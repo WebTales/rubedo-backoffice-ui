@@ -1,0 +1,156 @@
+﻿[
+
+{
+type: 'Liste de Contenus',
+description: '<h2>Bloc liste de contenus</h2> </br><p>Ce bloc affiche une liste de contenus filtrée soit selon le parétrage initial soit selon un paramétre reçu de la part d\'un autre bloc si l\'option "reçoit paramétre" est cochée. Lorsque c\'est bien le cas mais le bloc ne reçoit rien, il affiche une liste de contenus filtrée selon la configuration initiale.</p>',
+configBasique: {
+	title: 'Liste de contenus',
+	bType: 'Liste de Contenus',
+	flex: 1,
+	champsConfig: {
+		simple: [ 
+			{
+			categorie: 'Itération',
+			champs: [
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'Nombre de résultats affichés',
+						name: 'nbResultatsAffiches'
+						}
+					},
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'Ne pas afficher les n premiers résultats',
+						name: 'nbResultatsPasAfficher'
+						}
+					}
+			
+				]
+			},
+			{
+			categorie: 'Contenus',
+			champs: [
+					{
+					type:'Ext.form.field.Trigger',
+					ouvrir:'assistantRequetage',
+					config: {
+						fieldLabel: 'Requête',
+						name: 'requeteContenus'
+						}
+					}
+			
+				]
+			},
+			{
+			categorie: 'Pagination',
+			champs: [
+					{
+					type:'Ext.form.field.Checkbox',
+					config: {
+						fieldLabel: 'Utiliser la pagination',
+						name: 'utiliserPagination'
+						}
+					},
+					{
+					type:'Ext.form.field.Text',
+					config: {
+						fieldLabel: 'Libellé',
+						name: 'libellePagination'
+						}
+					},
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'Taille des pages',
+						name: 'taillePagination'
+						}
+					},
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'Limite "tout en une page"',
+						name: 'limitePagination'
+						}
+					}
+			
+				]
+			},
+			{
+			categorie: 'Tri',
+			champs: [
+					{
+					type:'Ext.form.field.Text',
+					config: {
+						fieldLabel: 'Trier par',
+						name: 'trierPar'
+						}
+					},
+					{
+					type:'Ext.form.field.ComboBox',
+					store:{
+						fields: ['valeur', 'nom'],
+						data : [
+							{"valeur":"AL", "nom":"Croissant"},
+							{"valeur":"AK", "nom":"Décroissant"}
+						] 
+					},
+
+					config: {
+						fieldLabel: 'Ordre',
+						queryMode: 'local',
+						displayField: 'nom',
+						valueField: 'valeur',
+						forceSelect: true,
+						editable: false,
+						name: 'ordreAffichage'
+						}
+					}
+			
+				]
+			}
+		],
+		avance: [ ]
+	},
+	configBloc: {
+
+		}
+	}
+},
+
+{
+type: 'Détail de contenu',
+description: 'Description du bloc détail de contenu',
+configBasique: {
+	title: 'Détail de contenu',
+	flex: 1,
+champsConfig: {
+		simple: [ 
+			{
+			categorie: 'Itération',
+			champs: [
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'p2',
+						name: 'nbResultatsAffiches'
+						}
+					},
+					{
+					type:'Ext.form.field.Number',
+					config: {
+						fieldLabel: 'Ne pas afficher les n premiers résultats',
+						name: 'nbResultatsPasAfficher'
+						}
+					}
+			
+				]
+			}
+		],
+		avance: [ ]
+	},
+	configBloc: { }
+	}
+}
+]

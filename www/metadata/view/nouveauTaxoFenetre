@@ -1,0 +1,80 @@
+{
+    "id": "ExtBox1-ext-gen64210",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "frame": null,
+        "height": 106,
+        "id": "nouveauTaxoFenetre",
+        "width": 300,
+        "layout": "fit",
+        "iconCls": "page_taxonomy",
+        "title": "Nouveau vocabulaire",
+        "modal": true,
+        "designer|userClassName": "nouveauTaxoFenetre",
+        "designer|userAlias": "nouveauTaxoFenetre"
+    },
+    "customConfigs": [],
+    "designerId": "b2ceb939-34ac-4cce-a01f-154ca2572cfb",
+    "$viewOrder": 19,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen64214",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "",
+                "designer|userClassName": "MyForm8"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen64220",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "champCreerTaxo",
+                        "fieldLabel": "Nom ",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField10",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen64229",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonCreerTaxo",
+                        "text": "Créer un nouveau vocabulaire",
+                        "designer|userClassName": "MyButton70",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

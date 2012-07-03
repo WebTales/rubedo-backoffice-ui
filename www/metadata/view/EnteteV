@@ -1,0 +1,204 @@
+{
+    "id": "ExtBox1-ext-gen14010",
+    "type": "toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 40,
+        "id": "entete",
+        "padding": null,
+        "tpl": null,
+        "designer|userClassName": "EnteteV",
+        "designer|userAlias": "entete",
+        "container|padding": null
+    },
+    "customConfigs": [],
+    "designerId": "399ef6a6-ce2b-45ce-b060-182cbb6d47e5",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen10461",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "boutonPincipalInterface",
+                "scale": "medium",
+                "text": "<img src=\"resources/images/KECMlogo.png\">",
+                "designer|userClassName": "MyButton79",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5886",
+            "type": "tbseparator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySeparator1",
+                "layout|flex": null,
+                "layout|margins": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen11246",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "boutonPanierEntete",
+                "icon": null,
+                "iconCls": "cart",
+                "text": "Panier",
+                "designer|userClassName": "MyButton1",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen38822",
+            "type": "tbseparator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySeparator1",
+                "layout|flex": null,
+                "layout|margins": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen53925",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": 0,
+                "height": 30,
+                "id": "taskbarPrincipal",
+                "enableOverflow": true,
+                "designer|userClassName": "MyToolbar24",
+                "layout|flex": 1
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6891",
+            "type": "tbseparator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySeparator2",
+                "layout|flex": null,
+                "layout|margins": "0, 0, 0, 20"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7682",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "filterField",
+                "value": "'Recherche'",
+                "fieldLabel": "",
+                "labelSeparator": " ",
+                "labelWidth": 68,
+                "designer|userClassName": "MyTextField",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8627",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "searchButton",
+                "iconCls": "search",
+                "text": null,
+                "designer|userClassName": "MyButton",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8735",
+            "type": "tbseparator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySeparator5",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen37464",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "x-btn-over",
+                "id": "boutonShowDesktop",
+                "width": 16,
+                "enableToggle": true,
+                "pressed": false,
+                "scale": "medium",
+                "text": null,
+                "tooltip": null,
+                "designer|userClassName": "MyButton44",
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

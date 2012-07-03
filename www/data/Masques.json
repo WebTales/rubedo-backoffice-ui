@@ -1,0 +1,46 @@
+[
+	{
+		text: 'Masque 1',
+		site: 'KECM',
+		etat: 'brouillon',
+		largeur: 1000,
+		auteur : 'Igor',
+		creation: '05/01/2012',
+		derniereModification: '05/01/2012',
+		version: '2',
+		id: '1',
+		versions:[
+				{text: '1', etat: 'brouillon', date: '05/01/2012', auteur: 'Igor'},
+				{text: '2', etat: 'brouillon', date: '06/01/2012', auteur: 'Igor'}
+			],
+		zones:[
+				{hauteur: 150, largeur: 1000, nom: 'Zone 1', colonnes:[{ flex: 1, blocs :[ ] }]},
+				{hauteur: 400, largeur: 400, nom: 'Zone 2', colonnes:[ {flex: 1, blocs :[ ] } ]},
+				{hauteur: 400, largeur: 600, nom: 'Zone 3', colonnes:[ {flex: 2,blocs :[ ] },{flex: 1, blocs :[ ]} ]},
+				{hauteur: 100, largeur: 1000, nom: 'Zone 4', colonnes:[ {flex: 1, blocs :[ ]} ]}
+			]
+	},
+
+	{
+		text: 'Masque 2',
+		site: 'Klee Interactive',
+		etat: 'brouillon',
+		largeur: 1200,
+		auteur : 'Igor',
+		creation: '05/01/2012',
+		derniereModification: '05/01/2012',
+		version: '2',
+		id: '2',
+		versions:[
+				{text: '1', etat: 'brouillon', date: '05/01/2012', auteur: 'Igor'},
+				{text: '2', etat: 'brouillon', date: '06/01/2012', auteur: 'Igor'}
+			],
+		zones:[
+				{hauteur: 150, largeur: 1200, nom: 'Zone 1', colonnes:[ {flex: 1,blocs :[ ] } ]},
+				{hauteur: 400, largeur: 600, nom: 'Zone 2', colonnes:[ {flex: 1,blocs :[ ] } ]},
+				{hauteur: 400, largeur: 600, nom: 'Zone 3', colonnes:[ {flex: 1,blocs :[ ] },{flex: 1, blocs :[ ]} ]},
+				{hauteur: 100, largeur: 1200, nom: 'Zone 4', colonnes:[ {flex: 1, blocs :[ ]},{flex: 1, blocs :[ ]} ]}
+			]
+	}
+
+]

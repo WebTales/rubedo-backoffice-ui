@@ -1,0 +1,31 @@
+{
+	rubriques:[
+		{
+		'text': 'KECM',
+		'id': 'site1',
+		'pages':[
+				{'text': 'Accueil', 'id': 'site1Accueil', 'masque': 'Masque vide', 'dateCreation': '30/11/2011', 'derniereModification': '30/11/2011', 'etat': 'Non', 'check': false, 'enLigne':'Aucune'}
+			]
+		},
+		{
+		'text': 'Produits',
+		'id': 'site1Produits',
+		'pages':[
+				{'text': 'KECM','id': 'site1ProduitsKECM', 'masque': 'Masque KECM 1', 'dateCreation': '30/11/2011', 'derniereModification': '30/11/2011', 'etat': 'Non', 'check': false, 'enLigne':'Aucune'},
+				{'text': 'Documentation', 'id': 'site1ProduitsDocumentation', 'masque': 'Masque KECM 2', 'dateCreation': '30/11/2011', 'derniereModification': '30/11/2011', 'etat': 'Non', 'check': false, 'enLigne':'Aucune'}
+			]
+		},
+		{
+			'text': 'Collaborateurs',
+			'id': 'site1Collaborateurs',	
+			'pages':[]
+		},
+		{
+			'text': 'Klee Interactive',
+			'id': 'site2',
+			'pages':[
+				{'text': 'Accueil', 'id': 'site2Accueil', 'masque': 'Masque KECM 1', 'dateCreation': '30/11/2011', 'derniereModification': '30/11/2011', 'etat': 'Non', 'check': false, 'enLigne':'Aucune'}
+			]	
+		}
+	]
+}

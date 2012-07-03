@@ -1,0 +1,80 @@
+{
+    "id": "ExtBox1-ext-gen44298",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "champsTCARStore",
+        "designer|userClassName": "champsTCARStore",
+        "designer|userAlias": "champsTCARStore"
+    },
+    "customConfigs": [],
+    "designerId": "6b2f4b2f-226c-4bce-9c71-210e5c512789",
+    "$viewOrder": 13,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen44305",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy11"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen44313",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader9"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen44789",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nom",
+                "designer|userClassName": "MyField46"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen44950",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "valeur",
+                "designer|userClassName": "MyField50"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

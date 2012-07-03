@@ -1,0 +1,490 @@
+{
+    "id": "ExtBox1-ext-gen29224",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "masquesDataModel"
+        ],
+        "stores": [
+            "VersionsDataJson",
+            "MasquesDataJson"
+        ],
+        "views": [
+            "nouveauMasque",
+            "ImportationMasques",
+            "copierMasque"
+        ],
+        "designer|userClassName": "MasqueController"
+    },
+    "customConfigs": [],
+    "designerId": "da6ed701-29c3-4603-a441-221b8ebb99cf",
+    "$viewOrder": 6,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen59189",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick2",
+                "implHandler": [
+                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    var fenetre = Ext.widget('delConfirmZ');\r",
+                    "    fenetre.showAt(screen.width/2-100, 100);\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getCmp('masquesGrid').getStore().remove(cible);\r",
+                    "        Ext.getCmp('masqueEdition').removeAll();\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "    });  \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSupprimerMasque",
+                "designer|userClassName": "onButtonClick2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen36159",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick4",
+                "implHandler": [
+                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.masqueMAJ(cible);\r",
+                    "    cible.data.etat='publié';\r",
+                    "    cible.data.derniereModification = new Date();\r",
+                    "    cible.data.version++;\r",
+                    "    cible.data.versions.push({text: cible.data.version, etat:'publié', date: new Date(), auteur: 'Igor'});\r",
+                    "    Ext.getCmp('masquesGrid').getView().refresh();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminfMasquesPublier",
+                "designer|userClassName": "onButtonClick4"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33079",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridviewItemClick",
+                "implHandler": [
+                    "var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var valeurs= Ext.clone(record.data);\r",
+                    "valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');\r",
+                    "valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');\r",
+                    "boiteMeta.update(valeurs);\r",
+                    "\r",
+                    "var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.text);}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"masque-icon\", text:record.data.text, itemId:'type'});\r",
+                    "filArianne.add(typeFil);\r",
+                    "}\r",
+                    "var masque = record.data;\r",
+                    "this.getVersionsDataJsonStore().loadData(masque.versions);\r",
+                    "\r",
+                    "this.getMasqueEdition().removeAll();\r",
+                    "this.getMasqueEdition().setWidth(masque.largeur);\r",
+                    "this.masqueRestit(masque.zones); \r",
+                    "\r",
+                    "\r",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.View",
+                "designer|controlQuery": "#masquesGridView",
+                "designer|userClassName": "onGridviewItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen34881",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MasqueEdition",
+                "selector": "#masqueEdition",
+                "designer|userClassName": "MasqueEdition"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen25462",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "masqueMAJ",
+                "designer|params": [
+                    "cible"
+                ],
+                "implHandler": [
+                    "var nouvZones = [ ];\r",
+                    "var zonesM =Ext.getCmp('masqueEdition').items.items;\r",
+                    "for (i=0; i<zonesM.length; i++) {\r",
+                    "    var nZone = {hauteur: zonesM[i].height, largeur: zonesM[i].width, nom: zonesM[i].title, colonnes: [ ] };\r",
+                    "    var colonnesM = zonesM[i].items.items;\r",
+                    "    for (j=0; j<colonnesM.length; j++){\r",
+                    "        var nColonne = {flex:colonnesM[j].flex, blocs: [ ]};\r",
+                    "        var blocsM =colonnesM[j].items.items;\r",
+                    "        for(k=0;k<blocsM.length; k++) {\r",
+                    "            nColonne.blocs.push({ flex : blocsM[k].flex, title: blocsM[k].title, bType: blocsM[k].bType, champsConfig: blocsM[k].champsConfig, configBloc: blocsM[k].configBloc});\r",
+                    "        }        \r",
+                    "        nZone.colonnes.push(nColonne);\r",
+                    "    }\r",
+                    "    nouvZones.push(nZone);\r",
+                    "}\r",
+                    "cible.data.zones=nouvZones;"
+                ],
+                "designer|userClassName": "masqueMAJ"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen52911",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "masqueAdapt",
+                "designer|params": [
+                    "zones, rapport"
+                ],
+                "implHandler": [
+                    "for (i=0; i<zones.length; i++) {\r",
+                    "    zones[i].largeur = zones[i].largeur * rapport;  \r",
+                    "}\r",
+                    ""
+                ],
+                "designer|userClassName": "masqueAdapt"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen36209",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "masqueRestit",
+                "designer|params": [
+                    "zones"
+                ],
+                "implHandler": [
+                    "var largeurMax = this.getMasqueEdition().width;\r",
+                    "for (i=0; i<zones.length; i++) {   \r",
+                    "    var zoneIns = zones[i];   \r",
+                    "    var nouvZone = Ext.widget('zone' , { width: zoneIns.largeur, height: zoneIns.hauteur, title :zoneIns.nom, maxWidth : largeurMax});\r",
+                    "    var colonnes = zoneIns.colonnes;\r",
+                    "    var blocs = colonnes[0].blocs;\r",
+                    "    nouvZone.items.items[0].flex=colonnes[0].flex;\r",
+                    "    for (k=0; k<blocs.length; k++) {\r",
+                    "        var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});\r",
+                    "        nouvZone.getComponent(0).add(nouvBloc);\r",
+                    "    }\r",
+                    "    for (j=1; j<colonnes.length; j++) {    \r",
+                    "        var nouvColonne = Ext.widget('colonne');\r",
+                    "        nouvColonne.flex=colonnes[j].flex;\r",
+                    "        var blocs = colonnes[j].blocs;\r",
+                    "        for (k=0; k<blocs.length; k++) {\r",
+                    "            var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});\r",
+                    "            nouvColonne.add(nouvBloc);\r",
+                    "        }\r",
+                    "        nouvZone.add(nouvColonne);\r",
+                    "    }\r",
+                    "\r",
+                    "\r",
+                    "    this.getMasqueEdition().add(nouvZone);  \r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "}"
+                ],
+                "designer|userClassName": "masqueRestit"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen22795",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreepanelItemClick",
+                "implHandler": [
+                    "var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];\r",
+                    "this.getMasqueEdition().removeAll();\r",
+                    "this.getMasqueEdition().setWidth(cible.data.largeur);\r",
+                    "this.masqueRestit(cible.raw.zones);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#arborescenceSites",
+                "designer|userClassName": "onTreepanelItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen45227",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick6",
+                "implHandler": [
+                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    var fenetre = Ext.widget('copierMasque');\r",
+                    "    fenetre.showAt(screen.width/2-150, 100);\r",
+                    "    Ext.getCmp('copierMasqueTitre').setValue(cible.data.text);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCopierMasque",
+                "designer|userClassName": "onButtonClick6"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21847",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "var fenetre = Ext.widget('nouveauMasque');\r",
+                    "fenetre.showAt(screen.width/2-200, 100);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonNouveauMasque",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen35762",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick1",
+                "implHandler": [
+                    "if ((Ext.getCmp('nouveauMasqueTitre').isValid())&&(Ext.getCmp('nouveauMasqueSite').isValid())) {\r",
+                    "\r",
+                    "    var nTitre = Ext.getCmp('nouveauMasqueTitre').getValue();\r",
+                    "    var nSite = Ext.getCmp('nouveauMasqueSite').getValue();\r",
+                    "    var nLargeur = Ext.getCmp('nouveauMasqueSite').store.findRecord('text', nSite).data.largeur;\r",
+                    "    var nouvMasque = Ext.create('model.masquesDataModel', {\r",
+                    "        text: nTitre,\r",
+                    "        site: nSite,\r",
+                    "        etat: 'brouillon',\r",
+                    "        largeur: nLargeur,\r",
+                    "        auteur: 'Igor',\r",
+                    "        creation: new Date(),\r",
+                    "        derniereModification: new Date(),\r",
+                    "        version: 1.0,\r",
+                    "        versions:[\r",
+                    "        {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}\r",
+                    "        ],\r",
+                    "        zones:[\r",
+                    "        {hauteur: 150, largeur: nLargeur, nom: 'Première zone', colonnes:[ { blocs :[ ] }]}\r",
+                    "\r",
+                    "        ]\r",
+                    "\r",
+                    "    });\r",
+                    "    this.getMasquesDataJsonStore().add(nouvMasque);\r",
+                    "\r",
+                    "    Ext.getCmp('nouveauMasqueFenetre').close();\r",
+                    "    Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);\r",
+                    "    this.onGridviewItemClick(Ext.getCmp('masquesGridView'));\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#creerNouveauMasque",
+                "designer|userClassName": "onButtonClick1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24279",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick3",
+                "implHandler": [
+                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.masqueMAJ(cible);\r",
+                    "    cible.data.etat='brouillon';\r",
+                    "    cible.data.derniereModification = new Date();\r",
+                    "    cible.data.version++;\r",
+                    "    cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: 'Igor'});\r",
+                    "    Ext.getCmp('masquesGrid').getView().refresh();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminfMasquesEnregistrer",
+                "designer|userClassName": "onButtonClick3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen50953",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick7",
+                "implHandler": [
+                    "if ((Ext.getCmp('copierMasqueTitre').isValid())&&(Ext.getCmp('copierMasqueSite').isValid())) {\r",
+                    "    var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
+                    "    var nTitre = Ext.getCmp('copierMasqueTitre').getValue();\r",
+                    "    var nSite = Ext.getCmp('copierMasqueSite').getValue();\r",
+                    "    var nLargeur = Ext.getCmp('copierMasqueSite').store.findRecord('text', nSite).data.largeur;\r",
+                    "    var rapport = nLargeur/cible.data.largeur;\r",
+                    "    var nZones = Ext.clone(cible.data.zones);\r",
+                    "    if (rapport != 1) {\r",
+                    "        this.masqueAdapt(nZones, rapport);\r",
+                    "    }\r",
+                    "    var nouvMasque = Ext.create('model.masquesDataModel', {\r",
+                    "        text: nTitre,\r",
+                    "        site: nSite,\r",
+                    "        etat: 'brouillon',\r",
+                    "        largeur: nLargeur,\r",
+                    "        auteur: 'Igor',\r",
+                    "        creation: new Date(),\r",
+                    "        derniereModification: new Date(),\r",
+                    "        version: 1.0,\r",
+                    "        versions:[\r",
+                    "        {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}\r",
+                    "        ],\r",
+                    "        zones: nZones\r",
+                    "\r",
+                    "    });\r",
+                    "    this.getMasquesDataJsonStore().add(nouvMasque);\r",
+                    "\r",
+                    "    Ext.getCmp('copieMasqueFenetre').close();    \r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#copierMasque",
+                "designer|userClassName": "onButtonClick7"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen49232",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick5",
+                "implHandler": [
+                    "var fenetre = Ext.widget('importationMasques');\r",
+                    "fenetre.showAt(screen.width/2-150, 100);\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminfMasquesImporter",
+                "designer|userClassName": "onButtonClick5"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

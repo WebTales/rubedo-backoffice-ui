@@ -1,0 +1,326 @@
+{
+    "id": "ExtBox1-ext-gen63606",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "termeTaxonomieModel"
+        ],
+        "views": [
+            "TermesTaxonomieTree",
+            "nouveauTaxoFenetre"
+        ],
+        "designer|userClassName": "TaxonomieController"
+    },
+    "customConfigs": [],
+    "designerId": "694f297c-7498-4216-9113-e00663d5f6c4",
+    "$viewOrder": 8,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen63853",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "majTaxo",
+                "implHandler": [
+                    "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre);}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.titre, itemId:'type'});\r",
+                    "filArianne.add(typeFil);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "Ext.getCmp('champEditionTaxoTitre').setValue(record.data.titre);\r",
+                    "Ext.getCmp('champEditionTaxoDescription').setValue(record.data.description);\r",
+                    "Ext.getCmp('champEditionTaxoHelpText').setValue(record.data.helpText);\r",
+                    "Ext.getCmp('champEditionTaxoEtiquettes').setValue(record.data.etiquettes);\r",
+                    "Ext.getCmp('champEditionTaxoChoixMultiple').setValue(record.data.choixMultiple);\r",
+                    "Ext.getCmp('champEditionTaxoObligatoire').setValue(record.data.obligatoire);\r",
+                    "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
+                    "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",
+                    "var data =  record.data.termes;\r",
+                    "var store = Ext.create('Ext.data.TreeStore', {\r",
+                    "    model: 'KECMours.model.termeTaxonomieModel',\r",
+                    "    root: Ext.clone(data),\r",
+                    "    proxy: {\r",
+                    "        type: 'memory'\r",
+                    "    }\r",
+                    "});\r",
+                    "var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1});\r",
+                    "\r",
+                    "Ext.getCmp('conteneurAdminfTaxo').add(arbre);\r",
+                    "arbre.getStore().getRootNode().expand(true);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#AdminfTaxonomieGrid",
+                "designer|userClassName": "majTaxo"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen85275",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "supprimeTerme",
+                "implHandler": [
+                    "var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    cible.remove();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSupprimerTermesTaxo",
+                "designer|userClassName": "supprimeTerme"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen87169",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajouterTerme",
+                "implHandler": [
+                    "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
+                    "\r",
+                    "    var champT = Ext.getCmp('nouveauTermeTaxoField');\r",
+                    "    if (champT.isValid()) {\r",
+                    "        var nTerme = Ext.create('model.termeTaxonomieModel', {text: champT.getValue()});\r",
+                    "        var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
+                    "        if (cibleI !== null) {\r",
+                    "            cibleI.insertChild(cibleI.indexOf(cibleI.lastChild)+1, nTerme);\r",
+                    "            cibleI.expand();\r",
+                    "            Ext.getCmp('nouveauTermeTaxoField').setValue();\r",
+                    "        } \r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonAjouterTermesTaxo",
+                "designer|userClassName": "ajouterTerme"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen92738",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "enregistrerTaxo",
+                "implHandler": [
+                    "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
+                    "    var cibleR=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected().data;\r",
+                    "    if (Ext.getCmp('champEditionTaxoTitre').isValid()){cibleR.titre=Ext.getCmp('champEditionTaxoTitre').getValue(); }\r",
+                    "    if (Ext.getCmp('champEditionTaxoDescription').isValid()){cibleR.description=Ext.getCmp('champEditionTaxoDescription').getValue(); }\r",
+                    "    if (Ext.getCmp('champEditionTaxoHelpText').isValid()){cibleR.helpText=Ext.getCmp('champEditionTaxoHelpText').getValue(); }\r",
+                    "    if (Ext.getCmp('champEditionTaxoEtiquettes').isValid()){cibleR.etiquettes=Ext.getCmp('champEditionTaxoEtiquettes').getValue(); }\r",
+                    "    if (Ext.getCmp('champEditionTaxoChoixMultiple').isValid()){cibleR.choixMultiple=Ext.getCmp('champEditionTaxoChoixMultiple').getValue(); }\r",
+                    "    if (Ext.getCmp('champEditionTaxoObligatoire').isValid()){cibleR.obligatoire=Ext.getCmp('champEditionTaxoObligatoire').getValue(); }\r",
+                    "    var racineR = Ext.getCmp('TermesTaxonomieTree').getStore().getRootNode();\r",
+                    "    var nouvRacine = {text: racineR.data.text, children: this.recupereFils(racineR.childNodes)};  \r",
+                    "    cibleR.termes=Ext.clone(nouvRacine);\r",
+                    "    Ext.getCmp('AdminfTaxonomieGrid').getView().refresh();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonEnregistrerTaxo",
+                "designer|userClassName": "enregistrerTaxo"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33099",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "recupereFils",
+                "designer|params": [
+                    "cible"
+                ],
+                "implHandler": [
+                    "var fils = [ ];\r",
+                    "if (cible.length>0) {\r",
+                    "    var f=0;\r",
+                    "    for (f=0; f<cible.length; f++) {\r",
+                    "        fils.push({text: cible[f].data.text, children: this.recupereFils(cible[f].childNodes)});\r",
+                    "    }    \r",
+                    "}\r",
+                    "return fils;"
+                ],
+                "designer|userClassName": "recupereFils"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen60364",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "supprimerVocabulaire",
+                "implHandler": [
+                    "var cible = Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    var fenetre = Ext.widget('delConfirmZ');\r",
+                    "    fenetre.showAt(screen.width/2-100, 100);\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getCmp('AdminfTaxonomieGrid').getStore().remove(cible);\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "    });  \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSupprimerTaxo",
+                "designer|userClassName": "supprimerVocabulaire"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen70317",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "creeVocabulaire",
+                "implHandler": [
+                    "if (Ext.getCmp('champCreerTaxo').isValid()) {\r",
+                    "    var nouveauVocab = Ext.create('model.taxonomieDataModel', {\r",
+                    "        titre: Ext.getCmp('champCreerTaxo').getValue(),\r",
+                    "        etiquettes: false,\r",
+                    "        choixMultiple: true,\r",
+                    "        obligatoire: false,\r",
+                    "        termes:\t{\r",
+                    "            children:[\r",
+                    "            ]\r",
+                    "        }\r",
+                    "\r",
+                    "\r",
+                    "    });\r",
+                    "    Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);\r",
+                    "    Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);\r",
+                    "    this.majTaxo(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);\r",
+                    "    Ext.getCmp('nouveauTaxoFenetre').close();\r",
+                    "}    "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCreerTaxo",
+                "designer|userClassName": "creeVocabulaire"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen63562",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "creerFenetreVocabulaire",
+                "implHandler": [
+                    "var fenetre = Ext.widget('nouveauTaxoFenetre');\r",
+                    "fenetre.showAt(screen.width/2-150, 100);\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCreerTaxonomie",
+                "designer|userClassName": "creerFenetreVocabulaire"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen81188",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
+                    "\r",
+                    "    var champT = Ext.getCmp('nouveauTermeTaxoField');\r",
+                    "    if (champT.isValid()) {\r",
+                    "        var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
+                    "        if (cibleI !== null) {\r",
+                    "            cibleI.data.text= champT.getValue();\r",
+                    "            Ext.getCmp('nouveauTermeTaxoField').setValue();\r",
+                    "            Ext.getCmp('TermesTaxonomieTree').getView().refresh();\r",
+                    "        } \r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonModifierTermesTaxo",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

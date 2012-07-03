@@ -1,0 +1,87 @@
+{
+    "id": "ExtBox1-ext-gen87627",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "ongletTCDep",
+        "layout": "fit",
+        "iconCls": "documentDep",
+        "title": "Types de contenus imbriqués",
+        "designer|userClassName": "ongletTCDep",
+        "designer|userAlias": "ongletTCDep"
+    },
+    "customConfigs": [],
+    "designerId": "c6f84d61-bbf5-4921-a9e9-82bfe825ab8e",
+    "$viewOrder": 30,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen89711",
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "TCImbriquesGrid",
+                "title": "",
+                "store": "TypesContenusDepDataJson",
+                "designer|userClassName": "MyGridPanel13"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen89758",
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView11"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen90863",
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "type",
+                        "flex": 1,
+                        "text": "Type",
+                        "designer|userClassName": "MyColumn23"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen93140",
+                    "type": "checkboxselectionmodel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckboxSelectionModel3"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

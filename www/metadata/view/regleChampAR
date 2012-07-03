@@ -1,0 +1,79 @@
+{
+    "id": "ExtBox1-ext-gen48281",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "frame": false,
+        "margin": "10 0 0 0",
+        "style": "{clear:both}",
+        "designer|userClassName": "regleChampAR",
+        "designer|userAlias": "regleChampAR"
+    },
+    "customConfigs": [],
+    "designerId": "360ae16f-62cb-4c81-b236-91d5583211e5",
+    "$viewOrder": 28,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen48909",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "frame": true,
+                "hidden": false,
+                "itemId": "boite",
+                "designer|userClassName": "MyToolbar22",
+                "designer|userAlias": "mytoolbar22"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen50181",
+                    "type": "tbtext",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "nomChamp",
+                        "text": "Champ",
+                        "designer|userClassName": "MyTextItem4",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen49434",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": false,
+                        "itemId": "boutonEnleveRegleAR",
+                        "style": "{float:right}",
+                        "iconCls": "delete",
+                        "text": "",
+                        "designer|userClassName": "MyButton74",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

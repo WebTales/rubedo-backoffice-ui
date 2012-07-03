@@ -1,0 +1,88 @@
+{
+    "id": "ExtBox1-ext-gen5978",
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "ConfigSpecBloc",
+        "activeTab": 0,
+        "designer|userClassName": "ConfigSpecBloc",
+        "designer|userAlias": "ConfigSpecBloc"
+    },
+    "customConfigs": [],
+    "designerId": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
+    "$viewOrder": 22,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5990",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "padding": null,
+                "bodyPadding": 10,
+                "title": "Simple",
+                "designer|userClassName": "MyForm10"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen6002",
+                    "type": "tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig33"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-tab-bar",
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen6007",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "Avancé",
+                "designer|userClassName": "MyForm11"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen6019",
+                    "type": "tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig34"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-tab-bar",
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

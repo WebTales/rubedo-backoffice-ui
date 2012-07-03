@@ -1,0 +1,156 @@
+{
+    "id": "ExtBox1-ext-gen28690",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "PanierDataJson"
+        ],
+        "views": [
+            "Panier"
+        ],
+        "designer|userClassName": "PanierController"
+    },
+    "customConfigs": [],
+    "designerId": "c58379f5-e379-488d-a665-b9ff52959309",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen21241",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "afficherPanier",
+                "implHandler": [
+                    "if (!(Ext.isDefined(Ext.getCmp('Panier')))) {\r",
+                    "    var panier = Ext.widget('panier');\r",
+                    "    Ext.getCmp('desktopCont').add(panier);\r",
+                    "    panier.show();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonPanierEntete",
+                "designer|userClassName": "afficherPanier"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21554",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick2",
+                "implHandler": [
+                    "var cible = Ext.getCmp('PanierGrid').getSelectionModel().getSelection();\r",
+                    "Ext.getCmp('PanierGrid').getStore().remove(cible);\r",
+                    "var nbelts = Ext.getCmp('PanierGrid').getStore().count();\r",
+                    "Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbelts+')');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#enleverPanier",
+                "designer|userClassName": "onButtonClick2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21661",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick3",
+                "implHandler": [
+                    "var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.getPanierDataJsonStore().add(cible);\r",
+                    "    var nbelts = this.getPanierDataJsonStore().count();\r",
+                    "    Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbelts+')');\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ajoutPanierSites",
+                "designer|userClassName": "onButtonClick3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21804",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick4",
+                "implHandler": [
+                    "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.getPanierDataJsonStore().add(cible);\r",
+                    "    var nbelts = this.getPanierDataJsonStore().count();\r",
+                    "    Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbelts+')');\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ajoutPanierContenus",
+                "designer|userClassName": "onButtonClick4"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen22376",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection();\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.getPanierDataJsonStore().add(cible);\r",
+                    "    var nbelts = this.getPanierDataJsonStore().count();\r",
+                    "    Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbelts+')');\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ajouterPanierMasques",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

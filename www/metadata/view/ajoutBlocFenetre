@@ -1,0 +1,135 @@
+{
+    "id": "ExtBox1-ext-gen15691",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 300,
+        "id": "ajoutBlocFenetre",
+        "width": 500,
+        "resizable": "false",
+        "layout": "hbox",
+        "title": "Ajouter un bloc",
+        "modal": true,
+        "designer|userClassName": "ajoutBlocFenetre",
+        "designer|userAlias": "ajoutBlocFenetre",
+        "container|align": "stretch"
+    },
+    "customConfigs": [],
+    "designerId": "98fcade8-7344-415c-99cd-f6e6e08ad540",
+    "$viewOrder": 20,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen6347",
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "BlocsSelectGrid",
+                "title": "",
+                "store": "BlocsDataStore",
+                "designer|userClassName": "MyGridPanel8",
+                "layout|flex": 0.5
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen6394",
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView6"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen6153",
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "type",
+                        "flex": 1,
+                        "text": "Type",
+                        "designer|userClassName": "MyColumn15"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen9385",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "PaneauBlocsDetail",
+                "tpl": "{description}",
+                "bodyPadding": 10,
+                "bodyStyle": "{text-align: justify;}",
+                "title": "",
+                "designer|userClassName": "MyPanel61",
+                "layout|flex": 1
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10876",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar16",
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen9801",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonAjouterBloc",
+                        "margin": "0 0 0 410",
+                        "iconCls": "add",
+                        "text": "Ajouter",
+                        "designer|userClassName": "MyButton72",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

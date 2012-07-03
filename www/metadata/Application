@@ -1,0 +1,82 @@
+{
+    "id": "ExtBox1-ext-gen12690",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "sitesDataModel",
+            "panierDataModel",
+            "versionsDataModel",
+            "blocDataModel",
+            "typesChampsDataModel",
+            "taxonomieDataModel",
+            "iconDataModel"
+        ],
+        "stores": [
+            "SitesDataJson",
+            "SitesJson",
+            "BlocsDataStore",
+            "StoreOptionFiltrageTaxonomie",
+            "TypesChampsDataStore",
+            "TaxonomieDataJson",
+            "champsTCARStore",
+            "TypesContenusDepDataJson",
+            "TypesContenusNDepDataJson",
+            "IconesDataJson"
+        ],
+        "views": [
+            "MyContainer",
+            "ArborescenceSites",
+            "MyGridPanel3",
+            "ViewportPrimaire",
+            "EnteteV",
+            "iconeBureau",
+            "menuMedias",
+            "contributionContenus",
+            "adminFTDC",
+            "adminFMDP"
+        ],
+        "autoCreateViewport": true,
+        "name": "KECMdesktop",
+        "controllers": [
+            "ContributionSitesController",
+            "PanierController",
+            "OutilsBureauController",
+            "ContributionContenusController",
+            "ZoneController",
+            "MasqueController",
+            "TypesContenusController",
+            "TaxonomieController",
+            "assistantRequetageController",
+            "InterfaceController"
+        ]
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "iconCls": "icon-application",
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen10365",
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "paths": "{\"Ext\":\".\", \"Ext.ux\": \"extjs-4.1.0/examples/ux\"}",
+                "designer|userClassName": "Loader"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-loader",
+            "expanded": true
+        }
+    ]
+}

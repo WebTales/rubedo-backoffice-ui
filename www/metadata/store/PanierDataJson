@@ -1,0 +1,93 @@
+{
+    "id": "ExtBox1-ext-gen16233",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "storeId": "PanierDataJson",
+        "model": "panierDataModel",
+        "designer|userClassName": "PanierDataJson",
+        "designer|userAlias": "panierDataJson"
+    },
+    "customConfigs": [],
+    "designerId": "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16240",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/Panier.json",
+                "designer|userClassName": "MyAjaxProxy1"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen16248",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen22756",
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "nameProperty": null,
+                        "root": null,
+                        "designer|userClassName": "MyJsonWriter"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen58695",
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreDataChangeD",
+                "implHandler": [
+                    "var nbeltspanier =  this.count();\r",
+                    "Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');\r",
+                    ""
+                ],
+                "single": true,
+                "name": "datachanged",
+                "scope": "me",
+                "designer|userClassName": "onJsonstoreDataChangeD"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

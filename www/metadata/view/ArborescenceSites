@@ -1,0 +1,80 @@
+{
+    "id": "ExtBox1-ext-gen19245",
+    "type": "treepanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "loader": null,
+        "autoScroll": false,
+        "autoDestroy": null,
+        "bodyBorder": false,
+        "title": "",
+        "store": "SitesDataJson",
+        "root": null,
+        "rootVisible": false,
+        "singleExpand": false,
+        "useArrows": true,
+        "designer|userClassName": "ArborescenceSites",
+        "designer|userAlias": "arborescenceSites"
+    },
+    "customConfigs": [],
+    "designerId": "9f94e842-af0e-4585-9753-04f49e1dd7f8",
+    "$viewOrder": 7,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen19256",
+            "type": "treeview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "minHeight": null,
+                "autoScroll": false,
+                "loadingHeight": null,
+                "designer|userClassName": "MyTreeView"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen19804",
+                    "type": "treedragdropplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                    "userConfig": {
+                        "ddGroup": "colonneDDGroup",
+                        "dropGroup": null,
+                        "designer|userClassName": "MyTreeDragDropPlugin"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen78737",
+            "type": "rowselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.RowModel",
+            "userConfig": {
+                "designer|userClassName": "MyRowSelectionModel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

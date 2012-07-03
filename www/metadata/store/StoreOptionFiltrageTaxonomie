@@ -1,0 +1,67 @@
+{
+    "id": "ExtBox1-ext-gen13161",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "storeId": "MyJsonStore7",
+        "data": "[\n{option:'exacte'},\n{option:'récursif'},\n{option:'ignoré'}\n]",
+        "designer|userClassName": "StoreOptionFiltrageTaxonomie"
+    },
+    "customConfigs": [],
+    "designerId": "adf83458-b18b-4fc2-9594-c78702fe9a0e",
+    "$viewOrder": 10,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen13168",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy8"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen13176",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader6"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen13601",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "option",
+                "type": "string",
+                "designer|userClassName": "MyField33"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -1,0 +1,258 @@
+{
+    "id": "ExtBox1-ext-gen28882",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "floating": true,
+        "height": 300,
+        "id": "Panier",
+        "style": null,
+        "styleHtmlCls": null,
+        "styleHtmlContent": false,
+        "width": 600,
+        "resizable": null,
+        "layout": "fit",
+        "bodyCls": "",
+        "bodyStyle": null,
+        "iconCls": "cart",
+        "title": "Panier",
+        "constrain": false,
+        "constrainHeader": true,
+        "modal": false,
+        "designer|userClassName": "Panier",
+        "designer|userAlias": "panier"
+    },
+    "customConfigs": [],
+    "designerId": "e59b3e1d-ac70-40ed-8cca-3251584e2e94",
+    "$viewOrder": 8,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen53368",
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "PanierGrid",
+                "title": "",
+                "store": "PanierDataJson",
+                "designer|userClassName": "MyGridPanel"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen53410",
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen55009",
+                    "type": "checkboxselectionmodel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckboxSelectionModel"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen16082",
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 183,
+                        "dataIndex": "text",
+                        "flex": 1,
+                        "text": "Titre",
+                        "designer|userClassName": "MyColumn3"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen16092",
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "etat",
+                        "flex": 1,
+                        "text": "Etat",
+                        "designer|userClassName": "MyColumn4"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen31379",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar13",
+                "dock": "left"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen32535",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "enleverPanier",
+                        "icon": "resources/icones/24x24/shopping_cart_remove.png",
+                        "iconCls": null,
+                        "scale": "medium",
+                        "text": "Enlever",
+                        "designer|userClassName": "MyButton45",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen40268",
+                    "type": "tbseparator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySeparator14",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen32781",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/icones/24x24/pencil.png",
+                        "iconCls": null,
+                        "scale": "medium",
+                        "text": "Action 1",
+                        "designer|userClassName": "MyButton46",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen9574",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/icones/24x24/pencil.png",
+                        "iconCls": null,
+                        "scale": "medium",
+                        "text": "Action 2",
+                        "designer|userClassName": "MyButton46",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen9780",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/icones/24x24/pencil.png",
+                        "iconCls": null,
+                        "scale": "medium",
+                        "text": "Action 3",
+                        "designer|userClassName": "MyButton46",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen68646",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "windowMinimize",
+                "type": "minimize",
+                "designer|userClassName": "MyTool14"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen68841",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "windowMaximize",
+                "type": "maximize",
+                "designer|userClassName": "MyTool14"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

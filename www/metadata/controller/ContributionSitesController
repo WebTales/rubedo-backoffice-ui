@@ -1,0 +1,97 @@
+{
+    "id": "ExtBox1-ext-gen13642",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "VersionsDataJson"
+        ],
+        "views": [
+            "ContributionSitesV"
+        ],
+        "designer|userClassName": "ContributionSitesController"
+    },
+    "customConfigs": [],
+    "designerId": "12a39889-52e2-4c1b-9b5b-6b9ed45da90b",
+    "$viewOrder": 1,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen15201",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreepanelSelectionChange",
+                "implHandler": [
+                    "var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    this.getNomPageSites().update(cible.raw); \r",
+                    "    this.getVersionsDataJsonStore().loadData(cible.raw.versions);\r",
+                    "\r",
+                    "    var ouvertRec = new Ext.menu.Item(cible.raw.id);\r",
+                    "    ouvertRec.setIconCls('document');\r",
+                    "    ouvertRec.setText(cible.raw.text);\r",
+                    "    Ext.getCmp('menuSitesRecents').remove(ouvertRec);\r",
+                    "    Ext.getCmp('menuSitesRecents').insert(1 ,ouvertRec);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#arborescenceSites",
+                "designer|userClassName": "onTreepanelSelectionChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16688",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "NomPageSites",
+                "selector": "#nomPageSites",
+                "designer|userClassName": "NomPageSites"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen27866",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "abstractcomponent.resizable = false;\r",
+                    "abstractcomponent.getDockedComponent(0).getComponent('supprimerZone').destroy();\r",
+                    "abstractcomponent.getDockedComponent(0).getComponent('ajouterColonne').destroy();\r",
+                    "abstractcomponent.getDockedComponent(0).getComponent('enleverColonne').destroy();"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#editionSites zone",
+                "designer|userClassName": "onPanelAfterRender"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

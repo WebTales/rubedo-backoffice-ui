@@ -1,0 +1,98 @@
+{
+    "id": "ExtBox1-ext-gen27280",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "frame": null,
+        "height": 125,
+        "id": "nouveauTypeContenuFenetre",
+        "width": 300,
+        "layout": "fit",
+        "iconCls": "content-icon",
+        "title": "Nouveau type de contenu",
+        "modal": true,
+        "designer|userClassName": "nouveauTypeContenu",
+        "designer|userAlias": "nouveauTypeContenu"
+    },
+    "customConfigs": [],
+    "designerId": "e6178e4c-162c-40e0-816c-026c97fd3f5e",
+    "$viewOrder": 18,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen28698",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "",
+                "designer|userClassName": "MyForm8"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen29158",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "champCreerTC",
+                        "fieldLabel": "Nom ",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField10",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen40567",
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "champTCIsDep",
+                        "fieldLabel": "Imbriqué ",
+                        "boxLabel": "",
+                        "designer|userClassName": "MyCheckbox3",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen29639",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonCreerTC",
+                        "text": "Créer un nouveau type de contenu",
+                        "designer|userClassName": "MyButton70",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

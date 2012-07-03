@@ -1,0 +1,61 @@
+{
+    "id": "ExtBox1-ext-gen11639",
+    "type": "treestore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "storeId": "SitesDataJson",
+        "model": "sitesDataModel",
+        "defaultRootId": null,
+        "defaultRootProperty": null,
+        "folderSort": null,
+        "nodeParam": null,
+        "designer|userClassName": "SitesDataJson",
+        "designer|userAlias": "sitesDataJson"
+    },
+    "customConfigs": [],
+    "designerId": "8f43a679-c0ea-4980-b4af-43ba29385f00",
+    "$viewOrder": 0,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen11646",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "url": "data/Sites.json",
+                "designer|userClassName": "MyAjaxProxy"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen11654",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null,
+                        "record": null,
+                        "designer|userClassName": "MyJsonReader1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "id": "ExtBox1-ext-gen60324",
+    "type": "treepanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "TermesTaxonomieTree",
+        "title": "Termes",
+        "store": null,
+        "useArrows": true,
+        "designer|userClassName": "TermesTaxonomieTree",
+        "designer|userAlias": "TermesTaxonomieTree"
+    },
+    "customConfigs": [],
+    "designerId": "a78850b9-8d6a-42a3-b37f-1a00b54aba85",
+    "$viewOrder": 26,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen60340",
+            "type": "treeview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "disableSelection": false,
+                "itemCls": null,
+                "designer|userClassName": "MyTreeView1"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen69006",
+                    "type": "treedragdropplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeDragDropPlugin1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen77695",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar20",
+                "dock": "top"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen77905",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "nouveauTermeTaxoField",
+                        "fieldLabel": "Terme ",
+                        "labelSeparator": null,
+                        "labelWidth": 50,
+                        "allowBlank": false,
+                        "vtype": null,
+                        "designer|userClassName": "MyTextField8",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen78197",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonAjouterTermesTaxo",
+                        "icon": "",
+                        "iconCls": "add",
+                        "text": "Ajouter",
+                        "designer|userClassName": "MyButton66",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen80426",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonModifierTermesTaxo",
+                        "icon": "",
+                        "iconCls": "edit",
+                        "text": "Substituer",
+                        "designer|userClassName": "MyButton66",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen78461",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonSupprimerTermesTaxo",
+                        "icon": null,
+                        "iconCls": "close",
+                        "text": "Supprimer",
+                        "designer|userClassName": "MyButton67",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

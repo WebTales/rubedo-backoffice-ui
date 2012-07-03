@@ -1,0 +1,83 @@
+{
+    "id": "ExtBox1-ext-gen54375",
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "iconDataModel",
+        "designer|userAlias": "iconDataModel"
+    },
+    "customConfigs": [],
+    "designerId": "753f02f1-5381-4a86-b5ea-e3b077257ff4",
+    "$viewOrder": 10,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen54690",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text",
+                "type": "string",
+                "designer|userClassName": "MyField57"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen54854",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "posX",
+                "type": "int",
+                "designer|userClassName": "MyField58"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen55021",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "posY",
+                "type": "int",
+                "designer|userClassName": "MyField59"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen55191",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "image",
+                "type": "string",
+                "designer|userClassName": "MyField60"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

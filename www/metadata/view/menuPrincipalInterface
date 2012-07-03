@@ -1,0 +1,312 @@
+{
+    "id": "ExtBox1-ext-gen12752",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": 0,
+        "floating": true,
+        "frame": false,
+        "height": 310,
+        "id": "menuPrincipalInterface",
+        "padding": null,
+        "width": 350,
+        "shadow": null,
+        "layout": "hbox",
+        "bodyBorder": false,
+        "bodyPadding": 0,
+        "frameHeader": false,
+        "iconCls": "meUser",
+        "overlapHeader": false,
+        "preventHeader": false,
+        "title": "Alexandru Dobre",
+        "designer|userClassName": "menuPrincipalInterface",
+        "designer|userAlias": "menuPrincipalInterface",
+        "container|align": "stretch",
+        "container|padding": null
+    },
+    "customConfigs": [],
+    "designerId": "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen21150",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "designer|userClassName": "MyPanel62",
+                "layout|flex": 1
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen28197",
+                    "type": "menu",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "floating": false,
+                        "id": null,
+                        "width": null,
+                        "ignoreParentClicks": true,
+                        "designer|userClassName": "MyMenu"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen10193",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "menuPrincipalDroite",
+                "width": 126,
+                "designer|userClassName": "MyToolbar25",
+                "layout|flex": 1,
+                "dock": "right"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen10249",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deconnexionMenuPrincipal",
+                        "iconCls": "deconecter",
+                        "text": "Déconnexion",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen43027",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "boutonParametresMenuPrincipal",
+                        "margin": null,
+                        "iconCls": "parametres",
+                        "text": "Paramètres",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen15769",
+                    "type": "tbseparator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySeparator12",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen6389",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "menuSites",
+                        "margin": null,
+                        "iconCls": "site-icon",
+                        "text": "Pages",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen6584",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "contributionContenus",
+                        "margin": null,
+                        "iconCls": "content-icon",
+                        "text": "Contenus",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen6723",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "menuMedias",
+                        "margin": null,
+                        "iconCls": "media-icon",
+                        "text": "Médias",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen15985",
+                    "type": "tbseparator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySeparator13",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen6863",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "adminFMDP",
+                        "margin": null,
+                        "iconCls": "masque-icon",
+                        "text": "Maques de page",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7513",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "adminFTDC",
+                        "margin": null,
+                        "iconCls": "content-icon",
+                        "text": "Types de contenus",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7004",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "adminFTaxonomie",
+                        "margin": null,
+                        "iconCls": "page_taxonomy",
+                        "text": "Taxonomie",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7329",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "menuUtilisateurs",
+                        "margin": null,
+                        "iconCls": "user",
+                        "text": "Utilisateurs",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7146",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "menuWorkflows",
+                        "margin": null,
+                        "iconCls": "process-icon",
+                        "text": "Workflows",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "id": "ExtBox1-ext-gen30900",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 133,
+        "id": "nouveauMasqueFenetre",
+        "width": 400,
+        "resizable": "false",
+        "layout": "fit",
+        "iconCls": "page_add",
+        "title": "Nouveau Masque",
+        "modal": true,
+        "designer|userClassName": "nouveauMasque",
+        "designer|userAlias": "nouveauMasque"
+    },
+    "customConfigs": [],
+    "designerId": "a5749eef-eecb-4978-b0d5-e075d6b5418b",
+    "$viewOrder": 15,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen32800",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "",
+                "designer|userClassName": "MyForm5"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen33270",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "nouveauMasqueTitre",
+                        "value": "Nouveau Masque\n",
+                        "fieldLabel": "Titre ",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField15",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen26777",
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "nouveauMasqueSite",
+                        "fieldLabel": "Site ",
+                        "allowBlank": false,
+                        "forceSelection": true,
+                        "store": "SitesJson",
+                        "valueField": "text",
+                        "designer|userClassName": "MyComboBox",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen34150",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "creerNouveauMasque",
+                        "width": null,
+                        "text": "Créer un nouveau masque",
+                        "designer|userClassName": "MyButton50",
+                        "layout|anchor": "1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

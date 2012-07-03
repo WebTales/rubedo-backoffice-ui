@@ -1,0 +1,223 @@
+{
+    "id": "ExtBox1-ext-gen29010",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "contenusDataModel"
+        ],
+        "stores": [
+            "ContenusDataJson"
+        ],
+        "views": [
+            "AjouterContenu"
+        ],
+        "designer|userClassName": "ContributionContenusController"
+    },
+    "customConfigs": [],
+    "designerId": "d27eb48c-e6bd-435b-8697-8ff50047fcac",
+    "$viewOrder": 4,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen34482",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridviewItemClick",
+                "implHandler": [
+                    "\r",
+                    "var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.type);}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.type, itemId:'type'});\r",
+                    "filArianne.add(typeFil);\r",
+                    "}\r",
+                    "var contenus = dataview.getSelectionModel().getLastSelected().data.contenus;\r",
+                    "this.getContenusDataJsonStore().loadData(contenus);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.View",
+                "designer|controlQuery": "#TypesContenusGridView",
+                "designer|userClassName": "onGridviewItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen34362",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick1",
+                "implHandler": [
+                    "this.nContenuRecorder('publié');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonPublierNouveauContenu",
+                "designer|userClassName": "onButtonClick1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17754",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "this.nContenuRecorder('brouillon');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonEnregistrerNouveauContenu",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen18190",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "nContenuRecorder",
+                "designer|params": [
+                    "etat"
+                ],
+                "implHandler": [
+                    "\r",
+                    "var formC = Ext.getCmp('boiteAChampsContenus').items.items;\r",
+                    "for (m=0;  m<formC.length; m++) {\r",
+                    "    if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){\r",
+                    "        return(false);\r",
+                    "    }\r",
+                    "}\r",
+                    "var champs = [ ];\r",
+                    "for (k=1; k<formC.length; k++) {\r",
+                    "    if (formC[k].getComponent(0).isXType('field')) {\r",
+                    "        var champ= {nom : formC[k].getComponent(0).name, value: formC[k].getComponent(0).getValue()};\r",
+                    "        champs.push(champ);\r",
+                    "    }\r",
+                    "}\r",
+                    "var nContenu = Ext.create('model.contenusDataModel', {\r",
+                    "    text: formC[0].getComponent(0).getValue(),\r",
+                    "    champs: champs,\r",
+                    "    etat: etat,\r",
+                    "    type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,\r",
+                    "    version: 1,\r",
+                    "    creation: new Date(),\r",
+                    "    derniereModification: new Date(),\r",
+                    "    auteur: 'Igor'\r",
+                    "});\r",
+                    "\r",
+                    "Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
+                    "Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);\r",
+                    "\r",
+                    "Ext.getCmp('ajouterContenu').close();"
+                ],
+                "designer|userClassName": "nContenuRecorder"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17154",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick2",
+                "implHandler": [
+                    "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
+                    "this.getContenusDataJsonStore().remove(cible);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSupprimerContenu",
+                "designer|userClassName": "onButtonClick2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17279",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick3",
+                "implHandler": [
+                    "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0].data;\r",
+                    "var fenetre = Ext.widget('ajouterContenu');\r",
+                    "fenetre.showAt(screen.width/2-300, 100);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonModifierContenu",
+                "designer|userClassName": "onButtonClick3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen53183",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "afficheMeta",
+                "implHandler": [
+                    "var boiteMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var valeurs= Ext.clone(record.data);\r",
+                    "valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');\r",
+                    "valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');\r",
+                    "boiteMeta.update(valeurs);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ContenusGrid",
+                "designer|userClassName": "afficheMeta"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

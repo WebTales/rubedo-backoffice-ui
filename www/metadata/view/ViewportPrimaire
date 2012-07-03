@@ -1,0 +1,101 @@
+{
+    "id": "ExtBox1-ext-gen6827",
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "id": "ViewportPrimaire",
+        "layout": "vbox",
+        "designer|userClassName": "ViewportPrimaire",
+        "designer|userAlias": "ViewportPrimaire",
+        "container|align": "stretch"
+    },
+    "customConfigs": [],
+    "designerId": "55cc6025-4d04-4a9d-807b-f99435c04a90",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8160",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "draggable": false,
+                "html": null,
+                "id": "desktopCont",
+                "layout": "absolute",
+                "designer|userClassName": "MyContainer14",
+                "designer|snapToGrid": 10,
+                "layout|flex": 1
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen7769",
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "src": "resources/images/background.jpg",
+                        "designer|userClassName": "MyImg1",
+                        "layout|anchor": "105%",
+                        "layout|x": 0,
+                        "layout|y": 0
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen75153",
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "id": "boiteAIconesBureau",
+                        "minHeight": 600,
+                        "layout": "absolute",
+                        "designer|userClassName": "MyContainer15",
+                        "designer|snapToGrid": 10,
+                        "layout|anchor": null,
+                        "layout|x": 0,
+                        "layout|y": 0
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen8610",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen14010"
+        }
+    ]
+}

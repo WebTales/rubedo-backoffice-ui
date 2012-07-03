@@ -1,0 +1,227 @@
+{
+    "id": "ExtBox1-ext-gen4339",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 400,
+        "id": "assistantRequetage",
+        "maxHeight": null,
+        "minHeight": null,
+        "width": 539,
+        "activeItem": 0,
+        "layout": "card",
+        "iconCls": "search",
+        "title": "Assistant de requêtage ",
+        "constrainHeader": true,
+        "modal": true,
+        "designer|userClassName": "assistantRequetage",
+        "designer|userAlias": "assistantRequetage"
+    },
+    "customConfigs": [],
+    "designerId": "80577966-9127-4f1a-ba7a-faceef3f254a",
+    "$viewOrder": 23,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16567",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar17",
+                "dock": "bottom"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen8987",
+                    "type": "progressbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "progressAR",
+                        "width": null,
+                        "animate": true,
+                        "text": "Etape 1 sur 4",
+                        "value": 0.2,
+                        "designer|userClassName": "MyProgressBar",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen42327",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonPrevRequeteur",
+                        "iconCls": "arrow_left",
+                        "text": "Précédent",
+                        "designer|userClassName": "MyButton62",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen42578",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonNextRequeteur",
+                        "iconAlign": "right",
+                        "iconCls": "arrow_right",
+                        "text": "Suivant",
+                        "designer|userClassName": "MyButton68",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen39000",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "assisstantRE1",
+                "bodyPadding": 10,
+                "title": "Choix des types de contenus",
+                "designer|userClassName": "MyForm9",
+                "etape": 1
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "etape",
+                    "type": "string"
+                }
+            ],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen47769",
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "champTCRequeteur",
+                        "style": "{float:left}",
+                        "fieldLabel": "",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "type",
+                        "forceSelection": true,
+                        "multiSelect": true,
+                        "store": "TypesContenusNDepDataJson",
+                        "valueField": "type",
+                        "designer|userClassName": "MyComboBox",
+                        "layout|anchor": "90%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen19764",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "boutonSelectAllTCAR",
+                        "style": "{float:right;}",
+                        "iconCls": "ouiSpetit",
+                        "text": "",
+                        "tooltip": "'Tout selectionner'",
+                        "designer|userClassName": "MyButton72"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen39197",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "assisstantRE2",
+                "autoScroll": false,
+                "bodyPadding": 10,
+                "title": "Choix des termes de la taxonomie",
+                "designer|userClassName": "MyForm11",
+                "etape": 2
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "etape",
+                    "type": "string"
+                }
+            ],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen23472",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {},
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen5907"
+        },
+        {
+            "id": "ExtBox1-ext-gen72809",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {},
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen6237"
+        }
+    ]
+}

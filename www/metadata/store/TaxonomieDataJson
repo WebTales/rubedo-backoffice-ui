@@ -1,0 +1,54 @@
+{
+    "id": "ExtBox1-ext-gen52930",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": false,
+        "storeId": "TaxonomieDataJson",
+        "model": "taxonomieDataModel",
+        "designer|userClassName": "TaxonomieDataJson",
+        "designer|userAlias": "TaxonomieDataJson"
+    },
+    "customConfigs": [],
+    "designerId": "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
+    "$viewOrder": 12,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen52937",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/Taxonomie.json",
+                "designer|userClassName": "MyAjaxProxy10"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen52945",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader8"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

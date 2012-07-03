@@ -1,0 +1,108 @@
+{
+    "id": "ExtBox1-ext-gen58292",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 100,
+        "id": "delConfirmZ",
+        "width": 200,
+        "resizable": "false",
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "warning",
+        "title": "Confirmation de supression",
+        "modal": true,
+        "plain": false,
+        "designer|userClassName": "DelConfirmZ",
+        "designer|userAlias": "delConfirmZ"
+    },
+    "customConfigs": [],
+    "designerId": "72d10373-385a-4cd4-98b5-fd8e6b3c7eec",
+    "$viewOrder": 13,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen59846",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "designer|userClassName": "MyToolbar16",
+                "dock": null
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen63816",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "id": "delConfirmZOui",
+                        "margin": "0, 0, 0, 10",
+                        "style": null,
+                        "iconCls": "ouiS",
+                        "scale": "large",
+                        "text": "Oui",
+                        "designer|userClassName": "MyButton44",
+                        "layout|flex": null,
+                        "layout|margins": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen63567",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "delConfirmZNon",
+                        "style": null,
+                        "iconCls": "nonS",
+                        "scale": "large",
+                        "text": "Non",
+                        "designer|userClassName": "MyButton43",
+                        "layout|flex": null,
+                        "layout|margins": "0, 0, 0, 30"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen68400",
+                    "type": "hiddenfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "delConfirmZField",
+                        "fieldLabel": "Label",
+                        "designer|userClassName": "MyHiddenField1",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

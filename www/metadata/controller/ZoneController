@@ -1,0 +1,673 @@
+{
+    "id": "ExtBox1-ext-gen27758",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": [
+            "Zone",
+            "Colonne",
+            "UnBloc",
+            "DelConfirmZ",
+            "ajoutBlocFenetre",
+            "ConfigSpecBloc",
+            "assistantRequetage"
+        ],
+        "designer|userClassName": "ZoneController"
+    },
+    "customConfigs": [],
+    "designerId": "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
+    "$viewOrder": 5,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen18417",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajouteColonne",
+                "implHandler": [
+                    "var maZone = tool.findParentByType('zone');\r",
+                    "var nouvColonne = Ext.widget('colonne', {flex : 1});\r",
+                    "maZone.add(nouvColonne);\r",
+                    "if ((Ext.isDefined(Ext.getCmp('zoneIdField')))&&(maZone.id==Ext.getCmp('zoneIdField').getValue())) {\r",
+                    "    this.updPanProp(maZone);    \r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='ajouterColonne']",
+                "designer|userClassName": "ajouteColonne"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24280",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "enleveColonne",
+                "implHandler": [
+                    "var maZone = tool.findParentByType('zone');\r",
+                    "var enleverCol = maZone.query('colonne').pop();\r",
+                    "if (enleverCol.previousSibling() !== null) {maZone.remove(enleverCol);}\r",
+                    "if ((Ext.isDefined(Ext.getCmp('zoneIdField')))&&(maZone.id==Ext.getCmp('zoneIdField').getValue())) {\r",
+                    "this.updPanProp(maZone); \r",
+                    "    \r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='enleverColonne']",
+                "designer|userClassName": "enleveColonne"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16471",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajoutBlocZoneFenetre",
+                "implHandler": [
+                    "tool.up().fireEvent('click');\r",
+                    "var delConfirm = Ext.widget('ajoutBlocFenetre');\r",
+                    "delConfirm.showAt(screen.width/2-250, 100);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='ajouterBlocZone']",
+                "designer|userClassName": "ajoutBlocZoneFenetre"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13822",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "insereBloc",
+                "implHandler": [
+                    "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
+                    "var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));\r",
+                    "Ext.getCmp(Ext.getCmp('zoneIdField').getValue()).getComponent(0).add(nouvBloc);\r",
+                    "button.up().up().close();\r",
+                    "nouvBloc.header.fireEvent('click');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonAjouterBloc",
+                "designer|userClassName": "insereBloc"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6156",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deplaceBas",
+                "implHandler": [
+                    "var pos = tool.up().up().up().items.indexOf(tool.up().up());\r",
+                    "tool.up().up().up().move(pos,pos+1);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='zoneBas']",
+                "designer|userClassName": "deplaceBas"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6744",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deplaceHaut",
+                "implHandler": [
+                    "var pos = tool.up().up().up().items.indexOf(tool.up().up());\r",
+                    "if (pos > 0) {\r",
+                    "    tool.up().up().up().move(pos,pos-1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='zoneHaut']",
+                "designer|userClassName": "deplaceHaut"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8468",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemClick",
+                "implHandler": [
+                    "Ext.getCmp('PaneauBlocsDetail').update(record.data);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#BlocsSelectGrid",
+                "designer|userClassName": "onGridpanelItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen51905",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "var masque = this.getMasqueEdition();\r",
+                    "var largeurMasque = masque.getWidth();\r",
+                    "largeurMasque = largeurMasque - (largeurMasque % 10);\r",
+                    "var largeur = largeurMasque; \r",
+                    "var hauteur = 150 ;\r",
+                    "var zonePrec = masque.query('zone').pop();\r",
+                    "if (Ext.isDefined(zonePrec)) {\r",
+                    "    var largeurPrec = zonePrec.getWidth();\r",
+                    "    var hauteurPrec = zonePrec.getHeight();\r",
+                    "    var xPrec = zonePrec.getPosition()[0]- masque.getPosition()[0];\r",
+                    "    var nouvLargeur = largeurMasque-xPrec-largeurPrec;\r",
+                    "    if (nouvLargeur > 19) {\r",
+                    "        largeur = nouvLargeur;\r",
+                    "        hauteur = hauteurPrec;\r",
+                    "    }\r",
+                    "}\r",
+                    "var zone = Ext.widget('zone' , { width: largeur, height: hauteur, maxWidth : largeurMasque});\r",
+                    "zone.title = zone.id;\r",
+                    "masque.add(zone);\r",
+                    "var zonesM =masque.items.items;\r",
+                    "for (i=0; i<zonesM.length; i++) {\r",
+                    "    zonesM[i].getEl().clearOpacity();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nouvelleZone",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen39314",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "blocDeplaceGauche",
+                "implHandler": [
+                    "var monBloc = tool.findParentByType('unBloc');\r",
+                    "var nouvBloc = monBloc.valueOf();\r",
+                    "var maColonne = monBloc.findParentByType('colonne');\r",
+                    "var colonnePrecedente = maColonne.previousSibling();\r",
+                    "if (colonnePrecedente !== null) {\r",
+                    "\r",
+                    "    colonnePrecedente.add(nouvBloc);\r",
+                    "    maColonne.remove(monBloc);\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='deplaceGaucheBloc']",
+                "designer|userClassName": "blocDeplaceGauche"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen52674",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MasqueEdition",
+                "selector": "#masqueEdition",
+                "designer|userClassName": "MasqueEdition"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33972",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "blocDeplaceDroite",
+                "implHandler": [
+                    "var monBloc = tool.findParentByType('unBloc');\r",
+                    "var nouvBloc = monBloc.valueOf();\r",
+                    "var maColonne = monBloc.findParentByType('colonne');\r",
+                    "var colonneSuivante = maColonne.nextSibling();\r",
+                    "if (colonneSuivante !== null) {\r",
+                    "\r",
+                    "    colonneSuivante.add(nouvBloc);\r",
+                    "    maColonne.remove(monBloc);\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='deplaceDroiteBloc']",
+                "designer|userClassName": "blocDeplaceDroite"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen44954",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "majZone",
+                "implHandler": [
+                    "var champTitre = Ext.getCmp('zoneTitleField');\r",
+                    "var champLargeur = Ext.getCmp('zoneWidthField');\r",
+                    "var champHauteur = Ext.getCmp('zoneHeightField');\r",
+                    "var champId = Ext.getCmp('zoneIdField');\r",
+                    "\r",
+                    "zoneModif = Ext.getCmp(champId.getValue());\r",
+                    "if (Ext.isDefined(zoneModif)) {\r",
+                    "    zoneModif.setTitle(champTitre.getValue());    \r",
+                    "    zoneModif.setHeight(champHauteur.getValue());\r",
+                    "    zoneModif.setWidth(champLargeur.getValue());\r",
+                    "    var colones = zoneModif.items.items;\r",
+                    "    for (om=0; om<colones.length; om++) {\r",
+                    "        if (Ext.isDefined(Ext.getCmp('colonnesEdit').items.items[om])) {\r",
+                    "        colones[om].flex= Ext.getCmp('colonnesEdit').items.items[om].getValue(); }\r",
+                    "\r",
+                    "    }\r",
+                    "    zoneModif.doLayout();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#modifierPropZone",
+                "designer|userClassName": "majZone"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4390",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "videPropZone",
+                "implHandler": [
+                    "if (component.id==Ext.getCmp('zoneIdField').getValue()) { \r",
+                    "    Ext.getCmp('zoneHeightField').setValue();\r",
+                    "    Ext.getCmp('zoneWidthField').setValue();\r",
+                    "    Ext.getCmp('zoneTitleField').setValue();\r",
+                    "    Ext.getCmp('zoneIdField').setValue();\r",
+                    "    Ext.getCmp('colonnesEdit').removeAll();\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "remove",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#masqueEdition",
+                "designer|userClassName": "videPropZone"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9737",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelBeforeDestroy",
+                "implHandler": [
+                    "if ((Ext.isDefined(Ext.getCmp('blocIdField')))&&(abstractcomponent.id==Ext.getCmp('blocIdField').getValue())) { \r",
+                    "    Ext.getCmp('blocHeightField').setValue();\r",
+                    "    Ext.getCmp('blocTitleField').setValue();\r",
+                    "    Ext.getCmp('blocIdField').setValue();\r",
+                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {\r",
+                    "        Ext.getCmp('paneauPropMasque').getComponent(2).destroy();\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "beforedestroy",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "unBloc",
+                "designer|userClassName": "onPanelBeforeDestroy"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13721",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "majBloc",
+                "implHandler": [
+                    "var champTitre = Ext.getCmp('blocTitleField');\r",
+                    "var champHauteur = Ext.getCmp('blocHeightField');\r",
+                    "var champId = Ext.getCmp('blocIdField');\r",
+                    "\r",
+                    "blocModif = Ext.getCmp(champId.getValue());\r",
+                    "if (Ext.isDefined(blocModif)) {\r",
+                    "    blocModif.setTitle(champTitre.getValue());    \r",
+                    "    blocModif.flex =champHauteur.getValue();\r",
+                    "    blocModif.up().doLayout();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#modifierPropBloc",
+                "designer|userClassName": "majBloc"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen37057",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "selectZone",
+                "implHandler": [
+                    "if (abstractcomponent.id !== 'outilsBureau') {\r",
+                    "    var moi = this;\r",
+                    "    abstractcomponent.header.on('click', function() { \r",
+                    "        this.up().getEl().frame('#D7251D');\r",
+                    "        this.up().setIconCls('editZone');\r",
+                    "        var champBId = Ext.getCmp('zoneIdField');\r",
+                    "        if (Ext.isDefined(champBId)) {    \r",
+                    "            var zonePrec = Ext.getCmp( Ext.getCmp('zoneIdField').getValue());\r",
+                    "            if ((Ext.isDefined(zonePrec))&&(zonePrec.id !== abstractcomponent.id )) { zonePrec.setIconCls(null);}   \r",
+                    "            champBId.setValue(abstractcomponent.id);\r",
+                    "        }\r",
+                    "        moi.updPanProp(this.up());\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "zone",
+                "designer|userClassName": "selectZone"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4777",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "selectBloc",
+                "implHandler": [
+                    "\r",
+                    "abstractcomponent.header.on('click', function() { \r",
+                    "\r",
+                    "    this.up().getEl().frame('#D7251D');\r",
+                    "    this.up().setIconCls('editBloc');\r",
+                    "\r",
+                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {\r",
+                    "        Ext.getCmp('paneauPropMasque').getComponent(2).destroy();\r",
+                    "    }\r",
+                    "\r",
+                    "    var champBTitre = Ext.getCmp('blocTitleField');\r",
+                    "    if (Ext.isDefined(champBTitre)) {\r",
+                    "    champBTitre.setValue(abstractcomponent.title);}\r",
+                    "\r",
+                    "    var champBHauteur = Ext.getCmp('blocHeightField');\r",
+                    "    if (Ext.isDefined(champBTitre)) {\r",
+                    "    champBHauteur.setValue(abstractcomponent.flex);}\r",
+                    "\r",
+                    "    var champBId = Ext.getCmp('blocIdField');\r",
+                    "    if (Ext.isDefined(champBId)) {    \r",
+                    "        var blocPrec = Ext.getCmp( Ext.getCmp('blocIdField').getValue());\r",
+                    "        if ((Ext.isDefined(blocPrec))&&(blocPrec.id !== abstractcomponent.id )) { blocPrec.setIconCls(null);}   \r",
+                    "        champBId.setValue(abstractcomponent.id);\r",
+                    "    }\r",
+                    "    var configSpec = Ext.widget('ConfigSpecBloc');\r",
+                    "    var categories = abstractcomponent.champsConfig.simple;\r",
+                    "    for (j=0; j<categories.length; j++){\r",
+                    "        var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});\r",
+                    "\r",
+                    "        var champsS = categories[j].champs;\r",
+                    "        for (i=0; i<champsS.length; i++) {\r",
+                    "            if (champsS[i].type =='Ext.form.field.ComboBox') {\r",
+                    "                var monStore=  Ext.create('Ext.data.Store', champsS[i].store);\r",
+                    "                champsS[i].config.store= monStore;\r",
+                    "            }\r",
+                    "            var nChampS = Ext.create(champsS[i].type, champsS[i].config);\r",
+                    "            if (champsS[i].type =='Ext.form.field.Trigger'){\r",
+                    "                var Ouvrir = Ext.clone(champsS[i].ouvrir);\r",
+                    "                nChampS.onTriggerClick= function() {\r",
+                    "                    var fenetre = Ext.widget(Ouvrir);\r",
+                    "                    fenetre.showAt(screen.width/2-200, 100);\r",
+                    "                } ;  \r",
+                    "            }\r",
+                    "            nChampS.labelSeparator= ' ';\r",
+                    "            nChampS.anchor= '100%';\r",
+                    "            nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);\r",
+                    "            nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });\r",
+                    "            nCateg.add(nChampS);\r",
+                    "        }\r",
+                    "        configSpec.items.items[0].add(nCateg);\r",
+                    "\r",
+                    "    }\r",
+                    "    Ext.getCmp('paneauPropMasque').add(configSpec);\r",
+                    "\r",
+                    "\r",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "unBloc",
+                "designer|userClassName": "selectBloc"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen69280",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "supprimerZone",
+                "implHandler": [
+                    "var delConfirm = Ext.widget('delConfirmZ');\r",
+                    "delConfirm.showAt(screen.width/2-100, 100);\r",
+                    "var cible = tool.findParentByType('zone');\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    cible.close();\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "});  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "[itemId='supprimerZone']",
+                "designer|userClassName": "supprimerZone"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen76620",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick2",
+                "implHandler": [
+                    "Ext.getCmp('delConfirmZ').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#delConfirmZNon",
+                "designer|userClassName": "onButtonClick2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen51570",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updPanProp",
+                "designer|params": [
+                    "abstractcomponent"
+                ],
+                "implHandler": [
+                    "var champTitre = Ext.getCmp('zoneTitleField');\r",
+                    "if (Ext.isDefined(champTitre)) {\r",
+                    "    champTitre.setValue(abstractcomponent.title);\r",
+                    "}\r",
+                    "var champLargeur = Ext.getCmp('zoneWidthField');\r",
+                    "if (Ext.isDefined(champLargeur)) {\r",
+                    "    champLargeur.setValue(abstractcomponent.width);\r",
+                    "}\r",
+                    "var champHauteur = Ext.getCmp('zoneHeightField');\r",
+                    "if (Ext.isDefined(champHauteur)) {\r",
+                    "    champHauteur.setValue(abstractcomponent.height);\r",
+                    "}\r",
+                    "var champId = Ext.getCmp('zoneIdField');\r",
+                    "if (Ext.isDefined(champId)) {\r",
+                    "    champId.setValue(abstractcomponent.id);\r",
+                    "}\r",
+                    "\r",
+                    "var colonEd = Ext.getCmp('colonnesEdit');\r",
+                    "if (Ext.isDefined(colonEd)) {\r",
+                    "    colonEd.removeAll();\r",
+                    "}\r",
+                    "\r",
+                    "var colonEd = Ext.getCmp('colonnesEdit');\r",
+                    "if (Ext.isDefined(colonEd)) {\r",
+                    "    colonEd.removeAll();\r",
+                    "    var colonnes = abstractcomponent.items.items;\r",
+                    "    for (pm=0; pm<colonnes.length; pm++) {\r",
+                    "        var champ = Ext.create('Ext.form.field.Number', {fieldLabel: 'col '+pm, labelWidth: 40, anchor:'100%' , value: colonnes[pm].flex});\r",
+                    "        colonEd.add(champ);\r",
+                    "\r",
+                    "    }\r",
+                    "\r",
+                    "\r",
+                    "}"
+                ],
+                "designer|userClassName": "updPanProp"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

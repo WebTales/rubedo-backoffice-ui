@@ -1,0 +1,76 @@
+{
+    "id": "ExtBox1-ext-gen46203",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 107,
+        "width": 300,
+        "layout": "fit",
+        "iconCls": "arrow_up",
+        "title": "Importation de masque",
+        "modal": true,
+        "designer|userClassName": "ImportationMasques",
+        "designer|userAlias": "importationMasques"
+    },
+    "customConfigs": [],
+    "designerId": "a1a636e5-f718-4d0b-b731-4fe502bcaef8",
+    "$viewOrder": 17,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen47235",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "",
+                "designer|userClassName": "MyForm9"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen47694",
+                    "type": "filefield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "buttonText": "Choisir",
+                        "designer|userClassName": "MyFileUpload",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen48022",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Importer",
+                        "designer|userClassName": "MyButton64",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

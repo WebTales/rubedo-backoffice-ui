@@ -1,0 +1,147 @@
+{
+    "id": "ExtBox1-ext-gen80152",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 150,
+        "renderSelectors": null,
+        "style": "float: left",
+        "resizable": " {heightIncrement : 10, widthIncrement: 10, minHeight: 20, minWidth: 20}",
+        "layout": "hbox",
+        "closable": null,
+        "collapsible": false,
+        "title": "Zone",
+        "designer|userClassName": "Zone",
+        "designer|userAlias": "zone",
+        "container|align": "stretch"
+    },
+    "customConfigs": [],
+    "designerId": "6d2b328f-44e4-4f9d-88ca-fe3c9a77a1f9",
+    "$viewOrder": 10,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5176",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "zoneBas",
+                "type": "down",
+                "designer|userClassName": "MyTool12"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5051",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "zoneHaut",
+                "type": "up",
+                "designer|userClassName": "MyTool11"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13195",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": null,
+                "itemId": "ajouterBlocZone",
+                "tooltip": "Ajouter un bloc",
+                "type": "expand",
+                "designer|userClassName": "MyTool12"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen86166",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "enleverColonne",
+                "tooltip": "Enlever une colonne",
+                "type": "minus",
+                "designer|userClassName": "MyTool5"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen86326",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": null,
+                "id": null,
+                "itemId": "ajouterColonne",
+                "tooltip": "Ajouter une colonne",
+                "type": "plus",
+                "designer|userClassName": "MyTool6"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen68986",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "supprimerZone",
+                "tooltip": "Supprimer cette zone",
+                "type": "close",
+                "designer|userClassName": "MyTool7"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen25367",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen84934"
+        }
+    ]
+}

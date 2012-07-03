@@ -1,0 +1,53 @@
+{
+    "id": "ExtBox1-ext-gen53594",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "storeId": "IconesDataJson",
+        "model": "iconDataModel",
+        "designer|userClassName": "IconesDataJson",
+        "designer|userAlias": "IconesDataJson"
+    },
+    "customConfigs": [],
+    "designerId": "cf50ea5a-151e-4a1b-b158-0ed251f05685",
+    "$viewOrder": 14,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen53601",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/Icones.json",
+                "designer|userClassName": "MyAjaxProxy14"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen53609",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader12"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

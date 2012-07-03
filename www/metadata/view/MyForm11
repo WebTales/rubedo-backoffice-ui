@@ -1,0 +1,65 @@
+{
+    "id": "ExtBox1-ext-gen6237",
+    "type": "form",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "assisstantRE6",
+        "bodyPadding": 10,
+        "title": "Finalisation et enregistrement",
+        "designer|userClassName": "MyForm11",
+        "designer|userAlias": "myform11",
+        "etape": 4
+    },
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "etape",
+            "type": "string"
+        }
+    ],
+    "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
+    "$viewOrder": 29,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen74322",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Nom ",
+                "allowBlank": false,
+                "designer|userClassName": "MyTextField12",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen74671",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": null,
+                "style": null,
+                "iconCls": null,
+                "text": "<b>Enregistrer la requête </b>",
+                "designer|userClassName": "MyButton76",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

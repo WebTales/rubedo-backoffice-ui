@@ -1,0 +1,34 @@
+{
+    "id": "ExtBox1-ext-gen14264",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "VersionsDataJson",
+        "model": "versionsDataModel",
+        "designer|userClassName": "VersionsDataJson"
+    },
+    "customConfigs": [],
+    "designerId": "c6ff1d1b-d029-4bbd-9168-0c5626ce9acd",
+    "$viewOrder": 7,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen14268",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

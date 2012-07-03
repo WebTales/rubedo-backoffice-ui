@@ -1,0 +1,185 @@
+{
+    "id": "ExtBox1-ext-gen14846",
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "id": "optionsLCGrid",
+        "margin": "20 0 0 0",
+        "width": null,
+        "autoScroll": true,
+        "title": "Options",
+        "store": null,
+        "designer|userClassName": "optionsLCGrid",
+        "designer|userAlias": "optionsLCGrid"
+    },
+    "customConfigs": [],
+    "designerId": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
+    "$viewOrder": 25,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen14890",
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16117",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "valeur",
+                "editor": "{\n            xtype: 'textfield',\n            allowBlank: false\n        }",
+                "flex": 1,
+                "text": "Valeur",
+                "designer|userClassName": "MyColumn16"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16753",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "nom",
+                "editor": "{\n            xtype: 'textfield',\n            allowBlank: false\n        }",
+                "flex": 1,
+                "text": "Nom",
+                "designer|userClassName": "MyColumn16"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19811",
+            "type": "gridroweditingplugin",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": "Ext.grid.plugin.RowEditing",
+            "userConfig": {
+                "designer|userClassName": "MyRowEditingPlugin"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen20427",
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar19",
+                "dock": "bottom"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen20946",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "add",
+                        "text": "Ajouter",
+                        "designer|userClassName": "MyButton64",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen21881",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "button.up().up().getComponent(0).getStore().add({valeur : 'valeur', nom : 'nom'});"
+                                ],
+                                "name": "click",
+                                "scope": "me",
+                                "designer|userClassName": "onButtonClick"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen21196",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "delete",
+                        "text": "Supprimer",
+                        "designer|userClassName": "MyButton65",
+                        "layout|flex": null
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen24277",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "button.up().up().getComponent(0).getStore().remove(button.up().up().getComponent(0).getSelectionModel().getLastSelected());"
+                                ],
+                                "name": "click",
+                                "scope": "me",
+                                "designer|userClassName": "onButtonClick1"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

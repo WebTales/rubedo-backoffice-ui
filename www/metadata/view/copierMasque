@@ -1,0 +1,103 @@
+{
+    "id": "ExtBox1-ext-gen45718",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 133,
+        "id": "copieMasqueFenetre",
+        "width": 400,
+        "resizable": "false",
+        "layout": "fit",
+        "iconCls": "page_copy",
+        "title": "Copie de masque avec redimensionement",
+        "modal": true,
+        "designer|userClassName": "copierMasque",
+        "designer|userAlias": "copierMasque"
+    },
+    "customConfigs": [],
+    "designerId": "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
+    "$viewOrder": 16,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen45722",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "",
+                "designer|userClassName": "MyForm5"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen45728",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "copierMasqueTitre",
+                        "value": null,
+                        "fieldLabel": "Nouveau titre ",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField15",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen45737",
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "copierMasqueSite",
+                        "fieldLabel": "Vers le site ",
+                        "allowBlank": false,
+                        "forceSelection": true,
+                        "store": "SitesJson",
+                        "valueField": "text",
+                        "designer|userClassName": "MyComboBox",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen45746",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "copierMasque",
+                        "width": null,
+                        "text": "Copier ce masque",
+                        "designer|userClassName": "MyButton50",
+                        "layout|anchor": "1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

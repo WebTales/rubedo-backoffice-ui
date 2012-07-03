@@ -1,0 +1,53 @@
+{
+    "id": "ExtBox1-ext-gen4288",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "storeId": "BlocsDataStore",
+        "model": "blocDataModel",
+        "designer|userClassName": "BlocsDataStore",
+        "designer|userAlias": "BlocsDataStore"
+    },
+    "customConfigs": [],
+    "designerId": "59694082-24d4-4519-ae8c-5fd6849d6503",
+    "$viewOrder": 9,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4295",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/Blocs.json",
+                "designer|userClassName": "MyAjaxProxy7"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4303",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader5"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}
