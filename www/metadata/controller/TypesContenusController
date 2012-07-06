@@ -26,7 +26,7 @@
     "customConfigs": [],
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
     "$viewOrder": 7,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen41308",
@@ -76,7 +76,7 @@
                     "        enrobage.getComponent(0).destroy();\r",
                     "        if (nouvChamp.multivalué) {\r",
                     "            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));\r",
-                    "        \r",
+                    "\r",
                     "        };\r",
                     "        formulaireTC.add(enrobage);\r",
                     "\r",
@@ -646,8 +646,8 @@
                     "enrobage.getComponent(0).destroy();\r",
                     "var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});\r",
                     "supprimeur.on('click', function(){\r",
-                    "button.valeursM--;\r",
-                    "this.up().destroy();\r",
+                    "    button.valeursM--;\r",
+                    "    this.up().destroy();\r",
                     "});\r",
                     "enrobage.add(supprimeur);\r",
                     "button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);\r",

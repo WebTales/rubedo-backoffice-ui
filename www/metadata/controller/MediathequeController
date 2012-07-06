@@ -1,0 +1,54 @@
+{
+    "id": "ExtBox1-ext-gen22225",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": null,
+        "designer|userClassName": "MediathequeController",
+        "designer|userAlias": "MediathequeController"
+    },
+    "customConfigs": [],
+    "designerId": "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
+    "$viewOrder": 10,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen22449",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemClick",
+                "implHandler": [
+                    "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre+'<b> > </b>');}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.titre+'<b> > </b>', itemId:'type'});\r",
+                    "filArianne.add(typeFil);\r",
+                    "}\r",
+                    "var boiteMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var imageMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
+                    "var customMeta = record.data.titre;\r",
+                    "boiteMeta.update(customMeta);\r",
+                    "imageMeta.setSrc('resources/icones/48x48/folder.png');\r",
+                    "Ext.getStore('MediaViewStore').loadData(record.data.medias);\r",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#contributionMediasGrid",
+                "designer|userClassName": "onGridpanelItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

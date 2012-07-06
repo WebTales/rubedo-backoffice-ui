@@ -31,7 +31,7 @@
     "customConfigs": [],
     "designerId": "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen21150",
@@ -148,7 +148,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "menuSites",
+                        "itemId": "contributionPages",
                         "margin": null,
                         "iconCls": "site-icon",
                         "text": "Pages",
@@ -186,10 +186,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "menuMedias",
+                        "itemId": "contributionMedias",
                         "margin": null,
                         "iconCls": "media-icon",
-                        "text": "Médias",
+                        "text": "Médiathèque",
                         "designer|userClassName": "MyButton2",
                         "layout|flex": null
                     },

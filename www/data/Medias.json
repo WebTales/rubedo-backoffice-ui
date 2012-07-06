@@ -1,7 +1,35 @@
 [
+{
+titre: "Fiat" ,
+type: "Image",
+medias: [
 	{
-		'text': 'Inconnu',
-		'leaf': 'false',
-		'children': []
+	text: "Fiat 500",
+	fichier: "data/Mediatheque/Images/fiat500.jpg"
+	},
+	{
+	text: "Fiat Bravo",
+	fichier: "data/Mediatheque/Images/fiatBravo.jpg"
+	},
+	{
+	text: "Fiat Grande Punto",
+	fichier: "data/Mediatheque/Images/fiatGrandePunto.jpg"
 	}
+ ]
+},
+{
+titre: "Lancia" ,
+type: "Image",
+medias: [ ]
+},
+{
+titre: "Alfa Romeo" ,
+type: "Image",
+medias: [ ]
+},
+{
+titre: "Plaquettes pub" ,
+type: "PDF",
+medias: [ ]
+}
 ]

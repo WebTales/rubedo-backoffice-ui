@@ -64,8 +64,9 @@
             "codeClass": null,
             "userConfig": {
                 "id": "boutonPanierEntete",
-                "icon": null,
-                "iconCls": "cart",
+                "icon": "resources/icones/24x24/shopping_cart.png",
+                "iconCls": null,
+                "scale": "medium",
                 "text": "Panier",
                 "designer|userClassName": "MyButton1",
                 "layout|flex": null

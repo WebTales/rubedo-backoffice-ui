@@ -28,22 +28,6 @@
             ],
             "className": "EnteteV"
         },
-        "a8894ef3-ab7b-49f4-b860-9e19e7f44dda": {
-            "paths": [
-                "metadata/view/ContributionSitesV",
-                "app/view/override/ContributionSitesV.js",
-                "app/view/ContributionSitesV.js"
-            ],
-            "className": "ContributionSitesV"
-        },
-        "f9235e3e-6471-4ac7-a5ea-52f7f9b9dd70": {
-            "paths": [
-                "metadata/view/ContributionMediasV",
-                "app/view/override/ContributionMediasV.js",
-                "app/view/ContributionMediasV.js"
-            ],
-            "className": "ContributionMediasV"
-        },
         "2a805f5c-8f4e-44df-8b5c-76107ce7f44d": {
             "paths": [
                 "metadata/view/AdminfUtilisateursV",
@@ -67,14 +51,6 @@
                 "app/store/SitesDataJson.js"
             ],
             "className": "SitesDataJson"
-        },
-        "9f94e842-af0e-4585-9753-04f49e1dd7f8": {
-            "paths": [
-                "metadata/view/ArborescenceSites",
-                "app/view/override/ArborescenceSites.js",
-                "app/view/ArborescenceSites.js"
-            ],
-            "className": "ArborescenceSites"
         },
         "67923df0-d312-4a3c-90d6-447c7e04828e": {
             "paths": [
@@ -573,38 +549,6 @@
             ],
             "className": "iconeBureau"
         },
-        "b4c7a0ff-6fae-4fe8-9fd3-cb0844563666": {
-            "paths": [
-                "metadata/view/menuUtilisateurs",
-                "app/view/override/menuUtilisateurs.js",
-                "app/view/menuUtilisateurs.js"
-            ],
-            "className": "menuUtilisateurs"
-        },
-        "e27c54ff-b688-44f6-9639-973fc410ea06": {
-            "paths": [
-                "metadata/view/menuWorkflows",
-                "app/view/override/menuWorkflows.js",
-                "app/view/menuWorkflows.js"
-            ],
-            "className": "menuWorkflows"
-        },
-        "596bf58f-73f4-46ec-8342-45a223c6f59a": {
-            "paths": [
-                "metadata/view/menuSites",
-                "app/view/override/menuSites.js",
-                "app/view/menuSites.js"
-            ],
-            "className": "menuSites"
-        },
-        "ea590687-94f6-4ac3-87f3-93d911c5b7dd": {
-            "paths": [
-                "metadata/view/menuMedias",
-                "app/view/override/menuMedias.js",
-                "app/view/menuMedias.js"
-            ],
-            "className": "menuMedias"
-        },
         "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265": {
             "paths": [
                 "metadata/view/contributionContenus",
@@ -670,6 +614,76 @@
                 "metadata/resource/js2"
             ],
             "className": "js2"
+        },
+        "2a997cf3-fe50-4034-bc1b-61cbb5863c12": {
+            "paths": [
+                "metadata/view/contributionPages",
+                "app/view/override/contributionPages.js",
+                "app/view/contributionPages.js"
+            ],
+            "className": "contributionPages"
+        },
+        "fc5c664a-7c9e-4a94-b81a-c8a116a6fcf0": {
+            "paths": [
+                "metadata/store/MediasDataStore",
+                "app/store/override/MediasDataStore.js",
+                "app/store/MediasDataStore.js"
+            ],
+            "className": "MediasDataStore"
+        },
+        "6af8431a-4003-4f39-a5e4-91e67f9ce07c": {
+            "paths": [
+                "metadata/model/mediaDataModel",
+                "app/model/override/mediaDataModel.js",
+                "app/model/mediaDataModel.js"
+            ],
+            "className": "mediaDataModel"
+        },
+        "80282cbf-46ae-4067-b98e-260703d28293": {
+            "paths": [
+                "metadata/view/contributionMedias",
+                "app/view/override/contributionMedias.js",
+                "app/view/contributionMedias.js"
+            ],
+            "className": "contributionMedias"
+        },
+        "b2af3c2f-f75e-4841-ba23-2846d3c30f46": {
+            "paths": [
+                "metadata/controller/MediathequeController",
+                "app/controller/override/MediathequeController.js",
+                "app/controller/MediathequeController.js"
+            ],
+            "className": "MediathequeController"
+        },
+        "12d05bbd-4ea4-4909-8d63-321b7998a5e0": {
+            "paths": [
+                "metadata/store/MediaViewStore",
+                "app/store/override/MediaViewStore.js",
+                "app/store/MediaViewStore.js"
+            ],
+            "className": "MediaViewStore"
+        },
+        "e417e6e0-9d99-47c1-9124-3a809e3f0b1e": {
+            "paths": [
+                "metadata/model/mediaViewModel",
+                "app/model/override/mediaViewModel.js",
+                "app/model/mediaViewModel.js"
+            ],
+            "className": "mediaViewModel"
+        },
+        "5401e987-3e88-4ecd-a849-83545e426644": {
+            "paths": [
+                "metadata/resource/css4"
+            ],
+            "className": "css4"
+        },
+        "65bb8cb3-a5cd-4190-a57a-aee4326f88e2": {
+            "paths": [
+                "metadata/view/MyView",
+                "app/view/override/MyView.js",
+                "app/view/MyView.js"
+            ],
+            "className": "MyView"
         }
     },
     "expandedState": {

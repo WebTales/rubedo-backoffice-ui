@@ -1,0 +1,67 @@
+{
+    "id": "ExtBox1-ext-gen5615",
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mediaDataModel",
+        "designer|userAlias": "mediaDataModel"
+    },
+    "customConfigs": [],
+    "designerId": "6af8431a-4003-4f39-a5e4-91e67f9ce07c",
+    "$viewOrder": 11,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5896",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "titre",
+                "type": "string",
+                "designer|userClassName": "MyField63"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6051",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type",
+                "type": "string",
+                "designer|userClassName": "MyField64"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6229",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "medias",
+                "type": "auto",
+                "designer|userClassName": "MyField65"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
