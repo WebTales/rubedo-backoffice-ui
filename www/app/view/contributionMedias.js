@@ -17,7 +17,7 @@ Ext.define('KECMdesktop.view.contributionMedias', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionMedias',
     requires: [
-        'KECMdesktop.view.MyView'
+        'KECMdesktop.view.mediaWindowsView'
     ],
 
     height: 578,
@@ -90,6 +90,7 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                     xtype: 'toolbar',
                     height: 54,
                     itemId: 'contextBar',
+                    enableOverflow: true,
                     flex: 1,
                     dock: 'top',
                     items: [
@@ -204,7 +205,7 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                     flex: 1,
                     items: [
                         {
-                            xtype: 'myview'
+                            xtype: 'mediaWindowsView'
                         }
                     ]
                 }

@@ -17,7 +17,7 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.MediathequeController',
 
-    onGridpanelItemClick: function(tablepanel, record, item, index, e, options) {
+    majMedias: function(tablepanel, record, item, index, e, options) {
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre+'<b> > </b>');}
@@ -29,14 +29,99 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
     var customMeta = record.data.titre;
     boiteMeta.update(customMeta);
     imageMeta.setSrc('resources/icones/48x48/folder.png');
+
     Ext.getStore('MediaViewStore').loadData(record.data.medias);
 
+    },
+
+    doubleClickPreview: function(dataview, record, item, index, e, options) {
+        var monType =Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;
+        if (monType=="Image"){
+            var fenetre = Ext.getCmp(record.data.text+"NadPreview");
+            if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+            else {
+                fenetre = Ext.widget('ImagePreviewWindow', {title:record.data.text, id:record.data.text+"NadPreview"});
+                var maTaille=record.data.conf;
+
+
+
+                fenetre.getComponent(0).setSize(maTaille).setSrc(record.data.fichier);
+                Ext.getCmp('desktopCont').add(fenetre);
+                fenetre.show();
+            }
+
+        }
+        else if (monType=="PDF"){
+            var fenetre = Ext.getCmp(record.data.text+"PDFPreview");
+            if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+            else {
+                fenetre = Ext.widget('PDFPreviewWindow', {title:record.data.text, id:record.data.text+"PDFPreview"});
+                fenetre.add(Ext.widget('container',{autoEl:{
+                    tag: 'iframe',
+                    style: 'height: 100%; width: 100%; border: none',
+                    src: record.data.fichier
+                }}));
+                Ext.getCmp('desktopCont').add(fenetre);
+                fenetre.show();
+            }
+
+        }
+
+    },
+
+    onDataviewSelectionChange: function(dataview, selections, options) {
+        var boiteMeta = Ext.getCmp('contributionMedias').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+        var imageMeta = Ext.getCmp('contributionMedias').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
+        if (Ext.isEmpty(selections)) {
+            var customMeta = Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.titre;
+            boiteMeta.update(customMeta);
+            imageMeta.setSrc('resources/icones/48x48/folder.png');
+
+        } else if (selections.length==1) {
+            var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   
+            if (monType=="Image"){
+                imageMeta.setSrc('resources/icones/48x48/image.png');
+                var customMeta=(selections[0].data.text+"</br> Creation : "+selections[0].data.meta.creation+
+                " Dernière modification : "+selections[0].data.meta.derniereModification+" Version : "+selections[0].data.meta.version+
+                " Auteur : "+selections[0].data.meta.auteur+" Dimensions : "+selections[0].data.conf.width+"x"+selections[0].data.conf.height);
+                boiteMeta.update(customMeta);
+            } else  if (monType=="PDF"){
+                imageMeta.setSrc('resources/icones/48x48/pdf.png');
+                var customMeta=(selections[0].data.text+"</br> Creation : "+selections[0].data.meta.creation+
+                " Dernière modification : "+selections[0].data.meta.derniereModification+" Version : "+selections[0].data.meta.version+
+                " Auteur : "+selections[0].data.meta.auteur);
+                boiteMeta.update(customMeta);
+            }
+        } else {
+            var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   
+            if (monType=="Image"){
+                imageMeta.setSrc('resources/icones/48x48/image.png');
+                var customMeta=(selections.length+" Images");
+                boiteMeta.update(customMeta);
+            } else if (monType=="PDF"){
+                imageMeta.setSrc('resources/icones/48x48/pdf.png');
+                var customMeta=(selections.length+" PDF");
+                boiteMeta.update(customMeta);
+            }
+
+        }
+    },
+
+    onButtonClick: function(button, e, options) {
+        Ext.getCmp('MediaMainView').getStore().remove(Ext.getCmp('MediaMainView').getSelectionModel().getSelection());
     },
 
     init: function() {
         this.control({
             "#contributionMediasGrid": {
-                itemclick: this.onGridpanelItemClick
+                itemclick: this.majMedias
+            },
+            "#MediaMainView": {
+                itemdblclick: this.doubleClickPreview,
+                selectionchange: this.onDataviewSelectionChange
+            },
+            "#boutonSupprimerMedias": {
+                click: this.onButtonClick
             }
         });
 

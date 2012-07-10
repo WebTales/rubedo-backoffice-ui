@@ -23,7 +23,7 @@ Ext.Loader.setConfig({
 
 Ext.application({
     requires: [
-        'KECMdesktop.view.override.MyView'
+        'KECMdesktop.view.override.mediaWindowsView'
     ],
 
     models: [
@@ -62,7 +62,9 @@ Ext.application({
         'adminFMDP',
         'contributionPages',
         'contributionMedias',
-        'MyView'
+        'mediaWindowsView',
+        'ImagePreviewWindow',
+        'PDFPreviewWindow'
     ],
     autoCreateViewport: true,
     name: 'KECMdesktop',

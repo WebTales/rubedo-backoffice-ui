@@ -28,22 +28,6 @@
             ],
             "className": "EnteteV"
         },
-        "2a805f5c-8f4e-44df-8b5c-76107ce7f44d": {
-            "paths": [
-                "metadata/view/AdminfUtilisateursV",
-                "app/view/override/AdminfUtilisateursV.js",
-                "app/view/AdminfUtilisateursV.js"
-            ],
-            "className": "AdminfUtilisateursV"
-        },
-        "89f6f716-6acb-4976-9e9b-e36b34342b25": {
-            "paths": [
-                "metadata/view/AdminfWorkflowsV",
-                "app/view/override/AdminfWorkflowsV.js",
-                "app/view/AdminfWorkflowsV.js"
-            ],
-            "className": "AdminfWorkflowsV"
-        },
         "8f43a679-c0ea-4980-b4af-43ba29385f00": {
             "paths": [
                 "metadata/store/SitesDataJson",
@@ -679,15 +663,47 @@
         },
         "65bb8cb3-a5cd-4190-a57a-aee4326f88e2": {
             "paths": [
-                "metadata/view/MyView",
-                "app/view/override/MyView.js",
-                "app/view/MyView.js"
+                "metadata/view/mediaWindowsView",
+                "app/view/override/mediaWindowsView.js",
+                "app/view/mediaWindowsView.js"
             ],
-            "className": "MyView"
+            "className": "mediaWindowsView"
+        },
+        "a8894ef3-ab7b-49f4-b860-9e19e7f44dda": {
+            "paths": [
+                "metadata/view/ContributionSitesV",
+                "app/view/override/ContributionSitesV.js",
+                "app/view/ContributionSitesV.js"
+            ],
+            "className": "ContributionSitesV"
+        },
+        "9f94e842-af0e-4585-9753-04f49e1dd7f8": {
+            "paths": [
+                "metadata/view/ArborescenceSites",
+                "app/view/override/ArborescenceSites.js",
+                "app/view/ArborescenceSites.js"
+            ],
+            "className": "ArborescenceSites"
+        },
+        "af90e791-bd98-4827-93a9-eca34c896abb": {
+            "paths": [
+                "metadata/view/ImagePreviewWindow",
+                "app/view/override/ImagePreviewWindow.js",
+                "app/view/ImagePreviewWindow.js"
+            ],
+            "className": "ImagePreviewWindow"
+        },
+        "ee7664a4-03e1-42ee-a412-6754a68ecb2f": {
+            "paths": [
+                "metadata/view/PDFPreviewWindow",
+                "app/view/override/PDFPreviewWindow.js",
+                "app/view/PDFPreviewWindow.js"
+            ],
+            "className": "PDFPreviewWindow"
         }
     },
     "expandedState": {
-        "data": true,
+        "data": false,
         "model": true,
         "component": true,
         "controller": true,

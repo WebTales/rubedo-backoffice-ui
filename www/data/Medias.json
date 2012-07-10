@@ -5,15 +5,33 @@ type: "Image",
 medias: [
 	{
 	text: "Fiat 500",
-	fichier: "data/Mediatheque/Images/fiat500.jpg"
+	fichier: "data/Mediatheque/Images/fiat500.jpg",
+	icone: "data/Mediatheque/Images/fiat500.jpg",
+	conf:{
+		height:326,
+		width:440
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
 	},
 	{
 	text: "Fiat Bravo",
-	fichier: "data/Mediatheque/Images/fiatBravo.jpg"
+	fichier: "data/Mediatheque/Images/fiatBravo.jpg",
+	icone: "data/Mediatheque/Images/fiatBravo.jpg",
+	conf:{
+		height:450,
+		width:261
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
 	},
 	{
 	text: "Fiat Grande Punto",
-	fichier: "data/Mediatheque/Images/fiatGrandePunto.jpg"
+	fichier: "data/Mediatheque/Images/fiatGrandePunto.jpg",
+	icone: "data/Mediatheque/Images/fiatGrandePunto.jpg",
+	conf:{
+		height:353,
+		width:470
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
 	}
  ]
 },
@@ -25,11 +43,102 @@ medias: [ ]
 {
 titre: "Alfa Romeo" ,
 type: "Image",
-medias: [ ]
+medias: [
+	{
+	text: "Alfa 8C",
+	fichier: "data/Mediatheque/Images/alfa8c.jpg",
+	icone: "data/Mediatheque/Images/alfa8c.jpg",
+	conf:{
+		height:1202,
+		width:1803
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa 159",
+	fichier: "data/Mediatheque/Images/alfa159.jpg",
+	icone: "data/Mediatheque/Images/alfa159.jpg",
+	conf:{
+		height:368,
+		width:500
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa Giulietta",
+	fichier: "data/Mediatheque/Images/alfaGiulietta.jpg",
+	icone: "data/Mediatheque/Images/alfaGiulietta.jpg",
+	conf:{
+		height:740,
+		width:1111
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa Mito",
+	fichier: "data/Mediatheque/Images/alfaMito.jpg",
+	icone: "data/Mediatheque/Images/alfaMito.jpg",
+	conf:{
+		height:350,
+		width:600
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa Mito GTA",
+	fichier: "data/Mediatheque/Images/alfaMitoGTA.jpg",
+	icone: "data/Mediatheque/Images/alfaMitoGTA.jpg",
+	conf:{
+		height:905,
+		width:1280
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa Spider",
+	fichier: "data/Mediatheque/Images/alfaSpider.jpg",
+	icone: "data/Mediatheque/Images/alfaSpider.jpg",
+	conf:{
+		height:428,
+		width:570
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Alfa Spider Cabriolet",
+	fichier: "data/Mediatheque/Images/alfaSpiderCabriolet.jpg",
+	icone: "data/Mediatheque/Images/alfaSpiderCabriolet.jpg",
+	conf:{
+		height:373,
+		width:460
+	},
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	}
+
+]
 },
 {
 titre: "Plaquettes pub" ,
 type: "PDF",
-medias: [ ]
+medias: [
+	{
+	text: "Catalogue Fiorino V2",
+	fichier: "data/Mediatheque/PDF/Catalogue Fiorino V2 .pdf",
+	icone: "resources/icones/64x64/pdf.png",
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Catalogue Scudo 2",
+	fichier: "data/Mediatheque/PDF/Catalogue_Scudo_2.pdf",
+	icone: "resources/icones/64x64/pdf.png",
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	},
+	{
+	text: "Ducato trasport de marchandises",
+	fichier: "data/Mediatheque/PDF/Ducato trasport de marchandises.pdf",
+	icone: "resources/icones/64x64/pdf.png",
+	meta:{ creation: '05/01/2012', derniereModification: '05/01/2012', version: '1', auteur: 'Igor'}
+	}
+ ]
 }
 ]

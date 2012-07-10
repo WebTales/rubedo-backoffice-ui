@@ -62,6 +62,38 @@
             },
             "customConfigs": [],
             "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7595",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "conf",
+                "type": "auto",
+                "designer|userClassName": "MyField69"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7862",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "meta",
+                "type": "auto",
+                "designer|userClassName": "MyField69"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }

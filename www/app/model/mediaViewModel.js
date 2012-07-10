@@ -29,6 +29,14 @@ Ext.define('KECMdesktop.model.mediaViewModel', {
         {
             name: 'icone',
             type: 'string'
+        },
+        {
+            name: 'conf',
+            type: 'auto'
+        },
+        {
+            name: 'meta',
+            type: 'auto'
         }
     ]
 });
