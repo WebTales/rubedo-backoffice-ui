@@ -1,0 +1,185 @@
+{
+    "id": "ExtBox1-ext-gen22225",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MediathequeController",
+        "designer|userAlias": "MediathequeController"
+    },
+    "customConfigs": [],
+    "designerId": "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
+    "$viewOrder": 10,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen22449",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "majMedias",
+                "implHandler": [
+                    "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre+'<b> > </b>');}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.titre+'<b> > </b>', itemId:'type'});\r",
+                    "filArianne.add(typeFil);\r",
+                    "}\r",
+                    "var boiteMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var imageMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
+                    "var customMeta = record.data.titre;\r",
+                    "boiteMeta.update(customMeta);\r",
+                    "imageMeta.setSrc('resources/icones/48x48/folder.png');\r",
+                    "\r",
+                    "Ext.getStore('MediaViewStore').loadData(record.data.medias);\r",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#contributionMediasGrid",
+                "designer|userClassName": "majMedias"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6269",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doubleClickPreview",
+                "implHandler": [
+                    "var monType =Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;\r",
+                    "if (monType==\"Image\"){\r",
+                    "    var fenetre = Ext.getCmp(record.data.text+\"NadPreview\");\r",
+                    "    if (Ext.isDefined(fenetre)){ fenetre.toFront(); }\r",
+                    "    else {\r",
+                    "        fenetre = Ext.widget('ImagePreviewWindow', {title:record.data.text, id:record.data.text+\"NadPreview\"});\r",
+                    "        var maTaille=record.data.conf;\r",
+                    "        \r",
+                    "        \r",
+                    "        \r",
+                    "        fenetre.getComponent(0).setSize(maTaille).setSrc(record.data.fichier);\r",
+                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "        fenetre.show();\r",
+                    "    }\r",
+                    "\r",
+                    "}\r",
+                    "else if (monType==\"PDF\"){\r",
+                    "    var fenetre = Ext.getCmp(record.data.text+\"PDFPreview\");\r",
+                    "    if (Ext.isDefined(fenetre)){ fenetre.toFront(); }\r",
+                    "    else {\r",
+                    "        fenetre = Ext.widget('PDFPreviewWindow', {title:record.data.text, id:record.data.text+\"PDFPreview\"});\r",
+                    "        fenetre.add(Ext.widget('container',{autoEl:{\r",
+                    "            tag: 'iframe',\r",
+                    "            style: 'height: 100%; width: 100%; border: none',\r",
+                    "            src: record.data.fichier\r",
+                    "        }}));\r",
+                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "        fenetre.show();\r",
+                    "    }\r",
+                    "\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.view.View",
+                "designer|controlQuery": "#MediaMainView",
+                "designer|userClassName": "doubleClickPreview"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6234",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDataviewSelectionChange",
+                "implHandler": [
+                    "var boiteMeta = Ext.getCmp('contributionMedias').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var imageMeta = Ext.getCmp('contributionMedias').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
+                    "if (Ext.isEmpty(selections)) {\r",
+                    "    var customMeta = Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.titre;\r",
+                    "    boiteMeta.update(customMeta);\r",
+                    "    imageMeta.setSrc('resources/icones/48x48/folder.png');\r",
+                    "\r",
+                    "} else if (selections.length==1) {\r",
+                    "    var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   \r",
+                    "    if (monType==\"Image\"){\r",
+                    "        imageMeta.setSrc('resources/icones/48x48/image.png');\r",
+                    "        var customMeta=(selections[0].data.text+\"</br> Creation : \"+selections[0].data.meta.creation+\r",
+                    "        \" Dernière modification : \"+selections[0].data.meta.derniereModification+\" Version : \"+selections[0].data.meta.version+\r",
+                    "        \" Auteur : \"+selections[0].data.meta.auteur+\" Dimensions : \"+selections[0].data.conf.width+\"x\"+selections[0].data.conf.height);\r",
+                    "        boiteMeta.update(customMeta);\r",
+                    "    } else  if (monType==\"PDF\"){\r",
+                    "        imageMeta.setSrc('resources/icones/48x48/pdf.png');\r",
+                    "        var customMeta=(selections[0].data.text+\"</br> Creation : \"+selections[0].data.meta.creation+\r",
+                    "        \" Dernière modification : \"+selections[0].data.meta.derniereModification+\" Version : \"+selections[0].data.meta.version+\r",
+                    "        \" Auteur : \"+selections[0].data.meta.auteur);\r",
+                    "        boiteMeta.update(customMeta);\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   \r",
+                    "    if (monType==\"Image\"){\r",
+                    "        imageMeta.setSrc('resources/icones/48x48/image.png');\r",
+                    "        var customMeta=(selections.length+\" Images\");\r",
+                    "        boiteMeta.update(customMeta);\r",
+                    "    } else if (monType==\"PDF\"){\r",
+                    "        imageMeta.setSrc('resources/icones/48x48/pdf.png');\r",
+                    "        var customMeta=(selections.length+\" PDF\");\r",
+                    "        boiteMeta.update(customMeta);\r",
+                    "    }\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.view.View",
+                "designer|controlQuery": "#MediaMainView",
+                "designer|userClassName": "onDataviewSelectionChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5548",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "Ext.getCmp('MediaMainView').getStore().remove(Ext.getCmp('MediaMainView').getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSupprimerMedias",
+                "designer|userClassName": "onButtonClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -80,7 +80,7 @@ Ext.define('KECMdesktop.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'menuSites',
+                            itemId: 'contributionPages',
                             iconCls: 'site-icon',
                             text: 'Pages'
                         },
@@ -92,9 +92,9 @@ Ext.define('KECMdesktop.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'menuMedias',
+                            itemId: 'contributionMedias',
                             iconCls: 'media-icon',
-                            text: 'Médias'
+                            text: 'Médiathèque'
                         },
                         {
                             xtype: 'tbseparator'

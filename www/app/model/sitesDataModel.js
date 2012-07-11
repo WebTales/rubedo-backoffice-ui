@@ -28,6 +28,10 @@ Ext.define('KECMdesktop.model.sitesDataModel', {
         {
             name: 'largeur',
             type: 'int'
+        },
+        {
+            name: 'site',
+            type: 'boolean'
         }
     ]
 });

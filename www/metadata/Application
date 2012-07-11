@@ -14,7 +14,9 @@
             "blocDataModel",
             "typesChampsDataModel",
             "taxonomieDataModel",
-            "iconDataModel"
+            "iconDataModel",
+            "mediaDataModel",
+            "mediaViewModel"
         ],
         "stores": [
             "SitesDataJson",
@@ -26,19 +28,24 @@
             "champsTCARStore",
             "TypesContenusDepDataJson",
             "TypesContenusNDepDataJson",
-            "IconesDataJson"
+            "IconesDataJson",
+            "MediasDataStore",
+            "MediaViewStore"
         ],
         "views": [
             "MyContainer",
-            "ArborescenceSites",
             "MyGridPanel3",
             "ViewportPrimaire",
             "EnteteV",
             "iconeBureau",
-            "menuMedias",
             "contributionContenus",
             "adminFTDC",
-            "adminFMDP"
+            "adminFMDP",
+            "contributionPages",
+            "contributionMedias",
+            "mediaWindowsView",
+            "ImagePreviewWindow",
+            "PDFPreviewWindow"
         ],
         "autoCreateViewport": true,
         "name": "KECMdesktop",
@@ -52,7 +59,8 @@
             "TypesContenusController",
             "TaxonomieController",
             "assistantRequetageController",
-            "InterfaceController"
+            "InterfaceController",
+            "MediathequeController"
         ]
     },
     "customConfigs": [],

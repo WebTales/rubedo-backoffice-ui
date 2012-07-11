@@ -1,0 +1,27 @@
+{
+    "id": "ExtBox1-ext-gen8472",
+    "type": "dataview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "MediaMainView",
+        "padding": 10,
+        "tpl": "<tpl for=\".\">\n                    <div class=\"thumb-wrap\" id=\"{text}\">\n                    <div class=\"thumb\"><img src=\"{fichier}\" title=\"{text}\"></div>\n                    <span class=\"x-editable\">{text}</span></div>\n                </tpl>\n                <div class=\"x-clear\"></div>",
+        "autoScroll": false,
+        "emptyText": "Dossier Vide",
+        "itemSelector": "div.thumb-wrap",
+        "multiSelect": true,
+        "overItemCls": "x-item-over",
+        "store": "MediaViewStore",
+        "trackOver": true,
+        "designer|userClassName": "MyView",
+        "designer|userAlias": "myview"
+    },
+    "customConfigs": [],
+    "designerId": "65bb8cb3-a5cd-4190-a57a-aee4326f88e2",
+    "$viewOrder": 35,
+    "expanded": true
+}

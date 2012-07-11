@@ -26,7 +26,7 @@
     "customConfigs": [],
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
     "$viewOrder": 7,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen41308",
@@ -74,7 +74,10 @@
                     "        enrobage.getComponent(2).destroy();\r",
                     "        enrobage.getComponent(1).destroy();\r",
                     "        enrobage.getComponent(0).destroy();\r",
-                    "        console.log(nouvChamp);\r",
+                    "        if (nouvChamp.multivalué) {\r",
+                    "            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));\r",
+                    "\r",
+                    "        };\r",
                     "        formulaireTC.add(enrobage);\r",
                     "\r",
                     "    }\r",
@@ -489,7 +492,7 @@
                     "            ouvrir:leChampR.ouvrir\r",
                     "        };\r",
                     "        if (leChampR.xtype== 'treepicker') {\r",
-                    "        nch.store=leChampR.getStore().storeId;\r",
+                    "            nch.store=leChampR.getStore().storeId;\r",
                     "        }\r",
                     "        else if (leChampR.xtype== 'combobox') {\r",
                     "            var dones = leChampR.getStore().data.items;\r",
@@ -617,6 +620,44 @@
                     "}"
                 ],
                 "designer|userClassName": "miseAPlatTaxo"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10980",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "repliqueChamp",
+                "implHandler": [
+                    "var nouvChamp=button.up().getComponent(1).cloneConfig();\r",
+                    "nouvChamp.anchor = '90%';\r",
+                    "nouvChamp.style = '{float:left;}';\r",
+                    "var enrobage =Ext.widget('ChampTC');\r",
+                    "enrobage.add(nouvChamp);\r",
+                    "enrobage.getComponent('helpBouton').setTooltip(nouvChamp.tooltip);\r",
+                    "enrobage.getComponent(2).destroy();\r",
+                    "enrobage.getComponent(1).destroy();\r",
+                    "enrobage.getComponent(0).destroy();\r",
+                    "var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});\r",
+                    "supprimeur.on('click', function(){\r",
+                    "    button.valeursM--;\r",
+                    "    this.up().destroy();\r",
+                    "});\r",
+                    "enrobage.add(supprimeur);\r",
+                    "button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);\r",
+                    "button.valeursM++;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']",
+                "designer|userClassName": "repliqueChamp"
             },
             "customConfigs": [],
             "expanded": true

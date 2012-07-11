@@ -1,3 +1,6 @@
+.referencement_icon{
+	background: url(../icones/16x16/globe_computer.png) left center no-repeat !important;
+}
 .folderM{
 	background: url(../images/folder.png) left center no-repeat !important;
 }
@@ -232,7 +235,7 @@
 }
 
 .media-icon{
-	background: url(../icones/16x16/image.png) left center no-repeat !important;
+	background: url(../icones/16x16/database.png) left center no-repeat !important;
 }
 
 .masque-icon{
@@ -273,6 +276,12 @@
 
 .close{
 	background: url(../icones/16x16/remove.png) left center no-repeat !important;
+}
+.imageIco{
+	background: url(../icones/16x16/image.png) left center no-repeat !important;
+}
+.pdfIco{
+	background: url(../icones/16x16/pdf.png) left center no-repeat !important;
 }
 
 .explorateur{

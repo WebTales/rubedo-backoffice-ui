@@ -22,6 +22,10 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
+    requires: [
+        'KECMdesktop.view.override.mediaWindowsView'
+    ],
+
     models: [
         'sitesDataModel',
         'panierDataModel',
@@ -29,7 +33,9 @@ Ext.application({
         'blocDataModel',
         'typesChampsDataModel',
         'taxonomieDataModel',
-        'iconDataModel'
+        'iconDataModel',
+        'mediaDataModel',
+        'mediaViewModel'
     ],
     stores: [
         'SitesDataJson',
@@ -41,19 +47,24 @@ Ext.application({
         'champsTCARStore',
         'TypesContenusDepDataJson',
         'TypesContenusNDepDataJson',
-        'IconesDataJson'
+        'IconesDataJson',
+        'MediasDataStore',
+        'MediaViewStore'
     ],
     views: [
         'MyContainer',
-        'ArborescenceSites',
         'MyGridPanel3',
         'ViewportPrimaire',
         'EnteteV',
         'iconeBureau',
-        'menuMedias',
         'contributionContenus',
         'adminFTDC',
-        'adminFMDP'
+        'adminFMDP',
+        'contributionPages',
+        'contributionMedias',
+        'mediaWindowsView',
+        'ImagePreviewWindow',
+        'PDFPreviewWindow'
     ],
     autoCreateViewport: true,
     name: 'KECMdesktop',
@@ -67,6 +78,7 @@ Ext.application({
         'TypesContenusController',
         'TaxonomieController',
         'assistantRequetageController',
-        'InterfaceController'
+        'InterfaceController',
+        'MediathequeController'
     ]
 });

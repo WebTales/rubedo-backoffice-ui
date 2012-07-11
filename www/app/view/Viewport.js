@@ -20,11 +20,9 @@ Ext.define('KECMdesktop.view.Viewport', {
         'KECMdesktop.view.ViewportPrimaire',
         'KECMdesktop.view.menuPrincipalInterface',
         'KECMdesktop.view.ContributionSitesV',
-        'KECMdesktop.view.ContributionMediasV',
-        'KECMdesktop.view.AdminfUtilisateursV',
-        'KECMdesktop.view.AdminfWorkflowsV',
         'KECMdesktop.view.Panier',
         'KECMdesktop.view.AjouterContenu',
+        'KECMdesktop.view.ArborescenceSites',
         'KECMdesktop.view.Zone',
         'KECMdesktop.view.UnBloc',
         'KECMdesktop.view.DelConfirmZ',
@@ -44,11 +42,11 @@ Ext.define('KECMdesktop.view.Viewport', {
         'KECMdesktop.view.iconeBureau',
         'KECMdesktop.view.adminFMDP',
         'KECMdesktop.view.adminFTDC',
-        'KECMdesktop.view.menuUtilisateurs',
-        'KECMdesktop.view.menuWorkflows',
-        'KECMdesktop.view.menuSites',
         'KECMdesktop.view.contributionContenus',
         'KECMdesktop.view.adminFTaxonomie',
-        'KECMdesktop.view.menuMedias'
+        'KECMdesktop.view.contributionPages',
+        'KECMdesktop.view.contributionMedias',
+        'KECMdesktop.view.ImagePreviewWindow',
+        'KECMdesktop.view.PDFPreviewWindow'
     ]
 });

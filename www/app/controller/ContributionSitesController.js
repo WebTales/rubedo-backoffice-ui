@@ -19,45 +19,15 @@ Ext.define('KECMdesktop.controller.ContributionSitesController', {
     stores: [
         'VersionsDataJson'
     ],
-    views: [
-        'ContributionSitesV'
-    ],
 
-    refs: [
-        {
-            ref: 'NomPageSites',
-            selector: '#nomPageSites'
-        }
-    ],
-
-    onTreepanelSelectionChange: function(tablepanel, selections, options) {
-        var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];
-        if (Ext.isDefined(cible)) {
-            this.getNomPageSites().update(cible.raw); 
-            this.getVersionsDataJsonStore().loadData(cible.raw.versions);
-
-            var ouvertRec = new Ext.menu.Item(cible.raw.id);
-            ouvertRec.setIconCls('document');
-            ouvertRec.setText(cible.raw.text);
-            Ext.getCmp('menuSitesRecents').remove(ouvertRec);
-            Ext.getCmp('menuSitesRecents').insert(1 ,ouvertRec);
-        }
-    },
-
-    onPanelAfterRender: function(abstractcomponent, options) {
-        abstractcomponent.resizable = false;
-        abstractcomponent.getDockedComponent(0).getComponent('supprimerZone').destroy();
-        abstractcomponent.getDockedComponent(0).getComponent('ajouterColonne').destroy();
-        abstractcomponent.getDockedComponent(0).getComponent('enleverColonne').destroy();
+    onTreepanelItemClick: function(tablepanel, record, item, index, e, options) {
+        console.log(record);
     },
 
     init: function() {
         this.control({
-            "#arborescenceSites": {
-                selectionchange: this.onTreepanelSelectionChange
-            },
-            "#editionSites zone": {
-                afterrender: this.onPanelAfterRender
+            "#pagesTree": {
+                itemclick: this.onTreepanelItemClick
             }
         });
 

@@ -1,0 +1,68 @@
+{
+    "id": "ExtBox1-ext-gen5045",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "storeId": "MediasDataStore",
+        "model": "mediaDataModel",
+        "designer|userClassName": "MediasDataStore",
+        "designer|userAlias": "MediasDataStore"
+    },
+    "customConfigs": [],
+    "designerId": "fc5c664a-7c9e-4a94-b81a-c8a116a6fcf0",
+    "$viewOrder": 15,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5052",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/Medias.json",
+                "designer|userClassName": "MyAjaxProxy15"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen5060",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader13"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen6804",
+            "type": "grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "type",
+                "designer|userClassName": "MyGrouper1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

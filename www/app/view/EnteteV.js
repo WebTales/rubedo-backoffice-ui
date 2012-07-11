@@ -37,7 +37,8 @@ Ext.define('KECMdesktop.view.EnteteV', {
                 {
                     xtype: 'button',
                     id: 'boutonPanierEntete',
-                    iconCls: 'cart',
+                    icon: 'resources/icones/24x24/shopping_cart.png',
+                    scale: 'medium',
                     text: 'Panier'
                 },
                 {

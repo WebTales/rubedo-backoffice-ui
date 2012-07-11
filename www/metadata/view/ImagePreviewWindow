@@ -1,0 +1,48 @@
+{
+    "id": "ExtBox1-ext-gen8111",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": null,
+        "maxHeight": null,
+        "maxWidth": null,
+        "width": null,
+        "resizable": "false",
+        "layout": "fit",
+        "iconCls": "imageIco",
+        "title": "Titre",
+        "constrain": false,
+        "constrainHeader": true,
+        "maximizable": null,
+        "minimizable": true,
+        "designer|userClassName": "ImagePreviewWindow",
+        "designer|userAlias": "ImagePreviewWindow"
+    },
+    "customConfigs": [],
+    "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
+    "$viewOrder": 36,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8606",
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "resizable": "false",
+                "src": " ",
+                "designer|userClassName": "MyImg8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
