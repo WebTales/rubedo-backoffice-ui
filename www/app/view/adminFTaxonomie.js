@@ -74,7 +74,12 @@ Ext.define('KECMdesktop.view.adminFTaxonomie', {
                             xtype: 'image',
                             height: 45,
                             width: 48,
-                            src: 'resources/icones/48x48/tag.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -95,28 +100,28 @@ Ext.define('KECMdesktop.view.adminFTaxonomie', {
                         {
                             xtype: 'button',
                             id: 'boutonCreerTaxonomie',
-                            icon: 'resources/icones/32x32/add.png',
+                            iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerTaxo',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonEnregistrerTaxo',
-                            icon: 'resources/icones/32x32/floppy_disc.png',
+                            iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
@@ -126,7 +131,7 @@ Ext.define('KECMdesktop.view.adminFTaxonomie', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -151,7 +156,7 @@ Ext.define('KECMdesktop.view.adminFTaxonomie', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/16x16/folder.png"> '+value);
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
                             },
                             dataIndex: 'titre',
                             flex: 1,
@@ -254,6 +259,10 @@ Ext.define('KECMdesktop.view.adminFTaxonomie', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/tag.png');
     }
 
 });

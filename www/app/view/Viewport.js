@@ -19,10 +19,8 @@ Ext.define('KECMdesktop.view.Viewport', {
     requires: [
         'KECMdesktop.view.ViewportPrimaire',
         'KECMdesktop.view.menuPrincipalInterface',
-        'KECMdesktop.view.ContributionSitesV',
         'KECMdesktop.view.Panier',
         'KECMdesktop.view.AjouterContenu',
-        'KECMdesktop.view.ArborescenceSites',
         'KECMdesktop.view.Zone',
         'KECMdesktop.view.UnBloc',
         'KECMdesktop.view.DelConfirmZ',
@@ -44,9 +42,15 @@ Ext.define('KECMdesktop.view.Viewport', {
         'KECMdesktop.view.adminFTDC',
         'KECMdesktop.view.contributionContenus',
         'KECMdesktop.view.adminFTaxonomie',
+        'KECMdesktop.view.adminFUtilisateurs',
         'KECMdesktop.view.contributionPages',
         'KECMdesktop.view.contributionMedias',
         'KECMdesktop.view.ImagePreviewWindow',
-        'KECMdesktop.view.PDFPreviewWindow'
+        'KECMdesktop.view.PDFPreviewWindow',
+        'KECMdesktop.view.mediaImageEditor',
+        'KECMdesktop.view.settingsContextMenu',
+        'KECMdesktop.view.DesktopCustomizeWindow',
+        'KECMdesktop.view.themePicker',
+        'KECMdesktop.view.accessibilityPicker'
     ]
 });

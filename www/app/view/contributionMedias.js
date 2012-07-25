@@ -75,7 +75,12 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                             height: 45,
                             itemId: 'imageBarreMeta',
                             width: 48,
-                            src: 'resources/icones/48x48/database.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageBarreMetaRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -97,56 +102,49 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                         {
                             xtype: 'button',
                             id: 'boutonAjouterDossierMedias',
-                            icon: 'resources/icones/32x32/folder_add.png',
+                            iconCls: 'folder_add_big',
                             scale: 'large',
                             text: 'Ajouter dossier'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerDossierMedias',
-                            icon: 'resources/icones/32x32/folder_remove.png',
+                            iconCls: 'folder_remove_big',
                             scale: 'large',
                             text: 'Supprimer dossier'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonUploadMedias',
-                            icon: 'resources/icones/32x32/database_up.png',
+                            iconCls: 'database_up_big',
                             scale: 'large',
                             text: 'Upload'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonDownloadMedias',
-                            icon: 'resources/icones/32x32/database_down.png',
+                            iconCls: 'database_down_big',
                             scale: 'large',
                             text: 'Download'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerMedias',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
-                            id: 'boutonApercuMedias',
-                            icon: 'resources/icones/32x32/play.png',
-                            scale: 'large',
-                            text: 'Aperçu'
-                        },
-                        {
-                            xtype: 'button',
                             id: 'boutonEditionMedias',
-                            icon: 'resources/icones/32x32/pencil.png',
+                            iconCls: 'pencil_big',
                             scale: 'large',
                             text: 'Edition'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
@@ -156,7 +154,7 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -179,7 +177,7 @@ Ext.define('KECMdesktop.view.contributionMedias', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return ('<img src="resources/icones/16x16/folder.png"> '+value);
+                                return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
                             },
                             dataIndex: 'titre',
                             fixed: false,
@@ -213,6 +211,10 @@ Ext.define('KECMdesktop.view.contributionMedias', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageBarreMetaRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/database.png');
     }
 
 });

@@ -73,7 +73,7 @@ Ext.define('KECMdesktop.view.Panier', {
                         {
                             xtype: 'button',
                             id: 'enleverPanier',
-                            icon: 'resources/icones/24x24/shopping_cart_remove.png',
+                            iconCls: 'shopping_cart_remove_med',
                             scale: 'medium',
                             text: 'Enlever'
                         },
@@ -82,19 +82,19 @@ Ext.define('KECMdesktop.view.Panier', {
                         },
                         {
                             xtype: 'button',
-                            icon: 'resources/icones/24x24/pencil.png',
+                            iconCls: 'pencil_med',
                             scale: 'medium',
                             text: 'Action 1'
                         },
                         {
                             xtype: 'button',
-                            icon: 'resources/icones/24x24/pencil.png',
+                            iconCls: 'pencil_med',
                             scale: 'medium',
                             text: 'Action 2'
                         },
                         {
                             xtype: 'button',
-                            icon: 'resources/icones/24x24/pencil.png',
+                            iconCls: 'pencil_med',
                             scale: 'medium',
                             text: 'Action 3'
                         }

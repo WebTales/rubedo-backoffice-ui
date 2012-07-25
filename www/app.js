@@ -35,7 +35,10 @@ Ext.application({
         'taxonomieDataModel',
         'iconDataModel',
         'mediaDataModel',
-        'mediaViewModel'
+        'mediaViewModel',
+        'wallpaperDataModel',
+        'themeDataModel',
+        'personalPrefsDataModel'
     ],
     stores: [
         'SitesDataJson',
@@ -49,7 +52,10 @@ Ext.application({
         'TypesContenusNDepDataJson',
         'IconesDataJson',
         'MediasDataStore',
-        'MediaViewStore'
+        'MediaViewStore',
+        'WallpapersDataJson',
+        'ThemesDataJson',
+        'PersonalPrefsStore'
     ],
     views: [
         'MyContainer',
@@ -64,7 +70,14 @@ Ext.application({
         'contributionMedias',
         'mediaWindowsView',
         'ImagePreviewWindow',
-        'PDFPreviewWindow'
+        'PDFPreviewWindow',
+        'mediaImageEditor',
+        'settingsContextMenu',
+        'DesktopCustomizeWindow',
+        'wallpaperPicker',
+        'themePicker',
+        'accessibilityPicker',
+        'adminFUtilisateurs'
     ],
     autoCreateViewport: true,
     name: 'KECMdesktop',

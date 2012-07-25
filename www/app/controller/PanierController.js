@@ -28,7 +28,7 @@ Ext.define('KECMdesktop.controller.PanierController', {
             var panier = Ext.widget('panier');
             Ext.getCmp('desktopCont').add(panier);
             panier.show();
-        }
+        }else {Ext.getCmp('Panier').toFront();}
     },
 
     onButtonClick2: function(button, e, options) {

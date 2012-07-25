@@ -1,0 +1,60 @@
+{
+    "id": "ExtBox1-ext-gen9567",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "themePicker",
+        "layout": "anchor",
+        "bodyPadding": 20,
+        "title": "",
+        "designer|userClassName": "themePicker",
+        "designer|userAlias": "themePicker"
+    },
+    "customConfigs": [],
+    "designerId": "34b8ae49-5eb1-4af4-9543-71bc700c8a7a",
+    "$viewOrder": 41,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen9571",
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "maxHeight": null,
+                "width": null,
+                "src": null,
+                "designer|userClassName": "MyImg9",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9578",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "themePickerButton",
+                "margin": "10 0 0 0",
+                "text": "Appliquer ce theme",
+                "designer|userClassName": "MyButton103",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

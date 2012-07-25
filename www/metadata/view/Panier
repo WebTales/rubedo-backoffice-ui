@@ -28,7 +28,7 @@
     },
     "customConfigs": [],
     "designerId": "e59b3e1d-ac70-40ed-8cca-3251584e2e94",
-    "$viewOrder": 4,
+    "$viewOrder": 3,
     "expanded": false,
     "cn": [
         {
@@ -138,8 +138,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "enleverPanier",
-                        "icon": "resources/icones/24x24/shopping_cart_remove.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "shopping_cart_remove_med",
                         "scale": "medium",
                         "text": "Enlever",
                         "designer|userClassName": "MyButton45",
@@ -172,8 +172,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "resources/icones/24x24/pencil.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "pencil_med",
                         "scale": "medium",
                         "text": "Action 1",
                         "designer|userClassName": "MyButton46",
@@ -191,8 +191,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "resources/icones/24x24/pencil.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "pencil_med",
                         "scale": "medium",
                         "text": "Action 2",
                         "designer|userClassName": "MyButton46",
@@ -210,8 +210,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "resources/icones/24x24/pencil.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "pencil_med",
                         "scale": "medium",
                         "text": "Action 3",
                         "designer|userClassName": "MyButton46",

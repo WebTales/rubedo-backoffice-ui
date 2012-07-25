@@ -1,0 +1,59 @@
+{
+    "id": "ExtBox1-ext-gen19845",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "id": "accessibilityPicker",
+        "width": 400,
+        "bodyPadding": 10,
+        "title": "",
+        "designer|userClassName": "accessibilityPicker",
+        "designer|userAlias": "accessibilityPicker"
+    },
+    "customConfigs": [],
+    "designerId": "035b8ace-5d4c-4fbd-be9b-35ee907849d9",
+    "$viewOrder": 42,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen20117",
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "padding": 10,
+                "title": "Mode contraste élevé",
+                "designer|userClassName": "MyFieldSet2"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen20372",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "highContrastButton",
+                        "text": "Activer",
+                        "designer|userClassName": "MyButton102",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

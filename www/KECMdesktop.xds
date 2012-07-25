@@ -669,22 +669,6 @@
             ],
             "className": "mediaWindowsView"
         },
-        "a8894ef3-ab7b-49f4-b860-9e19e7f44dda": {
-            "paths": [
-                "metadata/view/ContributionSitesV",
-                "app/view/override/ContributionSitesV.js",
-                "app/view/ContributionSitesV.js"
-            ],
-            "className": "ContributionSitesV"
-        },
-        "9f94e842-af0e-4585-9753-04f49e1dd7f8": {
-            "paths": [
-                "metadata/view/ArborescenceSites",
-                "app/view/override/ArborescenceSites.js",
-                "app/view/ArborescenceSites.js"
-            ],
-            "className": "ArborescenceSites"
-        },
         "af90e791-bd98-4827-93a9-eca34c896abb": {
             "paths": [
                 "metadata/view/ImagePreviewWindow",
@@ -700,10 +684,122 @@
                 "app/view/PDFPreviewWindow.js"
             ],
             "className": "PDFPreviewWindow"
+        },
+        "c88195fc-2977-4718-9287-536a4aead568": {
+            "paths": [
+                "metadata/view/mediaImageEditor",
+                "app/view/override/mediaImageEditor.js",
+                "app/view/mediaImageEditor.js"
+            ],
+            "className": "mediaImageEditor"
+        },
+        "c66cefff-0027-44ad-8bea-fa4e990327f5": {
+            "paths": [
+                "metadata/controller/ExplorateurController",
+                "app/controller/override/ExplorateurController.js",
+                "app/controller/ExplorateurController.js"
+            ],
+            "className": "ExplorateurController"
+        },
+        "89155b60-bd6b-4ba6-98c9-19a5443ffa2c": {
+            "paths": [
+                "metadata/view/settingsContextMenu",
+                "app/view/override/settingsContextMenu.js",
+                "app/view/settingsContextMenu.js"
+            ],
+            "className": "settingsContextMenu"
+        },
+        "021dc961-e2fd-4e63-afd9-8829737e3813": {
+            "paths": [
+                "metadata/view/DesktopCustomizeWindow",
+                "app/view/override/DesktopCustomizeWindow.js",
+                "app/view/DesktopCustomizeWindow.js"
+            ],
+            "className": "DesktopCustomizeWindow"
+        },
+        "6cb9f760-e375-46f8-ba70-e52ba7aa5725": {
+            "paths": [
+                "metadata/store/WallpapersDataJson",
+                "app/store/override/WallpapersDataJson.js",
+                "app/store/WallpapersDataJson.js"
+            ],
+            "className": "WallpapersDataJson"
+        },
+        "337a044d-f1fa-46dd-9870-5c57b86e2ab6": {
+            "paths": [
+                "metadata/model/wallpaperDataModel",
+                "app/model/override/wallpaperDataModel.js",
+                "app/model/wallpaperDataModel.js"
+            ],
+            "className": "wallpaperDataModel"
+        },
+        "b1d4214e-b893-4a6c-89f4-d297c8733b26": {
+            "paths": [
+                "metadata/view/wallpaperPicker",
+                "app/view/override/wallpaperPicker.js",
+                "app/view/wallpaperPicker.js"
+            ],
+            "className": "wallpaperPicker"
+        },
+        "ab38a55b-ca17-43f5-b3b9-44b0a53ad234": {
+            "paths": [
+                "metadata/store/ThemesDataJson",
+                "app/store/override/ThemesDataJson.js",
+                "app/store/ThemesDataJson.js"
+            ],
+            "className": "ThemesDataJson"
+        },
+        "631e6fdb-c3de-4905-9eaf-4d2aa157436e": {
+            "paths": [
+                "metadata/model/themeDataModel",
+                "app/model/override/themeDataModel.js",
+                "app/model/themeDataModel.js"
+            ],
+            "className": "themeDataModel"
+        },
+        "34b8ae49-5eb1-4af4-9543-71bc700c8a7a": {
+            "paths": [
+                "metadata/view/themePicker",
+                "app/view/override/themePicker.js",
+                "app/view/themePicker.js"
+            ],
+            "className": "themePicker"
+        },
+        "035b8ace-5d4c-4fbd-be9b-35ee907849d9": {
+            "paths": [
+                "metadata/view/accessibilityPicker",
+                "app/view/override/accessibilityPicker.js",
+                "app/view/accessibilityPicker.js"
+            ],
+            "className": "accessibilityPicker"
+        },
+        "acd4af16-103d-4c31-977e-f958c6cdf2b7": {
+            "paths": [
+                "metadata/store/PersonalPrefsStore",
+                "app/store/override/PersonalPrefsStore.js",
+                "app/store/PersonalPrefsStore.js"
+            ],
+            "className": "PersonalPrefsStore"
+        },
+        "d0fd2671-4491-440c-8e6c-915c6cca062e": {
+            "paths": [
+                "metadata/model/personalPrefsDataModel",
+                "app/model/override/personalPrefsDataModel.js",
+                "app/model/personalPrefsDataModel.js"
+            ],
+            "className": "personalPrefsDataModel"
+        },
+        "fb146702-039a-47f8-8142-bd4572c13135": {
+            "paths": [
+                "metadata/view/adminFUtilisateurs",
+                "app/view/override/adminFUtilisateurs.js",
+                "app/view/adminFUtilisateurs.js"
+            ],
+            "className": "adminFUtilisateurs"
         }
     },
     "expandedState": {
-        "data": false,
+        "data": true,
         "model": true,
         "component": true,
         "controller": true,

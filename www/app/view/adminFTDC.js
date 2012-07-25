@@ -71,7 +71,12 @@ Ext.define('KECMdesktop.view.adminFTDC', {
                             xtype: 'image',
                             height: 45,
                             width: 48,
-                            src: 'resources/icones/48x48/page_full.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -92,28 +97,28 @@ Ext.define('KECMdesktop.view.adminFTDC', {
                         {
                             xtype: 'button',
                             id: 'boutonNouveauTypeContenu',
-                            icon: 'resources/icones/32x32/add.png',
+                            iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerTypeContenu',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonEnregistrerTypeContenu',
-                            icon: 'resources/icones/32x32/floppy_disc.png',
+                            iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
@@ -123,7 +128,7 @@ Ext.define('KECMdesktop.view.adminFTDC', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -144,8 +149,9 @@ Ext.define('KECMdesktop.view.adminFTDC', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                if (record.data.imbrique===false) {return('<img src="resources/icones/16x16/page_full.png"> ' + value );}
-                                else {return('<img src="resources/icones/16x16/attach_document.png"> ' + value );}
+                                if (record.data.imbrique===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> ' + value );}
+                                else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + value );}
+
                             },
                             width: 452,
                             dataIndex: 'type',
@@ -325,6 +331,10 @@ Ext.define('KECMdesktop.view.adminFTDC', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
     }
 
 });

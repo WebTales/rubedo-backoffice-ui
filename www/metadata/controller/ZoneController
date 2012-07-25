@@ -20,7 +20,7 @@
     },
     "customConfigs": [],
     "designerId": "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
-    "$viewOrder": 5,
+    "$viewOrder": 6,
     "expanded": false,
     "cn": [
         {
@@ -65,8 +65,8 @@
                     "var enleverCol = maZone.query('colonne').pop();\r",
                     "if (enleverCol.previousSibling() !== null) {maZone.remove(enleverCol);}\r",
                     "if ((Ext.isDefined(Ext.getCmp('zoneIdField')))&&(maZone.id==Ext.getCmp('zoneIdField').getValue())) {\r",
-                    "this.updPanProp(maZone); \r",
-                    "    \r",
+                    "    this.updPanProp(maZone); \r",
+                    "\r",
                     "}"
                 ],
                 "name": "click",
@@ -464,7 +464,7 @@
                     "if (abstractcomponent.id !== 'outilsBureau') {\r",
                     "    var moi = this;\r",
                     "    abstractcomponent.header.on('click', function() { \r",
-                    "        this.up().getEl().frame('#D7251D');\r",
+                    "        this.up().getEl().frame(MyPrefData.themeColor);\r",
                     "        this.up().setIconCls('editZone');\r",
                     "        var champBId = Ext.getCmp('zoneIdField');\r",
                     "        if (Ext.isDefined(champBId)) {    \r",
@@ -502,7 +502,7 @@
                     "\r",
                     "abstractcomponent.header.on('click', function() { \r",
                     "\r",
-                    "    this.up().getEl().frame('#D7251D');\r",
+                    "    this.up().getEl().frame(MyPrefData.themeColor);\r",
                     "    this.up().setIconCls('editBloc');\r",
                     "\r",
                     "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {\r",

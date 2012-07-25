@@ -1,0 +1,60 @@
+{
+    "id": "ExtBox1-ext-gen27152",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "wallpaperPicker",
+        "layout": "anchor",
+        "bodyPadding": 20,
+        "title": "",
+        "designer|userClassName": "wallpaperPicker",
+        "designer|userAlias": "wallpaperPicker"
+    },
+    "customConfigs": [],
+    "designerId": "b1d4214e-b893-4a6c-89f4-d297c8733b26",
+    "$viewOrder": 40,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen27558",
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "maxHeight": null,
+                "width": null,
+                "src": null,
+                "designer|userClassName": "MyImg9",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen28387",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "wallpaperPickerButton",
+                "margin": "10 0 0 0",
+                "text": "Choisir en tant que nouveau fond 'écran",
+                "designer|userClassName": "MyButton103",
+                "layout|anchor": "100%"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

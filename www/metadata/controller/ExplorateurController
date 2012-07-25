@@ -1,0 +1,43 @@
+{
+    "id": "ExtBox1-ext-gen60552",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ExplorateurController",
+        "designer|userAlias": "ExplorateurController"
+    },
+    "customConfigs": [],
+    "designerId": "c66cefff-0027-44ad-8bea-fa4e990327f5",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen61074",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelExpand",
+                "implHandler": [
+                    "var monExp =p.up('Explorateur');\r",
+                    "monExp.getComponent('filArianne').getComponent('origine').setText(p.title+' <b>></b> ').setIconCls(p.iconCls);\r",
+                    "console.log(p.xtype);"
+                ],
+                "name": "expand",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "Explorateur [itemId='menuGauche'] panel",
+                "designer|userClassName": "onPanelExpand"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

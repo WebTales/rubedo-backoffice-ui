@@ -196,7 +196,7 @@ Ext.define('KECMdesktop.controller.ZoneController', {
         if (abstractcomponent.id !== 'outilsBureau') {
             var moi = this;
             abstractcomponent.header.on('click', function() { 
-                this.up().getEl().frame('#D7251D');
+                this.up().getEl().frame(MyPrefData.themeColor);
                 this.up().setIconCls('editZone');
                 var champBId = Ext.getCmp('zoneIdField');
                 if (Ext.isDefined(champBId)) {    
@@ -216,7 +216,7 @@ Ext.define('KECMdesktop.controller.ZoneController', {
 
         abstractcomponent.header.on('click', function() { 
 
-            this.up().getEl().frame('#D7251D');
+            this.up().getEl().frame(MyPrefData.themeColor);
             this.up().setIconCls('editBloc');
 
             if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {

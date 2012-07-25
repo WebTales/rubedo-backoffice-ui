@@ -28,7 +28,7 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
     var imageMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
     var customMeta = record.data.titre;
     boiteMeta.update(customMeta);
-    imageMeta.setSrc('resources/icones/48x48/folder.png');
+    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
 
     Ext.getStore('MediaViewStore').loadData(record.data.medias);
 
@@ -75,18 +75,18 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
         if (Ext.isEmpty(selections)) {
             var customMeta = Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.titre;
             boiteMeta.update(customMeta);
-            imageMeta.setSrc('resources/icones/48x48/folder.png');
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
 
         } else if (selections.length==1) {
             var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   
             if (monType=="Image"){
-                imageMeta.setSrc('resources/icones/48x48/image.png');
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/image.png');
                 var customMeta=(selections[0].data.text+"</br> Creation : "+selections[0].data.meta.creation+
                 " Dernière modification : "+selections[0].data.meta.derniereModification+" Version : "+selections[0].data.meta.version+
                 " Auteur : "+selections[0].data.meta.auteur+" Dimensions : "+selections[0].data.conf.width+"x"+selections[0].data.conf.height);
                 boiteMeta.update(customMeta);
             } else  if (monType=="PDF"){
-                imageMeta.setSrc('resources/icones/48x48/pdf.png');
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/pdf.png');
                 var customMeta=(selections[0].data.text+"</br> Creation : "+selections[0].data.meta.creation+
                 " Dernière modification : "+selections[0].data.meta.derniereModification+" Version : "+selections[0].data.meta.version+
                 " Auteur : "+selections[0].data.meta.auteur);
@@ -95,11 +95,11 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
         } else {
             var monType= Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;   
             if (monType=="Image"){
-                imageMeta.setSrc('resources/icones/48x48/image.png');
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/image.png');
                 var customMeta=(selections.length+" Images");
                 boiteMeta.update(customMeta);
             } else if (monType=="PDF"){
-                imageMeta.setSrc('resources/icones/48x48/pdf.png');
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/pdf.png');
                 var customMeta=(selections.length+" PDF");
                 boiteMeta.update(customMeta);
             }
@@ -107,8 +107,50 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
         }
     },
 
-    onButtonClick: function(button, e, options) {
+    supprimeMedia: function(button, e, options) {
         Ext.getCmp('MediaMainView').getStore().remove(Ext.getCmp('MediaMainView').getSelectionModel().getSelection());
+    },
+
+    afficheMediaEditor: function(button, e, options) {
+        var monType =Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;
+        var selectedStuf=Ext.getCmp('MediaMainView').getSelectionModel().getSelection();
+        if (selectedStuf.length==1){
+            var record=selectedStuf[0];
+            if (monType=="Image"){
+                var fenetre = Ext.getCmp('mediaImageEditor');
+                if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+                else {
+                    fenetre = Ext.widget('mediaImageEditor', {title:record.data.text});
+                    var maTaille=record.data.conf;
+                    var image = Ext.widget('image', {
+                        src:record.data.fichier,
+                        height:maTaille.height,
+                        width:maTaille.width,
+                        resizable:true
+                    });
+                    image.on('resize', function(moi, height, width, oldWidth, oldHeight){
+                        Ext.getCmp('imageEditorHeightField').setValue(height);
+                        Ext.getCmp('imageEditorWidthField').setValue(width);
+                        Ext.getCmp('imageEditorHeightField').removeListener('click');
+                        Ext.getCmp('imageEditorUndo').on('click', function(){
+                            image.setSize(oldWidth, oldHeight);
+                            console.log(image.id);
+                        });
+                    });
+                    fenetre.getComponent(0).add(image);
+
+
+                    Ext.getCmp('desktopCont').add(fenetre);
+                    fenetre.show();
+                }
+
+            }
+        }
+
+    },
+
+    onControllerClickStub: function() {
+
     },
 
     init: function() {
@@ -121,7 +163,10 @@ Ext.define('KECMdesktop.controller.MediathequeController', {
                 selectionchange: this.onDataviewSelectionChange
             },
             "#boutonSupprimerMedias": {
-                click: this.onButtonClick
+                click: this.supprimeMedia
+            },
+            "#boutonEditionMedias": {
+                click: this.afficheMediaEditor
             }
         });
 

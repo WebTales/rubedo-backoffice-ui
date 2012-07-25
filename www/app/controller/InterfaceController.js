@@ -26,7 +26,7 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
             Ext.getCmp('menuPrincipalInterface').destroy();
         }
         else {
-            var menuPrincipal = Ext.widget('menuPrincipalInterface');
+            var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});
 
 
             menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-310);   
@@ -78,7 +78,7 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
 
     showDesktop: function(button, e, options) {
         Ext.WindowManager.each(function(window){
-            if (window.isVisible()) {window.hide();}
+            if (window.isVisible()) {window.minimize();}
         });
     },
 
@@ -147,6 +147,88 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
                 nIcone.getComponent(0).setSrc(icone.data.image);
             }); 
         }});
+        abstractcomponent.getEl().on('contextmenu', function(e){
+            var menu= Ext.getCmp('settingsContextMenu');
+            if (Ext.isEmpty(menu)){
+                menu = Ext.widget('settingsContextMenu');
+                menu.on('blur', function(){this.destroy();});}
+                menu.showAt(Ext.EventObject.getXY());
+                e.stopEvent();
+
+
+            }); 
+    },
+
+    hideAllIcons: function(item, e, options) {
+        Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.hide();});
+    },
+
+    showAllIcons: function(item, e, options) {
+        Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.show();});
+    },
+
+    reagarangeAllIcons: function(item, e, options) {
+        Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.setPosition(0,0);});
+    },
+
+    displayDesktopCustomizeWindow: function(item, e, options) {
+        var fenetre=Ext.getCmp('DesktopCustomizeWindow'); 
+        if (Ext.isEmpty(fenetre)){
+            fenetre=Ext.widget('DesktopCustomizeWindow');
+            Ext.getCmp('desktopCont').add(fenetre);
+        }fenetre.show();
+    },
+
+    updateWallpaperPreview: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp('wallpaperPicker').getComponent(0).setSrc(record.data.file);
+    },
+
+    wallpaperChange: function(button, e, options) {
+        Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);
+    },
+
+    onGridpanelExpand: function(p, options) {
+        Ext.getCmp('DesktopCustomizeMainArea').removeAll();
+        Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('themePicker'));
+    },
+
+    onGridpanelExpand1: function(p, options) {
+        Ext.getCmp('DesktopCustomizeMainArea').removeAll();
+        Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('wallpaperPicker'));
+    },
+
+    onGridpanelItemClick: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp('themePicker').getComponent(0).setSrc(record.data.preview);
+    },
+
+    applyTheme: function(button, e, options) {
+        var theme = Ext.getCmp('themeGrid').getSelectionModel().getLastSelected().data;
+        Ext.getCmp('desktopBackGround').setSrc(theme.wallpaper);
+        Ext.util.CSS.swapStyleSheet('maintheme', theme.stylesheet);
+        MyPrefData.iconsDir=theme.iconSet;
+        MyPrefData.themeColor=theme.themeColor;
+    },
+
+    onPanelExpand: function(p, options) {
+        Ext.getCmp('DesktopCustomizeMainArea').removeAll();
+        Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('accessibilityPicker'));
+    },
+
+    HCmode: function(button, e, options) {
+        if (MyPrefData.highContrast===false) {
+            Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
+            MyPrefData.highContrast=true;
+            button.setText('Désactiver');
+        } else {Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-gray.css');
+            MyPrefData.highContrast=false;
+            button.setText('Activer');
+        }
+    },
+
+    setHCButtonStatus: function(abstractcomponent, options) {
+        if (MyPrefData.highContrast===true) {
+            abstractcomponent.setText('Désactiver');
+        } 
     },
 
     onLaunch: function() {
@@ -157,6 +239,16 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
         Ext.getCmp('boutonPincipalInterface').addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             Ext.getCmp('menuPrincipalInterface').destroy();
         }}); }); 
+        Ext.getStore('PersonalPrefsStore').load({
+            callback:function(){
+                var myPrefs=this.getRange()[0].data;
+                Ext.getCmp('desktopBackGround').setSrc(myPrefs.wallpaper);
+                Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.stylesheet);
+                MyPrefData.iconsDir=myPrefs.iconSet;
+                MyPrefData.myName=myPrefs.myName;
+                MyPrefData.themeColor=myPrefs.themeColor;
+            }
+        });
     },
 
     placeLibre: function(x, y, id) {
@@ -168,15 +260,7 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
         return libre;
     },
 
-    onControllerClickStub: function() {
-
-    },
-
-    onControllerRenderStub: function() {
-
-    },
-
-    init: function() {
+    init: function(application) {
         this.control({
             "#boutonPincipalInterface": {
                 click: this.afficherMenuPrincipal
@@ -204,8 +288,64 @@ Ext.define('KECMdesktop.controller.InterfaceController', {
             },
             "#boiteAIconesBureau": {
                 render: this.majIcones
+            },
+            "#itemHideAllIcons": {
+                click: this.hideAllIcons
+            },
+            "#itemShowAllIcons": {
+                click: this.showAllIcons
+            },
+            "#itemRearangeAllIcons": {
+                click: this.reagarangeAllIcons
+            },
+            "#itemCustomizeDesktop": {
+                click: this.displayDesktopCustomizeWindow
+            },
+            "#wallpaperGrid": {
+                itemclick: this.updateWallpaperPreview,
+                expand: this.onGridpanelExpand1
+            },
+            "#wallpaperPickerButton": {
+                click: this.wallpaperChange
+            },
+            "#themeGrid": {
+                expand: this.onGridpanelExpand,
+                itemclick: this.onGridpanelItemClick
+            },
+            "#themePickerButton": {
+                click: this.applyTheme
+            },
+            "#accessibilityOptionsPanel": {
+                expand: this.onPanelExpand
+            },
+            "#highContrastButton": {
+                click: this.HCmode,
+                render: this.setHCButtonStatus
             }
         });
+        Ext.define('MyPrefData', { 
+            singleton: true, 
+
+            iconsDir: 'red',
+            highContrast:false,
+            myName:'Alexandru Dobre',
+            themeColor: '#D7251D'
+        }); 
+    },
+
+    onControllerClickStub: function() {
+
+    },
+
+    onControllerRenderStub: function() {
+
+    },
+
+    onControllerItemClickStub: function() {
+
+    },
+
+    onControllerExpandStub: function() {
 
     }
 

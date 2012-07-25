@@ -16,7 +16,10 @@
             "taxonomieDataModel",
             "iconDataModel",
             "mediaDataModel",
-            "mediaViewModel"
+            "mediaViewModel",
+            "wallpaperDataModel",
+            "themeDataModel",
+            "personalPrefsDataModel"
         ],
         "stores": [
             "SitesDataJson",
@@ -30,7 +33,10 @@
             "TypesContenusNDepDataJson",
             "IconesDataJson",
             "MediasDataStore",
-            "MediaViewStore"
+            "MediaViewStore",
+            "WallpapersDataJson",
+            "ThemesDataJson",
+            "PersonalPrefsStore"
         ],
         "views": [
             "MyContainer",
@@ -45,7 +51,14 @@
             "contributionMedias",
             "mediaWindowsView",
             "ImagePreviewWindow",
-            "PDFPreviewWindow"
+            "PDFPreviewWindow",
+            "mediaImageEditor",
+            "settingsContextMenu",
+            "DesktopCustomizeWindow",
+            "wallpaperPicker",
+            "themePicker",
+            "accessibilityPicker",
+            "adminFUtilisateurs"
         ],
         "autoCreateViewport": true,
         "name": "KECMdesktop",

@@ -42,7 +42,8 @@ Ext.define('KECMdesktop.view.ViewportPrimaire', {
                     items: [
                         {
                             xtype: 'image',
-                            src: 'resources/images/background.jpg',
+                            id: 'desktopBackGround',
+                            src: 'resources/wallpapers/rubedo.jpg',
                             anchor: '105%',
                             x: 0,
                             y: 0

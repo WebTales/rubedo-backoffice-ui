@@ -34,7 +34,7 @@ Ext.define('KECMdesktop.view.iconeBureau', {
                     xtype: 'image',
                     height: 64,
                     width: 64,
-                    src: 'resources/icones/64x64/folder.png'
+                    src: 'resources/icones/red/64x64/folder.png'
                 }
             ]
         });

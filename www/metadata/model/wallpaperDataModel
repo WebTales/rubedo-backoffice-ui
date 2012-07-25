@@ -1,0 +1,51 @@
+{
+    "id": "ExtBox1-ext-gen24254",
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "wallpaperDataModel",
+        "designer|userAlias": "wallpaperDataModel"
+    },
+    "customConfigs": [],
+    "designerId": "337a044d-f1fa-46dd-9870-5c57b86e2ab6",
+    "$viewOrder": 13,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen24465",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string",
+                "designer|userClassName": "MyField71"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24633",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "file",
+                "type": "string",
+                "designer|userClassName": "MyField72"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

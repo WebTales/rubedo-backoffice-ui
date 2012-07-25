@@ -74,7 +74,12 @@ Ext.define('KECMdesktop.view.contributionPages', {
                             xtype: 'image',
                             height: 45,
                             width: 48,
-                            src: 'resources/icones/48x48/application.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -95,35 +100,35 @@ Ext.define('KECMdesktop.view.contributionPages', {
                         {
                             xtype: 'button',
                             id: 'boutonAjouterPages',
-                            icon: 'resources/icones/32x32/add.png',
+                            iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerPages',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonEnregistrerPages',
-                            icon: 'resources/icones/32x32/floppy_disc.png',
+                            iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonPublierPages',
-                            icon: 'resources/icones/32x32/floppy_disc_accept.png',
+                            iconCls: 'floppy_disc_accept_big',
                             scale: 'large',
-                            text: 'Enregistrer'
+                            text: 'Enregistrer et publier'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
@@ -133,7 +138,7 @@ Ext.define('KECMdesktop.view.contributionPages', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -172,8 +177,8 @@ Ext.define('KECMdesktop.view.contributionPages', {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
 
-                                if (record.data.site) {record.data.allowDrag=false;return ('<img src="resources/icones/16x16/globe.png"> '+value);}
-                                else return ('<img src="resources/icones/16x16/application.png"> '+value);
+                                if (record.data.site) {record.data.allowDrag=false;return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/globe.png"> '+value);}
+                                else return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> '+value);
                             },
                             dataIndex: 'text',
                             flex: 1,
@@ -261,6 +266,10 @@ Ext.define('KECMdesktop.view.contributionPages', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
     }
 
 });

@@ -166,8 +166,8 @@ Ext.define('KECMdesktop.controller.TypesContenusController', {
                     Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');
                 }
                 Ext.getCmp('champTCIdField').setValue(abstractcomponent.getComponent(4).id);    
-                this.frame('#D7251D');
-                this.applyStyles('color:#D7251D');
+                this.frame(MyPrefData.themeColor);
+                this.applyStyles('color:'+MyPrefData.themeColor);
                 var mesChamps = abstractcomponent.getComponent(4).champsConfig;
                 var boiteParam = Ext.getCmp('boiteConfigChampsTC');
                 boiteParam.removeAll();

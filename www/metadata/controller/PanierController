@@ -17,7 +17,7 @@
     },
     "customConfigs": [],
     "designerId": "c58379f5-e379-488d-a665-b9ff52959309",
-    "$viewOrder": 2,
+    "$viewOrder": 3,
     "expanded": false,
     "cn": [
         {
@@ -35,7 +35,7 @@
                     "    var panier = Ext.widget('panier');\r",
                     "    Ext.getCmp('desktopCont').add(panier);\r",
                     "    panier.show();\r",
-                    "}"
+                    "}else {Ext.getCmp('Panier').toFront();}"
                 ],
                 "name": "click",
                 "scope": "me",

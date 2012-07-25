@@ -20,7 +20,7 @@
     },
     "customConfigs": [],
     "designerId": "5b65ea9f-b5de-4028-be66-16c03842ef21",
-    "$viewOrder": 29,
+    "$viewOrder": 27,
     "expanded": false,
     "cn": [
         {
@@ -110,7 +110,7 @@
                 "dock": "bottom"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen75586",
@@ -123,12 +123,34 @@
                     "userConfig": {
                         "height": 45,
                         "width": 48,
-                        "src": "resources/icones/48x48/application.png",
+                        "src": null,
                         "designer|userClassName": "MyImg2",
                         "layout|flex": null
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen7331",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageRender",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me",
+                                "designer|userClassName": "onImageRender"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 },
                 {
                     "id": "ExtBox1-ext-gen75592",
@@ -181,8 +203,8 @@
                     "userConfig": {
                         "id": "boutonNouveauMasque",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter",
                         "designer|userClassName": "MyButton11",
@@ -202,8 +224,8 @@
                     "userConfig": {
                         "id": "boutonSupprimerMasque",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/remove.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer",
                         "designer|userClassName": "MyButton13",
@@ -223,9 +245,9 @@
                     "userConfig": {
                         "id": "boutonCopierMasque",
                         "width": null,
-                        "icon": "resources/icones/32x32/applications.png",
+                        "icon": null,
                         "iconAlign": null,
-                        "iconCls": null,
+                        "iconCls": "applications_big",
                         "scale": "large",
                         "text": "Copier",
                         "designer|userClassName": "MyButton17",
@@ -245,8 +267,8 @@
                     "userConfig": {
                         "id": "nouvelleZone",
                         "width": null,
-                        "icon": "resources/icones/32x32/window_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "window_add_big",
                         "scale": "large",
                         "text": "Nouvelle Zone",
                         "designer|userClassName": "MyButton51",
@@ -265,8 +287,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "AdminfMasquesExporter",
-                        "icon": "resources/icones/32x32/application_down.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "application_down_big",
                         "scale": "large",
                         "text": "Exporter",
                         "designer|userClassName": "MyButton62",
@@ -285,8 +307,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "AdminfMasquesImporter",
-                        "icon": "resources/icones/32x32/application_up.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "application_up_big",
                         "scale": "large",
                         "text": "Importer",
                         "designer|userClassName": "MyButton63",
@@ -306,8 +328,8 @@
                     "userConfig": {
                         "id": "AdminfMasquesEnregistrer",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/floppy_disc.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "floppy_disc_big",
                         "scale": "large",
                         "text": "Enregistrer",
                         "designer|userClassName": "MyButton13",
@@ -326,8 +348,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "AdminfMasquesPublier",
-                        "icon": "resources/icones/32x32/floppy_disc_accept.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "floppy_disc_accept_big",
                         "scale": "large",
                         "text": "Enregistrer et publier",
                         "designer|userClassName": "MyButton12",
@@ -346,8 +368,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonCreerRaccourci",
-                        "icon": "resources/icones/32x32/favorite_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "favorite_add_big",
                         "scale": "large",
                         "text": "Ajouter aux favoris",
                         "designer|userClassName": "MyButton14",
@@ -366,8 +388,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "ajouterPanierMasques",
-                        "icon": "resources/icones/32x32/shopping_cart_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "shopping_cart_add_big",
                         "scale": "large",
                         "text": "Ajouter au panier",
                         "designer|userClassName": "MyButton15",
@@ -401,8 +423,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonAide",
-                        "icon": "resources/icones/32x32/info.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "info_big",
                         "scale": "large",
                         "text": "",
                         "designer|userClassName": "MyButton94",
@@ -510,7 +532,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/16x16/application.png\"> ' + value );"
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png\"> ' + value );"
                                 ],
                                 "designer|userClassName": "renderer"
                             },

@@ -20,7 +20,7 @@
     },
     "customConfigs": [],
     "designerId": "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
-    "$viewOrder": 33,
+    "$viewOrder": 32,
     "expanded": false,
     "cn": [
         {
@@ -110,7 +110,7 @@
                 "dock": "bottom"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen5665",
@@ -123,12 +123,34 @@
                     "userConfig": {
                         "height": 45,
                         "width": 48,
-                        "src": "resources/icones/48x48/application.png",
+                        "src": null,
                         "designer|userClassName": "MyImg2",
                         "layout|flex": null
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen16820",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageRender",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me",
+                                "designer|userClassName": "onImageRender"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 },
                 {
                     "id": "ExtBox1-ext-gen5671",
@@ -180,8 +202,8 @@
                     "userConfig": {
                         "id": "boutonAjouterPages",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter",
                         "designer|userClassName": "MyButton11",
@@ -201,8 +223,8 @@
                     "userConfig": {
                         "id": "boutonSupprimerPages",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/remove.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer",
                         "designer|userClassName": "MyButton13",
@@ -222,8 +244,8 @@
                     "userConfig": {
                         "id": "boutonEnregistrerPages",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/floppy_disc.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "floppy_disc_big",
                         "scale": "large",
                         "text": "Enregistrer",
                         "designer|userClassName": "MyButton13",
@@ -243,10 +265,10 @@
                     "userConfig": {
                         "id": "boutonPublierPages",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/floppy_disc_accept.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "floppy_disc_accept_big",
                         "scale": "large",
-                        "text": "Enregistrer",
+                        "text": "Enregistrer et publier",
                         "designer|userClassName": "MyButton13",
                         "layout|flex": null
                     },
@@ -263,8 +285,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonCreerRaccourci",
-                        "icon": "resources/icones/32x32/favorite_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "favorite_add_big",
                         "scale": "large",
                         "text": "Ajouter aux favoris",
                         "designer|userClassName": "MyButton14",
@@ -298,8 +320,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonAide",
-                        "icon": "resources/icones/32x32/info.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "info_big",
                         "scale": "large",
                         "text": "",
                         "designer|userClassName": "MyButton94",
@@ -433,8 +455,8 @@
                                 ],
                                 "implHandler": [
                                     "\r",
-                                    "if (record.data.site) {record.data.allowDrag=false;return ('<img src=\"resources/icones/16x16/globe.png\"> '+value);}\r",
-                                    "else return ('<img src=\"resources/icones/16x16/application.png\"> '+value);"
+                                    "if (record.data.site) {record.data.allowDrag=false;return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/globe.png\"> '+value);}\r",
+                                    "else return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png\"> '+value);"
                                 ],
                                 "designer|userClassName": "renderer"
                             },

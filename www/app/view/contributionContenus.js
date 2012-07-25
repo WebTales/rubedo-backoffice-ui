@@ -71,7 +71,12 @@ Ext.define('KECMdesktop.view.contributionContenus', {
                             xtype: 'image',
                             height: 45,
                             width: 48,
-                            src: 'resources/icones/48x48/page_full.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -92,35 +97,35 @@ Ext.define('KECMdesktop.view.contributionContenus', {
                         {
                             xtype: 'button',
                             id: 'boutonAjouterContenu',
-                            icon: 'resources/icones/32x32/add.png',
+                            iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonModifierContenu',
-                            icon: 'resources/icones/32x32/pencil.png',
+                            iconCls: 'pencil_big',
                             scale: 'large',
                             text: 'Modifier'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerContenu',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
                         {
                             xtype: 'button',
                             id: 'ajoutPanierContenus',
-                            icon: 'resources/icones/32x32/shopping_cart_add.png',
+                            iconCls: 'shopping_cart_add_big',
                             scale: 'large',
                             text: 'Ajouter au panier'
                         },
@@ -130,7 +135,7 @@ Ext.define('KECMdesktop.view.contributionContenus', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -154,7 +159,7 @@ Ext.define('KECMdesktop.view.contributionContenus', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return ('<img src="resources/icones/16x16/folder.png"> '+value);
+                                return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
                             },
                             width: 672,
                             dataIndex: 'type',
@@ -179,7 +184,7 @@ Ext.define('KECMdesktop.view.contributionContenus', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/16x16/page_full.png"> '+value);
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> '+value);
                             },
                             dataIndex: 'text',
                             flex: 1,
@@ -200,6 +205,10 @@ Ext.define('KECMdesktop.view.contributionContenus', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
     }
 
 });

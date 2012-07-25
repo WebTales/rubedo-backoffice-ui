@@ -1,0 +1,99 @@
+{
+    "id": "ExtBox1-ext-gen8107",
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "personalPrefsDataModel",
+        "designer|userAlias": "personalPrefsDataModel"
+    },
+    "customConfigs": [],
+    "designerId": "d0fd2671-4491-440c-8e6c-915c6cca062e",
+    "$viewOrder": 15,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8115",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "stylesheet",
+                "type": "string",
+                "designer|userClassName": "MyField74"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8119",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "wallpaper",
+                "type": "string",
+                "designer|userClassName": "MyField74"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8127",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "iconSet",
+                "type": "string",
+                "designer|userClassName": "MyField74"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12636",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "myName",
+                "type": "string",
+                "designer|userClassName": "MyField74"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8192",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "themeColor",
+                "type": "string",
+                "designer|userClassName": "MyField74"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

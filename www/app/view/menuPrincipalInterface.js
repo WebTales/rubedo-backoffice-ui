@@ -119,7 +119,7 @@ Ext.define('KECMdesktop.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'menuUtilisateurs',
+                            itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
                             text: 'Utilisateurs'
                         },

@@ -25,7 +25,7 @@
     },
     "customConfigs": [],
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
-    "$viewOrder": 7,
+    "$viewOrder": 8,
     "expanded": false,
     "cn": [
         {
@@ -227,8 +227,8 @@
                     "            Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');\r",
                     "        }\r",
                     "        Ext.getCmp('champTCIdField').setValue(abstractcomponent.getComponent(4).id);    \r",
-                    "        this.frame('#D7251D');\r",
-                    "        this.applyStyles('color:#D7251D');\r",
+                    "        this.frame(MyPrefData.themeColor);\r",
+                    "        this.applyStyles('color:'+MyPrefData.themeColor);\r",
                     "        var mesChamps = abstractcomponent.getComponent(4).champsConfig;\r",
                     "        var boiteParam = Ext.getCmp('boiteConfigChampsTC');\r",
                     "        boiteParam.removeAll();\r",

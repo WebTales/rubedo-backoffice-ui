@@ -20,8 +20,8 @@
     },
     "customConfigs": [],
     "designerId": "80282cbf-46ae-4067-b98e-260703d28293",
-    "$viewOrder": 34,
-    "expanded": true,
+    "$viewOrder": 33,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen7431",
@@ -124,12 +124,34 @@
                         "height": 45,
                         "itemId": "imageBarreMeta",
                         "width": 48,
-                        "src": "resources/icones/48x48/database.png",
+                        "src": null,
                         "designer|userClassName": "MyImg2",
                         "layout|flex": null
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen25259",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageBarreMetaRender",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/database.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me",
+                                "designer|userClassName": "onImageBarreMetaRender"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 },
                 {
                     "id": "ExtBox1-ext-gen7469",
@@ -169,7 +191,7 @@
                 "dock": "top"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen12334",
@@ -182,8 +204,8 @@
                     "userConfig": {
                         "id": "boutonAjouterDossierMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/folder_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "folder_add_big",
                         "scale": "large",
                         "text": "Ajouter dossier",
                         "designer|userClassName": "MyButton13",
@@ -203,8 +225,8 @@
                     "userConfig": {
                         "id": "boutonSupprimerDossierMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/folder_remove.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "folder_remove_big",
                         "scale": "large",
                         "text": "Supprimer dossier",
                         "designer|userClassName": "MyButton13",
@@ -224,8 +246,8 @@
                     "userConfig": {
                         "id": "boutonUploadMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/database_up.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "database_up_big",
                         "scale": "large",
                         "text": "Upload",
                         "designer|userClassName": "MyButton13",
@@ -245,8 +267,8 @@
                     "userConfig": {
                         "id": "boutonDownloadMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/database_down.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "database_down_big",
                         "scale": "large",
                         "text": "Download",
                         "designer|userClassName": "MyButton13",
@@ -266,31 +288,10 @@
                     "userConfig": {
                         "id": "boutonSupprimerMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/remove.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer",
-                        "designer|userClassName": "MyButton13",
-                        "layout|flex": null
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen14706",
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "boutonApercuMedias",
-                        "itemId": null,
-                        "icon": "resources/icones/32x32/play.png",
-                        "iconCls": null,
-                        "scale": "large",
-                        "text": "Aperçu",
                         "designer|userClassName": "MyButton13",
                         "layout|flex": null
                     },
@@ -308,8 +309,8 @@
                     "userConfig": {
                         "id": "boutonEditionMedias",
                         "itemId": null,
-                        "icon": "resources/icones/32x32/pencil.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "pencil_big",
                         "scale": "large",
                         "text": "Edition",
                         "designer|userClassName": "MyButton13",
@@ -328,8 +329,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonCreerRaccourci",
-                        "icon": "resources/icones/32x32/favorite_add.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "favorite_add_big",
                         "scale": "large",
                         "text": "Ajouter aux favoris",
                         "designer|userClassName": "MyButton14",
@@ -363,8 +364,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "boutonAide",
-                        "icon": "resources/icones/32x32/info.png",
-                        "iconCls": null,
+                        "icon": null,
+                        "iconCls": "info_big",
                         "scale": "large",
                         "text": "",
                         "designer|userClassName": "MyButton94",
@@ -450,7 +451,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return ('<img src=\"resources/icones/16x16/folder.png\"> '+value);"
+                                    "return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> '+value);"
                                 ],
                                 "designer|userClassName": "renderer"
                             },
@@ -492,7 +493,7 @@
                 "layout|flex": 1
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen6283",

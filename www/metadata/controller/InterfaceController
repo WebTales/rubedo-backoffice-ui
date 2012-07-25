@@ -16,7 +16,7 @@
     "customConfigs": [],
     "designerId": "130f60c3-0d78-444a-92e2-79b56d3ab643",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen12025",
@@ -33,7 +33,7 @@
                     "    Ext.getCmp('menuPrincipalInterface').destroy();\r",
                     "}\r",
                     "else {\r",
-                    "    var menuPrincipal = Ext.widget('menuPrincipalInterface');\r",
+                    "    var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});\r",
                     "\r",
                     "\r",
                     "    menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-310);   \r",
@@ -117,7 +117,17 @@
                     "Ext.getCmp('boutonPincipalInterface').addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });\r",
                     "Ext.getCmp('boutonPincipalInterface').addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
                     "    Ext.getCmp('menuPrincipalInterface').destroy();\r",
-                    "}}); }); "
+                    "}}); }); \r",
+                    "Ext.getStore('PersonalPrefsStore').load({\r",
+                    "    callback:function(){\r",
+                    "        var myPrefs=this.getRange()[0].data;\r",
+                    "        Ext.getCmp('desktopBackGround').setSrc(myPrefs.wallpaper);\r",
+                    "        Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.stylesheet);\r",
+                    "        MyPrefData.iconsDir=myPrefs.iconSet;\r",
+                    "        MyPrefData.myName=myPrefs.myName;\r",
+                    "        MyPrefData.themeColor=myPrefs.themeColor;\r",
+                    "    }\r",
+                    "});"
                 ],
                 "designer|userClassName": "onLaunch"
             },
@@ -200,7 +210,7 @@
                 "fn": "showDesktop",
                 "implHandler": [
                     "Ext.WindowManager.each(function(window){\r",
-                    "    if (window.isVisible()) {window.hide();}\r",
+                    "    if (window.isVisible()) {window.minimize();}\r",
                     "});"
                 ],
                 "name": "click",
@@ -341,22 +351,367 @@
                 "implHandler": [
                     "\r",
                     "Ext.getStore('IconesDataJson').load({ callback: function(){\r",
-                    "var icones = Ext.getStore('IconesDataJson').getRange();\r",
-                    "abstractcomponent.removeAll();\r",
-                    "Ext.Array.forEach(icones, function(icone){\r",
-                    "    var nIcone = Ext.widget('iconeBureau');\r",
-                    "    nIcone.setTitle(icone.data.text);\r",
-                    "    abstractcomponent.add(nIcone);\r",
-                    "    nIcone.setPosition(icone.data.posX, icone.data.posY);\r",
-                    "    nIcone.getComponent(0).setSrc(icone.data.image);\r",
-                    "}); \r",
-                    "}});"
+                    "    var icones = Ext.getStore('IconesDataJson').getRange();\r",
+                    "    abstractcomponent.removeAll();\r",
+                    "    Ext.Array.forEach(icones, function(icone){\r",
+                    "        var nIcone = Ext.widget('iconeBureau');\r",
+                    "        nIcone.setTitle(icone.data.text);\r",
+                    "        abstractcomponent.add(nIcone);\r",
+                    "        nIcone.setPosition(icone.data.posX, icone.data.posY);\r",
+                    "        nIcone.getComponent(0).setSrc(icone.data.image);\r",
+                    "    }); \r",
+                    "}});\r",
+                    "abstractcomponent.getEl().on('contextmenu', function(e){\r",
+                    "    var menu= Ext.getCmp('settingsContextMenu');\r",
+                    "    if (Ext.isEmpty(menu)){\r",
+                    "        menu = Ext.widget('settingsContextMenu');\r",
+                    "        menu.on('blur', function(){this.destroy();});}\r",
+                    "        menu.showAt(Ext.EventObject.getXY());\r",
+                    "        e.stopEvent();\r",
+                    "\r",
+                    "\r",
+                    "    }); "
                 ],
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.container.Container",
                 "designer|controlQuery": "#boiteAIconesBureau",
                 "designer|userClassName": "majIcones"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13548",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideAllIcons",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.hide();});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#itemHideAllIcons",
+                "designer|userClassName": "hideAllIcons"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14014",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showAllIcons",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.show();});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#itemShowAllIcons",
+                "designer|userClassName": "showAllIcons"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14882",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reagarangeAllIcons",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.setPosition(0,0);});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#itemRearangeAllIcons",
+                "designer|userClassName": "reagarangeAllIcons"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17121",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayDesktopCustomizeWindow",
+                "implHandler": [
+                    "var fenetre=Ext.getCmp('DesktopCustomizeWindow'); \r",
+                    "if (Ext.isEmpty(fenetre)){\r",
+                    "    fenetre=Ext.widget('DesktopCustomizeWindow');\r",
+                    "    Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "}fenetre.show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#itemCustomizeDesktop",
+                "designer|userClassName": "displayDesktopCustomizeWindow"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen31775",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateWallpaperPreview",
+                "implHandler": [
+                    "Ext.getCmp('wallpaperPicker').getComponent(0).setSrc(record.data.file);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#wallpaperGrid",
+                "designer|userClassName": "updateWallpaperPreview"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33926",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "wallpaperChange",
+                "implHandler": [
+                    "Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#wallpaperPickerButton",
+                "designer|userClassName": "wallpaperChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6286",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Ext.define('MyPrefData', { \r",
+                    "    singleton: true, \r",
+                    "\r",
+                    "    iconsDir: 'red',\r",
+                    "    highContrast:false,\r",
+                    "    myName:'Alexandru Dobre',\r",
+                    "    themeColor: '#D7251D'\r",
+                    "}); "
+                ],
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-basic-function",
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen11035",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelExpand",
+                "implHandler": [
+                    "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
+                    "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('themePicker'));"
+                ],
+                "name": "expand",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#themeGrid",
+                "designer|userClassName": "onGridpanelExpand"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12115",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelExpand1",
+                "implHandler": [
+                    "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
+                    "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('wallpaperPicker'));"
+                ],
+                "name": "expand",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#wallpaperGrid",
+                "designer|userClassName": "onGridpanelExpand1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14439",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelItemClick",
+                "implHandler": [
+                    "Ext.getCmp('themePicker').getComponent(0).setSrc(record.data.preview);"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#themeGrid",
+                "designer|userClassName": "onGridpanelItemClick"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16215",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyTheme",
+                "implHandler": [
+                    "var theme = Ext.getCmp('themeGrid').getSelectionModel().getLastSelected().data;\r",
+                    "Ext.getCmp('desktopBackGround').setSrc(theme.wallpaper);\r",
+                    "Ext.util.CSS.swapStyleSheet('maintheme', theme.stylesheet);\r",
+                    "MyPrefData.iconsDir=theme.iconSet;\r",
+                    "MyPrefData.themeColor=theme.themeColor;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#themePickerButton",
+                "designer|userClassName": "applyTheme"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21299",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelExpand",
+                "implHandler": [
+                    "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
+                    "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('accessibilityPicker'));"
+                ],
+                "name": "expand",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#accessibilityOptionsPanel",
+                "designer|userClassName": "onPanelExpand"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen22445",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "HCmode",
+                "implHandler": [
+                    "if (MyPrefData.highContrast===false) {\r",
+                    "    Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');\r",
+                    "    MyPrefData.highContrast=true;\r",
+                    "    button.setText('Désactiver');\r",
+                    "} else {Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-gray.css');\r",
+                    "    MyPrefData.highContrast=false;\r",
+                    "    button.setText('Activer');\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#highContrastButton",
+                "designer|userClassName": "HCmode"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24577",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setHCButtonStatus",
+                "implHandler": [
+                    "if (MyPrefData.highContrast===true) {\r",
+                    "    abstractcomponent.setText('Désactiver');\r",
+                    "} "
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#highContrastButton",
+                "designer|userClassName": "setHCButtonStatus"
             },
             "customConfigs": [],
             "expanded": true

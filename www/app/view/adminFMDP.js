@@ -74,7 +74,12 @@ Ext.define('KECMdesktop.view.adminFMDP', {
                             xtype: 'image',
                             height: 45,
                             width: 48,
-                            src: 'resources/icones/48x48/application.png'
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'container',
@@ -96,70 +101,70 @@ Ext.define('KECMdesktop.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'boutonNouveauMasque',
-                            icon: 'resources/icones/32x32/add.png',
+                            iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerMasque',
-                            icon: 'resources/icones/32x32/remove.png',
+                            iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonCopierMasque',
-                            icon: 'resources/icones/32x32/applications.png',
+                            iconCls: 'applications_big',
                             scale: 'large',
                             text: 'Copier'
                         },
                         {
                             xtype: 'button',
                             id: 'nouvelleZone',
-                            icon: 'resources/icones/32x32/window_add.png',
+                            iconCls: 'window_add_big',
                             scale: 'large',
                             text: 'Nouvelle Zone'
                         },
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesExporter',
-                            icon: 'resources/icones/32x32/application_down.png',
+                            iconCls: 'application_down_big',
                             scale: 'large',
                             text: 'Exporter'
                         },
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesImporter',
-                            icon: 'resources/icones/32x32/application_up.png',
+                            iconCls: 'application_up_big',
                             scale: 'large',
                             text: 'Importer'
                         },
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesEnregistrer',
-                            icon: 'resources/icones/32x32/floppy_disc.png',
+                            iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
                         },
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesPublier',
-                            icon: 'resources/icones/32x32/floppy_disc_accept.png',
+                            iconCls: 'floppy_disc_accept_big',
                             scale: 'large',
                             text: 'Enregistrer et publier'
                         },
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
-                            icon: 'resources/icones/32x32/favorite_add.png',
+                            iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
                         },
                         {
                             xtype: 'button',
                             id: 'ajouterPanierMasques',
-                            icon: 'resources/icones/32x32/shopping_cart_add.png',
+                            iconCls: 'shopping_cart_add_big',
                             scale: 'large',
                             text: 'Ajouter au panier'
                         },
@@ -169,7 +174,7 @@ Ext.define('KECMdesktop.view.adminFMDP', {
                         {
                             xtype: 'button',
                             itemId: 'boutonAide',
-                            icon: 'resources/icones/32x32/info.png',
+                            iconCls: 'info_big',
                             scale: 'large',
                             text: ''
                         }
@@ -202,7 +207,7 @@ Ext.define('KECMdesktop.view.adminFMDP', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/16x16/application.png"> ' + value );
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> ' + value );
                             },
                             dataIndex: 'text',
                             editor: {
@@ -402,6 +407,10 @@ Ext.define('KECMdesktop.view.adminFMDP', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
     },
 
     onPaneauPropMasqueResize: function(abstractcomponent, adjWidth, adjHeight, options) {
