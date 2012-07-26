@@ -29,7 +29,7 @@ Ext.define('KECMdesktop.store.WallpapersDataJson', {
             model: 'KECMdesktop.model.wallpaperDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/wallpapers.json',
+                url: 'data/Wallpapers.json',
                 reader: {
                     type: 'json'
                 }
