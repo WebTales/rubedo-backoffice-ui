@@ -1,7 +1,7 @@
-Ext.define('KECMdesktop.view.override.mediaWindowsView', {
-    requires: 'KECMdesktop.view.mediaWindowsView'
+Ext.define('Rubedo.view.override.mediaWindowsView', {
+    requires: 'Rubedo.view.mediaWindowsView'
 }, function() {
-    Ext.override(KECMdesktop.view.mediaWindowsView, {
+    Ext.override(Rubedo.view.mediaWindowsView, {
         plugins:[
                 Ext.create('Ext.ux.DataView.DragSelector', {}),
                 Ext.create('Ext.ux.DataView.LabelEditor', {dataIndex: 'text'})

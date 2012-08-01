@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.ContributionSitesController', {
+Ext.define('Rubedo.controller.ContributionSitesController', {
     extend: 'Ext.app.Controller',
 
     stores: [

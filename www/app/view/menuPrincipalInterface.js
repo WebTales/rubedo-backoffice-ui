@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.menuPrincipalInterface', {
+Ext.define('Rubedo.view.menuPrincipalInterface', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.menuPrincipalInterface',
 

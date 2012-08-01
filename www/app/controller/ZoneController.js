@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.ZoneController', {
+Ext.define('Rubedo.controller.ZoneController', {
     extend: 'Ext.app.Controller',
 
     views: [

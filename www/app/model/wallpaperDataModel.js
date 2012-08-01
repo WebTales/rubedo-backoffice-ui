@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.wallpaperDataModel', {
+Ext.define('Rubedo.model.wallpaperDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.wallpaperDataModel',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.wallpaperPicker', {
+Ext.define('Rubedo.view.wallpaperPicker', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.wallpaperPicker',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.champsTCARStore', {
+Ext.define('Rubedo.store.champsTCARStore', {
     extend: 'Ext.data.Store',
     alias: 'store.champsTCARStore',
 

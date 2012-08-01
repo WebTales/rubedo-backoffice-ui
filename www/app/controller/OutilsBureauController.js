@@ -13,6 +13,6 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.OutilsBureauController', {
+Ext.define('Rubedo.controller.OutilsBureauController', {
     extend: 'Ext.app.Controller'
 });

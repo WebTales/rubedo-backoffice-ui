@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ajoutBlocFenetre', {
+Ext.define('Rubedo.view.ajoutBlocFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajoutBlocFenetre',
 

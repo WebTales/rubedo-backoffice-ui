@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.iconDataModel', {
+Ext.define('Rubedo.model.iconDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.iconDataModel',
 

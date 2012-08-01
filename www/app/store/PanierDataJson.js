@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.PanierDataJson', {
+Ext.define('Rubedo.store.PanierDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.panierDataJson',
     requires: [
-        'KECMdesktop.model.panierDataModel'
+        'Rubedo.model.panierDataModel'
     ],
 
     constructor: function(cfg) {
@@ -27,12 +27,19 @@ Ext.define('KECMdesktop.store.PanierDataJson', {
             autoLoad: true,
             autoSync: true,
             storeId: 'PanierDataJson',
-            model: 'KECMdesktop.model.panierDataModel',
+            model: 'Rubedo.model.panierDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Panier.json',
+                api: {
+                    create: 'panier/create',
+                    read: 'data/Panier.json',
+                    update: 'panier/update',
+                    destroy: 'panier/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
                 },
                 writer: {
                     type: 'json'

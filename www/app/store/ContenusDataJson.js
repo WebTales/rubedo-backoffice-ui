@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.ContenusDataJson', {
+Ext.define('Rubedo.store.ContenusDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.ContenusDataJson',
     requires: [
-        'KECMdesktop.model.contenusDataModel'
+        'Rubedo.model.contenusDataModel'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('KECMdesktop.store.ContenusDataJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: ' ',
-            model: 'KECMdesktop.model.contenusDataModel',
+            model: 'Rubedo.model.contenusDataModel',
             proxy: {
                 type: 'ajax'
             }

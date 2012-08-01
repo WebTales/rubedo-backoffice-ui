@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.assisstantRE4', {
+Ext.define('Rubedo.view.assisstantRE4', {
     extend: 'Ext.form.Panel',
     alias: 'widget.assisstantRE4',
 

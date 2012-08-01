@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.UnBloc', {
+Ext.define('Rubedo.view.UnBloc', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.unBloc',
 

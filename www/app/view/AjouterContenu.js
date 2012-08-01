@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.AjouterContenu', {
+Ext.define('Rubedo.view.AjouterContenu', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajouterContenu',
 

@@ -23,7 +23,7 @@ Ext.Loader.setConfig({
 
 Ext.application({
     requires: [
-        'KECMdesktop.view.override.mediaWindowsView'
+        'Rubedo.view.override.mediaWindowsView'
     ],
 
     models: [
@@ -80,7 +80,7 @@ Ext.application({
         'adminFUtilisateurs'
     ],
     autoCreateViewport: true,
-    name: 'KECMdesktop',
+    name: 'Rubedo',
     controllers: [
         'ContributionSitesController',
         'PanierController',

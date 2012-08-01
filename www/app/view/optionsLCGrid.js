@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.optionsLCGrid', {
+Ext.define('Rubedo.view.optionsLCGrid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.optionsLCGrid',
 

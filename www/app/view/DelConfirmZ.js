@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.DelConfirmZ', {
+Ext.define('Rubedo.view.DelConfirmZ', {
     extend: 'Ext.window.Window',
     alias: 'widget.delConfirmZ',
 

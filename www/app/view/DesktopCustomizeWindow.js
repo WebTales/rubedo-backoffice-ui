@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.DesktopCustomizeWindow', {
+Ext.define('Rubedo.view.DesktopCustomizeWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.DesktopCustomizeWindow',
     requires: [
-        'KECMdesktop.view.wallpaperPicker'
+        'Rubedo.view.wallpaperPicker'
     ],
 
     height: 450,

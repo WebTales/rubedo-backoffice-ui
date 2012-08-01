@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.MyGridPanel3', {
+Ext.define('Rubedo.view.MyGridPanel3', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.mygridpanel3',
 

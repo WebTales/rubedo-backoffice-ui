@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.blocDataModel', {
+Ext.define('Rubedo.model.blocDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.blocDataModel',
 

@@ -13,10 +13,10 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.VersionsDataJson', {
+Ext.define('Rubedo.store.VersionsDataJson', {
     extend: 'Ext.data.Store',
     requires: [
-        'KECMdesktop.model.versionsDataModel'
+        'Rubedo.model.versionsDataModel'
     ],
 
     constructor: function(cfg) {
@@ -24,7 +24,7 @@ Ext.define('KECMdesktop.store.VersionsDataJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'VersionsDataJson',
-            model: 'KECMdesktop.model.versionsDataModel',
+            model: 'Rubedo.model.versionsDataModel',
             proxy: {
                 type: 'ajax'
             }

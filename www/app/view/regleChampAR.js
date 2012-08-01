@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.regleChampAR', {
+Ext.define('Rubedo.view.regleChampAR', {
     extend: 'Ext.container.Container',
     alias: 'widget.regleChampAR',
 

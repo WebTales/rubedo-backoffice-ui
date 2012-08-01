@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.BlocsDataStore', {
+Ext.define('Rubedo.store.BlocsDataStore', {
     extend: 'Ext.data.Store',
     alias: 'store.BlocsDataStore',
     requires: [
-        'KECMdesktop.model.blocDataModel'
+        'Rubedo.model.blocDataModel'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +26,7 @@ Ext.define('KECMdesktop.store.BlocsDataStore', {
         me.callParent([Ext.apply({
             autoLoad: true,
             storeId: 'BlocsDataStore',
-            model: 'KECMdesktop.model.blocDataModel',
+            model: 'Rubedo.model.blocDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Blocs.json',

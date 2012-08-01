@@ -17,7 +17,7 @@
     "customConfigs": [],
     "designerId": "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
     "$viewOrder": 2,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen16240",
@@ -28,7 +28,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Panier.json",
+                "api": "{\n                        'create':'panier/create',\n                        'read':'data/Panier.json',\n                        'update':'panier/update',\n                        'destroy':'panier/delete'\n                }",
+                "url": null,
                 "designer|userClassName": "MyAjaxProxy1"
             },
             "customConfigs": [],
@@ -43,6 +44,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data",
                         "designer|userClassName": "MyJsonReader1"
                     },
                     "customConfigs": [],

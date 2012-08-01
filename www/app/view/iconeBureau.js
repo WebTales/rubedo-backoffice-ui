@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.iconeBureau', {
+Ext.define('Rubedo.view.iconeBureau', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.iconeBureau',
 

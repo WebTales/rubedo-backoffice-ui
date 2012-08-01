@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.nouveauMasque', {
+Ext.define('Rubedo.view.nouveauMasque', {
     extend: 'Ext.window.Window',
     alias: 'widget.nouveauMasque',
 

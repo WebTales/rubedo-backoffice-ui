@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.MediathequeController', {
+Ext.define('Rubedo.controller.MediathequeController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.MediathequeController',
 

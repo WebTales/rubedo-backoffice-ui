@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.MediaViewStore', {
+Ext.define('Rubedo.store.MediaViewStore', {
     extend: 'Ext.data.Store',
     alias: 'store.MediaViewStore',
     requires: [
-        'KECMdesktop.model.mediaViewModel'
+        'Rubedo.model.mediaViewModel'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('KECMdesktop.store.MediaViewStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'MediaViewStore',
-            model: 'KECMdesktop.model.mediaViewModel',
+            model: 'Rubedo.model.mediaViewModel',
             proxy: {
                 type: 'ajax',
                 reader: {

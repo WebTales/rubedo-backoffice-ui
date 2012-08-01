@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.copierMasque', {
+Ext.define('Rubedo.view.copierMasque', {
     extend: 'Ext.window.Window',
     alias: 'widget.copierMasque',
 

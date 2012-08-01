@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ViewportPrimaire', {
+Ext.define('Rubedo.view.ViewportPrimaire', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.ViewportPrimaire',
     requires: [
-        'KECMdesktop.view.EnteteV'
+        'Rubedo.view.EnteteV'
     ],
 
     id: 'ViewportPrimaire',

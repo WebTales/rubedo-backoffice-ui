@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.contributionMedias', {
+Ext.define('Rubedo.view.contributionMedias', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionMedias',
     requires: [
-        'KECMdesktop.view.mediaWindowsView'
+        'Rubedo.view.mediaWindowsView'
     ],
 
     height: 578,

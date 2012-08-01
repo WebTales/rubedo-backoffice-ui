@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.Zone', {
+Ext.define('Rubedo.view.Zone', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.zone',
     requires: [
-        'KECMdesktop.view.Colonne'
+        'Rubedo.view.Colonne'
     ],
 
     height: 150,

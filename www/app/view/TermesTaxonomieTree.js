@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.TermesTaxonomieTree', {
+Ext.define('Rubedo.view.TermesTaxonomieTree', {
     extend: 'Ext.tree.Panel',
     alias: 'widget.TermesTaxonomieTree',
 

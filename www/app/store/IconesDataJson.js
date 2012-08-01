@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.IconesDataJson', {
+Ext.define('Rubedo.store.IconesDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.IconesDataJson',
     requires: [
-        'KECMdesktop.model.iconDataModel'
+        'Rubedo.model.iconDataModel'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +26,7 @@ Ext.define('KECMdesktop.store.IconesDataJson', {
         me.callParent([Ext.apply({
             autoLoad: false,
             storeId: 'IconesDataJson',
-            model: 'KECMdesktop.model.iconDataModel',
+            model: 'Rubedo.model.iconDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Icones.json',

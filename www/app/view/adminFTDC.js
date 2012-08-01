@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.adminFTDC', {
+Ext.define('Rubedo.view.adminFTDC', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFTDC',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ongletTCDep', {
+Ext.define('Rubedo.view.ongletTCDep', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.ongletTCDep',
 

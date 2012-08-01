@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.ThemesDataJson', {
+Ext.define('Rubedo.store.ThemesDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.ThemesDataJson',
     requires: [
-        'KECMdesktop.model.themeDataModel'
+        'Rubedo.model.themeDataModel'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +26,7 @@ Ext.define('KECMdesktop.store.ThemesDataJson', {
         me.callParent([Ext.apply({
             autoLoad: true,
             storeId: 'ThemesDataJson',
-            model: 'KECMdesktop.model.themeDataModel',
+            model: 'Rubedo.model.themeDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Themes.json',

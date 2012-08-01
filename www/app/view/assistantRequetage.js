@@ -13,12 +13,12 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.assistantRequetage', {
+Ext.define('Rubedo.view.assistantRequetage', {
     extend: 'Ext.window.Window',
     alias: 'widget.assistantRequetage',
     requires: [
-        'KECMdesktop.view.assisstantRE4',
-        'KECMdesktop.view.MyForm11'
+        'Rubedo.view.assisstantRE4',
+        'Rubedo.view.MyForm11'
     ],
 
     height: 400,

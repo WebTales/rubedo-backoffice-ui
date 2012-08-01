@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.TaxonomieDataJson', {
+Ext.define('Rubedo.store.TaxonomieDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.TaxonomieDataJson',
     requires: [
-        'KECMdesktop.model.taxonomieDataModel'
+        'Rubedo.model.taxonomieDataModel'
     ],
 
     constructor: function(cfg) {
@@ -27,7 +27,7 @@ Ext.define('KECMdesktop.store.TaxonomieDataJson', {
             autoLoad: true,
             autoSync: false,
             storeId: 'TaxonomieDataJson',
-            model: 'KECMdesktop.model.taxonomieDataModel',
+            model: 'Rubedo.model.taxonomieDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Taxonomie.json',

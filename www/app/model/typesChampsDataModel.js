@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.typesChampsDataModel', {
+Ext.define('Rubedo.model.typesChampsDataModel', {
     extend: 'Ext.data.Model',
 
     fields: [

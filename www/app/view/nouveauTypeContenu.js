@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.nouveauTypeContenu', {
+Ext.define('Rubedo.view.nouveauTypeContenu', {
     extend: 'Ext.window.Window',
     alias: 'widget.nouveauTypeContenu',
 

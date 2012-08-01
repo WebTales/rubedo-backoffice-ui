@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.MyForm11', {
+Ext.define('Rubedo.view.MyForm11', {
     extend: 'Ext.form.Panel',
     alias: 'widget.myform11',
 

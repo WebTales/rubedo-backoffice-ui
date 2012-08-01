@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.assistantRequetageController', {
+Ext.define('Rubedo.controller.assistantRequetageController', {
     extend: 'Ext.app.Controller',
 
     views: [

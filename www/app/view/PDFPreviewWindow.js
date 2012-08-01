@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.PDFPreviewWindow', {
+Ext.define('Rubedo.view.PDFPreviewWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.PDFPreviewWindow',
 

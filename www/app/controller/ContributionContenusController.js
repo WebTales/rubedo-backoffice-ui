@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.ContributionContenusController', {
+Ext.define('Rubedo.controller.ContributionContenusController', {
     extend: 'Ext.app.Controller',
 
     models: [

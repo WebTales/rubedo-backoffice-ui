@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.TypesContenusDepDataJson', {
+Ext.define('Rubedo.store.TypesContenusDepDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.TypesContenusDepDataJson',
 

@@ -13,10 +13,10 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.MasquesDataJson', {
+Ext.define('Rubedo.store.MasquesDataJson', {
     extend: 'Ext.data.Store',
     requires: [
-        'KECMdesktop.model.masquesDataModel'
+        'Rubedo.model.masquesDataModel'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('KECMdesktop.store.MasquesDataJson', {
         me.callParent([Ext.apply({
             autoLoad: true,
             storeId: 'MasquesDataJson',
-            model: 'KECMdesktop.model.masquesDataModel',
+            model: 'Rubedo.model.masquesDataModel',
             groupers: {
                 property: 'site'
             },

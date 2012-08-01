@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.mediaWindowsView', {
+Ext.define('Rubedo.view.mediaWindowsView', {
     extend: 'Ext.view.View',
     alias: 'widget.mediaWindowsView',
 

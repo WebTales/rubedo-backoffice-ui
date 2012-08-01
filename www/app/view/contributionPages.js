@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.contributionPages', {
+Ext.define('Rubedo.view.contributionPages', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionPages',
     requires: [
-        'KECMdesktop.view.MyGridPanel3'
+        'Rubedo.view.MyGridPanel3'
     ],
 
     height: 578,

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.TaxonomieController', {
+Ext.define('Rubedo.controller.TaxonomieController', {
     extend: 'Ext.app.Controller',
 
     models: [

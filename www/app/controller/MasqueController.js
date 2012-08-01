@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.MasqueController', {
+Ext.define('Rubedo.controller.MasqueController', {
     extend: 'Ext.app.Controller',
 
     models: [

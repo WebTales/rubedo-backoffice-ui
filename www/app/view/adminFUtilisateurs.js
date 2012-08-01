@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.adminFUtilisateurs', {
+Ext.define('Rubedo.view.adminFUtilisateurs', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFUtilisateurs',
 

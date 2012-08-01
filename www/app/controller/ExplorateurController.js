@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.ExplorateurController', {
+Ext.define('Rubedo.controller.ExplorateurController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.ExplorateurController',
 

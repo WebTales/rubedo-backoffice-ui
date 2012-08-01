@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ImagePreviewWindow', {
+Ext.define('Rubedo.view.ImagePreviewWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePreviewWindow',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.mediaImageEditor', {
+Ext.define('Rubedo.view.mediaImageEditor', {
     extend: 'Ext.window.Window',
     alias: 'widget.mediaImageEditor',
 

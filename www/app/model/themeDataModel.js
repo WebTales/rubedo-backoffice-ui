@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.themeDataModel', {
+Ext.define('Rubedo.model.themeDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.themeDataModel',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.StoreOptionFiltrageTaxonomie', {
+Ext.define('Rubedo.store.StoreOptionFiltrageTaxonomie', {
     extend: 'Ext.data.Store',
 
     constructor: function(cfg) {

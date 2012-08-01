@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.WallpapersDataJson', {
+Ext.define('Rubedo.store.WallpapersDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.WallpapersDataJson',
     requires: [
-        'KECMdesktop.model.wallpaperDataModel'
+        'Rubedo.model.wallpaperDataModel'
     ],
 
     constructor: function(cfg) {
@@ -26,10 +26,10 @@ Ext.define('KECMdesktop.store.WallpapersDataJson', {
         me.callParent([Ext.apply({
             autoLoad: true,
             storeId: 'WallpapersDataJson',
-            model: 'KECMdesktop.model.wallpaperDataModel',
+            model: 'Rubedo.model.wallpaperDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Wallpapers.json',
+                url: 'data/wallpapers.json',
                 reader: {
                     type: 'json'
                 }

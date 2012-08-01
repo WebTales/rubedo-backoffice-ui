@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.termeTaxonomieModel', {
+Ext.define('Rubedo.model.termeTaxonomieModel', {
     extend: 'Ext.data.Model',
     alias: 'model.termeTaxonomieModel',
 

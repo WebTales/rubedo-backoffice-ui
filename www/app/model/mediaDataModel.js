@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.mediaDataModel', {
+Ext.define('Rubedo.model.mediaDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.mediaDataModel',
 

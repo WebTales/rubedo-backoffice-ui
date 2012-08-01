@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.Panier', {
+Ext.define('Rubedo.view.Panier', {
     extend: 'Ext.window.Window',
     alias: 'widget.panier',
 

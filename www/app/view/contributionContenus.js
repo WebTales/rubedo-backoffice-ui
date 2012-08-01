@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.contributionContenus', {
+Ext.define('Rubedo.view.contributionContenus', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionContenus',
 

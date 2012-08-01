@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.masquesDataModel', {
+Ext.define('Rubedo.model.masquesDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.masquesDataModel',
 

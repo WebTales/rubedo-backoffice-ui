@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ImportationMasques', {
+Ext.define('Rubedo.view.ImportationMasques', {
     extend: 'Ext.window.Window',
     alias: 'widget.importationMasques',
 

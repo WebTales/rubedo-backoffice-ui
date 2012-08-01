@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.settingsContextMenu', {
+Ext.define('Rubedo.view.settingsContextMenu', {
     extend: 'Ext.menu.Menu',
     alias: 'widget.settingsContextMenu',
 

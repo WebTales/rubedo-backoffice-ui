@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.SitesDataJson', {
+Ext.define('Rubedo.store.SitesDataJson', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.sitesDataJson',
     requires: [
-        'KECMdesktop.model.sitesDataModel'
+        'Rubedo.model.sitesDataModel'
     ],
 
     constructor: function(cfg) {
@@ -27,7 +27,7 @@ Ext.define('KECMdesktop.store.SitesDataJson', {
             autoLoad: true,
             autoSync: true,
             storeId: 'SitesDataJson',
-            model: 'KECMdesktop.model.sitesDataModel',
+            model: 'Rubedo.model.sitesDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Sites.json',

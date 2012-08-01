@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.nouveauTaxoFenetre', {
+Ext.define('Rubedo.view.nouveauTaxoFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.nouveauTaxoFenetre',
 

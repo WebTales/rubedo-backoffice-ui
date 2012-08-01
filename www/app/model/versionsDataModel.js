@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.versionsDataModel', {
+Ext.define('Rubedo.model.versionsDataModel', {
     extend: 'Ext.data.Model',
 
     fields: [

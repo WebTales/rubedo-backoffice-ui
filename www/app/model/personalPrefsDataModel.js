@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.personalPrefsDataModel', {
+Ext.define('Rubedo.model.personalPrefsDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.personalPrefsDataModel',
 

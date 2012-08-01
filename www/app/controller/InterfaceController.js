@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.InterfaceController', {
+Ext.define('Rubedo.controller.InterfaceController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.InterfaceController',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.PanierController', {
+Ext.define('Rubedo.controller.PanierController', {
     extend: 'Ext.app.Controller',
 
     stores: [

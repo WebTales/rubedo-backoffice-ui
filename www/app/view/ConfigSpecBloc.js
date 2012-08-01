@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.ConfigSpecBloc', {
+Ext.define('Rubedo.view.ConfigSpecBloc', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.ConfigSpecBloc',
 

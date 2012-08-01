@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.adminFTaxonomie', {
+Ext.define('Rubedo.view.adminFTaxonomie', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFTaxonomie',
     requires: [
-        'KECMdesktop.view.TermesTaxonomieTree'
+        'Rubedo.view.TermesTaxonomieTree'
     ],
 
     height: 578,

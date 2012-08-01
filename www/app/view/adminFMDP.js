@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.adminFMDP', {
+Ext.define('Rubedo.view.adminFMDP', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFMDP',
     requires: [
-        'KECMdesktop.view.MyGridPanel3'
+        'Rubedo.view.MyGridPanel3'
     ],
 
     height: 578,

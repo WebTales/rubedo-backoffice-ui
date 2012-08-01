@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.EnteteV', {
+Ext.define('Rubedo.view.EnteteV', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.entete',
 

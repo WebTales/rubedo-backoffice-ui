@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.model.panierDataModel', {
+Ext.define('Rubedo.model.panierDataModel', {
     extend: 'Ext.data.Model',
 
     fields: [

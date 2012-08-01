@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.store.PersonalPrefsStore', {
+Ext.define('Rubedo.store.PersonalPrefsStore', {
     extend: 'Ext.data.Store',
     alias: 'store.PersonalPrefsStore',
     requires: [
-        'KECMdesktop.model.personalPrefsDataModel'
+        'Rubedo.model.personalPrefsDataModel'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('KECMdesktop.store.PersonalPrefsStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'PersonalPrefsStore',
-            model: 'KECMdesktop.model.personalPrefsDataModel',
+            model: 'Rubedo.model.personalPrefsDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/PersonalPrefs.json',

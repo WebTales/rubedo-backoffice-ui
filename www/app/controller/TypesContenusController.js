@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.controller.TypesContenusController', {
+Ext.define('Rubedo.controller.TypesContenusController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.TypesContenusController',
 

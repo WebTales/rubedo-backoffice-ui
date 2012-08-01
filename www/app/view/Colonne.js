@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('KECMdesktop.view.Colonne', {
+Ext.define('Rubedo.view.Colonne', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.colonne',
 
