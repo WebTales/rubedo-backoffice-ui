@@ -1,8 +1,141 @@
-[{"type":"Liste de Contenus",
-"description":"<h2>Bloc liste de contenus</h2> </br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d'un autre bloc si l'option \"re\u00e7oit param\u00e9tre\" est coch\u00e9e. Lorsque c'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.</p>",
-"configBasique":{"title":"Liste de contenus","bType":"Liste de Contenus",
-"flex":1,"champsConfig":{"simple":[{"categorie":"It\u00e9ration",
-"champs":[{"type":"Ext.form.field.Number",
-"config":{"fieldLabel":"Nombre de r\u00e9sultats affich\u00e9s","name":"nbResultatsAffiches"}},
-{"type":"Ext.form.field.Number","config":{"fieldLabel":"Ne pas afficher les n premiers r\u00e9sultats","name":"nbResultatsPasAfficher"}}]},
-{"categorie":"Contenus","champs":[{"type":"Ext.form.field.Trigger","ouvrir":"assistantRequetage","config":{"fieldLabel":"Requ\u00eate","name":"requeteContenus"}}]},{"categorie":"Pagination","champs":[{"type":"Ext.form.field.Checkbox","config":{"fieldLabel":"Utiliser la pagination","name":"utiliserPagination"}},{"type":"Ext.form.field.Text","config":{"fieldLabel":"Libell\u00e9","name":"libellePagination"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Taille des pages","name":"taillePagination"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Limite \"tout en une page\"","name":"limitePagination"}}]},{"categorie":"Tri","champs":[{"type":"Ext.form.field.Text","config":{"fieldLabel":"Trier par","name":"trierPar"}},{"type":"Ext.form.field.ComboBox","store":{"fields":["valeur","nom"],"data":[{"valeur":"AL","nom":"Croissant"},{"valeur":"AK","nom":"D\u00e9croissant"}]},"config":{"fieldLabel":"Ordre","queryMode":"local","displayField":"nom","valueField":"valeur","forceSelect":true,"editable":false,"name":"ordreAffichage"}}]}],"avance":[]},"configBloc":{}}},{"type":"D\u00e9tail de contenu","description":"Description du bloc d\u00e9tail de contenu","configBasique":{"title":"D\u00e9tail de contenu","flex":1,"champsConfig":{"simple":[{"categorie":"It\u00e9ration","champs":[{"type":"Ext.form.field.Number","config":{"fieldLabel":"p2","name":"nbResultatsAffiches"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Ne pas afficher les n premiers r\u00e9sultats","name":"nbResultatsPasAfficher"}}]}],"avance":[]},"configBloc":{}}}]
+[
+	{
+		"type": "Liste de Contenus",
+		"description": "<h2>Bloc liste de contenus</h2> </br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d'un autre bloc si l'option \"re\u00e7oit param\u00e9tre\" est coch\u00e9e. Lorsque c'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.</p>",
+		"configBasique": {
+			"title": "Liste de contenus",
+			"bType": "Liste de Contenus",
+			"flex": 1,
+			"champsConfig": {
+				"simple": [
+					{
+						"categorie": "It\u00e9ration",
+						"champs": [
+							{
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "Nombre de r\u00e9sultats affich\u00e9s",
+									"name": "nbResultatsAffiches"
+								}
+							}, {
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "Ne pas afficher les n premiers r\u00e9sultats",
+									"name": "nbResultatsPasAfficher"
+								}
+							}
+						]
+					}, {
+						"categorie": "Contenus",
+						"champs": [
+							{
+								"type": "Ext.form.field.Trigger",
+								"ouvrir": "assistantRequetage",
+								"config": {
+									"fieldLabel": "Requ\u00eate",
+									"name": "requeteContenus"
+								}
+							}
+						]
+					}, {
+						"categorie": "Pagination",
+						"champs": [
+							{
+								"type": "Ext.form.field.Checkbox",
+								"config": {
+									"fieldLabel": "Utiliser la pagination",
+									"name": "utiliserPagination"
+								}
+							}, {
+								"type": "Ext.form.field.Text",
+								"config": {
+									"fieldLabel": "Libell\u00e9",
+									"name": "libellePagination"
+								}
+							}, {
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "Taille des pages",
+									"name": "taillePagination"
+								}
+							}, {
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "Limite \"tout en une page\"",
+									"name": "limitePagination"
+								}
+							}
+						]
+					}, {
+						"categorie": "Tri",
+						"champs": [
+							{
+								"type": "Ext.form.field.Text",
+								"config": {
+									"fieldLabel": "Trier par",
+									"name": "trierPar"
+								}
+							}, {
+								"type": "Ext.form.field.ComboBox",
+								"store": {
+									"fields": ["valeur", "nom"],
+									"data": [
+										{
+											"valeur": "AL",
+											"nom": "Croissant"
+										}, {
+											"valeur": "AK",
+											"nom": "D\u00e9croissant"
+										}
+									]
+								},
+								"config": {
+									"fieldLabel": "Ordre",
+									"queryMode": "local",
+									"displayField": "nom",
+									"valueField": "valeur",
+									"forceSelect": true,
+									"editable": false,
+									"name": "ordreAffichage"
+								}
+							}
+						]
+					}
+				],
+				"avance": []
+			},
+			"configBloc": {}
+		}
+	}, {
+		"type": "D\u00e9tail de contenu",
+		"description": "Description du bloc d\u00e9tail de contenu",
+		"configBasique": {
+			"title": "D\u00e9tail de contenu",
+			"flex": 1,
+			"champsConfig": {
+				"simple": [
+					{
+						"categorie": "It\u00e9ration",
+						"champs": [
+							{
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "p2",
+									"name": "nbResultatsAffiches"
+								}
+							}, {
+								"type": "Ext.form.field.Number",
+								"config": {
+									"fieldLabel": "Ne pas afficher les n premiers r\u00e9sultats",
+									"name": "nbResultatsPasAfficher"
+								}
+							}
+						]
+					}
+				],
+				"avance": []
+			},
+			"configBloc": {}
+		}
+	}
+]
