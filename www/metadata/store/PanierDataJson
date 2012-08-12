@@ -61,7 +61,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": null,
-                        "root": null,
+                        "encode": true,
+                        "root": "data",
                         "designer|userClassName": "MyJsonWriter"
                     },
                     "customConfigs": [],

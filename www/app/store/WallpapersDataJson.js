@@ -29,7 +29,7 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
             model: 'Rubedo.model.wallpaperDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/wallpapers.json',
+                url: 'data/Wallpapers.json',
                 reader: {
                     type: 'json'
                 }

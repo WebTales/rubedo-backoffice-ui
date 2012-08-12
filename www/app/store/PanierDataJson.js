@@ -42,7 +42,9 @@ Ext.define('Rubedo.store.PanierDataJson', {
                     root: 'data'
                 },
                 writer: {
-                    type: 'json'
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             },
             listeners: {
