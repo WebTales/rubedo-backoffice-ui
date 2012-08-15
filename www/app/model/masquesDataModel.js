@@ -30,10 +30,6 @@ Ext.define('Rubedo.model.masquesDataModel', {
             type: 'string'
         },
         {
-            name: 'largeur',
-            type: 'int'
-        },
-        {
             name: 'auteur',
             type: 'string'
         },
@@ -50,7 +46,7 @@ Ext.define('Rubedo.model.masquesDataModel', {
             type: 'int'
         },
         {
-            name: 'zones',
+            name: 'rows',
             type: 'auto'
         },
         {

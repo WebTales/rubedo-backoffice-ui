@@ -250,24 +250,16 @@ Ext.define('Rubedo.view.adminFMDP', {
                             title: 'Edition',
                             items: [
                                 {
-                                    xtype: 'container',
-                                    autoScroll: true,
+                                    xtype: 'panel',
+                                    border: 0,
+                                    frame: false,
+                                    id: 'masqueEdition',
+                                    autoScroll: false,
                                     layout: {
-                                        type: 'absolute'
+                                        align: 'stretch',
+                                        type: 'vbox'
                                     },
-                                    flex: 1,
-                                    items: [
-                                        {
-                                            xtype: 'panel',
-                                            border: 0,
-                                            frame: false,
-                                            id: 'masqueEdition',
-                                            margin: '0, 20, 0, 20',
-                                            width: 1020,
-                                            autoScroll: false,
-                                            bodyStyle: '{background:#DDDDDD;}'
-                                        }
-                                    ]
+                                    flex: 1
                                 },
                                 {
                                     xtype: 'panel',

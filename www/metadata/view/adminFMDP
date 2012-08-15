@@ -21,7 +21,7 @@
     "customConfigs": [],
     "designerId": "5b65ea9f-b5de-4028-be66-16c03842ef21",
     "$viewOrder": 27,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen75554",
@@ -604,7 +604,7 @@
                 "layout|flex": 1
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen38965",
@@ -642,46 +642,30 @@
                             "expanded": true
                         },
                         {
-                            "id": "ExtBox1-ext-gen81966",
-                            "type": "container",
+                            "id": "ExtBox1-ext-gen38977",
+                            "type": "panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "autoScroll": true,
-                                "layout": "absolute",
-                                "designer|userClassName": "MyContainer4",
-                                "designer|snapToGrid": 10,
+                                "border": 0,
+                                "frame": false,
+                                "id": "masqueEdition",
+                                "margin": null,
+                                "style": null,
+                                "width": null,
+                                "autoScroll": false,
+                                "layout": "vbox",
+                                "bodyStyle": null,
+                                "designer|userClassName": "MyPanel61",
+                                "container|align": "stretch",
+                                "container|pack": null,
                                 "layout|flex": 1
                             },
                             "customConfigs": [],
-                            "expanded": true,
-                            "cn": [
-                                {
-                                    "id": "ExtBox1-ext-gen38977",
-                                    "type": "panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "border": 0,
-                                        "frame": false,
-                                        "id": "masqueEdition",
-                                        "margin": "0, 20, 0, 20",
-                                        "style": null,
-                                        "width": 1020,
-                                        "autoScroll": false,
-                                        "bodyStyle": "{background:#DDDDDD;}",
-                                        "designer|userClassName": "MyPanel61"
-                                    },
-                                    "customConfigs": [],
-                                    "expanded": true
-                                }
-                            ]
+                            "expanded": true
                         },
                         {
                             "id": "ExtBox1-ext-gen39169",
@@ -711,7 +695,7 @@
                                 "dock": null
                             },
                             "customConfigs": [],
-                            "expanded": true,
+                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "ExtBox1-ext-gen29040",

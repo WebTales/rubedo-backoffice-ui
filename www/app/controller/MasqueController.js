@@ -63,7 +63,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
-    onGridviewItemClick: function(dataview, record, item, index, e, options) {
+    masqueDisplay: function(dataview, record, item, index, e, options) {
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
         valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
@@ -80,8 +80,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     this.getVersionsDataJsonStore().loadData(masque.versions);
 
     this.getMasqueEdition().removeAll();
-    this.getMasqueEdition().setWidth(masque.largeur);
-    this.masqueRestit(masque.zones); 
+    this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
 
 
 
@@ -217,36 +216,52 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
-    masqueRestit: function(zones) {
-        var largeurMax = this.getMasqueEdition().width;
-        for (i=0; i<zones.length; i++) {   
-            var zoneIns = zones[i];   
-            var nouvZone = Ext.widget('zone' , { width: zoneIns.largeur, height: zoneIns.hauteur, title :zoneIns.nom, maxWidth : largeurMax});
-            var colonnes = zoneIns.colonnes;
-            var blocs = colonnes[0].blocs;
-            nouvZone.items.items[0].flex=colonnes[0].flex;
-            for (k=0; k<blocs.length; k++) {
-                var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});
-                nouvZone.getComponent(0).add(nouvBloc);
-            }
-            for (j=1; j<colonnes.length; j++) {    
-                var nouvColonne = Ext.widget('colonne');
-                nouvColonne.flex=colonnes[j].flex;
-                var blocs = colonnes[j].blocs;
-                for (k=0; k<blocs.length; k++) {
-                    var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});
-                    nouvColonne.add(nouvBloc);
+    masqueRestit: function(mRows, its, cible) {
+        var me=this;
+        Ext.Array.forEach(mRows, function(row){
+            var newRow = Ext.widget('panel', {
+                header:false,
+                margin:4,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
                 }
-                nouvZone.add(nouvColonne);
+            });
+            var rFlex=1;
+            Ext.Array.forEach(row.columns, function(column){
+                if (column.offset>0) {
+                    newRow.add(Ext.widget('container', {margin:4, flex:column.offset}));
+                }
+                var newCol=Ext.widget('panel', {
+                    header:false,
+                    flex:column.span,
+                    margin:4,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    }
+                });
+                if ((its>0)&&(column.isTerminal===false)) {
+                    rFlex=Ext.Array.max([rFlex,column.rows.length]);
+                    me.masqueRestit(column.rows,its-1,newCol);    
+                }
+                else {
+                    //ajout bloc
+                }
+                newRow.add(newCol);
+
+            });
+            if (Ext.isEmpty(row.height)) {
+                newRow.flex=rFlex;
+                if (!Ext.isEmpty(row.maxHeight)) {newRow.maxhHeight=row.maxHeight;}
+                if (!Ext.isEmpty(row.minHeight)) {newRow.maxhHeight=row.minHeight;}
+            } else {
+                newRow.height=row.height;
             }
+            cible.add(newRow);  
 
 
-            this.getMasqueEdition().add(nouvZone);  
-
-
-
-
-        }
+        });
     },
 
     onControllerClickStub: function() {
@@ -266,7 +281,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 click: this.onButtonClick4
             },
             "#masquesGridView": {
-                itemclick: this.onGridviewItemClick
+                itemclick: this.masqueDisplay
             },
             "#arborescenceSites": {
                 itemclick: this.onTreepanelItemClick
