@@ -1,71 +1,80 @@
 [
 	{
-		"titre": "Prévention",
+		"_id": {
+			"$id": "502d055668822b7d36ddba08"
+		},
+		"titre": "Pr\u00e9vention",
 		"type": "Image",
 		"medias": [
 			{
-				"text": "Arrêt du Tabac",
-				"fichier": "data/Mediatheque/Images/arret_du_tabac_2.JPG",
-				"icone": "data/Mediatheque/Images/arret_du_tabac_2.JPG",
+				"text": "Arr\u00eat du Tabac",
+				"fichier": "data\/Mediatheque\/Images\/arret_du_tabac_2.JPG",
+				"icone": "data\/Mediatheque\/Images\/arret_du_tabac_2.JPG",
 				"conf": {
 					"height": 266,
 					"width": 625
 				},
 				"meta": {
-					"creation": "05/01/2012",
-					"derniereModification": "05/01/2012",
+					"creation": "05\/01\/2012",
+					"derniereModification": "05\/01\/2012",
 					"version": "1",
 					"auteur": "dfanchon"
 				}
 			}, {
 				"text": "Coup de Soleil",
-				"fichier": "data/Mediatheque/Images/coup_de_soleil.jpg",
-				"icone": "data/Mediatheque/Images/coup_de_soleil.jpg",
+				"fichier": "data\/Mediatheque\/Images\/coup_de_soleil.jpg",
+				"icone": "data\/Mediatheque\/Images\/coup_de_soleil.jpg",
 				"conf": {
 					"height": 266,
 					"width": 625
 				},
 				"meta": {
-					"creation": "05/01/2012",
-					"derniereModification": "05/01/2012",
+					"creation": "05\/01\/2012",
+					"derniereModification": "05\/01\/2012",
 					"version": "1",
 					"auteur": "dfanchon"
 				}
 			}, {
 				"text": "Mal de ventre",
-				"fichier": "data/Mediatheque/Images/Mal_de_ventre_.jpg",
-				"icone": "data/Mediatheque/Images/Mal_de_ventre_.jpg",
+				"fichier": "data\/Mediatheque\/Images\/Mal_de_ventre_.jpg",
+				"icone": "data\/Mediatheque\/Images\/Mal_de_ventre_.jpg",
 				"conf": {
 					"height": 266,
 					"width": 625
 				},
 				"meta": {
-					"creation": "05/01/2012",
-					"derniereModification": "05/01/2012",
+					"creation": "05\/01\/2012",
+					"derniereModification": "05\/01\/2012",
 					"version": "1",
 					"auteur": "jbourdin"
 				}
 			}
 		]
 	}, {
+		"_id": {
+			"$id": "502d057468822b7d36ddba09"
+		},
 		"titre": "Communication",
 		"type": "Image",
 		"medias": []
 	}, {
+		"_id": {
+			"$id": "502d058468822b7d36ddba0a"
+		},
 		"titre": "Formulaires",
 		"type": "PDF",
 		"medias": [
 			{
-				"text": "Arrêt de travail",
-				"fichier": "data/Mediatheque/PDF/S6110.pdf",
-				"icone": "resources/icones/red/64x64/pdf.png",
+				"text": "Arr\u00eat de travail",
+				"fichier": "data\/Mediatheque\/PDF\/S6110.pdf",
+				"icone": "resources\/icones\/red\/64x64\/pdf.png",
 				"meta": {
-					"creation": "05/01/2012",
-					"derniereModification": "05/01/2012",
+					"creation": "05\/01\/2012",
+					"derniereModification": "05\/01\/2012",
 					"version": "1",
 					"auteur": "Igor"
 				}
-			},
+			}
 		]
 	}
 ]
