@@ -8,7 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "autoSync": false,
+        "autoSync": true,
         "storeId": "TaxonomieDataJson",
         "model": "taxonomieDataModel",
         "designer|userClassName": "TaxonomieDataJson",
@@ -17,7 +17,7 @@
     "customConfigs": [],
     "designerId": "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
     "$viewOrder": 12,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen52937",
@@ -28,7 +28,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Taxonomie.json",
+                "api": "{\ncreate : 'taxonomy/create',\nread : 'data/Taxonomie.json',\nupdate : 'taxonomy/update',\ndestroy : 'taxonomy/delete'\n}",
+                "url": null,
                 "designer|userClassName": "MyAjaxProxy10"
             },
             "customConfigs": [],
@@ -43,7 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data",
                         "designer|userClassName": "MyJsonReader8"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen12215",
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data",
+                        "designer|userClassName": "MyJsonWriter1"
                     },
                     "customConfigs": [],
                     "expanded": true
