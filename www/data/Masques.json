@@ -9,36 +9,32 @@
 		"version": 2,
 		"rows": [ 
 			{
-				"minHeight":null,
-				"maxHeight":null,
-				"height":null,
+				"height":100,
 				"columns": [
 					{
 						"isTerminal":true,
 						"span":4,
 						"offset":0,
-						"bloc": { },
+						"bloc": {test:"ok"},
 						"rows":null	
 					},
 					{
 						"isTerminal":true,
-						"span":6,
+						"span":4,
 						"offset":2,
-						"bloc": { },
+						"bloc": null,
 						"rows":null	
 					}					
 				]
 			},
 			{
-				"minHeight":null,
-				"maxHeight":null,
 				"height":null,
 				"columns": [
 					{
 						"isTerminal":true,
 						"span":4,
 						"offset":0,
-						"bloc": { },
+						"bloc": null,
 						"rows":null	
 					},
 					{
@@ -48,36 +44,32 @@
 						"bloc": null,
 						"rows":[ 
 								{
-									"minHeight":null,
-									"maxHeight":null,
 									"height":null,
 									"columns": [
 										{
 											"span":4,
 											"offset":0,
-											"bloc": { }
+											"bloc": null
 										},
 										{
 											"span":6,
 											"offset":2,
-											"bloc": { }
+											"bloc": null
 										}					
 									]
 								},
 								{
-									"minHeight":null,
-									"maxHeight":null,
 									"height":null,
 									"columns": [
 										{
 											"span":4,
 											"offset":0,
-											"bloc": { }
+											"bloc": null
 										},
 										{
 											"span":8,
 											"offset":0,
-											"bloc": { }
+											"bloc": null
 										}					
 									]
 								}
@@ -110,15 +102,13 @@
 		"version": 2,
 		"rows": [ 
 			{
-				"minHeight":null,
-				"maxHeight":null,
 				"height":null,
 				"columns": [
 						{
 							"isTerminal":true,
 							"span":12,
 							"offset":0,
-							"bloc": { },
+							"bloc": null,
 							"rows":null	
 						}
 							]

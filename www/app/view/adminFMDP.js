@@ -92,7 +92,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                 },
                 {
                     xtype: 'toolbar',
-                    height: 54,
+                    height: 60,
                     itemId: 'contextBar',
                     enableOverflow: true,
                     flex: 1,
@@ -101,6 +101,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'boutonNouveauMasque',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
@@ -108,27 +109,58 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerMasque',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
+                            xtype: 'buttongroup',
+                            title: 'Edition du masque',
+                            columns: 3,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newRow',
+                                    iconCls: 'window_add_med',
+                                    scale: 'medium',
+                                    text: 'Nouvelle Ligne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newCol',
+                                    iconCls: 'window_add_med',
+                                    scale: 'medium',
+                                    text: 'Nouvelle Colonne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'deleteElement',
+                                    iconCls: 'remove_med',
+                                    scale: 'medium',
+                                    text: 'Supprimer'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'button',
                             id: 'boutonCopierMasque',
+                            iconAlign: 'top',
                             iconCls: 'applications_big',
                             scale: 'large',
                             text: 'Copier'
                         },
                         {
                             xtype: 'button',
-                            id: 'nouvelleZone',
-                            iconCls: 'window_add_big',
-                            scale: 'large',
-                            text: 'Nouvelle Zone'
-                        },
-                        {
-                            xtype: 'button',
                             id: 'AdminfMasquesExporter',
+                            iconAlign: 'top',
                             iconCls: 'application_down_big',
                             scale: 'large',
                             text: 'Exporter'
@@ -136,6 +168,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesImporter',
+                            iconAlign: 'top',
                             iconCls: 'application_up_big',
                             scale: 'large',
                             text: 'Importer'
@@ -143,6 +176,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesEnregistrer',
+                            iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
@@ -150,6 +184,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'AdminfMasquesPublier',
+                            autoWidth: false,
+                            iconAlign: 'top',
                             iconCls: 'floppy_disc_accept_big',
                             scale: 'large',
                             text: 'Enregistrer et publier'
@@ -157,6 +193,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             itemId: 'boutonCreerRaccourci',
+                            iconAlign: 'top',
                             iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
@@ -164,6 +201,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'ajouterPanierMasques',
+                            iconAlign: 'top',
                             iconCls: 'shopping_cart_add_big',
                             scale: 'large',
                             text: 'Ajouter au panier'
@@ -278,64 +316,22 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     margins: '0, 0, 0, 2',
                                     items: [
                                         {
+                                            xtype: 'hiddenfield',
+                                            id: 'elementIdField',
+                                            fieldLabel: 'Label'
+                                        },
+                                        {
                                             xtype: 'form',
+                                            id: 'elementEditControl',
                                             margin: '6 0 0 0',
                                             autoScroll: false,
                                             bodyPadding: 10,
                                             iconCls: 'editZone',
-                                            title: 'Zone',
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    id: 'zoneTitleField',
-                                                    fieldLabel: 'Titre',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'zoneWidthField',
-                                                    width: 80,
-                                                    fieldLabel: 'Largeur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'zoneHeightField',
-                                                    width: 80,
-                                                    fieldLabel: 'Hauteur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'hiddenfield',
-                                                    id: 'zoneIdField',
-                                                    fieldLabel: 'Label',
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'fieldset',
-                                                    id: 'colonnesEdit',
-                                                    autoScroll: false,
-                                                    collapsed: true,
-                                                    collapsible: true,
-                                                    title: 'Colonnes'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    id: 'modifierPropZone',
-                                                    width: 118,
-                                                    text: 'Modifier',
-                                                    anchor: '100%'
-                                                }
-                                            ]
+                                            title: 'Sélectionnez un élément'
                                         },
                                         {
                                             xtype: 'form',
+                                            disabled: true,
                                             margin: '10 0 0 0',
                                             autoScroll: false,
                                             activeItem: 0,

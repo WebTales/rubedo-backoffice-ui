@@ -156,17 +156,6 @@ Ext.define('Rubedo.controller.ZoneController', {
 
     },
 
-    videPropZone: function(abstractcontainer, component, options) {
-        if (component.id==Ext.getCmp('zoneIdField').getValue()) { 
-            Ext.getCmp('zoneHeightField').setValue();
-            Ext.getCmp('zoneWidthField').setValue();
-            Ext.getCmp('zoneTitleField').setValue();
-            Ext.getCmp('zoneIdField').setValue();
-            Ext.getCmp('colonnesEdit').removeAll();
-
-        }
-    },
-
     onPanelBeforeDestroy: function(abstractcomponent, options) {
         if ((Ext.isDefined(Ext.getCmp('blocIdField')))&&(abstractcomponent.id==Ext.getCmp('blocIdField').getValue())) { 
             Ext.getCmp('blocHeightField').setValue();
@@ -364,9 +353,6 @@ Ext.define('Rubedo.controller.ZoneController', {
             },
             "#modifierPropZone": {
                 click: this.majZone
-            },
-            "#masqueEdition": {
-                remove: this.videPropZone
             },
             "unBloc": {
                 beforedestroy: this.onPanelBeforeDestroy,

@@ -190,6 +190,250 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
+    selectionEvents: function(abstractcomponent, options) {
+        var me=this;
+        abstractcomponent.getEl().on("mouseover", function(e){
+            abstractcomponent.setBorder(4);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("mouseout", function(e){
+            abstractcomponent.setBorder(1);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("click", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if (!Ext.isEmpty(prevSelected)) {
+                prevSelected.removeBodyCls('selectedelement');
+            }
+            abstractcomponent.addBodyCls('selectedelement');
+            this.frame(MyPrefData.themeColor);
+            Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+            Ext.getCmp('deleteElement').enable();
+            var propEdit=Ext.getCmp('elementEditControl');
+            propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
+
+
+            propEdit.removeAll();
+            if (abstractcomponent.mType=="row"){
+                Ext.getCmp('newRow').disable();
+                if (abstractcomponent.getComponent("eol").flex===0){
+                    Ext.getCmp('newCol').disable();
+                } else {
+                    Ext.getCmp('newCol').enable();
+                }
+                propEdit.add(Ext.widget('button',{
+                    itemId:"rowAutoHeight",
+                    text:"Hauteur automatique",
+                    anchor:"100%",
+                    tooltip:"La hauteur s'adapte au contenu lors du rendu final",
+                    hidden:true,
+                    handler:function(){
+                        abstractcomponent.setHeight(null);
+                        abstractcomponent.flex=1;
+                        abstractcomponent.up().doLayout();
+                        propEdit.getComponent("rowHeightFixed").setValue();
+                        this.hide();
+                    }
+                }));
+                if (!Ext.isEmpty(abstractcomponent.height)){propEdit.getComponent("rowAutoHeight").show();}
+                propEdit.add(Ext.widget('numberfield',{
+                    itemId:"rowHeightFixed",
+                    fieldLabel:"Hauteur fixe ",
+                    labelWidth:80,
+                    allowDecimals:false,
+                    anchor:"60%",
+                    margin:"10 0 0 0",
+                    style:"{float:left;}",
+                    value:abstractcomponent.height
+                }));
+                propEdit.add(Ext.widget('button',{
+                    text:"Appliquer",
+                    anchor:"38%",
+                    margin:"10 0 0 0",
+                    style:"{float:right;}",
+                    handler:function(){
+                        abstractcomponent.flex=null;
+                        abstractcomponent.setHeight(propEdit.getComponent("rowHeightFixed").getValue());
+                        abstractcomponent.up().doLayout();
+                        propEdit.getComponent("rowAutoHeight").show();
+                    }
+                }));
+
+
+            }    
+
+            else if (abstractcomponent.mType=="col"){
+                if ((abstractcomponent.final)){
+                Ext.getCmp('newRow').disable();} else {
+                    Ext.getCmp('newRow').enable();
+                }
+                Ext.getCmp('newCol').disable();
+                //console.log(abstractcomponent);
+
+                var offsetEdit=Ext.widget('numberfield',{
+                    itemId:"offsetEditor",
+                    fieldLabel:"Offset ",
+                    editable:false,
+                    labelWidth:45,
+                    allowDecimals:false,
+                    anchor:"50%",
+                    margin:"10 0 0 0",
+                    style:"{float:left;}",
+                    value:0,
+                    minValue:0
+                });
+
+                var spanEdit=Ext.widget('numberfield',{
+                    itemId:"spanEditor",
+                    fieldLabel:"Span ",
+                    labelWidth:45,
+                    editable:false,
+                    allowDecimals:false,
+                    anchor:"50%",
+                    margin:"10 0 0 10",
+                    style:"{float:right;}",
+                    value:abstractcomponent.flex,
+                    minValue:1
+                });
+
+
+
+                propEdit.add(offsetEdit);
+                propEdit.add(spanEdit);
+                me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
+                offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+
+
+
+
+
+            }
+
+            e.stopEvent();
+        });
+    },
+
+    deleteMaskElement: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        if (cible.mType=="col"){
+            var myEol=cible.up().getComponent("eol");
+            var myOffset=cible.previousSibling();
+            if (!Ext.isEmpty(myOffset)) {
+                if ((myOffset.isXType("container"))&&(!(myOffset.isXType("panel")))) {
+                    myEol.flex=myEol.flex+myOffset.flex;
+                    myOffset.destroy();
+                }
+            }
+            myEol.flex=myEol.flex+cible.flex;
+
+        }
+        cible.destroy();
+        Ext.getCmp("newRow").disable();
+        Ext.getCmp("newCol").disable();
+        Ext.getCmp("deleteElement").disable();
+        Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+        Ext.getCmp('elementEditControl').removeAll();
+        Ext.getCmp('elementIdField').setValue(null);
+    },
+
+    addCol: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var myEol=cible.getComponent('eol');
+
+        if (myEol.flex>0) {
+            var isFinalCol=false;
+            if (cible.up().mType=="col"){
+                isFinalCol=true;
+            }
+            var newCol=Ext.widget('panel', {
+                header:false,
+                flex:1,
+                final:isFinalCol,
+                mType:'col',
+                margin:4,
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                }
+            });
+            myEol.flex=myEol.flex-1;
+            cible.insert(cible.items.items.length-1,newCol);
+            if (myEol.flex===0){
+                button.disable();
+            }
+
+        }
+    },
+
+    addRow: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var row = Ext.widget('panel', {
+            header:false,
+            mType:"row",
+            flex:1,
+            margin:4,
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            }
+        });
+        row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
+        cible.insert(cible.items.items.length,row);
+    },
+
+    applyConstrain: function(target, offsetF, spanF, applyFirst) {
+        var myEol=target.up().getComponent("eol");
+        var myOffset=null;
+        if ((!Ext.isEmpty(target.prev()))&&(target.prev().isXType("container"))&&(!(target.prev().isXType("panel")))) {
+            myOffset=target.prev();
+        }
+        if (applyFirst) {
+            myEol.flex=myEol.flex+target.flex-spanF.getValue();
+            target.flex=spanF.getValue();
+            spanF.setMaxValue(target.flex+myEol.flex);
+            offsetF.setMaxValue(offsetF.getValue()+myEol.flex);
+            target.up().doLayout();
+            if (offsetF.getValue()>0){ 
+                if (Ext.isEmpty(myOffset)) {
+                    myOffset=Ext.widget("container",{flex:0});
+                    target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
+
+
+                } 
+                myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                myOffset.flex=offsetF.getValue();
+                offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                target.up().doLayout();
+
+            } else if((offsetF.getValue()===0)) {
+                if (!Ext.isEmpty(myOffset)) {
+                    myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                    myOffset.flex=offsetF.getValue();
+                    offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                    spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                    myOffset.destroy();
+                    target.up().doLayout();      
+                } 
+
+            }
+        }
+        else {
+            if (Ext.isEmpty(myOffset)){
+                offsetF.setValue(0);
+                offsetF.setMaxValue(myEol.flex);
+            }
+            else {
+                offsetF.setValue(myOffset.flex);
+                offsetF.setMaxValue(myOffset.flex+myEol.flex); 
+            }
+
+            spanF.setValue(target.flex);
+            spanF.setMaxValue(target.flex+myEol.flex);
+        }
+    },
+
     masqueMAJ: function(cible) {
         var nouvZones = [ ];
         var zonesM =Ext.getCmp('masqueEdition').items.items;
@@ -221,6 +465,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.Array.forEach(mRows, function(row){
             var newRow = Ext.widget('panel', {
                 header:false,
+                mType:"row",
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -228,13 +473,19 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
             });
             var rFlex=1;
+            var eolWidth=12;
             Ext.Array.forEach(row.columns, function(column){
                 if (column.offset>0) {
-                    newRow.add(Ext.widget('container', {margin:4, flex:column.offset}));
+                    newRow.add(Ext.widget('container', {flex:column.offset}));
+                    eolWidth=eolWidth-column.offset;
                 }
+                var isFinalCol=false;
+                if (its<=0){isFinalCol=true;}
                 var newCol=Ext.widget('panel', {
                     header:false,
                     flex:column.span,
+                    final:isFinalCol,
+                    mType:'col',
                     margin:4,
                     layout: {
                         type: 'vbox',
@@ -248,13 +499,16 @@ Ext.define('Rubedo.controller.MasqueController', {
                 else {
                     //ajout bloc
                 }
+                eolWidth=eolWidth-column.span;
                 newRow.add(newCol);
 
             });
+            newRow.add(Ext.widget("container",{
+                flex:eolWidth,
+                itemId:"eol"
+            }));
             if (Ext.isEmpty(row.height)) {
                 newRow.flex=rFlex;
-                if (!Ext.isEmpty(row.maxHeight)) {newRow.maxhHeight=row.maxHeight;}
-                if (!Ext.isEmpty(row.minHeight)) {newRow.maxhHeight=row.minHeight;}
             } else {
                 newRow.height=row.height;
             }
@@ -303,6 +557,18 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#AdminfMasquesImporter": {
                 click: this.onButtonClick5
+            },
+            "#masqueEdition panel": {
+                render: this.selectionEvents
+            },
+            "#deleteElement": {
+                click: this.deleteMaskElement
+            },
+            "#newCol": {
+                click: this.addCol
+            },
+            "#newRow": {
+                click: this.addRow
             }
         });
 

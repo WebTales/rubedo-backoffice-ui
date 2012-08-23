@@ -1,5 +1,11 @@
+.selectedelement{
+border-color:#D7251D !important;
+}
 .referencement_icon{
 	background: url(../icones/red/16x16/globe_computer.png) left center no-repeat !important;
+}
+.window_add_med{
+	background: url(../icones/red/24x24/window_add.png) left center no-repeat !important;
 }
 .folder_add_big{
 	background: url(../icones/red/32x32/folder_add.png) left center no-repeat !important;
@@ -23,37 +29,40 @@
 	background: url(../icones/red/24x24/shopping_cart_remove.png) left center no-repeat !important;
 }
 .add_big{
-	background: url(../icones/red/32x32/add.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/add.png)  center no-repeat !important;
 }
 .remove_big{
-	background: url(../icones/red/32x32/remove.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/remove.png)  center no-repeat !important;
+}
+.remove_med{
+	background: url(../icones/red/24x24/remove.png)  center no-repeat !important;
 }
 .applications_big{
-	background: url(../icones/red/32x32/applications.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/applications.png)  center no-repeat !important;
 }
 .window_add_big{
-	background: url(../icones/red/32x32/window_add.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/window_add.png)  center no-repeat !important;
 }
 .application_down_big{
-	background: url(../icones/red/32x32/application_down.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/application_down.png)  center no-repeat !important;
 }
 .application_up_big{
-	background: url(../icones/red/32x32/application_up.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/application_up.png)  center no-repeat !important;
 }
 .floppy_disc_big{
-	background: url(../icones/red/32x32/floppy_disc.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/floppy_disc.png)  center no-repeat !important;
 }
 .floppy_disc_accept_big{
-	background: url(../icones/red/32x32/floppy_disc_accept.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/floppy_disc_accept.png)  center no-repeat !important;
 }
 .shopping_cart_add_big{
-	background: url(../icones/red/32x32/shopping_cart_add.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/shopping_cart_add.png)  center no-repeat !important;
 }
 .favorite_add_big{
-	background: url(../icones/red/32x32/favorite_add.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/favorite_add.png)  center no-repeat !important;
 }
 .pencil_big{
-	background: url(../icones/red/32x32/pencil.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/pencil.png) center no-repeat !important;
 }
 .pencil_med{
 	background: url(../icones/red/24x24/pencil.png) left center no-repeat !important;

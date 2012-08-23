@@ -21,7 +21,7 @@
     "customConfigs": [],
     "designerId": "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
     "$viewOrder": 6,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen18417",
@@ -356,35 +356,6 @@
                 "designer|targetType": "Ext.button.Button",
                 "designer|controlQuery": "#modifierPropZone",
                 "designer|userClassName": "majZone"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen4390",
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "videPropZone",
-                "implHandler": [
-                    "if (component.id==Ext.getCmp('zoneIdField').getValue()) { \r",
-                    "    Ext.getCmp('zoneHeightField').setValue();\r",
-                    "    Ext.getCmp('zoneWidthField').setValue();\r",
-                    "    Ext.getCmp('zoneTitleField').setValue();\r",
-                    "    Ext.getCmp('zoneIdField').setValue();\r",
-                    "    Ext.getCmp('colonnesEdit').removeAll();\r",
-                    "\r",
-                    "}"
-                ],
-                "name": "remove",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#masqueEdition",
-                "designer|userClassName": "videPropZone"
             },
             "customConfigs": [],
             "expanded": true
