@@ -13,7 +13,7 @@
     "customConfigs": [],
     "designerId": "47f4935c-57ba-4bf2-afc8-ba2cfce49904",
     "$viewOrder": 8,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen53855",
@@ -128,6 +128,21 @@
             "userConfig": {
                 "name": "termes",
                 "designer|userClassName": "MyField41"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6182",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version",
+                "designer|userClassName": "MyField86"
             },
             "customConfigs": [],
             "expanded": true

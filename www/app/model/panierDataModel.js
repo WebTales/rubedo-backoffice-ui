@@ -24,6 +24,9 @@ Ext.define('Rubedo.model.panierDataModel', {
         {
             name: 'etat',
             type: 'string'
+        },
+        {
+            name: 'version'
         }
     ]
 });

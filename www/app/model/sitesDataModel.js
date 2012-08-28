@@ -32,6 +32,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         {
             name: 'site',
             type: 'boolean'
+        },
+        {
+            name: 'version'
         }
     ]
 });

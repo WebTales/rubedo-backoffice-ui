@@ -44,6 +44,9 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
         },
         {
             name: 'termes'
+        },
+        {
+            name: 'version'
         }
     ]
 });

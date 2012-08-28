@@ -37,6 +37,9 @@ Ext.define('Rubedo.model.mediaViewModel', {
         {
             name: 'meta',
             type: 'auto'
+        },
+        {
+            name: 'version'
         }
     ]
 });

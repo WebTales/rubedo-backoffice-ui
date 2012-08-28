@@ -8,11 +8,23 @@
 		"derniereModification": "2012-05-01T00:00:00",
 		"version": 2,
 		"rows": [ 
-			{
+			{	
 				"height":100,
+				"eTitle":"titre",
+				"responsive":{
+					"phone":true,
+					"tablet":true,
+					"desktop":true
+				},
 				"columns": [
 					{
 						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 						"span":4,
 						"offset":0,
 						"bloc": {test:"ok"},
@@ -20,6 +32,12 @@
 					},
 					{
 						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 						"span":4,
 						"offset":2,
 						"bloc": null,
@@ -29,9 +47,21 @@
 			},
 			{
 				"height":null,
+				"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+				"eTitle":"titre",
 				"columns": [
 					{
 						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 						"span":4,
 						"offset":0,
 						"bloc": null,
@@ -39,20 +69,44 @@
 					},
 					{
 						"isTerminal":false,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 						"span":8,
 						"offset":0,
 						"bloc": null,
 						"rows":[ 
 								{
 									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 									"columns": [
 										{
 											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 											"offset":0,
 											"bloc": null
 										},
 										{
 											"span":6,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 											"offset":2,
 											"bloc": null
 										}					
@@ -60,14 +114,32 @@
 								},
 								{
 									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 									"columns": [
 										{
 											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 											"offset":0,
 											"bloc": null
 										},
 										{
 											"span":8,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 											"offset":0,
 											"bloc": null
 										}					
@@ -103,9 +175,21 @@
 		"rows": [ 
 			{
 				"height":null,
+				"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+				"eTitle":"titre",
 				"columns": [
 						{
 							"isTerminal":true,
+							"eTitle":"titre",
+							"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
 							"span":12,
 							"offset":0,
 							"bloc": null,
