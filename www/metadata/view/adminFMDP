@@ -247,7 +247,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "title": "Edition du masque",
-                        "columns": 3,
+                        "columns": 4,
                         "designer|userClassName": "MyButtonGroup",
                         "container|columns": 2,
                         "layout|flex": null
@@ -293,6 +293,27 @@
                                 "iconCls": "window_add_med",
                                 "scale": "medium",
                                 "text": "Nouvelle Colonne",
+                                "designer|userClassName": "MyButton51"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen7536",
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "id": "newBloc",
+                                "width": null,
+                                "icon": null,
+                                "iconCls": "window_add_med",
+                                "scale": "medium",
+                                "text": "Nouveau Bloc",
                                 "designer|userClassName": "MyButton51"
                             },
                             "customConfigs": [],
@@ -818,7 +839,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "disabled": true,
+                                        "disabled": false,
                                         "height": null,
                                         "margin": "10 0 0 0",
                                         "autoScroll": false,

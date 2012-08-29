@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.UnBloc', {
     alias: 'widget.unBloc',
 
     frame: true,
+    margin: 4,
     width: 50,
     layout: {
         type: 'fit'
@@ -27,31 +28,6 @@ Ext.define('Rubedo.view.UnBloc', {
 
     initComponent: function() {
         var me = this;
-
-        Ext.applyIf(me, {
-            tools: [
-                {
-                    xtype: 'tool',
-                    itemId: 'deplaceGaucheBloc',
-                    type: 'left'
-                },
-                {
-                    xtype: 'tool',
-                    itemId: 'deplaceDroiteBloc',
-                    type: 'right'
-                },
-                {
-                    xtype: 'tool',
-                    itemId: 'zoneHaut',
-                    type: 'up'
-                },
-                {
-                    xtype: 'tool',
-                    itemId: 'zoneBas',
-                    type: 'down'
-                }
-            ]
-        });
 
         me.callParent(arguments);
     }

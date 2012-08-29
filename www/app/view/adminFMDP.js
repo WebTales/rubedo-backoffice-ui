@@ -117,7 +117,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'buttongroup',
                             title: 'Edition du masque',
-                            columns: 3,
+                            columns: 4,
                             layout: {
                                 columns: 2,
                                 type: 'table'
@@ -138,6 +138,14 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconCls: 'window_add_med',
                                     scale: 'medium',
                                     text: 'Nouvelle Colonne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newBloc',
+                                    iconCls: 'window_add_med',
+                                    scale: 'medium',
+                                    text: 'Nouveau Bloc'
                                 },
                                 {
                                     xtype: 'button',
@@ -331,7 +339,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                         },
                                         {
                                             xtype: 'form',
-                                            disabled: true,
+                                            disabled: false,
                                             margin: '10 0 0 0',
                                             autoScroll: false,
                                             activeItem: 0,

@@ -21,7 +21,7 @@
     "customConfigs": [],
     "designerId": "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
     "$viewOrder": 6,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen18417",
@@ -98,32 +98,6 @@
                 "designer|targetType": "Ext.panel.Tool",
                 "designer|controlQuery": "[itemId='ajouterBlocZone']",
                 "designer|userClassName": "ajoutBlocZoneFenetre"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen13822",
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "insereBloc",
-                "implHandler": [
-                    "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
-                    "var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));\r",
-                    "Ext.getCmp(Ext.getCmp('zoneIdField').getValue()).getComponent(0).add(nouvBloc);\r",
-                    "button.up().up().close();\r",
-                    "nouvBloc.header.fireEvent('click');"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterBloc",
-                "designer|userClassName": "insereBloc"
             },
             "customConfigs": [],
             "expanded": true
@@ -375,8 +349,8 @@
                     "    Ext.getCmp('blocHeightField').setValue();\r",
                     "    Ext.getCmp('blocTitleField').setValue();\r",
                     "    Ext.getCmp('blocIdField').setValue();\r",
-                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {\r",
-                    "        Ext.getCmp('paneauPropMasque').getComponent(2).destroy();\r",
+                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {\r",
+                    "        Ext.getCmp('paneauPropMasque').getComponent(3).destroy();\r",
                     "    }\r",
                     "}"
                 ],
@@ -470,14 +444,16 @@
             "userConfig": {
                 "fn": "selectBloc",
                 "implHandler": [
-                    "\r",
+                    "abstractcomponent.getEl().on(\"click\", function(e){\r",
+                    "e.stopEvent();\r",
+                    "});\r",
                     "abstractcomponent.header.on('click', function() { \r",
                     "\r",
                     "    this.up().getEl().frame(MyPrefData.themeColor);\r",
                     "    this.up().setIconCls('editBloc');\r",
                     "\r",
-                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {\r",
-                    "        Ext.getCmp('paneauPropMasque').getComponent(2).destroy();\r",
+                    "    if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {\r",
+                    "        Ext.getCmp('paneauPropMasque').getComponent(3).destroy();\r",
                     "    }\r",
                     "\r",
                     "    var champBTitre = Ext.getCmp('blocTitleField');\r",
@@ -523,7 +499,6 @@
                     "\r",
                     "    }\r",
                     "    Ext.getCmp('paneauPropMasque').add(configSpec);\r",
-                    "\r",
                     "\r",
                     "});"
                 ],

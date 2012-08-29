@@ -58,14 +58,6 @@ Ext.define('Rubedo.controller.ZoneController', {
         delConfirm.showAt(screen.width/2-250, 100);
     },
 
-    insereBloc: function(button, e, options) {
-        var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
-        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
-        Ext.getCmp(Ext.getCmp('zoneIdField').getValue()).getComponent(0).add(nouvBloc);
-        button.up().up().close();
-        nouvBloc.header.fireEvent('click');
-    },
-
     deplaceBas: function(tool, e, options) {
         var pos = tool.up().up().up().items.indexOf(tool.up().up());
         tool.up().up().up().move(pos,pos+1);
@@ -161,8 +153,8 @@ Ext.define('Rubedo.controller.ZoneController', {
             Ext.getCmp('blocHeightField').setValue();
             Ext.getCmp('blocTitleField').setValue();
             Ext.getCmp('blocIdField').setValue();
-            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {
-                Ext.getCmp('paneauPropMasque').getComponent(2).destroy();
+            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {
+                Ext.getCmp('paneauPropMasque').getComponent(3).destroy();
             }
         }
     },
@@ -202,14 +194,16 @@ Ext.define('Rubedo.controller.ZoneController', {
     },
 
     selectBloc: function(abstractcomponent, options) {
-
+        abstractcomponent.getEl().on("click", function(e){
+            e.stopEvent();
+        });
         abstractcomponent.header.on('click', function() { 
 
             this.up().getEl().frame(MyPrefData.themeColor);
             this.up().setIconCls('editBloc');
 
-            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {
-                Ext.getCmp('paneauPropMasque').getComponent(2).destroy();
+            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {
+                Ext.getCmp('paneauPropMasque').getComponent(3).destroy();
             }
 
             var champBTitre = Ext.getCmp('blocTitleField');
@@ -255,7 +249,6 @@ Ext.define('Rubedo.controller.ZoneController', {
 
             }
             Ext.getCmp('paneauPropMasque').add(configSpec);
-
 
         });
     },
@@ -329,9 +322,6 @@ Ext.define('Rubedo.controller.ZoneController', {
             },
             "[itemId='ajouterBlocZone']": {
                 click: this.ajoutBlocZoneFenetre
-            },
-            "#boutonAjouterBloc": {
-                click: this.insereBloc
             },
             "[itemId='zoneBas']": {
                 click: this.deplaceBas

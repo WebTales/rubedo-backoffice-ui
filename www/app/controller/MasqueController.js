@@ -36,7 +36,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     ],
 
-    onButtonClick2: function(button, e, options) {
+    deleteMask: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('delConfirmZ');
@@ -44,22 +44,30 @@ Ext.define('Rubedo.controller.MasqueController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('masquesGrid').getStore().remove(cible);
                 Ext.getCmp('masqueEdition').removeAll();
+                Ext.getCmp("newRow").disable();
+                Ext.getCmp("newCol").disable();
+                Ext.getCmp("newBloc").disable();
+                Ext.getCmp("deleteElement").disable();
+                Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+                Ext.getCmp('elementEditControl').removeAll();
+                Ext.getCmp('elementIdField').setValue(null);
                 Ext.getCmp('delConfirmZ').close();
             });  
 
         }
+
     },
 
-    onButtonClick4: function(button, e, options) {
-        var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
+    publishMask: function(button, e, options) {
+        /*var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            this.masqueMAJ(cible);
-            cible.data.etat='publié';
-            cible.data.derniereModification = new Date();
-            cible.data.version++;
-            cible.data.versions.push({text: cible.data.version, etat:'publié', date: new Date(), auteur: 'Igor'});
-            Ext.getCmp('masquesGrid').getView().refresh();
-        }
+        this.masqueMAJ(cible);
+        cible.data.etat='publié';
+        cible.data.derniereModification = new Date();
+        cible.data.version++;
+        cible.data.versions.push({text: cible.data.version, etat:'publié', date: new Date(), auteur: MyPrefData.myName});
+        Ext.getCmp('masquesGrid').getView().refresh();
+        }*/
 
     },
 
@@ -82,6 +90,14 @@ Ext.define('Rubedo.controller.MasqueController', {
     this.getMasqueEdition().removeAll();
     this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
 
+    Ext.getCmp("newRow").disable();
+    Ext.getCmp("newCol").disable();
+    Ext.getCmp("newBloc").disable();
+    Ext.getCmp("deleteElement").disable();
+    Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+    Ext.getCmp('elementEditControl').removeAll();
+    Ext.getCmp('elementIdField').setValue(null);
+
 
 
     },
@@ -93,7 +109,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         this.masqueRestit(cible.raw.zones);
     },
 
-    onButtonClick6: function(button, e, options) {
+    copyMaskWindow: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('copierMasque');
@@ -102,32 +118,52 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    onButtonClick: function(button, e, options) {
+    newMaskWindow: function(button, e, options) {
         var fenetre = Ext.widget('nouveauMasque');
         fenetre.showAt(screen.width/2-200, 100);
     },
 
-    onButtonClick1: function(button, e, options) {
+    createMask: function(button, e, options) {
         if ((Ext.getCmp('nouveauMasqueTitre').isValid())&&(Ext.getCmp('nouveauMasqueSite').isValid())) {
 
             var nTitre = Ext.getCmp('nouveauMasqueTitre').getValue();
             var nSite = Ext.getCmp('nouveauMasqueSite').getValue();
-            var nLargeur = Ext.getCmp('nouveauMasqueSite').store.findRecord('text', nSite).data.largeur;
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 etat: 'brouillon',
-                largeur: nLargeur,
-                auteur: 'Igor',
+                auteur: MyPrefData.myName,
                 creation: new Date(),
                 derniereModification: new Date(),
                 version: 1.0,
                 versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}
+                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: MyPrefData.myName}
                 ],
-                zones:[
-                {hauteur: 150, largeur: nLargeur, nom: 'Première zone', colonnes:[ { blocs :[ ] }]}
-
+                "rows": [ 
+                {
+                    "height":null,
+                    "responsive":{
+                        "phone":true,
+                        "tablet":true,
+                        "desktop":true
+                    },
+                    "eTitle":"titre",
+                    "columns": [
+                    {
+                        "isTerminal":true,
+                        "eTitle":"titre",
+                        "responsive":{
+                            "phone":true,
+                            "tablet":true,
+                            "desktop":true
+                        },
+                        "span":12,
+                        "offset":0,
+                        "bloc": null,
+                        "rows":null	
+                    }
+                    ]
+                }
                 ]
 
             });
@@ -135,47 +171,44 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             Ext.getCmp('nouveauMasqueFenetre').close();
             Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);
-            this.onGridviewItemClick(Ext.getCmp('masquesGridView'));
+            this.masqueDisplay(Ext.getCmp('masquesGridView'),nouvMasque);
 
         }
     },
 
-    onButtonClick3: function(button, e, options) {
+    maskSave: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            this.masqueMAJ(cible);
-            cible.data.etat='brouillon';
-            cible.data.derniereModification = new Date();
-            cible.data.version++;
-            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: 'Igor'});
-            Ext.getCmp('masquesGrid').getView().refresh();
+            cible.beginEdit();
+            cible.set("rows",this.saveRows(this.getMasqueEdition()));
+            cible.set("etat","brouillon");
+            cible.set("derniereModification",new Date());
+            cible.set("version",cible.data.version+1);
+            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            cible.endEdit();
+            // Ext.getCmp('masquesGrid').getView().refresh();
+
         }
     },
 
-    onButtonClick7: function(button, e, options) {
+    copyMask: function(button, e, options) {
         if ((Ext.getCmp('copierMasqueTitre').isValid())&&(Ext.getCmp('copierMasqueSite').isValid())) {
             var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
             var nTitre = Ext.getCmp('copierMasqueTitre').getValue();
             var nSite = Ext.getCmp('copierMasqueSite').getValue();
-            var nLargeur = Ext.getCmp('copierMasqueSite').store.findRecord('text', nSite).data.largeur;
-            var rapport = nLargeur/cible.data.largeur;
-            var nZones = Ext.clone(cible.data.zones);
-            if (rapport != 1) {
-                this.masqueAdapt(nZones, rapport);
-            }
+            var nRows = Ext.clone(cible.data.rows);
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 etat: 'brouillon',
-                largeur: nLargeur,
-                auteur: 'Igor',
+                auteur: 'Alexandru Dobre',
                 creation: new Date(),
                 derniereModification: new Date(),
                 version: 1.0,
                 versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}
+                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Alexandru Dobre'}
                 ],
-                zones: nZones
+                rows: nRows
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
@@ -184,7 +217,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    onButtonClick5: function(button, e, options) {
+    importMaskWindow: function(button, e, options) {
         var fenetre = Ext.widget('importationMasques');
         fenetre.showAt(screen.width/2-150, 100);
 
@@ -192,169 +225,175 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     selectionEvents: function(abstractcomponent, options) {
         var me=this;
-        abstractcomponent.addBodyCls('contrastBorder');
-        if (abstractcomponent.mType=="col"){
-            abstractcomponent.addBodyCls('contrastRow');
-        }
-        abstractcomponent.getEl().on("mouseover", function(e){
-            abstractcomponent.setBorder(4);
-            e.stopEvent();
-        });
-        abstractcomponent.getEl().on("mouseout", function(e){
-            abstractcomponent.setBorder(2);
-            e.stopEvent();
-        });
-        abstractcomponent.getEl().on("click", function(e){
-            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
-            if (!Ext.isEmpty(prevSelected)) {
-                prevSelected.removeBodyCls('selectedelement');
+        if (!abstractcomponent.isXType("unBloc")){
+            abstractcomponent.addBodyCls('contrastBorder');
+            if (abstractcomponent.mType=="col"){
+                abstractcomponent.addBodyCls('contrastRow');
             }
-            abstractcomponent.addBodyCls('selectedelement');
-            this.frame(MyPrefData.themeColor);
-            Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
-            Ext.getCmp('deleteElement').enable();
-            var propEdit=Ext.getCmp('elementEditControl');
-            propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
+            abstractcomponent.getEl().on("mouseover", function(e){
+                abstractcomponent.setBorder(4);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                abstractcomponent.setBorder(2);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("click", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+                if (!Ext.isEmpty(prevSelected)) {
+                    prevSelected.removeBodyCls('selectedelement');
+                }
+                abstractcomponent.addBodyCls('selectedelement');
+                this.frame(MyPrefData.themeColor);
+                Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+                Ext.getCmp('deleteElement').enable();
+                var propEdit=Ext.getCmp('elementEditControl');
+                propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
 
 
-            propEdit.removeAll();
+                propEdit.removeAll();
 
-            propEdit.add(Ext.widget('textfield',{
-                itemId:"eTitleField",
-                fieldLabel:"Titre ",
-                labelWidth:40,
-                allowBlank:false,
-                anchor:"60%",
-                margin:"10 0 10 0",
-                style:"{float:left;}",
-                value:abstractcomponent.eTitle
-            }));
-            propEdit.add(Ext.widget('button',{
-                text:"Appliquer",
-                anchor:"38%",
-                margin:"10 0 10 0",
-                style:"{float:right;}",
-                handler:function(){
-                    if (propEdit.getComponent("eTitleField").isValid()){
-                        abstractcomponent.eTitle=propEdit.getComponent("eTitleField").getValue();
-                    }}
+                propEdit.add(Ext.widget('textfield',{
+                    itemId:"eTitleField",
+                    fieldLabel:"Titre ",
+                    labelWidth:40,
+                    allowBlank:false,
+                    anchor:"60%",
+                    margin:"10 0 10 0",
+                    style:"{float:left;}",
+                    value:abstractcomponent.eTitle
                 }));
-                propEdit.add(Ext.widget('checkboxgroup',{
-                    fieldLabel:"Visibilité ",
-                    anchor:"100%",
-                    labelWidth:60,
-                    margin:"0 0 10 0",
-                    vertical:true,
-                    columns:1,
-                    items: [
-                    { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
-                    { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
-                    { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
-                    ]
-
-                }));
-                if (abstractcomponent.mType=="row"){
-                    Ext.getCmp('newRow').disable();
-                    if (abstractcomponent.getComponent("eol").flex===0){
-                        Ext.getCmp('newCol').disable();
-                    } else {
-                        Ext.getCmp('newCol').enable();
-                    }
-                    propEdit.add(Ext.widget('button',{
-                        itemId:"rowAutoHeight",
-                        text:"Hauteur automatique",
+                propEdit.add(Ext.widget('button',{
+                    text:"Appliquer",
+                    anchor:"38%",
+                    margin:"10 0 10 0",
+                    style:"{float:right;}",
+                    handler:function(){
+                        if (propEdit.getComponent("eTitleField").isValid()){
+                            abstractcomponent.eTitle=propEdit.getComponent("eTitleField").getValue();
+                        }}
+                    }));
+                    propEdit.add(Ext.widget('checkboxgroup',{
+                        fieldLabel:"Visibilité ",
                         anchor:"100%",
-                        tooltip:"La hauteur s'adapte au contenu lors du rendu final",
-                        hidden:true,
-                        handler:function(){
-                            abstractcomponent.setHeight(null);
-                            abstractcomponent.flex=1;
-                            abstractcomponent.up().doLayout();
-                            propEdit.getComponent("rowHeightFixed").setValue();
-                            this.hide();
+                        labelWidth:60,
+                        margin:"0 0 10 0",
+                        vertical:true,
+                        columns:1,
+                        items: [
+                        { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                        { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                        { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                        ]
+
+                    }));
+                    if (abstractcomponent.mType=="row"){
+                        Ext.getCmp('newRow').disable();
+                        Ext.getCmp("newBloc").disable();
+                        if (abstractcomponent.getComponent("eol").flex===0){
+                            Ext.getCmp('newCol').disable();
+                        } else {
+                            Ext.getCmp('newCol').enable();
                         }
-                    }));
-                    if (!Ext.isEmpty(abstractcomponent.height)){propEdit.getComponent("rowAutoHeight").show();}
-                    propEdit.add(Ext.widget('numberfield',{
-                        itemId:"rowHeightFixed",
-                        fieldLabel:"Hauteur fixe ",
-                        labelWidth:80,
-                        allowDecimals:false,
-                        allowBlank:false,
-                        minValue:20,
-                        anchor:"60%",
-                        margin:"10 0 0 0",
-                        style:"{float:left;}",
-                        value:abstractcomponent.height
-                    }));
-                    propEdit.add(Ext.widget('button',{
-                        text:"Appliquer",
-                        anchor:"38%",
-                        margin:"10 0 0 0",
-                        style:"{float:right;}",
-                        handler:function(){
-                            if (propEdit.getComponent("rowHeightFixed").isValid()){
-                                abstractcomponent.flex=null;
-                                abstractcomponent.setHeight(propEdit.getComponent("rowHeightFixed").getValue());
+                        propEdit.add(Ext.widget('button',{
+                            itemId:"rowAutoHeight",
+                            text:"Hauteur automatique",
+                            anchor:"100%",
+                            tooltip:"La hauteur s'adapte au contenu lors du rendu final",
+                            hidden:true,
+                            handler:function(){
+                                abstractcomponent.setHeight(null);
+                                abstractcomponent.flex=1;
                                 abstractcomponent.up().doLayout();
-                                propEdit.getComponent("rowAutoHeight").show();
-                            }}
+                                propEdit.getComponent("rowHeightFixed").setValue();
+                                this.hide();
+                            }
                         }));
-
-
-
-                    }    
-
-                    else if (abstractcomponent.mType=="col"){
-                        if ((abstractcomponent.final)){
-                        Ext.getCmp('newRow').disable();} else {
-                            Ext.getCmp('newRow').enable();
-                        }
-                        Ext.getCmp('newCol').disable();
-                        //console.log(abstractcomponent);
-
-                        var offsetEdit=Ext.widget('numberfield',{
-                            itemId:"offsetEditor",
-                            fieldLabel:"Offset ",
-                            editable:false,
-                            labelWidth:45,
+                        if (!Ext.isEmpty(abstractcomponent.height)){propEdit.getComponent("rowAutoHeight").show();}
+                        propEdit.add(Ext.widget('numberfield',{
+                            itemId:"rowHeightFixed",
+                            fieldLabel:"Hauteur fixe ",
+                            labelWidth:80,
                             allowDecimals:false,
-                            anchor:"50%",
+                            allowBlank:false,
+                            minValue:20,
+                            anchor:"60%",
                             margin:"10 0 0 0",
                             style:"{float:left;}",
-                            value:0,
-                            minValue:0
-                        });
-
-                        var spanEdit=Ext.widget('numberfield',{
-                            itemId:"spanEditor",
-                            fieldLabel:"Span ",
-                            labelWidth:45,
-                            editable:false,
-                            allowDecimals:false,
-                            anchor:"50%",
-                            margin:"10 0 0 10",
+                            value:abstractcomponent.height
+                        }));
+                        propEdit.add(Ext.widget('button',{
+                            text:"Appliquer",
+                            anchor:"38%",
+                            margin:"10 0 0 0",
                             style:"{float:right;}",
-                            value:abstractcomponent.flex,
-                            minValue:1
-                        });
+                            handler:function(){
+                                if (propEdit.getComponent("rowHeightFixed").isValid()){
+                                    abstractcomponent.flex=null;
+                                    abstractcomponent.setHeight(propEdit.getComponent("rowHeightFixed").getValue());
+                                    abstractcomponent.up().doLayout();
+                                    propEdit.getComponent("rowAutoHeight").show();
+                                }}
+                            }));
 
 
 
-                        propEdit.add(offsetEdit);
-                        propEdit.add(spanEdit);
-                        me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
-                        offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
-                        spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                        }    
+
+                        else if (abstractcomponent.mType=="col"){
+                            if ((abstractcomponent.final)){
+                            Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
+                                Ext.getCmp('newRow').disable();
+                            }else {
+                                Ext.getCmp('newRow').enable();
+                            }
+
+                            Ext.getCmp('newCol').disable();
+                            if (Ext.isEmpty(abstractcomponent.items.items)){
+                            Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
+
+                                var offsetEdit=Ext.widget('numberfield',{
+                                    itemId:"offsetEditor",
+                                    fieldLabel:"Offset ",
+                                    editable:false,
+                                    labelWidth:45,
+                                    allowDecimals:false,
+                                    anchor:"50%",
+                                    margin:"10 0 0 0",
+                                    style:"{float:left;}",
+                                    value:0,
+                                    minValue:0
+                                });
+
+                                var spanEdit=Ext.widget('numberfield',{
+                                    itemId:"spanEditor",
+                                    fieldLabel:"Span ",
+                                    labelWidth:45,
+                                    editable:false,
+                                    allowDecimals:false,
+                                    anchor:"50%",
+                                    margin:"10 0 0 10",
+                                    style:"{float:right;}",
+                                    value:abstractcomponent.flex,
+                                    minValue:1
+                                });
+
+
+
+                                propEdit.add(offsetEdit);
+                                propEdit.add(spanEdit);
+                                me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
+                                offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                                spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
 
 
 
 
 
-                    }
+                            }
 
-                    e.stopEvent();
-                });
+                            e.stopEvent();
+                        });}
     },
 
     deleteMaskElement: function(button, e, options) {
@@ -374,6 +413,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         cible.destroy();
         Ext.getCmp("newRow").disable();
         Ext.getCmp("newCol").disable();
+        Ext.getCmp("newBloc").disable();
         Ext.getCmp("deleteElement").disable();
         Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
         Ext.getCmp('elementEditControl').removeAll();
@@ -393,6 +433,12 @@ Ext.define('Rubedo.controller.MasqueController', {
                 header:false,
                 flex:1,
                 final:isFinalCol,
+                eTitle:"titre",
+                responsive:{
+                    phone:true,
+                    tablet:true,
+                    desktop:true
+                },
                 mType:'col',
                 margin:4,
                 layout: {
@@ -415,6 +461,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             header:false,
             mType:"row",
             flex:1,
+            eTitle:"titre",
+            responsive:{
+                phone:true,
+                tablet:true,
+                desktop:true
+            },
             margin:4,
             layout: {
                 type: 'hbox',
@@ -423,6 +475,21 @@ Ext.define('Rubedo.controller.MasqueController', {
         });
         row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
         cible.insert(cible.items.items.length,row);
+        Ext.getCmp("newBloc").disable();
+    },
+
+    showBlocWindow: function(button, e, options) {
+        var blocWin = Ext.widget('ajoutBlocFenetre');
+        blocWin.showAt(screen.width/2-250, 100);
+    },
+
+    addBloc: function(button, e, options) {
+        var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
+        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
+        Ext.getCmp(Ext.getCmp('elementIdField').getValue()).add(nouvBloc);
+        button.up().up().close();
+        Ext.getCmp("newBloc").disable();
+        Ext.getCmp('newRow').disable();
     },
 
     applyConstrain: function(target, offsetF, spanF, applyFirst) {
@@ -496,13 +563,6 @@ Ext.define('Rubedo.controller.MasqueController', {
         cible.data.zones=nouvZones;
     },
 
-    masqueAdapt: function(zones, rapport) {
-        for (i=0; i<zones.length; i++) {
-            zones[i].largeur = zones[i].largeur * rapport;  
-        }
-
-    },
-
     masqueRestit: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -547,25 +607,94 @@ Ext.define('Rubedo.controller.MasqueController', {
                     me.masqueRestit(column.rows,its-1,newCol);    
                 }
                 else {
-                    //ajout bloc
+                    if (Ext.isEmpty(column.bloc)){} else {
+                    newCol.add(Ext.widget("unBloc",column.bloc));
                 }
-                eolWidth=eolWidth-column.span;
-                newRow.add(newCol);
-
-            });
-            newRow.add(Ext.widget("container",{
-                flex:eolWidth,
-                itemId:"eol"
-            }));
-            if (Ext.isEmpty(row.height)) {
-                newRow.flex=rFlex;
-            } else {
-                newRow.height=row.height;
             }
-            cible.add(newRow);  
-
+            eolWidth=eolWidth-column.span;
+            newRow.add(newCol);
 
         });
+        newRow.add(Ext.widget("container",{
+            flex:eolWidth,
+            itemId:"eol"
+        }));
+        if (Ext.isEmpty(row.height)) {
+            newRow.flex=rFlex;
+        } else {
+            newRow.height=row.height;
+        }
+        cible.add(newRow);  
+
+
+    });
+    },
+
+    saveRows: function(startComp) {
+        var me=this;
+        var nRows=[ ];
+        Ext.Array.forEach(startComp.items.items, function(row){
+            var newCols = [ ];
+            var offset=0;
+            Ext.Array.forEach(row.items.items, function(col){
+                if (col.isXType("panel")) {
+                    var bloc = null;
+                    var rows = null;
+                    var isTerminal=true;
+                    if (col.final) { 
+                        var nBloc=col.items.items[0];
+                        if (!Ext.isEmpty(nBloc)) {
+                            bloc={
+
+                                bType:nBloc.bType,
+                                champsConfig:nBloc.champsConfig,
+                                configBloc:nBloc.configBloc,
+                                title:nBloc.title,
+                                flex:1
+
+                            };
+                        }
+                    }else {
+                        var thing=col.items.items[0];
+                        if (Ext.isEmpty(thing)){} else if (thing.isXType("unBloc")) {
+                        bloc={
+
+                            bType:thing.bType,
+                            champsConfig:thing.champsConfig,
+                            configBloc:thing.configBloc,
+                            title:thing.title,
+                            flex:1
+
+                        };
+                    } else {
+                        isTerminal=false;
+                        rows=me.saveRows(col);
+                    }
+                }
+
+                newCols.push({
+                    eTitle:col.eTitle,
+                    responsive:col.responsive,
+                    span:col.flex,
+                    offset:offset,
+                    bloc: bloc,
+                    rows: rows,
+                    isTerminal:isTerminal
+
+                });
+                offset=0;
+            } else {offset=offset+col.flex;}
+
+            });
+            nRows.push({
+                height:row.height,
+                eTitle:row.eTitle,
+                responsive:row.responsive,
+                columns: newCols
+
+            });
+        });
+        return nRows;
     },
 
     onControllerClickStub: function() {
@@ -579,10 +708,10 @@ Ext.define('Rubedo.controller.MasqueController', {
     init: function() {
         this.control({
             "#boutonSupprimerMasque": {
-                click: this.onButtonClick2
+                click: this.deleteMask
             },
             "#AdminfMasquesPublier": {
-                click: this.onButtonClick4
+                click: this.publishMask
             },
             "#masquesGridView": {
                 itemclick: this.masqueDisplay
@@ -591,22 +720,22 @@ Ext.define('Rubedo.controller.MasqueController', {
                 itemclick: this.onTreepanelItemClick
             },
             "#boutonCopierMasque": {
-                click: this.onButtonClick6
+                click: this.copyMaskWindow
             },
             "#boutonNouveauMasque": {
-                click: this.onButtonClick
+                click: this.newMaskWindow
             },
             "#creerNouveauMasque": {
-                click: this.onButtonClick1
+                click: this.createMask
             },
             "#AdminfMasquesEnregistrer": {
-                click: this.onButtonClick3
+                click: this.maskSave
             },
             "#copierMasque": {
-                click: this.onButtonClick7
+                click: this.copyMask
             },
             "#AdminfMasquesImporter": {
-                click: this.onButtonClick5
+                click: this.importMaskWindow
             },
             "#masqueEdition panel": {
                 render: this.selectionEvents
@@ -619,6 +748,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#newRow": {
                 click: this.addRow
+            },
+            "#newBloc": {
+                click: this.showBlocWindow
+            },
+            "#boutonAjouterBloc": {
+                click: this.addBloc
             }
         });
 
