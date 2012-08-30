@@ -445,7 +445,7 @@
                 "fn": "selectBloc",
                 "implHandler": [
                     "abstractcomponent.getEl().on(\"click\", function(e){\r",
-                    "e.stopEvent();\r",
+                    "    e.stopEvent();\r",
                     "});\r",
                     "abstractcomponent.header.on('click', function() { \r",
                     "\r",

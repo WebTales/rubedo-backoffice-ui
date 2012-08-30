@@ -6,6 +6,11 @@ border-width:4px !important;
 border-color:#666666;
 border-width:2px; 
 }
+.contrastCBorder{
+border-color:#666666;
+border-width:2px; 
+border-style:dotted !important;
+}
 .contrastRow{
 border-style:dashed !important;
 }

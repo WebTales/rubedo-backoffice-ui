@@ -59,16 +59,17 @@ Ext.define('Rubedo.controller.MasqueController', {
     },
 
     publishMask: function(button, e, options) {
-        /*var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
+        var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-        this.masqueMAJ(cible);
-        cible.data.etat='publié';
-        cible.data.derniereModification = new Date();
-        cible.data.version++;
-        cible.data.versions.push({text: cible.data.version, etat:'publié', date: new Date(), auteur: MyPrefData.myName});
-        Ext.getCmp('masquesGrid').getView().refresh();
-        }*/
+            cible.beginEdit();
+            cible.set("rows",this.saveRows(this.getMasqueEdition()));
+            cible.set("etat","publié");
+            cible.set("derniereModification",new Date());
+            cible.set("version",cible.data.version+1);
+            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            cible.endEdit();
 
+        }
     },
 
     masqueDisplay: function(dataview, record, item, index, e, options) {
@@ -86,7 +87,10 @@ Ext.define('Rubedo.controller.MasqueController', {
     }
     var masque = record.data;
     this.getVersionsDataJsonStore().loadData(masque.versions);
-
+    var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+    if (!Ext.isEmpty(prevSelected)) {
+        prevSelected.removeBodyCls('selectedelement');
+    }
     this.getMasqueEdition().removeAll();
     this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
 
@@ -186,7 +190,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             cible.set("version",cible.data.version+1);
             cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
             cible.endEdit();
-            // Ext.getCmp('masquesGrid').getView().refresh();
 
         }
     },
@@ -453,6 +456,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             }
 
         }
+        newCol.getEl().dom.click();
     },
 
     addRow: function(button, e, options) {
@@ -476,6 +480,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
         cible.insert(cible.items.items.length,row);
         Ext.getCmp("newBloc").disable();
+        row.getEl().dom.click();
     },
 
     showBlocWindow: function(button, e, options) {
@@ -490,6 +495,38 @@ Ext.define('Rubedo.controller.MasqueController', {
         button.up().up().close();
         Ext.getCmp("newBloc").disable();
         Ext.getCmp('newRow').disable();
+    },
+
+    mainBoxSelect: function(abstractcomponent, options) {
+        abstractcomponent.setBorder(2);
+        abstractcomponent.addBodyCls('contrastCBorder');
+        abstractcomponent.getEl().on("mouseover", function(e){
+            abstractcomponent.setBorder(4);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("mouseout", function(e){
+            abstractcomponent.setBorder(2);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("click", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if (!Ext.isEmpty(prevSelected)) {
+                prevSelected.removeBodyCls('selectedelement');
+            }
+            abstractcomponent.addBodyCls('selectedelement');
+            this.frame(MyPrefData.themeColor);
+            Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+            Ext.getCmp('deleteElement').disable();
+            Ext.getCmp('newCol').disable();
+            Ext.getCmp('newBloc').disable();
+            Ext.getCmp('newRow').enable();
+            var propEdit=Ext.getCmp('elementEditControl');
+            propEdit.setTitle("Racine");
+
+
+            propEdit.removeAll();
+
+        });
     },
 
     applyConstrain: function(target, offsetF, spanF, applyFirst) {
@@ -705,6 +742,10 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
+    onControllerRenderStub: function() {
+
+    },
+
     init: function() {
         this.control({
             "#boutonSupprimerMasque": {
@@ -754,6 +795,9 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#boutonAjouterBloc": {
                 click: this.addBloc
+            },
+            "#masqueEdition": {
+                render: this.mainBoxSelect
             }
         });
 
