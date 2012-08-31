@@ -14,7 +14,7 @@
     "customConfigs": [],
     "designerId": "959aada9-4d0a-400b-bb01-0907998b9c82",
     "$viewOrder": 5,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen25447",
@@ -59,22 +59,6 @@
                 "name": "etat",
                 "type": "string",
                 "designer|userClassName": "MyField16"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen39500",
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "largeur",
-                "type": "int",
-                "designer|userClassName": "MyField20"
             },
             "customConfigs": [],
             "expanded": true
@@ -145,7 +129,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen48979",
+            "id": "ExtBox1-ext-gen7080",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -153,7 +137,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "zones",
+                "name": "rows",
                 "type": "auto",
                 "designer|userClassName": "MyField20"
             },

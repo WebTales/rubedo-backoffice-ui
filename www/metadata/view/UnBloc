@@ -10,10 +10,12 @@
         "draggable": null,
         "frame": true,
         "height": null,
+        "margin": 4,
         "width": 50,
         "maintainFlex": null,
         "layout": "fit",
-        "closable": true,
+        "closable": false,
+        "preventHeader": false,
         "title": "Un Bloc",
         "designer|userClassName": "UnBloc",
         "designer|userAlias": "unBloc"
@@ -21,73 +23,5 @@
     "customConfigs": [],
     "designerId": "3c5f989b-aadc-4101-b8f1-eecb9b463a6b",
     "$viewOrder": 7,
-    "expanded": false,
-    "cn": [
-        {
-            "id": "ExtBox1-ext-gen32581",
-            "type": "tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "id": null,
-                "itemId": "deplaceGaucheBloc",
-                "type": "left",
-                "designer|userClassName": "MyTool3"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen32724",
-            "type": "tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "deplaceDroiteBloc",
-                "tooltip": null,
-                "type": "right",
-                "designer|userClassName": "MyTool4"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen33068",
-            "type": "tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "zoneHaut",
-                "type": "up",
-                "designer|userClassName": "MyTool4"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen33159",
-            "type": "tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "zoneBas",
-                "type": "down",
-                "designer|userClassName": "MyTool4"
-            },
-            "customConfigs": [],
-            "expanded": true
-        }
-    ]
+    "expanded": true
 }

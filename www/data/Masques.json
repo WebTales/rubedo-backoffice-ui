@@ -3,54 +3,150 @@
 		"text": "Masque 1",
 		"site": "Ameli-Santé",
 		"etat": "brouillon",
-		"largeur": 1000,
 		"auteur": "jbourdin",
 		"creation": "2012-05-01T00:00:00",
 		"derniereModification": "2012-05-01T00:00:00",
 		"version": 2,
-		"zones": [
+		"rows": [ 
+			{	
+				"height":100,
+				"eTitle":"titre",
+				"responsive":{
+					"phone":true,
+					"tablet":true,
+					"desktop":true
+				},
+				"columns": [
+					{
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":0,
+						"bloc": null,
+						"rows":null	
+					},
+					{
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":2,
+						"bloc": null,
+						"rows":null	
+					}					
+				]
+			},
 			{
-				"hauteur": 150,
-				"largeur": 1000,
-				"nom": "Zone 1",
-				"colonnes": [
+				"height":null,
+				"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+				"eTitle":"titre",
+				"columns": [
 					{
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 400,
-				"largeur": 400,
-				"nom": "Zone 2",
-				"colonnes": [
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":0,
+						"bloc": null,
+						"rows":null	
+					},
 					{
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 400,
-				"largeur": 600,
-				"nom": "Zone 3",
-				"colonnes": [
-					{
-						"flex": 2,
-						"blocs": []
-					}, {
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 100,
-				"largeur": 1000,
-				"nom": "Zone 4",
-				"colonnes": [
-					{
-						"flex": 1,
-						"blocs": []
-					}
+						"isTerminal":false,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":8,
+						"offset":0,
+						"bloc": null,
+						"rows":[ 
+								{
+									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+									"columns": [
+										{
+											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										},
+										{
+											"span":6,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":2,
+											"bloc": null
+										}					
+									]
+								},
+								{
+									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+									"columns": [
+										{
+											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										},
+										{
+											"span":8,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										}					
+									]
+								}
+							]
+					}					
 				]
 			}
 		],
@@ -72,60 +168,36 @@
 		"text": "Masque 2",
 		"site": "Ameli.fr",
 		"etat": "brouillon",
-		"largeur": 1200,
 		"auteur": "jbourdin",
 		"creation": "2012-05-01T00:00:00",
 		"derniereModification": "2012-05-01T00:00:00",
 		"version": 2,
-		"zones": [
+		"rows": [ 
 			{
-				"hauteur": 150,
-				"largeur": 1200,
-				"nom": "Zone 1",
-				"colonnes": [
-					{
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 400,
-				"largeur": 600,
-				"nom": "Zone 2",
-				"colonnes": [
-					{
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 400,
-				"largeur": 600,
-				"nom": "Zone 3",
-				"colonnes": [
-					{
-						"flex": 1,
-						"blocs": []
-					}, {
-						"flex": 1,
-						"blocs": []
-					}
-				]
-			}, {
-				"hauteur": 100,
-				"largeur": 1200,
-				"nom": "Zone 4",
-				"colonnes": [
-					{
-						"flex": 1,
-						"blocs": []
-					}, {
-						"flex": 1,
-						"blocs": []
-					}
-				]
+				"height":null,
+				"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+				"eTitle":"titre",
+				"columns": [
+						{
+							"isTerminal":true,
+							"eTitle":"titre",
+							"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+							"span":12,
+							"offset":0,
+							"bloc": null,
+							"rows":null	
+						}
+							]
 			}
-		],
+				],
 		"versions": [
 			{
 				"text": "1",

@@ -68,10 +68,9 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
             var champT = Ext.getCmp('nouveauTermeTaxoField');
             if (champT.isValid()) {
-                var nTerme = Ext.create('model.termeTaxonomieModel', {text: champT.getValue()});
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
-                    cibleI.insertChild(cibleI.indexOf(cibleI.lastChild)+1, nTerme);
+                    cibleI.appendChild({text: champT.getValue()});
                     cibleI.expand();
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
                 } 
@@ -84,17 +83,18 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     enregistrerTaxo: function(button, e, options) {
         if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
-            var cibleR=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected().data;
-            if (Ext.getCmp('champEditionTaxoTitre').isValid()){cibleR.titre=Ext.getCmp('champEditionTaxoTitre').getValue(); }
-            if (Ext.getCmp('champEditionTaxoDescription').isValid()){cibleR.description=Ext.getCmp('champEditionTaxoDescription').getValue(); }
-            if (Ext.getCmp('champEditionTaxoHelpText').isValid()){cibleR.helpText=Ext.getCmp('champEditionTaxoHelpText').getValue(); }
-            if (Ext.getCmp('champEditionTaxoEtiquettes').isValid()){cibleR.etiquettes=Ext.getCmp('champEditionTaxoEtiquettes').getValue(); }
-            if (Ext.getCmp('champEditionTaxoChoixMultiple').isValid()){cibleR.choixMultiple=Ext.getCmp('champEditionTaxoChoixMultiple').getValue(); }
-            if (Ext.getCmp('champEditionTaxoObligatoire').isValid()){cibleR.obligatoire=Ext.getCmp('champEditionTaxoObligatoire').getValue(); }
+            var cibleR=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();
+            cibleR.beginEdit();
+            if (Ext.getCmp('champEditionTaxoTitre').isValid()){cibleR.set("titre",Ext.getCmp('champEditionTaxoTitre').getValue()); }
+            if (Ext.getCmp('champEditionTaxoDescription').isValid()){cibleR.set("description",Ext.getCmp('champEditionTaxoDescription').getValue()); }
+            if (Ext.getCmp('champEditionTaxoHelpText').isValid()){cibleR.set("helpText",Ext.getCmp('champEditionTaxoHelpText').getValue()); }
+            if (Ext.getCmp('champEditionTaxoEtiquettes').isValid()){cibleR.set("etiquettes",Ext.getCmp('champEditionTaxoEtiquettes').getValue()); }
+            if (Ext.getCmp('champEditionTaxoChoixMultiple').isValid()){cibleR.set("choixMultiple",Ext.getCmp('champEditionTaxoChoixMultiple').getValue()); }
+            if (Ext.getCmp('champEditionTaxoObligatoire').isValid()){cibleR.set("obligatoire",Ext.getCmp('champEditionTaxoObligatoire').getValue()); }
             var racineR = Ext.getCmp('TermesTaxonomieTree').getStore().getRootNode();
             var nouvRacine = {text: racineR.data.text, children: this.recupereFils(racineR.childNodes)};  
-            cibleR.termes=Ext.clone(nouvRacine);
-            Ext.getCmp('AdminfTaxonomieGrid').getView().refresh();
+            cibleR.set("termes",Ext.clone(nouvRacine));
+            cibleR.endEdit();
         }
     },
 

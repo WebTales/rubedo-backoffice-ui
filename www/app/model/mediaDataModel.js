@@ -29,6 +29,9 @@ Ext.define('Rubedo.model.mediaDataModel', {
         {
             name: 'medias',
             type: 'auto'
+        },
+        {
+            name: 'version'
         }
     ]
 });

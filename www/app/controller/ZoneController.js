@@ -58,14 +58,6 @@ Ext.define('Rubedo.controller.ZoneController', {
         delConfirm.showAt(screen.width/2-250, 100);
     },
 
-    insereBloc: function(button, e, options) {
-        var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
-        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
-        Ext.getCmp(Ext.getCmp('zoneIdField').getValue()).getComponent(0).add(nouvBloc);
-        button.up().up().close();
-        nouvBloc.header.fireEvent('click');
-    },
-
     deplaceBas: function(tool, e, options) {
         var pos = tool.up().up().up().items.indexOf(tool.up().up());
         tool.up().up().up().move(pos,pos+1);
@@ -156,24 +148,13 @@ Ext.define('Rubedo.controller.ZoneController', {
 
     },
 
-    videPropZone: function(abstractcontainer, component, options) {
-        if (component.id==Ext.getCmp('zoneIdField').getValue()) { 
-            Ext.getCmp('zoneHeightField').setValue();
-            Ext.getCmp('zoneWidthField').setValue();
-            Ext.getCmp('zoneTitleField').setValue();
-            Ext.getCmp('zoneIdField').setValue();
-            Ext.getCmp('colonnesEdit').removeAll();
-
-        }
-    },
-
     onPanelBeforeDestroy: function(abstractcomponent, options) {
         if ((Ext.isDefined(Ext.getCmp('blocIdField')))&&(abstractcomponent.id==Ext.getCmp('blocIdField').getValue())) { 
             Ext.getCmp('blocHeightField').setValue();
             Ext.getCmp('blocTitleField').setValue();
             Ext.getCmp('blocIdField').setValue();
-            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {
-                Ext.getCmp('paneauPropMasque').getComponent(2).destroy();
+            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {
+                Ext.getCmp('paneauPropMasque').getComponent(3).destroy();
             }
         }
     },
@@ -213,62 +194,63 @@ Ext.define('Rubedo.controller.ZoneController', {
     },
 
     selectBloc: function(abstractcomponent, options) {
-
+        /*abstractcomponent.getEl().on("click", function(e){
+        e.stopEvent();
+        });
         abstractcomponent.header.on('click', function() { 
 
-            this.up().getEl().frame(MyPrefData.themeColor);
-            this.up().setIconCls('editBloc');
+        this.up().getEl().frame(MyPrefData.themeColor);
+        this.up().setIconCls('editBloc');
 
-            if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(2))) {
-                Ext.getCmp('paneauPropMasque').getComponent(2).destroy();
-            }
+        if(Ext.isDefined(Ext.getCmp('paneauPropMasque').getComponent(3))) {
+        Ext.getCmp('paneauPropMasque').getComponent(3).destroy();
+        }
 
-            var champBTitre = Ext.getCmp('blocTitleField');
-            if (Ext.isDefined(champBTitre)) {
-            champBTitre.setValue(abstractcomponent.title);}
+        var champBTitre = Ext.getCmp('blocTitleField');
+        if (Ext.isDefined(champBTitre)) {
+        champBTitre.setValue(abstractcomponent.title);}
 
-            var champBHauteur = Ext.getCmp('blocHeightField');
-            if (Ext.isDefined(champBTitre)) {
-            champBHauteur.setValue(abstractcomponent.flex);}
+        var champBHauteur = Ext.getCmp('blocHeightField');
+        if (Ext.isDefined(champBTitre)) {
+        champBHauteur.setValue(abstractcomponent.flex);}
 
-            var champBId = Ext.getCmp('blocIdField');
-            if (Ext.isDefined(champBId)) {    
-                var blocPrec = Ext.getCmp( Ext.getCmp('blocIdField').getValue());
-                if ((Ext.isDefined(blocPrec))&&(blocPrec.id !== abstractcomponent.id )) { blocPrec.setIconCls(null);}   
-                champBId.setValue(abstractcomponent.id);
-            }
-            var configSpec = Ext.widget('ConfigSpecBloc');
-            var categories = abstractcomponent.champsConfig.simple;
-            for (j=0; j<categories.length; j++){
-                var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+        var champBId = Ext.getCmp('blocIdField');
+        if (Ext.isDefined(champBId)) {    
+        var blocPrec = Ext.getCmp( Ext.getCmp('blocIdField').getValue());
+        if ((Ext.isDefined(blocPrec))&&(blocPrec.id !== abstractcomponent.id )) { blocPrec.setIconCls(null);}   
+        champBId.setValue(abstractcomponent.id);
+        }
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        var categories = abstractcomponent.champsConfig.simple;
+        for (j=0; j<categories.length; j++){
+        var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
 
-                var champsS = categories[j].champs;
-                for (i=0; i<champsS.length; i++) {
-                    if (champsS[i].type =='Ext.form.field.ComboBox') {
-                        var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
-                        champsS[i].config.store= monStore;
-                    }
-                    var nChampS = Ext.create(champsS[i].type, champsS[i].config);
-                    if (champsS[i].type =='Ext.form.field.Trigger'){
-                        var Ouvrir = Ext.clone(champsS[i].ouvrir);
-                        nChampS.onTriggerClick= function() {
-                            var fenetre = Ext.widget(Ouvrir);
-                            fenetre.showAt(screen.width/2-200, 100);
-                        } ;  
-                    }
-                    nChampS.labelSeparator= ' ';
-                    nChampS.anchor= '100%';
-                    nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
-                    nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
-                    nCateg.add(nChampS);
-                }
-                configSpec.items.items[0].add(nCateg);
+        var champsS = categories[j].champs;
+        for (i=0; i<champsS.length; i++) {
+        if (champsS[i].type =='Ext.form.field.ComboBox') {
+        var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
+        champsS[i].config.store= monStore;
+        }
+        var nChampS = Ext.create(champsS[i].type, champsS[i].config);
+        if (champsS[i].type =='Ext.form.field.Trigger'){
+        var Ouvrir = Ext.clone(champsS[i].ouvrir);
+        nChampS.onTriggerClick= function() {
+        var fenetre = Ext.widget(Ouvrir);
+        fenetre.showAt(screen.width/2-200, 100);
+        } ;  
+        }
+        nChampS.labelSeparator= ' ';
+        nChampS.anchor= '100%';
+        nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
+        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+        nCateg.add(nChampS);
+        }
+        configSpec.items.items[0].add(nCateg);
 
-            }
-            Ext.getCmp('paneauPropMasque').add(configSpec);
+        }
+        Ext.getCmp('paneauPropMasque').add(configSpec);
 
-
-        });
+        });*/
     },
 
     supprimerZone: function(tool, e, options) {
@@ -341,9 +323,6 @@ Ext.define('Rubedo.controller.ZoneController', {
             "[itemId='ajouterBlocZone']": {
                 click: this.ajoutBlocZoneFenetre
             },
-            "#boutonAjouterBloc": {
-                click: this.insereBloc
-            },
             "[itemId='zoneBas']": {
                 click: this.deplaceBas
             },
@@ -364,9 +343,6 @@ Ext.define('Rubedo.controller.ZoneController', {
             },
             "#modifierPropZone": {
                 click: this.majZone
-            },
-            "#masqueEdition": {
-                remove: this.videPropZone
             },
             "unBloc": {
                 beforedestroy: this.onPanelBeforeDestroy,

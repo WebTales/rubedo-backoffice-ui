@@ -8,6 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
+        "autoSync": true,
         "storeId": "MasquesDataJson",
         "model": "masquesDataModel",
         "designer|userClassName": "MasquesDataJson"
@@ -41,7 +42,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Masques.json",
+                "api": "{\ncreate : 'masks/create',\nread : 'data/Masques.json',\nupdate : 'masks/update',\ndestroy : 'masks/delete'\n}",
+                "url": null,
                 "designer|userClassName": "MyAjaxProxy5"
             },
             "customConfigs": [],
@@ -56,7 +58,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data",
                         "designer|userClassName": "MyJsonReader3"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen29726",
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data",
+                        "designer|userClassName": "MyJsonWriter2"
                     },
                     "customConfigs": [],
                     "expanded": true

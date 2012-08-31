@@ -38,6 +38,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'typesImbriques'
+        },
+        {
+            name: 'version'
         }
     ]
 });

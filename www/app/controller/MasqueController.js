@@ -36,7 +36,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     ],
 
-    onButtonClick2: function(button, e, options) {
+    deleteMask: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('delConfirmZ');
@@ -44,26 +44,36 @@ Ext.define('Rubedo.controller.MasqueController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('masquesGrid').getStore().remove(cible);
                 Ext.getCmp('masqueEdition').removeAll();
+                Ext.getCmp("newRow").disable();
+                Ext.getCmp("newCol").disable();
+                Ext.getCmp("newBloc").disable();
+                Ext.getCmp("deleteElement").disable();
+                Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+                Ext.getCmp('elementEditControl').removeAll();
+                Ext.getCmp('elementEditControl').setIconCls();
+                Ext.getCmp('elementIdField').setValue(null);
                 Ext.getCmp('delConfirmZ').close();
             });  
 
         }
+
     },
 
-    onButtonClick4: function(button, e, options) {
+    publishMask: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            this.masqueMAJ(cible);
-            cible.data.etat='publié';
-            cible.data.derniereModification = new Date();
-            cible.data.version++;
-            cible.data.versions.push({text: cible.data.version, etat:'publié', date: new Date(), auteur: 'Igor'});
-            Ext.getCmp('masquesGrid').getView().refresh();
-        }
+            cible.beginEdit();
+            cible.set("rows",this.saveRows(this.getMasqueEdition()));
+            cible.set("etat","publié");
+            cible.set("derniereModification",new Date());
+            cible.set("version",cible.data.version+1);
+            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            cible.endEdit();
 
+        }
     },
 
-    onGridviewItemClick: function(dataview, record, item, index, e, options) {
+    masqueDisplay: function(dataview, record, item, index, e, options) {
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
         valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
@@ -78,10 +88,21 @@ Ext.define('Rubedo.controller.MasqueController', {
     }
     var masque = record.data;
     this.getVersionsDataJsonStore().loadData(masque.versions);
-
+    var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+    if (!Ext.isEmpty(prevSelected)) {
+        prevSelected.removeBodyCls('selectedelement');
+    }
     this.getMasqueEdition().removeAll();
-    this.getMasqueEdition().setWidth(masque.largeur);
-    this.masqueRestit(masque.zones); 
+    this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
+
+    Ext.getCmp("newRow").disable();
+    Ext.getCmp("newCol").disable();
+    Ext.getCmp("newBloc").disable();
+    Ext.getCmp("deleteElement").disable();
+    Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+    Ext.getCmp('elementEditControl').removeAll();
+    Ext.getCmp('elementEditControl').setIconCls();
+    Ext.getCmp('elementIdField').setValue(null);
 
 
 
@@ -94,7 +115,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         this.masqueRestit(cible.raw.zones);
     },
 
-    onButtonClick6: function(button, e, options) {
+    copyMaskWindow: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('copierMasque');
@@ -103,32 +124,52 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    onButtonClick: function(button, e, options) {
+    newMaskWindow: function(button, e, options) {
         var fenetre = Ext.widget('nouveauMasque');
         fenetre.showAt(screen.width/2-200, 100);
     },
 
-    onButtonClick1: function(button, e, options) {
+    createMask: function(button, e, options) {
         if ((Ext.getCmp('nouveauMasqueTitre').isValid())&&(Ext.getCmp('nouveauMasqueSite').isValid())) {
 
             var nTitre = Ext.getCmp('nouveauMasqueTitre').getValue();
             var nSite = Ext.getCmp('nouveauMasqueSite').getValue();
-            var nLargeur = Ext.getCmp('nouveauMasqueSite').store.findRecord('text', nSite).data.largeur;
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 etat: 'brouillon',
-                largeur: nLargeur,
-                auteur: 'Igor',
+                auteur: MyPrefData.myName,
                 creation: new Date(),
                 derniereModification: new Date(),
                 version: 1.0,
                 versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}
+                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: MyPrefData.myName}
                 ],
-                zones:[
-                {hauteur: 150, largeur: nLargeur, nom: 'Première zone', colonnes:[ { blocs :[ ] }]}
-
+                "rows": [ 
+                {
+                    "height":null,
+                    "responsive":{
+                        "phone":true,
+                        "tablet":true,
+                        "desktop":true
+                    },
+                    "eTitle":"titre",
+                    "columns": [
+                    {
+                        "isTerminal":true,
+                        "eTitle":"titre",
+                        "responsive":{
+                            "phone":true,
+                            "tablet":true,
+                            "desktop":true
+                        },
+                        "span":12,
+                        "offset":0,
+                        "bloc": null,
+                        "rows":null	
+                    }
+                    ]
+                }
                 ]
 
             });
@@ -136,47 +177,43 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             Ext.getCmp('nouveauMasqueFenetre').close();
             Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);
-            this.onGridviewItemClick(Ext.getCmp('masquesGridView'));
+            this.masqueDisplay(Ext.getCmp('masquesGridView'),nouvMasque);
 
         }
     },
 
-    onButtonClick3: function(button, e, options) {
+    maskSave: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            this.masqueMAJ(cible);
-            cible.data.etat='brouillon';
-            cible.data.derniereModification = new Date();
-            cible.data.version++;
-            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: 'Igor'});
-            Ext.getCmp('masquesGrid').getView().refresh();
+            cible.beginEdit();
+            cible.set("rows",this.saveRows(this.getMasqueEdition()));
+            cible.set("etat","brouillon");
+            cible.set("derniereModification",new Date());
+            cible.set("version",cible.data.version+1);
+            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            cible.endEdit();
+
         }
     },
 
-    onButtonClick7: function(button, e, options) {
+    copyMask: function(button, e, options) {
         if ((Ext.getCmp('copierMasqueTitre').isValid())&&(Ext.getCmp('copierMasqueSite').isValid())) {
             var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
             var nTitre = Ext.getCmp('copierMasqueTitre').getValue();
             var nSite = Ext.getCmp('copierMasqueSite').getValue();
-            var nLargeur = Ext.getCmp('copierMasqueSite').store.findRecord('text', nSite).data.largeur;
-            var rapport = nLargeur/cible.data.largeur;
-            var nZones = Ext.clone(cible.data.zones);
-            if (rapport != 1) {
-                this.masqueAdapt(nZones, rapport);
-            }
+            var nRows = Ext.clone(cible.data.rows);
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 etat: 'brouillon',
-                largeur: nLargeur,
-                auteur: 'Igor',
+                auteur: 'Alexandru Dobre',
                 creation: new Date(),
                 derniereModification: new Date(),
                 version: 1.0,
                 versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Igor'}
+                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Alexandru Dobre'}
                 ],
-                zones: nZones
+                rows: nRows
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
@@ -185,10 +222,510 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    onButtonClick5: function(button, e, options) {
+    importMaskWindow: function(button, e, options) {
         var fenetre = Ext.widget('importationMasques');
         fenetre.showAt(screen.width/2-150, 100);
 
+    },
+
+    selectionEvents: function(abstractcomponent, options) {
+        var me=this;
+        if (!abstractcomponent.isXType("unBloc")){
+            abstractcomponent.addBodyCls('contrastBorder');
+            if (abstractcomponent.mType=="col"){
+                abstractcomponent.addBodyCls('contrastRow');
+            }
+            abstractcomponent.getEl().on("mouseover", function(e){
+                abstractcomponent.setBorder(4);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                abstractcomponent.setBorder(2);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("click", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+                if (!Ext.isEmpty(prevSelected)) {
+                    if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
+                prevSelected.removeBodyCls('selectedelement');}
+            }
+            abstractcomponent.addBodyCls('selectedelement');
+            this.frame(MyPrefData.themeColor);
+            Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+            Ext.getCmp('deleteElement').enable();
+            var propEdit=Ext.getCmp('elementEditControl');
+            propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
+            propEdit.setIconCls('editZone');
+
+
+            propEdit.removeAll();
+
+            propEdit.add(Ext.widget('textfield',{
+                itemId:"eTitleField",
+                fieldLabel:"Titre ",
+                labelWidth:40,
+                allowBlank:false,
+                anchor:"60%",
+                margin:"10 0 10 0",
+                style:"{float:left;}",
+                value:abstractcomponent.eTitle
+            }));
+            propEdit.add(Ext.widget('button',{
+                text:"Appliquer",
+                anchor:"38%",
+                margin:"10 0 10 0",
+                style:"{float:right;}",
+                handler:function(){
+                    if (propEdit.getComponent("eTitleField").isValid()){
+                        abstractcomponent.eTitle=propEdit.getComponent("eTitleField").getValue();
+                    }}
+                }));
+                propEdit.add(Ext.widget('checkboxgroup',{
+                    fieldLabel:"Visibilité ",
+                    anchor:"100%",
+                    labelWidth:60,
+                    margin:"0 0 10 0",
+                    vertical:true,
+                    columns:1,
+                    items: [
+                    { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                    { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                    { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                    ]
+
+                }));
+                if (abstractcomponent.mType=="row"){
+                    Ext.getCmp('newRow').disable();
+                    Ext.getCmp("newBloc").disable();
+                    if (abstractcomponent.getComponent("eol").flex===0){
+                        Ext.getCmp('newCol').disable();
+                    } else {
+                        Ext.getCmp('newCol').enable();
+                    }
+                    propEdit.add(Ext.widget('button',{
+                        itemId:"rowAutoHeight",
+                        text:"Hauteur automatique",
+                        anchor:"100%",
+                        tooltip:"La hauteur s'adapte au contenu lors du rendu final",
+                        hidden:true,
+                        handler:function(){
+                            abstractcomponent.setHeight(null);
+                            abstractcomponent.flex=1;
+                            abstractcomponent.up().doLayout();
+                            propEdit.getComponent("rowHeightFixed").setValue();
+                            this.hide();
+                        }
+                    }));
+                    if (!Ext.isEmpty(abstractcomponent.height)){propEdit.getComponent("rowAutoHeight").show();}
+                    propEdit.add(Ext.widget('numberfield',{
+                        itemId:"rowHeightFixed",
+                        fieldLabel:"Hauteur fixe ",
+                        labelWidth:80,
+                        allowDecimals:false,
+                        allowBlank:false,
+                        minValue:20,
+                        anchor:"60%",
+                        margin:"10 0 0 0",
+                        style:"{float:left;}",
+                        value:abstractcomponent.height
+                    }));
+                    propEdit.add(Ext.widget('button',{
+                        text:"Appliquer",
+                        anchor:"38%",
+                        margin:"10 0 0 0",
+                        style:"{float:right;}",
+                        handler:function(){
+                            if (propEdit.getComponent("rowHeightFixed").isValid()){
+                                abstractcomponent.flex=null;
+                                abstractcomponent.setHeight(propEdit.getComponent("rowHeightFixed").getValue());
+                                abstractcomponent.up().doLayout();
+                                propEdit.getComponent("rowAutoHeight").show();
+                            }}
+                        }));
+
+
+
+                    }    
+
+                    else if (abstractcomponent.mType=="col"){
+                        if ((abstractcomponent.final)){
+                        Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
+                            Ext.getCmp('newRow').disable();
+                        }else {
+                            Ext.getCmp('newRow').enable();
+                        }
+
+                        Ext.getCmp('newCol').disable();
+                        if (Ext.isEmpty(abstractcomponent.items.items)){
+                        Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
+
+                            var offsetEdit=Ext.widget('numberfield',{
+                                itemId:"offsetEditor",
+                                fieldLabel:"Offset ",
+                                editable:false,
+                                labelWidth:45,
+                                allowDecimals:false,
+                                anchor:"50%",
+                                margin:"10 0 0 0",
+                                style:"{float:left;}",
+                                value:0,
+                                minValue:0
+                            });
+
+                            var spanEdit=Ext.widget('numberfield',{
+                                itemId:"spanEditor",
+                                fieldLabel:"Span ",
+                                labelWidth:45,
+                                editable:false,
+                                allowDecimals:false,
+                                anchor:"50%",
+                                margin:"10 0 0 10",
+                                style:"{float:right;}",
+                                value:abstractcomponent.flex,
+                                minValue:1
+                            });
+
+
+
+                            propEdit.add(offsetEdit);
+                            propEdit.add(spanEdit);
+                            me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
+                            offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                            spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+
+
+
+
+
+                        }
+
+                        e.stopEvent();
+                    });}
+    },
+
+    deleteMaskElement: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        if (cible.mType=="col"){
+            var myEol=cible.up().getComponent("eol");
+            var myOffset=cible.previousSibling();
+            if (!Ext.isEmpty(myOffset)) {
+                if ((myOffset.isXType("container"))&&(!(myOffset.isXType("panel")))) {
+                    myEol.flex=myEol.flex+myOffset.flex;
+                    myOffset.destroy();
+                }
+            }
+            myEol.flex=myEol.flex+cible.flex;
+
+        }
+        cible.destroy();
+        Ext.getCmp("newRow").disable();
+        Ext.getCmp("newCol").disable();
+        Ext.getCmp("newBloc").disable();
+        Ext.getCmp("deleteElement").disable();
+        Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+        Ext.getCmp('elementEditControl').removeAll();
+        Ext.getCmp('elementEditControl').setIconCls();
+        Ext.getCmp('elementIdField').setValue(null);
+
+    },
+
+    addCol: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var myEol=cible.getComponent('eol');
+
+        if (myEol.flex>0) {
+            var isFinalCol=false;
+            if (cible.up().mType=="col"){
+                isFinalCol=true;
+            }
+            var newCol=Ext.widget('panel', {
+                header:false,
+                flex:1,
+                final:isFinalCol,
+                eTitle:"titre",
+                responsive:{
+                    phone:true,
+                    tablet:true,
+                    desktop:true
+                },
+                mType:'col',
+                margin:4,
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                }
+            });
+            myEol.flex=myEol.flex-1;
+            cible.insert(cible.items.items.length-1,newCol);
+            if (myEol.flex===0){
+                button.disable();
+            }
+
+        }
+        newCol.getEl().dom.click();
+    },
+
+    addRow: function(button, e, options) {
+        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var row = Ext.widget('panel', {
+            header:false,
+            mType:"row",
+            flex:1,
+            eTitle:"titre",
+            responsive:{
+                phone:true,
+                tablet:true,
+                desktop:true
+            },
+            margin:4,
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            }
+        });
+        row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
+        cible.insert(cible.items.items.length,row);
+        Ext.getCmp("newBloc").disable();
+        row.getEl().dom.click();
+    },
+
+    showBlocWindow: function(button, e, options) {
+        var blocWin = Ext.widget('ajoutBlocFenetre');
+        blocWin.showAt(screen.width/2-250, 100);
+    },
+
+    addBloc: function(button, e, options) {
+        var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
+        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
+        nouvBloc.responsive={
+            "phone":true,
+            "tablet":true,
+            "desktop":true
+        };
+        Ext.getCmp(Ext.getCmp('elementIdField').getValue()).add(nouvBloc);
+        button.up().up().close();
+        Ext.getCmp("newBloc").disable();
+        Ext.getCmp('newRow').disable();
+    },
+
+    mainBoxSelect: function(abstractcomponent, options) {
+        abstractcomponent.setBorder(2);
+        abstractcomponent.addBodyCls('contrastCBorder');
+        abstractcomponent.getEl().on("mouseover", function(e){
+            abstractcomponent.setBorder(4);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("mouseout", function(e){
+            abstractcomponent.setBorder(2);
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("click", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if (!Ext.isEmpty(prevSelected)) {
+                if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
+            prevSelected.removeBodyCls('selectedelement');}
+        }
+        abstractcomponent.addBodyCls('selectedelement');
+        this.frame(MyPrefData.themeColor);
+        Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+        Ext.getCmp('deleteElement').disable();
+        Ext.getCmp('newCol').disable();
+        Ext.getCmp('newBloc').disable();
+        Ext.getCmp('newRow').enable();
+        var propEdit=Ext.getCmp('elementEditControl');
+        propEdit.setTitle("Racine");
+        propEdit.setIconCls('editZone');
+
+
+        propEdit.removeAll();
+
+    });
+    },
+
+    blocSelect: function(abstractcomponent, options) {
+
+
+        abstractcomponent.getEl().on("mouseover", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+                abstractcomponent.setIconCls('selectBloc');
+            }
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("mouseout", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+            abstractcomponent.setIconCls();}
+            e.stopEvent();
+        });
+        abstractcomponent.getEl().on("click", function(e){
+            var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            if (!Ext.isEmpty(prevSelected)) {
+                if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
+            prevSelected.removeBodyCls('selectedelement');}
+        }
+        abstractcomponent.setIconCls('editBloc');
+        this.frame(MyPrefData.themeColor);
+        Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
+        Ext.getCmp('deleteElement').enable();
+        Ext.getCmp('newCol').disable();
+        Ext.getCmp('newBloc').disable();
+        Ext.getCmp('newRow').disable();
+        var propEdit=Ext.getCmp('elementEditControl');
+        propEdit.setTitle(abstractcomponent.id.replace("unBloc", "Bloc"));
+        propEdit.setIconCls('editBloc');
+        propEdit.removeAll();
+
+
+        propEdit.add(Ext.widget('textfield',{
+            itemId:"eTitleField",
+            fieldLabel:"Titre ",
+            labelWidth:40,
+            allowBlank:false,
+            anchor:"60%",
+            margin:"10 0 10 0",
+            style:"{float:left;}",
+            value:abstractcomponent.title
+        }));
+        propEdit.add(Ext.widget('button',{
+            text:"Appliquer",
+            anchor:"38%",
+            margin:"10 0 10 0",
+            style:"{float:right;}",
+            handler:function(){
+                if (propEdit.getComponent("eTitleField").isValid()){
+                    abstractcomponent.setTitle(propEdit.getComponent("eTitleField").getValue());
+                }}
+            }));
+
+            propEdit.add(Ext.widget('numberfield',{
+                itemId:"rowHeightFixed",
+                fieldLabel:"Hauteur fluide ",
+                labelWidth:90,
+                allowDecimals:false,
+                allowBlank:false,
+                minValue:1,
+                anchor:"60%",
+                margin:"10 0 0 0",
+                style:"{float:left;}",
+                value:abstractcomponent.flex
+            }));
+            propEdit.add(Ext.widget('button',{
+                text:"Appliquer",
+                anchor:"38%",
+                margin:"10 0 0 0",
+                style:"{float:right;}",
+                handler:function(){
+                    if (propEdit.getComponent("rowHeightFixed").isValid()){
+                        abstractcomponent.flex=propEdit.getComponent("rowHeightFixed").getValue();
+                        abstractcomponent.up().doLayout();
+                    }}
+                }));
+
+
+                propEdit.add(Ext.widget('checkboxgroup',{
+                    fieldLabel:"Visibilité ",
+                    anchor:"100%",
+                    labelWidth:60,
+                    margin:"0 0 10 0",
+                    vertical:true,
+                    columns:1,
+                    items: [
+                    { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                    { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                    { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                    ]
+
+                }));  
+
+
+                var configSpec = Ext.widget('ConfigSpecBloc');
+                var categories = Ext.clone(abstractcomponent.champsConfig.simple);
+                for (j=0; j<categories.length; j++){
+                    var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+
+                    var champsS = Ext.clone(categories[j].champs);
+                    for (i=0; i<champsS.length; i++) {
+                        if (champsS[i].type =='Ext.form.field.ComboBox') {
+                            var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
+                            champsS[i].config.store= monStore;
+                        }
+                        var nChampS = Ext.create(champsS[i].type, champsS[i].config);
+                        if (champsS[i].type =='Ext.form.field.Trigger'){
+                            var Ouvrir = Ext.clone(champsS[i].ouvrir);
+                            nChampS.onTriggerClick= function() {
+                                var fenetre = Ext.widget(Ouvrir);
+                                fenetre.showAt(screen.width/2-200, 100);
+                            } ;  
+                        }
+                        nChampS.labelSeparator= ' ';
+                        nChampS.anchor= '100%';
+                        nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
+                        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                        nCateg.add(nChampS);
+                    }
+                    configSpec.items.items[0].add(nCateg);
+
+                }
+                propEdit.add(configSpec);
+
+
+
+                e.stopEvent();
+
+            });
+    },
+
+    applyConstrain: function(target, offsetF, spanF, applyFirst) {
+        var myEol=target.up().getComponent("eol");
+        var myOffset=null;
+        if ((!Ext.isEmpty(target.prev()))&&(target.prev().isXType("container"))&&(!(target.prev().isXType("panel")))) {
+            myOffset=target.prev();
+        }
+        if (applyFirst) {
+            myEol.flex=myEol.flex+target.flex-spanF.getValue();
+            target.flex=spanF.getValue();
+            spanF.setMaxValue(target.flex+myEol.flex);
+            offsetF.setMaxValue(offsetF.getValue()+myEol.flex);
+            target.up().doLayout();
+            if (offsetF.getValue()>0){ 
+                if (Ext.isEmpty(myOffset)) {
+                    myOffset=Ext.widget("container",{flex:0,style:"{background-image:url(resources/images/stripes.png);}"});
+                    target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
+
+
+                } 
+                myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                myOffset.flex=offsetF.getValue();
+                offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                target.up().doLayout();
+
+            } else if((offsetF.getValue()===0)) {
+                if (!Ext.isEmpty(myOffset)) {
+                    myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                    myOffset.flex=offsetF.getValue();
+                    offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                    spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                    myOffset.destroy();
+                    target.up().doLayout();      
+                } 
+
+            }
+        }
+        else {
+            if (Ext.isEmpty(myOffset)){
+                offsetF.setValue(0);
+                offsetF.setMaxValue(myEol.flex);
+            }
+            else {
+                offsetF.setValue(myOffset.flex);
+                offsetF.setMaxValue(myOffset.flex+myEol.flex); 
+            }
+
+            spanF.setValue(target.flex);
+            spanF.setMaxValue(target.flex+myEol.flex);
+        }
     },
 
     masqueMAJ: function(cible) {
@@ -210,43 +747,140 @@ Ext.define('Rubedo.controller.MasqueController', {
         cible.data.zones=nouvZones;
     },
 
-    masqueAdapt: function(zones, rapport) {
-        for (i=0; i<zones.length; i++) {
-            zones[i].largeur = zones[i].largeur * rapport;  
-        }
+    masqueRestit: function(mRows, its, cible) {
+        var me=this;
+        Ext.Array.forEach(mRows, function(row){
+            var newRow = Ext.widget('panel', {
+                header:false,
+                mType:"row",
+                eTitle:row.eTitle,
+                responsive:row.responsive,
+                margin:4,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                }
+            });
+            var rFlex=1;
+            var eolWidth=12;
+            Ext.Array.forEach(row.columns, function(column){
+                if (column.offset>0) {
+                    newRow.add(Ext.widget('container', {
+                        flex:column.offset,
+                        style:"{background-image:url(resources/images/stripes.png);}"
+                    }));
+                    eolWidth=eolWidth-column.offset;
+                }
+                var isFinalCol=false;
+                if (its<=0){isFinalCol=true;}
+                var newCol=Ext.widget('panel', {
+                    header:false,
+                    flex:column.span,
+                    final:isFinalCol,
+                    mType:'col',
+                    eTitle:column.eTitle,
+                    responsive:column.responsive,
+                    margin:4,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    }
+                });
+                if ((its>0)&&(column.isTerminal===false)) {
+                    rFlex=Ext.Array.max([rFlex,column.rows.length]);
+                    me.masqueRestit(column.rows,its-1,newCol);    
+                }
+                else {
+                    if (Ext.isEmpty(column.bloc)){} else {
+                    newCol.add(Ext.widget("unBloc",column.bloc));
+                }
+            }
+            eolWidth=eolWidth-column.span;
+            newRow.add(newCol);
 
+        });
+        newRow.add(Ext.widget("container",{
+            flex:eolWidth,
+            itemId:"eol"
+        }));
+        if (Ext.isEmpty(row.height)) {
+            newRow.flex=rFlex;
+        } else {
+            newRow.height=row.height;
+        }
+        cible.add(newRow);  
+
+
+    });
     },
 
-    masqueRestit: function(zones) {
-        var largeurMax = this.getMasqueEdition().width;
-        for (i=0; i<zones.length; i++) {   
-            var zoneIns = zones[i];   
-            var nouvZone = Ext.widget('zone' , { width: zoneIns.largeur, height: zoneIns.hauteur, title :zoneIns.nom, maxWidth : largeurMax});
-            var colonnes = zoneIns.colonnes;
-            var blocs = colonnes[0].blocs;
-            nouvZone.items.items[0].flex=colonnes[0].flex;
-            for (k=0; k<blocs.length; k++) {
-                var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});
-                nouvZone.getComponent(0).add(nouvBloc);
-            }
-            for (j=1; j<colonnes.length; j++) {    
-                var nouvColonne = Ext.widget('colonne');
-                nouvColonne.flex=colonnes[j].flex;
-                var blocs = colonnes[j].blocs;
-                for (k=0; k<blocs.length; k++) {
-                    var nouvBloc = Ext.widget('unBloc' ,{flex : blocs[k].flex, title: blocs[k].title, bType: blocs[k].bType, champsConfig: blocs[k].champsConfig, configBloc: blocs[k].configBloc});
-                    nouvColonne.add(nouvBloc);
+    saveRows: function(startComp) {
+        var me=this;
+        var nRows=[ ];
+        Ext.Array.forEach(startComp.items.items, function(row){
+            var newCols = [ ];
+            var offset=0;
+            Ext.Array.forEach(row.items.items, function(col){
+                if (col.isXType("panel")) {
+                    var bloc = null;
+                    var rows = null;
+                    var isTerminal=true;
+                    if (col.final) { 
+                        var nBloc=col.items.items[0];
+                        if (!Ext.isEmpty(nBloc)) {
+                            bloc={
+
+                                bType:nBloc.bType,
+                                champsConfig:nBloc.champsConfig,
+                                configBloc:nBloc.configBloc,
+                                title:nBloc.title,
+                                responsive:nBloc.responsive,
+                                flex:nBloc.flex
+
+                            };
+                        }
+                    }else {
+                        var thing=col.items.items[0];
+                        if (Ext.isEmpty(thing)){} else if (thing.isXType("unBloc")) {
+                        bloc={
+
+                            bType:thing.bType,
+                            champsConfig:thing.champsConfig,
+                            configBloc:thing.configBloc,
+                            title:thing.title,
+                            responsive:thing.responsive,
+                            flex:thing.flex
+
+                        };
+                    } else {
+                        isTerminal=false;
+                        rows=me.saveRows(col);
+                    }
                 }
-                nouvZone.add(nouvColonne);
-            }
 
+                newCols.push({
+                    eTitle:col.eTitle,
+                    responsive:col.responsive,
+                    span:col.flex,
+                    offset:offset,
+                    bloc: bloc,
+                    rows: rows,
+                    isTerminal:isTerminal
 
-            this.getMasqueEdition().add(nouvZone);  
+                });
+                offset=0;
+            } else {offset=offset+col.flex;}
 
+            });
+            nRows.push({
+                height:row.height,
+                eTitle:row.eTitle,
+                responsive:row.responsive,
+                columns: newCols
 
-
-
-        }
+            });
+        });
+        return nRows;
     },
 
     onControllerClickStub: function() {
@@ -257,37 +891,65 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
+    onControllerRenderStub: function() {
+
+    },
+
     init: function() {
         this.control({
             "#boutonSupprimerMasque": {
-                click: this.onButtonClick2
+                click: this.deleteMask
             },
             "#AdminfMasquesPublier": {
-                click: this.onButtonClick4
+                click: this.publishMask
             },
             "#masquesGridView": {
-                itemclick: this.onGridviewItemClick
+                itemclick: this.masqueDisplay
             },
             "#arborescenceSites": {
                 itemclick: this.onTreepanelItemClick
             },
             "#boutonCopierMasque": {
-                click: this.onButtonClick6
+                click: this.copyMaskWindow
             },
             "#boutonNouveauMasque": {
-                click: this.onButtonClick
+                click: this.newMaskWindow
             },
             "#creerNouveauMasque": {
-                click: this.onButtonClick1
+                click: this.createMask
             },
             "#AdminfMasquesEnregistrer": {
-                click: this.onButtonClick3
+                click: this.maskSave
             },
             "#copierMasque": {
-                click: this.onButtonClick7
+                click: this.copyMask
             },
             "#AdminfMasquesImporter": {
-                click: this.onButtonClick5
+                click: this.importMaskWindow
+            },
+            "#masqueEdition panel": {
+                render: this.selectionEvents
+            },
+            "#deleteElement": {
+                click: this.deleteMaskElement
+            },
+            "#newCol": {
+                click: this.addCol
+            },
+            "#newRow": {
+                click: this.addRow
+            },
+            "#newBloc": {
+                click: this.showBlocWindow
+            },
+            "#boutonAjouterBloc": {
+                click: this.addBloc
+            },
+            "#masqueEdition": {
+                render: this.mainBoxSelect
+            },
+            "unBloc": {
+                render: this.blocSelect
             }
         });
 

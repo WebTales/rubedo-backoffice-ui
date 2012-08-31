@@ -92,7 +92,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                 },
                 {
                     xtype: 'toolbar',
-                    height: 54,
+                    height: 86,
                     itemId: 'contextBar',
                     enableOverflow: true,
                     flex: 1,
@@ -101,72 +101,159 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             id: 'boutonNouveauMasque',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
-                            text: 'Ajouter'
+                            text: 'Nouveau'
                         },
                         {
                             xtype: 'button',
                             id: 'boutonSupprimerMasque',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
-                            xtype: 'button',
-                            id: 'boutonCopierMasque',
-                            iconCls: 'applications_big',
-                            scale: 'large',
-                            text: 'Copier'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Edition',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newRow',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
+                                    text: 'Nouvelle Ligne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newCol',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
+                                    text: 'Nouvelle Colonne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newBloc',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
+                                    text: 'Nouveau Bloc'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'deleteElement',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'nouvelleZone',
-                            iconCls: 'window_add_big',
-                            scale: 'large',
-                            text: 'Nouvelle Zone'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'boutonCopierMasque',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'ajouterPanierMasques',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'AdminfMasquesExporter',
-                            iconCls: 'application_down_big',
-                            scale: 'large',
-                            text: 'Exporter'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Sauvegarde',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesEnregistrer',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesPublier',
+                                    autoWidth: false,
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_accept_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer et publier'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'AdminfMasquesImporter',
-                            iconCls: 'application_up_big',
-                            scale: 'large',
-                            text: 'Importer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'AdminfMasquesEnregistrer',
-                            iconCls: 'floppy_disc_big',
-                            scale: 'large',
-                            text: 'Enregistrer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'AdminfMasquesPublier',
-                            iconCls: 'floppy_disc_accept_big',
-                            scale: 'large',
-                            text: 'Enregistrer et publier'
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'boutonCreerRaccourci',
-                            iconCls: 'favorite_add_big',
-                            scale: 'large',
-                            text: 'Ajouter aux favoris'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'ajouterPanierMasques',
-                            iconCls: 'shopping_cart_add_big',
-                            scale: 'large',
-                            text: 'Ajouter au panier'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Fichier',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesExporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesImporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'
@@ -175,8 +262,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             xtype: 'button',
                             itemId: 'boutonAide',
                             iconCls: 'info_big',
-                            scale: 'large',
-                            text: ''
+                            scale: 'large'
                         }
                     ]
                 }
@@ -250,24 +336,16 @@ Ext.define('Rubedo.view.adminFMDP', {
                             title: 'Edition',
                             items: [
                                 {
-                                    xtype: 'container',
-                                    autoScroll: true,
+                                    xtype: 'panel',
+                                    border: 0,
+                                    frame: false,
+                                    id: 'masqueEdition',
+                                    autoScroll: false,
                                     layout: {
-                                        type: 'absolute'
+                                        align: 'stretch',
+                                        type: 'vbox'
                                     },
-                                    flex: 1,
-                                    items: [
-                                        {
-                                            xtype: 'panel',
-                                            border: 0,
-                                            frame: false,
-                                            id: 'masqueEdition',
-                                            margin: '0, 20, 0, 20',
-                                            width: 1020,
-                                            autoScroll: false,
-                                            bodyStyle: '{background:#DDDDDD;}'
-                                        }
-                                    ]
+                                    flex: 1
                                 },
                                 {
                                     xtype: 'panel',
@@ -277,6 +355,9 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     autoScroll: true,
                                     resizable: true,
                                     resizeHandles: 'w',
+                                    layout: {
+                                        type: 'anchor'
+                                    },
                                     collapseDirection: 'right',
                                     collapsed: false,
                                     collapsible: true,
@@ -286,100 +367,17 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     margins: '0, 0, 0, 2',
                                     items: [
                                         {
-                                            xtype: 'form',
-                                            margin: '6 0 0 0',
-                                            autoScroll: false,
-                                            bodyPadding: 10,
-                                            iconCls: 'editZone',
-                                            title: 'Zone',
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    id: 'zoneTitleField',
-                                                    fieldLabel: 'Titre',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'zoneWidthField',
-                                                    width: 80,
-                                                    fieldLabel: 'Largeur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'zoneHeightField',
-                                                    width: 80,
-                                                    fieldLabel: 'Hauteur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'hiddenfield',
-                                                    id: 'zoneIdField',
-                                                    fieldLabel: 'Label',
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'fieldset',
-                                                    id: 'colonnesEdit',
-                                                    autoScroll: false,
-                                                    collapsed: true,
-                                                    collapsible: true,
-                                                    title: 'Colonnes'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    id: 'modifierPropZone',
-                                                    width: 118,
-                                                    text: 'Modifier',
-                                                    anchor: '100%'
-                                                }
-                                            ]
+                                            xtype: 'hiddenfield',
+                                            id: 'elementIdField',
+                                            fieldLabel: 'Label'
                                         },
                                         {
                                             xtype: 'form',
-                                            margin: '10 0 0 0',
+                                            id: 'elementEditControl',
+                                            margin: '6 0 0 0',
                                             autoScroll: false,
-                                            activeItem: 0,
                                             bodyPadding: 10,
-                                            iconCls: 'editBloc',
-                                            title: 'Bloc',
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    id: 'blocTitleField',
-                                                    fieldLabel: 'Titre',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'blocHeightField',
-                                                    fieldLabel: 'Hauteur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'hiddenfield',
-                                                    id: 'blocIdField',
-                                                    fieldLabel: 'Label',
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    id: 'modifierPropBloc',
-                                                    text: 'Modifier',
-                                                    anchor: '100%'
-                                                }
-                                            ]
+                                            title: 'Sélectionnez un élément'
                                         }
                                     ],
                                     listeners: {

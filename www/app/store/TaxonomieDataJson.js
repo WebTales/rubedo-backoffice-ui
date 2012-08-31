@@ -25,14 +25,26 @@ Ext.define('Rubedo.store.TaxonomieDataJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
-            autoSync: false,
+            autoSync: true,
             storeId: 'TaxonomieDataJson',
             model: 'Rubedo.model.taxonomieDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Taxonomie.json',
+                api: {
+                    create: 'taxonomy/create',
+                    read: 'data/Taxonomie.json',
+                    update: 'taxonomy/update',
+                    destroy: 'taxonomy/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

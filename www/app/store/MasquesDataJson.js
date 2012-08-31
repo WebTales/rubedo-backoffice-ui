@@ -24,6 +24,7 @@ Ext.define('Rubedo.store.MasquesDataJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
+            autoSync: true,
             storeId: 'MasquesDataJson',
             model: 'Rubedo.model.masquesDataModel',
             groupers: {
@@ -31,9 +32,21 @@ Ext.define('Rubedo.store.MasquesDataJson', {
             },
             proxy: {
                 type: 'ajax',
-                url: 'data/Masques.json',
+                api: {
+                    create: 'masks/create',
+                    read: 'data/Masques.json',
+                    update: 'masks/update',
+                    destroy: 'masks/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);
