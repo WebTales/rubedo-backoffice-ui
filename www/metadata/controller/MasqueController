@@ -84,8 +84,7 @@
                     "    cible.set(\"rows\",this.saveRows(this.getMasqueEdition()));\r",
                     "    cible.set(\"etat\",\"publié\");\r",
                     "    cible.set(\"derniereModification\",new Date());\r",
-                    "    cible.set(\"version\",cible.data.version+1);\r",
-                    "    cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
+                    "    //cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
                     "    cible.endEdit();\r",
                     "\r",
                     "}"
@@ -525,8 +524,7 @@
                     "    cible.set(\"rows\",this.saveRows(this.getMasqueEdition()));\r",
                     "    cible.set(\"etat\",\"brouillon\");\r",
                     "    cible.set(\"derniereModification\",new Date());\r",
-                    "    cible.set(\"version\",cible.data.version+1);\r",
-                    "    cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
+                    "   // cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
                     "    cible.endEdit();\r",
                     "\r",
                     "}"

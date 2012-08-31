@@ -66,8 +66,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             cible.set("rows",this.saveRows(this.getMasqueEdition()));
             cible.set("etat","publié");
             cible.set("derniereModification",new Date());
-            cible.set("version",cible.data.version+1);
-            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            //cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
             cible.endEdit();
 
         }
@@ -189,8 +188,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             cible.set("rows",this.saveRows(this.getMasqueEdition()));
             cible.set("etat","brouillon");
             cible.set("derniereModification",new Date());
-            cible.set("version",cible.data.version+1);
-            cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
+            // cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
             cible.endEdit();
 
         }
