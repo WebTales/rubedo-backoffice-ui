@@ -23,7 +23,8 @@ Ext.define('Rubedo.view.UnBloc', {
     layout: {
         type: 'fit'
     },
-    closable: true,
+    closable: false,
+    preventHeader: false,
     title: 'Un Bloc',
 
     initComponent: function() {

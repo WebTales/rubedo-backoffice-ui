@@ -444,7 +444,7 @@
             "userConfig": {
                 "fn": "selectBloc",
                 "implHandler": [
-                    "abstractcomponent.getEl().on(\"click\", function(e){\r",
+                    "/*abstractcomponent.getEl().on(\"click\", function(e){\r",
                     "    e.stopEvent();\r",
                     "});\r",
                     "abstractcomponent.header.on('click', function() { \r",
@@ -500,7 +500,7 @@
                     "    }\r",
                     "    Ext.getCmp('paneauPropMasque').add(configSpec);\r",
                     "\r",
-                    "});"
+                    "});*/"
                 ],
                 "name": "render",
                 "scope": "me",

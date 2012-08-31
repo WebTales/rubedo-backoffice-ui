@@ -92,7 +92,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                 },
                 {
                     xtype: 'toolbar',
-                    height: 60,
+                    height: 86,
                     itemId: 'contextBar',
                     enableOverflow: true,
                     flex: 1,
@@ -104,7 +104,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
-                            text: 'Ajouter'
+                            text: 'Nouveau'
                         },
                         {
                             xtype: 'button',
@@ -116,7 +116,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'buttongroup',
-                            title: 'Edition du masque',
+                            headerPosition: 'bottom',
+                            title: 'Edition',
                             columns: 4,
                             layout: {
                                 columns: 2,
@@ -127,92 +128,132 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     xtype: 'button',
                                     disabled: true,
                                     id: 'newRow',
-                                    iconCls: 'window_add_med',
-                                    scale: 'medium',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
                                     text: 'Nouvelle Ligne'
                                 },
                                 {
                                     xtype: 'button',
                                     disabled: true,
                                     id: 'newCol',
-                                    iconCls: 'window_add_med',
-                                    scale: 'medium',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
                                     text: 'Nouvelle Colonne'
                                 },
                                 {
                                     xtype: 'button',
                                     disabled: true,
                                     id: 'newBloc',
-                                    iconCls: 'window_add_med',
-                                    scale: 'medium',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
                                     text: 'Nouveau Bloc'
                                 },
                                 {
                                     xtype: 'button',
                                     disabled: true,
                                     id: 'deleteElement',
-                                    iconCls: 'remove_med',
-                                    scale: 'medium',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
                                     text: 'Supprimer'
                                 }
                             ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'boutonCopierMasque',
-                            iconAlign: 'top',
-                            iconCls: 'applications_big',
-                            scale: 'large',
-                            text: 'Copier'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'boutonCopierMasque',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'ajouterPanierMasques',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'AdminfMasquesExporter',
-                            iconAlign: 'top',
-                            iconCls: 'application_down_big',
-                            scale: 'large',
-                            text: 'Exporter'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Sauvegarde',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesEnregistrer',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesPublier',
+                                    autoWidth: false,
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_accept_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer et publier'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'AdminfMasquesImporter',
-                            iconAlign: 'top',
-                            iconCls: 'application_up_big',
-                            scale: 'large',
-                            text: 'Importer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'AdminfMasquesEnregistrer',
-                            iconAlign: 'top',
-                            iconCls: 'floppy_disc_big',
-                            scale: 'large',
-                            text: 'Enregistrer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'AdminfMasquesPublier',
-                            autoWidth: false,
-                            iconAlign: 'top',
-                            iconCls: 'floppy_disc_accept_big',
-                            scale: 'large',
-                            text: 'Enregistrer et publier'
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'boutonCreerRaccourci',
-                            iconAlign: 'top',
-                            iconCls: 'favorite_add_big',
-                            scale: 'large',
-                            text: 'Ajouter aux favoris'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'ajouterPanierMasques',
-                            iconAlign: 'top',
-                            iconCls: 'shopping_cart_add_big',
-                            scale: 'large',
-                            text: 'Ajouter au panier'
+                            xtype: 'buttongroup',
+                            headerPosition: 'bottom',
+                            title: 'Fichier',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesExporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'AdminfMasquesImporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'
@@ -221,8 +262,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             xtype: 'button',
                             itemId: 'boutonAide',
                             iconCls: 'info_big',
-                            scale: 'large',
-                            text: ''
+                            scale: 'large'
                         }
                     ]
                 }
@@ -315,6 +355,9 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     autoScroll: true,
                                     resizable: true,
                                     resizeHandles: 'w',
+                                    layout: {
+                                        type: 'anchor'
+                                    },
                                     collapseDirection: 'right',
                                     collapsed: false,
                                     collapsible: true,
@@ -334,48 +377,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                             margin: '6 0 0 0',
                                             autoScroll: false,
                                             bodyPadding: 10,
-                                            iconCls: 'editZone',
                                             title: 'Sélectionnez un élément'
-                                        },
-                                        {
-                                            xtype: 'form',
-                                            disabled: false,
-                                            margin: '10 0 0 0',
-                                            autoScroll: false,
-                                            activeItem: 0,
-                                            bodyPadding: 10,
-                                            iconCls: 'editBloc',
-                                            title: 'Bloc',
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    id: 'blocTitleField',
-                                                    fieldLabel: 'Titre',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'numberfield',
-                                                    id: 'blocHeightField',
-                                                    fieldLabel: 'Hauteur',
-                                                    labelSeparator: ' ',
-                                                    labelWidth: 45,
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'hiddenfield',
-                                                    id: 'blocIdField',
-                                                    fieldLabel: 'Label',
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    id: 'modifierPropBloc',
-                                                    text: 'Modifier',
-                                                    anchor: '100%'
-                                                }
-                                            ]
                                         }
                                     ],
                                     listeners: {

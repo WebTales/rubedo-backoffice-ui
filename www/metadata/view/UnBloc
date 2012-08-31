@@ -14,7 +14,8 @@
         "width": 50,
         "maintainFlex": null,
         "layout": "fit",
-        "closable": true,
+        "closable": false,
+        "preventHeader": false,
         "title": "Un Bloc",
         "designer|userClassName": "UnBloc",
         "designer|userAlias": "unBloc"
