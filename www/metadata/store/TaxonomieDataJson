@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen52930",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TaxonomieDataJson",
+        "designer|userAlias": "TaxonomieDataJson",
         "autoLoad": true,
         "autoSync": true,
         "storeId": "TaxonomieDataJson",
-        "model": "taxonomieDataModel",
-        "designer|userClassName": "TaxonomieDataJson",
-        "designer|userAlias": "TaxonomieDataJson"
+        "model": "taxonomieDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen52930",
     "designerId": "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
-    "$viewOrder": 12,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen52937",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -28,15 +24,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "api": "{\ncreate : 'taxonomy/create',\nread : 'data/Taxonomie.json',\nupdate : 'taxonomy/update',\ndestroy : 'taxonomy/delete'\n}",
-                "url": null,
-                "designer|userClassName": "MyAjaxProxy10"
+                "designer|userClassName": "MyAjaxProxy10",
+                "api": [
+                    "{",
+                    "create : 'taxonomy/create',",
+                    "read : 'data/Taxonomie.json',",
+                    "update : 'taxonomy/update',",
+                    "destroy : 'taxonomy/delete'",
+                    "}"
+                ],
+                "url": null
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "036a1bae-7627-4e6e-b297-e3bf4e671180",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen52945",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,15 +45,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonReader8",
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader8"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "925b331f-81f7-4778-948e-dede21eee20c"
                 },
                 {
-                    "id": "ExtBox1-ext-gen12215",
                     "type": "jsonwriter",
                     "reference": {
                         "name": "writer",
@@ -60,12 +59,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonWriter1",
                         "encode": true,
-                        "root": "data",
-                        "designer|userClassName": "MyJsonWriter1"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b8688256-dbc9-49a5-a023-2b248bc1297e"
                 }
             ]
         }

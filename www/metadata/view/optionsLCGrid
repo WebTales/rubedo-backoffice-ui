@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen14846",
     "type": "gridpanel",
     "reference": {
         "name": "items",
@@ -7,23 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "optionsLCGrid",
+        "designer|userAlias": "optionsLCGrid",
         "height": 250,
         "id": "optionsLCGrid",
         "margin": "20 0 0 0",
         "width": null,
         "autoScroll": true,
         "title": "Options",
-        "store": null,
-        "designer|userClassName": "optionsLCGrid",
-        "designer|userAlias": "optionsLCGrid"
+        "store": null
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen14846",
     "designerId": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
-    "$viewOrder": 20,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen14890",
             "type": "gridview",
             "reference": {
                 "name": "viewConfig",
@@ -33,11 +29,9 @@
             "userConfig": {
                 "designer|userClassName": "MyGridView8"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "75dc6c5f-c2ab-4503-a3ba-e4eb603a89aa"
         },
         {
-            "id": "ExtBox1-ext-gen16117",
             "type": "gridcolumn",
             "reference": {
                 "name": "columns",
@@ -45,17 +39,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyColumn16",
                 "dataIndex": "valeur",
-                "editor": "{\n            xtype: 'textfield',\n            allowBlank: false\n        }",
                 "flex": 1,
-                "text": "Valeur",
-                "designer|userClassName": "MyColumn16"
+                "text": "Valeur"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ee5447c9-3ff1-4cdc-8f11-2f8f5780c6ed",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField11",
+                        "allowBlank": false
+                    },
+                    "designerId": "a87ebb6f-d41e-4a17-832f-169d0cf3842c"
+                }
+            ]
         },
         {
-            "id": "ExtBox1-ext-gen16753",
             "type": "gridcolumn",
             "reference": {
                 "name": "columns",
@@ -63,17 +69,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyColumn16",
                 "dataIndex": "nom",
-                "editor": "{\n            xtype: 'textfield',\n            allowBlank: false\n        }",
                 "flex": 1,
-                "text": "Nom",
-                "designer|userClassName": "MyColumn16"
+                "text": "Nom"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "8ff67939-dca1-4c6b-927e-08c5eae18848",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField12",
+                        "allowBlank": false
+                    },
+                    "designerId": "ca6748c5-419c-49f0-9f1d-2bdb02d8550f"
+                }
+            ]
         },
         {
-            "id": "ExtBox1-ext-gen19811",
             "type": "gridroweditingplugin",
             "reference": {
                 "name": "plugins",
@@ -83,11 +101,9 @@
             "userConfig": {
                 "designer|userClassName": "MyRowEditingPlugin"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "7501fd76-69a6-4dae-bb1c-9b88bf2c7f17"
         },
         {
-            "id": "ExtBox1-ext-gen20427",
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -95,14 +111,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar19",
-                "dock": "bottom"
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar19"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "1a87ee7c-d1a8-4c6d-8a3a-d8898ba05b46",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen20946",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -110,16 +124,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "add",
-                        "text": "Ajouter",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton64",
-                        "layout|flex": null
+                        "iconCls": "add",
+                        "text": "Ajouter"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "bd89e8b0-020a-42d9-b70e-a59f08c37658",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen21881",
                             "type": "basiceventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -127,21 +139,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "onButtonClick",
                                 "fn": "onButtonClick",
                                 "implHandler": [
                                     "button.up().up().getComponent(0).getStore().add({valeur : 'valeur', nom : 'nom'});"
                                 ],
                                 "name": "click",
-                                "scope": "me",
-                                "designer|userClassName": "onButtonClick"
+                                "scope": "me"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "d4003201-286f-4a50-a993-b82ff2e2bafb"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen21196",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -149,16 +159,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "delete",
-                        "text": "Supprimer",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton65",
-                        "layout|flex": null
+                        "iconCls": "delete",
+                        "text": "Supprimer"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "77dd6c12-3fe7-479d-8e78-3277797aa3fb",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen24277",
                             "type": "basiceventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -166,16 +174,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "onButtonClick1",
                                 "fn": "onButtonClick1",
                                 "implHandler": [
                                     "button.up().up().getComponent(0).getStore().remove(button.up().up().getComponent(0).getSelectionModel().getLastSelected());"
                                 ],
                                 "name": "click",
-                                "scope": "me",
-                                "designer|userClassName": "onButtonClick1"
+                                "scope": "me"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "172ce518-1d10-475e-aa6a-015a64d49085"
                         }
                     ]
                 }

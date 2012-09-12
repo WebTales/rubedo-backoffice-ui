@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen19741",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "typesContenusDataModel",
         "designer|userAlias": "typesContenusDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen19741",
     "designerId": "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
-    "$viewOrder": 2,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen18619",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -24,14 +20,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "contenus",
-                "designer|userClassName": "MyField2"
+                "designer|userClassName": "MyField2",
+                "name": "contenus"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "5e5225fa-5de0-4136-a22c-4a7f91104c58"
         },
         {
-            "id": "ExtBox1-ext-gen19818",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -39,14 +33,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "type",
-                "designer|userClassName": "MyField2"
+                "designer|userClassName": "MyField2",
+                "name": "type"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "70507101-9150-49a0-b25e-27da2813a637"
         },
         {
-            "id": "ExtBox1-ext-gen36863",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -54,15 +46,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField2",
                 "name": "champs",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c74690d6-b0d7-4e74-97b0-7adb41d4a20a"
         },
         {
-            "id": "ExtBox1-ext-gen85155",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -70,15 +60,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField2",
                 "name": "vocabulaires",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "59ce6e62-cced-4e36-aceb-949093bfc475"
         },
         {
-            "id": "ExtBox1-ext-gen16074",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -86,15 +74,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField53",
                 "name": "imbrique",
-                "type": "boolean",
-                "designer|userClassName": "MyField53"
+                "type": "boolean"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "40f89b06-9db9-422a-a7af-5b81ef5e9bca"
         },
         {
-            "id": "ExtBox1-ext-gen13075",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -102,14 +88,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "typesImbriques",
-                "designer|userClassName": "MyField54"
+                "designer|userClassName": "MyField54",
+                "name": "typesImbriques"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "13953f15-65ae-4735-83c9-5222468a7272"
         },
         {
-            "id": "ExtBox1-ext-gen5949",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -117,11 +101,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField85"
+                "designer|userClassName": "MyField85",
+                "name": "version"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "83d240cd-2673-4959-a955-bc76773e73d9"
         }
     ]
 }

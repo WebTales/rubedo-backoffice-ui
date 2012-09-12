@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen11639",
     "type": "treestore",
     "reference": {
         "name": "items",
@@ -7,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "SitesDataJson",
+        "designer|userAlias": "sitesDataJson",
         "autoLoad": true,
         "autoSync": true,
         "storeId": "SitesDataJson",
@@ -14,17 +15,12 @@
         "defaultRootId": null,
         "defaultRootProperty": null,
         "folderSort": null,
-        "nodeParam": null,
-        "designer|userClassName": "SitesDataJson",
-        "designer|userAlias": "sitesDataJson"
+        "nodeParam": null
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen11639",
     "designerId": "8f43a679-c0ea-4980-b4af-43ba29385f00",
-    "$viewOrder": 0,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen11646",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -32,15 +28,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
                 "api": null,
-                "url": "data/Sites.json",
-                "designer|userClassName": "MyAjaxProxy"
+                "url": "data/Sites.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "d1c73d9e-5792-44f5-9cda-7f118b4c7afb",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen11654",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -48,12 +42,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonReader1",
                         "root": null,
-                        "record": null,
-                        "designer|userClassName": "MyJsonReader1"
+                        "record": null
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "22a96971-1abd-4fbd-aa0e-53f836e8a971"
                 }
             ]
         }

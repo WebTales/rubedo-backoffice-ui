@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen27280",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "nouveauTypeContenu",
+        "designer|userAlias": "nouveauTypeContenu",
         "frame": null,
         "height": 125,
         "id": "nouveauTypeContenuFenetre",
@@ -14,17 +15,12 @@
         "layout": "fit",
         "iconCls": "content-icon",
         "title": "Nouveau type de contenu",
-        "modal": true,
-        "designer|userClassName": "nouveauTypeContenu",
-        "designer|userAlias": "nouveauTypeContenu"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen27280",
     "designerId": "e6178e4c-162c-40e0-816c-026c97fd3f5e",
-    "$viewOrder": 13,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen28698",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -32,15 +28,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm8",
                 "bodyPadding": 10,
-                "title": "",
-                "designer|userClassName": "MyForm8"
+                "title": ""
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "38a03ff8-6fce-4b91-b472-bd57d4fa1c7e",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen29158",
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -48,17 +42,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField10",
                         "id": "champCreerTC",
                         "fieldLabel": "Nom ",
-                        "allowBlank": false,
-                        "designer|userClassName": "MyTextField10",
-                        "layout|anchor": "100%"
+                        "allowBlank": false
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a"
                 },
                 {
-                    "id": "ExtBox1-ext-gen40567",
                     "type": "checkboxfield",
                     "reference": {
                         "name": "items",
@@ -66,17 +58,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyCheckbox3",
                         "id": "champTCIsDep",
                         "fieldLabel": "Imbriqué ",
-                        "boxLabel": "",
-                        "designer|userClassName": "MyCheckbox3",
-                        "layout|anchor": "100%"
+                        "boxLabel": ""
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "5151ac20-edbc-403f-9251-031b0356329c"
                 },
                 {
-                    "id": "ExtBox1-ext-gen29639",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -84,13 +74,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "boutonCreerTC",
-                        "text": "Créer un nouveau type de contenu",
+                        "layout|anchor": "100%",
                         "designer|userClassName": "MyButton70",
-                        "layout|anchor": "100%"
+                        "id": "boutonCreerTC",
+                        "text": "Créer un nouveau type de contenu"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "5e9ce190-3a65-410a-8f33-122344d58a33"
                 }
             ]
         }

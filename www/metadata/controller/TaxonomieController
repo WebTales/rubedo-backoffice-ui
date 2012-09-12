@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen63606",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,22 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TaxonomieController",
         "models": [
             "termeTaxonomieModel"
         ],
         "views": [
             "TermesTaxonomieTree",
             "nouveauTaxoFenetre"
-        ],
-        "designer|userClassName": "TaxonomieController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen63606",
     "designerId": "694f297c-7498-4216-9113-e00663d5f6c4",
-    "$viewOrder": 9,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen63853",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -30,6 +26,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majTaxo",
                 "fn": "majTaxo",
                 "implHandler": [
                     "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
@@ -65,14 +62,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#AdminfTaxonomieGrid",
-                "designer|userClassName": "majTaxo"
+                "designer|controlQuery": "#AdminfTaxonomieGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "01427099-ea52-45c1-a5ad-233d5b442eec"
         },
         {
-            "id": "ExtBox1-ext-gen85275",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -80,6 +74,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "supprimeTerme",
                 "fn": "supprimeTerme",
                 "implHandler": [
                     "var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
@@ -90,14 +85,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTermesTaxo",
-                "designer|userClassName": "supprimeTerme"
+                "designer|controlQuery": "#boutonSupprimerTermesTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ce78b2cf-cde8-4749-acbf-369ba7160598"
         },
         {
-            "id": "ExtBox1-ext-gen87169",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -105,6 +97,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ajouterTerme",
                 "fn": "ajouterTerme",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
@@ -126,14 +119,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterTermesTaxo",
-                "designer|userClassName": "ajouterTerme"
+                "designer|controlQuery": "#boutonAjouterTermesTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b8758b15-4913-4a79-9539-ed729c7526d2"
         },
         {
-            "id": "ExtBox1-ext-gen92738",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -141,6 +131,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "enregistrerTaxo",
                 "fn": "enregistrerTaxo",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
@@ -161,14 +152,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerTaxo",
-                "designer|userClassName": "enregistrerTaxo"
+                "designer|controlQuery": "#boutonEnregistrerTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "87a4f3d1-7180-4c29-b9e6-24d7dc604e24"
         },
         {
-            "id": "ExtBox1-ext-gen33099",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -176,6 +164,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "recupereFils",
                 "fn": "recupereFils",
                 "designer|params": [
                     "cible"
@@ -189,14 +178,11 @@
                     "    }    \r",
                     "}\r",
                     "return fils;"
-                ],
-                "designer|userClassName": "recupereFils"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f4c567ad-de1e-4696-8221-38581beaa8e4"
         },
         {
-            "id": "ExtBox1-ext-gen60364",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -204,6 +190,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "supprimerVocabulaire",
                 "fn": "supprimerVocabulaire",
                 "implHandler": [
                     "var cible = Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getSelection()[0];\r",
@@ -220,14 +207,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTaxo",
-                "designer|userClassName": "supprimerVocabulaire"
+                "designer|controlQuery": "#boutonSupprimerTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "257c542b-3d3b-4c6f-b2e9-1e0db2c01e04"
         },
         {
-            "id": "ExtBox1-ext-gen70317",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -235,6 +219,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "creeVocabulaire",
                 "fn": "creeVocabulaire",
                 "implHandler": [
                     "if (Ext.getCmp('champCreerTaxo').isValid()) {\r",
@@ -259,14 +244,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTaxo",
-                "designer|userClassName": "creeVocabulaire"
+                "designer|controlQuery": "#boutonCreerTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "30f84c36-ac93-43a3-aeed-8a4c8ffb8f0e"
         },
         {
-            "id": "ExtBox1-ext-gen63562",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -274,6 +256,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "creerFenetreVocabulaire",
                 "fn": "creerFenetreVocabulaire",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauTaxoFenetre');\r",
@@ -283,14 +266,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTaxonomie",
-                "designer|userClassName": "creerFenetreVocabulaire"
+                "designer|controlQuery": "#boutonCreerTaxonomie"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "dba76a0e-a6ed-496f-8e85-7a3475ac10e3"
         },
         {
-            "id": "ExtBox1-ext-gen81188",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -298,6 +278,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick",
                 "fn": "onButtonClick",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
@@ -316,11 +297,9 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonModifierTermesTaxo",
-                "designer|userClassName": "onButtonClick"
+                "designer|controlQuery": "#boutonModifierTermesTaxo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "23c5b7f6-6ebc-46e8-83c6-371d7844c330"
         }
     ]
 }

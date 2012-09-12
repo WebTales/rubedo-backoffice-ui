@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen29819",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,24 +6,23 @@
     },
     "codeClass": null,
     "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "ajoutChampTCFenetre",
+        "designer|userAlias": "ajoutChampTCFenetre",
         "height": 300,
         "id": "ajoutChampTCFenetre",
         "width": 500,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "hbox",
         "title": "Ajouter un champ",
-        "modal": true,
-        "designer|userClassName": "ajoutChampTCFenetre",
-        "designer|userAlias": "ajoutChampTCFenetre",
-        "container|align": "stretch"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen29819",
     "designerId": "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
-    "$viewOrder": 16,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen29823",
             "type": "gridpanel",
             "reference": {
                 "name": "items",
@@ -32,17 +30,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 0.5,
+                "designer|userClassName": "MyGridPanel8",
                 "id": "ChampTCSelectGrid",
                 "title": "",
-                "store": "TypesChampsDataStore",
-                "designer|userClassName": "MyGridPanel8",
-                "layout|flex": 0.5
+                "store": "TypesChampsDataStore"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "4e0ad331-3355-4204-9b00-b51e9a390814",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen29832",
                     "type": "gridview",
                     "reference": {
                         "name": "viewConfig",
@@ -52,11 +48,9 @@
                     "userConfig": {
                         "designer|userClassName": "MyGridView6"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c"
                 },
                 {
-                    "id": "ExtBox1-ext-gen29836",
                     "type": "gridcolumn",
                     "reference": {
                         "name": "columns",
@@ -64,18 +58,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyColumn15",
                         "dataIndex": "type",
                         "flex": 1,
-                        "text": "Type",
-                        "designer|userClassName": "MyColumn15"
+                        "text": "Type"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen29842",
             "type": "panel",
             "reference": {
                 "name": "items",
@@ -83,19 +75,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "PaneauTCDetail",
-                "tpl": "{description}",
-                "bodyPadding": 10,
-                "bodyStyle": "{text-align: justify;}",
-                "title": "",
+                "layout|flex": 1,
                 "designer|userClassName": "MyPanel61",
-                "layout|flex": 1
+                "id": "PaneauTCDetail",
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "{text-align: justify;}"
+                ],
+                "title": ""
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "tpl",
+                        "implHandler": [
+                            "{description}"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
+                }
+            ]
         },
         {
-            "id": "ExtBox1-ext-gen29851",
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -103,15 +112,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar16",
                 "layout|flex": 1,
-                "dock": "bottom"
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar16"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "0e376d6c-8ec1-4c44-9c32-678fb7579a6e",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen30972",
                     "type": "tbfill",
                     "reference": {
                         "name": "items",
@@ -119,14 +126,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFill9",
-                        "layout|flex": null
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill9"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "7318e19f-be26-4061-a70e-0fcfdee1a901"
                 },
                 {
-                    "id": "ExtBox1-ext-gen29860",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -134,15 +139,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton72",
                         "id": "boutonAjouterChampTC",
                         "margin": null,
                         "iconCls": "add",
-                        "text": "Ajouter",
-                        "designer|userClassName": "MyButton72",
-                        "layout|flex": null
+                        "text": "Ajouter"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe"
                 }
             ]
         }

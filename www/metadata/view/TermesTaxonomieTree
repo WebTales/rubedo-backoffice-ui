@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen60324",
     "type": "treepanel",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TermesTaxonomieTree",
+        "designer|userAlias": "TermesTaxonomieTree",
         "id": "TermesTaxonomieTree",
         "title": "Termes",
         "store": null,
-        "useArrows": true,
-        "designer|userClassName": "TermesTaxonomieTree",
-        "designer|userAlias": "TermesTaxonomieTree"
+        "useArrows": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen60324",
     "designerId": "a78850b9-8d6a-42a3-b37f-1a00b54aba85",
-    "$viewOrder": 21,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen60340",
             "type": "treeview",
             "reference": {
                 "name": "viewConfig",
@@ -28,16 +24,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTreeView1",
                 "autoScroll": true,
                 "disableSelection": false,
-                "itemCls": null,
-                "designer|userClassName": "MyTreeView1"
+                "itemCls": null
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "6540d105-d54e-4bf2-9a22-4fe4d7d85df4",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen69006",
                     "type": "treedragdropplugin",
                     "reference": {
                         "name": "plugins",
@@ -47,13 +41,11 @@
                     "userConfig": {
                         "designer|userClassName": "MyTreeDragDropPlugin1"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "c30057c1-7987-483f-bff7-cba215698d02"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen77695",
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -61,14 +53,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar20",
-                "dock": "top"
+                "dock": "top",
+                "designer|userClassName": "MyToolbar20"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "494b4e9d-2b36-4bb2-80c3-e8ce19028068",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen77905",
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -76,20 +66,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyTextField8",
                         "id": "nouveauTermeTaxoField",
                         "fieldLabel": "Terme ",
                         "labelSeparator": null,
                         "labelWidth": 50,
                         "allowBlank": false,
-                        "vtype": null,
-                        "designer|userClassName": "MyTextField8",
-                        "layout|flex": null
+                        "vtype": null
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98"
                 },
                 {
-                    "id": "ExtBox1-ext-gen78197",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -97,18 +85,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton66",
                         "id": "boutonAjouterTermesTaxo",
                         "icon": "",
                         "iconCls": "add",
-                        "text": "Ajouter",
-                        "designer|userClassName": "MyButton66",
-                        "layout|flex": null
+                        "text": "Ajouter"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b"
                 },
                 {
-                    "id": "ExtBox1-ext-gen80426",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -116,18 +102,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton66",
                         "id": "boutonModifierTermesTaxo",
                         "icon": "",
                         "iconCls": "edit",
-                        "text": "Substituer",
-                        "designer|userClassName": "MyButton66",
-                        "layout|flex": null
+                        "text": "Substituer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "2e3911f0-3da9-4e53-b65d-56698f9f94e9"
                 },
                 {
-                    "id": "ExtBox1-ext-gen78461",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -135,15 +119,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton67",
                         "id": "boutonSupprimerTermesTaxo",
                         "icon": null,
                         "iconCls": "close",
-                        "text": "Supprimer",
-                        "designer|userClassName": "MyButton67",
-                        "layout|flex": null
+                        "text": "Supprimer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "ca16c6a2-921d-49a2-90ce-d1d7c384c787"
                 }
             ]
         }

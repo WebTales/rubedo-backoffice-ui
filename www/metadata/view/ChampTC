@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen15671",
     "type": "container",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "padding": 10,
-        "layout": "anchor",
         "designer|userClassName": "ChampTC",
-        "designer|userAlias": "ChampTC"
+        "designer|userAlias": "ChampTC",
+        "padding": 10,
+        "layout": "anchor"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen15671",
     "designerId": "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
-    "$viewOrder": 19,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen12675",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -26,17 +22,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyButton17",
                 "margin": null,
-                "style": "{float: right;}",
+                "style": [
+                    "{float: right;}"
+                ],
                 "iconCls": "close",
-                "text": "",
-                "designer|userClassName": "MyButton17"
+                "text": ""
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "06e4a4aa-bee2-4cb3-9186-01025cfe9857",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen5633",
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -44,22 +40,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "onButtonClick",
                         "fn": "onButtonClick",
                         "implHandler": [
                             "button.up().destroy();\r",
                             ""
                         ],
                         "name": "click",
-                        "scope": "me",
-                        "designer|userClassName": "onButtonClick"
+                        "scope": "me"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "769baaf5-cc1d-43e8-b92e-a5b417b57f87"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen13179",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -67,17 +61,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyButton16",
                 "margin": null,
-                "style": "{float: right;}",
+                "style": [
+                    "{float: right;}"
+                ],
                 "iconCls": "arrow_down",
-                "text": "",
-                "designer|userClassName": "MyButton16"
+                "text": ""
             },
-            "customConfigs": [],
-            "expanded": false,
+            "designerId": "dd6eae4f-ee4a-4c65-8fd4-f35f8a55bc9f",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen9303",
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -85,22 +79,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "onButtonClick2",
                         "fn": "onButtonClick2",
                         "implHandler": [
                             "var pos = button.up().up().items.indexOf(button.up());\r",
                             "button.up().up().move(pos,pos+1);"
                         ],
                         "name": "click",
-                        "scope": "me",
-                        "designer|userClassName": "onButtonClick2"
+                        "scope": "me"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "4b9b06a3-311c-4e39-a443-69f993f73d77"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen13685",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -108,17 +100,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyButton15",
                 "margin": null,
-                "style": "{float: right;}",
+                "style": [
+                    "{float: right;}"
+                ],
                 "iconCls": "arrow_up",
-                "text": "",
-                "designer|userClassName": "MyButton15"
+                "text": ""
             },
-            "customConfigs": [],
-            "expanded": false,
+            "designerId": "08bcbbd6-92bc-4323-bf7e-f38447ee3dbb",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen8491",
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -126,6 +118,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "onButtonClick1",
                         "fn": "onButtonClick1",
                         "implHandler": [
                             "var pos = button.up().up().items.indexOf(button.up());\r",
@@ -134,16 +127,13 @@
                             "}"
                         ],
                         "name": "click",
-                        "scope": "me",
-                        "designer|userClassName": "onButtonClick1"
+                        "scope": "me"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "6e99531b-8023-4eab-aec3-2417113dd6a8"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen7216",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -151,9 +141,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyButton17",
                 "itemId": "helpBouton",
                 "margin": "0 20 0 0",
-                "style": "{float:right;}",
+                "style": [
+                    "{float:right;}"
+                ],
                 "allowDepress": null,
                 "enableToggle": null,
                 "handleMouseEvents": false,
@@ -161,11 +154,9 @@
                 "pressed": null,
                 "pressedCls": "x-btn",
                 "text": "",
-                "tooltip": null,
-                "designer|userClassName": "MyButton17"
+                "tooltip": null
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "35573262-4075-43f0-9929-ca3d4e354902"
         }
     ]
 }

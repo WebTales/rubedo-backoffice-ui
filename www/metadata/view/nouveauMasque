@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen30900",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,24 +6,23 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "nouveauMasque",
+        "designer|userAlias": "nouveauMasque",
         "height": 133,
         "id": "nouveauMasqueFenetre",
         "width": 400,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "fit",
         "iconCls": "page_add",
         "title": "Nouveau Masque",
-        "modal": true,
-        "designer|userClassName": "nouveauMasque",
-        "designer|userAlias": "nouveauMasque"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen30900",
     "designerId": "a5749eef-eecb-4978-b0d5-e075d6b5418b",
-    "$viewOrder": 10,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen32800",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -32,15 +30,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm5",
                 "bodyPadding": 10,
-                "title": "",
-                "designer|userClassName": "MyForm5"
+                "title": ""
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "e7735688-e799-49e6-b885-2f1be0fe74fe",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen33270",
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -48,18 +44,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "nouveauMasqueTitre",
-                        "value": "Nouveau Masque\n",
-                        "fieldLabel": "Titre ",
-                        "allowBlank": false,
+                        "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField15",
-                        "layout|anchor": "100%"
+                        "id": "nouveauMasqueTitre",
+                        "value": [
+                            "Nouveau Masque",
+                            ""
+                        ],
+                        "fieldLabel": "Titre ",
+                        "allowBlank": false
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298"
                 },
                 {
-                    "id": "ExtBox1-ext-gen26777",
                     "type": "combobox",
                     "reference": {
                         "name": "items",
@@ -67,20 +64,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyComboBox",
                         "id": "nouveauMasqueSite",
                         "fieldLabel": "Site ",
                         "allowBlank": false,
                         "forceSelection": true,
                         "store": "SitesJson",
-                        "valueField": "text",
-                        "designer|userClassName": "MyComboBox",
-                        "layout|anchor": "100%"
+                        "valueField": "text"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b"
                 },
                 {
-                    "id": "ExtBox1-ext-gen34150",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -88,14 +83,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "1",
+                        "designer|userClassName": "MyButton50",
                         "id": "creerNouveauMasque",
                         "width": null,
-                        "text": "Créer un nouveau masque",
-                        "designer|userClassName": "MyButton50",
-                        "layout|anchor": "1"
+                        "text": "Créer un nouveau masque"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a"
                 }
             ]
         }

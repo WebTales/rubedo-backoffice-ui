@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6813",
     "type": "menu",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "settingsContextMenu",
+        "designer|userAlias": "settingsContextMenu",
         "frame": true,
         "id": "settingsContextMenu",
-        "width": null,
-        "designer|userClassName": "settingsContextMenu",
-        "designer|userAlias": "settingsContextMenu"
+        "width": null
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen6813",
     "designerId": "89155b60-bd6b-4ba6-98c9-19a5443ffa2c",
-    "$viewOrder": 38,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen6819",
             "type": "menuitem",
             "reference": {
                 "name": "items",
@@ -27,15 +23,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyMenuItem",
                 "iconCls": null,
-                "text": "Icônes",
-                "designer|userClassName": "MyMenuItem"
+                "text": "Icônes"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "3037325b-d9db-4d02-a1d7-6b9d7f3e8fbb",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen9954",
                     "type": "menu",
                     "reference": {
                         "name": "menu",
@@ -43,18 +37,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyMenu2",
                         "frame": true,
                         "width": null,
                         "ignoreParentClicks": false,
                         "plain": false,
-                        "showSeparator": false,
-                        "designer|userClassName": "MyMenu2"
+                        "showSeparator": false
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "6f008f16-0b19-4a66-89bf-4424300c5192",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen9962",
                             "type": "menuitem",
                             "reference": {
                                 "name": "items",
@@ -62,15 +54,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyMenuItem3",
                                 "id": "itemShowAllIcons",
-                                "text": "Afficher",
-                                "designer|userClassName": "MyMenuItem3"
+                                "text": "Afficher"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408"
                         },
                         {
-                            "id": "ExtBox1-ext-gen9974",
                             "type": "menuitem",
                             "reference": {
                                 "name": "items",
@@ -78,15 +68,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyMenuItem4",
                                 "id": "itemHideAllIcons",
-                                "text": "Cacher",
-                                "designer|userClassName": "MyMenuItem4"
+                                "text": "Cacher"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643"
                         },
                         {
-                            "id": "ExtBox1-ext-gen9986",
                             "type": "menuitem",
                             "reference": {
                                 "name": "items",
@@ -94,19 +82,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyMenuItem5",
                                 "id": "itemRearangeAllIcons",
-                                "text": "Réorganiser automatiquement",
-                                "designer|userClassName": "MyMenuItem5"
+                                "text": "Réorganiser automatiquement"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen12572",
             "type": "menuseparator",
             "reference": {
                 "name": "items",
@@ -116,11 +102,9 @@
             "userConfig": {
                 "designer|userClassName": "MySeparator7"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b9451322-077c-4b12-80a0-e4de53e30dba"
         },
         {
-            "id": "ExtBox1-ext-gen6843",
             "type": "menuitem",
             "reference": {
                 "name": "items",
@@ -128,13 +112,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyMenuItem2",
                 "id": "itemCustomizeDesktop",
                 "iconCls": "personalize",
-                "text": "Personalizer",
-                "designer|userClassName": "MyMenuItem2"
+                "text": "Personalizer"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b6bd5a9b-06dc-4c69-abce-482679780311"
         }
     ]
 }

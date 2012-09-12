@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen5978",
     "type": "tabpanel",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "ConfigSpecBloc",
-        "activeTab": 0,
         "designer|userClassName": "ConfigSpecBloc",
-        "designer|userAlias": "ConfigSpecBloc"
+        "designer|userAlias": "ConfigSpecBloc",
+        "id": "ConfigSpecBloc",
+        "activeTab": 0
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen5978",
     "designerId": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
-    "$viewOrder": 17,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen5990",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -26,16 +22,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm10",
                 "padding": null,
                 "bodyPadding": 10,
-                "title": "Simple",
-                "designer|userClassName": "MyForm10"
+                "title": "Simple"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen6002",
                     "type": "tab",
                     "reference": {
                         "name": "tabConfig",
@@ -45,14 +39,11 @@
                     "userConfig": {
                         "designer|userClassName": "TabConfig33"
                     },
-                    "customConfigs": [],
-                    "iconCls": "icon-tab-bar",
-                    "expanded": true
+                    "designerId": "db22a8e1-32da-4cb0-9a0d-3e27c539d9fd"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen6007",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -60,15 +51,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm11",
                 "bodyPadding": 10,
-                "title": "Avancé",
-                "designer|userClassName": "MyForm11"
+                "title": "Avancé"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "30b2853e-c6ad-4627-b904-006cc1fca756",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen6019",
                     "type": "tab",
                     "reference": {
                         "name": "tabConfig",
@@ -78,9 +67,7 @@
                     "userConfig": {
                         "designer|userClassName": "TabConfig34"
                     },
-                    "customConfigs": [],
-                    "iconCls": "icon-tab-bar",
-                    "expanded": true
+                    "designerId": "6f4cbf89-715a-4de1-93b4-01918cdf6d22"
                 }
             ]
         }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen24282",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TypesContenusController",
+        "designer|userAlias": "TypesContenusController",
         "models": [
             "typesContenusDataModel"
         ],
@@ -19,17 +20,12 @@
             "ChampTC",
             "optionsLCGrid",
             "ongletTCDep"
-        ],
-        "designer|userClassName": "TypesContenusController",
-        "designer|userAlias": "TypesContenusController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen24282",
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
-    "$viewOrder": 8,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen41308",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -37,6 +33,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ajouterContenu",
                 "fn": "ajouterContenu",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0])) {\r",
@@ -129,14 +126,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterContenu",
-                "designer|userClassName": "ajouterContenu"
+                "designer|controlQuery": "#boutonAjouterContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e81d0f4c-83eb-4437-a188-896315f1c5c8"
         },
         {
-            "id": "ExtBox1-ext-gen31574",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -144,6 +138,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ouvrirFenetreTC",
                 "fn": "ouvrirFenetreTC",
                 "implHandler": [
                     "var fenetreTC = Ext.widget('ajoutChampTCFenetre');\r",
@@ -152,14 +147,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonOuvrirFenetreTC",
-                "designer|userClassName": "ouvrirFenetreTC"
+                "designer|controlQuery": "#boutonOuvrirFenetreTC"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "063f8236-3289-49dc-a637-63d5b83ff07c"
         },
         {
-            "id": "ExtBox1-ext-gen33432",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -167,6 +159,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "creerChampTC",
                 "fn": "creerChampTC",
                 "implHandler": [
                     "var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;\r",
@@ -204,14 +197,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterChampTC",
-                "designer|userClassName": "creerChampTC"
+                "designer|controlQuery": "#boutonAjouterChampTC"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "cca991ed-25e3-4a89-9490-55e02f4dcef7"
         },
         {
-            "id": "ExtBox1-ext-gen40524",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -219,6 +209,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "selectChampTC",
                 "fn": "selectChampTC",
                 "implHandler": [
                     "abstractcomponent.getComponent(4).getEl().on('click', function() {\r",
@@ -282,14 +273,11 @@
                 "name": "afterrender",
                 "scope": "me",
                 "designer|targetType": "ChampTC",
-                "designer|controlQuery": "#champsEditionTC ChampTC",
-                "designer|userClassName": "selectChampTC"
+                "designer|controlQuery": "#champsEditionTC ChampTC"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e2ebc421-111e-445c-aa56-a4c4fc55fdfe"
         },
         {
-            "id": "ExtBox1-ext-gen25133",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -297,6 +285,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "enleveChampTC",
                 "fn": "enleveChampTC",
                 "implHandler": [
                     "if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(4).id) {\r",
@@ -306,14 +295,11 @@
                 "name": "beforedestroy",
                 "scope": "me",
                 "designer|targetType": "ChampTC",
-                "designer|controlQuery": "#champsEditionTC ChampTC",
-                "designer|userClassName": "enleveChampTC"
+                "designer|controlQuery": "#champsEditionTC ChampTC"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0541dcd4-ee38-4b95-9dbf-b9f8d5a998e7"
         },
         {
-            "id": "ExtBox1-ext-gen32926",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -321,6 +307,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "updateOptionsListeTC",
                 "fn": "updateOptionsListeTC",
                 "implHandler": [
                     "Ext.getCmp('PaneauTCDetail').update(record.data);"
@@ -328,14 +315,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ChampTCSelectGrid",
-                "designer|userClassName": "updateOptionsListeTC"
+                "designer|controlQuery": "#ChampTCSelectGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "74b79ea2-838b-4407-8e7a-69683f98bf32"
         },
         {
-            "id": "ExtBox1-ext-gen27988",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -343,6 +327,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majAdminfTypesCentenus",
                 "fn": "majAdminfTypesCentenus",
                 "implHandler": [
                     "\r",
@@ -432,14 +417,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#AdminfTypesGridView",
-                "designer|userClassName": "majAdminfTypesCentenus"
+                "designer|controlQuery": "#AdminfTypesGridView"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d5b57a48-78e7-4ae9-81e5-45b88a8b725e"
         },
         {
-            "id": "ExtBox1-ext-gen29640",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -447,6 +429,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "supprimeTypeContenu",
                 "fn": "supprimeTypeContenu",
                 "implHandler": [
                     "var cible = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getSelection()[0];\r",
@@ -463,14 +446,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTypeContenu",
-                "designer|userClassName": "supprimeTypeContenu"
+                "designer|controlQuery": "#boutonSupprimerTypeContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "926fdbd9-4653-4556-88a3-f6ea0c9a755f"
         },
         {
-            "id": "ExtBox1-ext-gen13601",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -478,6 +458,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "enregistrerTypeContenus",
                 "fn": "enregistrerTypeContenus",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){\r",
@@ -531,14 +512,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerTypeContenu",
-                "designer|userClassName": "enregistrerTypeContenus"
+                "designer|controlQuery": "#boutonEnregistrerTypeContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a61a2f23-93e0-4ad3-9987-1602c0afced2"
         },
         {
-            "id": "ExtBox1-ext-gen28887",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -546,6 +524,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "fenetreNTC",
                 "fn": "fenetreNTC",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauTypeContenu');\r",
@@ -554,14 +533,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonNouveauTypeContenu",
-                "designer|userClassName": "fenetreNTC"
+                "designer|controlQuery": "#boutonNouveauTypeContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "13f39238-b017-41fb-9868-d8f120518348"
         },
         {
-            "id": "ExtBox1-ext-gen33370",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -569,6 +545,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "creerNTC",
                 "fn": "creerNTC",
                 "implHandler": [
                     "if (Ext.getCmp('champCreerTC').isValid()) {\r",
@@ -592,14 +569,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTC",
-                "designer|userClassName": "creerNTC"
+                "designer|controlQuery": "#boutonCreerTC"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "80a1e005-fdd4-4af3-82fb-a9229417cce3"
         },
         {
-            "id": "ExtBox1-ext-gen91222",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -607,6 +581,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "miseAPlatTaxo",
                 "fn": "miseAPlatTaxo",
                 "designer|params": [
                     "cible",
@@ -618,14 +593,11 @@
                     "    resultat.push({terme: cible[e].text});\r",
                     "    this.miseAPlatTaxo(cible[e].children, resultat);\r",
                     "}"
-                ],
-                "designer|userClassName": "miseAPlatTaxo"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b01c65a8-deab-4097-8985-5e8fc1acca30"
         },
         {
-            "id": "ExtBox1-ext-gen10980",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -633,6 +605,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "repliqueChamp",
                 "fn": "repliqueChamp",
                 "implHandler": [
                     "var nouvChamp=button.up().getComponent(1).cloneConfig();\r",
@@ -656,11 +629,9 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']",
-                "designer|userClassName": "repliqueChamp"
+                "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "6c7dc62c-8c47-4fdb-a92c-52250f3464b5"
         }
     ]
 }

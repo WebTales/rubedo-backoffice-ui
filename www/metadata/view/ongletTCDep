@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen87627",
     "type": "panel",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ongletTCDep",
+        "designer|userAlias": "ongletTCDep",
         "id": "ongletTCDep",
         "layout": "fit",
         "iconCls": "documentDep",
-        "title": "Types de contenus imbriqués",
-        "designer|userClassName": "ongletTCDep",
-        "designer|userAlias": "ongletTCDep"
+        "title": "Types de contenus imbriqués"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen87627",
     "designerId": "c6f84d61-bbf5-4921-a9e9-82bfe825ab8e",
-    "$viewOrder": 25,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen89711",
             "type": "gridpanel",
             "reference": {
                 "name": "items",
@@ -28,16 +24,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyGridPanel13",
                 "id": "TCImbriquesGrid",
                 "title": "",
-                "store": "TypesContenusDepDataJson",
-                "designer|userClassName": "MyGridPanel13"
+                "store": "TypesContenusDepDataJson"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "9c000a7e-fe57-40f2-a6c9-7f0c8e68b6cf",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen89758",
                     "type": "gridview",
                     "reference": {
                         "name": "viewConfig",
@@ -47,11 +41,9 @@
                     "userConfig": {
                         "designer|userClassName": "MyGridView11"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "7c9f11a1-5d96-49aa-9cdf-c22abca73d64"
                 },
                 {
-                    "id": "ExtBox1-ext-gen90863",
                     "type": "gridcolumn",
                     "reference": {
                         "name": "columns",
@@ -59,16 +51,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyColumn23",
                         "dataIndex": "type",
                         "flex": 1,
-                        "text": "Type",
-                        "designer|userClassName": "MyColumn23"
+                        "text": "Type"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "7f5c7cb6-2dcb-42b9-a9e1-358d00de5e8a"
                 },
                 {
-                    "id": "ExtBox1-ext-gen93140",
                     "type": "checkboxselectionmodel",
                     "reference": {
                         "name": "selModel",
@@ -78,8 +68,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyCheckboxSelectionModel3"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "a8646a49-8894-4ef1-bcfa-0f8ca02f1273"
                 }
             ]
         }

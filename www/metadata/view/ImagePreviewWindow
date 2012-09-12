@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen8111",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,29 +6,28 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ImagePreviewWindow",
+        "designer|userAlias": "ImagePreviewWindow",
         "height": null,
         "id": null,
         "maxHeight": null,
         "maxWidth": null,
         "width": null,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "fit",
         "iconCls": "imageIco",
         "title": "Titre",
         "constrain": false,
         "constrainHeader": true,
         "maximizable": null,
-        "minimizable": true,
-        "designer|userClassName": "ImagePreviewWindow",
-        "designer|userAlias": "ImagePreviewWindow"
+        "minimizable": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen8111",
     "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
-    "$viewOrder": 35,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen8606",
             "type": "image",
             "reference": {
                 "name": "items",
@@ -37,12 +35,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "resizable": "false",
-                "src": " ",
-                "designer|userClassName": "MyImg8"
+                "designer|userClassName": "MyImg8",
+                "resizable": [
+                    "false"
+                ],
+                "src": " "
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "cd57e8c2-1ed9-432b-8d95-8b42e6d62348"
         }
     ]
 }

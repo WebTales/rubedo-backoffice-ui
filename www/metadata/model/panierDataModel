@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen64452",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -9,13 +8,10 @@
     "userConfig": {
         "designer|userClassName": "panierDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen64452",
     "designerId": "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
-    "$viewOrder": 1,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen64456",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -23,15 +19,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField",
                 "name": "text",
-                "type": "string",
-                "designer|userClassName": "MyField"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ca854959-6a91-4af5-ba02-816989e8ad4c"
         },
         {
-            "id": "ExtBox1-ext-gen64460",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -39,15 +33,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField",
                 "name": "etat",
-                "type": "string",
-                "designer|userClassName": "MyField"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "15cd6d38-263f-496f-8fc2-c2acb545cd86"
         },
         {
-            "id": "ExtBox1-ext-gen5724",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -55,11 +47,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField84"
+                "designer|userClassName": "MyField84",
+                "name": "version"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "43ac1d3f-767c-4592-a642-b538aeb8bb69"
         }
     ]
 }

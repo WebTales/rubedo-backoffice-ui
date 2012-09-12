@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen27460",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TypesChampsDataStore",
+        "designer|userAlias": "TypesChampsDataStore",
         "autoLoad": true,
         "storeId": "TypesChampsDataStore",
-        "model": "typesChampsDataModel",
-        "designer|userClassName": "TypesChampsDataStore",
-        "designer|userAlias": "TypesChampsDataStore"
+        "model": "typesChampsDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen27460",
     "designerId": "cb2fc7b0-aa63-4f16-b7f4-12b636102cc6",
-    "$viewOrder": 11,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen27464",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/TypesChamps.json",
-                "designer|userClassName": "MyAjaxProxy7"
+                "designer|userClassName": "MyAjaxProxy7",
+                "url": "data/TypesChamps.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "03cd85d3-3b8e-4d44-8727-cfd6c373ca65",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen27468",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,8 +38,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader5"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "8f0a0e7b-9588-47bf-817f-73191b86c86e"
                 }
             ]
         }

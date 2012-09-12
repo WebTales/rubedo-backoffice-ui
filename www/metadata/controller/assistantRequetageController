@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen43952",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "assistantRequetageController",
         "views": [
             "assisstantRE4",
             "regleChampAR"
-        ],
-        "designer|userClassName": "assistantRequetageController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen43952",
     "designerId": "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
-    "$viewOrder": 10,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen44433",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -27,6 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "suivant",
                 "fn": "suivant",
                 "implHandler": [
                     "var nextOK = 1;\r",
@@ -238,14 +235,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonNextRequeteur",
-                "designer|userClassName": "suivant"
+                "designer|controlQuery": "#boutonNextRequeteur"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b83c1479-9cbe-478c-bde1-54b5275f3a77"
         },
         {
-            "id": "ExtBox1-ext-gen44531",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -253,6 +247,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "precedent",
                 "fn": "precedent",
                 "implHandler": [
                     "var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;\r",
@@ -267,14 +262,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPrevRequeteur",
-                "designer|userClassName": "precedent"
+                "designer|controlQuery": "#boutonPrevRequeteur"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "4667034e-54b1-41f0-9662-9b004a9c8479"
         },
         {
-            "id": "ExtBox1-ext-gen9891",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -282,6 +274,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "miseAPlatTaxo",
                 "fn": "miseAPlatTaxo",
                 "designer|params": [
                     "cible",
@@ -293,14 +286,11 @@
                     "    resultat.push({terme: cible[e].text});\r",
                     "    this.miseAPlatTaxo(cible[e].children, resultat);\r",
                     "}"
-                ],
-                "designer|userClassName": "miseAPlatTaxo"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "aa80c73c-634a-4906-8575-47e0b636d035"
         },
         {
-            "id": "ExtBox1-ext-gen21180",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -308,6 +298,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "enleveRegle",
                 "fn": "enleveRegle",
                 "implHandler": [
                     "if (Ext.getCmp('assisstantRE4').items.items.indexOf(button.up().up())==2) {\r",
@@ -318,14 +309,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId='boutonEnleveRegleAR']",
-                "designer|userClassName": "enleveRegle"
+                "designer|controlQuery": "[itemId='boutonEnleveRegleAR']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "20f3e13d-6f29-47e0-ba81-ac64ffef193e"
         },
         {
-            "id": "ExtBox1-ext-gen20507",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -333,6 +321,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "selectAllTC",
                 "fn": "selectAllTC",
                 "implHandler": [
                     "Ext.getCmp('champTCRequeteur').select(Ext.getCmp('champTCRequeteur').getStore().data.items);"
@@ -340,14 +329,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSelectAllTCAR",
-                "designer|userClassName": "selectAllTC"
+                "designer|controlQuery": "#boutonSelectAllTCAR"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c95df528-b694-421e-b11a-54c5cba5aea0"
         },
         {
-            "id": "ExtBox1-ext-gen56442",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -355,6 +341,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ajoutRegleChamp",
                 "fn": "ajoutRegleChamp",
                 "implHandler": [
                     "var nRegle= Ext.getCmp('createurReglesChampsAR').getValue();\r",
@@ -402,11 +389,9 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreateurReglesChampsAR",
-                "designer|userClassName": "ajoutRegleChamp"
+                "designer|controlQuery": "#boutonCreateurReglesChampsAR"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0889cbbf-053a-469f-99aa-a047a88adba7"
         }
     ]
 }

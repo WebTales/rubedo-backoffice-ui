@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen45718",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,24 +6,23 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "copierMasque",
+        "designer|userAlias": "copierMasque",
         "height": 133,
         "id": "copieMasqueFenetre",
         "width": 400,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "fit",
         "iconCls": "page_copy",
         "title": "Copie de masque avec redimensionement",
-        "modal": true,
-        "designer|userClassName": "copierMasque",
-        "designer|userAlias": "copierMasque"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen45718",
     "designerId": "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
-    "$viewOrder": 11,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen45722",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -32,15 +30,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm5",
                 "bodyPadding": 10,
-                "title": "",
-                "designer|userClassName": "MyForm5"
+                "title": ""
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "7f8d4838-c91a-4df2-b725-94f2ced615f1",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen45728",
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -48,18 +44,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField15",
                         "id": "copierMasqueTitre",
                         "value": null,
                         "fieldLabel": "Nouveau titre ",
-                        "allowBlank": false,
-                        "designer|userClassName": "MyTextField15",
-                        "layout|anchor": "100%"
+                        "allowBlank": false
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6"
                 },
                 {
-                    "id": "ExtBox1-ext-gen45737",
                     "type": "combobox",
                     "reference": {
                         "name": "items",
@@ -67,20 +61,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyComboBox",
                         "id": "copierMasqueSite",
                         "fieldLabel": "Vers le site ",
                         "allowBlank": false,
                         "forceSelection": true,
                         "store": "SitesJson",
-                        "valueField": "text",
-                        "designer|userClassName": "MyComboBox",
-                        "layout|anchor": "100%"
+                        "valueField": "text"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "36fde64e-b099-4699-a162-b92b00cde888"
                 },
                 {
-                    "id": "ExtBox1-ext-gen45746",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -88,14 +80,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": "1",
+                        "designer|userClassName": "MyButton50",
                         "id": "copierMasque",
                         "width": null,
-                        "text": "Copier ce masque",
-                        "designer|userClassName": "MyButton50",
-                        "layout|anchor": "1"
+                        "text": "Copier ce masque"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523"
                 }
             ]
         }

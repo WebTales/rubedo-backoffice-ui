@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen23783",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "WallpapersDataJson",
+        "designer|userAlias": "WallpapersDataJson",
         "autoLoad": true,
         "storeId": "WallpapersDataJson",
-        "model": "wallpaperDataModel",
-        "designer|userClassName": "WallpapersDataJson",
-        "designer|userAlias": "WallpapersDataJson"
+        "model": "wallpaperDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen23783",
     "designerId": "6cb9f760-e375-46f8-ba70-e52ba7aa5725",
-    "$viewOrder": 17,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen23790",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Wallpapers.json",
-                "designer|userClassName": "MyAjaxProxy17"
+                "designer|userClassName": "MyAjaxProxy17",
+                "url": "data/Wallpapers.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "a1a0785f-52fe-48c9-bf8f-412a52763d36",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen23798",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,8 +38,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader15"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "6dbcaea5-5fba-4e0e-95c2-f35228b140b5"
                 }
             ]
         }

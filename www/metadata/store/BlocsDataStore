@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen4288",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "BlocsDataStore",
+        "designer|userAlias": "BlocsDataStore",
         "autoLoad": true,
         "storeId": "BlocsDataStore",
-        "model": "blocDataModel",
-        "designer|userClassName": "BlocsDataStore",
-        "designer|userAlias": "BlocsDataStore"
+        "model": "blocDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen4288",
     "designerId": "59694082-24d4-4519-ae8c-5fd6849d6503",
-    "$viewOrder": 9,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen4295",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Blocs.json",
-                "designer|userClassName": "MyAjaxProxy7"
+                "designer|userClassName": "MyAjaxProxy7",
+                "url": "data/Blocs.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "6ca4fab4-aed9-4c86-9dd0-023690b06325",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen4303",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,8 +38,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader5"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "c161b047-9b55-4bdc-8f79-b2a61e227ef8"
                 }
             ]
         }

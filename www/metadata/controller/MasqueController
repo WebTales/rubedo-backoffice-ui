@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen29224",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "MasqueController",
         "models": [
             "masquesDataModel"
         ],
@@ -18,16 +18,12 @@
             "nouveauMasque",
             "ImportationMasques",
             "copierMasque"
-        ],
-        "designer|userClassName": "MasqueController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen29224",
     "designerId": "da6ed701-29c3-4603-a441-221b8ebb99cf",
-    "$viewOrder": 7,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen59189",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -35,6 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "deleteMask",
                 "fn": "deleteMask",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -61,14 +58,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerMasque",
-                "designer|userClassName": "deleteMask"
+                "designer|controlQuery": "#boutonSupprimerMasque"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "50908fd7-bd46-4d7d-b504-215fdd4c7c75"
         },
         {
-            "id": "ExtBox1-ext-gen36159",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -76,6 +70,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "publishMask",
                 "fn": "publishMask",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -92,14 +87,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#AdminfMasquesPublier",
-                "designer|userClassName": "publishMask"
+                "designer|controlQuery": "#AdminfMasquesPublier"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "cf67521a-8173-4dc9-8aa3-0e9cb3c97b0b"
         },
         {
-            "id": "ExtBox1-ext-gen33079",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -107,6 +99,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "masqueDisplay",
                 "fn": "masqueDisplay",
                 "implHandler": [
                     "var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
@@ -145,14 +138,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#masquesGridView",
-                "designer|userClassName": "masqueDisplay"
+                "designer|controlQuery": "#masquesGridView"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "90ee9ec3-51ac-45fd-a5c8-da93ce6a5710"
         },
         {
-            "id": "ExtBox1-ext-gen34881",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -160,15 +150,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MasqueEdition",
                 "ref": "MasqueEdition",
-                "selector": "#masqueEdition",
-                "designer|userClassName": "MasqueEdition"
+                "selector": "#masqueEdition"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0430d23b-9032-4abc-a5c3-c3d4f9a291e8"
         },
         {
-            "id": "ExtBox1-ext-gen7074",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -176,6 +164,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "applyConstrain",
                 "fn": "applyConstrain",
                 "designer|params": [
                     "target",
@@ -233,14 +222,11 @@
                     "    spanF.setValue(target.flex);\r",
                     "    spanF.setMaxValue(target.flex+myEol.flex);\r",
                     "}"
-                ],
-                "designer|userClassName": "applyConstrain"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "23c1d979-a727-40ed-bac2-e4ef8b4c7c72"
         },
         {
-            "id": "ExtBox1-ext-gen25462",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -248,6 +234,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "masqueMAJ",
                 "fn": "masqueMAJ",
                 "designer|params": [
                     "cible"
@@ -269,14 +256,11 @@
                     "    nouvZones.push(nZone);\r",
                     "}\r",
                     "cible.data.zones=nouvZones;"
-                ],
-                "designer|userClassName": "masqueMAJ"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1d1aba20-f06b-46cd-9b94-ce3f0b0e3b74"
         },
         {
-            "id": "ExtBox1-ext-gen36209",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -284,6 +268,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "masqueRestit",
                 "fn": "masqueRestit",
                 "designer|params": [
                     "mRows",
@@ -355,14 +340,11 @@
                     "\r",
                     "\r",
                     "});"
-                ],
-                "designer|userClassName": "masqueRestit"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "36dfcf49-7a25-41ac-9be8-5cd054e2bdb0"
         },
         {
-            "id": "ExtBox1-ext-gen22795",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -370,6 +352,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onTreepanelItemClick",
                 "fn": "onTreepanelItemClick",
                 "implHandler": [
                     "var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];\r",
@@ -380,14 +363,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.tree.Panel",
-                "designer|controlQuery": "#arborescenceSites",
-                "designer|userClassName": "onTreepanelItemClick"
+                "designer|controlQuery": "#arborescenceSites"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b8b8ae88-6dae-43af-82a5-68d5129ec5d9"
         },
         {
-            "id": "ExtBox1-ext-gen45227",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -395,6 +375,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "copyMaskWindow",
                 "fn": "copyMaskWindow",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -407,14 +388,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCopierMasque",
-                "designer|userClassName": "copyMaskWindow"
+                "designer|controlQuery": "#boutonCopierMasque"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "fcd80b72-c55f-4cd8-8b60-795aeb1185aa"
         },
         {
-            "id": "ExtBox1-ext-gen21847",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -422,6 +400,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "newMaskWindow",
                 "fn": "newMaskWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauMasque');\r",
@@ -430,14 +409,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonNouveauMasque",
-                "designer|userClassName": "newMaskWindow"
+                "designer|controlQuery": "#boutonNouveauMasque"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "937a8757-7537-4f4b-b0b9-9367d551ad9b"
         },
         {
-            "id": "ExtBox1-ext-gen35762",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -445,6 +421,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "createMask",
                 "fn": "createMask",
                 "implHandler": [
                     "if ((Ext.getCmp('nouveauMasqueTitre').isValid())&&(Ext.getCmp('nouveauMasqueSite').isValid())) {\r",
@@ -501,14 +478,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#creerNouveauMasque",
-                "designer|userClassName": "createMask"
+                "designer|controlQuery": "#creerNouveauMasque"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1cf108dd-b3e6-442c-8aec-e10df6fac9c6"
         },
         {
-            "id": "ExtBox1-ext-gen24279",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -516,6 +490,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "maskSave",
                 "fn": "maskSave",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -532,14 +507,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#AdminfMasquesEnregistrer",
-                "designer|userClassName": "maskSave"
+                "designer|controlQuery": "#AdminfMasquesEnregistrer"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0beba9df-bf9f-4e8f-963d-36a9dd323b38"
         },
         {
-            "id": "ExtBox1-ext-gen50953",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -547,6 +519,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "copyMask",
                 "fn": "copyMask",
                 "implHandler": [
                     "if ((Ext.getCmp('copierMasqueTitre').isValid())&&(Ext.getCmp('copierMasqueSite').isValid())) {\r",
@@ -576,14 +549,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#copierMasque",
-                "designer|userClassName": "copyMask"
+                "designer|controlQuery": "#copierMasque"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "22678e8c-5ce9-4592-9220-d5edc41a832a"
         },
         {
-            "id": "ExtBox1-ext-gen49232",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -591,6 +561,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "importMaskWindow",
                 "fn": "importMaskWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('importationMasques');\r",
@@ -600,14 +571,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#AdminfMasquesImporter",
-                "designer|userClassName": "importMaskWindow"
+                "designer|controlQuery": "#AdminfMasquesImporter"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "28793c92-7265-46de-8344-651a0523c5d1"
         },
         {
-            "id": "ExtBox1-ext-gen12939",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -615,6 +583,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var me=this;\r",
@@ -793,14 +762,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#masqueEdition panel",
-                "designer|userClassName": "selectionEvents"
+                "designer|controlQuery": "#masqueEdition panel"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b4a72045-b1e4-4c98-a83e-c7eacb3de7b6"
         },
         {
-            "id": "ExtBox1-ext-gen20289",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -808,6 +774,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "deleteMaskElement",
                 "fn": "deleteMaskElement",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -837,14 +804,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#deleteElement",
-                "designer|userClassName": "deleteMaskElement"
+                "designer|controlQuery": "#deleteElement"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "7dc2e797-0d01-464d-9a9f-6486e7f2707d"
         },
         {
-            "id": "ExtBox1-ext-gen6550",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -852,6 +816,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "addCol",
                 "fn": "addCol",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -891,14 +856,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newCol",
-                "designer|userClassName": "addCol"
+                "designer|controlQuery": "#newCol"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "50d8cf43-e448-4ab1-9638-49be8b101ba3"
         },
         {
-            "id": "ExtBox1-ext-gen26189",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -906,6 +868,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "addRow",
                 "fn": "addRow",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -933,14 +896,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newRow",
-                "designer|userClassName": "addRow"
+                "designer|controlQuery": "#newRow"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b82ff31c-9d1a-4232-b20c-26c553fac70e"
         },
         {
-            "id": "ExtBox1-ext-gen9100",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -948,6 +908,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "showBlocWindow",
                 "fn": "showBlocWindow",
                 "implHandler": [
                     "var blocWin = Ext.widget('ajoutBlocFenetre');\r",
@@ -956,14 +917,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newBloc",
-                "designer|userClassName": "showBlocWindow"
+                "designer|controlQuery": "#newBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "4c85525a-9c6d-41e1-8158-3c916ff237ec"
         },
         {
-            "id": "ExtBox1-ext-gen10153",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -971,6 +929,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "addBloc",
                 "fn": "addBloc",
                 "implHandler": [
                     "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
@@ -988,14 +947,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterBloc",
-                "designer|userClassName": "addBloc"
+                "designer|controlQuery": "#boutonAjouterBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a1d7be70-950d-412d-aef0-c1fe5ea341db"
         },
         {
-            "id": "ExtBox1-ext-gen10644",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -1003,6 +959,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "saveRows",
                 "fn": "saveRows",
                 "designer|params": [
                     "startComp"
@@ -1074,14 +1031,11 @@
                     "    });\r",
                     "});\r",
                     "return nRows;"
-                ],
-                "designer|userClassName": "saveRows"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ec7012c8-a91c-4437-a012-b355dc5bfe70"
         },
         {
-            "id": "ExtBox1-ext-gen5662",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -1089,6 +1043,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "mainBoxSelect",
                 "fn": "mainBoxSelect",
                 "implHandler": [
                     "abstractcomponent.setBorder(2);\r",
@@ -1126,14 +1081,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#masqueEdition",
-                "designer|userClassName": "mainBoxSelect"
+                "designer|controlQuery": "#masqueEdition"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "5b3c538a-da66-40b6-88b1-e671ff70a9fb"
         },
         {
-            "id": "ExtBox1-ext-gen5677",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -1141,6 +1093,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "blocSelect",
                 "fn": "blocSelect",
                 "implHandler": [
                     "\r",
@@ -1278,11 +1231,9 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "UnBloc",
-                "designer|controlQuery": "unBloc",
-                "designer|userClassName": "blocSelect"
+                "designer|controlQuery": "unBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "51ce778b-c530-48f5-a2d7-43f3b6482faf"
         }
     ]
 }

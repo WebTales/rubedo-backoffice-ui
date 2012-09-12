@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen8159",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "InterfaceController",
+        "designer|userAlias": "InterfaceController",
         "views": [
             "menuPrincipalInterface"
-        ],
-        "designer|userClassName": "InterfaceController",
-        "designer|userAlias": "InterfaceController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen8159",
     "designerId": "130f60c3-0d78-444a-92e2-79b56d3ab643",
-    "$viewOrder": 0,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen12025",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -27,6 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "afficherMenuPrincipal",
                 "fn": "afficherMenuPrincipal",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
@@ -46,14 +43,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPincipalInterface",
-                "designer|userClassName": "afficherMenuPrincipal"
+                "designer|controlQuery": "#boutonPincipalInterface"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "5c5b9451-2e7e-4af5-8da6-f40b2b04a89c"
         },
         {
-            "id": "ExtBox1-ext-gen69912",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -61,6 +55,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "maximize",
                 "fn": "maximize",
                 "implHandler": [
                     "tool.up().up().toggleMaximize();"
@@ -68,14 +63,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='windowMaximize']",
-                "designer|userClassName": "maximize"
+                "designer|controlQuery": "[itemId='windowMaximize']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "eb38fbf4-e77e-4549-8114-44d2c5a0699e"
         },
         {
-            "id": "ExtBox1-ext-gen18307",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -83,6 +75,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "compenserResize",
                 "fn": "compenserResize",
                 "implHandler": [
                     "Ext.getCmp('boiteAIconesBureau').setHeight(abstractcomponent.getHeight());\r",
@@ -94,14 +87,11 @@
                 "name": "resize",
                 "scope": "me",
                 "designer|targetType": "Ext.container.Container",
-                "designer|controlQuery": "#desktopCont",
-                "designer|userClassName": "compenserResize"
+                "designer|controlQuery": "#desktopCont"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0cc85e6b-3c41-4554-a7a8-8d79eb8cc9f5"
         },
         {
-            "id": "ExtBox1-ext-gen50527",
             "type": "fixedfunction",
             "reference": {
                 "name": "items",
@@ -109,6 +99,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
                     "Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
@@ -128,15 +119,11 @@
                     "        MyPrefData.themeColor=myPrefs.themeColor;\r",
                     "    }\r",
                     "});"
-                ],
-                "designer|userClassName": "onLaunch"
+                ]
             },
-            "customConfigs": [],
-            "iconCls": "icon-basic-function",
-            "expanded": true
+            "designerId": "1060d695-b0e6-4a96-b3a9-eba366981ee3"
         },
         {
-            "id": "ExtBox1-ext-gen59410",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -144,6 +131,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "componrtementWindow",
                 "fn": "componrtementWindow",
                 "implHandler": [
                     "var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:\"split\", enableToggle: true,allowDepress: false});\r",
@@ -170,14 +158,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "window",
-                "designer|userClassName": "componrtementWindow"
+                "designer|controlQuery": "window"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1fc66bc9-dd85-4f94-8109-c4d66106d244"
         },
         {
-            "id": "ExtBox1-ext-gen70672",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -185,6 +170,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "minimize",
                 "fn": "minimize",
                 "implHandler": [
                     "tool.up().up().minimize();"
@@ -192,14 +178,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='windowMinimize']",
-                "designer|userClassName": "minimize"
+                "designer|controlQuery": "[itemId='windowMinimize']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d2d6b13a-8dbe-45e8-bccc-ea158a727004"
         },
         {
-            "id": "ExtBox1-ext-gen72724",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -207,6 +190,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "showDesktop",
                 "fn": "showDesktop",
                 "implHandler": [
                     "Ext.WindowManager.each(function(window){\r",
@@ -216,14 +200,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonShowDesktop",
-                "designer|userClassName": "showDesktop"
+                "designer|controlQuery": "#boutonShowDesktop"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "315bf162-3a25-4a0a-90f4-ecb07054a136"
         },
         {
-            "id": "ExtBox1-ext-gen89918",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -231,6 +212,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "comportementIcones",
                 "fn": "comportementIcones",
                 "implHandler": [
                     "abstractcomponent.on('move', function(cible, x, y){\r",
@@ -254,14 +236,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "iconeBureau",
-                "designer|userClassName": "comportementIcones"
+                "designer|controlQuery": "iconeBureau"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "88f8999a-4a2a-41a4-a846-7beed8ca293a"
         },
         {
-            "id": "ExtBox1-ext-gen103295",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -269,6 +248,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "placeLibre",
                 "fn": "placeLibre",
                 "designer|params": [
                     "x",
@@ -282,14 +262,11 @@
                     "    if ((icone.x==x)&&(icone.y==y)&&(icone.id!=id)) {libre = false;}\r",
                     "});\r",
                     "return libre;"
-                ],
-                "designer|userClassName": "placeLibre"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2dc1828d-08ec-46f2-9405-6c306be9b083"
         },
         {
-            "id": "ExtBox1-ext-gen22360",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -297,6 +274,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ouvrirFenteresMenuDroite",
                 "fn": "ouvrirFenteresMenuDroite",
                 "implHandler": [
                     "if (button.itemId=='deconnexionMenuPrincipal') {\r",
@@ -332,14 +310,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button",
-                "designer|userClassName": "ouvrirFenteresMenuDroite"
+                "designer|controlQuery": "#menuPrincipalDroite button"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "eb23ce14-d3fd-4cfe-9907-95b111a42752"
         },
         {
-            "id": "ExtBox1-ext-gen60778",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -347,6 +322,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majIcones",
                 "fn": "majIcones",
                 "implHandler": [
                     "\r",
@@ -375,14 +351,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.container.Container",
-                "designer|controlQuery": "#boiteAIconesBureau",
-                "designer|userClassName": "majIcones"
+                "designer|controlQuery": "#boiteAIconesBureau"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b1767f0a-3ac7-44c5-90b5-0bfe2e3cd45b"
         },
         {
-            "id": "ExtBox1-ext-gen13548",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -390,6 +363,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "hideAllIcons",
                 "fn": "hideAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.hide();});"
@@ -397,14 +371,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemHideAllIcons",
-                "designer|userClassName": "hideAllIcons"
+                "designer|controlQuery": "#itemHideAllIcons"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2e116f9b-b80b-4880-b148-156c7f2d564e"
         },
         {
-            "id": "ExtBox1-ext-gen14014",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -412,6 +383,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "showAllIcons",
                 "fn": "showAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.show();});"
@@ -419,14 +391,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemShowAllIcons",
-                "designer|userClassName": "showAllIcons"
+                "designer|controlQuery": "#itemShowAllIcons"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "3157d68b-57d3-4ab6-a7bf-30487ceeb27d"
         },
         {
-            "id": "ExtBox1-ext-gen14882",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -434,6 +403,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "reagarangeAllIcons",
                 "fn": "reagarangeAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.setPosition(0,0);});"
@@ -441,14 +411,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemRearangeAllIcons",
-                "designer|userClassName": "reagarangeAllIcons"
+                "designer|controlQuery": "#itemRearangeAllIcons"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "8d6e33bd-f189-487b-b19f-c336643aa836"
         },
         {
-            "id": "ExtBox1-ext-gen17121",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -456,6 +423,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "displayDesktopCustomizeWindow",
                 "fn": "displayDesktopCustomizeWindow",
                 "implHandler": [
                     "var fenetre=Ext.getCmp('DesktopCustomizeWindow'); \r",
@@ -467,14 +435,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemCustomizeDesktop",
-                "designer|userClassName": "displayDesktopCustomizeWindow"
+                "designer|controlQuery": "#itemCustomizeDesktop"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "828de331-3494-4fee-8964-14993238848e"
         },
         {
-            "id": "ExtBox1-ext-gen31775",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -482,6 +447,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "updateWallpaperPreview",
                 "fn": "updateWallpaperPreview",
                 "implHandler": [
                     "Ext.getCmp('wallpaperPicker').getComponent(0).setSrc(record.data.file);"
@@ -489,14 +455,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#wallpaperGrid",
-                "designer|userClassName": "updateWallpaperPreview"
+                "designer|controlQuery": "#wallpaperGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f64052c0-db2d-4409-afdb-17f059629b12"
         },
         {
-            "id": "ExtBox1-ext-gen33926",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -504,6 +467,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "wallpaperChange",
                 "fn": "wallpaperChange",
                 "implHandler": [
                     "Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);"
@@ -511,14 +475,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#wallpaperPickerButton",
-                "designer|userClassName": "wallpaperChange"
+                "designer|controlQuery": "#wallpaperPickerButton"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "71c12dac-ac32-4123-be0a-15c7e184593d"
         },
         {
-            "id": "ExtBox1-ext-gen6286",
             "type": "fixedfunction",
             "reference": {
                 "name": "items",
@@ -526,6 +487,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -539,15 +501,11 @@
                     "    myName:'Alexandru Dobre',\r",
                     "    themeColor: '#D7251D'\r",
                     "}); "
-                ],
-                "designer|userClassName": "init"
+                ]
             },
-            "customConfigs": [],
-            "iconCls": "icon-basic-function",
-            "expanded": true
+            "designerId": "ba2fb59b-169b-4580-9a53-19166be42cf7"
         },
         {
-            "id": "ExtBox1-ext-gen11035",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -555,6 +513,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onGridpanelExpand",
                 "fn": "onGridpanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -563,14 +522,11 @@
                 "name": "expand",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#themeGrid",
-                "designer|userClassName": "onGridpanelExpand"
+                "designer|controlQuery": "#themeGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "cc545788-e513-4b76-a2c2-c6aec618de2a"
         },
         {
-            "id": "ExtBox1-ext-gen12115",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -578,6 +534,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onGridpanelExpand1",
                 "fn": "onGridpanelExpand1",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -586,14 +543,11 @@
                 "name": "expand",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#wallpaperGrid",
-                "designer|userClassName": "onGridpanelExpand1"
+                "designer|controlQuery": "#wallpaperGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "123d6f2a-906f-409a-988e-a536d26f09eb"
         },
         {
-            "id": "ExtBox1-ext-gen14439",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -601,6 +555,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onGridpanelItemClick",
                 "fn": "onGridpanelItemClick",
                 "implHandler": [
                     "Ext.getCmp('themePicker').getComponent(0).setSrc(record.data.preview);"
@@ -608,14 +563,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#themeGrid",
-                "designer|userClassName": "onGridpanelItemClick"
+                "designer|controlQuery": "#themeGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e4b03aa4-070e-4907-aab2-cc2e642f3f89"
         },
         {
-            "id": "ExtBox1-ext-gen16215",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -623,6 +575,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "applyTheme",
                 "fn": "applyTheme",
                 "implHandler": [
                     "var theme = Ext.getCmp('themeGrid').getSelectionModel().getLastSelected().data;\r",
@@ -634,14 +587,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#themePickerButton",
-                "designer|userClassName": "applyTheme"
+                "designer|controlQuery": "#themePickerButton"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "17005950-13f0-4c5d-9029-bc0eac6be6d1"
         },
         {
-            "id": "ExtBox1-ext-gen21299",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -649,6 +599,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onPanelExpand",
                 "fn": "onPanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -657,14 +608,11 @@
                 "name": "expand",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#accessibilityOptionsPanel",
-                "designer|userClassName": "onPanelExpand"
+                "designer|controlQuery": "#accessibilityOptionsPanel"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f3a11150-070c-4296-b731-250dbacad406"
         },
         {
-            "id": "ExtBox1-ext-gen22445",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -672,6 +620,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "HCmode",
                 "fn": "HCmode",
                 "implHandler": [
                     "if (MyPrefData.highContrast===false) {\r",
@@ -686,14 +635,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#highContrastButton",
-                "designer|userClassName": "HCmode"
+                "designer|controlQuery": "#highContrastButton"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "beaebb73-b0f8-4def-b178-90ae0286a930"
         },
         {
-            "id": "ExtBox1-ext-gen24577",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -701,6 +647,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "setHCButtonStatus",
                 "fn": "setHCButtonStatus",
                 "implHandler": [
                     "if (MyPrefData.highContrast===true) {\r",
@@ -710,11 +657,9 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#highContrastButton",
-                "designer|userClassName": "setHCButtonStatus"
+                "designer|controlQuery": "#highContrastButton"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "04048948-77bd-4f55-8916-587fb608e6e1"
         }
     ]
 }

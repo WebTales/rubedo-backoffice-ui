@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen24546",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "MasquesDataJson",
         "autoLoad": true,
         "autoSync": true,
         "storeId": "MasquesDataJson",
-        "model": "masquesDataModel",
-        "designer|userClassName": "MasquesDataJson"
+        "model": "masquesDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen24546",
     "designerId": "f9902d72-af14-482b-bdd9-9ceda04a75cd",
-    "$viewOrder": 8,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen25852",
             "type": "grouper",
             "reference": {
                 "name": "groupers",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "site",
-                "designer|userClassName": "MyGrouper"
+                "designer|userClassName": "MyGrouper",
+                "property": "site"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "bde309da-e690-46af-ac46-812a93f86786"
         },
         {
-            "id": "ExtBox1-ext-gen24553",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -42,15 +36,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "api": "{\ncreate : 'masks/create',\nread : 'data/Masques.json',\nupdate : 'masks/update',\ndestroy : 'masks/delete'\n}",
-                "url": null,
-                "designer|userClassName": "MyAjaxProxy5"
+                "designer|userClassName": "MyAjaxProxy5",
+                "api": [
+                    "{",
+                    "create : 'masks/create',",
+                    "read : 'data/Masques.json',",
+                    "update : 'masks/update',",
+                    "destroy : 'masks/delete'",
+                    "}"
+                ],
+                "url": null
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "6debaa08-6929-44a8-867a-9f355f670b59",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen24561",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -58,15 +57,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonReader3",
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader3"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "f187256a-f83f-42d3-ba2e-d0b22e7ec462"
                 },
                 {
-                    "id": "ExtBox1-ext-gen29726",
                     "type": "jsonwriter",
                     "reference": {
                         "name": "writer",
@@ -74,12 +71,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonWriter2",
                         "encode": true,
-                        "root": "data",
-                        "designer|userClassName": "MyJsonWriter2"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "96e6b4ed-d39e-46de-9558-bd8a129557af"
                 }
             ]
         }

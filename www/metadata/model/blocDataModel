@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen4860",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "blocDataModel",
         "designer|userAlias": "blocDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen4860",
     "designerId": "f3a63ac1-e559-4822-a676-32639054b4e9",
-    "$viewOrder": 6,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen5081",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -24,15 +20,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField30",
                 "name": "type",
-                "type": "string",
-                "designer|userClassName": "MyField30"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "fc45f23e-7eb0-48bd-9132-e9b604dfb8fd"
         },
         {
-            "id": "ExtBox1-ext-gen5310",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -40,15 +34,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField30",
                 "name": "description",
-                "type": "string",
-                "designer|userClassName": "MyField30"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ec603d02-1dc7-4149-a838-211511a7b4c3"
         },
         {
-            "id": "ExtBox1-ext-gen5441",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -56,12 +48,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField30",
                 "name": "configBasique",
-                "type": null,
-                "designer|userClassName": "MyField30"
+                "type": null
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "edf08f2c-328e-4f66-9395-9597d55189ef"
         }
     ]
 }

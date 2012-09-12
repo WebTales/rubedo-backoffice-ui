@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen75497",
     "type": "panel",
     "reference": {
         "name": "items",
@@ -7,24 +6,23 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "iconeBureau",
+        "designer|userAlias": "iconeBureau",
         "border": 0,
         "draggable": true,
         "height": 90,
         "style": null,
         "width": 66,
-        "bodyStyle": "{background: transparent !important}",
+        "bodyStyle": [
+            "{background: transparent !important}"
+        ],
         "headerPosition": "bottom",
-        "title": "Test",
-        "designer|userClassName": "iconeBureau",
-        "designer|userAlias": "iconeBureau"
+        "title": "Test"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen75497",
     "designerId": "a87eba5d-b490-46b3-9dec-8a8f63610693",
-    "$viewOrder": 26,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen78427",
             "type": "image",
             "reference": {
                 "name": "items",
@@ -32,13 +30,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyImg",
                 "height": 64,
                 "width": 64,
-                "src": "resources/icones/red/64x64/folder.png",
-                "designer|userClassName": "MyImg"
+                "src": "resources/icones/red/64x64/folder.png"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "61d52f99-aa07-4195-bcf3-300d629e0514"
         }
     ]
 }

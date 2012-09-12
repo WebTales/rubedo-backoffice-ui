@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen46203",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,22 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ImportationMasques",
+        "designer|userAlias": "importationMasques",
         "height": 107,
         "width": 300,
         "layout": "fit",
         "iconCls": "arrow_up",
         "title": "Importation de masque",
-        "modal": true,
-        "designer|userClassName": "ImportationMasques",
-        "designer|userAlias": "importationMasques"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen46203",
     "designerId": "a1a636e5-f718-4d0b-b731-4fe502bcaef8",
-    "$viewOrder": 12,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen47235",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -30,15 +26,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyForm9",
                 "bodyPadding": 10,
-                "title": "",
-                "designer|userClassName": "MyForm9"
+                "title": ""
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "28f6ddc5-5704-48bb-9679-0ae4ecc4e0b3",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen47694",
                     "type": "filefield",
                     "reference": {
                         "name": "items",
@@ -46,16 +40,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "",
-                        "buttonText": "Choisir",
+                        "layout|anchor": "100%",
                         "designer|userClassName": "MyFileUpload",
-                        "layout|anchor": "100%"
+                        "fieldLabel": "",
+                        "buttonText": "Choisir"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "a71f5d51-3a11-4f28-aeb3-b984d1dadbe8"
                 },
                 {
-                    "id": "ExtBox1-ext-gen48022",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -63,12 +55,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "text": "Importer",
+                        "layout|anchor": "100%",
                         "designer|userClassName": "MyButton64",
-                        "layout|anchor": "100%"
+                        "text": "Importer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b3b303f8-d040-4197-9eb0-064b3ab653e9"
                 }
             ]
         }

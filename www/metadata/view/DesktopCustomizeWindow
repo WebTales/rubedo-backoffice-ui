@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen16204",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,27 +6,26 @@
     },
     "codeClass": null,
     "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "DesktopCustomizeWindow",
+        "designer|userAlias": "DesktopCustomizeWindow",
         "height": 450,
         "id": "DesktopCustomizeWindow",
         "width": 600,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "hbox",
         "iconCls": "personalize",
         "title": "Personalisation du bureau",
         "constrainHeader": true,
         "maximizable": false,
-        "minimizable": true,
-        "designer|userClassName": "DesktopCustomizeWindow",
-        "designer|userAlias": "DesktopCustomizeWindow",
-        "container|align": "stretch"
+        "minimizable": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen16204",
     "designerId": "021dc961-e2fd-4e63-afd9-8829737e3813",
-    "$viewOrder": 39,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen19258",
             "type": "container",
             "reference": {
                 "name": "items",
@@ -35,15 +33,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyContainer18",
                 "width": 150,
-                "layout": "accordion",
-                "designer|userClassName": "MyContainer18"
+                "layout": "accordion"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "ed7cfa8f-e792-4d4d-a78e-e6a596c08fff",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen20196",
                     "type": "gridpanel",
                     "reference": {
                         "name": "items",
@@ -51,17 +47,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyGridPanel15",
                         "id": "wallpaperGrid",
                         "collapsed": false,
                         "title": "Fond d'écran",
-                        "store": "WallpapersDataJson",
-                        "designer|userClassName": "MyGridPanel15"
+                        "store": "WallpapersDataJson"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "974790ab-642a-4ffe-bfad-e99d29df691a",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen20241",
                             "type": "gridview",
                             "reference": {
                                 "name": "viewConfig",
@@ -71,11 +65,9 @@
                             "userConfig": {
                                 "designer|userClassName": "MyGridView13"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "b4a054a2-490f-4ccc-92d0-b22fbc3f742b"
                         },
                         {
-                            "id": "ExtBox1-ext-gen25911",
                             "type": "gridcolumn",
                             "reference": {
                                 "name": "columns",
@@ -83,18 +75,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyColumn24",
                                 "dataIndex": "name",
                                 "flex": 1,
-                                "text": "Nom",
-                                "designer|userClassName": "MyColumn24"
+                                "text": "Nom"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen21060",
                     "type": "gridpanel",
                     "reference": {
                         "name": "items",
@@ -102,17 +92,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyGridPanel16",
                         "id": "themeGrid",
                         "collapsed": true,
                         "title": "Themes",
-                        "store": "ThemesDataJson",
-                        "designer|userClassName": "MyGridPanel16"
+                        "store": "ThemesDataJson"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "be927406-6991-4ea4-8ee4-2be67b9bf469",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen21105",
                             "type": "gridview",
                             "reference": {
                                 "name": "viewConfig",
@@ -122,11 +110,9 @@
                             "userConfig": {
                                 "designer|userClassName": "MyGridView14"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "a2e630a6-e060-4b2b-aeaf-e56aa3f9da0e"
                         },
                         {
-                            "id": "ExtBox1-ext-gen7183",
                             "type": "gridcolumn",
                             "reference": {
                                 "name": "columns",
@@ -134,18 +120,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyColumn2",
                                 "dataIndex": "name",
                                 "flex": 1,
-                                "text": "Nom",
-                                "designer|userClassName": "MyColumn2"
+                                "text": "Nom"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "29e86ca0-e02b-4343-9670-5da548459531"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen18641",
                     "type": "panel",
                     "reference": {
                         "name": "items",
@@ -153,17 +137,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyPanel36",
                         "id": "accessibilityOptionsPanel",
-                        "title": "Accessibilité",
-                        "designer|userClassName": "MyPanel36"
+                        "title": "Accessibilité"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen19399",
             "type": "container",
             "reference": {
                 "name": "items",
@@ -171,26 +153,21 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "DesktopCustomizeMainArea",
-                "layout": "fit",
+                "layout|flex": 1,
                 "designer|userClassName": "MyContainer19",
-                "layout|flex": 1
+                "id": "DesktopCustomizeMainArea",
+                "layout": "fit"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "4a737d26-c7f2-4aa4-8bc1-aa26bec7529c",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen28951",
                     "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {},
-                    "customConfigs": [],
-                    "iconCls": "icon-linkedinstance",
-                    "expanded": true,
+                    "designerId": "24b761b6-c50f-4c67-9ee2-4b9c3e22abba",
                     "masterInstanceId": "ExtBox1-ext-gen27152"
                 }
             ]

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen8472",
     "type": "dataview",
     "reference": {
         "name": "items",
@@ -7,21 +6,41 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "mediaWindowsView",
+        "designer|userAlias": "mediaWindowsView",
         "id": "MediaMainView",
         "padding": 10,
-        "tpl": "<tpl for=\".\">\n                    <div class=\"thumb-wrap\" id=\"{text}\">\n                    <div class=\"thumb\"><img src=\"{icone}\" title=\"{text}\"></div>\n                    <span class=\"x-editable\">{text}</span></div>\n                </tpl>\n                <div class=\"x-clear\"></div>",
         "autoScroll": false,
         "emptyText": "Dossier Vide",
         "itemSelector": "div.thumb-wrap",
         "multiSelect": true,
         "overItemCls": "x-item-over",
         "store": "MediaViewStore",
-        "trackOver": true,
-        "designer|userClassName": "mediaWindowsView",
-        "designer|userAlias": "mediaWindowsView"
+        "trackOver": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen8472",
     "designerId": "65bb8cb3-a5cd-4190-a57a-aee4326f88e2",
-    "$viewOrder": 34,
-    "expanded": true
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "tpl",
+                "implHandler": [
+                    "<tpl for=\".\">",
+                    "                    <div class=\"thumb-wrap\" id=\"{text}\">",
+                    "                    <div class=\"thumb\"><img src=\"{icone}\" title=\"{text}\"></div>",
+                    "                    <span class=\"x-editable\">{text}</span></div>",
+                    "                </tpl>",
+                    "                <div class=\"x-clear\"></div>"
+                ],
+                "designer|displayName": "tpl"
+            },
+            "designerId": "ac056426-e4e7-456a-9fdc-d3b441c9120e"
+        }
+    ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen15897",
     "type": "gridpanel",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "MyGridPanel3",
+        "designer|userAlias": "mygridpanel3",
         "id": "VersionsGrid",
         "title": null,
-        "store": "VersionsDataJson",
-        "designer|userClassName": "MyGridPanel3",
-        "designer|userAlias": "mygridpanel3"
+        "store": "VersionsDataJson"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen15897",
     "designerId": "3c30f443-ab91-4ef6-912a-0d56b07c5fc6",
-    "$viewOrder": 9,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen15939",
             "type": "gridview",
             "reference": {
                 "name": "viewConfig",
@@ -29,11 +25,9 @@
             "userConfig": {
                 "designer|userClassName": "MyGridView3"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "75273763-d757-4a34-b5ae-88575c8acfad"
         },
         {
-            "id": "ExtBox1-ext-gen17152",
             "type": "gridcolumn",
             "reference": {
                 "name": "columns",
@@ -41,15 +35,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyColumn8",
                 "dataIndex": "text",
-                "text": "Version",
-                "designer|userClassName": "MyColumn8"
+                "text": "Version"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "541b6899-09a8-4e4f-9cfa-021638da40ab"
         },
         {
-            "id": "ExtBox1-ext-gen17162",
             "type": "gridcolumn",
             "reference": {
                 "name": "columns",
@@ -57,15 +49,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyColumn9",
                 "dataIndex": "etat",
-                "text": "Etat",
-                "designer|userClassName": "MyColumn9"
+                "text": "Etat"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "24b88560-e1e7-4e71-a71c-814635132305"
         },
         {
-            "id": "ExtBox1-ext-gen17172",
             "type": "datecolumn",
             "reference": {
                 "name": "columns",
@@ -73,15 +63,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyDateColumn3",
                 "dataIndex": "date",
-                "text": "Date",
-                "designer|userClassName": "MyDateColumn3"
+                "text": "Date"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d7c8bf6e-5a20-4874-a7e2-8558ea4a82ee"
         },
         {
-            "id": "ExtBox1-ext-gen17182",
             "type": "gridcolumn",
             "reference": {
                 "name": "columns",
@@ -89,12 +77,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyColumn10",
                 "dataIndex": "auteur",
-                "text": "Auteur",
-                "designer|userClassName": "MyColumn10"
+                "text": "Auteur"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "3606d661-4716-4eb3-b810-57eb507c0e8f"
         }
     ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen19845",
     "type": "panel",
     "reference": {
         "name": "items",
@@ -7,21 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "accessibilityPicker",
+        "designer|userAlias": "accessibilityPicker",
         "height": 250,
         "id": "accessibilityPicker",
         "width": 400,
         "bodyPadding": 10,
-        "title": "",
-        "designer|userClassName": "accessibilityPicker",
-        "designer|userAlias": "accessibilityPicker"
+        "title": ""
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen19845",
     "designerId": "035b8ace-5d4c-4fbd-be9b-35ee907849d9",
-    "$viewOrder": 42,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen20117",
             "type": "fieldset",
             "reference": {
                 "name": "items",
@@ -29,15 +25,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyFieldSet2",
                 "padding": 10,
-                "title": "Mode contraste élevé",
-                "designer|userClassName": "MyFieldSet2"
+                "title": "Mode contraste élevé"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "ff710c4d-105f-4dfc-8df7-9ee042bccbaa",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen20372",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -45,13 +39,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "highContrastButton",
-                        "text": "Activer",
+                        "layout|anchor": "100%",
                         "designer|userClassName": "MyButton102",
-                        "layout|anchor": "100%"
+                        "id": "highContrastButton",
+                        "text": "Activer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "e1f91b5b-7cc6-4167-92a0-9149123ffb5f"
                 }
             ]
         }

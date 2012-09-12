@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6237",
     "type": "form",
     "reference": {
         "name": "items",
@@ -7,13 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "assisstantRE6",
-        "bodyPadding": 10,
-        "title": "Finalisation et enregistrement",
+        "etape": "4",
         "designer|userClassName": "MyForm11",
         "designer|userAlias": "myform11",
-        "etape": 4
+        "id": "assisstantRE6",
+        "bodyPadding": 10,
+        "title": "Finalisation et enregistrement"
     },
+    "id": "ExtBox1-ext-gen6237",
+    "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -21,12 +22,8 @@
             "type": "string"
         }
     ],
-    "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
-    "$viewOrder": 24,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen74322",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -34,16 +31,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fieldLabel": "Nom ",
-                "allowBlank": false,
+                "layout|anchor": "100%",
                 "designer|userClassName": "MyTextField12",
-                "layout|anchor": "100%"
+                "fieldLabel": "Nom ",
+                "allowBlank": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a390587b-db4f-4850-93eb-b20c8f8eb22a"
         },
         {
-            "id": "ExtBox1-ext-gen74671",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -51,15 +46,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|anchor": "100%",
+                "designer|userClassName": "MyButton76",
                 "margin": null,
                 "style": null,
                 "iconCls": null,
-                "text": "<b>Enregistrer la requête </b>",
-                "designer|userClassName": "MyButton76",
-                "layout|anchor": "100%"
+                "text": "<b>Enregistrer la requête </b>"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b"
         }
     ]
 }

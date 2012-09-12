@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen21030",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "storeId": " ",
-        "model": "contenusDataModel",
         "designer|userClassName": "ContenusDataJson",
-        "designer|userAlias": "ContenusDataJson"
+        "designer|userAlias": "ContenusDataJson",
+        "storeId": " ",
+        "model": "contenusDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen21030",
     "designerId": "e9b9f232-c36a-4edc-bbe4-44a651487d17",
-    "$viewOrder": 6,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen23501",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -28,8 +24,7 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy3"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "7646645f-b9b9-4b22-a9b0-00bba1b2d813"
         }
     ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen28142",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "SitesJson",
+        "designer|userAlias": "sitesJson",
         "autoLoad": true,
         "autoSync": false,
         "storeId": "SitesJson",
-        "model": "sitesDataModel",
-        "designer|userClassName": "SitesJson",
-        "designer|userAlias": "sitesJson"
+        "model": "sitesDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen28142",
     "designerId": "84e3508a-4334-4550-b82b-fd4877c331e4",
-    "$viewOrder": 1,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen28149",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -28,14 +24,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Sites.json",
-                "designer|userClassName": "MyAjaxProxy6"
+                "designer|userClassName": "MyAjaxProxy6",
+                "url": "data/Sites.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "89f1dacd-62b3-4e91-86e9-d07c65122481",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen28157",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -45,8 +39,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader4"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "67fdc2a7-5ca3-4922-9237-f1c9a507c1e6"
                 }
             ]
         }

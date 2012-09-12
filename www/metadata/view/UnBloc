@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen71668",
     "type": "panel",
     "reference": {
         "name": "items",
@@ -7,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "UnBloc",
+        "designer|userAlias": "unBloc",
         "draggable": null,
         "frame": true,
         "height": null,
@@ -16,12 +17,8 @@
         "layout": "fit",
         "closable": false,
         "preventHeader": false,
-        "title": "Un Bloc",
-        "designer|userClassName": "UnBloc",
-        "designer|userAlias": "unBloc"
+        "title": "Un Bloc"
     },
-    "customConfigs": [],
-    "designerId": "3c5f989b-aadc-4101-b8f1-eecb9b463a6b",
-    "$viewOrder": 7,
-    "expanded": true
+    "id": "ExtBox1-ext-gen71668",
+    "designerId": "3c5f989b-aadc-4101-b8f1-eecb9b463a6b"
 }

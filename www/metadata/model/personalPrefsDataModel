@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen8107",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "personalPrefsDataModel",
         "designer|userAlias": "personalPrefsDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen8107",
     "designerId": "d0fd2671-4491-440c-8e6c-915c6cca062e",
-    "$viewOrder": 15,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen8115",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -24,15 +20,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField74",
                 "name": "stylesheet",
-                "type": "string",
-                "designer|userClassName": "MyField74"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "22e83abe-76fc-4fca-9ed1-12f8e43d2bf3"
         },
         {
-            "id": "ExtBox1-ext-gen8119",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -40,15 +34,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField74",
                 "name": "wallpaper",
-                "type": "string",
-                "designer|userClassName": "MyField74"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "79c8dd9c-71f7-464c-9efd-9e26f36616ff"
         },
         {
-            "id": "ExtBox1-ext-gen8127",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -56,15 +48,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField74",
                 "name": "iconSet",
-                "type": "string",
-                "designer|userClassName": "MyField74"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2bc1a8bf-7080-4d41-8fda-2fdd1298f4d1"
         },
         {
-            "id": "ExtBox1-ext-gen12636",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -72,15 +62,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField74",
                 "name": "myName",
-                "type": "string",
-                "designer|userClassName": "MyField74"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "3955426f-9d1a-45fa-a117-f8403cb0ae6a"
         },
         {
-            "id": "ExtBox1-ext-gen8192",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -88,12 +76,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField74",
                 "name": "themeColor",
-                "type": "string",
-                "designer|userClassName": "MyField74"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d054f657-34ac-4d0d-84a0-e811d490829e"
         }
     ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen48281",
     "type": "container",
     "reference": {
         "name": "items",
@@ -7,19 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "regleChampAR",
+        "designer|userAlias": "regleChampAR",
         "frame": false,
         "margin": "10 0 0 0",
-        "style": "{clear:both}",
-        "designer|userClassName": "regleChampAR",
-        "designer|userAlias": "regleChampAR"
+        "style": [
+            "{clear:both}"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen48281",
     "designerId": "360ae16f-62cb-4c81-b236-91d5583211e5",
-    "$viewOrder": 23,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen48909",
             "type": "toolbar",
             "reference": {
                 "name": "items",
@@ -27,17 +25,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyToolbar22",
+                "designer|userAlias": "mytoolbar22",
                 "frame": true,
                 "hidden": false,
-                "itemId": "boite",
-                "designer|userClassName": "MyToolbar22",
-                "designer|userAlias": "mytoolbar22"
+                "itemId": "boite"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "3c75a79e-90f7-4a56-a629-d75f94e71a32",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen50181",
                     "type": "tbtext",
                     "reference": {
                         "name": "items",
@@ -45,16 +41,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "nomChamp",
-                        "text": "Champ",
+                        "layout|flex": null,
                         "designer|userClassName": "MyTextItem4",
-                        "layout|flex": null
+                        "itemId": "nomChamp",
+                        "text": "Champ"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "cdec8b9e-1356-42ec-bd70-8fbf38156ea8"
                 },
                 {
-                    "id": "ExtBox1-ext-gen49434",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -62,16 +56,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton74",
                         "frame": false,
                         "itemId": "boutonEnleveRegleAR",
-                        "style": "{float:right}",
+                        "style": [
+                            "{float:right}"
+                        ],
                         "iconCls": "delete",
-                        "text": "",
-                        "designer|userClassName": "MyButton74",
-                        "layout|flex": null
+                        "text": ""
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "c18c00f5-838b-47ce-aa26-e901f1662b02"
                 }
             ]
         }

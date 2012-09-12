@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen48334",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,26 +6,25 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "AjouterContenu",
+        "designer|userAlias": "ajouterContenu",
         "floating": true,
         "height": 500,
         "id": "ajouterContenu",
         "width": 800,
-        "resizable": "false",
+        "resizable": [
+            "false"
+        ],
         "layout": "fit",
         "iconCls": "content-icon",
         "title": "Nouveau Contenu",
         "constrainHeader": true,
-        "modal": true,
-        "designer|userClassName": "AjouterContenu",
-        "designer|userAlias": "ajouterContenu"
+        "modal": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen48334",
     "designerId": "b6ffe1bc-b42f-4987-9728-a2d2563012af",
-    "$viewOrder": 4,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen53085",
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -34,14 +32,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar14",
-                "dock": "bottom"
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar14"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "5fdbaee6-a984-400c-91a6-d04d65c467fe",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen44287",
                     "type": "tbfill",
                     "reference": {
                         "name": "items",
@@ -49,14 +45,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFill10",
-                        "layout|flex": null
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill10"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "6e0b7a95-da0b-437e-b46d-00ce24cec254"
                 },
                 {
-                    "id": "ExtBox1-ext-gen54752",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -64,18 +58,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "layout|margins": null,
+                        "designer|userClassName": "MyButton49",
                         "id": "boutonEnregistrerNouveauContenu",
                         "iconCls": "save",
-                        "text": "Enregistrer",
-                        "designer|userClassName": "MyButton49",
-                        "layout|flex": null,
-                        "layout|margins": null
+                        "text": "Enregistrer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "64cb37a7-2723-4a4b-8f92-f35cbfae819c"
                 },
                 {
-                    "id": "ExtBox1-ext-gen55023",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -83,20 +75,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton50",
                         "id": "boutonPublierNouveauContenu",
                         "iconAlign": null,
                         "iconCls": "publish",
-                        "text": "Enregistrer et publier",
-                        "designer|userClassName": "MyButton50",
-                        "layout|flex": null
+                        "text": "Enregistrer et publier"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "dde47fdf-a021-49c5-bd8e-45465df11ddd"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen50360",
             "type": "tabpanel",
             "reference": {
                 "name": "items",
@@ -104,14 +94,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "activeTab": 0,
-                "designer|userClassName": "MyTabPanel6"
+                "designer|userClassName": "MyTabPanel6",
+                "activeTab": 0
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "2fa9a88e-b658-4f2d-854c-2efaebcc668f",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen50372",
                     "type": "panel",
                     "reference": {
                         "name": "items",
@@ -119,15 +107,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyPanel46",
                         "layout": "fit",
-                        "title": "Edition",
-                        "designer|userClassName": "MyPanel46"
+                        "title": "Edition"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "abd37294-8462-47b8-a2cf-649c1257bdb5",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen50382",
                             "type": "tab",
                             "reference": {
                                 "name": "tabConfig",
@@ -137,12 +123,9 @@
                             "userConfig": {
                                 "designer|userClassName": "TabConfig27"
                             },
-                            "customConfigs": [],
-                            "iconCls": "icon-tab-bar",
-                            "expanded": true
+                            "designerId": "39d2203a-e32c-438e-9e73-e2fa5a3ef4d6"
                         },
                         {
-                            "id": "ExtBox1-ext-gen32841",
                             "type": "form",
                             "reference": {
                                 "name": "items",
@@ -150,18 +133,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "MyForm3",
                                 "height": 101,
                                 "id": "boiteAChampsContenus",
                                 "autoScroll": true,
                                 "bodyPadding": 10,
-                                "title": "",
-                                "designer|userClassName": "MyForm3"
+                                "title": ""
                             },
-                            "customConfigs": [],
-                            "expanded": true,
+                            "designerId": "da1ecc3d-e8e0-461f-843d-352ec80dea54",
                             "cn": [
                                 {
-                                    "id": "ExtBox1-ext-gen46134",
                                     "type": "container",
                                     "reference": {
                                         "name": "items",
@@ -169,16 +150,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "padding": 10,
-                                        "layout": "anchor",
                                         "designer|userClassName": "ChampTC",
-                                        "designer|userAlias": "ChampTC"
+                                        "designer|userAlias": "ChampTC",
+                                        "padding": 10,
+                                        "layout": "anchor"
                                     },
-                                    "customConfigs": [],
-                                    "expanded": true,
+                                    "designerId": "2620fef2-078c-4983-8fec-8f914a248962",
                                     "cn": [
                                         {
-                                            "id": "ExtBox1-ext-gen15929",
                                             "type": "textfield",
                                             "reference": {
                                                 "name": "items",
@@ -186,18 +165,18 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "style": "{float:left}",
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextField1",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
                                                 "name": "text",
                                                 "fieldLabel": "Titre ",
-                                                "allowBlank": false,
-                                                "designer|userClassName": "MyTextField1",
-                                                "layout|anchor": "90%"
+                                                "allowBlank": false
                                             },
-                                            "customConfigs": [],
-                                            "expanded": true
+                                            "designerId": "a1c40ec8-11e9-4786-995b-514d97b359ba"
                                         },
                                         {
-                                            "id": "ExtBox1-ext-gen46174",
                                             "type": "button",
                                             "reference": {
                                                 "name": "items",
@@ -205,9 +184,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|userClassName": "MyButton17",
                                                 "itemId": "helpBouton",
                                                 "margin": "0 20 0 0",
-                                                "style": "{float:right;}",
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
                                                 "allowDepress": null,
                                                 "enableToggle": null,
                                                 "handleMouseEvents": false,
@@ -215,11 +197,11 @@
                                                 "pressed": null,
                                                 "pressedCls": "x-btn",
                                                 "text": "",
-                                                "tooltip": "'Titre administratif du contenu. Obligatoire.'",
-                                                "designer|userClassName": "MyButton17"
+                                                "tooltip": [
+                                                    "'Titre administratif du contenu. Obligatoire.'"
+                                                ]
                                             },
-                                            "customConfigs": [],
-                                            "expanded": true
+                                            "designerId": "aca71617-cf95-468c-8248-0f1d34b64832"
                                         }
                                     ]
                                 }
@@ -228,7 +210,6 @@
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen50387",
                     "type": "panel",
                     "reference": {
                         "name": "items",
@@ -236,14 +217,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Métadonnées",
-                        "designer|userClassName": "MyPanel47"
+                        "designer|userClassName": "MyPanel47",
+                        "title": "Métadonnées"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "45cec5da-5f70-4ea6-9ae6-6412232b37fe",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen50397",
                             "type": "tab",
                             "reference": {
                                 "name": "tabConfig",
@@ -253,14 +232,11 @@
                             "userConfig": {
                                 "designer|userClassName": "TabConfig28"
                             },
-                            "customConfigs": [],
-                            "iconCls": "icon-tab-bar",
-                            "expanded": true
+                            "designerId": "6382d243-7dcc-4aac-947b-71f6e8bde597"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen50402",
                     "type": "form",
                     "reference": {
                         "name": "items",
@@ -268,16 +244,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyForm16",
                         "id": "boiteATaxoContenus",
                         "bodyPadding": 10,
-                        "title": "Taxonomie",
-                        "designer|userClassName": "MyForm16"
+                        "title": "Taxonomie"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "e75d6069-629b-427a-b3cf-a53887688394",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen50412",
                             "type": "tab",
                             "reference": {
                                 "name": "tabConfig",
@@ -287,14 +261,11 @@
                             "userConfig": {
                                 "designer|userClassName": "TabConfig29"
                             },
-                            "customConfigs": [],
-                            "iconCls": "icon-tab-bar",
-                            "expanded": true
+                            "designerId": "3a998a89-0efb-4245-9f1f-7d21860f9dad"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen52112",
                     "type": "panel",
                     "reference": {
                         "name": "items",
@@ -302,14 +273,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Droits",
-                        "designer|userClassName": "MyPanel48"
+                        "designer|userClassName": "MyPanel48",
+                        "title": "Droits"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "7e3a7635-40e6-413a-a4bd-2f63dc9af76f",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen52118",
                             "type": "tab",
                             "reference": {
                                 "name": "tabConfig",
@@ -319,14 +288,11 @@
                             "userConfig": {
                                 "designer|userClassName": "TabConfig29"
                             },
-                            "customConfigs": [],
-                            "iconCls": "icon-tab-bar",
-                            "expanded": true
+                            "designerId": "41a82d8f-cc6c-40e6-bd18-70a0b7441752"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen52246",
                     "type": "panel",
                     "reference": {
                         "name": "items",
@@ -334,14 +300,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Versions",
-                        "designer|userClassName": "MyPanel48"
+                        "designer|userClassName": "MyPanel48",
+                        "title": "Versions"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "8d6cd2cd-6bbe-45d7-b1fe-21e05a5eaa5e",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen52252",
                             "type": "tab",
                             "reference": {
                                 "name": "tabConfig",
@@ -351,9 +315,7 @@
                             "userConfig": {
                                 "designer|userClassName": "TabConfig29"
                             },
-                            "customConfigs": [],
-                            "iconCls": "icon-tab-bar",
-                            "expanded": true
+                            "designerId": "b2841907-99b4-46e8-8359-cc0ad3ef9eaa"
                         }
                     ]
                 }

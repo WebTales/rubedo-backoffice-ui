@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6938",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "mediaViewModel",
         "designer|userAlias": "mediaViewModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen6938",
     "designerId": "e417e6e0-9d99-47c1-9124-3a809e3f0b1e",
-    "$viewOrder": 12,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen7159",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -24,15 +20,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField66",
                 "name": "text",
-                "type": "string",
-                "designer|userClassName": "MyField66"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "dca85483-336d-4c19-bc87-051bea7ed45b"
         },
         {
-            "id": "ExtBox1-ext-gen7314",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -40,15 +34,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField67",
                 "name": "fichier",
-                "type": "string",
-                "designer|userClassName": "MyField67"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "25366854-4411-4c0a-923b-f7dc9c7386e7"
         },
         {
-            "id": "ExtBox1-ext-gen7472",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -56,15 +48,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField68",
                 "name": "icone",
-                "type": "string",
-                "designer|userClassName": "MyField68"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "08fbf4d3-bf01-4109-b181-cc2d283c8c46"
         },
         {
-            "id": "ExtBox1-ext-gen7595",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -72,15 +62,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField69",
                 "name": "conf",
-                "type": "auto",
-                "designer|userClassName": "MyField69"
+                "type": "auto"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "fd3f8b8d-f0e8-45fa-8aa5-74c89a753aaa"
         },
         {
-            "id": "ExtBox1-ext-gen7862",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -88,15 +76,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField69",
                 "name": "meta",
-                "type": "auto",
-                "designer|userClassName": "MyField69"
+                "type": "auto"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "397fa5de-3dbd-4b95-b425-3c0b759156f1"
         },
         {
-            "id": "ExtBox1-ext-gen6648",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -104,11 +90,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField88"
+                "designer|userClassName": "MyField88",
+                "name": "version"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0110ce53-cc75-425c-98a8-4cb796807042"
         }
     ]
 }

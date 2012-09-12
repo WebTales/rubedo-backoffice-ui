@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6472",
     "type": "window",
     "reference": {
         "name": "items",
@@ -7,6 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
+        "rapport": "1",
+        "container|align": "stretch",
+        "designer|userClassName": "mediaImageEditor",
+        "designer|userAlias": "mediaImageEditor",
         "height": 600,
         "id": "mediaImageEditor",
         "maxHeight": null,
@@ -20,12 +23,10 @@
         "constrainHeader": true,
         "maximizable": true,
         "minimizable": false,
-        "modal": true,
-        "designer|userClassName": "mediaImageEditor",
-        "designer|userAlias": "mediaImageEditor",
-        "rapport": 1,
-        "container|align": "stretch"
+        "modal": true
     },
+    "id": "ExtBox1-ext-gen6472",
+    "designerId": "c88195fc-2977-4718-9287-536a4aead568",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -33,12 +34,8 @@
             "type": "string"
         }
     ],
-    "designerId": "c88195fc-2977-4718-9287-536a4aead568",
-    "$viewOrder": 37,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen5680",
             "type": "container",
             "reference": {
                 "name": "items",
@@ -46,19 +43,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 1,
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyContainer20",
                 "itemId": "workspace",
                 "width": 794,
                 "autoScroll": true,
-                "layout": "absolute",
-                "designer|userClassName": "MyContainer20",
-                "designer|snapToGrid": 10,
-                "layout|flex": 1
+                "layout": "absolute"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "188b2f77-8d40-4f2f-92d5-b30810d9cb14"
         },
         {
-            "id": "ExtBox1-ext-gen5884",
             "type": "form",
             "reference": {
                 "name": "items",
@@ -66,21 +61,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyForm20",
                 "itemId": "proprietes",
                 "width": 200,
                 "bodyPadding": 10,
                 "collapseDirection": "right",
                 "collapsible": true,
                 "iconCls": "parametres",
-                "title": "Propriétés",
-                "designer|userClassName": "MyForm20",
-                "layout|flex": null
+                "title": "Propriétés"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "5e29504d-bf61-4d14-a7e2-2e9661f2d2c0",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen5666",
                     "type": "fieldset",
                     "reference": {
                         "name": "items",
@@ -88,14 +81,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Taille",
-                        "designer|userClassName": "MyFieldSet1"
+                        "designer|userClassName": "MyFieldSet1",
+                        "title": "Taille"
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "37f09996-58b3-4f35-9ff7-d1eea4126367",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen6049",
                             "type": "numberfield",
                             "reference": {
                                 "name": "items",
@@ -103,18 +94,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField3",
                                 "id": "imageEditorHeightField",
                                 "itemId": null,
                                 "fieldLabel": "Hauteur ",
-                                "labelWidth": 60,
-                                "designer|userClassName": "MyNumberField3",
-                                "layout|anchor": "100%"
+                                "labelWidth": 60
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "9390803d-ed33-47c6-a7ac-91edfd88fe3a"
                         },
                         {
-                            "id": "ExtBox1-ext-gen6255",
                             "type": "numberfield",
                             "reference": {
                                 "name": "items",
@@ -122,21 +111,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField4",
                                 "id": "imageEditorWidthField",
                                 "fieldLabel": "Largeur ",
-                                "labelWidth": 60,
-                                "designer|userClassName": "MyNumberField4",
-                                "layout|anchor": "100%"
+                                "labelWidth": 60
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "11ed8bb6-834e-4cec-9114-69cd484f2967"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen8991",
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -144,15 +131,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar32",
                 "layout|flex": 1,
-                "dock": "top"
+                "dock": "top",
+                "designer|userClassName": "MyToolbar32"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "a1c048fb-48c9-4203-b3c9-952de24d2840",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen7554",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -160,17 +145,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton102",
                         "icon": "resources/icones/32x32/zoom_in.png",
                         "scale": "large",
-                        "text": "Zoom in",
-                        "designer|userClassName": "MyButton102",
-                        "layout|flex": null
+                        "text": "Zoom in"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "65730c38-1142-4971-a098-34f229bb9af5"
                 },
                 {
-                    "id": "ExtBox1-ext-gen7343",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -178,17 +161,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton101",
                         "icon": "resources/icones/32x32/zoom_out.png",
                         "scale": "large",
-                        "text": "Zoom out",
-                        "designer|userClassName": "MyButton101",
-                        "layout|flex": null
+                        "text": "Zoom out"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "e5df9187-b889-43b8-b3a7-761aeebfdd80"
                 },
                 {
-                    "id": "ExtBox1-ext-gen7133",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -196,17 +177,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/floppy_disc.png",
                         "scale": "large",
-                        "text": "Enregistrer",
-                        "designer|userClassName": "MyButton100",
-                        "layout|flex": null
+                        "text": "Enregistrer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b61b8188-b60c-4ecd-bae8-0797fe5308d3"
                 },
                 {
-                    "id": "ExtBox1-ext-gen11442",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -214,18 +193,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton100",
                         "id": "imageEditorUndo",
                         "icon": "resources/icones/32x32/skip_backward.png",
                         "scale": "large",
-                        "text": "Undo",
-                        "designer|userClassName": "MyButton100",
-                        "layout|flex": null
+                        "text": "Undo"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "2c34218d-e04e-4cc3-8aea-9647b7f8138a"
                 },
                 {
-                    "id": "ExtBox1-ext-gen11783",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -233,18 +210,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton100",
                         "id": "imageEditorReset",
                         "icon": "resources/icones/32x32/repeat.png",
                         "scale": "large",
-                        "text": "Reset",
-                        "designer|userClassName": "MyButton100",
-                        "layout|flex": null
+                        "text": "Reset"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "b3cbde72-337f-41d8-a899-f60bdabca716"
                 },
                 {
-                    "id": "ExtBox1-ext-gen12119",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -252,14 +227,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/crop.png",
                         "scale": "large",
-                        "text": "Crop",
-                        "designer|userClassName": "MyButton100",
-                        "layout|flex": null
+                        "text": "Crop"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "17e49376-2c4f-4868-bede-e345f910ac22"
                 }
             ]
         }

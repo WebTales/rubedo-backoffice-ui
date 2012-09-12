@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen29010",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ContributionContenusController",
         "models": [
             "contenusDataModel"
         ],
@@ -15,16 +15,12 @@
         ],
         "views": [
             "AjouterContenu"
-        ],
-        "designer|userClassName": "ContributionContenusController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen29010",
     "designerId": "d27eb48c-e6bd-435b-8697-8ff50047fcac",
-    "$viewOrder": 5,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen34482",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -32,6 +28,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onGridviewItemClick",
                 "fn": "onGridviewItemClick",
                 "implHandler": [
                     "\r",
@@ -47,14 +44,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#TypesContenusGridView",
-                "designer|userClassName": "onGridviewItemClick"
+                "designer|controlQuery": "#TypesContenusGridView"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0466eea6-c776-4c88-b14e-95220a71766a"
         },
         {
-            "id": "ExtBox1-ext-gen34362",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -62,6 +56,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick1",
                 "fn": "onButtonClick1",
                 "implHandler": [
                     "this.nContenuRecorder('publié');"
@@ -69,14 +64,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPublierNouveauContenu",
-                "designer|userClassName": "onButtonClick1"
+                "designer|controlQuery": "#boutonPublierNouveauContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "0be12317-77a9-4e12-adae-fbd3e1286d46"
         },
         {
-            "id": "ExtBox1-ext-gen17754",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -84,6 +76,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick",
                 "fn": "onButtonClick",
                 "implHandler": [
                     "this.nContenuRecorder('brouillon');"
@@ -91,14 +84,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerNouveauContenu",
-                "designer|userClassName": "onButtonClick"
+                "designer|controlQuery": "#boutonEnregistrerNouveauContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "43982057-d428-4c80-892d-67f635c19e58"
         },
         {
-            "id": "ExtBox1-ext-gen18190",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -106,6 +96,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "nContenuRecorder",
                 "fn": "nContenuRecorder",
                 "designer|params": [
                     "etat"
@@ -140,14 +131,11 @@
                     "Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);\r",
                     "\r",
                     "Ext.getCmp('ajouterContenu').close();"
-                ],
-                "designer|userClassName": "nContenuRecorder"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "ae3d7d9c-194f-4fdd-b848-335bc618dcb5"
         },
         {
-            "id": "ExtBox1-ext-gen17154",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -155,6 +143,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick2",
                 "fn": "onButtonClick2",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
@@ -163,14 +152,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerContenu",
-                "designer|userClassName": "onButtonClick2"
+                "designer|controlQuery": "#boutonSupprimerContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1e8e3da9-d15d-4ff8-ae22-5814e4e23120"
         },
         {
-            "id": "ExtBox1-ext-gen17279",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -178,6 +164,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick3",
                 "fn": "onButtonClick3",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0].data;\r",
@@ -187,14 +174,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonModifierContenu",
-                "designer|userClassName": "onButtonClick3"
+                "designer|controlQuery": "#boutonModifierContenu"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d1d6b138-ff4c-43ec-bf21-9b2632472cf9"
         },
         {
-            "id": "ExtBox1-ext-gen53183",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -202,6 +186,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "afficheMeta",
                 "fn": "afficheMeta",
                 "implHandler": [
                     "var boiteMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
@@ -213,11 +198,9 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ContenusGrid",
-                "designer|userClassName": "afficheMeta"
+                "designer|controlQuery": "#ContenusGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2af287bb-3cc0-46dd-9a77-33d9b9c7235f"
         }
     ]
 }

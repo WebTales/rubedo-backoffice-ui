@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen13161",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "StoreOptionFiltrageTaxonomie",
         "autoLoad": true,
         "storeId": "MyJsonStore7",
-        "data": "[\n{option:'exacte'},\n{option:'récursif'},\n{option:'ignoré'}\n]",
-        "designer|userClassName": "StoreOptionFiltrageTaxonomie"
+        "data": "[\n{option:'exacte'},\n{option:'récursif'},\n{option:'ignoré'}\n]"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen13161",
     "designerId": "adf83458-b18b-4fc2-9594-c78702fe9a0e",
-    "$viewOrder": 10,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen13168",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -28,11 +24,9 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy8"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "c78c57a4-c4d5-41d3-bab3-b82da1dbda6d",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen13176",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -42,13 +36,11 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader6"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "997be2e1-4143-42b0-a556-dc1fde39de19"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen13601",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -56,12 +48,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField33",
                 "name": "option",
-                "type": "string",
-                "designer|userClassName": "MyField33"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "9f6b6806-c567-4bee-b167-66061a994b8f"
         }
     ]
 }

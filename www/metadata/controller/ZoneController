@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen27758",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ZoneController",
         "views": [
             "Zone",
             "Colonne",
@@ -15,16 +15,12 @@
             "ajoutBlocFenetre",
             "ConfigSpecBloc",
             "assistantRequetage"
-        ],
-        "designer|userClassName": "ZoneController"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen27758",
     "designerId": "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
-    "$viewOrder": 6,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen18417",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -32,6 +28,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ajouteColonne",
                 "fn": "ajouteColonne",
                 "implHandler": [
                     "var maZone = tool.findParentByType('zone');\r",
@@ -44,14 +41,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='ajouterColonne']",
-                "designer|userClassName": "ajouteColonne"
+                "designer|controlQuery": "[itemId='ajouterColonne']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "4dfbb617-557b-4056-825c-0248d53b51fa"
         },
         {
-            "id": "ExtBox1-ext-gen24280",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -59,6 +53,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "enleveColonne",
                 "fn": "enleveColonne",
                 "implHandler": [
                     "var maZone = tool.findParentByType('zone');\r",
@@ -72,14 +67,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='enleverColonne']",
-                "designer|userClassName": "enleveColonne"
+                "designer|controlQuery": "[itemId='enleverColonne']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "03575760-2162-429e-b1e0-d9b6ffe06ce6"
         },
         {
-            "id": "ExtBox1-ext-gen16471",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -87,6 +79,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "ajoutBlocZoneFenetre",
                 "fn": "ajoutBlocZoneFenetre",
                 "implHandler": [
                     "tool.up().fireEvent('click');\r",
@@ -96,14 +89,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='ajouterBlocZone']",
-                "designer|userClassName": "ajoutBlocZoneFenetre"
+                "designer|controlQuery": "[itemId='ajouterBlocZone']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a5aa9892-7bea-4fb7-844d-704e268a34b4"
         },
         {
-            "id": "ExtBox1-ext-gen6156",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -111,6 +101,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "deplaceBas",
                 "fn": "deplaceBas",
                 "implHandler": [
                     "var pos = tool.up().up().up().items.indexOf(tool.up().up());\r",
@@ -119,14 +110,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='zoneBas']",
-                "designer|userClassName": "deplaceBas"
+                "designer|controlQuery": "[itemId='zoneBas']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "96d5b6a3-f59a-4295-bab5-ec5c513b5cf6"
         },
         {
-            "id": "ExtBox1-ext-gen6744",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -134,6 +122,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "deplaceHaut",
                 "fn": "deplaceHaut",
                 "implHandler": [
                     "var pos = tool.up().up().up().items.indexOf(tool.up().up());\r",
@@ -144,14 +133,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='zoneHaut']",
-                "designer|userClassName": "deplaceHaut"
+                "designer|controlQuery": "[itemId='zoneHaut']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "7b73835d-7ef1-41f6-abfc-7565e3a9d82b"
         },
         {
-            "id": "ExtBox1-ext-gen8468",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -159,6 +145,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onGridpanelItemClick",
                 "fn": "onGridpanelItemClick",
                 "implHandler": [
                     "Ext.getCmp('PaneauBlocsDetail').update(record.data);"
@@ -166,14 +153,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#BlocsSelectGrid",
-                "designer|userClassName": "onGridpanelItemClick"
+                "designer|controlQuery": "#BlocsSelectGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "576318b5-444f-4cfc-8aac-972c7834dbe0"
         },
         {
-            "id": "ExtBox1-ext-gen51905",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -181,6 +165,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick",
                 "fn": "onButtonClick",
                 "implHandler": [
                     "var masque = this.getMasqueEdition();\r",
@@ -210,14 +195,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nouvelleZone",
-                "designer|userClassName": "onButtonClick"
+                "designer|controlQuery": "#nouvelleZone"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c0b1f264-899e-436a-af75-29b3a1a36a8b"
         },
         {
-            "id": "ExtBox1-ext-gen39314",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -225,6 +207,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "blocDeplaceGauche",
                 "fn": "blocDeplaceGauche",
                 "implHandler": [
                     "var monBloc = tool.findParentByType('unBloc');\r",
@@ -241,14 +224,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='deplaceGaucheBloc']",
-                "designer|userClassName": "blocDeplaceGauche"
+                "designer|controlQuery": "[itemId='deplaceGaucheBloc']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "6fc1979d-4fe0-4c0b-9ccc-6a949db66dff"
         },
         {
-            "id": "ExtBox1-ext-gen52674",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -256,15 +236,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MasqueEdition",
                 "ref": "MasqueEdition",
-                "selector": "#masqueEdition",
-                "designer|userClassName": "MasqueEdition"
+                "selector": "#masqueEdition"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d227e367-3c0c-4894-9cfb-3babda2ac9da"
         },
         {
-            "id": "ExtBox1-ext-gen33972",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -272,6 +250,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "blocDeplaceDroite",
                 "fn": "blocDeplaceDroite",
                 "implHandler": [
                     "var monBloc = tool.findParentByType('unBloc');\r",
@@ -288,14 +267,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='deplaceDroiteBloc']",
-                "designer|userClassName": "blocDeplaceDroite"
+                "designer|controlQuery": "[itemId='deplaceDroiteBloc']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a8926aad-ba60-43a6-8be6-92e5ddff405c"
         },
         {
-            "id": "ExtBox1-ext-gen44954",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -303,6 +279,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majZone",
                 "fn": "majZone",
                 "implHandler": [
                     "var champTitre = Ext.getCmp('zoneTitleField');\r",
@@ -328,14 +305,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#modifierPropZone",
-                "designer|userClassName": "majZone"
+                "designer|controlQuery": "#modifierPropZone"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "3f184692-51b2-4966-9f4e-4e3548eb4ce5"
         },
         {
-            "id": "ExtBox1-ext-gen9737",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -343,6 +317,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onPanelBeforeDestroy",
                 "fn": "onPanelBeforeDestroy",
                 "implHandler": [
                     "if ((Ext.isDefined(Ext.getCmp('blocIdField')))&&(abstractcomponent.id==Ext.getCmp('blocIdField').getValue())) { \r",
@@ -357,14 +332,11 @@
                 "name": "beforedestroy",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "unBloc",
-                "designer|userClassName": "onPanelBeforeDestroy"
+                "designer|controlQuery": "unBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "66b209b4-d8bd-421e-a096-ca13fcc3dd69"
         },
         {
-            "id": "ExtBox1-ext-gen13721",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -372,6 +344,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majBloc",
                 "fn": "majBloc",
                 "implHandler": [
                     "var champTitre = Ext.getCmp('blocTitleField');\r",
@@ -389,14 +362,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#modifierPropBloc",
-                "designer|userClassName": "majBloc"
+                "designer|controlQuery": "#modifierPropBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "21150e1f-cd27-4986-adea-ab60fc9f8ffa"
         },
         {
-            "id": "ExtBox1-ext-gen37057",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -404,6 +374,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "selectZone",
                 "fn": "selectZone",
                 "implHandler": [
                     "if (abstractcomponent.id !== 'outilsBureau') {\r",
@@ -427,14 +398,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "zone",
-                "designer|userClassName": "selectZone"
+                "designer|controlQuery": "zone"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "6c5d3976-2056-4bf3-9848-6fe3b6f68631"
         },
         {
-            "id": "ExtBox1-ext-gen4777",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -442,6 +410,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "selectBloc",
                 "fn": "selectBloc",
                 "implHandler": [
                     "/*abstractcomponent.getEl().on(\"click\", function(e){\r",
@@ -505,14 +474,11 @@
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "unBloc",
-                "designer|userClassName": "selectBloc"
+                "designer|controlQuery": "unBloc"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "89c808fa-b88a-4a47-b9f2-d6edaad0cf89"
         },
         {
-            "id": "ExtBox1-ext-gen69280",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -520,6 +486,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "supprimerZone",
                 "fn": "supprimerZone",
                 "implHandler": [
                     "var delConfirm = Ext.widget('delConfirmZ');\r",
@@ -533,14 +500,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='supprimerZone']",
-                "designer|userClassName": "supprimerZone"
+                "designer|controlQuery": "[itemId='supprimerZone']"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "865b89cf-ebfe-4054-8920-7f980352168f"
         },
         {
-            "id": "ExtBox1-ext-gen76620",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -548,6 +512,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onButtonClick2",
                 "fn": "onButtonClick2",
                 "implHandler": [
                     "Ext.getCmp('delConfirmZ').close();"
@@ -555,14 +520,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#delConfirmZNon",
-                "designer|userClassName": "onButtonClick2"
+                "designer|controlQuery": "#delConfirmZNon"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "7445658b-040f-46bc-8aee-da04bb228068"
         },
         {
-            "id": "ExtBox1-ext-gen51570",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -570,6 +532,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "updPanProp",
                 "fn": "updPanProp",
                 "designer|params": [
                     "abstractcomponent"
@@ -609,11 +572,9 @@
                     "\r",
                     "\r",
                     "}"
-                ],
-                "designer|userClassName": "updPanProp"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d3ac8b37-6818-425e-9fde-f46b1b5d0a3a"
         }
     ]
 }

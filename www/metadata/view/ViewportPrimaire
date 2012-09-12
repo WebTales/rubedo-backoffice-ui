@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6827",
     "type": "viewport",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
-        "id": "ViewportPrimaire",
-        "layout": "vbox",
+        "container|align": "stretch",
         "designer|userClassName": "ViewportPrimaire",
         "designer|userAlias": "ViewportPrimaire",
-        "container|align": "stretch"
+        "designer|initialView": true,
+        "id": "ViewportPrimaire",
+        "layout": "vbox"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen6827",
     "designerId": "55cc6025-4d04-4a9d-807b-f99435c04a90",
-    "$viewOrder": 0,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen8160",
             "type": "container",
             "reference": {
                 "name": "items",
@@ -28,19 +24,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 1,
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyContainer14",
                 "draggable": false,
                 "html": null,
                 "id": "desktopCont",
-                "layout": "absolute",
-                "designer|userClassName": "MyContainer14",
-                "designer|snapToGrid": 10,
-                "layout|flex": 1
+                "layout": "absolute"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "023bf79d-a672-42b6-8be4-30ccedf209ee",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen7769",
                     "type": "image",
                     "reference": {
                         "name": "items",
@@ -48,18 +42,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "desktopBackGround",
-                        "src": "resources/wallpapers/rubedo.jpg",
-                        "designer|userClassName": "MyImg1",
                         "layout|anchor": "105%",
                         "layout|x": 0,
-                        "layout|y": 0
+                        "layout|y": 0,
+                        "designer|userClassName": "MyImg1",
+                        "id": "desktopBackGround",
+                        "src": "resources/wallpapers/rubedo.jpg"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "d5ec879b-ad7a-4406-801f-56acb8f93b02"
                 },
                 {
-                    "id": "ExtBox1-ext-gen75153",
                     "type": "container",
                     "reference": {
                         "name": "items",
@@ -67,23 +59,21 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|anchor": null,
+                        "layout|x": 0,
+                        "layout|y": 0,
+                        "designer|snapToGrid": 10,
+                        "designer|userClassName": "MyContainer15",
                         "height": null,
                         "id": "boiteAIconesBureau",
                         "minHeight": 600,
-                        "layout": "absolute",
-                        "designer|userClassName": "MyContainer15",
-                        "designer|snapToGrid": 10,
-                        "layout|anchor": null,
-                        "layout|x": 0,
-                        "layout|y": 0
+                        "layout": "absolute"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "3160047d-8039-425d-9444-82ba9106f9b7"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen8610",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -93,9 +83,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
+            "designerId": "69fb08d5-bb0d-4839-861d-cac57fb6eec2",
             "masterInstanceId": "ExtBox1-ext-gen14010"
         }
     ]

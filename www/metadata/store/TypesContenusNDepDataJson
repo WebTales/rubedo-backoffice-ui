@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen14587",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TypesContenusNDepDataJson",
+        "designer|userAlias": "TypesContenusNDepDataJson",
         "autoLoad": true,
         "storeId": "TypesContenusNDepDataJson",
-        "model": null,
-        "designer|userClassName": "TypesContenusNDepDataJson",
-        "designer|userAlias": "TypesContenusNDepDataJson"
+        "model": null
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen14587",
     "designerId": "98a1d671-046d-4829-b790-2d84feb7eacc",
-    "$viewOrder": 5,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen14591",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Contenus.json",
-                "designer|userClassName": "MyAjaxProxy2"
+                "designer|userClassName": "MyAjaxProxy2",
+                "url": "data/Contenus.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "e932b8ec-e36f-41ec-a6ae-f3d83c39751e",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen14595",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,13 +38,11 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader2"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "2fcd38bb-d3ae-4190-bcce-789de820be91"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen14598",
             "type": "filter",
             "reference": {
                 "name": "filters",
@@ -58,16 +50,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyFilter",
                 "exactMatch": true,
                 "property": "imbrique",
-                "value": "false",
-                "designer|userClassName": "MyFilter"
+                "value": [
+                    "false"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "77c03993-0c28-43a1-8e49-2129fe7e82b5"
         },
         {
-            "id": "ExtBox1-ext-gen15437",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -75,14 +67,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "type",
-                "designer|userClassName": "MyField2"
+                "designer|userClassName": "MyField2",
+                "name": "type"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "550f628b-57e4-4bb0-8716-2cd055063e58"
         },
         {
-            "id": "ExtBox1-ext-gen16162",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -90,12 +80,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField53",
                 "name": "imbrique",
-                "type": "boolean",
-                "designer|userClassName": "MyField53"
+                "type": "boolean"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c63d9d19-0e79-42e7-aa62-9aea4f989cc2"
         }
     ]
 }

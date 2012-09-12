@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen5045",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "MediasDataStore",
+        "designer|userAlias": "MediasDataStore",
         "autoLoad": true,
         "storeId": "MediasDataStore",
-        "model": "mediaDataModel",
-        "designer|userClassName": "MediasDataStore",
-        "designer|userAlias": "MediasDataStore"
+        "model": "mediaDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen5045",
     "designerId": "fc5c664a-7c9e-4a94-b81a-c8a116a6fcf0",
-    "$viewOrder": 15,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen5052",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -27,14 +23,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/Medias.json",
-                "designer|userClassName": "MyAjaxProxy15"
+                "designer|userClassName": "MyAjaxProxy15",
+                "url": "data/Medias.json"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "f4ee53cb-62e0-45ba-a9eb-e4aedb2979cf",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen5060",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,13 +38,11 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader13"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "c604f77d-e996-4acf-ad2a-25ad092a2dbb"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen6804",
             "type": "grouper",
             "reference": {
                 "name": "groupers",
@@ -58,11 +50,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "type",
-                "designer|userClassName": "MyGrouper1"
+                "designer|userClassName": "MyGrouper1",
+                "property": "type"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2d26b3f6-002f-453f-80f9-e024a74e6da0"
         }
     ]
 }

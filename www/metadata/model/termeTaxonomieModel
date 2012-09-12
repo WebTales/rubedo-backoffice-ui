@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen61697",
     "type": "datamodel",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "termeTaxonomieModel",
         "designer|userAlias": "termeTaxonomieModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen61697",
     "designerId": "b7c9bf48-e637-4102-9d82-32331502ba65",
-    "$viewOrder": 9,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen61701",
             "type": "datafield",
             "reference": {
                 "name": "fields",
@@ -24,12 +20,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField40",
                 "name": "text",
-                "type": "string",
-                "designer|userClassName": "MyField40"
+                "type": "string"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "585482ba-a618-48f3-9508-b920319a14f8"
         }
     ]
 }

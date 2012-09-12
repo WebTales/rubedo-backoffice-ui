@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen22225",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -10,13 +9,10 @@
         "designer|userClassName": "MediathequeController",
         "designer|userAlias": "MediathequeController"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen22225",
     "designerId": "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
-    "$viewOrder": 11,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen22449",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -24,6 +20,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "majMedias",
                 "fn": "majMedias",
                 "implHandler": [
                     "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
@@ -44,14 +41,11 @@
                 "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#contributionMediasGrid",
-                "designer|userClassName": "majMedias"
+                "designer|controlQuery": "#contributionMediasGrid"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "29b51909-4a99-48d1-a1d7-5565eff81dfa"
         },
         {
-            "id": "ExtBox1-ext-gen6269",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -59,6 +53,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "doubleClickPreview",
                 "fn": "doubleClickPreview",
                 "implHandler": [
                     "var monType =Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;\r",
@@ -97,14 +92,11 @@
                 "name": "itemdblclick",
                 "scope": "me",
                 "designer|targetType": "Ext.view.View",
-                "designer|controlQuery": "#MediaMainView",
-                "designer|userClassName": "doubleClickPreview"
+                "designer|controlQuery": "#MediaMainView"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1868ecb2-d3bd-4ac2-927c-54f119d5d5f7"
         },
         {
-            "id": "ExtBox1-ext-gen6234",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -112,6 +104,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onDataviewSelectionChange",
                 "fn": "onDataviewSelectionChange",
                 "implHandler": [
                     "var boiteMeta = Ext.getCmp('contributionMedias').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
@@ -153,14 +146,11 @@
                 "name": "selectionchange",
                 "scope": "me",
                 "designer|targetType": "Ext.view.View",
-                "designer|controlQuery": "#MediaMainView",
-                "designer|userClassName": "onDataviewSelectionChange"
+                "designer|controlQuery": "#MediaMainView"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2a2ed000-fc23-4e82-b396-a8cafa297782"
         },
         {
-            "id": "ExtBox1-ext-gen5548",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -168,6 +158,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "supprimeMedia",
                 "fn": "supprimeMedia",
                 "implHandler": [
                     "Ext.getCmp('MediaMainView').getStore().remove(Ext.getCmp('MediaMainView').getSelectionModel().getSelection());"
@@ -175,14 +166,11 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerMedias",
-                "designer|userClassName": "supprimeMedia"
+                "designer|controlQuery": "#boutonSupprimerMedias"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a98295bf-93ec-4ab2-94f7-5550a70780a2"
         },
         {
-            "id": "ExtBox1-ext-gen5791",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -190,6 +178,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "afficheMediaEditor",
                 "fn": "afficheMediaEditor",
                 "implHandler": [
                     "var monType =Ext.getCmp('contributionMediasGrid').getSelectionModel().getLastSelected().data.type;\r",
@@ -231,11 +220,9 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEditionMedias",
-                "designer|userClassName": "afficheMediaEditor"
+                "designer|controlQuery": "#boutonEditionMedias"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f1e7fea5-8b3f-4729-aeff-fc64453a7d03"
         }
     ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen14010",
     "type": "toolbar",
     "reference": {
         "name": "items",
@@ -7,21 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 40,
-        "id": "entete",
-        "padding": null,
-        "tpl": null,
+        "container|padding": null,
         "designer|userClassName": "EnteteV",
         "designer|userAlias": "entete",
-        "container|padding": null
+        "height": 40,
+        "id": "entete",
+        "padding": null
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen14010",
     "designerId": "399ef6a6-ce2b-45ce-b060-182cbb6d47e5",
-    "$viewOrder": 2,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen10461",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -29,17 +24,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton79",
                 "id": "boutonPincipalInterface",
                 "scale": "medium",
-                "text": "<img src=\"resources/images/KECMlogo.png\">",
-                "designer|userClassName": "MyButton79",
-                "layout|flex": null
+                "text": "<img src=\"resources/images/KECMlogo.png\">"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "992292a5-8070-43d3-8eca-9b714b20724d"
         },
         {
-            "id": "ExtBox1-ext-gen5886",
             "type": "tbseparator",
             "reference": {
                 "name": "items",
@@ -47,15 +40,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySeparator1",
                 "layout|flex": null,
-                "layout|margins": null
+                "layout|margins": null,
+                "designer|userClassName": "MySeparator1"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "82c79abf-2f13-4993-929f-eb97bef30738"
         },
         {
-            "id": "ExtBox1-ext-gen11246",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -63,19 +54,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton1",
                 "id": "boutonPanierEntete",
                 "icon": null,
                 "iconCls": "shopping_cart_med",
                 "scale": "medium",
-                "text": "Panier",
-                "designer|userClassName": "MyButton1",
-                "layout|flex": null
+                "text": "Panier"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "8a361570-44b9-4ea6-b6f2-300c49f6f1b0"
         },
         {
-            "id": "ExtBox1-ext-gen38822",
             "type": "tbseparator",
             "reference": {
                 "name": "items",
@@ -83,15 +72,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySeparator1",
                 "layout|flex": null,
-                "layout|margins": null
+                "layout|margins": null,
+                "designer|userClassName": "MySeparator1"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c9b9dbe4-c3c2-4d7c-9e5d-f78c7d19ea94"
         },
         {
-            "id": "ExtBox1-ext-gen53925",
             "type": "toolbar",
             "reference": {
                 "name": "items",
@@ -99,18 +86,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyToolbar24",
                 "border": 0,
                 "height": 30,
                 "id": "taskbarPrincipal",
-                "enableOverflow": true,
-                "designer|userClassName": "MyToolbar24",
-                "layout|flex": 1
+                "enableOverflow": true
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1cf8c639-afdd-492d-a6f2-9805dc2e51c1"
         },
         {
-            "id": "ExtBox1-ext-gen6891",
             "type": "tbseparator",
             "reference": {
                 "name": "items",
@@ -118,15 +103,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySeparator2",
                 "layout|flex": null,
-                "layout|margins": "0, 0, 0, 20"
+                "layout|margins": "0, 0, 0, 20",
+                "designer|userClassName": "MySeparator2"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f4eba072-e5b3-4edd-9ff3-717fd94b8075"
         },
         {
-            "id": "ExtBox1-ext-gen7682",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -134,19 +117,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyTextField",
                 "itemId": "filterField",
-                "value": "'Recherche'",
+                "value": [
+                    "'Recherche'"
+                ],
                 "fieldLabel": "",
                 "labelSeparator": " ",
-                "labelWidth": 68,
-                "designer|userClassName": "MyTextField",
-                "layout|flex": null
+                "labelWidth": 68
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "6c99783e-6f06-4dfc-a123-064f5486e953"
         },
         {
-            "id": "ExtBox1-ext-gen8627",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -154,17 +137,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton",
                 "itemId": "searchButton",
                 "iconCls": "search",
-                "text": null,
-                "designer|userClassName": "MyButton",
-                "layout|flex": null
+                "text": null
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "c36bf3eb-a1b1-4c33-9d98-6c61d12c1f1f"
         },
         {
-            "id": "ExtBox1-ext-gen8735",
             "type": "tbseparator",
             "reference": {
                 "name": "items",
@@ -172,14 +153,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySeparator5",
-                "layout|flex": null
+                "layout|flex": null,
+                "designer|userClassName": "MySeparator5"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e8775610-6baa-4af5-934b-1f63b7c5c381"
         },
         {
-            "id": "ExtBox1-ext-gen37464",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -187,6 +166,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton44",
                 "baseCls": "x-btn-over",
                 "id": "boutonShowDesktop",
                 "width": 16,
@@ -194,12 +175,9 @@
                 "pressed": false,
                 "scale": "medium",
                 "text": null,
-                "tooltip": null,
-                "designer|userClassName": "MyButton44",
-                "layout|flex": null
+                "tooltip": null
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "408a2812-64dc-4875-8c74-c5d0dc56e8d5"
         }
     ]
 }

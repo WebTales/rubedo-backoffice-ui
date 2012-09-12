@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen12690",
     "type": "application",
     "reference": {
         "name": "items",
@@ -76,14 +75,10 @@
             "MediathequeController"
         ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen12690",
     "designerId": "application",
-    "$viewOrder": 0,
-    "iconCls": "icon-application",
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen10365",
             "type": "loader",
             "reference": {
                 "name": "loader",
@@ -91,13 +86,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "Loader",
                 "enabled": true,
-                "paths": "{\"Ext\":\".\", \"Ext.ux\": \"extjs-4.1.0/examples/ux\"}",
-                "designer|userClassName": "Loader"
+                "paths": [
+                    "{\"Ext\":\".\", \"Ext.ux\": \"extjs-4.1.0/examples/ux\"}"
+                ]
             },
-            "customConfigs": [],
-            "iconCls": "icon-loader",
-            "expanded": true
+            "designerId": "6de556ca-fa0f-48b7-8b2f-6030a2ecc030"
         }
     ]
 }

@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen16233",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -7,20 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "PanierDataJson",
+        "designer|userAlias": "panierDataJson",
         "autoLoad": true,
         "autoSync": true,
         "storeId": "PanierDataJson",
-        "model": "panierDataModel",
-        "designer|userClassName": "PanierDataJson",
-        "designer|userAlias": "panierDataJson"
+        "model": "panierDataModel"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen16233",
     "designerId": "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
-    "$viewOrder": 2,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen16240",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -28,15 +24,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "api": "{\n                        'create':'panier/create',\n                        'read':'data/Panier.json',\n                        'update':'panier/update',\n                        'destroy':'panier/delete'\n                }",
-                "url": null,
-                "designer|userClassName": "MyAjaxProxy1"
+                "designer|userClassName": "MyAjaxProxy1",
+                "api": [
+                    "{",
+                    "                        'create':'panier/create',",
+                    "                        'read':'data/Panier.json',",
+                    "                        'update':'panier/update',",
+                    "                        'destroy':'panier/delete'",
+                    "                }"
+                ],
+                "url": null
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "7f76c064-8ad8-4e13-864a-28cccc00111e",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen16248",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -44,15 +45,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonReader1",
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader1"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "44a1369b-822f-4a6c-b4e3-26cd6cfbb9c8"
                 },
                 {
-                    "id": "ExtBox1-ext-gen22756",
                     "type": "jsonwriter",
                     "reference": {
                         "name": "writer",
@@ -60,18 +59,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyJsonWriter",
                         "nameProperty": null,
                         "encode": true,
-                        "root": "data",
-                        "designer|userClassName": "MyJsonWriter"
+                        "root": "data"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "6d05d397-799f-475a-ba73-eb04bae7887d"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen58695",
             "type": "basiceventbinding",
             "reference": {
                 "name": "listeners",
@@ -79,6 +76,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onJsonstoreDataChangeD",
                 "fn": "onJsonstoreDataChangeD",
                 "implHandler": [
                     "var nbeltspanier =  this.count();\r",
@@ -87,11 +85,9 @@
                 ],
                 "single": true,
                 "name": "datachanged",
-                "scope": "me",
-                "designer|userClassName": "onJsonstoreDataChangeD"
+                "scope": "me"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "68c96a00-f6a7-4245-b9be-0942b6500873"
         }
     ]
 }
