@@ -68,9 +68,9 @@
                     "        var enrobage =Ext.widget('ChampTC');\r",
                     "        enrobage.add(nouvChamp);\r",
                     "        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
-                    "        enrobage.getComponent(2).destroy();\r",
+                    "      /*  enrobage.getComponent(2).destroy();\r",
                     "        enrobage.getComponent(1).destroy();\r",
-                    "        enrobage.getComponent(0).destroy();\r",
+                    "        enrobage.getComponent(0).destroy(); */\r",
                     "        if (nouvChamp.multivalué) {\r",
                     "            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));\r",
                     "\r",
@@ -184,7 +184,7 @@
                     "    } ;  \r",
                     "    nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);\r",
                     "}\r",
-                    "nouvChamp.anchor = '72%';\r",
+                    "nouvChamp.anchor = '90%';\r",
                     "nouvChamp.style = '{float:left;}';\r",
                     "var enrobage =Ext.widget('ChampTC');\r",
                     "enrobage.add(nouvChamp);\r",
@@ -212,15 +212,16 @@
                 "designer|userClassName": "selectChampTC",
                 "fn": "selectChampTC",
                 "implHandler": [
-                    "abstractcomponent.getComponent(4).getEl().on('click', function() {\r",
-                    "    if (Ext.getCmp('champTCIdField').getValue() != abstractcomponent.getComponent(4).id) {\r",
+                    "var TCfield=abstractcomponent.getComponent(1);\r",
+                    "TCfield.getEl().on('click', function() {\r",
+                    "    if (Ext.getCmp('champTCIdField').getValue() != TCfield.id) {\r",
                     "        if (Ext.isDefined(Ext.getCmp(Ext.getCmp('champTCIdField').getValue()))){    \r",
                     "            Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');\r",
                     "        }\r",
-                    "        Ext.getCmp('champTCIdField').setValue(abstractcomponent.getComponent(4).id);    \r",
+                    "        Ext.getCmp('champTCIdField').setValue(TCfield.id);    \r",
                     "        this.frame(MyPrefData.themeColor);\r",
                     "        this.applyStyles('color:'+MyPrefData.themeColor);\r",
-                    "        var mesChamps = abstractcomponent.getComponent(4).champsConfig;\r",
+                    "        var mesChamps = TCfield.champsConfig;\r",
                     "        var boiteParam = Ext.getCmp('boiteConfigChampsTC');\r",
                     "        boiteParam.removeAll();\r",
                     "        for(t=0; t<mesChamps.length; t++) {\r",
@@ -231,39 +232,39 @@
                     "            var nouvChamp= Ext.create(mesChamps[t].type, mesChamps[t].config);\r",
                     "            nouvChamp.labelSeparator= ' ';\r",
                     "            nouvChamp.anchor='100%';\r",
-                    "            nouvChamp.setValue(abstractcomponent.getComponent(4).config[nouvChamp.name]);\r",
+                    "            nouvChamp.setValue(TCfield.config[nouvChamp.name]);\r",
                     "            nouvChamp.on('change', function () {\r",
-                    "                abstractcomponent.getComponent(4).config[this.name]= this.getValue();\r",
+                    "                TCfield.config[this.name]= this.getValue();\r",
                     "                if (this.name=='fieldLabel') {\r",
-                    "                    abstractcomponent.getComponent(4).setFieldLabel(this.getValue());\r",
+                    "                    TCfield.setFieldLabel(this.getValue());\r",
                     "                }\r",
                     "                else if (this.name=='value') {\r",
-                    "                    abstractcomponent.getComponent(4).setValue(this.getValue());\r",
+                    "                    TCfield.setValue(this.getValue());\r",
                     "                }\r",
                     "                else if (this.name=='editable') {\r",
-                    "                    abstractcomponent.getComponent(4).setEditable(this.getValue());\r",
-                    "                    abstractcomponent.getComponent(4).reset();\r",
+                    "                    TCfield.setEditable(this.getValue());\r",
+                    "                    TCfield.reset();\r",
                     "                }\r",
                     "                else if (this.name=='multiSelect') {\r",
-                    "                    abstractcomponent.getComponent(4).multiSelect = this.getValue();\r",
-                    "                    abstractcomponent.getComponent(4).reset();\r",
+                    "                    TCfield.multiSelect = this.getValue();\r",
+                    "                    TCfield.reset();\r",
                     "                }\r",
                     "                else if (this.name=='tooltip') {\r",
                     "                    abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());\r",
                     "                }\r",
                     "                else if (this.name=='regex') {\r",
-                    "                    abstractcomponent.getComponent(4).regex = new RegExp(this.getValue());\r",
+                    "                    TCfield.regex = new RegExp(this.getValue());\r",
                     "                }\r",
                     "                else {\r",
-                    "                    abstractcomponent.getComponent(4)[this.name]= this.getValue();\r",
+                    "                    TCfield[this.name]= this.getValue();\r",
                     "                }\r",
-                    "                abstractcomponent.getComponent(4).validate();\r",
+                    "                TCfield.validate();\r",
                     "            });\r",
                     "            boiteParam.add(nouvChamp); \r",
                     "\r",
                     "        }\r",
-                    "        if ((abstractcomponent.getComponent(4).isXType('combobox'))&&(!(abstractcomponent.getComponent(4).isXType('timefield')))) {\r",
-                    "            var optionsLC = Ext.widget('optionsLCGrid', {store : abstractcomponent.getComponent(4).getStore()});\r",
+                    "        if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {\r",
+                    "            var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});\r",
                     "            boiteParam.add(optionsLC); \r",
                     "\r",
                     "        }\r",
@@ -288,7 +289,7 @@
                 "designer|userClassName": "enleveChampTC",
                 "fn": "enleveChampTC",
                 "implHandler": [
-                    "if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(4).id) {\r",
+                    "if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(1).id) {\r",
                     "    Ext.getCmp('boiteConfigChampsTC').removeAll();\r",
                     "}"
                 ],
@@ -381,7 +382,7 @@
                     "    } ; \r",
                     "    nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);\r",
                     "}    \r",
-                    "nouvChamp.anchor = '72%';\r",
+                    "nouvChamp.anchor = '90%';\r",
                     "\r",
                     "nouvChamp.style = '{float:left;}';\r",
                     "var enrobage =Ext.widget('ChampTC');\r",
@@ -465,7 +466,7 @@
                     "    var fieldsR = Ext.getCmp('champsEditionTC').items.items;\r",
                     "    var champsR = [ ];\r",
                     "    for (u=0; u<fieldsR.length; u++) { \r",
-                    "        var leChampR= fieldsR[u].getComponent(4);\r",
+                    "        var leChampR= fieldsR[u].getComponent(1);\r",
                     "        var nch ={\r",
                     "            cType: leChampR.xtype,\r",
                     "            config: leChampR.config,\r",
@@ -632,6 +633,79 @@
                 "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']"
             },
             "designerId": "6c7dc62c-8c47-4fdb-a92c-52250f3464b5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "TCfieldDelete",
+                "fn": "TCfieldDelete",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    field.up().destroy();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#TCfieldDeleter"
+            },
+            "designerId": "f53cb645-4e7d-4623-87f9-123e8288a1fa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "TCfieldMoveUp",
+                "fn": "TCfieldMoveUp",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().up().items.indexOf(field.up());\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#TCfieldUp"
+            },
+            "designerId": "6b32c09e-8580-4589-8ae1-6487396f7d72"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "TCfieldMoveDown",
+                "fn": "TCfieldMoveDown",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().up().items.indexOf(field.up());\r",
+                    "    field.up().up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#TCfieldDown"
+            },
+            "designerId": "84d48f71-a70a-422b-92a2-5af45464a790"
         }
     ]
 }

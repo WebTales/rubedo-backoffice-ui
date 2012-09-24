@@ -170,6 +170,12 @@ border-style:dashed !important;
 .arrow_up  {
 	background: url(../icones/blue/16x16/up.png) left center no-repeat !important;
 }
+.arrow_up_big  {
+	background: url(../icones/blue/32x32/up.png)  center no-repeat !important;
+}
+.arrow_down_big {
+	background: url(../icones/blue/32x32/down.png) center no-repeat !important;
+}
 .outil {
 	background: url(../images/application.png) left center no-repeat !important;
 }

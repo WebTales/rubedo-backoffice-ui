@@ -449,7 +449,6 @@
                                 "designer|userClassName": "MyButton12",
                                 "id": "AdminfMasquesPublier",
                                 "maxWidth": null,
-                                "autoWidth": false,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_accept_big",
@@ -563,7 +562,6 @@
                 "id": "masquesGrid",
                 "itemId": null,
                 "width": 150,
-                "maintainFlex": false,
                 "resizable": [
                     "true"
                 ],
@@ -598,7 +596,6 @@
                     "userConfig": {
                         "designer|userClassName": "MyGroupingFeature",
                         "groupByText": null,
-                        "groupHeaderTpl": " {name}",
                         "startCollapsed": false
                     },
                     "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e"

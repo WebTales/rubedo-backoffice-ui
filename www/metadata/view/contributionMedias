@@ -396,11 +396,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyColumn21",
-                        "resizable": [
-                            "true"
-                        ],
                         "dataIndex": "titre",
-                        "fixed": false,
                         "flex": 1,
                         "groupable": true,
                         "menuDisabled": true,
@@ -443,8 +439,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature1",
-                        "groupHeaderTpl": "{name}"
+                        "designer|userClassName": "MyGroupingFeature1"
                     },
                     "designerId": "8c513b76-f7ab-4c3b-842f-3c9ceedb8258"
                 }

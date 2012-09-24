@@ -181,7 +181,7 @@
                 "dock": "top",
                 "designer|userClassName": "menuContenusTools",
                 "designer|userAlias": "menuContenusTools",
-                "height": 54,
+                "height": 86,
                 "itemId": "contextBar",
                 "width": null
             },
@@ -200,6 +200,7 @@
                         "id": "boutonNouveauTypeContenu",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter"
@@ -219,6 +220,7 @@
                         "id": "boutonSupprimerTypeContenu",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer"
@@ -226,7 +228,7 @@
                     "designerId": "10ad580b-1d96-446a-afab-5edaadfc1ec1"
                 },
                 {
-                    "type": "button",
+                    "type": "buttongroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -234,18 +236,86 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
-                        "id": "boutonEnregistrerTypeContenu",
-                        "itemId": null,
-                        "icon": null,
-                        "iconCls": "floppy_disc_big",
-                        "scale": "large",
-                        "text": "Enregistrer"
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "headerPosition": "bottom",
+                        "title": "Edition",
+                        "columns": 4
                     },
-                    "designerId": "5605da8d-43e1-497e-b967-8a604c98008a"
+                    "designerId": "02205170-acac-46ce-9696-415d93aad3c6",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton112",
+                                "id": "boutonOuvrirFenetreTC",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Nouveau champ"
+                            },
+                            "designerId": "24744ace-3327-4473-ba1a-7995f17e1daf"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton113",
+                                "id": "TCfieldUp",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_up_big",
+                                "scale": "large",
+                                "text": "Dèplacer"
+                            },
+                            "designerId": "383b69d8-c624-49a9-9cb7-816c3d9134c0"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton114",
+                                "id": "TCfieldDown",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_down_big",
+                                "scale": "large",
+                                "text": "Dèplacer"
+                            },
+                            "designerId": "8abfefed-9f65-4fd4-9abd-fb0c854faa0a"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton115",
+                                "id": "TCfieldDeleter",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Supprimer champ"
+                            },
+                            "designerId": "f79da3fd-7a82-43d0-9cd8-347184c50d65"
+                        }
+                    ]
                 },
                 {
-                    "type": "button",
+                    "type": "buttongroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -253,14 +323,163 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton14",
-                        "itemId": "boutonCreerRaccourci",
-                        "icon": null,
-                        "iconCls": "favorite_add_big",
-                        "scale": "large",
-                        "text": "Ajouter aux favoris"
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "headerPosition": "bottom",
+                        "title": "Presse-papiers",
+                        "columns": 4
                     },
-                    "designerId": "c4ee24e3-e634-483d-88b0-ea7303cb2141"
+                    "designerId": "9dc9e26e-1f14-4eb8-8020-e60ede4b2b1d",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton17",
+                                "id": "boutonCopierTC",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton15",
+                                "id": "ajouterPanierTC",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "shopping_cart_add_big",
+                                "scale": "large",
+                                "text": "Ajouter au panier"
+                            },
+                            "designerId": "ea6dd839-85b7-4b37-933e-fdf5bbfc6057"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton14",
+                                "itemId": "boutonCreerRaccourci",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "favorite_add_big",
+                                "scale": "large",
+                                "text": "Ajouter aux favoris"
+                            },
+                            "designerId": "0074bfba-4b6b-479f-b392-0eb2d66c0500"
+                        }
+                    ]
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "headerPosition": "bottom",
+                        "title": "Sauvegarde",
+                        "columns": 4
+                    },
+                    "designerId": "592268b8-61de-44c4-a8e0-8ac3a1cd8f67",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton13",
+                                "id": "boutonEnregistrerTypeContenu",
+                                "itemId": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "floppy_disc_big",
+                                "scale": "large",
+                                "text": "Enregistrer"
+                            },
+                            "designerId": "5605da8d-43e1-497e-b967-8a604c98008a"
+                        }
+                    ]
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "headerPosition": "bottom",
+                        "title": "Fichier",
+                        "columns": 4
+                    },
+                    "designerId": "89c96f3c-c739-4986-b1b0-11dda855bb67",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton62",
+                                "id": "AdminfTCExporter",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_down_big",
+                                "scale": "large",
+                                "text": "Exporter"
+                            },
+                            "designerId": "e1354cee-b0f6-4543-be7e-19c35c7e1722"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton63",
+                                "id": "AdminfTCImporter",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_up_big",
+                                "scale": "large",
+                                "text": "Importer"
+                            },
+                            "designerId": "4c078505-2e86-44c3-80cc-e905f379890d"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",
@@ -468,23 +687,7 @@
                                         "bodyPadding": 0,
                                         "title": "Champs"
                                     },
-                                    "designerId": "9f720849-6c20-4727-8b99-ce99c0298e28",
-                                    "cn": [
-                                        {
-                                            "type": "tool",
-                                            "reference": {
-                                                "name": "tools",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyTool13",
-                                                "id": "boutonOuvrirFenetreTC",
-                                                "type": "expand"
-                                            },
-                                            "designerId": "2cbc80cc-4311-4e6c-8e7c-11c8cdb6be6d"
-                                        }
-                                    ]
+                                    "designerId": "9f720849-6c20-4727-8b99-ce99c0298e28"
                                 }
                             ]
                         },
