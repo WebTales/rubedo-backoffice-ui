@@ -10,7 +10,7 @@
         "designer|userAlias": "TypesContenusNDepDataJson",
         "autoLoad": true,
         "storeId": "TypesContenusNDepDataJson",
-        "model": null
+        "model": "typesContenusDataModel"
     },
     "id": "ExtBox1-ext-gen14587",
     "designerId": "98a1d671-046d-4829-b790-2d84feb7eacc",
@@ -58,33 +58,6 @@
                 ]
             },
             "designerId": "77c03993-0c28-43a1-8e49-2129fe7e82b5"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "type"
-            },
-            "designerId": "550f628b-57e4-4bb0-8716-2cd055063e58"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField53",
-                "name": "imbrique",
-                "type": "boolean"
-            },
-            "designerId": "c63d9d19-0e79-42e7-aa62-9aea4f989cc2"
         }
     ]
 }

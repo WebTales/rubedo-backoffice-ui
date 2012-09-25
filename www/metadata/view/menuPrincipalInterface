@@ -37,8 +37,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "layout|flex": 0.8,
                 "designer|userClassName": "MyPanel62",
+                "width": 210,
                 "layout": "fit"
             },
             "designerId": "3f0ed9de-c4f2-4009-b09e-6c9174f435fc",
@@ -73,7 +74,7 @@
                 "dock": "right",
                 "designer|userClassName": "MyToolbar25",
                 "id": "menuPrincipalDroite",
-                "width": 126
+                "width": null
             },
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
             "cn": [
@@ -200,7 +201,7 @@
                         "itemId": "adminFMDP",
                         "margin": null,
                         "iconCls": "masque-icon",
-                        "text": "Maques de page"
+                        "text": "Masques de page"
                     },
                     "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914"
                 },

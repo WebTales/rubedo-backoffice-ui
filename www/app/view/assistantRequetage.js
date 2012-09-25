@@ -82,11 +82,9 @@ Ext.define('Rubedo.view.assistantRequetage', {
                             fieldLabel: '',
                             allowBlank: false,
                             editable: false,
-                            displayField: 'type',
                             forceSelection: true,
                             multiSelect: true,
-                            store: 'TypesContenusNDepDataJson',
-                            valueField: 'type'
+                            store: 'TypesContenusNDepDataJson'
                         },
                         {
                             xtype: 'button',

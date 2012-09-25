@@ -41,7 +41,8 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             items: [
                 {
                     xtype: 'panel',
-                    flex: 1,
+                    flex: 0.8,
+                    width: 210,
                     layout: {
                         type: 'fit'
                     },
@@ -60,7 +61,6 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                     flex: 1,
                     dock: 'right',
                     id: 'menuPrincipalDroite',
-                    width: 126,
                     items: [
                         {
                             xtype: 'button',
@@ -102,7 +102,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             itemId: 'adminFMDP',
                             iconCls: 'masque-icon',
-                            text: 'Maques de page'
+                            text: 'Masques de page'
                         },
                         {
                             xtype: 'button',

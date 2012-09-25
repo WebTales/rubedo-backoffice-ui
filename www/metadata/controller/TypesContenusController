@@ -68,7 +68,7 @@
                     "        var enrobage =Ext.widget('ChampTC');\r",
                     "        enrobage.add(nouvChamp);\r",
                     "        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
-                    "      /*  enrobage.getComponent(2).destroy();\r",
+                    "        /*  enrobage.getComponent(2).destroy();\r",
                     "        enrobage.getComponent(1).destroy();\r",
                     "        enrobage.getComponent(0).destroy(); */\r",
                     "        if (nouvChamp.multivalué) {\r",
@@ -214,6 +214,9 @@
                 "implHandler": [
                     "var TCfield=abstractcomponent.getComponent(1);\r",
                     "TCfield.getEl().on('click', function() {\r",
+                    "    Ext.getCmp(\"TCfieldUp\").enable();\r",
+                    "    Ext.getCmp(\"TCfieldDown\").enable();\r",
+                    "    Ext.getCmp(\"TCfieldDeleter\").enable();\r",
                     "    if (Ext.getCmp('champTCIdField').getValue() != TCfield.id) {\r",
                     "        if (Ext.isDefined(Ext.getCmp(Ext.getCmp('champTCIdField').getValue()))){    \r",
                     "            Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');\r",
@@ -291,6 +294,9 @@
                 "implHandler": [
                     "if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(1).id) {\r",
                     "    Ext.getCmp('boiteConfigChampsTC').removeAll();\r",
+                    "    Ext.getCmp(\"TCfieldUp\").disable();\r",
+                    "    Ext.getCmp(\"TCfieldDown\").disable();\r",
+                    "    Ext.getCmp(\"TCfieldDeleter\").disable();\r",
                     "}"
                 ],
                 "name": "beforedestroy",
@@ -331,7 +337,9 @@
                 "designer|userClassName": "majAdminfTypesCentenus",
                 "fn": "majAdminfTypesCentenus",
                 "implHandler": [
-                    "\r",
+                    "Ext.getCmp(\"TCfieldUp\").disable();\r",
+                    "Ext.getCmp(\"TCfieldDown\").disable();\r",
+                    "Ext.getCmp(\"TCfieldDeleter\").disable();\r",
                     "var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');\r",
                     "var monIco = 'content-icon';\r",
                     "var monImg = 'resources/icones/48x48/page_full.png';\r",
@@ -706,6 +714,26 @@
                 "designer|controlQuery": "#TCfieldDown"
             },
             "designerId": "84d48f71-a70a-422b-92a2-5af45464a790"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "createThroughDblClick",
+                "fn": "createThroughDblClick",
+                "implHandler": [
+                    "this.creerChampTC(Ext.getCmp(\"boutonAjouterChampTC\"));"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ChampTCSelectGrid"
+            },
+            "designerId": "165b0cf1-e3f8-4a55-9506-56f5f6d8c60d"
         }
     ]
 }

@@ -130,6 +130,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
                                     id: 'TCfieldUp',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
@@ -138,6 +139,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
                                     id: 'TCfieldDown',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
@@ -146,6 +148,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
                                     id: 'TCfieldDeleter',
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',

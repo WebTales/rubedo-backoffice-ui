@@ -162,6 +162,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     selectChampTC: function(abstractcomponent, options) {
         var TCfield=abstractcomponent.getComponent(1);
         TCfield.getEl().on('click', function() {
+            Ext.getCmp("TCfieldUp").enable();
+            Ext.getCmp("TCfieldDown").enable();
+            Ext.getCmp("TCfieldDeleter").enable();
             if (Ext.getCmp('champTCIdField').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('champTCIdField').getValue()))){    
                     Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');
@@ -223,6 +226,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     enleveChampTC: function(abstractcomponent, options) {
         if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(1).id) {
             Ext.getCmp('boiteConfigChampsTC').removeAll();
+            Ext.getCmp("TCfieldUp").disable();
+            Ext.getCmp("TCfieldDown").disable();
+            Ext.getCmp("TCfieldDeleter").disable();
         }
     },
 
@@ -231,7 +237,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     majAdminfTypesCentenus: function(dataview, record, item, index, e, options) {
-
+        Ext.getCmp("TCfieldUp").disable();
+        Ext.getCmp("TCfieldDown").disable();
+        Ext.getCmp("TCfieldDeleter").disable();
         var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
         var monIco = 'content-icon';
         var monImg = 'resources/icones/48x48/page_full.png';
@@ -449,6 +457,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    createThroughDblClick: function(tablepanel, record, item, index, e, options) {
+        this.creerChampTC(Ext.getCmp("boutonAjouterChampTC"));
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -473,7 +485,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 beforedestroy: this.enleveChampTC
             },
             "#ChampTCSelectGrid": {
-                itemclick: this.updateOptionsListeTC
+                itemclick: this.updateOptionsListeTC,
+                itemdblclick: this.createThroughDblClick
             },
             "#AdminfTypesGridView": {
                 itemclick: this.majAdminfTypesCentenus

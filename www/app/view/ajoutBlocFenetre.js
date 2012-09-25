@@ -55,6 +55,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                     xtype: 'panel',
                     flex: 1,
                     id: 'PaneauBlocsDetail',
+                    styleHtmlContent: true,
                     tpl: [
                         '{description}'
                     ],

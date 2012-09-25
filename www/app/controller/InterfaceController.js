@@ -127,6 +127,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
             else {
                 fenetre = Ext.widget(button.itemId);
                 Ext.getCmp('desktopCont').add(fenetre);
+                if (Ext.isDefined(window.innerHeight)) {
+                    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                }
                 fenetre.show();
 
             }

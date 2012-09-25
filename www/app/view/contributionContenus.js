@@ -151,7 +151,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                     resizable: true,
                     resizeHandles: 'e',
                     title: '',
-                    store: 'TypesContenusDataJson',
+                    store: 'TypesContenusNDepDataJson',
                     viewConfig: {
                         id: 'TypesContenusGridView'
                     },

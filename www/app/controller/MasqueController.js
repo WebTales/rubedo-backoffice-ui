@@ -354,7 +354,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         }
 
                         Ext.getCmp('newCol').disable();
-                        if (Ext.isEmpty(abstractcomponent.items.items)){
+                        if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
                         Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
 
                             var offsetEdit=Ext.widget('numberfield',{
@@ -502,8 +502,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         };
         Ext.getCmp(Ext.getCmp('elementIdField').getValue()).add(nouvBloc);
         button.up().up().close();
-        Ext.getCmp("newBloc").disable();
         Ext.getCmp('newRow').disable();
+        nouvBloc.getEl().dom.click();
     },
 
     mainBoxSelect: function(abstractcomponent, options) {
@@ -674,6 +674,10 @@ Ext.define('Rubedo.controller.MasqueController', {
             });
     },
 
+    addBlocDblClick: function(tablepanel, record, item, index, e, options) {
+        this.addBloc(Ext.getCmp("boutonAjouterBloc"));
+    },
+
     applyConstrain: function(target, offsetF, spanF, applyFirst) {
         var myEol=target.up().getComponent("eol");
         var myOffset=null;
@@ -790,7 +794,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
                 else {
                     if (Ext.isEmpty(column.bloc)){} else {
-                    newCol.add(Ext.widget("unBloc",column.bloc));
+                    Ext.Array.forEach(column.bloc, function(bl){
+                        newCol.add(Ext.widget("unBloc",bl));
+                    });
                 }
             }
             eolWidth=eolWidth-column.span;
@@ -824,32 +830,45 @@ Ext.define('Rubedo.controller.MasqueController', {
                     var rows = null;
                     var isTerminal=true;
                     if (col.final) { 
-                        var nBloc=col.items.items[0];
-                        if (!Ext.isEmpty(nBloc)) {
-                            bloc={
+                        var nBlocs=col.items.items;
+                        if (!Ext.isEmpty(nBlocs)) {
+                            bloc=[ ];
+                            Ext.Array.forEach(nBlocs, function(nBloc){
+                                bloc.push({
 
-                                bType:nBloc.bType,
-                                champsConfig:nBloc.champsConfig,
-                                configBloc:nBloc.configBloc,
-                                title:nBloc.title,
-                                responsive:nBloc.responsive,
-                                flex:nBloc.flex
+                                    bType:nBloc.bType,
+                                    champsConfig:nBloc.champsConfig,
+                                    configBloc:nBloc.configBloc,
+                                    title:nBloc.title,
+                                    responsive:nBloc.responsive,
+                                    flex:nBloc.flex
 
-                            };
+                                });
+
+                            });
+
                         }
                     }else {
                         var thing=col.items.items[0];
                         if (Ext.isEmpty(thing)){} else if (thing.isXType("unBloc")) {
-                        bloc={
+                        var nBlocs=col.items.items;
+                        if (!Ext.isEmpty(nBlocs)) {
+                            bloc=[ ];
+                            Ext.Array.forEach(nBlocs, function(nBloc){
+                                bloc.push({
 
-                            bType:thing.bType,
-                            champsConfig:thing.champsConfig,
-                            configBloc:thing.configBloc,
-                            title:thing.title,
-                            responsive:thing.responsive,
-                            flex:thing.flex
+                                    bType:nBloc.bType,
+                                    champsConfig:nBloc.champsConfig,
+                                    configBloc:nBloc.configBloc,
+                                    title:nBloc.title,
+                                    responsive:nBloc.responsive,
+                                    flex:nBloc.flex
 
-                        };
+                                });
+
+                            });
+
+                        }
                     } else {
                         isTerminal=false;
                         rows=me.saveRows(col);
@@ -936,6 +955,9 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "unBloc": {
                 render: this.blocSelect
+            },
+            "#BlocsSelectGrid": {
+                itemdblclick: this.addBlocDblClick
             }
         });
     }

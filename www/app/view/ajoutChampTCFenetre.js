@@ -55,6 +55,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                     xtype: 'panel',
                     flex: 1,
                     id: 'PaneauTCDetail',
+                    styleHtmlContent: true,
                     tpl: [
                         '{description}'
                     ],

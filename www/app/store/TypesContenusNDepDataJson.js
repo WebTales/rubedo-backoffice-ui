@@ -17,12 +17,17 @@ Ext.define('Rubedo.store.TypesContenusNDepDataJson', {
     extend: 'Ext.data.Store',
     alias: 'store.TypesContenusNDepDataJson',
 
+    requires: [
+        'Rubedo.model.typesContenusDataModel'
+    ],
+
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
             storeId: 'TypesContenusNDepDataJson',
+            model: 'Rubedo.model.typesContenusDataModel',
             proxy: {
                 type: 'ajax',
                 url: 'data/Contenus.json',
@@ -34,16 +39,7 @@ Ext.define('Rubedo.store.TypesContenusNDepDataJson', {
                 exactMatch: true,
                 property: 'imbrique',
                 value: false
-            },
-            fields: [
-                {
-                    name: 'type'
-                },
-                {
-                    name: 'imbrique',
-                    type: 'boolean'
-                }
-            ]
+            }
         }, cfg)]);
     }
 });
