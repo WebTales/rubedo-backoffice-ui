@@ -154,6 +154,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         enrobage.add(nouvChamp);
         enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
         Ext.getCmp('champsEditionTC').add(enrobage);
+        nouvChamp.getEl().dom.click();
         button.up().up().close();
 
 

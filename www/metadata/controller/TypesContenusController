@@ -190,6 +190,7 @@
                     "enrobage.add(nouvChamp);\r",
                     "enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
                     "Ext.getCmp('champsEditionTC').add(enrobage);\r",
+                    "nouvChamp.getEl().dom.click();\r",
                     "button.up().up().close();\r",
                     "\r",
                     ""
