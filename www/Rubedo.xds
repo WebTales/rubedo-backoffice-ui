@@ -16,7 +16,7 @@
         "cssPath": "resources\\css\\main.css"
     },
     "xdsVersion": "2.1.0",
-    "xdsBuild": 633,
+    "xdsBuild": 636,
     "schemaVersion": 1,
     "upgradeVersion": 210000000498,
     "framework": "ext41",
@@ -172,14 +172,6 @@
                 "app/view/Colonne.js"
             ],
             "className": "Colonne"
-        },
-        "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb": {
-            "paths": [
-                "metadata/controller/ZoneController",
-                "app/controller/override/ZoneController.js",
-                "app/controller/ZoneController.js"
-            ],
-            "className": "ZoneController"
         },
         "3c5f989b-aadc-4101-b8f1-eecb9b463a6b": {
             "paths": [
@@ -803,6 +795,54 @@
                 "metadata/resource/Library"
             ],
             "className": "Library"
+        },
+        "9b9da84e-8515-4ff4-99f3-69b81dc01a02": {
+            "paths": [
+                "metadata/model/groupDataModel",
+                "app/model/override/groupDataModel.js",
+                "app/model/groupDataModel.js"
+            ],
+            "className": "groupDataModel"
+        },
+        "07053528-2f61-4530-94a2-099a9f5d243c": {
+            "paths": [
+                "metadata/store/GroupsDataStore",
+                "app/store/override/GroupsDataStore.js",
+                "app/store/GroupsDataStore.js"
+            ],
+            "className": "GroupsDataStore"
+        },
+        "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d": {
+            "paths": [
+                "metadata/model/userDataModel",
+                "app/model/override/userDataModel.js",
+                "app/model/userDataModel.js"
+            ],
+            "className": "userDataModel"
+        },
+        "6024e937-1032-4d87-9bf7-74a57a473a31": {
+            "paths": [
+                "metadata/store/UsersDataStore",
+                "app/store/override/UsersDataStore.js",
+                "app/store/UsersDataStore.js"
+            ],
+            "className": "UsersDataStore"
+        },
+        "81ee60ff-5960-4240-b5ab-53f409b51792": {
+            "paths": [
+                "metadata/store/UsersGroupStore",
+                "app/store/override/UsersGroupStore.js",
+                "app/store/UsersGroupStore.js"
+            ],
+            "className": "UsersGroupStore"
+        },
+        "d52b97aa-6ec0-4868-8574-1e35f4b86c88": {
+            "paths": [
+                "metadata/controller/UsersController",
+                "app/controller/override/UsersController.js",
+                "app/controller/UsersController.js"
+            ],
+            "className": "UsersController"
         }
     },
     "viewOrderMap": {
@@ -871,7 +911,10 @@
             "12d05bbd-4ea4-4909-8d63-321b7998a5e0",
             "6cb9f760-e375-46f8-ba70-e52ba7aa5725",
             "ab38a55b-ca17-43f5-b3b9-44b0a53ad234",
-            "acd4af16-103d-4c31-977e-f958c6cdf2b7"
+            "acd4af16-103d-4c31-977e-f958c6cdf2b7",
+            "07053528-2f61-4530-94a2-099a9f5d243c",
+            "6024e937-1032-4d87-9bf7-74a57a473a31",
+            "81ee60ff-5960-4240-b5ab-53f409b51792"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -880,12 +923,12 @@
             "c58379f5-e379-488d-a665-b9ff52959309",
             "8b596d59-f455-4a27-9468-a628653709a2",
             "d27eb48c-e6bd-435b-8697-8ff50047fcac",
-            "5db9f65a-d334-4c2e-a3a0-a5fbfe30b3fb",
             "da6ed701-29c3-4603-a441-221b8ebb99cf",
             "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
             "694f297c-7498-4216-9113-e00663d5f6c4",
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
-            "b2af3c2f-f75e-4841-ba23-2846d3c30f46"
+            "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
+            "d52b97aa-6ec0-4868-8574-1e35f4b86c88"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",
@@ -903,7 +946,9 @@
             "e417e6e0-9d99-47c1-9124-3a809e3f0b1e",
             "337a044d-f1fa-46dd-9870-5c57b86e2ab6",
             "631e6fdb-c3de-4905-9eaf-4d2aa157436e",
-            "d0fd2671-4491-440c-8e6c-915c6cca062e"
+            "d0fd2671-4491-440c-8e6c-915c6cca062e",
+            "9b9da84e-8515-4ff4-99f3-69b81dc01a02",
+            "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

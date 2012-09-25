@@ -295,6 +295,12 @@ border-style:dashed !important;
 .user{
 	background: url(../icones/red/16x16/users.png) left center no-repeat !important;
 }
+.user_add_big{
+	background: url(../icones/red/32x32/user_add.png)  center no-repeat !important;
+}
+.user_remove_big{
+	background: url(../icones/red/32x32/user_remove.png) center no-repeat !important;
+}
 .meUser{
 	background: url(../icones/red/16x16/business_user.png) left center no-repeat !important;
 }

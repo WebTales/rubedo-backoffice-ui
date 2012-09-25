@@ -25,7 +25,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         type: 'hbox'
     },
     iconCls: 'user',
-    title: 'Utilisateurs',
+    title: 'Groupes',
     constrainHeader: true,
 
     initComponent: function() {
@@ -56,7 +56,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             xtype: 'button',
                             itemId: 'origine',
                             iconCls: 'user',
-                            text: 'Utilisateurs <b>></b> '
+                            text: 'Groupes <b>></b> '
                         }
                     ]
                 },
@@ -91,22 +91,50 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
-                    height: 54,
+                    height: 86,
                     itemId: 'contextBar',
                     items: [
                         {
                             xtype: 'button',
-                            id: 'userAddButton',
+                            id: 'groupAddButton',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
-                            id: 'userDeleteButton',
+                            id: 'groupDeleteButton',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            header: true,
+                            headerPosition: 'bottom',
+                            overlapHeader: false,
+                            title: 'Edition',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'userAddButton',
+                                    iconAlign: 'top',
+                                    iconCls: 'user_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'userRemoveButton',
+                                    iconAlign: 'top',
+                                    iconCls: 'user_remove_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'
@@ -120,6 +148,152 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         }
                     ]
                 }
+            ],
+            items: [
+                {
+                    xtype: 'treepanel',
+                    flex: 0.4,
+                    id: 'groupsGrid',
+                    title: '',
+                    hideHeaders: false,
+                    store: 'GroupsDataStore',
+                    displayField: 'name',
+                    folderSort: false,
+                    rootVisible: false,
+                    singleExpand: false,
+                    useArrows: true,
+                    viewConfig: {
+                        plugins: [
+                            Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
+                                ptype: 'treeviewdragdrop'
+                            })
+                        ]
+                    },
+                    columns: [
+                        {
+                            xtype: 'treecolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
+                            },
+                            dataIndex: 'name',
+                            flex: 1,
+                            text: 'Nom'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'tabpanel',
+                    flex: 1,
+                    activeTab: 0,
+                    items: [
+                        {
+                            xtype: 'panel',
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Utilisateurs',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    title: '',
+                                    store: 'UsersGroupStore',
+                                    viewConfig: {
+
+                                    },
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'name',
+                                            flex: 1,
+                                            text: 'Nom'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'email',
+                                            flex: 1,
+                                            text: 'Email'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'telephone',
+                                            flex: 1,
+                                            text: 'Téléphone'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'adress',
+                                            flex: 1,
+                                            text: 'Adresse'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'position',
+                                            flex: 1,
+                                            text: 'Poste'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'department',
+                                            flex: 1,
+                                            text: 'Département'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            hidden: true,
+                                            dataIndex: 'groups',
+                                            flex: 1,
+                                            text: 'Groupes'
+                                        },
+                                        {
+                                            xtype: 'datecolumn',
+                                            hidden: true,
+                                            dataIndex: 'creationDate',
+                                            flex: 1,
+                                            text: 'Création'
+                                        },
+                                        {
+                                            xtype: 'datecolumn',
+                                            hidden: true,
+                                            dataIndex: 'lastUpdate',
+                                            flex: 1,
+                                            text: 'Dernière modification'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    layout: {
+                                        type: 'accordion'
+                                    },
+                                    title: '',
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            title: 'Sites'
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: 'Types de contenus'
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: 'Médias'
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         });
 
@@ -127,7 +301,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
     },
 
     onImageRender: function(abstractcomponent, options) {
-        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png');
     }
 
 });

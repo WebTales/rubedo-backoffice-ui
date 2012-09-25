@@ -34,7 +34,9 @@ Ext.application({
         'mediaViewModel',
         'wallpaperDataModel',
         'themeDataModel',
-        'personalPrefsDataModel'
+        'personalPrefsDataModel',
+        'groupDataModel',
+        'userDataModel'
     ],
     stores: [
         'SitesDataJson',
@@ -51,7 +53,10 @@ Ext.application({
         'MediaViewStore',
         'WallpapersDataJson',
         'ThemesDataJson',
-        'PersonalPrefsStore'
+        'PersonalPrefsStore',
+        'GroupsDataStore',
+        'UsersDataStore',
+        'UsersGroupStore'
     ],
     views: [
         'MyContainer',
@@ -82,12 +87,12 @@ Ext.application({
         'PanierController',
         'OutilsBureauController',
         'ContributionContenusController',
-        'ZoneController',
         'MasqueController',
         'TypesContenusController',
         'TaxonomieController',
         'assistantRequetageController',
         'InterfaceController',
-        'MediathequeController'
+        'MediathequeController',
+        'UsersController'
     ]
 });

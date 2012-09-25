@@ -1,0 +1,35 @@
+[
+{
+"name":"Défaut",
+"rights": { },
+"members": [ ],
+"iconCls": "user",
+"children": [
+	{
+	"name":"Admin",
+	"rights": { },
+	"members": ["John Doe"],
+	"children": [ 
+		{
+		"name":"Admin Fonctionnel",
+		"rights": { },
+		"members": [ ],
+		"children": [ ]
+		},
+		{
+		"name":"Admin Technique",
+		"rights": { },
+		"members": [ ],
+		"children": [ ]
+		}
+	]
+	},
+	{
+	"name":"Contributeurs",
+	"rights": { },
+	"members": ["John Dowski"],
+	"children": [ ]
+	}
+]
+}
+]

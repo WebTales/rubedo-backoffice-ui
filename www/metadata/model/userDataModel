@@ -1,0 +1,141 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "userDataModel",
+        "designer|userAlias": "userDataModel"
+    },
+    "id": "ExtBox1-ext-gen7166",
+    "designerId": "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field90",
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "ea53749b-2795-4efe-8728-1ba1d826ea24"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field91",
+                "name": "email",
+                "type": "string"
+            },
+            "designerId": "3cf7b3c6-9d78-49ce-a0d4-0adabde2f657"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field98",
+                "name": "telephone",
+                "type": "string"
+            },
+            "designerId": "e93e9cdb-7be5-4b82-acca-d933dc5b137e"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "adress",
+                "type": "string"
+            },
+            "designerId": "eb047aae-e31d-4781-854e-bdc0d9772fd8"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "position",
+                "type": "string"
+            },
+            "designerId": "0a29dc9f-5351-42c0-86fa-4a6ce3e104b1"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "department",
+                "type": "string"
+            },
+            "designerId": "d1490fd0-bfb7-46de-a9ae-4d511514440e"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "groups"
+            },
+            "designerId": "edb3f766-5f7a-4a98-bca4-38aeeff193ad"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "creationDate",
+                "type": "date"
+            },
+            "designerId": "aac14f8c-de1c-4f5e-8e24-37e20739edac"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdate",
+                "type": "date"
+            },
+            "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
+        }
+    ]
+}

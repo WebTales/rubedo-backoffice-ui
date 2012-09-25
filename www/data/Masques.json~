@@ -1,0 +1,196 @@
+[
+	{
+		"text": "Masque 1",
+		"site": "Ameli-Santé",
+		"etat": "brouillon",
+		"auteur": "jbourdin",
+		"creation": "2012-05-01T00:00:00",
+		"derniereModification": "2012-05-01T00:00:00",
+		"version": 2,
+		"rows": [ 
+			{	
+				"height":100,
+				"eTitle":"titre",
+				"responsive":{
+					"phone":true,
+					"tablet":true,
+					"desktop":true
+				},
+				"columns": [
+					{
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":0,
+						"bloc": null,
+						"rows":null	
+					},
+					{
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":2,
+						"bloc": null,
+						"rows":null	
+					}					
+				]
+			},
+			{
+				"height":null,
+				"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+				"eTitle":"titre",
+				"columns": [
+					{
+						"isTerminal":true,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":4,
+						"offset":0,
+						"bloc": null,
+						"rows":null	
+					},
+					{
+						"isTerminal":false,
+						"eTitle":"titre",
+						"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+						"span":8,
+						"offset":0,
+						"bloc": null,
+						"rows":[ 
+								{
+									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+									"columns": [
+										{
+											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										},
+										{
+											"span":6,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":2,
+											"bloc": null
+										}					
+									]
+								},
+								{
+									"height":null,
+									"eTitle":"titre",
+									"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+									"columns": [
+										{
+											"span":4,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										},
+										{
+											"span":8,
+											"eTitle":"titre",
+											"responsive":{
+							"phone":true,
+							"tablet":true,
+							"desktop":true
+						},
+											"offset":0,
+											"bloc": null
+										}					
+									]
+								}
+							]
+					}					
+				]
+			}
+		],
+		"versions": [
+			{
+				"text": "1",
+				"etat": "brouillon",
+				"date": "05/01/2012",
+				"auteur": "jbourdin"
+			}, {
+				"text": "2",
+				"etat": "brouillon",
+				"date": "06/01/2012",
+				"auteur": "jbourdin"
+			}
+		],
+		"id": "1"
+	}, {
+		"text": "Masque 2",
+		"site": "Ameli.fr",
+		"etat": "brouillon",
+		"auteur": "jbourdin",
+		"creation": "2012-05-01T00:00:00",
+		"derniereModification": "2012-05-01T00:00:00",
+		"version": 2,
+		"rows": [{"height":100,"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"columns":[{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":4,"offset":0,"bloc":null,"rows":null,"isTerminal":true},{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":4,"offset":2,"bloc":null,"rows":null,"isTerminal":true}]},{"height":null,"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"columns":[{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":4,"offset":0,
+
+"bloc":{"bType":"Liste de Contenus","champsConfig":{"simple":[{"categorie":"It\u00e9ration","champs":[{"type":"Ext.form.field.Number","config":{"fieldLabel":"Nombre de r\u00e9sultats affich\u00e9s","name":"nbResultatsAffiches"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Ne pas afficher les n premiers r\u00e9sultats","name":"nbResultatsPasAfficher"}}]},{"categorie":"Contenus","champs":[{"type":"Ext.form.field.Trigger","ouvrir":"assistantRequetage","config":{"fieldLabel":"Requ\u00eate","name":"requeteContenus"}}]},{"categorie":"Pagination","champs":[{"type":"Ext.form.field.Checkbox","config":{"fieldLabel":"Utiliser la pagination","name":"utiliserPagination"}},{"type":"Ext.form.field.Text","config":{"fieldLabel":"Libell\u00e9","name":"libellePagination"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Taille des pages","name":"taillePagination"}},{"type":"Ext.form.field.Number","config":{"fieldLabel":"Limite \"tout en une page\"","name":"limitePagination"}}]},{"categorie":"Tri","champs":[{"type":"Ext.form.field.Text","config":{"fieldLabel":"Trier par","name":"trierPar"}},{"type":"Ext.form.field.ComboBox","store":{"fields":["valeur","nom"],"data":[{"valeur":"AL","nom":"Croissant"},{"valeur":"AK","nom":"D\u00e9croissant"}]},"config":{"fieldLabel":"Ordre","queryMode":"local","displayField":"nom","valueField":"valeur","forceSelect":true,"editable":false,"name":"ordreAffichage"}}]}],"avance":[]},"configBloc":{},"title":"Liste de contenus","responsive":{"phone":true,"tablet":true,"desktop":true},"flex":1},
+
+
+"rows":null,"isTerminal":true},{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":8,"offset":0,"bloc":null,"rows":[{"height":null,"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"columns":[{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":4,"offset":0,"bloc":null,"rows":null,"isTerminal":true},{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":6,"offset":2,"bloc":null,"rows":null,"isTerminal":true}]},{"height":null,"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"columns":[{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":4,"offset":0,"bloc":null,"rows":null,"isTerminal":true},{"eTitle":"titre","responsive":{"phone":true,"tablet":true,"desktop":true},"span":8,"offset":0,"bloc":null,"rows":null,"isTerminal":true}]}],"isTerminal":false}]}],
+		"versions": [
+			{
+				"text": "1",
+				"etat": "brouillon",
+				"date": "05/01/2012",
+				"auteur": "jbourdin"
+			}, {
+				"text": "2",
+				"etat": "brouillon",
+				"date": "06/01/2012",
+				"auteur": "jbourdin"
+			}
+		],
+		"id": "2"
+	}
+]

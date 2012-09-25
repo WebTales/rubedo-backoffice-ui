@@ -120,7 +120,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
-                            text: 'Utilisateurs'
+                            text: 'Groupes'
                         },
                         {
                             xtype: 'button',

@@ -18,7 +18,9 @@
             "mediaViewModel",
             "wallpaperDataModel",
             "themeDataModel",
-            "personalPrefsDataModel"
+            "personalPrefsDataModel",
+            "groupDataModel",
+            "userDataModel"
         ],
         "stores": [
             "SitesDataJson",
@@ -35,7 +37,10 @@
             "MediaViewStore",
             "WallpapersDataJson",
             "ThemesDataJson",
-            "PersonalPrefsStore"
+            "PersonalPrefsStore",
+            "GroupsDataStore",
+            "UsersDataStore",
+            "UsersGroupStore"
         ],
         "views": [
             "MyContainer",
@@ -66,13 +71,13 @@
             "PanierController",
             "OutilsBureauController",
             "ContributionContenusController",
-            "ZoneController",
             "MasqueController",
             "TypesContenusController",
             "TaxonomieController",
             "assistantRequetageController",
             "InterfaceController",
-            "MediathequeController"
+            "MediathequeController",
+            "UsersController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

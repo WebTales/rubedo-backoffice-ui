@@ -156,6 +156,7 @@ Ext.define('Rubedo.view.contributionPages', {
                     resizeHandles: 'e',
                     bodyBorder: false,
                     title: '',
+                    hideHeaders: false,
                     store: 'SitesDataJson',
                     rootVisible: false,
                     singleExpand: false,

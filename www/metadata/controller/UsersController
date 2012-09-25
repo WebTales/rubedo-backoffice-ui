@@ -1,0 +1,43 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UsersController",
+        "designer|userAlias": "UsersController"
+    },
+    "id": "ExtBox1-ext-gen18283",
+    "designerId": "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "groupSelect",
+                "fn": "groupSelect",
+                "implHandler": [
+                    "var users = [ ];\r",
+                    "Ext.Array.forEach(record.get(\"members\"), function(membre){\r",
+                    "    var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
+                    "    if (!Ext.isEmpty(someMembre)){\r",
+                    "    users.push(someMembre);\r",
+                    "    }\r",
+                    "});\r",
+                    "Ext.getStore(\"UsersGroupStore\").loadData(users);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#groupsGrid"
+            },
+            "designerId": "d5a180c2-cf12-41c6-af7a-aac95a40309e"
+        }
+    ]
+}
