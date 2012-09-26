@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'TypesChamps/create',
+                    create: 'field-types/create',
                     read: 'data/TypesChamps.json',
-                    update: 'TypesChamps/update',
-                    destroy: 'TypesChamps/delete'
+                    update: 'field-types/update',
+                    destroy: 'field-types/delete'
                 },
                 reader: {
                     type: 'json',

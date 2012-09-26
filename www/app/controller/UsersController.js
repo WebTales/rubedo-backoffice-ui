@@ -28,10 +28,17 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getStore("UsersGroupStore").loadData(users);
     },
 
+    onButtonClick: function(button, e, options) {
+
+    },
+
     init: function(application) {
         this.control({
             "#groupsGrid": {
                 select: this.groupSelect
+            },
+            "#groupRemoveButton": {
+                click: this.onButtonClick
             }
         });
     }

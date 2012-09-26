@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'Blocs/create',
+                    create: 'blocks/create',
                     read: 'data/Blocs.json',
-                    update: 'Blocs/update',
-                    destroy: 'Blocs/delete'
+                    update: 'blocks/update',
+                    destroy: 'blocks/delete'
                 },
                 reader: {
                     type: 'json',

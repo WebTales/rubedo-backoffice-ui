@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy20",
                 "api": [
                     "{\r",
-                    "     create: 'Groups/create',\r",
+                    "     create: 'groups/create',\r",
                     "     read: 'data/Groups.json',\r",
-                    "     update: 'Groups/update',\r",
-                    "     destroy: 'Groups/delete'\r",
+                    "     update: 'groups/update',\r",
+                    "     destroy: 'groups/delete'\r",
                     "}"
                 ],
                 "url": null

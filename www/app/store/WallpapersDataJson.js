@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'Wallpapers/create',
+                    create: 'wallpapers/create',
                     read: 'data/Wallpapers.json',
-                    update: 'Wallpapers/update',
-                    destroy: 'Wallpapers/delete'
+                    update: 'wallpapers/update',
+                    destroy: 'wallpapers/delete'
                 },
                 reader: {
                     type: 'json',

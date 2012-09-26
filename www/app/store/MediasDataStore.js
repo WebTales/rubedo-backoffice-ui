@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.MediasDataStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'Medias/create',
+                    create: 'medias/create',
                     read: 'data/Medias.json',
-                    update: 'Medias/update',
-                    destroy: 'Medias/delete'
+                    update: 'medias/update',
+                    destroy: 'medias/delete'
                 },
                 reader: {
                     type: 'json',

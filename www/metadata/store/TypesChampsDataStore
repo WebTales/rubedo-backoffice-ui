@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy7",
                 "api": [
                     "{\r",
-                    "     create: 'TypesChamps/create',\r",
+                    "     create: 'field-types/create',\r",
                     "     read: 'data/TypesChamps.json',\r",
-                    "     update: 'TypesChamps/update',\r",
-                    "     destroy: 'TypesChamps/delete'\r",
+                    "     update: 'field-types/update',\r",
+                    "     destroy: 'field-types/delete'\r",
                     "}"
                 ],
                 "url": null

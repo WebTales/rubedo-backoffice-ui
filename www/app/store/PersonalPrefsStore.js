@@ -30,10 +30,10 @@ Ext.define('Rubedo.store.PersonalPrefsStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'PersonalPrefs/create',
+                    create: 'personal-prefs/create',
                     read: 'data/PersonalPrefs.json',
-                    update: 'PersonalPrefs/update',
-                    destroy: 'PersonalPrefs/delete'
+                    update: 'personal-prefs/update',
+                    destroy: 'personal-prefs/delete'
                 },
                 reader: {
                     type: 'json',

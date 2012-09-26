@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.UsersDataStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'Users/create',
+                    create: 'users/create',
                     read: 'data/Users.json',
-                    update: 'Users/update',
-                    destroy: 'Users/delete'
+                    update: 'users/update',
+                    destroy: 'users/delete'
                 },
                 reader: {
                     type: 'json',

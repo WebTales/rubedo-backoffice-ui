@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy21",
                 "api": [
                     "{\r",
-                    "     create: 'Users/create',\r",
+                    "     create: 'users/create',\r",
                     "     read: 'data/Users.json',\r",
-                    "     update: 'Users/update',\r",
-                    "     destroy: 'Users/delete'\r",
+                    "     update: 'users/update',\r",
+                    "     destroy: 'users/delete'\r",
                     "}"
                 ],
                 "url": null

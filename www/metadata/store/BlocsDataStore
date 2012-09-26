@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy7",
                 "api": [
                     "{\r",
-                    "     create: 'Blocs/create',\r",
+                    "     create: 'blocks/create',\r",
                     "     read: 'data/Blocs.json',\r",
-                    "     update: 'Blocs/update',\r",
-                    "     destroy: 'Blocs/delete'\r",
+                    "     update: 'blocks/update',\r",
+                    "     destroy: 'blocks/delete'\r",
                     "}"
                 ],
                 "url": null

@@ -25,10 +25,10 @@
                 "designer|userClassName": "MyAjaxProxy19",
                 "api": [
                     "{\r",
-                    "     create: 'PersonalPrefs/create',\r",
+                    "     create: 'personal-prefs/create',\r",
                     "     read: 'data/PersonalPrefs.json',\r",
-                    "     update: 'PersonalPrefs/update',\r",
-                    "     destroy: 'PersonalPrefs/delete'\r",
+                    "     update: 'personal-prefs/update',\r",
+                    "     destroy: 'personal-prefs/delete'\r",
                     "}"
                 ],
                 "url": null

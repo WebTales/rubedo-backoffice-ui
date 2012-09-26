@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy15",
                 "api": [
                     "{\r",
-                    "     create: 'Medias/create',\r",
+                    "     create: 'medias/create',\r",
                     "     read: 'data/Medias.json',\r",
-                    "     update: 'Medias/update',\r",
-                    "     destroy: 'Medias/delete'\r",
+                    "     update: 'medias/update',\r",
+                    "     destroy: 'medias/delete'\r",
                     "}"
                 ],
                 "url": null

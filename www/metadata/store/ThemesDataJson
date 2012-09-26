@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy18",
                 "api": [
                     "{\r",
-                    "     create: 'Themes/create',\r",
+                    "     create: 'themes/create',\r",
                     "     read: 'data/Themes.json',\r",
-                    "     update: 'Themes/update',\r",
-                    "     destroy: 'Themes/delete'\r",
+                    "     update: 'themes/update',\r",
+                    "     destroy: 'themes/delete'\r",
                     "}"
                 ],
                 "url": null

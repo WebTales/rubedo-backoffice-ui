@@ -26,10 +26,10 @@
                 "designer|userClassName": "MyAjaxProxy17",
                 "api": [
                     "{\r",
-                    "     create: 'Wallpapers/create',\r",
+                    "     create: 'wallpapers/create',\r",
                     "     read: 'data/Wallpapers.json',\r",
-                    "     update: 'Wallpapers/update',\r",
-                    "     destroy: 'Wallpapers/delete'\r",
+                    "     update: 'wallpapers/update',\r",
+                    "     destroy: 'wallpapers/delete'\r",
                     "}"
                 ],
                 "url": null
