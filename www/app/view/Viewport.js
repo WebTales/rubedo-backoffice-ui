@@ -52,6 +52,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.regleChampAR',
         'Rubedo.view.settingsContextMenu',
         'Rubedo.view.themePicker',
-        'Rubedo.view.GroupAddWindow'
+        'Rubedo.view.GroupAddWindow',
+        'Rubedo.view.UserAddWindow',
+        'Rubedo.view.MyWindow24'
     ]
 });

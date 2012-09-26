@@ -19,19 +19,35 @@ Ext.define('Rubedo.controller.UsersController', {
 
     groupSelect: function(selModel, record, index, options) {
         var users = [ ];
-        Ext.Array.forEach(record.get("members"), function(membre){
-            var someMembre = Ext.getStore("UsersDataStore").findRecord("name", membre);
-            if (!Ext.isEmpty(someMembre)){
-                users.push(someMembre);
-            }
-        });
+        this.getGroupUsers(record,users);
         Ext.getStore("UsersGroupStore").loadData(users);
+        Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+        Ext.getCmp("groupDeleteButton").enable();
+        var arButtons = [ ];
+        this.ArianneBuilder(record,arButtons);
+        Ext.getCmp("adminFUtilisateurs").getComponent("filArianne").removeAll();
+        Ext.getCmp("adminFUtilisateurs").getComponent("filArianne").add(arButtons.reverse());
+        if (record.isRoot()){
+            var name= " Racine ";
+        } else {
+            var name = " "+record.get("name")+" : ";
+            var userNb = users.length;
+            var calif = "vide";
+            if (userNb==1) {calif="utilisateur";} else if (userNb>1) {calif="utilisateurs";} else if (userNb===0) {userNb= undefined;}
+        }
+        Ext.getCmp("adminFUtilisateurs").getComponent("barreMeta").getComponent("boiteBarreMeta").update({
+            name:name,
+            userNb:userNb,
+            calif:calif
+        });
     },
 
     removeGroup: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         if (!Ext.isEmpty(target)) {
             target.remove();
+            Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+            button.disable();
         }
     },
 
@@ -40,7 +56,7 @@ Ext.define('Rubedo.controller.UsersController', {
         if (!Ext.isEmpty(target)) {
 
             var window = Ext.widget("GroupAddWindow");
-            Ext.getCmp('desktopCont').add(window);
+            Ext.getCmp('ViewportPrimaire').add(window);
             window.show();
         }
     },
@@ -60,6 +76,60 @@ Ext.define('Rubedo.controller.UsersController', {
 
     },
 
+    openUserAddWindow: function(button, e, options) {
+        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(target)) {
+            var window = Ext.widget("UserAddWindow");
+            Ext.getCmp('ViewportPrimaire').add(window);
+            window.show();
+        }
+    },
+
+    userSelectionAdd: function(button, e, options) {
+        var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),"data"),"name");
+        var record = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        record.set("members", Ext.Array.union(record.get("members"),selection));
+        Ext.getCmp("groupsGrid").getSelectionModel().deselectAll();
+        Ext.getCmp("groupsGrid").getSelectionModel().select(record);
+        button.up().up().close();
+    },
+
+    removeUserFromGroup: function(button, e, options) {
+        var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("UsersInGroupGrid").getSelectionModel().getSelection(),"data"),"name");
+        var record=Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        record.set("members", Ext.Array.difference(record.get("members"),targets));
+        Ext.getCmp("groupsGrid").getSelectionModel().deselectAll();
+        Ext.getCmp("groupsGrid").getSelectionModel().select(record);
+    },
+
+    getGroupUsers: function(group, array) {
+        if (!group.isRoot()){
+            var me=this;
+            Ext.Array.forEach(group.get("members"), function(membre){
+                var someMembre = Ext.getStore("UsersDataStore").findRecord("name", membre);
+                if (!Ext.isEmpty(someMembre)){
+                    Ext.Array.include(array,someMembre);
+                }
+            });
+            group.eachChild(function(kid){me.getGroupUsers(kid,array);});
+        }
+
+    },
+
+    ArianneBuilder: function(node, array) {
+        var me=this;
+        if (node.isRoot()) {
+            var button = Ext.widget("button", {text:"Groupes<b> ></b>", iconCls:"user"});
+            button.on("click",function(){ Ext.getCmp("groupsGrid").getSelectionModel().select(node);});
+            array.push(button);
+        } else {
+            var button = Ext.widget("button", {text:node.get("name")+"<b> ></b>", iconCls:"user"});
+            button.on("click",function(){ Ext.getCmp("groupsGrid").getSelectionModel().select(node);});
+            array.push(button);
+            me.ArianneBuilder(node.parentNode,array);
+        }
+    },
+
     init: function(application) {
         this.control({
             "#groupsGrid": {
@@ -73,6 +143,15 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#groupCreateButton": {
                 click: this.createGroup
+            },
+            "#userAddButton": {
+                click: this.openUserAddWindow
+            },
+            "#userSelectionAddButton": {
+                click: this.userSelectionAdd
+            },
+            "#userRemoveButton": {
+                click: this.removeUserFromGroup
             }
         });
     }

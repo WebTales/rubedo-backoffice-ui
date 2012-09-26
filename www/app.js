@@ -79,7 +79,9 @@ Ext.application({
         'themePicker',
         'accessibilityPicker',
         'adminFUtilisateurs',
-        'GroupAddWindow'
+        'GroupAddWindow',
+        'UserAddWindow',
+        'MyWindow24'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

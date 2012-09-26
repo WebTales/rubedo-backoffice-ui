@@ -145,7 +145,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "margin": "0 0 0 10",
+                        "styleHtmlContent": true
                     },
                     "designerId": "ac6e9cc8-defd-49ca-be3e-e8db39210003",
                     "cn": [
@@ -159,7 +161,7 @@
                             "userConfig": {
                                 "designer|userClassName": "tpl",
                                 "implHandler": [
-                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}"
+                                    "<p> <b> {name} </b> {userNb} {calif} </p>"
                                 ],
                                 "designer|displayName": "tpl"
                             },
@@ -217,6 +219,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
+                        "disabled": true,
                         "id": "groupDeleteButton",
                         "itemId": null,
                         "icon": null,
@@ -237,6 +240,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButtonGroup8",
+                        "disabled": true,
                         "header": true,
                         "headerPosition": "bottom",
                         "overlapHeader": false,
@@ -459,6 +463,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyGridPanel15",
+                                "id": "UsersInGroupGrid",
                                 "title": "",
                                 "store": "UsersGroupStore"
                             },
@@ -613,6 +618,18 @@
                                         "text": "Dernière modification"
                                     },
                                     "designerId": "39446dd6-babd-48de-a9c5-e7457ac9479f"
+                                },
+                                {
+                                    "type": "checkboxselectionmodel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": "Ext.selection.CheckboxModel",
+                                    "userConfig": {
+                                        "designer|userClassName": "MyCheckboxSelectionModel5"
+                                    },
+                                    "designerId": "3f12ae69-31e9-4a12-a7dc-5d9cf6b7cdc6"
                                 }
                             ]
                         }

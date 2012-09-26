@@ -81,8 +81,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
+                            margin: '0 0 0 10',
+                            styleHtmlContent: true,
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '<p> <b> {name} </b> {userNb} {calif} </p>'
                             ]
                         }
                     ]
@@ -104,6 +106,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'groupDeleteButton',
                             iconAlign: 'top',
                             iconCls: 'remove_big',
@@ -112,6 +115,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'buttongroup',
+                            disabled: true,
                             header: true,
                             headerPosition: 'bottom',
                             overlapHeader: false,
@@ -195,6 +199,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             items: [
                                 {
                                     xtype: 'gridpanel',
+                                    id: 'UsersInGroupGrid',
                                     title: '',
                                     store: 'UsersGroupStore',
                                     viewConfig: {
@@ -258,7 +263,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                             flex: 1,
                                             text: 'Dernière modification'
                                         }
-                                    ]
+                                    ],
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                                    })
                                 }
                             ]
                         },

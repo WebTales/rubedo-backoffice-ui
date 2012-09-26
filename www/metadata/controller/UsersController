@@ -24,13 +24,27 @@
                 "fn": "groupSelect",
                 "implHandler": [
                     "var users = [ ];\r",
-                    "Ext.Array.forEach(record.get(\"members\"), function(membre){\r",
-                    "    var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
-                    "    if (!Ext.isEmpty(someMembre)){\r",
-                    "        users.push(someMembre);\r",
-                    "    }\r",
-                    "});\r",
-                    "Ext.getStore(\"UsersGroupStore\").loadData(users);"
+                    "this.getGroupUsers(record,users);\r",
+                    "Ext.getStore(\"UsersGroupStore\").loadData(users);\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
+                    "Ext.getCmp(\"groupDeleteButton\").enable();\r",
+                    "var arButtons = [ ];\r",
+                    "this.ArianneBuilder(record,arButtons);\r",
+                    "Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"filArianne\").removeAll();\r",
+                    "Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"filArianne\").add(arButtons.reverse());\r",
+                    "if (record.isRoot()){\r",
+                    "    var name= \" Racine \";\r",
+                    "} else {\r",
+                    "    var name = \" \"+record.get(\"name\")+\" : \";\r",
+                    "    var userNb = users.length;\r",
+                    "    var calif = \"vide\";\r",
+                    "    if (userNb==1) {calif=\"utilisateur\";} else if (userNb>1) {calif=\"utilisateurs\";} else if (userNb===0) {userNb= undefined;}\r",
+                    "}\r",
+                    "Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"barreMeta\").getComponent(\"boiteBarreMeta\").update({\r",
+                    "    name:name,\r",
+                    "    userNb:userNb,\r",
+                    "    calif:calif\r",
+                    "});"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -52,7 +66,9 @@
                 "implHandler": [
                     "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
                     "if (!Ext.isEmpty(target)) {\r",
-                    "target.remove();\r",
+                    "    target.remove();\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "    button.disable();\r",
                     "}"
                 ],
                 "name": "click",
@@ -76,9 +92,9 @@
                     "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
                     "if (!Ext.isEmpty(target)) {\r",
                     "\r",
-                    "var window = Ext.widget(\"GroupAddWindow\");\r",
-                    "Ext.getCmp('desktopCont').add(window);\r",
-                    "window.show();\r",
+                    "    var window = Ext.widget(\"GroupAddWindow\");\r",
+                    "    Ext.getCmp('ViewportPrimaire').add(window);\r",
+                    "    window.show();\r",
                     "}"
                 ],
                 "name": "click",
@@ -109,7 +125,7 @@
                     "    });\r",
                     "    target.expand();\r",
                     "}\r",
-                    "    button.up().up().close();\r",
+                    "button.up().up().close();\r",
                     ""
                 ],
                 "name": "click",
@@ -118,6 +134,140 @@
                 "designer|controlQuery": "#groupCreateButton"
             },
             "designerId": "144cc988-420a-4aa3-8a44-870dd5054898"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getGroupUsers",
+                "fn": "getGroupUsers",
+                "designer|params": [
+                    "group",
+                    "array"
+                ],
+                "implHandler": [
+                    "if (!group.isRoot()){\r",
+                    "var me=this;\r",
+                    "Ext.Array.forEach(group.get(\"members\"), function(membre){\r",
+                    "    var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
+                    "    if (!Ext.isEmpty(someMembre)){\r",
+                    "        Ext.Array.include(array,someMembre);\r",
+                    "    }\r",
+                    "});\r",
+                    "group.eachChild(function(kid){me.getGroupUsers(kid,array);});\r",
+                    "}\r",
+                    ""
+                ]
+            },
+            "designerId": "03bf4d8d-7208-40bc-ae87-ee81d0db4237"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "openUserAddWindow",
+                "fn": "openUserAddWindow",
+                "implHandler": [
+                    "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(target)) {\r",
+                    "    var window = Ext.widget(\"UserAddWindow\");\r",
+                    "    Ext.getCmp('ViewportPrimaire').add(window);\r",
+                    "    window.show();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAddButton"
+            },
+            "designerId": "32ce4eb7-43ac-435d-8196-64a8e0e46d81"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "userSelectionAdd",
+                "fn": "userSelectionAdd",
+                "implHandler": [
+                    "var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),\"data\"),\"name\");\r",
+                    "var record = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.set(\"members\", Ext.Array.union(record.get(\"members\"),selection));\r",
+                    "Ext.getCmp(\"groupsGrid\").getSelectionModel().deselectAll();\r",
+                    "Ext.getCmp(\"groupsGrid\").getSelectionModel().select(record);\r",
+                    "button.up().up().close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userSelectionAddButton"
+            },
+            "designerId": "d506ab15-3503-437c-969b-004bf29956fb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "ArianneBuilder",
+                "fn": "ArianneBuilder",
+                "designer|params": [
+                    "node",
+                    "array"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (node.isRoot()) {\r",
+                    "    var button = Ext.widget(\"button\", {text:\"Groupes<b> ></b>\", iconCls:\"user\"});\r",
+                    "    button.on(\"click\",function(){ Ext.getCmp(\"groupsGrid\").getSelectionModel().select(node);});\r",
+                    "    array.push(button);\r",
+                    "} else {\r",
+                    "    var button = Ext.widget(\"button\", {text:node.get(\"name\")+\"<b> ></b>\", iconCls:\"user\"});\r",
+                    "    button.on(\"click\",function(){ Ext.getCmp(\"groupsGrid\").getSelectionModel().select(node);});\r",
+                    "    array.push(button);\r",
+                    "    me.ArianneBuilder(node.parentNode,array);\r",
+                    "}"
+                ]
+            },
+            "designerId": "b3ae164b-36fd-4fc8-a7a5-42b40eb42626"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "removeUserFromGroup",
+                "fn": "removeUserFromGroup",
+                "implHandler": [
+                    "var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"UsersInGroupGrid\").getSelectionModel().getSelection(),\"data\"),\"name\");\r",
+                    "var record=Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.set(\"members\", Ext.Array.difference(record.get(\"members\"),targets));\r",
+                    "Ext.getCmp(\"groupsGrid\").getSelectionModel().deselectAll();\r",
+                    "Ext.getCmp(\"groupsGrid\").getSelectionModel().select(record);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userRemoveButton"
+            },
+            "designerId": "26700983-4198-4add-8976-6e2842b7b0e7"
         }
     ]
 }

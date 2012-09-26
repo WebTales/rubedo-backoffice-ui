@@ -1,0 +1,246 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserAddWindow",
+        "designer|userAlias": "UserAddWindow",
+        "height": 300,
+        "width": 600,
+        "layout": "fit",
+        "title": "Ajouter des utilisateurs",
+        "maximizable": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen29637",
+    "designerId": "d21c61a7-09e5-467f-a13e-93a9854a919a",
+    "cn": [
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel16",
+                "title": "",
+                "store": "UsersDataStore"
+            },
+            "designerId": "7c42a553-c355-4b76-8b73-ec8120fbd692",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView16"
+                    },
+                    "designerId": "28ac541a-429f-43fd-8fc9-e161c3bd8245"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn31",
+                        "dataIndex": "name",
+                        "flex": 1,
+                        "text": "Name"
+                    },
+                    "designerId": "b6f68631-64d0-44bc-a13c-ae4d64ac0bca"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn32",
+                        "dataIndex": "email",
+                        "flex": 1,
+                        "text": "Email"
+                    },
+                    "designerId": "033c23e6-9a02-4ed5-981f-8a4f30b7c4ab"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn33",
+                        "dataIndex": "telephone",
+                        "flex": 1,
+                        "text": "Telephone"
+                    },
+                    "designerId": "27699327-9ee4-42bc-ae3c-bf5fadc5ee10"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn34",
+                        "dataIndex": "adress",
+                        "flex": 1,
+                        "text": "Adress"
+                    },
+                    "designerId": "e7fc3fb3-fee3-4477-bfaa-1e96f4240486"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn35",
+                        "dataIndex": "position",
+                        "flex": 1,
+                        "text": "Position"
+                    },
+                    "designerId": "843332c4-ce56-497a-8042-14d6afefd8ca"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn36",
+                        "dataIndex": "department",
+                        "flex": 1,
+                        "text": "Department"
+                    },
+                    "designerId": "034fbbdd-2fca-477c-b1f6-d6486c2f502d"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn37",
+                        "hidden": true,
+                        "dataIndex": "groups",
+                        "flex": 1,
+                        "text": "Groups"
+                    },
+                    "designerId": "32542093-06d4-495e-ae16-3376d70660f6"
+                },
+                {
+                    "type": "datecolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateColumn4",
+                        "hidden": true,
+                        "dataIndex": "creationDate",
+                        "flex": 1,
+                        "text": "CreationDate"
+                    },
+                    "designerId": "264f41ed-df99-47fd-8304-71bc35c6df4f"
+                },
+                {
+                    "type": "datecolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateColumn5",
+                        "hidden": true,
+                        "dataIndex": "lastUpdate",
+                        "flex": 1,
+                        "text": "LastUpdate"
+                    },
+                    "designerId": "1e7e9cdd-e0be-4025-8d60-fb424bf803a8"
+                },
+                {
+                    "type": "checkboxselectionmodel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckboxSelectionModel4"
+                    },
+                    "designerId": "ba06f1ad-21b3-4bc5-ac4d-8d47c00e70e8"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar34"
+            },
+            "designerId": "8f6a2d0c-8818-4262-9471-fde2393a18e8",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill9"
+                    },
+                    "designerId": "bf8eb351-c547-433a-b956-77020f986d9a"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton116",
+                        "id": "userSelectionAddButton",
+                        "text": "Ajouter ces utilisateurs au groupe séléctionné"
+                    },
+                    "designerId": "443ec294-ec6b-40e7-8e7f-7002e2951501"
+                }
+            ]
+        }
+    ]
+}
