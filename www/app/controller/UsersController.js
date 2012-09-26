@@ -28,8 +28,11 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getStore("UsersGroupStore").loadData(users);
     },
 
-    onButtonClick: function(button, e, options) {
-
+    removeGroup: function(button, e, options) {
+        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(target)) {
+            target.remove();
+        }
     },
 
     init: function(application) {
@@ -37,8 +40,8 @@ Ext.define('Rubedo.controller.UsersController', {
             "#groupsGrid": {
                 select: this.groupSelect
             },
-            "#groupRemoveButton": {
-                click: this.onButtonClick
+            "#groupDeleteButton": {
+                click: this.removeGroup
             }
         });
     }

@@ -26,6 +26,7 @@ Ext.define('Rubedo.store.GroupsDataStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
+            autoSync: true,
             storeId: 'GroupsDataStore',
             model: 'Rubedo.model.groupDataModel',
             proxy: {
