@@ -78,7 +78,8 @@ Ext.application({
         'wallpaperPicker',
         'themePicker',
         'accessibilityPicker',
-        'adminFUtilisateurs'
+        'adminFUtilisateurs',
+        'GroupAddWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

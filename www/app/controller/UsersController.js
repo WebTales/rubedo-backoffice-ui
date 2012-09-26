@@ -35,6 +35,31 @@ Ext.define('Rubedo.controller.UsersController', {
         }
     },
 
+    openGroupAddWindow: function(button, e, options) {
+        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(target)) {
+
+            var window = Ext.widget("GroupAddWindow");
+            Ext.getCmp('desktopCont').add(window);
+            window.show();
+        }
+    },
+
+    createGroup: function(button, e, options) {
+        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        var nameField = button.previousSibling();
+        if (nameField.isValid()) {
+            target.appendChild({
+                name:nameField.getValue(),
+                members: [ ],
+                rights: { }
+            });
+            target.expand();
+        }
+        button.up().up().close();
+
+    },
+
     init: function(application) {
         this.control({
             "#groupsGrid": {
@@ -42,6 +67,12 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#groupDeleteButton": {
                 click: this.removeGroup
+            },
+            "#groupAddButton": {
+                click: this.openGroupAddWindow
+            },
+            "#groupCreateButton": {
+                click: this.createGroup
             }
         });
     }

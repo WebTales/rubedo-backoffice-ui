@@ -843,6 +843,14 @@
                 "app/controller/UsersController.js"
             ],
             "className": "UsersController"
+        },
+        "0cc03184-ad23-4674-8d3a-2f88ad0d1aa5": {
+            "paths": [
+                "metadata/view/GroupAddWindow",
+                "app/view/override/GroupAddWindow.js",
+                "app/view/GroupAddWindow.js"
+            ],
+            "className": "GroupAddWindow"
         }
     },
     "viewOrderMap": {
@@ -889,7 +897,8 @@
             "d036c7e0-5f9d-403b-b550-4a470da98fd0",
             "360ae16f-62cb-4c81-b236-91d5583211e5",
             "89155b60-bd6b-4ba6-98c9-19a5443ffa2c",
-            "34b8ae49-5eb1-4af4-9543-71bc700c8a7a"
+            "34b8ae49-5eb1-4af4-9543-71bc700c8a7a",
+            "0cc03184-ad23-4674-8d3a-2f88ad0d1aa5"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",

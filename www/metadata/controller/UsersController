@@ -61,6 +61,63 @@
                 "designer|controlQuery": "#groupDeleteButton"
             },
             "designerId": "ba45fde9-05e0-4f40-9bf1-4ba0064daf9f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "openGroupAddWindow",
+                "fn": "openGroupAddWindow",
+                "implHandler": [
+                    "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(target)) {\r",
+                    "\r",
+                    "var window = Ext.widget(\"GroupAddWindow\");\r",
+                    "Ext.getCmp('desktopCont').add(window);\r",
+                    "window.show();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#groupAddButton"
+            },
+            "designerId": "f61e9a39-0a51-41ea-b239-15f38bc28d33"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "createGroup",
+                "fn": "createGroup",
+                "implHandler": [
+                    "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "var nameField = button.previousSibling();\r",
+                    "if (nameField.isValid()) {\r",
+                    "    target.appendChild({\r",
+                    "        name:nameField.getValue(),\r",
+                    "        members: [ ],\r",
+                    "        rights: { }\r",
+                    "    });\r",
+                    "    target.expand();\r",
+                    "}\r",
+                    "    button.up().up().close();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#groupCreateButton"
+            },
+            "designerId": "144cc988-420a-4aa3-8a44-870dd5054898"
         }
     ]
 }
