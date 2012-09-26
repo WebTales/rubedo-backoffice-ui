@@ -238,6 +238,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     majAdminfTypesCentenus: function(dataview, record, item, index, e, options) {
+        Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
         Ext.getCmp("TCfieldUp").disable();
         Ext.getCmp("TCfieldDown").disable();
         Ext.getCmp("TCfieldDeleter").disable();
@@ -333,6 +334,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);
                 Ext.getCmp('delConfirmZ').close();
+                Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             });  
 
         }

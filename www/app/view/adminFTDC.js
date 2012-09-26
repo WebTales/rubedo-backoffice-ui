@@ -112,6 +112,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
                             columns: 4,
@@ -159,6 +160,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
                             columns: 4,
@@ -195,6 +197,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
                             columns: 4,
@@ -215,6 +218,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            disabled: true,
                             headerPosition: 'bottom',
                             title: 'Fichier',
                             columns: 4,

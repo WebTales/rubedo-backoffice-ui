@@ -53,6 +53,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 Ext.getCmp('elementEditControl').setIconCls();
                 Ext.getCmp('elementIdField').setValue(null);
                 Ext.getCmp('delConfirmZ').close();
+                Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             });  
 
         }
@@ -103,7 +104,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp('elementEditControl').setIconCls();
     Ext.getCmp('elementIdField').setValue(null);
 
-
+    Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
 
     },
 
