@@ -266,6 +266,24 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",
+                        "floating": false,
+                        "itemId": "UserAdminWindow",
+                        "margin": null,
+                        "iconCls": "user_edit",
+                        "text": "Utilisateurs"
+                    },
+                    "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
                         "itemId": "menuWorkflows",
                         "margin": null,
                         "iconCls": "process-icon",

@@ -124,6 +124,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            floating: false,
+                            itemId: 'UserAdminWindow',
+                            iconCls: 'user_edit',
+                            text: 'Utilisateurs'
+                        },
+                        {
+                            xtype: 'button',
                             itemId: 'menuWorkflows',
                             iconCls: 'process-icon',
                             text: 'Workflows'

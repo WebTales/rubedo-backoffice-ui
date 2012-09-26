@@ -54,6 +54,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.themePicker',
         'Rubedo.view.GroupAddWindow',
         'Rubedo.view.UserAddWindow',
-        'Rubedo.view.MyWindow24'
+        'Rubedo.view.UserAdminWindow'
     ]
 });

@@ -6,13 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MyWindow24",
-        "height": 300,
-        "width": 600,
+        "designer|userClassName": "UserAdminWindow",
+        "designer|userAlias": "UserAdminWindow",
+        "height": 400,
+        "width": 700,
         "layout": "fit",
+        "iconCls": "user_edit",
         "title": "Gestion des utilisateurs",
+        "constrainHeader": true,
         "maximizable": true,
-        "modal": true
+        "minimizable": true,
+        "modal": false
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -59,7 +63,22 @@
                         "flex": 1,
                         "text": "Name"
                     },
-                    "designerId": "368b9a1c-061d-44d0-aff3-05e912fc26af"
+                    "designerId": "368b9a1c-061d-44d0-aff3-05e912fc26af",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField14",
+                                "allowBlank": false
+                            },
+                            "designerId": "fafcdce8-9b29-40e8-8ca4-88a5ec584db4"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -74,7 +93,22 @@
                         "flex": 1,
                         "text": "Email"
                     },
-                    "designerId": "3d84e991-4491-466b-8914-cbe4bed865e4"
+                    "designerId": "3d84e991-4491-466b-8914-cbe4bed865e4",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField15",
+                                "vtype": "email"
+                            },
+                            "designerId": "a3ab13d4-0da3-467d-8280-6adb67213a25"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -89,7 +123,21 @@
                         "flex": 1,
                         "text": "Telephone"
                     },
-                    "designerId": "2163a68b-2cd5-47f7-859c-3c578cc61656"
+                    "designerId": "2163a68b-2cd5-47f7-859c-3c578cc61656",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField16"
+                            },
+                            "designerId": "2a1b4546-5ca0-4ee7-8c81-c7d9bc821a7d"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -104,7 +152,21 @@
                         "flex": 1,
                         "text": "Adress"
                     },
-                    "designerId": "caf900dc-7fbe-4fbe-9142-fd795820029e"
+                    "designerId": "caf900dc-7fbe-4fbe-9142-fd795820029e",
+                    "cn": [
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextArea1"
+                            },
+                            "designerId": "fb5f6d8c-4961-4474-b6e2-7edeca3530e6"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -119,7 +181,21 @@
                         "flex": 1,
                         "text": "Position"
                     },
-                    "designerId": "896b20a0-2466-4174-ae0b-e528ddde3228"
+                    "designerId": "896b20a0-2466-4174-ae0b-e528ddde3228",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField17"
+                            },
+                            "designerId": "f1f79460-c829-474c-8a01-dc7c2301e989"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -134,7 +210,21 @@
                         "flex": 1,
                         "text": "Department"
                     },
-                    "designerId": "76205323-3414-4992-bef4-476c6e4630fc"
+                    "designerId": "76205323-3414-4992-bef4-476c6e4630fc",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField18"
+                            },
+                            "designerId": "369cccd4-c816-4169-b673-012ae82de264"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",
@@ -195,6 +285,18 @@
                         "designer|userClassName": "MyCheckboxSelectionModel4"
                     },
                     "designerId": "b93c27fe-d628-4ddd-b7eb-cad93152971c"
+                },
+                {
+                    "type": "gridcelleditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin1"
+                    },
+                    "designerId": "27cd5bd6-24b0-4b9c-8425-7bf2b37fc59d"
                 }
             ]
         },
@@ -221,7 +323,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton118",
-                        "text": "MyButton"
+                        "id": "userAdminAdd",
+                        "iconCls": "add",
+                        "text": "Ajouter"
                     },
                     "designerId": "aebe2732-1f70-4e9f-bbf3-c58b6aa716d8"
                 },
@@ -235,7 +339,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton117",
-                        "text": "MyButton"
+                        "id": "userAdminRemove",
+                        "iconCls": "close",
+                        "text": "Supprimer"
                     },
                     "designerId": "113f1038-7f65-4c47-baea-4250085aa700"
                 }

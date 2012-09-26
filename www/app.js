@@ -81,7 +81,7 @@ Ext.application({
         'adminFUtilisateurs',
         'GroupAddWindow',
         'UserAddWindow',
-        'MyWindow24'
+        'UserAdminWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
