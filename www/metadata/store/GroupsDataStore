@@ -24,7 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy20",
-                "url": "data/Groups.json"
+                "api": [
+                    "{\r",
+                    "     create: 'Groups/create',\r",
+                    "     read: 'data/Groups.json',\r",
+                    "     update: 'Groups/update',\r",
+                    "     destroy: 'Groups/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "e1785f69-601f-4fed-b839-5d6dcaf4b9aa",
             "cn": [
@@ -36,9 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader18"
+                        "designer|userClassName": "MyJsonReader18",
+                        "messageProperty": "message",
+                        "root": null
                     },
                     "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter4",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "c10c65aa-5737-48d2-af1e-c2bad3b2ef87"
                 }
             ]
         }

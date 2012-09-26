@@ -26,13 +26,7 @@ Ext.define('Rubedo.store.MediaViewStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'MediaViewStore',
-            model: 'Rubedo.model.mediaViewModel',
-            proxy: {
-                type: 'ajax',
-                reader: {
-                    type: 'json'
-                }
-            }
+            model: 'Rubedo.model.mediaViewModel'
         }, cfg)]);
     }
 });

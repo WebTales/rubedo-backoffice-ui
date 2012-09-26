@@ -23,7 +23,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy19",
-                "url": "data/PersonalPrefs.json"
+                "api": [
+                    "{\r",
+                    "     create: 'PersonalPrefs/create',\r",
+                    "     read: 'data/PersonalPrefs.json',\r",
+                    "     update: 'PersonalPrefs/update',\r",
+                    "     destroy: 'PersonalPrefs/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "594ae9bd-d0c2-400a-9412-4d3fb715c968",
             "cn": [
@@ -35,9 +43,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader17"
+                        "designer|userClassName": "MyJsonReader17",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "98802c47-7c19-4fbf-8ab3-8e3561b3faf6"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter3",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "df8dc517-cd20-4db5-9c8e-fe6fea5a2a6c"
                 }
             ]
         }

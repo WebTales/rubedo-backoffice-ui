@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Blocs.json',
+                api: {
+                    create: 'Blocs/create',
+                    read: 'data/Blocs.json',
+                    update: 'Blocs/update',
+                    destroy: 'Blocs/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

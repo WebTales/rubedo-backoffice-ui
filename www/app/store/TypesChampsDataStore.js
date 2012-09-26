@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             model: 'Rubedo.model.typesChampsDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/TypesChamps.json',
+                api: {
+                    create: 'TypesChamps/create',
+                    read: 'data/TypesChamps.json',
+                    update: 'TypesChamps/update',
+                    destroy: 'TypesChamps/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

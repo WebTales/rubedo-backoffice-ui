@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.ThemesDataJson', {
             model: 'Rubedo.model.themeDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Themes.json',
+                api: {
+                    create: 'Themes/create',
+                    read: 'data/Themes.json',
+                    update: 'Themes/update',
+                    destroy: 'Themes/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

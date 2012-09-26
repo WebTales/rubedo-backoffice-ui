@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.MediasDataStore', {
             model: 'Rubedo.model.mediaDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Medias.json',
+                api: {
+                    create: 'Medias/create',
+                    read: 'data/Medias.json',
+                    update: 'Medias/update',
+                    destroy: 'Medias/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             },
             groupers: {

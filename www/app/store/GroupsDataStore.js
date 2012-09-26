@@ -30,9 +30,20 @@ Ext.define('Rubedo.store.GroupsDataStore', {
             model: 'Rubedo.model.groupDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Groups.json',
+                api: {
+                    create: 'Groups/create',
+                    read: 'data/Groups.json',
+                    update: 'Groups/update',
+                    destroy: 'Groups/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

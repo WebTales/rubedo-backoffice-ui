@@ -24,7 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy18",
-                "url": "data/Themes.json"
+                "api": [
+                    "{\r",
+                    "     create: 'Themes/create',\r",
+                    "     read: 'data/Themes.json',\r",
+                    "     update: 'Themes/update',\r",
+                    "     destroy: 'Themes/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "613243ea-dd48-47a7-b9a6-c5e5c7e02318",
             "cn": [
@@ -36,9 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader16"
+                        "designer|userClassName": "MyJsonReader16",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "a004aa16-d902-4300-96ff-220791803a8c"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter6",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "3beaaa21-42aa-4a88-bb61-ca9f8c0c1868"
                 }
             ]
         }

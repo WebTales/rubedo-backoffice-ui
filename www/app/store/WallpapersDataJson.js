@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
             model: 'Rubedo.model.wallpaperDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Wallpapers.json',
+                api: {
+                    create: 'Wallpapers/create',
+                    read: 'data/Wallpapers.json',
+                    update: 'Wallpapers/update',
+                    destroy: 'Wallpapers/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'daya'
                 }
             }
         }, cfg)]);

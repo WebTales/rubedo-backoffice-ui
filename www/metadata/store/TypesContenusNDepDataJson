@@ -24,6 +24,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy2",
+                "api": null,
                 "url": "data/Contenus.json"
             },
             "designerId": "e932b8ec-e36f-41ec-a6ae-f3d83c39751e",
@@ -36,7 +37,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2"
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": null,
+                        "root": null
                     },
                     "designerId": "2fcd38bb-d3ae-4190-bcce-789de820be91"
                 }

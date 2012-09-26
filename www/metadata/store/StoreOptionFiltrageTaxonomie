@@ -9,37 +9,11 @@
         "designer|userClassName": "StoreOptionFiltrageTaxonomie",
         "autoLoad": true,
         "storeId": "MyJsonStore7",
-        "data": "[\n{option:'exacte'},\n{option:'récursif'},\n{option:'ignoré'}\n]"
+        "data": "[\r\n{option:'exacte'},\r\n{option:'récursif'},\r\n{option:'ignoré'}\r\n]"
     },
     "id": "ExtBox1-ext-gen13161",
     "designerId": "adf83458-b18b-4fc2-9594-c78702fe9a0e",
     "cn": [
-        {
-            "type": "ajaxproxy",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyAjaxProxy8"
-            },
-            "designerId": "c78c57a4-c4d5-41d3-bab3-b82da1dbda6d",
-            "cn": [
-                {
-                    "type": "jsonreader",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyJsonReader6"
-                    },
-                    "designerId": "997be2e1-4143-42b0-a556-dc1fde39de19"
-                }
-            ]
-        },
         {
             "type": "datafield",
             "reference": {

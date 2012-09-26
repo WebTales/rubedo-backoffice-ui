@@ -29,9 +29,21 @@ Ext.define('Rubedo.store.PersonalPrefsStore', {
             model: 'Rubedo.model.personalPrefsDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/PersonalPrefs.json',
+                api: {
+                    create: 'PersonalPrefs/create',
+                    read: 'data/PersonalPrefs.json',
+                    update: 'PersonalPrefs/update',
+                    destroy: 'PersonalPrefs/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

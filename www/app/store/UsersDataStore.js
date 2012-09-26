@@ -30,9 +30,21 @@ Ext.define('Rubedo.store.UsersDataStore', {
             model: 'Rubedo.model.userDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Users.json',
+                api: {
+                    create: 'Users/create',
+                    read: 'data/Users.json',
+                    update: 'Users/update',
+                    destroy: 'Users/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

@@ -24,7 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy7",
-                "url": "data/TypesChamps.json"
+                "api": [
+                    "{\r",
+                    "     create: 'TypesChamps/create',\r",
+                    "     read: 'data/TypesChamps.json',\r",
+                    "     update: 'TypesChamps/update',\r",
+                    "     destroy: 'TypesChamps/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "03cd85d3-3b8e-4d44-8727-cfd6c373ca65",
             "cn": [
@@ -36,9 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader5"
+                        "designer|userClassName": "MyJsonReader5",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "8f0a0e7b-9588-47bf-817f-73191b86c86e"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter9",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "c7be722f-bd31-4ab1-a7d1-e3a25eb9e4e6"
                 }
             ]
         }

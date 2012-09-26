@@ -24,7 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy7",
-                "url": "data/Blocs.json"
+                "api": [
+                    "{\r",
+                    "     create: 'Blocs/create',\r",
+                    "     read: 'data/Blocs.json',\r",
+                    "     update: 'Blocs/update',\r",
+                    "     destroy: 'Blocs/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "6ca4fab4-aed9-4c86-9dd0-023690b06325",
             "cn": [
@@ -36,9 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader5"
+                        "designer|userClassName": "MyJsonReader5",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "c161b047-9b55-4bdc-8f79-b2a61e227ef8"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter10",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "9d622649-ea01-4b11-b016-5f0f2a4ab102"
                 }
             ]
         }

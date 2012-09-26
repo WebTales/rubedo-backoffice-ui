@@ -33,12 +33,6 @@ Ext.define('Rubedo.store.StoreOptionFiltrageTaxonomie', {
                     option: 'ignoré'
                 }
             ],
-            proxy: {
-                type: 'ajax',
-                reader: {
-                    type: 'json'
-                }
-            },
             fields: [
                 {
                     name: 'option',

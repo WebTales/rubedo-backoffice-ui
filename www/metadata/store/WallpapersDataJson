@@ -24,7 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy17",
-                "url": "data/Wallpapers.json"
+                "api": [
+                    "{\r",
+                    "     create: 'Wallpapers/create',\r",
+                    "     read: 'data/Wallpapers.json',\r",
+                    "     update: 'Wallpapers/update',\r",
+                    "     destroy: 'Wallpapers/delete'\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "a1a0785f-52fe-48c9-bf8f-412a52763d36",
             "cn": [
@@ -36,9 +44,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader15"
+                        "designer|userClassName": "MyJsonReader15",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "6dbcaea5-5fba-4e0e-95c2-f35228b140b5"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter7",
+                        "encode": true,
+                        "root": "daya"
+                    },
+                    "designerId": "05e76cdc-6583-4de4-b1b1-06002cc5c25e"
                 }
             ]
         }

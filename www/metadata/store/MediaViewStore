@@ -12,33 +12,5 @@
         "model": "mediaViewModel"
     },
     "id": "ExtBox1-ext-gen6467",
-    "designerId": "12d05bbd-4ea4-4909-8d63-321b7998a5e0",
-    "cn": [
-        {
-            "type": "ajaxproxy",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyAjaxProxy16"
-            },
-            "designerId": "e254a3af-412b-48c4-afdc-3b731a69ea27",
-            "cn": [
-                {
-                    "type": "jsonreader",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyJsonReader14"
-                    },
-                    "designerId": "12a6637d-f7e0-4788-a4b3-b2a1ef8b39dc"
-                }
-            ]
-        }
-    ]
+    "designerId": "12d05bbd-4ea4-4909-8d63-321b7998a5e0"
 }
