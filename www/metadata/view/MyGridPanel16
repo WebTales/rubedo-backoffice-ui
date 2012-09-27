@@ -1,0 +1,355 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyGridPanel16",
+        "designer|userAlias": "mygridpanel16",
+        "title": "",
+        "store": "UsersDataStore"
+    },
+    "id": "ExtBox1-ext-gen2236",
+    "designerId": "73e60547-6188-4b20-9a1a-e3f085be455a",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView16"
+            },
+            "designerId": "4c510eed-cbd9-419d-b3eb-b323b1deb924"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn31",
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "Nom"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "368b9a1c-061d-44d0-aff3-05e912fc26af",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField14",
+                        "allowBlank": false
+                    },
+                    "designerId": "fafcdce8-9b29-40e8-8ca4-88a5ec584db4"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn32",
+                "dataIndex": "email",
+                "flex": 1,
+                "text": "Email"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "3d84e991-4491-466b-8914-cbe4bed865e4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField15",
+                        "vtype": "email"
+                    },
+                    "designerId": "a3ab13d4-0da3-467d-8280-6adb67213a25"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn33",
+                "dataIndex": "telephone",
+                "flex": 1,
+                "text": "Téléphone"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "2163a68b-2cd5-47f7-859c-3c578cc61656",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField16"
+                    },
+                    "designerId": "2a1b4546-5ca0-4ee7-8c81-c7d9bc821a7d"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn34",
+                "dataIndex": "adress",
+                "flex": 1,
+                "text": "Adresse"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "caf900dc-7fbe-4fbe-9142-fd795820029e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextArea1"
+                    },
+                    "designerId": "fb5f6d8c-4961-4474-b6e2-7edeca3530e6"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn35",
+                "dataIndex": "position",
+                "flex": 1,
+                "text": "Poste"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "896b20a0-2466-4174-ae0b-e528ddde3228",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField17"
+                    },
+                    "designerId": "f1f79460-c829-474c-8a01-dc7c2301e989"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn36",
+                "dataIndex": "department",
+                "flex": 1,
+                "text": "Département"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "76205323-3414-4992-bef4-476c6e4630fc",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField18"
+                    },
+                    "designerId": "369cccd4-c816-4169-b673-012ae82de264"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn37",
+                "hidden": true,
+                "dataIndex": "groups",
+                "flex": 1,
+                "text": "Groupes"
+            },
+            "designerId": "66a77993-53e8-4663-a7ab-3f86285d5b84"
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyDateColumn4",
+                "hidden": true,
+                "dataIndex": "creationDate",
+                "flex": 1,
+                "text": "Création"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "64e45ed7-df7d-4a13-8d2c-2d801f290fa6",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn5",
+                "hidden": true,
+                "dataIndex": "lastUpdate",
+                "flex": 1,
+                "text": "Dernière Modification"
+            },
+            "designerId": "c74bf92a-ddaf-411b-a612-f7cd46d8ee95"
+        },
+        {
+            "type": "checkboxselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.CheckboxModel",
+            "userConfig": {
+                "designer|userClassName": "MyCheckboxSelectionModel4"
+            },
+            "designerId": "b93c27fe-d628-4ddd-b7eb-cad93152971c"
+        },
+        {
+            "type": "gridcelleditingplugin",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": "Ext.grid.plugin.CellEditing",
+            "userConfig": {
+                "designer|userClassName": "MyCellEditingPlugin1"
+            },
+            "designerId": "27cd5bd6-24b0-4b9c-8425-7bf2b37fc59d"
+        }
+    ]
+}
