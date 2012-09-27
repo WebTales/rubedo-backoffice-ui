@@ -81,7 +81,8 @@ Ext.application({
         'adminFUtilisateurs',
         'GroupAddWindow',
         'UserAddWindow',
-        'UserAdminWindow'
+        'UserAdminWindow',
+        'MyGridPanel16'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

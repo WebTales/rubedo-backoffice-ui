@@ -17,13 +17,18 @@ Ext.define('Rubedo.view.UserAdminWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.UserAdminWindow',
 
+    requires: [
+        'Rubedo.view.MyGridPanel16'
+    ],
+
     height: 400,
+    id: 'UserAdminWindow',
     width: 700,
     layout: {
         type: 'fit'
     },
     iconCls: 'user_edit',
-    title: 'Gestion des utilisateurs',
+    title: 'Utilisateurs',
     constrainHeader: true,
     maximizable: true,
     minimizable: true,
@@ -35,99 +40,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'gridpanel',
-                    title: '',
-                    store: 'UsersDataStore',
-                    viewConfig: {
-
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'name',
-                            flex: 1,
-                            text: 'Name',
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'email',
-                            flex: 1,
-                            text: 'Email',
-                            editor: {
-                                xtype: 'textfield',
-                                vtype: 'email'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'telephone',
-                            flex: 1,
-                            text: 'Telephone',
-                            editor: {
-                                xtype: 'textfield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'adress',
-                            flex: 1,
-                            text: 'Adress',
-                            editor: {
-                                xtype: 'textareafield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'position',
-                            flex: 1,
-                            text: 'Position',
-                            editor: {
-                                xtype: 'textfield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'department',
-                            flex: 1,
-                            text: 'Department',
-                            editor: {
-                                xtype: 'textfield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            hidden: true,
-                            dataIndex: 'groups',
-                            flex: 1,
-                            text: 'Groups'
-                        },
-                        {
-                            xtype: 'datecolumn',
-                            hidden: true,
-                            dataIndex: 'creationDate',
-                            flex: 1,
-                            text: 'CreationDate'
-                        },
-                        {
-                            xtype: 'datecolumn',
-                            hidden: true,
-                            dataIndex: 'lastUpdate',
-                            flex: 1,
-                            text: 'LastUpdate'
-                        }
-                    ],
-                    selModel: Ext.create('Ext.selection.CheckboxModel', {
-
-                    }),
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting'
-                        })
-                    ]
+                    xtype: 'mygridpanel16'
                 }
             ],
             dockedItems: [
