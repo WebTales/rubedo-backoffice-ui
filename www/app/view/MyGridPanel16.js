@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
     ],
 
     title: '',
-    store: 'UsersDataStore',
+    store: 'UsersAdminDataStore',
 
     initComponent: function() {
         var me = this;

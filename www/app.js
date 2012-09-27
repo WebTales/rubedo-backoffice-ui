@@ -56,7 +56,8 @@ Ext.application({
         'PersonalPrefsStore',
         'GroupsDataStore',
         'UsersDataStore',
-        'UsersGroupStore'
+        'UsersGroupStore',
+        'UsersAdminDataStore'
     ],
     views: [
         'MyContainer',

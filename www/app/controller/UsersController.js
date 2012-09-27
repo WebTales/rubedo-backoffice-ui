@@ -76,6 +76,10 @@ Ext.define('Rubedo.controller.UsersController', {
 
     },
 
+    onUserAdminWindowDestroy: function(abstractcomponent, options) {
+        Ext.getStore("UsersAdminDataStore").removeAll();
+    },
+
     openUserAddWindow: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         if (!Ext.isEmpty(target)) {
@@ -115,6 +119,11 @@ Ext.define('Rubedo.controller.UsersController', {
         button.up().up().getComponent(0).getStore().remove(targets);
     },
 
+    onUserAdminWindowRender: function(abstractcomponent, options) {
+        Ext.getStore("UsersAdminDataStore").clearFilter();
+        Ext.getStore("UsersAdminDataStore").load();
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -124,7 +133,7 @@ Ext.define('Rubedo.controller.UsersController', {
                     Ext.Array.include(array,someMembre);
                 }
             });
-            group.eachChild(function(kid){me.getGroupUsers(kid,array);});
+            //group.eachChild(function(kid){me.getGroupUsers(kid,array);});
         }
 
     },
@@ -156,6 +165,10 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#groupCreateButton": {
                 click: this.createGroup
+            },
+            "#UserAdminWindow": {
+                destroy: this.onUserAdminWindowDestroy,
+                render: this.onUserAdminWindowRender
             },
             "#userAddButton": {
                 click: this.openUserAddWindow

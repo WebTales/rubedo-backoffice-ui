@@ -136,6 +136,26 @@
             "designerId": "144cc988-420a-4aa3-8a44-870dd5054898"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onUserAdminWindowDestroy",
+                "fn": "onUserAdminWindowDestroy",
+                "implHandler": [
+                    "Ext.getStore(\"UsersAdminDataStore\").removeAll();"
+                ],
+                "name": "destroy",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#UserAdminWindow"
+            },
+            "designerId": "3375b5d3-7c29-4e47-8ec3-7973d618e5b9"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -158,7 +178,7 @@
                     "            Ext.Array.include(array,someMembre);\r",
                     "        }\r",
                     "    });\r",
-                    "    group.eachChild(function(kid){me.getGroupUsers(kid,array);});\r",
+                    "    //group.eachChild(function(kid){me.getGroupUsers(kid,array);});\r",
                     "}\r",
                     ""
                 ]
@@ -313,6 +333,27 @@
                 "designer|controlQuery": "#userAdminRemove"
             },
             "designerId": "17aee2a2-5dba-41fd-b861-1a82d7a8fb72"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onUserAdminWindowRender",
+                "fn": "onUserAdminWindowRender",
+                "implHandler": [
+                    "Ext.getStore(\"UsersAdminDataStore\").clearFilter();\r",
+                    "Ext.getStore(\"UsersAdminDataStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#UserAdminWindow"
+            },
+            "designerId": "f846cc49-b3e2-43ce-8275-ace5d5099d69"
         }
     ]
 }
