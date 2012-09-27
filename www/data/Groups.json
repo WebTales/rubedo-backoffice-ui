@@ -1,23 +1,41 @@
 {
-        "expanded": true,
-        "children": [
-{
-	"name": "D\u00e9faut",
-	"rights": [],
-	"members": [],
-	"iconCls": "user",
-	"children": [],
-	"version": 1,
-	"lastUpdateUser": {
-		"id": 1,
-		"login": "jbourdin",
-		"fullName": "Julien Bourdin"
-	},
-	"createUser": {
-		"id": 1,
-		"login": "jbourdin",
-		"fullName": "Julien Bourdin"
-	},
-	"id": "506435e9c64804b804000004"
+	"expanded": true,
+	"children": {
+		"name": "D\u00e9faut",
+		"rights": [],
+		"members": [],
+		"iconCls": "user",
+		"children": [
+			{
+				"name": "test",
+				"rights": [],
+				"members": [],
+				"id": "506449d3c648047c17000000",
+				"version": 1,
+				"parentId": "5064499fc648040914000008",
+				"lastUpdateUser": {
+					"id": 1,
+					"login": "jbourdin",
+					"fullName": "Julien Bourdin"
+				},
+				"createUser": {
+					"id": 1,
+					"login": "jbourdin",
+					"fullName": "Julien Bourdin"
+				}
+			}
+		],
+		"version": 1,
+		"lastUpdateUser": {
+			"id": 1,
+			"login": "jbourdin",
+			"fullName": "Julien Bourdin"
+		},
+		"createUser": {
+			"id": 1,
+			"login": "jbourdin",
+			"fullName": "Julien Bourdin"
+		},
+		"id": "5064499fc648040914000008"
+	}
 }
-]}
