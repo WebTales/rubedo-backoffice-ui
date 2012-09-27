@@ -51,6 +51,32 @@
                 "name": "members"
             },
             "designerId": "41ca5f57-01c1-4f23-bcc8-df2ae47c15f6"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field101",
+                "name": "id"
+            },
+            "designerId": "de0566ed-31d7-47b7-8a96-eb09a6abbb04"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field102",
+                "name": "version"
+            },
+            "designerId": "4211fc0e-0178-477d-b1ca-8a7816bf2c45"
         }
     ]
 }

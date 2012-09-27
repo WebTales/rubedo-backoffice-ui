@@ -27,6 +27,12 @@ Ext.define('Rubedo.model.groupDataModel', {
         },
         {
             name: 'members'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'version'
         }
     ]
 });

@@ -33,6 +33,12 @@ Ext.define('Rubedo.model.iconDataModel', {
         {
             name: 'image',
             type: 'string'
+        },
+        {
+            name: 'window'
+        },
+        {
+            name: 'recordId'
         }
     ]
 });
