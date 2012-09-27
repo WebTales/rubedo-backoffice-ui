@@ -380,7 +380,7 @@
                     "    }\r",
                     "    enrobage.getComponent(0).insert(1,operateur);\r",
                     "    if (Ext.getCmp('assisstantRE4').items.items.length>2){\r",
-                    "    enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));\r",
+                    "        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));\r",
                     "    }\r",
                     "\r",
                     "    Ext.getCmp('assisstantRE4').add(enrobage);\r",

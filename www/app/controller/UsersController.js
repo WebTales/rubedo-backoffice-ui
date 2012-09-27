@@ -102,6 +102,19 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp("groupsGrid").getSelectionModel().select(record);
     },
 
+    newUser: function(button, e, options) {
+        var newUser = Ext.create("Rubedo.model.userDataModel",{
+            name:"Nouvel Utilisateur",
+            creationDate:Ext.Date.now()
+        });
+        button.up().up().getComponent(0).getStore().add(newUser);
+    },
+
+    userRemove: function(button, e, options) {
+        var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();
+        button.up().up().getComponent(0).getStore().remove(targets);
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -152,6 +165,12 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#userRemoveButton": {
                 click: this.removeUserFromGroup
+            },
+            "#userAdminAdd": {
+                click: this.newUser
+            },
+            "#userAdminRemove": {
+                click: this.userRemove
             }
         });
     }

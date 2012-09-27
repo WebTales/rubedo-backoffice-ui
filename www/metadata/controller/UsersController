@@ -151,14 +151,14 @@
                 ],
                 "implHandler": [
                     "if (!group.isRoot()){\r",
-                    "var me=this;\r",
-                    "Ext.Array.forEach(group.get(\"members\"), function(membre){\r",
-                    "    var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
-                    "    if (!Ext.isEmpty(someMembre)){\r",
-                    "        Ext.Array.include(array,someMembre);\r",
-                    "    }\r",
-                    "});\r",
-                    "group.eachChild(function(kid){me.getGroupUsers(kid,array);});\r",
+                    "    var me=this;\r",
+                    "    Ext.Array.forEach(group.get(\"members\"), function(membre){\r",
+                    "        var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
+                    "        if (!Ext.isEmpty(someMembre)){\r",
+                    "            Ext.Array.include(array,someMembre);\r",
+                    "        }\r",
+                    "    });\r",
+                    "    group.eachChild(function(kid){me.getGroupUsers(kid,array);});\r",
                     "}\r",
                     ""
                 ]
@@ -268,6 +268,51 @@
                 "designer|controlQuery": "#userRemoveButton"
             },
             "designerId": "26700983-4198-4add-8976-6e2842b7b0e7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "newUser",
+                "fn": "newUser",
+                "implHandler": [
+                    "var newUser = Ext.create(\"Rubedo.model.userDataModel\",{\r",
+                    "    name:\"Nouvel Utilisateur\",\r",
+                    "    creationDate:Ext.Date.now()\r",
+                    "});\r",
+                    "button.up().up().getComponent(0).getStore().add(newUser);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAdminAdd"
+            },
+            "designerId": "b016e231-6e64-470a-9d72-9b5056c18eac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "userRemove",
+                "fn": "userRemove",
+                "implHandler": [
+                    "var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();\r",
+                    "button.up().up().getComponent(0).getStore().remove(targets);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAdminRemove"
+            },
+            "designerId": "17aee2a2-5dba-41fd-b861-1a82d7a8fb72"
         }
     ]
 }
