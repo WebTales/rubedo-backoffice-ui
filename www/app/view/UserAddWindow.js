@@ -17,7 +17,12 @@ Ext.define('Rubedo.view.UserAddWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.UserAddWindow',
 
+    requires: [
+        'Rubedo.view.MyGridPanel16'
+    ],
+
     height: 300,
+    id: 'UserAddWindow',
     width: 600,
     layout: {
         type: 'fit'
@@ -32,74 +37,8 @@ Ext.define('Rubedo.view.UserAddWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'gridpanel',
-                    title: '',
-                    store: 'UsersDataStore',
-                    viewConfig: {
-
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'name',
-                            flex: 1,
-                            text: 'Name'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'email',
-                            flex: 1,
-                            text: 'Email'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'telephone',
-                            flex: 1,
-                            text: 'Telephone'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'adress',
-                            flex: 1,
-                            text: 'Adress'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'position',
-                            flex: 1,
-                            text: 'Position'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'department',
-                            flex: 1,
-                            text: 'Department'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            hidden: true,
-                            dataIndex: 'groups',
-                            flex: 1,
-                            text: 'Groups'
-                        },
-                        {
-                            xtype: 'datecolumn',
-                            hidden: true,
-                            dataIndex: 'creationDate',
-                            flex: 1,
-                            text: 'CreationDate'
-                        },
-                        {
-                            xtype: 'datecolumn',
-                            hidden: true,
-                            dataIndex: 'lastUpdate',
-                            flex: 1,
-                            text: 'LastUpdate'
-                        }
-                    ],
-                    selModel: Ext.create('Ext.selection.CheckboxModel', {
-
-                    })
+                    xtype: 'mygridpanel16',
+                    store: 'UsersDataStore'
                 }
             ],
             dockedItems: [

@@ -119,12 +119,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
             ],
             selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-            }),
-            plugins: [
-                Ext.create('Ext.grid.plugin.CellEditing', {
-                    ptype: 'cellediting'
-                })
-            ]
+            })
         });
 
         me.callParent(arguments);

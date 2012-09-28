@@ -143,12 +143,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onUserAdminWindowDestroy",
-                "fn": "onUserAdminWindowDestroy",
+                "designer|userClassName": "onWindowBeforeClose",
+                "fn": "onWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"UsersAdminDataStore\").removeAll();"
                 ],
-                "name": "destroy",
+                "name": "beforeclose",
                 "scope": "me",
                 "designer|targetType": "Ext.window.Window",
                 "designer|controlQuery": "#UserAdminWindow"
@@ -342,18 +342,79 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onUserAdminWindowRender",
-                "fn": "onUserAdminWindowRender",
+                "designer|userClassName": "onWindowShow",
+                "fn": "onWindowShow",
                 "implHandler": [
                     "Ext.getStore(\"UsersAdminDataStore\").clearFilter();\r",
                     "Ext.getStore(\"UsersAdminDataStore\").load();"
                 ],
-                "name": "render",
+                "name": "show",
                 "scope": "me",
                 "designer|targetType": "Ext.window.Window",
                 "designer|controlQuery": "#UserAdminWindow"
             },
             "designerId": "f846cc49-b3e2-43ce-8275-ace5d5099d69"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainWindowRender",
+                "fn": "onMainWindowRender",
+                "implHandler": [
+                    "Ext.getStore(\"UsersDataStore\").load();\r",
+                    "Ext.getStore(\"UsersDataStore\").clearFilter();"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#adminFUtilisateurs"
+            },
+            "designerId": "369e4812-8da1-45b1-b858-c405863f003e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowBeforeClose2",
+                "fn": "onWindowBeforeClose2",
+                "implHandler": [
+                    "Ext.getStore(\"UsersDataStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#adminFUtilisateurs"
+            },
+            "designerId": "32971f1d-2fcc-4fc8-b9ee-947e1e17c79e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowBeforeClose1",
+                "fn": "onWindowBeforeClose1",
+                "implHandler": [
+                    "Ext.getStore(\"UsersDataStore\").clearFilter();"
+                ],
+                "name": "beforeclose",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#UserAddWindow"
+            },
+            "designerId": "70ef9ae5-0d90-4cac-ae92-b3ea47a49aeb"
         }
     ]
 }

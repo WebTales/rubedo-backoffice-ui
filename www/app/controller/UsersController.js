@@ -76,7 +76,7 @@ Ext.define('Rubedo.controller.UsersController', {
 
     },
 
-    onUserAdminWindowDestroy: function(abstractcomponent, options) {
+    onWindowBeforeClose: function(panel, options) {
         Ext.getStore("UsersAdminDataStore").removeAll();
     },
 
@@ -119,9 +119,22 @@ Ext.define('Rubedo.controller.UsersController', {
         button.up().up().getComponent(0).getStore().remove(targets);
     },
 
-    onUserAdminWindowRender: function(abstractcomponent, options) {
+    onWindowShow: function(abstractcomponent, options) {
         Ext.getStore("UsersAdminDataStore").clearFilter();
         Ext.getStore("UsersAdminDataStore").load();
+    },
+
+    onMainWindowRender: function(abstractcomponent, options) {
+        Ext.getStore("UsersDataStore").load();
+        Ext.getStore("UsersDataStore").clearFilter();
+    },
+
+    onWindowBeforeClose2: function(panel, options) {
+        Ext.getStore("UsersDataStore").removeAll();
+    },
+
+    onWindowBeforeClose1: function(panel, options) {
+        Ext.getStore("UsersDataStore").clearFilter();
     },
 
     getGroupUsers: function(group, array) {
@@ -167,8 +180,8 @@ Ext.define('Rubedo.controller.UsersController', {
                 click: this.createGroup
             },
             "#UserAdminWindow": {
-                destroy: this.onUserAdminWindowDestroy,
-                render: this.onUserAdminWindowRender
+                beforeclose: this.onWindowBeforeClose,
+                show: this.onWindowShow
             },
             "#userAddButton": {
                 click: this.openUserAddWindow
@@ -184,6 +197,13 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#userAdminRemove": {
                 click: this.userRemove
+            },
+            "#adminFUtilisateurs": {
+                render: this.onMainWindowRender,
+                beforeclose: this.onWindowBeforeClose2
+            },
+            "#UserAddWindow": {
+                beforeclose: this.onWindowBeforeClose1
             }
         });
     }
