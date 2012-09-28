@@ -33,7 +33,7 @@ Ext.define('Rubedo.store.GroupsDataStore', {
                 type: 'ajax',
                 api: {
                     create: 'groups/create',
-                    read: 'data/Groups.json',
+                    read: 'groups/tree',
                     update: 'groups/update',
                     destroy: 'groups/delete'
                 },

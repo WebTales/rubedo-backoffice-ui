@@ -17,9 +17,6 @@ Ext.define('Rubedo.model.groupDataModel', {
     extend: 'Ext.data.Model',
     alias: 'model.groupDataModel',
 
-    clientIdProperty: 'children',
-    idProperty: 'id',
-
     fields: [
         {
             name: 'name',

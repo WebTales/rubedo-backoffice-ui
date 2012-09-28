@@ -29,7 +29,7 @@
                 "api": [
                     "{\r",
                     "     create: 'groups/create',\r",
-                    "     read: 'data/Groups.json',\r",
+                    "     read: 'groups/tree',\r",
                     "     update: 'groups/update',\r",
                     "     destroy: 'groups/delete'\r",
                     "}"
