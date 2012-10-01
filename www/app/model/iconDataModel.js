@@ -35,10 +35,7 @@ Ext.define('Rubedo.model.iconDataModel', {
             type: 'string'
         },
         {
-            name: 'window'
-        },
-        {
-            name: 'recordId'
+            name: 'actions'
         }
     ]
 });

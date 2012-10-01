@@ -147,9 +147,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 var nIcone = Ext.widget('iconeBureau');
                 nIcone.setTitle(icone.data.text);
                 abstractcomponent.add(nIcone);
+                console.log(icone.data.actions);
                 nIcone.setPosition(icone.data.posX, icone.data.posY);
                 nIcone.getComponent(0).setSrc(icone.data.image);
-                nIcone.getEl().on("dblclick", function(){console.log("test");});
+                nIcone.getEl().on("dblclick", function(){});
             }); 
         }});
         abstractcomponent.getEl().on('contextmenu', function(e){

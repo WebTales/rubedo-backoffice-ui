@@ -25,7 +25,7 @@ Ext.define('Rubedo.store.GroupsDataStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             storeId: 'GroupsDataStore',
             model: 'Rubedo.model.groupDataModel',
@@ -44,7 +44,7 @@ Ext.define('Rubedo.store.GroupsDataStore', {
 
                         try {
                             data = Ext.decode(response.responseText);
-                            if (Ext.isDefined(data.data)){data.children=data.data;}// hihi
+                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
                             return this.readRecords(data);
                         } catch (ex) {
                             error = new Ext.data.ResultSet({

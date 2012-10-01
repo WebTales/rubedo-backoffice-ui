@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.EnteteV', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.entete',
 
-    height: 40,
+    height: 46,
     id: 'entete',
 
     initComponent: function() {
@@ -28,8 +28,8 @@ Ext.define('Rubedo.view.EnteteV', {
                 {
                     xtype: 'button',
                     id: 'boutonPincipalInterface',
-                    scale: 'medium',
-                    text: '<img src="resources/images/KECMlogo.png">'
+                    icon: 'resources/images/logoRubedo.png',
+                    scale: 'large'
                 },
                 {
                     xtype: 'tbseparator'

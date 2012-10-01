@@ -3,6 +3,17 @@
 		"text": "Icone 1",
 		"posX": 160,
 		"posY": 180,
-		"image": "resources/icones/red/64x64/pencil.png"
+		"image": "resources/icones/red/64x64/pencil.png",
+		"actions": [
+			{
+				"type":"openWindow",
+				"target":"adminFTaxonomie"
+			},
+			{
+				"type":"selectRecord",
+				"target":"adminFTaxonomieGrid",
+				"recordId":"506441f8c64804fa13000000"
+			}			
+		]
 	}
 ]

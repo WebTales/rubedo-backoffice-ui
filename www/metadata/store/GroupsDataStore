@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "GroupsDataStore",
         "designer|userAlias": "GroupsDataStore",
-        "autoLoad": true,
+        "autoLoad": false,
         "autoSync": true,
         "storeId": "GroupsDataStore",
         "model": "groupDataModel",
@@ -72,7 +72,7 @@
                                     " \r",
                                     "        try {\r",
                                     "            data = Ext.decode(response.responseText);\r",
-                                    "            if (Ext.isDefined(data.data)){data.children=data.data;}// hihi\r",
+                                    "            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix\r",
                                     "            return this.readRecords(data);\r",
                                     "        } catch (ex) {\r",
                                     "            error = new Ext.data.ResultSet({\r",
