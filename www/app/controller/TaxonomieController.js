@@ -24,7 +24,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         'nouveauTaxoFenetre'
     ],
 
-    majTaxo: function(tablepanel, record, item, index, e, options) {
+    onGridpanelSelect: function(selModel, record, index, options) {
+        var tablepanel=Ext.getCmp("AdminfTaxonomieGrid");
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre);}
@@ -167,7 +168,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     init: function(application) {
         this.control({
             "#AdminfTaxonomieGrid": {
-                itemclick: this.majTaxo
+                select: this.onGridpanelSelect
             },
             "#boutonSupprimerTermesTaxo": {
                 click: this.supprimeTerme

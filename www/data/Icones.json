@@ -1,9 +1,9 @@
 [
 	{
-		"text": "Icone 1",
+		"text": "Vocabulaire 1",
 		"posX": 160,
 		"posY": 180,
-		"image": "resources/icones/red/64x64/pencil.png",
+		"image": "resources/icones/blue/64x64/tag.png",
 		"actions": [
 			{
 				"type":"openWindow",
@@ -11,7 +11,7 @@
 			},
 			{
 				"type":"selectRecord",
-				"target":"adminFTaxonomieGrid",
+				"target":"AdminfTaxonomieGrid",
 				"recordId":"506441f8c64804fa13000000"
 			}			
 		]

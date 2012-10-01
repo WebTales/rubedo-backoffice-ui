@@ -147,10 +147,33 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 var nIcone = Ext.widget('iconeBureau');
                 nIcone.setTitle(icone.data.text);
                 abstractcomponent.add(nIcone);
-                console.log(icone.data.actions);
+                nIcone.actions=icone.get("actions");
                 nIcone.setPosition(icone.data.posX, icone.data.posY);
                 nIcone.getComponent(0).setSrc(icone.data.image);
-                nIcone.getEl().on("dblclick", function(){});
+                nIcone.getEl().on("dblclick", function(){
+                    Ext.Array.forEach(nIcone.actions, function(action){
+                        if (action.type=="openWindow") { 
+                            var fenetre = Ext.getCmp(action.target);
+                            if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+                            else {
+                                fenetre = Ext.widget(action.target);
+                                Ext.getCmp('desktopCont').add(fenetre);
+                                if (Ext.isDefined(window.innerHeight)) {
+                                    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                                    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                                }
+                                fenetre.show();
+                            }
+                        }else if (action.type=="selectRecord") { 
+                            var target=Ext.getCmp(action.target);
+                            if (!Ext.isEmpty(target)) {
+                                target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
+                            }
+                        }
+
+                    });
+
+                });
             }); 
         }});
         abstractcomponent.getEl().on('contextmenu', function(e){
