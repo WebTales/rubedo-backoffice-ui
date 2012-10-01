@@ -39,6 +39,29 @@ Ext.define('Rubedo.store.GroupsDataStore', {
                 },
                 reader: {
                     type: 'json',
+                    getResponseData: function(response) {
+                        var data, error;
+
+                        try {
+                            data = Ext.decode(response.responseText);
+                            if (Ext.isDefined(data.data)){data.children=data.data;}// hihi
+                            return this.readRecords(data);
+                        } catch (ex) {
+                            error = new Ext.data.ResultSet({
+                                total  : 0,
+                                count  : 0,
+                                records: [],
+                                success: false,
+                                message: ex.message
+                            });
+
+                            this.fireEvent('exception', this, response, error);
+
+                            Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                            return error;
+                        }
+                    },
                     messageProperty: 'message'
                 },
                 writer: {

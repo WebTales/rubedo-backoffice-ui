@@ -47,10 +47,53 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader18",
+                        "idProperty": null,
                         "messageProperty": "message",
-                        "root": null
+                        "root": null,
+                        "record": null
                     },
-                    "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818"
+                    "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "getResponseData",
+                                "fn": "getResponseData",
+                                "designer|params": [
+                                    "response"
+                                ],
+                                "implHandler": [
+                                    "        var data, error;\r",
+                                    " \r",
+                                    "        try {\r",
+                                    "            data = Ext.decode(response.responseText);\r",
+                                    "            if (Ext.isDefined(data.data)){data.children=data.data;}// hihi\r",
+                                    "            return this.readRecords(data);\r",
+                                    "        } catch (ex) {\r",
+                                    "            error = new Ext.data.ResultSet({\r",
+                                    "                total  : 0,\r",
+                                    "                count  : 0,\r",
+                                    "                records: [],\r",
+                                    "                success: false,\r",
+                                    "                message: ex.message\r",
+                                    "            });\r",
+                                    "\r",
+                                    "            this.fireEvent('exception', this, response, error);\r",
+                                    "\r",
+                                    "            Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                    "\r",
+                                    "            return error;\r",
+                                    "        }"
+                                ]
+                            },
+                            "designerId": "8f9cef44-3553-4805-9ccc-c140ca8a78c3"
+                        }
+                    ]
                 },
                 {
                     "type": "jsonwriter",
