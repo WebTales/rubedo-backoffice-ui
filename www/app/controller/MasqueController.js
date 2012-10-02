@@ -74,7 +74,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    onGridpanelSelect: function(selModel, record, index, options) {
+    masquesDisplay: function(selModel, record, index, options) {
         var dataview = Ext.getCmp("masquesGrid");
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
@@ -912,8 +912,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             "#AdminfMasquesPublier": {
                 click: this.publishMask
             },
-            "gridpanel": {
-                select: this.onGridpanelSelect
+            "#masquesGrid": {
+                select: this.masquesDisplay
             },
             "#arborescenceSites": {
                 itemclick: this.onTreepanelItemClick

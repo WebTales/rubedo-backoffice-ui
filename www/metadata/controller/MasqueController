@@ -101,8 +101,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelSelect",
-                "fn": "onGridpanelSelect",
+                "designer|userClassName": "masquesDisplay",
+                "fn": "masquesDisplay",
                 "implHandler": [
                     "var dataview = Ext.getCmp(\"masquesGrid\");\r",
                     "var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
@@ -142,7 +142,7 @@
                 "name": "select",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "gridpanel"
+                "designer|controlQuery": "#masquesGrid"
             },
             "designerId": "90ee9ec3-51ac-45fd-a5c8-da93ce6a5710"
         },
