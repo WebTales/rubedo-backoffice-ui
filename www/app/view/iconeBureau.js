@@ -20,24 +20,14 @@ Ext.define('Rubedo.view.iconeBureau', {
     border: 0,
     draggable: true,
     height: 90,
-    width: 66,
-    bodyStyle: '{background: transparent !important}',
+    styleHtmlContent: true,
+    width: 64,
+    header: false,
     headerPosition: 'bottom',
     title: 'Test',
 
     initComponent: function() {
         var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'image',
-                    height: 64,
-                    width: 64,
-                    src: 'resources/icones/red/64x64/folder.png'
-                }
-            ]
-        });
 
         me.callParent(arguments);
     }

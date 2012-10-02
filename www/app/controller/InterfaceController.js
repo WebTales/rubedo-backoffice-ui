@@ -144,48 +144,51 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var icones = Ext.getStore('IconesDataJson').getRange();
             abstractcomponent.removeAll();
             Ext.Array.forEach(icones, function(icone){
-                var nIcone = Ext.widget('iconeBureau');
+                var nIcone = Ext.widget('iconeBureau',{
+                    bodyStyle:"background-image: url("+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
+                    html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 16px;\">"+icone.get("text")+"</p>"
+                });
                 nIcone.setTitle(icone.data.text);
                 abstractcomponent.add(nIcone);
                 nIcone.actions=icone.get("actions");
                 nIcone.setPosition(icone.data.posX, icone.data.posY);
-                nIcone.getComponent(0).setSrc(icone.data.image);
                 nIcone.getEl().on("dblclick", function(){
-                    Ext.Array.forEach(nIcone.actions, function(action){
-                        if (action.type=="openWindow") { 
-                            var fenetre = Ext.getCmp(action.target);
-                            if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
-                            else {
-                                fenetre = Ext.widget(action.target);
-                                Ext.getCmp('desktopCont').add(fenetre);
-                                if (Ext.isDefined(window.innerHeight)) {
-                                    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
-                                    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                    if (!Ext.isEmpty(nIcone.actions)){
+                        Ext.Array.forEach(nIcone.actions, function(action){
+                            if (action.type=="openWindow") { 
+                                var fenetre = Ext.getCmp(action.target);
+                                if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+                                else {
+                                    fenetre = Ext.widget(action.target);
+                                    Ext.getCmp('desktopCont').add(fenetre);
+                                    if (Ext.isDefined(window.innerHeight)) {
+                                        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                                        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                                    }
+                                    fenetre.show();
                                 }
-                                fenetre.show();
+                            }else if (action.type=="selectRecord") { 
+                                var target=Ext.getCmp(action.target);
+                                if (!Ext.isEmpty(target)) {
+                                    target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
+                                }
                             }
-                        }else if (action.type=="selectRecord") { 
-                            var target=Ext.getCmp(action.target);
-                            if (!Ext.isEmpty(target)) {
-                                target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
-                            }
-                        }
 
-                    });
+                        });
 
-                });
-            }); 
-        }});
-        abstractcomponent.getEl().on('contextmenu', function(e){
-            var menu= Ext.getCmp('settingsContextMenu');
-            if (Ext.isEmpty(menu)){
-                menu = Ext.widget('settingsContextMenu');
-                menu.on('blur', function(){this.destroy();});}
-                menu.showAt(Ext.EventObject.getXY());
-                e.stopEvent();
+                    }});
+                }); 
+            }});
+            abstractcomponent.getEl().on('contextmenu', function(e){
+                var menu= Ext.getCmp('settingsContextMenu');
+                if (Ext.isEmpty(menu)){
+                    menu = Ext.widget('settingsContextMenu');
+                    menu.on('blur', function(){this.destroy();});}
+                    menu.showAt(Ext.EventObject.getXY());
+                    e.stopEvent();
 
 
-            }); 
+                }); 
     },
 
     hideAllIcons: function(item, e, options) {

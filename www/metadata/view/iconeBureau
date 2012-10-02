@@ -12,30 +12,13 @@
         "draggable": true,
         "height": 90,
         "style": null,
-        "width": 66,
-        "bodyStyle": [
-            "{background: transparent !important}"
-        ],
+        "styleHtmlContent": true,
+        "width": 64,
+        "bodyStyle": null,
+        "header": false,
         "headerPosition": "bottom",
         "title": "Test"
     },
     "id": "ExtBox1-ext-gen75497",
-    "designerId": "a87eba5d-b490-46b3-9dec-8a8f63610693",
-    "cn": [
-        {
-            "type": "image",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyImg",
-                "height": 64,
-                "width": 64,
-                "src": "resources/icones/red/64x64/folder.png"
-            },
-            "designerId": "61d52f99-aa07-4195-bcf3-300d629e0514"
-        }
-    ]
+    "designerId": "a87eba5d-b490-46b3-9dec-8a8f63610693"
 }
