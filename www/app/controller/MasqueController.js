@@ -54,6 +54,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 Ext.getCmp('elementIdField').setValue(null);
                 Ext.getCmp('delConfirmZ').close();
                 Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                Ext.getCmp("boutonSupprimerMasque").disable();
             });  
 
         }
@@ -73,7 +74,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
-    masqueDisplay: function(dataview, record, item, index, e, options) {
+    onGridpanelSelect: function(selModel, record, index, options) {
+        var dataview = Ext.getCmp("masquesGrid");
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
         valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
@@ -105,6 +107,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp('elementIdField').setValue(null);
 
     Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+    Ext.getCmp("boutonSupprimerMasque").enable();
 
     },
 
@@ -287,7 +290,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     vertical:true,
                     columns:1,
                     items: [
-                    { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                    { boxLabel: 'Téléphone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
                     { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
                     { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
                     ]
@@ -909,8 +912,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             "#AdminfMasquesPublier": {
                 click: this.publishMask
             },
-            "#masquesGridView": {
-                itemclick: this.masqueDisplay
+            "gridpanel": {
+                select: this.onGridpanelSelect
             },
             "#arborescenceSites": {
                 itemclick: this.onTreepanelItemClick

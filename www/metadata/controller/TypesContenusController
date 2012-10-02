@@ -339,6 +339,7 @@
                 "fn": "majAdminfTypesCentenus",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
+                    "Ext.getCmp(\"boutonSupprimerTypeContenu\").enable();\r",
                     "Ext.getCmp(\"TCfieldUp\").disable();\r",
                     "Ext.getCmp(\"TCfieldDown\").disable();\r",
                     "Ext.getCmp(\"TCfieldDeleter\").disable();\r",
@@ -451,6 +452,7 @@
                     "        Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);\r",
                     "        Ext.getCmp('delConfirmZ').close();\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "        Ext.getCmp(\"boutonSupprimerTypeContenu\").disable();\r",
                     "    });  \r",
                     "\r",
                     "}"

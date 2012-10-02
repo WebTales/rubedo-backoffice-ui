@@ -19,10 +19,10 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
 
     fields: [
         {
-            name: 'contenus'
+            name: 'type'
         },
         {
-            name: 'type'
+            name: 'contenus'
         },
         {
             name: 'champs',

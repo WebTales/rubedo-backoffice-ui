@@ -123,7 +123,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         else{
 
             var fenetre = Ext.getCmp(button.itemId);
-            if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+            if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
             else {
                 fenetre = Ext.widget(button.itemId);
                 Ext.getCmp('desktopCont').add(fenetre);
@@ -139,56 +139,18 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     majIcones: function(abstractcomponent, options) {
-
-        Ext.getStore('IconesDataJson').load({ callback: function(){
-            var icones = Ext.getStore('IconesDataJson').getRange();
-            abstractcomponent.removeAll();
-            Ext.Array.forEach(icones, function(icone){
-                var nIcone = Ext.widget('iconeBureau',{
-                    bodyStyle:"background-image: url("+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
-                    html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 16px;\">"+icone.get("text")+"</p>"
-                });
-                nIcone.setTitle(icone.data.text);
-                abstractcomponent.add(nIcone);
-                nIcone.actions=icone.get("actions");
-                nIcone.setPosition(icone.data.posX, icone.data.posY);
-                nIcone.getEl().on("dblclick", function(){
-                    if (!Ext.isEmpty(nIcone.actions)){
-                        Ext.Array.forEach(nIcone.actions, function(action){
-                            if (action.type=="openWindow") { 
-                                var fenetre = Ext.getCmp(action.target);
-                                if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
-                                else {
-                                    fenetre = Ext.widget(action.target);
-                                    Ext.getCmp('desktopCont').add(fenetre);
-                                    if (Ext.isDefined(window.innerHeight)) {
-                                        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
-                                        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
-                                    }
-                                    fenetre.show();
-                                }
-                            }else if (action.type=="selectRecord") { 
-                                var target=Ext.getCmp(action.target);
-                                if (!Ext.isEmpty(target)) {
-                                    target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
-                                }
-                            }
-
-                        });
-
-                    }});
-                }); 
-            }});
-            abstractcomponent.getEl().on('contextmenu', function(e){
-                var menu= Ext.getCmp('settingsContextMenu');
-                if (Ext.isEmpty(menu)){
-                    menu = Ext.widget('settingsContextMenu');
-                    menu.on('blur', function(){this.destroy();});}
-                    menu.showAt(Ext.EventObject.getXY());
-                    e.stopEvent();
+        var me=this;
+        Ext.getStore('IconesDataJson').load({ callback: me.refreshIcons()});
+        abstractcomponent.getEl().on('contextmenu', function(e){
+            var menu= Ext.getCmp('settingsContextMenu');
+            if (Ext.isEmpty(menu)){
+                menu = Ext.widget('settingsContextMenu');
+                menu.on('blur', function(){this.destroy();});}
+                menu.showAt(Ext.EventObject.getXY());
+                e.stopEvent();
 
 
-                }); 
+            }); 
     },
 
     hideAllIcons: function(item, e, options) {
@@ -261,6 +223,35 @@ Ext.define('Rubedo.controller.InterfaceController', {
         if (MyPrefData.highContrast===true) {
             abstractcomponent.setText('Désactiver');
         } 
+    },
+
+    createIconBtn: function(button, e, options) {
+        var myWindow = button.findParentByType("window");
+        var myText = myWindow.title;
+        var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
+        var actions = [ ];
+        actions.push({
+            type:"openWindow",
+            target:myWindow.id			
+        });
+        if (!Ext.isEmpty(myRecord)){
+            myText=myRecord.get(myRecord.fields.items[0].name);
+            actions.push({
+                type:"selectRecord",
+                target:myWindow.getComponent(0).id,
+                recordId:myRecord.get("id")
+            });
+        }
+        var newIcon = Ext.create("Rubedo.model.iconDataModel",{
+            text:myText,
+            posX:0,
+            posY:0,
+            image: "resources/icones/blue/64x64/favorite.png",
+            actions:actions
+
+        });
+        Ext.getStore("IconesDataJson").add(newIcon);
+        this.refreshIcons();
     },
 
     onLaunch: function() {
@@ -362,8 +353,53 @@ Ext.define('Rubedo.controller.InterfaceController', {
             "#highContrastButton": {
                 click: this.HCmode,
                 render: this.setHCButtonStatus
+            },
+            "[itemId='boutonCreerRaccourci']": {
+                click: this.createIconBtn
             }
         });
+    },
+
+    refreshIcons: function() {
+        var icones = Ext.getStore('IconesDataJson').getRange();
+        Ext.getCmp("boiteAIconesBureau").removeAll();
+        Ext.Array.forEach(icones, function(icone){
+            var nIcone = Ext.widget('iconeBureau',{
+                bodyStyle:"background-image: url("+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
+                html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 14px;\">"+icone.get("text")+"</p>"
+            });
+            nIcone.setTitle(icone.data.text);
+            nIcone.actions=icone.get("actions");
+            nIcone.on("render", function(){
+                nIcone.getEl().on("dblclick", function(){
+                    if (!Ext.isEmpty(nIcone.actions)){
+                        Ext.Array.forEach(nIcone.actions, function(action){
+                            if (action.type=="openWindow") { 
+                                var fenetre = Ext.getCmp(action.target);
+                                if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }
+                                else {
+                                    fenetre = Ext.widget(action.target);
+                                    Ext.getCmp('desktopCont').add(fenetre);
+                                    if (Ext.isDefined(window.innerHeight)) {
+                                        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                                        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                                    }
+                                    fenetre.show();
+                                }
+                            }else if (action.type=="selectRecord") { 
+                                var target=Ext.getCmp(action.target);
+                                if (!Ext.isEmpty(target)) {
+                                    target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
+                                }
+                            }
+
+                        });
+
+                    }});});
+                    nIcone.setPosition(icone.data.posX, icone.data.posY);
+                    Ext.getCmp("boiteAIconesBureau").add(nIcone);
+                }); 
+
     }
 
 });

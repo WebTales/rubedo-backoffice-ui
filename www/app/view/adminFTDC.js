@@ -104,6 +104,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonSupprimerTypeContenu',
                             iconAlign: 'top',
                             iconCls: 'remove_big',

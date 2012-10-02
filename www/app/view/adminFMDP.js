@@ -109,6 +109,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonSupprimerMasque',
                             iconAlign: 'top',
                             iconCls: 'remove_big',
