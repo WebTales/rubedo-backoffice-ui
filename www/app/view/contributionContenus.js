@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.contributionContenus', {
 
     height: 578,
     id: 'contributionContenus',
-    width: 650,
+    width: 800,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -91,43 +91,102 @@ Ext.define('Rubedo.view.contributionContenus', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
-                    height: 54,
+                    height: 86,
                     itemId: 'contextBar',
                     items: [
                         {
                             xtype: 'button',
                             id: 'boutonAjouterContenu',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonModifierContenu',
+                            iconAlign: 'top',
                             iconCls: 'pencil_big',
                             scale: 'large',
                             text: 'Modifier'
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonSupprimerContenu',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
-                            xtype: 'button',
-                            itemId: 'boutonCreerRaccourci',
-                            iconCls: 'favorite_add_big',
-                            scale: 'large',
-                            text: 'Ajouter aux favoris'
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'boutonCopierContenus',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'ajoutPanierContenus',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            id: 'ajoutPanierContenus',
-                            iconCls: 'shopping_cart_add_big',
-                            scale: 'large',
-                            text: 'Ajouter au panier'
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Fichier',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'ContenusExporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'ContenusImporter',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'

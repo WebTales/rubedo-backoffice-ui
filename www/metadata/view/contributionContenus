@@ -11,7 +11,7 @@
         "designer|userAlias": "contributionContenus",
         "height": 578,
         "id": "contributionContenus",
-        "width": 650,
+        "width": 800,
         "layout": "hbox",
         "iconCls": "content-icon",
         "title": "Contenus",
@@ -181,7 +181,7 @@
                 "dock": "top",
                 "designer|userClassName": "menuContenusTools",
                 "designer|userAlias": "menuContenusTools",
-                "height": 54,
+                "height": 86,
                 "itemId": "contextBar",
                 "width": null
             },
@@ -200,6 +200,7 @@
                         "id": "boutonAjouterContenu",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter"
@@ -216,9 +217,11 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton12",
+                        "disabled": true,
                         "id": "boutonModifierContenu",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "pencil_big",
                         "scale": "large",
                         "text": "Modifier"
@@ -235,9 +238,11 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
+                        "disabled": true,
                         "id": "boutonSupprimerContenu",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer"
@@ -245,7 +250,7 @@
                     "designerId": "361f1a7a-0d6b-4fbd-a9c0-d30c8d30487a"
                 },
                 {
-                    "type": "button",
+                    "type": "buttongroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -253,17 +258,77 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton14",
-                        "itemId": "boutonCreerRaccourci",
-                        "icon": null,
-                        "iconCls": "favorite_add_big",
-                        "scale": "large",
-                        "text": "Ajouter aux favoris"
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Presse-papiers",
+                        "columns": 4
                     },
-                    "designerId": "8dea969a-7410-4bea-9649-2dcee0591d79"
+                    "designerId": "ccedf1de-e6e6-4e1c-8689-9e38542a036b",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton17",
+                                "disabled": true,
+                                "id": "boutonCopierContenus",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "2dfcb475-1ddf-4d9b-8c54-b370ee4b19f6"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton15",
+                                "disabled": true,
+                                "id": "ajoutPanierContenus",
+                                "itemId": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "shopping_cart_add_big",
+                                "scale": "large",
+                                "text": "Ajouter au panier"
+                            },
+                            "designerId": "5ad36dbb-5c5f-4c2b-ac22-aa67f61a9bad"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton14",
+                                "itemId": "boutonCreerRaccourci",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "favorite_add_big",
+                                "scale": "large",
+                                "text": "Ajouter aux favoris"
+                            },
+                            "designerId": "47bef028-84b9-4022-b0cb-21191642357a"
+                        }
+                    ]
                 },
                 {
-                    "type": "button",
+                    "type": "buttongroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -271,15 +336,52 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton15",
-                        "id": "ajoutPanierContenus",
-                        "itemId": null,
-                        "icon": null,
-                        "iconCls": "shopping_cart_add_big",
-                        "scale": "large",
-                        "text": "Ajouter au panier"
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Fichier",
+                        "columns": 4
                     },
-                    "designerId": "5ad36dbb-5c5f-4c2b-ac22-aa67f61a9bad"
+                    "designerId": "b2c5641f-6d50-4bf0-a415-3f9384afc338",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton62",
+                                "id": "ContenusExporter",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_down_big",
+                                "scale": "large",
+                                "text": "Exporter"
+                            },
+                            "designerId": "c79eb797-e7ae-49ec-9ab9-061a88672d89"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton63",
+                                "id": "ContenusImporter",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_up_big",
+                                "scale": "large",
+                                "text": "Importer"
+                            },
+                            "designerId": "55bc88d8-f3a9-4145-b77c-dac6cf7c9172"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",

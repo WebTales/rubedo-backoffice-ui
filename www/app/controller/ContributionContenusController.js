@@ -26,16 +26,19 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         'AjouterContenu'
     ],
 
-    onGridviewItemClick: function(dataview, record, item, index, e, options) {
-
-        var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
+    typeSelect: function(dataviewmodel, record, options) {
+        var filArianne = Ext.getCmp("TypesContenusGrid").findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.type);}
         else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.type, itemId:'type'});
         filArianne.add(typeFil);
     }
-    var contenus = dataview.getSelectionModel().getLastSelected().data.contenus;
-    this.getContenusDataJsonStore().loadData(contenus);
+    this.getContenusDataJsonStore().loadData(record.get("contenus"));
+    Ext.Array.forEach(Ext.getCmp("contributionContenus").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+    Ext.getCmp("ajoutPanierContenus").disable();
+    Ext.getCmp("boutonSupprimerContenu").disable();
+    Ext.getCmp("boutonModifierContenu").disable();
+    Ext.getCmp("boutonCopierContenus").disable();
     },
 
     onButtonClick1: function(button, e, options) {
@@ -57,12 +60,32 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         fenetre.showAt(screen.width/2-300, 100);
     },
 
-    afficheMeta: function(tablepanel, record, item, index, e, options) {
-        var boiteMeta = tablepanel.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
-        var valeurs= Ext.clone(record.data);
+    contentsSelect: function(tablepanel, selections, options) {
+        var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+        /*var valeurs= Ext.clone(record.data);
         valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
         valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');
-        boiteMeta.update(valeurs);
+        boiteMeta.update(valeurs);*/
+        if (selections.length===0) {
+            Ext.getCmp("ajoutPanierContenus").disable();
+            Ext.getCmp("boutonSupprimerContenu").disable();
+            Ext.getCmp("boutonModifierContenu").disable();
+            Ext.getCmp("boutonCopierContenus").disable();
+        } else if (selections.length==1) {
+            Ext.getCmp("ajoutPanierContenus").enable();
+            Ext.getCmp("boutonSupprimerContenu").enable();
+            Ext.getCmp("boutonModifierContenu").enable();
+            Ext.getCmp("boutonCopierContenus").enable();    
+
+        } else {
+            Ext.getCmp("ajoutPanierContenus").enable();
+            Ext.getCmp("boutonSupprimerContenu").enable();
+            Ext.getCmp("boutonModifierContenu").disable();
+            Ext.getCmp("boutonCopierContenus").disable();    
+
+        }
+
+
     },
 
     nContenuRecorder: function(etat) {
@@ -99,8 +122,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     init: function(application) {
         this.control({
-            "#TypesContenusGridView": {
-                itemclick: this.onGridviewItemClick
+            "#TypesContenusGrid": {
+                select: this.typeSelect
             },
             "#boutonPublierNouveauContenu": {
                 click: this.onButtonClick1
@@ -115,7 +138,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 click: this.onButtonClick3
             },
             "#ContenusGrid": {
-                itemclick: this.afficheMeta
+                selectionchange: this.contentsSelect
             }
         });
     }
