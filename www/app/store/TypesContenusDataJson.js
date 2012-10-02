@@ -31,7 +31,8 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
                 type: 'ajax',
                 url: 'data/Contenus.json',
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    root: 'data'
                 }
             }
         }, cfg)]);
