@@ -63,6 +63,23 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];
         Ext.getCmp("boutonAjouterContenu").fireEvent("click");
         Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
+        Ext.Object.each(cible.get("champs"), function(key, value, myself){
+            if (Ext.isArray(value)) {
+                console.log(value);
+                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+                var y=0;
+                console.log(multiField.multivalué)
+                if (multiField.multivalué) {
+                    Ext.Array.each(value,function(val,index){
+                        if (index>0) {
+                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                        }
+                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+                    }); 
+                }
+            }
+        });
+
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
