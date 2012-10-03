@@ -47,11 +47,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     contentSaveAndPublish: function(button, e, options) {
-        this.nContenuRecorder('publié');
+        this.nContenuRecorder('publié',button.isUpdate);
     },
 
     contentSave: function(button, e, options) {
-        this.nContenuRecorder('brouillon');
+        this.nContenuRecorder('brouillon', button.isUpdate);
     },
 
     contentDelete: function(button, e, options) {
@@ -59,10 +59,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.getContenusDataJsonStore().remove(cible);
     },
 
-    onButtonClick3: function(button, e, options) {
+    contentEdit: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];
         Ext.getCmp("boutonAjouterContenu").fireEvent("click");
         Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
+        Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
+        Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
+        Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
+        Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu");
     },
 
     contentsSelect: function(tablepanel, selections, options) {
@@ -100,37 +104,37 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         boiteMeta.update(customMeta);
     },
 
-    nContenuRecorder: function(etat) {
-        /*
-        var formC = Ext.getCmp('boiteAChampsContenus').items.items;
-        for (m=0;  m<formC.length; m++) {
-        if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){
-        return(false);
-        }
-        }
-        var champs = [ ];
-        for (k=1; k<formC.length; k++) {
-        if (formC[k].getComponent(0).isXType('field')) {
-        var champ= {nom : formC[k].getComponent(0).name, value: formC[k].getComponent(0).getValue()};
-        champs.push(champ);
-        }
-        }
-        */
-        if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
+    doubleClickEdit: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("boutonModifierContenu").fireEvent("click");
+    },
+
+    nContenuRecorder: function(etat, update) {
+        if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
-            var nContenu = Ext.create('model.contenusDataModel', {
-                text: champs.text,
-                champs: champs,
-                etat: etat,
-                type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,
-                auteur: MyPrefData.myName
-            });
+            var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
+            if (update) {
+                var myRec =Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0];
+                myRec.beginEdit();
+                myRec.set("text",champs.text);
+                myRec.set("champs",champs);
+                myRec.set("taxonomie",taxonomie);
+                myRec.set("etat",etat);
+                myRec.endEdit();
 
-            Ext.getCmp('ContenusGrid').getStore().add(nContenu);
-            Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);//remove after server sync operational
+            } 
+            else {
+                var nContenu = Ext.create('model.contenusDataModel', {
+                    text: champs.text,
+                    champs: champs,
+                    taxonomie:taxonomie,
+                    etat: etat,
+                    type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,
+                    auteur: MyPrefData.myName
+                });
 
+                Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+            }
             Ext.getCmp('ajouterContenu').close();
-            console.log(nContenu);
         }
     },
 
@@ -149,10 +153,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 click: this.contentDelete
             },
             "#boutonModifierContenu": {
-                click: this.onButtonClick3
+                click: this.contentEdit
             },
             "#ContenusGrid": {
-                selectionchange: this.contentsSelect
+                selectionchange: this.contentsSelect,
+                itemdblclick: this.doubleClickEdit
             }
         });
     }

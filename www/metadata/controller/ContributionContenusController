@@ -67,7 +67,7 @@
                 "designer|userClassName": "contentSaveAndPublish",
                 "fn": "contentSaveAndPublish",
                 "implHandler": [
-                    "this.nContenuRecorder('publié');"
+                    "this.nContenuRecorder('publié',button.isUpdate);"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -87,7 +87,7 @@
                 "designer|userClassName": "contentSave",
                 "fn": "contentSave",
                 "implHandler": [
-                    "this.nContenuRecorder('brouillon');"
+                    "this.nContenuRecorder('brouillon', button.isUpdate);"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -107,39 +107,36 @@
                 "designer|userClassName": "nContenuRecorder",
                 "fn": "nContenuRecorder",
                 "designer|params": [
-                    "etat"
+                    "etat",
+                    "update"
                 ],
                 "implHandler": [
-                    "/*\r",
-                    "var formC = Ext.getCmp('boiteAChampsContenus').items.items;\r",
-                    "for (m=0;  m<formC.length; m++) {\r",
-                    "    if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){\r",
-                    "        return(false);\r",
-                    "    }\r",
-                    "}\r",
-                    "var champs = [ ];\r",
-                    "for (k=1; k<formC.length; k++) {\r",
-                    "    if (formC[k].getComponent(0).isXType('field')) {\r",
-                    "        var champ= {nom : formC[k].getComponent(0).name, value: formC[k].getComponent(0).getValue()};\r",
-                    "        champs.push(champ);\r",
-                    "    }\r",
-                    "}\r",
-                    "*/\r",
-                    "if (Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid()){\r",
+                    "if ((Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid())&&(Ext.getCmp(\"boiteATaxoContenus\").getForm().isValid())){\r",
                     "    var champs=Ext.getCmp(\"boiteAChampsContenus\").getForm().getValues();\r",
-                    "    var nContenu = Ext.create('model.contenusDataModel', {\r",
-                    "        text: champs.text,\r",
-                    "        champs: champs,\r",
-                    "        etat: etat,\r",
-                    "        type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,\r",
-                    "        auteur: MyPrefData.myName\r",
-                    "    });\r",
-                    "    \r",
-                    "    Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
-                    "    Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);//remove after server sync operational\r",
-                    "    \r",
+                    "    var taxonomie =Ext.getCmp(\"boiteATaxoContenus\").getForm().getValues();\r",
+                    "    if (update) {\r",
+                    "        var myRec =Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection()[0];\r",
+                    "        myRec.beginEdit();\r",
+                    "        myRec.set(\"text\",champs.text);\r",
+                    "        myRec.set(\"champs\",champs);\r",
+                    "        myRec.set(\"taxonomie\",taxonomie);\r",
+                    "        myRec.set(\"etat\",etat);\r",
+                    "        myRec.endEdit();\r",
+                    "\r",
+                    "    } \r",
+                    "    else {\r",
+                    "        var nContenu = Ext.create('model.contenusDataModel', {\r",
+                    "            text: champs.text,\r",
+                    "            champs: champs,\r",
+                    "            taxonomie:taxonomie,\r",
+                    "            etat: etat,\r",
+                    "            type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,\r",
+                    "            auteur: MyPrefData.myName\r",
+                    "        });\r",
+                    "        \r",
+                    "        Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
+                    "    }\r",
                     "    Ext.getCmp('ajouterContenu').close();\r",
-                    "    console.log(nContenu);\r",
                     "}"
                 ]
             },
@@ -174,12 +171,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonClick3",
-                "fn": "onButtonClick3",
+                "designer|userClassName": "contentEdit",
+                "fn": "contentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];\r",
                     "Ext.getCmp(\"boutonAjouterContenu\").fireEvent(\"click\");\r",
-                    "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));"
+                    "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));\r",
+                    "Ext.getCmp(\"boiteATaxoContenus\").getForm().setValues(cible.get(\"taxonomie\"));\r",
+                    "Ext.getCmp(\"boutonEnregistrerNouveauContenu\").isUpdate=true;\r",
+                    "Ext.getCmp(\"boutonPublierNouveauContenu\").isUpdate=true;\r",
+                    "Ext.getCmp('ajouterContenu').setTitle(\"Modifier un contenu\");"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -238,6 +239,26 @@
                 "designer|controlQuery": "#ContenusGrid"
             },
             "designerId": "2af287bb-3cc0-46dd-9a77-33d9b9c7235f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "doubleClickEdit",
+                "fn": "doubleClickEdit",
+                "implHandler": [
+                    "Ext.getCmp(\"boutonModifierContenu\").fireEvent(\"click\");"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ContenusGrid"
+            },
+            "designerId": "29809d19-0d43-44be-9789-cb0efb02186f"
         }
     ]
 }

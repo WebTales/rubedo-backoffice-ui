@@ -121,6 +121,32 @@
                 "type": "auto"
             },
             "designerId": "f68f6322-f7e3-440d-a3af-42931ba8e660"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field104",
+                "name": "id"
+            },
+            "designerId": "425e900a-f12f-43cc-ae7a-96f02f52d478"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field105",
+                "name": "taxonomie"
+            },
+            "designerId": "91b732b7-a0c5-49b3-9fa3-ad9acd777314"
         }
     ]
 }

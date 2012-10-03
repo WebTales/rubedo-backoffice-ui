@@ -47,6 +47,12 @@ Ext.define('Rubedo.model.contenusDataModel', {
         {
             name: 'auteur',
             type: 'auto'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'taxonomie'
         }
     ]
 });

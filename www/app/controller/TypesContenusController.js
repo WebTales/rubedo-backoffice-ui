@@ -34,7 +34,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     ajouterContenu: function(button, e, options) {
         if (Ext.isDefined(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0])) {
             var fenetre = Ext.widget('ajouterContenu');
-            Ext.getCmp('desktopCont').add(fenetre);
+            Ext.getCmp('ViewportPrimaire').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {
                 if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
                 if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
@@ -91,6 +91,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
 
                 var selecteur = Ext.widget('comboboxselect', {
+                    name:lesTaxo[i].titre,
                     width:690,
                     fieldLabel: leVocab.data.titre,
                     autoScroll: false,
@@ -422,7 +423,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.tooltip);
+        enrobage.getComponent('helpBouton').setTooltip("Réplique du champ "+button.up().getComponent(1).fieldLabel);
         var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
         supprimeur.on('click', function(){
             button.valeursM--;

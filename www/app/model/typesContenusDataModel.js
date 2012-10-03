@@ -41,6 +41,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'version'
+        },
+        {
+            name: 'id'
         }
     ]
 });
