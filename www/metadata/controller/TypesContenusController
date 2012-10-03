@@ -631,7 +631,7 @@
                     "var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});\r",
                     "supprimeur.on('click', function(){\r",
                     "    button.valeursM--;\r",
-                    "    this.up().destroy();\r",
+                    "    Ext.getCmp('boiteAChampsContenus').remove(supprimeur.up());\r",
                     "});\r",
                     "enrobage.add(supprimeur);\r",
                     "button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);\r",

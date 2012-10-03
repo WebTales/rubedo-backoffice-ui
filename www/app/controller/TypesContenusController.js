@@ -427,7 +427,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
         supprimeur.on('click', function(){
             button.valeursM--;
-            this.up().destroy();
+            Ext.getCmp('boiteAChampsContenus').remove(supprimeur.up());
         });
         enrobage.add(supprimeur);
         button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);

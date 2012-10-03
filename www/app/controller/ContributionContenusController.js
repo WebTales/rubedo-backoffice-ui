@@ -65,10 +65,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
         Ext.Object.each(cible.get("champs"), function(key, value, myself){
             if (Ext.isArray(value)) {
-                console.log(value);
                 var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
                 var y=0;
-                console.log(multiField.multivalué)
                 if (multiField.multivalué) {
                     Ext.Array.each(value,function(val,index){
                         if (index>0) {
