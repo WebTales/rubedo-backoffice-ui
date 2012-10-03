@@ -95,7 +95,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                 {
                                                     xtype: 'button',
                                                     itemId: 'helpBouton',
-                                                    margin: '0 20 0 0',
                                                     style: '{float:right;}',
                                                     handleMouseEvents: false,
                                                     iconCls: 'help',

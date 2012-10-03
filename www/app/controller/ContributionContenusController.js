@@ -39,85 +39,99 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("boutonSupprimerContenu").disable();
     Ext.getCmp("boutonModifierContenu").disable();
     Ext.getCmp("boutonCopierContenus").disable();
+    var  customMeta = record.get("type");
+    var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
+    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  
+    var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+    boiteMeta.update(customMeta);
     },
 
-    onButtonClick1: function(button, e, options) {
+    contentSaveAndPublish: function(button, e, options) {
         this.nContenuRecorder('publié');
     },
 
-    onButtonClick: function(button, e, options) {
+    contentSave: function(button, e, options) {
         this.nContenuRecorder('brouillon');
     },
 
-    onButtonClick2: function(button, e, options) {
+    contentDelete: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();
         this.getContenusDataJsonStore().remove(cible);
     },
 
     onButtonClick3: function(button, e, options) {
-        var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0].data;
-        var fenetre = Ext.widget('ajouterContenu');
-        fenetre.showAt(screen.width/2-300, 100);
+        var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];
+        Ext.getCmp("boutonAjouterContenu").fireEvent("click");
+        Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
     },
 
     contentsSelect: function(tablepanel, selections, options) {
         var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
-        /*var valeurs= Ext.clone(record.data);
-        valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
-        valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');
-        boiteMeta.update(valeurs);*/
+        var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
+        var customMeta= "";
         if (selections.length===0) {
             Ext.getCmp("ajoutPanierContenus").disable();
             Ext.getCmp("boutonSupprimerContenu").disable();
             Ext.getCmp("boutonModifierContenu").disable();
             Ext.getCmp("boutonCopierContenus").disable();
+            customMeta = Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().data.type;
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');    
+
         } else if (selections.length==1) {
             Ext.getCmp("ajoutPanierContenus").enable();
             Ext.getCmp("boutonSupprimerContenu").enable();
             Ext.getCmp("boutonModifierContenu").enable();
-            Ext.getCmp("boutonCopierContenus").enable();    
+            Ext.getCmp("boutonCopierContenus").enable();
+            customMeta=selections[0].data.text+"</br> Creation : "+selections[0].data.creation+
+            " Dernière modification : "+selections[0].data.derniereModification+" Version : "+selections[0].data.version+
+            " Auteur : "+selections[0].data.auteur;
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
 
         } else {
             Ext.getCmp("ajoutPanierContenus").enable();
             Ext.getCmp("boutonSupprimerContenu").enable();
             Ext.getCmp("boutonModifierContenu").disable();
-            Ext.getCmp("boutonCopierContenus").disable();    
+            Ext.getCmp("boutonCopierContenus").disable();
+            customMeta=selections.length+" Contenus";
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
 
         }
 
-
+        boiteMeta.update(customMeta);
     },
 
     nContenuRecorder: function(etat) {
-
+        /*
         var formC = Ext.getCmp('boiteAChampsContenus').items.items;
         for (m=0;  m<formC.length; m++) {
-            if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){
-                return(false);
-            }
+        if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){
+        return(false);
+        }
         }
         var champs = [ ];
         for (k=1; k<formC.length; k++) {
-            if (formC[k].getComponent(0).isXType('field')) {
-                var champ= {nom : formC[k].getComponent(0).name, value: formC[k].getComponent(0).getValue()};
-                champs.push(champ);
-            }
+        if (formC[k].getComponent(0).isXType('field')) {
+        var champ= {nom : formC[k].getComponent(0).name, value: formC[k].getComponent(0).getValue()};
+        champs.push(champ);
         }
-        var nContenu = Ext.create('model.contenusDataModel', {
-            text: formC[0].getComponent(0).getValue(),
-            champs: champs,
-            etat: etat,
-            type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,
-            version: 1,
-            creation: new Date(),
-            derniereModification: new Date(),
-            auteur: 'Igor'
-        });
+        }
+        */
+        if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
+            var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+            var nContenu = Ext.create('model.contenusDataModel', {
+                text: champs.text,
+                champs: champs,
+                etat: etat,
+                type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,
+                auteur: MyPrefData.myName
+            });
 
-        Ext.getCmp('ContenusGrid').getStore().add(nContenu);
-        Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);
+            Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+            Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);//remove after server sync operational
 
-        Ext.getCmp('ajouterContenu').close();
+            Ext.getCmp('ajouterContenu').close();
+            console.log(nContenu);
+        }
     },
 
     init: function(application) {
@@ -126,13 +140,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 select: this.typeSelect
             },
             "#boutonPublierNouveauContenu": {
-                click: this.onButtonClick1
+                click: this.contentSaveAndPublish
             },
             "#boutonEnregistrerNouveauContenu": {
-                click: this.onButtonClick
+                click: this.contentSave
             },
             "#boutonSupprimerContenu": {
-                click: this.onButtonClick2
+                click: this.contentDelete
             },
             "#boutonModifierContenu": {
                 click: this.onButtonClick3

@@ -42,7 +42,12 @@
                     "Ext.getCmp(\"ajoutPanierContenus\").disable();\r",
                     "Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
                     "Ext.getCmp(\"boutonModifierContenu\").disable();\r",
-                    "Ext.getCmp(\"boutonCopierContenus\").disable();"
+                    "Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "var  customMeta = record.get(\"type\");\r",
+                    "var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
+                    "imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  \r",
+                    "var boiteMeta = Ext.getCmp(\"contributionContenus\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "boiteMeta.update(customMeta);"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -59,8 +64,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonClick1",
-                "fn": "onButtonClick1",
+                "designer|userClassName": "contentSaveAndPublish",
+                "fn": "contentSaveAndPublish",
                 "implHandler": [
                     "this.nContenuRecorder('publié');"
                 ],
@@ -79,8 +84,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonClick",
-                "fn": "onButtonClick",
+                "designer|userClassName": "contentSave",
+                "fn": "contentSave",
                 "implHandler": [
                     "this.nContenuRecorder('brouillon');"
                 ],
@@ -105,7 +110,7 @@
                     "etat"
                 ],
                 "implHandler": [
-                    "\r",
+                    "/*\r",
                     "var formC = Ext.getCmp('boiteAChampsContenus').items.items;\r",
                     "for (m=0;  m<formC.length; m++) {\r",
                     "    if((formC[m].getComponent(0).isXType('field'))&&(!formC[m].getComponent(0).isValid())){\r",
@@ -119,21 +124,23 @@
                     "        champs.push(champ);\r",
                     "    }\r",
                     "}\r",
-                    "var nContenu = Ext.create('model.contenusDataModel', {\r",
-                    "    text: formC[0].getComponent(0).getValue(),\r",
-                    "    champs: champs,\r",
-                    "    etat: etat,\r",
-                    "    type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,\r",
-                    "    version: 1,\r",
-                    "    creation: new Date(),\r",
-                    "    derniereModification: new Date(),\r",
-                    "    auteur: 'Igor'\r",
-                    "});\r",
-                    "\r",
-                    "Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
-                    "Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);\r",
-                    "\r",
-                    "Ext.getCmp('ajouterContenu').close();"
+                    "*/\r",
+                    "if (Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid()){\r",
+                    "    var champs=Ext.getCmp(\"boiteAChampsContenus\").getForm().getValues();\r",
+                    "    var nContenu = Ext.create('model.contenusDataModel', {\r",
+                    "        text: champs.text,\r",
+                    "        champs: champs,\r",
+                    "        etat: etat,\r",
+                    "        type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,\r",
+                    "        auteur: MyPrefData.myName\r",
+                    "    });\r",
+                    "    \r",
+                    "    Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
+                    "    Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.contenus.push(nContenu.data);//remove after server sync operational\r",
+                    "    \r",
+                    "    Ext.getCmp('ajouterContenu').close();\r",
+                    "    console.log(nContenu);\r",
+                    "}"
                 ]
             },
             "designerId": "ae3d7d9c-194f-4fdd-b848-335bc618dcb5"
@@ -146,8 +153,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonClick2",
-                "fn": "onButtonClick2",
+                "designer|userClassName": "contentDelete",
+                "fn": "contentDelete",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
                     "this.getContenusDataJsonStore().remove(cible);"
@@ -170,9 +177,9 @@
                 "designer|userClassName": "onButtonClick3",
                 "fn": "onButtonClick3",
                 "implHandler": [
-                    "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0].data;\r",
-                    "var fenetre = Ext.widget('ajouterContenu');\r",
-                    "fenetre.showAt(screen.width/2-300, 100);"
+                    "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];\r",
+                    "Ext.getCmp(\"boutonAjouterContenu\").fireEvent(\"click\");\r",
+                    "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -193,30 +200,37 @@
                 "fn": "contentsSelect",
                 "implHandler": [
                     "var boiteMeta = Ext.getCmp(\"contributionContenus\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
-                    "/*var valeurs= Ext.clone(record.data);\r",
-                    "valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');\r",
-                    "valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');\r",
-                    "boiteMeta.update(valeurs);*/\r",
+                    "var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
+                    "var customMeta= \"\";\r",
                     "if (selections.length===0) {\r",
                     "    Ext.getCmp(\"ajoutPanierContenus\").disable();\r",
                     "    Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").disable();\r",
                     "    Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "    customMeta = Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().data.type;\r",
+                    "    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');    \r",
+                    "\r",
                     "} else if (selections.length==1) {\r",
                     "    Ext.getCmp(\"ajoutPanierContenus\").enable();\r",
                     "    Ext.getCmp(\"boutonSupprimerContenu\").enable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").enable();\r",
-                    "    Ext.getCmp(\"boutonCopierContenus\").enable();    \r",
-                    "    \r",
+                    "    Ext.getCmp(\"boutonCopierContenus\").enable();\r",
+                    "    customMeta=selections[0].data.text+\"</br> Creation : \"+selections[0].data.creation+\r",
+                    "    \" Dernière modification : \"+selections[0].data.derniereModification+\" Version : \"+selections[0].data.version+\r",
+                    "    \" Auteur : \"+selections[0].data.auteur;\r",
+                    "    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');\r",
+                    "\r",
                     "} else {\r",
                     "    Ext.getCmp(\"ajoutPanierContenus\").enable();\r",
                     "    Ext.getCmp(\"boutonSupprimerContenu\").enable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").disable();\r",
-                    "    Ext.getCmp(\"boutonCopierContenus\").disable();    \r",
-                    "    \r",
+                    "    Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "    customMeta=selections.length+\" Contenus\";\r",
+                    "    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');\r",
+                    "\r",
                     "}\r",
                     "\r",
-                    ""
+                    "boiteMeta.update(customMeta);"
                 ],
                 "name": "selectionchange",
                 "scope": "me",

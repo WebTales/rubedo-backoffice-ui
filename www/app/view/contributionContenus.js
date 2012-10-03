@@ -70,6 +70,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'image',
                             height: 45,
+                            itemId: 'imageBarreMeta',
                             width: 48,
                             listeners: {
                                 render: {
@@ -82,7 +83,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '{customMeta}'
                             ]
                         }
                     ]
