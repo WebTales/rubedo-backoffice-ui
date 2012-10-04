@@ -1,0 +1,71 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "testingGround",
+        "designer|userAlias": "testingGround",
+        "height": 351,
+        "id": "testingGround",
+        "width": 959,
+        "layout": "vbox",
+        "title": "Testing ground"
+    },
+    "id": "ExtBox1-ext-gen3685",
+    "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyForm19",
+                "height": null,
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "title": "My Panel"
+            },
+            "designerId": "c5544ea9-bc79-42bc-8475-9c261bea94fa",
+            "cn": [
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextArea2",
+                        "inputId": "ckTest1",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "f62f7eaf-6601-4d61-9323-5a39b2a46bc7"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "test11",
+                        "allowBlank": false
+                    },
+                    "designerId": "edd52b7c-6124-4d7e-a0b4-b81a205aaeb8",
+                    "masterInstanceId": "ExtBox1-ext-gen18078"
+                }
+            ]
+        }
+    ]
+}

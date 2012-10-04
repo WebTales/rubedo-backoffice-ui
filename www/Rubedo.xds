@@ -901,6 +901,28 @@
                 "app/store/UsersAdminDataStore.js"
             ],
             "className": "UsersAdminDataStore"
+        },
+        "66174f28-03d3-4c02-855f-65706d91852a": {
+            "paths": [
+                "metadata/view/testingGround",
+                "app/view/override/testingGround.js",
+                "app/view/testingGround.js"
+            ],
+            "className": "testingGround"
+        },
+        "b33b5113-9bce-464d-b456-744c33e548ac": {
+            "paths": [
+                "metadata/resource/js5"
+            ],
+            "className": "js5"
+        },
+        "d307504b-480a-4d03-adf2-dc2c18432b4f": {
+            "paths": [
+                "metadata/view/CKEField",
+                "app/view/override/CKEField.js",
+                "app/view/CKEField.js"
+            ],
+            "className": "CKEField"
         }
     },
     "viewOrderMap": {
@@ -951,7 +973,9 @@
             "0cc03184-ad23-4674-8d3a-2f88ad0d1aa5",
             "d21c61a7-09e5-467f-a13e-93a9854a919a",
             "437ee3cb-dd4a-4ddc-a96a-c098f1303647",
-            "73e60547-6188-4b20-9a1a-e3f085be455a"
+            "73e60547-6188-4b20-9a1a-e3f085be455a",
+            "66174f28-03d3-4c02-855f-65706d91852a",
+            "d307504b-480a-4d03-adf2-dc2c18432b4f"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",
@@ -1025,7 +1049,8 @@
             "5401e987-3e88-4ecd-a849-83545e426644",
             "f92c6775-5e7f-4c31-a916-31e49b697f92",
             "5c6c9dbc-ea18-4641-8992-e908e96b625e",
-            "b744ebe0-d437-4adb-bc20-850fa1741b55"
+            "b744ebe0-d437-4adb-bc20-850fa1741b55",
+            "b33b5113-9bce-464d-b456-744c33e548ac"
         ],
         "app": [
             "application"

@@ -83,7 +83,9 @@ Ext.application({
         'GroupAddWindow',
         'UserAddWindow',
         'UserAdminWindow',
-        'MyGridPanel16'
+        'MyGridPanel16',
+        'testingGround',
+        'CKEField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

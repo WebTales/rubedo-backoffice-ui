@@ -1,0 +1,111 @@
+{
+    "type": "textareafield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CKEField",
+        "designer|userAlias": "CKEField",
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen18078",
+    "designerId": "d307504b-480a-4d03-adf2-dc2c18432b4f",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTextareafieldAfterRender",
+                "fn": "onTextareafieldAfterRender",
+                "implHandler": [
+                    "var targetId = abstractcomponent.getInputId();\r",
+                    "abstractcomponent.editor= editor=CKEDITOR.replace( targetId, { }, abstractcomponent.getValue());"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "0d473cf7-8a08-442c-a253-4fe63b539c25"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getValue",
+                "fn": "getValue",
+                "implHandler": [
+                    "return(this.getRawValue());"
+                ]
+            },
+            "designerId": "8596bf7d-caf3-459d-8f8f-939c5177cd73"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTextareafieldBeforeDestroy",
+                "fn": "onTextareafieldBeforeDestroy",
+                "implHandler": [
+                    "abstractcomponent.editor.destroy();"
+                ],
+                "name": "beforedestroy",
+                "scope": "me"
+            },
+            "designerId": "b57e2716-9740-4f9d-b0ec-144e41eb45ec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "setValue",
+                "fn": "setValue",
+                "designer|params": [
+                    "value"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.isDefined(me.editor)) {\r",
+                    "    me.editor.setData(value);\r",
+                    "}"
+                ]
+            },
+            "designerId": "0e06946f-efae-4aa6-83d8-7e108db4e464"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getRawValue",
+                "fn": "getRawValue",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.isDefined(me.editor)) {\r",
+                    "    return(me.editor.getData());\r",
+                    "}"
+                ]
+            },
+            "designerId": "611d8653-5926-4310-8fb5-0d14257c441a"
+        }
+    ]
+}
