@@ -390,7 +390,132 @@
 			}
 		],
 		"store": ""
-	}, {
+	}, 
+	{
+		"type": "Champ zone de texte CKEditor",
+		"cType": "Rubedo.view.CKEField",
+		"ouvrir": "",
+		"description": "<h2>Champ zone de texte CKEditor</h2> </br> <p>Ce champ permet la saisie de texte riche avec CKEditor.</p>",
+		"config": {
+			"name": "Nouveau_champ_zone_de_texte CKEditor",
+			"fieldLabel": "Label du champ",
+			"maxLength": 6000,
+			"minLength": 0,
+			"allowBlank": true,
+			"localisable": false,
+			"recherchable": false,
+			"multivalu\u00e9": false,
+			"r\u00e9sum\u00e9": false,
+			"hidden": false,
+			"tooltip": "help text",
+			"vtype": null
+		},
+		"champsConfig": [
+			{
+				"type": "Ext.form.field.Text",
+				"config": {
+					"fieldLabel": "Nom",
+					"name": "name",
+					"allowBlank": false
+				}
+			}, {
+				"type": "Ext.form.field.Text",
+				"config": {
+					"fieldLabel": "Label",
+					"name": "fieldLabel",
+					"allowBlank": false
+				}
+			}, {
+				"type": "Ext.form.field.Text",
+				"config": {
+					"fieldLabel": "Bulle d'aide",
+					"name": "tooltip",
+					"allowBlank": false
+				}
+			}, {
+				"type": "Ext.form.field.Text",
+				"config": {
+					"fieldLabel": "Valeur par d\u00e9faut",
+					"name": "value"
+				}
+			}, {
+				"type": "Ext.form.field.ComboBox",
+				"store": {
+					"fields": ["valeur", "nom"],
+					"data": [
+						{
+							"valeur": "alpha",
+							"nom": "alpha"
+						}, {
+							"valeur": "alphanum",
+							"nom": "alphanum"
+						}, {
+							"valeur": null,
+							"nom": "aucune"
+						}
+					]
+				},
+				"config": {
+					"fieldLabel": "Validation",
+					"queryMode": "local",
+					"displayField": "nom",
+					"valueField": "valeur",
+					"forceSelect": true,
+					"editable": false,
+					"name": "vtype"
+				}
+			}, {
+				"type": "Ext.form.field.Number",
+				"config": {
+					"fieldLabel": "Longueur max",
+					"name": "maxLength"
+				}
+			}, {
+				"type": "Ext.form.field.Number",
+				"config": {
+					"fieldLabel": "Longueur min",
+					"name": "minLength"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "Peut \u00eatre vide",
+					"name": "allowBlank"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "Localisable",
+					"name": "localisable"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "Recherchable",
+					"name": "recherchable"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "Multivalu\u00e9",
+					"name": "multivalu\u00e9"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "R\u00e9sum\u00e9",
+					"name": "r\u00e9sum\u00e9"
+				}
+			}, {
+				"type": "Ext.form.field.Checkbox",
+				"config": {
+					"fieldLabel": "Cach\u00e9",
+					"name": "hidden"
+				}
+			}
+		],
+		"store": ""
+	},{
 		"type": "Champ zone de texte riche",
 		"cType": "Ext.form.field.HtmlEditor",
 		"ouvrir": "",
