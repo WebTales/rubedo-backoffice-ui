@@ -1,7 +1,7 @@
 {
     "name": "Rubedo",
     "settings": {
-        "urlPrefix": "http://rubedo.alexandru.local/backoffice/",
+        "urlPrefix": "http://127.0.0.1/",
         "spacesToIndent": 4,
         "exportPath": "",
         "lineEnding": "CRLF",
@@ -923,6 +923,38 @@
                 "app/view/CKEField.js"
             ],
             "className": "CKEField"
+        },
+        "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24": {
+            "paths": [
+                "metadata/store/ReusableElementsDataStore",
+                "app/store/override/ReusableElementsDataStore.js",
+                "app/store/ReusableElementsDataStore.js"
+            ],
+            "className": "ReusableElementsDataStore"
+        },
+        "3387fa23-11a9-43c0-a57c-f14978feff02": {
+            "paths": [
+                "metadata/model/reusableElementModel",
+                "app/model/override/reusableElementModel.js",
+                "app/model/reusableElementModel.js"
+            ],
+            "className": "reusableElementModel"
+        },
+        "04ab642c-6370-4c30-97cf-7c905f47813f": {
+            "paths": [
+                "metadata/view/ReusableElementPicker",
+                "app/view/override/ReusableElementPicker.js",
+                "app/view/ReusableElementPicker.js"
+            ],
+            "className": "ReusableElementPicker"
+        },
+        "4e5df8c9-dabd-492c-a887-bdcba9d112f4": {
+            "paths": [
+                "metadata/view/ExportElementWindow",
+                "app/view/override/ExportElementWindow.js",
+                "app/view/ExportElementWindow.js"
+            ],
+            "className": "ExportElementWindow"
         }
     },
     "viewOrderMap": {
@@ -975,7 +1007,9 @@
             "437ee3cb-dd4a-4ddc-a96a-c098f1303647",
             "73e60547-6188-4b20-9a1a-e3f085be455a",
             "66174f28-03d3-4c02-855f-65706d91852a",
-            "d307504b-480a-4d03-adf2-dc2c18432b4f"
+            "d307504b-480a-4d03-adf2-dc2c18432b4f",
+            "04ab642c-6370-4c30-97cf-7c905f47813f",
+            "4e5df8c9-dabd-492c-a887-bdcba9d112f4"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",
@@ -1001,7 +1035,8 @@
             "07053528-2f61-4530-94a2-099a9f5d243c",
             "6024e937-1032-4d87-9bf7-74a57a473a31",
             "e69f4522-8b28-4e61-badf-c5c8f0dee470",
-            "81ee60ff-5960-4240-b5ab-53f409b51792"
+            "81ee60ff-5960-4240-b5ab-53f409b51792",
+            "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1035,7 +1070,8 @@
             "631e6fdb-c3de-4905-9eaf-4d2aa157436e",
             "d0fd2671-4491-440c-8e6c-915c6cca062e",
             "9b9da84e-8515-4ff4-99f3-69b81dc01a02",
-            "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d"
+            "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d",
+            "3387fa23-11a9-43c0-a57c-f14978feff02"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

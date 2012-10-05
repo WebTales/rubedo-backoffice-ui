@@ -100,6 +100,8 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp("newRow").disable();
     Ext.getCmp("newCol").disable();
     Ext.getCmp("newBloc").disable();
+    Ext.getCmp("importElement").disable();
+    Ext.getCmp("exportElement").disable();
     Ext.getCmp("deleteElement").disable();
     Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
     Ext.getCmp('elementEditControl').removeAll();
@@ -109,6 +111,13 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     Ext.getCmp("boutonSupprimerMasque").enable();
 
+    },
+
+    reusablesGridSelect: function(selModel, record, index, options) {
+        Ext.getCmp("reusableelementDescription").update(record.data);
+        var go =true;
+        //tests
+        if (go) {Ext.getCmp("REAddButton").enable(); } else {Ext.getCmp("REAddButton").disable(); }
     },
 
     onTreepanelItemClick: function(tablepanel, record, item, index, e, options) {
@@ -232,6 +241,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     selectionEvents: function(abstractcomponent, options) {
         var me=this;
+
         if (!abstractcomponent.isXType("unBloc")){
             abstractcomponent.addBodyCls('contrastBorder');
             if (abstractcomponent.mType=="col"){
@@ -255,6 +265,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             this.frame(MyPrefData.themeColor);
             Ext.getCmp('elementIdField').setValue(abstractcomponent.id);
             Ext.getCmp('deleteElement').enable();
+            Ext.getCmp("importElement").enable();
+            Ext.getCmp("exportElement").enable();
             var propEdit=Ext.getCmp('elementEditControl');
             propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
             propEdit.setIconCls('editZone');
@@ -423,6 +435,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("newRow").disable();
         Ext.getCmp("newCol").disable();
         Ext.getCmp("newBloc").disable();
+        Ext.getCmp("importElement").disable();
+        Ext.getCmp("exportElement").disable();
         Ext.getCmp("deleteElement").disable();
         Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
         Ext.getCmp('elementEditControl').removeAll();
@@ -496,6 +510,16 @@ Ext.define('Rubedo.controller.MasqueController', {
         blocWin.showAt(screen.width/2-250, 100);
     },
 
+    importElement: function(button, e, options) {
+        var target=button.up().up().up().insTar;
+        var child=Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected().get("mCode");
+        this.removeIds(child);
+        var maskRows = this.saveRows(this.getMasqueEdition());
+        this.spliceMask(maskRows,target.id,child,true);
+        this.getMasqueEdition().removeAll();
+        this.masqueRestit(maskRows,1,this.getMasqueEdition());  
+    },
+
     addBloc: function(button, e, options) {
         var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
         var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
@@ -534,6 +558,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp('newCol').disable();
         Ext.getCmp('newBloc').disable();
         Ext.getCmp('newRow').enable();
+        Ext.getCmp("importElement").enable();
+        Ext.getCmp("exportElement").disable();
         var propEdit=Ext.getCmp('elementEditControl');
         propEdit.setTitle("Racine");
         propEdit.setIconCls('editZone');
@@ -573,6 +599,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp('newCol').disable();
         Ext.getCmp('newBloc').disable();
         Ext.getCmp('newRow').disable();
+        Ext.getCmp("importElement").disable();
+        Ext.getCmp("exportElement").enable();
         var propEdit=Ext.getCmp('elementEditControl');
         propEdit.setTitle(abstractcomponent.id.replace("unBloc", "Bloc"));
         propEdit.setIconCls('editBloc');
@@ -678,8 +706,61 @@ Ext.define('Rubedo.controller.MasqueController', {
             });
     },
 
+    exportElement: function(button, e, options) {
+        var form = button.up().getForm();
+        if (form.isValid()) {
+            var values=form.getValues();
+            var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+            var maskRows = this.saveRows(this.getMasqueEdition());
+            var newElement=Ext.create("Rubedo.model.reusableElementModel",{
+                name:values.name,
+                description:values.description,
+                mCode:this.findElement(maskRows,target.id),
+                mType:target.mType,
+                mLevel:this.getElementLevel(target,0),
+                site:Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("site")
+            });
+            Ext.getStore("ReusableElementsDataStore").add(newElement);
+        }
+        button.up().up().close();
+
+    },
+
     addBlocDblClick: function(tablepanel, record, item, index, e, options) {
         this.addBloc(Ext.getCmp("boutonAjouterBloc"));
+    },
+
+    exportMaskElementWindow: function(button, e, options) {
+        var fenetre = Ext.widget('ExportElementWindow');
+        Ext.getCmp('ViewportPrimaire').add(fenetre);
+        fenetre.show();
+    },
+
+    showImportWindow: function(button, e, options) {
+        var fenetre = Ext.widget('ReusableElementPicker');
+        Ext.getCmp('ViewportPrimaire').add(fenetre);
+        var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var site=Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("site");
+        var level=this.getElementLevel(target,0);
+        Ext.getStore("ReusableElementsDataStore").clearFilter();
+        Ext.getStore("ReusableElementsDataStore").filter("site",site);
+        fenetre.insTar={mType:target.mType,level:level,id:target.id};
+        fenetre.show();
+
+    },
+
+    removeIds: function(element) {
+        var me=this;
+        element.id=undefined;
+        if (!Ext.isEmpty(element.columns)) {
+            Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing);});
+        }
+        if (!Ext.isEmpty(element.rows)) {
+            Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing);});
+        }
+        if (!Ext.isEmpty(element.bloc)) {
+            Ext.Array.forEach(element.bloc,function(thing){me.removeIds(thing);});
+        }
     },
 
     applyConstrain: function(target, offsetF, spanF, applyFirst) {
@@ -734,6 +815,58 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
+    spliceMask: function(elements, id, child, continueOK) {
+        var me=this;
+        if (continueOK){
+            Ext.Array.forEach(elements, function(element){
+                if (continueOK){
+                    if (element.id==id) {
+                        var leprop="rows";
+                        if (child.mType=="col") { leprop="columns";} else if (child.mType=="bloc") { leprop="bloc";}
+                        if(Ext.isEmpty(element[leprop])){
+                            element[leprop]=[ ];
+                        }
+                        element[leprop].push(child);
+                        if ((element.mType=="col")&&(child.mType=="row")){
+                            element.isTerminal=false;
+                        }
+                        continueOK=false;
+                    } else {
+                        if (!Ext.isEmpty(element.columns)) {
+                            me.spliceMask(element.columns,id,child,continueOK);
+                        }
+                        if (!Ext.isEmpty(element.rows)) {
+                            me.spliceMask(element.rows,id,child,continueOK);
+                        }
+                    }
+
+                }
+            });}
+    },
+
+    findElement: function(someArray, elementId) {
+        var me=this;
+        var result= null;
+        Ext.Array.forEach(someArray, function(element){
+            if (result===null){
+                if (element.id===elementId){
+                    result=Ext.clone(element);
+                } else {
+                    if (!Ext.isEmpty(element.columns)) {
+                        result=(me.findElement(element.columns,elementId));
+                    }
+                    if ((!Ext.isEmpty(element.rows))&&(result===null)) {
+                        result=me.findElement(element.rows,elementId);
+                    }
+                    if ((!Ext.isEmpty(element.bloc))&&(result===null)) {
+                        result=me.findElement(element.bloc,elementId);
+                    }
+                }}
+
+            });
+            return (result);
+    },
+
     masqueMAJ: function(cible) {
         var nouvZones = [ ];
         var zonesM =Ext.getCmp('masqueEdition').items.items;
@@ -760,6 +893,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 header:false,
                 mType:"row",
                 eTitle:row.eTitle,
+                id:row.id,
                 responsive:row.responsive,
                 margin:4,
                 layout: {
@@ -784,6 +918,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     flex:column.span,
                     final:isFinalCol,
                     mType:'col',
+                    id:column.id,
                     eTitle:column.eTitle,
                     responsive:column.responsive,
                     margin:4,
@@ -822,6 +957,14 @@ Ext.define('Rubedo.controller.MasqueController', {
     });
     },
 
+    getElementLevel: function(element, level) {
+        if (element.id=="masqueEdition") {
+            return (level);
+        } else {   
+            return(this.getElementLevel(element.up(),level+1));
+        }
+    },
+
     saveRows: function(startComp) {
         var me=this;
         var nRows=[ ];
@@ -841,6 +984,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                                 bloc.push({
 
                                     bType:nBloc.bType,
+                                    id:nBloc.id,
+                                    mType:"bloc",
                                     champsConfig:nBloc.champsConfig,
                                     configBloc:nBloc.configBloc,
                                     title:nBloc.title,
@@ -862,6 +1007,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                                 bloc.push({
 
                                     bType:nBloc.bType,
+                                    id:nBloc.id,
+                                    mType:"bloc",
                                     champsConfig:nBloc.champsConfig,
                                     configBloc:nBloc.configBloc,
                                     title:nBloc.title,
@@ -883,6 +1030,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                     eTitle:col.eTitle,
                     responsive:col.responsive,
                     span:col.flex,
+                    id:col.id,
+                    mType:"col",
                     offset:offset,
                     bloc: bloc,
                     rows: rows,
@@ -896,6 +1045,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             nRows.push({
                 height:row.height,
                 eTitle:row.eTitle,
+                id:row.id,
+                mType:"row",
                 responsive:row.responsive,
                 columns: newCols
 
@@ -914,6 +1065,9 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#masquesGrid": {
                 select: this.masquesDisplay
+            },
+            "#ReusableElementsGrid": {
+                select: this.reusablesGridSelect
             },
             "#arborescenceSites": {
                 itemclick: this.onTreepanelItemClick
@@ -951,6 +1105,9 @@ Ext.define('Rubedo.controller.MasqueController', {
             "#newBloc": {
                 click: this.showBlocWindow
             },
+            "#REAddButton": {
+                click: this.importElement
+            },
             "#boutonAjouterBloc": {
                 click: this.addBloc
             },
@@ -960,8 +1117,17 @@ Ext.define('Rubedo.controller.MasqueController', {
             "unBloc": {
                 render: this.blocSelect
             },
+            "#ExportElementButton": {
+                click: this.exportElement
+            },
             "#BlocsSelectGrid": {
                 itemdblclick: this.addBlocDblClick
+            },
+            "#exportElement": {
+                click: this.exportMaskElementWindow
+            },
+            "#importElement": {
+                click: this.showImportWindow
             }
         });
     }

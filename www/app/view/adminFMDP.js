@@ -121,7 +121,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
-                            columns: 4,
+                            columns: 6,
                             layout: {
                                 columns: 2,
                                 type: 'table'
@@ -162,6 +162,24 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconCls: 'remove_big',
                                     scale: 'large',
                                     text: 'Supprimer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'exportElement',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'importElement',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
                                 }
                             ]
                         },

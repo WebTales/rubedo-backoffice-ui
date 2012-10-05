@@ -1,0 +1,59 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReusableElementsDataStore",
+        "designer|userAlias": "ReusableElementsDataStore",
+        "autoLoad": true,
+        "storeId": "ReusableElementsDataStore",
+        "model": "reusableElementModel"
+    },
+    "id": "ExtBox1-ext-gen27595",
+    "designerId": "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy21",
+                "url": "data/ReusableElements.json"
+            },
+            "designerId": "22c9fca0-61d1-43e9-9248-2cc06b581b17",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader19"
+                    },
+                    "designerId": "2cf93d8a-a7eb-4e0e-835b-db521f83497d"
+                }
+            ]
+        },
+        {
+            "type": "grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGrouper2",
+                "property": "mType"
+            },
+            "designerId": "f18abfdb-3e63-41d1-8354-625575748b05"
+        }
+    ]
+}

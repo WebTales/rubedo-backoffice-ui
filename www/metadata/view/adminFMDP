@@ -244,7 +244,7 @@
                         "disabled": true,
                         "headerPosition": "bottom",
                         "title": "Edition",
-                        "columns": 4
+                        "columns": 6
                     },
                     "designerId": "283c8d6e-452d-4a1b-b2ba-633f281409ef",
                     "cn": [
@@ -327,6 +327,46 @@
                                 "text": "Supprimer"
                             },
                             "designerId": "31fea061-d506-4bea-97dd-db58877f255e"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton51",
+                                "disabled": true,
+                                "id": "exportElement",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_down_big",
+                                "scale": "large",
+                                "text": "Exporter"
+                            },
+                            "designerId": "32b25a07-c68c-457c-9486-43b245e54995"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton51",
+                                "disabled": true,
+                                "id": "importElement",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_up_big",
+                                "scale": "large",
+                                "text": "Importer"
+                            },
+                            "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5"
                         }
                     ]
                 },

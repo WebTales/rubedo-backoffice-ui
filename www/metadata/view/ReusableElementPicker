@@ -1,0 +1,220 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "ReusableElementPicker",
+        "designer|userAlias": "ReusableElementPicker",
+        "height": 350,
+        "id": "ReusableElementPicker",
+        "width": 600,
+        "resizable": false,
+        "layout": "hbox",
+        "title": "Eléments réutilisables",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen29107",
+    "designerId": "04ab642c-6370-4c30-97cf-7c905f47813f",
+    "cn": [
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5,
+                "designer|userClassName": "MyGridPanel17",
+                "id": "ReusableElementsGrid",
+                "title": "",
+                "store": "ReusableElementsDataStore"
+            },
+            "designerId": "a960641e-1c1e-4c13-97ec-48a30c4d0e2a",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView17"
+                    },
+                    "designerId": "8bdb7e96-8aed-4c82-b1f5-7fc83e88f1f3"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn38",
+                        "dataIndex": "name",
+                        "flex": 1,
+                        "text": "Name"
+                    },
+                    "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed"
+                },
+                {
+                    "type": "groupinggridfeature",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGroupingFeature2"
+                    },
+                    "designerId": "92bbf608-3b28-491c-aab5-19f563d60436",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "groupHeaderTpl",
+                                "implHandler": [
+                                    "{name}"
+                                ],
+                                "designer|displayName": "groupHeaderTpl"
+                            },
+                            "designerId": "4041d896-a934-4ed3-a37b-015e7595308f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "center",
+                "designer|userClassName": "MyPanel41",
+                "layout": "vbox",
+                "title": ""
+            },
+            "designerId": "c87ed310-3b37-4d51-93d7-2a052278a20d",
+            "cn": [
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MyContainer20",
+                        "id": "reusableelementSimulation",
+                        "margin": "10 0 0 0",
+                        "width": 300,
+                        "anchorSize": null
+                    },
+                    "designerId": "72bbb711-00fc-426b-ac82-9a0301c20483"
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MyContainer20",
+                        "id": "reusableelementDescription",
+                        "margin": "10 0 10 0",
+                        "styleHtmlContent": true,
+                        "width": 350,
+                        "anchorSize": null
+                    },
+                    "designerId": "d1370439-418e-4078-b7ed-18fff72361d9",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "tpl",
+                                "implHandler": [
+                                    "<h2>{name}</h2>\r",
+                                    "<p>{description}</p>"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "de9ec4af-29ce-422f-aa44-b11dc80e39f6"
+                        }
+                    ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "dock": "bottom",
+                        "designer|userClassName": "MyToolbar36"
+                    },
+                    "designerId": "8ef4da63-4453-4819-a353-67967c734453",
+                    "cn": [
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill10"
+                            },
+                            "designerId": "236618a2-a732-4b8d-98fe-7b8e3b062289"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton125",
+                                "disabled": true,
+                                "id": "REAddButton",
+                                "iconCls": "add",
+                                "text": "Ajouter"
+                            },
+                            "designerId": "8dd193ad-a01e-4ed0-8569-1ff6bbd3b08c"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

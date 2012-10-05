@@ -129,6 +129,8 @@
                     "Ext.getCmp(\"newRow\").disable();\r",
                     "Ext.getCmp(\"newCol\").disable();\r",
                     "Ext.getCmp(\"newBloc\").disable();\r",
+                    "Ext.getCmp(\"importElement\").disable();\r",
+                    "Ext.getCmp(\"exportElement\").disable();\r",
                     "Ext.getCmp(\"deleteElement\").disable();\r",
                     "Ext.getCmp('elementEditControl').setTitle(\"Séléctionnez un élément\");\r",
                     "Ext.getCmp('elementEditControl').removeAll();\r",
@@ -147,6 +149,29 @@
             "designerId": "90ee9ec3-51ac-45fd-a5c8-da93ce6a5710"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "reusablesGridSelect",
+                "fn": "reusablesGridSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"reusableelementDescription\").update(record.data);\r",
+                    "var go =true;\r",
+                    "//tests\r",
+                    "if (go) {Ext.getCmp(\"REAddButton\").enable(); } else {Ext.getCmp(\"REAddButton\").disable(); }"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ReusableElementsGrid"
+            },
+            "designerId": "f667b1d0-f417-425f-8afc-d0d5af2b1e38"
+        },
+        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -159,6 +184,35 @@
                 "selector": "#masqueEdition"
             },
             "designerId": "0430d23b-9032-4abc-a5c3-c3d4f9a291e8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "removeIds",
+                "fn": "removeIds",
+                "designer|params": [
+                    "element"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "element.id=undefined;\r",
+                    "if (!Ext.isEmpty(element.columns)) {\r",
+                    "    Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing);});\r",
+                    "}\r",
+                    "if (!Ext.isEmpty(element.rows)) {\r",
+                    "    Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing);});\r",
+                    "}\r",
+                    "if (!Ext.isEmpty(element.bloc)) {\r",
+                    "    Ext.Array.forEach(element.bloc,function(thing){me.removeIds(thing);});\r",
+                    "}"
+                ]
+            },
+            "designerId": "bd0aa780-5af5-48a6-bd54-73374ad60e9d"
         },
         {
             "type": "basicfunction",
@@ -238,6 +292,92 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "spliceMask",
+                "fn": "spliceMask",
+                "designer|params": [
+                    "elements",
+                    "id",
+                    "child",
+                    "continueOK"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (continueOK){\r",
+                    "    Ext.Array.forEach(elements, function(element){\r",
+                    "        if (continueOK){\r",
+                    "            if (element.id==id) {\r",
+                    "                var leprop=\"rows\";\r",
+                    "                if (child.mType==\"col\") { leprop=\"columns\";} else if (child.mType==\"bloc\") { leprop=\"bloc\";}\r",
+                    "                if(Ext.isEmpty(element[leprop])){\r",
+                    "                    element[leprop]=[ ];\r",
+                    "                }\r",
+                    "                element[leprop].push(child);\r",
+                    "                if ((element.mType==\"col\")&&(child.mType==\"row\")){\r",
+                    "                element.isTerminal=false;\r",
+                    "                }\r",
+                    "                continueOK=false;\r",
+                    "            } else {\r",
+                    "                if (!Ext.isEmpty(element.columns)) {\r",
+                    "                    me.spliceMask(element.columns,id,child,continueOK);\r",
+                    "                }\r",
+                    "                if (!Ext.isEmpty(element.rows)) {\r",
+                    "                    me.spliceMask(element.rows,id,child,continueOK);\r",
+                    "                }\r",
+                    "            }\r",
+                    "\r",
+                    "        }\r",
+                    "    });}"
+                ]
+            },
+            "designerId": "0b1d99fd-b045-4490-bd3e-935590c2ea71"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "findElement",
+                "fn": "findElement",
+                "designer|params": [
+                    "someArray",
+                    "elementId"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var result= null;\r",
+                    "Ext.Array.forEach(someArray, function(element){\r",
+                    "    if (result===null){\r",
+                    "        if (element.id===elementId){\r",
+                    "            result=Ext.clone(element);\r",
+                    "        } else {\r",
+                    "            if (!Ext.isEmpty(element.columns)) {\r",
+                    "                result=(me.findElement(element.columns,elementId));\r",
+                    "            }\r",
+                    "            if ((!Ext.isEmpty(element.rows))&&(result===null)) {\r",
+                    "                result=me.findElement(element.rows,elementId);\r",
+                    "            }\r",
+                    "            if ((!Ext.isEmpty(element.bloc))&&(result===null)) {\r",
+                    "                result=me.findElement(element.bloc,elementId);\r",
+                    "            }\r",
+                    "        }}\r",
+                    "\r",
+                    "    });\r",
+                    "    return (result);"
+                ]
+            },
+            "designerId": "6e535155-ae5c-4d33-a23f-38d5eae4fcc0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "masqueMAJ",
                 "fn": "masqueMAJ",
                 "designer|params": [
@@ -286,6 +426,7 @@
                     "        header:false,\r",
                     "        mType:\"row\",\r",
                     "        eTitle:row.eTitle,\r",
+                    "        id:row.id,\r",
                     "        responsive:row.responsive,\r",
                     "        margin:4,\r",
                     "        layout: {\r",
@@ -310,6 +451,7 @@
                     "            flex:column.span,\r",
                     "            final:isFinalCol,\r",
                     "            mType:'col',\r",
+                    "            id:column.id,\r",
                     "            eTitle:column.eTitle,\r",
                     "            responsive:column.responsive,\r",
                     "            margin:4,\r",
@@ -324,9 +466,9 @@
                     "        }\r",
                     "        else {\r",
                     "            if (Ext.isEmpty(column.bloc)){} else {\r",
-                    "                Ext.Array.forEach(column.bloc, function(bl){\r",
-                    "                    newCol.add(Ext.widget(\"unBloc\",bl));\r",
-                    "                });\r",
+                    "            Ext.Array.forEach(column.bloc, function(bl){\r",
+                    "                newCol.add(Ext.widget(\"unBloc\",bl));\r",
+                    "            });\r",
                     "        }\r",
                     "    }\r",
                     "    eolWidth=eolWidth-column.span;\r",
@@ -505,7 +647,7 @@
                     "    cible.set(\"rows\",this.saveRows(this.getMasqueEdition()));\r",
                     "    cible.set(\"etat\",\"brouillon\");\r",
                     "    cible.set(\"derniereModification\",new Date());\r",
-                    "   // cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
+                    "    // cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
                     "    cible.endEdit();\r",
                     "\r",
                     "}"
@@ -593,6 +735,7 @@
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var me=this;\r",
+                    "\r",
                     "if (!abstractcomponent.isXType(\"unBloc\")){\r",
                     "    abstractcomponent.addBodyCls('contrastBorder');\r",
                     "    if (abstractcomponent.mType==\"col\"){\r",
@@ -616,6 +759,8 @@
                     "    this.frame(MyPrefData.themeColor);\r",
                     "    Ext.getCmp('elementIdField').setValue(abstractcomponent.id);\r",
                     "    Ext.getCmp('deleteElement').enable();\r",
+                    "    Ext.getCmp(\"importElement\").enable();\r",
+                    "    Ext.getCmp(\"exportElement\").enable();\r",
                     "    var propEdit=Ext.getCmp('elementEditControl');\r",
                     "    propEdit.setTitle(abstractcomponent.id.replace(\"panel\", abstractcomponent.mType));\r",
                     "    propEdit.setIconCls('editZone');\r",
@@ -800,6 +945,8 @@
                     "Ext.getCmp(\"newRow\").disable();\r",
                     "Ext.getCmp(\"newCol\").disable();\r",
                     "Ext.getCmp(\"newBloc\").disable();\r",
+                    "Ext.getCmp(\"importElement\").disable();\r",
+                    "Ext.getCmp(\"exportElement\").disable();\r",
                     "Ext.getCmp(\"deleteElement\").disable();\r",
                     "Ext.getCmp('elementEditControl').setTitle(\"Séléctionnez un élément\");\r",
                     "Ext.getCmp('elementEditControl').removeAll();\r",
@@ -935,6 +1082,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "importElement",
+                "fn": "importElement",
+                "implHandler": [
+                    "var target=button.up().up().up().insTar;\r",
+                    "var child=Ext.getCmp(\"ReusableElementsGrid\").getSelectionModel().getLastSelected().get(\"mCode\");\r",
+                    "this.removeIds(child);\r",
+                    "var maskRows = this.saveRows(this.getMasqueEdition());\r",
+                    "this.spliceMask(maskRows,target.id,child,true);\r",
+                    "this.getMasqueEdition().removeAll();\r",
+                    "this.masqueRestit(maskRows,1,this.getMasqueEdition());  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#REAddButton"
+            },
+            "designerId": "ed2cc6c0-ce25-4b86-a298-e0e2e4e50823"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "addBloc",
                 "fn": "addBloc",
                 "implHandler": [
@@ -965,6 +1138,30 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "getElementLevel",
+                "fn": "getElementLevel",
+                "designer|params": [
+                    "element",
+                    "level"
+                ],
+                "implHandler": [
+                    "if (element.id==\"masqueEdition\") {\r",
+                    "    return (level);\r",
+                    "} else {   \r",
+                    "    return(this.getElementLevel(element.up(),level+1));\r",
+                    "}"
+                ]
+            },
+            "designerId": "3b400554-8f07-4613-91a5-515b3f336a32"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "saveRows",
                 "fn": "saveRows",
                 "designer|params": [
@@ -986,19 +1183,21 @@
                     "                if (!Ext.isEmpty(nBlocs)) {\r",
                     "                    bloc=[ ];\r",
                     "                    Ext.Array.forEach(nBlocs, function(nBloc){\r",
-                    "                    bloc.push({\r",
+                    "                        bloc.push({\r",
                     "\r",
-                    "                        bType:nBloc.bType,\r",
-                    "                        champsConfig:nBloc.champsConfig,\r",
-                    "                        configBloc:nBloc.configBloc,\r",
-                    "                        title:nBloc.title,\r",
-                    "                        responsive:nBloc.responsive,\r",
-                    "                        flex:nBloc.flex\r",
+                    "                            bType:nBloc.bType,\r",
+                    "                            id:nBloc.id,\r",
+                    "                            mType:\"bloc\",\r",
+                    "                            champsConfig:nBloc.champsConfig,\r",
+                    "                            configBloc:nBloc.configBloc,\r",
+                    "                            title:nBloc.title,\r",
+                    "                            responsive:nBloc.responsive,\r",
+                    "                            flex:nBloc.flex\r",
+                    "\r",
+                    "                        });\r",
                     "\r",
                     "                    });\r",
-                    "                    \r",
-                    "                    });\r",
-                    "                        \r",
+                    "\r",
                     "                }\r",
                     "            }else {\r",
                     "                var thing=col.items.items[0];\r",
@@ -1007,19 +1206,21 @@
                     "                if (!Ext.isEmpty(nBlocs)) {\r",
                     "                    bloc=[ ];\r",
                     "                    Ext.Array.forEach(nBlocs, function(nBloc){\r",
-                    "                    bloc.push({\r",
+                    "                        bloc.push({\r",
                     "\r",
-                    "                        bType:nBloc.bType,\r",
-                    "                        champsConfig:nBloc.champsConfig,\r",
-                    "                        configBloc:nBloc.configBloc,\r",
-                    "                        title:nBloc.title,\r",
-                    "                        responsive:nBloc.responsive,\r",
-                    "                        flex:nBloc.flex\r",
+                    "                            bType:nBloc.bType,\r",
+                    "                            id:nBloc.id,\r",
+                    "                            mType:\"bloc\",\r",
+                    "                            champsConfig:nBloc.champsConfig,\r",
+                    "                            configBloc:nBloc.configBloc,\r",
+                    "                            title:nBloc.title,\r",
+                    "                            responsive:nBloc.responsive,\r",
+                    "                            flex:nBloc.flex\r",
+                    "\r",
+                    "                        });\r",
                     "\r",
                     "                    });\r",
-                    "                    \r",
-                    "                    });\r",
-                    "                        \r",
+                    "\r",
                     "                }\r",
                     "            } else {\r",
                     "                isTerminal=false;\r",
@@ -1031,6 +1232,8 @@
                     "            eTitle:col.eTitle,\r",
                     "            responsive:col.responsive,\r",
                     "            span:col.flex,\r",
+                    "            id:col.id,\r",
+                    "            mType:\"col\",\r",
                     "            offset:offset,\r",
                     "            bloc: bloc,\r",
                     "            rows: rows,\r",
@@ -1044,6 +1247,8 @@
                     "    nRows.push({\r",
                     "        height:row.height,\r",
                     "        eTitle:row.eTitle,\r",
+                    "        id:row.id,\r",
+                    "        mType:\"row\",\r",
                     "        responsive:row.responsive,\r",
                     "        columns: newCols\r",
                     "\r",
@@ -1088,6 +1293,8 @@
                     "Ext.getCmp('newCol').disable();\r",
                     "Ext.getCmp('newBloc').disable();\r",
                     "Ext.getCmp('newRow').enable();\r",
+                    "Ext.getCmp(\"importElement\").enable();\r",
+                    "Ext.getCmp(\"exportElement\").disable();\r",
                     "var propEdit=Ext.getCmp('elementEditControl');\r",
                     "propEdit.setTitle(\"Racine\");\r",
                     "propEdit.setIconCls('editZone');\r",
@@ -1143,6 +1350,8 @@
                     "Ext.getCmp('newCol').disable();\r",
                     "Ext.getCmp('newBloc').disable();\r",
                     "Ext.getCmp('newRow').disable();\r",
+                    "Ext.getCmp(\"importElement\").disable();\r",
+                    "Ext.getCmp(\"exportElement\").enable();\r",
                     "var propEdit=Ext.getCmp('elementEditControl');\r",
                     "propEdit.setTitle(abstractcomponent.id.replace(\"unBloc\", \"Bloc\"));\r",
                     "propEdit.setIconCls('editBloc');\r",
@@ -1262,6 +1471,42 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "exportElement",
+                "fn": "exportElement",
+                "implHandler": [
+                    "var form = button.up().getForm();\r",
+                    "if (form.isValid()) {\r",
+                    "    var values=form.getValues();\r",
+                    "    var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
+                    "    var maskRows = this.saveRows(this.getMasqueEdition());\r",
+                    "    var newElement=Ext.create(\"Rubedo.model.reusableElementModel\",{\r",
+                    "        name:values.name,\r",
+                    "        description:values.description,\r",
+                    "        mCode:this.findElement(maskRows,target.id),\r",
+                    "        mType:target.mType,\r",
+                    "        mLevel:this.getElementLevel(target,0),\r",
+                    "        site:Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"site\")\r",
+                    "    });\r",
+                    "    Ext.getStore(\"ReusableElementsDataStore\").add(newElement);\r",
+                    "}\r",
+                    "button.up().up().close();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ExportElementButton"
+            },
+            "designerId": "ed3f878d-3a09-4236-b788-0dd518f58baa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "addBlocDblClick",
                 "fn": "addBlocDblClick",
                 "implHandler": [
@@ -1273,6 +1518,57 @@
                 "designer|controlQuery": "#BlocsSelectGrid"
             },
             "designerId": "d0ccbeb8-e552-4c5f-84da-1d9621ba77f2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "exportMaskElementWindow",
+                "fn": "exportMaskElementWindow",
+                "implHandler": [
+                    "var fenetre = Ext.widget('ExportElementWindow');\r",
+                    "Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
+                    "fenetre.show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#exportElement"
+            },
+            "designerId": "18bb8233-5671-499b-858c-d49767199033"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "showImportWindow",
+                "fn": "showImportWindow",
+                "implHandler": [
+                    "var fenetre = Ext.widget('ReusableElementPicker');\r",
+                    "Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
+                    "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
+                    "var site=Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"site\");\r",
+                    "var level=this.getElementLevel(target,0);\r",
+                    "Ext.getStore(\"ReusableElementsDataStore\").clearFilter();\r",
+                    "Ext.getStore(\"ReusableElementsDataStore\").filter(\"site\",site);\r",
+                    "fenetre.insTar={mType:target.mType,level:level,id:target.id};\r",
+                    "fenetre.show();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#importElement"
+            },
+            "designerId": "e52a692b-71b5-4751-b59d-b8cf3d7ec5c5"
         }
     ]
 }

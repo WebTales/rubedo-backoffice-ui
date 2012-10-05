@@ -20,7 +20,8 @@
             "themeDataModel",
             "personalPrefsDataModel",
             "groupDataModel",
-            "userDataModel"
+            "userDataModel",
+            "reusableElementModel"
         ],
         "stores": [
             "SitesDataJson",
@@ -41,7 +42,8 @@
             "GroupsDataStore",
             "UsersDataStore",
             "UsersGroupStore",
-            "UsersAdminDataStore"
+            "UsersAdminDataStore",
+            "ReusableElementsDataStore"
         ],
         "views": [
             "MyContainer",
@@ -69,7 +71,9 @@
             "UserAdminWindow",
             "MyGridPanel16",
             "testingGround",
-            "CKEField"
+            "CKEField",
+            "ReusableElementPicker",
+            "ExportElementWindow"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

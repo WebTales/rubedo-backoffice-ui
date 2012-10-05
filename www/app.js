@@ -36,7 +36,8 @@ Ext.application({
         'themeDataModel',
         'personalPrefsDataModel',
         'groupDataModel',
-        'userDataModel'
+        'userDataModel',
+        'reusableElementModel'
     ],
     stores: [
         'SitesDataJson',
@@ -57,7 +58,8 @@ Ext.application({
         'GroupsDataStore',
         'UsersDataStore',
         'UsersGroupStore',
-        'UsersAdminDataStore'
+        'UsersAdminDataStore',
+        'ReusableElementsDataStore'
     ],
     views: [
         'MyContainer',
@@ -85,7 +87,9 @@ Ext.application({
         'UserAdminWindow',
         'MyGridPanel16',
         'testingGround',
-        'CKEField'
+        'CKEField',
+        'ReusableElementPicker',
+        'ExportElementWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
