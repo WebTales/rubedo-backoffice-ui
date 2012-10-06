@@ -43,14 +43,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                     xtype: 'panel',
                     flex: 0.8,
                     width: 210,
-                    layout: {
-                        type: 'fit'
-                    },
+                    bodyPadding: 10,
                     items: [
                         {
-                            xtype: 'menu',
-                            floating: false,
-                            ignoreParentClicks: true
+                            xtype: 'image',
+                            height: 239,
+                            width: 210,
+                            src: 'resources/images/logoBkg.png'
                         }
                     ]
                 }

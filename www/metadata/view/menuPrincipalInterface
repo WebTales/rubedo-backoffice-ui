@@ -40,25 +40,28 @@
                 "layout|flex": 0.8,
                 "designer|userClassName": "MyPanel62",
                 "width": 210,
-                "layout": "fit"
+                "bodyPadding": 10,
+                "bodyStyle": null
+            },
+            "configAlternates": {
+                "bodyStyle": "string"
             },
             "designerId": "3f0ed9de-c4f2-4009-b09e-6c9174f435fc",
             "cn": [
                 {
-                    "type": "menu",
+                    "type": "image",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyMenu",
-                        "floating": false,
-                        "id": null,
-                        "width": null,
-                        "ignoreParentClicks": true
+                        "designer|userClassName": "MyImg11",
+                        "height": 239,
+                        "width": 210,
+                        "src": "resources/images/logoBkg.png"
                     },
-                    "designerId": "d3de6554-cf68-4b57-b9e3-f237f33bb893"
+                    "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
                 }
             ]
         },
