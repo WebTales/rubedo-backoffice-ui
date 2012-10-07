@@ -170,6 +170,7 @@
                     "\r",
                     "else if ((record.get(\"mType\")==\"row\")&&(target.mType==\"bloc\")) {go=false;}\r",
                     "else if ((record.get(\"mType\")!=\"row\")&&(target.id==\"masqueEdition\")) {go=false;}\r",
+                    "else if ((record.get(\"mType\")!=\"bloc\")&&(target.level==4)) {go=false;}\r",
                     "//else if (record.get(\"level\")<target.level) {go=false;}\r",
                     "// fin tests\r",
                     "\r",
