@@ -117,6 +117,17 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("reusableelementDescription").update(record.data);
         var go =true;
         //tests
+        var target=Ext.getCmp("ReusableElementPicker").insTar;
+
+        if (record.get("mType")==target.mType) {go=false;}
+
+        else if ((target.mType=="row")&&(Ext.getCmp(target.id).getComponent("eol").flex===0)) {go=false;}
+
+        else if ((record.get("mType")=="row")&&(target.mType=="bloc")) {go=false;}
+        else if ((record.get("mType")!="row")&&(target.id=="masqueEdition")) {go=false;}
+        //else if (record.get("level")<target.level) {go=false;}
+        // fin tests
+
         if (go) {Ext.getCmp("REAddButton").enable(); } else {Ext.getCmp("REAddButton").disable(); }
     },
 
@@ -189,7 +200,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             Ext.getCmp('nouveauMasqueFenetre').close();
             Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);
-            this.masqueDisplay(Ext.getCmp('masquesGridView'),nouvMasque);
+            this.masquesDisplay(Ext.getCmp('masquesGridView'),nouvMasque);
 
         }
     },
@@ -515,7 +526,11 @@ Ext.define('Rubedo.controller.MasqueController', {
         var child=Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected().get("mCode");
         this.removeIds(child);
         var maskRows = this.saveRows(this.getMasqueEdition());
-        this.spliceMask(maskRows,target.id,child,true);
+        if (target.id=="masqueEdition") {
+            maskRows.push(child);
+        } else {
+            this.spliceMask(maskRows,target.id,child,true);
+        }
         this.getMasqueEdition().removeAll();
         this.masqueRestit(maskRows,1,this.getMasqueEdition());  
     },
