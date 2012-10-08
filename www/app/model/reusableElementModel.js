@@ -33,7 +33,12 @@ Ext.define('Rubedo.model.reusableElementModel', {
             name: 'mType'
         },
         {
-            name: 'mLevel'
+            name: 'mLevel',
+            type: 'int'
+        },
+        {
+            name: 'depth',
+            type: 'int'
         },
         {
             name: 'site'

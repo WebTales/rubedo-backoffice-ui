@@ -161,7 +161,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"reusableelementDescription\").update(record.data);\r",
                     "var go =true;\r",
-                    "//tests\r",
+                    "\r",
                     "var target=Ext.getCmp(\"ReusableElementPicker\").insTar;\r",
                     "\r",
                     "if (record.get(\"mType\")==target.mType) {go=false;}\r",
@@ -171,8 +171,10 @@
                     "else if ((record.get(\"mType\")==\"row\")&&(target.mType==\"bloc\")) {go=false;}\r",
                     "else if ((record.get(\"mType\")!=\"row\")&&(target.id==\"masqueEdition\")) {go=false;}\r",
                     "else if ((record.get(\"mType\")!=\"bloc\")&&(target.level==4)) {go=false;}\r",
-                    "//else if (record.get(\"level\")<target.level) {go=false;}\r",
-                    "// fin tests\r",
+                    "else if((record.get(\"mType\")==\"bloc\")&&(!Ext.isEmpty(target.mCode.rows))) {go=false;}\r",
+                    "else if((record.get(\"mType\")==\"row\")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}\r",
+                    "\r",
+                    "\r",
                     "\r",
                     "if (go) {Ext.getCmp(\"REAddButton\").enable(); } else {Ext.getCmp(\"REAddButton\").disable(); }"
                 ],
@@ -415,6 +417,47 @@
                 ]
             },
             "designerId": "1d1aba20-f06b-46cd-9b94-ce3f0b0e3b74"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getElementDepth",
+                "fn": "getElementDepth",
+                "designer|params": [
+                    "element"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "if (element.mType==\"bloc\") {\r",
+                    "    return(1);\r",
+                    "}\r",
+                    "else if (element.mType==\"col\") {\r",
+                    "    var bDepth = 1;\r",
+                    "    if (!Ext.isEmpty(element.bloc)) {bDepth=2;}\r",
+                    "    var cDepth = 1;\r",
+                    "    if (!Ext.isEmpty(element.rows)) {\r",
+                    "         cDepth= 1+Ext.Array.max(Ext.Array.map(element.rows,function(row){return(me.getElementDepth(row));}));\r",
+                    "    }\r",
+                    " \r",
+                    "    return(Math.max(bDepth,cDepth));\r",
+                    "}\r",
+                    "else if (element.mType==\"row\") {\r",
+                    "    if (Ext.isEmpty(element.columns)) {\r",
+                    "            return(1);\r",
+                    "    }else{\r",
+                    "         return( 1+Ext.Array.max(Ext.Array.map(element.columns,function(col){return(me.getElementDepth(col));})));\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    return(0);\r",
+                    "}"
+                ]
+            },
+            "designerId": "9dab9dc0-ebc4-45bd-a056-7fd019fea6e1"
         },
         {
             "type": "basicfunction",
@@ -1104,7 +1147,7 @@
                     "if (target.id==\"masqueEdition\") {\r",
                     "    maskRows.push(child);\r",
                     "} else {\r",
-                    "this.spliceMask(maskRows,target.id,child,true);\r",
+                    "    this.spliceMask(maskRows,target.id,child,true);\r",
                     "}\r",
                     "this.getMasqueEdition().removeAll();\r",
                     "this.masqueRestit(maskRows,1,this.getMasqueEdition());  "
@@ -1495,10 +1538,12 @@
                     "    var values=form.getValues();\r",
                     "    var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
                     "    var maskRows = this.saveRows(this.getMasqueEdition());\r",
+                    "    var mCode=this.findElement(maskRows,target.id);\r",
                     "    var newElement=Ext.create(\"Rubedo.model.reusableElementModel\",{\r",
                     "        name:values.name,\r",
                     "        description:values.description,\r",
-                    "        mCode:this.findElement(maskRows,target.id),\r",
+                    "        mCode:mCode,\r",
+                    "        depth:this.getElementDepth(mCode),\r",
                     "        mType:target.mType,\r",
                     "        mLevel:this.getElementLevel(target,0),\r",
                     "        site:Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"site\")\r",
@@ -1571,11 +1616,13 @@
                     "var fenetre = Ext.widget('ReusableElementPicker');\r",
                     "Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
                     "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
+                    "var maskRows = this.saveRows(this.getMasqueEdition());\r",
+                    "var mCode=this.findElement(maskRows,target.id);\r",
                     "var site=Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"site\");\r",
                     "var level=this.getElementLevel(target,0);\r",
                     "Ext.getStore(\"ReusableElementsDataStore\").clearFilter();\r",
                     "Ext.getStore(\"ReusableElementsDataStore\").filter(\"site\",site);\r",
-                    "fenetre.insTar={mType:target.mType,level:level,id:target.id};\r",
+                    "fenetre.insTar={mType:target.mType,level:level,id:target.id,mCode:mCode};\r",
                     "fenetre.show();\r",
                     ""
                 ],

@@ -116,7 +116,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     reusablesGridSelect: function(selModel, record, index, options) {
         Ext.getCmp("reusableelementDescription").update(record.data);
         var go =true;
-        //tests
+
         var target=Ext.getCmp("ReusableElementPicker").insTar;
 
         if (record.get("mType")==target.mType) {go=false;}
@@ -126,8 +126,10 @@ Ext.define('Rubedo.controller.MasqueController', {
         else if ((record.get("mType")=="row")&&(target.mType=="bloc")) {go=false;}
         else if ((record.get("mType")!="row")&&(target.id=="masqueEdition")) {go=false;}
         else if ((record.get("mType")!="bloc")&&(target.level==4)) {go=false;}
-        //else if (record.get("level")<target.level) {go=false;}
-        // fin tests
+        else if((record.get("mType")=="bloc")&&(!Ext.isEmpty(target.mCode.rows))) {go=false;}
+        else if((record.get("mType")=="row")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}
+
+
 
         if (go) {Ext.getCmp("REAddButton").enable(); } else {Ext.getCmp("REAddButton").disable(); }
     },
@@ -728,10 +730,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             var values=form.getValues();
             var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
             var maskRows = this.saveRows(this.getMasqueEdition());
+            var mCode=this.findElement(maskRows,target.id);
             var newElement=Ext.create("Rubedo.model.reusableElementModel",{
                 name:values.name,
                 description:values.description,
-                mCode:this.findElement(maskRows,target.id),
+                mCode:mCode,
+                depth:this.getElementDepth(mCode),
                 mType:target.mType,
                 mLevel:this.getElementLevel(target,0),
                 site:Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("site")
@@ -756,11 +760,13 @@ Ext.define('Rubedo.controller.MasqueController', {
         var fenetre = Ext.widget('ReusableElementPicker');
         Ext.getCmp('ViewportPrimaire').add(fenetre);
         var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var maskRows = this.saveRows(this.getMasqueEdition());
+        var mCode=this.findElement(maskRows,target.id);
         var site=Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("site");
         var level=this.getElementLevel(target,0);
         Ext.getStore("ReusableElementsDataStore").clearFilter();
         Ext.getStore("ReusableElementsDataStore").filter("site",site);
-        fenetre.insTar={mType:target.mType,level:level,id:target.id};
+        fenetre.insTar={mType:target.mType,level:level,id:target.id,mCode:mCode};
         fenetre.show();
 
     },
@@ -900,6 +906,32 @@ Ext.define('Rubedo.controller.MasqueController', {
             nouvZones.push(nZone);
         }
         cible.data.zones=nouvZones;
+    },
+
+    getElementDepth: function(element) {
+        var me = this;
+        if (element.mType=="bloc") {
+            return(1);
+        }
+        else if (element.mType=="col") {
+            var bDepth = 1;
+            if (!Ext.isEmpty(element.bloc)) {bDepth=2;}
+            var cDepth = 1;
+            if (!Ext.isEmpty(element.rows)) {
+                cDepth= 1+Ext.Array.max(Ext.Array.map(element.rows,function(row){return(me.getElementDepth(row));}));
+            }
+
+            return(Math.max(bDepth,cDepth));
+        }
+        else if (element.mType=="row") {
+            if (Ext.isEmpty(element.columns)) {
+                return(1);
+            }else{
+                return( 1+Ext.Array.max(Ext.Array.map(element.columns,function(col){return(me.getElementDepth(col));})));
+            }
+        } else {
+            return(0);
+        }
     },
 
     masqueRestit: function(mRows, its, cible) {
