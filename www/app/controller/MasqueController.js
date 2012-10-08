@@ -127,7 +127,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         else if ((record.get("mType")!="row")&&(target.id=="masqueEdition")) {go=false;}
         else if ((record.get("mType")!="bloc")&&(target.level==4)) {go=false;}
         else if((record.get("mType")=="bloc")&&(!Ext.isEmpty(target.mCode.rows))) {go=false;}
-        else if((record.get("mType")=="row")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}
+        else if((target.id!="masqueEdition")&&(record.get("mType")=="row")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}
 
 
 

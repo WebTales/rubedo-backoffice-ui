@@ -172,7 +172,7 @@
                     "else if ((record.get(\"mType\")!=\"row\")&&(target.id==\"masqueEdition\")) {go=false;}\r",
                     "else if ((record.get(\"mType\")!=\"bloc\")&&(target.level==4)) {go=false;}\r",
                     "else if((record.get(\"mType\")==\"bloc\")&&(!Ext.isEmpty(target.mCode.rows))) {go=false;}\r",
-                    "else if((record.get(\"mType\")==\"row\")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}\r",
+                    "else if((target.id!=\"masqueEdition\")&&(record.get(\"mType\")==\"row\")&&(!Ext.isEmpty(target.mCode.bloc))) {go=false;}\r",
                     "\r",
                     "\r",
                     "\r",
