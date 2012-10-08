@@ -535,7 +535,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             this.spliceMask(maskRows,target.id,child,true);
         }
         this.getMasqueEdition().removeAll();
-        this.masqueRestit(maskRows,1,this.getMasqueEdition());  
+        this.masqueRestit(maskRows,1,this.getMasqueEdition()); 
+        button.up().up().up().close();
     },
 
     addBloc: function(button, e, options) {

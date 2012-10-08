@@ -1150,7 +1150,8 @@
                     "    this.spliceMask(maskRows,target.id,child,true);\r",
                     "}\r",
                     "this.getMasqueEdition().removeAll();\r",
-                    "this.masqueRestit(maskRows,1,this.getMasqueEdition());  "
+                    "this.masqueRestit(maskRows,1,this.getMasqueEdition()); \r",
+                    "button.up().up().up().close();"
                 ],
                 "name": "click",
                 "scope": "me",
