@@ -89,13 +89,10 @@
                 "designer|userClassName": "openGroupAddWindow",
                 "fn": "openGroupAddWindow",
                 "implHandler": [
-                    "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
-                    "if (!Ext.isEmpty(target)) {\r",
-                    "\r",
-                    "    var window = Ext.widget(\"GroupAddWindow\");\r",
-                    "    Ext.getCmp('ViewportPrimaire').add(window);\r",
-                    "    window.show();\r",
-                    "}"
+                    "var window = Ext.widget(\"GroupAddWindow\");\r",
+                    "Ext.getCmp('ViewportPrimaire').add(window);\r",
+                    "window.show();\r",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",
@@ -116,6 +113,9 @@
                 "fn": "createGroup",
                 "implHandler": [
                     "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (Ext.isEmpty(target)) {\r",
+                    "    target=Ext.getCmp(\"groupsGrid\").getStore().getRootNode();\r",
+                    "}\r",
                     "var nameField = button.previousSibling();\r",
                     "if (nameField.isValid()) {\r",
                     "    target.appendChild({\r",

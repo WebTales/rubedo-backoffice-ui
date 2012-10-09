@@ -52,17 +52,17 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     openGroupAddWindow: function(button, e, options) {
-        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
-        if (!Ext.isEmpty(target)) {
+        var window = Ext.widget("GroupAddWindow");
+        Ext.getCmp('ViewportPrimaire').add(window);
+        window.show();
 
-            var window = Ext.widget("GroupAddWindow");
-            Ext.getCmp('ViewportPrimaire').add(window);
-            window.show();
-        }
     },
 
     createGroup: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        if (Ext.isEmpty(target)) {
+            target=Ext.getCmp("groupsGrid").getStore().getRootNode();
+        }
         var nameField = button.previousSibling();
         if (nameField.isValid()) {
             target.appendChild({
