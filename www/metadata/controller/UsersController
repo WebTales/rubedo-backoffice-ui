@@ -297,6 +297,53 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "userAdminSelect",
+                "fn": "userAdminSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"userAdminInfoDisplay\").getForm().loadRecord(record);\r",
+                    "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
+                    "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(record.get(\"photo\"));\r",
+                    "}"
+                ],
+                "name": "itemclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#userAdminGrid"
+            },
+            "designerId": "908d61e5-f2ab-4a31-94d7-c387687d58cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "adminInfoUpdate",
+                "fn": "adminInfoUpdate",
+                "implHandler": [
+                    "if (Ext.getCmp(\"userAdminInfoDisplay\").getForm().isValid()) {\r",
+                    "    Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected().set(Ext.getCmp(\"userAdminInfoDisplay\").getForm().getValues());\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAdminInfoEdit"
+            },
+            "designerId": "205c0122-f13f-4d4b-adc9-c7373616bb3a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "newUser",
                 "fn": "newUser",
                 "implHandler": [
@@ -415,6 +462,27 @@
                 "designer|controlQuery": "#UserAddWindow"
             },
             "designerId": "70ef9ae5-0d90-4cac-ae92-b3ea47a49aeb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "deleteAdminPicture",
+                "fn": "deleteAdminPicture",
+                "implHandler": [
+                    "Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected().set(\"photo\", null);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAdminProfilePictureDelete"
+            },
+            "designerId": "8207d36b-07bf-4ffa-97de-f2afcf5e4a75"
         }
     ]
 }

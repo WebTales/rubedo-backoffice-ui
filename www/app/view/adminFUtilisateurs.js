@@ -220,25 +220,25 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'telephone',
+                                            dataIndex: 'mobile',
                                             flex: 1,
                                             text: 'Téléphone'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'adress',
+                                            dataIndex: 'login',
                                             flex: 1,
                                             text: 'Adresse'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'position',
+                                            dataIndex: 'post',
                                             flex: 1,
                                             text: 'Poste'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'department',
+                                            dataIndex: 'organisation',
                                             flex: 1,
                                             text: 'Département'
                                         },
@@ -252,14 +252,14 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         {
                                             xtype: 'datecolumn',
                                             hidden: true,
-                                            dataIndex: 'creationDate',
+                                            dataIndex: 'createTime',
                                             flex: 1,
                                             text: 'Création'
                                         },
                                         {
                                             xtype: 'datecolumn',
                                             hidden: true,
-                                            dataIndex: 'lastUpdate',
+                                            dataIndex: 'updateTime',
                                             flex: 1,
                                             text: 'Dernière modification'
                                         }

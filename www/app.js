@@ -59,7 +59,10 @@ Ext.application({
         'UsersDataStore',
         'UsersGroupStore',
         'UsersAdminDataStore',
-        'ReusableElementsDataStore'
+        'ReusableElementsDataStore',
+        'titleStore',
+        'countryStore',
+        'languageStore'
     ],
     views: [
         'MyContainer',

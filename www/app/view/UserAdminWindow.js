@@ -21,11 +21,12 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         'Rubedo.view.MyGridPanel16'
     ],
 
-    height: 400,
+    height: 465,
     id: 'UserAdminWindow',
-    width: 700,
+    width: 800,
     layout: {
-        type: 'fit'
+        align: 'stretch',
+        type: 'hbox'
     },
     iconCls: 'user_edit',
     title: 'Utilisateurs',
@@ -40,7 +41,203 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'mygridpanel16'
+                    xtype: 'mygridpanel16',
+                    id: 'userAdminGrid',
+                    width: 200,
+                    resizable: true,
+                    resizeHandles: 'e'
+                },
+                {
+                    xtype: 'tabpanel',
+                    flex: 1,
+                    items: [
+                        {
+                            xtype: 'form',
+                            id: 'userAdminInfoDisplay',
+                            layout: {
+                                type: 'hbox'
+                            },
+                            bodyPadding: 10,
+                            title: 'Informations',
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    flex: 1,
+                                    height: 360,
+                                    margin: 0,
+                                    width: 356,
+                                    autoScroll: true,
+                                    title: 'Informations',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            disabled: false,
+                                            name: 'name',
+                                            fieldLabel: 'Nom ',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            name: 'title',
+                                            fieldLabel: 'Civilité ',
+                                            displayField: 'title',
+                                            store: 'titleStore',
+                                            valueField: 'title'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'organisation',
+                                            fieldLabel: 'Organisation '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'service',
+                                            fieldLabel: 'Service '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'post',
+                                            fieldLabel: 'Fonction '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'email',
+                                            fieldLabel: 'E-mail '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'telephone',
+                                            fieldLabel: 'Téléphone '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'mobile',
+                                            fieldLabel: 'Mobile '
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'coordinates',
+                                            fieldLabel: 'Coordonnées '
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            name: 'language',
+                                            fieldLabel: 'Langue ',
+                                            displayField: 'language',
+                                            store: 'languageStore',
+                                            valueField: 'language'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            name: 'country',
+                                            fieldLabel: 'Pays ',
+                                            displayField: 'country',
+                                            store: 'countryStore',
+                                            valueField: 'country'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            anchor: '100%',
+                                            id: 'userAdminInfoEdit',
+                                            text: 'Appliquer'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    height: 292,
+                                    margin: '0 0 0 10',
+                                    width: 200,
+                                    title: 'Photo',
+                                    items: [
+                                        {
+                                            xtype: 'image',
+                                            height: 180,
+                                            id: 'userAdminProfilePicture',
+                                            margin: '0 0 18 18',
+                                            width: 140,
+                                            src: 'resources/images/userBig.png'
+                                        },
+                                        {
+                                            xtype: 'filefield',
+                                            anchor: '60%',
+                                            formBind: false,
+                                            style: 'float: left;',
+                                            submitValue: false,
+                                            fieldLabel: '',
+                                            buttonText: 'Choisir'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            anchor: '40%',
+                                            text: 'Appliquer'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            anchor: '100%',
+                                            id: 'userAdminProfilePictureDelete',
+                                            text: 'Suprimer'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'form',
+                            bodyPadding: 20,
+                            title: 'Accès',
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Changement du mot de passe',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Compte utilisateur ',
+                                            labelWidth: 200
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Mot de passe',
+                                            labelWidth: 200
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Confirmation du mot de passe ',
+                                            labelWidth: 200
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            anchor: '100%',
+                                            text: 'Appliquer'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Délégations'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            title: 'Droits'
+                        }
+                    ]
                 }
             ],
             dockedItems: [

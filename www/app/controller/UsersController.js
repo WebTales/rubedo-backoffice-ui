@@ -106,6 +106,21 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp("groupsGrid").getSelectionModel().select(record);
     },
 
+    userAdminSelect: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("userAdminInfoDisplay").getForm().loadRecord(record);
+        if (Ext.isEmpty(record.get("photo"))) {
+            Ext.getCmp("userAdminProfilePicture").setSrc("resources/images/userBig.png");
+        } else {
+            Ext.getCmp("userAdminProfilePicture").setSrc(record.get("photo"));
+        }
+    },
+
+    adminInfoUpdate: function(button, e, options) {
+        if (Ext.getCmp("userAdminInfoDisplay").getForm().isValid()) {
+            Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected().set(Ext.getCmp("userAdminInfoDisplay").getForm().getValues());
+        }
+    },
+
     newUser: function(button, e, options) {
         var newUser = Ext.create("Rubedo.model.userDataModel",{
             name:"Nouvel Utilisateur",
@@ -135,6 +150,11 @@ Ext.define('Rubedo.controller.UsersController', {
 
     onWindowBeforeClose1: function(panel, options) {
         Ext.getStore("UsersDataStore").clearFilter();
+    },
+
+    deleteAdminPicture: function(button, e, options) {
+        Ext.getCmp("userAdminProfilePicture").setSrc("resources/images/userBig.png");
+        Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected().set("photo", null);
     },
 
     getGroupUsers: function(group, array) {
@@ -192,6 +212,12 @@ Ext.define('Rubedo.controller.UsersController', {
             "#userRemoveButton": {
                 click: this.removeUserFromGroup
             },
+            "#userAdminGrid": {
+                itemclick: this.userAdminSelect
+            },
+            "#userAdminInfoEdit": {
+                click: this.adminInfoUpdate
+            },
             "#userAdminAdd": {
                 click: this.newUser
             },
@@ -204,6 +230,9 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#UserAddWindow": {
                 beforeclose: this.onWindowBeforeClose1
+            },
+            "#userAdminProfilePictureDelete": {
+                click: this.deleteAdminPicture
             }
         });
     }

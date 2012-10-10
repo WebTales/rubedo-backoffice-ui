@@ -31,95 +31,114 @@ Ext.define('Rubedo.view.MyGridPanel16', {
             viewConfig: {
 
             },
+            selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+            }),
             columns: [
                 {
                     xtype: 'gridcolumn',
                     filter: true,
                     dataIndex: 'name',
                     flex: 1,
-                    text: 'Nom',
-                    editor: {
-                        xtype: 'textfield',
-                        allowBlank: false
-                    }
+                    text: 'Nom'
                 },
                 {
                     xtype: 'gridcolumn',
                     filter: true,
+                    hidden: true,
+                    dataIndex: 'title',
+                    flex: 1,
+                    text: 'Civilité'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'organisation',
+                    flex: 1,
+                    text: 'Organisation'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'service',
+                    flex: 1,
+                    text: 'Service'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'post',
+                    flex: 1,
+                    text: 'Fonction'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
                     dataIndex: 'email',
                     flex: 1,
-                    text: 'Email',
-                    editor: {
-                        xtype: 'textfield',
-                        vtype: 'email'
-                    }
+                    text: 'E-mail'
                 },
                 {
                     xtype: 'gridcolumn',
                     filter: true,
+                    hidden: true,
                     dataIndex: 'telephone',
                     flex: 1,
-                    text: 'Téléphone',
-                    editor: {
-                        xtype: 'textfield'
-                    }
+                    text: 'Téléphone'
                 },
                 {
                     xtype: 'gridcolumn',
                     filter: true,
-                    dataIndex: 'adress',
-                    flex: 1,
-                    text: 'Adresse',
-                    editor: {
-                        xtype: 'textareafield'
-                    }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    filter: true,
-                    dataIndex: 'position',
-                    flex: 1,
-                    text: 'Poste',
-                    editor: {
-                        xtype: 'textfield'
-                    }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    filter: true,
-                    dataIndex: 'department',
-                    flex: 1,
-                    text: 'Département',
-                    editor: {
-                        xtype: 'textfield'
-                    }
-                },
-                {
-                    xtype: 'gridcolumn',
                     hidden: true,
-                    dataIndex: 'groups',
+                    dataIndex: 'mobile',
                     flex: 1,
-                    text: 'Groupes'
+                    text: 'Mobile'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'coordinates',
+                    flex: 1,
+                    text: 'Coordonnées'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'language',
+                    flex: 1,
+                    text: 'Langue'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    filter: true,
+                    hidden: true,
+                    dataIndex: 'country',
+                    flex: 1,
+                    text: 'Pays'
                 },
                 {
                     xtype: 'datecolumn',
                     filter: true,
                     hidden: true,
-                    dataIndex: 'creationDate',
+                    dataIndex: 'createTime',
                     flex: 1,
                     text: 'Création'
                 },
                 {
                     xtype: 'datecolumn',
+                    filter: true,
                     hidden: true,
-                    dataIndex: 'lastUpdate',
+                    dataIndex: 'updateTime',
                     flex: 1,
-                    text: 'Dernière Modification'
+                    text: 'Mise à jour'
                 }
-            ],
-            selModel: Ext.create('Ext.selection.CheckboxModel', {
-
-            })
+            ]
         });
 
         me.callParent(arguments);

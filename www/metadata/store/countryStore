@@ -1,0 +1,31 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "countryStore",
+        "designer|userAlias": "countryStore",
+        "storeId": "countryStore",
+        "data": "[\r\n    {\r\n        \"country\":\"France\"\r\n    },\r\n    {\r\n        \"country\":\"Roumanie\"\r\n    }\r\n]"
+    },
+    "id": "ExtBox1-ext-gen101861",
+    "designerId": "ec6d87e1-455e-426b-8458-d7738082aeee",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field123",
+                "name": "country"
+            },
+            "designerId": "b27eb4a4-41b6-474b-a625-84ef5fb1c7ff"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "titleStore",
+        "designer|userAlias": "titleStore",
+        "storeId": "titleStore",
+        "data": "[\r\n    {\r\n        \"title\":\"Mr\"\r\n    },\r\n    {\r\n        \"title\":\"Mme\"\r\n    },\r\n    {\r\n        \"title\":\"Mlle\"\r\n    }\r\n]"
+    },
+    "id": "ExtBox1-ext-gen100290",
+    "designerId": "7deb13fd-39d0-4955-a6be-d73c771ea5c7",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field123",
+                "name": "title"
+            },
+            "designerId": "4ba27fc5-9da5-46e6-b5f7-bd5aafdc5209"
+        }
+    ]
+}
