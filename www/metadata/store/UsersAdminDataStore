@@ -10,6 +10,8 @@
         "designer|userAlias": "UsersAdminDataStore",
         "autoLoad": false,
         "autoSync": true,
+        "remoteFilter": true,
+        "remoteSort": true,
         "storeId": "UsersAdminDataStore",
         "model": "userDataModel"
     },
@@ -28,7 +30,7 @@
                 "api": [
                     "{\r",
                     "     create: 'users/create',\r",
-                    "     read: 'data/Users.json',\r",
+                    "     read: 'users',\r",
                     "     update: 'users/update',\r",
                     "     destroy: 'users/delete'\r",
                     "}"

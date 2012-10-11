@@ -27,13 +27,15 @@ Ext.define('Rubedo.store.UsersAdminDataStore', {
         me.callParent([Ext.apply({
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
+            remoteSort: true,
             storeId: 'UsersAdminDataStore',
             model: 'Rubedo.model.userDataModel',
             proxy: {
                 type: 'ajax',
                 api: {
                     create: 'users/create',
-                    read: 'data/Users.json',
+                    read: 'users',
                     update: 'users/update',
                     destroy: 'users/delete'
                 },
