@@ -979,6 +979,14 @@
                 "app/store/languageStore.js"
             ],
             "className": "languageStore"
+        },
+        "bf25a36d-563e-484d-b6b8-b387924e3a62": {
+            "paths": [
+                "metadata/controller/ServerErrorController",
+                "app/controller/override/ServerErrorController.js",
+                "app/controller/ServerErrorController.js"
+            ],
+            "className": "ServerErrorController"
         }
     },
     "viewOrderMap": {
@@ -1077,7 +1085,8 @@
             "694f297c-7498-4216-9113-e00663d5f6c4",
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
             "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
-            "d52b97aa-6ec0-4868-8574-1e35f4b86c88"
+            "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
+            "bf25a36d-563e-484d-b6b8-b387924e3a62"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",

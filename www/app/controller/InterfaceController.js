@@ -50,26 +50,26 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     componrtementWindow: function(abstractcomponent, options) {
-        var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
-        abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
-        abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});
-        abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
-        abstractcomponent.on('resize', function(){this.focus();});
-        abstractcomponent.getEl().on('blur', function(){boutonCompagnon.toggle(false);});
-        boutonCompagnon.on('click', function(){ 
-            if (abstractcomponent.isVisible()) {
-                if (Ext.WindowManager.getActive().id==abstractcomponent.id) {abstractcomponent.hide(); this.toggle(false);}
-                else {abstractcomponent.toFront(); this.toggle(true);}
-            }
-            else {abstractcomponent.show();}
+        if (!abstractcomponent.isXType("messagebox")){
+            var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
+            abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
+            abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});
+            abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
+            abstractcomponent.on('resize', function(){this.focus();});
+            abstractcomponent.getEl().on('blur', function(){boutonCompagnon.toggle(false);});
+            boutonCompagnon.on('click', function(){ 
+                if (abstractcomponent.isVisible()) {
+                    if (Ext.WindowManager.getActive().id==abstractcomponent.id) {abstractcomponent.hide(); this.toggle(false);}
+                    else {abstractcomponent.toFront(); this.toggle(true);}
+                }
+                else {abstractcomponent.show();}
 
-        });
-        boutonCompagnon.on('arrowclick', function(){abstractcomponent.close();});
-        boutonCompagnon.on('render', function(){abstractcomponent.animateTarget=this.getEl();});
-        Ext.getCmp('taskbarPrincipal').add(boutonCompagnon);
-        abstractcomponent.animateTarget=boutonCompagnon.getEl();
-
-
+            });
+            boutonCompagnon.on('arrowclick', function(){abstractcomponent.close();});
+            boutonCompagnon.on('render', function(){abstractcomponent.animateTarget=this.getEl();});
+            Ext.getCmp('taskbarPrincipal').add(boutonCompagnon);
+            abstractcomponent.animateTarget=boutonCompagnon.getEl();
+        }
     },
 
     minimize: function(tool, e, options) {

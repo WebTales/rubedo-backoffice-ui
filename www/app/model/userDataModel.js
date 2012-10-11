@@ -82,6 +82,12 @@ Ext.define('Rubedo.model.userDataModel', {
         {
             name: 'updateTime',
             type: 'date'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'version'
         }
     ]
 });

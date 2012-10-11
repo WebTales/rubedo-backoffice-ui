@@ -248,6 +248,34 @@
                 "type": "date"
             },
             "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field126",
+                "name": "id",
+                "type": null
+            },
+            "designerId": "102e008e-efeb-43c1-b3e9-61e49dcb8383"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field126",
+                "name": "version",
+                "type": null
+            },
+            "designerId": "8f6c804d-e81b-47f0-a077-a615d805073b"
         }
     ]
 }

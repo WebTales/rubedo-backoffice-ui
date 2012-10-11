@@ -1,0 +1,62 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ServerErrorController",
+        "designer|userAlias": "ServerErrorController"
+    },
+    "id": "ExtBox1-ext-gen10969",
+    "designerId": "bf25a36d-563e-484d-b6b8-b387924e3a62",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "Ext.data.StoreManager.each(function(store){\r",
+                    "var proxy = store.getProxy();\r",
+                    "    if (!Ext.isEmpty(proxy)) {\r",
+                    "        proxy.on(\"exception\", function( proxy, response, operation, options ){\r",
+                    "            var message = \"\";\r",
+                    "            if (response.status === 0) {message= \"Connexion au serveur interrompue\";}\r",
+                    "            else if (response.status === 500) {message= \"Erreur interne du serveur\";}\r",
+                    "            Ext.Msg.alert(\"Erreur\", message);\r",
+                    "            console.log(operation);\r",
+                    "            if (operation.action==\"update\") {\r",
+                    "                Ext.Array.forEach(operation.records, function (record){ record.reject();});\r",
+                    "            }\r",
+                    "            else if (operation.action==\"create\") {\r",
+                    "                store.remove(operation.records);\r",
+                    "            }\r",
+                    "            else if (operation.action==\"destroy\") {\r",
+                    "                Ext.Array.forEach(operation.records, function (record){ store.insert(record.index || 0, record);});\r",
+                    "                store.removed= [];\r",
+                    "            }\r",
+                    "            \r",
+                    "            \r",
+                    "            \r",
+                    "            \r",
+                    "            \r",
+                    "        });\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "3f2282cf-a673-4541-9ce2-896c6e5906b4"
+        }
+    ]
+}

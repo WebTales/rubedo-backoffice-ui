@@ -107,6 +107,7 @@ Ext.application({
         'assistantRequetageController',
         'InterfaceController',
         'MediathequeController',
-        'UsersController'
+        'UsersController',
+        'ServerErrorController'
     ]
 });

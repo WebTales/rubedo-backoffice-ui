@@ -166,7 +166,6 @@ Ext.define('Rubedo.controller.UsersController', {
                     Ext.Array.include(array,someMembre);
                 }
             });
-            //group.eachChild(function(kid){me.getGroupUsers(kid,array);});
         }
 
     },
