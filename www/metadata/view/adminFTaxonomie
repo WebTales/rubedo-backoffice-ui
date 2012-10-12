@@ -340,9 +340,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyColumn18",
-                        "dataIndex": "titre",
+                        "dataIndex": "name",
                         "flex": 1,
-                        "text": "Titre"
+                        "text": "Nom"
                     },
                     "designerId": "691c3d64-6d16-4f5b-941a-efd4ae2c6f30",
                     "cn": [
@@ -449,9 +449,9 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField9",
-                                        "id": "champEditionTaxoTitre",
-                                        "name": "titre",
-                                        "fieldLabel": "Titre ",
+                                        "id": null,
+                                        "name": "name",
+                                        "fieldLabel": "Nom ",
                                         "allowBlank": false
                                     },
                                     "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855"
@@ -466,7 +466,7 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextArea",
-                                        "id": "champEditionTaxoDescription",
+                                        "id": null,
                                         "itemId": null,
                                         "name": "description",
                                         "fieldLabel": "Description "
@@ -483,7 +483,7 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField10",
-                                        "id": "champEditionTaxoHelpText",
+                                        "id": null,
                                         "name": "helpText",
                                         "fieldLabel": "Texte d'aide "
                                     },
@@ -499,10 +499,12 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyCheckbox3",
-                                        "id": "champEditionTaxoEtiquettes",
-                                        "name": "etiquettes",
+                                        "id": null,
+                                        "name": "expandable",
                                         "fieldLabel": "Extensible ",
-                                        "boxLabel": ""
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
                                     },
                                     "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b"
                                 },
@@ -516,10 +518,12 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyCheckbox4",
-                                        "id": "champEditionTaxoChoixMultiple",
-                                        "name": "choixMultiple",
+                                        "id": null,
+                                        "name": "multiSelect",
                                         "fieldLabel": "Choix multiple ",
-                                        "boxLabel": ""
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
                                     },
                                     "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47"
                                 },
@@ -533,10 +537,12 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyCheckbox5",
-                                        "id": "champEditionTaxoObligatoire",
-                                        "name": "obligatoire",
+                                        "id": null,
+                                        "name": "mandatory",
                                         "fieldLabel": "Obligatoire ",
-                                        "boxLabel": ""
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
                                     },
                                     "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61"
                                 }

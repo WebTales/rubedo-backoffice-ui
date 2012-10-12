@@ -21,7 +21,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField40",
-                "name": "titre",
+                "name": "name",
                 "defaultValue": null,
                 "type": "string"
             },
@@ -66,7 +66,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField40",
-                "name": "etiquettes",
+                "name": "expandable",
                 "defaultValue": null,
                 "type": "boolean"
             },
@@ -81,7 +81,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField40",
-                "name": "choixMultiple",
+                "name": "multiSelect",
                 "defaultValue": null,
                 "type": "boolean"
             },
@@ -96,11 +96,11 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField40",
-                "name": "obligatoire",
+                "name": "mandatory",
                 "defaultValue": null,
                 "type": "boolean"
             },
-            "designerId": "1129aa88-fc9c-4b12-9bcd-389475e15a5b"
+            "designerId": "dec5ef4a-c9da-4cf2-b5d0-b771aed728a1"
         },
         {
             "type": "datafield",
@@ -111,7 +111,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField41",
-                "name": "termes"
+                "name": "terms"
             },
             "designerId": "aaeb8967-f4b8-433e-aba9-cd8773fb06f3"
         },
@@ -140,6 +140,35 @@
                 "name": "id"
             },
             "designerId": "af053b8c-6f84-4fd9-9072-25131c65ab92"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": null,
+                "type": "date"
+            },
+            "designerId": "bcb5486a-a461-41bc-891b-5a4f198087df"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "updateTime",
+                "type": "date"
+            },
+            "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
         }
     ]
 }

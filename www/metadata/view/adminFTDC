@@ -867,7 +867,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|userClassName": "MyColumn18",
-                                        "dataIndex": "titre",
+                                        "dataIndex": "name",
                                         "flex": 1,
                                         "text": "Titre"
                                     },
@@ -912,7 +912,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|userClassName": "MyBooleanColumn",
-                                        "dataIndex": "etiquettes",
+                                        "dataIndex": "expandable",
                                         "flex": 1,
                                         "text": "Etiquettes",
                                         "falseText": "non",
@@ -929,7 +929,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|userClassName": "MyBooleanColumn1",
-                                        "dataIndex": "choixMultiple",
+                                        "dataIndex": "mandatory",
                                         "flex": 1,
                                         "text": "ChoixMultiple",
                                         "falseText": "non",

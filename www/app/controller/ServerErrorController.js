@@ -27,7 +27,6 @@ Ext.define('Rubedo.controller.ServerErrorController', {
                     if (response.status === 0) {message= "Connexion au serveur interrompue";}
                     else if (response.status === 500) {message= "Erreur interne du serveur";}
                     Ext.Msg.alert("Erreur", message);
-                    console.log(operation);
                     if (operation.action=="update") {
                         Ext.Array.forEach(operation.records, function (record){ record.reject();});
                     }

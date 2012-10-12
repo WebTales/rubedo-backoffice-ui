@@ -19,7 +19,7 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
 
     fields: [
         {
-            name: 'titre',
+            name: 'name',
             type: 'string'
         },
         {
@@ -31,25 +31,33 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             type: 'string'
         },
         {
-            name: 'etiquettes',
+            name: 'expandable',
             type: 'boolean'
         },
         {
-            name: 'choixMultiple',
+            name: 'multiSelect',
             type: 'boolean'
         },
         {
-            name: 'obligatoire',
+            name: 'mandatory',
             type: 'boolean'
         },
         {
-            name: 'termes'
+            name: 'terms'
         },
         {
             name: 'version'
         },
         {
             name: 'id'
+        },
+        {
+            name: 'createTime',
+            type: 'date'
+        },
+        {
+            name: 'updateTime',
+            type: 'date'
         }
     ]
 });

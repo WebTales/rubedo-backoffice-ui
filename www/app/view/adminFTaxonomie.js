@@ -159,9 +159,9 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
                             },
-                            dataIndex: 'titre',
+                            dataIndex: 'name',
                             flex: 1,
-                            text: 'Titre'
+                            text: 'Nom'
                         }
                     ]
                 },
@@ -193,48 +193,48 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoTitre',
-                                            name: 'titre',
-                                            fieldLabel: 'Titre ',
+                                            name: 'name',
+                                            fieldLabel: 'Nom ',
                                             allowBlank: false
                                         },
                                         {
                                             xtype: 'textareafield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoDescription',
                                             name: 'description',
                                             fieldLabel: 'Description '
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoHelpText',
                                             name: 'helpText',
                                             fieldLabel: 'Texte d\'aide '
                                         },
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoEtiquettes',
-                                            name: 'etiquettes',
+                                            name: 'expandable',
                                             fieldLabel: 'Extensible ',
-                                            boxLabel: ''
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
                                         },
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoChoixMultiple',
-                                            name: 'choixMultiple',
+                                            name: 'multiSelect',
                                             fieldLabel: 'Choix multiple ',
-                                            boxLabel: ''
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
                                         },
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
-                                            id: 'champEditionTaxoObligatoire',
-                                            name: 'obligatoire',
+                                            name: 'mandatory',
                                             fieldLabel: 'Obligatoire ',
-                                            boxLabel: ''
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
                                         }
                                     ]
                                 },

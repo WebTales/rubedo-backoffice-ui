@@ -79,6 +79,35 @@
                 "name": "version"
             },
             "designerId": "4211fc0e-0178-477d-b1ca-8a7816bf2c45"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": null,
+                "type": "date"
+            },
+            "designerId": "843eff58-0d7d-45a9-adae-7b4d7acfb0de"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "updateTime",
+                "type": "date"
+            },
+            "designerId": "1ef9ae75-c2f3-4782-944c-051179f47a88"
         }
     ]
 }

@@ -388,7 +388,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'titre',
+                                            dataIndex: 'name',
                                             flex: 1,
                                             text: 'Titre'
                                         },
@@ -406,7 +406,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
-                                            dataIndex: 'etiquettes',
+                                            dataIndex: 'expandable',
                                             flex: 1,
                                             text: 'Etiquettes',
                                             falseText: 'non',
@@ -414,7 +414,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
-                                            dataIndex: 'choixMultiple',
+                                            dataIndex: 'mandatory',
                                             flex: 1,
                                             text: 'ChoixMultiple',
                                             falseText: 'non',

@@ -33,6 +33,14 @@ Ext.define('Rubedo.model.groupDataModel', {
         },
         {
             name: 'version'
+        },
+        {
+            name: 'createTime',
+            type: 'date'
+        },
+        {
+            name: 'updateTime',
+            type: 'date'
         }
     ]
 });

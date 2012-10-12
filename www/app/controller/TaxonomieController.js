@@ -24,7 +24,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         'nouveauTaxoFenetre'
     ],
 
-    onGridpanelSelect: function(selModel, record, index, options) {
+    selectVocabulary: function(selModel, record, index, options) {
         var tablepanel=Ext.getCmp("AdminfTaxonomieGrid");
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
@@ -32,18 +32,13 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.titre, itemId:'type'});
         filArianne.add(typeFil);
     }
+    Ext.getCmp("ProprietesTaxonomie").getForm().loadRecord(record);
 
 
 
-    Ext.getCmp('champEditionTaxoTitre').setValue(record.data.titre);
-    Ext.getCmp('champEditionTaxoDescription').setValue(record.data.description);
-    Ext.getCmp('champEditionTaxoHelpText').setValue(record.data.helpText);
-    Ext.getCmp('champEditionTaxoEtiquettes').setValue(record.data.etiquettes);
-    Ext.getCmp('champEditionTaxoChoixMultiple').setValue(record.data.choixMultiple);
-    Ext.getCmp('champEditionTaxoObligatoire').setValue(record.data.obligatoire);
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
-    var data =  record.data.termes;
+    var data =  record.get("terms");
     var store = Ext.create('Ext.data.TreeStore', {
         model: 'KECMours.model.termeTaxonomieModel',
         root: Ext.clone(data),
@@ -57,14 +52,14 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     arbre.getStore().getRootNode().expand(true);
     },
 
-    supprimeTerme: function(button, e, options) {
+    removeTerm: function(button, e, options) {
         var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
         if (Ext.isDefined(cible)) {
             cible.remove();
         }
     },
 
-    ajouterTerme: function(button, e, options) {
+    addTerm: function(button, e, options) {
         if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
 
             var champT = Ext.getCmp('nouveauTermeTaxoField');
@@ -82,28 +77,26 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         }
     },
 
-    enregistrerTaxo: function(button, e, options) {
+    saveVocabulary: function(button, e, options) {
         if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
             var cibleR=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();
             cibleR.beginEdit();
-            if (Ext.getCmp('champEditionTaxoTitre').isValid()){cibleR.set("titre",Ext.getCmp('champEditionTaxoTitre').getValue()); }
-            if (Ext.getCmp('champEditionTaxoDescription').isValid()){cibleR.set("description",Ext.getCmp('champEditionTaxoDescription').getValue()); }
-            if (Ext.getCmp('champEditionTaxoHelpText').isValid()){cibleR.set("helpText",Ext.getCmp('champEditionTaxoHelpText').getValue()); }
-            if (Ext.getCmp('champEditionTaxoEtiquettes').isValid()){cibleR.set("etiquettes",Ext.getCmp('champEditionTaxoEtiquettes').getValue()); }
-            if (Ext.getCmp('champEditionTaxoChoixMultiple').isValid()){cibleR.set("choixMultiple",Ext.getCmp('champEditionTaxoChoixMultiple').getValue()); }
-            if (Ext.getCmp('champEditionTaxoObligatoire').isValid()){cibleR.set("obligatoire",Ext.getCmp('champEditionTaxoObligatoire').getValue()); }
+            if (Ext.getCmp("ProprietesTaxonomie").getForm().isValid()){
+                cibleR.set(Ext.getCmp("ProprietesTaxonomie").getForm().getValues());
+            }
             var racineR = Ext.getCmp('TermesTaxonomieTree').getStore().getRootNode();
             var nouvRacine = {text: racineR.data.text, children: this.recupereFils(racineR.childNodes)};  
-            cibleR.set("termes",Ext.clone(nouvRacine));
+            cibleR.set("terms",Ext.clone(nouvRacine));
             cibleR.endEdit();
         }
     },
 
-    supprimerVocabulaire: function(button, e, options) {
+    deleteVocabulary: function(button, e, options) {
         var cible = Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            var fenetre = Ext.widget('delConfirmZ');
-            fenetre.showAt(screen.width/2-100, 100);
+            var window = Ext.widget('delConfirmZ');
+            Ext.getCmp('ViewportPrimaire').add(window);
+            window.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('AdminfTaxonomieGrid').getStore().remove(cible);
                 Ext.getCmp('delConfirmZ').close();
@@ -112,14 +105,14 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         }
     },
 
-    creeVocabulaire: function(button, e, options) {
+    newVocabulary: function(button, e, options) {
         if (Ext.getCmp('champCreerTaxo').isValid()) {
             var nouveauVocab = Ext.create('model.taxonomieDataModel', {
-                titre: Ext.getCmp('champCreerTaxo').getValue(),
-                etiquettes: false,
-                choixMultiple: true,
-                obligatoire: false,
-                termes:	{
+                name: Ext.getCmp('champCreerTaxo').getValue(),
+                extendable: false,
+                multiSelect: true,
+                mandatory: false,
+                terms:	{
                     children:[
                     ]
                 }
@@ -128,18 +121,19 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
             Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);
-            this.majTaxo(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);
+            this.selectVocabulary(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);
             Ext.getCmp('nouveauTaxoFenetre').close();
         }    
     },
 
-    creerFenetreVocabulaire: function(button, e, options) {
-        var fenetre = Ext.widget('nouveauTaxoFenetre');
-        fenetre.showAt(screen.width/2-150, 100);
+    openVocabWindow: function(button, e, options) {
+        var window = Ext.widget('nouveauTaxoFenetre');
+        Ext.getCmp('ViewportPrimaire').add(window);
+        window.show();
 
     },
 
-    onButtonClick: function(button, e, options) {
+    newTerm: function(button, e, options) {
         if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
 
             var champT = Ext.getCmp('nouveauTermeTaxoField');
@@ -168,28 +162,28 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     init: function(application) {
         this.control({
             "#AdminfTaxonomieGrid": {
-                select: this.onGridpanelSelect
+                select: this.selectVocabulary
             },
             "#boutonSupprimerTermesTaxo": {
-                click: this.supprimeTerme
+                click: this.removeTerm
             },
             "#boutonAjouterTermesTaxo": {
-                click: this.ajouterTerme
+                click: this.addTerm
             },
             "#boutonEnregistrerTaxo": {
-                click: this.enregistrerTaxo
+                click: this.saveVocabulary
             },
             "#boutonSupprimerTaxo": {
-                click: this.supprimerVocabulaire
+                click: this.deleteVocabulary
             },
             "#boutonCreerTaxo": {
-                click: this.creeVocabulaire
+                click: this.newVocabulary
             },
             "#boutonCreerTaxonomie": {
-                click: this.creerFenetreVocabulaire
+                click: this.openVocabWindow
             },
             "#boutonModifierTermesTaxo": {
-                click: this.onButtonClick
+                click: this.newTerm
             }
         });
     }

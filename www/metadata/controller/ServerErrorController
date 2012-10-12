@@ -35,7 +35,6 @@
                     "            if (response.status === 0) {message= \"Connexion au serveur interrompue\";}\r",
                     "            else if (response.status === 500) {message= \"Erreur interne du serveur\";}\r",
                     "            Ext.Msg.alert(\"Erreur\", message);\r",
-                    "            console.log(operation);\r",
                     "            if (operation.action==\"update\") {\r",
                     "                Ext.Array.forEach(operation.records, function (record){ record.reject();});\r",
                     "            }\r",
