@@ -26,8 +26,7 @@ Ext.define('Rubedo.model.contenusDataModel', {
             type: 'auto'
         },
         {
-            name: 'type',
-            type: 'string'
+            name: 'typeId'
         },
         {
             name: 'etat'

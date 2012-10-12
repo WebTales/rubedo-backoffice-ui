@@ -1,1558 +1,1793 @@
-[
-	{
-		"type": "Champ texte",
-		"cType": "Ext.form.field.Text",
-		"ouvrir": "",
-		"description": "<h2>Champ texte</h2> </br> <p>Ce champ permet la saisie de texte court.</p> <p>Il peut \u00eatre utilis\u00e9 en tant que champ texte basique ou bien en tant que champ url ou e-mail selon les options de validation.</p>",
-		"config": {
-			"name": "Nouveau_champ_texte",
-			"fieldLabel": "Label du champ",
-			"maxLength": 255,
-			"minLength": 0,
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"vtype": null
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.ComboBox",
-				"store": {
-					"fields": ["valeur", "nom"],
-					"data": [
-						{
-							"valeur": "alpha",
-							"nom": "alpha"
-						}, {
-							"valeur": "alphanum",
-							"nom": "alphanum"
-						}, {
-							"valeur": "email",
-							"nom": "email"
-						}, {
-							"valeur": "url",
-							"nom": "url"
-						}, {
-							"valeur": null,
-							"nom": "aucune"
-						}
-					]
-				},
-				"config": {
-					"fieldLabel": "Validation",
-					"queryMode": "local",
-					"displayField": "nom",
-					"valueField": "valeur",
-					"forceSelect": true,
-					"editable": false,
-					"name": "vtype"
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "RegExp",
-					"name": "regex"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur max",
-					"name": "maxLength"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur min",
-					"name": "minLength"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ mot de passe",
-		"cType": "Ext.form.field.Text",
-		"ouvrir": "",
-		"description": "<h2>Champ mot de passe</h2> </br> <p>Ce champ permet la saisie de mots de passe.</p> <p>Il int\u00e9gre plusieures m\u00e9thodes de validation.</p>",
-		"config": {
-			"name": "Nouveau_champ_mot_de_passe",
-			"fieldLabel": "Label du champ",
-			"maxLength": 255,
-			"minLength": 0,
-			"allowBlank": false,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"inputType": "password",
-			"vtype": null
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.ComboBox",
-				"store": {
-					"fields": ["valeur", "nom"],
-					"data": [
-						{
-							"valeur": "alpha",
-							"nom": "alpha"
-						}, {
-							"valeur": "alphanum",
-							"nom": "alphanum"
-						}, {
-							"valeur": null,
-							"nom": "aucune"
-						}
-					]
-				},
-				"config": {
-					"fieldLabel": "Validation",
-					"queryMode": "local",
-					"displayField": "nom",
-					"valueField": "valeur",
-					"forceSelect": true,
-					"editable": false,
-					"name": "vtype"
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "RegExp",
-					"name": "regex"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur max",
-					"name": "maxLength"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur min",
-					"name": "minLength"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ zone de texte",
-		"cType": "Ext.form.field.TextArea",
-		"ouvrir": "",
-		"description": "<h2>Champ zone de texte</h2> </br> <p>Ce champ permet la saisie de texte long basique.</p>",
-		"config": {
-			"name": "Nouveau_champ_zone_de_texte",
-			"fieldLabel": "Label du champ",
-			"maxLength": 6000,
-			"minLength": 0,
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"vtype": null
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.ComboBox",
-				"store": {
-					"fields": ["valeur", "nom"],
-					"data": [
-						{
-							"valeur": "alpha",
-							"nom": "alpha"
-						}, {
-							"valeur": "alphanum",
-							"nom": "alphanum"
-						}, {
-							"valeur": null,
-							"nom": "aucune"
-						}
-					]
-				},
-				"config": {
-					"fieldLabel": "Validation",
-					"queryMode": "local",
-					"displayField": "nom",
-					"valueField": "valeur",
-					"forceSelect": true,
-					"editable": false,
-					"name": "vtype"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur max",
-					"name": "maxLength"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur min",
-					"name": "minLength"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, 
-	{
-		"type": "Champ zone de texte CKEditor",
-		"cType": "Rubedo.view.CKEField",
-		"ouvrir": "",
-		"description": "<h2>Champ zone de texte CKEditor</h2> </br> <p>Ce champ permet la saisie de texte riche avec CKEditor.</p>",
-		"config": {
-			"name": "Nouveau_champ_zone_de_texte CKEditor",
-			"fieldLabel": "Label du champ",
-			"maxLength": 6000,
-			"minLength": 0,
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"vtype": null
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.ComboBox",
-				"store": {
-					"fields": ["valeur", "nom"],
-					"data": [
-						{
-							"valeur": "alpha",
-							"nom": "alpha"
-						}, {
-							"valeur": "alphanum",
-							"nom": "alphanum"
-						}, {
-							"valeur": null,
-							"nom": "aucune"
-						}
-					]
-				},
-				"config": {
-					"fieldLabel": "Validation",
-					"queryMode": "local",
-					"displayField": "nom",
-					"valueField": "valeur",
-					"forceSelect": true,
-					"editable": false,
-					"name": "vtype"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur max",
-					"name": "maxLength"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Longueur min",
-					"name": "minLength"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	},{
-		"type": "Champ zone de texte riche",
-		"cType": "Ext.form.field.HtmlEditor",
-		"ouvrir": "",
-		"description": "<h2>Champ zone de texte riche</h2> </br> <p>Ce champ permet la saisie de texte riche par le biais d'un \u00e9diteur HTML.</p>",
-		"config": {
-			"name": "Nouveau_champ_zone_de_texte_riche",
-			"fieldLabel": "Label du champ",
-			"enableAlignments": true,
-			"enableColors": true,
-			"enableFont": true,
-			"enableFontSize": true,
-			"enableFormat": true,
-			"enableLinks": true,
-			"enableLists": true,
-			"enableSourceEdit": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"value": " ",
-			"tooltip": "help text",
-			"height": 200,
-			"margin": "0 0 20 0"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Alignements",
-					"name": "enableAlignments"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Couleurs",
-					"name": "enableColors"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Polices",
-					"name": "enableFont"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Taille de police",
-					"name": "enableFontSize"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Format",
-					"name": "enableFormat"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Liens",
-					"name": "enableLinks"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Listes",
-					"name": "enableLists"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Edition de la source",
-					"name": "enableSourceEdit"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ date",
-		"cType": "Ext.form.field.Date",
-		"ouvrir": "",
-		"description": "<h2>Champ date</h2> </br> <p>Ce champ permet la saisie de dates.</p>",
-		"config": {
-			"name": "Nouveau_champ_date",
-			"fieldLabel": "Label du champ",
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Date",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Date",
-				"config": {
-					"fieldLabel": "Valeur max",
-					"name": "maxValue"
-				}
-			}, {
-				"type": "Ext.form.field.Date",
-				"config": {
-					"fieldLabel": "Valeur min",
-					"name": "minValue"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ temps",
-		"cType": "Ext.form.field.Time",
-		"ouvrir": "",
-		"description": "<h2>Champ temps</h2> </br> <p>Ce champ permet la saisie de temps.</p>",
-		"config": {
-			"name": "Nouveau_champ_temps",
-			"fieldLabel": "Label du champ",
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Time",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Time",
-				"config": {
-					"fieldLabel": "Valeur max",
-					"name": "maxValue"
-				}
-			}, {
-				"type": "Ext.form.field.Time",
-				"config": {
-					"fieldLabel": "Valeur min",
-					"name": "minValue"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ nombre",
-		"cType": "Ext.form.field.Number",
-		"ouvrir": "",
-		"description": "<h2>Champ nombre</h2> </br> <p>Ce champ permet la saisie de nombres.</p>",
-		"config": {
-			"name": "Nouveau_champ_nombre",
-			"fieldLabel": "Label du champ",
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"allowDecimals": true,
-			"decimalPrecision": 2
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur max",
-					"name": "maxValue"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur min",
-					"name": "minValue"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Afficher decimales",
-					"name": "allowDecimals"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Precision decimale",
-					"name": "decimalPrecision"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ slider",
-		"cType": "Ext.slider.Single",
-		"ouvrir": "",
-		"description": "<h2>Champ slider</h2> </br> <p>Ce champ permet la saisie de nombres par le biais d'un slider.</p>",
-		"config": {
-			"name": "Nouveau_champ_slider",
-			"fieldLabel": "Label du champ",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"minValue": 0,
-			"maxValue": 100,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"increment": 10
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur max",
-					"name": "maxValue"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur min",
-					"name": "minValue"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Increment",
-					"name": "increment"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ \u00e9valuation",
-		"cType": "Ext.ux.widget.Rating",
-		"ouvrir": "",
-		"description": "<h2>Champ \u00e9valuation</h2> </br> <p>Ce champ permet la saisie d'\u00e9valuations</p>",
-		"config": {
-			"name": "Nouveau_champ_evaluation",
-			"fieldLabel": "Label du champ",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"minValue": 0.5,
-			"maxValue": 5,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"numberOfStars": 5,
-			"split": 2
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur max",
-					"name": "maxValue"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Valeur min",
-					"name": "minValue"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Nombre d'etoiles",
-					"name": "numberOfStars"
-				}
-			}, {
-				"type": "Ext.form.field.Number",
-				"config": {
-					"fieldLabel": "Divisions par \u00e9toile",
-					"name": "split"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ bool\u00e9en",
-		"cType": "Ext.form.field.Checkbox",
-		"ouvrir": "",
-		"description": "<h2>Champ bool\u00e9en</h2> </br> <p>Ce champ permet la saisie de valeurs bool\u00e9enes. Il prend la forme d'une checkbox.</p>",
-		"config": {
-			"name": "Nouveau_champ_bool\u00e9en",
-			"fieldLabel": "Label du champ",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ liste de choix",
-		"cType": "Ext.form.field.ComboBox",
-		"ouvrir": "",
-		"description": "<h2>Champ liste de choix</h2> </br> <p>Ce champ permet la saisie de valeur \u00e0 partir d'une liste de choix ouverte ou ferm\u00e9e.</p>",
-		"config": {
-			"name": "Nouveau_champ_liste_de_choix",
-			"queryMode": "local",
-			"displayField": "nom",
-			"valueField": "valeur",
-			"fieldLabel": "Label du champ",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"multiSelect": true,
-			"editable": true,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multis\u00e9lection",
-					"name": "multiSelect"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Liste ouverte",
-					"name": "editable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": {
-			"fields": ["valeur", "nom"],
-			"data": [
+{
+	"data":[
+		{
+			"type":"Champ texte",
+			"cType":"Ext.form.field.Text",
+			"ouvrir":"",
+			"description":"<h2>Champ texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte court.<\/p> <p>Il peut \u00eatre utilis\u00e9 en tant que champ texte basique ou bien en tant que champ url ou e-mail selon les options de validation.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_texte",
+				"fieldLabel":"Label du champ",
+				"maxLength":255,
+				"minLength":0,
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"vtype":null
+			},
+			"champsConfig":[
 				{
-					"valeur": "valeur 1",
-					"nom": "valeur 1"
-				}, {
-					"valeur": "valeur 2",
-					"nom": "valeur 2"
-				}, {
-					"valeur": "valeur 3",
-					"nom": "valeur 3"
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.ComboBox",
+					"store":{
+						"fields":[
+							"valeur",
+							"nom"
+						],
+						"data":[
+							{
+								"valeur":"alpha",
+								"nom":"alpha"
+							},
+							{
+								"valeur":"alphanum",
+								"nom":"alphanum"
+							},
+							{
+								"valeur":"email",
+								"nom":"email"
+							},
+							{
+								"valeur":"url",
+								"nom":"url"
+							},
+							{
+								"valeur":null,
+								"nom":"aucune"
+							}
+						]
+					},
+					"config":{
+						"fieldLabel":"Validation",
+						"queryMode":"local",
+						"displayField":"nom",
+						"valueField":"valeur",
+						"forceSelect":true,
+						"editable":false,
+						"name":"vtype"
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"RegExp",
+						"name":"regex"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur max",
+						"name":"maxLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur min",
+						"name":"minLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
 				}
-			]
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000017"
+		},
+		{
+			"type":"Champ mot de passe",
+			"cType":"Ext.form.field.Text",
+			"ouvrir":"",
+			"description":"<h2>Champ mot de passe<\/h2> <\/br> <p>Ce champ permet la saisie de mots de passe.<\/p> <p>Il int\u00e9gre plusieures m\u00e9thodes de validation.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_mot_de_passe",
+				"fieldLabel":"Label du champ",
+				"maxLength":255,
+				"minLength":0,
+				"allowBlank":false,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"inputType":"password",
+				"vtype":null
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.ComboBox",
+					"store":{
+						"fields":[
+							"valeur",
+							"nom"
+						],
+						"data":[
+							{
+								"valeur":"alpha",
+								"nom":"alpha"
+							},
+							{
+								"valeur":"alphanum",
+								"nom":"alphanum"
+							},
+							{
+								"valeur":null,
+								"nom":"aucune"
+							}
+						]
+					},
+					"config":{
+						"fieldLabel":"Validation",
+						"queryMode":"local",
+						"displayField":"nom",
+						"valueField":"valeur",
+						"forceSelect":true,
+						"editable":false,
+						"name":"vtype"
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"RegExp",
+						"name":"regex"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur max",
+						"name":"maxLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur min",
+						"name":"minLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000018"
+		},
+		{
+			"type":"Champ zone de texte",
+			"cType":"Ext.form.field.TextArea",
+			"ouvrir":"",
+			"description":"<h2>Champ zone de texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte long basique.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_zone_de_texte",
+				"fieldLabel":"Label du champ",
+				"maxLength":6000,
+				"minLength":0,
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"vtype":null
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.ComboBox",
+					"store":{
+						"fields":[
+							"valeur",
+							"nom"
+						],
+						"data":[
+							{
+								"valeur":"alpha",
+								"nom":"alpha"
+							},
+							{
+								"valeur":"alphanum",
+								"nom":"alphanum"
+							},
+							{
+								"valeur":null,
+								"nom":"aucune"
+							}
+						]
+					},
+					"config":{
+						"fieldLabel":"Validation",
+						"queryMode":"local",
+						"displayField":"nom",
+						"valueField":"valeur",
+						"forceSelect":true,
+						"editable":false,
+						"name":"vtype"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur max",
+						"name":"maxLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Longueur min",
+						"name":"minLength"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000019"
+		},
+		{
+			"type":"Champ zone de texte riche",
+			"cType":"Ext.form.field.HtmlEditor",
+			"ouvrir":"",
+			"description":"<h2>Champ zone de texte riche<\/h2> <\/br> <p>Ce champ permet la saisie de texte riche par le biais d'un \u00e9diteur HTML.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_zone_de_texte_riche",
+				"fieldLabel":"Label du champ",
+				"enableAlignments":true,
+				"enableColors":true,
+				"enableFont":true,
+				"enableFontSize":true,
+				"enableFormat":true,
+				"enableLinks":true,
+				"enableLists":true,
+				"enableSourceEdit":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"value":" ",
+				"tooltip":"help text",
+				"height":200,
+				"margin":"0 0 20 0"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Alignements",
+						"name":"enableAlignments"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Couleurs",
+						"name":"enableColors"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Polices",
+						"name":"enableFont"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Taille de police",
+						"name":"enableFontSize"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Format",
+						"name":"enableFormat"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Liens",
+						"name":"enableLinks"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Listes",
+						"name":"enableLists"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Edition de la source",
+						"name":"enableSourceEdit"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001a"
+		},
+		{
+			"type":"Champ date",
+			"cType":"Ext.form.field.Date",
+			"ouvrir":"",
+			"description":"<h2>Champ date<\/h2> <\/br> <p>Ce champ permet la saisie de dates.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_date",
+				"fieldLabel":"Label du champ",
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Date",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Date",
+					"config":{
+						"fieldLabel":"Valeur max",
+						"name":"maxValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Date",
+					"config":{
+						"fieldLabel":"Valeur min",
+						"name":"minValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001b"
+		},
+		{
+			"type":"Champ temps",
+			"cType":"Ext.form.field.Time",
+			"ouvrir":"",
+			"description":"<h2>Champ temps<\/h2> <\/br> <p>Ce champ permet la saisie de temps.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_temps",
+				"fieldLabel":"Label du champ",
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Time",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Time",
+					"config":{
+						"fieldLabel":"Valeur max",
+						"name":"maxValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Time",
+					"config":{
+						"fieldLabel":"Valeur min",
+						"name":"minValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001c"
+		},
+		{
+			"type":"Champ nombre",
+			"cType":"Ext.form.field.Number",
+			"ouvrir":"",
+			"description":"<h2>Champ nombre<\/h2> <\/br> <p>Ce champ permet la saisie de nombres.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_nombre",
+				"fieldLabel":"Label du champ",
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"allowDecimals":true,
+				"decimalPrecision":2
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur max",
+						"name":"maxValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur min",
+						"name":"minValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Afficher decimales",
+						"name":"allowDecimals"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Precision decimale",
+						"name":"decimalPrecision"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001d"
+		},
+		{
+			"type":"Champ slider",
+			"cType":"Ext.slider.Single",
+			"ouvrir":"",
+			"description":"<h2>Champ slider<\/h2> <\/br> <p>Ce champ permet la saisie de nombres par le biais d'un slider.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_slider",
+				"fieldLabel":"Label du champ",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"minValue":0,
+				"maxValue":100,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"increment":10
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur max",
+						"name":"maxValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur min",
+						"name":"minValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Increment",
+						"name":"increment"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001e"
+		},
+		{
+			"type":"Champ \u00e9valuation",
+			"cType":"Ext.ux.widget.Rating",
+			"ouvrir":"",
+			"description":"<h2>Champ \u00e9valuation<\/h2> <\/br> <p>Ce champ permet la saisie d'\u00e9valuations<\/p>",
+			"config":{
+				"name":"Nouveau_champ_evaluation",
+				"fieldLabel":"Label du champ",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"minValue":0.5,
+				"maxValue":5,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"numberOfStars":5,
+				"split":2
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur max",
+						"name":"maxValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Valeur min",
+						"name":"minValue"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Nombre d'etoiles",
+						"name":"numberOfStars"
+					}
+				},
+				{
+					"type":"Ext.form.field.Number",
+					"config":{
+						"fieldLabel":"Divisions par \u00e9toile",
+						"name":"split"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c64804391200001f"
+		},
+		{
+			"type":"Champ bool\u00e9en",
+			"cType":"Ext.form.field.Checkbox",
+			"ouvrir":"",
+			"description":"<h2>Champ bool\u00e9en<\/h2> <\/br> <p>Ce champ permet la saisie de valeurs bool\u00e9enes. Il prend la forme d'une checkbox.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_bool\u00e9en",
+				"fieldLabel":"Label du champ",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000020"
+		},
+		{
+			"type":"Champ liste de choix",
+			"cType":"Ext.form.field.ComboBox",
+			"ouvrir":"",
+			"description":"<h2>Champ liste de choix<\/h2> <\/br> <p>Ce champ permet la saisie de valeur \u00e0 partir d'une liste de choix ouverte ou ferm\u00e9e.<\/p>",
+			"config":{
+				"name":"Nouveau_champ_liste_de_choix",
+				"queryMode":"local",
+				"displayField":"nom",
+				"valueField":"valeur",
+				"fieldLabel":"Label du champ",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"multiSelect":true,
+				"editable":true,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multis\u00e9lection",
+						"name":"multiSelect"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Liste ouverte",
+						"name":"editable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":{
+				"fields":[
+					"valeur",
+					"nom"
+				],
+				"data":[
+					{
+						"valeur":"valeur 1",
+						"nom":"valeur 1"
+					},
+					{
+						"valeur":"valeur 2",
+						"nom":"valeur 2"
+					},
+					{
+						"valeur":"valeur 3",
+						"nom":"valeur 3"
+					}
+				]
+			},
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000021"
+		},
+		{
+			"type":"Champ requ\u00eate",
+			"cType":"Ext.form.field.Trigger",
+			"ouvrir":"assistantRequetage",
+			"description":"<h2>Champ requ\u00eate<\/h2> <\/br> <p>Ce champ permet la saisie de requ\u00eates sur les contenus<\/p>",
+			"config":{
+				"name":"Nouveau_champ_requ\u00eate",
+				"fieldLabel":"Label du champ",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"editable":false,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000022"
+		},
+		{
+			"type":"Champ lien sur page",
+			"cType":"Ext.ux.TreePicker",
+			"ouvrir":"",
+			"description":"<h2>Champ lien sur page<\/h2> <\/br> <p>Ce champ permet la saisie de liens internes sur pages<\/p>",
+			"config":{
+				"name":"Nouveau_champ_lien_sur_page",
+				"fieldLabel":"Label du champ",
+				"displayField":"text",
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"SitesDataJson",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000023"
+		},
+		{
+			"type":"Champ couleur",
+			"cType":"Ext.ux.ColorField",
+			"ouvrir":"",
+			"description":"<h2>Champ couleur<\/h2> <\/br> <p>Ce champ permet la saisie de couleurs sous format hexadecimal<\/p>",
+			"config":{
+				"name":"Nouveau_champ_couleur",
+				"fieldLabel":"Label du champ",
+				"allowBlank":true,
+				"localisable":false,
+				"recherchable":false,
+				"multivalu\u00e9":false,
+				"r\u00e9sum\u00e9":false,
+				"hidden":false,
+				"tooltip":"help text",
+				"value":"ffffff"
+			},
+			"champsConfig":[
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Nom",
+						"name":"name",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Label",
+						"name":"fieldLabel",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.form.field.Text",
+					"config":{
+						"fieldLabel":"Bulle d'aide",
+						"name":"tooltip",
+						"allowBlank":false
+					}
+				},
+				{
+					"type":"Ext.ux.ColorField",
+					"config":{
+						"fieldLabel":"Valeur par d\u00e9faut",
+						"name":"value",
+						"allowBlank":true
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Peut \u00eatre vide",
+						"name":"allowBlank"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Localisable",
+						"name":"localisable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Recherchable",
+						"name":"recherchable"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Multivalu\u00e9",
+						"name":"multivalu\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"R\u00e9sum\u00e9",
+						"name":"r\u00e9sum\u00e9"
+					}
+				},
+				{
+					"type":"Ext.form.field.Checkbox",
+					"config":{
+						"fieldLabel":"Cach\u00e9",
+						"name":"hidden"
+					}
+				}
+			],
+			"store":"",
+			"version":1,
+			"lastUpdateUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"createUser":{
+				"id":1,
+				"login":"jbourdin",
+				"fullName":"Julien Bourdin"
+			},
+			"id":"506441f8c648043912000024"
 		}
-	}, {
-		"type": "Champ requ\u00eate",
-		"cType": "Ext.form.field.Trigger",
-		"ouvrir": "assistantRequetage",
-		"description": "<h2>Champ requ\u00eate</h2> </br> <p>Ce champ permet la saisie de requ\u00eates sur les contenus</p>",
-		"config": {
-			"name": "Nouveau_champ_requ\u00eate",
-			"fieldLabel": "Label du champ",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"editable": false,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}, {
-		"type": "Champ lien sur page",
-		"cType": "Ext.ux.TreePicker",
-		"ouvrir": "",
-		"description": "<h2>Champ lien sur page</h2> </br> <p>Ce champ permet la saisie de liens internes sur pages</p>",
-		"config": {
-			"name": "Nouveau_champ_lien_sur_page",
-			"fieldLabel": "Label du champ",
-			"displayField": "text",
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": "SitesDataJson"
-	}, {
-		"type": "Champ couleur",
-		"cType": "Ext.ux.ColorField",
-		"ouvrir": "",
-		"description": "<h2>Champ couleur</h2> </br> <p>Ce champ permet la saisie de couleurs sous format hexadecimal</p>",
-		"config": {
-			"name": "Nouveau_champ_couleur",
-			"fieldLabel": "Label du champ",
-			"allowBlank": true,
-			"localisable": false,
-			"recherchable": false,
-			"multivalu\u00e9": false,
-			"r\u00e9sum\u00e9": false,
-			"hidden": false,
-			"tooltip": "help text",
-			"value": "ffffff"
-		},
-		"champsConfig": [
-			{
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Nom",
-					"name": "name",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Label",
-					"name": "fieldLabel",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.form.field.Text",
-				"config": {
-					"fieldLabel": "Bulle d'aide",
-					"name": "tooltip",
-					"allowBlank": false
-				}
-			}, {
-				"type": "Ext.ux.ColorField",
-				"config": {
-					"fieldLabel": "Valeur par d\u00e9faut",
-					"name": "value",
-					"allowBlank": true
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Peut \u00eatre vide",
-					"name": "allowBlank"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Localisable",
-					"name": "localisable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Recherchable",
-					"name": "recherchable"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Multivalu\u00e9",
-					"name": "multivalu\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "R\u00e9sum\u00e9",
-					"name": "r\u00e9sum\u00e9"
-				}
-			}, {
-				"type": "Ext.form.field.Checkbox",
-				"config": {
-					"fieldLabel": "Cach\u00e9",
-					"name": "hidden"
-				}
-			}
-		],
-		"store": ""
-	}
-]
+	],
+	"total":14,
+	"success":true,
+	"message":"OK"
+}

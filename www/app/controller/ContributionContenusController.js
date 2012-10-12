@@ -33,7 +33,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.type, itemId:'type'});
         filArianne.add(typeFil);
     }
-    this.getContenusDataJsonStore().loadData(record.get("contenus"));
+    this.getContenusDataJsonStore().clearFilter();
+    this.getContenusDataJsonStore().filter("typeId",record.get("id"));
+    this.getContenusDataJsonStore().load();
     Ext.Array.forEach(Ext.getCmp("contributionContenus").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     Ext.getCmp("ajoutPanierContenus").disable();
     Ext.getCmp("boutonSupprimerContenu").disable();

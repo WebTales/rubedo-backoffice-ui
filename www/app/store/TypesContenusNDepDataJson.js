@@ -30,7 +30,7 @@ Ext.define('Rubedo.store.TypesContenusNDepDataJson', {
             model: 'Rubedo.model.typesContenusDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Contenus.json',
+                url: 'data/ContentTypes.json',
                 reader: {
                     type: 'json',
                     root: 'data'

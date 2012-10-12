@@ -138,6 +138,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             configurateur.store = monStore;
         }
         var nouvChamp = Ext.create(donnees.cType, configurateur);
+        nouvChamp.protoId=donnees.id;
         nouvChamp.config=Ext.clone(donnees.config);
         nouvChamp.champsConfig=Ext.clone(donnees.champsConfig);
         if (donnees.cType =='Ext.form.field.Trigger'){
@@ -156,8 +157,6 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp('champsEditionTC').add(enrobage);
         nouvChamp.getEl().dom.click();
         button.up().up().close();
-
-
     },
 
     selectChampTC: function(abstractcomponent, options) {
@@ -284,7 +283,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
         var nouvChamp = Ext.widget(donnees.cType, configurateur);
         nouvChamp.config=Ext.clone(donnees.config);
-        nouvChamp.champsConfig=Ext.clone(donnees.champsConfig);
+        nouvChamp.champsConfig=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("champsConfig");
         if (donnees.cType =='triggerfield'){ 
             var Ouvrir = Ext.clone(donnees.ouvrir);
             nouvChamp.onTriggerClick= function() {
@@ -294,6 +293,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
         }    
         nouvChamp.anchor = '90%';
+        nouvChamp.protoId=donnees.protoId;
+
 
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
@@ -351,7 +352,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var nch ={
                     cType: leChampR.xtype,
                     config: leChampR.config,
-                    champsConfig: leChampR.champsConfig,
+                    protoId:leChampR.protoId,
                     ouvrir:leChampR.ouvrir
                 };
                 if (leChampR.xtype== 'treepicker') {

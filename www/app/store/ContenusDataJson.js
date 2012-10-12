@@ -25,10 +25,18 @@ Ext.define('Rubedo.store.ContenusDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            autoLoad: false,
             storeId: ' ',
             model: 'Rubedo.model.contenusDataModel',
             proxy: {
-                type: 'ajax'
+                type: 'ajax',
+                url: 'data/Contents.json',
+                reader: {
+                    type: 'json'
+                },
+                writer: {
+                    type: 'json'
+                }
             }
         }, cfg)]);
     }
