@@ -408,7 +408,7 @@
                     "var selectionR = [ ];\r",
                     "var i =0;\r",
                     "for (i=0; i<maTaxo.length; i++) {\r",
-                    "var leVocab = tableauTaxoTC.getStore().findRecord('titre', maTaxo[i].titre);\r",
+                    "var leVocab = tableauTaxoTC.getStore().findRecord('name', maTaxo[i].titre);\r",
                     "selectionR.push(leVocab);\r",
                     "tableauTaxoTC.getSelectionModel().select(selectionR);\r",
                     "}\r",

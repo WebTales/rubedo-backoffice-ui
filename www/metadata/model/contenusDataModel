@@ -75,34 +75,6 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField2",
-                "name": "creation",
-                "type": "date"
-            },
-            "designerId": "4f02052b-ba32-4539-82d0-76d577bf4146"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "derniereModification",
-                "type": "date"
-            },
-            "designerId": "e2ae3ef9-b113-4314-b1a4-97220b818678"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField2",
                 "name": "version",
                 "type": "auto"
             },
@@ -147,6 +119,35 @@
                 "name": "taxonomie"
             },
             "designerId": "91b732b7-a0c5-49b3-9fa3-ad9acd777314"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": null,
+                "type": "date"
+            },
+            "designerId": "f98c306f-ee6d-461f-b4ed-5710455e4f74"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "updateTime",
+                "type": "date"
+            },
+            "designerId": "90e28d4c-26ff-44ea-9e3f-b704d0def82f"
         }
     ]
 }

@@ -118,6 +118,35 @@
                 "name": "id"
             },
             "designerId": "72b0e420-c12b-40cb-9b27-2b968712e6ea"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": null,
+                "type": "date"
+            },
+            "designerId": "49c0e80c-0478-43cc-b2c8-7f493889d3ad"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "updateTime",
+                "type": "date"
+            },
+            "designerId": "a5a2780c-7ffb-4a89-bb92-9a142403659a"
         }
     ]
 }

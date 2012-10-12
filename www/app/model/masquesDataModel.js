@@ -50,6 +50,9 @@ Ext.define('Rubedo.model.masquesDataModel', {
             type: 'auto'
         },
         {
+            name: 'id'
+        },
+        {
             name: 'versions',
             type: 'auto'
         }

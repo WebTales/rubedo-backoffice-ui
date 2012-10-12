@@ -44,6 +44,14 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'id'
+        },
+        {
+            name: 'createTime',
+            type: 'date'
+        },
+        {
+            name: 'updateTime',
+            type: 'date'
         }
     ]
 });

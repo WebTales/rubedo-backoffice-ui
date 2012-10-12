@@ -308,7 +308,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     var selectionR = [ ];
     var i =0;
     for (i=0; i<maTaxo.length; i++) {
-        var leVocab = tableauTaxoTC.getStore().findRecord('titre', maTaxo[i].titre);
+        var leVocab = tableauTaxoTC.getStore().findRecord('name', maTaxo[i].titre);
         selectionR.push(leVocab);
         tableauTaxoTC.getSelectionModel().select(selectionR);
     }

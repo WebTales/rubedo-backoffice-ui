@@ -33,14 +33,6 @@ Ext.define('Rubedo.model.contenusDataModel', {
             name: 'etat'
         },
         {
-            name: 'creation',
-            type: 'date'
-        },
-        {
-            name: 'derniereModification',
-            type: 'date'
-        },
-        {
             name: 'version',
             type: 'auto'
         },
@@ -53,6 +45,14 @@ Ext.define('Rubedo.model.contenusDataModel', {
         },
         {
             name: 'taxonomie'
+        },
+        {
+            name: 'createTime',
+            type: 'date'
+        },
+        {
+            name: 'updateTime',
+            type: 'date'
         }
     ]
 });
