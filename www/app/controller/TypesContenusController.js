@@ -80,9 +80,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.vocabulaires;
             var i=0;
             for (i=0; i<lesTaxo.length; i++) {
-                var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('titre', lesTaxo[i].titre);
+                var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', lesTaxo[i].id);
                 var vocabAPlat= [ ];
-                this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+                this.miseAPlatTaxo(leVocab.data.terms.children, vocabAPlat);
 
                 var storeT = Ext.create('Ext.data.Store', {
                     fields: ['terme'],
@@ -93,7 +93,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var selecteur = Ext.widget('comboboxselect', {
                     name:lesTaxo[i].titre,
                     width:690,
-                    fieldLabel: leVocab.data.titre,
+                    fieldLabel: leVocab.data.name,
                     autoScroll: false,
                     store: storeT,
                     queryMode: 'local',
@@ -101,10 +101,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     valueField: 'terme',
                     filterPickList: true,
                     typeAhead: true,
-                    forceSelection: !leVocab.data.etiquettes,
-                    createNewOnEnter: leVocab.data.etiquettes,
-                    multiSelect: leVocab.data.choixMultiple,
-                    allowBlank: !leVocab.data.obligatoire
+                    forceSelection: !leVocab.data.expandable,
+                    createNewOnEnter: leVocab.data.expandable,
+                    multiSelect: leVocab.data.multiSelect,
+                    allowBlank: !leVocab.data.mandatory
                 });
                 var enrobage =Ext.widget('ChampTC');
                 enrobage.add(selecteur);
@@ -310,7 +310,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     var selectionR = [ ];
     var i =0;
     for (i=0; i<maTaxo.length; i++) {
-        var leVocab = tableauTaxoTC.getStore().findRecord('name', maTaxo[i].titre);
+        var leVocab = tableauTaxoTC.getStore().findRecord('id', maTaxo[i].id);
         selectionR.push(leVocab);
         tableauTaxoTC.getSelectionModel().select(selectionR);
     }
@@ -379,7 +379,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var i=0;
             var nouvTaxoR = [ ];
             for (i=0; i<nouvTaxoTC.length; i++) {
-                nouvTaxoR.push({titre: nouvTaxoTC[i].data.titre});
+                nouvTaxoR.push({id: nouvTaxoTC[i].get("id")});
             }
             target.set("vocabulaires", nouvTaxoR);
             if (target.get("imbrique") ===false) {
