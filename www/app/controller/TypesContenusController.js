@@ -157,6 +157,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp('champsEditionTC').add(enrobage);
         nouvChamp.getEl().dom.click();
         button.up().up().close();
+
     },
 
     selectChampTC: function(abstractcomponent, options) {

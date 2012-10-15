@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userClassName": "CKEField",
         "designer|userAlias": "CKEField",
+        "height": null,
         "fieldLabel": "Label"
     },
     "id": "ExtBox1-ext-gen18078",
@@ -25,7 +26,19 @@
                 "fn": "onTextareafieldAfterRender",
                 "implHandler": [
                     "var targetId = abstractcomponent.getInputId();\r",
-                    "abstractcomponent.editor= editor=CKEDITOR.replace( targetId, { }, abstractcomponent.getValue());"
+                    "abstractcomponent.editor= editor=CKEDITOR.replace( targetId, {toolbar: [\r",
+                    "\t{ name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },\r",
+                    "\t{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },\r",
+                    "\t{ name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },\r",
+                    "\t{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },\r",
+                    "\t{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',\r",
+                    "\t'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },\r",
+                    "\t{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },\r",
+                    "\t{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },\r",
+                    "\t{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },\r",
+                    "\t{ name: 'colors', items : [ 'TextColor','BGColor' ] },\r",
+                    "\t{ name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }\r",
+                    "]});"
                 ],
                 "name": "afterrender",
                 "scope": "me"

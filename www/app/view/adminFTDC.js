@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     height: 578,
     id: 'adminFTDC',
-    width: 1000,
+    width: 1200,
     layout: {
         align: 'stretch',
         type: 'hbox'

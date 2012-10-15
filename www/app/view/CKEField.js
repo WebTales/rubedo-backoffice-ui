@@ -40,7 +40,19 @@ Ext.define('Rubedo.view.CKEField', {
 
     onTextareafieldAfterRender: function(abstractcomponent, options) {
         var targetId = abstractcomponent.getInputId();
-        abstractcomponent.editor= editor=CKEDITOR.replace( targetId, { }, abstractcomponent.getValue());
+        abstractcomponent.editor= editor=CKEDITOR.replace( targetId, {toolbar: [
+            { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
+            { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+            { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+            { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+            { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
+            '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+            { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+            { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+            { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+            { name: 'colors', items : [ 'TextColor','BGColor' ] },
+            { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
+        ]});
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {
