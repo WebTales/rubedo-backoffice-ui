@@ -145,8 +145,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     champs: champs,
                     taxonomie:taxonomie,
                     etat: etat,
-                    type: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().data.type,
-                    auteur: MyPrefData.myName
+                    typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
+
                 });
 
                 Ext.getCmp('ContenusGrid').getStore().add(nContenu);

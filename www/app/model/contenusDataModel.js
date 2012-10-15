@@ -36,10 +36,6 @@ Ext.define('Rubedo.model.contenusDataModel', {
             type: 'auto'
         },
         {
-            name: 'auteur',
-            type: 'auto'
-        },
-        {
             name: 'id'
         },
         {

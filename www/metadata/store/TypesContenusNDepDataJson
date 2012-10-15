@@ -24,8 +24,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy2",
-                "api": null,
-                "url": "data/ContentTypes.json"
+                "api": [
+                    "{\r",
+                    "                    create: 'content-types/create',\r",
+                    "                    read: 'content-types',\r",
+                    "                    update: 'content-types/update',\r",
+                    "                    destroy: 'content-types/delete'\r",
+                    "                }"
+                ],
+                "url": null
             },
             "designerId": "e932b8ec-e36f-41ec-a6ae-f3d83c39751e",
             "cn": [
@@ -38,7 +45,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader2",
-                        "messageProperty": null,
+                        "messageProperty": "message",
                         "root": "data"
                     },
                     "designerId": "2fcd38bb-d3ae-4190-bcce-789de820be91"
@@ -54,7 +61,6 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyFilter",
-                "exactMatch": true,
                 "property": "imbrique",
                 "value": [
                     "false"

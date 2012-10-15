@@ -9,6 +9,7 @@
         "designer|userClassName": "TypesChampsDataStore",
         "designer|userAlias": "TypesChampsDataStore",
         "autoLoad": true,
+        "autoSync": true,
         "storeId": "TypesChampsDataStore",
         "model": "typesChampsDataModel"
     },
@@ -27,7 +28,7 @@
                 "api": [
                     "{\r",
                     "     create: 'field-types/create',\r",
-                    "     read: 'data/TypesChamps.json',\r",
+                    "     read: 'field-types',\r",
                     "     update: 'field-types/update',\r",
                     "     destroy: 'field-types/delete'\r",
                     "}"

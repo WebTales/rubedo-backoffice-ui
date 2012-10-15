@@ -372,25 +372,28 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 }
                 champsR.push(nch);
             }
-            Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected().data.champs = champsR;
+            var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
+            target.beginEdit();
+            target.set("champs", champsR);
             var nouvTaxoTC = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
             var i=0;
             var nouvTaxoR = [ ];
             for (i=0; i<nouvTaxoTC.length; i++) {
                 nouvTaxoR.push({titre: nouvTaxoTC[i].data.titre});
             }
-            Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected().data.vocabulaires = nouvTaxoR;
-            if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected().data.imbrique ===false) {
+            target.set("vocabulaires", nouvTaxoR);
+            if (target.get("imbrique") ===false) {
                 var nouvTCI = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();
                 var j=0;
                 var nouvTCIR = [ ];
                 for (j=0; j<nouvTCI.length; j++) {
                     nouvTCIR.push({type: nouvTCI[j].data.type});
                 }
-                Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected().data.typesImbriques = nouvTCIR;
+                target.set("typesImbriques", nouvTCIR);
 
 
             }
+            target.endEdit();
         }
     },
 

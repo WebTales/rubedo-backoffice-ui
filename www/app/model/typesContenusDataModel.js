@@ -22,9 +22,6 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             name: 'type'
         },
         {
-            name: 'contenus'
-        },
-        {
             name: 'champs',
             type: 'auto'
         },

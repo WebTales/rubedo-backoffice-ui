@@ -9,6 +9,7 @@
         "designer|userClassName": "ContenusDataJson",
         "designer|userAlias": "ContenusDataJson",
         "autoLoad": false,
+        "autoSync": true,
         "storeId": " ",
         "model": "contenusDataModel"
     },
@@ -24,7 +25,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy6",
-                "url": "data/Contents.json"
+                "api": [
+                    "{\r",
+                    "                    create: 'contents/create',\r",
+                    "                    read: 'contents',\r",
+                    "                    update: 'contents/update',\r",
+                    "                    destroy: 'contents/delete'\r",
+                    "                }"
+                ],
+                "url": null
             },
             "designerId": "402f9244-a4eb-4476-aa0d-7d47d285444e",
             "cn": [
@@ -36,7 +45,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader20"
+                        "designer|userClassName": "MyJsonReader20",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "eaf8ec34-dff7-4d22-9865-12e5613107e2"
                 },
@@ -48,7 +59,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter12"
+                        "designer|userClassName": "MyJsonWriter12",
+                        "encode": true,
+                        "root": "data"
                     },
                     "designerId": "be7e2b1d-d655-464a-a777-eced0aa78295"
                 }

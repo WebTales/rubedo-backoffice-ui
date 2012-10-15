@@ -26,13 +26,14 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
+            autoSync: true,
             storeId: 'TypesChampsDataStore',
             model: 'Rubedo.model.typesChampsDataModel',
             proxy: {
                 type: 'ajax',
                 api: {
                     create: 'field-types/create',
-                    read: 'data/TypesChamps.json',
+                    read: 'field-types',
                     update: 'field-types/update',
                     destroy: 'field-types/delete'
                 },

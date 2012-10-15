@@ -41,6 +41,9 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
         },
         {
             name: 'store'
+        },
+        {
+            name: 'id'
         }
     ]
 });
