@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "favoriteIcon": "tag.png",
         "designer|userClassName": "adminFTaxonomie",
         "designer|userAlias": "adminFTaxonomie",
         "height": 578,
@@ -19,6 +20,13 @@
     },
     "id": "ExtBox1-ext-gen6790",
     "designerId": "6422f6a9-9b88-4951-b942-22332afd3f8d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "favoriteIcon",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "tool",
@@ -366,7 +374,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> '+value);"
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png\"> '+value);"
                                 ]
                             },
                             "designerId": "87b5c1f5-0461-4963-b0b0-5d00918bcfbf"

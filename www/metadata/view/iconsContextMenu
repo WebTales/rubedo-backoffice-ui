@@ -1,0 +1,68 @@
+{
+    "type": "menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "iconsContextMenu",
+        "designer|userAlias": "iconsContextMenu",
+        "frame": true,
+        "id": "iconsContextMenu",
+        "width": null,
+        "showSeparator": false
+    },
+    "id": "ExtBox1-ext-gen9284",
+    "designerId": "7c4031db-6eea-4991-8483-b8160573bba4",
+    "cn": [
+        {
+            "type": "menuitem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyMenuItem2",
+                "id": null,
+                "itemId": "iconDeleteMenuItem",
+                "iconCls": "close",
+                "text": "Supprimer"
+            },
+            "designerId": "25329bfb-492e-44b5-821f-d7930b01ed8e"
+        },
+        {
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTextField26",
+                "itemId": "iconNameField",
+                "fieldLabel": "Nom ",
+                "labelWidth": 40,
+                "allowBlank": false
+            },
+            "designerId": "3affe49c-7c9f-40c9-bb62-e1b1049a2d25"
+        },
+        {
+            "type": "menuitem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyMenuItem2",
+                "id": null,
+                "itemId": "iconRenameMenuItem",
+                "iconCls": "edit",
+                "text": "Renommer"
+            },
+            "designerId": "90b328f2-ff86-4357-be12-87fa37c0fce6"
+        }
+    ]
+}

@@ -26,13 +26,25 @@ Ext.define('Rubedo.store.IconesDataJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
+            autoSync: true,
             storeId: 'IconesDataJson',
             model: 'Rubedo.model.iconDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Icones.json',
+                api: {
+                    create: 'icons/create',
+                    read: 'icons',
+                    update: 'icons/update',
+                    destroy: 'icons/delete'
+                },
                 reader: {
                     type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
                     root: 'data'
                 }
             }

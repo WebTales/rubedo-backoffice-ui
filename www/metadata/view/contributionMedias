@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "favoriteIcon": "folder.png",
         "designer|userClassName": "contributionMedias",
         "designer|userAlias": "contributionMedias",
         "height": 578,
@@ -19,6 +20,13 @@
     },
     "id": "ExtBox1-ext-gen7427",
     "designerId": "80282cbf-46ae-4067-b98e-260703d28293",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "favoriteIcon",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "tool",

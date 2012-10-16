@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "favoriteIcon": "application.png",
         "designer|userClassName": "contributionPages",
         "designer|userAlias": "contributionPages",
         "height": 578,
@@ -19,6 +20,13 @@
     },
     "id": "ExtBox1-ext-gen5629",
     "designerId": "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "favoriteIcon",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "tool",

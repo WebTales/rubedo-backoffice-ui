@@ -140,8 +140,10 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     onMainWindowRender: function(abstractcomponent, options) {
-        Ext.getStore("UsersDataStore").load();
-        Ext.getStore("UsersDataStore").clearFilter();
+        if (abstractcomponent.isXType("window")){
+            Ext.getStore("UsersDataStore").clearFilter();
+            Ext.getStore("UsersDataStore").load();
+        }
     },
 
     onWindowBeforeClose2: function(panel, options) {

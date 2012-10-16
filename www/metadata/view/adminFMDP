@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "favoriteIcon": "application.png",
         "designer|userClassName": "adminFMDP",
         "designer|userAlias": "adminFMDP",
         "height": 578,
@@ -19,6 +20,13 @@
     },
     "id": "ExtBox1-ext-gen75550",
     "designerId": "5b65ea9f-b5de-4028-be66-16c03842ef21",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "favoriteIcon",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "tool",

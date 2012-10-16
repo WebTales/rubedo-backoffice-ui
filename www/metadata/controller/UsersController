@@ -412,8 +412,10 @@
                 "designer|userClassName": "onMainWindowRender",
                 "fn": "onMainWindowRender",
                 "implHandler": [
-                    "Ext.getStore(\"UsersDataStore\").load();\r",
-                    "Ext.getStore(\"UsersDataStore\").clearFilter();"
+                    "if (abstractcomponent.isXType(\"window\")){\r",
+                    "    Ext.getStore(\"UsersDataStore\").clearFilter();\r",
+                    "    Ext.getStore(\"UsersDataStore\").load();\r",
+                    "}"
                 ],
                 "name": "render",
                 "scope": "me",

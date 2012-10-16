@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.adminFMDP', {
         'Rubedo.view.MyGridPanel3'
     ],
 
+    favoriteIcon: 'application.png',
     height: 578,
     id: 'adminFMDP',
     width: 1200,

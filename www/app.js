@@ -92,7 +92,8 @@ Ext.application({
         'testingGround',
         'CKEField',
         'ReusableElementPicker',
-        'ExportElementWindow'
+        'ExportElementWindow',
+        'iconsContextMenu'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

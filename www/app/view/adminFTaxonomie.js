@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
         'Rubedo.view.TermesTaxonomieTree'
     ],
 
+    favoriteIcon: 'tag.png',
     height: 578,
     id: 'adminFTaxonomie',
     width: 1000,
@@ -157,7 +158,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png"> '+value);
                             },
                             dataIndex: 'name',
                             flex: 1,

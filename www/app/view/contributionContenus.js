@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.contributionContenus', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionContenus',
 
+    favoriteIcon: 'folder.png',
     height: 578,
     id: 'contributionContenus',
     width: 800,

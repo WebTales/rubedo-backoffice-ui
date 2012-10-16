@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.contributionMedias', {
         'Rubedo.view.mediaWindowsView'
     ],
 
+    favoriteIcon: 'folder.png',
     height: 578,
     id: 'contributionMedias',
     width: 1000,

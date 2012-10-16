@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.contributionPages', {
         'Rubedo.view.MyGridPanel3'
     ],
 
+    favoriteIcon: 'application.png',
     height: 578,
     id: 'contributionPages',
     width: 1000,

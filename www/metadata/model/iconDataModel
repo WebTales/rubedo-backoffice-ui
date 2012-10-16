@@ -80,6 +80,32 @@
                 "name": "actions"
             },
             "designerId": "344a653c-1deb-46ab-a787-561069338bd6"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field134",
+                "name": "id"
+            },
+            "designerId": "56647b2e-241f-42f8-9f27-72584e072fac"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field135",
+                "name": "version"
+            },
+            "designerId": "2ea9cc63-eef7-40bc-9746-4f80cecd2758"
         }
     ]
 }

@@ -83,11 +83,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     comportementIcones: function(abstractcomponent, options) {
+        var me=this;
         abstractcomponent.on('move', function(cible, x, y){
             if ((x % 80)>40) {x = x-(x % 80)+80;} else {x = x-(x % 80);}
             if ((y % 90)>45) {y = y-(y % 90)+90;} else {y = y-(y % 90);}
             while (this.placeLibre(x,y, abstractcomponent.id)===false) {
-                if (y<(screen.height-90)) {    
+                if (y<(window.innerHeight-90)) {    
                     y=y+90;
                 }
                 else {
@@ -98,26 +99,56 @@ Ext.define('Rubedo.controller.InterfaceController', {
             abstractcomponent.suspendEvents(false);
             abstractcomponent.setPosition(x, y);
             abstractcomponent.resumeEvents();
+            var myRec =Ext.getStore("IconesDataJson").findRecord("id", abstractcomponent.recId);
+            if (!Ext.isEmpty(myRec)){
+                if ((myRec.get("posX")!=x)||(myRec.get("posY")!=y)) {
+                    myRec.beginEdit();
+                    myRec.set("posX", x);
+                    myRec.set("posY", y);
+                    myRec.endEdit();
+                }
 
-        }, this);
+            }}, this);
+
+            abstractcomponent.getEl().on("contextmenu", function(e){
+                var menu= Ext.getCmp('iconsContextMenu');
+                if (Ext.isEmpty(menu)){
+                    menu = Ext.widget('iconsContextMenu');
+                    menu.on('blur', function(){this.destroy();});}
+                    menu.getComponent("iconDeleteMenuItem").on("click", function(){
+                        Ext.getStore("IconesDataJson").remove(Ext.getStore("IconesDataJson").findRecord("id", abstractcomponent.recId));
+                        abstractcomponent.up().remove(abstractcomponent);
+                        menu.destroy();
+                    });
+                    menu.getComponent("iconNameField").setValue(abstractcomponent.iText);
+                    menu.getComponent("iconRenameMenuItem").on("click", function(){
+                        if (menu.getComponent("iconNameField").isValid()) {
+                            Ext.getStore("IconesDataJson").findRecord("id", abstractcomponent.recId).set("text",menu.getComponent("iconNameField").getValue());
+                            me.refreshIcons();
+                        }
+                    });
+                    menu.showAt(Ext.EventObject.getXY());
+                    e.stopEvent();
+
+                });
     },
 
     ouvrirFenteresMenuDroite: function(button, e, options) {
         if (button.itemId=='deconnexionMenuPrincipal') {
-            var iconesE = [ ];
+            /*  var iconesE = [ ];
             var iconesR = Ext.getCmp('boiteAIconesBureau').items.items;    
             Ext.Array.forEach(iconesR, function(icone) {
-                iconesE.push(
-                {
-                    text:icone.title,
-                    posX:icone.getPosition()[0],
-                    posY:icone.getPosition()[1],
-                    image:icone.getComponent(0).src
-                }
-                );
+            iconesE.push(
+            {
+            text:icone.title,
+            posX:icone.getPosition()[0],
+            posY:icone.getPosition()[1],
+            image:icone.getComponent(0).src
+            }
+            );
             });
 
-            console.log(iconesE);  
+            console.log(iconesE);  */
 
         }
         else{
@@ -139,8 +170,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     majIcones: function(abstractcomponent, options) {
-        var me=this;
-        Ext.getStore('IconesDataJson').load({ callback: me.refreshIcons()});
         abstractcomponent.getEl().on('contextmenu', function(e){
             var menu= Ext.getCmp('settingsContextMenu');
             if (Ext.isEmpty(menu)){
@@ -201,6 +230,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.util.CSS.swapStyleSheet('maintheme', theme.stylesheet);
         MyPrefData.iconsDir=theme.iconSet;
         MyPrefData.themeColor=theme.themeColor;
+        this.refreshIcons();
     },
 
     onPanelExpand: function(p, options) {
@@ -246,7 +276,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             text:myText,
             posX:0,
             posY:0,
-            image: "resources/icones/blue/64x64/favorite.png",
+            image: myWindow.favoriteIcon||"favorite.png",
             actions:actions
 
         });
@@ -255,6 +285,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     onLaunch: function() {
+        var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             Ext.getCmp('menuPrincipalInterface').destroy();
         }});
@@ -270,6 +301,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 MyPrefData.iconsDir=myPrefs.iconSet;
                 MyPrefData.myName=myPrefs.myName;
                 MyPrefData.themeColor=myPrefs.themeColor;
+                me.refreshIcons();
             }
         });
     },
@@ -365,10 +397,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp("boiteAIconesBureau").removeAll();
         Ext.Array.forEach(icones, function(icone){
             var nIcone = Ext.widget('iconeBureau',{
-                bodyStyle:"background-image: url("+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
+                bodyStyle:"background-image: url(resources/icones/"+MyPrefData.iconsDir+"/64x64/"+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
                 html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 14px;\">"+icone.get("text")+"</p>"
             });
-            nIcone.setTitle(icone.data.text);
+            nIcone.iText=icone.get("text");
+            nIcone.recId=icone.get("id");
             nIcone.actions=icone.get("actions");
             nIcone.on("render", function(){
                 nIcone.getEl().on("dblclick", function(){
@@ -399,7 +432,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
                     nIcone.setPosition(icone.data.posX, icone.data.posY);
                     Ext.getCmp("boiteAIconesBureau").add(nIcone);
                 }); 
-
     }
 
 });
