@@ -191,7 +191,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     reagarangeAllIcons: function(item, e, options) {
+        Ext.getStore("IconesDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.setPosition(0,0);});
+        Ext.getStore("IconesDataJson").resumeAutoSync();
+        Ext.getStore("IconesDataJson").sync();
     },
 
     displayDesktopCustomizeWindow: function(item, e, options) {
@@ -280,8 +283,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
             actions:actions
 
         });
+        var me=this;
         Ext.getStore("IconesDataJson").add(newIcon);
-        this.refreshIcons();
+        Ext.getStore("IconesDataJson").on("datachanged", function(){
+            me.refreshIcons();
+            Ext.getStore("IconesDataJson").clearListeners();
+        });
     },
 
     onLaunch: function() {
