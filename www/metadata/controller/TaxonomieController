@@ -33,7 +33,7 @@
                     "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
                     "var typeFil = filArianne.getComponent('type');\r",
                     "if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre);}\r",
-                    "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.titre, itemId:'type'});\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"page_taxonomy\", text:record.data.name, itemId:'type'});\r",
                     "filArianne.add(typeFil);\r",
                     "}\r",
                     "Ext.getCmp(\"ProprietesTaxonomie\").getForm().loadRecord(record);\r",

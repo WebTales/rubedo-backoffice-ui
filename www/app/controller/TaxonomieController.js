@@ -29,7 +29,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre);}
-        else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.titre, itemId:'type'});
+        else { typeFil= Ext.widget('button',{iconCls: "page_taxonomy", text:record.data.name, itemId:'type'});
         filArianne.add(typeFil);
     }
     Ext.getCmp("ProprietesTaxonomie").getForm().loadRecord(record);
