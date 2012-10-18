@@ -471,6 +471,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         this.creerChampTC(Ext.getCmp("boutonAjouterChampTC"));
     },
 
+    copyTC: function(button, e, options) {
+        var rec = Ext.clone(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().data);
+        delete(rec.id);
+        rec.type=rec.type+"-Copie";
+        Ext.getCmp("AdminfTypesGrid").getStore().add(rec);
+        Ext.getStore("TypesContenusNDepDataJson").load();
+    },
+
+    onGridpanelEdit: function(editor, e, options) {
+        Ext.getStore("TypesContenusNDepDataJson").load();
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -524,6 +536,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#TCfieldDown": {
                 click: this.TCfieldMoveDown
+            },
+            "#boutonCopierTC": {
+                click: this.copyTC
+            },
+            "#AdminfTypesGrid": {
+                edit: this.onGridpanelEdit
             }
         });
     }

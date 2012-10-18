@@ -281,12 +281,21 @@ Ext.define('Rubedo.view.adminFTDC', {
                             width: 452,
                             dataIndex: 'type',
                             flex: 1,
-                            text: 'Type'
+                            text: 'Type',
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false
+                            }
                         }
                     ],
                     selModel: Ext.create('Ext.selection.RowModel', {
 
-                    })
+                    }),
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+                            ptype: 'cellediting'
+                        })
+                    ]
                 },
                 {
                     xtype: 'tabpanel',

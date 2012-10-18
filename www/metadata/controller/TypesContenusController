@@ -744,6 +744,50 @@
                 "designer|controlQuery": "#ChampTCSelectGrid"
             },
             "designerId": "165b0cf1-e3f8-4a55-9506-56f5f6d8c60d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "copyTC",
+                "fn": "copyTC",
+                "implHandler": [
+                    "var rec = Ext.clone(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().data);\r",
+                    "delete(rec.id);\r",
+                    "rec.type=rec.type+\"-Copie\";\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").getStore().add(rec);\r",
+                    "Ext.getStore(\"TypesContenusNDepDataJson\").load();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCopierTC"
+            },
+            "designerId": "217b6cb9-f771-406e-87cc-5c8d71d1ffaf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onGridpanelEdit",
+                "fn": "onGridpanelEdit",
+                "implHandler": [
+                    "Ext.getStore(\"TypesContenusNDepDataJson\").load();"
+                ],
+                "name": "edit",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#AdminfTypesGrid"
+            },
+            "designerId": "cee18c78-aca5-49d7-89a4-764138838ca9"
         }
     ]
 }

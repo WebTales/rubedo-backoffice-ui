@@ -604,6 +604,19 @@
                                 ]
                             },
                             "designerId": "5fb6b3c5-4d70-47be-ad37-e8c36c578e63"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField27",
+                                "allowBlank": false
+                            },
+                            "designerId": "73da240b-428c-452a-beb7-f008eefd9db0"
                         }
                     ]
                 },
@@ -618,6 +631,18 @@
                         "designer|userClassName": "MyRowSelectionModel3"
                     },
                     "designerId": "16e785a1-3a76-422c-a5de-1397b78c3dbc"
+                },
+                {
+                    "type": "gridcelleditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin1"
+                    },
+                    "designerId": "b868827d-50c2-4a9e-b8c0-401bcedb701e"
                 }
             ]
         },
