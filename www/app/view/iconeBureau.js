@@ -19,9 +19,9 @@ Ext.define('Rubedo.view.iconeBureau', {
 
     border: 0,
     draggable: true,
-    height: 90,
+    height: 100,
     styleHtmlContent: true,
-    width: 64,
+    width: 100,
     header: false,
     headerPosition: 'bottom',
     title: 'Test',

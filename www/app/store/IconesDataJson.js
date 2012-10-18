@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.IconesDataJson', {
             model: 'Rubedo.model.iconDataModel',
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'icons/create',
                     read: 'icons',

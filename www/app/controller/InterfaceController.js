@@ -85,15 +85,15 @@ Ext.define('Rubedo.controller.InterfaceController', {
     comportementIcones: function(abstractcomponent, options) {
         var me=this;
         abstractcomponent.on('move', function(cible, x, y){
-            if ((x % 80)>40) {x = x-(x % 80)+80;} else {x = x-(x % 80);}
-            if ((y % 90)>45) {y = y-(y % 90)+90;} else {y = y-(y % 90);}
+            if ((x % 100)>50) {x = x-(x % 100)+100;} else {x = x-(x % 100);}
+            if ((y % 100)>50) {y = y-(y % 100)+100;} else {y = y-(y % 100);}
             while (this.placeLibre(x,y, abstractcomponent.id)===false) {
-                if (y<(window.innerHeight-90)) {    
-                    y=y+90;
+                if (y<(window.innerHeight-150)) {    
+                    y=y+100;
                 }
                 else {
                     y=0;
-                    x=x+80;
+                    x=x+100;
                 }
             }
             abstractcomponent.suspendEvents(false);
@@ -404,8 +404,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp("boiteAIconesBureau").removeAll();
         Ext.Array.forEach(icones, function(icone){
             var nIcone = Ext.widget('iconeBureau',{
-                bodyStyle:"background-image: url(resources/icones/"+MyPrefData.iconsDir+"/64x64/"+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat;",
-                html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 14px;\">"+icone.get("text")+"</p>"
+                bodyStyle:"background-image: url(resources/icones/"+MyPrefData.iconsDir+"/64x64/"+icone.get("image")+")  !important; background: transparent; background-repeat: no-repeat; background-position:top center;",
+                html:"<p style=\"margin-top:66px; text-align: center; color: #fff; font-size: 10px;\">"+icone.get("text")+"</p>"
             });
             nIcone.iText=icone.get("text");
             nIcone.recId=icone.get("id");
