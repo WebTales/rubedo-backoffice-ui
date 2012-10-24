@@ -246,14 +246,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
         var monIco = 'content-icon';
         var monImg = 'resources/icones/48x48/page_full.png';
-        if (record.data.imbrique===true){monIco='documentDep'; monImg = 'resources/icones/48x48/attach_document.png';}
+        if (record.data.dependant===true){monIco='documentDep'; monImg = 'resources/icones/48x48/attach_document.png';}
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.type).setIconCls(monIco); }
         else { typeFil= Ext.widget('button',{iconCls: monIco, text:record.data.type, itemId:'type'});
         filArianne.add(typeFil);
     }
 
-    if (record.data.imbrique===false) {
+    if (record.data.dependant===false) {
         if (!(Ext.isDefined(Ext.getCmp('ongletTCDep')))) {
             Ext.getCmp('tabPanTC').add(Ext.widget('ongletTCDep'));    
         }
@@ -410,9 +410,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var nType = Ext.getCmp('champCreerTC').getValue();
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
-                imbrique: Ext.getCmp('champTCIsDep').getValue(),
-                champs: [ ],
-                contenus: [ ]
+                dependant: Ext.getCmp('champTCIsDep').getValue(),
+                fields: [ ]
 
 
             });

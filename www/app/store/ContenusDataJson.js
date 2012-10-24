@@ -44,6 +44,7 @@ Ext.define('Rubedo.store.ContenusDataJson', {
                 },
                 writer: {
                     type: 'json',
+                    nameProperty: 'mapping',
                     encode: true,
                     root: 'data'
                 }

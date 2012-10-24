@@ -26,11 +26,11 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy10",
                 "api": [
-                    "{",
-                    "create : 'taxonomy/create',",
-                    "read : 'data/Taxonomie.json',",
-                    "update : 'taxonomy/update',",
-                    "destroy : 'taxonomy/delete'",
+                    "{\r",
+                    "create : 'taxonomy/create',\r",
+                    "read : 'taxonomy',\r",
+                    "update : 'taxonomy/update',\r",
+                    "destroy : 'taxonomy/delete'\r",
                     "}"
                 ],
                 "url": null

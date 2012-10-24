@@ -23,18 +23,21 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'champs',
+            mapping: 'fields',
             type: 'auto'
         },
         {
             name: 'vocabulaires',
+            mapping: 'vocabularies',
             type: 'auto'
         },
         {
-            name: 'imbrique',
+            name: 'dependant',
             type: 'boolean'
         },
         {
-            name: 'typesImbriques'
+            name: 'typesImbriques',
+            mapping: 'dependantTypes'
         },
         {
             name: 'version'

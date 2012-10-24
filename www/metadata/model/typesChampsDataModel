@@ -50,7 +50,7 @@
             "userConfig": {
                 "designer|userClassName": "MyField35",
                 "name": "ouvrir",
-                "mapping": null,
+                "mapping": "openWindow",
                 "type": "string"
             },
             "designerId": "e6095fbc-5c4b-4d5a-b140-de3855912829"
@@ -91,7 +91,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField36",
-                "name": "champsConfig"
+                "name": "champsConfig",
+                "mapping": "configFields"
             },
             "designerId": "5332f28f-15a7-44d3-8217-ca5723f27d8d"
         },

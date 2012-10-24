@@ -598,7 +598,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "if (record.data.imbrique===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + value );}\r",
+                                    "if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + value );}\r",
                                     "else {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> ' + value );}\r",
                                     ""
                                 ]

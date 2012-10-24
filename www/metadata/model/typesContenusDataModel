@@ -21,7 +21,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField2",
-                "name": "type"
+                "name": "type",
+                "mapping": null
             },
             "designerId": "70507101-9150-49a0-b25e-27da2813a637"
         },
@@ -35,6 +36,7 @@
             "userConfig": {
                 "designer|userClassName": "MyField2",
                 "name": "champs",
+                "mapping": "fields",
                 "type": "auto"
             },
             "designerId": "c74690d6-b0d7-4e74-97b0-7adb41d4a20a"
@@ -49,6 +51,7 @@
             "userConfig": {
                 "designer|userClassName": "MyField2",
                 "name": "vocabulaires",
+                "mapping": "vocabularies",
                 "type": "auto"
             },
             "designerId": "59ce6e62-cced-4e36-aceb-949093bfc475"
@@ -62,7 +65,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField53",
-                "name": "imbrique",
+                "name": "dependant",
+                "mapping": null,
                 "type": "boolean"
             },
             "designerId": "40f89b06-9db9-422a-a7af-5b81ef5e9bca"
@@ -76,7 +80,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField54",
-                "name": "typesImbriques"
+                "name": "typesImbriques",
+                "mapping": "dependantTypes"
             },
             "designerId": "13953f15-65ae-4735-83c9-5222468a7272"
         },

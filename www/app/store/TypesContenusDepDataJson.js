@@ -38,7 +38,7 @@ Ext.define('Rubedo.store.TypesContenusDepDataJson', {
                 }
             },
             filters: {
-                property: 'imbrique',
+                property: 'dependant',
                 value: true
             },
             fields: [

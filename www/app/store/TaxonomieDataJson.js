@@ -33,7 +33,7 @@ Ext.define('Rubedo.store.TaxonomieDataJson', {
                 type: 'ajax',
                 api: {
                     create: 'taxonomy/create',
-                    read: 'data/Taxonomie.json',
+                    read: 'taxonomy',
                     update: 'taxonomy/update',
                     destroy: 'taxonomy/delete'
                 },

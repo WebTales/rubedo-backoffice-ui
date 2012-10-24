@@ -23,13 +23,15 @@ Ext.define('Rubedo.model.contenusDataModel', {
         },
         {
             name: 'champs',
+            mapping: 'fields',
             type: 'auto'
         },
         {
             name: 'typeId'
         },
         {
-            name: 'etat'
+            name: 'etat',
+            mapping: 'status'
         },
         {
             name: 'version',
@@ -39,7 +41,8 @@ Ext.define('Rubedo.model.contenusDataModel', {
             name: 'id'
         },
         {
-            name: 'taxonomie'
+            name: 'taxonomie',
+            mapping: 'taxonomy'
         },
         {
             name: 'createTime',

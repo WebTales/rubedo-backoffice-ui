@@ -43,6 +43,7 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
                 },
                 writer: {
                     type: 'json',
+                    nameProperty: 'mapping',
                     encode: true,
                     root: 'data'
                 }

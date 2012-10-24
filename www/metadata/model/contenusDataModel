@@ -35,6 +35,7 @@
             "userConfig": {
                 "designer|userClassName": "MyField2",
                 "name": "champs",
+                "mapping": "fields",
                 "type": "auto"
             },
             "designerId": "f40ef47e-8d86-4e17-b1e6-bffe5c5374c7"
@@ -62,7 +63,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField2",
-                "name": "etat"
+                "name": "etat",
+                "mapping": "status"
             },
             "designerId": "635a78d5-5539-47df-bc44-e0f42c2185c1"
         },
@@ -102,7 +104,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field105",
-                "name": "taxonomie"
+                "name": "taxonomie",
+                "mapping": "taxonomy"
             },
             "designerId": "91b732b7-a0c5-49b3-9fa3-ad9acd777314"
         },
