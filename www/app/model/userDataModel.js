@@ -69,10 +69,6 @@ Ext.define('Rubedo.model.userDataModel', {
             type: 'string'
         },
         {
-            name: 'delegations',
-            type: 'string'
-        },
-        {
             name: 'groups'
         },
         {
@@ -88,6 +84,14 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'version'
+        },
+        {
+            name: 'startValidity',
+            type: 'date'
+        },
+        {
+            name: 'endValidity',
+            type: 'date'
         }
     ]
 });

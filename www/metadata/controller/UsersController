@@ -156,6 +156,27 @@
             "designerId": "3375b5d3-7c29-4e47-8ec3-7973d618e5b9"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "changeAdminPwdSubmit",
+                "fn": "changeAdminPwdSubmit",
+                "implHandler": [
+                    "var myForm=button.up().getForm();\r",
+                    "console.log(myForm.getValues());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminPasswordChangeBtn"
+            },
+            "designerId": "a97d8177-f772-417c-9577-3fbfe56b07af"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -300,6 +321,7 @@
                 "fn": "userAdminSelect",
                 "implHandler": [
                     "Ext.getCmp(\"userAdminInfoDisplay\").getForm().loadRecord(record);\r",
+                    "Ext.getCmp(\"userAdminAccessDisplay\").getForm().loadRecord(record);\r",
                     "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
                     "} else {\r",
@@ -484,6 +506,51 @@
                 "designer|controlQuery": "#userAdminProfilePictureDelete"
             },
             "designerId": "8207d36b-07bf-4ffa-97de-f2afcf5e4a75"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "adminAccessEdit",
+                "fn": "adminAccessEdit",
+                "implHandler": [
+                    "if (Ext.getCmp(\"userAdminAccessDisplay\").getForm().isValid()) {\r",
+                    "    Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected().set(Ext.getCmp(\"userAdminAccessDisplay\").getForm().getValues());\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userAdminAccessEdit"
+            },
+            "designerId": "63093309-3444-4fbd-8f56-16fd975913cd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "openAdminChangePwdWindow",
+                "fn": "openAdminChangePwdWindow",
+                "implHandler": [
+                    "    var window = Ext.widget(\"AdminPasswordChange\");\r",
+                    "    Ext.getCmp('ViewportPrimaire').add(window);\r",
+                    "    window.show();\r",
+                    "    window.getComponent(0).getForm().loadRecord(Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminChangeUserPwd"
+            },
+            "designerId": "c35e008c-6517-4379-8842-8a169c91d814"
         }
     ]
 }

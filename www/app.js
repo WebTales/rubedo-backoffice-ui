@@ -93,7 +93,8 @@ Ext.application({
         'CKEField',
         'ReusableElementPicker',
         'ExportElementWindow',
-        'iconsContextMenu'
+        'iconsContextMenu',
+        'AdminPasswordChange'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -202,20 +202,6 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field92",
-                "name": "delegations",
-                "type": "string"
-            },
-            "designerId": "97f549bf-ebd9-4452-ab09-a672e9df276e"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "field92",
                 "name": "groups"
             },
             "designerId": "edb3f766-5f7a-4a98-bca4-38aeeff193ad"
@@ -276,6 +262,34 @@
                 "type": null
             },
             "designerId": "8f6c804d-e81b-47f0-a077-a615d805073b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field113",
+                "name": "startValidity",
+                "type": "date"
+            },
+            "designerId": "1942a416-533e-4c2c-aaa9-e26efb7abd62"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field136",
+                "name": "endValidity",
+                "type": "date"
+            },
+            "designerId": "468949db-8ce0-4565-8c27-6c0664e6c79b"
         }
     ]
 }

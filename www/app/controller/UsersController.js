@@ -80,6 +80,11 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getStore("UsersAdminDataStore").removeAll();
     },
 
+    changeAdminPwdSubmit: function(button, e, options) {
+        var myForm=button.up().getForm();
+        console.log(myForm.getValues());
+    },
+
     openUserAddWindow: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         if (!Ext.isEmpty(target)) {
@@ -108,6 +113,7 @@ Ext.define('Rubedo.controller.UsersController', {
 
     userAdminSelect: function(tablepanel, record, item, index, e, options) {
         Ext.getCmp("userAdminInfoDisplay").getForm().loadRecord(record);
+        Ext.getCmp("userAdminAccessDisplay").getForm().loadRecord(record);
         if (Ext.isEmpty(record.get("photo"))) {
             Ext.getCmp("userAdminProfilePicture").setSrc("resources/images/userBig.png");
         } else {
@@ -159,6 +165,19 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected().set("photo", null);
     },
 
+    adminAccessEdit: function(button, e, options) {
+        if (Ext.getCmp("userAdminAccessDisplay").getForm().isValid()) {
+            Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected().set(Ext.getCmp("userAdminAccessDisplay").getForm().getValues());
+        }
+    },
+
+    openAdminChangePwdWindow: function(button, e, options) {
+        var window = Ext.widget("AdminPasswordChange");
+        Ext.getCmp('ViewportPrimaire').add(window);
+        window.show();
+        window.getComponent(0).getForm().loadRecord(Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected());
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -204,6 +223,9 @@ Ext.define('Rubedo.controller.UsersController', {
                 beforeclose: this.onWindowBeforeClose,
                 show: this.onWindowShow
             },
+            "#AdminPasswordChangeBtn": {
+                click: this.changeAdminPwdSubmit
+            },
             "#userAddButton": {
                 click: this.openUserAddWindow
             },
@@ -234,6 +256,12 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#userAdminProfilePictureDelete": {
                 click: this.deleteAdminPicture
+            },
+            "#userAdminAccessEdit": {
+                click: this.adminAccessEdit
+            },
+            "#AdminChangeUserPwd": {
+                click: this.openAdminChangePwdWindow
             }
         });
     }

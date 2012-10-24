@@ -995,6 +995,14 @@
                 "app/view/iconsContextMenu.js"
             ],
             "className": "iconsContextMenu"
+        },
+        "b1bc7398-38df-48e1-a226-5c63483e1eab": {
+            "paths": [
+                "metadata/view/AdminPasswordChange",
+                "app/view/override/AdminPasswordChange.js",
+                "app/view/AdminPasswordChange.js"
+            ],
+            "className": "AdminPasswordChange"
         }
     },
     "viewOrderMap": {
@@ -1050,7 +1058,8 @@
             "66174f28-03d3-4c02-855f-65706d91852a",
             "d307504b-480a-4d03-adf2-dc2c18432b4f",
             "04ab642c-6370-4c30-97cf-7c905f47813f",
-            "4e5df8c9-dabd-492c-a887-bdcba9d112f4"
+            "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
+            "b1bc7398-38df-48e1-a226-5c63483e1eab"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",

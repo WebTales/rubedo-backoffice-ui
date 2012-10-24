@@ -78,11 +78,21 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             allowBlank: false
                                         },
                                         {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'email',
+                                            fieldLabel: 'E-mail ',
+                                            allowBlank: false,
+                                            vtype: 'email'
+                                        },
+                                        {
                                             xtype: 'combobox',
                                             anchor: '100%',
                                             name: 'title',
                                             fieldLabel: 'Civilité ',
+                                            editable: false,
                                             displayField: 'title',
+                                            forceSelection: true,
                                             store: 'titleStore',
                                             valueField: 'title'
                                         },
@@ -107,12 +117,6 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
-                                            name: 'email',
-                                            fieldLabel: 'E-mail '
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            anchor: '100%',
                                             name: 'telephone',
                                             fieldLabel: 'Téléphone '
                                         },
@@ -133,7 +137,9 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             anchor: '100%',
                                             name: 'language',
                                             fieldLabel: 'Langue ',
+                                            editable: false,
                                             displayField: 'language',
+                                            forceSelection: true,
                                             store: 'languageStore',
                                             valueField: 'language'
                                         },
@@ -142,7 +148,9 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             anchor: '100%',
                                             name: 'country',
                                             fieldLabel: 'Pays ',
+                                            editable: false,
                                             displayField: 'country',
+                                            forceSelection: true,
                                             store: 'countryStore',
                                             valueField: 'country'
                                         },
@@ -195,41 +203,83 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                         },
                         {
                             xtype: 'form',
+                            id: 'userAdminAccessDisplay',
                             bodyPadding: 20,
                             title: 'Accès',
                             items: [
                                 {
                                     xtype: 'fieldset',
-                                    title: 'Changement du mot de passe',
+                                    title: 'Compte utilisateur et validité',
                                     items: [
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            name: 'login',
                                             fieldLabel: 'Compte utilisateur ',
                                             labelWidth: 200
                                         },
                                         {
-                                            xtype: 'textfield',
+                                            xtype: 'datefield',
                                             anchor: '100%',
-                                            fieldLabel: 'Mot de passe',
+                                            name: 'startValidity',
+                                            fieldLabel: 'Début de validité ',
                                             labelWidth: 200
                                         },
                                         {
-                                            xtype: 'textfield',
+                                            xtype: 'datefield',
                                             anchor: '100%',
-                                            fieldLabel: 'Confirmation du mot de passe ',
+                                            name: 'endValidity',
+                                            fieldLabel: 'Fin de validité ',
                                             labelWidth: 200
                                         },
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            id: 'userAdminAccessEdit',
                                             text: 'Appliquer'
                                         }
                                     ]
                                 },
                                 {
                                     xtype: 'fieldset',
-                                    title: 'Délégations'
+                                    title: 'Changement de mot de passe',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            anchor: '100%',
+                                            id: 'AdminChangeUserPwd',
+                                            text: 'Changer le mot de passe de cet utilisateur'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'gridpanel',
+                                    title: 'Délégations',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'string',
+                                            text: 'String'
+                                        },
+                                        {
+                                            xtype: 'numbercolumn',
+                                            dataIndex: 'number',
+                                            text: 'Number'
+                                        },
+                                        {
+                                            xtype: 'datecolumn',
+                                            dataIndex: 'date',
+                                            text: 'Date'
+                                        },
+                                        {
+                                            xtype: 'booleancolumn',
+                                            dataIndex: 'bool',
+                                            text: 'Boolean'
+                                        }
+                                    ],
+                                    viewConfig: {
+
+                                    }
                                 }
                             ]
                         },

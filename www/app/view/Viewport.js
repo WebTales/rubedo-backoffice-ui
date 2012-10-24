@@ -58,6 +58,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.UserAdminWindow',
         'Rubedo.view.testingGround',
         'Rubedo.view.ReusableElementPicker',
-        'Rubedo.view.ExportElementWindow'
+        'Rubedo.view.ExportElementWindow',
+        'Rubedo.view.AdminPasswordChange'
     ]
 });
