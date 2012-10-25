@@ -38,5 +38,12 @@ Ext.define('Rubedo.model.delegationDataModel', {
         {
             name: 'version'
         }
+    ],
+
+    validations: [
+        {
+            type: 'presence',
+            field: 'receiverId'
+        }
     ]
 });

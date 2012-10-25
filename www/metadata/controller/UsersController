@@ -201,6 +201,29 @@
             "designerId": "a97d8177-f772-417c-9577-3fbfe56b07af"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "newAdminDelegation",
+                "fn": "newAdminDelegation",
+                "implHandler": [
+                    "var newDel = Ext.create(\"Rubedo.model.delegationDataModel\", {\r",
+                    "    giverId:Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "});\r",
+                    "button.up().up().getStore().add(newDel);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminAddDelegationBtn"
+            },
+            "designerId": "d707be6e-62df-49b1-8e30-c9fa4e6f2c2e"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -350,7 +373,9 @@
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
                     "} else {\r",
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(record.get(\"photo\"));\r",
-                    "}"
+                    "}\r",
+                    "Ext.getStore(\"DelegationsDataStore\").clearFilter();\r",
+                    "Ext.getStore(\"DelegationsDataStore\").filter(\"giverId\", record.get(\"id\"));"
                 ],
                 "name": "itemclick",
                 "scope": "me",

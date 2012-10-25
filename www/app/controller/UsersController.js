@@ -109,6 +109,13 @@ Ext.define('Rubedo.controller.UsersController', {
             }
     },
 
+    newAdminDelegation: function(button, e, options) {
+        var newDel = Ext.create("Rubedo.model.delegationDataModel", {
+            giverId:Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected().get("id")
+        });
+        button.up().up().getStore().add(newDel);
+    },
+
     openUserAddWindow: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         if (!Ext.isEmpty(target)) {
@@ -143,6 +150,8 @@ Ext.define('Rubedo.controller.UsersController', {
         } else {
             Ext.getCmp("userAdminProfilePicture").setSrc(record.get("photo"));
         }
+        Ext.getStore("DelegationsDataStore").clearFilter();
+        Ext.getStore("DelegationsDataStore").filter("giverId", record.get("id"));
     },
 
     adminInfoUpdate: function(button, e, options) {
@@ -249,6 +258,9 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#AdminPasswordChangeBtn": {
                 click: this.changeAdminPwdSubmit
+            },
+            "#AdminAddDelegationBtn": {
+                click: this.newAdminDelegation
             },
             "#userAddButton": {
                 click: this.openUserAddWindow

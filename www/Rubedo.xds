@@ -1011,6 +1011,22 @@
                 "app/model/delegationDataModel.js"
             ],
             "className": "delegationDataModel"
+        },
+        "0a22fbd6-a30a-4acd-a4f1-19d6123be17a": {
+            "paths": [
+                "metadata/store/DelegationsDataStore",
+                "app/store/override/DelegationsDataStore.js",
+                "app/store/DelegationsDataStore.js"
+            ],
+            "className": "DelegationsDataStore"
+        },
+        "10cb87b2-f9b6-429c-9f0e-2d16b7f55c5b": {
+            "paths": [
+                "metadata/store/UsersComboStore",
+                "app/store/override/UsersComboStore.js",
+                "app/store/UsersComboStore.js"
+            ],
+            "className": "UsersComboStore"
         }
     },
     "viewOrderMap": {
@@ -1093,11 +1109,13 @@
             "07053528-2f61-4530-94a2-099a9f5d243c",
             "6024e937-1032-4d87-9bf7-74a57a473a31",
             "e69f4522-8b28-4e61-badf-c5c8f0dee470",
+            "10cb87b2-f9b6-429c-9f0e-2d16b7f55c5b",
             "81ee60ff-5960-4240-b5ab-53f409b51792",
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
             "7deb13fd-39d0-4955-a6be-d73c771ea5c7",
             "ec6d87e1-455e-426b-8458-d7738082aeee",
-            "009dac05-8a5b-4014-95f4-f8917c4e8c1c"
+            "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
+            "0a22fbd6-a30a-4acd-a4f1-19d6123be17a"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

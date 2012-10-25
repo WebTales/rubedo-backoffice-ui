@@ -21,7 +21,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         'Rubedo.view.MyGridPanel16'
     ],
 
-    height: 465,
+    height: 490,
     id: 'UserAdminWindow',
     width: 800,
     layout: {
@@ -254,32 +254,85 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 },
                                 {
                                     xtype: 'gridpanel',
+                                    height: 150,
+                                    autoScroll: true,
                                     title: 'Délégations',
+                                    store: 'DelegationsDataStore',
+                                    viewConfig: {
+
+                                    },
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'string',
-                                            text: 'String'
-                                        },
-                                        {
-                                            xtype: 'numbercolumn',
-                                            dataIndex: 'number',
-                                            text: 'Number'
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                var user = Ext.getStore("UsersAdminDataStore").findRecord("id", value);
+                                                if (Ext.isEmpty(user)) {
+                                                    return("Inconnu");
+                                                } else {
+                                                    return(user.get("name"));
+                                                }
+                                            },
+                                            dataIndex: 'receiverId',
+                                            flex: 1,
+                                            text: 'Délégué',
+                                            editor: {
+                                                xtype: 'combobox',
+                                                displayField: 'name',
+                                                minChars: 3,
+                                                store: 'UsersComboStore',
+                                                typeAhead: true,
+                                                valueField: 'id'
+                                            }
                                         },
                                         {
                                             xtype: 'datecolumn',
-                                            dataIndex: 'date',
-                                            text: 'Date'
+                                            dataIndex: 'startValidity',
+                                            flex: 1,
+                                            text: 'Début de validité',
+                                            editor: {
+                                                xtype: 'datefield'
+                                            }
                                         },
                                         {
-                                            xtype: 'booleancolumn',
-                                            dataIndex: 'bool',
-                                            text: 'Boolean'
+                                            xtype: 'datecolumn',
+                                            dataIndex: 'endValidity',
+                                            flex: 1,
+                                            text: 'Fin de validité',
+                                            editor: {
+                                                xtype: 'datefield'
+                                            }
                                         }
                                     ],
-                                    viewConfig: {
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'bottom',
+                                            items: [
+                                                {
+                                                    xtype: 'tbfill'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    id: 'AdminAddDelegationBtn',
+                                                    iconCls: 'add',
+                                                    text: 'Ajouter'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'close',
+                                                    text: 'Supprimer'
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-                                    }
+                                    }),
+                                    plugins: [
+                                        Ext.create('Ext.grid.plugin.RowEditing', {
+                                            ptype: 'rowediting'
+                                        })
+                                    ]
                                 }
                             ]
                         },

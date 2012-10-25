@@ -91,6 +91,19 @@
                 "name": "version"
             },
             "designerId": "3d7f020a-1631-40d4-893d-3a872ec92423"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPresenceValidation",
+                "field": "receiverId"
+            },
+            "designerId": "7518b78e-d06a-420c-ba88-42372e9a1549"
         }
     ]
 }

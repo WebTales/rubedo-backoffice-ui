@@ -63,7 +63,9 @@ Ext.application({
         'ReusableElementsDataStore',
         'titleStore',
         'countryStore',
-        'languageStore'
+        'languageStore',
+        'DelegationsDataStore',
+        'UsersComboStore'
     ],
     views: [
         'MyContainer',
