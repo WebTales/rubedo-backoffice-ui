@@ -1003,6 +1003,14 @@
                 "app/view/AdminPasswordChange.js"
             ],
             "className": "AdminPasswordChange"
+        },
+        "0817bd4b-dad6-4ba8-a953-6e51126364d2": {
+            "paths": [
+                "metadata/model/delegationDataModel",
+                "app/model/override/delegationDataModel.js",
+                "app/model/delegationDataModel.js"
+            ],
+            "className": "delegationDataModel"
         }
     },
     "viewOrderMap": {
@@ -1125,7 +1133,8 @@
             "d0fd2671-4491-440c-8e6c-915c6cca062e",
             "9b9da84e-8515-4ff4-99f3-69b81dc01a02",
             "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d",
-            "3387fa23-11a9-43c0-a57c-f14978feff02"
+            "3387fa23-11a9-43c0-a57c-f14978feff02",
+            "0817bd4b-dad6-4ba8-a953-6e51126364d2"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

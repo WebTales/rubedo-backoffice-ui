@@ -37,7 +37,8 @@ Ext.application({
         'personalPrefsDataModel',
         'groupDataModel',
         'userDataModel',
-        'reusableElementModel'
+        'reusableElementModel',
+        'delegationDataModel'
     ],
     stores: [
         'SitesDataJson',

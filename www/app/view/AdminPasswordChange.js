@@ -61,6 +61,12 @@ Ext.define('Rubedo.view.AdminPasswordChange', {
                             fieldLabel: 'Label'
                         },
                         {
+                            xtype: 'hiddenfield',
+                            anchor: '100%',
+                            name: 'version',
+                            fieldLabel: 'Label'
+                        },
+                        {
                             xtype: 'button',
                             anchor: '100%',
                             id: 'AdminPasswordChangeBtn',
