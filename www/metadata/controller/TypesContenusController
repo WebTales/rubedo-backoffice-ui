@@ -73,7 +73,7 @@
                     "        var enrobage =Ext.widget('ChampTC');\r",
                     "        enrobage.add(nouvChamp);\r",
                     "        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
-                    "        if (nouvChamp.multivalué) {\r",
+                    "        if (nouvChamp.multivalued) {\r",
                     "            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));\r",
                     "\r",
                     "        };\r",

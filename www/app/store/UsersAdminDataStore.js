@@ -49,6 +49,9 @@ Ext.define('Rubedo.store.UsersAdminDataStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            sorters: {
+                property: 'name'
             }
         }, cfg)]);
     }

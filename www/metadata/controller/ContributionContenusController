@@ -183,7 +183,7 @@
                     "    if (Ext.isArray(value)) {\r",
                     "        var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];\r",
                     "        var y=0;\r",
-                    "        if (multiField.multivalué) {\r",
+                    "        if (multiField.multivalued) {\r",
                     "            Ext.Array.each(value,function(val,index){\r",
                     "                if (index>0) {\r",
                     "                    multiField.up().getComponent('boutonReplicateurChamps').fireEvent(\"click\",multiField.up().getComponent('boutonReplicateurChamps'));\r",

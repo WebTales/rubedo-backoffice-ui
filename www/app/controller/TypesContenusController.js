@@ -69,7 +69,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var enrobage =Ext.widget('ChampTC');
                 enrobage.add(nouvChamp);
                 enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-                if (nouvChamp.multivalué) {
+                if (nouvChamp.multivalued) {
                     enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
 
                 };

@@ -69,7 +69,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             if (Ext.isArray(value)) {
                 var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
                 var y=0;
-                if (multiField.multivalué) {
+                if (multiField.multivalued) {
                     Ext.Array.each(value,function(val,index){
                         if (index>0) {
                             multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
