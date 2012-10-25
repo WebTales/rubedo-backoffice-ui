@@ -48,6 +48,9 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                         },
                         {
                             xtype: 'button',
+                            handler: function(button, event) {
+                                button.up().up().close();
+                            },
                             margins: '0, 0, 0, 30',
                             id: 'delConfirmZNon',
                             iconCls: 'nonS',

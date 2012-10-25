@@ -237,13 +237,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp('PaneauTCDetail').update(record.data);
     },
 
-    majAdminfTypesCentenus: function(dataview, record, item, index, e, options) {
+    onGridviewSelect: function(dataviewmodel, record, options) {
         Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
         Ext.getCmp("boutonSupprimerTypeContenu").enable();
         Ext.getCmp("TCfieldUp").disable();
         Ext.getCmp("TCfieldDown").disable();
         Ext.getCmp("TCfieldDeleter").disable();
-        var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
+        var filArianne = Ext.getCmp("adminFTDC").getDockedComponent('filArianne');
         var monIco = 'content-icon';
         var monImg = 'resources/icones/48x48/page_full.png';
         if (record.data.dependant===true){monIco='documentDep'; monImg = 'resources/icones/48x48/attach_document.png';}
@@ -509,8 +509,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 itemclick: this.updateOptionsListeTC,
                 itemdblclick: this.createThroughDblClick
             },
-            "#AdminfTypesGridView": {
-                itemclick: this.majAdminfTypesCentenus
+            "#AdminfTypesGrid": {
+                select: this.onGridviewSelect,
+                edit: this.onGridpanelEdit
             },
             "#boutonSupprimerTypeContenu": {
                 click: this.supprimeTypeContenu
@@ -538,9 +539,6 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#boutonCopierTC": {
                 click: this.copyTC
-            },
-            "#AdminfTypesGrid": {
-                edit: this.onGridpanelEdit
             }
         });
     }

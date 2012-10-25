@@ -76,7 +76,29 @@
                         "scale": "large",
                         "text": "Non"
                     },
-                    "designerId": "fac07a17-ab3c-4bb4-89dd-197c723494d9"
+                    "designerId": "fac07a17-ab3c-4bb4-89dd-197c723494d9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "3951778e-9fa9-4fd0-bdaa-23cb39e20614"
+                        }
+                    ]
                 },
                 {
                     "type": "hiddenfield",

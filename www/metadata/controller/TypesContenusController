@@ -335,15 +335,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "majAdminfTypesCentenus",
-                "fn": "majAdminfTypesCentenus",
+                "designer|userClassName": "onGridviewSelect",
+                "fn": "onGridviewSelect",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
                     "Ext.getCmp(\"boutonSupprimerTypeContenu\").enable();\r",
                     "Ext.getCmp(\"TCfieldUp\").disable();\r",
                     "Ext.getCmp(\"TCfieldDown\").disable();\r",
                     "Ext.getCmp(\"TCfieldDeleter\").disable();\r",
-                    "var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');\r",
+                    "var filArianne = Ext.getCmp(\"adminFTDC\").getDockedComponent('filArianne');\r",
                     "var monIco = 'content-icon';\r",
                     "var monImg = 'resources/icones/48x48/page_full.png';\r",
                     "if (record.data.dependant===true){monIco='documentDep'; monImg = 'resources/icones/48x48/attach_document.png';}\r",
@@ -428,10 +428,10 @@
                     "}\r",
                     ""
                 ],
-                "name": "itemclick",
+                "name": "select",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#AdminfTypesGridView"
+                "designer|controlQuery": "#AdminfTypesGrid"
             },
             "designerId": "d5b57a48-78e7-4ae9-81e5-45b88a8b725e"
         },
