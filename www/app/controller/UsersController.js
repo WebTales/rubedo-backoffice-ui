@@ -82,7 +82,31 @@ Ext.define('Rubedo.controller.UsersController', {
 
     changeAdminPwdSubmit: function(button, e, options) {
         var myForm=button.up().getForm();
-        console.log(myForm.getValues());
+
+        if (myForm.isValid()) {
+            if (myForm.getFieldValues().password==myForm.getFieldValues().passwordConfirm){
+                myForm.submit({
+                    url:"users/change-password",
+                    success: function(form, action) {
+                        button.up().up().close();
+
+                    },
+                    failure: function(form, action) {
+                        switch (action.failureType) {
+                            case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Erreur', 'Formulaire invalide');
+                            break;
+                            case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                            break;
+                            case Ext.form.action.Action.SERVER_INVALID:
+                            Ext.Msg.alert('Erreur', action.result.msg);
+                        }
+                    }
+                }); } else {
+                    Ext.Msg.alert('Erreur', "Les mots de passe ne correspondent pas");
+                }
+            }
     },
 
     openUserAddWindow: function(button, e, options) {
