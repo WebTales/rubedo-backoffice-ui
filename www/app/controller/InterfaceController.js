@@ -135,20 +135,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     ouvrirFenteresMenuDroite: function(button, e, options) {
         if (button.itemId=='deconnexionMenuPrincipal') {
-            /*  var iconesE = [ ];
-            var iconesR = Ext.getCmp('boiteAIconesBureau').items.items;    
-            Ext.Array.forEach(iconesR, function(icone) {
-            iconesE.push(
-            {
-            text:icone.title,
-            posX:icone.getPosition()[0],
-            posY:icone.getPosition()[1],
-            image:icone.getComponent(0).src
-            }
-            );
+            Ext.Ajax.request({
+                url: 'logout',
+                success: function(response){
+                    window.location.href="login";
+                }
             });
-
-            console.log(iconesE);  */
 
         }
         else{

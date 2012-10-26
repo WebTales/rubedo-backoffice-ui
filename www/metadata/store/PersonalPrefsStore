@@ -26,7 +26,7 @@
                 "api": [
                     "{\r",
                     "     create: 'personal-prefs/create',\r",
-                    "     read: 'data/PersonalPrefs.json',\r",
+                    "     read: 'personal-prefs',\r",
                     "     update: 'personal-prefs/update',\r",
                     "     destroy: 'personal-prefs/delete'\r",
                     "}"

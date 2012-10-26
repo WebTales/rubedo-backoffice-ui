@@ -38,10 +38,6 @@ Ext.define('Rubedo.controller.ServerErrorController', {
                         store.removed= [];
                     }
 
-
-
-
-
                 });
             }
         });
