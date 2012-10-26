@@ -204,6 +204,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
     wallpaperChange: function(button, e, options) {
         Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);
         Ext.getStore('PersonalPrefsStore').getRange()[0].set("wallpaper",Ext.getCmp('wallpaperPicker').getComponent(0).src);
+        console.log("changed");
     },
 
     onGridpanelExpand: function(p, options) {
@@ -226,7 +227,15 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.util.CSS.swapStyleSheet('maintheme', theme.stylesheet);
         MyPrefData.iconsDir=theme.iconSet;
         MyPrefData.themeColor=theme.themeColor;
+        var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];
+        myPrefs.beginEdit();
+        myPrefs.set("stylesheet",theme.stylesheet);
+        myPrefs.set("iconSet",theme.iconSet);
+        myPrefs.set("themeColor",theme.themeColor);
+        myPrefs.set("wallpaper",theme.wallpaper);
+        myPrefs.endEdit();
         this.refreshIcons();
+
     },
 
     onPanelExpand: function(p, options) {
@@ -312,7 +321,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
             Ext.getCmp('desktopBackGround').setSrc(myPrefs.get("wallpaper"));
             Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.get("stylesheet"));
             MyPrefData.iconsDir=myPrefs.get("iconSet");
-            MyPrefData.themeColor=myPrefs.get("themeColor");
             MyPrefData.themeColor=myPrefs.get("themeColor");
             me.refreshIcons(); 
         });

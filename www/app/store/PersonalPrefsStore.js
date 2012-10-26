@@ -25,6 +25,7 @@ Ext.define('Rubedo.store.PersonalPrefsStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            autoSync: true,
             storeId: 'PersonalPrefsStore',
             model: 'Rubedo.model.personalPrefsDataModel',
             proxy: {

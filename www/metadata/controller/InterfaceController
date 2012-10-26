@@ -130,7 +130,6 @@
                     "        Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.get(\"stylesheet\"));\r",
                     "        MyPrefData.iconsDir=myPrefs.get(\"iconSet\");\r",
                     "        MyPrefData.themeColor=myPrefs.get(\"themeColor\");\r",
-                    "        MyPrefData.themeColor=myPrefs.get(\"themeColor\");\r",
                     "        me.refreshIcons(); \r",
                     "});\r",
                     "Ext.getStore('PersonalPrefsStore').load();\r",
@@ -505,7 +504,8 @@
                 "fn": "wallpaperChange",
                 "implHandler": [
                     "Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);\r",
-                    "Ext.getStore('PersonalPrefsStore').getRange()[0].set(\"wallpaper\",Ext.getCmp('wallpaperPicker').getComponent(0).src);"
+                    "Ext.getStore('PersonalPrefsStore').getRange()[0].set(\"wallpaper\",Ext.getCmp('wallpaperPicker').getComponent(0).src);\r",
+                    "console.log(\"changed\");"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -618,7 +618,15 @@
                     "Ext.util.CSS.swapStyleSheet('maintheme', theme.stylesheet);\r",
                     "MyPrefData.iconsDir=theme.iconSet;\r",
                     "MyPrefData.themeColor=theme.themeColor;\r",
-                    "this.refreshIcons();"
+                    "var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];\r",
+                    "myPrefs.beginEdit();\r",
+                    "myPrefs.set(\"stylesheet\",theme.stylesheet);\r",
+                    "myPrefs.set(\"iconSet\",theme.iconSet);\r",
+                    "myPrefs.set(\"themeColor\",theme.themeColor);\r",
+                    "myPrefs.set(\"wallpaper\",theme.wallpaper);\r",
+                    "myPrefs.endEdit();\r",
+                    "this.refreshIcons();\r",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",
