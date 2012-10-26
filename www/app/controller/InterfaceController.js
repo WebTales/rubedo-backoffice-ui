@@ -87,6 +87,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         abstractcomponent.on('move', function(cible, x, y){
             if ((x % 100)>50) {x = x-(x % 100)+100;} else {x = x-(x % 100);}
             if ((y % 100)>50) {y = y-(y % 100)+100;} else {y = y-(y % 100);}
+            if (y>(window.innerHeight-150)) {x=x+100; y=0;}
             while (this.placeLibre(x,y, abstractcomponent.id)===false) {
                 if (y<(window.innerHeight-150)) {    
                     y=y+100;

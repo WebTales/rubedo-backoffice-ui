@@ -234,6 +234,7 @@
                     "abstractcomponent.on('move', function(cible, x, y){\r",
                     "    if ((x % 100)>50) {x = x-(x % 100)+100;} else {x = x-(x % 100);}\r",
                     "    if ((y % 100)>50) {y = y-(y % 100)+100;} else {y = y-(y % 100);}\r",
+                    "    if (y>(window.innerHeight-150)) {x=x+100; y=0;}\r",
                     "    while (this.placeLibre(x,y, abstractcomponent.id)===false) {\r",
                     "        if (y<(window.innerHeight-150)) {    \r",
                     "            y=y+100;\r",
