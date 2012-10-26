@@ -133,7 +133,12 @@
                     "        me.refreshIcons(); \r",
                     "});\r",
                     "Ext.getStore('PersonalPrefsStore').load();\r",
-                    " "
+                    "Ext.getStore(\"CurrentUserDataStore\").on(\"load\", function(){\r",
+                    "    var currentUser = this.getRange()[0];\r",
+                    "    MyPrefData.myName=currentUser.get(\"name\");\r",
+                    "\r",
+                    "}); \r",
+                    "Ext.getStore(\"CurrentUserDataStore\").load();"
                 ]
             },
             "designerId": "1060d695-b0e6-4a96-b3a9-eba366981ee3"

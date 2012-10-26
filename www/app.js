@@ -65,7 +65,8 @@ Ext.application({
         'countryStore',
         'languageStore',
         'DelegationsDataStore',
-        'UsersComboStore'
+        'UsersComboStore',
+        'CurrentUserDataStore'
     ],
     views: [
         'MyContainer',

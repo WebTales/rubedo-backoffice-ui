@@ -1027,6 +1027,14 @@
                 "app/store/UsersComboStore.js"
             ],
             "className": "UsersComboStore"
+        },
+        "1c783102-7726-4aa1-bd76-fa5d05fa2046": {
+            "paths": [
+                "metadata/store/CurrentUserDataStore",
+                "app/store/override/CurrentUserDataStore.js",
+                "app/store/CurrentUserDataStore.js"
+            ],
+            "className": "CurrentUserDataStore"
         }
     },
     "viewOrderMap": {
@@ -1109,6 +1117,7 @@
             "07053528-2f61-4530-94a2-099a9f5d243c",
             "6024e937-1032-4d87-9bf7-74a57a473a31",
             "e69f4522-8b28-4e61-badf-c5c8f0dee470",
+            "1c783102-7726-4aa1-bd76-fa5d05fa2046",
             "10cb87b2-f9b6-429c-9f0e-2d16b7f55c5b",
             "81ee60ff-5960-4240-b5ab-53f409b51792",
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",

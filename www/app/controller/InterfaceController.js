@@ -326,7 +326,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
             me.refreshIcons(); 
         });
         Ext.getStore('PersonalPrefsStore').load();
+        Ext.getStore("CurrentUserDataStore").on("load", function(){
+            var currentUser = this.getRange()[0];
+            MyPrefData.myName=currentUser.get("name");
 
+        }); 
+        Ext.getStore("CurrentUserDataStore").load();
     },
 
     placeLibre: function(x, y, id) {
