@@ -37,6 +37,8 @@ Ext.define('Rubedo.controller.ServerErrorController', {
                         Ext.Array.forEach(operation.records, function (record){ store.insert(record.index || 0, record);});
                         store.removed= [];
                     }
+                    console.log(store);
+                    console.log(response);
 
                 });
             }

@@ -203,6 +203,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     wallpaperChange: function(button, e, options) {
         Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);
+        Ext.getStore('PersonalPrefsStore').getRange()[0].set("wallpaper",Ext.getCmp('wallpaperPicker').getComponent(0).src);
     },
 
     onGridpanelExpand: function(p, options) {
@@ -292,17 +293,31 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp('boutonPincipalInterface').addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             Ext.getCmp('menuPrincipalInterface').destroy();
         }}); }); 
-        Ext.getStore('PersonalPrefsStore').load({
-            callback:function(){
-                var myPrefs=this.getRange()[0].data;
-                Ext.getCmp('desktopBackGround').setSrc(myPrefs.wallpaper);
-                Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.stylesheet);
-                MyPrefData.iconsDir=myPrefs.iconSet;
-                MyPrefData.myName=myPrefs.myName;
-                MyPrefData.themeColor=myPrefs.themeColor;
-                me.refreshIcons();
+        Ext.getStore('PersonalPrefsStore').on("load",function(){
+            var myPrefs=this.getRange()[0];
+            if (Ext.isEmpty(myPrefs)) {
+                myPrefs=Ext.create("Rubedo.model.personalPrefsDataModel",{
+                    stylesheet:"resources/css/red_theme.css",
+                    wallpaper:"resources/wallpapers/rubedo.jpg",
+                    iconSet:"red",
+                    themeColor:"#D7251D"
+                });
+
+                this.add(myPrefs);
+
+
             }
+
+
+            Ext.getCmp('desktopBackGround').setSrc(myPrefs.get("wallpaper"));
+            Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.get("stylesheet"));
+            MyPrefData.iconsDir=myPrefs.get("iconSet");
+            MyPrefData.themeColor=myPrefs.get("themeColor");
+            MyPrefData.themeColor=myPrefs.get("themeColor");
+            me.refreshIcons(); 
         });
+        Ext.getStore('PersonalPrefsStore').load();
+
     },
 
     placeLibre: function(x, y, id) {

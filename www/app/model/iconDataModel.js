@@ -38,6 +38,9 @@ Ext.define('Rubedo.model.iconDataModel', {
             name: 'actions'
         },
         {
+            name: 'userId'
+        },
+        {
             name: 'id'
         },
         {

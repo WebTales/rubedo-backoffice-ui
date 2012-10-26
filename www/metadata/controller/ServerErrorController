@@ -45,6 +45,8 @@
                     "                Ext.Array.forEach(operation.records, function (record){ store.insert(record.index || 0, record);});\r",
                     "                store.removed= [];\r",
                     "            }\r",
+                    "            console.log(store);\r",
+                    "            console.log(response);\r",
                     "            \r",
                     "        });\r",
                     "    }\r",

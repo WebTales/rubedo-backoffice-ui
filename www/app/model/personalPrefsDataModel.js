@@ -31,12 +31,17 @@ Ext.define('Rubedo.model.personalPrefsDataModel', {
             type: 'string'
         },
         {
-            name: 'myName',
+            name: 'themeColor',
             type: 'string'
         },
         {
-            name: 'themeColor',
-            type: 'string'
+            name: 'userId'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'version'
         }
     ]
 });

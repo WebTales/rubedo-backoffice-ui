@@ -63,10 +63,10 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField74",
-                "name": "myName",
+                "name": "themeColor",
                 "type": "string"
             },
-            "designerId": "3955426f-9d1a-45fa-a117-f8403cb0ae6a"
+            "designerId": "d054f657-34ac-4d0d-84a0-e811d490829e"
         },
         {
             "type": "datafield",
@@ -76,11 +76,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField74",
-                "name": "themeColor",
-                "type": "string"
+                "designer|userClassName": "field91",
+                "name": "userId"
             },
-            "designerId": "d054f657-34ac-4d0d-84a0-e811d490829e"
+            "designerId": "552b385f-ff68-41c2-9524-b1c9b7536e4b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field144",
+                "name": "id"
+            },
+            "designerId": "c4d7985e-3fa4-47b8-8806-a1a6f7d897d7"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field145",
+                "name": "version"
+            },
+            "designerId": "d092af3d-6998-4baf-88a0-2ab921580ed3"
         }
     ]
 }
