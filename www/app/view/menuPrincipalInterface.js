@@ -69,7 +69,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonParametresMenuPrincipal',
+                            itemId: 'userSettings',
                             iconCls: 'parametres',
                             text: 'Paramètres'
                         },

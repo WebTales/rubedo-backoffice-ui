@@ -1,0 +1,405 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "userSettings",
+        "designer|userAlias": "userSettings",
+        "height": 450,
+        "id": "userSettings",
+        "width": 600,
+        "layout": "fit",
+        "iconCls": "parametres",
+        "title": "Paramètres",
+        "constrainHeader": true,
+        "maximizable": true,
+        "minimizable": true
+    },
+    "id": "ExtBox1-ext-gen4357",
+    "designerId": "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabPanel8",
+                "activeTab": 0
+            },
+            "designerId": "9b18d5fa-c863-4308-b52a-7c7737c83404",
+            "cn": [
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm22",
+                        "designer|displayName": "",
+                        "id": "userInfoDisplay",
+                        "layout": "hbox",
+                        "bodyPadding": 10,
+                        "title": "Informations"
+                    },
+                    "designerId": "0ab49c7b-8ed5-4ad6-8d60-7fc2fcbd7b9d",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig24"
+                            },
+                            "designerId": "c0c5a29e-4423-4050-8757-2fc6971211e7"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyFieldSet5",
+                                "height": 360,
+                                "margin": 0,
+                                "width": 356,
+                                "autoScroll": true,
+                                "title": "Informations"
+                            },
+                            "designerId": "d5cf9428-a2cd-4308-a4ce-40333fe9ef0f",
+                            "cn": [
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField5",
+                                        "disabled": false,
+                                        "name": "name",
+                                        "readOnly": null,
+                                        "fieldLabel": "Nom ",
+                                        "allowBlank": false
+                                    },
+                                    "designerId": "a96bfa91-7feb-4d52-a806-320a83c4bbfa"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField22",
+                                        "name": "email",
+                                        "fieldLabel": "E-mail ",
+                                        "allowBlank": false,
+                                        "vtype": "email"
+                                    },
+                                    "designerId": "d31aabb2-a733-41a3-8057-a8912a93ce82"
+                                },
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox4",
+                                        "name": "title",
+                                        "fieldLabel": "Civilité ",
+                                        "editable": false,
+                                        "displayField": "title",
+                                        "forceSelection": true,
+                                        "store": "titleStore",
+                                        "valueField": "title"
+                                    },
+                                    "designerId": "dbb2a9c2-cd57-4f9d-88c5-027c6640d103"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField9",
+                                        "name": "organisation",
+                                        "fieldLabel": "Organisation "
+                                    },
+                                    "designerId": "99325132-0517-41ea-9c58-b2cc1d2d3d3d"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField20",
+                                        "name": "service",
+                                        "fieldLabel": "Service "
+                                    },
+                                    "designerId": "3a75d1c5-b68d-4955-8f87-36a628726e62"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField21",
+                                        "name": "post",
+                                        "fieldLabel": "Fonction "
+                                    },
+                                    "designerId": "23831d34-f782-4005-a7ee-556c847b6e70"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField23",
+                                        "name": "telephone",
+                                        "fieldLabel": "Téléphone "
+                                    },
+                                    "designerId": "41153bcc-821b-4a8b-9b55-e6b2781d80fa"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField24",
+                                        "name": "mobile",
+                                        "fieldLabel": "Mobile "
+                                    },
+                                    "designerId": "ffd1c463-f9a0-4d98-82a3-598e4d50ac74"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField25",
+                                        "name": "coordinates",
+                                        "fieldLabel": "Coordonnées "
+                                    },
+                                    "designerId": "d455b234-fb9a-438e-b7a2-c97c3085eab7"
+                                },
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox5",
+                                        "name": "language",
+                                        "fieldLabel": "Langue ",
+                                        "editable": false,
+                                        "displayField": "language",
+                                        "forceSelection": true,
+                                        "store": "languageStore",
+                                        "valueField": "language"
+                                    },
+                                    "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e"
+                                },
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox6",
+                                        "name": "country",
+                                        "fieldLabel": "Pays ",
+                                        "editable": false,
+                                        "displayField": "country",
+                                        "forceSelection": true,
+                                        "store": "countryStore",
+                                        "valueField": "country"
+                                    },
+                                    "designerId": "330e487a-5f04-4588-805a-b52c927f9a8d"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyButton130",
+                                        "id": "userInfoEdit",
+                                        "text": "Appliquer"
+                                    },
+                                    "designerId": "3d93bfd0-6d10-4763-bd53-081f63ee0c1c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFieldSet4",
+                                "height": 292,
+                                "margin": "0 0 0 10",
+                                "width": 200,
+                                "title": "Photo"
+                            },
+                            "designerId": "48d0b8d5-9096-43aa-bd78-dce11f4337f8",
+                            "cn": [
+                                {
+                                    "type": "image",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyImg12",
+                                        "height": 180,
+                                        "id": "userProfilePicture",
+                                        "margin": "0 0 18 18",
+                                        "width": 140,
+                                        "src": "resources/images/userBig.png"
+                                    },
+                                    "designerId": "668838f7-ef25-4f75-83c6-f31331501a7c"
+                                },
+                                {
+                                    "type": "filefield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "60%",
+                                        "formBind": false,
+                                        "designer|userClassName": "MyFileUpload1",
+                                        "style": "float: left;",
+                                        "submitValue": false,
+                                        "fieldLabel": "",
+                                        "buttonText": "Choisir"
+                                    },
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "9bf48127-c68d-4930-953c-dff02897536f"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "40%",
+                                        "designer|userClassName": "MyButton128",
+                                        "text": "Appliquer"
+                                    },
+                                    "designerId": "76cee99d-6502-44fb-b189-0ab50695c771"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyButton128",
+                                        "id": "userProfilePictureDelete",
+                                        "margin": null,
+                                        "text": "Suprimer"
+                                    },
+                                    "designerId": "da5b5540-e49c-4bc0-ac26-5dab9caaca96"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel44",
+                        "title": "Accès"
+                    },
+                    "designerId": "0e4adc8b-9062-4f83-99b1-83c5275f2813",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig28"
+                            },
+                            "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

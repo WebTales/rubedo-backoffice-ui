@@ -50,6 +50,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    activeTab: 0,
                     items: [
                         {
                             xtype: 'form',
@@ -319,6 +320,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    id: 'AdminDeleteDelegationBtn',
                                                     iconCls: 'close',
                                                     text: 'Supprimer'
                                                 }

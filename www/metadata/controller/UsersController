@@ -375,6 +375,7 @@
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(record.get(\"photo\"));\r",
                     "}\r",
                     "Ext.getStore(\"DelegationsDataStore\").clearFilter();\r",
+                    "Ext.getStore(\"DelegationsDataStore\").removeAll();\r",
                     "Ext.getStore(\"DelegationsDataStore\").filter(\"giverId\", record.get(\"id\"));"
                 ],
                 "name": "itemclick",
@@ -600,6 +601,98 @@
                 "designer|controlQuery": "#AdminChangeUserPwd"
             },
             "designerId": "c35e008c-6517-4379-8842-8a169c91d814"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "openUserSettings",
+                "fn": "openUserSettings",
+                "implHandler": [
+                    "if (abstractcomponent.isWindow) {\r",
+                    "    var myRecord= Ext.getStore(\"CurrentUserDataStore\").getRange()[0];\r",
+                    "    Ext.getCmp(\"userInfoDisplay\").getForm().loadRecord(myRecord);\r",
+                    "    if (Ext.isEmpty(myRecord.get(\"photo\"))) {\r",
+                    "        Ext.getCmp(\"userProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "    } else {\r",
+                    "        Ext.getCmp(\"userProfilePicture\").setSrc(myRecord.get(\"photo\"));\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#userSettings"
+            },
+            "designerId": "04e922d4-7684-4208-b46d-c34b4cfa93bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "userInfoUpdate",
+                "fn": "userInfoUpdate",
+                "implHandler": [
+                    "var myRecord= Ext.getStore(\"CurrentUserDataStore\").getRange()[0];\r",
+                    "if (Ext.getCmp(\"userInfoDisplay\").getForm().isValid()){\r",
+                    "    myRecord.set(Ext.getCmp(\"userInfoDisplay\").getForm().getValues());\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userInfoEdit"
+            },
+            "designerId": "deac057a-6ffc-4a5e-ae86-1322e16a47e5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "deleteUserProfilePic",
+                "fn": "deleteUserProfilePic",
+                "implHandler": [
+                    "Ext.getCmp(\"userProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "Ext.getStore(\"CurrentUserDataStore\").getRange()[0].set(\"photo\", null);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userProfilePictureDelete"
+            },
+            "designerId": "c5ec7123-c1ee-48c7-a36a-6fd54357bec8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "adminDeleteDelegations",
+                "fn": "adminDeleteDelegations",
+                "implHandler": [
+                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AdminDeleteDelegationBtn"
+            },
+            "designerId": "b5c79b18-d75b-4e19-8009-4419a155c5d3"
         }
     ]
 }

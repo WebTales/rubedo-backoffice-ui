@@ -98,7 +98,8 @@ Ext.application({
         'ReusableElementPicker',
         'ExportElementWindow',
         'iconsContextMenu',
-        'AdminPasswordChange'
+        'AdminPasswordChange',
+        'userSettings'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

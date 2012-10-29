@@ -151,6 +151,7 @@ Ext.define('Rubedo.controller.UsersController', {
             Ext.getCmp("userAdminProfilePicture").setSrc(record.get("photo"));
         }
         Ext.getStore("DelegationsDataStore").clearFilter();
+        Ext.getStore("DelegationsDataStore").removeAll();
         Ext.getStore("DelegationsDataStore").filter("giverId", record.get("id"));
     },
 
@@ -209,6 +210,34 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp('ViewportPrimaire').add(window);
         window.show();
         window.getComponent(0).getForm().loadRecord(Ext.getCmp("userAdminGrid").getSelectionModel().getLastSelected());
+    },
+
+    openUserSettings: function(abstractcomponent, options) {
+        if (abstractcomponent.isWindow) {
+            var myRecord= Ext.getStore("CurrentUserDataStore").getRange()[0];
+            Ext.getCmp("userInfoDisplay").getForm().loadRecord(myRecord);
+            if (Ext.isEmpty(myRecord.get("photo"))) {
+                Ext.getCmp("userProfilePicture").setSrc("resources/images/userBig.png");
+            } else {
+                Ext.getCmp("userProfilePicture").setSrc(myRecord.get("photo"));
+            }
+        }
+    },
+
+    userInfoUpdate: function(button, e, options) {
+        var myRecord= Ext.getStore("CurrentUserDataStore").getRange()[0];
+        if (Ext.getCmp("userInfoDisplay").getForm().isValid()){
+            myRecord.set(Ext.getCmp("userInfoDisplay").getForm().getValues());
+        }
+    },
+
+    deleteUserProfilePic: function(button, e, options) {
+        Ext.getCmp("userProfilePicture").setSrc("resources/images/userBig.png");
+        Ext.getStore("CurrentUserDataStore").getRange()[0].set("photo", null);
+    },
+
+    adminDeleteDelegations: function(button, e, options) {
+        button.up().up().getStore().remove(button.up().up().getSelectionModel().getSelection());
     },
 
     getGroupUsers: function(group, array) {
@@ -298,6 +327,18 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#AdminChangeUserPwd": {
                 click: this.openAdminChangePwdWindow
+            },
+            "#userSettings": {
+                afterrender: this.openUserSettings
+            },
+            "#userInfoEdit": {
+                click: this.userInfoUpdate
+            },
+            "#userProfilePictureDelete": {
+                click: this.deleteUserProfilePic
+            },
+            "#AdminDeleteDelegationBtn": {
+                click: this.adminDeleteDelegations
             }
         });
     }

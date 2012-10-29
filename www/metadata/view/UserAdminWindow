@@ -102,7 +102,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyTabPanel7"
+                "designer|userClassName": "MyTabPanel7",
+                "activeTab": 0
             },
             "designerId": "8c3d9510-d629-4e19-9483-9f30337da40f",
             "cn": [
@@ -783,6 +784,7 @@
                                             "userConfig": {
                                                 "layout|flex": null,
                                                 "designer|userClassName": "MyButton134",
+                                                "id": "AdminDeleteDelegationBtn",
                                                 "iconCls": "close",
                                                 "text": "Supprimer"
                                             },
