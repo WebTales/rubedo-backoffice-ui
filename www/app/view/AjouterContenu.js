@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     floating: true,
     height: 500,
     id: 'ajouterContenu',
-    width: 800,
+    width: 900,
     resizable: false,
     layout: {
         type: 'fit'
@@ -28,6 +28,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     iconCls: 'content-icon',
     title: 'Nouveau Contenu',
     constrainHeader: true,
+    maximizable: true,
     modal: true,
 
     initComponent: function() {

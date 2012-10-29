@@ -49,10 +49,12 @@ Ext.define('Rubedo.view.CKEField', {
             '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
             { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
             { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
-            { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
             { name: 'colors', items : [ 'TextColor','BGColor' ] },
+            { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
             { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
-        ]});
+
+
+        ], resize_enabled:false});
         CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
     },
 

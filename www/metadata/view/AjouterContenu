@@ -11,7 +11,7 @@
         "floating": true,
         "height": 500,
         "id": "ajouterContenu",
-        "width": 800,
+        "width": 900,
         "resizable": [
             "false"
         ],
@@ -19,6 +19,7 @@
         "iconCls": "content-icon",
         "title": "Nouveau Contenu",
         "constrainHeader": true,
+        "maximizable": true,
         "modal": true
     },
     "id": "ExtBox1-ext-gen48334",

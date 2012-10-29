@@ -367,6 +367,7 @@
                 "designer|userClassName": "userAdminSelect",
                 "fn": "userAdminSelect",
                 "implHandler": [
+                    "Ext.getCmp(\"userAdminMainPanel\").enable();\r",
                     "Ext.getCmp(\"userAdminInfoDisplay\").getForm().loadRecord(record);\r",
                     "Ext.getCmp(\"userAdminAccessDisplay\").getForm().loadRecord(record);\r",
                     "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
@@ -439,11 +440,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "userRemove",
-                "fn": "userRemove",
+                "designer|userClassName": "userAdminRemove",
+                "fn": "userAdminRemove",
                 "implHandler": [
                     "var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();\r",
-                    "button.up().up().getComponent(0).getStore().remove(targets);"
+                    "button.up().up().getComponent(0).getStore().remove(targets);\r",
+                    "Ext.getCmp(\"userAdminMainPanel\").disable();"
                 ],
                 "name": "click",
                 "scope": "me",

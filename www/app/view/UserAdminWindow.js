@@ -50,6 +50,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
+                    id: 'userAdminMainPanel',
                     activeTab: 0,
                     items: [
                         {

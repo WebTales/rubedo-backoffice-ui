@@ -9,6 +9,7 @@
         "designer|userClassName": "CKEField",
         "designer|userAlias": "CKEField",
         "height": null,
+        "minHeight": null,
         "fieldLabel": "Label"
     },
     "id": "ExtBox1-ext-gen18078",
@@ -35,10 +36,12 @@
                     "    '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },\r",
                     "    { name: 'links', items : [ 'Link','Unlink','Anchor' ] },\r",
                     "    { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },\r",
-                    "    { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },\r",
                     "    { name: 'colors', items : [ 'TextColor','BGColor' ] },\r",
+                    "    { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },\r",
                     "    { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }\r",
-                    "]});\r",
+                    "    \r",
+                    "   \r",
+                    "], resize_enabled:false});\r",
                     "CKFinder.setupCKEditor(abstractcomponent.editor, \"resources/ckfinder/\");"
                 ],
                 "name": "afterrender",

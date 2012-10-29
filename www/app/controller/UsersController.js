@@ -143,6 +143,7 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     userAdminSelect: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("userAdminMainPanel").enable();
         Ext.getCmp("userAdminInfoDisplay").getForm().loadRecord(record);
         Ext.getCmp("userAdminAccessDisplay").getForm().loadRecord(record);
         if (Ext.isEmpty(record.get("photo"))) {
@@ -169,9 +170,10 @@ Ext.define('Rubedo.controller.UsersController', {
         button.up().up().getComponent(0).getStore().add(newUser);
     },
 
-    userRemove: function(button, e, options) {
+    userAdminRemove: function(button, e, options) {
         var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();
         button.up().up().getComponent(0).getStore().remove(targets);
+        Ext.getCmp("userAdminMainPanel").disable();
     },
 
     onWindowShow: function(abstractcomponent, options) {
@@ -310,7 +312,7 @@ Ext.define('Rubedo.controller.UsersController', {
                 click: this.newUser
             },
             "#userAdminRemove": {
-                click: this.userRemove
+                click: this.userAdminRemove
             },
             "#adminFUtilisateurs": {
                 render: this.onMainWindowRender,
