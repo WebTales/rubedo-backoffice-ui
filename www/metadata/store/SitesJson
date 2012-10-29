@@ -25,7 +25,12 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy6",
-                "url": "data/Sites.json"
+                "api": [
+                    "{\r",
+                    "    read: \"sites\"\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "89f1dacd-62b3-4e91-86e9-d07c65122481",
             "cn": [
@@ -37,7 +42,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader4"
+                        "designer|userClassName": "MyJsonReader4",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "67fdc2a7-5ca3-4922-9237-f1c9a507c1e6"
                 }

@@ -31,9 +31,13 @@ Ext.define('Rubedo.store.SitesJson', {
             model: 'Rubedo.model.sitesDataModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/Sites.json',
+                api: {
+                    read: 'sites'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
                 }
             }
         }, cfg)]);
