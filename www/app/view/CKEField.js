@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.CKEField', {
 
     onTextareafieldAfterRender: function(abstractcomponent, options) {
         var targetId = abstractcomponent.getInputId();
-        abstractcomponent.editor= editor=CKEDITOR.replace( targetId, {toolbar: [
+        abstractcomponent.editor= CKEDITOR.replace( targetId, {toolbar: [
             { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
             { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
             { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
@@ -53,6 +53,7 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'colors', items : [ 'TextColor','BGColor' ] },
             { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
         ]});
+        CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {
