@@ -51,6 +51,18 @@ Ext.define('Rubedo.model.contenusDataModel', {
         {
             name: 'updateTime',
             type: 'date'
+        },
+        {
+            name: 'online',
+            type: 'boolean'
+        },
+        {
+            name: 'startPublicationDate',
+            type: 'date'
+        },
+        {
+            name: 'endPublicationDate',
+            type: 'date'
         }
     ]
 });

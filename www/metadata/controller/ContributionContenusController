@@ -69,7 +69,7 @@
                 "designer|userClassName": "contentSaveAndPublish",
                 "fn": "contentSaveAndPublish",
                 "implHandler": [
-                    "this.nContenuRecorder('publié',button.isUpdate);"
+                    "this.nContenuRecorder('published',button.isUpdate);"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -89,7 +89,7 @@
                 "designer|userClassName": "contentSave",
                 "fn": "contentSave",
                 "implHandler": [
-                    "this.nContenuRecorder('brouillon', button.isUpdate);"
+                    "this.nContenuRecorder('draft', button.isUpdate);"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -276,6 +276,83 @@
                 "designer|controlQuery": "#ContenusGrid"
             },
             "designerId": "29809d19-0d43-44be-9789-cb0efb02186f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "putContentsOnline",
+                "fn": "putContentsOnline",
+                "implHandler": [
+                    "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
+                    "    \r",
+                    "content.set(\"online\", true);\r",
+                    "});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#contentOnlineBtn"
+            },
+            "designerId": "5609cb55-a942-4612-a54f-e9f26e0decce"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "putContentsOffline",
+                "fn": "putContentsOffline",
+                "implHandler": [
+                    "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
+                    "content.set(\"online\", false);\r",
+                    "});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#contentOfflineBtn"
+            },
+            "designerId": "a09ba59a-d8db-44ca-8e79-c42a6a3dcb2d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "contentAcceptPublish",
+                "fn": "contentAcceptPublish",
+                "implHandler": [
+                    "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
+                    "    \r",
+                    "content.set(\"etat\", \"published\");\r",
+                    "});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#contentAcceptPublishBtn"
+            },
+            "designerId": "84f2a9eb-c989-4280-98ec-f1d06b70936e"
         }
     ]
 }

@@ -20,6 +20,15 @@ border-style:dashed !important;
 .referencement_icon{
 	background: url(../icones/red/16x16/globe_computer.png) left center no-repeat !important;
 }
+.online_big{
+	background: url(../icones/red/32x32/globe_up.png)  center no-repeat !important;
+}
+.offline_big{
+	background: url(../icones/red/32x32/globe_down.png)  center no-repeat !important;
+}
+.validation_submit_big{
+	background: url(../icones/red/32x32/question_mark.png)  center no-repeat !important;
+}
 .window_add_med{
 	background: url(../icones/red/24x24/window_add.png) left center no-repeat !important;
 }
@@ -77,6 +86,9 @@ border-style:dashed !important;
 .floppy_disc_accept_big{
 	background: url(../icones/red/32x32/floppy_disc_accept.png)  center no-repeat !important;
 }
+.accept_big{
+	background: url(../icones/red/32x32/accept.png)  center no-repeat !important;
+}
 .shopping_cart_add_big{
 	background: url(../icones/red/32x32/shopping_cart_add.png)  center no-repeat !important;
 }
@@ -126,7 +138,7 @@ border-style:dashed !important;
 	background: url(../icones/red/16x16/check_mark.png) left center no-repeat !important;
 }
 .nonS{
-	background: url(../icones/red/32x32/delete.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/delete.png)  center no-repeat !important;
 }
 .action{
 	background: url(../icones/red/16x16/pencil.png) left center no-repeat !important;

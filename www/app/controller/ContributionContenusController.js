@@ -49,11 +49,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     contentSaveAndPublish: function(button, e, options) {
-        this.nContenuRecorder('publié',button.isUpdate);
+        this.nContenuRecorder('published',button.isUpdate);
     },
 
     contentSave: function(button, e, options) {
-        this.nContenuRecorder('brouillon', button.isUpdate);
+        this.nContenuRecorder('draft', button.isUpdate);
     },
 
     contentDelete: function(button, e, options) {
@@ -125,6 +125,35 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonModifierContenu").fireEvent("click");
     },
 
+    putContentsOnline: function(button, e, options) {
+        Ext.getStore("ContenusDataJson").suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+
+            content.set("online", true);
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
+    },
+
+    putContentsOffline: function(button, e, options) {
+        Ext.getStore("ContenusDataJson").suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+            content.set("online", false);
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
+    },
+
+    contentAcceptPublish: function(button, e, options) {
+        Ext.getStore("ContenusDataJson").suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+
+            content.set("etat", "published");
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
+    },
+
     nContenuRecorder: function(etat, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -175,6 +204,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             "#ContenusGrid": {
                 selectionchange: this.contentsSelect,
                 itemdblclick: this.doubleClickEdit
+            },
+            "#contentOnlineBtn": {
+                click: this.putContentsOnline
+            },
+            "#contentOfflineBtn": {
+                click: this.putContentsOffline
+            },
+            "#contentAcceptPublishBtn": {
+                click: this.contentAcceptPublish
             }
         });
     }

@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.contributionContenus', {
     favoriteIcon: 'folder.png',
     height: 578,
     id: 'contributionContenus',
-    width: 800,
+    width: 951,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -165,28 +165,48 @@ Ext.define('Rubedo.view.contributionContenus', {
                             xtype: 'buttongroup',
                             disabled: true,
                             headerPosition: 'bottom',
-                            title: 'Fichier',
-                            columns: 4,
-                            layout: {
-                                columns: 2,
-                                type: 'table'
-                            },
+                            title: 'Workflow',
+                            columns: 5,
                             items: [
                                 {
                                     xtype: 'button',
-                                    id: 'ContenusExporter',
+                                    id: 'contentAcceptPublishBtn',
                                     iconAlign: 'top',
-                                    iconCls: 'application_down_big',
+                                    iconCls: 'accept_big',
                                     scale: 'large',
-                                    text: 'Exporter'
+                                    text: 'Publier'
                                 },
                                 {
                                     xtype: 'button',
-                                    id: 'ContenusImporter',
+                                    id: 'contentSubmitValBtn',
                                     iconAlign: 'top',
-                                    iconCls: 'application_up_big',
+                                    iconCls: 'validation_submit_big',
                                     scale: 'large',
-                                    text: 'Importer'
+                                    text: 'Soumettre'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'contentRefuseBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'nonS',
+                                    scale: 'large',
+                                    text: 'Refuser'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'contentOnlineBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'online_big',
+                                    scale: 'large',
+                                    text: 'Mettre en ligne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'contentOfflineBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'offline_big',
+                                    scale: 'large',
+                                    text: 'Mettre hors ligne'
                                 }
                             ]
                         },
@@ -256,6 +276,14 @@ Ext.define('Rubedo.view.contributionContenus', {
                             dataIndex: 'etat',
                             flex: 1,
                             text: 'Etat'
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            width: 60,
+                            dataIndex: 'online',
+                            text: 'En ligne',
+                            falseText: 'Non',
+                            trueText: 'Oui'
                         }
                     ],
                     selModel: Ext.create('Ext.selection.CheckboxModel', {

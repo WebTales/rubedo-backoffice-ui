@@ -137,6 +137,48 @@
                 "type": "date"
             },
             "designerId": "90e28d4c-26ff-44ea-9e3f-b704d0def82f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field146",
+                "name": "online",
+                "type": "boolean"
+            },
+            "designerId": "a57b4710-6cd5-4974-8105-d8d731ba6459"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field147",
+                "name": "startPublicationDate",
+                "type": "date"
+            },
+            "designerId": "a2814e00-7b6a-47b8-b360-4756f76d2b1b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field148",
+                "name": "endPublicationDate",
+                "type": "date"
+            },
+            "designerId": "6bfd7261-8f98-4b47-8034-51084593dcb0"
         }
     ]
 }

@@ -330,7 +330,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         }
                                     ],
                                     selModel: Ext.create('Ext.selection.CheckboxModel', {
-
+                                        checkOnly: false
                                     }),
                                     plugins: [
                                         Ext.create('Ext.grid.plugin.RowEditing', {

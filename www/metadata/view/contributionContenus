@@ -12,7 +12,7 @@
         "designer|userAlias": "contributionContenus",
         "height": 578,
         "id": "contributionContenus",
-        "width": 800,
+        "width": 951,
         "layout": "hbox",
         "iconCls": "content-icon",
         "title": "Contenus",
@@ -345,14 +345,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
+                        "designer|userClassName": "MyButtonGroup10",
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Fichier",
-                        "columns": 4
+                        "title": "Workflow",
+                        "columns": 5
                     },
-                    "designerId": "b2c5641f-6d50-4bf0-a415-3f9384afc338",
+                    "designerId": "276fe7a3-f6d9-4d7d-b50f-47156dbd0d6c",
                     "cn": [
                         {
                             "type": "button",
@@ -362,15 +361,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton62",
-                                "id": "ContenusExporter",
-                                "icon": null,
+                                "designer|userClassName": "MyButton136",
+                                "id": "contentAcceptPublishBtn",
                                 "iconAlign": "top",
-                                "iconCls": "application_down_big",
+                                "iconCls": "accept_big",
                                 "scale": "large",
-                                "text": "Exporter"
+                                "text": "Publier"
                             },
-                            "designerId": "c79eb797-e7ae-49ec-9ab9-061a88672d89"
+                            "designerId": "5fb19905-c6a5-42ca-8b81-9ddca48b596d"
                         },
                         {
                             "type": "button",
@@ -380,15 +378,65 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton63",
-                                "id": "ContenusImporter",
-                                "icon": null,
+                                "designer|userClassName": "MyButton136",
+                                "id": "contentSubmitValBtn",
                                 "iconAlign": "top",
-                                "iconCls": "application_up_big",
+                                "iconCls": "validation_submit_big",
                                 "scale": "large",
-                                "text": "Importer"
+                                "text": "Soumettre"
                             },
-                            "designerId": "55bc88d8-f3a9-4145-b77c-dac6cf7c9172"
+                            "designerId": "f129e72f-6d52-45d7-aaf9-00b425ea77da"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton136",
+                                "id": "contentRefuseBtn",
+                                "iconAlign": "top",
+                                "iconCls": "nonS",
+                                "scale": "large",
+                                "text": "Refuser"
+                            },
+                            "designerId": "f93ec826-fc84-4fe9-8894-887bdde096a4"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton136",
+                                "id": "contentOnlineBtn",
+                                "iconAlign": "top",
+                                "iconCls": "online_big",
+                                "scale": "large",
+                                "text": "Mettre en ligne"
+                            },
+                            "designerId": "c54ec06e-1daa-449d-89d1-61ff2a511013"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton136",
+                                "id": "contentOfflineBtn",
+                                "iconAlign": "top",
+                                "iconCls": "offline_big",
+                                "scale": "large",
+                                "text": "Mettre hors ligne"
+                            },
+                            "designerId": "ab7b91b1-87df-4e7f-ab9c-85cb7805a1de"
                         }
                     ]
                 },
@@ -617,6 +665,23 @@
                         "designer|userClassName": "MyCheckboxSelectionModel1"
                     },
                     "designerId": "24562e9f-7aab-42ce-aa9e-28544273751b"
+                },
+                {
+                    "type": "booleancolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn3",
+                        "width": 60,
+                        "dataIndex": "online",
+                        "text": "En ligne",
+                        "falseText": "Non",
+                        "trueText": "Oui"
+                    },
+                    "designerId": "cad27599-49fe-4eae-92e8-e302257c2a24"
                 }
             ]
         }

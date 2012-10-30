@@ -17,8 +17,20 @@ border-style:dotted !important;
 .contrastRow{
 border-style:dashed !important;
 }
+.accept_big{
+	background: url(../icones/blue/32x32/accept.png)  center no-repeat !important;
+}
 .referencement_icon{
 	background: url(../icones/blue/16x16/globe_computer.png) left center no-repeat !important;
+}
+.online_big{
+	background: url(../icones/blue/32x32/globe_up.png)  center no-repeat !important;
+}
+.offline_big{
+	background: url(../icones/blue/32x32/globe_down.png)  center no-repeat !important;
+}
+.validation_submit_big{
+	background: url(../icones/blue/32x32/question_mark.png)  center no-repeat !important;
 }
 .folder_add_big{
 	background: url(../icones/blue/32x32/folder_add.png) left center no-repeat !important;
@@ -120,7 +132,7 @@ border-style:dashed !important;
 	background: url(../images/application_form_edit.png) left center no-repeat !important;
 }
 .ouiS{
-	background: url(../icones/blue/32x32/check_mark.png) left center no-repeat !important;
+	background: url(../icones/blue/32x32/check_mark.png)  center no-repeat !important;
 }
 .ouiSpetit{
 	background: url(../icones/blue/16x16/check_mark.png) left center no-repeat !important;
