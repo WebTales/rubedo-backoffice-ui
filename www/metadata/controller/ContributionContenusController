@@ -290,9 +290,9 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    \r",
-                    "content.set(\"online\", true);\r",
-                    "});\r",
+                    "    if (content.get(\"etat\")==\"published\") {\r",
+                    "        content.set(\"online\", true);\r",
+                    "    }});\r",
                     "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
@@ -311,13 +311,40 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "contentRefuse",
+                "fn": "contentRefuse",
+                "implHandler": [
+                    "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
+                    "    if (content.get(\"etat\")==\"pending\") {\r",
+                    "        content.set(\"etat\", \"draft\");\r",
+                    "    }});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#contentRefuseBtn"
+            },
+            "designerId": "94138a98-a78e-4bb5-ad8b-0e949321e587"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "putContentsOffline",
                 "fn": "putContentsOffline",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "content.set(\"online\", false);\r",
-                    "});\r",
+                    "    if (content.get(\"etat\")==\"published\") {\r",
+                    "        content.set(\"online\", false);\r",
+                    "    }});\r",
                     "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
@@ -336,14 +363,40 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "contentSubmitVal",
+                "fn": "contentSubmitVal",
+                "implHandler": [
+                    "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
+                    "    if (content.get(\"etat\")==\"draft\") {\r",
+                    "        content.set(\"etat\", \"pending\");\r",
+                    "    }});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#contentSubmitValBtn"
+            },
+            "designerId": "eae53a4e-c7fe-4932-b8c5-bc212c9bb55c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "contentAcceptPublish",
                 "fn": "contentAcceptPublish",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    \r",
-                    "content.set(\"etat\", \"published\");\r",
-                    "});\r",
+                    "    if (content.get(\"etat\")==\"pending\") {\r",
+                    "        content.set(\"etat\", \"published\");\r",
+                    "    }});\r",
                     "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],

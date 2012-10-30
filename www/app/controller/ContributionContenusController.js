@@ -128,30 +128,51 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     putContentsOnline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+            if (content.get("etat")=="published") {
+                content.set("online", true);
+            }});
+            Ext.getStore("ContenusDataJson").resumeAutoSync();
+            Ext.getStore("ContenusDataJson").sync();
+    },
 
-            content.set("online", true);
-        });
-        Ext.getStore("ContenusDataJson").resumeAutoSync();
-        Ext.getStore("ContenusDataJson").sync();
+    contentRefuse: function(button, e, options) {
+        Ext.getStore("ContenusDataJson").suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+            if (content.get("etat")=="pending") {
+                content.set("etat", "draft");
+            }});
+            Ext.getStore("ContenusDataJson").resumeAutoSync();
+            Ext.getStore("ContenusDataJson").sync();
     },
 
     putContentsOffline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            content.set("online", false);
-        });
-        Ext.getStore("ContenusDataJson").resumeAutoSync();
-        Ext.getStore("ContenusDataJson").sync();
+            if (content.get("etat")=="published") {
+                content.set("online", false);
+            }});
+            Ext.getStore("ContenusDataJson").resumeAutoSync();
+            Ext.getStore("ContenusDataJson").sync();
+    },
+
+    contentSubmitVal: function(button, e, options) {
+        Ext.getStore("ContenusDataJson").suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
+            if (content.get("etat")=="draft") {
+                content.set("etat", "pending");
+            }});
+            Ext.getStore("ContenusDataJson").resumeAutoSync();
+            Ext.getStore("ContenusDataJson").sync();
     },
 
     contentAcceptPublish: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-
-            content.set("etat", "published");
-        });
-        Ext.getStore("ContenusDataJson").resumeAutoSync();
-        Ext.getStore("ContenusDataJson").sync();
+            if (content.get("etat")=="pending") {
+                content.set("etat", "published");
+            }});
+            Ext.getStore("ContenusDataJson").resumeAutoSync();
+            Ext.getStore("ContenusDataJson").sync();
     },
 
     nContenuRecorder: function(etat, update) {
@@ -208,8 +229,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             "#contentOnlineBtn": {
                 click: this.putContentsOnline
             },
+            "#contentRefuseBtn": {
+                click: this.contentRefuse
+            },
             "#contentOfflineBtn": {
                 click: this.putContentsOffline
+            },
+            "#contentSubmitValBtn": {
+                click: this.contentSubmitVal
             },
             "#contentAcceptPublishBtn": {
                 click: this.contentAcceptPublish
