@@ -106,6 +106,22 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton141",
+                        "id": "boutonSoumettreNouveauContenu",
+                        "iconCls": "save",
+                        "text": "Enregistrer et soumettre"
+                    },
+                    "designerId": "6b1e908f-be02-45b8-87d8-2da37baeb671"
                 }
             ]
         },

@@ -56,6 +56,12 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             id: 'boutonPublierNouveauContenu',
                             iconCls: 'publish',
                             text: 'Enregistrer et publier'
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'boutonSoumettreNouveauContenu',
+                            iconCls: 'save',
+                            text: 'Enregistrer et soumettre'
                         }
                     ]
                 }

@@ -45,6 +45,7 @@
                     "Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
                     "Ext.getCmp(\"boutonModifierContenu\").disable();\r",
                     "Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "Ext.getCmp(\"contribWorkflowBox\").disable();\r",
                     "var  customMeta = record.get(\"type\");\r",
                     "var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
                     "imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  \r",
@@ -197,6 +198,7 @@
                     "Ext.getCmp(\"boiteATaxoContenus\").getForm().setValues(cible.get(\"taxonomie\"));\r",
                     "Ext.getCmp(\"boutonEnregistrerNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp(\"boutonPublierNouveauContenu\").isUpdate=true;\r",
+                    "Ext.getCmp(\"boutonSoumettreNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp('ajouterContenu').setTitle(\"Modifier un contenu\");"
                 ],
                 "name": "click",
@@ -225,6 +227,7 @@
                     "    Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").disable();\r",
                     "    Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "    Ext.getCmp(\"contribWorkflowBox\").disable();\r",
                     "    customMeta = Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().data.type;\r",
                     "    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');    \r",
                     "\r",
@@ -233,6 +236,7 @@
                     "    Ext.getCmp(\"boutonSupprimerContenu\").enable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").enable();\r",
                     "    Ext.getCmp(\"boutonCopierContenus\").enable();\r",
+                    "    Ext.getCmp(\"contribWorkflowBox\").enable();\r",
                     "    customMeta=selections[0].data.text+\"</br> Creation : \"+selections[0].data.creation+\r",
                     "    \" Dernière modification : \"+selections[0].data.derniereModification+\" Version : \"+selections[0].data.version+\r",
                     "    \" Auteur : \"+selections[0].data.auteur;\r",
@@ -243,6 +247,7 @@
                     "    Ext.getCmp(\"boutonSupprimerContenu\").enable();\r",
                     "    Ext.getCmp(\"boutonModifierContenu\").disable();\r",
                     "    Ext.getCmp(\"boutonCopierContenus\").disable();\r",
+                    "    Ext.getCmp(\"contribWorkflowBox\").enable();\r",
                     "    customMeta=selections.length+\" Contenus\";\r",
                     "    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');\r",
                     "\r",
@@ -406,6 +411,26 @@
                 "designer|controlQuery": "#contentAcceptPublishBtn"
             },
             "designerId": "84f2a9eb-c989-4280-98ec-f1d06b70936e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "contentSaveAndSubmit",
+                "fn": "contentSaveAndSubmit",
+                "implHandler": [
+                    "this.nContenuRecorder('pending',button.isUpdate);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonSoumettreNouveauContenu"
+            },
+            "designerId": "b54053e6-c639-4ad5-819e-ed4b31921c1e"
         }
     ]
 }

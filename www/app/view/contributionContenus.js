@@ -164,6 +164,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
+                            id: 'contribWorkflowBox',
                             headerPosition: 'bottom',
                             title: 'Workflow',
                             columns: 5,
@@ -265,7 +266,16 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> '+value);
+                                if (record.get("etat")=="published") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
+                                } else if (record.get("etat")=="pending") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
+                                } else if (record.get("etat")=="draft") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
+                                }
+
+
+
                             },
                             dataIndex: 'text',
                             flex: 1,
@@ -273,6 +283,15 @@ Ext.define('Rubedo.view.contributionContenus', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (value=="published") {
+                                    return("publié");
+                                } else if (value=="pending") {
+                                    return("en attente de validation");
+                                } else if (value=="draft") {
+                                    return("brouillon");
+                                }
+                            },
                             dataIndex: 'etat',
                             flex: 1,
                             text: 'Etat'

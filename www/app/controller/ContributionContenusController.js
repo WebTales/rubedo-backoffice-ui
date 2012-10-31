@@ -41,6 +41,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("boutonSupprimerContenu").disable();
     Ext.getCmp("boutonModifierContenu").disable();
     Ext.getCmp("boutonCopierContenus").disable();
+    Ext.getCmp("contribWorkflowBox").disable();
     var  customMeta = record.get("type");
     var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
     imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  
@@ -83,6 +84,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
+        Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu");
     },
 
@@ -95,6 +97,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonSupprimerContenu").disable();
             Ext.getCmp("boutonModifierContenu").disable();
             Ext.getCmp("boutonCopierContenus").disable();
+            Ext.getCmp("contribWorkflowBox").disable();
             customMeta = Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().data.type;
             imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');    
 
@@ -103,6 +106,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonSupprimerContenu").enable();
             Ext.getCmp("boutonModifierContenu").enable();
             Ext.getCmp("boutonCopierContenus").enable();
+            Ext.getCmp("contribWorkflowBox").enable();
             customMeta=selections[0].data.text+"</br> Creation : "+selections[0].data.creation+
             " Dernière modification : "+selections[0].data.derniereModification+" Version : "+selections[0].data.version+
             " Auteur : "+selections[0].data.auteur;
@@ -113,6 +117,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonSupprimerContenu").enable();
             Ext.getCmp("boutonModifierContenu").disable();
             Ext.getCmp("boutonCopierContenus").disable();
+            Ext.getCmp("contribWorkflowBox").enable();
             customMeta=selections.length+" Contenus";
             imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
 
@@ -173,6 +178,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
             Ext.getStore("ContenusDataJson").sync();
+    },
+
+    contentSaveAndSubmit: function(button, e, options) {
+        this.nContenuRecorder('pending',button.isUpdate);
     },
 
     nContenuRecorder: function(etat, update) {
@@ -240,6 +249,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#contentAcceptPublishBtn": {
                 click: this.contentAcceptPublish
+            },
+            "#boutonSoumettreNouveauContenu": {
+                click: this.contentSaveAndSubmit
             }
         });
     }

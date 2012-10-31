@@ -347,6 +347,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButtonGroup10",
                         "disabled": true,
+                        "id": "contribWorkflowBox",
                         "headerPosition": "bottom",
                         "title": "Workflow",
                         "columns": 5
@@ -632,7 +633,16 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> '+value);"
+                                    "if (record.get(\"etat\")==\"published\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
+                                    "} else if (record.get(\"etat\")==\"pending\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
+                                    "} else if (record.get(\"etat\")==\"draft\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    ""
                                 ]
                             },
                             "designerId": "4a2a18c1-f9ef-4126-a37c-3af3b0a38374"
@@ -652,7 +662,40 @@
                         "flex": 1,
                         "text": "Etat"
                     },
-                    "designerId": "acff0fc3-935c-459e-8b50-c04422f4f5f3"
+                    "designerId": "acff0fc3-935c-459e-8b50-c04422f4f5f3",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (value==\"published\") {\r",
+                                    "    return(\"publié\");\r",
+                                    "} else if (value==\"pending\") {\r",
+                                    "    return(\"en attente de validation\");\r",
+                                    "} else if (value==\"draft\") {\r",
+                                    "    return(\"brouillon\");\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "7453c21b-fba4-49f2-b1e1-174ac3866a0c"
+                        }
+                    ]
                 },
                 {
                     "type": "checkboxselectionmodel",
