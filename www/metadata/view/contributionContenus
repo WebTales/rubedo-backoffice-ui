@@ -569,164 +569,17 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "designer|userClassName": "menuContenusContext",
-                "designer|userAlias": "menuContenusContext",
-                "id": "ContenusGrid",
-                "itemId": null,
-                "title": "",
-                "store": "ContenusDataJson"
+                "layout|flex": 1
             },
-            "designerId": "648ee02b-21bf-4d06-8c07-2e215977ab97",
-            "cn": [
-                {
-                    "type": "gridview",
-                    "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView2"
-                    },
-                    "designerId": "1768ec9b-890e-4c0e-8028-98798e539c51"
-                },
-                {
-                    "type": "gridcolumn",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn5",
-                        "dataIndex": "text",
-                        "flex": 1,
-                        "text": "Titre"
-                    },
-                    "designerId": "530bd307-39db-43cc-87f5-75331b3c161a",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "renderer",
-                                "fn": "renderer",
-                                "designer|params": [
-                                    "value",
-                                    "metaData",
-                                    "record",
-                                    "rowIndex",
-                                    "colIndex",
-                                    "store",
-                                    "view"
-                                ],
-                                "implHandler": [
-                                    "if (record.get(\"etat\")==\"published\") {\r",
-                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
-                                    "} else if (record.get(\"etat\")==\"pending\") {\r",
-                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
-                                    "} else if (record.get(\"etat\")==\"draft\") {\r",
-                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
-                                    "}\r",
-                                    "\r",
-                                    "\r",
-                                    ""
-                                ]
-                            },
-                            "designerId": "4a2a18c1-f9ef-4126-a37c-3af3b0a38374"
-                        }
-                    ]
-                },
-                {
-                    "type": "gridcolumn",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn6",
-                        "dataIndex": "etat",
-                        "flex": 1,
-                        "text": "Etat"
-                    },
-                    "designerId": "acff0fc3-935c-459e-8b50-c04422f4f5f3",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "renderer",
-                                "fn": "renderer",
-                                "designer|params": [
-                                    "value",
-                                    "metaData",
-                                    "record",
-                                    "rowIndex",
-                                    "colIndex",
-                                    "store",
-                                    "view"
-                                ],
-                                "implHandler": [
-                                    "if (value==\"published\") {\r",
-                                    "    return(\"publié\");\r",
-                                    "} else if (value==\"pending\") {\r",
-                                    "    return(\"en attente de validation\");\r",
-                                    "} else if (value==\"draft\") {\r",
-                                    "    return(\"brouillon\");\r",
-                                    "}"
-                                ]
-                            },
-                            "designerId": "7453c21b-fba4-49f2-b1e1-174ac3866a0c"
-                        }
-                    ]
-                },
-                {
-                    "type": "checkboxselectionmodel",
-                    "reference": {
-                        "name": "selModel",
-                        "type": "object"
-                    },
-                    "codeClass": "Ext.selection.CheckboxModel",
-                    "userConfig": {
-                        "designer|userClassName": "MyCheckboxSelectionModel1"
-                    },
-                    "designerId": "24562e9f-7aab-42ce-aa9e-28544273751b"
-                },
-                {
-                    "type": "booleancolumn",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyBooleanColumn3",
-                        "width": 60,
-                        "dataIndex": "online",
-                        "text": "En ligne",
-                        "falseText": "Non",
-                        "trueText": "Oui"
-                    },
-                    "designerId": "cad27599-49fe-4eae-92e8-e302257c2a24"
-                }
-            ]
+            "designerId": "6ce832cf-6263-4b92-98ae-36d955e93c38",
+            "masterInstanceId": "ExtBox1-ext-gen2729"
         }
     ]
 }

@@ -1049,6 +1049,14 @@
                 "metadata/resource/js6"
             ],
             "className": "js6"
+        },
+        "648ee02b-21bf-4d06-8c07-2e215977ab97": {
+            "paths": [
+                "metadata/view/menuContenusContext",
+                "app/view/override/menuContenusContext.js",
+                "app/view/menuContenusContext.js"
+            ],
+            "className": "menuContenusContext"
         }
     },
     "viewOrderMap": {
@@ -1106,7 +1114,8 @@
             "04ab642c-6370-4c30-97cf-7c905f47813f",
             "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
             "b1bc7398-38df-48e1-a226-5c63483e1eab",
-            "ff1ccb16-8670-4464-8aec-9e29b8f7ad76"
+            "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
+            "648ee02b-21bf-4d06-8c07-2e215977ab97"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",

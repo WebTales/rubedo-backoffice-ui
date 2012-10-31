@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.contributionContenus', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionContenus',
 
+    requires: [
+        'Rubedo.view.menuContenusContext'
+    ],
+
     favoriteIcon: 'folder.png',
     height: 578,
     id: 'contributionContenus',
@@ -254,60 +258,8 @@ Ext.define('Rubedo.view.contributionContenus', {
                     })
                 },
                 {
-                    xtype: 'gridpanel',
-                    flex: 1,
-                    id: 'ContenusGrid',
-                    title: '',
-                    store: 'ContenusDataJson',
-                    viewConfig: {
-
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                if (record.get("etat")=="published") {
-                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
-                                } else if (record.get("etat")=="pending") {
-                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
-                                } else if (record.get("etat")=="draft") {
-                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
-                                }
-
-
-
-                            },
-                            dataIndex: 'text',
-                            flex: 1,
-                            text: 'Titre'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                if (value=="published") {
-                                    return("publié");
-                                } else if (value=="pending") {
-                                    return("en attente de validation");
-                                } else if (value=="draft") {
-                                    return("brouillon");
-                                }
-                            },
-                            dataIndex: 'etat',
-                            flex: 1,
-                            text: 'Etat'
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            width: 60,
-                            dataIndex: 'online',
-                            text: 'En ligne',
-                            falseText: 'Non',
-                            trueText: 'Oui'
-                        }
-                    ],
-                    selModel: Ext.create('Ext.selection.CheckboxModel', {
-
-                    })
+                    xtype: 'menuContenusContext',
+                    flex: 1
                 }
             ]
         });

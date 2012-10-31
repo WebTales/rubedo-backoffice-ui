@@ -97,8 +97,8 @@ Ext.define('Ext.ux.grid.FilterBar', {
 		triggerAction: 'all',
 		editable: false,
 		store: [
-			[1, 'Yes'],
-			[0, 'No']
+			[1, 'Oui'],
+			[0, 'Non']
 		],
 		operator: 'eq'
 	},
