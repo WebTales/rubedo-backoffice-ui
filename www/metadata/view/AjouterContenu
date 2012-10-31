@@ -249,14 +249,16 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel47",
+                        "designer|userClassName": "MyForm25",
+                        "id": "contentMetadataBox",
+                        "bodyPadding": 10,
                         "title": "Métadonnées"
                     },
                     "designerId": "45cec5da-5f70-4ea6-9ae6-6412232b37fe",
@@ -272,6 +274,53 @@
                                 "designer|userClassName": "TabConfig28"
                             },
                             "designerId": "6382d243-7dcc-4aac-947b-71f6e8bde597"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet8",
+                                "title": "Publication"
+                            },
+                            "designerId": "3c64996e-d30c-451d-b7c0-00cf76fcc57f",
+                            "cn": [
+                                {
+                                    "type": "datefield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyDateField4",
+                                        "name": "startPublicationDate",
+                                        "fieldLabel": "Date de début de publication ",
+                                        "labelWidth": 200
+                                    },
+                                    "designerId": "a349d498-9cd7-465f-96eb-b59afe27ac41"
+                                },
+                                {
+                                    "type": "datefield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyDateField5",
+                                        "name": "endPublicationDate",
+                                        "fieldLabel": "Date de fin de publication ",
+                                        "labelWidth": 200
+                                    },
+                                    "designerId": "96d08ae7-6132-4319-afd9-9d664f976f4d"
+                                }
+                            ]
                         }
                     ]
                 },

@@ -118,8 +118,32 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             ]
                         },
                         {
-                            xtype: 'panel',
-                            title: 'Métadonnées'
+                            xtype: 'form',
+                            id: 'contentMetadataBox',
+                            bodyPadding: 10,
+                            title: 'Métadonnées',
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Publication',
+                                    items: [
+                                        {
+                                            xtype: 'datefield',
+                                            anchor: '100%',
+                                            name: 'startPublicationDate',
+                                            fieldLabel: 'Date de début de publication ',
+                                            labelWidth: 200
+                                        },
+                                        {
+                                            xtype: 'datefield',
+                                            anchor: '100%',
+                                            name: 'endPublicationDate',
+                                            fieldLabel: 'Date de fin de publication ',
+                                            labelWidth: 200
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             xtype: 'form',

@@ -82,6 +82,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         });
 
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
+        Ext.getCmp("contentMetadataBox").getForm().loadRecord(cible);
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
@@ -110,7 +111,17 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             customMeta=selections[0].data.text+"</br> Creation : "+selections[0].data.creation+
             " Dernière modification : "+selections[0].data.derniereModification+" Version : "+selections[0].data.version+
             " Auteur : "+selections[0].data.auteur;
-            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+            if (selections[0].get("etat")=="published") {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
+            } else if (selections[0].get("etat")=="pending") {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
+            } else if (selections[0].get("etat")=="draft") {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
+            } else {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+            }
+
+
 
         } else {
             Ext.getCmp("ajoutPanierContenus").enable();
@@ -185,9 +196,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     nContenuRecorder: function(etat, update) {
-        if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())){
+        if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
             var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
+            var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
             if (update) {
                 var myRec =Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0];
                 myRec.beginEdit();
@@ -195,6 +207,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 myRec.set("champs",champs);
                 myRec.set("taxonomie",taxonomie);
                 myRec.set("etat",etat);
+                myRec.set(metaData);
                 myRec.endEdit();
 
             } 
@@ -207,6 +220,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
 
                 });
+                nContenu.set(metaData);
 
                 Ext.getCmp('ContenusGrid').getStore().add(nContenu);
             }
