@@ -772,6 +772,18 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
+    maskWindowRender: function(abstractcomponent, options) {
+        if (abstractcomponent.isWindow){
+            Ext.getStore("MasquesDataJson").load();
+        }
+    },
+
+    maskWindowClose: function(abstractcomponent, options) {
+        if (abstractcomponent.isWindow){
+            Ext.getStore("MasquesDataJson").removeAll();
+        }
+    },
+
     removeIds: function(element) {
         var me=this;
         element.id=undefined;
@@ -1177,6 +1189,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#importElement": {
                 click: this.showImportWindow
+            },
+            "adminFMDP": {
+                render: this.maskWindowRender
+            },
+            "#adminFMDP": {
+                beforedestroy: this.maskWindowClose
             }
         });
     }

@@ -24,7 +24,7 @@ Ext.define('Rubedo.store.MasquesDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             storeId: 'MasquesDataJson',
             model: 'Rubedo.model.masquesDataModel',

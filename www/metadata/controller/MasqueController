@@ -1633,6 +1633,50 @@
                 "designer|controlQuery": "#importElement"
             },
             "designerId": "e52a692b-71b5-4751-b59d-b8cf3d7ec5c5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "maskWindowRender",
+                "fn": "maskWindowRender",
+                "implHandler": [
+                    "if (abstractcomponent.isWindow){\r",
+                    "Ext.getStore(\"MasquesDataJson\").load();\r",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "adminFMDP"
+            },
+            "designerId": "de29d4ab-250a-4175-adfd-085a694195a5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "maskWindowClose",
+                "fn": "maskWindowClose",
+                "implHandler": [
+                    "if (abstractcomponent.isWindow){\r",
+                    "Ext.getStore(\"MasquesDataJson\").removeAll();\r",
+                    "}"
+                ],
+                "name": "beforedestroy",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#adminFMDP"
+            },
+            "designerId": "7ddc7cdd-b94b-4bcb-bdcd-e8884fac5ab1"
         }
     ]
 }
