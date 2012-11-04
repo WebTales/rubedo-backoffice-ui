@@ -10,8 +10,11 @@
         "designer|userAlias": "ContenusDataJson",
         "autoLoad": false,
         "autoSync": true,
+        "remoteFilter": true,
+        "remoteSort": true,
         "storeId": " ",
-        "model": "contenusDataModel"
+        "model": "contenusDataModel",
+        "sortOnFilter": false
     },
     "id": "ExtBox1-ext-gen21030",
     "designerId": "e9b9f232-c36a-4edc-bbe4-44a651487d17",
@@ -25,7 +28,6 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy6",
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'contents/create',\r",

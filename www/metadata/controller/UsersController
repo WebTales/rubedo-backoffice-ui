@@ -375,8 +375,7 @@
                     "} else {\r",
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(record.get(\"photo\"));\r",
                     "}\r",
-                    "Ext.getStore(\"DelegationsDataStore\").clearFilter();\r",
-                    "Ext.getStore(\"DelegationsDataStore\").removeAll();\r",
+                    "Ext.getStore(\"DelegationsDataStore\").clearFilter(true);\r",
                     "Ext.getStore(\"DelegationsDataStore\").filter(\"giverId\", record.get(\"id\"));"
                 ],
                 "name": "itemclick",

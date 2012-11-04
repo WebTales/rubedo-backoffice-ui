@@ -27,11 +27,13 @@ Ext.define('Rubedo.store.ContenusDataJson', {
         me.callParent([Ext.apply({
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
+            remoteSort: true,
             storeId: ' ',
             model: 'Rubedo.model.contenusDataModel',
+            sortOnFilter: false,
             proxy: {
                 type: 'ajax',
-                batchActions: false,
                 api: {
                     create: 'contents/create',
                     read: 'contents',

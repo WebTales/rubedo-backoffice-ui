@@ -30,8 +30,7 @@ Ext.define('Rubedo.model.contenusDataModel', {
             name: 'typeId'
         },
         {
-            name: 'etat',
-            mapping: 'status'
+            name: 'status'
         },
         {
             name: 'version',

@@ -711,6 +711,12 @@ Ext.define('Ext.ux.grid.FilterBar', {
 			}
 		}
 		grid.store.currentPage = 1;
+        if (grid.id=="ContenusGrid") {
+            me.filterArray.push(Ext.create('Ext.util.Filter', {
+					property: "typeId",
+					value: Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id"),
+				}));            
+            }
 		if(me.filterArray.length > 0) {
 			if (!grid.store.remoteFilter) grid.store.clearFilter();
 			grid.store.filters.clear();
@@ -718,8 +724,10 @@ Ext.define('Ext.ux.grid.FilterBar', {
 			if (me.clearAllEl) {
 				me.clearAllEl.show({duration: 1000});
 			}
+            
 		} else {
 			grid.store.clearFilter();
+            //
 			if (me.clearAllEl) {
 				me.clearAllEl.hide({duration: 1000});
 			}
@@ -727,6 +735,7 @@ Ext.define('Ext.ux.grid.FilterBar', {
 		if (!grid.store.remoteFilter && me.autoUpdateAutoStores) {
 			me.fillAutoStores();
 		}
+
 		me.fireEvent('filterupdated', me.filterArray);
 	},
 
@@ -774,8 +783,10 @@ Ext.define('Ext.ux.grid.FilterBar', {
 
 	clearFilters: function() {
 		var me = this;
-
-		if (me.filterArray.length == 0) return;
+        var supressor=false;
+        if (me.grid.id!="ContenusGrid") {
+            if (me.filterArray.length === 0) {return;}
+        } else { supressor=true;}
 		me.filterArray = [];
 		me.fields.eachKey(function(key, field) {
 			field.suspendEvents();
@@ -786,11 +797,14 @@ Ext.define('Ext.ux.grid.FilterBar', {
 				column.getEl().removeCls(Ext.baseCSSPrefix + 'column-filtered');
 			}
 		}, me);
-		me.grid.store.clearFilter();
+		me.grid.store.clearFilter(supressor);
 		if (me.clearAllEl) {
 			me.clearAllEl.hide({duration: 1000});
 		}
-
+        if (me.grid.id=="ContenusGrid") {
+             me.grid.store.filter("typeId",Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id"));
+            
+            }
 		me.fireEvent('filterupdated', me.filterArray);
 	},
 

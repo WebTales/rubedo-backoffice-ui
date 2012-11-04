@@ -33,9 +33,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.type, itemId:'type'});
         filArianne.add(typeFil);
     }
-    this.getContenusDataJsonStore().clearFilter();
-    this.getContenusDataJsonStore().filter("typeId",record.get("id"));
-    this.getContenusDataJsonStore().load();
+
+    Ext.getCmp("ContenusGrid").filterBar.clearFilters();
+
     Ext.Array.forEach(Ext.getCmp("contributionContenus").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     Ext.getCmp("ajoutPanierContenus").disable();
     Ext.getCmp("boutonSupprimerContenu").disable();
@@ -111,11 +111,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             customMeta=selections[0].data.text+"</br> Creation : "+selections[0].data.creation+
             " Dernière modification : "+selections[0].data.derniereModification+" Version : "+selections[0].data.version+
             " Auteur : "+selections[0].data.auteur;
-            if (selections[0].get("etat")=="published") {
+            if (selections[0].get("status")=="published") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
-            } else if (selections[0].get("etat")=="pending") {
+            } else if (selections[0].get("status")=="pending") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
-            } else if (selections[0].get("etat")=="draft") {
+            } else if (selections[0].get("status")=="draft") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
             } else {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
@@ -144,7 +144,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     putContentsOnline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("etat")=="published") {
+            if (content.get("status")=="published") {
                 content.set("online", true);
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
@@ -154,8 +154,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentRefuse: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("etat")=="pending") {
-                content.set("etat", "draft");
+            if (content.get("status")=="pending") {
+                content.set("status", "draft");
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
             Ext.getStore("ContenusDataJson").sync();
@@ -164,7 +164,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     putContentsOffline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("etat")=="published") {
+            if (content.get("status")=="published") {
                 content.set("online", false);
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
@@ -174,8 +174,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentSubmitVal: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("etat")=="draft") {
-                content.set("etat", "pending");
+            if (content.get("status")=="draft") {
+                content.set("status", "pending");
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
             Ext.getStore("ContenusDataJson").sync();
@@ -184,8 +184,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentAcceptPublish: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("etat")=="pending") {
-                content.set("etat", "published");
+            if (content.get("status")=="pending") {
+                content.set("status", "published");
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
             Ext.getStore("ContenusDataJson").sync();
@@ -195,7 +195,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.nContenuRecorder('pending',button.isUpdate);
     },
 
-    nContenuRecorder: function(etat, update) {
+    nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
             var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
@@ -206,7 +206,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 myRec.set("text",champs.text);
                 myRec.set("champs",champs);
                 myRec.set("taxonomie",taxonomie);
-                myRec.set("etat",etat);
+                myRec.set("status",status);
                 myRec.set(metaData);
                 myRec.endEdit();
 
@@ -216,7 +216,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     text: champs.text,
                     champs: champs,
                     taxonomie:taxonomie,
-                    etat: etat,
+                    status: status,
                     typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
 
                 });

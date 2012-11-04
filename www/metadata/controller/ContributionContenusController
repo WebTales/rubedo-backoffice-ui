@@ -37,9 +37,9 @@
                     "else { typeFil= Ext.widget('button',{iconCls: \"folder\", text:record.data.type, itemId:'type'});\r",
                     "filArianne.add(typeFil);\r",
                     "}\r",
-                    "this.getContenusDataJsonStore().clearFilter();\r",
-                    "this.getContenusDataJsonStore().filter(\"typeId\",record.get(\"id\"));\r",
-                    "this.getContenusDataJsonStore().load();\r",
+                    "\r",
+                    "Ext.getCmp(\"ContenusGrid\").filterBar.clearFilters();\r",
+                    "\r",
                     "Ext.Array.forEach(Ext.getCmp(\"contributionContenus\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
                     "Ext.getCmp(\"ajoutPanierContenus\").disable();\r",
                     "Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
@@ -110,7 +110,7 @@
                 "designer|userClassName": "nContenuRecorder",
                 "fn": "nContenuRecorder",
                 "designer|params": [
-                    "etat",
+                    "status",
                     "update"
                 ],
                 "implHandler": [
@@ -124,7 +124,7 @@
                     "        myRec.set(\"text\",champs.text);\r",
                     "        myRec.set(\"champs\",champs);\r",
                     "        myRec.set(\"taxonomie\",taxonomie);\r",
-                    "        myRec.set(\"etat\",etat);\r",
+                    "        myRec.set(\"status\",status);\r",
                     "        myRec.set(metaData);\r",
                     "        myRec.endEdit();\r",
                     "\r",
@@ -134,7 +134,7 @@
                     "            text: champs.text,\r",
                     "            champs: champs,\r",
                     "            taxonomie:taxonomie,\r",
-                    "            etat: etat,\r",
+                    "            status: status,\r",
                     "            typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get(\"id\")\r",
                     "\r",
                     "        });\r",
@@ -244,17 +244,17 @@
                     "    customMeta=selections[0].data.text+\"</br> Creation : \"+selections[0].data.creation+\r",
                     "    \" Dernière modification : \"+selections[0].data.derniereModification+\" Version : \"+selections[0].data.version+\r",
                     "    \" Auteur : \"+selections[0].data.auteur;\r",
-                    "    if (selections[0].get(\"etat\")==\"published\") {\r",
+                    "    if (selections[0].get(\"status\")==\"published\") {\r",
                     "        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');\r",
-                    "    } else if (selections[0].get(\"etat\")==\"pending\") {\r",
+                    "    } else if (selections[0].get(\"status\")==\"pending\") {\r",
                     "        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');\r",
-                    "    } else if (selections[0].get(\"etat\")==\"draft\") {\r",
+                    "    } else if (selections[0].get(\"status\")==\"draft\") {\r",
                     "        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');\r",
                     "    } else {\r",
                     "        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');\r",
                     "    }\r",
-                    "    \r",
-                    "    \r",
+                    "\r",
+                    "\r",
                     "\r",
                     "} else {\r",
                     "    Ext.getCmp(\"ajoutPanierContenus\").enable();\r",
@@ -309,11 +309,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    if (content.get(\"etat\")==\"published\") {\r",
+                    "    if (content.get(\"status\")==\"published\") {\r",
                     "        content.set(\"online\", true);\r",
                     "    }});\r",
-                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -335,11 +335,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    if (content.get(\"etat\")==\"pending\") {\r",
-                    "        content.set(\"etat\", \"draft\");\r",
+                    "    if (content.get(\"status\")==\"pending\") {\r",
+                    "        content.set(\"status\", \"draft\");\r",
                     "    }});\r",
-                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -361,11 +361,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    if (content.get(\"etat\")==\"published\") {\r",
+                    "    if (content.get(\"status\")==\"published\") {\r",
                     "        content.set(\"online\", false);\r",
                     "    }});\r",
-                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -387,11 +387,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    if (content.get(\"etat\")==\"draft\") {\r",
-                    "        content.set(\"etat\", \"pending\");\r",
+                    "    if (content.get(\"status\")==\"draft\") {\r",
+                    "        content.set(\"status\", \"pending\");\r",
                     "    }});\r",
-                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -413,11 +413,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    if (content.get(\"etat\")==\"pending\") {\r",
-                    "        content.set(\"etat\", \"published\");\r",
+                    "    if (content.get(\"status\")==\"pending\") {\r",
+                    "        content.set(\"status\", \"published\");\r",
                     "    }});\r",
-                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "Ext.getStore(\"ContenusDataJson\").sync();"
+                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",

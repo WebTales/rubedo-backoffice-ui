@@ -74,11 +74,11 @@
                             "view"
                         ],
                         "implHandler": [
-                            "if (record.get(\"etat\")==\"published\") {\r",
+                            "if (record.get(\"status\")==\"published\") {\r",
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
-                            "} else if (record.get(\"etat\")==\"pending\") {\r",
+                            "} else if (record.get(\"status\")==\"pending\") {\r",
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
-                            "} else if (record.get(\"etat\")==\"draft\") {\r",
+                            "} else if (record.get(\"status\")==\"draft\") {\r",
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
                             "}\r",
                             "\r",
@@ -109,7 +109,7 @@
                     "}"
                 ],
                 "designer|userClassName": "MyColumn6",
-                "dataIndex": "etat",
+                "dataIndex": "status",
                 "flex": 1,
                 "text": "Etat"
             },
@@ -170,8 +170,8 @@
                     "{\r",
                     "    type:\"combo\",\r",
                     "    store: [\r",
-                    "                [1, 'Oui'],\r",
-                    "                [0, 'Non']\r",
+                    "                [true, 'Oui'],\r",
+                    "                [false, 'Non']\r",
                     "            ]\r",
                     "}"
                 ],

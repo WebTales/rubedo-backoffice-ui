@@ -36,11 +36,11 @@ Ext.define('Rubedo.view.menuContenusContext', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        if (record.get("etat")=="published") {
+                        if (record.get("status")=="published") {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
-                        } else if (record.get("etat")=="pending") {
+                        } else if (record.get("status")=="pending") {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
-                        } else if (record.get("etat")=="draft") {
+                        } else if (record.get("status")=="draft") {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
                         }
 
@@ -80,7 +80,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             ]
                         ]
                     },
-                    dataIndex: 'etat',
+                    dataIndex: 'status',
                     flex: 1,
                     text: 'Etat'
                 },
@@ -90,11 +90,11 @@ Ext.define('Rubedo.view.menuContenusContext', {
                         type: 'combo',
                         store: [
                             [
-                                1,
+                                true,
                                 'Oui'
                             ],
                             [
-                                0,
+                                false,
                                 'Non'
                             ]
                         ]
