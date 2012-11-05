@@ -117,40 +117,54 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field92",
-                "name": "createTime",
-                "dateFormat": null,
-                "type": "date"
-            },
-            "designerId": "f98c306f-ee6d-461f-b4ed-5710455e4f74"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "field92",
-                "name": "updateTime",
-                "type": "date"
-            },
-            "designerId": "90e28d4c-26ff-44ea-9e3f-b704d0def82f"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|userClassName": "field146",
                 "name": "online",
                 "type": "boolean"
             },
             "designerId": "a57b4710-6cd5-4974-8105-d8d731ba6459"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "b3bb0d6e-af79-49db-80fe-9b5c399ef693"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser"
+            },
+            "designerId": "539e9c08-1655-4cd9-9d13-97a28df7b8e1"
         },
         {
             "type": "datafield",

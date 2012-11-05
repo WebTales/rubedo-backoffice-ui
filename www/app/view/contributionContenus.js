@@ -87,6 +87,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
+                            margin: '0 0 0 20',
                             tpl: [
                                 '{customMeta}'
                             ]

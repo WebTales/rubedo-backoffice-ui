@@ -44,16 +44,21 @@ Ext.define('Rubedo.model.contenusDataModel', {
             mapping: 'taxonomy'
         },
         {
-            name: 'createTime',
-            type: 'date'
-        },
-        {
-            name: 'updateTime',
-            type: 'date'
-        },
-        {
             name: 'online',
             type: 'boolean'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createUser'
         },
         {
             name: 'startPublicationDate',

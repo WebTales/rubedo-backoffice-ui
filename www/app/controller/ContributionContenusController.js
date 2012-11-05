@@ -108,9 +108,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonModifierContenu").enable();
             Ext.getCmp("boutonCopierContenus").enable();
             Ext.getCmp("contribWorkflowBox").enable();
-            customMeta=selections[0].data.text+"</br> Creation : "+selections[0].data.creation+
-            " Dernière modification : "+selections[0].data.derniereModification+" Version : "+selections[0].data.version+
-            " Auteur : "+selections[0].data.auteur;
+            customMeta=selections[0].get("text")+"</br> Creation : "+Ext.Date.format(selections[0].get("createTime"), "d-m-y")+
+            " Dernière modification : "+Ext.Date.format(selections[0].get("lastUpdateTime"), "d-m-y")+" Auteur : "+selections[0].get("createUser").fullName;
+            boiteMeta.update(customMeta);
             if (selections[0].get("status")=="published") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
             } else if (selections[0].get("status")=="pending") {

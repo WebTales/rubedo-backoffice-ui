@@ -95,7 +95,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     customMeta=record.get("name")+"</br> Creation : "+Ext.Date.format(record.get("createTime"), "d-m-y")+
     " Dernière modification : "+Ext.Date.format(record.get("lastUpdateTime"), "d-m-y")+" Auteur : "+record.get("createUser").fullName;
     boiteMeta.update(customMeta);
-    console.log(record);
     },
 
     removeTerm: function(button, e, options) {
