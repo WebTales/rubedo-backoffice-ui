@@ -43,9 +43,6 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             type: 'boolean'
         },
         {
-            name: 'terms'
-        },
-        {
             name: 'version'
         },
         {

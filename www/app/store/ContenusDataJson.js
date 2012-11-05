@@ -34,6 +34,7 @@ Ext.define('Rubedo.store.ContenusDataJson', {
             sortOnFilter: false,
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'contents/create',
                     read: 'contents',

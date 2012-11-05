@@ -17,7 +17,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     extend: 'Ext.app.Controller',
 
     models: [
-        'termeTaxonomieModel'
+        'taxonomyTermModel'
     ],
     views: [
         'TermesTaxonomieTree',
@@ -28,7 +28,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         var tablepanel=Ext.getCmp("AdminfTaxonomieGrid");
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
-        if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.titre);}
+        if (Ext.isDefined(typeFil)) {typeFil.setText(record.get("name"));}
         else { typeFil= Ext.widget('button',{iconCls: "page_taxonomy", text:record.get("name"), itemId:'type'});
         filArianne.add(typeFil);
     }
@@ -38,18 +38,61 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
-    var data =  record.get("terms");
     var store = Ext.create('Ext.data.TreeStore', {
-        model: 'KECMours.model.termeTaxonomieModel',
-        root: Ext.clone(data),
+        model: 'Rubedo.model.taxonomyTermModel',
+        storeId: 'TypesContenusNDepDataJson',
+        autoSync:true,
         proxy: {
-            type: 'memory'
+            type: 'ajax',
+            api: {
+                create: 'taxonomy-terms/create',
+                read: 'taxonomy-terms/read-child',
+                update: 'taxonomy-terms/update',
+                destroy: 'taxonomy-terms/delete'
+            },
+            reader: {
+                getResponseData: function(response) {
+                    var data, error;
+
+                    try {
+                        data = Ext.decode(response.responseText);
+                        if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                        return this.readRecords(data);
+                    } catch (ex) {
+                        error = new Ext.data.ResultSet({
+                            total  : 0,
+                            count  : 0,
+                            records: [],
+                            success: false,
+                            message: ex.message
+                        });
+
+                        this.fireEvent('exception', this, response, error);
+
+                        Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                        return error;
+                    }
+                },
+                type: 'json',
+                messageProperty: 'message'
+
+            },
+            writer: {
+                type: 'json',
+                encode: true,
+                root: 'data'
+            }
+        },
+        filters: {
+            property: 'vocabularyId',
+            value: record.get("id")
         }
     });
     var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1});
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
-    arbre.getStore().getRootNode().expand(true);
+    store.load();
     },
 
     removeTerm: function(button, e, options) {
@@ -60,13 +103,14 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     },
 
     addTerm: function(button, e, options) {
-        if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
+        var mainTaxo=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();
+        if (mainTaxo !== null) {
 
             var champT = Ext.getCmp('nouveauTermeTaxoField');
             if (champT.isValid()) {
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
-                    cibleI.appendChild({text: champT.getValue()});
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id")});
                     cibleI.expand();
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
                 } 
@@ -84,9 +128,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             if (Ext.getCmp("ProprietesTaxonomie").getForm().isValid()){
                 cibleR.set(Ext.getCmp("ProprietesTaxonomie").getForm().getValues());
             }
-            var racineR = Ext.getCmp('TermesTaxonomieTree').getStore().getRootNode();
-            var nouvRacine = {text: racineR.data.text, children: this.recupereFils(racineR.childNodes)};  
-            cibleR.set("terms",Ext.clone(nouvRacine));
             cibleR.endEdit();
         }
     },
@@ -111,13 +152,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 name: Ext.getCmp('champCreerTaxo').getValue(),
                 extendable: false,
                 multiSelect: true,
-                mandatory: false,
-                terms:	{
-                    children:[
-                    ]
-                }
-
-
+                mandatory: false
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
             Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);
@@ -133,19 +168,25 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     },
 
-    newTerm: function(button, e, options) {
+    updateTerm: function(button, e, options) {
         if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {
 
             var champT = Ext.getCmp('nouveauTermeTaxoField');
             if (champT.isValid()) {
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
-                    cibleI.data.text= champT.getValue();
+                    cibleI.set("text", champT.getValue());
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
                     Ext.getCmp('TermesTaxonomieTree').getView().refresh();
                 } 
             }
         }
+    },
+
+    onTreepanelItemContextMenu: function(tablepanel, record, item, index, e, options) {
+        if (record.get("id")!="root") {
+        }
+        e.stopEvent();
     },
 
     recupereFils: function(cible) {
@@ -183,7 +224,10 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 click: this.openVocabWindow
             },
             "#boutonModifierTermesTaxo": {
-                click: this.newTerm
+                click: this.updateTerm
+            },
+            "#TermesTaxonomieTree": {
+                itemcontextmenu: this.onTreepanelItemContextMenu
             }
         });
     }
