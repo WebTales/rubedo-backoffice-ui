@@ -37,9 +37,6 @@
                     "filArianne.add(typeFil);\r",
                     "}\r",
                     "Ext.getCmp(\"ProprietesTaxonomie\").getForm().loadRecord(record);\r",
-                    "\r",
-                    "\r",
-                    "\r",
                     "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",
                     "var store = Ext.create('Ext.data.TreeStore', {\r",
@@ -96,7 +93,13 @@
                     "var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1});\r",
                     "\r",
                     "Ext.getCmp('conteneurAdminfTaxo').add(arbre);\r",
-                    "store.load();"
+                    "store.load();\r",
+                    "\r",
+                    "var boiteMeta = Ext.getCmp(\"adminFTaxonomie\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "    customMeta=record.get(\"name\")+\"</br> Creation : \"+Ext.Date.format(record.get(\"createTime\"), \"d-m-y\")+\r",
+                    "        \" Dernière modification : \"+Ext.Date.format(record.get(\"lastUpdateTime\"), \"d-m-y\")+\" Auteur : \"+record.get(\"createUser\").fullName;\r",
+                    "boiteMeta.update(customMeta);\r",
+                    "console.log(record);"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -342,8 +345,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTreepanelItemContextMenu",
-                "fn": "onTreepanelItemContextMenu",
+                "designer|userClassName": "termsContextMenuDisplay",
+                "fn": "termsContextMenuDisplay",
                 "implHandler": [
                     "var menu= Ext.getCmp('termContextMenu');\r",
                     "if (Ext.isEmpty(menu)){\r",

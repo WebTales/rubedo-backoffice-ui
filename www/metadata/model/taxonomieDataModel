@@ -138,7 +138,7 @@
             "userConfig": {
                 "designer|userClassName": "field92",
                 "name": "createTime",
-                "dateFormat": null,
+                "dateFormat": "timestamp",
                 "type": "date"
             },
             "designerId": "bcb5486a-a461-41bc-891b-5a4f198087df"
@@ -152,10 +152,24 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field92",
-                "name": "updateTime",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
                 "type": "date"
             },
             "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser"
+            },
+            "designerId": "539e9c08-1655-4cd9-9d13-97a28df7b8e1"
         }
     ]
 }

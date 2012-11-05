@@ -86,8 +86,9 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
+                            margin: '0 0 0 20',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '{customMeta}'
                             ]
                         }
                     ]

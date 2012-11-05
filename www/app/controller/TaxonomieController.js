@@ -33,9 +33,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         filArianne.add(typeFil);
     }
     Ext.getCmp("ProprietesTaxonomie").getForm().loadRecord(record);
-
-
-
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
     var store = Ext.create('Ext.data.TreeStore', {
@@ -93,6 +90,12 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
     store.load();
+
+    var boiteMeta = Ext.getCmp("adminFTaxonomie").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+    customMeta=record.get("name")+"</br> Creation : "+Ext.Date.format(record.get("createTime"), "d-m-y")+
+    " Dernière modification : "+Ext.Date.format(record.get("lastUpdateTime"), "d-m-y")+" Auteur : "+record.get("createUser").fullName;
+    boiteMeta.update(customMeta);
+    console.log(record);
     },
 
     removeTerm: function(button, e, options) {
@@ -186,7 +189,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         button.up().destroy();
     },
 
-    onTreepanelItemContextMenu: function(tablepanel, record, item, index, e, options) {
+    termsContextMenuDisplay: function(tablepanel, record, item, index, e, options) {
         var menu= Ext.getCmp('termContextMenu');
         if (Ext.isEmpty(menu)){
             menu = Ext.widget('termContextMenu');
@@ -240,7 +243,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 click: this.updateTerm
             },
             "#TermesTaxonomieTree": {
-                itemcontextmenu: this.onTreepanelItemContextMenu
+                itemcontextmenu: this.termsContextMenuDisplay
             }
         });
     }

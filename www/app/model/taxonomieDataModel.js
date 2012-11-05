@@ -50,11 +50,16 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
         },
         {
             name: 'createTime',
+            dateFormat: 'timestamp',
             type: 'date'
         },
         {
-            name: 'updateTime',
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
             type: 'date'
+        },
+        {
+            name: 'createUser'
         }
     ]
 });

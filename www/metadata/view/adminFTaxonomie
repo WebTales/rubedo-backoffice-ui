@@ -153,7 +153,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "margin": "0 0 0 20"
                     },
                     "designerId": "015d3e9e-7c67-4770-9c6f-2d44b4c25b32",
                     "cn": [
@@ -167,7 +168,7 @@
                             "userConfig": {
                                 "designer|userClassName": "tpl",
                                 "implHandler": [
-                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}"
+                                    "{customMeta}"
                                 ],
                                 "designer|displayName": "tpl"
                             },
