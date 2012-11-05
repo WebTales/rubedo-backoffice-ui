@@ -1,0 +1,85 @@
+{
+    "type": "menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "termContextMenu",
+        "designer|userAlias": "termContextMenu",
+        "id": "termContextMenu",
+        "width": null,
+        "showSeparator": false
+    },
+    "id": "ExtBox1-ext-gen12765",
+    "designerId": "b7f01d02-1b3a-4b25-a151-46fe64190510",
+    "cn": [
+        {
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTextField8",
+                "id": "nouveauTermeTaxoField",
+                "fieldLabel": "Terme ",
+                "labelSeparator": null,
+                "labelWidth": 50,
+                "allowBlank": false,
+                "vtype": null
+            },
+            "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton66",
+                "id": "boutonAjouterTermesTaxo",
+                "icon": "",
+                "iconCls": "add",
+                "text": "Ajouter"
+            },
+            "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton66",
+                "id": "boutonModifierTermesTaxo",
+                "icon": "",
+                "iconCls": "edit",
+                "text": "Substituer"
+            },
+            "designerId": "2e3911f0-3da9-4e53-b65d-56698f9f94e9"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton67",
+                "id": "boutonSupprimerTermesTaxo",
+                "icon": null,
+                "iconCls": "close",
+                "text": "Supprimer"
+            },
+            "designerId": "ca16c6a2-921d-49a2-90ce-d1d7c384c787"
+        }
+    ]
+}

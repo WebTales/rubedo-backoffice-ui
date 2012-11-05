@@ -100,7 +100,8 @@ Ext.application({
         'iconsContextMenu',
         'AdminPasswordChange',
         'userSettings',
-        'menuContenusContext'
+        'menuContenusContext',
+        'termContextMenu'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

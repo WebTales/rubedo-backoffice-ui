@@ -100,6 +100,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         if (Ext.isDefined(cible)) {
             cible.remove();
         }
+        button.up().destroy();
     },
 
     addTerm: function(button, e, options) {
@@ -119,6 +120,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
             }
         }
+        button.up().destroy();
     },
 
     saveVocabulary: function(button, e, options) {
@@ -181,12 +183,23 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 } 
             }
         }
+        button.up().destroy();
     },
 
     onTreepanelItemContextMenu: function(tablepanel, record, item, index, e, options) {
-        if (record.get("id")!="root") {
-        }
-        e.stopEvent();
+        var menu= Ext.getCmp('termContextMenu');
+        if (Ext.isEmpty(menu)){
+            menu = Ext.widget('termContextMenu');
+            menu.on('blur', function(){this.destroy();});}
+            menu.showAt(Ext.EventObject.getXY());
+            if (record.get("id")=="root") {
+                Ext.getCmp("boutonModifierTermesTaxo").hide();
+                Ext.getCmp("boutonSupprimerTermesTaxo").hide();
+            } else {
+                Ext.getCmp("boutonModifierTermesTaxo").show();
+                Ext.getCmp("boutonSupprimerTermesTaxo").show();
+            }
+            e.stopEvent();
     },
 
     recupereFils: function(cible) {

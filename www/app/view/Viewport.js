@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.PDFPreviewWindow',
         'Rubedo.view.Panier',
         'Rubedo.view.UnBloc',
+        'Rubedo.view.termContextMenu',
         'Rubedo.view.ViewportPrimaire',
         'Rubedo.view.Zone',
         'Rubedo.view.accessibilityPicker',

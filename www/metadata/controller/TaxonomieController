@@ -119,7 +119,8 @@
                     "var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
                     "if (Ext.isDefined(cible)) {\r",
                     "    cible.remove();\r",
-                    "}"
+                    "}\r",
+                    "button.up().destroy();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -154,7 +155,8 @@
                     "\r",
                     "\r",
                     "    }\r",
-                    "}"
+                    "}\r",
+                    "button.up().destroy();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -322,7 +324,8 @@
                     "            Ext.getCmp('TermesTaxonomieTree').getView().refresh();\r",
                     "        } \r",
                     "    }\r",
-                    "}"
+                    "}\r",
+                    "button.up().destroy();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -342,7 +345,17 @@
                 "designer|userClassName": "onTreepanelItemContextMenu",
                 "fn": "onTreepanelItemContextMenu",
                 "implHandler": [
-                    "if (record.get(\"id\")!=\"root\") {\r",
+                    "var menu= Ext.getCmp('termContextMenu');\r",
+                    "if (Ext.isEmpty(menu)){\r",
+                    "menu = Ext.widget('termContextMenu');\r",
+                    "menu.on('blur', function(){this.destroy();});}\r",
+                    "menu.showAt(Ext.EventObject.getXY());\r",
+                    "if (record.get(\"id\")==\"root\") {\r",
+                    "    Ext.getCmp(\"boutonModifierTermesTaxo\").hide();\r",
+                    "    Ext.getCmp(\"boutonSupprimerTermesTaxo\").hide();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"boutonModifierTermesTaxo\").show();\r",
+                    "    Ext.getCmp(\"boutonSupprimerTermesTaxo\").show();\r",
                     "}\r",
                     "e.stopEvent();"
                 ],

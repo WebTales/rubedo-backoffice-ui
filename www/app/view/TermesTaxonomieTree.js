@@ -33,42 +33,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                         ptype: 'treeviewdragdrop'
                     })
                 ]
-            },
-            dockedItems: [
-                {
-                    xtype: 'toolbar',
-                    dock: 'top',
-                    items: [
-                        {
-                            xtype: 'textfield',
-                            id: 'nouveauTermeTaxoField',
-                            fieldLabel: 'Terme ',
-                            labelWidth: 50,
-                            allowBlank: false
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'boutonAjouterTermesTaxo',
-                            icon: '',
-                            iconCls: 'add',
-                            text: 'Ajouter'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'boutonModifierTermesTaxo',
-                            icon: '',
-                            iconCls: 'edit',
-                            text: 'Substituer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'boutonSupprimerTermesTaxo',
-                            iconCls: 'close',
-                            text: 'Supprimer'
-                        }
-                    ]
-                }
-            ]
+            }
         });
 
         me.callParent(arguments);
