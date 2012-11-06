@@ -314,18 +314,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         selectionR.push(leVocab);
         tableauTaxoTC.getSelectionModel().select(selectionR);
     }
-    if (record.data.imbrique===false) {
+    if (record.get("dependant")===false) {
         var tableauTCI = Ext.getCmp('TCImbriquesGrid');
         tableauTCI.getSelectionModel().deselectAll();
-        var mesTCI = record.data.typesImbriques;
-        var selectionTCI = [ ];
-        var j =0;
-        for (j=0; j<mesTCI.length; j++) {
-            var leTCI = tableauTCI.getStore().findRecord('type', mesTCI[j].type);
-            selectionTCI.push(leTCI);
-            tableauTCI.getSelectionModel().select(selectionTCI);
-        }
+        var depTypes = record.get("dependantTypes");
+        var selector=[];
+        Ext.Array.forEach(depTypes, function(someTypeId){
+            selector.push(tableauTCI.getStore().findRecord("id", someTypeId));
+        });
+        tableauTCI.getSelectionModel().select(selector);
     }
+
 
     },
 
@@ -383,15 +382,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 nouvTaxoR.push({id: nouvTaxoTC[i].get("id")});
             }
             target.set("vocabulaires", nouvTaxoR);
-            if (target.get("imbrique") ===false) {
-                var nouvTCI = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();
-                var j=0;
-                var nouvTCIR = [ ];
-                for (j=0; j<nouvTCI.length; j++) {
-                    nouvTCIR.push({type: nouvTCI[j].data.type});
-                }
-                target.set("typesImbriques", nouvTCIR);
-
+            if (target.get("dependant") ===false) {
+                var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
+                target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
 
             }
             target.endEdit();

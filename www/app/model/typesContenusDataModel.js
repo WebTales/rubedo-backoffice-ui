@@ -36,8 +36,7 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             type: 'boolean'
         },
         {
-            name: 'typesImbriques',
-            mapping: 'dependantTypes'
+            name: 'dependantTypes'
         },
         {
             name: 'version'

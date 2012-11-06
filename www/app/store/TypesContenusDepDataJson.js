@@ -46,8 +46,11 @@ Ext.define('Rubedo.store.TypesContenusDepDataJson', {
                     name: 'type'
                 },
                 {
-                    name: 'imbrique',
+                    name: 'dependant',
                     type: 'boolean'
+                },
+                {
+                    name: 'id'
                 }
             ]
         }, cfg)]);

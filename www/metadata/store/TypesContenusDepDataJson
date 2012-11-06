@@ -90,10 +90,23 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField53",
-                "name": "imbrique",
+                "name": "dependant",
                 "type": "boolean"
             },
             "designerId": "5b74bbca-bf1e-402b-90ab-2141738b56b8"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field153",
+                "name": "id"
+            },
+            "designerId": "5c078508-b8f6-470d-bafe-57fdbd9453e7"
         }
     ]
 }
