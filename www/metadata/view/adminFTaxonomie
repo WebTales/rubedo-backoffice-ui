@@ -225,6 +225,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
+                        "disabled": true,
                         "id": "boutonSupprimerTaxo",
                         "itemId": null,
                         "icon": null,
@@ -244,6 +245,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
+                        "disabled": true,
                         "id": "boutonEnregistrerTaxo",
                         "itemId": null,
                         "icon": null,
@@ -394,6 +396,8 @@
             "userConfig": {
                 "layout|flex": 1,
                 "designer|userClassName": "MyTabPanel",
+                "disabled": true,
+                "id": "taxonomyCenterBox",
                 "activeTab": 0
             },
             "designerId": "f20a43a3-d7ab-4d39-b820-31c90cae2204",

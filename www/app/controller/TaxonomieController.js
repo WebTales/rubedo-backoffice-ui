@@ -17,7 +17,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     extend: 'Ext.app.Controller',
 
     models: [
-        'taxonomyTermModel'
+        'taxonomyTermModel',
+        'taxonomieDataModel'
     ],
     views: [
         'TermesTaxonomieTree',
@@ -26,6 +27,9 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     selectVocabulary: function(selModel, record, index, options) {
         var tablepanel=Ext.getCmp("AdminfTaxonomieGrid");
+        Ext.getCmp("taxonomyCenterBox").enable();
+        Ext.getCmp("boutonEnregistrerTaxo").enable();
+        Ext.getCmp("boutonSupprimerTaxo").enable();
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.get("name"));}
@@ -144,6 +148,11 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             window.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('AdminfTaxonomieGrid').getStore().remove(cible);
+                Ext.getCmp("ProprietesTaxonomie").getForm().reset(true);
+                Ext.getCmp("TermesTaxonomieTree").getView().hide();
+                Ext.getCmp("taxonomyCenterBox").disable();
+                Ext.getCmp("boutonEnregistrerTaxo").disable();
+                Ext.getCmp("boutonSupprimerTaxo").disable();        
                 Ext.getCmp('delConfirmZ').close();
             });  
 
@@ -159,8 +168,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 mandatory: false
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
-            Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);
-            this.selectVocabulary(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);
+            //Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);
+            //this.selectVocabulary(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);
             Ext.getCmp('nouveauTaxoFenetre').close();
         }    
     },

@@ -109,6 +109,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonSupprimerTaxo',
                             iconCls: 'remove_big',
                             scale: 'large',
@@ -116,6 +117,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'boutonEnregistrerTaxo',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
@@ -170,6 +172,8 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
+                    id: 'taxonomyCenterBox',
                     activeTab: 0,
                     items: [
                         {
