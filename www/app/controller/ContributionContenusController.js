@@ -108,15 +108,31 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonModifierContenu").enable();
             Ext.getCmp("boutonCopierContenus").enable();
             Ext.getCmp("contribWorkflowBox").enable();
+            Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});    
             customMeta=selections[0].get("text")+"</br> Creation : "+Ext.Date.format(selections[0].get("createTime"), "d-m-y")+
             " Dernière modification : "+Ext.Date.format(selections[0].get("lastUpdateTime"), "d-m-y")+" Auteur : "+selections[0].get("createUser").fullName;
             boiteMeta.update(customMeta);
             if (selections[0].get("status")=="published") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
+                Ext.getCmp("contentAcceptPublishBtn").disable();
+                Ext.getCmp("contentSubmitValBtn").disable();
+                Ext.getCmp("contentRefuseBtn").disable();
+                if (selections[0].get("online")) {
+                    Ext.getCmp("contentOnlineBtn").disable();
+                } else {
+                    Ext.getCmp("contentOfflineBtn").disable();
+                }
             } else if (selections[0].get("status")=="pending") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
+                Ext.getCmp("contentSubmitValBtn").disable();
+                Ext.getCmp("contentOnlineBtn").disable();
+                Ext.getCmp("contentOfflineBtn").disable();
             } else if (selections[0].get("status")=="draft") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
+                Ext.getCmp("contentAcceptPublishBtn").disable();
+                Ext.getCmp("contentOnlineBtn").disable();
+                Ext.getCmp("contentOfflineBtn").disable();
+                Ext.getCmp("contentRefuseBtn").disable();
             } else {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
             }
@@ -129,12 +145,50 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonModifierContenu").disable();
             Ext.getCmp("boutonCopierContenus").disable();
             Ext.getCmp("contribWorkflowBox").enable();
-            customMeta=selections.length+" Contenus";
-            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+            var statuses = [];
+            var onlines = [];
+            Ext.Array.forEach(selections, function(someContent){
+                Ext.Array.include(statuses, someContent.get("status"));
+                Ext.Array.include(onlines, someContent.get("online"));
+            });
+            if (statuses.length>1){
+                Ext.getCmp("contribWorkflowBox").disable();
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
 
-        }
+            } else {
+                Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});        
+                if (statuses[0]=="published") {
+                    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
+                    Ext.getCmp("contentAcceptPublishBtn").disable();
+                    Ext.getCmp("contentSubmitValBtn").disable();
+                    Ext.getCmp("contentRefuseBtn").disable();
+                    if (onlines.length>1) {
+                        Ext.getCmp("contentOnlineBtn").disable();
+                        Ext.getCmp("contentOfflineBtn").disable();
 
-        boiteMeta.update(customMeta);
+                    }else {
+                        if (onlines[0]) {
+                            Ext.getCmp("contentOnlineBtn").disable();
+                        } else {
+                            Ext.getCmp("contentOfflineBtn").disable();
+                        }}
+                    } else if (statuses[0]=="pending") {
+                        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
+                        Ext.getCmp("contentSubmitValBtn").disable();
+                        Ext.getCmp("contentOnlineBtn").disable();
+                        Ext.getCmp("contentOfflineBtn").disable();
+                    } else if (statuses[0]=="draft") {
+                        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
+                        Ext.getCmp("contentAcceptPublishBtn").disable();
+                        Ext.getCmp("contentOnlineBtn").disable();
+                        Ext.getCmp("contentOfflineBtn").disable();
+                        Ext.getCmp("contentRefuseBtn").disable();
+                    }
+                }
+                customMeta=selections.length+" Contenus";
+            }
+
+            boiteMeta.update(customMeta);
     },
 
     doubleClickEdit: function(tablepanel, record, item, index, e, options) {

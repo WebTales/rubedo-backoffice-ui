@@ -71,6 +71,25 @@
                     "designerId": "be7e2b1d-d655-464a-a777-eced0aa78295"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreUpdate",
+                "fn": "onJsonstoreUpdate",
+                "implHandler": [
+                    "Rubedo.controller.ContributionContenusController.prototype.contentsSelect(Ext.getCmp(\"ContenusGrid\"), Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection());\r",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "designerId": "1c54afaa-5f2c-4199-ac3b-ec0d97b07f19"
         }
     ]
 }

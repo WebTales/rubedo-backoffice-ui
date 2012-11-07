@@ -52,7 +52,19 @@ Ext.define('Rubedo.store.ContenusDataJson', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            listeners: {
+                update: {
+                    fn: me.onJsonstoreUpdate,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreUpdate: function(abstractstore, record, operation, options) {
+        Rubedo.controller.ContributionContenusController.prototype.contentsSelect(Ext.getCmp("ContenusGrid"), Ext.getCmp("ContenusGrid").getSelectionModel().getSelection());
+
     }
+
 });

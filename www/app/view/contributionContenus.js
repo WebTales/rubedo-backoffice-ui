@@ -184,6 +184,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: false,
                                     id: 'contentSubmitValBtn',
                                     iconAlign: 'top',
                                     iconCls: 'validation_submit_big',
