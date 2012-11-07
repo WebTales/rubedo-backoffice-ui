@@ -158,30 +158,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'panel',
                             title: 'Versions'
-                        },
-                        {
-                            xtype: 'panel',
-                            title: 'Contenus dépendants',
-                            dockedItems: [
-                                {
-                                    xtype: 'toolbar',
-                                    dock: 'top',
-                                    items: [
-                                        {
-                                            xtype: 'combobox',
-                                            fieldLabel: 'Type de contenu à ajouter ',
-                                            labelWidth: 160,
-                                            editable: false,
-                                            displayField: 'type',
-                                            forceSelection: true,
-                                            queryMode: 'local',
-                                            store: 'DepContentsCombo',
-                                            typeAhead: true,
-                                            valueField: 'id'
-                                        }
-                                    ]
-                                }
-                            ]
                         }
                     ]
                 }
