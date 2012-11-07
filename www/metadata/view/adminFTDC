@@ -700,15 +700,94 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|snapToGrid": 10,
                                 "designer|userClassName": "MyContainer4",
                                 "id": "conteneurChampsEditionTC",
                                 "width": 710,
-                                "autoScroll": true,
-                                "layout": "absolute"
+                                "autoScroll": true
                             },
                             "designerId": "da1da9d0-fbd4-418f-b29e-09ffba76a126",
                             "cn": [
+                                {
+                                    "type": "panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyPanel43",
+                                        "frame": true,
+                                        "margin": 20,
+                                        "title": "Champs obligatoires"
+                                    },
+                                    "designerId": "75afc2fc-c004-4c43-9dd4-a2f48682cd6b",
+                                    "cn": [
+                                        {
+                                            "type": "container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "ChampTC",
+                                                "designer|userAlias": "ChampTC",
+                                                "designer|displayName": null,
+                                                "padding": 10,
+                                                "layout": "anchor"
+                                            },
+                                            "designerId": "032443c2-17fb-4f27-acd6-a45aa2d3a625",
+                                            "cn": [
+                                                {
+                                                    "type": "textfield",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|anchor": "90%",
+                                                        "designer|userClassName": "MyTextField1",
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ],
+                                                        "name": "text",
+                                                        "fieldLabel": "Titre ",
+                                                        "allowBlank": false
+                                                    },
+                                                    "designerId": "c1895a27-4332-4dc5-86f2-429457ef78dc"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyButton17",
+                                                        "itemId": "helpBouton",
+                                                        "margin": null,
+                                                        "style": [
+                                                            "{float:right;}"
+                                                        ],
+                                                        "allowDepress": null,
+                                                        "enableToggle": null,
+                                                        "handleMouseEvents": false,
+                                                        "iconCls": "help",
+                                                        "pressed": null,
+                                                        "pressedCls": "x-btn",
+                                                        "text": "",
+                                                        "tooltip": [
+                                                            "'Titre du contenu. Obligatoire.'"
+                                                        ]
+                                                    },
+                                                    "designerId": "0aa9f65c-4547-49b4-8858-5ae847cbe4c2"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
                                 {
                                     "type": "form",
                                     "reference": {

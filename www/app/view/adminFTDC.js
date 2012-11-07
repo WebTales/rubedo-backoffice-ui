@@ -318,10 +318,42 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     id: 'conteneurChampsEditionTC',
                                     width: 710,
                                     autoScroll: true,
-                                    layout: {
-                                        type: 'absolute'
-                                    },
                                     items: [
+                                        {
+                                            xtype: 'panel',
+                                            frame: true,
+                                            margin: 20,
+                                            title: 'Champs obligatoires',
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'text',
+                                                            fieldLabel: 'Titre ',
+                                                            allowBlank: false
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'helpBouton',
+                                                            style: '{float:right;}',
+                                                            handleMouseEvents: false,
+                                                            iconCls: 'help',
+                                                            pressedCls: 'x-btn',
+                                                            text: '',
+                                                            tooltip: 'Titre du contenu. Obligatoire.'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         {
                                             xtype: 'form',
                                             frame: true,

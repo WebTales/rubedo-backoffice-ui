@@ -109,7 +109,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     iconCls: 'help',
                                                     pressedCls: 'x-btn',
                                                     text: '',
-                                                    tooltip: 'Titre administratif du contenu. Obligatoire.'
+                                                    tooltip: 'Titre du contenu. Obligatoire.'
                                                 }
                                             ]
                                         }
