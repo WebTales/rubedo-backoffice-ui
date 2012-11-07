@@ -50,7 +50,13 @@
                     "var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
                     "imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  \r",
                     "var boiteMeta = Ext.getCmp(\"contributionContenus\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
-                    "boiteMeta.update(customMeta);"
+                    "boiteMeta.update(customMeta);\r",
+                    "var myDependantTypes= [ ];\r",
+                    "Ext.Array.forEach(record.get(\"dependantTypes\"), function(someType){\r",
+                    "    myDependantTypes.push(Ext.getStore(\"TypesContenusDataJson\").findRecord(\"id\",someType));\r",
+                    "});\r",
+                    "Ext.getStore(\"DepContentsCombo\").removeAll();\r",
+                    "Ext.getStore(\"DepContentsCombo\").loadData(myDependantTypes);"
                 ],
                 "name": "select",
                 "scope": "me",

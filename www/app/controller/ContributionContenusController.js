@@ -47,6 +47,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  
     var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
     boiteMeta.update(customMeta);
+    var myDependantTypes= [ ];
+    Ext.Array.forEach(record.get("dependantTypes"), function(someType){
+        myDependantTypes.push(Ext.getStore("TypesContenusDataJson").findRecord("id",someType));
+    });
+    Ext.getStore("DepContentsCombo").removeAll();
+    Ext.getStore("DepContentsCombo").loadData(myDependantTypes);
     },
 
     contentSaveAndPublish: function(button, e, options) {

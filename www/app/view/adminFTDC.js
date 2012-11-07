@@ -362,7 +362,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             autoScroll: false,
                                             resizable: false,
                                             bodyPadding: 0,
-                                            title: 'Champs'
+                                            title: 'Champs éditables'
                                         }
                                     ]
                                 },

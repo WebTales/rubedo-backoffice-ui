@@ -66,7 +66,8 @@ Ext.application({
         'languageStore',
         'DelegationsDataStore',
         'UsersComboStore',
-        'CurrentUserDataStore'
+        'CurrentUserDataStore',
+        'DepContentsCombo'
     ],
     views: [
         'MyContainer',

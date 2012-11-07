@@ -1065,6 +1065,14 @@
                 "app/view/termContextMenu.js"
             ],
             "className": "termContextMenu"
+        },
+        "b4bbd262-e72b-4675-8908-02414ab69420": {
+            "paths": [
+                "metadata/store/DepContentsCombo",
+                "app/store/override/DepContentsCombo.js",
+                "app/store/DepContentsCombo.js"
+            ],
+            "className": "DepContentsCombo"
         }
     },
     "viewOrderMap": {
@@ -1157,7 +1165,8 @@
             "7deb13fd-39d0-4955-a6be-d73c771ea5c7",
             "ec6d87e1-455e-426b-8458-d7738082aeee",
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
-            "0a22fbd6-a30a-4acd-a4f1-19d6123be17a"
+            "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
+            "b4bbd262-e72b-4675-8908-02414ab69420"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
