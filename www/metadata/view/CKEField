@@ -39,10 +39,13 @@
                     "    { name: 'colors', items : [ 'TextColor','BGColor' ] },\r",
                     "    { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },\r",
                     "    { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }\r",
-                    "    \r",
-                    "   \r",
+                    "\r",
+                    "\r",
                     "], resize_enabled:false});\r",
-                    "CKFinder.setupCKEditor(abstractcomponent.editor, \"resources/ckfinder/\");"
+                    "CKFinder.setupCKEditor(abstractcomponent.editor, \"resources/ckfinder/\");\r",
+                    "abstractcomponent.editor.on('instanceReady', function(){\r",
+                    "    abstractcomponent.up().doLayout();\r",
+                    "});"
                 ],
                 "name": "afterrender",
                 "scope": "me"
