@@ -38,7 +38,8 @@ Ext.application({
         'groupDataModel',
         'userDataModel',
         'reusableElementModel',
-        'delegationDataModel'
+        'delegationDataModel',
+        'nestedContentModel'
     ],
     stores: [
         'SitesDataJson',
@@ -67,7 +68,8 @@ Ext.application({
         'DelegationsDataStore',
         'UsersComboStore',
         'CurrentUserDataStore',
-        'DepContentsCombo'
+        'DepContentsCombo',
+        'NestedContensStore'
     ],
     views: [
         'MyContainer',
@@ -102,7 +104,8 @@ Ext.application({
         'AdminPasswordChange',
         'userSettings',
         'menuContenusContext',
-        'termContextMenu'
+        'termContextMenu',
+        'NestedContentsGrid'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

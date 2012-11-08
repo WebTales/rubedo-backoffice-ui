@@ -22,7 +22,8 @@
             "groupDataModel",
             "userDataModel",
             "reusableElementModel",
-            "delegationDataModel"
+            "delegationDataModel",
+            "nestedContentModel"
         ],
         "stores": [
             "SitesDataJson",
@@ -51,7 +52,8 @@
             "DelegationsDataStore",
             "UsersComboStore",
             "CurrentUserDataStore",
-            "DepContentsCombo"
+            "DepContentsCombo",
+            "NestedContensStore"
         ],
         "views": [
             "MyContainer",
@@ -86,7 +88,8 @@
             "AdminPasswordChange",
             "userSettings",
             "menuContenusContext",
-            "termContextMenu"
+            "termContextMenu",
+            "NestedContentsGrid"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

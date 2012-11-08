@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajouterContenu',
 
+    requires: [
+        'Rubedo.view.NestedContentsGrid'
+    ],
+
     floating: true,
     height: 500,
     id: 'ajouterContenu',
@@ -161,6 +165,9 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'panel',
+                            layout: {
+                                type: 'fit'
+                            },
                             title: 'Contenus dépendants',
                             dockedItems: [
                                 {
@@ -180,6 +187,11 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             valueField: 'id'
                                         }
                                     ]
+                                }
+                            ],
+                            items: [
+                                {
+                                    xtype: 'NestedContentsGrid'
                                 }
                             ]
                         }

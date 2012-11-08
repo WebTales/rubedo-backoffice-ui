@@ -416,6 +416,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel44",
+                        "layout": "fit",
                         "title": "Contenus dépendants"
                     },
                     "designerId": "da2c272b-9698-40ef-8757-9ca98a9e1355",
@@ -468,6 +469,16 @@
                                     "designerId": "d5278b74-bce1-4bb5-aed4-9908677587fd"
                                 }
                             ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "ae8b0fcb-d91b-433e-96cc-e232b36aef40",
+                            "masterInstanceId": "ExtBox1-ext-gen7209"
                         }
                     ]
                 }

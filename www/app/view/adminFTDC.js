@@ -464,7 +464,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
-                                            dataIndex: 'obligatoire',
+                                            dataIndex: 'mandatory',
                                             flex: 1,
                                             text: 'Obligatoire',
                                             falseText: 'non',

@@ -1073,6 +1073,30 @@
                 "app/store/DepContentsCombo.js"
             ],
             "className": "DepContentsCombo"
+        },
+        "8130c927-1032-4d5f-b157-d56672d37d52": {
+            "paths": [
+                "metadata/model/nestedContentModel",
+                "app/model/override/nestedContentModel.js",
+                "app/model/nestedContentModel.js"
+            ],
+            "className": "nestedContentModel"
+        },
+        "817bd763-92f6-4eb5-9b4c-817418ccc96f": {
+            "paths": [
+                "metadata/store/NestedContensStore",
+                "app/store/override/NestedContensStore.js",
+                "app/store/NestedContensStore.js"
+            ],
+            "className": "NestedContensStore"
+        },
+        "1a109b37-693d-4f8c-8b02-455dffd48a58": {
+            "paths": [
+                "metadata/view/NestedContentsGrid",
+                "app/view/override/NestedContentsGrid.js",
+                "app/view/NestedContentsGrid.js"
+            ],
+            "className": "NestedContentsGrid"
         }
     },
     "viewOrderMap": {
@@ -1132,7 +1156,8 @@
             "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
             "b1bc7398-38df-48e1-a226-5c63483e1eab",
             "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
-            "648ee02b-21bf-4d06-8c07-2e215977ab97"
+            "648ee02b-21bf-4d06-8c07-2e215977ab97",
+            "1a109b37-693d-4f8c-8b02-455dffd48a58"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",
@@ -1166,7 +1191,8 @@
             "ec6d87e1-455e-426b-8458-d7738082aeee",
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
-            "b4bbd262-e72b-4675-8908-02414ab69420"
+            "b4bbd262-e72b-4675-8908-02414ab69420",
+            "817bd763-92f6-4eb5-9b4c-817418ccc96f"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1188,6 +1214,7 @@
             "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
             "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
             "3895db21-6cb0-4c47-bbdb-6733b5e4684f",
+            "8130c927-1032-4d5f-b157-d56672d37d52",
             "b22a93f8-8da7-4af9-9421-f70e6693b540",
             "fe5d7737-8a9a-41fb-bffc-cc004c69d906",
             "959aada9-4d0a-400b-bb01-0907998b9c82",

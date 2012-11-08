@@ -77,28 +77,43 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             }
             var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
-            var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.vocabulaires;
+            var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
             var i=0;
             for (i=0; i<lesTaxo.length; i++) {
-                var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', lesTaxo[i].id);
-                var vocabAPlat= [ ];
-                this.miseAPlatTaxo(leVocab.data.terms.children, vocabAPlat);
-
+                var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', lesTaxo[i]);
                 var storeT = Ext.create('Ext.data.Store', {
-                    fields: ['terme'],
-                    data : vocabAPlat
+                    model:"Rubedo.model.taxonomyTermModel",
+                    remoteFilter:"true",
+                    autoLoad:true,
+                    proxy: {
+                        type: 'ajax',
+                        api: {
+                            read: 'taxonomy-terms'
+                        },
+                        reader: {
+                            type: 'json',
+                            messageProperty: 'message',
+                            root: 'data'
+                        }
+                    },
+                    filters: {
+                        property: 'vocabularyId',
+                        value: leVocab.get("id")
+                    }
+
                 });
 
 
                 var selecteur = Ext.widget('comboboxselect', {
                     name:lesTaxo[i].titre,
                     width:690,
-                    fieldLabel: leVocab.data.name,
+                    fieldLabel: leVocab.get("name"),
                     autoScroll: false,
                     store: storeT,
-                    queryMode: 'local',
-                    displayField: 'terme',
-                    valueField: 'terme',
+                    queryMode: 'remote',
+                    minChars:3,
+                    displayField: 'text',
+                    valueField: 'id',
                     filterPickList: true,
                     typeAhead: true,
                     forceSelection: !leVocab.data.expandable,
@@ -306,14 +321,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     }
     var tableauTaxoTC = Ext.getCmp('vocabulairesTypesContenusGrid');
     tableauTaxoTC.getSelectionModel().deselectAll();
-    var maTaxo= record.data.vocabulaires;
+    var maTaxo= record.get("vocabularies");
     var selectionR = [ ];
-    var i =0;
-    for (i=0; i<maTaxo.length; i++) {
-        var leVocab = tableauTaxoTC.getStore().findRecord('id', maTaxo[i].id);
-        selectionR.push(leVocab);
-        tableauTaxoTC.getSelectionModel().select(selectionR);
-    }
+    Ext.Array.forEach(maTaxo, function(someTaxoId){
+        selectionR.push(tableauTaxoTC.getStore().findRecord("id", someTaxoId));
+    });
+    tableauTaxoTC.getSelectionModel().select(selectionR);
+
     if (record.get("dependant")===false) {
         var tableauTCI = Ext.getCmp('TCImbriquesGrid');
         tableauTCI.getSelectionModel().deselectAll();
@@ -375,13 +389,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
             target.beginEdit();
             target.set("champs", champsR);
-            var nouvTaxoTC = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
-            var i=0;
-            var nouvTaxoR = [ ];
-            for (i=0; i<nouvTaxoTC.length; i++) {
-                nouvTaxoR.push({id: nouvTaxoTC[i].get("id")});
-            }
-            target.set("vocabulaires", nouvTaxoR);
+            var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
+            target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
             if (target.get("dependant") ===false) {
                 var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
                 target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
