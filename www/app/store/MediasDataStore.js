@@ -32,7 +32,7 @@ Ext.define('Rubedo.store.MediasDataStore', {
                 type: 'ajax',
                 api: {
                     create: 'medias/create',
-                    read: 'data/Medias.json',
+                    read: 'medias',
                     update: 'medias/update',
                     destroy: 'medias/delete'
                 },

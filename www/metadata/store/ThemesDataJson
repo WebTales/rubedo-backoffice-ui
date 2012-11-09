@@ -27,7 +27,7 @@
                 "api": [
                     "{\r",
                     "     create: 'themes/create',\r",
-                    "     read: 'data/Themes.json',\r",
+                    "     read: 'themes',\r",
                     "     update: 'themes/update',\r",
                     "     destroy: 'themes/delete'\r",
                     "}"

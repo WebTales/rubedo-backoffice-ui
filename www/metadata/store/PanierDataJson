@@ -26,11 +26,11 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy1",
                 "api": [
-                    "{",
-                    "                        'create':'panier/create',",
-                    "                        'read':'data/Panier.json',",
-                    "                        'update':'panier/update',",
-                    "                        'destroy':'panier/delete'",
+                    "{\r",
+                    "                        'create':'panier/create',\r",
+                    "                        'read':'panier',\r",
+                    "                        'update':'panier/update',\r",
+                    "                        'destroy':'panier/delete'\r",
                     "                }"
                 ],
                 "url": null

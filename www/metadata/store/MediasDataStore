@@ -27,7 +27,7 @@
                 "api": [
                     "{\r",
                     "     create: 'medias/create',\r",
-                    "     read: 'data/Medias.json',\r",
+                    "     read: 'medias',\r",
                     "     update: 'medias/update',\r",
                     "     destroy: 'medias/delete'\r",
                     "}"

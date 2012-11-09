@@ -33,7 +33,7 @@ Ext.define('Rubedo.store.PanierDataJson', {
                 type: 'ajax',
                 api: {
                     create: 'panier/create',
-                    read: 'data/Panier.json',
+                    read: 'panier',
                     update: 'panier/update',
                     destroy: 'panier/delete'
                 },

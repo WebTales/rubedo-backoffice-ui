@@ -27,7 +27,7 @@
                 "api": [
                     "{\r",
                     "     create: 'wallpapers/create',\r",
-                    "     read: 'data/Wallpapers.json',\r",
+                    "     read: 'wallpapers',\r",
                     "     update: 'wallpapers/update',\r",
                     "     destroy: 'wallpapers/delete'\r",
                     "}"

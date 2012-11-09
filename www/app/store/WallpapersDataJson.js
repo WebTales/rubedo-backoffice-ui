@@ -32,7 +32,7 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
                 type: 'ajax',
                 api: {
                     create: 'wallpapers/create',
-                    read: 'data/Wallpapers.json',
+                    read: 'wallpapers',
                     update: 'wallpapers/update',
                     destroy: 'wallpapers/delete'
                 },

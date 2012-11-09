@@ -32,7 +32,7 @@ Ext.define('Rubedo.store.ThemesDataJson', {
                 type: 'ajax',
                 api: {
                     create: 'themes/create',
-                    read: 'data/Themes.json',
+                    read: 'themes',
                     update: 'themes/update',
                     destroy: 'themes/delete'
                 },

@@ -27,7 +27,7 @@
                 "api": [
                     "{\r",
                     "     create: 'blocks/create',\r",
-                    "     read: 'data/Blocs.json',\r",
+                    "     read: 'blocks',\r",
                     "     update: 'blocks/update',\r",
                     "     destroy: 'blocks/delete'\r",
                     "}"
