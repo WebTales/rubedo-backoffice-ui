@@ -287,7 +287,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp('PaneauTCDetail').update(record.data);
     },
 
-    onGridviewSelect: function(dataviewmodel, record, options) {
+    selectTC: function(dataviewmodel, record, options) {
         Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
         Ext.getCmp("boutonSupprimerTypeContenu").enable();
         Ext.getCmp("TCfieldUp").disable();
@@ -448,7 +448,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
                 dependant: Ext.getCmp('champTCIsDep').getValue(),
-                fields: [ ]
+                fields: [ ],
+                vocabularies:[ ],
+                dependantTypes:[ ]
 
 
             });
@@ -456,8 +458,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             Ext.getCmp('nouveauTypeContenuFenetre').close();
             Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);
-            this.majAdminfTypesCentenus(Ext.getCmp('AdminfTypesGridView'), nouvType);
+            this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);
             Ext.getStore("TypesContenusNDepDataJson").load();
+            Ext.getStore("TypesContenusDepDataJson").load();
         }
     },
 
@@ -547,7 +550,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 itemdblclick: this.createThroughDblClick
             },
             "#AdminfTypesGrid": {
-                select: this.onGridviewSelect,
+                select: this.selectTC,
                 edit: this.onGridpanelEdit
             },
             "#boutonSupprimerTypeContenu": {
