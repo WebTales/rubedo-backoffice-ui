@@ -505,6 +505,29 @@
                 "designer|controlQuery": "#boutonSoumettreNouveauContenu"
             },
             "designerId": "b54053e6-c639-4ad5-819e-ed4b31921c1e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nestedContentsTabRender",
+                "fn": "nestedContentsTabRender",
+                "implHandler": [
+                    "if (Ext.isEmpty(Ext.getStore(\"DepContentsCombo\").getRange())) {\r",
+                    "    abstractcomponent.destroy();\r",
+                    "    Ext.getCmp(\"nestedContentsTab\").destroy();\r",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#nestedContensTabConfig"
+            },
+            "designerId": "e2089ef6-7bb1-42c2-b0be-68cbfaf929b7"
         }
     ]
 }

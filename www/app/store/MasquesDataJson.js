@@ -35,7 +35,7 @@ Ext.define('Rubedo.store.MasquesDataJson', {
                 type: 'ajax',
                 api: {
                     create: 'masks/create',
-                    read: 'data/Masques.json',
+                    read: 'masks',
                     update: 'masks/update',
                     destroy: 'masks/delete'
                 },

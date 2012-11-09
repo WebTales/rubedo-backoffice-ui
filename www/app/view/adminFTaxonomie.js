@@ -190,6 +190,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                     xtype: 'form',
                                     id: 'ProprietesTaxonomie',
                                     width: 300,
+                                    overflowY: 'auto',
                                     bodyPadding: 10,
                                     collapseDirection: 'left',
                                     collapsed: false,

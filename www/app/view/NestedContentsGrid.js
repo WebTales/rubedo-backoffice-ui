@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.NestedContentsGrid', {
     ],
 
     id: 'NestedContentsGrid',
-    store: 'NestedContensStore',
+    store: 'NestedContentsStore',
 
     initComponent: function() {
         var me = this;

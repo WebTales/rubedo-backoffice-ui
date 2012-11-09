@@ -38,11 +38,11 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy5",
                 "api": [
-                    "{",
-                    "create : 'masks/create',",
-                    "read : 'data/Masques.json',",
-                    "update : 'masks/update',",
-                    "destroy : 'masks/delete'",
+                    "{\r",
+                    "create : 'masks/create',\r",
+                    "read : 'masks',\r",
+                    "update : 'masks/update',\r",
+                    "destroy : 'masks/delete'\r",
                     "}"
                 ],
                 "url": null

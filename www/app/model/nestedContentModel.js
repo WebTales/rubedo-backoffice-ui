@@ -29,6 +29,9 @@ Ext.define('Rubedo.model.nestedContentModel', {
             name: 'typeId'
         },
         {
+            name: 'nestedContentId'
+        },
+        {
             name: 'version',
             type: 'auto'
         },

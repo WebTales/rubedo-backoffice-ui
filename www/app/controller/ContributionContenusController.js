@@ -255,6 +255,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.nContenuRecorder('pending',button.isUpdate);
     },
 
+    nestedContentsTabRender: function(abstractcomponent, options) {
+        if (Ext.isEmpty(Ext.getStore("DepContentsCombo").getRange())) {
+            abstractcomponent.destroy();
+            Ext.getCmp("nestedContentsTab").destroy();
+        }
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -326,6 +333,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#boutonSoumettreNouveauContenu": {
                 click: this.contentSaveAndSubmit
+            },
+            "#nestedContensTabConfig": {
+                render: this.nestedContentsTabRender
             }
         });
     }

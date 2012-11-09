@@ -69,7 +69,7 @@ Ext.application({
         'UsersComboStore',
         'CurrentUserDataStore',
         'DepContentsCombo',
-        'NestedContensStore'
+        'NestedContentsStore'
     ],
     views: [
         'MyContainer',

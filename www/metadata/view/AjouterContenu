@@ -416,6 +416,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel44",
+                        "id": "nestedContentsTab",
                         "layout": "fit",
                         "title": "Contenus dépendants"
                     },
@@ -429,7 +430,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "TabConfig29"
+                                "designer|userClassName": "TabConfig29",
+                                "id": "nestedContensTabConfig"
                             },
                             "designerId": "1a19d2e0-ed7b-4a6b-8bdd-5016b832a3fd"
                         },
@@ -442,12 +444,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "top",
-                                "designer|userClassName": "MyToolbar37"
+                                "designer|userClassName": "MyToolbar37",
+                                "height": 60
                             },
                             "designerId": "d0d74000-3ed4-406c-826c-ab9b49c52b79",
                             "cn": [
                                 {
-                                    "type": "combobox",
+                                    "type": "buttongroup",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -455,18 +458,67 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": null,
-                                        "designer|userClassName": "MyComboBox11",
-                                        "fieldLabel": "Type de contenu à ajouter ",
-                                        "labelWidth": 160,
-                                        "editable": false,
-                                        "displayField": "type",
-                                        "forceSelection": true,
-                                        "queryMode": "local",
-                                        "store": "DepContentsCombo",
-                                        "typeAhead": true,
-                                        "valueField": "id"
+                                        "designer|userClassName": "MyButtonGroup11",
+                                        "headerPosition": "bottom",
+                                        "title": "Ajouter un contenu dépendant",
+                                        "columns": 2
                                     },
-                                    "designerId": "d5278b74-bce1-4bb5-aed4-9908677587fd"
+                                    "designerId": "c12b109a-d515-4699-b267-8ea50a898a8a",
+                                    "cn": [
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox11",
+                                                "margin": null,
+                                                "fieldLabel": "Type de contenu à ajouter ",
+                                                "labelWidth": 160,
+                                                "editable": false,
+                                                "displayField": "type",
+                                                "forceSelection": true,
+                                                "queryMode": "local",
+                                                "store": "DepContentsCombo",
+                                                "typeAhead": true,
+                                                "valueField": "id"
+                                            },
+                                            "designerId": "d5278b74-bce1-4bb5-aed4-9908677587fd"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton143",
+                                                "iconCls": "add",
+                                                "text": "Ajouter"
+                                            },
+                                            "designerId": "277e8c37-fefb-411c-9df5-2907ac5f17f3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton144",
+                                        "iconAlign": "top",
+                                        "iconCls": "remove_big",
+                                        "scale": "large",
+                                        "text": "MyButton"
+                                    },
+                                    "designerId": "1c86a39c-654f-4f9e-9724-9cd10ccc3de6"
                                 }
                             ]
                         },

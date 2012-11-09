@@ -165,26 +165,52 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'panel',
+                            id: 'nestedContentsTab',
                             layout: {
                                 type: 'fit'
                             },
                             title: 'Contenus dépendants',
+                            tabConfig: {
+                                xtype: 'tab',
+                                id: 'nestedContensTabConfig'
+                            },
                             dockedItems: [
                                 {
                                     xtype: 'toolbar',
                                     dock: 'top',
+                                    height: 60,
                                     items: [
                                         {
-                                            xtype: 'combobox',
-                                            fieldLabel: 'Type de contenu à ajouter ',
-                                            labelWidth: 160,
-                                            editable: false,
-                                            displayField: 'type',
-                                            forceSelection: true,
-                                            queryMode: 'local',
-                                            store: 'DepContentsCombo',
-                                            typeAhead: true,
-                                            valueField: 'id'
+                                            xtype: 'buttongroup',
+                                            headerPosition: 'bottom',
+                                            title: 'Ajouter un contenu dépendant',
+                                            columns: 2,
+                                            items: [
+                                                {
+                                                    xtype: 'combobox',
+                                                    fieldLabel: 'Type de contenu à ajouter ',
+                                                    labelWidth: 160,
+                                                    editable: false,
+                                                    displayField: 'type',
+                                                    forceSelection: true,
+                                                    queryMode: 'local',
+                                                    store: 'DepContentsCombo',
+                                                    typeAhead: true,
+                                                    valueField: 'id'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'add',
+                                                    text: 'Ajouter'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconAlign: 'top',
+                                            iconCls: 'remove_big',
+                                            scale: 'large',
+                                            text: 'MyButton'
                                         }
                                     ]
                                 }
