@@ -178,10 +178,12 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 {
                                     xtype: 'toolbar',
                                     dock: 'top',
-                                    height: 60,
+                                    height: 54,
                                     items: [
                                         {
                                             xtype: 'buttongroup',
+                                            height: 50,
+                                            bodyPadding: 4,
                                             headerPosition: 'bottom',
                                             title: 'Ajouter un contenu dépendant',
                                             columns: 2,
@@ -200,6 +202,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    margin: '0 0 0 10',
                                                     iconCls: 'add',
                                                     text: 'Ajouter'
                                                 }
@@ -208,9 +211,39 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         {
                                             xtype: 'button',
                                             iconAlign: 'top',
-                                            iconCls: 'remove_big',
+                                            iconCls: 'remove_med',
+                                            scale: 'medium',
+                                            text: 'Supprimer'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconAlign: 'top',
+                                            iconCls: 'pencil_med',
+                                            scale: 'medium',
+                                            text: 'Modifier'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconAlign: 'top',
+                                            iconCls: 'online_med',
+                                            scale: 'medium',
+                                            text: 'Mettre en ligne'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconAlign: 'top',
+                                            iconCls: 'offline_med',
+                                            scale: 'medium',
+                                            text: 'Mettre hors  ligne'
+                                        },
+                                        {
+                                            xtype: 'tbfill'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconCls: 'info_big',
                                             scale: 'large',
-                                            text: 'MyButton'
+                                            text: ''
                                         }
                                     ]
                                 }

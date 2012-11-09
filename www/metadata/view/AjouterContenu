@@ -445,7 +445,7 @@
                             "userConfig": {
                                 "dock": "top",
                                 "designer|userClassName": "MyToolbar37",
-                                "height": 60
+                                "height": 54
                             },
                             "designerId": "d0d74000-3ed4-406c-826c-ab9b49c52b79",
                             "cn": [
@@ -459,6 +459,8 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButtonGroup11",
+                                        "height": 50,
+                                        "bodyPadding": 4,
                                         "headerPosition": "bottom",
                                         "title": "Ajouter un contenu dépendant",
                                         "columns": 2
@@ -496,6 +498,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton143",
+                                                "margin": "0 0 0 10",
                                                 "iconCls": "add",
                                                 "text": "Ajouter"
                                             },
@@ -514,11 +517,91 @@
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButton144",
                                         "iconAlign": "top",
-                                        "iconCls": "remove_big",
-                                        "scale": "large",
-                                        "text": "MyButton"
+                                        "iconCls": "remove_med",
+                                        "scale": "medium",
+                                        "text": "Supprimer"
                                     },
                                     "designerId": "1c86a39c-654f-4f9e-9724-9cd10ccc3de6"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton145",
+                                        "iconAlign": "top",
+                                        "iconCls": "pencil_med",
+                                        "scale": "medium",
+                                        "text": "Modifier"
+                                    },
+                                    "designerId": "f50bebd2-9f97-4a1f-ba76-a4b3c53612df"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton145",
+                                        "iconAlign": "top",
+                                        "iconCls": "online_med",
+                                        "scale": "medium",
+                                        "text": "Mettre en ligne"
+                                    },
+                                    "designerId": "18876897-54be-4304-b422-f55accf7470b"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton145",
+                                        "iconAlign": "top",
+                                        "iconCls": "offline_med",
+                                        "scale": "medium",
+                                        "text": "Mettre hors  ligne"
+                                    },
+                                    "designerId": "19a681bf-f959-42ba-8ac3-f8650d1136ee"
+                                },
+                                {
+                                    "type": "tbfill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyFill12"
+                                    },
+                                    "designerId": "4da4df51-41a0-44a7-8d33-bb77e0e18eee"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton148",
+                                        "iconCls": "info_big",
+                                        "scale": "large",
+                                        "text": ""
+                                    },
+                                    "designerId": "67a63c4c-cf71-4ce9-ab31-42d5db8bb669"
                                 }
                             ]
                         },

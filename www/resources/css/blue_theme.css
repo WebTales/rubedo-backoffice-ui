@@ -29,6 +29,12 @@ border-style:dashed !important;
 .offline_big{
 	background: url(../icones/blue/32x32/globe_down.png)  center no-repeat !important;
 }
+.online_med{
+	background: url(../icones/blue/24x24/globe_up.png)  center no-repeat !important;
+}
+.offline_med{
+	background: url(../icones/blue/24x24/globe_down.png)  center no-repeat !important;
+}
 .validation_submit_big{
 	background: url(../icones/blue/32x32/question_mark.png)  center no-repeat !important;
 }
@@ -99,7 +105,7 @@ border-style:dashed !important;
 	background: url(../icones/blue/32x32/pencil.png) left center no-repeat !important;
 }
 .pencil_med{
-	background: url(../icones/blue/24x24/pencil.png) left center no-repeat !important;
+	background: url(../icones/blue/24x24/pencil.png)  center no-repeat !important;
 }
 .image_edit{
 	background: url(../icones/blue/16x16/image_edit.png) left center no-repeat !important;
