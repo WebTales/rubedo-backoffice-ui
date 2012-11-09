@@ -104,7 +104,14 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     removeTerm: function(button, e, options) {
         var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
         if (Ext.isDefined(cible)) {
+            Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
+            var myParent=cible.parentNode;
+            if (myParent.childNodes.length==1){
+                myParent.set("leaf",true);
+            }
             cible.remove();
+            Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
+            Ext.getCmp('TermesTaxonomieTree').getStore().sync();
         }
         button.up().destroy();
     },
@@ -117,9 +124,13 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             if (champT.isValid()) {
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id")});
+                    Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
+                    cibleI.set("leaf",false);
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true});
                     cibleI.expand();
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
+                    Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
+                    Ext.getCmp('TermesTaxonomieTree').getStore().sync();
                 } 
 
 
@@ -190,7 +201,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 if (cibleI !== null) {
                     cibleI.set("text", champT.getValue());
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
-                    Ext.getCmp('TermesTaxonomieTree').getView().refresh();
                 } 
             }
         }
