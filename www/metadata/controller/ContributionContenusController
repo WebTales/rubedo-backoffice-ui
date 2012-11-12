@@ -53,7 +53,7 @@
                     "boiteMeta.update(customMeta);\r",
                     "var myDependantTypes= [ ];\r",
                     "Ext.Array.forEach(record.get(\"dependantTypes\"), function(someType){\r",
-                    "    myDependantTypes.push(Ext.getStore(\"TypesContenusDataJson\").findRecord(\"id\",someType));\r",
+                    "myDependantTypes.push(Ext.getStore(\"TypesContenusDataJson\").findRecord(\"id\",someType));\r",
                     "});\r",
                     "Ext.getStore(\"DepContentsCombo\").removeAll();\r",
                     "Ext.getStore(\"DepContentsCombo\").loadData(myDependantTypes);"
@@ -104,6 +104,83 @@
                 "designer|controlQuery": "#boutonEnregistrerNouveauContenu"
             },
             "designerId": "43982057-d428-4c80-892d-67f635c19e58"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "putNestedContentsOffline",
+                "fn": "putNestedContentsOffline",
+                "implHandler": [
+                    "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
+                    "myStore.suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection(), function(nesC){\r",
+                    "nesC.set(\"online\", false);\r",
+                    "});\r",
+                    "myStore.resumeAutoSync();\r",
+                    "myStore.sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentsOfflineBtn"
+            },
+            "designerId": "87d8077d-4130-4766-b7fe-4ed15619aff3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nestedContentsSelect",
+                "fn": "nestedContentsSelect",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    Ext.getCmp(\"nestedContentsDeleteBtn\").disable();\r",
+                    "    Ext.getCmp(\"nestedContentsModifyBtn\").disable();\r",
+                    "    Ext.getCmp(\"nestedContentsOnlineBtn\").disable();\r",
+                    "    Ext.getCmp(\"nestedContentsOfflineBtn\").disable();\r",
+                    "} else if (selections.length==1) {\r",
+                    "    Ext.getCmp(\"nestedContentsDeleteBtn\").enable();\r",
+                    "    Ext.getCmp(\"nestedContentsModifyBtn\").enable();\r",
+                    "    if (selections[0].get(\"online\")){\r",
+                    "        Ext.getCmp(\"nestedContentsOnlineBtn\").disable();\r",
+                    "        Ext.getCmp(\"nestedContentsOfflineBtn\").enable();\r",
+                    "    } else {\r",
+                    "        Ext.getCmp(\"nestedContentsOnlineBtn\").enable();\r",
+                    "        Ext.getCmp(\"nestedContentsOfflineBtn\").disable();\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"nestedContentsModifyBtn\").disable();\r",
+                    "    Ext.getCmp(\"nestedContentsDeleteBtn\").enable();    \r",
+                    "    var onlines = [];\r",
+                    "    Ext.Array.forEach(selections, function(someContent){\r",
+                    "        Ext.Array.include(onlines, someContent.get(\"online\"));\r",
+                    "    });\r",
+                    "    if (onlines.length>1) {\r",
+                    "        Ext.getCmp(\"nestedContentsOnlineBtn\").disable();\r",
+                    "        Ext.getCmp(\"nestedContentsOfflineBtn\").disable();        \r",
+                    "    } else {\r",
+                    "          if (onlines[0]) {\r",
+                    "              Ext.getCmp(\"nestedContentsOnlineBtn\").disable();\r",
+                    "          } else {\r",
+                    "             Ext.getCmp(\"nestedContentsOfflineBtn\").disable();\r",
+                    "          }}\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#NestedContentsGrid"
+            },
+            "designerId": "7c34508b-b7bf-46cc-9bbd-67b7260dcd4f"
         },
         {
             "type": "basicfunction",
@@ -287,16 +364,16 @@
                     "    var statuses = [];\r",
                     "    var onlines = [];\r",
                     "    Ext.Array.forEach(selections, function(someContent){\r",
-                    "    Ext.Array.include(statuses, someContent.get(\"status\"));\r",
-                    "    Ext.Array.include(onlines, someContent.get(\"online\"));\r",
+                    "        Ext.Array.include(statuses, someContent.get(\"status\"));\r",
+                    "        Ext.Array.include(onlines, someContent.get(\"online\"));\r",
                     "    });\r",
                     "    if (statuses.length>1){\r",
                     "        Ext.getCmp(\"contribWorkflowBox\").disable();\r",
                     "        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');\r",
                     "\r",
                     "    } else {\r",
-                    "            Ext.Array.forEach(Ext.getCmp(\"contribWorkflowBox\").items.items, function(item){item.enable();});        \r",
-                    "            if (statuses[0]==\"published\") {\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"contribWorkflowBox\").items.items, function(item){item.enable();});        \r",
+                    "        if (statuses[0]==\"published\") {\r",
                     "            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');\r",
                     "            Ext.getCmp(\"contentAcceptPublishBtn\").disable();\r",
                     "            Ext.getCmp(\"contentSubmitValBtn\").disable();\r",
@@ -306,11 +383,11 @@
                     "                Ext.getCmp(\"contentOfflineBtn\").disable();\r",
                     "\r",
                     "            }else {\r",
-                    "            if (onlines[0]) {\r",
-                    "                Ext.getCmp(\"contentOnlineBtn\").disable();\r",
-                    "            } else {\r",
-                    "                Ext.getCmp(\"contentOfflineBtn\").disable();\r",
-                    "            }}\r",
+                    "                if (onlines[0]) {\r",
+                    "                    Ext.getCmp(\"contentOnlineBtn\").disable();\r",
+                    "                } else {\r",
+                    "                    Ext.getCmp(\"contentOfflineBtn\").disable();\r",
+                    "                }}\r",
                     "            } else if (statuses[0]==\"pending\") {\r",
                     "                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');\r",
                     "                Ext.getCmp(\"contentSubmitValBtn\").disable();\r",
@@ -323,11 +400,11 @@
                     "                Ext.getCmp(\"contentOfflineBtn\").disable();\r",
                     "                Ext.getCmp(\"contentRefuseBtn\").disable();\r",
                     "            }\r",
+                    "        }\r",
+                    "        customMeta=selections.length+\" Contenus\";\r",
                     "    }\r",
-                    "    customMeta=selections.length+\" Contenus\";\r",
-                    "}\r",
                     "\r",
-                    "boiteMeta.update(customMeta);"
+                    "    boiteMeta.update(customMeta);"
                 ],
                 "name": "selectionchange",
                 "scope": "me",
@@ -528,6 +605,52 @@
                 "designer|controlQuery": "#nestedContensTabConfig"
             },
             "designerId": "e2089ef6-7bb1-42c2-b0be-68cbfaf929b7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nestedContentsDelete",
+                "fn": "nestedContentsDelete",
+                "implHandler": [
+                    "Ext.getCmp(\"NestedContentsGrid\").getStore().remove(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentsDeleteBtn"
+            },
+            "designerId": "c3974fbb-2e52-4e6f-986a-7b7761b2adee"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "putNestedContentsOnline",
+                "fn": "putNestedContentsOnline",
+                "implHandler": [
+                    "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
+                    "myStore.suspendAutoSync();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection(), function(nesC){\r",
+                    "nesC.set(\"online\", true);\r",
+                    "});\r",
+                    "myStore.resumeAutoSync();\r",
+                    "myStore.sync();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentsOnlineBtn"
+            },
+            "designerId": "b6ad5fdb-bf2f-463f-834e-aa0c589df945"
         }
     ]
 }

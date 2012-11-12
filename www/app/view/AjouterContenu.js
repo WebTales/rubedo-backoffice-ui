@@ -192,6 +192,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     xtype: 'combobox',
                                                     fieldLabel: 'Type de contenu à ajouter ',
                                                     labelWidth: 160,
+                                                    allowBlank: false,
                                                     editable: false,
                                                     displayField: 'type',
                                                     forceSelection: true,
@@ -210,6 +211,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'button',
+                                            disabled: true,
+                                            id: 'nestedContentsDeleteBtn',
                                             iconAlign: 'top',
                                             iconCls: 'remove_med',
                                             scale: 'medium',
@@ -217,6 +220,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'button',
+                                            disabled: true,
+                                            id: 'nestedContentsModifyBtn',
                                             iconAlign: 'top',
                                             iconCls: 'pencil_med',
                                             scale: 'medium',
@@ -224,6 +229,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'button',
+                                            disabled: true,
+                                            id: 'nestedContentsOnlineBtn',
                                             iconAlign: 'top',
                                             iconCls: 'online_med',
                                             scale: 'medium',
@@ -231,6 +238,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'button',
+                                            disabled: true,
+                                            id: 'nestedContentsOfflineBtn',
                                             iconAlign: 'top',
                                             iconCls: 'offline_med',
                                             scale: 'medium',

@@ -479,6 +479,7 @@
                                                 "margin": null,
                                                 "fieldLabel": "Type de contenu à ajouter ",
                                                 "labelWidth": 160,
+                                                "allowBlank": false,
                                                 "editable": false,
                                                 "displayField": "type",
                                                 "forceSelection": true,
@@ -516,6 +517,8 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButton144",
+                                        "disabled": true,
+                                        "id": "nestedContentsDeleteBtn",
                                         "iconAlign": "top",
                                         "iconCls": "remove_med",
                                         "scale": "medium",
@@ -533,6 +536,8 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButton145",
+                                        "disabled": true,
+                                        "id": "nestedContentsModifyBtn",
                                         "iconAlign": "top",
                                         "iconCls": "pencil_med",
                                         "scale": "medium",
@@ -550,6 +555,8 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButton145",
+                                        "disabled": true,
+                                        "id": "nestedContentsOnlineBtn",
                                         "iconAlign": "top",
                                         "iconCls": "online_med",
                                         "scale": "medium",
@@ -567,6 +574,8 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "designer|userClassName": "MyButton145",
+                                        "disabled": true,
+                                        "id": "nestedContentsOfflineBtn",
                                         "iconAlign": "top",
                                         "iconCls": "offline_med",
                                         "scale": "medium",

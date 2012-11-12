@@ -63,6 +63,51 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.nContenuRecorder('draft', button.isUpdate);
     },
 
+    putNestedContentsOffline: function(button, e, options) {
+        var myStore = Ext.getCmp("NestedContentsGrid").getStore();
+        myStore.suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection(), function(nesC){
+            nesC.set("online", false);
+        });
+        myStore.resumeAutoSync();
+        myStore.sync();
+    },
+
+    nestedContentsSelect: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("nestedContentsDeleteBtn").disable();
+            Ext.getCmp("nestedContentsModifyBtn").disable();
+            Ext.getCmp("nestedContentsOnlineBtn").disable();
+            Ext.getCmp("nestedContentsOfflineBtn").disable();
+        } else if (selections.length==1) {
+            Ext.getCmp("nestedContentsDeleteBtn").enable();
+            Ext.getCmp("nestedContentsModifyBtn").enable();
+            if (selections[0].get("online")){
+                Ext.getCmp("nestedContentsOnlineBtn").disable();
+                Ext.getCmp("nestedContentsOfflineBtn").enable();
+            } else {
+                Ext.getCmp("nestedContentsOnlineBtn").enable();
+                Ext.getCmp("nestedContentsOfflineBtn").disable();
+            }
+        } else {
+            Ext.getCmp("nestedContentsModifyBtn").disable();
+            Ext.getCmp("nestedContentsDeleteBtn").enable();    
+            var onlines = [];
+            Ext.Array.forEach(selections, function(someContent){
+                Ext.Array.include(onlines, someContent.get("online"));
+            });
+            if (onlines.length>1) {
+                Ext.getCmp("nestedContentsOnlineBtn").disable();
+                Ext.getCmp("nestedContentsOfflineBtn").disable();        
+            } else {
+                if (onlines[0]) {
+                    Ext.getCmp("nestedContentsOnlineBtn").disable();
+                } else {
+                    Ext.getCmp("nestedContentsOfflineBtn").disable();
+                }}
+            }
+    },
+
     contentDelete: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();
         this.getContenusDataJsonStore().remove(cible);
@@ -262,6 +307,20 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
+    nestedContentsDelete: function(button, e, options) {
+        Ext.getCmp("NestedContentsGrid").getStore().remove(Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection());
+    },
+
+    putNestedContentsOnline: function(button, e, options) {
+        var myStore = Ext.getCmp("NestedContentsGrid").getStore();
+        myStore.suspendAutoSync();
+        Ext.Array.forEach(Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection(), function(nesC){
+            nesC.set("online", true);
+        });
+        myStore.resumeAutoSync();
+        myStore.sync();
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -306,6 +365,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             "#boutonEnregistrerNouveauContenu": {
                 click: this.contentSave
             },
+            "#nestedContentsOfflineBtn": {
+                click: this.putNestedContentsOffline
+            },
+            "#NestedContentsGrid": {
+                selectionchange: this.nestedContentsSelect
+            },
             "#boutonSupprimerContenu": {
                 click: this.contentDelete
             },
@@ -336,6 +401,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#nestedContensTabConfig": {
                 render: this.nestedContentsTabRender
+            },
+            "#nestedContentsDeleteBtn": {
+                click: this.nestedContentsDelete
+            },
+            "#nestedContentsOnlineBtn": {
+                click: this.putNestedContentsOnline
             }
         });
     }
