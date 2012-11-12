@@ -26,7 +26,22 @@ Ext.define('Rubedo.store.NestedContentsStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'NestedContentsStore',
-            model: 'Rubedo.model.nestedContentModel'
+            model: 'Rubedo.model.nestedContentModel',
+            listeners: {
+                update: {
+                    fn: me.onStoreUpdate,
+                    scope: me
+                }
+            },
+            groupers: {
+                property: 'typeId'
+            }
         }, cfg)]);
+    },
+
+    onStoreUpdate: function(abstractstore, record, operation, options) {
+        Rubedo.controller.ContributionContenusController.prototype.nestedContentsSelect(Ext.getCmp("NestedContentsGrid"), Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection());
+
     }
+
 });

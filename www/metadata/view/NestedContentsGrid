@@ -128,6 +128,58 @@
                 "designer|userClassName": "MyCheckboxSelectionModel5"
             },
             "designerId": "ffa17544-3abd-4e72-a4a9-f37c4f1ce274"
+        },
+        {
+            "type": "groupinggridfeature",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGroupingFeature3",
+                "enableGroupingMenu": false
+            },
+            "designerId": "4857f368-7d2a-41cc-b239-95daf8b38792",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "groupHeaderTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "groupHeaderTpl",
+                        "implHandler": [
+                            "Type : {name:this.formatName}"
+                        ],
+                        "designer|displayName": "groupHeaderTpl"
+                    },
+                    "designerId": "c590964c-1efc-49f4-8ee2-f8d0917431b4",
+                    "cn": [
+                        {
+                            "type": "templatefunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "formatName",
+                                "fn": "formatName",
+                                "designer|params": [
+                                    "name"
+                                ],
+                                "implHandler": [
+                                    "return(Ext.getStore('DepContentsCombo').findRecord(\"id\",name).get(\"type\"));"
+                                ]
+                            },
+                            "designerId": "a5844abc-c128-4333-8401-d47923b79963"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

@@ -12,5 +12,40 @@
         "model": "nestedContentModel"
     },
     "id": "ExtBox1-ext-gen5851",
-    "designerId": "817bd763-92f6-4eb5-9b4c-817418ccc96f"
+    "designerId": "817bd763-92f6-4eb5-9b4c-817418ccc96f",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onStoreUpdate",
+                "fn": "onStoreUpdate",
+                "implHandler": [
+                    "Rubedo.controller.ContributionContenusController.prototype.nestedContentsSelect(Ext.getCmp(\"NestedContentsGrid\"), Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection());\r",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "designerId": "425fcc41-c269-48df-babe-0bcb2b9c29e7"
+        },
+        {
+            "type": "grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGrouper3",
+                "property": "typeId",
+                "root": null
+            },
+            "designerId": "3d04bb23-cec3-48a8-b92f-989a5b0e80ce"
+        }
+    ]
 }

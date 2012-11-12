@@ -66,7 +66,21 @@ Ext.define('Rubedo.view.NestedContentsGrid', {
             ],
             selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-            })
+            }),
+            features: [
+                {
+                    ftype: 'grouping',
+                    enableGroupingMenu: false,
+                    groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                        'Type : {name:this.formatName}',
+                        {
+                            formatName: function(name) {
+                                return(Ext.getStore('DepContentsCombo').findRecord("id",name).get("type"));
+                            }
+                        }
+                    )
+                }
+            ]
         });
 
         me.callParent(arguments);
