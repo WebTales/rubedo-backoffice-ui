@@ -321,6 +321,87 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         myStore.sync();
     },
 
+    addNestedContent: function(button, e, options) {
+        if (Ext.getCmp("nestedContentsAddCombo").isValid()) {
+            var myType=Ext.getCmp("nestedContentsAddCombo").getStore().findRecord("id",Ext.getCmp("nestedContentsAddCombo").getValue());
+            var myWindow = Ext.widget('NestedContentAddWindow');
+            Ext.getCmp('ViewportPrimaire').add(myWindow);
+            if (Ext.isDefined(window.innerHeight)) {
+                if (myWindow.height>(window.innerHeight-40)) {myWindow.setHeight((window.innerHeight-40));}
+                if (myWindow.width>(window.innerWidth)) {myWindow.setWidth((window.innerWidth));}
+            }
+            myWindow.show();
+            var formulaireTC = Ext.getCmp('nestedContentsFieldBox');
+            var champsD =myType.get("champs");
+            Ext.Array.forEach(champsD,function(donnees) {
+                var configurateur = Ext.clone(donnees.config);
+                if (donnees.cType =='treepicker'){ 
+                    var monStore= Ext.getStore(donnees.store);
+                    configurateur.store = monStore;
+                    monStore.load();
+                }
+                else if (donnees.cType == 'combobox') {
+                    var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
+                    configurateur.store = monStore;
+                }
+                var nouvChamp = Ext.widget(donnees.cType, configurateur);
+                nouvChamp.config=Ext.clone(donnees.config);
+                if (donnees.cType =='triggerfield'){ 
+                    var Ouvrir = Ext.clone(donnees.ouvrir);
+                    nouvChamp.onTriggerClick= function() {
+                        var fenetre = Ext.widget(Ouvrir);
+                        fenetre.showAt(screen.width/2-200, 100);
+                    } ; 
+                    nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+                }  
+                nouvChamp.anchor = '90%';
+                nouvChamp.style = '{float:left;}';
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(nouvChamp);
+                enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+                if (nouvChamp.multivalued) {
+                    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+
+                };
+                formulaireTC.add(enrobage);
+
+            });
+        }
+    },
+
+    saveNestedContent: function(button, e, options) {
+        this.nestedContentRecorder(button.isUpdate);
+    },
+
+    nestedContentEdit: function(button, e, options) {
+        var cible = Ext.getCmp('NestedContentsGrid').getSelectionModel().getSelection()[0];
+        Ext.getCmp("nestedContentsAddCombo").setValue(cible.get("typeId"));
+        Ext.getCmp("nestedContentsAddBtn").fireEvent("click");
+        Ext.getCmp('nestedContentsFieldBox').getForm().setValues(cible.get("fields"));
+        Ext.Object.each(cible.get("fields"), function(key, value, myself){
+            if (Ext.isArray(value)) {
+                var multiField=Ext.getCmp('nestedContentsFieldBox').query('[name='+key+']')[0];
+                var y=0;
+                if (multiField.multivalued) {
+                    Ext.Array.each(value,function(val,index){
+                        if (index>0) {
+                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                        }
+                        Ext.getCmp('nestedContentsFieldBox').query('[name='+key+']')[index].setValue(val);
+                    }); 
+                }
+            }
+        });
+
+
+        Ext.getCmp("nestedContentRecordBtn").isUpdate=true;
+        Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu imbriqué");
+    },
+
+    NCDblClickEdit: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("nestedContentsModifyBtn").fireEvent("click");
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -338,7 +419,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
             } 
             else {
-                var nContenu = Ext.create('model.contenusDataModel', {
+                var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
                     text: champs.text,
                     champs: champs,
                     taxonomie:taxonomie,
@@ -351,6 +432,31 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp('ContenusGrid').getStore().add(nContenu);
             }
             Ext.getCmp('ajouterContenu').close();
+        }
+    },
+
+    nestedContentRecorder: function(update) {
+        if (Ext.getCmp("nestedContentsFieldBox").getForm().isValid()){
+            var fields=Ext.getCmp("nestedContentsFieldBox").getForm().getValues();
+            if (update) {
+                var myRec =Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection()[0];
+                myRec.beginEdit();
+                myRec.set("text",fields.text);
+                myRec.set("fields",fields);
+                myRec.endEdit();
+
+            } 
+            else {
+                var nContenu = Ext.create('Rubedo.model.nestedContentModel', {
+                    text: fields.text,
+                    fields: fields,
+                    typeId: Ext.getCmp('nestedContentsAddCombo').getValue()
+
+                });
+
+                Ext.getCmp("NestedContentsGrid").getStore().add(nContenu);
+            }
+            Ext.getCmp('NestedContentAddWindow').close();
         }
     },
 
@@ -369,7 +475,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 click: this.putNestedContentsOffline
             },
             "#NestedContentsGrid": {
-                selectionchange: this.nestedContentsSelect
+                selectionchange: this.nestedContentsSelect,
+                itemdblclick: this.NCDblClickEdit
             },
             "#boutonSupprimerContenu": {
                 click: this.contentDelete
@@ -407,6 +514,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#nestedContentsOnlineBtn": {
                 click: this.putNestedContentsOnline
+            },
+            "#nestedContentsAddBtn": {
+                click: this.addNestedContent
+            },
+            "#nestedContentRecordBtn": {
+                click: this.saveNestedContent
+            },
+            "#nestedContentsModifyBtn": {
+                click: this.nestedContentEdit
             }
         });
     }

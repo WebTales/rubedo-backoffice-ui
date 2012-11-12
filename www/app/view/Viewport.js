@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.Viewport', {
     renderTo: Ext.getBody(),
     requires: [
         'Rubedo.view.AjouterContenu',
+        'Rubedo.view.NestedContentAddWindow',
         'Rubedo.view.ChampTC',
         'Rubedo.view.ConfigSpecBloc',
         'Rubedo.view.DelConfirmZ',

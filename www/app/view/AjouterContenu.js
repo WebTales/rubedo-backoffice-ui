@@ -169,7 +169,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             layout: {
                                 type: 'fit'
                             },
-                            title: 'Contenus dépendants',
+                            title: 'Contenus Imbriqués',
                             tabConfig: {
                                 xtype: 'tab',
                                 id: 'nestedContensTabConfig'
@@ -185,11 +185,12 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             height: 50,
                                             bodyPadding: 4,
                                             headerPosition: 'bottom',
-                                            title: 'Ajouter un contenu dépendant',
+                                            title: 'Ajouter un contenu imbriqué',
                                             columns: 2,
                                             items: [
                                                 {
                                                     xtype: 'combobox',
+                                                    id: 'nestedContentsAddCombo',
                                                     fieldLabel: 'Type de contenu à ajouter ',
                                                     labelWidth: 160,
                                                     allowBlank: false,
@@ -203,6 +204,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    id: 'nestedContentsAddBtn',
                                                     margin: '0 0 0 10',
                                                     iconCls: 'add',
                                                     text: 'Ajouter'

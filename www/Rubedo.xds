@@ -1097,11 +1097,20 @@
                 "app/view/NestedContentsGrid.js"
             ],
             "className": "NestedContentsGrid"
+        },
+        "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c": {
+            "paths": [
+                "metadata/view/NestedContentAddWindow",
+                "app/view/override/NestedContentAddWindow.js",
+                "app/view/NestedContentAddWindow.js"
+            ],
+            "className": "NestedContentAddWindow"
         }
     },
     "viewOrderMap": {
         "view": [
             "b6ffe1bc-b42f-4987-9728-a2d2563012af",
+            "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c",
             "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
             "2de13705-89e4-4cfe-abe7-36d5129e9aca",
             "41d656a3-49d4-4a9c-ab7d-f13817e6085f",

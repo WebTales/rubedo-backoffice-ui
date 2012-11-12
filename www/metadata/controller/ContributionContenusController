@@ -213,7 +213,7 @@
                     "\r",
                     "    } \r",
                     "    else {\r",
-                    "        var nContenu = Ext.create('model.contenusDataModel', {\r",
+                    "        var nContenu = Ext.create('Rubedo.model.contenusDataModel', {\r",
                     "            text: champs.text,\r",
                     "            champs: champs,\r",
                     "            taxonomie:taxonomie,\r",
@@ -651,6 +651,191 @@
                 "designer|controlQuery": "#nestedContentsOnlineBtn"
             },
             "designerId": "b6ad5fdb-bf2f-463f-834e-aa0c589df945"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "addNestedContent",
+                "fn": "addNestedContent",
+                "implHandler": [
+                    "if (Ext.getCmp(\"nestedContentsAddCombo\").isValid()) {\r",
+                    "    var myType=Ext.getCmp(\"nestedContentsAddCombo\").getStore().findRecord(\"id\",Ext.getCmp(\"nestedContentsAddCombo\").getValue());\r",
+                    "    var myWindow = Ext.widget('NestedContentAddWindow');\r",
+                    "    Ext.getCmp('ViewportPrimaire').add(myWindow);\r",
+                    "    if (Ext.isDefined(window.innerHeight)) {\r",
+                    "        if (myWindow.height>(window.innerHeight-40)) {myWindow.setHeight((window.innerHeight-40));}\r",
+                    "        if (myWindow.width>(window.innerWidth)) {myWindow.setWidth((window.innerWidth));}\r",
+                    "    }\r",
+                    "    myWindow.show();\r",
+                    "    var formulaireTC = Ext.getCmp('nestedContentsFieldBox');\r",
+                    "    var champsD =myType.get(\"champs\");\r",
+                    "    Ext.Array.forEach(champsD,function(donnees) {\r",
+                    "        var configurateur = Ext.clone(donnees.config);\r",
+                    "        if (donnees.cType =='treepicker'){ \r",
+                    "            var monStore= Ext.getStore(donnees.store);\r",
+                    "            configurateur.store = monStore;\r",
+                    "            monStore.load();\r",
+                    "        }\r",
+                    "        else if (donnees.cType == 'combobox') {\r",
+                    "            var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));\r",
+                    "            configurateur.store = monStore;\r",
+                    "        }\r",
+                    "        var nouvChamp = Ext.widget(donnees.cType, configurateur);\r",
+                    "        nouvChamp.config=Ext.clone(donnees.config);\r",
+                    "        if (donnees.cType =='triggerfield'){ \r",
+                    "            var Ouvrir = Ext.clone(donnees.ouvrir);\r",
+                    "            nouvChamp.onTriggerClick= function() {\r",
+                    "                var fenetre = Ext.widget(Ouvrir);\r",
+                    "                fenetre.showAt(screen.width/2-200, 100);\r",
+                    "            } ; \r",
+                    "            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);\r",
+                    "        }  \r",
+                    "        nouvChamp.anchor = '90%';\r",
+                    "        nouvChamp.style = '{float:left;}';\r",
+                    "        var enrobage =Ext.widget('ChampTC');\r",
+                    "        enrobage.add(nouvChamp);\r",
+                    "        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
+                    "        if (nouvChamp.multivalued) {\r",
+                    "            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));\r",
+                    "\r",
+                    "        };\r",
+                    "        formulaireTC.add(enrobage);\r",
+                    "\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentsAddBtn"
+            },
+            "designerId": "ccc66b9c-5a97-416f-ae83-84c635ac8e29"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nestedContentRecorder",
+                "fn": "nestedContentRecorder",
+                "designer|params": [
+                    "update"
+                ],
+                "implHandler": [
+                    "if (Ext.getCmp(\"nestedContentsFieldBox\").getForm().isValid()){\r",
+                    "    var fields=Ext.getCmp(\"nestedContentsFieldBox\").getForm().getValues();\r",
+                    "    if (update) {\r",
+                    "        var myRec =Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection()[0];\r",
+                    "        myRec.beginEdit();\r",
+                    "        myRec.set(\"text\",fields.text);\r",
+                    "        myRec.set(\"fields\",fields);\r",
+                    "        myRec.endEdit();\r",
+                    "\r",
+                    "    } \r",
+                    "    else {\r",
+                    "        var nContenu = Ext.create('Rubedo.model.nestedContentModel', {\r",
+                    "            text: fields.text,\r",
+                    "            fields: fields,\r",
+                    "            typeId: Ext.getCmp('nestedContentsAddCombo').getValue()\r",
+                    "\r",
+                    "        });\r",
+                    "\r",
+                    "        Ext.getCmp(\"NestedContentsGrid\").getStore().add(nContenu);\r",
+                    "    }\r",
+                    "    Ext.getCmp('NestedContentAddWindow').close();\r",
+                    "}"
+                ]
+            },
+            "designerId": "e3e4e254-cc5e-4ecf-8755-659164383223"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveNestedContent",
+                "fn": "saveNestedContent",
+                "implHandler": [
+                    "this.nestedContentRecorder(button.isUpdate);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentRecordBtn"
+            },
+            "designerId": "9fe56c18-95bf-4c2e-a4a4-4319db241081"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nestedContentEdit",
+                "fn": "nestedContentEdit",
+                "implHandler": [
+                    "var cible = Ext.getCmp('NestedContentsGrid').getSelectionModel().getSelection()[0];\r",
+                    "Ext.getCmp(\"nestedContentsAddCombo\").setValue(cible.get(\"typeId\"));\r",
+                    "Ext.getCmp(\"nestedContentsAddBtn\").fireEvent(\"click\");\r",
+                    "Ext.getCmp('nestedContentsFieldBox').getForm().setValues(cible.get(\"fields\"));\r",
+                    "Ext.Object.each(cible.get(\"fields\"), function(key, value, myself){\r",
+                    "    if (Ext.isArray(value)) {\r",
+                    "        var multiField=Ext.getCmp('nestedContentsFieldBox').query('[name='+key+']')[0];\r",
+                    "        var y=0;\r",
+                    "        if (multiField.multivalued) {\r",
+                    "            Ext.Array.each(value,function(val,index){\r",
+                    "                if (index>0) {\r",
+                    "                    multiField.up().getComponent('boutonReplicateurChamps').fireEvent(\"click\",multiField.up().getComponent('boutonReplicateurChamps'));\r",
+                    "                }\r",
+                    "                Ext.getCmp('nestedContentsFieldBox').query('[name='+key+']')[index].setValue(val);\r",
+                    "            }); \r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "\r",
+                    "Ext.getCmp(\"nestedContentRecordBtn\").isUpdate=true;\r",
+                    "Ext.getCmp('ajouterContenu').setTitle(\"Modifier un contenu imbriqué\");"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#nestedContentsModifyBtn"
+            },
+            "designerId": "c95e30f7-faca-4c58-875f-27f2e815b47d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "NCDblClickEdit",
+                "fn": "NCDblClickEdit",
+                "implHandler": [
+                    "Ext.getCmp(\"nestedContentsModifyBtn\").fireEvent(\"click\");"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#NestedContentsGrid"
+            },
+            "designerId": "575594ef-2357-4a76-b58a-b2bad0120ca7"
         }
     ]
 }

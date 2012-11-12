@@ -1,0 +1,167 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "NestedContentAddWindow",
+        "designer|userAlias": "NestedContentAddWindow",
+        "floating": true,
+        "height": 500,
+        "id": "NestedContentAddWindow",
+        "width": 900,
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "iconCls": "documentDep",
+        "title": "Nouveau Contenu Imbriqué",
+        "constrainHeader": true,
+        "maximizable": true,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen18656",
+    "designerId": "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar14"
+            },
+            "designerId": "a241ddd5-fdd2-44f9-a3ee-4edd5307ce46",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill10"
+                    },
+                    "designerId": "ade30501-96ce-4ec5-af84-97fcb1bdb130"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "isUpdate": false,
+                        "layout|flex": null,
+                        "layout|margins": null,
+                        "designer|userClassName": "MyButton49",
+                        "id": "nestedContentRecordBtn",
+                        "iconCls": "save",
+                        "text": "Enregistrer"
+                    },
+                    "configAlternates": {
+                        "isUpdate": "boolean"
+                    },
+                    "designerId": "ccf0628d-df06-47ba-9692-e367ff4d9284",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "isUpdate",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm3",
+                "height": 101,
+                "id": "nestedContentsFieldBox",
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "b1dbf2f3-cbdd-4601-ac89-4f82627a7120",
+            "cn": [
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "ChampTC",
+                        "designer|userAlias": "ChampTC",
+                        "padding": 10,
+                        "layout": "anchor"
+                    },
+                    "designerId": "f849470d-bac7-40d0-99c6-1003a109c5e8",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "90%",
+                                "designer|userClassName": "MyTextField1",
+                                "style": [
+                                    "{float:left}"
+                                ],
+                                "name": "text",
+                                "fieldLabel": "Titre ",
+                                "allowBlank": false
+                            },
+                            "designerId": "aa34c731-a68c-4407-9fb5-4ace47e8fe8f"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton17",
+                                "itemId": "helpBouton",
+                                "margin": null,
+                                "style": [
+                                    "{float:right;}"
+                                ],
+                                "allowDepress": null,
+                                "enableToggle": null,
+                                "handleMouseEvents": false,
+                                "iconCls": "help",
+                                "pressed": null,
+                                "pressedCls": "x-btn",
+                                "text": "",
+                                "tooltip": [
+                                    "'Titre du contenu. Obligatoire.'"
+                                ]
+                            },
+                            "designerId": "69ae1ddb-c03f-4ce9-aff9-8450f6028056"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
