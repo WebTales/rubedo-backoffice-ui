@@ -154,13 +154,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.contents",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionContenus",
                         "margin": null,
                         "iconCls": "content-icon",
                         "text": "Contenus"
                     },
-                    "designerId": "835f100d-6054-4611-93f2-d423b3823b89"
+                    "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

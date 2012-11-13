@@ -176,6 +176,15 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    id: 'boutonCopierTC',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
                                     id: 'ajouterPanierTC',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',
@@ -189,15 +198,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     iconCls: 'favorite_add_big',
                                     scale: 'large',
                                     text: 'Ajouter aux favoris'
-                                },
-                                {
-                                    xtype: 'button',
-                                    ACL: 'write.ui.contentTypes',
-                                    id: 'boutonCopierTC',
-                                    iconAlign: 'top',
-                                    iconCls: 'applications_big',
-                                    scale: 'large',
-                                    text: 'Copier'
                                 }
                             ]
                         },

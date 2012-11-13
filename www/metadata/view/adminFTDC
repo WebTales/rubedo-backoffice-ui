@@ -377,6 +377,33 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "designer|userClassName": "MyButton17",
+                                "id": "boutonCopierTC",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "designer|userClassName": "MyButton15",
                                 "id": "ajouterPanierTC",
                                 "icon": null,
@@ -404,33 +431,6 @@
                                 "text": "Ajouter aux favoris"
                             },
                             "designerId": "0074bfba-4b6b-479f-b392-0eb2d66c0500"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "ACL": "write.ui.contentTypes",
-                                "designer|userClassName": "MyButton17",
-                                "id": "boutonCopierTC",
-                                "width": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "applications_big",
-                                "scale": "large",
-                                "text": "Copier"
-                            },
-                            "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "ACL",
-                                    "type": "string"
-                                }
-                            ]
                         }
                     ]
                 },

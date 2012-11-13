@@ -103,6 +103,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contents',
                             id: 'boutonAjouterContenu',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -111,6 +112,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contents',
                             disabled: true,
                             id: 'boutonModifierContenu',
                             iconAlign: 'top',
@@ -120,6 +122,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contents',
                             disabled: true,
                             id: 'boutonSupprimerContenu',
                             iconAlign: 'top',
@@ -140,6 +143,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents',
                                     disabled: true,
                                     id: 'boutonCopierContenus',
                                     iconAlign: 'top',
@@ -168,6 +172,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.contents',
                             disabled: true,
                             id: 'contribWorkflowBox',
                             headerPosition: 'bottom',
@@ -176,6 +181,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents.pendingToPublished',
                                     id: 'contentAcceptPublishBtn',
                                     iconAlign: 'top',
                                     iconCls: 'accept_big',
@@ -184,6 +190,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents.draftToPending',
                                     disabled: false,
                                     id: 'contentSubmitValBtn',
                                     iconAlign: 'top',
@@ -193,6 +200,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents.pendingToDraft',
                                     id: 'contentRefuseBtn',
                                     iconAlign: 'top',
                                     iconCls: 'nonS',
@@ -201,6 +209,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents.putOnline',
                                     id: 'contentOnlineBtn',
                                     iconAlign: 'top',
                                     iconCls: 'online_big',
@@ -209,6 +218,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contents.putOffline',
                                     id: 'contentOfflineBtn',
                                     iconAlign: 'top',
                                     iconCls: 'offline_big',

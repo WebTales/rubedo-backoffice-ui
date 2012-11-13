@@ -50,6 +50,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'button',
                             isUpdate: false,
+                            ACL: 'write.ui.contents.draft',
                             id: 'boutonEnregistrerNouveauContenu',
                             iconCls: 'save',
                             text: 'Enregistrer'
@@ -57,12 +58,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'button',
                             isUpdate: false,
+                            ACL: 'write.ui.contents.published',
                             id: 'boutonPublierNouveauContenu',
                             iconCls: 'publish',
                             text: 'Enregistrer et publier'
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contents.pending',
                             id: 'boutonSoumettreNouveauContenu',
                             iconCls: 'save',
                             text: 'Enregistrer et soumettre'

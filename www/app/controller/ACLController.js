@@ -17,11 +17,13 @@ Ext.define('Rubedo.controller.ACLController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.ACLController',
 
-    onComponentBeforeRender: function(abstractcomponent, options) {
+    onComponentRender: function(abstractcomponent, options) {
         if (!Ext.isEmpty(abstractcomponent.ACL)) {
             if (ACL.interfaceRights[abstractcomponent.ACL]===false){
                 abstractcomponent.hide();
-            }    
+                abstractcomponent.clearListeners();
+                abstractcomponent.fireEvent=Ext.emptyFn;
+            }
         }
     },
 
@@ -32,13 +34,26 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.taxonomy":false,
                 "write.ui.taxonomy":false,
                 "read.ui.contentTypes":false,
-                "write.ui.contentTypes":false
+                "write.ui.contentTypes":false,
+                "read.ui.contents":false,
+                "write.ui.contents":false,
+                "read.ui.contents.draft":false,
+                "read.ui.contents.pending":false,
+                "read.ui.contents.published":false,
+                "write.ui.contents.draft":false,
+                "write.ui.contents.pending":false,
+                "write.ui.contents.published":false,
+                "write.ui.contents.draftToPending":false,
+                "write.ui.contents.pendingToDraft":false,
+                "write.ui.contents.pendingToPublished":false,
+                "write.ui.contents.putOnline":false,
+                "write.ui.contents.putOffline":false
             }
         });
 
         this.control({
             "component": {
-                beforerender: this.onComponentBeforeRender
+                render: this.onComponentRender
             }
         });
     },
