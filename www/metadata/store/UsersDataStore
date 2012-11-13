@@ -28,7 +28,7 @@
                 "api": [
                     "{\r",
                     "     create: 'users/create',\r",
-                    "     read: 'data/Users.json',\r",
+                    "     read: 'users',\r",
                     "     update: 'users/update',\r",
                     "     destroy: 'users/delete'\r",
                     "}"
