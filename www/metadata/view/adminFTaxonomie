@@ -205,6 +205,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.taxonomy",
                         "designer|userClassName": "MyButton11",
                         "id": "boutonCreerTaxonomie",
                         "itemId": null,
@@ -213,7 +214,14 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "9d7a0299-439a-4d78-8938-ca44d6de13ab"
+                    "designerId": "9d7a0299-439a-4d78-8938-ca44d6de13ab",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -224,6 +232,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.taxonomy",
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "boutonSupprimerTaxo",
@@ -233,7 +242,14 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "8f786ed7-cf94-43d9-bb43-61d8f8162ba8"
+                    "designerId": "8f786ed7-cf94-43d9-bb43-61d8f8162ba8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -244,6 +260,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.taxonomy",
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "boutonEnregistrerTaxo",
@@ -253,7 +270,14 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
-                    "designerId": "0dfdda57-8a62-4763-bfb5-224bb52b8160"
+                    "designerId": "0dfdda57-8a62-4763-bfb5-224bb52b8160",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

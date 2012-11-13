@@ -97,6 +97,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contentTypes',
                             id: 'boutonNouveauTypeContenu',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -105,6 +106,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contentTypes',
                             disabled: true,
                             id: 'boutonSupprimerTypeContenu',
                             iconAlign: 'top',
@@ -114,6 +116,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.contentTypes',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -173,14 +176,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    id: 'boutonCopierTC',
-                                    iconAlign: 'top',
-                                    iconCls: 'applications_big',
-                                    scale: 'large',
-                                    text: 'Copier'
-                                },
-                                {
-                                    xtype: 'button',
                                     id: 'ajouterPanierTC',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',
@@ -194,11 +189,21 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     iconCls: 'favorite_add_big',
                                     scale: 'large',
                                     text: 'Ajouter aux favoris'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    id: 'boutonCopierTC',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
                                 }
                             ]
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.contentTypes',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -239,6 +244,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
                                     id: 'AdminfTCImporter',
                                     iconAlign: 'top',
                                     iconCls: 'application_up_big',
@@ -470,7 +476,13 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             falseText: 'non',
                                             trueText: 'oui'
                                         }
-                                    ]
+                                    ],
+                                    listeners: {
+                                        viewready: {
+                                            fn: me.onVocabulairesTypesContenusGridViewReady,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -494,6 +506,12 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+    },
+
+    onVocabulairesTypesContenusGridViewReady: function(tablepanel, options) {
+        if (!ACL.interfaceRights["write.ui.contentTypes"]){
+            tablepanel.getSelectionModel().setLocked(true);
+        }
     }
 
 });

@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.settingsContextMenu', {
                     xtype: 'menuitem',
                     id: 'itemCustomizeDesktop',
                     iconCls: 'personalize',
-                    text: 'Personalizer'
+                    text: 'Personaliser'
                 }
             ]
         });

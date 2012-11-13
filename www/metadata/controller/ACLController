@@ -1,0 +1,91 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ACLController",
+        "designer|userAlias": "ACLController"
+    },
+    "id": "ExtBox1-ext-gen4642",
+    "designerId": "dc1acb41-f9a0-4ebc-8338-2cd4321f5712",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Ext.define('ACL', {\r",
+                    "    singleton:true,\r",
+                    "    interfaceRights:{\r",
+                    "        \"read.ui.taxonomy\":false,\r",
+                    "        \"write.ui.taxonomy\":false,\r",
+                    "        \"read.ui.contentTypes\":false,\r",
+                    "        \"write.ui.contentTypes\":false\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "2830bd31-d38c-4fac-869d-a550f739c628"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComponentBeforeRender",
+                "fn": "onComponentBeforeRender",
+                "implHandler": [
+                    "if (!Ext.isEmpty(abstractcomponent.ACL)) {\r",
+                    "    if (ACL.interfaceRights[abstractcomponent.ACL]===false){\r",
+                    "        abstractcomponent.hide();\r",
+                    "    }    \r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": "Ext.Component",
+                "designer|controlQuery": "component"
+            },
+            "designerId": "fa87d97c-595c-421e-b2c0-1f4f38d36f1a"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLaunch",
+                "fn": "onLaunch",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url:'acl',\r",
+                    "    params:{\r",
+                    "        data: Ext.JSON.encode(ACL.interfaceRights)\r",
+                    "    },\r",
+                    "    success:function(response){\r",
+                    "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "83ba7d31-8371-4044-a1c9-120f85c20615"
+        }
+    ]
+}

@@ -41,6 +41,9 @@
                     "filArianne.add(typeFil);\r",
                     "}\r",
                     "Ext.getCmp(\"ProprietesTaxonomie\").getForm().loadRecord(record);\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"ProprietesTaxonomie\").items.items, function(thingy){\r",
+                    "    thingy.setReadOnly(!ACL.interfaceRights[\"write.ui.taxonomy\"]);\r",
+                    "});\r",
                     "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",
                     "var store = Ext.create('Ext.data.TreeStore', {\r",
@@ -288,8 +291,6 @@
                     "        mandatory: false\r",
                     "    });\r",
                     "    Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);\r",
-                    "    //Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);\r",
-                    "    //this.selectVocabulary(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);\r",
                     "    Ext.getCmp('nouveauTaxoFenetre').close();\r",
                     "}    "
                 ],
@@ -365,6 +366,7 @@
                 "designer|userClassName": "termsContextMenuDisplay",
                 "fn": "termsContextMenuDisplay",
                 "implHandler": [
+                    "if (ACL.interfaceRights[\"write.ui.taxonomy\"]){\r",
                     "var menu= Ext.getCmp('termContextMenu');\r",
                     "if (Ext.isEmpty(menu)){\r",
                     "    menu = Ext.widget('termContextMenu');\r",
@@ -377,7 +379,9 @@
                     "        Ext.getCmp(\"boutonModifierTermesTaxo\").show();\r",
                     "        Ext.getCmp(\"boutonSupprimerTermesTaxo\").show();\r",
                     "    }\r",
-                    "    e.stopEvent();"
+                    "   \r",
+                    "}\r",
+                    "e.stopEvent();"
                 ],
                 "name": "itemcontextmenu",
                 "scope": "me",

@@ -738,10 +738,11 @@
                     "        recordId:myRecord.get(\"id\")\r",
                     "    });\r",
                     "}\r",
+                    "\r",
                     "var newIcon = Ext.create(\"Rubedo.model.iconDataModel\",{\r",
                     "    text:myText,\r",
-                    "    posX:0,\r",
-                    "    posY:0,\r",
+                    "    posX:x,\r",
+                    "    posY:y,\r",
                     "    image: myWindow.favoriteIcon||\"favorite.png\",\r",
                     "    actions:actions\r",
                     "\r",
@@ -751,7 +752,8 @@
                     "Ext.getStore(\"IconesDataJson\").on(\"datachanged\", function(){\r",
                     "    me.refreshIcons();\r",
                     "    Ext.getStore(\"IconesDataJson\").clearListeners();\r",
-                    "});"
+                    "});\r",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",

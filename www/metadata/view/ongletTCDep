@@ -69,6 +69,26 @@
                         "designer|userClassName": "MyCheckboxSelectionModel3"
                     },
                     "designerId": "a8646a49-8894-4ef1-bcfa-0f8ca02f1273"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onTCImbriquesGridViewReady",
+                        "fn": "onTCImbriquesGridViewReady",
+                        "implHandler": [
+                            "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",
+                            "tablepanel.getSelectionModel().setLocked(true);\r",
+                            "}"
+                        ],
+                        "name": "viewready",
+                        "scope": "me"
+                    },
+                    "designerId": "18066158-67f0-4db2-8e06-e22d6c7a126b"
                 }
             ]
         }

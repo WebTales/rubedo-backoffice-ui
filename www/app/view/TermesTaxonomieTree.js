@@ -30,13 +30,26 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                 disableSelection: false,
                 plugins: [
                     Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
-                        ptype: 'treeviewdragdrop'
+                        ptype: 'treeviewdragdrop',
+                        pluginId: 'termsDrager'
                     })
-                ]
+                ],
+                listeners: {
+                    beforedrop: {
+                        fn: me.onTreedragdroppluginBeforeDrop,
+                        scope: me
+                    }
+                }
             }
         });
 
         me.callParent(arguments);
+    },
+
+    onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
+        if (!ACL.interfaceRights["write.ui.taxonomy"]){
+            return(false);
+        }
     }
 
 });

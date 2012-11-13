@@ -47,12 +47,24 @@ Ext.define('Rubedo.view.ongletTCDep', {
                     ],
                     selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-                    })
+                    }),
+                    listeners: {
+                        viewready: {
+                            fn: me.onTCImbriquesGridViewReady,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onTCImbriquesGridViewReady: function(tablepanel, options) {
+        if (!ACL.interfaceRights["write.ui.contentTypes"]){
+            tablepanel.getSelectionModel().setLocked(true);
+        }
     }
 
 });

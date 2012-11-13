@@ -37,6 +37,9 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         filArianne.add(typeFil);
     }
     Ext.getCmp("ProprietesTaxonomie").getForm().loadRecord(record);
+    Ext.Array.forEach(Ext.getCmp("ProprietesTaxonomie").items.items, function(thingy){
+        thingy.setReadOnly(!ACL.interfaceRights["write.ui.taxonomy"]);
+    });
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
     var store = Ext.create('Ext.data.TreeStore', {
@@ -178,8 +181,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 mandatory: false
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
-            //Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);
-            //this.selectVocabulary(Ext.getCmp('AdminfTaxonomieGrid'),nouveauVocab);
             Ext.getCmp('nouveauTaxoFenetre').close();
         }    
     },
@@ -207,17 +208,20 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     },
 
     termsContextMenuDisplay: function(tablepanel, record, item, index, e, options) {
-        var menu= Ext.getCmp('termContextMenu');
-        if (Ext.isEmpty(menu)){
-            menu = Ext.widget('termContextMenu');
-            menu.on('blur', function(){this.destroy();});}
-            menu.showAt(Ext.EventObject.getXY());
-            if (record.get("id")=="root") {
-                Ext.getCmp("boutonModifierTermesTaxo").hide();
-                Ext.getCmp("boutonSupprimerTermesTaxo").hide();
-            } else {
-                Ext.getCmp("boutonModifierTermesTaxo").show();
-                Ext.getCmp("boutonSupprimerTermesTaxo").show();
+        if (ACL.interfaceRights["write.ui.taxonomy"]){
+            var menu= Ext.getCmp('termContextMenu');
+            if (Ext.isEmpty(menu)){
+                menu = Ext.widget('termContextMenu');
+                menu.on('blur', function(){this.destroy();});}
+                menu.showAt(Ext.EventObject.getXY());
+                if (record.get("id")=="root") {
+                    Ext.getCmp("boutonModifierTermesTaxo").hide();
+                    Ext.getCmp("boutonSupprimerTermesTaxo").hide();
+                } else {
+                    Ext.getCmp("boutonModifierTermesTaxo").show();
+                    Ext.getCmp("boutonSupprimerTermesTaxo").show();
+                }
+
             }
             e.stopEvent();
     },

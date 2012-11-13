@@ -122,6 +122,7 @@ Ext.application({
         'InterfaceController',
         'MediathequeController',
         'UsersController',
-        'ServerErrorController'
+        'ServerErrorController',
+        'ACLController'
     ]
 });

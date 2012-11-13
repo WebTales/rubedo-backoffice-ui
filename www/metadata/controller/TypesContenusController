@@ -287,6 +287,7 @@
                     "            nouvChamp.labelSeparator= ' ';\r",
                     "            nouvChamp.anchor='100%';\r",
                     "            nouvChamp.setValue(TCfield.config[nouvChamp.name]);\r",
+                    "            nouvChamp.setReadOnly(!ACL.interfaceRights[\"write.ui.contentTypes\"]);\r",
                     "            nouvChamp.on('change', function () {\r",
                     "                TCfield.config[this.name]= this.getValue();\r",
                     "                if (this.name=='fieldLabel') {\r",
@@ -463,6 +464,7 @@
                     "});\r",
                     "tableauTaxoTC.getSelectionModel().select(selectionR);\r",
                     "\r",
+                    "\r",
                     "if (record.get(\"dependant\")===false) {\r",
                     "var tableauTCI = Ext.getCmp('TCImbriquesGrid');\r",
                     "tableauTCI.getSelectionModel().deselectAll();\r",
@@ -473,8 +475,7 @@
                     "});\r",
                     "tableauTCI.getSelectionModel().select(selector);\r",
                     "}\r",
-                    "\r",
-                    ""
+                    "Ext.getCmp('champsEditionTC').doLayout();"
                 ],
                 "name": "select",
                 "scope": "me",

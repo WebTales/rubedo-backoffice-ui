@@ -105,12 +105,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.contentTypes',
                             itemId: 'adminFTDC',
                             iconCls: 'content-icon',
                             text: 'Types de contenus'
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.taxonomy',
                             itemId: 'adminFTaxonomie',
                             iconCls: 'page_taxonomy',
                             text: 'Taxonomie'

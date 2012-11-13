@@ -102,6 +102,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.taxonomy',
                             id: 'boutonCreerTaxonomie',
                             iconCls: 'add_big',
                             scale: 'large',
@@ -109,6 +110,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.taxonomy',
                             disabled: true,
                             id: 'boutonSupprimerTaxo',
                             iconCls: 'remove_big',
@@ -117,6 +119,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.taxonomy',
                             disabled: true,
                             id: 'boutonEnregistrerTaxo',
                             iconCls: 'floppy_disc_big',

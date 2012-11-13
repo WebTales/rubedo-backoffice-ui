@@ -235,6 +235,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     nouvChamp.labelSeparator= ' ';
                     nouvChamp.anchor='100%';
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
+                    nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
                     nouvChamp.on('change', function () {
                         TCfield.config[this.name]= this.getValue();
                         if (this.name=='fieldLabel') {
@@ -363,6 +364,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     });
     tableauTaxoTC.getSelectionModel().select(selectionR);
 
+
     if (record.get("dependant")===false) {
         var tableauTCI = Ext.getCmp('TCImbriquesGrid');
         tableauTCI.getSelectionModel().deselectAll();
@@ -373,8 +375,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         });
         tableauTCI.getSelectionModel().select(selector);
     }
-
-
+    Ext.getCmp('champsEditionTC').doLayout();
     },
 
     supprimeTypeContenu: function(button, e, options) {

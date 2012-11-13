@@ -204,6 +204,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.contentTypes",
                         "designer|userClassName": "MyButton11",
                         "id": "boutonNouveauTypeContenu",
                         "itemId": null,
@@ -213,7 +214,14 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "a9af2f4e-dff4-4048-81dd-1296ba3cd597"
+                    "designerId": "a9af2f4e-dff4-4048-81dd-1296ba3cd597",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -224,6 +232,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.contentTypes",
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "boutonSupprimerTypeContenu",
@@ -234,7 +243,14 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "10ad580b-1d96-446a-afab-5edaadfc1ec1"
+                    "designerId": "10ad580b-1d96-446a-afab-5edaadfc1ec1",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "buttongroup",
@@ -246,6 +262,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
+                        "ACL": "write.ui.contentTypes",
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "headerPosition": "bottom",
@@ -253,6 +270,13 @@
                         "columns": 4
                     },
                     "designerId": "02205170-acac-46ce-9696-415d93aad3c6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "button",
@@ -353,25 +377,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton17",
-                                "id": "boutonCopierTC",
-                                "width": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "applications_big",
-                                "scale": "large",
-                                "text": "Copier"
-                            },
-                            "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
                                 "designer|userClassName": "MyButton15",
                                 "id": "ajouterPanierTC",
                                 "icon": null,
@@ -399,6 +404,33 @@
                                 "text": "Ajouter aux favoris"
                             },
                             "designerId": "0074bfba-4b6b-479f-b392-0eb2d66c0500"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "designer|userClassName": "MyButton17",
+                                "id": "boutonCopierTC",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -412,6 +444,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
+                        "ACL": "write.ui.contentTypes",
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "headerPosition": "bottom",
@@ -419,6 +452,13 @@
                         "columns": 4
                     },
                     "designerId": "592268b8-61de-44c4-a8e0-8ac3a1cd8f67",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "button",
@@ -485,6 +525,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.contentTypes",
                                 "designer|userClassName": "MyButton63",
                                 "id": "AdminfTCImporter",
                                 "icon": null,
@@ -493,7 +534,14 @@
                                 "scale": "large",
                                 "text": "Importer"
                             },
-                            "designerId": "4c078505-2e86-44c3-80cc-e905f379890d"
+                            "designerId": "4c078505-2e86-44c3-80cc-e905f379890d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1065,6 +1113,26 @@
                                         "trueText": "oui"
                                     },
                                     "designerId": "98bedb6a-d499-4f0b-a722-92891bf4cf0e"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onVocabulairesTypesContenusGridViewReady",
+                                        "fn": "onVocabulairesTypesContenusGridViewReady",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",
+                                            "tablepanel.getSelectionModel().setLocked(true);\r",
+                                            "}"
+                                        ],
+                                        "name": "viewready",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c115d3be-14c1-472e-8a2e-23abb6b12176"
                                 }
                             ]
                         }

@@ -218,13 +218,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.contentTypes",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTDC",
                         "margin": null,
                         "iconCls": "content-icon",
                         "text": "Types de contenus"
                     },
-                    "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750"
+                    "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -235,13 +243,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.taxonomy",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTaxonomie",
                         "margin": null,
                         "iconCls": "page_taxonomy",
                         "text": "Taxonomie"
                     },
-                    "designerId": "51ac5c24-9d11-408f-ac2f-0bf9162bc196"
+                    "designerId": "51ac5c24-9d11-408f-ac2f-0bf9162bc196",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

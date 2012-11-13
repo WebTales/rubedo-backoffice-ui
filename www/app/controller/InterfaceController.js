@@ -278,10 +278,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 recordId:myRecord.get("id")
             });
         }
+
         var newIcon = Ext.create("Rubedo.model.iconDataModel",{
             text:myText,
-            posX:0,
-            posY:0,
+            posX:x,
+            posY:y,
             image: myWindow.favoriteIcon||"favorite.png",
             actions:actions
 
@@ -292,6 +293,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             me.refreshIcons();
             Ext.getStore("IconesDataJson").clearListeners();
         });
+
     },
 
     onLaunch: function() {

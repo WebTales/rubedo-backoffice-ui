@@ -1105,6 +1105,14 @@
                 "app/view/NestedContentAddWindow.js"
             ],
             "className": "NestedContentAddWindow"
+        },
+        "dc1acb41-f9a0-4ebc-8338-2cd4321f5712": {
+            "paths": [
+                "metadata/controller/ACLController",
+                "app/controller/override/ACLController.js",
+                "app/controller/ACLController.js"
+            ],
+            "className": "ACLController"
         }
     },
     "viewOrderMap": {
@@ -1216,7 +1224,8 @@
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
             "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
             "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
-            "bf25a36d-563e-484d-b6b8-b387924e3a62"
+            "bf25a36d-563e-484d-b6b8-b387924e3a62",
+            "dc1acb41-f9a0-4ebc-8338-2cd4321f5712"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",

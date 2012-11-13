@@ -39,9 +39,32 @@
                     },
                     "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                     "userConfig": {
-                        "designer|userClassName": "MyTreeDragDropPlugin1"
+                        "designer|userClassName": "MyTreeDragDropPlugin1",
+                        "pluginId": "termsDrager"
                     },
-                    "designerId": "c30057c1-7987-483f-bff7-cba215698d02"
+                    "designerId": "c30057c1-7987-483f-bff7-cba215698d02",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onTreedragdroppluginBeforeDrop",
+                                "fn": "onTreedragdroppluginBeforeDrop",
+                                "implHandler": [
+                                    "if (!ACL.interfaceRights[\"write.ui.taxonomy\"]){\r",
+                                    "    return(false);\r",
+                                    "}"
+                                ],
+                                "name": "beforedrop",
+                                "scope": "me"
+                            },
+                            "designerId": "8c3b19f9-6624-432b-8e65-7e0ca23cc88a"
+                        }
+                    ]
                 }
             ]
         }
