@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.CKEField', {
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
         });
+        console.log(abstractcomponent.editor);
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {

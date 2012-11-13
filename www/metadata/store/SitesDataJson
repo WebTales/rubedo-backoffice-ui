@@ -9,7 +9,7 @@
         "designer|userClassName": "SitesDataJson",
         "designer|userAlias": "sitesDataJson",
         "autoLoad": true,
-        "autoSync": true,
+        "autoSync": false,
         "storeId": "SitesDataJson",
         "model": "sitesDataModel",
         "defaultRootId": null,
@@ -29,8 +29,12 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy",
-                "api": null,
-                "url": "data/Sites.json"
+                "api": [
+                    "{\r",
+                    "    read:\"sites\"\r",
+                    "}"
+                ],
+                "url": null
             },
             "designerId": "d1c73d9e-5792-44f5-9cda-7f118b4c7afb",
             "cn": [
@@ -43,7 +47,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyJsonReader1",
-                        "root": null,
+                        "messageProperty": "message",
+                        "root": "dta",
                         "record": null
                     },
                     "designerId": "22a96971-1abd-4fbd-aa0e-53f836e8a971"
