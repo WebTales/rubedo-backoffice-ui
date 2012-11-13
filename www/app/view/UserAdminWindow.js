@@ -160,6 +160,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            ACL: 'write.ui.users',
                                             id: 'userAdminInfoEdit',
                                             text: 'Appliquer'
                                         }
@@ -192,11 +193,13 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         {
                                             xtype: 'button',
                                             anchor: '40%',
+                                            ACL: 'write.ui.users',
                                             text: 'Appliquer'
                                         },
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            ACL: 'write.ui.users',
                                             id: 'userAdminProfilePictureDelete',
                                             text: 'Suprimer'
                                         }
@@ -238,6 +241,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            ACL: 'write.ui.users',
                                             id: 'userAdminAccessEdit',
                                             text: 'Appliquer'
                                         }
@@ -245,6 +249,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    ACL: 'write.ui.users',
                                     title: 'Changement de mot de passe',
                                     items: [
                                         {
@@ -316,12 +321,14 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    ACL: 'write.ui.users',
                                                     id: 'AdminAddDelegationBtn',
                                                     iconCls: 'add',
                                                     text: 'Ajouter'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    ACL: 'write.ui.users',
                                                     id: 'AdminDeleteDelegationBtn',
                                                     iconCls: 'close',
                                                     text: 'Supprimer'
@@ -334,7 +341,13 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     }),
                                     plugins: [
                                         Ext.create('Ext.grid.plugin.RowEditing', {
-                                            ptype: 'rowediting'
+                                            ptype: 'rowediting',
+                                            listeners: {
+                                                beforeedit: {
+                                                    fn: me.onGridroweditingpluginBeforeEdit,
+                                                    scope: me
+                                                }
+                                            }
                                         })
                                     ]
                                 }
@@ -354,12 +367,14 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.users',
                             id: 'userAdminAdd',
                             iconCls: 'add',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.users',
                             id: 'userAdminRemove',
                             iconCls: 'close',
                             text: 'Supprimer'
@@ -370,6 +385,10 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onGridroweditingpluginBeforeEdit: function(editor, e, options) {
+        if (!ACL.interfaceRights['write.ui.users']) {return(false);}
     }
 
 });

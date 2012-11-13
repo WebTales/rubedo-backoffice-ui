@@ -144,6 +144,10 @@ Ext.define('Rubedo.controller.UsersController', {
 
     userAdminSelect: function(tablepanel, record, item, index, e, options) {
         Ext.getCmp("userAdminMainPanel").enable();
+        if ((!ACL.interfaceRights["write.ui.users"])&&(Ext.isEmpty(Ext.getCmp("userAdminMainPanel").alreadyRO))){
+            Ext.Array.forEach(Ext.getCmp("userAdminMainPanel").query("field"), function(truc){truc.setReadOnly(true);});
+            Ext.getCmp("userAdminMainPanel").alreadyRO=true;
+        }
         Ext.getCmp("userAdminInfoDisplay").getForm().loadRecord(record);
         Ext.getCmp("userAdminAccessDisplay").getForm().loadRecord(record);
         if (Ext.isEmpty(record.get("photo"))) {

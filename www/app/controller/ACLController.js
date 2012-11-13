@@ -47,7 +47,19 @@ Ext.define('Rubedo.controller.ACLController', {
                 "write.ui.contents.pendingToDraft":false,
                 "write.ui.contents.pendingToPublished":false,
                 "write.ui.contents.putOnline":false,
-                "write.ui.contents.putOffline":false
+                "write.ui.contents.putOffline":false,
+                "read.ui.masks":false,
+                "write.ui.masks":false,
+                "read.ui.users":false,
+                "write.ui.users":false,
+                "read.ui.pages":false,
+                "write.ui.pages":false,
+                "read.ui.medias":false,
+                "write.ui.medias":false,
+                "read.ui.groups":false,
+                "write.ui.groups":false,
+                "read.ui.workflows":false,
+                "write.ui.workflows":false
             }
         });
 

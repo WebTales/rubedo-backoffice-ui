@@ -138,9 +138,20 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu");
+        if (button.restricedRead){
+            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){truc.setReadOnly(thing);})
+            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy();        
+            }
+        }
     },
 
     contentsSelect: function(tablepanel, selections, options) {
+        Ext.getCmp("boutonModifierContenu").setText('Modifier');
+        Ext.getCmp("boutonModifierContenu").restricedRead=false;
         var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
         var customMeta= "";
@@ -155,9 +166,20 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
         } else if (selections.length==1) {
             Ext.getCmp("ajoutPanierContenus").enable();
-            Ext.getCmp("boutonSupprimerContenu").enable();
-            Ext.getCmp("boutonModifierContenu").enable();
             Ext.getCmp("boutonCopierContenus").enable();
+            if (ACL.interfaceRights["write.ui.contents."+selections[0].get("status")]){
+                Ext.getCmp("boutonModifierContenu").enable();
+                Ext.getCmp("boutonSupprimerContenu").enable();
+            }else if (ACL.interfaceRights["read.ui.contents."+selections[0].get("status")]){
+                Ext.getCmp("boutonModifierContenu").enable();
+                Ext.getCmp("boutonModifierContenu").setText('Afficher');
+                Ext.getCmp("boutonModifierContenu").restricedRead=true;
+                Ext.getCmp("boutonSupprimerContenu").disable();        
+            } else {
+                Ext.getCmp("boutonModifierContenu").disable();
+                Ext.getCmp("boutonSupprimerContenu").disable();
+            }
+
             Ext.getCmp("contribWorkflowBox").enable();
             Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});    
             customMeta=selections[0].get("text")+"</br> Creation : "+Ext.Date.format(selections[0].get("createTime"), "d-m-y")+

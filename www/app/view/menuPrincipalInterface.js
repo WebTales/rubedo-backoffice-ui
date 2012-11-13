@@ -78,6 +78,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.pages',
                             itemId: 'contributionPages',
                             iconCls: 'site-icon',
                             text: 'Pages'
@@ -91,6 +92,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.medias',
                             itemId: 'contributionMedias',
                             iconCls: 'media-icon',
                             text: 'Médiathèque'
@@ -100,6 +102,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.masks',
                             itemId: 'adminFMDP',
                             iconCls: 'masque-icon',
                             text: 'Masques de page'
@@ -120,12 +123,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.groups',
                             itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
                             text: 'Groupes'
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.users',
                             floating: false,
                             itemId: 'UserAdminWindow',
                             iconCls: 'user_edit',
@@ -133,6 +138,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.workflows',
                             itemId: 'menuWorkflows',
                             iconCls: 'process-icon',
                             text: 'Workflows'

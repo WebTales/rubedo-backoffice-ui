@@ -98,6 +98,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.groups',
                             id: 'groupAddButton',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -106,6 +107,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.groups',
                             disabled: true,
                             id: 'groupDeleteButton',
                             iconAlign: 'top',
@@ -115,6 +117,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.groups',
                             disabled: true,
                             header: true,
                             headerPosition: 'bottom',
@@ -171,7 +174,13 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
                                 ptype: 'treeviewdragdrop'
                             })
-                        ]
+                        ],
+                        listeners: {
+                            beforedrop: {
+                                fn: me.onTreedragdroppluginBeforeDrop,
+                                scope: me
+                            }
+                        }
                     },
                     columns: [
                         {
@@ -310,6 +319,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png');
+    },
+
+    onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
+        if (!ACL.interfaceRights['write.ui.groups']){return(false);}
     }
 
 });

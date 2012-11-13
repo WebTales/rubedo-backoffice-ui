@@ -68,12 +68,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.users",
                         "designer|userClassName": "MyButton118",
                         "id": "userAdminAdd",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
-                    "designerId": "aebe2732-1f70-4e9f-bbf3-c58b6aa716d8"
+                    "designerId": "aebe2732-1f70-4e9f-bbf3-c58b6aa716d8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -84,12 +92,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.users",
                         "designer|userClassName": "MyButton117",
                         "id": "userAdminRemove",
                         "iconCls": "close",
                         "text": "Supprimer"
                     },
-                    "designerId": "113f1038-7f65-4c47-baea-4250085aa700"
+                    "designerId": "113f1038-7f65-4c47-baea-4250085aa700",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },
@@ -350,11 +366,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "ACL": "write.ui.users",
                                         "designer|userClassName": "MyButton130",
                                         "id": "userAdminInfoEdit",
                                         "text": "Appliquer"
                                     },
-                                    "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4"
+                                    "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -422,10 +446,18 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "40%",
+                                        "ACL": "write.ui.users",
                                         "designer|userClassName": "MyButton128",
                                         "text": "Appliquer"
                                     },
-                                    "designerId": "1e6569f7-1cea-43fd-948e-0cc701ed9e28"
+                                    "designerId": "1e6569f7-1cea-43fd-948e-0cc701ed9e28",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "button",
@@ -436,12 +468,20 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "ACL": "write.ui.users",
                                         "designer|userClassName": "MyButton128",
                                         "id": "userAdminProfilePictureDelete",
                                         "margin": null,
                                         "text": "Suprimer"
                                     },
-                                    "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1"
+                                    "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -545,11 +585,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "ACL": "write.ui.users",
                                         "designer|userClassName": "MyButton127",
                                         "id": "userAdminAccessEdit",
                                         "text": "Appliquer"
                                     },
-                                    "designerId": "848b18e8-9811-4ad3-b616-69932515952b"
+                                    "designerId": "848b18e8-9811-4ad3-b616-69932515952b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -561,10 +609,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.users",
                                 "designer|userClassName": "MyFieldSet6",
                                 "title": "Changement de mot de passe"
                             },
                             "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "button",
@@ -769,12 +825,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "ACL": "write.ui.users",
                                                 "designer|userClassName": "MyButton133",
                                                 "id": "AdminAddDelegationBtn",
                                                 "iconCls": "add",
                                                 "text": "Ajouter"
                                             },
-                                            "designerId": "73bbdf86-d19b-4d35-b5bb-e38407959aae"
+                                            "designerId": "73bbdf86-d19b-4d35-b5bb-e38407959aae",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "ACL",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "button",
@@ -785,12 +849,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "ACL": "write.ui.users",
                                                 "designer|userClassName": "MyButton134",
                                                 "id": "AdminDeleteDelegationBtn",
                                                 "iconCls": "close",
                                                 "text": "Supprimer"
                                             },
-                                            "designerId": "e30a03a7-8978-4058-a59a-d7c9f0b525d4"
+                                            "designerId": "e30a03a7-8978-4058-a59a-d7c9f0b525d4",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "ACL",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -817,7 +889,27 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyRowEditingPlugin1"
                                     },
-                                    "designerId": "a144b900-8b4c-47b1-8e19-43f27d903412"
+                                    "designerId": "a144b900-8b4c-47b1-8e19-43f27d903412",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onGridroweditingpluginBeforeEdit",
+                                                "fn": "onGridroweditingpluginBeforeEdit",
+                                                "implHandler": [
+                                                    "if (!ACL.interfaceRights['write.ui.users']) {return(false);}"
+                                                ],
+                                                "name": "beforeedit",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "5a5aa829-5d5b-4969-ab43-1f7f965fb9a8"
+                                        }
+                                    ]
                                 }
                             ]
                         }

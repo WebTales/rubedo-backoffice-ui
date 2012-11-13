@@ -137,13 +137,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.pages",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionPages",
                         "margin": null,
                         "iconCls": "site-icon",
                         "text": "Pages"
                     },
-                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5"
+                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -153,8 +161,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "read.ui.contents",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionContenus",
                         "margin": null,
@@ -179,13 +187,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.medias",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionMedias",
                         "margin": null,
                         "iconCls": "media-icon",
                         "text": "Médiathèque"
                     },
-                    "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723"
+                    "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "tbseparator",
@@ -209,13 +225,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.masks",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFMDP",
                         "margin": null,
                         "iconCls": "masque-icon",
                         "text": "Masques de page"
                     },
-                    "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914"
+                    "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -225,8 +249,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "read.ui.contentTypes",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTDC",
                         "margin": null,
@@ -250,8 +274,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "read.ui.taxonomy",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTaxonomie",
                         "margin": null,
@@ -276,13 +300,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.groups",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFUtilisateurs",
                         "margin": null,
                         "iconCls": "user",
                         "text": "Groupes"
                     },
-                    "designerId": "8ac7f7b1-509a-4157-a960-bae0d2e7c0bb"
+                    "designerId": "8ac7f7b1-509a-4157-a960-bae0d2e7c0bb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -293,6 +325,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.users",
                         "designer|userClassName": "MyButton2",
                         "floating": false,
                         "itemId": "UserAdminWindow",
@@ -300,7 +333,14 @@
                         "iconCls": "user_edit",
                         "text": "Utilisateurs"
                     },
-                    "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d"
+                    "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -311,13 +351,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.workflows",
                         "designer|userClassName": "MyButton2",
                         "itemId": "menuWorkflows",
                         "margin": null,
                         "iconCls": "process-icon",
                         "text": "Workflows"
                     },
-                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a"
+                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

@@ -102,6 +102,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.masks',
                             id: 'boutonNouveauMasque',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -110,6 +111,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.masks',
                             disabled: true,
                             id: 'boutonSupprimerMasque',
                             iconAlign: 'top',
@@ -119,6 +121,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.masks',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -197,6 +200,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.masks',
                                     id: 'boutonCopierMasque',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -223,6 +227,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.masks',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -336,7 +341,13 @@ Ext.define('Rubedo.view.adminFMDP', {
                     ],
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting'
+                            ptype: 'cellediting',
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onGridcelleditingpluginBeforeEdit,
+                                    scope: me
+                                }
+                            }
                         })
                     ],
                     selModel: Ext.create('Ext.selection.RowModel', {
@@ -431,6 +442,10 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
+        if (!ACL.interfaceRights['write.ui.masks']){return(false);}
     },
 
     onPaneauPropMasqueResize: function(abstractcomponent, adjWidth, adjHeight, options) {

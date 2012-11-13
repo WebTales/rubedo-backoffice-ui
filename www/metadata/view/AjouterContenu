@@ -60,9 +60,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "isUpdate": false,
+                        "ACL": "write.ui.contents.draft",
                         "layout|flex": null,
                         "layout|margins": null,
-                        "ACL": "write.ui.contents.draft",
                         "designer|userClassName": "MyButton49",
                         "id": "boutonEnregistrerNouveauContenu",
                         "iconCls": "save",
@@ -94,8 +94,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "isUpdate": false,
-                        "layout|flex": null,
                         "ACL": "write.ui.contents.published",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton50",
                         "id": "boutonPublierNouveauContenu",
                         "iconAlign": null,
@@ -127,8 +127,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "write.ui.contents.pending",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton141",
                         "id": "boutonSoumettreNouveauContenu",
                         "iconCls": "save",

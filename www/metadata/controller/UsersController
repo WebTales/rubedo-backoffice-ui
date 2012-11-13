@@ -368,6 +368,10 @@
                 "fn": "userAdminSelect",
                 "implHandler": [
                     "Ext.getCmp(\"userAdminMainPanel\").enable();\r",
+                    "if ((!ACL.interfaceRights[\"write.ui.users\"])&&(Ext.isEmpty(Ext.getCmp(\"userAdminMainPanel\").alreadyRO))){\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"userAdminMainPanel\").query(\"field\"), function(truc){truc.setReadOnly(true);});\r",
+                    "    Ext.getCmp(\"userAdminMainPanel\").alreadyRO=true;\r",
+                    "}\r",
                     "Ext.getCmp(\"userAdminInfoDisplay\").getForm().loadRecord(record);\r",
                     "Ext.getCmp(\"userAdminAccessDisplay\").getForm().loadRecord(record);\r",
                     "if (Ext.isEmpty(record.get(\"photo\"))) {\r",

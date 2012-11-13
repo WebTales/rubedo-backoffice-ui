@@ -198,6 +198,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.groups",
                         "designer|userClassName": "MyButton11",
                         "id": "groupAddButton",
                         "itemId": null,
@@ -207,7 +208,14 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "718cf831-9456-4b34-b2ea-e15e269a5bfb"
+                    "designerId": "718cf831-9456-4b34-b2ea-e15e269a5bfb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -218,6 +226,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.groups",
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "groupDeleteButton",
@@ -228,7 +237,14 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "cd77b6e5-9094-4028-84c5-38b3c7f01ca3"
+                    "designerId": "cd77b6e5-9094-4028-84c5-38b3c7f01ca3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "buttongroup",
@@ -239,6 +255,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.groups",
                         "designer|userClassName": "MyButtonGroup8",
                         "disabled": true,
                         "header": true,
@@ -248,6 +265,13 @@
                         "columns": 2
                     },
                     "designerId": "310a8329-c4d6-474b-a625-6c6ddeef1b8a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "button",
@@ -366,7 +390,27 @@
                             "userConfig": {
                                 "designer|userClassName": "MyTreeDragDropPlugin2"
                             },
-                            "designerId": "42bcca70-3797-46a0-b074-6f8a822a9421"
+                            "designerId": "42bcca70-3797-46a0-b074-6f8a822a9421",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTreedragdroppluginBeforeDrop",
+                                        "fn": "onTreedragdroppluginBeforeDrop",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights['write.ui.groups']){return(false);}"
+                                        ],
+                                        "name": "beforedrop",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e322749e-b27b-4ec7-929b-0036ed2b8990"
+                                }
+                            ]
                         }
                     ]
                 },
