@@ -587,7 +587,8 @@
                 "fn": "fenetreNTC",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauTypeContenu');\r",
-                    "fenetre.showAt(screen.width/2-150, 100);"
+                    "Ext.getCmp(\"ViewportPrimaire\").add(fenetre);\r",
+                    "fenetre.show();"
                 ],
                 "name": "click",
                 "scope": "me",

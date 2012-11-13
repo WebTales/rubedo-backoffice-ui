@@ -12,10 +12,15 @@
         "height": 106,
         "id": "nouveauTaxoFenetre",
         "width": 300,
+        "resizable": false,
         "layout": "fit",
         "iconCls": "page_taxonomy",
         "title": "Nouveau vocabulaire",
+        "constrainHeader": true,
         "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen64210",
     "designerId": "b2ceb939-34ac-4cce-a01f-154ca2572cfb",

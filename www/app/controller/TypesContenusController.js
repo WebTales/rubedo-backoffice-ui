@@ -439,7 +439,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     fenetreNTC: function(button, e, options) {
         var fenetre = Ext.widget('nouveauTypeContenu');
-        fenetre.showAt(screen.width/2-150, 100);
+        Ext.getCmp("ViewportPrimaire").add(fenetre);
+        fenetre.show();
     },
 
     creerNTC: function(button, e, options) {

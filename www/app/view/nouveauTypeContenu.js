@@ -20,11 +20,13 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
     height: 125,
     id: 'nouveauTypeContenuFenetre',
     width: 300,
+    resizable: false,
     layout: {
         type: 'fit'
     },
     iconCls: 'content-icon',
     title: 'Nouveau type de contenu',
+    constrainHeader: true,
     modal: true,
 
     initComponent: function() {

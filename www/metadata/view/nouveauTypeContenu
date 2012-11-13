@@ -12,10 +12,15 @@
         "height": 125,
         "id": "nouveauTypeContenuFenetre",
         "width": 300,
+        "resizable": false,
         "layout": "fit",
         "iconCls": "content-icon",
         "title": "Nouveau type de contenu",
+        "constrainHeader": true,
         "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen27280",
     "designerId": "e6178e4c-162c-40e0-816c-026c97fd3f5e",

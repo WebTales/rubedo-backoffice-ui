@@ -20,11 +20,13 @@ Ext.define('Rubedo.view.nouveauTaxoFenetre', {
     height: 106,
     id: 'nouveauTaxoFenetre',
     width: 300,
+    resizable: false,
     layout: {
         type: 'fit'
     },
     iconCls: 'page_taxonomy',
     title: 'Nouveau vocabulaire',
+    constrainHeader: true,
     modal: true,
 
     initComponent: function() {
