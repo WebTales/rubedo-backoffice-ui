@@ -45,8 +45,11 @@
                     "CKFinder.setupCKEditor(abstractcomponent.editor, \"resources/ckfinder/\");\r",
                     "abstractcomponent.editor.on('instanceReady', function(){\r",
                     "    abstractcomponent.up().doLayout();\r",
+                    "    abstractcomponent.editor.document.getDocumentElement().on('click', function(){\r",
+                    "        abstractcomponent.getEl().dom.click();\r",
+                    "    });\r",
                     "});\r",
-                    "console.log(abstractcomponent.editor);"
+                    ""
                 ],
                 "name": "afterrender",
                 "scope": "me"

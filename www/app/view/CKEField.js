@@ -58,8 +58,11 @@ Ext.define('Rubedo.view.CKEField', {
         CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
+            abstractcomponent.editor.document.getDocumentElement().on('click', function(){
+                abstractcomponent.getEl().dom.click();
+            });
         });
-        console.log(abstractcomponent.editor);
+
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {
