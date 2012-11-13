@@ -45,7 +45,6 @@
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",
                     "var store = Ext.create('Ext.data.TreeStore', {\r",
                     "model: 'Rubedo.model.taxonomyTermModel',\r",
-                    "storeId: 'TypesContenusNDepDataJson',\r",
                     "autoSync:true,\r",
                     "proxy: {\r",
                     "    type: 'ajax',\r",
