@@ -1130,6 +1130,14 @@
                 "app/view/esResponseWindow.js"
             ],
             "className": "esResponseWindow"
+        },
+        "c3fda741-3af7-4193-85b9-c42d3530fd90": {
+            "paths": [
+                "metadata/view/esWindowButton",
+                "app/view/override/esWindowButton.js",
+                "app/view/esWindowButton.js"
+            ],
+            "className": "esWindowButton"
         }
     },
     "viewOrderMap": {
@@ -1193,7 +1201,8 @@
             "648ee02b-21bf-4d06-8c07-2e215977ab97",
             "1a109b37-693d-4f8c-8b02-455dffd48a58",
             "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
-            "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed"
+            "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
+            "c3fda741-3af7-4193-85b9-c42d3530fd90"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",

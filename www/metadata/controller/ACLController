@@ -76,7 +76,7 @@
                 "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
-                    "if (!Ext.isEmpty(abstractcomponent.ACL)) {\r",
+                    "if (!Ext.isEmpty(abstractcomponent.ACL)) {   \r",
                     "    if (ACL.interfaceRights[abstractcomponent.ACL]===false){\r",
                     "        abstractcomponent.hide();\r",
                     "        abstractcomponent.clearListeners();\r",
@@ -109,6 +109,11 @@
                     "    },\r",
                     "    success:function(response){\r",
                     "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);\r",
+                    "        Ext.getCmp('boutonPincipalInterface').enable();\r",
+                    "        Ext.getCmp('entete').add(Ext.widget('esWindowButton'));\r",
+                    "    },\r",
+                    "    failure:function(){\r",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",
                     "    }\r",
                     "});"
                 ]

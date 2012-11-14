@@ -26,6 +26,7 @@
             "userConfig": {
                 "layout|flex": null,
                 "designer|userClassName": "MyButton79",
+                "disabled": true,
                 "id": "boutonPincipalInterface",
                 "icon": "resources/images/logoRubedo.png",
                 "scale": "large",
@@ -158,31 +159,6 @@
                 "designer|userClassName": "MySeparator5"
             },
             "designerId": "e8775610-6baa-4af5-934b-1f63b7c5c381"
-        },
-        {
-            "type": "button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": null,
-                "ACL": "exe.ui.elasticSearch",
-                "designer|userClassName": "MyButton151",
-                "id": "esWindowButton",
-                "icon": "resources/images/esLogo.png",
-                "scale": "medium",
-                "text": ""
-            },
-            "designerId": "c3fda741-3af7-4193-85b9-c42d3530fd90",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "ACL",
-                    "type": "string"
-                }
-            ]
         }
     ]
 }

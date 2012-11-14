@@ -18,7 +18,7 @@ Ext.define('Rubedo.controller.ACLController', {
     alias: 'controller.ACLController',
 
     onComponentRender: function(abstractcomponent, options) {
-        if (!Ext.isEmpty(abstractcomponent.ACL)) {
+        if (!Ext.isEmpty(abstractcomponent.ACL)) {   
             if (ACL.interfaceRights[abstractcomponent.ACL]===false){
                 abstractcomponent.hide();
                 abstractcomponent.clearListeners();
@@ -79,6 +79,11 @@ Ext.define('Rubedo.controller.ACLController', {
             },
             success:function(response){
                 ACL.interfaceRights=Ext.JSON.decode(response.responseText);
+                Ext.getCmp('boutonPincipalInterface').enable();
+                Ext.getCmp('entete').add(Ext.widget('esWindowButton'));
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
             }
         });
     }

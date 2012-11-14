@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.EnteteV', {
             items: [
                 {
                     xtype: 'button',
+                    disabled: true,
                     id: 'boutonPincipalInterface',
                     icon: 'resources/images/logoRubedo.png',
                     scale: 'large'
@@ -71,14 +72,6 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'tbseparator'
-                },
-                {
-                    xtype: 'button',
-                    ACL: 'exe.ui.elasticSearch',
-                    id: 'esWindowButton',
-                    icon: 'resources/images/esLogo.png',
-                    scale: 'medium',
-                    text: ''
                 }
             ]
         });

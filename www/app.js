@@ -108,7 +108,8 @@ Ext.application({
         'NestedContentsGrid',
         'NestedContentAddWindow',
         'MyWindow31',
-        'esResponseWindow'
+        'esResponseWindow',
+        'esWindowButton'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

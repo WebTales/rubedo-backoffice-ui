@@ -64,6 +64,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.AdminPasswordChange',
         'Rubedo.view.userSettings',
         'Rubedo.view.ESWindow',
-        'Rubedo.view.esResponseWindow'
+        'Rubedo.view.esResponseWindow',
+        'Rubedo.view.esWindowButton'
     ]
 });
