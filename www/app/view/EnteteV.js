@@ -65,7 +65,14 @@ Ext.define('Rubedo.view.EnteteV', {
                     fieldLabel: '',
                     labelSeparator: ' ',
                     labelWidth: 68,
-                    allowBlank: false
+                    allowBlank: false,
+                    listeners: {
+                        focus: {
+                            fn: me.onESSearchFieldFocus,
+                            single: true,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'button',
@@ -79,6 +86,10 @@ Ext.define('Rubedo.view.EnteteV', {
         });
 
         me.callParent(arguments);
+    },
+
+    onESSearchFieldFocus: function(field, options) {
+        field.setValue();
     }
 
 });

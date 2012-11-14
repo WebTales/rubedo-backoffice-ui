@@ -41,6 +41,19 @@
             "designerId": "beec4b95-63a5-468d-a63b-ce093f2bcc40"
         },
         {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field165",
+                "name": "id"
+            },
+            "designerId": "57fa356d-9814-4634-b094-fd90a4945a8c"
+        },
+        {
             "type": "grouper",
             "reference": {
                 "name": "groupers",

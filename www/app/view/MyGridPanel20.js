@@ -45,10 +45,36 @@ Ext.define('Rubedo.view.MyGridPanel20', {
                 {
                     ftype: 'grouping'
                 }
-            ]
+            ],
+            listeners: {
+                itemdblclick: {
+                    fn: me.onResultContentsGridItemDblClick,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onResultContentsGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        if (ACL.interfaceRights['read.ui.contents']){
+            var fenetre=Ext.getCmp("contributionContenus");
+            if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }
+            else {
+                fenetre = Ext.widget("contributionContenus");
+                Ext.getCmp('desktopCont').add(fenetre);
+                if (Ext.isDefined(window.innerHeight)) {
+                    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                }
+                fenetre.show();
+            }
+            Ext.getCmp("TypesContenusGrid").getSelectionModel().select(Ext.getCmp("TypesContenusGrid").getStore().findRecord("type",record.get("type")));
+            Ext.getCmp("ContenusGrid").getStore().addListener("load", function(){
+                Ext.getCmp("ContenusGrid").getSelectionModel().select(Ext.getCmp("ContenusGrid").getStore().findRecord("id",record.get("id")));
+            }, this, {single:true});
+            }
     }
 
 });

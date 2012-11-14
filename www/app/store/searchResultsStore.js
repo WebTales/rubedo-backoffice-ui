@@ -28,6 +28,9 @@ Ext.define('Rubedo.store.searchResultsStore', {
                 },
                 {
                     name: 'type'
+                },
+                {
+                    name: 'id'
                 }
             ],
             groupers: {
