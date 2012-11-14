@@ -146,6 +146,20 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp('nestedContensTabConfig').destroy();
                 nct.destroy();        
             }
+        } else {
+            var myId=cible.get("id");
+
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                if (Ext.isEmpty(myId)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy();
+                } else {
+                    Ext.getStore('NestedContentsStore').removeAll();
+                    Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
+                    Ext.getStore('NestedContentsStore').load();
+                }
+            }
         }
     },
 

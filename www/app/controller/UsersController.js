@@ -269,7 +269,7 @@ Ext.define('Rubedo.controller.UsersController', {
                         }
                     }
                 }); } else {
-                    Ext.Msg.alert('Erreur', "Les mots de passe ne correspondent pas");
+                    Ext.Msg.alert('Erreur', "Les nouveaux mots de passe ne correspondent pas");
                 }
             }
     },
