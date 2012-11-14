@@ -159,8 +159,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'button',
-                                            anchor: '100%',
                                             ACL: 'write.ui.users',
+                                            anchor: '100%',
                                             id: 'userAdminInfoEdit',
                                             text: 'Appliquer'
                                         }
@@ -192,14 +192,14 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'button',
-                                            anchor: '40%',
                                             ACL: 'write.ui.users',
+                                            anchor: '40%',
                                             text: 'Appliquer'
                                         },
                                         {
                                             xtype: 'button',
-                                            anchor: '100%',
                                             ACL: 'write.ui.users',
+                                            anchor: '100%',
                                             id: 'userAdminProfilePictureDelete',
                                             text: 'Suprimer'
                                         }
@@ -240,8 +240,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'button',
-                                            anchor: '100%',
                                             ACL: 'write.ui.users',
+                                            anchor: '100%',
                                             id: 'userAdminAccessEdit',
                                             text: 'Appliquer'
                                         }

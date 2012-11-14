@@ -39,7 +39,7 @@ Ext.define('Rubedo.store.NestedContentsStore', {
         }, cfg)]);
     },
 
-    onStoreUpdate: function(abstractstore, record, operation, options) {
+    onStoreUpdate: function(abstractstore, record, operation, modifiedFieldNames, options) {
         Rubedo.controller.ContributionContenusController.prototype.nestedContentsSelect(Ext.getCmp("NestedContentsGrid"), Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection());
 
     }

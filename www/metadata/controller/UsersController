@@ -240,8 +240,8 @@
                 "implHandler": [
                     "if (!group.isRoot()){\r",
                     "    var me=this;\r",
-                    "    Ext.Array.forEach(group.get(\"members\"), function(membre){\r",
-                    "        var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"name\", membre);\r",
+                    "    Ext.Array.forEach(group.get(\"members\"), function(member){\r",
+                    "        var someMembre = Ext.getStore(\"UsersDataStore\").findRecord(\"id\", member);\r",
                     "        if (!Ext.isEmpty(someMembre)){\r",
                     "            Ext.Array.include(array,someMembre);\r",
                     "        }\r",
@@ -288,7 +288,7 @@
                 "designer|userClassName": "userSelectionAdd",
                 "fn": "userSelectionAdd",
                 "implHandler": [
-                    "var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),\"data\"),\"name\");\r",
+                    "var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),\"data\"),\"id\");\r",
                     "var record = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
                     "record.set(\"members\", Ext.Array.union(record.get(\"members\"),selection));\r",
                     "Ext.getCmp(\"groupsGrid\").getSelectionModel().deselectAll();\r",

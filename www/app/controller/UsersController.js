@@ -126,7 +126,7 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     userSelectionAdd: function(button, e, options) {
-        var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),"data"),"name");
+        var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),"data"),"id");
         var record = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         record.set("members", Ext.Array.union(record.get("members"),selection));
         Ext.getCmp("groupsGrid").getSelectionModel().deselectAll();
@@ -248,8 +248,8 @@ Ext.define('Rubedo.controller.UsersController', {
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
-            Ext.Array.forEach(group.get("members"), function(membre){
-                var someMembre = Ext.getStore("UsersDataStore").findRecord("name", membre);
+            Ext.Array.forEach(group.get("members"), function(member){
+                var someMembre = Ext.getStore("UsersDataStore").findRecord("id", member);
                 if (!Ext.isEmpty(someMembre)){
                     Ext.Array.include(array,someMembre);
                 }

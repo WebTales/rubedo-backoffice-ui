@@ -62,7 +62,7 @@ Ext.define('Rubedo.store.ContenusDataJson', {
         }, cfg)]);
     },
 
-    onJsonstoreUpdate: function(abstractstore, record, operation, options) {
+    onJsonstoreUpdate: function(abstractstore, record, operation, modifiedFieldNames, options) {
         Rubedo.controller.ContributionContenusController.prototype.contentsSelect(Ext.getCmp("ContenusGrid"), Ext.getCmp("ContenusGrid").getSelectionModel().getSelection());
 
     }
