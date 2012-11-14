@@ -1,7 +1,7 @@
 {
     "name": "Rubedo",
     "settings": {
-        "urlPrefix": "http://127.0.0.1/",
+        "urlPrefix": "http://rubedo.alexandru.local/backoffice/",
         "spacesToIndent": 4,
         "exportPath": "",
         "sdkPath": "",
@@ -1122,6 +1122,14 @@
                 "app/view/ESWindow.js"
             ],
             "className": "ESWindow"
+        },
+        "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed": {
+            "paths": [
+                "metadata/view/esResponseWindow",
+                "app/view/override/esResponseWindow.js",
+                "app/view/esResponseWindow.js"
+            ],
+            "className": "esResponseWindow"
         }
     },
     "viewOrderMap": {
@@ -1184,7 +1192,8 @@
             "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
             "648ee02b-21bf-4d06-8c07-2e215977ab97",
             "1a109b37-693d-4f8c-8b02-455dffd48a58",
-            "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155"
+            "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
+            "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",

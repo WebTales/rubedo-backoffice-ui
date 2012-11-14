@@ -1,0 +1,130 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "esResponseWindow",
+        "designer|userAlias": "esResponseWindow",
+        "height": 250,
+        "id": "esResponseWindow",
+        "width": 400,
+        "layout": "fit",
+        "title": "Contenus indexés",
+        "constrainHeader": true,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen9135",
+    "designerId": "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
+    "cn": [
+        {
+            "type": "propertygrid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPropertyGrid",
+                "overflowY": "auto",
+                "title": "",
+                "disableSelection": true,
+                "forceFit": true,
+                "hideHeaders": true,
+                "nameColumnWidth": 250,
+                "nameField": null,
+                "propertyNames": null,
+                "source": [
+                    "{\"Property 1\":\"String\",\"Property 2\":true,\"Property 3\":\"2012-11-14T13:46:09\",\"Property 4\":123}"
+                ]
+            },
+            "designerId": "4e089adb-811a-4e6c-8b95-e2bf7aec9b76",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onPropertygridBeforeEdit",
+                        "fn": "onPropertygridBeforeEdit",
+                        "implHandler": [
+                            "return(false);"
+                        ],
+                        "name": "beforeedit",
+                        "scope": "me"
+                    },
+                    "designerId": "572fc55d-42a4-43f2-814d-022c63307b81"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar40"
+            },
+            "designerId": "5eb46282-3897-43ea-a286-93094bd21c65",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill15"
+                    },
+                    "designerId": "a6677035-0c91-41b2-837f-4781583ca7a8"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton152",
+                        "text": "<b>OK</b>"
+                    },
+                    "designerId": "cc6419f1-4bc6-4165-a055-83f86270d8fa",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "f77e7be7-3710-4193-98fa-661f322dc6bd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

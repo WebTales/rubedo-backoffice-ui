@@ -25,7 +25,8 @@ Ext.define('Rubedo.view.ESWindow', {
     },
     icon: 'resources/images/esLogo.png',
     title: 'ElasticSearch',
-    constrain: true,
+    constrain: false,
+    constrainHeader: true,
     maximizable: true,
     maximized: false,
     minimizable: true,
@@ -41,6 +42,44 @@ Ext.define('Rubedo.view.ESWindow', {
                         tag: 'iframe',
                         src: 'http://178.32.8.116:9200/_plugin/head/'
                     }
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    height: 30,
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                button.setLoading(true);
+                                Ext.Ajax.request({
+                                    url: 'elastic-indexer',
+                                    success: function(response){
+                                        var answerMe = Ext.widget("esResponseWindow");
+                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                        answerMe.show();
+                                        button.setLoading(false);
+                                    },
+                                    failure: function(form, action) {
+                                        switch (action.failureType) {
+                                            case Ext.form.action.Action.CONNECT_FAILURE:
+                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                            break;
+                                            case Ext.form.action.Action.SERVER_INVALID:
+                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                        }
+                                    }
+                                });
+                            },
+                            text: '<b>Lancer une indexation complète</b>'
+                        }
+                    ]
                 }
             ]
         });
