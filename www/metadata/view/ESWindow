@@ -1,0 +1,44 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ESWindow",
+        "designer|userAlias": "ESWindow",
+        "height": 500,
+        "id": "ESWindow",
+        "width": 1100,
+        "layout": "fit",
+        "icon": "resources/images/esLogo.png",
+        "title": "ElasticSearch",
+        "constrain": true,
+        "maximizable": true,
+        "maximized": false,
+        "minimizable": true
+    },
+    "id": "ExtBox1-ext-gen8960",
+    "designerId": "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
+    "cn": [
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer24",
+                "autoEl": [
+                    "{\r",
+                    "    tag:'iframe',\r",
+                    "    src:\"http://178.32.8.116:9200/_plugin/head/\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "08f7f2c2-fcc0-43d8-8ead-d764d2ff74b3"
+        }
+    ]
+}

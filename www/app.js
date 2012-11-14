@@ -106,7 +106,8 @@ Ext.application({
         'menuContenusContext',
         'termContextMenu',
         'NestedContentsGrid',
-        'NestedContentAddWindow'
+        'NestedContentAddWindow',
+        'ESWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

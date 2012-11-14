@@ -330,12 +330,12 @@
                 "fn": "ouvrirFenteresMenuDroite",
                 "implHandler": [
                     "if (button.itemId=='deconnexionMenuPrincipal') {\r",
-                    "Ext.Ajax.request({\r",
-                    "    url: 'logout',\r",
-                    "    success: function(response){\r",
-                    "        window.location.href=\"login\";\r",
-                    "    }\r",
-                    "});\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'logout',\r",
+                    "        success: function(response){\r",
+                    "            window.location.href=\"login\";\r",
+                    "        }\r",
+                    "    });\r",
                     "\r",
                     "}\r",
                     "else{\r",
@@ -815,6 +815,34 @@
                 ]
             },
             "designerId": "87ba059c-e5bc-4365-ae29-67c7e1758449"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "launchESWindow",
+                "fn": "launchESWindow",
+                "implHandler": [
+                    "if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {\r",
+                    "    var fenetre = Ext.widget('ESWindow');\r",
+                    "    Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "            if (Ext.isDefined(window.innerHeight)) {\r",
+                    "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
+                    "            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
+                    "        }\r",
+                    "    fenetre.show();\r",
+                    "}else {Ext.getCmp('ESWindow').toFront();}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#esWindowButton"
+            },
+            "designerId": "dfb50cfb-9242-4189-acc8-25879407d359"
         }
     ]
 }

@@ -74,12 +74,10 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'button',
-                    baseCls: 'x-btn-over',
-                    id: 'boutonShowDesktop',
-                    width: 16,
-                    enableToggle: true,
-                    pressed: false,
-                    scale: 'medium'
+                    id: 'esWindowButton',
+                    icon: 'resources/images/esLogo.png',
+                    scale: 'medium',
+                    text: ''
                 }
             ]
         });

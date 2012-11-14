@@ -296,6 +296,18 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     },
 
+    launchESWindow: function(button, e, options) {
+        if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {
+            var fenetre = Ext.widget('ESWindow');
+            Ext.getCmp('desktopCont').add(fenetre);
+            if (Ext.isDefined(window.innerHeight)) {
+                if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+            }
+            fenetre.show();
+        }else {Ext.getCmp('ESWindow').toFront();}
+    },
+
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
@@ -418,6 +430,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "[itemId='boutonCreerRaccourci']": {
                 click: this.createIconBtn
+            },
+            "#esWindowButton": {
+                click: this.launchESWindow
             }
         });
     },
