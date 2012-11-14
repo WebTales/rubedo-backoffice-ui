@@ -74,6 +74,7 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'button',
+                    ACL: 'exe.ui.elasticSearch',
                     id: 'esWindowButton',
                     icon: 'resources/images/esLogo.png',
                     scale: 'medium',

@@ -168,13 +168,21 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "ACL": "exe.ui.elasticSearch",
                 "designer|userClassName": "MyButton151",
                 "id": "esWindowButton",
                 "icon": "resources/images/esLogo.png",
                 "scale": "medium",
                 "text": ""
             },
-            "designerId": "c3fda741-3af7-4193-85b9-c42d3530fd90"
+            "designerId": "c3fda741-3af7-4193-85b9-c42d3530fd90",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

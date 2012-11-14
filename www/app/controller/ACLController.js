@@ -59,7 +59,8 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.groups":false,
                 "write.ui.groups":false,
                 "read.ui.workflows":false,
-                "write.ui.workflows":false
+                "write.ui.workflows":false,
+                "exe.ui.elasticSearch":false
             }
         });
 

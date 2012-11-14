@@ -281,8 +281,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
         var newIcon = Ext.create("Rubedo.model.iconDataModel",{
             text:myText,
-            posX:x,
-            posY:y,
+            posX:0,
+            posY:0,
             image: myWindow.favoriteIcon||"favorite.png",
             actions:actions
 
