@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "userSettings",
         "designer|userAlias": "userSettings",
-        "height": 450,
+        "height": 468,
         "id": "userSettings",
         "width": 600,
         "layout": "fit",
@@ -73,7 +73,7 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "designer|userClassName": "MyFieldSet5",
-                                "height": 360,
+                                "height": 385,
                                 "margin": 0,
                                 "width": 356,
                                 "autoScroll": true,
@@ -98,6 +98,23 @@
                                         "allowBlank": false
                                     },
                                     "designerId": "a96bfa91-7feb-4d52-a806-320a83c4bbfa"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField22",
+                                        "name": "login",
+                                        "fieldLabel": "Login ",
+                                        "allowBlank": false,
+                                        "vtype": "alphanum"
+                                    },
+                                    "designerId": "3085aba8-536d-4148-817f-6db8cec7805a"
                                 },
                                 {
                                     "type": "textfield",
@@ -373,14 +390,15 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel44",
+                        "designer|userClassName": "MyForm27",
+                        "bodyPadding": 10,
                         "title": "Accès"
                     },
                     "designerId": "0e4adc8b-9062-4f83-99b1-83c5275f2813",
@@ -396,6 +414,88 @@
                                 "designer|userClassName": "TabConfig28"
                             },
                             "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet9",
+                                "title": "Changer de mot de passe"
+                            },
+                            "designerId": "b73318c6-650c-4d4f-ae83-7102e1441070",
+                            "cn": [
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField39",
+                                        "inputType": "password",
+                                        "name": "oldPassword",
+                                        "fieldLabel": "Mot de passe actuel ",
+                                        "labelWidth": 160
+                                    },
+                                    "designerId": "ac6139e7-3498-4dfd-9ac8-db23cde9dac1"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField40",
+                                        "inputType": "password",
+                                        "name": "newPassword",
+                                        "fieldLabel": "Nouveau mot de passe ",
+                                        "labelWidth": 160
+                                    },
+                                    "designerId": "7bfffd5f-30b7-4ffa-bfdc-fd88b209b39d"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField41",
+                                        "inputType": "password",
+                                        "name": "newPasswordConfirm",
+                                        "submitValue": false,
+                                        "fieldLabel": "Confirmer le mot passe ",
+                                        "labelWidth": 160
+                                    },
+                                    "designerId": "df2f517f-9928-4f9a-931c-b779d498b335"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyButton153",
+                                        "id": "changeMyPasswordBtn",
+                                        "text": "Changer le mot de passe"
+                                    },
+                                    "designerId": "75ed947b-9aca-4a8b-9ef8-f7c4e9d1773b"
+                                }
+                            ]
                         }
                     ]
                 }

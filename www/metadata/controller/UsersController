@@ -698,6 +698,26 @@
                 "designer|controlQuery": "#AdminDeleteDelegationBtn"
             },
             "designerId": "b5c79b18-d75b-4e19-8009-4419a155c5d3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "changeMyPassword",
+                "fn": "changeMyPassword",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#changeMyPasswordBtn"
+            },
+            "designerId": "9be6d494-9865-48ec-b69e-8995f55a10c6"
         }
     ]
 }

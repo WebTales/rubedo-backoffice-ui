@@ -222,7 +222,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             anchor: '100%',
                                             name: 'login',
                                             fieldLabel: 'Compte utilisateur ',
-                                            labelWidth: 200
+                                            labelWidth: 200,
+                                            vtype: 'alphanum'
                                         },
                                         {
                                             xtype: 'datefield',

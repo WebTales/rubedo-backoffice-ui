@@ -245,6 +245,10 @@ Ext.define('Rubedo.controller.UsersController', {
         button.up().up().getStore().remove(button.up().up().getSelectionModel().getSelection());
     },
 
+    changeMyPassword: function(button, e, options) {
+
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -344,6 +348,9 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#AdminDeleteDelegationBtn": {
                 click: this.adminDeleteDelegations
+            },
+            "#changeMyPasswordBtn": {
+                click: this.changeMyPassword
             }
         });
     }

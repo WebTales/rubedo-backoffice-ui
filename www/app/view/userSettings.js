@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.userSettings', {
     extend: 'Ext.window.Window',
     alias: 'widget.userSettings',
 
-    height: 450,
+    height: 468,
     id: 'userSettings',
     width: 600,
     layout: {
@@ -50,7 +50,7 @@ Ext.define('Rubedo.view.userSettings', {
                                 {
                                     xtype: 'fieldset',
                                     flex: 1,
-                                    height: 360,
+                                    height: 385,
                                     margin: 0,
                                     width: 356,
                                     autoScroll: true,
@@ -63,6 +63,14 @@ Ext.define('Rubedo.view.userSettings', {
                                             name: 'name',
                                             fieldLabel: 'Nom ',
                                             allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'login',
+                                            fieldLabel: 'Login ',
+                                            allowBlank: false,
+                                            vtype: 'alphanum'
                                         },
                                         {
                                             xtype: 'textfield',
@@ -189,8 +197,48 @@ Ext.define('Rubedo.view.userSettings', {
                             ]
                         },
                         {
-                            xtype: 'panel',
-                            title: 'Accès'
+                            xtype: 'form',
+                            bodyPadding: 10,
+                            title: 'Accès',
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Changer de mot de passe',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            inputType: 'password',
+                                            name: 'oldPassword',
+                                            fieldLabel: 'Mot de passe actuel ',
+                                            labelWidth: 160
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            inputType: 'password',
+                                            name: 'newPassword',
+                                            fieldLabel: 'Nouveau mot de passe ',
+                                            labelWidth: 160
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            inputType: 'password',
+                                            name: 'newPasswordConfirm',
+                                            submitValue: false,
+                                            fieldLabel: 'Confirmer le mot passe ',
+                                            labelWidth: 160
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            anchor: '100%',
+                                            id: 'changeMyPasswordBtn',
+                                            text: 'Changer le mot de passe'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
