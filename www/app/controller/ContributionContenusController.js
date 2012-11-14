@@ -139,7 +139,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu");
         if (button.restricedRead){
-            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){truc.setReadOnly(thing);})
+            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
             Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
             var nct = Ext.getCmp("nestedContentsTab");
             if (!Ext.isEmpty(nct)){
@@ -152,6 +152,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentsSelect: function(tablepanel, selections, options) {
         Ext.getCmp("boutonModifierContenu").setText('Modifier');
         Ext.getCmp("boutonModifierContenu").restricedRead=false;
+        //console.log(Ext.getCmp("boutonModifierContenu").restricedRead);
         var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
         var customMeta= "";
@@ -265,6 +266,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     doubleClickEdit: function(tablepanel, record, item, index, e, options) {
+
         Ext.getCmp("boutonModifierContenu").fireEvent("click");
     },
 

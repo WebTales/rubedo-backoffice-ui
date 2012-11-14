@@ -288,7 +288,7 @@
                     "Ext.getCmp(\"boutonSoumettreNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp('ajouterContenu').setTitle(\"Modifier un contenu\");\r",
                     "if (button.restricedRead){\r",
-                    "    Ext.Array.forEach(Ext.getCmp(\"ajouterContenu\").query(\"field\"), function(thing){truc.setReadOnly(thing);})\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"ajouterContenu\").query(\"field\"), function(thing){thing.setReadOnly(true);})\r",
                     "    Ext.getCmp(\"boutonSoumettreNouveauContenu\").up().hide();\r",
                     "    var nct = Ext.getCmp(\"nestedContentsTab\");\r",
                     "    if (!Ext.isEmpty(nct)){\r",
@@ -317,6 +317,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"boutonModifierContenu\").setText('Modifier');\r",
                     "Ext.getCmp(\"boutonModifierContenu\").restricedRead=false;\r",
+                    "//console.log(Ext.getCmp(\"boutonModifierContenu\").restricedRead);\r",
                     "var boiteMeta = Ext.getCmp(\"contributionContenus\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
                     "var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');\r",
                     "var customMeta= \"\";\r",
@@ -344,7 +345,7 @@
                     "        Ext.getCmp(\"boutonModifierContenu\").disable();\r",
                     "        Ext.getCmp(\"boutonSupprimerContenu\").disable();\r",
                     "    }\r",
-                    "    \r",
+                    "\r",
                     "    Ext.getCmp(\"contribWorkflowBox\").enable();\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"contribWorkflowBox\").items.items, function(item){item.enable();});    \r",
                     "    customMeta=selections[0].get(\"text\")+\"</br> Creation : \"+Ext.Date.format(selections[0].get(\"createTime\"), \"d-m-y\")+\r",
@@ -446,6 +447,7 @@
                 "designer|userClassName": "doubleClickEdit",
                 "fn": "doubleClickEdit",
                 "implHandler": [
+                    "\r",
                     "Ext.getCmp(\"boutonModifierContenu\").fireEvent(\"click\");"
                 ],
                 "name": "itemdblclick",

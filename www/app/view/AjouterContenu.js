@@ -53,7 +53,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             ACL: 'write.ui.contents.draft',
                             id: 'boutonEnregistrerNouveauContenu',
                             iconCls: 'save',
-                            text: 'Enregistrer'
+                            text: 'Enregistrer en tant que brouillon'
                         },
                         {
                             xtype: 'button',
