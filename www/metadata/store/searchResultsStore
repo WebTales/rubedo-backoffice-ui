@@ -1,0 +1,57 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "searchResultsStore",
+        "designer|userAlias": "searchResultsStore",
+        "storeId": "searchResultsStore",
+        "model": null
+    },
+    "id": "ExtBox1-ext-gen8899",
+    "designerId": "b43f409a-1426-4a5b-9347-6d7f4103dd6b",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field164",
+                "name": "text"
+            },
+            "designerId": "06e76df1-0d09-4bd3-a048-8e512a3ab5f2"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field165",
+                "name": "type"
+            },
+            "designerId": "beec4b95-63a5-468d-a63b-ce093f2bcc40"
+        },
+        {
+            "type": "grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGrouper4",
+                "property": "type"
+            },
+            "designerId": "ae14cd98-83bc-4f5a-9cf8-17934b4a70de"
+        }
+    ]
+}

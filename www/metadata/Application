@@ -53,7 +53,8 @@
             "UsersComboStore",
             "CurrentUserDataStore",
             "DepContentsCombo",
-            "NestedContentsStore"
+            "NestedContentsStore",
+            "searchResultsStore"
         ],
         "views": [
             "MyContainer",
@@ -93,7 +94,9 @@
             "NestedContentAddWindow",
             "MyWindow31",
             "esResponseWindow",
-            "esWindowButton"
+            "esWindowButton",
+            "searchResultsWindow",
+            "MyGridPanel20"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
@@ -110,7 +113,8 @@
             "MediathequeController",
             "UsersController",
             "ServerErrorController",
-            "ACLController"
+            "ACLController",
+            "SearchController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

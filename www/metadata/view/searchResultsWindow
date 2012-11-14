@@ -1,0 +1,34 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "searchResultsWindow",
+        "designer|userAlias": "searchResultsWindow",
+        "height": 402,
+        "id": "searchResultsWindow",
+        "width": 607,
+        "layout": "fit",
+        "iconCls": "search",
+        "title": "Résultats de recherche",
+        "maximizable": true,
+        "minimizable": true
+    },
+    "id": "ExtBox1-ext-gen9089",
+    "designerId": "f720ad71-dfb5-436d-95de-957b47102cb6",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "e0c87a36-f0b1-4300-8367-fd019bd614ef",
+            "masterInstanceId": "ExtBox1-ext-gen12006"
+        }
+    ]
+}

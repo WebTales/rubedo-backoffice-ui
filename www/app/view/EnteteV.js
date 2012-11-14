@@ -59,15 +59,17 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'textfield',
+                    id: 'ESSearchField',
                     itemId: 'filterField',
                     value: 'Recherche',
                     fieldLabel: '',
                     labelSeparator: ' ',
-                    labelWidth: 68
+                    labelWidth: 68,
+                    allowBlank: false
                 },
                 {
                     xtype: 'button',
-                    itemId: 'searchButton',
+                    itemId: 'ESSearchButton',
                     iconCls: 'search'
                 },
                 {

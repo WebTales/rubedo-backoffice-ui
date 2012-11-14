@@ -121,13 +121,15 @@
             "userConfig": {
                 "layout|flex": null,
                 "designer|userClassName": "MyTextField",
+                "id": "ESSearchField",
                 "itemId": "filterField",
                 "value": [
                     "'Recherche'"
                 ],
                 "fieldLabel": "",
                 "labelSeparator": " ",
-                "labelWidth": 68
+                "labelWidth": 68,
+                "allowBlank": false
             },
             "designerId": "6c99783e-6f06-4dfc-a123-064f5486e953"
         },
@@ -141,7 +143,7 @@
             "userConfig": {
                 "layout|flex": null,
                 "designer|userClassName": "MyButton",
-                "itemId": "searchButton",
+                "itemId": "ESSearchButton",
                 "iconCls": "search",
                 "text": null
             },

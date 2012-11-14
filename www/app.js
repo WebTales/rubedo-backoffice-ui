@@ -69,7 +69,8 @@ Ext.application({
         'UsersComboStore',
         'CurrentUserDataStore',
         'DepContentsCombo',
-        'NestedContentsStore'
+        'NestedContentsStore',
+        'searchResultsStore'
     ],
     views: [
         'MyContainer',
@@ -109,7 +110,9 @@ Ext.application({
         'NestedContentAddWindow',
         'MyWindow31',
         'esResponseWindow',
-        'esWindowButton'
+        'esWindowButton',
+        'searchResultsWindow',
+        'MyGridPanel20'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -126,6 +129,7 @@ Ext.application({
         'MediathequeController',
         'UsersController',
         'ServerErrorController',
-        'ACLController'
+        'ACLController',
+        'SearchController'
     ]
 });

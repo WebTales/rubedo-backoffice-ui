@@ -1,0 +1,70 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyGridPanel20",
+        "designer|userAlias": "mygridpanel20",
+        "id": "ResultContentsGrid",
+        "itemId": null,
+        "title": "",
+        "store": "searchResultsStore"
+    },
+    "id": "ExtBox1-ext-gen12006",
+    "designerId": "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView2"
+            },
+            "designerId": "5dc083f4-5a24-48aa-9b80-e39f6ddee069"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn5",
+                "dataIndex": "text",
+                "flex": 1,
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "e3587e55-0229-4cf6-b84f-d922e423dbf2",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "groupinggridfeature",
+            "reference": {
+                "name": "features",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGroupingFeature4"
+            },
+            "designerId": "124e7ab1-4e7a-4be9-9720-bd4584334401"
+        }
+    ]
+}

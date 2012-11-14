@@ -1138,6 +1138,38 @@
                 "app/view/esWindowButton.js"
             ],
             "className": "esWindowButton"
+        },
+        "f720ad71-dfb5-436d-95de-957b47102cb6": {
+            "paths": [
+                "metadata/view/searchResultsWindow",
+                "app/view/override/searchResultsWindow.js",
+                "app/view/searchResultsWindow.js"
+            ],
+            "className": "searchResultsWindow"
+        },
+        "b43f409a-1426-4a5b-9347-6d7f4103dd6b": {
+            "paths": [
+                "metadata/store/searchResultsStore",
+                "app/store/override/searchResultsStore.js",
+                "app/store/searchResultsStore.js"
+            ],
+            "className": "searchResultsStore"
+        },
+        "7ebe237b-4559-4f9b-9f7e-314717f87dd7": {
+            "paths": [
+                "metadata/view/MyGridPanel20",
+                "app/view/override/MyGridPanel20.js",
+                "app/view/MyGridPanel20.js"
+            ],
+            "className": "MyGridPanel20"
+        },
+        "606ff5d4-d66c-4e04-81ba-5331a2b062fc": {
+            "paths": [
+                "metadata/controller/SearchController",
+                "app/controller/override/SearchController.js",
+                "app/controller/SearchController.js"
+            ],
+            "className": "SearchController"
         }
     },
     "viewOrderMap": {
@@ -1199,10 +1231,12 @@
             "b1bc7398-38df-48e1-a226-5c63483e1eab",
             "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
             "648ee02b-21bf-4d06-8c07-2e215977ab97",
+            "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
             "1a109b37-693d-4f8c-8b02-455dffd48a58",
             "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
             "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
-            "c3fda741-3af7-4193-85b9-c42d3530fd90"
+            "c3fda741-3af7-4193-85b9-c42d3530fd90",
+            "f720ad71-dfb5-436d-95de-957b47102cb6"
         ],
         "store": [
             "8f43a679-c0ea-4980-b4af-43ba29385f00",
@@ -1237,7 +1271,8 @@
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
             "b4bbd262-e72b-4675-8908-02414ab69420",
-            "817bd763-92f6-4eb5-9b4c-817418ccc96f"
+            "817bd763-92f6-4eb5-9b4c-817418ccc96f",
+            "b43f409a-1426-4a5b-9347-6d7f4103dd6b"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1253,7 +1288,8 @@
             "b2af3c2f-f75e-4841-ba23-2846d3c30f46",
             "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
-            "dc1acb41-f9a0-4ebc-8338-2cd4321f5712"
+            "dc1acb41-f9a0-4ebc-8338-2cd4321f5712",
+            "606ff5d4-d66c-4e04-81ba-5331a2b062fc"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",
