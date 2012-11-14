@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     favoriteIcon: 'page_full.png',
     height: 578,
     id: 'adminFTDC',
-    width: 1320,
+    width: 1330,
     layout: {
         align: 'stretch',
         type: 'hbox'
