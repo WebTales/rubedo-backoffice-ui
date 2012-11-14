@@ -246,7 +246,32 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     changeMyPassword: function(button, e, options) {
+        var myForm=button.up().up().getForm();
 
+        if (myForm.isValid()) {
+            if (myForm.getFieldValues().newPassword==myForm.getFieldValues().newPasswordConfirm){
+                myForm.submit({
+                    url:"current-user/change-password",
+                    success: function(form, action) {
+                        Ext.Msg.alert('Succés', 'Mot de passe changé');
+
+                    },
+                    failure: function(form, action) {
+                        switch (action.failureType) {
+                            case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Erreur', 'Formulaire invalide');
+                            break;
+                            case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                            break;
+                            case Ext.form.action.Action.SERVER_INVALID:
+                            Ext.Msg.alert('Erreur', action.result.msg);
+                        }
+                    }
+                }); } else {
+                    Ext.Msg.alert('Erreur', "Les mots de passe ne correspondent pas");
+                }
+            }
     },
 
     getGroupUsers: function(group, array) {
