@@ -8,12 +8,13 @@
     "userConfig": {
         "designer|userClassName": "searchResultsWindow",
         "designer|userAlias": "searchResultsWindow",
-        "height": 402,
+        "height": 350,
         "id": "searchResultsWindow",
         "width": 607,
         "layout": "fit",
         "iconCls": "search",
         "title": "Résultats de recherche",
+        "constrainHeader": true,
         "maximizable": true,
         "minimizable": true
     },
@@ -27,6 +28,9 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "overflowY": "auto"
+            },
             "designerId": "e0c87a36-f0b1-4300-8367-fd019bd614ef",
             "masterInstanceId": "ExtBox1-ext-gen12006"
         }

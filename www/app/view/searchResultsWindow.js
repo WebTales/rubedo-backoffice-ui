@@ -21,7 +21,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         'Rubedo.view.MyGridPanel20'
     ],
 
-    height: 402,
+    height: 350,
     id: 'searchResultsWindow',
     width: 607,
     layout: {
@@ -29,6 +29,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     },
     iconCls: 'search',
     title: 'Résultats de recherche',
+    constrainHeader: true,
     maximizable: true,
     minimizable: true,
 
@@ -38,7 +39,8 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'mygridpanel20'
+                    xtype: 'mygridpanel20',
+                    overflowY: 'auto'
                 }
             ]
         });
