@@ -65,40 +65,6 @@
                 "designer|userClassName": "MyGroupingFeature4"
             },
             "designerId": "124e7ab1-4e7a-4be9-9720-bd4584334401"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onResultContentsGridItemDblClick",
-                "fn": "onResultContentsGridItemDblClick",
-                "implHandler": [
-                    "if (ACL.interfaceRights['read.ui.contents']){\r",
-                    "    var fenetre=Ext.getCmp(\"contributionContenus\");\r",
-                    "    if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }\r",
-                    "    else {\r",
-                    "        fenetre = Ext.widget(\"contributionContenus\");\r",
-                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
-                    "        if (Ext.isDefined(window.innerHeight)) {\r",
-                    "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
-                    "            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
-                    "        }\r",
-                    "        fenetre.show();\r",
-                    "    }\r",
-                    "    Ext.getCmp(\"TypesContenusGrid\").getSelectionModel().select(Ext.getCmp(\"TypesContenusGrid\").getStore().findRecord(\"type\",record.get(\"type\")));\r",
-                    "    Ext.getCmp(\"ContenusGrid\").getStore().addListener(\"load\", function(){\r",
-                    "        Ext.getCmp(\"ContenusGrid\").getSelectionModel().select(Ext.getCmp(\"ContenusGrid\").getStore().findRecord(\"id\",record.get(\"id\")));\r",
-                    "    }, this, {single:true});\r",
-                    "}"
-                ],
-                "name": "itemdblclick",
-                "scope": "me"
-            },
-            "designerId": "866e27ef-4eba-4dc3-892f-dccfef066424"
         }
     ]
 }

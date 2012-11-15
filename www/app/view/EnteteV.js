@@ -71,12 +71,16 @@ Ext.define('Rubedo.view.EnteteV', {
                             fn: me.onESSearchFieldFocus,
                             single: true,
                             scope: me
+                        },
+                        specialkey: {
+                            fn: me.onESSearchFieldSpecialkey,
+                            scope: me
                         }
                     }
                 },
                 {
                     xtype: 'button',
-                    itemId: 'ESSearchButton',
+                    id: 'ESSearchButton',
                     iconCls: 'search'
                 },
                 {
@@ -90,6 +94,13 @@ Ext.define('Rubedo.view.EnteteV', {
 
     onESSearchFieldFocus: function(field, options) {
         field.setValue();
+    },
+
+    onESSearchFieldSpecialkey: function(field, e, options) {
+
+        if (e.getKey() == e.ENTER) {
+            Ext.getCmp("ESSearchButton").fireEvent("click",Ext.getCmp("ESSearchButton"));
+        }
     }
 
 });

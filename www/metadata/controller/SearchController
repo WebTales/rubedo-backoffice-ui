@@ -53,7 +53,7 @@
                     "            });\r",
                     "            DisplayResults.getComponent(0).getStore().loadData(data);\r",
                     "            DisplayResults.setLoading(false);\r",
-                    "            \r",
+                    "\r",
                     "        }\r",
                     "    });\r",
                     "}"
@@ -64,6 +64,42 @@
                 "designer|controlQuery": "#ESSearchButton"
             },
             "designerId": "73056bf5-5078-4dd5-bd60-eb6b0e8f8262"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mainResultWindowGetContext",
+                "fn": "mainResultWindowGetContext",
+                "implHandler": [
+                    "if (ACL.interfaceRights['read.ui.contents']){\r",
+                    "    var fenetre=Ext.getCmp(\"contributionContenus\");\r",
+                    "    if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }\r",
+                    "    else {\r",
+                    "        fenetre = Ext.widget(\"contributionContenus\");\r",
+                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "        if (Ext.isDefined(window.innerHeight)) {\r",
+                    "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
+                    "            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
+                    "        }\r",
+                    "        fenetre.show();\r",
+                    "    }\r",
+                    "    Ext.getCmp(\"TypesContenusGrid\").getSelectionModel().select(Ext.getCmp(\"TypesContenusGrid\").getStore().findRecord(\"type\",record.get(\"type\")));\r",
+                    "    Ext.getCmp(\"ContenusGrid\").getStore().addListener(\"load\", function(){\r",
+                    "        Ext.getCmp(\"ContenusGrid\").getSelectionModel().select(Ext.getCmp(\"ContenusGrid\").getStore().findRecord(\"id\",record.get(\"id\")));\r",
+                    "    }, this, {single:true});\r",
+                    "    }"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ResultContentsGrid"
+            },
+            "designerId": "fea6c637-212a-4372-a699-1d94b9313c48"
         }
     ]
 }

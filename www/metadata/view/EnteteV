@@ -151,6 +151,27 @@
                         "scope": "me"
                     },
                     "designerId": "3f727643-9834-4f15-a59c-112dd9608a57"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onESSearchFieldSpecialkey",
+                        "fn": "onESSearchFieldSpecialkey",
+                        "implHandler": [
+                            "\r",
+                            "if (e.getKey() == e.ENTER) {\r",
+                            "    Ext.getCmp(\"ESSearchButton\").fireEvent(\"click\",Ext.getCmp(\"ESSearchButton\"));\r",
+                            "}"
+                        ],
+                        "name": "specialkey",
+                        "scope": "me"
+                    },
+                    "designerId": "29b50670-f20c-4ba1-98eb-cbfdb2fa1a1c"
                 }
             ]
         },
@@ -164,7 +185,8 @@
             "userConfig": {
                 "layout|flex": null,
                 "designer|userClassName": "MyButton",
-                "itemId": "ESSearchButton",
+                "id": "ESSearchButton",
+                "itemId": null,
                 "iconCls": "search",
                 "text": null
             },
