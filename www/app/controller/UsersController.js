@@ -44,8 +44,16 @@ Ext.define('Rubedo.controller.UsersController', {
 
     removeGroup: function(button, e, options) {
         var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+        var store = Ext.getCmp("groupsGrid").getStore();
         if (!Ext.isEmpty(target)) {
+            store.suspendAutoSync();
+            var myParent=target.parentNode;
+            if (myParent.childNodes.length==1){
+                myParent.set("leaf",true);
+            }
             target.remove();
+            store.resumeAutoSync();
+            store.sync();
             Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             button.disable();
         }
@@ -63,14 +71,20 @@ Ext.define('Rubedo.controller.UsersController', {
         if (Ext.isEmpty(target)) {
             target=Ext.getCmp("groupsGrid").getStore().getRootNode();
         }
+        var store=Ext.getCmp("groupsGrid").getStore();
         var nameField = button.previousSibling();
         if (nameField.isValid()) {
+            store.suspendAutoSync();
             target.appendChild({
                 name:nameField.getValue(),
                 members: [ ],
-                rights: { }
+                rights: { },
+                leaf:true
             });
+            target.set("leaf",false);
             target.expand();
+            store.resumeAutoSync();
+            store.sync();
         }
         button.up().up().close();
 
