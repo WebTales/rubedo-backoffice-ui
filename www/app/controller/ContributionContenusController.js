@@ -216,7 +216,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp("contentSubmitValBtn").disable();
             } else if (selections[0].get("status")=="draft") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
-                Ext.getCmp("contentAcceptPublishBtn").disable();
+                if (!Ext.getCmp("contentSubmitValBtn").isVisible()) {
+                    Ext.getCmp("contentAcceptPublishBtn").disable();
+                }
                 Ext.getCmp("contentRefuseBtn").disable();
             } else {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
@@ -264,7 +266,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
                     } else if (statuses[0]=="draft") {
                         imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
-                        Ext.getCmp("contentAcceptPublishBtn").disable();
+                        if (!Ext.getCmp("contentSubmitValBtn").isVisible()) {
+                            Ext.getCmp("contentAcceptPublishBtn").disable();
+                        }
                         Ext.getCmp("contentRefuseBtn").disable();
                     }
                 }
@@ -322,11 +326,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentAcceptPublish: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("status")=="pending") {
-                content.set("status", "published");
-            }});
-            Ext.getStore("ContenusDataJson").resumeAutoSync();
-            Ext.getStore("ContenusDataJson").sync();
+
+            content.set("status", "published");
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
     },
 
     contentSaveAndSubmit: function(button, e, options) {
