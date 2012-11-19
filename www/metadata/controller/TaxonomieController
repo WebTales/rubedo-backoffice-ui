@@ -42,7 +42,7 @@
                     "}\r",
                     "Ext.getCmp(\"ProprietesTaxonomie\").getForm().loadRecord(record);\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ProprietesTaxonomie\").items.items, function(thingy){\r",
-                    "    thingy.setReadOnly(!ACL.interfaceRights[\"write.ui.taxonomy\"]);\r",
+                    "thingy.setReadOnly(!ACL.interfaceRights[\"write.ui.taxonomy\"]);\r",
                     "});\r",
                     "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",

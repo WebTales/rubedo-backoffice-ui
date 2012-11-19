@@ -200,26 +200,23 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             customMeta=selections[0].get("text")+"</br> Creation : "+Ext.Date.format(selections[0].get("createTime"), "d-m-y")+
             " Dernière modification : "+Ext.Date.format(selections[0].get("lastUpdateTime"), "d-m-y")+" Auteur : "+selections[0].get("createUser").fullName;
             boiteMeta.update(customMeta);
+            if (selections[0].get("online")) {
+                Ext.getCmp("contentOnlineBtn").disable();
+            } else {
+                Ext.getCmp("contentOfflineBtn").disable();
+            }
             if (selections[0].get("status")=="published") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
                 Ext.getCmp("contentAcceptPublishBtn").disable();
                 Ext.getCmp("contentSubmitValBtn").disable();
                 Ext.getCmp("contentRefuseBtn").disable();
-                if (selections[0].get("online")) {
-                    Ext.getCmp("contentOnlineBtn").disable();
-                } else {
-                    Ext.getCmp("contentOfflineBtn").disable();
-                }
+
             } else if (selections[0].get("status")=="pending") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
                 Ext.getCmp("contentSubmitValBtn").disable();
-                Ext.getCmp("contentOnlineBtn").disable();
-                Ext.getCmp("contentOfflineBtn").disable();
             } else if (selections[0].get("status")=="draft") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
                 Ext.getCmp("contentAcceptPublishBtn").disable();
-                Ext.getCmp("contentOnlineBtn").disable();
-                Ext.getCmp("contentOfflineBtn").disable();
                 Ext.getCmp("contentRefuseBtn").disable();
             } else {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
@@ -244,32 +241,30 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
 
             } else {
-                Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});        
-                if (statuses[0]=="published") {
-                    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
-                    Ext.getCmp("contentAcceptPublishBtn").disable();
-                    Ext.getCmp("contentSubmitValBtn").disable();
-                    Ext.getCmp("contentRefuseBtn").disable();
-                    if (onlines.length>1) {
-                        Ext.getCmp("contentOnlineBtn").disable();
-                        Ext.getCmp("contentOfflineBtn").disable();
+                Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});
+                if (onlines.length>1) {
+                    Ext.getCmp("contentOnlineBtn").disable();
+                    Ext.getCmp("contentOfflineBtn").disable();
 
-                    }else {
-                        if (onlines[0]) {
-                            Ext.getCmp("contentOnlineBtn").disable();
-                        } else {
-                            Ext.getCmp("contentOfflineBtn").disable();
-                        }}
+                }else {
+                    if (onlines[0]) {
+                        Ext.getCmp("contentOnlineBtn").disable();
+                    } else {
+                        Ext.getCmp("contentOfflineBtn").disable();
+                    }}
+                    if (statuses[0]=="published") {
+                        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_accept.png');
+                        Ext.getCmp("contentAcceptPublishBtn").disable();
+                        Ext.getCmp("contentSubmitValBtn").disable();
+                        Ext.getCmp("contentRefuseBtn").disable();
+
                     } else if (statuses[0]=="pending") {
                         imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
                         Ext.getCmp("contentSubmitValBtn").disable();
-                        Ext.getCmp("contentOnlineBtn").disable();
-                        Ext.getCmp("contentOfflineBtn").disable();
+
                     } else if (statuses[0]=="draft") {
                         imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
                         Ext.getCmp("contentAcceptPublishBtn").disable();
-                        Ext.getCmp("contentOnlineBtn").disable();
-                        Ext.getCmp("contentOfflineBtn").disable();
                         Ext.getCmp("contentRefuseBtn").disable();
                     }
                 }
@@ -287,11 +282,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     putContentsOnline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("status")=="published") {
-                content.set("online", true);
-            }});
-            Ext.getStore("ContenusDataJson").resumeAutoSync();
-            Ext.getStore("ContenusDataJson").sync();
+
+            content.set("online", true);
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
     },
 
     contentRefuse: function(button, e, options) {
@@ -307,11 +302,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     putContentsOffline: function(button, e, options) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("status")=="published") {
-                content.set("online", false);
-            }});
-            Ext.getStore("ContenusDataJson").resumeAutoSync();
-            Ext.getStore("ContenusDataJson").sync();
+
+            content.set("online", false);
+        });
+        Ext.getStore("ContenusDataJson").resumeAutoSync();
+        Ext.getStore("ContenusDataJson").sync();
     },
 
     contentSubmitVal: function(button, e, options) {

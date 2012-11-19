@@ -119,7 +119,6 @@ Ext.application({
     controllers: [
         'ContributionSitesController',
         'PanierController',
-        'OutilsBureauController',
         'ContributionContenusController',
         'MasqueController',
         'TypesContenusController',

@@ -133,13 +133,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         o.filters.push(newFilter);
 
                     }
-                    console.log(o);
+
 
                 });
 
 
                 var selecteur = Ext.widget('comboboxselect', {
-                    name:lesTaxo[i].titre,
+                    name:leVocab.get("id"),
                     width:690,
                     fieldLabel: leVocab.get("name"),
                     autoScroll: false,
