@@ -24,7 +24,14 @@
                 "fn": "pageSiteSelect",
                 "implHandler": [
                     "Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
-                    "Ext.getStore(\"PagesDataStore\").load();"
+                    "Ext.getStore(\"PagesDataStore\").load();\r",
+                    "var filArianne = combo.up().up().up().getDockedComponent('filArianne');\r",
+                    "var typeFil = filArianne.getComponent('type');\r",
+                    "if (Ext.isDefined(typeFil)) {typeFil.setText(records[0].get(\"text\"));}\r",
+                    "else { typeFil= Ext.widget('button',{iconCls: \"masque-icon\", text:records[0].get(\"text\"), itemId:'type'});\r",
+                    "      typeFil.on(\"click\", function(){Ext.getCmp(\"mainPageTree\").getSelectionModel().select(Ext.getCmp(\"mainPageTree\").getRootNode());});\r",
+                    "      filArianne.add(typeFil);\r",
+                    "}"
                 ],
                 "name": "select",
                 "scope": "me",

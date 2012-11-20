@@ -42,7 +42,7 @@ Ext.define('Rubedo.view.regleChampAR', {
                             frame: false,
                             itemId: 'boutonEnleveRegleAR',
                             style: '{float:right}',
-                            iconCls: 'delete',
+                            iconCls: 'close',
                             text: ''
                         }
                     ]

@@ -128,7 +128,7 @@
                     "if (Ext.isDefined(cible)) {\r",
                     "    Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();\r",
                     "    var myParent=cible.parentNode;\r",
-                    "    if (myParent.childNodes.length==1){\r",
+                    "    if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){\r",
                     "        myParent.set(\"leaf\",true);\r",
                     "    }\r",
                     "    cible.remove();\r",

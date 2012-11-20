@@ -75,7 +75,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                         },
                         {
                             xtype: 'button',
-                            iconCls: 'delete',
+                            iconCls: 'close',
                             text: 'Supprimer',
                             listeners: {
                                 click: {

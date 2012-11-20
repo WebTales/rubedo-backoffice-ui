@@ -20,6 +20,13 @@ Ext.define('Rubedo.controller.PagesController', {
     pageSiteSelect: function(combo, records, options) {
         Ext.getStore("PagesDataStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
         Ext.getStore("PagesDataStore").load();
+        var filArianne = combo.up().up().up().getDockedComponent('filArianne');
+        var typeFil = filArianne.getComponent('type');
+        if (Ext.isDefined(typeFil)) {typeFil.setText(records[0].get("text"));}
+        else { typeFil= Ext.widget('button',{iconCls: "masque-icon", text:records[0].get("text"), itemId:'type'});
+        typeFil.on("click", function(){Ext.getCmp("mainPageTree").getSelectionModel().select(Ext.getCmp("mainPageTree").getRootNode());});
+        filArianne.add(typeFil);
+    }
     },
 
     init: function(application) {

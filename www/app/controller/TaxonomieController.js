@@ -108,7 +108,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         if (Ext.isDefined(cible)) {
             Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
             var myParent=cible.parentNode;
-            if (myParent.childNodes.length==1){
+            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
                 myParent.set("leaf",true);
             }
             cible.remove();

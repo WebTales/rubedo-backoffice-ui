@@ -69,7 +69,7 @@
                     "if (!Ext.isEmpty(target)) {\r",
                     "    store.suspendAutoSync();\r",
                     "    var myParent=target.parentNode;\r",
-                    "    if (myParent.childNodes.length==1){\r",
+                    "    if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){\r",
                     "        myParent.set(\"leaf\",true);\r",
                     "    }\r",
                     "    target.remove();\r",

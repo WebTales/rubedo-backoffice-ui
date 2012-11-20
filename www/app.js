@@ -115,7 +115,7 @@ Ext.application({
         'searchResultsWindow',
         'MyGridPanel20',
         'sitesInterface',
-        'newSiteWindow'
+        'MyWindow35'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

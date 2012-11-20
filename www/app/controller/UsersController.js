@@ -48,7 +48,7 @@ Ext.define('Rubedo.controller.UsersController', {
         if (!Ext.isEmpty(target)) {
             store.suspendAutoSync();
             var myParent=target.parentNode;
-            if (myParent.childNodes.length==1){
+            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
                 myParent.set("leaf",true);
             }
             target.remove();
