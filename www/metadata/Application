@@ -23,7 +23,8 @@
             "userDataModel",
             "reusableElementModel",
             "delegationDataModel",
-            "nestedContentModel"
+            "nestedContentModel",
+            "pageDataModel"
         ],
         "stores": [
             "SitesJson",
@@ -53,7 +54,8 @@
             "CurrentUserDataStore",
             "DepContentsCombo",
             "NestedContentsStore",
-            "searchResultsStore"
+            "searchResultsStore",
+            "PagesDataStore"
         ],
         "views": [
             "MyContainer",
@@ -115,7 +117,8 @@
             "ServerErrorController",
             "ACLController",
             "SearchController",
-            "SitesController"
+            "SitesController",
+            "PagesController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

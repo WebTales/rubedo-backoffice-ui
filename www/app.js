@@ -39,7 +39,8 @@ Ext.application({
         'userDataModel',
         'reusableElementModel',
         'delegationDataModel',
-        'nestedContentModel'
+        'nestedContentModel',
+        'pageDataModel'
     ],
     stores: [
         'SitesJson',
@@ -69,7 +70,8 @@ Ext.application({
         'CurrentUserDataStore',
         'DepContentsCombo',
         'NestedContentsStore',
-        'searchResultsStore'
+        'searchResultsStore',
+        'PagesDataStore'
     ],
     views: [
         'MyContainer',
@@ -131,6 +133,7 @@ Ext.application({
         'ServerErrorController',
         'ACLController',
         'SearchController',
-        'SitesController'
+        'SitesController',
+        'PagesController'
     ]
 });

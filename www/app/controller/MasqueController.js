@@ -89,7 +89,6 @@ Ext.define('Rubedo.controller.MasqueController', {
         filArianne.add(typeFil);
     }
     var masque = record.data;
-    this.getVersionsDataJsonStore().loadData(masque.versions);
     var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
     if (!Ext.isEmpty(prevSelected)) {
         prevSelected.removeBodyCls('selectedelement');
@@ -191,7 +190,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         },
                         "span":12,
                         "offset":0,
-                        "bloc": null,
+                        "blocks": null,
                         "rows":null	
                     }
                     ]
@@ -799,8 +798,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (!Ext.isEmpty(element.rows)) {
             Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing);});
         }
-        if (!Ext.isEmpty(element.bloc)) {
-            Ext.Array.forEach(element.bloc,function(thing){me.removeIds(thing);});
+        if (!Ext.isEmpty(element.blocks)) {
+            Ext.Array.forEach(element.blocks,function(thing){me.removeIds(thing);});
         }
     },
 
@@ -863,7 +862,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 if (continueOK){
                     if (element.id==id) {
                         var leprop="rows";
-                        if (child.mType=="col") { leprop="columns";} else if (child.mType=="bloc") { leprop="bloc";}
+                        if (child.mType=="col") { leprop="columns";} else if (child.mType=="block") { leprop="blocks";}
                         if(Ext.isEmpty(element[leprop])){
                             element[leprop]=[ ];
                         }
@@ -899,8 +898,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                     if ((!Ext.isEmpty(element.rows))&&(result===null)) {
                         result=me.findElement(element.rows,elementId);
                     }
-                    if ((!Ext.isEmpty(element.bloc))&&(result===null)) {
-                        result=me.findElement(element.bloc,elementId);
+                    if ((!Ext.isEmpty(element.blocks))&&(result===null)) {
+                        result=me.findElement(element.blocks,elementId);
                     }
                 }}
 
@@ -918,7 +917,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 var nColonne = {flex:colonnesM[j].flex, blocs: [ ]};
                 var blocsM =colonnesM[j].items.items;
                 for(k=0;k<blocsM.length; k++) {
-                    nColonne.blocs.push({ flex : blocsM[k].flex, title: blocsM[k].title, bType: blocsM[k].bType, champsConfig: blocsM[k].champsConfig, configBloc: blocsM[k].configBloc});
+                    nColonne.blocks.push({ flex : blocsM[k].flex, title: blocsM[k].title, bType: blocsM[k].bType, champsConfig: blocsM[k].champsConfig, configBloc: blocsM[k].configBloc});
                 }        
                 nZone.colonnes.push(nColonne);
             }
@@ -929,12 +928,12 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     getElementDepth: function(element) {
         var me = this;
-        if (element.mType=="bloc") {
+        if (element.mType=="block") {
             return(1);
         }
         else if (element.mType=="col") {
             var bDepth = 1;
-            if (!Ext.isEmpty(element.bloc)) {bDepth=2;}
+            if (!Ext.isEmpty(element.blocks)) {bDepth=2;}
             var cDepth = 1;
             if (!Ext.isEmpty(element.rows)) {
                 cDepth= 1+Ext.Array.max(Ext.Array.map(element.rows,function(row){return(me.getElementDepth(row));}));
@@ -999,8 +998,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                     me.masqueRestit(column.rows,its-1,newCol);    
                 }
                 else {
-                    if (Ext.isEmpty(column.bloc)){} else {
-                    Ext.Array.forEach(column.bloc, function(bl){
+                    if (Ext.isEmpty(column.blocks)){} else {
+                    Ext.Array.forEach(column.blocks, function(bl){
                         newCol.add(Ext.widget("unBloc",bl));
                     });
                 }
@@ -1040,15 +1039,15 @@ Ext.define('Rubedo.controller.MasqueController', {
             var offset=0;
             Ext.Array.forEach(row.items.items, function(col){
                 if (col.isXType("panel")) {
-                    var bloc = null;
+                    var blocks = null;
                     var rows = null;
                     var isTerminal=true;
                     if (col.final) { 
                         var nBlocs=col.items.items;
                         if (!Ext.isEmpty(nBlocs)) {
-                            bloc=[ ];
+                            blocks=[ ];
                             Ext.Array.forEach(nBlocs, function(nBloc){
-                                bloc.push({
+                                blocks.push({
 
                                     bType:nBloc.bType,
                                     id:nBloc.id,
@@ -1069,13 +1068,13 @@ Ext.define('Rubedo.controller.MasqueController', {
                         if (Ext.isEmpty(thing)){} else if (thing.isXType("unBloc")) {
                         var nBlocs=col.items.items;
                         if (!Ext.isEmpty(nBlocs)) {
-                            bloc=[ ];
+                            blocks=[ ];
                             Ext.Array.forEach(nBlocs, function(nBloc){
-                                bloc.push({
+                                blocks.push({
 
                                     bType:nBloc.bType,
                                     id:nBloc.id,
-                                    mType:"bloc",
+                                    mType:"block",
                                     champsConfig:nBloc.champsConfig,
                                     configBloc:nBloc.configBloc,
                                     title:nBloc.title,
@@ -1100,7 +1099,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     id:col.id,
                     mType:"col",
                     offset:offset,
-                    bloc: bloc,
+                    blocks: blocks,
                     rows: rows,
                     isTerminal:isTerminal
 

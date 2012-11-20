@@ -1178,6 +1178,30 @@
                 "app/view/newSiteWindow.js"
             ],
             "className": "newSiteWindow"
+        },
+        "de8dc629-dc89-4153-926c-012ddbaa1d57": {
+            "paths": [
+                "metadata/model/pageDataModel",
+                "app/model/override/pageDataModel.js",
+                "app/model/pageDataModel.js"
+            ],
+            "className": "pageDataModel"
+        },
+        "1c2adda2-e782-40ff-b3f4-9e592104046f": {
+            "paths": [
+                "metadata/store/PagesDataStore",
+                "app/store/override/PagesDataStore.js",
+                "app/store/PagesDataStore.js"
+            ],
+            "className": "PagesDataStore"
+        },
+        "b29235f7-9588-4632-b7ab-b0f2633b21ec": {
+            "paths": [
+                "metadata/controller/PagesController",
+                "app/controller/override/PagesController.js",
+                "app/controller/PagesController.js"
+            ],
+            "className": "PagesController"
         }
     },
     "viewOrderMap": {
@@ -1281,7 +1305,8 @@
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
             "b4bbd262-e72b-4675-8908-02414ab69420",
             "817bd763-92f6-4eb5-9b4c-817418ccc96f",
-            "b43f409a-1426-4a5b-9347-6d7f4103dd6b"
+            "b43f409a-1426-4a5b-9347-6d7f4103dd6b",
+            "1c2adda2-e782-40ff-b3f4-9e592104046f"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1298,7 +1323,8 @@
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
             "dc1acb41-f9a0-4ebc-8338-2cd4321f5712",
             "606ff5d4-d66c-4e04-81ba-5331a2b062fc",
-            "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c"
+            "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c",
+            "b29235f7-9588-4632-b7ab-b0f2633b21ec"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",
@@ -1309,6 +1335,7 @@
             "b22a93f8-8da7-4af9-9421-f70e6693b540",
             "fe5d7737-8a9a-41fb-bffc-cc004c69d906",
             "959aada9-4d0a-400b-bb01-0907998b9c82",
+            "de8dc629-dc89-4153-926c-012ddbaa1d57",
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",
             "b7c9bf48-e637-4102-9d82-32331502ba65",

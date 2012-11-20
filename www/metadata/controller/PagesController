@@ -1,0 +1,36 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PagesController",
+        "designer|userAlias": "PagesController"
+    },
+    "id": "ExtBox1-ext-gen40229",
+    "designerId": "b29235f7-9588-4632-b7ab-b0f2633b21ec",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboboxSelect",
+                "fn": "onComboboxSelect",
+                "implHandler": [
+                    "console.log(records);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#pagesSitesCombo"
+            },
+            "designerId": "7f866395-6912-493e-b496-40113840a82e"
+        }
+    ]
+}

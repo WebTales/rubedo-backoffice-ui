@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.contributionPages', {
     favoriteIcon: 'application.png',
     height: 578,
     id: 'contributionPages',
-    width: 1000,
+    width: 1200,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -141,6 +141,40 @@ Ext.define('Rubedo.view.contributionPages', {
                             text: ''
                         }
                     ]
+                }
+            ],
+            items: [
+                {
+                    xtype: 'treepanel',
+                    width: 240,
+                    title: '',
+                    store: 'PagesDataStore',
+                    viewConfig: {
+
+                    },
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    id: 'pagesSitesCombo',
+                                    fieldLabel: 'Site ',
+                                    labelWidth: 40,
+                                    editable: false,
+                                    forceSelection: true,
+                                    store: 'SitesJson',
+                                    valueField: 'id'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    flex: 1,
+                    title: ''
                 }
             ]
         });

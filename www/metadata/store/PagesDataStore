@@ -6,16 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "GroupsDataStore",
-        "designer|userAlias": "GroupsDataStore",
+        "designer|userClassName": "PagesDataStore",
+        "designer|userAlias": "PagesDataStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "GroupsDataStore",
-        "model": "groupDataModel",
-        "defaultRootId": null
+        "storeId": "PagesDataStore",
+        "model": "pageDataModel"
     },
-    "id": "ExtBox1-ext-gen13038",
-    "designerId": "07053528-2f61-4530-94a2-099a9f5d243c",
+    "id": "ExtBox1-ext-gen37573",
+    "designerId": "1c2adda2-e782-40ff-b3f4-9e592104046f",
     "cn": [
         {
             "type": "ajaxproxy",
@@ -25,18 +24,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy20",
+                "designer|userClassName": "MyAjaxProxy",
                 "api": [
                     "{\r",
-                    "     create: 'groups/create',\r",
-                    "     read: 'groups/read-child',\r",
-                    "     update: 'groups/update',\r",
-                    "     destroy: 'groups/delete'\r",
-                    "}"
-                ],
-                "url": null
+                    "                    create: 'pages/create',\r",
+                    "                    read: 'pages/read-child',\r",
+                    "                    update: 'pages/update',\r",
+                    "                    destroy: 'pages/delete'\r",
+                    "                }"
+                ]
             },
-            "designerId": "e1785f69-601f-4fed-b839-5d6dcaf4b9aa",
+            "designerId": "37a9c970-4cbf-4899-908c-cf71e5d92987",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -46,13 +44,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader18",
-                        "idProperty": null,
-                        "messageProperty": "message",
-                        "root": null,
-                        "record": null
+                        "designer|userClassName": "MyJsonReader",
+                        "messageProperty": "message"
                     },
-                    "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818",
+                    "designerId": "7fe66814-48c6-4515-ab77-c9aa1d7ac239",
                     "cn": [
                         {
                             "type": "basicfunction",
@@ -91,7 +86,7 @@
                                     "}"
                                 ]
                             },
-                            "designerId": "8f9cef44-3553-4805-9ccc-c140ca8a78c3"
+                            "designerId": "5380563e-73c7-4994-b679-d39906ff5d8b"
                         }
                     ]
                 },
@@ -103,11 +98,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter4",
+                        "designer|userClassName": "MyJsonWriter20",
                         "encode": true,
                         "root": "data"
                     },
-                    "designerId": "c10c65aa-5737-48d2-af1e-c2bad3b2ef87"
+                    "designerId": "0ebb1a9e-cc95-4b9f-b91b-6c8c6e6db8b8"
                 }
             ]
         }
