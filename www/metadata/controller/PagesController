@@ -36,7 +36,8 @@
                     "}\r",
                     "Ext.getCmp(\"addPageBtn\").enable();\r",
                     "Ext.getCmp(\"removePageBtn\").disable();\r",
-                    "Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});"
+                    "Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "Ext.getCmp(\"mainPageEdition\").removeAll();"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -130,6 +131,7 @@
                     "        Ext.getCmp(\"addPageBtn\").enable();\r",
                     "        Ext.getCmp(\"removePageBtn\").disable();\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "        Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "        Ext.getCmp('delConfirmZ').close();\r",
                     "\r",
                     "    });  \r",
@@ -154,8 +156,12 @@
                 "designer|userClassName": "pageSelect",
                 "fn": "pageSelect",
                 "implHandler": [
-                    "Ext.getCmp(\"removePageBtn\").enable();\r",
-                    "Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});"
+                    "if (!record.isRoot()){\r",
+                    "    Ext.getCmp(\"removePageBtn\").enable();\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
+                    "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
+                    "    Rubedo.controller.MasqueController.prototype.masqueRestit(record.get(\"rows\"),1,Ext.getCmp(\"mainPageEdition\"));\r",
+                    "}"
                 ],
                 "name": "select",
                 "scope": "me",

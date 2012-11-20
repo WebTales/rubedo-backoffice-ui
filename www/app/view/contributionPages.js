@@ -258,7 +258,11 @@ Ext.define('Rubedo.view.contributionPages', {
                 {
                     xtype: 'panel',
                     flex: 1,
-                    id: 'mainPageEdition'
+                    id: 'mainPageEdition',
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    }
                 },
                 {
                     xtype: 'panel',

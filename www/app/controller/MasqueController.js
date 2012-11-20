@@ -1180,7 +1180,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             "#masqueEdition": {
                 render: this.mainBoxSelect
             },
-            "unBloc": {
+            "#masqueEdition unBloc": {
                 render: this.blocSelect
             },
             "#ExportElementButton": {

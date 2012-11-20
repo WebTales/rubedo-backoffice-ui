@@ -32,6 +32,7 @@ Ext.define('Rubedo.controller.PagesController', {
     Ext.getCmp("addPageBtn").enable();
     Ext.getCmp("removePageBtn").disable();
     Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+    Ext.getCmp("mainPageEdition").removeAll();
     },
 
     openPageAddWindow: function(button, e, options) {
@@ -77,6 +78,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 Ext.getCmp("addPageBtn").enable();
                 Ext.getCmp("removePageBtn").disable();
                 Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                Ext.getCmp("mainPageEdition").removeAll();
                 Ext.getCmp('delConfirmZ').close();
 
             });  
@@ -85,8 +87,12 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     pageSelect: function(selModel, record, index, options) {
-        Ext.getCmp("removePageBtn").enable();
-        Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+        if (!record.isRoot()){
+            Ext.getCmp("removePageBtn").enable();
+            Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+            Ext.getCmp("mainPageEdition").removeAll();
+            Rubedo.controller.MasqueController.prototype.masqueRestit(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
+        }
     },
 
     init: function(application) {
