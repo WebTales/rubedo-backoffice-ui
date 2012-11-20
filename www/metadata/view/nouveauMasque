@@ -69,9 +69,10 @@
                         "id": "nouveauMasqueSite",
                         "fieldLabel": "Site ",
                         "allowBlank": false,
+                        "editable": false,
                         "forceSelection": true,
                         "store": "SitesJson",
-                        "valueField": "text"
+                        "valueField": "id"
                     },
                     "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b"
                 },

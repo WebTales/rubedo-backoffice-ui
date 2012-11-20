@@ -691,7 +691,46 @@
                         "groupByText": null,
                         "startCollapsed": false
                     },
-                    "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e"
+                    "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "groupHeaderTpl",
+                                "implHandler": [
+                                    "Site : {name:this.getProperName}"
+                                ],
+                                "designer|displayName": "groupHeaderTpl"
+                            },
+                            "designerId": "8eae40f4-701a-4c09-bedc-e8dc38a4874e",
+                            "cn": [
+                                {
+                                    "type": "templatefunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "getProperName",
+                                        "fn": "getProperName",
+                                        "designer|params": [
+                                            "name"
+                                        ],
+                                        "implHandler": [
+                                            "return(Ext.getStore(\"SitesJson\").findRecord(\"id\",name).get(\"text\"));"
+                                        ]
+                                    },
+                                    "designerId": "7948b3e1-2996-4fe8-9f40-2f91dd2a3987"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",

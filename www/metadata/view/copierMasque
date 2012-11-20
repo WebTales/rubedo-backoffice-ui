@@ -66,9 +66,10 @@
                         "id": "copierMasqueSite",
                         "fieldLabel": "Vers le site ",
                         "allowBlank": false,
+                        "editable": false,
                         "forceSelection": true,
                         "store": "SitesJson",
-                        "valueField": "text"
+                        "valueField": "id"
                     },
                     "designerId": "36fde64e-b099-4699-a162-b92b00cde888"
                 },

@@ -313,6 +313,14 @@ Ext.define('Rubedo.view.adminFMDP', {
                     features: [
                         {
                             ftype: 'grouping',
+                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                'Site : {name:this.getProperName}',
+                                {
+                                    getProperName: function(name) {
+                                        return(Ext.getStore("SitesJson").findRecord("id",name).get("text"));
+                                    }
+                                }
+                            ),
                             startCollapsed: false
                         }
                     ],

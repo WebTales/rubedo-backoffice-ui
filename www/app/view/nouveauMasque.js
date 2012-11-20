@@ -52,9 +52,10 @@ Ext.define('Rubedo.view.nouveauMasque', {
                             id: 'nouveauMasqueSite',
                             fieldLabel: 'Site ',
                             allowBlank: false,
+                            editable: false,
                             forceSelection: true,
                             store: 'SitesJson',
-                            valueField: 'text'
+                            valueField: 'id'
                         },
                         {
                             xtype: 'button',

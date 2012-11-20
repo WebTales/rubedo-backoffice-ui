@@ -22,19 +22,10 @@ Ext.define('Rubedo.model.sitesDataModel', {
             type: 'string'
         },
         {
-            name: 'etat',
-            type: 'string'
-        },
-        {
-            name: 'largeur',
-            type: 'int'
-        },
-        {
-            name: 'site',
-            type: 'boolean'
-        },
-        {
             name: 'version'
+        },
+        {
+            name: 'id'
         }
     ]
 });

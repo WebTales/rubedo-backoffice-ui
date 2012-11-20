@@ -42,7 +42,6 @@ Ext.application({
         'nestedContentModel'
     ],
     stores: [
-        'SitesDataJson',
         'SitesJson',
         'BlocsDataStore',
         'StoreOptionFiltrageTaxonomie',

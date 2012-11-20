@@ -51,9 +51,10 @@ Ext.define('Rubedo.view.copierMasque', {
                             id: 'copierMasqueSite',
                             fieldLabel: 'Vers le site ',
                             allowBlank: false,
+                            editable: false,
                             forceSelection: true,
                             store: 'SitesJson',
-                            valueField: 'text'
+                            valueField: 'id'
                         },
                         {
                             xtype: 'button',

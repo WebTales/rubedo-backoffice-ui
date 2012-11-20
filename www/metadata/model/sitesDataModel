@@ -33,52 +33,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField",
-                "name": "etat",
-                "type": "string"
-            },
-            "designerId": "7740a5b9-4374-49c3-8565-21ba6307a57f"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField26",
-                "name": "largeur",
-                "type": "int"
-            },
-            "designerId": "32651c66-0ccf-409e-84a2-b6e0397a39e0"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyField26",
-                "name": "site",
-                "type": "boolean"
-            },
-            "designerId": "008df4f1-c1ef-4aeb-8c51-80aa104aa2a5"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|userClassName": "MyField83",
                 "name": "version"
             },
             "designerId": "41057fc7-288c-4a96-b2e0-5a5acf9bcd1f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field1",
+                "name": "id"
+            },
+            "designerId": "0a562948-338a-4d66-922c-c9b47668bfd8"
         }
     ]
 }
