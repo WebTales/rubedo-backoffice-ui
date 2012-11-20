@@ -97,14 +97,14 @@ Ext.define('Rubedo.view.contributionPages', {
                     items: [
                         {
                             xtype: 'button',
-                            id: 'boutonAjouterPages',
+                            id: 'addPageBtn',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
-                            id: 'boutonSupprimerPages',
+                            id: 'removePageBtn',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
@@ -115,13 +115,6 @@ Ext.define('Rubedo.view.contributionPages', {
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
-                        },
-                        {
-                            xtype: 'button',
-                            id: 'boutonPublierPages',
-                            iconCls: 'floppy_disc_accept_big',
-                            scale: 'large',
-                            text: 'Enregistrer et publier'
                         },
                         {
                             xtype: 'button',
@@ -150,6 +143,7 @@ Ext.define('Rubedo.view.contributionPages', {
                     width: 225,
                     title: '',
                     store: 'PagesDataStore',
+                    useArrows: true,
                     viewConfig: {
 
                     },
@@ -160,6 +154,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'combobox',
+                                    flex: 1,
                                     id: 'pagesSitesCombo',
                                     fieldLabel: 'Site ',
                                     labelWidth: 40,

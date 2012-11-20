@@ -1,0 +1,54 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MasksComboStore",
+        "designer|userAlias": "MasksComboStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "MasksComboStore",
+        "model": "masquesDataModel"
+    },
+    "id": "ExtBox1-ext-gen58574",
+    "designerId": "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy5",
+                "api": [
+                    "{\r",
+                    "read : 'masks'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "403759a8-51ca-47a9-89ce-18ffe6fb4517",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader3",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "38a29384-a150-49b6-a79b-7fcc59725867"
+                }
+            ]
+        }
+    ]
+}

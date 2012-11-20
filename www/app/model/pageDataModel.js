@@ -23,6 +23,10 @@ Ext.define('Rubedo.model.pageDataModel', {
             type: 'string'
         },
         {
+            name: 'maskId',
+            type: 'string'
+        },
+        {
             name: 'site'
         },
         {

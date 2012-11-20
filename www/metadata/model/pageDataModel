@@ -35,6 +35,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField16",
+                "name": "maskId",
+                "type": "string"
+            },
+            "designerId": "30cbd8d0-648a-4d91-98db-bb16c69f074a"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "MyField25",
                 "name": "site"
             },

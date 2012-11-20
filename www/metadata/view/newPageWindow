@@ -1,0 +1,99 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "newPageWindow",
+        "designer|userAlias": "newPageWindow",
+        "height": 126,
+        "id": "newPageWindow",
+        "width": 400,
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": null,
+        "title": "Nouvelle Page",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen61139",
+    "designerId": "ec59b13f-ba9f-4798-932e-3dff958db8e7",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm29",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "64ec40ac-85f8-4eab-b2ce-a83bd6c0e3df",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField44",
+                        "name": "text",
+                        "fieldLabel": "Nom  ",
+                        "labelWidth": 110,
+                        "allowBlank": false
+                    },
+                    "designerId": "d31f0307-4d9d-418b-aafc-f22ffef2078a"
+                },
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "dock": null,
+                        "designer|userClassName": "MyComboBox13",
+                        "name": "maskId",
+                        "fieldLabel": "Masque de page ",
+                        "labelWidth": 110,
+                        "allowBlank": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "MasksComboStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "46268254-4c0b-4734-bf0f-ff042a959e8b"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton158",
+                        "id": "newPageSubmitBtn",
+                        "text": "Créer en tant que fille de la page sélectionnée"
+                    },
+                    "designerId": "f85a67ca-a9ca-4c19-bb27-31ccee2deba8"
+                }
+            ]
+        }
+    ]
+}

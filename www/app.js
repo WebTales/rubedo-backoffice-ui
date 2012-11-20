@@ -71,7 +71,8 @@ Ext.application({
         'DepContentsCombo',
         'NestedContentsStore',
         'searchResultsStore',
-        'PagesDataStore'
+        'PagesDataStore',
+        'MasksComboStore'
     ],
     views: [
         'MyContainer',

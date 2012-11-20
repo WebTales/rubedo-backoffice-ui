@@ -205,7 +205,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton11",
-                        "id": "boutonAjouterPages",
+                        "id": "addPageBtn",
                         "itemId": null,
                         "icon": null,
                         "iconCls": "add_big",
@@ -224,7 +224,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
-                        "id": "boutonSupprimerPages",
+                        "id": "removePageBtn",
                         "itemId": null,
                         "icon": null,
                         "iconCls": "remove_big",
@@ -251,25 +251,6 @@
                         "text": "Enregistrer"
                     },
                     "designerId": "3d2ecff1-65dd-46e8-968a-7673274b373d"
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
-                        "id": "boutonPublierPages",
-                        "itemId": null,
-                        "icon": null,
-                        "iconCls": "floppy_disc_accept_big",
-                        "scale": "large",
-                        "text": "Enregistrer et publier"
-                    },
-                    "designerId": "caf1ca34-f62b-4be0-a7d8-5928d1f7b930"
                 },
                 {
                     "type": "button",
@@ -335,7 +316,8 @@
                 "id": "mainPageTree",
                 "width": 225,
                 "title": "",
-                "store": "PagesDataStore"
+                "store": "PagesDataStore",
+                "useArrows": true
             },
             "designerId": "d85e6db6-4417-4616-ab61-8cba6f2817a7",
             "cn": [
@@ -372,7 +354,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
+                                "layout|flex": 1,
                                 "designer|userClassName": "MyComboBox12",
                                 "id": "pagesSitesCombo",
                                 "fieldLabel": "Site ",

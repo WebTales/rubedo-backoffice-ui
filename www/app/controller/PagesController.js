@@ -20,6 +20,8 @@ Ext.define('Rubedo.controller.PagesController', {
     pageSiteSelect: function(combo, records, options) {
         Ext.getStore("PagesDataStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
         Ext.getStore("PagesDataStore").load();
+        Ext.getStore("MasksComboStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
+        Ext.getStore("MasksComboStore").load();
         var filArianne = combo.up().up().up().getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(records[0].get("text"));}
@@ -29,10 +31,66 @@ Ext.define('Rubedo.controller.PagesController', {
     }
     },
 
+    openPageAddWindow: function(button, e, options) {
+        Ext.widget("newPageWindow").show();
+    },
+
+    createNewPage: function(button, e, options) {
+        var form=button.up().getForm();
+        var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if (form.isValid()){
+            var newRows=button.previousSibling().getStore().findRecord("id",button.previousSibling().getValue()).get("rows");
+            var newPage=form.getValues();
+            newPage.rows=newRows;
+            newPage.leaf=true;
+            newPage.iconCls="masque-icon";
+            newPage.site=Ext.getCmp("pagesSitesCombo").getValue();
+            var store=Ext.getCmp("mainPageTree").getStore();
+            store.suspendAutoSync();
+            target.appendChild(newPage);
+            target.set("leaf",false);
+            target.expand();
+            store.resumeAutoSync();
+            store.sync();
+            button.up().up().close();
+        }
+    },
+
+    deletePage: function(button, e, options) {
+        var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if (Ext.isDefined(target)) {
+            var delCon = Ext.widget('delConfirmZ');
+            delCon.show();
+            Ext.getCmp('delConfirmZOui').on('click', function() { 
+
+
+
+
+
+
+
+
+
+                Ext.getCmp('delConfirmZ').close();
+
+            });  
+
+        }
+    },
+
     init: function(application) {
         this.control({
             "#pagesSitesCombo": {
                 select: this.pageSiteSelect
+            },
+            "#addPageBtn": {
+                click: this.openPageAddWindow
+            },
+            "#newPageSubmitBtn": {
+                click: this.createNewPage
+            },
+            "#removePageBtn": {
+                click: this.deletePage
             }
         });
     }

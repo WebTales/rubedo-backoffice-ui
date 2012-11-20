@@ -1202,6 +1202,22 @@
                 "app/controller/PagesController.js"
             ],
             "className": "PagesController"
+        },
+        "53a5164e-3fb7-4025-a2eb-6b0e836bdc64": {
+            "paths": [
+                "metadata/store/MasksComboStore",
+                "app/store/override/MasksComboStore.js",
+                "app/store/MasksComboStore.js"
+            ],
+            "className": "MasksComboStore"
+        },
+        "ec59b13f-ba9f-4798-932e-3dff958db8e7": {
+            "paths": [
+                "metadata/view/newPageWindow",
+                "app/view/override/newPageWindow.js",
+                "app/view/newPageWindow.js"
+            ],
+            "className": "newPageWindow"
         }
     },
     "viewOrderMap": {
@@ -1270,7 +1286,8 @@
             "c3fda741-3af7-4193-85b9-c42d3530fd90",
             "f720ad71-dfb5-436d-95de-957b47102cb6",
             "08c3601d-6da2-4434-bbf8-03968b08ffe4",
-            "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005"
+            "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005",
+            "ec59b13f-ba9f-4798-932e-3dff958db8e7"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1282,6 +1299,7 @@
             "e9b9f232-c36a-4edc-bbe4-44a651487d17",
             "c6ff1d1b-d029-4bbd-9168-0c5626ce9acd",
             "f9902d72-af14-482b-bdd9-9ceda04a75cd",
+            "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
             "59694082-24d4-4519-ae8c-5fd6849d6503",
             "adf83458-b18b-4fc2-9594-c78702fe9a0e",
             "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
