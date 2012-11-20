@@ -29,6 +29,9 @@ Ext.define('Rubedo.controller.PagesController', {
         typeFil.on("click", function(){Ext.getCmp("mainPageTree").getSelectionModel().select(Ext.getCmp("mainPageTree").getRootNode());});
         filArianne.add(typeFil);
     }
+    Ext.getCmp("addPageBtn").enable();
+    Ext.getCmp("removePageBtn").disable();
+    Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
     },
 
     openPageAddWindow: function(button, e, options) {
@@ -61,21 +64,29 @@ Ext.define('Rubedo.controller.PagesController', {
         if (Ext.isDefined(target)) {
             var delCon = Ext.widget('delConfirmZ');
             delCon.show();
+            var store=Ext.getCmp("mainPageTree").getStore();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
-
-
-
-
-
-
-
-
-
+                store.suspendAutoSync();
+                var myParent=target.parentNode;
+                if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
+                    myParent.set("leaf",true);
+                }
+                target.remove();
+                store.resumeAutoSync();
+                store.sync();
+                Ext.getCmp("addPageBtn").enable();
+                Ext.getCmp("removePageBtn").disable();
+                Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp('delConfirmZ').close();
 
             });  
 
         }
+    },
+
+    pageSelect: function(selModel, record, index, options) {
+        Ext.getCmp("removePageBtn").enable();
+        Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     },
 
     init: function(application) {
@@ -91,6 +102,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#removePageBtn": {
                 click: this.deletePage
+            },
+            "#mainPageTree": {
+                select: this.pageSelect
             }
         });
     }

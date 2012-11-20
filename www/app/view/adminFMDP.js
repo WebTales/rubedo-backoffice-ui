@@ -163,7 +163,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     disabled: true,
                                     id: 'deleteElement',
                                     iconAlign: 'top',
-                                    iconCls: 'remove_big',
+                                    iconCls: 'window_remove_big',
                                     scale: 'large',
                                     text: 'Supprimer'
                                 },
@@ -415,7 +415,6 @@ Ext.define('Rubedo.view.adminFMDP', {
                                         {
                                             xtype: 'form',
                                             id: 'elementEditControl',
-                                            margin: '6 0 0 0',
                                             autoScroll: false,
                                             bodyPadding: 10,
                                             title: 'Sélectionnez un élément'

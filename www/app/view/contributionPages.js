@@ -92,36 +92,124 @@ Ext.define('Rubedo.view.contributionPages', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
-                    height: 54,
+                    height: 86,
                     itemId: 'contextBar',
                     items: [
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'addPageBtn',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
                             id: 'removePageBtn',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
                         },
                         {
-                            xtype: 'button',
-                            id: 'boutonEnregistrerPages',
-                            iconCls: 'floppy_disc_big',
-                            scale: 'large',
-                            text: 'Enregistrer'
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.masks',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Edition',
+                            columns: 6,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'newPageBloc',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_add_big',
+                                    scale: 'large',
+                                    text: 'Nouveau Bloc'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'deletePageElement',
+                                    iconAlign: 'top',
+                                    iconCls: 'window_remove_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'pageElementUp',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_up_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'pageElementDown',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_down_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'button',
-                            itemId: 'boutonCreerRaccourci',
-                            iconCls: 'favorite_add_big',
-                            scale: 'large',
-                            text: 'Ajouter aux favoris'
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.masks',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Sauvegarde',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'
@@ -170,7 +258,23 @@ Ext.define('Rubedo.view.contributionPages', {
                 {
                     xtype: 'panel',
                     flex: 1,
-                    title: ''
+                    id: 'mainPageEdition'
+                },
+                {
+                    xtype: 'panel',
+                    frame: false,
+                    width: 300,
+                    bodyPadding: 5,
+                    collapseDirection: 'right',
+                    collapsible: true,
+                    title: 'Propriétés',
+                    items: [
+                        {
+                            xtype: 'panel',
+                            bodyPadding: 10,
+                            title: 'Sélectionnez un élément'
+                        }
+                    ]
                 }
             ]
         });

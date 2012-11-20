@@ -33,7 +33,10 @@
                     "else { typeFil= Ext.widget('button',{iconCls: \"masque-icon\", text:records[0].get(\"text\"), itemId:'type'});\r",
                     "typeFil.on(\"click\", function(){Ext.getCmp(\"mainPageTree\").getSelectionModel().select(Ext.getCmp(\"mainPageTree\").getRootNode());});\r",
                     "filArianne.add(typeFil);\r",
-                    "}"
+                    "}\r",
+                    "Ext.getCmp(\"addPageBtn\").enable();\r",
+                    "Ext.getCmp(\"removePageBtn\").disable();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -114,16 +117,19 @@
                     "if (Ext.isDefined(target)) {\r",
                     "    var delCon = Ext.widget('delConfirmZ');\r",
                     "    delCon.show();\r",
+                    "    var store=Ext.getCmp(\"mainPageTree\").getStore();\r",
                     "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
-                    "        \r",
+                    "        store.suspendAutoSync();\r",
+                    "        var myParent=target.parentNode;\r",
+                    "        if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){\r",
+                    "            myParent.set(\"leaf\",true);\r",
+                    "        }\r",
+                    "        target.remove();\r",
+                    "        store.resumeAutoSync();\r",
+                    "        store.sync();\r",
+                    "        Ext.getCmp(\"addPageBtn\").enable();\r",
+                    "        Ext.getCmp(\"removePageBtn\").disable();\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
                     "        Ext.getCmp('delConfirmZ').close();\r",
                     "\r",
                     "    });  \r",
@@ -136,6 +142,27 @@
                 "designer|controlQuery": "#removePageBtn"
             },
             "designerId": "054b6624-59d6-425e-8c55-a8dc5ed95e57"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "pageSelect",
+                "fn": "pageSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"removePageBtn\").enable();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#mainPageTree"
+            },
+            "designerId": "16f72b7e-ea83-4f98-97e0-5e5f729e2d85"
         }
     ]
 }
