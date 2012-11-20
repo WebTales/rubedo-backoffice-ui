@@ -26,17 +26,25 @@ Ext.define('Rubedo.store.SitesJson', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
-            autoSync: false,
+            autoSync: true,
             storeId: 'SitesJson',
             model: 'Rubedo.model.sitesDataModel',
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'sites'
+                    create: 'sites/create',
+                    read: 'sites',
+                    update: 'sites/update',
+                    destroy: 'sites/delete'
                 },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
                     root: 'data'
                 }
             }

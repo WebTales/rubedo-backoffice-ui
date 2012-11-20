@@ -51,7 +51,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                             disabled: true,
                             id: 'siteRemoveBtn',
                             iconCls: 'close',
-                            text: 'Modifier'
+                            text: 'Bupprimer'
                         }
                     ]
                 }

@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.contributionPages', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionPages',
 
-    requires: [
-        'Rubedo.view.MyGridPanel3'
-    ],
-
     favoriteIcon: 'application.png',
     height: 578,
     id: 'contributionPages',
@@ -143,124 +139,6 @@ Ext.define('Rubedo.view.contributionPages', {
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''
-                        }
-                    ]
-                }
-            ],
-            items: [
-                {
-                    xtype: 'treepanel',
-                    id: 'pagesTree',
-                    width: 150,
-                    autoScroll: false,
-                    resizable: true,
-                    resizeHandles: 'e',
-                    bodyBorder: false,
-                    title: '',
-                    hideHeaders: false,
-                    rootVisible: false,
-                    singleExpand: false,
-                    useArrows: true,
-                    viewConfig: {
-                        autoScroll: false,
-                        rootVisible: false,
-                        plugins: [
-                            Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
-                                ptype: 'treeviewdragdrop',
-                                nodeHighlightColor: 'D7251D'
-                            })
-                        ]
-                    },
-                    selModel: Ext.create('Ext.selection.RowModel', {
-
-                    }),
-                    columns: [
-                        {
-                            xtype: 'treecolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-
-                                if (record.data.site) {record.data.allowDrag=false;return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/globe.png"> '+value);}
-                                else return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> '+value);
-                            },
-                            dataIndex: 'text',
-                            flex: 1,
-                            hideable: false,
-                            menuDisabled: false,
-                            text: 'Titre'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'tabpanel',
-                    flex: 1,
-                    activeTab: 2,
-                    items: [
-                        {
-                            xtype: 'panel',
-                            id: 'editionSites',
-                            layout: {
-                                align: 'stretch',
-                                type: 'hbox'
-                            },
-                            iconCls: 'edit',
-                            title: 'Edition',
-                            items: [
-                                {
-                                    xtype: 'container',
-                                    flex: 1,
-                                    autoScroll: true,
-                                    layout: {
-                                        type: 'absolute'
-                                    },
-                                    items: [
-                                        {
-                                            xtype: 'container',
-                                            id: 'masqueEdition',
-                                            margin: '0, 20, 0, 20',
-                                            width: 1020,
-                                            autoScroll: false
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'panel',
-                                    margins: '0, 0, 0, 2',
-                                    frame: true,
-                                    width: 150,
-                                    resizable: true,
-                                    resizeHandles: 'w',
-                                    collapseDirection: 'left',
-                                    collapsed: false,
-                                    collapsible: true,
-                                    title: 'Propriétés',
-                                    titleCollapse: false
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
-                            iconCls: 'page_taxonomy',
-                            title: 'Taxonomie'
-                        },
-                        {
-                            xtype: 'panel',
-                            iconCls: 'user',
-                            title: 'Droits'
-                        },
-                        {
-                            xtype: 'panel',
-                            iconCls: 'referencement_icon',
-                            title: 'Réferencement'
-                        },
-                        {
-                            xtype: 'panel',
-                            iconCls: 'versions',
-                            title: 'Versions',
-                            items: [
-                                {
-                                    xtype: 'mygridpanel3'
-                                }
-                            ]
                         }
                     ]
                 }
