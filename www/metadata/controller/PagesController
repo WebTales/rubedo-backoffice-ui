@@ -20,10 +20,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxSelect",
-                "fn": "onComboboxSelect",
+                "designer|userClassName": "pageSiteSelect",
+                "fn": "pageSiteSelect",
                 "implHandler": [
-                    "console.log(records);"
+                    "Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
+                    "Ext.getStore(\"PagesDataStore\").load();"
                 ],
                 "name": "select",
                 "scope": "me",

@@ -146,7 +146,7 @@ Ext.define('Rubedo.view.contributionPages', {
             items: [
                 {
                     xtype: 'treepanel',
-                    width: 240,
+                    width: 225,
                     title: '',
                     store: 'PagesDataStore',
                     viewConfig: {

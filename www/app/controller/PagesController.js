@@ -17,14 +17,15 @@ Ext.define('Rubedo.controller.PagesController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.PagesController',
 
-    onComboboxSelect: function(combo, records, options) {
-        console.log(records);
+    pageSiteSelect: function(combo, records, options) {
+        Ext.getStore("PagesDataStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
+        Ext.getStore("PagesDataStore").load();
     },
 
     init: function(application) {
         this.control({
             "#pagesSitesCombo": {
-                select: this.onComboboxSelect
+                select: this.pageSiteSelect
             }
         });
     }

@@ -51,7 +51,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 create: 'taxonomy-terms/create',
                 read: 'taxonomy-terms/read-child',
                 update: 'taxonomy-terms/update',
-                destroy: 'taxonomy-terms/delete-child'
+                destroy: 'taxonomy-terms/delete'
             },
             reader: {
                 getResponseData: function(response) {

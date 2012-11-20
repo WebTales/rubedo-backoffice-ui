@@ -55,7 +55,7 @@
                     "        create: 'taxonomy-terms/create',\r",
                     "        read: 'taxonomy-terms/read-child',\r",
                     "        update: 'taxonomy-terms/update',\r",
-                    "        destroy: 'taxonomy-terms/delete-child'\r",
+                    "        destroy: 'taxonomy-terms/delete'\r",
                     "    },\r",
                     "    reader: {\r",
                     "        getResponseData: function(response) {\r",
