@@ -111,7 +111,9 @@ Ext.application({
         'esResponseWindow',
         'esWindowButton',
         'searchResultsWindow',
-        'MyGridPanel20'
+        'MyGridPanel20',
+        'sitesInterface',
+        'newSiteWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -128,6 +130,7 @@ Ext.application({
         'UsersController',
         'ServerErrorController',
         'ACLController',
-        'SearchController'
+        'SearchController',
+        'SitesController'
     ]
 });

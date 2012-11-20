@@ -1,0 +1,117 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SitesController",
+        "designer|userAlias": "SitesController"
+    },
+    "id": "ExtBox1-ext-gen18503",
+    "designerId": "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "selectSite",
+                "fn": "selectSite",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)) {\r",
+                    "    Ext.getCmp(\"siteRemoveBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"siteRemoveBtn\").enable();\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainSitesGrid"
+            },
+            "designerId": "f556d022-ed69-445c-ae0b-256f2561b3b0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "deleteSite",
+                "fn": "deleteSite",
+                "implHandler": [
+                    "var target = Ext.getCmp('mainSitesGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(target)) {\r",
+                    "    var delCon = Ext.widget('delConfirmZ');\r",
+                    "    delCon.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getCmp('mainSitesGrid').getStore().remove(target);\r",
+                    "        //button.disable();\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "\r",
+                    "    });  \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#siteRemoveBtn"
+            },
+            "designerId": "9e982d4b-bf73-4485-9935-2ad4712bb630"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "openAddSiteWindow",
+                "fn": "openAddSiteWindow",
+                "implHandler": [
+                    "Ext.widget(\"newSiteWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#siteAddBtn"
+            },
+            "designerId": "db880338-3f71-412b-8ce9-7ed7faa11844"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "createNewSite",
+                "fn": "createNewSite",
+                "implHandler": [
+                    "var form = button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var newSite= Ext.create(\"Rubedo.model.sitesDataModel\", form.getValues());\r",
+                    "    Ext.getStore(\"SitesJson\").add(newSite);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newSiteSubmitBtn"
+            },
+            "designerId": "93b162d4-b6dd-4c4f-b017-dcca9a36421c"
+        }
+    ]
+}

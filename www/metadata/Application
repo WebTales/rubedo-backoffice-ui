@@ -95,7 +95,9 @@
             "esResponseWindow",
             "esWindowButton",
             "searchResultsWindow",
-            "MyGridPanel20"
+            "MyGridPanel20",
+            "sitesInterface",
+            "MyWindow35"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
@@ -112,7 +114,8 @@
             "UsersController",
             "ServerErrorController",
             "ACLController",
-            "SearchController"
+            "SearchController",
+            "SitesController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

@@ -1154,6 +1154,30 @@
                 "app/controller/SearchController.js"
             ],
             "className": "SearchController"
+        },
+        "08c3601d-6da2-4434-bbf8-03968b08ffe4": {
+            "paths": [
+                "metadata/view/sitesInterface",
+                "app/view/override/sitesInterface.js",
+                "app/view/sitesInterface.js"
+            ],
+            "className": "sitesInterface"
+        },
+        "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c": {
+            "paths": [
+                "metadata/controller/SitesController",
+                "app/controller/override/SitesController.js",
+                "app/controller/SitesController.js"
+            ],
+            "className": "SitesController"
+        },
+        "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005": {
+            "paths": [
+                "metadata/view/newSiteWindow",
+                "app/view/override/newSiteWindow.js",
+                "app/view/newSiteWindow.js"
+            ],
+            "className": "newSiteWindow"
         }
     },
     "viewOrderMap": {
@@ -1220,7 +1244,9 @@
             "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
             "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
             "c3fda741-3af7-4193-85b9-c42d3530fd90",
-            "f720ad71-dfb5-436d-95de-957b47102cb6"
+            "f720ad71-dfb5-436d-95de-957b47102cb6",
+            "08c3601d-6da2-4434-bbf8-03968b08ffe4",
+            "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1271,7 +1297,8 @@
             "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
             "dc1acb41-f9a0-4ebc-8338-2cd4321f5712",
-            "606ff5d4-d66c-4e04-81ba-5331a2b062fc"
+            "606ff5d4-d66c-4e04-81ba-5331a2b062fc",
+            "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",

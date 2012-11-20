@@ -1,0 +1,196 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "sitesInterface",
+        "designer|userAlias": "sitesInterface",
+        "height": 387,
+        "id": "sitesInterface",
+        "width": 537,
+        "layout": "hbox",
+        "iconCls": "referencement_icon",
+        "title": "Sites",
+        "maximizable": true,
+        "minimizable": true
+    },
+    "id": "ExtBox1-ext-gen10446",
+    "designerId": "08c3601d-6da2-4434-bbf8-03968b08ffe4",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar41"
+            },
+            "designerId": "41095a8f-523a-40a9-a8ed-85fa9e8bfb0b",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.sites",
+                        "designer|userClassName": "MyButton155",
+                        "id": "siteAddBtn",
+                        "iconCls": "add",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "9716f05d-2866-4623-8a0b-5b690412ca10",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.sites",
+                        "designer|userClassName": "MyButton156",
+                        "disabled": true,
+                        "id": "siteRemoveBtn",
+                        "iconCls": "close",
+                        "text": "Modifier"
+                    },
+                    "designerId": "36e0c9e4-ff5c-4000-8e12-72d241096cb5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyGridPanel21",
+                "id": "mainSitesGrid",
+                "width": 200,
+                "title": "",
+                "forceFit": true,
+                "store": "SitesJson"
+            },
+            "designerId": "7baea55f-d003-487e-a9c6-69251b16ef9d",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView21"
+                    },
+                    "designerId": "de7f7da1-3e7f-4d67-ba0c-9a4ef387bb4e"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn46",
+                        "dataIndex": "text",
+                        "text": "Nom"
+                    },
+                    "designerId": "4d47923d-d812-40f9-8714-9e31b009dc49",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField42",
+                                "allowBlank": false
+                            },
+                            "designerId": "504e26a0-588f-4898-9f56-ebb4889252e8"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcelleditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin2"
+                    },
+                    "designerId": "27487282-1275-4c72-b598-a38a45b09137",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
+                                "fn": "onGridcelleditingpluginBeforeEdit",
+                                "implHandler": [
+                                    "if (!ACL.interfaceRights['write.ui.sites']){return(false);}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "fcb72988-826b-4eb3-a733-dd9882684e07"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyPanel44",
+                "title": ""
+            },
+            "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3"
+        }
+    ]
+}

@@ -138,6 +138,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.sites',
+                            itemId: 'sitesInterface',
+                            iconCls: 'referencement_icon',
+                            text: 'Sites'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'read.ui.workflows',
                             itemId: 'menuWorkflows',
                             iconCls: 'process-icon',

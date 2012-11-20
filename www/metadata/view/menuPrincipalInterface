@@ -350,6 +350,31 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.sites",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "sitesInterface",
+                        "margin": null,
+                        "iconCls": "referencement_icon",
+                        "text": "Sites"
+                    },
+                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "read.ui.workflows",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",

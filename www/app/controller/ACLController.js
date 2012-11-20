@@ -52,6 +52,8 @@ Ext.define('Rubedo.controller.ACLController', {
                 "write.ui.masks":false,
                 "read.ui.users":false,
                 "write.ui.users":false,
+                "read.ui.sites":false,
+                "write.ui.sites":false,
                 "read.ui.pages":false,
                 "write.ui.pages":false,
                 "read.ui.medias":false,

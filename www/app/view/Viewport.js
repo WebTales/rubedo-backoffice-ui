@@ -66,6 +66,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.ESWindow',
         'Rubedo.view.esResponseWindow',
         'Rubedo.view.esWindowButton',
-        'Rubedo.view.searchResultsWindow'
+        'Rubedo.view.searchResultsWindow',
+        'Rubedo.view.sitesInterface',
+        'Rubedo.view.newSiteWindow'
     ]
 });
