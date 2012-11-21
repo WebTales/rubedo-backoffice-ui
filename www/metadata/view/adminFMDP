@@ -12,7 +12,7 @@
         "designer|userAlias": "adminFMDP",
         "height": 578,
         "id": "adminFMDP",
-        "width": 1200,
+        "width": 1350,
         "layout": "hbox",
         "iconCls": "masque-icon",
         "title": "Masques de page",
@@ -269,7 +269,7 @@
                         "disabled": true,
                         "headerPosition": "bottom",
                         "title": "Edition",
-                        "columns": 6
+                        "columns": 8
                     },
                     "designerId": "283c8d6e-452d-4a1b-b2ba-633f281409ef",
                     "customConfigs": [
@@ -399,6 +399,46 @@
                                 "text": "Importer"
                             },
                             "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton51",
+                                "disabled": true,
+                                "id": "moveElementUp",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "arrow_up_big",
+                                "scale": "large",
+                                "text": "Dèplacer"
+                            },
+                            "designerId": "800ddbd4-ee28-4961-9ecc-681bf122db20"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton51",
+                                "disabled": true,
+                                "id": "moveElementDown",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "arrow_down_big",
+                                "scale": "large",
+                                "text": "Dèplacer"
+                            },
+                            "designerId": "ef594afe-971b-4416-8d0f-bc0577d69f07"
                         }
                     ]
                 },

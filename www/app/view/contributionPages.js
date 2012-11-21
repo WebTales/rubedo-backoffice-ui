@@ -150,7 +150,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
                                     scale: 'large',
-                                    text: 'Supprimer'
+                                    text: 'Dèplacer'
                                 },
                                 {
                                     xtype: 'button',
@@ -159,7 +159,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
-                                    text: 'Supprimer'
+                                    text: 'Dèplacer'
                                 }
                             ]
                         },

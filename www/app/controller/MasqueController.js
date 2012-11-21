@@ -102,6 +102,8 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp("importElement").disable();
     Ext.getCmp("exportElement").disable();
     Ext.getCmp("deleteElement").disable();
+    Ext.getCmp("moveElementUp").disable();
+    Ext.getCmp("moveElementDown").disable();
     Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
     Ext.getCmp('elementEditControl').removeAll();
     Ext.getCmp('elementEditControl').setIconCls();
@@ -322,6 +324,8 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                 }));
                 if (abstractcomponent.mType=="row"){
+                    Ext.getCmp("moveElementUp").enable();
+                    Ext.getCmp("moveElementDown").enable();
                     Ext.getCmp('newRow').disable();
                     Ext.getCmp("newBloc").disable();
                     if (abstractcomponent.getComponent("eol").flex===0){
@@ -375,6 +379,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                     }    
 
                     else if (abstractcomponent.mType=="col"){
+                        Ext.getCmp("moveElementUp").disable();
+                        Ext.getCmp("moveElementDown").disable();
                         if ((abstractcomponent.final)){
                         Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
                             Ext.getCmp('newRow').disable();
@@ -454,6 +460,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("importElement").disable();
         Ext.getCmp("exportElement").disable();
         Ext.getCmp("deleteElement").disable();
+        Ext.getCmp("moveElementUp").disable();
+        Ext.getCmp("moveElementDown").disable();
         Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
         Ext.getCmp('elementEditControl').removeAll();
         Ext.getCmp('elementEditControl').setIconCls();
@@ -579,6 +587,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp('newCol').disable();
         Ext.getCmp('newBloc').disable();
         Ext.getCmp('newRow').enable();
+        Ext.getCmp("moveElementUp").disable();
+        Ext.getCmp("moveElementDown").disable();
         Ext.getCmp("importElement").enable();
         Ext.getCmp("exportElement").disable();
         var propEdit=Ext.getCmp('elementEditControl');
@@ -622,6 +632,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp('newRow').disable();
         Ext.getCmp("importElement").disable();
         Ext.getCmp("exportElement").enable();
+        Ext.getCmp("moveElementUp").enable();
+        Ext.getCmp("moveElementDown").enable();
         var propEdit=Ext.getCmp('elementEditControl');
         propEdit.setTitle(abstractcomponent.id.replace("unBloc", "Bloc"));
         propEdit.setIconCls('editBloc');
@@ -786,6 +798,24 @@ Ext.define('Rubedo.controller.MasqueController', {
     maskWindowClose: function(abstractcomponent, options) {
         if (abstractcomponent.isWindow){
             Ext.getStore("MasquesDataJson").removeAll();
+        }
+    },
+
+    moveElementUp: function(button, e, options) {
+        var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        if (!Ext.isEmpty(target)) {
+            var pos = target.up().items.indexOf(target);
+            if (pos > 0) {
+                target.up().move(pos,pos-1);
+            }
+        }
+    },
+
+    moveElementDown: function(button, e, options) {
+        var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        if (!Ext.isEmpty(target)) {
+            var pos = target.up().items.indexOf(target);
+            target.up().move(pos,pos+1);
         }
     },
 
@@ -1200,6 +1230,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#adminFMDP": {
                 beforedestroy: this.maskWindowClose
+            },
+            "#moveElementUp": {
+                click: this.moveElementUp
+            },
+            "#moveElementDown": {
+                click: this.moveElementDown
             }
         });
     }

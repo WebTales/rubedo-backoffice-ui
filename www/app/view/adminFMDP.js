@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.adminFMDP', {
     favoriteIcon: 'application.png',
     height: 578,
     id: 'adminFMDP',
-    width: 1200,
+    width: 1350,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -125,7 +125,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
-                            columns: 6,
+                            columns: 8,
                             layout: {
                                 columns: 2,
                                 type: 'table'
@@ -184,6 +184,24 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconCls: 'window_up_big',
                                     scale: 'large',
                                     text: 'Importer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'moveElementUp',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_up_big',
+                                    scale: 'large',
+                                    text: 'Dèplacer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'moveElementDown',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_down_big',
+                                    scale: 'large',
+                                    text: 'Dèplacer'
                                 }
                             ]
                         },

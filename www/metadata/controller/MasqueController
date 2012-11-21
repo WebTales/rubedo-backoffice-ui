@@ -131,6 +131,8 @@
                     "Ext.getCmp(\"importElement\").disable();\r",
                     "Ext.getCmp(\"exportElement\").disable();\r",
                     "Ext.getCmp(\"deleteElement\").disable();\r",
+                    "Ext.getCmp(\"moveElementUp\").disable();\r",
+                    "Ext.getCmp(\"moveElementDown\").disable();\r",
                     "Ext.getCmp('elementEditControl').setTitle(\"Séléctionnez un élément\");\r",
                     "Ext.getCmp('elementEditControl').removeAll();\r",
                     "Ext.getCmp('elementEditControl').setIconCls();\r",
@@ -857,6 +859,8 @@
                     "\r",
                     "        }));\r",
                     "        if (abstractcomponent.mType==\"row\"){\r",
+                    "            Ext.getCmp(\"moveElementUp\").enable();\r",
+                    "            Ext.getCmp(\"moveElementDown\").enable();\r",
                     "            Ext.getCmp('newRow').disable();\r",
                     "            Ext.getCmp(\"newBloc\").disable();\r",
                     "            if (abstractcomponent.getComponent(\"eol\").flex===0){\r",
@@ -910,6 +914,8 @@
                     "            }    \r",
                     "\r",
                     "            else if (abstractcomponent.mType==\"col\"){\r",
+                    "                Ext.getCmp(\"moveElementUp\").disable();\r",
+                    "                Ext.getCmp(\"moveElementDown\").disable();\r",
                     "                if ((abstractcomponent.final)){\r",
                     "                Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType(\"unBloc\"))) {\r",
                     "                    Ext.getCmp('newRow').disable();\r",
@@ -1005,6 +1011,8 @@
                     "Ext.getCmp(\"importElement\").disable();\r",
                     "Ext.getCmp(\"exportElement\").disable();\r",
                     "Ext.getCmp(\"deleteElement\").disable();\r",
+                    "Ext.getCmp(\"moveElementUp\").disable();\r",
+                    "Ext.getCmp(\"moveElementDown\").disable();\r",
                     "Ext.getCmp('elementEditControl').setTitle(\"Séléctionnez un élément\");\r",
                     "Ext.getCmp('elementEditControl').removeAll();\r",
                     "Ext.getCmp('elementEditControl').setIconCls();\r",
@@ -1355,6 +1363,8 @@
                     "Ext.getCmp('newCol').disable();\r",
                     "Ext.getCmp('newBloc').disable();\r",
                     "Ext.getCmp('newRow').enable();\r",
+                    "Ext.getCmp(\"moveElementUp\").disable();\r",
+                    "Ext.getCmp(\"moveElementDown\").disable();\r",
                     "Ext.getCmp(\"importElement\").enable();\r",
                     "Ext.getCmp(\"exportElement\").disable();\r",
                     "var propEdit=Ext.getCmp('elementEditControl');\r",
@@ -1414,6 +1424,8 @@
                     "Ext.getCmp('newRow').disable();\r",
                     "Ext.getCmp(\"importElement\").disable();\r",
                     "Ext.getCmp(\"exportElement\").enable();\r",
+                    "Ext.getCmp(\"moveElementUp\").enable();\r",
+                    "Ext.getCmp(\"moveElementDown\").enable();\r",
                     "var propEdit=Ext.getCmp('elementEditControl');\r",
                     "propEdit.setTitle(abstractcomponent.id.replace(\"unBloc\", \"Bloc\"));\r",
                     "propEdit.setIconCls('editBloc');\r",
@@ -1682,6 +1694,56 @@
                 "designer|controlQuery": "#adminFMDP"
             },
             "designerId": "7ddc7cdd-b94b-4bcb-bdcd-e8884fac5ab1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "moveElementUp",
+                "fn": "moveElementUp",
+                "implHandler": [
+                    "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
+                    "if (!Ext.isEmpty(target)) {\r",
+                    "    var pos = target.up().items.indexOf(target);\r",
+                    "    if (pos > 0) {\r",
+                    "        target.up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveElementUp"
+            },
+            "designerId": "4c31abba-9cbd-47a1-bc12-416d3bdd7689"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "moveElementDown",
+                "fn": "moveElementDown",
+                "implHandler": [
+                    "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
+                    "if (!Ext.isEmpty(target)) {\r",
+                    "    var pos = target.up().items.indexOf(target);\r",
+                    "    target.up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveElementDown"
+            },
+            "designerId": "9fb491cc-46e8-401f-bb85-a3a2f46e0ca4"
         }
     ]
 }
