@@ -26,6 +26,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'id'
+        },
+        {
+            name: 'alias'
         }
     ]
 });

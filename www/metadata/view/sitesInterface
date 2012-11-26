@@ -179,7 +179,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "form",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -187,10 +187,46 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyPanel44",
+                "designer|userClassName": "MyForm30",
+                "disabled": true,
+                "id": "mainSiteProps",
+                "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3"
+            "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField45",
+                        "name": "alias",
+                        "fieldLabel": "Alias "
+                    },
+                    "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton165",
+                        "id": "updateSiteBtn",
+                        "scale": "large",
+                        "text": "Appliquer"
+                    },
+                    "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a"
+                }
+            ]
         }
     ]
 }

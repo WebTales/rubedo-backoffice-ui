@@ -20,8 +20,13 @@ Ext.define('Rubedo.controller.SitesController', {
     selectSite: function(tablepanel, selections, options) {
         if (Ext.isEmpty(selections)) {
             Ext.getCmp("siteRemoveBtn").disable();
+            Ext.getCmp("mainSiteProps").disable();
+            Ext.getCmp("mainSiteProps").getForm().setValues();
         } else {
             Ext.getCmp("siteRemoveBtn").enable();
+            Ext.getCmp("mainSiteProps").getForm().loadRecord(selections[0]);
+            Ext.getCmp("mainSiteProps").enable();
+
 
         }
     },
@@ -54,6 +59,13 @@ Ext.define('Rubedo.controller.SitesController', {
         }
     },
 
+    updateSiteSubmit: function(button, e, options) {
+        var form = button.up().getForm();
+        if (form.isValid()){
+            Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues());
+        }
+    },
+
     init: function(application) {
         this.control({
             "#mainSitesGrid": {
@@ -67,6 +79,9 @@ Ext.define('Rubedo.controller.SitesController', {
             },
             "#newSiteSubmitBtn": {
                 click: this.createNewSite
+            },
+            "#updateSiteBtn": {
+                click: this.updateSiteSubmit
             }
         });
     }

@@ -91,9 +91,27 @@ Ext.define('Rubedo.view.sitesInterface', {
                     ]
                 },
                 {
-                    xtype: 'panel',
+                    xtype: 'form',
                     flex: 1,
-                    title: ''
+                    disabled: true,
+                    id: 'mainSiteProps',
+                    bodyPadding: 10,
+                    title: '',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            name: 'alias',
+                            fieldLabel: 'Alias '
+                        },
+                        {
+                            xtype: 'button',
+                            anchor: '100%',
+                            id: 'updateSiteBtn',
+                            scale: 'large',
+                            text: 'Appliquer'
+                        }
+                    ]
                 }
             ]
         });

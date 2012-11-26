@@ -25,8 +25,13 @@
                 "implHandler": [
                     "if (Ext.isEmpty(selections)) {\r",
                     "    Ext.getCmp(\"siteRemoveBtn\").disable();\r",
+                    "    Ext.getCmp(\"mainSiteProps\").disable();\r",
+                    "    Ext.getCmp(\"mainSiteProps\").getForm().setValues();\r",
                     "} else {\r",
                     "    Ext.getCmp(\"siteRemoveBtn\").enable();\r",
+                    "    Ext.getCmp(\"mainSiteProps\").getForm().loadRecord(selections[0]);\r",
+                    "    Ext.getCmp(\"mainSiteProps\").enable();\r",
+                    "\r",
                     "\r",
                     "}"
                 ],
@@ -112,6 +117,29 @@
                 "designer|controlQuery": "#newSiteSubmitBtn"
             },
             "designerId": "93b162d4-b6dd-4c4f-b017-dcca9a36421c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "updateSiteSubmit",
+                "fn": "updateSiteSubmit",
+                "implHandler": [
+                    "var form = button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues());\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#updateSiteBtn"
+            },
+            "designerId": "0cd9478d-25ca-4ba2-8f1d-0706ea13fa61"
         }
     ]
 }
