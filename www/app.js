@@ -72,7 +72,9 @@ Ext.application({
         'NestedContentsStore',
         'searchResultsStore',
         'PagesDataStore',
-        'MasksComboStore'
+        'MasksComboStore',
+        'contentTypesCombo',
+        'taxoTermsCombo'
     ],
     views: [
         'MyContainer',
@@ -116,7 +118,9 @@ Ext.application({
         'searchResultsWindow',
         'MyGridPanel20',
         'sitesInterface',
-        'MyWindow35'
+        'MyWindow35',
+        'CTCField',
+        'TTField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -56,7 +56,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.GroupAddWindow',
         'Rubedo.view.UserAddWindow',
         'Rubedo.view.UserAdminWindow',
-        'Rubedo.view.testingGround',
+        'Rubedo.view.CKEField',
         'Rubedo.view.ReusableElementPicker',
         'Rubedo.view.ExportElementWindow',
         'Rubedo.view.AdminPasswordChange',
@@ -69,6 +69,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.searchResultsWindow',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.newSiteWindow',
-        'Rubedo.view.newPageWindow'
+        'Rubedo.view.newPageWindow',
+        'Rubedo.view.testingGround'
     ]
 });

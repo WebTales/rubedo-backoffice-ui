@@ -28,25 +28,380 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             autoLoad: true,
             storeId: 'BlocsDataStore',
             model: 'Rubedo.model.blocDataModel',
-            proxy: {
-                type: 'ajax',
-                api: {
-                    create: 'blocks/create',
-                    read: 'blocks',
-                    update: 'blocks/update',
-                    destroy: 'blocks/delete'
+            data: [
+                {
+                    type: 'Liste de Contenus',
+                    description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Liste de contenus',
+                        bType: 'Liste de Contenus',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Type d\'affichage',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contenus',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.CTCField',
+                                            config: {
+                                                fieldLabel: 'Types de contenus',
+                                                name: 'contentTypes'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.TTField',
+                                            config: {
+                                                fieldLabel: 'Taxonomie',
+                                                name: 'taxonomy'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Pagination',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Taille des pages',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514000000'
                 },
-                reader: {
-                    type: 'json',
-                    messageProperty: 'message',
-                    root: 'data'
+                {
+                    type: 'Carrousel',
+                    description: '<h2>Bloc carrousel<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Carrousel',
+                        bType: 'Carrousel',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Type d\'affichage',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contenus',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.CTCField',
+                                            config: {
+                                                fieldLabel: 'Types de contenus',
+                                                name: 'contentTypes'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.TTField',
+                                            config: {
+                                                fieldLabel: 'Taxonomie',
+                                                name: 'taxonomy'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Pagination',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Taille des pages',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514022000'
                 },
-                writer: {
-                    type: 'json',
-                    encode: true,
-                    root: 'data'
+                {
+                    type: 'Bloc de navigation',
+                    description: '<h2>Bloc de navigation<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Bloc de navigation',
+                        bType: 'Bloc de navigation',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514033000'
+                },
+                {
+                    type: 'Fil d\'Ariane',
+                    description: '<h2>Bloc Fil d\'Ariane<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Fil d\'Ariane',
+                        bType: 'Fil d\'Ariane',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514044000'
+                },
+                {
+                    type: 'Pied de page',
+                    description: '<h2>Bloc Pied de page<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Pied de page',
+                        bType: 'Pied de page',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514055000'
+                },
+                {
+                    type: 'Résultat de recherche',
+                    description: '<h2>Bloc Résultat de recherche<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Résultat de recherche',
+                        bType: 'Résultat de recherche',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514066000'
+                },
+                {
+                    type: 'Twig',
+                    description: '<h2>Bloc Twig<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Twig',
+                        bType: 'Twig',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Fichier',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Nom du fichier',
+                                                name: 'fileName'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514066000'
+                },
+                {
+                    type: 'D\u00e9tail de contenu',
+                    description: 'Description du bloc d\u00e9tail de contenu',
+                    configBasique: {
+                        title: 'D\u00e9tail de contenu',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'It\u00e9ration',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'p2',
+                                                name: 'nbResultatsAffiches'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Ne pas afficher les n premiers r\u00e9sultats',
+                                                name: 'nbResultatsPasAfficher'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: [
+                            
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514000001'
                 }
-            }
+            ]
         }, cfg)]);
     }
 });

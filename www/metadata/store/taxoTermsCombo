@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "taxoTermsCombo",
+        "storeId": "MyJsonStore28",
+        "model": "taxonomyTermModel"
+    },
+    "id": "ExtBox1-ext-gen11860",
+    "designerId": "05756dfd-35f5-4ef8-9b19-273ca508f817",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy27",
+                "api": [
+                    "{\r",
+                    "                    read: 'taxonomy-terms'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "809bb699-8685-4884-b804-cc1bf3867b59",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader26",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "85e297a3-b404-420f-8646-a4abfc73fee1"
+                }
+            ]
+        }
+    ]
+}

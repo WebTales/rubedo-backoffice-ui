@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.CKEField'
+        'Rubedo.view.CTCField',
+        'Rubedo.view.TTField'
     ],
 
     height: 351,
@@ -43,16 +44,18 @@ Ext.define('Rubedo.view.testingGround', {
                     title: 'My Panel',
                     items: [
                         {
+                            xtype: 'CTCField',
+                            anchor: '100%'
+                        },
+                        {
+                            xtype: 'TTField',
+                            anchor: '100%'
+                        },
+                        {
                             xtype: 'textareafield',
                             anchor: '100%',
                             inputId: 'ckTest1',
                             fieldLabel: 'Label'
-                        },
-                        {
-                            xtype: 'CKEField',
-                            id: 'test11',
-                            allowBlank: false,
-                            anchor: '100%'
                         }
                     ]
                 }

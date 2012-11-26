@@ -1218,6 +1218,38 @@
                 "app/view/newPageWindow.js"
             ],
             "className": "newPageWindow"
+        },
+        "fcf5d26b-2f4a-4e20-b881-f1cf4befead8": {
+            "paths": [
+                "metadata/store/contentTypesCombo",
+                "app/store/override/contentTypesCombo.js",
+                "app/store/contentTypesCombo.js"
+            ],
+            "className": "contentTypesCombo"
+        },
+        "a047977c-445c-4ae7-b3b2-c6db4a58e0bb": {
+            "paths": [
+                "metadata/view/CTCField",
+                "app/view/override/CTCField.js",
+                "app/view/CTCField.js"
+            ],
+            "className": "CTCField"
+        },
+        "05756dfd-35f5-4ef8-9b19-273ca508f817": {
+            "paths": [
+                "metadata/store/taxoTermsCombo",
+                "app/store/override/taxoTermsCombo.js",
+                "app/store/taxoTermsCombo.js"
+            ],
+            "className": "taxoTermsCombo"
+        },
+        "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b": {
+            "paths": [
+                "metadata/view/TTField",
+                "app/view/override/TTField.js",
+                "app/view/TTField.js"
+            ],
+            "className": "TTField"
         }
     },
     "viewOrderMap": {
@@ -1270,7 +1302,6 @@
             "d21c61a7-09e5-467f-a13e-93a9854a919a",
             "437ee3cb-dd4a-4ddc-a96a-c098f1303647",
             "73e60547-6188-4b20-9a1a-e3f085be455a",
-            "66174f28-03d3-4c02-855f-65706d91852a",
             "d307504b-480a-4d03-adf2-dc2c18432b4f",
             "04ab642c-6370-4c30-97cf-7c905f47813f",
             "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
@@ -1287,12 +1318,16 @@
             "f720ad71-dfb5-436d-95de-957b47102cb6",
             "08c3601d-6da2-4434-bbf8-03968b08ffe4",
             "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005",
-            "ec59b13f-ba9f-4798-932e-3dff958db8e7"
+            "ec59b13f-ba9f-4798-932e-3dff958db8e7",
+            "66174f28-03d3-4c02-855f-65706d91852a",
+            "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
+            "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
             "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
+            "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
             "c4d38002-e3cd-47e7-9909-3ac4b2892e89",
             "98a1d671-046d-4829-b790-2d84feb7eacc",
             "cb2fc7b0-aa63-4f16-b7f4-12b636102cc6",
@@ -1324,7 +1359,8 @@
             "b4bbd262-e72b-4675-8908-02414ab69420",
             "817bd763-92f6-4eb5-9b4c-817418ccc96f",
             "b43f409a-1426-4a5b-9347-6d7f4103dd6b",
-            "1c2adda2-e782-40ff-b3f4-9e592104046f"
+            "1c2adda2-e782-40ff-b3f4-9e592104046f",
+            "05756dfd-35f5-4ef8-9b19-273ca508f817"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

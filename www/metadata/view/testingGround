@@ -36,6 +36,32 @@
             "designerId": "c5544ea9-bc79-42bc-8475-9c261bea94fa",
             "cn": [
                 {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "05bd9c47-2541-40bd-81aa-b86368fb4a1b",
+                    "masterInstanceId": "ExtBox1-ext-gen5388"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "aa9754e9-500d-4893-9f79-ec8a793a5a67",
+                    "masterInstanceId": "ExtBox1-ext-gen12673"
+                },
+                {
                     "type": "textareafield",
                     "reference": {
                         "name": "items",
@@ -49,21 +75,6 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "f62f7eaf-6601-4d61-9323-5a39b2a46bc7"
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "test11",
-                        "allowBlank": false,
-                        "layout|anchor": "100%"
-                    },
-                    "designerId": "edd52b7c-6124-4d7e-a0b4-b81a205aaeb8",
-                    "masterInstanceId": "ExtBox1-ext-gen18078"
                 }
             ]
         }
