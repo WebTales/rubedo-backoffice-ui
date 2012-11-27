@@ -9,15 +9,18 @@
         "container|align": "stretch",
         "designer|userClassName": "ajoutBlocFenetre",
         "designer|userAlias": "ajoutBlocFenetre",
+        "draggable": false,
         "height": 300,
         "id": "ajoutBlocFenetre",
         "width": 500,
-        "resizable": [
-            "false"
-        ],
+        "resizable": false,
         "layout": "hbox",
         "title": "Ajouter un bloc",
+        "constrainHeader": true,
         "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen15691",
     "designerId": "98fcade8-7344-415c-99cd-f6e6e08ad540",
@@ -120,6 +123,19 @@
             "designerId": "34af955f-e5f0-4ad4-a966-a4b024424451",
             "cn": [
                 {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill16"
+                    },
+                    "designerId": "8804b6d2-1710-4da3-8c89-5497ca27c176"
+                },
+                {
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -130,11 +146,29 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton72",
                         "id": "boutonAjouterBloc",
-                        "margin": "0 0 0 410",
+                        "margin": null,
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
                     "designerId": "0971d8e8-2a32-4b8d-982a-a0171003b368"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton72",
+                        "hidden": true,
+                        "id": "addPageBlocBtn",
+                        "margin": null,
+                        "iconCls": "add",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "187a4d90-09af-4c71-8a57-f746b887c58f"
                 }
             ]
         }

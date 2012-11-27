@@ -765,7 +765,11 @@ Ext.define('Rubedo.controller.MasqueController', {
     },
 
     addBlocDblClick: function(tablepanel, record, item, index, e, options) {
-        this.addBloc(Ext.getCmp("boutonAjouterBloc"));
+        if (Ext.getCmp("BlocsSelectGrid").pageMode){
+            Ext.getCmp("addPageBlocBtn").fireEvent("click");
+        } else {
+            this.addBloc(Ext.getCmp("boutonAjouterBloc"));
+        }
     },
 
     exportMaskElementWindow: function(button, e, options) {
@@ -1086,7 +1090,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     configBloc:nBloc.configBloc,
                                     title:nBloc.title,
                                     responsive:nBloc.responsive,
-                                    flex:nBloc.flex
+                                    flex:nBloc.flex,
+                                    canEdit:nBloc.canEdit
 
                                 });
 
@@ -1109,7 +1114,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     configBloc:nBloc.configBloc,
                                     title:nBloc.title,
                                     responsive:nBloc.responsive,
-                                    flex:nBloc.flex
+                                    flex:nBloc.flex,
+                                    canEdit:nBloc.canEdit
 
                                 });
 

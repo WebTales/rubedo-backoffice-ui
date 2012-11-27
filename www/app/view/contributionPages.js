@@ -204,6 +204,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    id: 'pageSaveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
@@ -268,15 +269,22 @@ Ext.define('Rubedo.view.contributionPages', {
                     xtype: 'panel',
                     frame: false,
                     width: 300,
+                    overflowY: 'auto',
                     bodyPadding: 5,
                     collapseDirection: 'right',
                     collapsible: true,
                     title: 'Propriétés',
                     items: [
                         {
-                            xtype: 'panel',
+                            xtype: 'form',
+                            id: 'pageElementPropsPanel',
                             bodyPadding: 10,
                             title: 'Sélectionnez un élément'
+                        },
+                        {
+                            xtype: 'hiddenfield',
+                            id: 'pageElementIdField',
+                            fieldLabel: 'Label'
                         }
                     ]
                 }

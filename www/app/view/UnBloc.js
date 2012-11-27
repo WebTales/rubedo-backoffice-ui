@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.UnBloc', {
     alias: 'widget.unBloc',
 
     frame: true,
-    margin: 4,
+    margin: '10% 4 10% 4',
     width: 50,
     layout: {
         type: 'fit'

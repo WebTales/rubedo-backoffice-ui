@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajoutBlocFenetre',
 
+    draggable: false,
     height: 300,
     id: 'ajoutBlocFenetre',
     width: 500,
@@ -26,6 +27,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
         type: 'hbox'
     },
     title: 'Ajouter un bloc',
+    constrainHeader: true,
     modal: true,
 
     initComponent: function() {
@@ -71,9 +73,18 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                     dock: 'bottom',
                     items: [
                         {
+                            xtype: 'tbfill'
+                        },
+                        {
                             xtype: 'button',
                             id: 'boutonAjouterBloc',
-                            margin: '0 0 0 410',
+                            iconCls: 'add',
+                            text: 'Ajouter'
+                        },
+                        {
+                            xtype: 'button',
+                            hidden: true,
+                            id: 'addPageBlocBtn',
                             iconCls: 'add',
                             text: 'Ajouter'
                         }

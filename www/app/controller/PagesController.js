@@ -33,6 +33,7 @@ Ext.define('Rubedo.controller.PagesController', {
     Ext.getCmp("removePageBtn").disable();
     Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
     Ext.getCmp("mainPageEdition").removeAll();
+    this.resetInterface();
     },
 
     openPageAddWindow: function(button, e, options) {
@@ -61,6 +62,7 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     deletePage: function(button, e, options) {
+        var me=this;
         var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
         if (Ext.isDefined(target)) {
             var delCon = Ext.widget('delConfirmZ');
@@ -80,7 +82,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp("mainPageEdition").removeAll();
                 Ext.getCmp('delConfirmZ').close();
-
+                this.resetInterface();
             });  
 
         }
@@ -93,7 +95,228 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
             me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
+            me.resetInterface();
         }
+    },
+
+    moveElementUp: function(button, e, options) {
+        var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+        if (!Ext.isEmpty(target)) {
+            var pos = target.up().items.indexOf(target);
+            if (pos > 0) {
+                target.up().move(pos,pos-1);
+            }
+        }
+    },
+
+    moveElementDown: function(button, e, options) {
+        var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+        if (!Ext.isEmpty(target)) {
+            var pos = target.up().items.indexOf(target);
+            target.up().move(pos,pos+1);
+        }
+    },
+
+    deleteElement: function(button, e, options) {
+        var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+        target.destroy();
+        this.resetInterface();
+    },
+
+    columnSelector: function(abstractcomponent, options) {
+        if ((abstractcomponent.mType=="col")&&((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc")))){
+            abstractcomponent.addBodyCls('contrastBorder');
+            abstractcomponent.addBodyCls('contrastRow');
+            abstractcomponent.getEl().on("mouseover", function(e){
+                abstractcomponent.setBorder(4);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                abstractcomponent.setBorder(2);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("click", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+                if (!Ext.isEmpty(prevSelected)) {
+                    if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
+                prevSelected.removeBodyCls('selectedelement');}
+            }
+            abstractcomponent.addBodyCls('selectedelement');
+            this.frame(MyPrefData.themeColor);
+            Ext.getCmp('pageElementIdField').setValue(abstractcomponent.id);
+            Ext.getCmp("newPageBloc").enable();
+            Ext.getCmp("deletePageElement").disable();
+            Ext.getCmp("pageElementUp").disable();
+            Ext.getCmp("pageElementDown").disable();
+            var propEdit=Ext.getCmp('pageElementPropsPanel');
+            propEdit.removeAll();
+            propEdit.setTitle(abstractcomponent.id.replace("panel", abstractcomponent.mType));
+            propEdit.setIconCls('editZone');
+            e.stopEvent();
+        });
+    }
+    },
+
+    showBlocAddWindow: function(button, e, options) {
+        Ext.widget("ajoutBlocFenetre").show();
+        Ext.getCmp("boutonAjouterBloc").hide();
+        Ext.getCmp("addPageBlocBtn").show();
+        Ext.getCmp("BlocsSelectGrid").pageMode=true;
+    },
+
+    insertBloc: function(button, e, options) {
+        var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
+        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
+        nouvBloc.responsive={
+            "phone":true,
+            "tablet":true,
+            "desktop":true
+        };
+        nouvBloc.canEdit=true;
+        Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).add(nouvBloc);
+        Ext.getCmp("ajoutBlocFenetre").close();
+        nouvBloc.getEl().dom.click();
+    },
+
+    blocSelection: function(abstractcomponent, options) {
+        if (abstractcomponent.canEdit){
+            abstractcomponent.getEl().on("mouseover", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+                    abstractcomponent.setIconCls('selectBloc');
+                }
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+                abstractcomponent.setIconCls();}
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("click", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+                if (!Ext.isEmpty(prevSelected)) {
+                    if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
+                prevSelected.removeBodyCls('selectedelement');}
+            }
+            abstractcomponent.setIconCls('editBloc');
+            Ext.getCmp("newPageBloc").disable();
+            Ext.getCmp("deletePageElement").enable();
+            Ext.getCmp("pageElementUp").enable();
+            Ext.getCmp("pageElementDown").enable();
+            this.frame(MyPrefData.themeColor);
+            Ext.getCmp('pageElementIdField').setValue(abstractcomponent.id);
+            var propEdit=Ext.getCmp('pageElementPropsPanel');
+            propEdit.setTitle(abstractcomponent.id.replace("unBloc", "Bloc"));
+            propEdit.setIconCls('editBloc');
+            propEdit.removeAll();
+
+
+            propEdit.add(Ext.widget('textfield',{
+                itemId:"eTitleField",
+                fieldLabel:"Titre ",
+                labelWidth:40,
+                allowBlank:false,
+                anchor:"60%",
+                margin:"10 0 10 0",
+                style:"{float:left;}",
+                value:abstractcomponent.title
+            }));
+            propEdit.add(Ext.widget('button',{
+                text:"Appliquer",
+                anchor:"38%",
+                margin:"10 0 10 0",
+                style:"{float:right;}",
+                handler:function(){
+                    if (propEdit.getComponent("eTitleField").isValid()){
+                        abstractcomponent.setTitle(propEdit.getComponent("eTitleField").getValue());
+                    }}
+                }));
+
+                propEdit.add(Ext.widget('numberfield',{
+                    itemId:"rowHeightFixed",
+                    fieldLabel:"Hauteur fluide ",
+                    labelWidth:90,
+                    allowDecimals:false,
+                    allowBlank:false,
+                    minValue:1,
+                    anchor:"60%",
+                    margin:"10 0 0 0",
+                    style:"{float:left;}",
+                    value:abstractcomponent.flex
+                }));
+                propEdit.add(Ext.widget('button',{
+                    text:"Appliquer",
+                    anchor:"38%",
+                    margin:"10 0 0 0",
+                    style:"{float:right;}",
+                    handler:function(){
+                        if (propEdit.getComponent("rowHeightFixed").isValid()){
+                            abstractcomponent.flex=propEdit.getComponent("rowHeightFixed").getValue();
+                            abstractcomponent.up().doLayout();
+                        }}
+                    }));
+
+
+                    propEdit.add(Ext.widget('checkboxgroup',{
+                        fieldLabel:"Visibilité ",
+                        anchor:"100%",
+                        labelWidth:60,
+                        margin:"0 0 10 0",
+                        vertical:true,
+                        columns:1,
+                        items: [
+                        { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                        { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                        { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                        ]
+
+                    }));  
+
+
+                    var configSpec = Ext.widget('ConfigSpecBloc');
+                    var categories = Ext.clone(abstractcomponent.champsConfig.simple);
+                    for (j=0; j<categories.length; j++){
+                        var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+
+                        var champsS = Ext.clone(categories[j].champs);
+                        for (i=0; i<champsS.length; i++) {
+                            if (champsS[i].type =='Ext.form.field.ComboBox') {
+                                var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
+                                champsS[i].config.store= monStore;
+                            }
+                            var nChampS = Ext.create(champsS[i].type, champsS[i].config);
+                            if (champsS[i].type =='Ext.form.field.Trigger'){
+                                var Ouvrir = Ext.clone(champsS[i].ouvrir);
+                                nChampS.onTriggerClick= function() {
+                                    var fenetre = Ext.widget(Ouvrir);
+                                    fenetre.showAt(screen.width/2-200, 100);
+                                } ;  
+                            }
+                            nChampS.labelSeparator= ' ';
+                            nChampS.anchor= '100%';
+                            nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
+                            nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                            nCateg.add(nChampS);
+                        }
+                        configSpec.items.items[0].add(nCateg);
+
+                    }
+                    propEdit.add(configSpec);
+
+
+                    if (!ACL.interfaceRights['write.ui.masks']){
+                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                    }
+                    e.stopEvent();
+
+                });}
+    },
+
+    savePage: function(button, e, options) {
+        var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
+        Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().set("rows",newRows);
     },
 
     renderPage: function(mRows, its, cible) {
@@ -168,6 +391,17 @@ Ext.define('Rubedo.controller.PagesController', {
     });
     },
 
+    resetInterface: function() {
+        Ext.getCmp("newPageBloc").disable();
+        Ext.getCmp("deletePageElement").disable();
+        Ext.getCmp("pageElementUp").disable();
+        Ext.getCmp("pageElementDown").disable();
+        Ext.getCmp('pageElementPropsPanel').removeAll();
+        Ext.getCmp('pageElementPropsPanel').setTitle("Sélectionnez un élément");
+        Ext.getCmp('pageElementPropsPanel').setIconCls();
+        Ext.getCmp('pageElementIdField').setValue();
+    },
+
     init: function(application) {
         this.control({
             "#pagesSitesCombo": {
@@ -184,6 +418,30 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#mainPageTree": {
                 select: this.pageSelect
+            },
+            "#pageElementUp": {
+                click: this.moveElementUp
+            },
+            "#pageElementDown": {
+                click: this.moveElementDown
+            },
+            "#deletePageElement": {
+                click: this.deleteElement
+            },
+            "#mainPageEdition panel": {
+                render: this.columnSelector
+            },
+            "#newPageBloc": {
+                click: this.showBlocAddWindow
+            },
+            "#addPageBlocBtn": {
+                click: this.insertBloc
+            },
+            "#mainPageEdition unBloc": {
+                render: this.blocSelection
+            },
+            "#pageSaveBtn": {
+                click: this.savePage
             }
         });
     }

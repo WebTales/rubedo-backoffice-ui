@@ -26,6 +26,7 @@ Ext.define('Rubedo.view.sitesInterface', {
     },
     iconCls: 'referencement_icon',
     title: 'Sites',
+    constrainHeader: true,
     maximizable: true,
     minimizable: true,
 

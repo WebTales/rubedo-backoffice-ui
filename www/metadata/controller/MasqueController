@@ -1262,7 +1262,8 @@
                     "                            configBloc:nBloc.configBloc,\r",
                     "                            title:nBloc.title,\r",
                     "                            responsive:nBloc.responsive,\r",
-                    "                            flex:nBloc.flex\r",
+                    "                            flex:nBloc.flex,\r",
+                    "                            canEdit:nBloc.canEdit\r",
                     "\r",
                     "                        });\r",
                     "\r",
@@ -1285,7 +1286,8 @@
                     "                            configBloc:nBloc.configBloc,\r",
                     "                            title:nBloc.title,\r",
                     "                            responsive:nBloc.responsive,\r",
-                    "                            flex:nBloc.flex\r",
+                    "                            flex:nBloc.flex,\r",
+                    "                            canEdit:nBloc.canEdit\r",
                     "\r",
                     "                        });\r",
                     "\r",
@@ -1589,7 +1591,11 @@
                 "designer|userClassName": "addBlocDblClick",
                 "fn": "addBlocDblClick",
                 "implHandler": [
-                    "this.addBloc(Ext.getCmp(\"boutonAjouterBloc\"));"
+                    "if (Ext.getCmp(\"BlocsSelectGrid\").pageMode){\r",
+                    "Ext.getCmp(\"addPageBlocBtn\").fireEvent(\"click\");\r",
+                    "} else {\r",
+                    "this.addBloc(Ext.getCmp(\"boutonAjouterBloc\"));\r",
+                    "}"
                 ],
                 "name": "itemdblclick",
                 "scope": "me",
