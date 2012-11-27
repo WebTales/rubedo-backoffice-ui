@@ -87,12 +87,85 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     pageSelect: function(selModel, record, index, options) {
+        var me=this;
         if (!record.isRoot()){
             Ext.getCmp("removePageBtn").enable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
-            Rubedo.controller.MasqueController.prototype.masqueRestit(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
+            me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
         }
+    },
+
+    renderPage: function(mRows, its, cible) {
+        var me=this;
+        Ext.Array.forEach(mRows, function(row){
+            var newRow = Ext.widget('panel', {
+                header:false,
+                mType:"row",
+                eTitle:row.eTitle,
+                id:"page-"+row.id,
+                responsive:row.responsive,
+                margin:4,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                }
+            });
+            var rFlex=1;
+            var eolWidth=12;
+            Ext.Array.forEach(row.columns, function(column){
+                if (column.offset>0) {
+                    newRow.add(Ext.widget('container', {
+                        flex:column.offset,
+                        style:"{background-image:url(resources/images/stripes.png);}"
+                    }));
+                    eolWidth=eolWidth-column.offset;
+                }
+                var isFinalCol=false;
+                if (its<=0){isFinalCol=true;}
+                var newCol=Ext.widget('panel', {
+                    header:false,
+                    flex:column.span,
+                    final:isFinalCol,
+                    mType:'col',
+                    id:"page-"+column.id,
+                    eTitle:column.eTitle,
+                    responsive:column.responsive,
+                    margin:4,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    }
+                });
+                if ((its>0)&&(column.isTerminal===false)) {
+                    rFlex=Ext.Array.max([rFlex,column.rows.length]);
+                    me.masqueRestit(column.rows,its-1,newCol);    
+                }
+                else {
+                    if (Ext.isEmpty(column.blocks)){} else {
+                    Ext.Array.forEach(column.blocks, function(bl){
+                        bl.id="page-"+bl.id;
+                        newCol.add(Ext.widget("unBloc",bl));
+                    });
+                }
+            }
+            eolWidth=eolWidth-column.span;
+            newRow.add(newCol);
+
+        });
+        newRow.add(Ext.widget("container",{
+            flex:eolWidth,
+            itemId:"eol"
+        }));
+        if (Ext.isEmpty(row.height)) {
+            newRow.flex=rFlex;
+        } else {
+            newRow.height=row.height;
+        }
+        cible.add(newRow);  
+
+
+    });
     },
 
     init: function(application) {
