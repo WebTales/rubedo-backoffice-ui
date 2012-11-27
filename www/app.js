@@ -74,7 +74,8 @@ Ext.application({
         'PagesDataStore',
         'MasksComboStore',
         'contentTypesCombo',
-        'taxoTermsCombo'
+        'taxoTermsCombo',
+        'ContentSelectorStore'
     ],
     views: [
         'MyContainer',
@@ -120,7 +121,8 @@ Ext.application({
         'sitesInterface',
         'MyWindow35',
         'CTCField',
-        'TTField'
+        'TTField',
+        'FCCField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

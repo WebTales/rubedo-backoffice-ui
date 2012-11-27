@@ -1,0 +1,119 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ContentSelectorStore",
+        "designer|userAlias": "ContentSelectorStore",
+        "remoteFilter": true,
+        "storeId": "ContentSelectorStore",
+        "model": "contenusDataModel"
+    },
+    "id": "ExtBox1-ext-gen19877",
+    "designerId": "8cd88717-2905-4617-b9ff-10d34dec0a0e",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy27",
+                "api": [
+                    "{\r",
+                    "                    read: 'contents'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "27aaef56-815a-4c8d-b0fc-255dd95d1af7",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader26",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "db4cbb47-2692-4405-9a9e-4141c52f9ae5"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "encodeFilters",
+                        "fn": "encodeFilters",
+                        "designer|params": [
+                            "filters"
+                        ],
+                        "implHandler": [
+                            "var min = [],\r",
+                            "                    length = filters.length,\r",
+                            "                    i = 0;\r",
+                            "\r",
+                            "                    for (; i < length; i++) {\r",
+                            "                        min[i] = {\r",
+                            "                            property: filters[i].property,\r",
+                            "                            value   : filters[i].value\r",
+                            "                        };\r",
+                            "                        if (filters[i].type) {\r",
+                            "                            min[i].type = filters[i].type;\r",
+                            "                        }\r",
+                            "                        if (filters[i].operator) {\r",
+                            "                            min[i].operator = filters[i].operator;\r",
+                            "                        }\r",
+                            "                    }\r",
+                            "                    return this.applyEncoding(min);"
+                        ]
+                    },
+                    "designerId": "6b37408f-6b4e-4dd6-a8ee-15142eb05ccf"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "var o=operation;\r",
+                    "o.filters=[ ];\r",
+                    "if (!Ext.isEmpty(o.params.comboQuery)){\r",
+                    "\r",
+                    "    var newFilter=Ext.create('Ext.util.Filter', {\r",
+                    "        property:\"text\",\r",
+                    "        value:o.params.comboQuery,\r",
+                    "        type:\"string\",\r",
+                    "        operator:\"like\"\r",
+                    "    });\r",
+                    "    \r",
+                    "\r",
+                    "    o.filters.push(newFilter);\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "2dda97aa-7fd2-494d-9e67-8bdb41f9886a"
+        }
+    ]
+}

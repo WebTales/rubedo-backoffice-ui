@@ -75,6 +75,19 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "f62f7eaf-6601-4d61-9323-5a39b2a46bc7"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "aa3b8301-7b7c-4da2-bed4-87801b1dd66b",
+                    "masterInstanceId": "ExtBox1-ext-gen3062"
                 }
             ]
         }

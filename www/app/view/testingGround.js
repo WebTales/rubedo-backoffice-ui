@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.testingGround', {
 
     requires: [
         'Rubedo.view.CTCField',
-        'Rubedo.view.TTField'
+        'Rubedo.view.TTField',
+        'Rubedo.view.FCCField'
     ],
 
     height: 351,
@@ -56,6 +57,10 @@ Ext.define('Rubedo.view.testingGround', {
                             anchor: '100%',
                             inputId: 'ckTest1',
                             fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'FCCField',
+                            anchor: '100%'
                         }
                     ]
                 }

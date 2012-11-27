@@ -1250,6 +1250,22 @@
                 "app/view/TTField.js"
             ],
             "className": "TTField"
+        },
+        "8cd88717-2905-4617-b9ff-10d34dec0a0e": {
+            "paths": [
+                "metadata/store/ContentSelectorStore",
+                "app/store/override/ContentSelectorStore.js",
+                "app/store/ContentSelectorStore.js"
+            ],
+            "className": "ContentSelectorStore"
+        },
+        "71505c40-5587-40f5-be0e-bea55fa8806d": {
+            "paths": [
+                "metadata/view/FCCField",
+                "app/view/override/FCCField.js",
+                "app/view/FCCField.js"
+            ],
+            "className": "FCCField"
         }
     },
     "viewOrderMap": {
@@ -1321,7 +1337,8 @@
             "ec59b13f-ba9f-4798-932e-3dff958db8e7",
             "66174f28-03d3-4c02-855f-65706d91852a",
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
-            "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b"
+            "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
+            "71505c40-5587-40f5-be0e-bea55fa8806d"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1360,7 +1377,8 @@
             "817bd763-92f6-4eb5-9b4c-817418ccc96f",
             "b43f409a-1426-4a5b-9347-6d7f4103dd6b",
             "1c2adda2-e782-40ff-b3f4-9e592104046f",
-            "05756dfd-35f5-4ef8-9b19-273ca508f817"
+            "05756dfd-35f5-4ef8-9b19-273ca508f817",
+            "8cd88717-2905-4617-b9ff-10d34dec0a0e"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

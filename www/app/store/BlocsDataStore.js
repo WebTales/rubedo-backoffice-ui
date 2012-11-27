@@ -361,20 +361,32 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'It\u00e9ration',
+                                    categorie: 'Affichage',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Number',
+                                            type: 'Ext.form.field.Text',
                                             config: {
-                                                fieldLabel: 'p2',
-                                                name: 'nbResultatsAffiches'
+                                                fieldLabel: 'Type d\'affichage',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contenu',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.FCCField',
+                                            config: {
+                                                fieldLabel: 'Contenu à afficher',
+                                                name: 'contentId'
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.Number',
+                                            type: 'Ext.form.field.Checkbox',
                                             config: {
-                                                fieldLabel: 'Ne pas afficher les n premiers r\u00e9sultats',
-                                                name: 'nbResultatsPasAfficher'
+                                                fieldLabel: 'Paramètre externe',
+                                                name: 'recievesParam'
                                             }
                                         }
                                     ]
