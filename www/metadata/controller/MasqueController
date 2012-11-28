@@ -1592,9 +1592,9 @@
                 "fn": "addBlocDblClick",
                 "implHandler": [
                     "if (Ext.getCmp(\"BlocsSelectGrid\").pageMode){\r",
-                    "Ext.getCmp(\"addPageBlocBtn\").fireEvent(\"click\");\r",
+                    "    Ext.getCmp(\"addPageBlocBtn\").fireEvent(\"click\");\r",
                     "} else {\r",
-                    "this.addBloc(Ext.getCmp(\"boutonAjouterBloc\"));\r",
+                    "    this.addBloc(Ext.getCmp(\"boutonAjouterBloc\"));\r",
                     "}"
                 ],
                 "name": "itemdblclick",
@@ -1750,6 +1750,26 @@
                 "designer|controlQuery": "#moveElementDown"
             },
             "designerId": "9fb491cc-46e8-401f-bb85-a3a2f46e0ca4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "blocDetailShow",
+                "fn": "blocDetailShow",
+                "implHandler": [
+                    "Ext.getCmp(\"PaneauBlocsDetail\").update(record.getData());"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#BlocsSelectGrid"
+            },
+            "designerId": "9f82b3ec-ab6c-412f-829c-25c9816f1994"
         }
     ]
 }

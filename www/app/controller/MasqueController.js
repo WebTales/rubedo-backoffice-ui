@@ -823,6 +823,10 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
     },
 
+    blocDetailShow: function(selModel, record, index, options) {
+        Ext.getCmp("PaneauBlocsDetail").update(record.getData());
+    },
+
     removeIds: function(element) {
         var me=this;
         element.id=undefined;
@@ -1223,7 +1227,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 click: this.exportElement
             },
             "#BlocsSelectGrid": {
-                itemdblclick: this.addBlocDblClick
+                itemdblclick: this.addBlocDblClick,
+                select: this.blocDetailShow
             },
             "#exportElement": {
                 click: this.exportMaskElementWindow

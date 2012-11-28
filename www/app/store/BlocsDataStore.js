@@ -88,9 +88,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -164,9 +164,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -196,9 +196,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -228,9 +228,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -260,9 +260,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -292,9 +292,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -335,9 +335,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
@@ -397,9 +397,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 
                             ]
                         },
-                        configBloc: [
+                        configBloc: {
                             
-                        ]
+                        }
                     },
                     version: 1,
                     lastUpdateUser: {
