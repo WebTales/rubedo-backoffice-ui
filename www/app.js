@@ -137,7 +137,7 @@ Ext.application({
         'InterfaceController',
         'MediathequeController',
         'UsersController',
-        'ServerErrorController',
+        'MainStoresController',
         'ACLController',
         'SearchController',
         'SitesController',

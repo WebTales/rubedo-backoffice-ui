@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ServerErrorController",
-        "designer|userAlias": "ServerErrorController"
+        "designer|userClassName": "MainStoresController",
+        "designer|userAlias": "MainStoresController"
     },
     "id": "ExtBox1-ext-gen10969",
     "designerId": "bf25a36d-563e-484d-b6b8-b387924e3a62",
@@ -28,6 +28,28 @@
                 "implHandler": [
                     "var me = this;\r",
                     "Ext.data.StoreManager.each(function(store){\r",
+                    "    //events for optimised stores\r",
+                    "    if (store.isOptimised){\r",
+                    "        store.on(\"load\", function(theStore,records,successful){\r",
+                    "            if (successful) {\r",
+                    "                theStore.isUsed=true;\r",
+                    "            }\r",
+                    "        });\r",
+                    "        store.on(\"clear\", function(theStore){\r",
+                    "            theStore.isUsed=false;\r",
+                    "        });\r",
+                    "        store.on(\"write\", function(theStore,roperation){\r",
+                    "            me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId);\r",
+                    "        });\r",
+                    "        \r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    }\r",
+                    "\r",
+                    "    //error handling (needs work) \r",
                     "    var proxy = store.getProxy();\r",
                     "    if (!Ext.isEmpty(proxy)) {\r",
                     "        proxy.on(\"exception\", function( proxy, response, operation, options ){\r",
@@ -47,13 +69,37 @@
                     "            }\r",
                     "            console.log(store);\r",
                     "            console.log(response);\r",
-                    "            \r",
+                    "\r",
                     "        });\r",
                     "    }\r",
                     "});"
                 ]
             },
             "designerId": "3f2282cf-a673-4541-9ce2-896c6e5906b4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "reloadActiveBrothers",
+                "fn": "reloadActiveBrothers",
+                "designer|params": [
+                    "collectionName",
+                    "myId"
+                ],
+                "implHandler": [
+                    "Ext.data.StoreManager.each(function(someStore){\r",
+                    "    if ((someStore.isOptimised)&&(someStore.isUsed)&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
+                    "        someStore.load();\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "13ecd8e3-c429-4167-92cf-6364ddb00501"
         }
     ]
 }
