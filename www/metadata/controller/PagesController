@@ -633,6 +633,27 @@
                 "designer|controlQuery": "#pageSaveBtn"
             },
             "designerId": "b1fb801d-af5e-43a7-b7f8-56799de85ce4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowBeforeDestroy",
+                "fn": "onWindowBeforeDestroy",
+                "implHandler": [
+                    "Ext.getStore(\"MasksComboStore\").removeAll();\r",
+                    "Ext.getStore(\"PagesDataStore\").removeAll();"
+                ],
+                "name": "beforedestroy",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#contributionPages"
+            },
+            "designerId": "6120f6e7-46b7-410a-971d-e8c79c4f2e57"
         }
     ]
 }

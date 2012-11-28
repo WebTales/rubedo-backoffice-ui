@@ -8,18 +8,18 @@
     "userConfig": {
         "usedCollection": "Sites",
         "isOptimised": true,
-        "designer|userClassName": "SitesJson",
-        "designer|userAlias": "sitesJson",
+        "designer|userClassName": "SitesComboMasks",
+        "designer|userAlias": "SitesComboMasks",
         "autoLoad": false,
-        "autoSync": true,
-        "storeId": "SitesJson",
+        "autoSync": false,
+        "storeId": "SitesComboMasks",
         "model": "sitesDataModel"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen28142",
-    "designerId": "84e3508a-4334-4550-b82b-fd4877c331e4",
+    "id": "ExtBox1-ext-gen27613",
+    "designerId": "5640d13d-589e-4233-a94f-d4e11749b140",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -52,7 +52,7 @@
                 ],
                 "url": null
             },
-            "designerId": "89f1dacd-62b3-4e91-86e9-d07c65122481",
+            "designerId": "db9a4af1-4840-4680-87fe-696c0a6397fb",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -66,7 +66,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "67fdc2a7-5ca3-4922-9237-f1c9a507c1e6"
+                    "designerId": "9a75271f-c926-4bc5-97bb-bb2b983ce93f"
                 },
                 {
                     "type": "jsonwriter",
@@ -80,7 +80,7 @@
                         "encode": true,
                         "root": "data"
                     },
-                    "designerId": "c1982e8c-db7e-46c8-9bf8-be71fafd30c8"
+                    "designerId": "2cee8885-4aa4-436f-b6d4-fdbc2d0f42a9"
                 }
             ]
         }

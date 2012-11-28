@@ -244,12 +244,14 @@ Ext.define('Rubedo.view.contributionPages', {
                                 {
                                     xtype: 'combobox',
                                     flex: 1,
+                                    managesStore: true,
                                     id: 'pagesSitesCombo',
                                     fieldLabel: 'Site ',
                                     labelWidth: 40,
                                     editable: false,
                                     forceSelection: true,
-                                    store: 'SitesJson',
+                                    queryMode: 'local',
+                                    store: 'SitesComboPages',
                                     valueField: 'id'
                                 }
                             ]

@@ -319,6 +319,11 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().set("rows",newRows);
     },
 
+    onWindowBeforeDestroy: function(abstractcomponent, options) {
+        Ext.getStore("MasksComboStore").removeAll();
+        Ext.getStore("PagesDataStore").removeAll();
+    },
+
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -442,6 +447,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#pageSaveBtn": {
                 click: this.savePage
+            },
+            "#contributionPages": {
+                beforedestroy: this.onWindowBeforeDestroy
             }
         });
     }

@@ -17,6 +17,14 @@ Ext.define('Rubedo.controller.MainStoresController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.MainStoresController',
 
+    onComponentRender: function(abstractcomponent, options) {
+        if ((abstractcomponent.managesStore)&&(abstractcomponent.store)) {
+            abstractcomponent.getStore().load();
+
+            abstractcomponent.on("beforeDestroy", function(thing){ thing.getStore().removeAll(); });
+        }
+    },
+
     init: function(application) {
         var me = this;
         Ext.data.StoreManager.each(function(store){
@@ -63,6 +71,12 @@ Ext.define('Rubedo.controller.MainStoresController', {
                     console.log(response);
 
                 });
+            }
+        });
+
+        this.control({
+            "component": {
+                render: this.onComponentRender
             }
         });
     },

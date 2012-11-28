@@ -1266,6 +1266,22 @@
                 "app/view/FCCField.js"
             ],
             "className": "FCCField"
+        },
+        "5fb72a18-9339-4c3a-9c9d-c5edd63b5362": {
+            "paths": [
+                "metadata/store/SitesComboPages",
+                "app/store/override/SitesComboPages.js",
+                "app/store/SitesComboPages.js"
+            ],
+            "className": "SitesComboPages"
+        },
+        "5640d13d-589e-4233-a94f-d4e11749b140": {
+            "paths": [
+                "metadata/store/SitesComboMasks",
+                "app/store/override/SitesComboMasks.js",
+                "app/store/SitesComboMasks.js"
+            ],
+            "className": "SitesComboMasks"
         }
     },
     "viewOrderMap": {
@@ -1342,6 +1358,8 @@
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
+            "5fb72a18-9339-4c3a-9c9d-c5edd63b5362",
+            "5640d13d-589e-4233-a94f-d4e11749b140",
             "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
             "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",

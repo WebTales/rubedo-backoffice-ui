@@ -49,12 +49,14 @@ Ext.define('Rubedo.view.nouveauMasque', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            managesStore: true,
                             id: 'nouveauMasqueSite',
                             fieldLabel: 'Site ',
                             allowBlank: false,
                             editable: false,
                             forceSelection: true,
-                            store: 'SitesJson',
+                            queryMode: 'local',
+                            store: 'SitesComboMasks',
                             valueField: 'id'
                         },
                         {

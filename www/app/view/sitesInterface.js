@@ -52,7 +52,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                             disabled: true,
                             id: 'siteRemoveBtn',
                             iconCls: 'close',
-                            text: 'Bupprimer'
+                            text: 'Supprimer'
                         }
                     ]
                 }
@@ -60,6 +60,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     id: 'mainSitesGrid',
                     width: 200,
                     title: '',
