@@ -357,6 +357,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: 'Description du bloc d\u00e9tail de contenu',
                     configBasique: {
                         title: 'D\u00e9tail de contenu',
+                        bType: 'D\u00e9tail de contenu',
                         flex: 1,
                         champsConfig: {
                             simple: [
