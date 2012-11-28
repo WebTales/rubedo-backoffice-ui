@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "usedCollection": "Masks",
+        "isOptimised": true,
         "designer|userClassName": "MasksComboStore",
         "designer|userAlias": "MasksComboStore",
         "autoLoad": false,
@@ -13,8 +15,23 @@
         "storeId": "MasksComboStore",
         "model": "masquesDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen58574",
     "designerId": "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

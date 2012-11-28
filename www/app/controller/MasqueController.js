@@ -793,18 +793,6 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
-    maskWindowRender: function(abstractcomponent, options) {
-        if (abstractcomponent.isWindow){
-            Ext.getStore("MasquesDataJson").load();
-        }
-    },
-
-    maskWindowClose: function(abstractcomponent, options) {
-        if (abstractcomponent.isWindow){
-            Ext.getStore("MasquesDataJson").removeAll();
-        }
-    },
-
     moveElementUp: function(button, e, options) {
         var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
         if (!Ext.isEmpty(target)) {
@@ -1235,12 +1223,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#importElement": {
                 click: this.showImportWindow
-            },
-            "adminFMDP": {
-                render: this.maskWindowRender
-            },
-            "#adminFMDP": {
-                beforedestroy: this.maskWindowClose
             },
             "#moveElementUp": {
                 click: this.moveElementUp

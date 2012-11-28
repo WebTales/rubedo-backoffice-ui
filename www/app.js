@@ -77,7 +77,8 @@ Ext.application({
         'taxoTermsCombo',
         'ContentSelectorStore',
         'SitesComboPages',
-        'SitesComboMasks'
+        'SitesComboMasks',
+        'MasquesDataJson'
     ],
     views: [
         'MyContainer',

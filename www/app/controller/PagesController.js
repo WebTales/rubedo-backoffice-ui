@@ -320,8 +320,10 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     onWindowBeforeDestroy: function(abstractcomponent, options) {
-        Ext.getStore("MasksComboStore").removeAll();
-        Ext.getStore("PagesDataStore").removeAll();
+        if (abstractcomponent.isXType("window")){
+            Ext.getStore("MasksComboStore").removeAll();
+            Ext.getStore("PagesDataStore").removeAll();
+        }
     },
 
     renderPage: function(mRows, its, cible) {

@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.MasksComboStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            usedCollection: 'Masks',
+            isOptimised: true,
             autoLoad: false,
             autoSync: false,
             storeId: 'MasksComboStore',

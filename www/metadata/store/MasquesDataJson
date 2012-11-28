@@ -6,14 +6,31 @@
     },
     "codeClass": null,
     "userConfig": {
+        "usedCollection": "Masks",
+        "isOptimised": true,
         "designer|userClassName": "MasquesDataJson",
         "autoLoad": false,
         "autoSync": true,
         "storeId": "MasquesDataJson",
         "model": "masquesDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen24546",
     "designerId": "f9902d72-af14-482b-bdd9-9ceda04a75cd",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "grouper",

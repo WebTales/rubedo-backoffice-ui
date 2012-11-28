@@ -317,6 +317,7 @@ Ext.define('Rubedo.view.adminFMDP', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     frame: false,
                     id: 'masquesGrid',
                     width: 150,

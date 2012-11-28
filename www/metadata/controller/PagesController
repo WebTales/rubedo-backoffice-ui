@@ -645,8 +645,10 @@
                 "designer|userClassName": "onWindowBeforeDestroy",
                 "fn": "onWindowBeforeDestroy",
                 "implHandler": [
+                    "if (abstractcomponent.isXType(\"window\")){\r",
                     "Ext.getStore(\"MasksComboStore\").removeAll();\r",
-                    "Ext.getStore(\"PagesDataStore\").removeAll();"
+                    "Ext.getStore(\"PagesDataStore\").removeAll();\r",
+                    "}"
                 ],
                 "name": "beforedestroy",
                 "scope": "me",
