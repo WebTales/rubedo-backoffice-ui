@@ -467,7 +467,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
                             }else if (action.type=="selectRecord") { 
                                 var target=Ext.getCmp(action.target);
                                 if (!Ext.isEmpty(target)) {
-                                    target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
+
+                                    if (target.getStore().isLoading()) {
+                                        target.getStore().addListener("load", function(){target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));},this,{single:true});
+                                    } else {
+                                        target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
+                                    }
                                 }
                             }
 
