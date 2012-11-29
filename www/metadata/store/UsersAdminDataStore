@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Users",
         "designer|userClassName": "UsersAdminDataStore",
         "designer|userAlias": "UsersAdminDataStore",
         "autoLoad": false,
@@ -15,8 +17,23 @@
         "storeId": "UsersAdminDataStore",
         "model": "userDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen20704",
     "designerId": "e69f4522-8b28-4e61-badf-c5c8f0dee470",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

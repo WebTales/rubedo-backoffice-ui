@@ -6,13 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
+        "managesStore": false,
         "designer|userClassName": "MyGridPanel16",
         "designer|userAlias": "mygridpanel16",
         "title": "",
         "store": "UsersAdminDataStore"
     },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
     "id": "ExtBox1-ext-gen2236",
     "designerId": "73e60547-6188-4b20-9a1a-e3f085be455a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "gridview",

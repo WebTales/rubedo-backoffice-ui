@@ -275,7 +275,13 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     ],
                                     selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-                                    })
+                                    }),
+                                    listeners: {
+                                        destroy: {
+                                            fn: me.onUsersInGroupGridDestroy,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -323,6 +329,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
         if (!ACL.interfaceRights['write.ui.groups']){return(false);}
+    },
+
+    onUsersInGroupGridDestroy: function(abstractcomponent, options) {
+        abstractcomponent.getStore().removeAll();
     }
 
 });

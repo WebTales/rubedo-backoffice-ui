@@ -511,6 +511,9 @@
                                 "title": "",
                                 "store": "UsersGroupStore"
                             },
+                            "configAlternates": {
+                                "managesStore": "boolean"
+                            },
                             "designerId": "1abd1243-0fad-4594-afc2-0459e86e4fc6",
                             "cn": [
                                 {
@@ -674,6 +677,24 @@
                                         "designer|userClassName": "MyCheckboxSelectionModel5"
                                     },
                                     "designerId": "3f12ae69-31e9-4a12-a7dc-5d9cf6b7cdc6"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onUsersInGroupGridDestroy",
+                                        "fn": "onUsersInGroupGridDestroy",
+                                        "implHandler": [
+                                            "abstractcomponent.getStore().removeAll();"
+                                        ],
+                                        "name": "destroy",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "1c5e327c-d31f-4edb-84bb-ccfc75677fd1"
                                 }
                             ]
                         }

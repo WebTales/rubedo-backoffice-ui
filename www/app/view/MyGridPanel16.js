@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
         'Rubedo.view.override.MyGridPanel16'
     ],
 
+    managesStore: false,
     title: '',
     store: 'UsersAdminDataStore',
 

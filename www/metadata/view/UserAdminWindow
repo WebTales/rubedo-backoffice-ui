@@ -38,12 +38,21 @@
                 "width": 200,
                 "resizable": true,
                 "resizeHandles": "e",
-                "store": null
+                "store": null,
+                "managesStore": true
             },
             "configAlternates": {
-                "resizable": "boolean"
+                "resizable": "boolean",
+                "managesStore": "boolean"
             },
             "designerId": "f2f8a432-0919-41df-9ee4-977730c28139",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "masterInstanceId": "ExtBox1-ext-gen2236"
         },
         {
@@ -692,6 +701,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "managesStore": true,
                                                 "designer|userClassName": "MyComboBox7",
                                                 "displayField": "name",
                                                 "minChars": 3,
@@ -699,7 +709,17 @@
                                                 "typeAhead": true,
                                                 "valueField": "id"
                                             },
-                                            "designerId": "a8a909a5-592a-457c-ad51-56c2daa201ba"
+                                            "configAlternates": {
+                                                "managesStore": "boolean"
+                                            },
+                                            "designerId": "a8a909a5-592a-457c-ad51-56c2daa201ba",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "managesStore",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "fixedfunction",
@@ -725,7 +745,7 @@
                                                     "if (Ext.isEmpty(user)) {\r",
                                                     "    return(\"Inconnu\");\r",
                                                     "} else {\r",
-                                                    "return(user.get(\"name\"));\r",
+                                                    "    return(user.get(\"name\"));\r",
                                                     "}"
                                                 ]
                                             },

@@ -30,9 +30,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "store": "UsersDataStore"
+                "store": "UsersDataStore",
+                "managesStore": true
+            },
+            "configAlternates": {
+                "managesStore": "boolean"
             },
             "designerId": "b7134df2-47c4-42b9-be72-c802189ae0b7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "masterInstanceId": "ExtBox1-ext-gen2236"
         },
         {

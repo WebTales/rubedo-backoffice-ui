@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.UsersComboStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'Users',
             autoLoad: false,
             autoSync: true,
             remoteFilter: true,

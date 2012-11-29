@@ -45,7 +45,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                     id: 'userAdminGrid',
                     width: 200,
                     resizable: true,
-                    resizeHandles: 'e'
+                    resizeHandles: 'e',
+                    managesStore: true
                 },
                 {
                     xtype: 'tabpanel',
@@ -286,6 +287,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             text: 'Délégué',
                                             editor: {
                                                 xtype: 'combobox',
+                                                managesStore: true,
                                                 displayField: 'name',
                                                 minChars: 3,
                                                 store: 'UsersComboStore',

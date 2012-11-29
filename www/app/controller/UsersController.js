@@ -90,10 +90,6 @@ Ext.define('Rubedo.controller.UsersController', {
 
     },
 
-    onWindowBeforeClose: function(panel, options) {
-        Ext.getStore("UsersAdminDataStore").removeAll();
-    },
-
     changeAdminPwdSubmit: function(button, e, options) {
         var myForm=button.up().getForm();
 
@@ -191,26 +187,6 @@ Ext.define('Rubedo.controller.UsersController', {
         var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();
         button.up().up().getComponent(0).getStore().remove(targets);
         Ext.getCmp("userAdminMainPanel").disable();
-    },
-
-    onWindowShow: function(abstractcomponent, options) {
-        Ext.getStore("UsersAdminDataStore").clearFilter();
-        Ext.getStore("UsersAdminDataStore").load();
-    },
-
-    onMainWindowRender: function(abstractcomponent, options) {
-        if (abstractcomponent.isXType("window")){
-            Ext.getStore("UsersDataStore").clearFilter();
-            Ext.getStore("UsersDataStore").load();
-        }
-    },
-
-    onWindowBeforeClose2: function(panel, options) {
-        Ext.getStore("UsersDataStore").removeAll();
-    },
-
-    onWindowBeforeClose1: function(panel, options) {
-        Ext.getStore("UsersDataStore").clearFilter();
     },
 
     deleteAdminPicture: function(button, e, options) {
@@ -329,10 +305,6 @@ Ext.define('Rubedo.controller.UsersController', {
             "#groupCreateButton": {
                 click: this.createGroup
             },
-            "#UserAdminWindow": {
-                beforeclose: this.onWindowBeforeClose,
-                show: this.onWindowShow
-            },
             "#AdminPasswordChangeBtn": {
                 click: this.changeAdminPwdSubmit
             },
@@ -359,13 +331,6 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#userAdminRemove": {
                 click: this.userAdminRemove
-            },
-            "#adminFUtilisateurs": {
-                render: this.onMainWindowRender,
-                beforeclose: this.onWindowBeforeClose2
-            },
-            "#UserAddWindow": {
-                beforeclose: this.onWindowBeforeClose1
             },
             "#userAdminProfilePictureDelete": {
                 click: this.deleteAdminPicture
