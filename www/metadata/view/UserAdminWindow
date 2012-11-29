@@ -34,12 +34,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "managesStore": true,
                 "id": "userAdminGrid",
                 "width": 200,
                 "resizable": true,
                 "resizeHandles": "e",
-                "store": null,
-                "managesStore": true
+                "store": null
             },
             "configAlternates": {
                 "resizable": "boolean",

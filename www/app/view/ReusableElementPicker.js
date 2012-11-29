@@ -35,8 +35,8 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    flex: 0.5,
                     managesStore: true,
+                    flex: 0.5,
                     id: 'ReusableElementsGrid',
                     title: '',
                     store: 'ReusableElementsDataStore',

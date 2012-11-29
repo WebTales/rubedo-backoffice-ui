@@ -30,8 +30,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "store": "UsersDataStore",
-                "managesStore": true
+                "managesStore": true,
+                "store": "UsersDataStore"
             },
             "configAlternates": {
                 "managesStore": "boolean"

@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.ContenusDataJson', {
             remoteSort: true,
             storeId: ' ',
             model: 'Rubedo.model.contenusDataModel',
+            pageSize: 25,
             sortOnFilter: false,
             proxy: {
                 type: 'ajax',
