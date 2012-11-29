@@ -78,7 +78,10 @@ Ext.application({
         'SitesComboMasks',
         'MasquesDataJson',
         'TaxonomyForCT',
-        'TaxonomyForC'
+        'TaxonomyForC',
+        'VersionsDataJson',
+        'ContenusDataJson',
+        'DepTypesForContents'
     ],
     views: [
         'MyContainer',

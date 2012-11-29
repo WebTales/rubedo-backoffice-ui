@@ -354,7 +354,13 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                                 }
                                             }
                                         })
-                                    ]
+                                    ],
+                                    listeners: {
+                                        destroy: {
+                                            fn: me.onGridpanelDestroy,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -394,6 +400,10 @@ Ext.define('Rubedo.view.UserAdminWindow', {
 
     onGridroweditingpluginBeforeEdit: function(editor, e, options) {
         if (!ACL.interfaceRights['write.ui.users']) {return(false);}
+    },
+
+    onGridpanelDestroy: function(abstractcomponent, options) {
+        abstractcomponent.getStore().removeAll();
     }
 
 });

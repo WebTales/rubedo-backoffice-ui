@@ -31,6 +31,7 @@ Ext.define('Rubedo.view.ongletTCDep', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: false,
                     id: 'TCImbriquesGrid',
                     title: '',
                     store: 'TypesContenusDepDataJson',

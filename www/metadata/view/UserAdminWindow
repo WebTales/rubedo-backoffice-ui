@@ -934,6 +934,24 @@
                                             "designerId": "5a5aa829-5d5b-4969-ab43-1f7f965fb9a8"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onGridpanelDestroy",
+                                        "fn": "onGridpanelDestroy",
+                                        "implHandler": [
+                                            "abstractcomponent.getStore().removeAll();"
+                                        ],
+                                        "name": "destroy",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "061d4b84-42ac-4238-99d7-0a5d0a0e6808"
                                 }
                             ]
                         }

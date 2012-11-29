@@ -21,7 +21,9 @@ Ext.define('Rubedo.store.TypesContenusDepDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            isOptimised: true,
+            usedCollection: 'ContentTypes',
+            autoLoad: false,
             storeId: 'TypesContenusDepDataJson',
             proxy: {
                 type: 'ajax',

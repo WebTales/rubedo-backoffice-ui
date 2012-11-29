@@ -25,8 +25,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
-            autoSync: true,
+            autoLoad: false,
+            autoSync: false,
             storeId: 'TypesChampsDataStore',
             model: 'Rubedo.model.typesChampsDataModel',
             proxy: {

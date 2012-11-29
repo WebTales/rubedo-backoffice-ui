@@ -269,6 +269,7 @@ Ext.define('Rubedo.view.adminFTDC', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     id: 'AdminfTypesGrid',
                     width: 150,
                     title: '',
@@ -420,7 +421,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'gridpanel',
-                                    managesStore: true,
+                                    managesStore: false,
                                     flex: 1,
                                     autoRender: false,
                                     autoShow: false,

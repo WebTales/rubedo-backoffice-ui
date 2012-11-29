@@ -243,6 +243,7 @@ Ext.define('Rubedo.view.contributionContenus', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     id: 'TypesContenusGrid',
                     width: 150,
                     autoScroll: true,

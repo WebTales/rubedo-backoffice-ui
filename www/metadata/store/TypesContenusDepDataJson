@@ -6,14 +6,31 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "ContentTypes",
         "designer|userClassName": "TypesContenusDepDataJson",
         "designer|userAlias": "TypesContenusDepDataJson",
-        "autoLoad": true,
+        "autoLoad": false,
         "storeId": "TypesContenusDepDataJson",
         "model": null
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen88885",
     "designerId": "c4d38002-e3cd-47e7-9909-3ac4b2892e89",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

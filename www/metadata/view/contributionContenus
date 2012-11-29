@@ -565,6 +565,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "managesStore": true,
                 "designer|userClassName": "MyGridPanel1",
                 "id": "TypesContenusGrid",
                 "itemId": null,
@@ -577,7 +578,17 @@
                 "title": "",
                 "store": "TypesContenusNDepDataJson"
             },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
             "designerId": "3a3864fe-9efb-4e78-b20b-160463e73c53",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "gridview",

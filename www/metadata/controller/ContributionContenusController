@@ -53,7 +53,7 @@
                     "boiteMeta.update(customMeta);\r",
                     "var myDependantTypes= [ ];\r",
                     "Ext.Array.forEach(record.get(\"dependantTypes\"), function(someType){\r",
-                    "myDependantTypes.push(Ext.getStore(\"TypesContenusDataJson\").findRecord(\"id\",someType));\r",
+                    "myDependantTypes.push(Ext.getStore(\"DepTypesForContents\").findRecord(\"id\",someType));\r",
                     "});\r",
                     "Ext.getStore(\"DepContentsCombo\").removeAll();\r",
                     "Ext.getStore(\"DepContentsCombo\").loadData(myDependantTypes);"
@@ -909,6 +909,7 @@
                 "implHandler": [
                     "if (abstractcomponent.isXType(\"window\")){\r",
                     "    Ext.getStore(\"TaxonomyForC\").load();\r",
+                    "    Ext.getStore(\"DepTypesForContents\").load();\r",
                     "}"
                 ],
                 "name": "render",
@@ -917,6 +918,29 @@
                 "designer|controlQuery": "#contributionContenus"
             },
             "designerId": "f3285970-e0ec-4143-bcc6-6cd9ad124687"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTypesContenusGridDestroy",
+                "fn": "onTypesContenusGridDestroy",
+                "implHandler": [
+                    "Ext.getStore(\"DepContentsCombo\").removeAll();\r",
+                    "Ext.getStore(\"NestedContentsStore\").removeAll();\r",
+                    "Ext.getStore(\"ContenusDataJson\").removeAll();\r",
+                    "Ext.getStore(\"DepTypesForContents\").removeAll();"
+                ],
+                "name": "destroy",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#TypesContenusGrid"
+            },
+            "designerId": "563540e4-b429-442b-901c-77db0c466708"
         }
     ]
 }

@@ -25,7 +25,9 @@ Ext.define('Rubedo.store.TypesContenusNDepDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            isOptimised: true,
+            usedCollection: 'ContentTypes',
+            autoLoad: false,
             storeId: 'TypesContenusNDepDataJson',
             model: 'Rubedo.model.typesContenusDataModel',
             proxy: {

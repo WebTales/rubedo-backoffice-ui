@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "ContentTypes",
         "designer|userClassName": "contentTypesCombo",
         "designer|userAlias": "contentTypesCombo",
         "autoLoad": false,
@@ -13,8 +15,23 @@
         "storeId": "contentTypesCombo",
         "model": "typesContenusDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen4524",
     "designerId": "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.contentTypesCombo', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'ContentTypes',
             autoLoad: false,
             autoSync: false,
             storeId: 'contentTypesCombo',

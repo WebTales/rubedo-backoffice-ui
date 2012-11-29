@@ -524,6 +524,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getStore("TypesContenusNDepDataJson").load();
     },
 
+    onAdminfTypesGridRender: function(abstractcomponent, options) {
+        Ext.getStore("TypesChampsDataStore").load();
+        Ext.getStore("TypesContenusDepDataJson").load();
+        Ext.getStore("TaxonomyForCT").load();
+    },
+
+    onAdminfTypesGridDestroy: function(abstractcomponent, options) {
+        Ext.getStore("TypesChampsDataStore").removeAll();
+        Ext.getStore("TypesContenusDepDataJson").removeAll();
+        Ext.getStore("TaxonomyForCT").removeAll();
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -553,7 +565,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#AdminfTypesGrid": {
                 select: this.selectTC,
-                edit: this.onGridpanelEdit
+                edit: this.onGridpanelEdit,
+                render: this.onAdminfTypesGridRender,
+                destroy: this.onAdminfTypesGridDestroy
             },
             "#boutonSupprimerTypeContenu": {
                 click: this.supprimeTypeContenu

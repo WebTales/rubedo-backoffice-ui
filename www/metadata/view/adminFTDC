@@ -587,6 +587,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "managesStore": true,
                 "designer|userClassName": "MyGridPanel7",
                 "id": "AdminfTypesGrid",
                 "itemId": null,
@@ -594,7 +595,17 @@
                 "title": "",
                 "store": "TypesContenusDataJson"
             },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
             "designerId": "b105d673-8ef5-43b8-85c0-bb751100be7b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "gridview",
@@ -983,7 +994,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "managesStore": true,
+                                "managesStore": false,
                                 "layout|flex": 1,
                                 "designer|userClassName": "MyGridPanel12",
                                 "autoRender": false,

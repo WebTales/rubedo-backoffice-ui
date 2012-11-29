@@ -24,12 +24,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "managesStore": false,
                 "designer|userClassName": "MyGridPanel13",
                 "id": "TCImbriquesGrid",
                 "title": "",
                 "store": "TypesContenusDepDataJson"
             },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
             "designerId": "9c000a7e-fe57-40f2-a6c9-7f0c8e68b6cf",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "gridview",
@@ -82,7 +93,7 @@
                         "fn": "onTCImbriquesGridViewReady",
                         "implHandler": [
                             "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",
-                            "tablepanel.getSelectionModel().setLocked(true);\r",
+                            "    tablepanel.getSelectionModel().setLocked(true);\r",
                             "}"
                         ],
                         "name": "viewready",

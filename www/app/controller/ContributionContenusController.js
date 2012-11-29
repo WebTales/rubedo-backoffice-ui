@@ -49,7 +49,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     boiteMeta.update(customMeta);
     var myDependantTypes= [ ];
     Ext.Array.forEach(record.get("dependantTypes"), function(someType){
-        myDependantTypes.push(Ext.getStore("TypesContenusDataJson").findRecord("id",someType));
+        myDependantTypes.push(Ext.getStore("DepTypesForContents").findRecord("id",someType));
     });
     Ext.getStore("DepContentsCombo").removeAll();
     Ext.getStore("DepContentsCombo").loadData(myDependantTypes);
@@ -448,7 +448,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     onWindowRender: function(abstractcomponent, options) {
         if (abstractcomponent.isXType("window")){
             Ext.getStore("TaxonomyForC").load();
+            Ext.getStore("DepTypesForContents").load();
         }
+    },
+
+    onTypesContenusGridDestroy: function(abstractcomponent, options) {
+        Ext.getStore("DepContentsCombo").removeAll();
+        Ext.getStore("NestedContentsStore").removeAll();
+        Ext.getStore("ContenusDataJson").removeAll();
+        Ext.getStore("DepTypesForContents").removeAll();
     },
 
     nContenuRecorder: function(status, update) {
@@ -512,7 +520,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     init: function(application) {
         this.control({
             "#TypesContenusGrid": {
-                select: this.typeSelect
+                select: this.typeSelect,
+                destroy: this.onTypesContenusGridDestroy
             },
             "#boutonPublierNouveauContenu": {
                 click: this.contentSaveAndPublish

@@ -829,6 +829,50 @@
                 "designer|controlQuery": "#AdminfTypesGrid"
             },
             "designerId": "cee18c78-aca5-49d7-89a4-764138838ca9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminfTypesGridRender",
+                "fn": "onAdminfTypesGridRender",
+                "implHandler": [
+                    "Ext.getStore(\"TypesChampsDataStore\").load();\r",
+                    "Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
+                    "Ext.getStore(\"TaxonomyForCT\").load();"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#AdminfTypesGrid"
+            },
+            "designerId": "e9ec09d3-2d5c-48ea-ba05-b5a7cdc8c067"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminfTypesGridDestroy",
+                "fn": "onAdminfTypesGridDestroy",
+                "implHandler": [
+                    "Ext.getStore(\"TypesChampsDataStore\").removeAll();\r",
+                    "Ext.getStore(\"TypesContenusDepDataJson\").removeAll();\r",
+                    "Ext.getStore(\"TaxonomyForCT\").removeAll();"
+                ],
+                "name": "destroy",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#AdminfTypesGrid"
+            },
+            "designerId": "94a0398d-b1eb-4d7b-905e-37ab1698b6fd"
         }
     ]
 }

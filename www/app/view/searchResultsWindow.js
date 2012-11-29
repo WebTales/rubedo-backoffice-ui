@@ -40,12 +40,22 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             items: [
                 {
                     xtype: 'mygridpanel20',
-                    overflowY: 'auto'
+                    overflowY: 'auto',
+                    listeners: {
+                        destroy: {
+                            fn: me.onResultContentsGridDestroy,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onResultContentsGridDestroy: function(abstractcomponent, options) {
+        abstracrtcomponent.getStore().removeAll();
     }
 
 });
