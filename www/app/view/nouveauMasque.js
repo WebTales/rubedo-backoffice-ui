@@ -48,8 +48,8 @@ Ext.define('Rubedo.view.nouveauMasque', {
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             managesStore: true,
+                            anchor: '100%',
                             id: 'nouveauMasqueSite',
                             fieldLabel: 'Site ',
                             allowBlank: false,

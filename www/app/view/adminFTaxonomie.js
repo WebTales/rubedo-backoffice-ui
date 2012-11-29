@@ -149,6 +149,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     autoRender: false,
                     autoShow: false,
                     id: 'AdminfTaxonomieGrid',

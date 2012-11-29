@@ -984,14 +984,25 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
+                                "managesStore": true,
                                 "designer|userClassName": "MyGridPanel12",
                                 "autoRender": false,
                                 "autoShow": false,
                                 "id": "vocabulairesTypesContenusGrid",
                                 "title": "Vocabulaires",
-                                "store": "TaxonomieDataJson"
+                                "store": "TaxonomyForCT"
+                            },
+                            "configAlternates": {
+                                "managesStore": "boolean"
                             },
                             "designerId": "16da27e8-be47-4ea4-9205-c2994361ff30",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "managesStore",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "gridview",

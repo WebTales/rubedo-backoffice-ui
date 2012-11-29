@@ -8,18 +8,18 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Taxonomy",
-        "designer|userClassName": "TaxonomieDataJson",
-        "designer|userAlias": "TaxonomieDataJson",
+        "designer|userClassName": "TaxonomyForCT",
+        "designer|userAlias": "TaxonomyForCT",
         "autoLoad": false,
-        "autoSync": true,
-        "storeId": "TaxonomieDataJson",
+        "autoSync": false,
+        "storeId": "TaxonomyForCT",
         "model": "taxonomieDataModel"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen52930",
-    "designerId": "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
+    "id": "ExtBox1-ext-gen5360",
+    "designerId": "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -52,7 +52,7 @@
                 ],
                 "url": null
             },
-            "designerId": "036a1bae-7627-4e6e-b297-e3bf4e671180",
+            "designerId": "ab3a3447-db9d-428a-84b9-4fab5d64aa81",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -66,7 +66,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "925b331f-81f7-4778-948e-dede21eee20c"
+                    "designerId": "34cdad70-b86a-4e75-a931-3a3726584237"
                 },
                 {
                     "type": "jsonwriter",
@@ -80,7 +80,7 @@
                         "encode": true,
                         "root": "data"
                     },
-                    "designerId": "b8688256-dbc9-49a5-a023-2b248bc1297e"
+                    "designerId": "1a8719c9-ecf5-4e61-bc45-86accd24cb22"
                 }
             ]
         }

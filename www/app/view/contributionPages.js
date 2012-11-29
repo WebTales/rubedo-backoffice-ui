@@ -243,8 +243,8 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'combobox',
-                                    flex: 1,
                                     managesStore: true,
+                                    flex: 1,
                                     id: 'pagesSitesCombo',
                                     fieldLabel: 'Site ',
                                     labelWidth: 40,

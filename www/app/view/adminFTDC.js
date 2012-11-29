@@ -421,11 +421,12 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'gridpanel',
                                     flex: 1,
+                                    managesStore: true,
                                     autoRender: false,
                                     autoShow: false,
                                     id: 'vocabulairesTypesContenusGrid',
                                     title: 'Vocabulaires',
-                                    store: 'TaxonomieDataJson',
+                                    store: 'TaxonomyForCT',
                                     viewConfig: {
                                         autoRender: false
                                     },

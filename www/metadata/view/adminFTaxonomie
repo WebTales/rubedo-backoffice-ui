@@ -339,6 +339,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "managesStore": true,
                 "designer|userClassName": "MyGridPanel11",
                 "autoRender": false,
                 "autoShow": false,
@@ -352,7 +353,17 @@
                 "title": "",
                 "store": "TaxonomieDataJson"
             },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
             "designerId": "a8217b56-d011-4e19-bdbf-9e9a79681700",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "gridview",

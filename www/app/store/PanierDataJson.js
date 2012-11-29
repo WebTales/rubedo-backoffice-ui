@@ -25,7 +25,7 @@ Ext.define('Rubedo.store.PanierDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             autoSync: true,
             storeId: 'PanierDataJson',
             model: 'Rubedo.model.panierDataModel',
@@ -59,8 +59,8 @@ Ext.define('Rubedo.store.PanierDataJson', {
     },
 
     onJsonstoreDataChangeD: function(abstractstore, options) {
-        var nbeltspanier =  this.count();
-        Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');
+        /*var nbeltspanier =  this.count();
+        Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');*/
 
     }
 

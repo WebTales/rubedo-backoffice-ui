@@ -45,7 +45,6 @@ Ext.application({
     stores: [
         'SitesJson',
         'BlocsDataStore',
-        'StoreOptionFiltrageTaxonomie',
         'TypesChampsDataStore',
         'TaxonomieDataJson',
         'champsTCARStore',
@@ -78,7 +77,8 @@ Ext.application({
         'ContentSelectorStore',
         'SitesComboPages',
         'SitesComboMasks',
-        'MasquesDataJson'
+        'MasquesDataJson',
+        'TaxonomyForCT'
     ],
     views: [
         'MyContainer',

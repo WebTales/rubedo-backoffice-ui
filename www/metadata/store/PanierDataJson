@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "PanierDataJson",
         "designer|userAlias": "panierDataJson",
-        "autoLoad": true,
+        "autoLoad": false,
         "autoSync": true,
         "storeId": "PanierDataJson",
         "model": "panierDataModel"
@@ -79,8 +79,8 @@
                 "designer|userClassName": "onJsonstoreDataChangeD",
                 "fn": "onJsonstoreDataChangeD",
                 "implHandler": [
-                    "var nbeltspanier =  this.count();\r",
-                    "Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');\r",
+                    "/*var nbeltspanier =  this.count();\r",
+                    "Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');*/\r",
                     ""
                 ],
                 "single": true,

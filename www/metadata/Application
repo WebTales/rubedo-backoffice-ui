@@ -29,7 +29,6 @@
         "stores": [
             "SitesJson",
             "BlocsDataStore",
-            "StoreOptionFiltrageTaxonomie",
             "TypesChampsDataStore",
             "TaxonomieDataJson",
             "champsTCARStore",
@@ -62,7 +61,8 @@
             "ContentSelectorStore",
             "SitesComboPages",
             "SitesComboMasks",
-            "MasquesDataJson"
+            "MasquesDataJson",
+            "TaxonomyForCT"
         ],
         "views": [
             "MyContainer",
