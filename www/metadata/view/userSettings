@@ -146,10 +146,13 @@
                                         "name": "title",
                                         "fieldLabel": "Civilité ",
                                         "editable": false,
-                                        "displayField": "title",
+                                        "displayField": null,
                                         "forceSelection": true,
-                                        "store": "titleStore",
-                                        "valueField": "title"
+                                        "store": "[\"Mr\",\"Mme\",\"Mlle\"]",
+                                        "valueField": null
+                                    },
+                                    "configAlternates": {
+                                        "store": "array"
                                     },
                                     "designerId": "dbb2a9c2-cd57-4f9d-88c5-027c6640d103"
                                 },

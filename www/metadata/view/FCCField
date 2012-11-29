@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "managesStore": true,
         "designer|userClassName": "FCCField",
         "designer|userAlias": "FCCField",
         "fieldLabel": "Label",
@@ -16,6 +17,16 @@
         "typeAhead": true,
         "valueField": "id"
     },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
     "id": "ExtBox1-ext-gen3062",
-    "designerId": "71505c40-5587-40f5-be0e-bea55fa8806d"
+    "designerId": "71505c40-5587-40f5-be0e-bea55fa8806d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ]
 }

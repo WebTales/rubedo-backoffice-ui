@@ -61,7 +61,6 @@ Ext.application({
         'UsersGroupStore',
         'UsersAdminDataStore',
         'ReusableElementsDataStore',
-        'titleStore',
         'countryStore',
         'languageStore',
         'DelegationsDataStore',

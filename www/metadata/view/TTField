@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "managesStore": true,
         "designer|userClassName": "TTField",
         "designer|userAlias": "TTField",
         "fieldLabel": "Label",
@@ -16,44 +17,16 @@
         "store": "taxoTermsCombo",
         "valueField": "id"
     },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
     "id": "ExtBox1-ext-gen12673",
     "designerId": "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
-    "cn": [
+    "customConfigs": [
         {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onComboboxRender",
-                "fn": "onComboboxRender",
-                "implHandler": [
-                    "abstractcomponent.getStore().load();"
-                ],
-                "name": "render",
-                "scope": "me"
-            },
-            "designerId": "c448335d-04a7-475d-aabe-0a69c291e4f2"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onComboboxBeforeDestroy",
-                "fn": "onComboboxBeforeDestroy",
-                "implHandler": [
-                    "abstractcomponent.getStore().removeAll();"
-                ],
-                "name": "beforedestroy",
-                "scope": "me"
-            },
-            "designerId": "b3435283-35e5-44ae-a0c0-1c62095d3295"
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
         }
     ]
 }

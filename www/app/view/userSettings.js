@@ -86,10 +86,12 @@ Ext.define('Rubedo.view.userSettings', {
                                             name: 'title',
                                             fieldLabel: 'Civilité ',
                                             editable: false,
-                                            displayField: 'title',
                                             forceSelection: true,
-                                            store: 'titleStore',
-                                            valueField: 'title'
+                                            store: [
+                                                'Mr',
+                                                'Mme',
+                                                'Mlle'
+                                            ]
                                         },
                                         {
                                             xtype: 'textfield',

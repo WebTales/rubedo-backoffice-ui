@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "managesStore": true,
         "designer|userClassName": "CTCField",
         "designer|userAlias": "CTCField",
         "fieldLabel": "Label",
@@ -17,44 +18,16 @@
         "store": "contentTypesCombo",
         "valueField": "id"
     },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
     "id": "ExtBox1-ext-gen5388",
     "designerId": "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
-    "cn": [
+    "customConfigs": [
         {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onComboboxRender",
-                "fn": "onComboboxRender",
-                "implHandler": [
-                    "abstractcomponent.getStore().load();"
-                ],
-                "name": "render",
-                "scope": "me"
-            },
-            "designerId": "baf09ed8-50d1-4160-9a6f-032ffdb6984d"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onComboboxBeforeDestroy",
-                "fn": "onComboboxBeforeDestroy",
-                "implHandler": [
-                    "abstractcomponent.getStore().removeAll();"
-                ],
-                "name": "beforedestroy",
-                "scope": "me"
-            },
-            "designerId": "a96c36d7-b002-40b7-9c26-2000fd9b504e"
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
         }
     ]
 }

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.FCCField', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.FCCField',
 
+    managesStore: true,
     fieldLabel: 'Label',
     forceSelection: true,
     minChars: 3,

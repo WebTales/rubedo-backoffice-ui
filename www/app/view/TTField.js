@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.TTField', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.TTField',
 
+    managesStore: true,
     fieldLabel: 'Label',
     editable: false,
     forceSelection: true,
@@ -28,28 +29,7 @@ Ext.define('Rubedo.view.TTField', {
     initComponent: function() {
         var me = this;
 
-        Ext.applyIf(me, {
-            listeners: {
-                render: {
-                    fn: me.onComboboxRender,
-                    scope: me
-                },
-                beforedestroy: {
-                    fn: me.onComboboxBeforeDestroy,
-                    scope: me
-                }
-            }
-        });
-
         me.callParent(arguments);
-    },
-
-    onComboboxRender: function(abstractcomponent, options) {
-        abstractcomponent.getStore().load();
-    },
-
-    onComboboxBeforeDestroy: function(abstractcomponent, options) {
-        abstractcomponent.getStore().removeAll();
     }
 
 });

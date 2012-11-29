@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.CTCField', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.CTCField',
 
+    managesStore: true,
     fieldLabel: 'Label',
     editable: false,
     displayField: 'type',
@@ -29,28 +30,7 @@ Ext.define('Rubedo.view.CTCField', {
     initComponent: function() {
         var me = this;
 
-        Ext.applyIf(me, {
-            listeners: {
-                render: {
-                    fn: me.onComboboxRender,
-                    scope: me
-                },
-                beforedestroy: {
-                    fn: me.onComboboxBeforeDestroy,
-                    scope: me
-                }
-            }
-        });
-
         me.callParent(arguments);
-    },
-
-    onComboboxRender: function(abstractcomponent, options) {
-        abstractcomponent.getStore().load();
-    },
-
-    onComboboxBeforeDestroy: function(abstractcomponent, options) {
-        abstractcomponent.getStore().removeAll();
     }
 
 });
