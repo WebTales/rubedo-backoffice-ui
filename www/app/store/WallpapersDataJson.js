@@ -25,7 +25,7 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             storeId: 'WallpapersDataJson',
             model: 'Rubedo.model.wallpaperDataModel',
             proxy: {

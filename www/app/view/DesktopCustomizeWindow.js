@@ -49,6 +49,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                     items: [
                         {
                             xtype: 'gridpanel',
+                            managesStore: true,
                             id: 'wallpaperGrid',
                             collapsed: false,
                             title: 'Fond d\'écran',
@@ -67,6 +68,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                         },
                         {
                             xtype: 'gridpanel',
+                            managesStore: true,
                             id: 'themeGrid',
                             collapsed: true,
                             title: 'Themes',

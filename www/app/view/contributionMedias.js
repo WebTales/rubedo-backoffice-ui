@@ -166,6 +166,7 @@ Ext.define('Rubedo.view.contributionMedias', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     id: 'contributionMediasGrid',
                     width: 150,
                     resizable: true,

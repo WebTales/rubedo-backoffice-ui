@@ -371,6 +371,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "managesStore": true,
                 "designer|userClassName": "MyGridPanel14",
                 "id": "contributionMediasGrid",
                 "width": 150,
@@ -381,7 +382,17 @@
                 "title": "",
                 "store": "MediasDataStore"
             },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
             "designerId": "0f3b346f-390d-47be-b081-3a399c56ba17",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "gridview",

@@ -47,13 +47,24 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "managesStore": true,
                         "designer|userClassName": "MyGridPanel15",
                         "id": "wallpaperGrid",
                         "collapsed": false,
                         "title": "Fond d'écran",
                         "store": "WallpapersDataJson"
                     },
+                    "configAlternates": {
+                        "managesStore": "boolean"
+                    },
                     "designerId": "974790ab-642a-4ffe-bfad-e99d29df691a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "managesStore",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "gridview",
@@ -92,13 +103,24 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "managesStore": true,
                         "designer|userClassName": "MyGridPanel16",
                         "id": "themeGrid",
                         "collapsed": true,
                         "title": "Themes",
                         "store": "ThemesDataJson"
                     },
+                    "configAlternates": {
+                        "managesStore": "boolean"
+                    },
                     "designerId": "be927406-6991-4ea4-8ee4-2be67b9bf469",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "managesStore",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "gridview",

@@ -25,7 +25,7 @@ Ext.define('Rubedo.store.MediasDataStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             storeId: 'MediasDataStore',
             model: 'Rubedo.model.mediaDataModel',
             proxy: {
