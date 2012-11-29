@@ -108,6 +108,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
     },
 
+    onWindowBeforeDestroy: function(abstractcomponent, options) {
+        if (abstractcomponent.isXType("window")){
+            Ext.getStore("TaxonomyForC").removeAll();
+        }
+    },
+
     contentDelete: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();
         this.getContenusDataJsonStore().remove(cible);
@@ -439,6 +445,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("nestedContentsModifyBtn").fireEvent("click");
     },
 
+    onWindowRender: function(abstractcomponent, options) {
+        if (abstractcomponent.isXType("window")){
+            Ext.getStore("TaxonomyForC").load();
+        }
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -514,6 +526,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             "#NestedContentsGrid": {
                 selectionchange: this.nestedContentsSelect,
                 itemdblclick: this.NCDblClickEdit
+            },
+            "#contributionContenus": {
+                beforedestroy: this.onWindowBeforeDestroy,
+                render: this.onWindowRender
             },
             "#boutonSupprimerContenu": {
                 click: this.contentDelete

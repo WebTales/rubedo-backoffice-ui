@@ -84,7 +84,7 @@
                     "    var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get(\"vocabularies\");\r",
                     "    var i=0;\r",
                     "    for (i=0; i<lesTaxo.length; i++) {\r",
-                    "        var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', lesTaxo[i]);\r",
+                    "        var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);\r",
                     "        var storeT = Ext.create('Ext.data.JsonStore', {\r",
                     "            model:\"Rubedo.model.taxonomyTermModel\",\r",
                     "            remoteFilter:\"true\",\r",

@@ -420,8 +420,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'gridpanel',
-                                    flex: 1,
                                     managesStore: true,
+                                    flex: 1,
                                     autoRender: false,
                                     autoShow: false,
                                     id: 'vocabulairesTypesContenusGrid',

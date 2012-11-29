@@ -183,6 +183,28 @@
             "designerId": "7c34508b-b7bf-46cc-9bbd-67b7260dcd4f"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowBeforeDestroy",
+                "fn": "onWindowBeforeDestroy",
+                "implHandler": [
+                    "if (abstractcomponent.isXType(\"window\")){\r",
+                    "    Ext.getStore(\"TaxonomyForC\").removeAll();\r",
+                    "}"
+                ],
+                "name": "beforedestroy",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#contributionContenus"
+            },
+            "designerId": "22ca2295-8f59-4e36-acb8-122494e04a8b"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -873,6 +895,28 @@
                 "designer|controlQuery": "#NestedContentsGrid"
             },
             "designerId": "575594ef-2357-4a76-b58a-b2bad0120ca7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowRender",
+                "fn": "onWindowRender",
+                "implHandler": [
+                    "if (abstractcomponent.isXType(\"window\")){\r",
+                    "    Ext.getStore(\"TaxonomyForC\").load();\r",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#contributionContenus"
+            },
+            "designerId": "f3285970-e0ec-4143-bcc6-6cd9ad124687"
         }
     ]
 }
