@@ -176,6 +176,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     creerChampTC: function(button, e, options) {
+        var me=this;
         var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;
         var configurateur = Ext.clone(donnees.config);
         if (donnees.cType =='Ext.ux.TreePicker'){ 
@@ -204,6 +205,16 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
         enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+        if (!me.nameAvailable(nouvChamp.name)) {
+            var duplic = 1;
+            while (!me.nameAvailable(nouvChamp.name+duplic)){
+                duplic++;
+            }
+            nouvChamp.name=nouvChamp.name+duplic;
+            nouvChamp.config.name=nouvChamp.config.name+duplic;
+
+        }
+
         Ext.getCmp('champsEditionTC').add(enrobage);
         nouvChamp.getEl().dom.click();
         button.up().up().close();
@@ -541,6 +552,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         for (e=0; e<cible.length; e++) {
             resultat.push({terme: cible[e].text});
             this.miseAPlatTaxo(cible[e].children, resultat);
+        }
+    },
+
+    nameAvailable: function(name) {
+        var usedNames=[];
+        Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
+            Ext.Array.include(usedNames,field.name);
+        });
+        if (Ext.Array.contains(usedNames,name)){
+            return(false);
+        } else {
+            return(true);
         }
     },
 

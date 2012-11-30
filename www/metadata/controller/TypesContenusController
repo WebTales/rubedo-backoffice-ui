@@ -212,6 +212,7 @@
                 "designer|userClassName": "creerChampTC",
                 "fn": "creerChampTC",
                 "implHandler": [
+                    "var me=this;\r",
                     "var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;\r",
                     "var configurateur = Ext.clone(donnees.config);\r",
                     "if (donnees.cType =='Ext.ux.TreePicker'){ \r",
@@ -240,6 +241,16 @@
                     "var enrobage =Ext.widget('ChampTC');\r",
                     "enrobage.add(nouvChamp);\r",
                     "enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
+                    "if (!me.nameAvailable(nouvChamp.name)) {\r",
+                    "    var duplic = 1;\r",
+                    "    while (!me.nameAvailable(nouvChamp.name+duplic)){\r",
+                    "        duplic++;\r",
+                    "    }\r",
+                    "    nouvChamp.name=nouvChamp.name+duplic;\r",
+                    "    nouvChamp.config.name=nouvChamp.config.name+duplic;\r",
+                    "\r",
+                    "}\r",
+                    "\r",
                     "Ext.getCmp('champsEditionTC').add(enrobage);\r",
                     "nouvChamp.getEl().dom.click();\r",
                     "button.up().up().close();\r",
@@ -873,6 +884,33 @@
                 "designer|controlQuery": "#AdminfTypesGrid"
             },
             "designerId": "94a0398d-b1eb-4d7b-905e-37ab1698b6fd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nameAvailable",
+                "fn": "nameAvailable",
+                "designer|params": [
+                    "name"
+                ],
+                "implHandler": [
+                    "var usedNames=[];\r",
+                    "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
+                    "    Ext.Array.include(usedNames,field.name);\r",
+                    "});\r",
+                    "if (Ext.Array.contains(usedNames,name)){\r",
+                    "    return(false);\r",
+                    "} else {\r",
+                    "    return(true);\r",
+                    "}"
+                ]
+            },
+            "designerId": "d157a9ee-580e-4b98-beef-42abf6f6da50"
         }
     ]
 }
