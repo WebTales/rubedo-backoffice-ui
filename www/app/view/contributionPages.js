@@ -213,6 +213,28 @@ Ext.define('Rubedo.view.contributionPages', {
                             ]
                         },
                         {
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.masks',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Test',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'pagePreviewBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'page_preview_big',
+                                    scale: 'large',
+                                    text: 'Prèvisualisation'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'tbfill'
                         },
                         {

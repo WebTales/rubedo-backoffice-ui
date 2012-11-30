@@ -314,6 +314,11 @@ Ext.define('Rubedo.controller.PagesController', {
                 });}
     },
 
+    pagePreview: function(button, e, options) {
+        var target=Ext.getCmp('mainPageTree').getSelectionModel().getLastSelected().get("text");
+        Ext.widget("FOShowWindow",{targetURL:window.location.origin+"/index/"+target}).show();
+    },
+
     savePage: function(button, e, options) {
         var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
         Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().set("rows",newRows);
@@ -446,6 +451,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#mainPageEdition unBloc": {
                 render: this.blocSelection
+            },
+            "#pagePreviewBtn": {
+                click: this.pagePreview
             },
             "#pageSaveBtn": {
                 click: this.savePage

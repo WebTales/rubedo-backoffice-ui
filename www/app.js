@@ -128,7 +128,8 @@ Ext.application({
         'MyWindow35',
         'CTCField',
         'TTField',
-        'FCCField'
+        'FCCField',
+        'FOShowWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

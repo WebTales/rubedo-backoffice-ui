@@ -1,0 +1,59 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "targetURL": "http://www.webtales.fr/",
+        "designer|userClassName": "FOShowWindow",
+        "designer|userAlias": "FOShowWindow",
+        "height": 500,
+        "id": null,
+        "width": 1100,
+        "layout": "fit",
+        "icon": null,
+        "title": "Prèvisualisation",
+        "constrain": false,
+        "constrainHeader": true,
+        "maximizable": true,
+        "maximized": true,
+        "minimizable": false,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen4824",
+    "designerId": "7a0ece9f-fba6-4305-abf1-76fe8c8c7496",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "targetURL",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFOShowWindowRender",
+                "fn": "onFOShowWindowRender",
+                "implHandler": [
+                    "abstractcomponent.add(Ext.widget(\"container\",{\r",
+                    "autoEl: {\r",
+                    "                        tag: 'iframe',\r",
+                    "                        src: \"resources/responsiveShow/?url=\"+abstractcomponent.targetURL\r",
+                    "                    }\r",
+                    "}));"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "0a7d9aa6-eab9-4e1f-8d06-63c0d17ecaf3"
+        }
+    ]
+}
