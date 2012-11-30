@@ -3,7 +3,7 @@
     "settings": {
         "urlPrefix": "http://rubedo.alexandru.local/backoffice/",
         "spacesToIndent": 4,
-        "exportPath": "",
+        "exportPath": "/home/dobrea/Documents/Workspace/rubedo-backoffice-ui/www/DeployedRubedo",
         "sdkPath": "",
         "lineEnding": "CRLF",
         "genTimestamps": false,
@@ -1290,6 +1290,12 @@
                 "app/store/DepTypesForContents.js"
             ],
             "className": "DepTypesForContents"
+        },
+        "e6373763-028a-4d9f-907b-92c55d7ec5c5": {
+            "paths": [
+                "metadata/resource/js7"
+            ],
+            "className": "js7"
         }
     },
     "viewOrderMap": {
@@ -1453,6 +1459,7 @@
             "0e13e975-ba15-4606-abba-202c9e7af037",
             "f475730f-fee0-46a3-afc0-066400d5ef4d",
             "2010faab-850e-4352-8ff3-c9a5192ef9af",
+            "e6373763-028a-4d9f-907b-92c55d7ec5c5",
             "29125295-6de9-496a-91f9-2dba071bbccf",
             "afcdcf8b-35ee-4667-97c8-d98412372d4c",
             "d1d84fd4-1d39-40c1-98f3-7c1634c356ef",
