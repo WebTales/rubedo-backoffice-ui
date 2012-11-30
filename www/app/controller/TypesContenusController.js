@@ -222,6 +222,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     selectChampTC: function(abstractcomponent, options) {
+        var me=this;
         var TCfield=abstractcomponent.getComponent(1);
         TCfield.getEl().on('click', function() {
             Ext.getCmp("TCfieldUp").enable();
@@ -245,45 +246,49 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     var nouvChamp= Ext.create(mesChamps[t].type, mesChamps[t].config);
                     nouvChamp.labelSeparator= ' ';
                     nouvChamp.anchor='100%';
+                    if (nouvChamp.name=="name"){
+                        nouvChamp.validator=me.nameValidator;
+                    }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
                     nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
-                    nouvChamp.on('change', function () {
-                        TCfield.config[this.name]= this.getValue();
-                        if (this.name=='fieldLabel') {
-                            TCfield.setFieldLabel(this.getValue());
-                        }
-                        else if (this.name=='value') {
-                            TCfield.setValue(this.getValue());
-                        }
-                        else if (this.name=='editable') {
-                            TCfield.setEditable(this.getValue());
-                            TCfield.reset();
-                        }
-                        else if (this.name=='multiSelect') {
-                            TCfield.multiSelect = this.getValue();
-                            TCfield.reset();
-                        }
-                        else if (this.name=='tooltip') {
-                            abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());
-                        }
-                        else if (this.name=='regex') {
-                            TCfield.regex = new RegExp(this.getValue());
-                        }
-                        else {
-                            TCfield[this.name]= this.getValue();
-                        }
-                        TCfield.validate();
-                    });
-                    boiteParam.add(nouvChamp); 
+                    nouvChamp.on('change', function (thing) {
+                        if (thing.isValid()){
+                            TCfield.config[this.name]= this.getValue();
+                            if (this.name=='fieldLabel') {
+                                TCfield.setFieldLabel(this.getValue());
+                            }
+                            else if (this.name=='value') {
+                                TCfield.setValue(this.getValue());
+                            }
+                            else if (this.name=='editable') {
+                                TCfield.setEditable(this.getValue());
+                                TCfield.reset();
+                            }
+                            else if (this.name=='multiSelect') {
+                                TCfield.multiSelect = this.getValue();
+                                TCfield.reset();
+                            }
+                            else if (this.name=='tooltip') {
+                                abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());
+                            }
+                            else if (this.name=='regex') {
+                                TCfield.regex = new RegExp(this.getValue());
+                            }
+                            else {
+                                TCfield[this.name]= this.getValue();
+                            }
+                            TCfield.validate();
+                        }});
+                        boiteParam.add(nouvChamp); 
 
-                }
-                if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
-                    var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
-                    boiteParam.add(optionsLC); 
+                    }
+                    if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
+                        var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
+                        boiteParam.add(optionsLC); 
 
+                    }
                 }
-            }
-        });
+            });
     },
 
     enleveChampTC: function(abstractcomponent, options) {
@@ -552,6 +557,20 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         for (e=0; e<cible.length; e++) {
             resultat.push({terme: cible[e].text});
             this.miseAPlatTaxo(cible[e].children, resultat);
+        }
+    },
+
+    nameValidator: function(name) {
+        var usedNames=[];
+        Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
+            if (field.getId()!=Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getId()){
+                Ext.Array.include(usedNames,field.name);
+            }
+        });
+        if (Ext.Array.contains(usedNames,name)){
+            return("Nom dèjà utilisé par un autre champ");
+        } else {
+            return(true);
         }
     },
 
