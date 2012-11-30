@@ -77,14 +77,18 @@ Ext.define('Rubedo.view.assistantRequetage', {
                         {
                             xtype: 'combobox',
                             anchor: '90%',
+                            managesStore: true,
                             id: 'champTCRequeteur',
                             style: '{float:left}',
                             fieldLabel: '',
                             allowBlank: false,
                             editable: false,
+                            displayField: 'type',
                             forceSelection: true,
                             multiSelect: true,
-                            store: 'TypesContenusNDepDataJson'
+                            queryMode: 'local',
+                            store: 'TCNDepCombo',
+                            valueField: 'id'
                         },
                         {
                             xtype: 'button',

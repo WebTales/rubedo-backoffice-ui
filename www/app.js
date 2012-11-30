@@ -81,7 +81,8 @@ Ext.application({
         'TaxonomyForC',
         'VersionsDataJson',
         'ContenusDataJson',
-        'DepTypesForContents'
+        'DepTypesForContents',
+        'TCNDepCombo'
     ],
     views: [
         'MyContainer',

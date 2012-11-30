@@ -83,7 +83,7 @@
                     "                label: 'Dernière modification'\r",
                     "            }});\r",
                     "            if (typesContenus.length<2) {\r",
-                    "                var champsReq = Ext.clone(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.champs);\r",
+                    "                var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.champs);\r",
                     "                var champsEligibles = [\"datefield\", \"timefield\", \"checkboxfield\", \"numberfield\"];\r",
                     "                var champsReqF = Ext.Array.filter(champsReq, function(champ){\r",
                     "                    if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}\r",
@@ -96,10 +96,10 @@
                     "\r",
                     "            }\r",
                     "\r",
-                    "            var typesDEP = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.typesImbriques, 'type');\r",
+                    "            var typesDEP = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes, 'id');\r",
                     "            var j = 1;\r",
                     "            for (j=1; j<typesContenus.length; j++) {\r",
-                    "                var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[j]).data.typesImbriques, 'type');\r",
+                    "                var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes, 'id');\r",
                     "                typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);\r",
                     "            }\r",
                     "            var k=0;\r",
@@ -119,7 +119,7 @@
                     "                    }});  \r",
                     "\r",
                     "\r",
-                    "                    var champsReq = Ext.clone(Ext.getStore('TypesContenusDataJson').findRecord('type',typesDEP[k]).data.champs);\r",
+                    "                    var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesDEP[k]).data.fields);\r",
                     "                    var champsEligibles = [\"datefield\", \"timefield\", \"checkboxfield\", \"numberfield\"];\r",
                     "                    var champsReqF = Ext.Array.filter(champsReq, function(champ){\r",
                     "                        if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}\r",
@@ -139,10 +139,10 @@
                     "\r",
                     "\r",
                     "\r",
-                    "                var vocabulaires = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.vocabulaires, 'titre');\r",
+                    "                var vocabulaires = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies, 'id');\r",
                     "                var j = 1;\r",
                     "                for (j=1; j<typesContenus.length; j++) {\r",
-                    "                    var vocabSuivant = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[j]).data.vocabulaires, 'titre');\r",
+                    "                    var vocabSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies, 'id');\r",
                     "                    vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);\r",
                     "                }\r",
                     "\r",
@@ -265,30 +265,6 @@
                 "designer|controlQuery": "#boutonPrevRequeteur"
             },
             "designerId": "4667034e-54b1-41f0-9662-9b004a9c8479"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "miseAPlatTaxo",
-                "fn": "miseAPlatTaxo",
-                "designer|params": [
-                    "cible",
-                    "resultat"
-                ],
-                "implHandler": [
-                    "var e=0;\r",
-                    "for (e=0; e<cible.length; e++) {\r",
-                    "    resultat.push({terme: cible[e].text});\r",
-                    "    this.miseAPlatTaxo(cible[e].children, resultat);\r",
-                    "}"
-                ]
-            },
-            "designerId": "aa80c73c-634a-4906-8575-47e0b636d035"
         },
         {
             "type": "controlleraction",

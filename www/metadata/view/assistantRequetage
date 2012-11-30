@@ -120,6 +120,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "90%",
+                        "managesStore": true,
                         "designer|userClassName": "MyComboBox",
                         "id": "champTCRequeteur",
                         "style": [
@@ -128,13 +129,24 @@
                         "fieldLabel": "",
                         "allowBlank": false,
                         "editable": false,
-                        "displayField": null,
+                        "displayField": "type",
                         "forceSelection": true,
                         "multiSelect": true,
-                        "store": "TypesContenusNDepDataJson",
-                        "valueField": null
+                        "queryMode": "local",
+                        "store": "TCNDepCombo",
+                        "valueField": "id"
                     },
-                    "designerId": "900e06a4-5cf4-4ea4-b930-d9e2a09137c4"
+                    "configAlternates": {
+                        "managesStore": "boolean"
+                    },
+                    "designerId": "900e06a4-5cf4-4ea4-b930-d9e2a09137c4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "managesStore",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

@@ -79,7 +79,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         label: 'Dernière modification'
                     }});
                     if (typesContenus.length<2) {
-                        var champsReq = Ext.clone(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.champs);
+                        var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.champs);
                         var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
                         var champsReqF = Ext.Array.filter(champsReq, function(champ){
                             if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
@@ -92,10 +92,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                     }
 
-                    var typesDEP = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.typesImbriques, 'type');
+                    var typesDEP = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes, 'id');
                     var j = 1;
                     for (j=1; j<typesContenus.length; j++) {
-                        var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[j]).data.typesImbriques, 'type');
+                        var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes, 'id');
                         typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
                     }
                     var k=0;
@@ -115,7 +115,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             }});  
 
 
-                            var champsReq = Ext.clone(Ext.getStore('TypesContenusDataJson').findRecord('type',typesDEP[k]).data.champs);
+                            var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesDEP[k]).data.fields);
                             var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
                             var champsReqF = Ext.Array.filter(champsReq, function(champ){
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
@@ -135,10 +135,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
 
 
-                        var vocabulaires = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[0]).data.vocabulaires, 'titre');
+                        var vocabulaires = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies, 'id');
                         var j = 1;
                         for (j=1; j<typesContenus.length; j++) {
-                            var vocabSuivant = Ext.Array.pluck(Ext.getStore('TypesContenusDataJson').findRecord('type',typesContenus[j]).data.vocabulaires, 'titre');
+                            var vocabSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies, 'id');
                             vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
                         }
 
@@ -292,14 +292,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             }
 
             Ext.getCmp('assisstantRE4').add(enrobage);
-        }
-    },
-
-    miseAPlatTaxo: function(cible, resultat) {
-        var e=0;
-        for (e=0; e<cible.length; e++) {
-            resultat.push({terme: cible[e].text});
-            this.miseAPlatTaxo(cible[e].children, resultat);
         }
     },
 
