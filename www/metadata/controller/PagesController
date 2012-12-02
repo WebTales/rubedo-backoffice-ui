@@ -165,6 +165,7 @@
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "    me.renderPage(record.get(\"rows\"),1,Ext.getCmp(\"mainPageEdition\"));\r",
                     "    me.resetInterface();\r",
+                    "    Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues(record.getData());\r",
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "        autoEl: {\r",
                     "            tag: 'iframe',\r",
@@ -410,7 +411,8 @@
                     "Ext.getCmp('pageElementPropsPanel').setTitle(\"Sélectionnez un élément\");\r",
                     "Ext.getCmp('pageElementPropsPanel').setIconCls();\r",
                     "Ext.getCmp('pageElementIdField').setValue();\r",
-                    "Ext.getCmp(\"pagesInternalPreview\").removeAll();"
+                    "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
+                    "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();"
                 ]
             },
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"
@@ -652,8 +654,17 @@
                 "designer|userClassName": "savePage",
                 "fn": "savePage",
                 "implHandler": [
-                    "var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp(\"mainPageEdition\"));\r",
-                    "Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().set(\"rows\",newRows);"
+                    "if (Ext.getCmp(\"mainPageAttributeForm\").getForm().isValid()) {\r",
+                    "    var editedPage=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                    "    var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp(\"mainPageEdition\"));\r",
+                    "    editedPage.beginEdit();\r",
+                    "    editedPage.set(\"rows\",newRows);\r",
+                    "    editedPage.set(Ext.getCmp(\"mainPageAttributeForm\").getForm().getValues());\r",
+                    "    editedPage.endEdit();\r",
+                    "} else {\r",
+                    "Ext.getCmp(\"mainPageAttributeForm\").up().setActiveTab(1);\r",
+                    "Ext.Msg.alert(\"Erreur\", \"Les propriérés de la page sont invalides.\");\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",

@@ -330,8 +330,19 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'form',
+                            id: 'mainPageAttributeForm',
                             bodyPadding: 10,
-                            title: 'Propriétés'
+                            title: 'Propriétés',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'text',
+                                    fieldLabel: 'Titre ',
+                                    allowBlank: false,
+                                    vtype: 'alphanum'
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',

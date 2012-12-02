@@ -96,6 +96,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("mainPageEdition").removeAll();
             me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
             me.resetInterface();
+            Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
             Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                 autoEl: {
                     tag: 'iframe',
@@ -326,8 +327,17 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     savePage: function(button, e, options) {
-        var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
-        Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().set("rows",newRows);
+        if (Ext.getCmp("mainPageAttributeForm").getForm().isValid()) {
+            var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+            var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
+            editedPage.beginEdit();
+            editedPage.set("rows",newRows);
+            editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
+            editedPage.endEdit();
+        } else {
+            Ext.getCmp("mainPageAttributeForm").up().setActiveTab(1);
+            Ext.Msg.alert("Erreur", "Les propriérés de la page sont invalides.");
+        }
     },
 
     onWindowBeforeDestroy: function(abstractcomponent, options) {
@@ -420,6 +430,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp('pageElementPropsPanel').setIconCls();
         Ext.getCmp('pageElementIdField').setValue();
         Ext.getCmp("pagesInternalPreview").removeAll();
+        Ext.getCmp("mainPageAttributeForm").getForm().setValues();
     },
 
     init: function(application) {

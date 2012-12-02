@@ -44,7 +44,8 @@ Ext.define('Rubedo.view.newPageWindow', {
                             name: 'text',
                             fieldLabel: 'Nom  ',
                             labelWidth: 110,
-                            allowBlank: false
+                            allowBlank: false,
+                            vtype: 'alphanum'
                         },
                         {
                             xtype: 'combobox',

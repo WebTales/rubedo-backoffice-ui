@@ -728,6 +728,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyForm32",
+                        "id": "mainPageAttributeForm",
                         "bodyPadding": 10,
                         "title": "Propriétés"
                     },
@@ -744,6 +745,23 @@
                                 "designer|userClassName": "TabConfig26"
                             },
                             "designerId": "ebdeaea9-51a6-4e03-adba-216b96c86f7a"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField46",
+                                "name": "text",
+                                "fieldLabel": "Titre ",
+                                "allowBlank": false,
+                                "vtype": "alphanum"
+                            },
+                            "designerId": "f6278924-efcd-4e74-8398-758aee1678e9"
                         }
                     ]
                 },

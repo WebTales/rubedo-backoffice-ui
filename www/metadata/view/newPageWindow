@@ -60,7 +60,8 @@
                         "name": "text",
                         "fieldLabel": "Nom  ",
                         "labelWidth": 110,
-                        "allowBlank": false
+                        "allowBlank": false,
+                        "vtype": "alphanum"
                     },
                     "designerId": "d31f0307-4d9d-418b-aafc-f22ffef2078a"
                 },
