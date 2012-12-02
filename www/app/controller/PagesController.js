@@ -82,7 +82,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp("mainPageEdition").removeAll();
                 Ext.getCmp('delConfirmZ').close();
-                this.resetInterface();
+                me.resetInterface();
             });  
 
         }
@@ -96,6 +96,12 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("mainPageEdition").removeAll();
             me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
             me.resetInterface();
+            Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                autoEl: {
+                    tag: 'iframe',
+                    src: "resources/responsiveShow/?url="+window.location.origin+"/index/"+record.get("text")
+                }
+            }));
         }
     },
 
@@ -412,6 +418,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp('pageElementPropsPanel').setTitle("Sélectionnez un élément");
         Ext.getCmp('pageElementPropsPanel').setIconCls();
         Ext.getCmp('pageElementIdField').setValue();
+        Ext.getCmp("pagesInternalPreview").removeAll();
     },
 
     init: function(application) {

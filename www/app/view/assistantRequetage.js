@@ -76,8 +76,8 @@ Ext.define('Rubedo.view.assistantRequetage', {
                     items: [
                         {
                             xtype: 'combobox',
-                            anchor: '90%',
                             managesStore: true,
+                            anchor: '90%',
                             id: 'champTCRequeteur',
                             style: '{float:left}',
                             fieldLabel: '',

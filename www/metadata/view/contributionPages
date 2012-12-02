@@ -489,7 +489,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "page_preview_big",
                                 "scale": "large",
-                                "text": "Prèvisualisation"
+                                "text": "Prèvisualisation plein-écran"
                             },
                             "designerId": "37a74d33-ce15-40db-b2ad-b2437b443565"
                         }
@@ -608,7 +608,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "tabpanel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -616,12 +616,100 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "container|align": "stretch",
-                "designer|userClassName": "MyPanel40",
-                "id": "mainPageEdition",
-                "layout": "vbox"
+                "designer|userClassName": "MyTabPanel8",
+                "activeTab": 0
             },
-            "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c"
+            "designerId": "31ec80f6-28dc-4ca5-88b0-992bb0b0b5cc",
+            "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|userClassName": "MyPanel40",
+                        "id": "mainPageEdition",
+                        "layout": "vbox",
+                        "title": "Edition"
+                    },
+                    "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "TabConfig25"
+                            },
+                            "designerId": "3712a8f0-b685-4c61-8d5d-cb18419f3c3f"
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm32",
+                        "bodyPadding": 10,
+                        "title": "Propriétés"
+                    },
+                    "designerId": "91ab2532-4ab7-4cef-8048-67f3535521b8",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig26"
+                            },
+                            "designerId": "ebdeaea9-51a6-4e03-adba-216b96c86f7a"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel40",
+                        "id": "pagesInternalPreview",
+                        "layout": "fit",
+                        "title": "Prèvisualisation"
+                    },
+                    "designerId": "95e16f35-228a-4f1b-a587-d3ff5beb1f36",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig27"
+                            },
+                            "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "panel",

@@ -44,10 +44,10 @@
                 "fn": "onFOShowWindowRender",
                 "implHandler": [
                     "abstractcomponent.add(Ext.widget(\"container\",{\r",
-                    "autoEl: {\r",
-                    "                        tag: 'iframe',\r",
-                    "                        src: \"resources/responsiveShow/?url=\"+abstractcomponent.targetURL\r",
-                    "                    }\r",
+                    "    autoEl: {\r",
+                    "        tag: 'iframe',\r",
+                    "        src: \"resources/responsiveShow/?url=\"+abstractcomponent.targetURL\r",
+                    "    }\r",
                     "}));"
                 ],
                 "name": "render",

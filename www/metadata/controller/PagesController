@@ -135,7 +135,7 @@
                     "        Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
                     "        Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "        Ext.getCmp('delConfirmZ').close();\r",
-                    "        this.resetInterface();\r",
+                    "        me.resetInterface();\r",
                     "    });  \r",
                     "\r",
                     "}"
@@ -165,6 +165,12 @@
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "    me.renderPage(record.get(\"rows\"),1,Ext.getCmp(\"mainPageEdition\"));\r",
                     "    me.resetInterface();\r",
+                    "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
+                    "    autoEl: {\r",
+                    "        tag: 'iframe',\r",
+                    "        src: \"resources/responsiveShow/?url=\"+window.location.origin+\"/index/\"+record.get(\"text\")\r",
+                    "    }\r",
+                    "}));\r",
                     "}"
                 ],
                 "name": "select",
@@ -403,7 +409,8 @@
                     "Ext.getCmp('pageElementPropsPanel').removeAll();\r",
                     "Ext.getCmp('pageElementPropsPanel').setTitle(\"Sélectionnez un élément\");\r",
                     "Ext.getCmp('pageElementPropsPanel').setIconCls();\r",
-                    "Ext.getCmp('pageElementIdField').setValue();"
+                    "Ext.getCmp('pageElementIdField').setValue();\r",
+                    "Ext.getCmp(\"pagesInternalPreview\").removeAll();"
                 ]
             },
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"

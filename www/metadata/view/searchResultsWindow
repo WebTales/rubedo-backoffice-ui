@@ -32,27 +32,25 @@
                 "overflowY": "auto"
             },
             "designerId": "e0c87a36-f0b1-4300-8367-fd019bd614ef",
-            "masterInstanceId": "ExtBox1-ext-gen12006",
-            "cn": [
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onResultContentsGridDestroy",
-                        "fn": "onResultContentsGridDestroy",
-                        "implHandler": [
-                            "abstracrtcomponent.getStore().removeAll();"
-                        ],
-                        "name": "destroy",
-                        "scope": "me"
-                    },
-                    "designerId": "0cf209f2-ab92-4ea6-a16c-d5a8380864fd"
-                }
-            ]
+            "masterInstanceId": "ExtBox1-ext-gen12006"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSearchResultsWindowBeforeClose",
+                "fn": "onSearchResultsWindowBeforeClose",
+                "implHandler": [
+                    "panel.getComponent(0).getStore().removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "3c8c07db-76a3-49f2-b1df-f29002e3b9d4"
         }
     ]
 }
