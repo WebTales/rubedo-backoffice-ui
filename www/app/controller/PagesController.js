@@ -333,7 +333,8 @@ Ext.define('Rubedo.controller.PagesController', {
     onWindowBeforeDestroy: function(abstractcomponent, options) {
         if (abstractcomponent.isXType("window")){
             Ext.getStore("MasksComboStore").removeAll();
-            Ext.getStore("PagesDataStore").removeAll();
+            Ext.getStore("PagesDataStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\"emptyDecoy\"}]";
+            Ext.getStore("PagesDataStore").load();
         }
     },
 

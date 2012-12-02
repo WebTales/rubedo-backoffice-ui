@@ -21,7 +21,7 @@ Ext.define('Rubedo.controller.MainStoresController', {
         if ((abstractcomponent.managesStore)&&(abstractcomponent.store)) {
             abstractcomponent.getStore().load();
 
-            abstractcomponent.on("destroy", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });
+            abstractcomponent.on("beforedestroy", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });
         }
     },
 

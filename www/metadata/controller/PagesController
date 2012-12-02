@@ -166,11 +166,11 @@
                     "    me.renderPage(record.get(\"rows\"),1,Ext.getCmp(\"mainPageEdition\"));\r",
                     "    me.resetInterface();\r",
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
-                    "    autoEl: {\r",
-                    "        tag: 'iframe',\r",
-                    "        src: \"resources/responsiveShow/?url=\"+window.location.origin+\"/index/\"+record.get(\"text\")\r",
-                    "    }\r",
-                    "}));\r",
+                    "        autoEl: {\r",
+                    "            tag: 'iframe',\r",
+                    "            src: \"resources/responsiveShow/?url=\"+window.location.origin+\"/index/\"+record.get(\"text\")\r",
+                    "        }\r",
+                    "    }));\r",
                     "}"
                 ],
                 "name": "select",
@@ -674,8 +674,9 @@
                 "fn": "onWindowBeforeDestroy",
                 "implHandler": [
                     "if (abstractcomponent.isXType(\"window\")){\r",
-                    "Ext.getStore(\"MasksComboStore\").removeAll();\r",
-                    "Ext.getStore(\"PagesDataStore\").removeAll();\r",
+                    "    Ext.getStore(\"MasksComboStore\").removeAll();\r",
+                    "    Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
+                    "    Ext.getStore(\"PagesDataStore\").load();\r",
                     "}"
                 ],
                 "name": "beforedestroy",

@@ -115,7 +115,7 @@
                     "if ((abstractcomponent.managesStore)&&(abstractcomponent.store)) {\r",
                     "    abstractcomponent.getStore().load();\r",
                     "\r",
-                    "    abstractcomponent.on(\"destroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
+                    "    abstractcomponent.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
                     "}"
                 ],
                 "name": "render",
