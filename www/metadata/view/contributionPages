@@ -630,12 +630,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel40",
-                        "id": "mainPageEdition",
-                        "layout": "vbox",
+                        "designer|userClassName": "MyPanel41",
+                        "layout": "hbox",
                         "title": "Edition"
                     },
-                    "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c",
+                    "designerId": "fc5aec75-3b24-4636-91ef-4ab3b58d0cb7",
                     "cn": [
                         {
                             "type": "tab",
@@ -645,10 +644,78 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "TabConfig25"
+                                "designer|userClassName": "TabConfig28"
                             },
-                            "designerId": "3712a8f0-b685-4c61-8d5d-cb18419f3c3f"
+                            "designerId": "3e88f0dd-a817-428c-9196-8bf2d9687ec0"
+                        },
+                        {
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyPanel40",
+                                "id": "mainPageEdition",
+                                "layout": "vbox",
+                                "title": ""
+                            },
+                            "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c"
+                        },
+                        {
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyPanel33",
+                                "frame": false,
+                                "width": 300,
+                                "overflowY": "auto",
+                                "bodyPadding": 5,
+                                "collapseDirection": "right",
+                                "collapsible": true,
+                                "title": "Propriétés"
+                            },
+                            "designerId": "262bc1bd-e9ae-49c3-9af5-8cd6f9ca1715",
+                            "cn": [
+                                {
+                                    "type": "form",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyForm31",
+                                        "height": null,
+                                        "id": "pageElementPropsPanel",
+                                        "bodyPadding": 10,
+                                        "title": "Sélectionnez un élément"
+                                    },
+                                    "designerId": "b083b428-a042-47f4-8ce7-10c381e90a1f"
+                                },
+                                {
+                                    "type": "hiddenfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyHiddenField5",
+                                        "id": "pageElementIdField",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "0aae9eaa-8caf-4cc9-9b8d-99911592506f"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -708,58 +775,6 @@
                             "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": null,
-                "designer|userClassName": "MyPanel33",
-                "frame": false,
-                "width": 300,
-                "overflowY": "auto",
-                "bodyPadding": 5,
-                "collapseDirection": "right",
-                "collapsible": true,
-                "title": "Propriétés"
-            },
-            "designerId": "262bc1bd-e9ae-49c3-9af5-8cd6f9ca1715",
-            "cn": [
-                {
-                    "type": "form",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyForm31",
-                        "height": null,
-                        "id": "pageElementPropsPanel",
-                        "bodyPadding": 10,
-                        "title": "Sélectionnez un élément"
-                    },
-                    "designerId": "b083b428-a042-47f4-8ce7-10c381e90a1f"
-                },
-                {
-                    "type": "hiddenfield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyHiddenField5",
-                        "id": "pageElementIdField",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "0aae9eaa-8caf-4cc9-9b8d-99911592506f"
                 }
             ]
         }

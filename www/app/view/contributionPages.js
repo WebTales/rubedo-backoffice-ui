@@ -287,12 +287,46 @@ Ext.define('Rubedo.view.contributionPages', {
                     items: [
                         {
                             xtype: 'panel',
-                            id: 'mainPageEdition',
                             layout: {
                                 align: 'stretch',
-                                type: 'vbox'
+                                type: 'hbox'
                             },
-                            title: 'Edition'
+                            title: 'Edition',
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    flex: 1,
+                                    id: 'mainPageEdition',
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
+                                    title: ''
+                                },
+                                {
+                                    xtype: 'panel',
+                                    frame: false,
+                                    width: 300,
+                                    overflowY: 'auto',
+                                    bodyPadding: 5,
+                                    collapseDirection: 'right',
+                                    collapsible: true,
+                                    title: 'Propriétés',
+                                    items: [
+                                        {
+                                            xtype: 'form',
+                                            id: 'pageElementPropsPanel',
+                                            bodyPadding: 10,
+                                            title: 'Sélectionnez un élément'
+                                        },
+                                        {
+                                            xtype: 'hiddenfield',
+                                            id: 'pageElementIdField',
+                                            fieldLabel: 'Label'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             xtype: 'form',
@@ -306,29 +340,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                 type: 'fit'
                             },
                             title: 'Prèvisualisation'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    frame: false,
-                    width: 300,
-                    overflowY: 'auto',
-                    bodyPadding: 5,
-                    collapseDirection: 'right',
-                    collapsible: true,
-                    title: 'Propriétés',
-                    items: [
-                        {
-                            xtype: 'form',
-                            id: 'pageElementPropsPanel',
-                            bodyPadding: 10,
-                            title: 'Sélectionnez un élément'
-                        },
-                        {
-                            xtype: 'hiddenfield',
-                            id: 'pageElementIdField',
-                            fieldLabel: 'Label'
                         }
                     ]
                 }
