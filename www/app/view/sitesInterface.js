@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    managesStore: true,
+                    managesStore: false,
                     id: 'mainSitesGrid',
                     width: 200,
                     title: '',

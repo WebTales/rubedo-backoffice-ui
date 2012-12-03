@@ -66,10 +66,19 @@ Ext.define('Rubedo.controller.SitesController', {
         }
     },
 
+    onSitesInterfaceBeforeClose: function(panel, options) {
+        Ext.getStore("SitesJson").removeAll();
+    },
+
+    onMainSitesGridRender: function(abstractcomponent, options) {
+        Ext.getStore("SitesJson").load();
+    },
+
     init: function(application) {
         this.control({
             "#mainSitesGrid": {
-                selectionchange: this.selectSite
+                selectionchange: this.selectSite,
+                render: this.onMainSitesGridRender
             },
             "#siteRemoveBtn": {
                 click: this.deleteSite
@@ -82,6 +91,9 @@ Ext.define('Rubedo.controller.SitesController', {
             },
             "#updateSiteBtn": {
                 click: this.updateSiteSubmit
+            },
+            "#sitesInterface": {
+                beforeclose: this.onSitesInterfaceBeforeClose
             }
         });
     }

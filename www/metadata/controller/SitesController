@@ -140,6 +140,46 @@
                 "designer|controlQuery": "#updateSiteBtn"
             },
             "designerId": "0cd9478d-25ca-4ba2-8f1d-0706ea13fa61"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSitesInterfaceBeforeClose",
+                "fn": "onSitesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"SitesJson\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#sitesInterface"
+            },
+            "designerId": "ff32189d-a3ea-4f62-8b32-e8137715867d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainSitesGridRender",
+                "fn": "onMainSitesGridRender",
+                "implHandler": [
+                    "Ext.getStore(\"SitesJson\").load();"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainSitesGrid"
+            },
+            "designerId": "829e1c72-ddea-4fe6-b0b1-dbb2fa2da509"
         }
     ]
 }
