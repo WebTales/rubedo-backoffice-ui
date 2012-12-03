@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.nouveauMasque', {
     layout: {
         type: 'fit'
     },
-    iconCls: 'page_add',
+    iconCls: 'add',
     title: 'Nouveau Masque',
     modal: true,
 

@@ -17,9 +17,10 @@ Ext.define('Rubedo.view.DelConfirmZ', {
     extend: 'Ext.window.Window',
     alias: 'widget.delConfirmZ',
 
+    draggable: false,
     height: 100,
     id: 'delConfirmZ',
-    width: 200,
+    width: 201,
     resizable: false,
     layout: {
         type: 'fit'

@@ -8,18 +8,20 @@
     "userConfig": {
         "designer|userClassName": "DelConfirmZ",
         "designer|userAlias": "delConfirmZ",
+        "draggable": false,
         "height": 100,
         "id": "delConfirmZ",
-        "width": 200,
-        "resizable": [
-            "false"
-        ],
+        "width": 201,
+        "resizable": false,
         "layout": "fit",
         "closable": false,
         "iconCls": "warning",
         "title": "Confirmation de supression",
         "modal": true,
         "plain": false
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen58292",
     "designerId": "72d10373-385a-4cd4-98b5-fd8e6b3c7eec",

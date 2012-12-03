@@ -37,7 +37,7 @@
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
                     "if (Ext.isDefined(cible)) {\r",
                     "    var fenetre = Ext.widget('delConfirmZ');\r",
-                    "    fenetre.showAt(screen.width/2-100, 100);\r",
+                    "    fenetre.show();\r",
                     "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
                     "        Ext.getCmp('masquesGrid').getStore().remove(cible);\r",
                     "        Ext.getCmp('masqueEdition').removeAll();\r",
@@ -608,7 +608,7 @@
                 "fn": "newMaskWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauMasque');\r",
-                    "fenetre.showAt(screen.width/2-200, 100);"
+                    "fenetre.show();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -665,9 +665,9 @@
                     "\r",
                     "    });\r",
                     "    this.getMasquesDataJsonStore().add(nouvMasque);\r",
-                    "\r",
+                    "    this.getMasquesDataJsonStore().addListener(\"datachanged\",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});\r",
+                    "    \r",
                     "    Ext.getCmp('nouveauMasqueFenetre').close();\r",
-                    "    Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);\r",
                     "    this.masquesDisplay(Ext.getCmp('masquesGridView'),nouvMasque);\r",
                     "\r",
                     "}"
@@ -737,6 +737,7 @@
                     "\r",
                     "    });\r",
                     "    this.getMasquesDataJsonStore().add(nouvMasque);\r",
+                    "    this.getMasquesDataJsonStore().addListener(\"datachanged\",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});\r",
                     "\r",
                     "    Ext.getCmp('copieMasqueFenetre').close();    \r",
                     "}"

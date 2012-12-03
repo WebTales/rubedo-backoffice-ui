@@ -40,7 +40,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('delConfirmZ');
-            fenetre.showAt(screen.width/2-100, 100);
+            fenetre.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('masquesGrid').getStore().remove(cible);
                 Ext.getCmp('masqueEdition').removeAll();
@@ -153,7 +153,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     newMaskWindow: function(button, e, options) {
         var fenetre = Ext.widget('nouveauMasque');
-        fenetre.showAt(screen.width/2-200, 100);
+        fenetre.show();
     },
 
     createMask: function(button, e, options) {
@@ -194,9 +194,9 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
+            this.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});
 
             Ext.getCmp('nouveauMasqueFenetre').close();
-            Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);
             this.masquesDisplay(Ext.getCmp('masquesGridView'),nouvMasque);
 
         }
@@ -234,6 +234,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
+            this.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});
 
             Ext.getCmp('copieMasqueFenetre').close();    
         }
