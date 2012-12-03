@@ -39,6 +39,18 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'id'
+        },
+        {
+            name: 'title'
+        },
+        {
+            name: 'description'
+        },
+        {
+            name: 'keywords'
+        },
+        {
+            name: 'pageURL'
         }
     ]
 });

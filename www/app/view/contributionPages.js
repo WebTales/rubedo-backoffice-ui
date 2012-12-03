@@ -338,9 +338,35 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'text',
-                                    fieldLabel: 'Titre ',
+                                    fieldLabel: 'Nom ',
                                     allowBlank: false,
                                     vtype: 'alphanum'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'title',
+                                    fieldLabel: 'Titre '
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'description',
+                                    fieldLabel: 'Description :',
+                                    maxLength: 250
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'keywords',
+                                    fieldLabel: 'Mots clés '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'pageURL',
+                                    fieldLabel: 'URL ',
+                                    vtype: 'url'
                                 }
                             ]
                         },

@@ -757,11 +757,73 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField46",
                                 "name": "text",
-                                "fieldLabel": "Titre ",
+                                "fieldLabel": "Nom ",
                                 "allowBlank": false,
                                 "vtype": "alphanum"
                             },
                             "designerId": "f6278924-efcd-4e74-8398-758aee1678e9"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField47",
+                                "name": "title",
+                                "fieldLabel": "Titre "
+                            },
+                            "designerId": "4aac2896-fd55-4956-b889-63edbbda59c3"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea4",
+                                "name": "description",
+                                "fieldLabel": "Description :",
+                                "maxLength": 250
+                            },
+                            "designerId": "7404f378-38dc-4c94-9309-8719a156f0c9"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField48",
+                                "name": "keywords",
+                                "fieldLabel": "Mots clés "
+                            },
+                            "designerId": "ce71e39f-71a4-456a-b6c8-f26e1dc3f63d"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField49",
+                                "name": "pageURL",
+                                "fieldLabel": "URL ",
+                                "vtype": "url"
+                            },
+                            "designerId": "e23827bb-bedc-46be-9cd4-71433c232443"
                         }
                     ]
                 },
