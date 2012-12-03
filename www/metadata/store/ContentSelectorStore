@@ -96,6 +96,7 @@
                 "implHandler": [
                     "var o=operation;\r",
                     "o.filters=[ ];\r",
+                    "if (!Ext.isEmpty(o.params)){\r",
                     "if (!Ext.isEmpty(o.params.comboQuery)){\r",
                     "\r",
                     "    var newFilter=Ext.create('Ext.util.Filter', {\r",
@@ -104,10 +105,11 @@
                     "        type:\"string\",\r",
                     "        operator:\"like\"\r",
                     "    });\r",
-                    "    \r",
+                    "\r",
                     "\r",
                     "    o.filters.push(newFilter);\r",
                     "\r",
+                    "}\r",
                     "}"
                 ],
                 "name": "beforeload",

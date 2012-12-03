@@ -165,6 +165,7 @@
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "    me.renderPage(record.get(\"rows\"),1,Ext.getCmp(\"mainPageEdition\"));\r",
                     "    me.resetInterface();\r",
+                    "    Ext.getCmp(\"mainPageAttributeForm\").enable();\r",
                     "    Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues(record.getData());\r",
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "        autoEl: {\r",
@@ -412,7 +413,8 @@
                     "Ext.getCmp('pageElementPropsPanel').setIconCls();\r",
                     "Ext.getCmp('pageElementIdField').setValue();\r",
                     "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
-                    "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();"
+                    "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();\r",
+                    "Ext.getCmp(\"mainPageAttributeForm\").disable();"
                 ]
             },
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"

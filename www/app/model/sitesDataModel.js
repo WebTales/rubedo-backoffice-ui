@@ -29,6 +29,45 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'alias'
+        },
+        {
+            name: 'description'
+        },
+        {
+            name: 'keywords'
+        },
+        {
+            name: 'mainLanguage'
+        },
+        {
+            name: 'languages'
+        },
+        {
+            name: 'activeMessagery'
+        },
+        {
+            name: 'SMTPServer'
+        },
+        {
+            name: 'SMTPPort'
+        },
+        {
+            name: 'SMTPLogin'
+        },
+        {
+            name: 'SMTPPassword'
+        },
+        {
+            name: 'defaultEmail'
+        },
+        {
+            name: 'accessibilityLevel'
+        },
+        {
+            name: 'opquastLogin'
+        },
+        {
+            name: 'opquastPassword'
         }
     ]
 });

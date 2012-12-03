@@ -330,6 +330,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'form',
+                            disabled: true,
                             id: 'mainPageAttributeForm',
                             bodyPadding: 10,
                             title: 'Propriétés',

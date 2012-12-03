@@ -70,18 +70,20 @@ Ext.define('Rubedo.store.ContentSelectorStore', {
     onJsonstoreBeforeLoad: function(store, operation, options) {
         var o=operation;
         o.filters=[ ];
-        if (!Ext.isEmpty(o.params.comboQuery)){
+        if (!Ext.isEmpty(o.params)){
+            if (!Ext.isEmpty(o.params.comboQuery)){
 
-            var newFilter=Ext.create('Ext.util.Filter', {
-                property:"text",
-                value:o.params.comboQuery,
-                type:"string",
-                operator:"like"
-            });
+                var newFilter=Ext.create('Ext.util.Filter', {
+                    property:"text",
+                    value:o.params.comboQuery,
+                    type:"string",
+                    operator:"like"
+                });
 
 
-            o.filters.push(newFilter);
+                o.filters.push(newFilter);
 
+            }
         }
     }
 

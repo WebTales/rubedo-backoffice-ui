@@ -63,6 +63,175 @@
                 "name": "alias"
             },
             "designerId": "cd3c7f28-3f6d-451f-af12-052948323ab9"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field175",
+                "name": "description"
+            },
+            "designerId": "a32d2c2d-95f8-4124-bdea-038d65fd4f22"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field176",
+                "name": "keywords"
+            },
+            "designerId": "be0a524c-32bb-4656-b6c5-d353565a28a5"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field177",
+                "name": "mainLanguage"
+            },
+            "designerId": "56fe266c-6cba-42eb-9634-69cd5ea09e6d"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field178",
+                "name": "languages"
+            },
+            "designerId": "9a046475-eea7-43ea-9c69-aee2d15a21e9"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field179",
+                "name": "activeMessagery"
+            },
+            "designerId": "07eb3657-1c52-410d-8a19-4c0f9f4fa301"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field180",
+                "name": "SMTPServer"
+            },
+            "designerId": "a7eebc17-c789-4cbd-94e5-1e9c88853581"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field181",
+                "name": "SMTPPort"
+            },
+            "designerId": "7ebe276a-9462-47cc-8d6d-896be3312483"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field182",
+                "name": "SMTPLogin"
+            },
+            "designerId": "01cb88c1-7ad8-4db0-a0fe-b3c148aaede2"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field183",
+                "name": "SMTPPassword"
+            },
+            "designerId": "9356b47f-b216-4d0e-bf62-a6a4f1942c91"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field184",
+                "name": "defaultEmail"
+            },
+            "designerId": "fad17b02-8694-42e4-b79a-475eece527a6"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field185",
+                "name": "accessibilityLevel"
+            },
+            "designerId": "fce0cdfc-7553-4c0a-babe-762448c3ef74"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field186",
+                "name": "opquastLogin"
+            },
+            "designerId": "44550dd2-785f-43df-a31e-ed0aba2fa19b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field187",
+                "name": "opquastPassword"
+            },
+            "designerId": "c352ec7c-1f79-431e-8786-af832d1acca6"
         }
     ]
 }

@@ -9,9 +9,9 @@
         "container|align": "stretch",
         "designer|userClassName": "sitesInterface",
         "designer|userAlias": "sitesInterface",
-        "height": 387,
+        "height": 449,
         "id": "sitesInterface",
-        "width": 537,
+        "width": 753,
         "layout": "hbox",
         "iconCls": "referencement_icon",
         "title": "Sites",
@@ -202,25 +202,328 @@
                 "designer|userClassName": "MyForm30",
                 "disabled": true,
                 "id": "mainSiteProps",
+                "overflowY": "auto",
                 "bodyPadding": 10,
                 "title": ""
             },
             "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "fieldset",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField45",
-                        "name": "alias",
-                        "fieldLabel": "Alias "
+                        "designer|userClassName": "MyFieldSet11",
+                        "collapsible": true,
+                        "title": "Site"
                     },
-                    "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
+                    "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField50",
+                                "name": "text",
+                                "fieldLabel": "Nom ",
+                                "allowBlank": false
+                            },
+                            "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField45",
+                                "name": "alias",
+                                "fieldLabel": "Alias "
+                            },
+                            "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea5",
+                                "name": "description",
+                                "fieldLabel": "Description ",
+                                "maxLength": 250
+                            },
+                            "designerId": "b8f4ce97-2c78-448a-b1a2-6d7b4c53788c"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField51",
+                                "name": "keywords",
+                                "fieldLabel": "Mots clés "
+                            },
+                            "designerId": "03adf42a-bb84-4d33-ba51-b98d567d8027"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField52",
+                                "name": "mainLanguage",
+                                "fieldLabel": "Langue principale "
+                            },
+                            "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField53",
+                                "name": "languages",
+                                "fieldLabel": "Langues "
+                            },
+                            "designerId": "ada022ae-82c9-415b-9926-ea61dd1649fe"
+                        }
+                    ]
+                },
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet10",
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Messagerie"
+                    },
+                    "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
+                    "cn": [
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox4",
+                                "name": "activeMessagery",
+                                "fieldLabel": "Activé ",
+                                "boxLabel": ""
+                            },
+                            "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField54",
+                                "name": "SMTPServer",
+                                "fieldLabel": "Serveur SMTP "
+                            },
+                            "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e"
+                        },
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField2",
+                                "name": "SMTPPort",
+                                "fieldLabel": "Port SMTP ",
+                                "allowDecimals": false,
+                                "minValue": 0
+                            },
+                            "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField56",
+                                "name": "SMTPLogin",
+                                "fieldLabel": "Login SMTP "
+                            },
+                            "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField55",
+                                "inputType": "password",
+                                "name": "SMTPPassword",
+                                "fieldLabel": "Mot de passe SMTP "
+                            },
+                            "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField57",
+                                "name": "defaultEmail",
+                                "fieldLabel": "E-mail par défaut ",
+                                "vtype": "email"
+                            },
+                            "designerId": "89e663aa-7d5a-4581-952e-6d9e80784a03"
+                        }
+                    ]
+                },
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet12",
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Proxy"
+                    },
+                    "designerId": "d680842a-288f-436b-ad00-64dc85247158"
+                },
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet13",
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Cache"
+                    },
+                    "designerId": "7927cfd5-9b41-4a7e-822e-d91c98bf44f9"
+                },
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet14",
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Accessibilité"
+                    },
+                    "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
+                    "cn": [
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox17",
+                                "name": "accessibilityLevel",
+                                "fieldLabel": "Niveau d'accessibilité ",
+                                "store": "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "50ee0abb-5872-495d-acb7-7f37ec72c674"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField58",
+                                "name": "opquastLogin",
+                                "fieldLabel": "Login Opquast "
+                            },
+                            "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField59",
+                                "inputType": "password",
+                                "name": "opquastPassword",
+                                "fieldLabel": "Mot de passe Optquast "
+                            },
+                            "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

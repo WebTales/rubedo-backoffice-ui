@@ -17,9 +17,9 @@ Ext.define('Rubedo.view.sitesInterface', {
     extend: 'Ext.window.Window',
     alias: 'widget.sitesInterface',
 
-    height: 387,
+    height: 449,
     id: 'sitesInterface',
-    width: 537,
+    width: 753,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -97,14 +97,147 @@ Ext.define('Rubedo.view.sitesInterface', {
                     flex: 1,
                     disabled: true,
                     id: 'mainSiteProps',
+                    overflowY: 'auto',
                     bodyPadding: 10,
                     title: '',
                     items: [
                         {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            name: 'alias',
-                            fieldLabel: 'Alias '
+                            xtype: 'fieldset',
+                            collapsible: true,
+                            title: 'Site',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'text',
+                                    fieldLabel: 'Nom ',
+                                    allowBlank: false
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'alias',
+                                    fieldLabel: 'Alias '
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'description',
+                                    fieldLabel: 'Description ',
+                                    maxLength: 250
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'keywords',
+                                    fieldLabel: 'Mots clés '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'mainLanguage',
+                                    fieldLabel: 'Langue principale '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'languages',
+                                    fieldLabel: 'Langues '
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Messagerie',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'activeMessagery',
+                                    fieldLabel: 'Activé ',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'SMTPServer',
+                                    fieldLabel: 'Serveur SMTP '
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    name: 'SMTPPort',
+                                    fieldLabel: 'Port SMTP ',
+                                    allowDecimals: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'SMTPLogin',
+                                    fieldLabel: 'Login SMTP '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    inputType: 'password',
+                                    name: 'SMTPPassword',
+                                    fieldLabel: 'Mot de passe SMTP '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'defaultEmail',
+                                    fieldLabel: 'E-mail par défaut ',
+                                    vtype: 'email'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Proxy'
+                        },
+                        {
+                            xtype: 'fieldset',
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Cache'
+                        },
+                        {
+                            xtype: 'fieldset',
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Accessibilité',
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    name: 'accessibilityLevel',
+                                    fieldLabel: 'Niveau d\'accessibilité ',
+                                    store: [
+                                        'RGAA A',
+                                        'RGAA AA',
+                                        'RGAA AAA'
+                                    ]
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'opquastLogin',
+                                    fieldLabel: 'Login Opquast '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    inputType: 'password',
+                                    name: 'opquastPassword',
+                                    fieldLabel: 'Mot de passe Optquast '
+                                }
+                            ]
                         },
                         {
                             xtype: 'button',

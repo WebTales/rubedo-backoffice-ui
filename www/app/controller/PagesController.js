@@ -96,6 +96,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("mainPageEdition").removeAll();
             me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
             me.resetInterface();
+            Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
             Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                 autoEl: {
@@ -431,6 +432,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp('pageElementIdField').setValue();
         Ext.getCmp("pagesInternalPreview").removeAll();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
+        Ext.getCmp("mainPageAttributeForm").disable();
     },
 
     init: function(application) {
