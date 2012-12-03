@@ -30,18 +30,6 @@ Ext.define('Rubedo.model.masquesDataModel', {
             type: 'string'
         },
         {
-            name: 'auteur',
-            type: 'string'
-        },
-        {
-            name: 'creation',
-            type: 'date'
-        },
-        {
-            name: 'derniereModification',
-            type: 'date'
-        },
-        {
             name: 'rows',
             type: 'auto'
         },
@@ -51,6 +39,19 @@ Ext.define('Rubedo.model.masquesDataModel', {
         {
             name: 'version',
             type: 'auto'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createUser'
         }
     ]
 });

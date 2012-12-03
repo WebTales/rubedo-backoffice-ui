@@ -78,8 +78,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         var dataview = Ext.getCmp("masquesGrid");
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
-        valeurs.creation= Ext.Date.format(valeurs.creation, 'd-m-Y');
-        valeurs.derniereModification= Ext.Date.format(valeurs.derniereModification, 'd-m-Y');
+        valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
+        valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');
         boiteMeta.update(valeurs);
 
         var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
@@ -164,15 +164,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
-                etat: 'brouillon',
-                auteur: MyPrefData.myName,
-                creation: new Date(),
-                derniereModification: new Date(),
-                version: 1.0,
-                versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: MyPrefData.myName}
-                ],
-                "rows": [ 
+                etat: 'brouillon',        
+                rows: [ 
                 {
                     "height":null,
                     "responsive":{
@@ -215,8 +208,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             cible.beginEdit();
             cible.set("rows",this.saveRows(this.getMasqueEdition()));
             cible.set("etat","brouillon");
-            cible.set("derniereModification",new Date());
-            // cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
             cible.endEdit();
 
         }

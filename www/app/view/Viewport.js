@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.Viewport', {
     extend: 'Rubedo.view.ViewportPrimaire',
     renderTo: Ext.getBody(),
     requires: [
+        'Rubedo.view.assistantRequetage',
         'Rubedo.view.AjouterContenu',
         'Rubedo.view.NestedContentAddWindow',
         'Rubedo.view.ChampTC',
@@ -37,7 +38,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFUtilisateurs',
         'Rubedo.view.ajoutBlocFenetre',
         'Rubedo.view.ajoutChampTCFenetre',
-        'Rubedo.view.assistantRequetage',
         'Rubedo.view.contributionContenus',
         'Rubedo.view.contributionMedias',
         'Rubedo.view.copierMasque',

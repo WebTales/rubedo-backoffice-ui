@@ -130,7 +130,8 @@ Ext.application({
         'CTCField',
         'TTField',
         'FCCField',
-        'FOShowWindow'
+        'FOShowWindow',
+        'assistantRequetage'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

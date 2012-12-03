@@ -87,7 +87,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser.fullName}  <b>Version : </b>{version}'
                             ]
                         }
                     ]
