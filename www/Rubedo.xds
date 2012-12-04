@@ -1312,6 +1312,38 @@
                 "app/store/TCNDepCombo.js"
             ],
             "className": "TCNDepCombo"
+        },
+        "c316a888-2684-4def-b009-db4b56937683": {
+            "paths": [
+                "metadata/store/CurrentContent",
+                "app/store/override/CurrentContent.js",
+                "app/store/CurrentContent.js"
+            ],
+            "className": "CurrentContent"
+        },
+        "cc2e5f6d-9258-47d2-8829-9ef556b6d1e1": {
+            "paths": [
+                "metadata/store/ContentTypesForContent",
+                "app/store/override/ContentTypesForContent.js",
+                "app/store/ContentTypesForContent.js"
+            ],
+            "className": "ContentTypesForContent"
+        },
+        "69a463a7-e035-49e5-a756-9f98074f41ec": {
+            "paths": [
+                "metadata/store/DepContentsCombo2",
+                "app/store/override/DepContentsCombo2.js",
+                "app/store/DepContentsCombo2.js"
+            ],
+            "className": "DepContentsCombo2"
+        },
+        "ad9ed2e8-e6a2-4a5c-9180-4d296526fb47": {
+            "paths": [
+                "metadata/store/TaxonomyForC2",
+                "app/store/override/TaxonomyForC2.js",
+                "app/store/TaxonomyForC2.js"
+            ],
+            "className": "TaxonomyForC2"
         }
     },
     "viewOrderMap": {
@@ -1397,6 +1429,7 @@
             "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
             "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",
+            "ad9ed2e8-e6a2-4a5c-9180-4d296526fb47",
             "fc5c664a-7c9e-4a94-b81a-c8a116a6fcf0",
             "12d05bbd-4ea4-4909-8d63-321b7998a5e0",
             "6cb9f760-e375-46f8-ba70-e52ba7aa5725",
@@ -1420,12 +1453,15 @@
             "c6ff1d1b-d029-4bbd-9168-0c5626ce9acd",
             "cb2fc7b0-aa63-4f16-b7f4-12b636102cc6",
             "b4bbd262-e72b-4675-8908-02414ab69420",
+            "69a463a7-e035-49e5-a756-9f98074f41ec",
             "e9b9f232-c36a-4edc-bbe4-44a651487d17",
+            "c316a888-2684-4def-b009-db4b56937683",
             "817bd763-92f6-4eb5-9b4c-817418ccc96f",
             "59694082-24d4-4519-ae8c-5fd6849d6503",
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
             "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
+            "cc2e5f6d-9258-47d2-8829-9ef556b6d1e1",
             "c4d38002-e3cd-47e7-9909-3ac4b2892e89",
             "4116a2e3-9249-4bd3-9cb8-0dfe02c9a66b",
             "98a1d671-046d-4829-b790-2d84feb7eacc",

@@ -343,13 +343,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.nContenuRecorder('pending',button.isUpdate);
     },
 
-    nestedContentsTabRender: function(abstractcomponent, options) {
-        if (Ext.isEmpty(Ext.getStore("DepContentsCombo").getRange())) {
-            abstractcomponent.destroy();
-            Ext.getCmp("nestedContentsTab").destroy();
-        }
-    },
-
     nestedContentsDelete: function(button, e, options) {
         Ext.getCmp("NestedContentsGrid").getStore().remove(Ext.getCmp("NestedContentsGrid").getSelectionModel().getSelection());
     },
@@ -517,6 +510,228 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
+    unitaryContentEdit: function(id) {
+        var me=this;
+        Ext.getStore("CurrentContent").getProxy().extraParams.id = id;
+        Ext.getStore("CurrentContent").addListener("load",function(theStore,records,successful){
+            if (successful){
+                var theContent = records[0];
+                if (ACL.interfaceRights["write.ui.contents."+theContent.get("status")]){
+                    me.prepareContext(theContent, true);
+                }else if (ACL.interfaceRights["read.ui.contents."+theContent.get("status")]){
+                    conslole.log("read me");
+                } else {
+                    Ext.Msg.alert('Erreur',"Vos droits sont insuffisants pour afficher ou modifier ce contenu");
+                    theStore.removeAll();
+                }
+
+            }
+        },this,{single:true});
+            Ext.getStore("CurrentContent").load();
+    },
+
+    displayContentEditWindow: function(content, contentType, editMode) {
+        var fenetre = Ext.widget('ajouterContenu');
+        Ext.getCmp('ViewportPrimaire').add(fenetre);
+        if (Ext.isDefined(window.innerHeight)) {
+            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+        }
+        fenetre.show();
+        Ext.getCmp("nestedContentsAddCombo").bindStore(Ext.getStore("DepContentsCombo2"));
+        var formulaireTC = Ext.getCmp('boiteAChampsContenus');
+        var champsD =contentType.get("champs");
+        for (g=0; g<champsD.length; g++) {
+            var donnees=champsD[g];
+            var configurateur = Ext.clone(donnees.config);
+            if (donnees.cType =='treepicker'){ 
+                var monStore= Ext.getStore(donnees.store);
+                configurateur.store = monStore;
+                monStore.load();
+            }
+            else if (donnees.cType == 'combobox') {
+                var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
+                configurateur.store = monStore;
+            }
+            var nouvChamp = Ext.widget(donnees.cType, configurateur);
+            nouvChamp.config=Ext.clone(donnees.config);
+            if (donnees.cType =='triggerfield'){ 
+                var Ouvrir = Ext.clone(donnees.ouvrir);
+                nouvChamp.onTriggerClick= function() {
+                    var fenetre = Ext.widget(Ouvrir);
+                    fenetre.showAt(screen.width/2-200, 100);
+                } ; 
+                nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+            }  
+            nouvChamp.anchor = '90%';
+            nouvChamp.style = '{float:left;}';
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(nouvChamp);
+            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+            if (nouvChamp.multivalued) {
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+
+            };
+            formulaireTC.add(enrobage);
+
+        }
+        var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
+        var lesTaxo = contentType.get("vocabularies");
+        var i=0;
+        for (i=0; i<lesTaxo.length; i++) {
+            var leVocab = Ext.getStore('TaxonomyForC2').findRecord('id', lesTaxo[i]);
+            var storeT = Ext.create('Ext.data.JsonStore', {
+                model:"Rubedo.model.taxonomyTermModel",
+                remoteFilter:"true",
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms'
+                    },
+                    reader: {
+                        type: 'json',
+                        messageProperty: 'message',
+                        root: 'data'
+                    },
+                    encodeFilters: function(filters) {
+                        var min = [],
+                        length = filters.length,
+                        i = 0;
+
+                        for (; i < length; i++) {
+                            min[i] = {
+                                property: filters[i].property,
+                                value   : filters[i].value
+                            };
+                            if (filters[i].type) {
+                                min[i].type = filters[i].type;
+                            }
+                            if (filters[i].operator) {
+                                min[i].operator = filters[i].operator;
+                            }
+                        }
+                        return this.applyEncoding(min);
+                    }
+                },
+                filters: {
+                    property: 'vocabularyId',
+                    value: leVocab.get("id")
+                }
+
+            });
+            storeT.on("beforeload", function(s,o){
+                o.filters=Ext.Array.slice(o.filters,0,1);
+                if (!Ext.isEmpty(o.params.comboQuery)){
+
+                    var newFilter=Ext.create('Ext.util.Filter', {
+                        property:"text",
+                        value:o.params.comboQuery,
+                        operator:'like'
+                    });
+
+                    o.filters.push(newFilter);
+
+                }
+
+
+            });
+
+
+            var selecteur = Ext.widget('comboboxselect', {
+                name:leVocab.get("id"),
+                width:690,
+                fieldLabel: leVocab.get("name"),
+                autoScroll: false,
+                store: storeT,
+                queryMode: 'remote',
+                queryParam: 'comboQuery',
+                minChars:3,
+                displayField: 'text',
+                valueField: 'id',
+                filterPickList: true,
+                typeAhead: true,
+                forceSelection: !leVocab.data.expandable,
+                createNewOnEnter: leVocab.data.expandable,
+                multiSelect: leVocab.data.multiSelect,
+                allowBlank: !leVocab.data.mandatory
+            });
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(selecteur);
+            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+            formTaxoTC.add(enrobage);
+
+        }
+
+        var cible = content;
+        Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
+        Ext.Object.each(cible.get("champs"), function(key, value, myself){
+            if (Ext.isArray(value)) {
+                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+                var y=0;
+                if (multiField.multivalued) {
+                    Ext.Array.each(value,function(val,index){
+                        if (index>0) {
+                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                        }
+                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+                    }); 
+                }
+            }
+        });
+
+        Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
+        Ext.getCmp("contentMetadataBox").getForm().loadRecord(cible);
+        Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
+        Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
+        Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
+        Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
+        if (!editMode){
+            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy(); 
+            }
+        } else {
+            var myId=cible.get("id");
+
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                if (Ext.isEmpty(Ext.getCmp("nestedContentsAddCombo").getStore().getRange())){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy();
+
+                } else {
+                    Ext.getStore('NestedContentsStore').removeAll();
+                    Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
+                    Ext.getStore('NestedContentsStore').load();
+                }
+            }
+        }
+    },
+
+    prepareContext: function(content, editMode) {
+        var me=this;
+        Ext.getStore('TaxonomyForC2').load();
+        Ext.getStore("ContentTypesForContent").addListener("load",function(theStore,records,successful){
+            if (successful){
+                var myContentType=theStore.findRecord("id",content.get("typeId"));
+                if (editMode){
+                    var myDependantTypes= [ ];
+                    Ext.Array.forEach(myContentType.get("dependantTypes"), function(someType){
+                        myDependantTypes.push(theStore.findRecord("id",someType));
+                    });
+                    Ext.getStore("DepContentsCombo2").removeAll();
+                    Ext.getStore("DepContentsCombo2").loadData(myDependantTypes);
+                }
+                me.displayContentEditWindow(content, myContentType,editMode);
+
+            }
+        },this,{single:true});
+            Ext.getStore("ContentTypesForContent").load();
+    },
+
     init: function(application) {
         this.control({
             "#TypesContenusGrid": {
@@ -567,9 +782,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#boutonSoumettreNouveauContenu": {
                 click: this.contentSaveAndSubmit
-            },
-            "#nestedContensTabConfig": {
-                render: this.nestedContentsTabRender
             },
             "#nestedContentsDeleteBtn": {
                 click: this.nestedContentsDelete

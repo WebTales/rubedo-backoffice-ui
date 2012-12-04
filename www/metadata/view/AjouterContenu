@@ -12,15 +12,15 @@
         "height": 500,
         "id": "ajouterContenu",
         "width": 900,
-        "resizable": [
-            "false"
-        ],
         "layout": "fit",
         "iconCls": "content-icon",
         "title": "Nouveau Contenu",
         "constrainHeader": true,
         "maximizable": true,
         "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen48334",
     "designerId": "b6ffe1bc-b42f-4987-9728-a2d2563012af",

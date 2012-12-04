@@ -1,0 +1,75 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CurrentContent",
+        "designer|userAlias": "CurrentContent",
+        "autoLoad": false,
+        "autoSync": true,
+        "storeId": "CurrentContent",
+        "model": "contenusDataModel",
+        "pageSize": null,
+        "sortOnFilter": null
+    },
+    "id": "ExtBox1-ext-gen6455",
+    "designerId": "c316a888-2684-4def-b009-db4b56937683",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy6",
+                "batchActions": false,
+                "api": [
+                    "{\r",
+                    "                    create: 'contents/create',\r",
+                    "                    read: 'contents/find-one',\r",
+                    "                    update: 'contents/update',\r",
+                    "                    destroy: 'contents/delete'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "7b8ae4be-d88d-468d-8f5d-39262a82edd0",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader20",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "fe8610be-93fe-4f6c-8f8d-e179a1ab5ec8"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter12",
+                        "nameProperty": "mapping",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "3c11ec69-5c35-4b09-bbfd-34a39c640519"
+                }
+            ]
+        }
+    ]
+}

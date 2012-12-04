@@ -163,7 +163,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             }
 
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy();
 
+            }
 
 
 

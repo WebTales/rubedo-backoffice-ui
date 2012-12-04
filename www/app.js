@@ -82,7 +82,11 @@ Ext.application({
         'VersionsDataJson',
         'ContenusDataJson',
         'DepTypesForContents',
-        'TCNDepCombo'
+        'TCNDepCombo',
+        'CurrentContent',
+        'ContentTypesForContent',
+        'DepContentsCombo2',
+        'TaxonomyForC2'
     ],
     views: [
         'MyContainer',
