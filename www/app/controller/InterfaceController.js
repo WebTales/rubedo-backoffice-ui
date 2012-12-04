@@ -266,24 +266,34 @@ Ext.define('Rubedo.controller.InterfaceController', {
         var myText = myWindow.title;
         var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
         var actions = [ ];
-        actions.push({
-            type:"openWindow",
-            target:myWindow.id			
-        });
-        if (!Ext.isEmpty(myRecord)){
-            myText=myRecord.get(myRecord.fields.items[0].name);
+        if ((myWindow.id=="contributionContenus")&&(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection().length==1)) {
             actions.push({
-                type:"selectRecord",
-                target:myWindow.getComponent(0).id,
-                recordId:myRecord.get("id")
+                type:"editContent",
+                target:Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("id")			
             });
-        }
+            var preDefined="page_full.png";
+            myText=Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("text");
 
+        } else {
+
+            actions.push({
+                type:"openWindow",
+                target:myWindow.id			
+            });
+            if (!Ext.isEmpty(myRecord)){
+                myText=myRecord.get(myRecord.fields.items[0].name);
+                actions.push({
+                    type:"selectRecord",
+                    target:myWindow.getComponent(0).id,
+                    recordId:myRecord.get("id")
+                });
+            }
+        }
         var newIcon = Ext.create("Rubedo.model.iconDataModel",{
             text:myText,
             posX:0,
             posY:0,
-            image: myWindow.favoriteIcon||"favorite.png",
+            image: preDefined||myWindow.favoriteIcon||"favorite.png",
             actions:actions
 
         });
@@ -474,6 +484,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                                         target.getSelectionModel().select(target.getStore().findRecord("id",action.recordId));
                                     }
                                 }
+                            } else if (action.type=="editContent") { 
+                                Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(action.target);
                             }
 
                         });
