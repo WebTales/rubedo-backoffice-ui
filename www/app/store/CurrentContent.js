@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.CurrentContent', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            usedCollection: 'contents',
+            isOptimised: true,
             autoLoad: false,
             autoSync: true,
             storeId: 'CurrentContent',

@@ -224,7 +224,7 @@
                     "    var taxonomie =Ext.getCmp(\"boiteATaxoContenus\").getForm().getValues();\r",
                     "    var metaData = Ext.getCmp(\"contentMetadataBox\").getForm().getValues();\r",
                     "    if (update) {\r",
-                    "        var myRec =Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection()[0];\r",
+                    "        var myRec =Ext.getStore(\"CurrentContent\").getRange()[0];\r",
                     "        myRec.beginEdit();\r",
                     "        myRec.set(\"text\",champs.text);\r",
                     "        myRec.set(\"champs\",champs);\r",
@@ -232,6 +232,11 @@
                     "        myRec.set(\"status\",status);\r",
                     "        myRec.set(metaData);\r",
                     "        myRec.endEdit();\r",
+                    "        Ext.getStore(\"CurrentContent\").removeAll();\r",
+                    "        Ext.getStore('TaxonomyForC2').removeAll();\r",
+                    "        Ext.getStore(\"ContentTypesForContent\").removeAll();\r",
+                    "        Ext.getStore(\"DepContentsCombo2\").removeAll();\r",
+                    "        Ext.getStore('NestedContentsStore').removeAll();\r",
                     "\r",
                     "    } \r",
                     "    else {\r",
@@ -286,6 +291,8 @@
                 "fn": "contentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];\r",
+                    "this.unitaryContentEdit(cible.get(\"id\"));\r",
+                    "/*\r",
                     "Ext.getCmp(\"boutonAjouterContenu\").fireEvent(\"click\");\r",
                     "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));\r",
                     "Ext.Object.each(cible.get(\"champs\"), function(key, value, myself){\r",
@@ -331,7 +338,7 @@
                     "            Ext.getStore('NestedContentsStore').load();\r",
                     "        }\r",
                     "    }\r",
-                    "}"
+                    "}*/"
                 ],
                 "name": "click",
                 "scope": "me",

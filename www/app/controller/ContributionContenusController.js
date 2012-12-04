@@ -121,21 +121,23 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     contentEdit: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];
+        this.unitaryContentEdit(cible.get("id"));
+        /*
         Ext.getCmp("boutonAjouterContenu").fireEvent("click");
         Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
         Ext.Object.each(cible.get("champs"), function(key, value, myself){
-            if (Ext.isArray(value)) {
-                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
-                var y=0;
-                if (multiField.multivalued) {
-                    Ext.Array.each(value,function(val,index){
-                        if (index>0) {
-                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
-                        }
-                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
-                    }); 
-                }
-            }
+        if (Ext.isArray(value)) {
+        var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+        var y=0;
+        if (multiField.multivalued) {
+        Ext.Array.each(value,function(val,index){
+        if (index>0) {
+        multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+        }
+        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+        }); 
+        }
+        }
         });
 
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
@@ -145,28 +147,28 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle("Modifier un contenu");
         if (button.restricedRead){
-            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
-            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
-            var nct = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct.destroy();        
-            }
-        } else {
-            var myId=cible.get("id");
-
-            var nct = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                if (Ext.isEmpty(myId)){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct.destroy();
-                } else {
-                    Ext.getStore('NestedContentsStore').removeAll();
-                    Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
-                    Ext.getStore('NestedContentsStore').load();
-                }
-            }
+        Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+        Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+        var nct = Ext.getCmp("nestedContentsTab");
+        if (!Ext.isEmpty(nct)){
+        Ext.getCmp('nestedContensTabConfig').destroy();
+        nct.destroy();        
         }
+        } else {
+        var myId=cible.get("id");
+
+        var nct = Ext.getCmp("nestedContentsTab");
+        if (!Ext.isEmpty(nct)){
+        if (Ext.isEmpty(myId)){
+        Ext.getCmp('nestedContensTabConfig').destroy();
+        nct.destroy();
+        } else {
+        Ext.getStore('NestedContentsStore').removeAll();
+        Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
+        Ext.getStore('NestedContentsStore').load();
+        }
+        }
+        }*/
     },
 
     contentsSelect: function(tablepanel, selections, options) {
@@ -458,7 +460,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
             var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
             if (update) {
-                var myRec =Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0];
+                var myRec =Ext.getStore("CurrentContent").getRange()[0];
                 myRec.beginEdit();
                 myRec.set("text",champs.text);
                 myRec.set("champs",champs);
@@ -466,6 +468,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 myRec.set("status",status);
                 myRec.set(metaData);
                 myRec.endEdit();
+                Ext.getStore("CurrentContent").removeAll();
+                Ext.getStore('TaxonomyForC2').removeAll();
+                Ext.getStore("ContentTypesForContent").removeAll();
+                Ext.getStore("DepContentsCombo2").removeAll();
+                Ext.getStore('NestedContentsStore').removeAll();
 
             } 
             else {

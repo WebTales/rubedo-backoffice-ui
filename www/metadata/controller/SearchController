@@ -77,7 +77,8 @@
                 "fn": "mainResultWindowGetContext",
                 "implHandler": [
                     "if (ACL.interfaceRights['read.ui.contents']){\r",
-                    "    var fenetre=Ext.getCmp(\"contributionContenus\");\r",
+                    "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));\r",
+                    "    /*var fenetre=Ext.getCmp(\"contributionContenus\");\r",
                     "    if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }\r",
                     "    else {\r",
                     "        fenetre = Ext.widget(\"contributionContenus\");\r",
@@ -91,7 +92,7 @@
                     "    Ext.getCmp(\"TypesContenusGrid\").getSelectionModel().select(Ext.getCmp(\"TypesContenusGrid\").getStore().findRecord(\"type\",record.get(\"type\")));\r",
                     "    Ext.getCmp(\"ContenusGrid\").getStore().addListener(\"load\", function(){\r",
                     "        Ext.getCmp(\"ContenusGrid\").getSelectionModel().select(Ext.getCmp(\"ContenusGrid\").getStore().findRecord(\"id\",record.get(\"id\")));\r",
-                    "    }, this, {single:true});\r",
+                    "    }, this, {single:true});*/\r",
                     "    }"
                 ],
                 "name": "itemdblclick",
