@@ -101,7 +101,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                 autoEl: {
                     tag: 'iframe',
-                    src: "resources/responsiveShow/?url="+window.location.origin+"/index/"+record.get("text")
+                    src: window.location.origin+"/index/"+record.get("text")
                 }
             }));
         }

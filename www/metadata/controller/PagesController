@@ -170,7 +170,7 @@
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "        autoEl: {\r",
                     "            tag: 'iframe',\r",
-                    "            src: \"resources/responsiveShow/?url=\"+window.location.origin+\"/index/\"+record.get(\"text\")\r",
+                    "            src: window.location.origin+\"/index/\"+record.get(\"text\")\r",
                     "        }\r",
                     "    }));\r",
                     "}"

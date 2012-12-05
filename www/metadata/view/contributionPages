@@ -489,7 +489,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "page_preview_big",
                                 "scale": "large",
-                                "text": "Prèvisualisation plein-écran"
+                                "text": "Prèvisualisation"
                             },
                             "designerId": "37a74d33-ce15-40db-b2ad-b2437b443565"
                         }
@@ -621,6 +621,35 @@
             },
             "designerId": "31ec80f6-28dc-4ca5-88b0-992bb0b0b5cc",
             "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel40",
+                        "id": "pagesInternalPreview",
+                        "layout": "fit",
+                        "title": "Contribution"
+                    },
+                    "designerId": "95e16f35-228a-4f1b-a587-d3ff5beb1f36",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig27"
+                            },
+                            "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
+                        }
+                    ]
+                },
                 {
                     "type": "panel",
                     "reference": {
@@ -825,35 +854,6 @@
                                 "vtype": "url"
                             },
                             "designerId": "e23827bb-bedc-46be-9cd4-71433c232443"
-                        }
-                    ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel40",
-                        "id": "pagesInternalPreview",
-                        "layout": "fit",
-                        "title": "Prèvisualisation"
-                    },
-                    "designerId": "95e16f35-228a-4f1b-a587-d3ff5beb1f36",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig27"
-                            },
-                            "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
                         }
                     ]
                 }

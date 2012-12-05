@@ -230,7 +230,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'page_preview_big',
                                     scale: 'large',
-                                    text: 'Prèvisualisation plein-écran'
+                                    text: 'Prèvisualisation'
                                 }
                             ]
                         },
@@ -285,6 +285,14 @@ Ext.define('Rubedo.view.contributionPages', {
                     flex: 1,
                     activeTab: 0,
                     items: [
+                        {
+                            xtype: 'panel',
+                            id: 'pagesInternalPreview',
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Contribution'
+                        },
                         {
                             xtype: 'panel',
                             layout: {
@@ -370,14 +378,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                     vtype: 'url'
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'panel',
-                            id: 'pagesInternalPreview',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Prèvisualisation'
                         }
                     ]
                 }
