@@ -73,8 +73,8 @@ Ext.define('Rubedo.view.testingGround', {
             ],
             uploader: 
             {
-                url: 'file/put',
-                uploadpath: '/Root/files',
+                url: 'image/put',
+                //uploadpath: '/Root/files',
                 autoStart: false,
                 max_file_size: '2020mb',			
                 drop_element: 'dragload',
