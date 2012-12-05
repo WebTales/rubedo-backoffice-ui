@@ -17,12 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.CTCField',
-        'Rubedo.view.TTField',
-        'Rubedo.view.FCCField'
-    ],
-
     height: 351,
     id: 'testingGround',
     width: 959,
@@ -41,26 +35,27 @@ Ext.define('Rubedo.view.testingGround', {
                     xtype: 'form',
                     flex: 1,
                     autoScroll: true,
+                    layout: {
+                        type: 'fit'
+                    },
                     bodyPadding: 10,
-                    title: 'My Panel',
+                    title: 'Upload test',
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onToolbarAfterRender,
+                                    scope: me
+                                }
+                            }
+                        }
+                    ],
                     items: [
                         {
-                            xtype: 'CTCField',
-                            anchor: '100%'
-                        },
-                        {
-                            xtype: 'TTField',
-                            anchor: '100%'
-                        },
-                        {
-                            xtype: 'textareafield',
-                            anchor: '100%',
-                            inputId: 'ckTest1',
-                            fieldLabel: 'Label'
-                        },
-                        {
-                            xtype: 'FCCField',
-                            anchor: '100%'
+                            xtype: 'container',
+                            id: 'dragload'
                         }
                     ]
                 }
@@ -68,6 +63,56 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
+    },
+
+    onToolbarAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
+            text: 'Select files',
+            //singleFile: true,
+            plugins: [Ext.create("Ext.ux.upload.plugin.Window",{title:"test",height:300,width:300})
+            ],
+            uploader: 
+            {
+                url: 'file/put',
+                uploadpath: '/Root/files',
+                autoStart: false,
+                max_file_size: '2020mb',			
+                drop_element: 'dragload',
+                statusQueuedText: 'Ready to upload',
+                statusUploadingText: 'Uploading ({0}%)',
+                statusFailedText: '<span style="color: red">Error</span>',
+                statusDoneText: '<span style="color: green">Complete</span>',
+
+                statusInvalidSizeText: 'File too large',
+                statusInvalidExtensionText: 'Invalid file type'
+            },
+            listeners: 
+            {
+                filesadded: function(uploader, files)								
+                {
+                    //console.log('filesadded');
+                    return true;
+                },
+
+                beforeupload: function(uploader, file)								
+                {
+                    //console.log('beforeupload');			
+                },
+
+                fileuploaded: function(uploader, file)								
+                {
+                    //console.log('fileuploaded');
+                },
+
+                uploadcomplete: function(uploader, success, failed)								
+                {
+                    //console.log('uploadcomplete');				
+                },
+                scope: this
+            }
+
+
+        }));
     }
 
 });

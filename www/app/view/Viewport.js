@@ -71,6 +71,9 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sitesInterface',
         'Rubedo.view.newSiteWindow',
         'Rubedo.view.newPageWindow',
-        'Rubedo.view.testingGround'
+        'Rubedo.view.testingGround',
+        'Rubedo.view.CTCField',
+        'Rubedo.view.TTField',
+        'Rubedo.view.FCCField'
     ]
 });

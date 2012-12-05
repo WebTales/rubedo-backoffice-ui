@@ -30,64 +30,103 @@
                 "designer|userClassName": "MyForm19",
                 "height": null,
                 "autoScroll": true,
+                "layout": "fit",
                 "bodyPadding": 10,
-                "title": "My Panel"
+                "title": "Upload test"
             },
             "designerId": "c5544ea9-bc79-42bc-8475-9c261bea94fa",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "toolbar",
                     "reference": {
-                        "name": "items",
+                        "name": "dockedItems",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%"
+                        "dock": "bottom",
+                        "designer|userClassName": "MyToolbar43"
                     },
-                    "designerId": "05bd9c47-2541-40bd-81aa-b86368fb4a1b",
-                    "masterInstanceId": "ExtBox1-ext-gen5388"
+                    "designerId": "10552eef-870b-4703-914d-c4488508e2ee",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onToolbarAfterRender",
+                                "fn": "onToolbarAfterRender",
+                                "implHandler": [
+                                    "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {\r",
+                                    "\t\ttext: 'Select files',\r",
+                                    "\t\t//singleFile: true,\r",
+                                    "    plugins: [Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"test\",height:300,width:300})\r",
+                                    "        ],\r",
+                                    "\t\tuploader: \r",
+                                    "\t\t{\r",
+                                    "\t\t\turl: 'file/put',\r",
+                                    "\t\t\tuploadpath: '/Root/files',\r",
+                                    "\t\t\tautoStart: false,\r",
+                                    "\t\t\tmax_file_size: '2020mb',\t\t\t\r",
+                                    "\t\t\tdrop_element: 'dragload',\r",
+                                    "\t\t\tstatusQueuedText: 'Ready to upload',\r",
+                                    "\t\t\tstatusUploadingText: 'Uploading ({0}%)',\r",
+                                    "\t\t\tstatusFailedText: '<span style=\"color: red\">Error</span>',\r",
+                                    "\t\t\tstatusDoneText: '<span style=\"color: green\">Complete</span>',\r",
+                                    "\r",
+                                    "\t\t\tstatusInvalidSizeText: 'File too large',\r",
+                                    "\t\t\tstatusInvalidExtensionText: 'Invalid file type'\r",
+                                    "\t\t},\r",
+                                    "\t\tlisteners: \r",
+                                    "\t\t{\r",
+                                    "\t\t\tfilesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
+                                    "\t\t\t{\r",
+                                    "\t\t\t\t//console.log('filesadded');\r",
+                                    "\t\t\t\treturn true;\r",
+                                    "\t\t\t},\r",
+                                    "\t\t\t\r",
+                                    "\t\t\tbeforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                                    "\t\t\t{\r",
+                                    "\t\t\t\t//console.log('beforeupload');\t\t\t\r",
+                                    "\t\t\t},\r",
+                                    "\r",
+                                    "\t\t\tfileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                                    "\t\t\t{\r",
+                                    "\t\t\t\t//console.log('fileuploaded');\r",
+                                    "\t\t\t},\r",
+                                    "\t\t\t\r",
+                                    "\t\t\tuploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
+                                    "\t\t\t{\r",
+                                    "\t\t\t\t//console.log('uploadcomplete');\t\t\t\t\r",
+                                    "\t\t\t},\r",
+                                    "\t\t\tscope: this\r",
+                                    "\t\t}\r",
+                                    "\t\t\t\t\r",
+                                    "\t\t\r",
+                                    "\t}));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "1100e73d-8a90-4b47-91e7-aa6ec32526d1"
+                        }
+                    ]
                 },
                 {
-                    "type": "linkedinstance",
+                    "type": "container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%"
+                        "designer|userClassName": "MyContainer23",
+                        "id": "dragload"
                     },
-                    "designerId": "aa9754e9-500d-4893-9f79-ec8a793a5a67",
-                    "masterInstanceId": "ExtBox1-ext-gen12673"
-                },
-                {
-                    "type": "textareafield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextArea2",
-                        "inputId": "ckTest1",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "f62f7eaf-6601-4d61-9323-5a39b2a46bc7"
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%"
-                    },
-                    "designerId": "aa3b8301-7b7c-4da2-bed4-87801b1dd66b",
-                    "masterInstanceId": "ExtBox1-ext-gen3062"
+                    "designerId": "c8c5c1f5-30b9-4698-93f9-207223bf7c64"
                 }
             ]
         }
