@@ -26,13 +26,26 @@ Ext.define('Rubedo.store.ReusableElementsDataStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: false,
+            autoSync: true,
             storeId: 'ReusableElementsDataStore',
             model: 'Rubedo.model.reusableElementModel',
             proxy: {
                 type: 'ajax',
-                url: 'data/ReusableElements.json',
+                api: {
+                    create: 'reusable-elements/create',
+                    read: 'reusable-elements',
+                    update: 'reusable-elements/update',
+                    destroy: 'reusable-elements/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             },
             groupers: {

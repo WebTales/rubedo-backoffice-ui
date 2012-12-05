@@ -9,6 +9,7 @@
         "designer|userClassName": "ReusableElementsDataStore",
         "designer|userAlias": "ReusableElementsDataStore",
         "autoLoad": false,
+        "autoSync": true,
         "storeId": "ReusableElementsDataStore",
         "model": "reusableElementModel"
     },
@@ -24,7 +25,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy21",
-                "url": "data/ReusableElements.json"
+                "api": [
+                    "{\r",
+                    "                    create: 'reusable-elements/create',\r",
+                    "                    read: 'reusable-elements',\r",
+                    "                    update: 'reusable-elements/update',\r",
+                    "                    destroy: 'reusable-elements/delete'\r",
+                    "                }"
+                ],
+                "url": null
             },
             "designerId": "22c9fca0-61d1-43e9-9248-2cc06b581b17",
             "cn": [
@@ -36,9 +45,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19"
+                        "designer|userClassName": "MyJsonReader19",
+                        "messageProperty": "message",
+                        "root": "data"
                     },
                     "designerId": "2cf93d8a-a7eb-4e0e-835b-db521f83497d"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter28",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "9e11df5a-887d-483f-ab9e-cee349e8859f"
                 }
             ]
         },
