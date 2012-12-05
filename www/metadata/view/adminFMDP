@@ -774,7 +774,7 @@
                                             "name"
                                         ],
                                         "implHandler": [
-                                            "return(Ext.getStore(\"SitesJson\").findRecord(\"id\",name).get(\"text\"));"
+                                            "return(Ext.getStore(\"SitesComboMasks\").findRecord(\"id\",name).get(\"text\"));"
                                         ]
                                     },
                                     "designerId": "7948b3e1-2996-4fe8-9f40-2f91dd2a3987"
@@ -898,6 +898,42 @@
                         "designer|userClassName": "MyRowSelectionModel1"
                     },
                     "designerId": "d1d1591c-0345-41dd-8fd5-0559a865cb4c"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onMasquesGridBeforeRender",
+                        "fn": "onMasquesGridBeforeRender",
+                        "implHandler": [
+                            "Ext.getStore(\"SitesComboMasks\").load();"
+                        ],
+                        "name": "beforerender",
+                        "scope": "me"
+                    },
+                    "designerId": "34ec05a3-5d69-4ef5-bb7b-372a6defd8a1"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onMasquesGridDestroy",
+                        "fn": "onMasquesGridDestroy",
+                        "implHandler": [
+                            "Ext.getStore(\"SitesComboMasks\").removeAll();"
+                        ],
+                        "name": "destroy",
+                        "scope": "me"
+                    },
+                    "designerId": "a535cc5e-c850-4fae-bd13-97b76608ce30"
                 }
             ]
         },

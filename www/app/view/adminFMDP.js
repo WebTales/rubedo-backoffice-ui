@@ -336,7 +336,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 'Site : {name:this.getProperName}',
                                 {
                                     getProperName: function(name) {
-                                        return(Ext.getStore("SitesJson").findRecord("id",name).get("text"));
+                                        return(Ext.getStore("SitesComboMasks").findRecord("id",name).get("text"));
                                     }
                                 }
                             ),
@@ -379,7 +379,17 @@ Ext.define('Rubedo.view.adminFMDP', {
                     ],
                     selModel: Ext.create('Ext.selection.RowModel', {
 
-                    })
+                    }),
+                    listeners: {
+                        beforerender: {
+                            fn: me.onMasquesGridBeforeRender,
+                            scope: me
+                        },
+                        destroy: {
+                            fn: me.onMasquesGridDestroy,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'tabpanel',
@@ -472,6 +482,14 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
         if (!ACL.interfaceRights['write.ui.masks']){return(false);}
+    },
+
+    onMasquesGridBeforeRender: function(abstractcomponent, options) {
+        Ext.getStore("SitesComboMasks").load();
+    },
+
+    onMasquesGridDestroy: function(abstractcomponent, options) {
+        Ext.getStore("SitesComboMasks").removeAll();
     },
 
     onPaneauPropMasqueResize: function(abstractcomponent, adjWidth, adjHeight, options) {

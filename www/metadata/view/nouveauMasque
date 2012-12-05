@@ -64,7 +64,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "managesStore": true,
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyComboBox",
                         "id": "nouveauMasqueSite",
@@ -79,14 +78,7 @@
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
-                    "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "managesStore",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b"
                 },
                 {
                     "type": "button",
