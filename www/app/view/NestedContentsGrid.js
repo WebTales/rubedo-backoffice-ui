@@ -75,7 +75,7 @@ Ext.define('Rubedo.view.NestedContentsGrid', {
                         'Type : {name:this.formatName}',
                         {
                             formatName: function(name) {
-                                return(Ext.getStore('DepContentsCombo').findRecord("id",name).get("type"));
+                                return(Ext.getStore('DepContentsCombo2').findRecord("id",name).get("type"));
                             }
                         }
                     )

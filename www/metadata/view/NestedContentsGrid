@@ -172,7 +172,7 @@
                                     "name"
                                 ],
                                 "implHandler": [
-                                    "return(Ext.getStore('DepContentsCombo').findRecord(\"id\",name).get(\"type\"));"
+                                    "return(Ext.getStore('DepContentsCombo2').findRecord(\"id\",name).get(\"type\"));"
                                 ]
                             },
                             "designerId": "a5844abc-c128-4333-8401-d47923b79963"
