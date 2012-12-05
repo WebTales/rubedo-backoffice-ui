@@ -40,7 +40,8 @@ Ext.application({
         'reusableElementModel',
         'delegationDataModel',
         'nestedContentModel',
-        'pageDataModel'
+        'pageDataModel',
+        'imageDataModel'
     ],
     stores: [
         'SitesJson',
@@ -87,7 +88,8 @@ Ext.application({
         'ContentTypesForContent',
         'DepContentsCombo2',
         'TaxonomyForC2',
-        'TCDepForQA'
+        'TCDepForQA',
+        'ImagePickerStore'
     ],
     views: [
         'MyContainer',
@@ -136,7 +138,9 @@ Ext.application({
         'TTField',
         'FCCField',
         'FOShowWindow',
-        'assistantRequetage'
+        'assistantRequetage',
+        'ImagePickerWindow',
+        'ImagePickerField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -546,13 +546,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     onAdminfTypesGridRender: function(abstractcomponent, options) {
-        Ext.getStore("TypesChampsDataStore").load();
         Ext.getStore("TypesContenusDepDataJson").load();
         Ext.getStore("TaxonomyForCT").load();
     },
 
     onAdminfTypesGridDestroy: function(abstractcomponent, options) {
-        Ext.getStore("TypesChampsDataStore").removeAll();
         Ext.getStore("TypesContenusDepDataJson").removeAll();
         Ext.getStore("TaxonomyForCT").removeAll();
     },

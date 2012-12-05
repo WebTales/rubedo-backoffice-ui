@@ -25,30 +25,1944 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: false,
+            autoLoad: true,
             autoSync: false,
             storeId: 'TypesChampsDataStore',
             model: 'Rubedo.model.typesChampsDataModel',
-            proxy: {
-                type: 'ajax',
-                api: {
-                    create: 'field-types/create',
-                    read: 'field-types',
-                    update: 'field-types/update',
-                    destroy: 'field-types/delete'
+            data: [
+                {
+                    type: 'Champ texte',
+                    cType: 'Ext.form.field.Text',
+                    openWindow: '',
+                    description: '<h2>Champ texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte court.<\/p> <p>Il peut \u00eatre utilis\u00e9 en tant que champ texte basique ou bien en tant que champ url ou e-mail selon les options de validation.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_texte',
+                        fieldLabel: 'Label du champ',
+                        maxLength: 255,
+                        minLength: 0,
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        vtype: null
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'alpha',
+                                        nom: 'alpha'
+                                    },
+                                    {
+                                        valeur: 'alphanum',
+                                        nom: 'alphanum'
+                                    },
+                                    {
+                                        valeur: 'email',
+                                        nom: 'email'
+                                    },
+                                    {
+                                        valeur: 'url',
+                                        nom: 'url'
+                                    },
+                                    {
+                                        valeur: null,
+                                        nom: 'aucune'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Validation',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                forceSelect: true,
+                                editable: false,
+                                name: 'vtype'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'RegExp',
+                                name: 'regex'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur max',
+                                name: 'maxLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur min',
+                                name: 'minLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000017'
                 },
-                reader: {
-                    type: 'json',
-                    messageProperty: 'message',
-                    root: 'data'
+                {
+                    type: 'Champ mot de passe',
+                    cType: 'Ext.form.field.Text',
+                    openWindow: '',
+                    description: '<h2>Champ mot de passe<\/h2> <\/br> <p>Ce champ permet la saisie de mots de passe.<\/p> <p>Il int\u00e9gre plusieures m\u00e9thodes de validation.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_mot_de_passe',
+                        fieldLabel: 'Label du champ',
+                        maxLength: 255,
+                        minLength: 0,
+                        allowBlank: false,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        inputType: 'password',
+                        vtype: null
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'alpha',
+                                        nom: 'alpha'
+                                    },
+                                    {
+                                        valeur: 'alphanum',
+                                        nom: 'alphanum'
+                                    },
+                                    {
+                                        valeur: null,
+                                        nom: 'aucune'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Validation',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                forceSelect: true,
+                                editable: false,
+                                name: 'vtype'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'RegExp',
+                                name: 'regex'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur max',
+                                name: 'maxLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur min',
+                                name: 'minLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000018'
                 },
-                writer: {
-                    type: 'json',
-                    nameProperty: 'mapping',
-                    encode: true,
-                    root: 'data'
+                {
+                    type: 'Champ zone de texte',
+                    cType: 'Ext.form.field.TextArea',
+                    openWindow: '',
+                    description: '<h2>Champ zone de texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte long basique.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_zone_de_texte',
+                        fieldLabel: 'Label du champ',
+                        maxLength: 6000,
+                        minLength: 0,
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        vtype: null
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'alpha',
+                                        nom: 'alpha'
+                                    },
+                                    {
+                                        valeur: 'alphanum',
+                                        nom: 'alphanum'
+                                    },
+                                    {
+                                        valeur: null,
+                                        nom: 'aucune'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Validation',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                forceSelect: true,
+                                editable: false,
+                                name: 'vtype'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur max',
+                                name: 'maxLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur min',
+                                name: 'minLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000019'
+                },
+                {
+                    type: 'Champ zone de texte riche',
+                    cType: 'Ext.form.field.HtmlEditor',
+                    openWindow: '',
+                    description: '<h2>Champ zone de texte riche<\/h2> <\/br> <p>Ce champ permet la saisie de texte riche par le biais d\'un \u00e9diteur HTML.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_zone_de_texte_riche',
+                        fieldLabel: 'Label du champ',
+                        enableAlignments: true,
+                        enableColors: true,
+                        enableFont: true,
+                        enableFontSize: true,
+                        enableFormat: true,
+                        enableLinks: true,
+                        enableLists: true,
+                        enableSourceEdit: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        value: ' ',
+                        tooltip: 'help text',
+                        height: 200,
+                        margin: '0 0 20 0'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Alignements',
+                                name: 'enableAlignments'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Couleurs',
+                                name: 'enableColors'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Polices',
+                                name: 'enableFont'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Taille de police',
+                                name: 'enableFontSize'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Format',
+                                name: 'enableFormat'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Liens',
+                                name: 'enableLinks'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Listes',
+                                name: 'enableLists'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Edition de la source',
+                                name: 'enableSourceEdit'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001a'
+                },
+                {
+                    type: 'Champ date',
+                    cType: 'Ext.form.field.Date',
+                    openWindow: '',
+                    description: '<h2>Champ date<\/h2> <\/br> <p>Ce champ permet la saisie de dates.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_date',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Date',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Date',
+                            config: {
+                                fieldLabel: 'Valeur max',
+                                name: 'maxValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Date',
+                            config: {
+                                fieldLabel: 'Valeur min',
+                                name: 'minValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001b'
+                },
+                {
+                    type: 'Champ temps',
+                    cType: 'Ext.form.field.Time',
+                    openWindow: '',
+                    description: '<h2>Champ temps<\/h2> <\/br> <p>Ce champ permet la saisie de temps.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_temps',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Time',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Time',
+                            config: {
+                                fieldLabel: 'Valeur max',
+                                name: 'maxValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Time',
+                            config: {
+                                fieldLabel: 'Valeur min',
+                                name: 'minValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001c'
+                },
+                {
+                    type: 'Champ nombre',
+                    cType: 'Ext.form.field.Number',
+                    openWindow: '',
+                    description: '<h2>Champ nombre<\/h2> <\/br> <p>Ce champ permet la saisie de nombres.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_nombre',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        allowDecimals: true,
+                        decimalPrecision: 2
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur max',
+                                name: 'maxValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur min',
+                                name: 'minValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Afficher decimales',
+                                name: 'allowDecimals'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Precision decimale',
+                                name: 'decimalPrecision'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001d'
+                },
+                {
+                    type: 'Champ slider',
+                    cType: 'Ext.slider.Single',
+                    openWindow: '',
+                    description: '<h2>Champ slider<\/h2> <\/br> <p>Ce champ permet la saisie de nombres par le biais d\'un slider.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_slider',
+                        fieldLabel: 'Label du champ',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        minValue: 0,
+                        maxValue: 100,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        increment: 10
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur max',
+                                name: 'maxValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur min',
+                                name: 'minValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Increment',
+                                name: 'increment'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001e'
+                },
+                {
+                    type: 'Champ \u00e9valuation',
+                    cType: 'Ext.ux.widget.Rating',
+                    openWindow: '',
+                    description: '<h2>Champ \u00e9valuation<\/h2> <\/br> <p>Ce champ permet la saisie d\'\u00e9valuations<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_evaluation',
+                        fieldLabel: 'Label du champ',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        minValue: 0.5,
+                        maxValue: 5,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        numberOfStars: 5,
+                        split: 2
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur max',
+                                name: 'maxValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Valeur min',
+                                name: 'minValue'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Nombre d\'etoiles',
+                                name: 'numberOfStars'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Divisions par \u00e9toile',
+                                name: 'split'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804391200001f'
+                },
+                {
+                    type: 'Champ zone de texte CKEditor',
+                    cType: 'Rubedo.view.CKEField',
+                    openWindow: '',
+                    description: '<h2>Champ zone de texte CKEditor<\/h2> <\/br> <p>Ce champ permet la saisie de texte riche avec CKEditor.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_zone_de_texte',
+                        fieldLabel: 'Label du champ',
+                        maxLength: 6000,
+                        minLength: 0,
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        vtype: null
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'alpha',
+                                        nom: 'alpha'
+                                    },
+                                    {
+                                        valeur: 'alphanum',
+                                        nom: 'alphanum'
+                                    },
+                                    {
+                                        valeur: null,
+                                        nom: 'aucune'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Validation',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                forceSelect: true,
+                                editable: false,
+                                name: 'vtype'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur max',
+                                name: 'maxLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Longueur min',
+                                name: 'minLength'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000020'
+                },
+                {
+                    type: 'Champ liste de choix',
+                    cType: 'Ext.form.field.ComboBox',
+                    openWindow: '',
+                    description: '<h2>Champ liste de choix<\/h2> <\/br> <p>Ce champ permet la saisie de valeur \u00e0 partir d\'une liste de choix ouverte ou ferm\u00e9e.<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_liste_de_choix',
+                        queryMode: 'local',
+                        displayField: 'nom',
+                        valueField: 'valeur',
+                        fieldLabel: 'Label du champ',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        multiSelect: true,
+                        editable: true,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multis\u00e9lection',
+                                name: 'multiSelect'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Liste ouverte',
+                                name: 'editable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: {
+                        fields: [
+                            'valeur',
+                            'nom'
+                        ],
+                        data: [
+                            {
+                                valeur: 'valeur 1',
+                                nom: 'valeur 1'
+                            },
+                            {
+                                valeur: 'valeur 2',
+                                nom: 'valeur 2'
+                            },
+                            {
+                                valeur: 'valeur 3',
+                                nom: 'valeur 3'
+                            }
+                        ]
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000021'
+                },
+                {
+                    type: 'Champ requ\u00eate',
+                    cType: 'Ext.form.field.Trigger',
+                    openWindow: 'assistantRequetage',
+                    description: '<h2>Champ requ\u00eate<\/h2> <\/br> <p>Ce champ permet la saisie de requ\u00eates sur les contenus<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_requ\u00eate',
+                        fieldLabel: 'Label du champ',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        editable: false,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000022'
+                },
+                {
+                    type: 'Champ lien sur page',
+                    cType: 'Ext.ux.TreePicker',
+                    openWindow: '',
+                    description: '<h2>Champ lien sur page<\/h2> <\/br> <p>Ce champ permet la saisie de liens internes sur pages<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_lien_sur_page',
+                        fieldLabel: 'Label du champ',
+                        displayField: 'text',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: 'SitesDataJson',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000023'
+                },
+                {
+                    type: 'Champ Image',
+                    cType: 'Rubedo.view.ImagePickerField',
+                    openWindow: '',
+                    description: '<h2>Champ Image<\/h2> <\/br> <p><\/p>',
+                    config: {
+                        name: 'Nouveau_champ_Champ Image',
+                        fieldLabel: 'Label du champ',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912991123'
+                },
+                {
+                    type: 'Champ couleur',
+                    cType: 'Ext.ux.ColorField',
+                    openWindow: '',
+                    description: '<h2>Champ couleur<\/h2> <\/br> <p>Ce champ permet la saisie de couleurs sous format hexadecimal<\/p>',
+                    config: {
+                        name: 'Nouveau_champ_couleur',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        resumed: false,
+                        hidden: false,
+                        tooltip: 'help text',
+                        value: 'ffffff'
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.ux.ColorField',
+                            config: {
+                                fieldLabel: 'Valeur par d\u00e9faut',
+                                name: 'value',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Peut \u00eatre vide',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'R\u00e9sum\u00e9',
+                                name: 'resumed'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Cach\u00e9',
+                                name: 'hidden'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912000024'
                 }
-            }
+            ]
         }, cfg)]);
     }
 });

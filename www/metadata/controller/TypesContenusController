@@ -862,7 +862,6 @@
                 "designer|userClassName": "onAdminfTypesGridRender",
                 "fn": "onAdminfTypesGridRender",
                 "implHandler": [
-                    "Ext.getStore(\"TypesChampsDataStore\").load();\r",
                     "Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
                     "Ext.getStore(\"TaxonomyForCT\").load();"
                 ],
@@ -884,7 +883,6 @@
                 "designer|userClassName": "onAdminfTypesGridDestroy",
                 "fn": "onAdminfTypesGridDestroy",
                 "implHandler": [
-                    "Ext.getStore(\"TypesChampsDataStore\").removeAll();\r",
                     "Ext.getStore(\"TypesContenusDepDataJson\").removeAll();\r",
                     "Ext.getStore(\"TaxonomyForCT\").removeAll();"
                 ],

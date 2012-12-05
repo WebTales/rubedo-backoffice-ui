@@ -1,0 +1,39 @@
+{
+    "type": "triggerfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImagePickerField",
+        "designer|userAlias": "ImagePickerField",
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen42308",
+    "designerId": "e0567ff6-7b85-4df2-90af-398e1092da4b",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTriggerClick",
+                "fn": "onTriggerClick",
+                "designer|params": [
+                    "test",
+                    "test2",
+                    "test3"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "Ext.widget(\"ImagePickerWindow\", {targetField:me.id}).show();                                 "
+                ]
+            },
+            "designerId": "5d18834f-4b6e-443a-bc41-3c9967de7f71"
+        }
+    ]
+}

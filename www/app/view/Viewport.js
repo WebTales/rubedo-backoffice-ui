@@ -74,6 +74,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.testingGround',
         'Rubedo.view.CTCField',
         'Rubedo.view.TTField',
-        'Rubedo.view.FCCField'
+        'Rubedo.view.FCCField',
+        'Rubedo.view.ImagePickerWindow'
     ]
 });

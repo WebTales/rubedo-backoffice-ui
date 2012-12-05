@@ -52,8 +52,8 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },
             { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
             { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
-        ], resize_enabled:false});
-        CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
+        ], resize_enabled:false, filebrowserBrowseUrl:"image"});
+        //CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){

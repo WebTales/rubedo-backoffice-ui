@@ -1382,6 +1382,38 @@
                 "metadata/resource/js12"
             ],
             "className": "js12"
+        },
+        "d8f6752f-2ba3-491c-832a-e8456b095138": {
+            "paths": [
+                "metadata/store/ImagePickerStore",
+                "app/store/override/ImagePickerStore.js",
+                "app/store/ImagePickerStore.js"
+            ],
+            "className": "ImagePickerStore"
+        },
+        "5c997a93-3afc-42e9-9098-74110e9872bf": {
+            "paths": [
+                "metadata/model/imageDataModel",
+                "app/model/override/imageDataModel.js",
+                "app/model/imageDataModel.js"
+            ],
+            "className": "imageDataModel"
+        },
+        "529b2508-9046-4453-930b-c1aa11abce73": {
+            "paths": [
+                "metadata/view/ImagePickerWindow",
+                "app/view/override/ImagePickerWindow.js",
+                "app/view/ImagePickerWindow.js"
+            ],
+            "className": "ImagePickerWindow"
+        },
+        "e0567ff6-7b85-4df2-90af-398e1092da4b": {
+            "paths": [
+                "metadata/view/ImagePickerField",
+                "app/view/override/ImagePickerField.js",
+                "app/view/ImagePickerField.js"
+            ],
+            "className": "ImagePickerField"
         }
     },
     "viewOrderMap": {
@@ -1455,7 +1487,9 @@
             "66174f28-03d3-4c02-855f-65706d91852a",
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
-            "71505c40-5587-40f5-be0e-bea55fa8806d"
+            "71505c40-5587-40f5-be0e-bea55fa8806d",
+            "529b2508-9046-4453-930b-c1aa11abce73",
+            "e0567ff6-7b85-4df2-90af-398e1092da4b"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1504,7 +1538,8 @@
             "c169dcca-ae11-4cb6-ac6d-7734f240e1fc",
             "4116a2e3-9249-4bd3-9cb8-0dfe02c9a66b",
             "98a1d671-046d-4829-b790-2d84feb7eacc",
-            "22ba5094-835c-4318-a1c2-2d6da1f35089"
+            "22ba5094-835c-4318-a1c2-2d6da1f35089",
+            "d8f6752f-2ba3-491c-832a-e8456b095138"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1546,7 +1581,8 @@
             "9b9da84e-8515-4ff4-99f3-69b81dc01a02",
             "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d",
             "3387fa23-11a9-43c0-a57c-f14978feff02",
-            "0817bd4b-dad6-4ba8-a953-6e51126364d2"
+            "0817bd4b-dad6-4ba8-a953-6e51126364d2",
+            "5c997a93-3afc-42e9-9098-74110e9872bf"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

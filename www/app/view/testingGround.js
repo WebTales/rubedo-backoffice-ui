@@ -17,7 +17,11 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    height: 351,
+    requires: [
+        'Rubedo.view.ImagePickerField'
+    ],
+
+    height: 450,
     id: 'testingGround',
     width: 959,
     layout: {
@@ -36,7 +40,8 @@ Ext.define('Rubedo.view.testingGround', {
                     flex: 1,
                     autoScroll: true,
                     layout: {
-                        type: 'fit'
+                        align: 'stretch',
+                        type: 'vbox'
                     },
                     bodyPadding: 10,
                     title: 'Upload test',
@@ -55,7 +60,11 @@ Ext.define('Rubedo.view.testingGround', {
                     items: [
                         {
                             xtype: 'container',
+                            flex: 1,
                             id: 'dragload'
+                        },
+                        {
+                            xtype: 'ImagePickerField'
                         }
                     ]
                 }

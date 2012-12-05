@@ -9,7 +9,7 @@
         "container|align": "stretch",
         "designer|userClassName": "testingGround",
         "designer|userAlias": "testingGround",
-        "height": 351,
+        "height": 450,
         "id": "testingGround",
         "width": 959,
         "layout": "vbox",
@@ -27,10 +27,11 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "container|align": "stretch",
                 "designer|userClassName": "MyForm19",
                 "height": null,
                 "autoScroll": true,
-                "layout": "fit",
+                "layout": "vbox",
                 "bodyPadding": 10,
                 "title": "Upload test"
             },
@@ -123,10 +124,21 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": 1,
                         "designer|userClassName": "MyContainer23",
                         "id": "dragload"
                     },
                     "designerId": "c8c5c1f5-30b9-4698-93f9-207223bf7c64"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "94e19944-c5ca-4795-b326-4ddbc2d0e17d",
+                    "masterInstanceId": "ExtBox1-ext-gen42308"
                 }
             ]
         }

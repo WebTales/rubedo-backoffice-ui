@@ -24,7 +24,8 @@
             "reusableElementModel",
             "delegationDataModel",
             "nestedContentModel",
-            "pageDataModel"
+            "pageDataModel",
+            "imageDataModel"
         ],
         "stores": [
             "SitesJson",
@@ -71,7 +72,8 @@
             "ContentTypesForContent",
             "DepContentsCombo2",
             "TaxonomyForC2",
-            "TCDepForQA"
+            "TCDepForQA",
+            "ImagePickerStore"
         ],
         "views": [
             "MyContainer",
@@ -120,7 +122,9 @@
             "TTField",
             "FCCField",
             "FOShowWindow",
-            "assistantRequetage"
+            "assistantRequetage",
+            "ImagePickerWindow",
+            "ImagePickerField"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
