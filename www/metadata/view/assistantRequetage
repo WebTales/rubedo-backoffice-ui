@@ -214,6 +214,24 @@
             "codeClass": null,
             "designerId": "f136b46b-b4ee-439d-8940-27af18abedda",
             "masterInstanceId": "ExtBox1-ext-gen6237"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAssistantRequetageRender",
+                "fn": "onAssistantRequetageRender",
+                "implHandler": [
+                    "Ext.getStore('TCDepForQA').load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "cdec9ded-7679-4a33-b617-1555e3c16058"
         }
     ]
 }

@@ -100,6 +100,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     }
                     var k=0;
                     for (k=0; k<typesDEP.length; k++) {
+                        var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
                         champsRegles.push({nom:typesDEP[k]+' > '+'Création',
                             valeur: {
                                 cType: 'datefield',
@@ -115,7 +116,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             }});  
 
 
-                            var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesDEP[k]).data.fields);
+                            var champsReq = Ext.clone(theTargetType.data.fields);
                             var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
                             var champsReqF = Ext.Array.filter(champsReq, function(champ){
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}

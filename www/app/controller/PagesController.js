@@ -349,6 +349,14 @@ Ext.define('Rubedo.controller.PagesController', {
         }
     },
 
+    onPagesSitesComboBeforeRender: function(abstractcomponent, options) {
+        var me=this;
+        abstractcomponent.getStore().addListener("load",function(store,records){
+            abstractcomponent.select(records[0]);
+            me.pageSiteSelect(abstractcomponent, [records[0]]);
+        },this,{single:true});
+    },
+
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -438,7 +446,8 @@ Ext.define('Rubedo.controller.PagesController', {
     init: function(application) {
         this.control({
             "#pagesSitesCombo": {
-                select: this.pageSiteSelect
+                select: this.pageSiteSelect,
+                beforerender: this.onPagesSitesComboBeforeRender
             },
             "#addPageBtn": {
                 click: this.openPageAddWindow

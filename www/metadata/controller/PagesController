@@ -698,6 +698,30 @@
                 "designer|controlQuery": "#contributionPages"
             },
             "designerId": "6120f6e7-46b7-410a-971d-e8c79c4f2e57"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPagesSitesComboBeforeRender",
+                "fn": "onPagesSitesComboBeforeRender",
+                "implHandler": [
+                    "var me=this;\r",
+                    "abstractcomponent.getStore().addListener(\"load\",function(store,records){\r",
+                    "    abstractcomponent.select(records[0]);\r",
+                    "    me.pageSiteSelect(abstractcomponent, [records[0]]);\r",
+                    "},this,{single:true});"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#pagesSitesCombo"
+            },
+            "designerId": "fed768ea-12ff-49c5-8386-55e42679392e"
         }
     ]
 }

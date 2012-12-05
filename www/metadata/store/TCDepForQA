@@ -1,0 +1,75 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TCDepForQA",
+        "designer|userAlias": "TCDepForQA",
+        "autoLoad": false,
+        "storeId": "TCDepForQA",
+        "model": "typesContenusDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen11982",
+    "designerId": "c169dcca-ae11-4cb6-ac6d-7734f240e1fc",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "api": [
+                    "{\r",
+                    "                    create: 'content-types/create',\r",
+                    "                    read: 'content-types',\r",
+                    "                    update: 'content-types/update',\r",
+                    "                    destroy: 'content-types/delete'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "4241738d-a410-4c4b-ad07-8758ad9e01d0",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "845802ac-c948-4dba-aff6-d258a9b4487f"
+                }
+            ]
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter",
+                "property": "dependant",
+                "value": [
+                    "true"
+                ]
+            },
+            "designerId": "b9801b10-74c6-41d3-a359-92fdb97856e6"
+        }
+    ]
+}

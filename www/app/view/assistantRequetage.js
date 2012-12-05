@@ -114,10 +114,20 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 {
                     xtype: 'myform11'
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onAssistantRequetageRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onAssistantRequetageRender: function(abstractcomponent, options) {
+        Ext.getStore('TCDepForQA').load();
     }
 
 });

@@ -86,7 +86,8 @@ Ext.application({
         'CurrentContent',
         'ContentTypesForContent',
         'DepContentsCombo2',
-        'TaxonomyForC2'
+        'TaxonomyForC2',
+        'TCDepForQA'
     ],
     views: [
         'MyContainer',
