@@ -230,7 +230,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'page_preview_big',
                                     scale: 'large',
-                                    text: 'Prèvisualisation'
+                                    text: 'Prévisualisation'
                                 }
                             ]
                         },

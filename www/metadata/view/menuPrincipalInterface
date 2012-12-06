@@ -89,44 +89,22 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.sites",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",
-                        "id": null,
-                        "itemId": "deconnexionMenuPrincipal",
-                        "iconCls": "deconecter",
-                        "text": "Déconnexion"
-                    },
-                    "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a"
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "userSettings",
+                        "itemId": "sitesInterface",
                         "margin": null,
-                        "iconCls": "parametres",
-                        "text": "Paramètres"
+                        "iconCls": "referencement_icon",
+                        "text": "Sites"
                     },
-                    "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff"
-                },
-                {
-                    "type": "tbseparator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MySeparator12"
-                    },
-                    "designerId": "3ee767ac-8205-470f-9bf1-49679b863304"
+                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -299,6 +277,44 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.workflows",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "menuWorkflows",
+                        "margin": null,
+                        "iconCls": "process-icon",
+                        "text": "Workflows"
+                    },
+                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbseparator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MySeparator13"
+                    },
+                    "designerId": "11306168-fa34-41ee-9f92-f6fd80d03173"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "read.ui.groups",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",
@@ -343,29 +359,17 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "tbseparator",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "read.ui.sites",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "sitesInterface",
-                        "margin": null,
-                        "iconCls": "referencement_icon",
-                        "text": "Sites"
+                        "designer|userClassName": "MySeparator13"
                     },
-                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "6ecc6d21-afd3-40c6-883f-98ae0b7ad249"
                 },
                 {
                     "type": "button",
@@ -375,22 +379,31 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "read.ui.workflows",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",
-                        "itemId": "menuWorkflows",
+                        "itemId": "userSettings",
                         "margin": null,
-                        "iconCls": "process-icon",
-                        "text": "Workflows"
+                        "iconCls": "parametres",
+                        "text": "Paramètres"
                     },
-                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "id": null,
+                        "itemId": "deconnexionMenuPrincipal",
+                        "iconCls": "deconecter",
+                        "text": "Déconnexion"
+                    },
+                    "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a"
                 }
             ]
         }

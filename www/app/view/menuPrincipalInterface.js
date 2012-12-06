@@ -63,18 +63,10 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            itemId: 'deconnexionMenuPrincipal',
-                            iconCls: 'deconecter',
-                            text: 'Déconnexion'
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'userSettings',
-                            iconCls: 'parametres',
-                            text: 'Paramètres'
-                        },
-                        {
-                            xtype: 'tbseparator'
+                            ACL: 'read.ui.sites',
+                            itemId: 'sitesInterface',
+                            iconCls: 'referencement_icon',
+                            text: 'Sites'
                         },
                         {
                             xtype: 'button',
@@ -123,6 +115,16 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.workflows',
+                            itemId: 'menuWorkflows',
+                            iconCls: 'process-icon',
+                            text: 'Workflows'
+                        },
+                        {
+                            xtype: 'tbseparator'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'read.ui.groups',
                             itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
@@ -137,18 +139,19 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             text: 'Utilisateurs'
                         },
                         {
-                            xtype: 'button',
-                            ACL: 'read.ui.sites',
-                            itemId: 'sitesInterface',
-                            iconCls: 'referencement_icon',
-                            text: 'Sites'
+                            xtype: 'tbseparator'
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.workflows',
-                            itemId: 'menuWorkflows',
-                            iconCls: 'process-icon',
-                            text: 'Workflows'
+                            itemId: 'userSettings',
+                            iconCls: 'parametres',
+                            text: 'Paramètres'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'deconnexionMenuPrincipal',
+                            iconCls: 'deconecter',
+                            text: 'Déconnexion'
                         }
                     ]
                 }
