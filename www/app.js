@@ -141,7 +141,8 @@ Ext.application({
         'assistantRequetage',
         'ImagePickerWindow',
         'ImageFieldComponent',
-        'ImagePickerField'
+        'ImagePickerField',
+        'monitoringTools'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

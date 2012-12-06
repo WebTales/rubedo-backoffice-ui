@@ -333,6 +333,24 @@
                         "scope": "me"
                     },
                     "designerId": "2136dd45-adf3-4187-9df4-ab78033a8f3b"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onGridpanelItemDblClick",
+                        "fn": "onGridpanelItemDblClick",
+                        "implHandler": [
+                            "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\");"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "designerId": "43c49471-02f8-4ca5-9bcc-cbd79eddcd23"
                 }
             ]
         }

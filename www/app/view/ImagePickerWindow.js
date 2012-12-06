@@ -102,6 +102,10 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                         selectionchange: {
                             fn: me.onGridpanelSelectionChange,
                             scope: me
+                        },
+                        itemdblclick: {
+                            fn: me.onGridpanelItemDblClick,
+                            scope: me
                         }
                     }
                 }
@@ -175,6 +179,10 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         } else {
             Ext.getCmp("ImagePickerChooseBtn").enable();
         }
+    },
+
+    onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("ImagePickerChooseBtn").fireEvent("click");
     }
 
 });

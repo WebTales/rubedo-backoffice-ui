@@ -1422,6 +1422,14 @@
                 "app/view/ImagePickerField.js"
             ],
             "className": "ImagePickerField"
+        },
+        "aad4192f-6fb1-4dbc-946e-1204a1cea801": {
+            "paths": [
+                "metadata/view/monitoringTools",
+                "app/view/override/monitoringTools.js",
+                "app/view/monitoringTools.js"
+            ],
+            "className": "monitoringTools"
         }
     },
     "viewOrderMap": {
@@ -1498,7 +1506,8 @@
             "71505c40-5587-40f5-be0e-bea55fa8806d",
             "529b2508-9046-4453-930b-c1aa11abce73",
             "29ccd34b-610a-4d7f-84de-be664235a5e8",
-            "c731a69e-dd8d-4064-b123-ea9f9fbdc128"
+            "c731a69e-dd8d-4064-b123-ea9f9fbdc128",
+            "aad4192f-6fb1-4dbc-946e-1204a1cea801"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
