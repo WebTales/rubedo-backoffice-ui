@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
     extend: 'Ext.form.field.Hidden',
     alias: 'widget.ImagePickerField',
 
+    height: 0,
     fieldLabel: 'Label',
 
     initComponent: function() {
@@ -36,6 +37,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
 
     onHiddenfieldRender: function(abstractcomponent, options) {
         var myComponent = Ext.widget("ImageFieldComponent");
+        myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+":");
         myComponent.on("render",function(){
             myComponent.getEl().on("click",function(){
                 abstractcomponent.getEl().dom.click();

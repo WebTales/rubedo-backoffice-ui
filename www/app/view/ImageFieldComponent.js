@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
     extend: 'Ext.container.Container',
     alias: 'widget.ImageFieldComponent',
 
+    anchor: '90%',
     height: 120,
     itemId: 'imageFieldComponent',
     width: 338,
@@ -30,6 +31,11 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
 
         Ext.applyIf(me, {
             items: [
+                {
+                    xtype: 'label',
+                    width: 105,
+                    text: 'My Label :'
+                },
                 {
                     xtype: 'image',
                     height: 120,
