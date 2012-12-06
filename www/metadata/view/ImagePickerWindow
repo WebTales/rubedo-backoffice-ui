@@ -345,7 +345,7 @@
                         "designer|userClassName": "onGridpanelItemDblClick",
                         "fn": "onGridpanelItemDblClick",
                         "implHandler": [
-                            "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\");"
+                            "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\",Ext.getCmp(\"ImagePickerChooseBtn\"));"
                         ],
                         "name": "itemdblclick",
                         "scope": "me"
