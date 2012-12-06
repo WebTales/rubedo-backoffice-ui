@@ -241,85 +241,126 @@ Ext.define('Rubedo.controller.PagesController', {
                     }}
                 }));
 
-                propEdit.add(Ext.widget('numberfield',{
-                    itemId:"rowHeightFixed",
-                    fieldLabel:"Hauteur fluide ",
-                    labelWidth:90,
-                    allowDecimals:false,
-                    allowBlank:false,
-                    minValue:1,
+                propEdit.add(Ext.widget('textfield',{
+                    itemId:"eClassHTMLField",
+                    fieldLabel:"Classe HTML ",
+                    labelWidth:40,
+                    allowBlank:true,
                     anchor:"60%",
-                    margin:"10 0 0 0",
+                    margin:"10 0 10 0",
                     style:"{float:left;}",
-                    value:abstractcomponent.flex
+                    value:abstractcomponent.classHTML
                 }));
                 propEdit.add(Ext.widget('button',{
                     text:"Appliquer",
                     anchor:"38%",
-                    margin:"10 0 0 0",
+                    margin:"10 0 10 0",
                     style:"{float:right;}",
                     handler:function(){
-                        if (propEdit.getComponent("rowHeightFixed").isValid()){
-                            abstractcomponent.flex=propEdit.getComponent("rowHeightFixed").getValue();
-                            abstractcomponent.up().doLayout();
+                        if (propEdit.getComponent("eClassHTMLField").isValid()){
+                            abstractcomponent.classHTML=propEdit.getComponent("eClassHTMLField").getValue();
                         }}
                     }));
+                    propEdit.add(Ext.widget('textfield',{
+                        itemId:"eidHTMLField",
+                        fieldLabel:"Id HTML ",
+                        labelWidth:40,
+                        allowBlank:true,
+                        anchor:"60%",
+                        margin:"10 0 10 0",
+                        style:"{float:left;}",
+                        value:abstractcomponent.idHTML
+                    }));
+                    propEdit.add(Ext.widget('button',{
+                        text:"Appliquer",
+                        anchor:"38%",
+                        margin:"10 0 10 0",
+                        style:"{float:right;}",
+                        handler:function(){
+                            if (propEdit.getComponent("eidHTMLField").isValid()){
+                                abstractcomponent.idHTML=propEdit.getComponent("eidHTMLField").getValue();
+                            }}
+                        }));
+
+                        propEdit.add(Ext.widget('numberfield',{
+                            itemId:"rowHeightFixed",
+                            fieldLabel:"Hauteur fluide ",
+                            labelWidth:90,
+                            allowDecimals:false,
+                            allowBlank:false,
+                            minValue:1,
+                            anchor:"60%",
+                            margin:"10 0 0 0",
+                            style:"{float:left;}",
+                            value:abstractcomponent.flex
+                        }));
+                        propEdit.add(Ext.widget('button',{
+                            text:"Appliquer",
+                            anchor:"38%",
+                            margin:"10 0 0 0",
+                            style:"{float:right;}",
+                            handler:function(){
+                                if (propEdit.getComponent("rowHeightFixed").isValid()){
+                                    abstractcomponent.flex=propEdit.getComponent("rowHeightFixed").getValue();
+                                    abstractcomponent.up().doLayout();
+                                }}
+                            }));
 
 
-                    propEdit.add(Ext.widget('checkboxgroup',{
-                        fieldLabel:"Visibilité ",
-                        anchor:"100%",
-                        labelWidth:60,
-                        margin:"0 0 10 0",
-                        vertical:true,
-                        columns:1,
-                        items: [
-                        { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
-                        { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
-                        { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
-                        ]
+                            propEdit.add(Ext.widget('checkboxgroup',{
+                                fieldLabel:"Visibilité ",
+                                anchor:"100%",
+                                labelWidth:60,
+                                margin:"0 0 10 0",
+                                vertical:true,
+                                columns:1,
+                                items: [
+                                { boxLabel: 'Télephone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                                { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                                { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                                ]
 
-                    }));  
+                            }));  
 
 
-                    var configSpec = Ext.widget('ConfigSpecBloc');
-                    var categories = Ext.clone(abstractcomponent.champsConfig.simple);
-                    for (j=0; j<categories.length; j++){
-                        var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+                            var configSpec = Ext.widget('ConfigSpecBloc');
+                            var categories = Ext.clone(abstractcomponent.champsConfig.simple);
+                            for (j=0; j<categories.length; j++){
+                                var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
 
-                        var champsS = Ext.clone(categories[j].champs);
-                        for (i=0; i<champsS.length; i++) {
-                            if (champsS[i].type =='Ext.form.field.ComboBox') {
-                                var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
-                                champsS[i].config.store= monStore;
+                                var champsS = Ext.clone(categories[j].champs);
+                                for (i=0; i<champsS.length; i++) {
+                                    if (champsS[i].type =='Ext.form.field.ComboBox') {
+                                        var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
+                                        champsS[i].config.store= monStore;
+                                    }
+                                    var nChampS = Ext.create(champsS[i].type, champsS[i].config);
+                                    if (champsS[i].type =='Ext.form.field.Trigger'){
+                                        var Ouvrir = Ext.clone(champsS[i].ouvrir);
+                                        nChampS.onTriggerClick= function() {
+                                            var fenetre = Ext.widget(Ouvrir);
+                                            fenetre.showAt(screen.width/2-200, 100);
+                                        } ;  
+                                    }
+                                    nChampS.labelSeparator= ' ';
+                                    nChampS.anchor= '100%';
+                                    nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
+                                    nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                                    nCateg.add(nChampS);
+                                }
+                                configSpec.items.items[0].add(nCateg);
+
                             }
-                            var nChampS = Ext.create(champsS[i].type, champsS[i].config);
-                            if (champsS[i].type =='Ext.form.field.Trigger'){
-                                var Ouvrir = Ext.clone(champsS[i].ouvrir);
-                                nChampS.onTriggerClick= function() {
-                                    var fenetre = Ext.widget(Ouvrir);
-                                    fenetre.showAt(screen.width/2-200, 100);
-                                } ;  
+                            propEdit.add(configSpec);
+
+
+                            if (!ACL.interfaceRights['write.ui.masks']){
+                                Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                                Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
                             }
-                            nChampS.labelSeparator= ' ';
-                            nChampS.anchor= '100%';
-                            nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
-                            nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
-                            nCateg.add(nChampS);
-                        }
-                        configSpec.items.items[0].add(nCateg);
+                            e.stopEvent();
 
-                    }
-                    propEdit.add(configSpec);
-
-
-                    if (!ACL.interfaceRights['write.ui.masks']){
-                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
-                    }
-                    e.stopEvent();
-
-                });}
+                        });}
     },
 
     pagePreview: function(button, e, options) {
@@ -366,6 +407,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 eTitle:row.eTitle,
                 id:"page-"+row.id,
                 responsive:row.responsive,
+                classHTML:row.classHTML,
+                idHTML:row.idHTML,
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -392,6 +435,8 @@ Ext.define('Rubedo.controller.PagesController', {
                     id:"page-"+column.id,
                     eTitle:column.eTitle,
                     responsive:column.responsive,
+                    classHTML:column.classHTML,
+                    idHTML:column.idHTML,
                     margin:4,
                     layout: {
                         type: 'vbox',
