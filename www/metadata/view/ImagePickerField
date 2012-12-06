@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userClassName": "ImagePickerField",
         "designer|userAlias": "ImagePickerField",
+        "height": null,
         "id": null,
         "fieldLabel": "Label"
     },
@@ -26,6 +27,11 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var myComponent = Ext.widget(\"ImageFieldComponent\");\r",
+                    "myComponent.on(\"render\",function(){\r",
+                    "    myComponent.getEl().on(\"click\",function(){\r",
+                    "        abstractcomponent.getEl().dom.click();\r",
+                    "    });\r",
+                    "});\r",
                     "abstractcomponent.up().add(myComponent);\r",
                     "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldChangeImage\").on(\"click\",function(){\r",
                     "    Ext.widget(\"ImagePickerWindow\",{targetField:abstractcomponent.id}).show();\r",

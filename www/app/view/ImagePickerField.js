@@ -36,6 +36,11 @@ Ext.define('Rubedo.view.ImagePickerField', {
 
     onHiddenfieldRender: function(abstractcomponent, options) {
         var myComponent = Ext.widget("ImageFieldComponent");
+        myComponent.on("render",function(){
+            myComponent.getEl().on("click",function(){
+                abstractcomponent.getEl().dom.click();
+            });
+        });
         abstractcomponent.up().add(myComponent);
         myComponent.getComponent("buttonHolder").getComponent("fieldChangeImage").on("click",function(){
             Ext.widget("ImagePickerWindow",{targetField:abstractcomponent.id}).show();

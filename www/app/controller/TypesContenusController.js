@@ -57,12 +57,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var nouvChamp = Ext.widget(donnees.cType, configurateur);
                 nouvChamp.config=Ext.clone(donnees.config);
                 if (donnees.cType =='triggerfield'){ 
-                    var Ouvrir = Ext.clone(donnees.ouvrir);
+                    var Ouvrir = Ext.clone(donnees.openWindow);
                     nouvChamp.onTriggerClick= function() {
                         var fenetre = Ext.widget(Ouvrir);
                         fenetre.showAt(screen.width/2-200, 100);
                     } ; 
-                    nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+                    nouvChamp.openWindow =Ext.clone(donnees.openWindow);
                 }  
                 nouvChamp.anchor = '90%';
                 nouvChamp.style = '{float:left;}';
@@ -196,14 +196,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var nouvChamp = Ext.create(donnees.cType, configurateur);
         nouvChamp.protoId=donnees.id;
         nouvChamp.config=Ext.clone(donnees.config);
-        nouvChamp.champsConfig=Ext.clone(donnees.champsConfig);
+        nouvChamp.configFields=Ext.clone(donnees.configFields);
         if (donnees.cType =='Ext.form.field.Trigger'){
-            var Ouvrir = Ext.clone(donnees.ouvrir);
+            var Ouvrir = Ext.clone(donnees.openWindow);
             nouvChamp.onTriggerClick= function() {
                 var fenetre = Ext.widget(Ouvrir);
                 fenetre.showAt(screen.width/2-200, 100);
             } ;  
-            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+            nouvChamp.openWindow =Ext.clone(donnees.openWindow);
         }
         nouvChamp.anchor = '90%';
         nouvChamp.style = '{float:left;}';
@@ -240,7 +240,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('champTCIdField').setValue(TCfield.id);    
                 this.frame(MyPrefData.themeColor);
                 this.applyStyles('color:'+MyPrefData.themeColor);
-                var mesChamps = TCfield.champsConfig;
+                var mesChamps = TCfield.configFields;
                 var boiteParam = Ext.getCmp('boiteConfigChampsTC');
                 boiteParam.removeAll();
                 for(t=0; t<mesChamps.length; t++) {
@@ -356,14 +356,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
         var nouvChamp = Ext.widget(donnees.cType, configurateur);
         nouvChamp.config=Ext.clone(donnees.config);
-        nouvChamp.champsConfig=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("champsConfig");
+        nouvChamp.configFields=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("configFields");
         if (donnees.cType =='triggerfield'){ 
-            var Ouvrir = Ext.clone(donnees.ouvrir);
+            var Ouvrir = Ext.clone(donnees.openWindow);
             nouvChamp.onTriggerClick= function() {
                 var fenetre = Ext.widget(Ouvrir);
                 fenetre.showAt(screen.width/2-200, 100);
             } ; 
-            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+            nouvChamp.openWindow =Ext.clone(donnees.openWindow);
         }    
         nouvChamp.anchor = '90%';
         nouvChamp.protoId=donnees.protoId;
@@ -425,7 +425,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     cType: leChampR.xtype,
                     config: leChampR.config,
                     protoId:leChampR.protoId,
-                    ouvrir:leChampR.ouvrir
+                    openWindow:leChampR.openWindow
                 };
                 if (leChampR.xtype== 'treepicker') {
                     nch.store=leChampR.getStore().storeId;

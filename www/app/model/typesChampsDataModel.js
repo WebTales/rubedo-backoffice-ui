@@ -26,8 +26,7 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
             type: 'string'
         },
         {
-            name: 'ouvrir',
-            mapping: 'openWindow',
+            name: 'openWindow',
             type: 'string'
         },
         {
@@ -38,7 +37,7 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
             name: 'config'
         },
         {
-            name: 'champsConfig',
+            name: 'configFields',
             mapping: 'configFields'
         },
         {
