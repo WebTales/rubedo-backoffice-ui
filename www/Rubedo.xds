@@ -1407,7 +1407,15 @@
             ],
             "className": "ImagePickerWindow"
         },
-        "e0567ff6-7b85-4df2-90af-398e1092da4b": {
+        "c731a69e-dd8d-4064-b123-ea9f9fbdc128": {
+            "paths": [
+                "metadata/view/ImageFieldComponent",
+                "app/view/override/ImageFieldComponent.js",
+                "app/view/ImageFieldComponent.js"
+            ],
+            "className": "ImageFieldComponent"
+        },
+        "29ccd34b-610a-4d7f-84de-be664235a5e8": {
             "paths": [
                 "metadata/view/ImagePickerField",
                 "app/view/override/ImagePickerField.js",
@@ -1489,7 +1497,8 @@
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
             "71505c40-5587-40f5-be0e-bea55fa8806d",
             "529b2508-9046-4453-930b-c1aa11abce73",
-            "e0567ff6-7b85-4df2-90af-398e1092da4b"
+            "29ccd34b-610a-4d7f-84de-be664235a5e8",
+            "c731a69e-dd8d-4064-b123-ea9f9fbdc128"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

@@ -54,7 +54,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGridView22"
+                        "designer|userClassName": "MyGridView22",
+                        "id": "dragload"
                     },
                     "designerId": "ac291d28-0ff8-4482-a631-b7dad307fade"
                 },
@@ -241,6 +242,71 @@
                                     "designerId": "e18c4bf0-0ba7-4aa3-9263-63df6388a473"
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onToolbarAfterRender",
+                                "fn": "onToolbarAfterRender",
+                                "implHandler": [
+                                    "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {\r",
+                                    "    text: 'Uploader des images',\r",
+                                    "    iconCls:\"arrow_up\",\r",
+                                    "    //singleFile: true,\r",
+                                    "    plugins: [Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"Ajoutez des images\",height:300,width:300})\r",
+                                    "    ],\r",
+                                    "    uploader: \r",
+                                    "    {\r",
+                                    "        url: 'image/put',\r",
+                                    "        //uploadpath: '/Root/files',\r",
+                                    "        autoStart: false,\r",
+                                    "        max_file_size: '2020mb',\t\t\t\r",
+                                    "        drop_element: 'dragload',\r",
+                                    "        statusQueuedText: 'Ready to upload',\r",
+                                    "        statusUploadingText: 'Uploading ({0}%)',\r",
+                                    "        statusFailedText: '<span style=\"color: red\">Error</span>',\r",
+                                    "        statusDoneText: '<span style=\"color: green\">Complete</span>',\r",
+                                    "\r",
+                                    "        statusInvalidSizeText: 'File too large',\r",
+                                    "        statusInvalidExtensionText: 'Invalid file type'\r",
+                                    "    },\r",
+                                    "    listeners: \r",
+                                    "    {\r",
+                                    "        filesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
+                                    "        {\r",
+                                    "            //console.log('filesadded');\r",
+                                    "            return true;\r",
+                                    "        },\r",
+                                    "\r",
+                                    "        beforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                                    "        {\r",
+                                    "            //console.log('beforeupload');\t\t\t\r",
+                                    "        },\r",
+                                    "\r",
+                                    "        fileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                                    "        {\r",
+                                    "            //console.log('fileuploaded');\r",
+                                    "        },\r",
+                                    "\r",
+                                    "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
+                                    "        {\r",
+                                    "            abstractcomponent.up().getStore().load();\t\t\t\t\r",
+                                    "        },\r",
+                                    "        scope: this\r",
+                                    "    }\r",
+                                    "\r",
+                                    "\r",
+                                    "}));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "9727fa0b-7316-48f8-bd00-cf775ddb01b4"
                         }
                     ]
                 },

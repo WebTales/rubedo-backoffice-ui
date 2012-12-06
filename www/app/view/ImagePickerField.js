@@ -14,7 +14,7 @@
  */
 
 Ext.define('Rubedo.view.ImagePickerField', {
-    extend: 'Ext.form.field.Trigger',
+    extend: 'Ext.form.field.Hidden',
     alias: 'widget.ImagePickerField',
 
     fieldLabel: 'Label',
@@ -22,12 +22,34 @@ Ext.define('Rubedo.view.ImagePickerField', {
     initComponent: function() {
         var me = this;
 
+        Ext.applyIf(me, {
+            listeners: {
+                render: {
+                    fn: me.onHiddenfieldRender,
+                    scope: me
+                }
+            }
+        });
+
         me.callParent(arguments);
     },
 
-    onTriggerClick: function(test, test2, test3) {
-        var me=this;
-        Ext.widget("ImagePickerWindow", {targetField:me.id}).show();                                 
+    onHiddenfieldRender: function(abstractcomponent, options) {
+        var myComponent = Ext.widget("ImageFieldComponent");
+        abstractcomponent.up().add(myComponent);
+        myComponent.getComponent("buttonHolder").getComponent("fieldChangeImage").on("click",function(){
+            Ext.widget("ImagePickerWindow",{targetField:abstractcomponent.id}).show();
+        });
+        myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").on("click",function(){
+            abstractcomponent.setValue();
+        });
+        abstractcomponent.on("change",function(theField,newValue){
+            if (newValue===""){
+                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image.png");
+            } else {
+                myComponent.getComponent("fieldImagePreview").setSrc("file/get/file-id/"+newValue);
+            }
+        });
     }
 
 });

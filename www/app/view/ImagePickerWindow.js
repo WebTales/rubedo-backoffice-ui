@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                     forceFit: true,
                     store: 'ImagePickerStore',
                     viewConfig: {
-
+                        id: 'dragload'
                     },
                     columns: [
                         {
@@ -89,7 +89,13 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                                     iconCls: 'close',
                                     text: 'Annuler'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onToolbarAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ],
                     listeners: {
@@ -108,6 +114,57 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     onButtonClick: function(button, e, options) {
         Ext.getCmp(button.up().up().up().targetField).setValue(button.up().up().getSelectionModel().getLastSelected().get("id"));
         button.up().up().up().close();
+    },
+
+    onToolbarAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
+            text: 'Uploader des images',
+            iconCls:"arrow_up",
+            //singleFile: true,
+            plugins: [Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:300})
+            ],
+            uploader: 
+            {
+                url: 'image/put',
+                //uploadpath: '/Root/files',
+                autoStart: false,
+                max_file_size: '2020mb',			
+                drop_element: 'dragload',
+                statusQueuedText: 'Ready to upload',
+                statusUploadingText: 'Uploading ({0}%)',
+                statusFailedText: '<span style="color: red">Error</span>',
+                statusDoneText: '<span style="color: green">Complete</span>',
+
+                statusInvalidSizeText: 'File too large',
+                statusInvalidExtensionText: 'Invalid file type'
+            },
+            listeners: 
+            {
+                filesadded: function(uploader, files)								
+                {
+                    //console.log('filesadded');
+                    return true;
+                },
+
+                beforeupload: function(uploader, file)								
+                {
+                    //console.log('beforeupload');			
+                },
+
+                fileuploaded: function(uploader, file)								
+                {
+                    //console.log('fileuploaded');
+                },
+
+                uploadcomplete: function(uploader, success, failed)								
+                {
+                    abstractcomponent.up().getStore().load();				
+                },
+                scope: this
+            }
+
+
+        }));
     },
 
     onGridpanelSelectionChange: function(tablepanel, selections, options) {

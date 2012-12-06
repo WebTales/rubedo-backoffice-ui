@@ -75,6 +75,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.CTCField',
         'Rubedo.view.TTField',
         'Rubedo.view.FCCField',
-        'Rubedo.view.ImagePickerWindow'
+        'Rubedo.view.ImagePickerWindow',
+        'Rubedo.view.ImagePickerField',
+        'Rubedo.view.ImageFieldComponent'
     ]
 });

@@ -1,5 +1,5 @@
 {
-    "type": "triggerfield",
+    "type": "hiddenfield",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,32 +8,43 @@
     "userConfig": {
         "designer|userClassName": "ImagePickerField",
         "designer|userAlias": "ImagePickerField",
+        "id": null,
         "fieldLabel": "Label"
     },
-    "id": "ExtBox1-ext-gen42308",
-    "designerId": "e0567ff6-7b85-4df2-90af-398e1092da4b",
+    "id": "ExtBox1-ext-gen11990",
+    "designerId": "29ccd34b-610a-4d7f-84de-be664235a5e8",
     "cn": [
         {
-            "type": "basicfunction",
+            "type": "basiceventbinding",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTriggerClick",
-                "fn": "onTriggerClick",
-                "designer|params": [
-                    "test",
-                    "test2",
-                    "test3"
-                ],
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
                 "implHandler": [
-                    "var me=this;\r",
-                    "Ext.widget(\"ImagePickerWindow\", {targetField:me.id}).show();                                 "
-                ]
+                    "var myComponent = Ext.widget(\"ImageFieldComponent\");\r",
+                    "abstractcomponent.up().add(myComponent);\r",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldChangeImage\").on(\"click\",function(){\r",
+                    "    Ext.widget(\"ImagePickerWindow\",{targetField:abstractcomponent.id}).show();\r",
+                    "});\r",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearImage\").on(\"click\",function(){\r",
+                    "    abstractcomponent.setValue();\r",
+                    "});\r",
+                    "abstractcomponent.on(\"change\",function(theField,newValue){\r",
+                    "    if (newValue===\"\"){\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image.png\");\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"file/get/file-id/\"+newValue);\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me"
             },
-            "designerId": "5d18834f-4b6e-443a-bc41-3c9967de7f71"
+            "designerId": "3cb1e8fb-afa1-41c1-b5d9-26c2c7f1580d"
         }
     ]
 }

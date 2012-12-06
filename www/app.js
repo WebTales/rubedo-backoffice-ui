@@ -140,6 +140,7 @@ Ext.application({
         'FOShowWindow',
         'assistantRequetage',
         'ImagePickerWindow',
+        'ImageFieldComponent',
         'ImagePickerField'
     ],
     autoCreateViewport: true,
