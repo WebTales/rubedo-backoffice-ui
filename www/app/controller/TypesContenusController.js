@@ -422,7 +422,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('delConfirmZ').close();
                 Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp("boutonSupprimerTypeContenu").disable();
-                Ext.getStore("TypesContenusNDepDataJson").load();
+
             });  
 
         }
@@ -467,7 +467,6 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             }
             target.endEdit();
-            Ext.getStore("TypesContenusNDepDataJson").load();
         }
     },
 
@@ -495,8 +494,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp('nouveauTypeContenuFenetre').close();
             Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);
             this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);
-            Ext.getStore("TypesContenusNDepDataJson").load();
-            Ext.getStore("TypesContenusDepDataJson").load();
+
         }
     },
 

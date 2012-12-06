@@ -538,7 +538,7 @@
                     "        Ext.getCmp('delConfirmZ').close();\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
                     "        Ext.getCmp(\"boutonSupprimerTypeContenu\").disable();\r",
-                    "        Ext.getStore(\"TypesContenusNDepDataJson\").load();\r",
+                    "\r",
                     "    });  \r",
                     "\r",
                     "}"
@@ -599,7 +599,6 @@
                     "\r",
                     "    }\r",
                     "    target.endEdit();\r",
-                    "    Ext.getStore(\"TypesContenusNDepDataJson\").load();\r",
                     "}"
                 ],
                 "name": "click",
@@ -659,8 +658,7 @@
                     "    Ext.getCmp('nouveauTypeContenuFenetre').close();\r",
                     "    Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);\r",
                     "    this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);\r",
-                    "    Ext.getStore(\"TypesContenusNDepDataJson\").load();\r",
-                    "    Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
+                    "\r",
                     "}"
                 ],
                 "name": "click",
