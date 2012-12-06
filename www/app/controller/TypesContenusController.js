@@ -269,7 +269,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         if (thing.isValid()){
                             TCfield.config[this.name]= this.getValue();
                             if (this.name=='fieldLabel') {
-                                TCfield.setFieldLabel(this.getValue());
+                                if (TCfield.isXType("ImagePickerField")) {
+                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+":");
+                                } else {
+                                    TCfield.setFieldLabel(this.getValue());
+                                }
                             }
                             else if (this.name=='value') {
                                 TCfield.setValue(this.getValue());

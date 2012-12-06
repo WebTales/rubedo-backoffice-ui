@@ -117,26 +117,28 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     },
 
     onToolbarAfterRender: function(abstractcomponent, options) {
+
         abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
             text: 'Uploader des images',
             iconCls:"arrow_up",
+            hidden:true,
             //singleFile: true,
-            plugins: [Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:300})
+            plugins: [Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440})
             ],
+
             uploader: 
             {
                 url: 'image/put',
-                //uploadpath: '/Root/files',
                 autoStart: false,
-                max_file_size: '2020mb',			
+                max_file_size: '2mb',			
                 drop_element: 'dragload',
-                statusQueuedText: 'Ready to upload',
-                statusUploadingText: 'Uploading ({0}%)',
-                statusFailedText: '<span style="color: red">Error</span>',
-                statusDoneText: '<span style="color: green">Complete</span>',
+                statusQueuedText: 'Pret à télécharger',
+                statusUploadingText: 'Téléchargement ({0}%)',
+                statusFailedText: '<span style="color: red">Erreur</span>',
+                statusDoneText: '<span style="color: green">Fini</span>',
 
-                statusInvalidSizeText: 'File too large',
-                statusInvalidExtensionText: 'Invalid file type'
+                statusInvalidSizeText: 'Fichier trop volumineux',
+                statusInvalidExtensionText: 'Type de fichier invalide'
             },
             listeners: 
             {

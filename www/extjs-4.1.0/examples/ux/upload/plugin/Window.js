@@ -34,7 +34,7 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             updateprogress: {
                 fn: function(uploader, total, percent, sent, success, failed, queued, speed)
                 {
-                    var t = Ext.String.format('Upload {0}% ({1} von {2})', percent, sent, total);
+                    var t = Ext.String.format('Upload {0}% ({1} sur {2})', percent, sent, total);
                     me.statusbar.showBusy({
                         text: t,
                         clear: false
@@ -62,7 +62,7 @@ Ext.define('Ext.ux.upload.plugin.Window', {
         me.statusbar = new Ext.ux.StatusBar({
             dock: 'bottom',
             id: 'form-statusbar',
-            defaultText: 'Ready'
+            defaultText: 'Pret'
         });
         
         me.view = new Ext.grid.Panel({

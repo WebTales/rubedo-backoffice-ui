@@ -38,8 +38,10 @@ Ext.define('Rubedo.view.ImagePickerField', {
     onHiddenfieldRender: function(abstractcomponent, options) {
         var myComponent = Ext.widget("ImageFieldComponent");
         myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+":");
-        myComponent.on("render",function(){
+        myComponent.on("afterrender",function(){
+            myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
             myComponent.getEl().on("click",function(){
+
                 abstractcomponent.getEl().dom.click();
             });
         });
@@ -51,8 +53,8 @@ Ext.define('Rubedo.view.ImagePickerField', {
             abstractcomponent.setValue();
         });
         abstractcomponent.on("change",function(theField,newValue){
-            if (newValue===""){
-                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image.png");
+            if ((newValue==="")||(Ext.isEmpty(newValue))){
+                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("file/get/file-id/"+newValue);
             }

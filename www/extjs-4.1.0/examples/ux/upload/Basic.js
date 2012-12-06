@@ -10,12 +10,12 @@ Ext.define('Ext.ux.upload.Basic', {
     autoStart: true,
     autoRemoveUploaded: true,
     
-    statusQueuedText: 'Ready to upload',
-    statusUploadingText: 'Uploading ({0}%)',
-    statusFailedText: 'Error',
-    statusDoneText: 'Complete',
-    statusInvalidSizeText: 'File too large',
-    statusInvalidExtensionText: 'Invalid file type',
+    statusQueuedText: 'Pret à télécharger',
+    statusUploadingText: 'Télechargement ({0}%)',
+    statusFailedText: 'Erreur',
+    statusDoneText: 'Fini',
+    statusInvalidSizeText: 'Fichier trop volumineux',
+    statusInvalidExtensionText: 'Type de fichier invalide',
     
 
     configs: {

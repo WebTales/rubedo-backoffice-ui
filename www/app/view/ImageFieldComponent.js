@@ -40,7 +40,6 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
                     xtype: 'image',
                     height: 120,
                     itemId: 'fieldImagePreview',
-                    src: 'resources/icones/red/128x128/image.png',
                     listeners: {
                         render: {
                             fn: me.onFieldImagePreviewRender,

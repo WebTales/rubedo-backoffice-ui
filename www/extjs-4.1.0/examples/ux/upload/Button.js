@@ -9,7 +9,7 @@ Ext.define('Ext.ux.upload.Button', {
     extend: 'Ext.button.Button',
     alias: 'widget.uploadbutton',
     requires: ['Ext.ux.upload.Basic'],
-    disabled: true,
+    disabled: false,
     
     constructor: function(config)
     {
