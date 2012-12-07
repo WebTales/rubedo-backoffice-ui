@@ -21,12 +21,14 @@ Ext.define('Rubedo.view.monitoringTools', {
         'Rubedo.view.SystemStatusPanel'
     ],
 
-    height: 448,
+    ACL: 'exe.ui.elasticSearch',
+    height: 658,
     id: 'monitoringTools',
-    width: 789,
+    width: 1016,
     layout: {
         type: 'fit'
     },
+    iconCls: 'monitoring',
     title: 'Monitoring',
     constrainHeader: true,
     maximizable: true,

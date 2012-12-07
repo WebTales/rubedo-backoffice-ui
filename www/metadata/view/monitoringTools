@@ -6,12 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "exe.ui.elasticSearch",
         "designer|userClassName": "monitoringTools",
         "designer|userAlias": "monitoringTools",
-        "height": 448,
+        "height": 658,
         "id": "monitoringTools",
-        "width": 789,
+        "width": 1016,
         "layout": "fit",
+        "iconCls": "monitoring",
         "title": "Monitoring",
         "constrainHeader": true,
         "maximizable": true,
@@ -19,6 +21,13 @@
     },
     "id": "ExtBox1-ext-gen6055",
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "tabpanel",

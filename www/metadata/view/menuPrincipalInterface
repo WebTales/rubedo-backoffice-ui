@@ -13,7 +13,7 @@
         "border": 0,
         "floating": true,
         "frame": false,
-        "height": 310,
+        "height": 320,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
@@ -366,6 +366,30 @@
                         "text": "Utilisateurs"
                     },
                     "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "exe.ui.elasticSearch",
+                        "designer|userClassName": "MyButton172",
+                        "itemId": "monitoringTools",
+                        "iconCls": "monitoring",
+                        "text": "Monitoring"
+                    },
+                    "designerId": "cde32027-84e3-423e-aa6b-262d1db05b70",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

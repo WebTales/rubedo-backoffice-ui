@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 310,
+    height: 320,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -139,6 +139,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             itemId: 'UserAdminWindow',
                             iconCls: 'user_edit',
                             text: 'Utilisateurs'
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'exe.ui.elasticSearch',
+                            itemId: 'monitoringTools',
+                            iconCls: 'monitoring',
+                            text: 'Monitoring'
                         },
                         {
                             xtype: 'tbseparator'

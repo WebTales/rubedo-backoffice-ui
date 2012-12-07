@@ -21,7 +21,7 @@ Ext.define('Rubedo.view.SystemStatusPanel', {
         align: 'stretch',
         type: 'hbox'
     },
-    title: 'Test',
+    title: '',
 
     initComponent: function() {
         var me = this;
@@ -131,7 +131,7 @@ Ext.define('Rubedo.view.SystemStatusPanel', {
                 minimum: 0,
                 maximum: 100,
                 fields: ['core1'],
-                title: 'CPU Load',
+                title: 'Charge processeur',
                 grid: true,
                 labelTitle: {
                     font: '13px Arial'
@@ -173,7 +173,7 @@ Ext.define('Rubedo.view.SystemStatusPanel', {
                 maximum: 100,
                 grid: true,
                 fields: ['core2'],
-                title: 'CPU Load',
+                title: 'Charge processeur',
                 labelTitle: {
                     font: '13px Arial'
                 },
@@ -267,7 +267,7 @@ Ext.define('Rubedo.view.SystemStatusPanel', {
                 minimum: 0,
                 maximum: 10,
                 fields: ['memory'],
-                title: 'Memory',
+                title: 'Memoire',
                 labelTitle: {
                     font: '13px Arial'
                 },
@@ -278,7 +278,7 @@ Ext.define('Rubedo.view.SystemStatusPanel', {
                 type: 'Category',
                 position: 'bottom',
                 fields: ['name'],
-                title: 'System Processes',
+                title: 'Processus système',
                 labelTitle: {
                     font: 'bold 14px Arial'
                 },
