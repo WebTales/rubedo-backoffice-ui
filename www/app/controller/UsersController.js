@@ -264,6 +264,24 @@ Ext.define('Rubedo.controller.UsersController', {
             }
     },
 
+    onUserAdminWindowBeforeClose: function(panel, options) {
+        Ext.getStore("UsersAdminDataStore").removeAll();
+    },
+
+    onUserAdminWindowRender: function(abstractcomponent, options) {
+        if (abstractcomponent.isXType("window")){
+            Ext.getStore("UsersAdminDataStore").load();
+        }
+    },
+
+    onUserAddWindowBeforeClose: function(panel, options) {
+        Ext.getStore("UsersDataStore").removeAll();
+    },
+
+    onUserAddWindowRender: function(abstractcomponent, options) {
+        Ext.getStore("UsersDataStore").load();
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -355,6 +373,14 @@ Ext.define('Rubedo.controller.UsersController', {
             },
             "#changeMyPasswordBtn": {
                 click: this.changeMyPassword
+            },
+            "#UserAdminWindow": {
+                beforeclose: this.onUserAdminWindowBeforeClose,
+                render: this.onUserAdminWindowRender
+            },
+            "#UserAddWindow": {
+                beforeclose: this.onUserAddWindowBeforeClose,
+                render: this.onUserAddWindowRender
             }
         });
     }

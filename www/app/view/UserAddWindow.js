@@ -38,7 +38,6 @@ Ext.define('Rubedo.view.UserAddWindow', {
             items: [
                 {
                     xtype: 'mygridpanel16',
-                    managesStore: true,
                     store: 'UsersDataStore'
                 }
             ],

@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 320,
+    height: 340,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -155,6 +155,9 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             itemId: 'userSettings',
                             iconCls: 'parametres',
                             text: 'Paramètres'
+                        },
+                        {
+                            xtype: 'tbfill'
                         },
                         {
                             xtype: 'button',

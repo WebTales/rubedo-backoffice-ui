@@ -27,14 +27,14 @@ Ext.define('Rubedo.store.searchResultsStore', {
                     name: 'text'
                 },
                 {
-                    name: 'type'
+                    name: 'contentType'
                 },
                 {
                     name: 'id'
                 }
             ],
             groupers: {
-                property: 'type'
+                property: 'contentType'
             }
         }, cfg)]);
     }

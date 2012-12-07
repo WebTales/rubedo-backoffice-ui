@@ -13,7 +13,7 @@
         "border": 0,
         "floating": true,
         "frame": false,
-        "height": 320,
+        "height": 340,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
@@ -189,8 +189,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "read.ui.contentTypes",
+                        "layout|flex": null,
                         "designer|userClassName": "MySeparator13"
                     },
                     "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
@@ -310,8 +310,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "read.ui.groups",
+                        "layout|flex": null,
                         "designer|userClassName": "MySeparator13"
                     },
                     "designerId": "11306168-fa34-41ee-9f92-f6fd80d03173",
@@ -382,8 +382,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "exe.ui.elasticSearch",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton172",
                         "itemId": "monitoringTools",
                         "iconCls": "monitoring",
@@ -427,6 +427,19 @@
                         "text": "Paramètres"
                     },
                     "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff"
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill18"
+                    },
+                    "designerId": "b6eb0758-2e62-4dcb-acb0-adf28999e387"
                 },
                 {
                     "type": "button",

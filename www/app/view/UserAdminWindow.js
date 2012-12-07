@@ -42,7 +42,6 @@ Ext.define('Rubedo.view.UserAdminWindow', {
             items: [
                 {
                     xtype: 'mygridpanel16',
-                    managesStore: true,
                     id: 'userAdminGrid',
                     width: 200,
                     resizable: true,

@@ -29,7 +29,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});
 
 
-            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-310);   
+            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-340);   
             menuPrincipal.getEl().addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });
             menuPrincipal.getEl().addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
                 Ext.getCmp('menuPrincipalInterface').destroy();
