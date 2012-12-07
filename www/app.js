@@ -143,7 +143,8 @@ Ext.application({
         'ImagePickerWindow',
         'ImageFieldComponent',
         'ImagePickerField',
-        'monitoringTools'
+        'monitoringTools',
+        'SystemStatusPanel'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

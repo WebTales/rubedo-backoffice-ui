@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.monitoringTools', {
     extend: 'Ext.window.Window',
     alias: 'widget.monitoringTools',
 
+    requires: [
+        'Rubedo.view.SystemStatusPanel'
+    ],
+
     height: 448,
     id: 'monitoringTools',
     width: 789,
@@ -54,7 +58,15 @@ Ext.define('Rubedo.view.monitoringTools', {
                         },
                         {
                             xtype: 'panel',
-                            title: 'Performances'
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Performances',
+                            items: [
+                                {
+                                    xtype: 'SystemStatusPanel'
+                                }
+                            ]
                         }
                     ]
                 }

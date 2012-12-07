@@ -88,6 +88,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyPanel44",
                         "html": null,
+                        "layout": "fit",
                         "title": "Performances"
                     },
                     "designerId": "1963be95-8c68-4e0b-a4a3-f2e935852ef1",
@@ -103,6 +104,16 @@
                                 "designer|userClassName": "TabConfig30"
                             },
                             "designerId": "b9f233c4-8d24-4770-9fd3-a233ab7bdc92"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "af3d40dc-c0f2-477f-b9a5-191c969c0d70",
+                            "masterInstanceId": "ExtBox1-ext-gen24072"
                         }
                     ]
                 }
