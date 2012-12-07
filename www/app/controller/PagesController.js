@@ -383,6 +383,13 @@ Ext.define('Rubedo.controller.PagesController', {
             editedPage.set("rows",newRows);
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
             editedPage.endEdit();
+            Ext.getCmp("pagesInternalPreview").removeAll();
+            Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                autoEl: {
+                    tag: 'iframe',
+                    src: "http://"+window.location.host+"/index/"+editedPage.get("text")
+                }
+            }));
         } else {
             Ext.getCmp("mainPageAttributeForm").up().setActiveTab(1);
             Ext.Msg.alert("Erreur", "Les propriérés de la page sont invalides.");
