@@ -47,7 +47,7 @@
                     "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
                     "                data.push({\r",
                     "                    text:thing.text,\r",
-                    "                    type:thing.type,\r",
+                    "                    type:thing.contentType,\r",
                     "                    id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
                     "                });\r",
                     "            });\r",

@@ -42,7 +42,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
                         data.push({
                             text:thing.text,
-                            type:thing.type,
+                            type:thing.contentType,
                             id:rez[Ext.Object.getKeys(rez)[0]]._id
                         });
                     });
