@@ -170,7 +170,7 @@
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "        autoEl: {\r",
                     "            tag: 'iframe',\r",
-                    "            src: window.location.origin+\"/index/\"+record.get(\"text\")\r",
+                    "            src: \"http://\"+window.location.host+\"/index/\"+record.get(\"text\")\r",
                     "        }\r",
                     "    }));\r",
                     "}"
@@ -688,7 +688,7 @@
                 "fn": "pagePreview",
                 "implHandler": [
                     "var target=Ext.getCmp('mainPageTree').getSelectionModel().getLastSelected().get(\"text\");\r",
-                    "Ext.widget(\"FOShowWindow\",{targetURL:window.location.origin+\"/index/\"+target}).show();"
+                    "Ext.widget(\"FOShowWindow\",{targetURL:\"http://\"+window.location.host+\"/index/\"+target}).show();"
                 ],
                 "name": "click",
                 "scope": "me",

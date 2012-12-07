@@ -101,7 +101,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                 autoEl: {
                     tag: 'iframe',
-                    src: window.location.origin+"/index/"+record.get("text")
+                    src: "http://"+window.location.host+"/index/"+record.get("text")
                 }
             }));
         }
@@ -372,7 +372,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
     pagePreview: function(button, e, options) {
         var target=Ext.getCmp('mainPageTree').getSelectionModel().getLastSelected().get("text");
-        Ext.widget("FOShowWindow",{targetURL:window.location.origin+"/index/"+target}).show();
+        Ext.widget("FOShowWindow",{targetURL:"http://"+window.location.host+"/index/"+target}).show();
     },
 
     savePage: function(button, e, options) {
