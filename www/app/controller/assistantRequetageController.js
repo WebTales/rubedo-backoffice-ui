@@ -92,14 +92,15 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                     }
 
-                    var typesDEP = Ext.Array.pluck(Ext.getStore('TCDepForQA').findRecord('id',typesContenus[0]).data.dependantTypes, 'id');
+                    var typesDEP = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes;
                     var j = 1;
                     for (j=1; j<typesContenus.length; j++) {
-                        var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TCDepForQA').findRecord('id',typesContenus[j]).data.dependantTypes, 'id');
+                        var typesDEPSuivant = Ext.getStore('TCDepForQA').findRecord('id',typesContenus[j]).data.dependantTypes;
                         typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
                     }
                     var k=0;
                     for (k=0; k<typesDEP.length; k++) {
+
                         var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
                         champsRegles.push({nom:typesDEP[k]+' > '+'Création',
                             valeur: {
@@ -147,9 +148,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                         var k =0;
                         for (k=0; k<vocabulaires.length; k++) {
-                            var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('titre', vocabulaires[k]);
+                            var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', vocabulaires[k]);
                             var vocabAPlat= [ ];
-                            this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+                            //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
 
 
                             var storeT = Ext.create('Ext.data.Store', {
@@ -168,8 +169,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 valueField: 'terme',
                                 filterPickList: true,
                                 typeAhead: true,
-                                forceSelection: !leVocab.data.etiquettes,
-                                createNewOnEnter: leVocab.data.etiquettes,
+                                //   forceSelection: !leVocab.data.etiquettes,
+                                //   createNewOnEnter: leVocab.data.etiquettes,
                                 multiSelect: true,
                                 allowBlank: true
                             });

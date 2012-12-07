@@ -9,6 +9,7 @@
         "designer|userClassName": "WallpapersDataJson",
         "designer|userAlias": "WallpapersDataJson",
         "autoLoad": false,
+        "autoSync": true,
         "storeId": "WallpapersDataJson",
         "model": "wallpaperDataModel"
     },
@@ -60,7 +61,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyJsonWriter7",
                         "encode": true,
-                        "root": "daya"
+                        "root": "data"
                     },
                     "designerId": "05e76cdc-6583-4de4-b1b1-06002cc5c25e"
                 }
