@@ -797,22 +797,29 @@ Ext.define('Rubedo.controller.MasqueController', {
                                 nChampS.labelSeparator= ' ';
                                 nChampS.anchor= '100%';
                                 nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
-                                nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
-                                nCateg.add(nChampS);
+                                if (nChampS.isXType("combobox")){
+                                    nChampS.getStore().fieldId=Ext.clone(nChampS.id);
+                                    nChampS.getStore().fieldValue=Ext.clone(abstractcomponent.configBloc[nChampS.name]);
+                                    nChampS.getStore().addListener("load",function(storeThing){
+                                        Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
+                                    },this,{single:true});
+                                    }
+                                    nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                                    nCateg.add(nChampS);
+                                }
+                                configSpec.items.items[0].add(nCateg);
+
                             }
-                            configSpec.items.items[0].add(nCateg);
-
-                        }
-                        propEdit.add(configSpec);
+                            propEdit.add(configSpec);
 
 
-                        if (!ACL.interfaceRights['write.ui.masks']){
-                            Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                            Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
-                        }
-                        e.stopEvent();
+                            if (!ACL.interfaceRights['write.ui.masks']){
+                                Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                                Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                            }
+                            e.stopEvent();
 
-                    });
+                        });
     },
 
     exportElement: function(button, e, options) {
