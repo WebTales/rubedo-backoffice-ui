@@ -190,9 +190,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.contentTypes",
                         "designer|userClassName": "MySeparator13"
                     },
-                    "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50"
+                    "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -303,9 +311,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "read.ui.groups",
                         "designer|userClassName": "MySeparator13"
                     },
-                    "designerId": "11306168-fa34-41ee-9f92-f6fd80d03173"
+                    "designerId": "11306168-fa34-41ee-9f92-f6fd80d03173",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

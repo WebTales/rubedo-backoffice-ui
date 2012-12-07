@@ -92,10 +92,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                     }
 
-                    var typesDEP = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes, 'id');
+                    var typesDEP = Ext.Array.pluck(Ext.getStore('TCDepForQA').findRecord('id',typesContenus[0]).data.dependantTypes, 'id');
                     var j = 1;
                     for (j=1; j<typesContenus.length; j++) {
-                        var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes, 'id');
+                        var typesDEPSuivant = Ext.Array.pluck(Ext.getStore('TCDepForQA').findRecord('id',typesContenus[j]).data.dependantTypes, 'id');
                         typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
                     }
                     var k=0;
@@ -116,7 +116,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             }});  
 
 
-                            var champsReq = Ext.clone(theTargetType.data.fields);
+                            var champsReq = Ext.clone(theTargetType.get("champs"));
                             var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
                             var champsReqF = Ext.Array.filter(champsReq, function(champ){
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}

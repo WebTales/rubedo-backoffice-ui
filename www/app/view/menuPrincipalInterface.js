@@ -90,7 +90,8 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             text: 'Médiathèque'
                         },
                         {
-                            xtype: 'tbseparator'
+                            xtype: 'tbseparator',
+                            ACL: 'read.ui.contentTypes'
                         },
                         {
                             xtype: 'button',
@@ -121,7 +122,8 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             text: 'Workflows'
                         },
                         {
-                            xtype: 'tbseparator'
+                            xtype: 'tbseparator',
+                            ACL: 'read.ui.groups'
                         },
                         {
                             xtype: 'button',
