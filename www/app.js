@@ -89,7 +89,8 @@ Ext.application({
         'DepContentsCombo2',
         'TaxonomyForC2',
         'TCDepForQA',
-        'ImagePickerStore'
+        'ImagePickerStore',
+        'TaxonomyForQA'
     ],
     views: [
         'MyContainer',

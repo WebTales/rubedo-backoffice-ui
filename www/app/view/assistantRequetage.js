@@ -128,6 +128,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
 
     onAssistantRequetageRender: function(abstractcomponent, options) {
         Ext.getStore('TCDepForQA').load();
+        Ext.getStore('TaxonomyForQA').load();
     }
 
 });

@@ -79,13 +79,14 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         label: 'Dernière modification'
                     }});
                     if (typesContenus.length<2) {
-                        var champsReq = Ext.clone(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.champs);
-                        var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
+                        var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
+                        var champsReq = Ext.clone(myThingType.data.champs);
+                        var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
                         var champsReqF = Ext.Array.filter(champsReq, function(champ){
                             if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                         });
                         champsReqF = Ext.Array.map(champsReqF, function(champ){
-                            return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label: typesContenus[0]+' > '+champ.config.fieldLabel}});
+                            return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
                         });
 
                         champsRegles = Ext.Array.merge(champsRegles, champsReqF);
@@ -95,35 +96,35 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     var typesDEP = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes;
                     var j = 1;
                     for (j=1; j<typesContenus.length; j++) {
-                        var typesDEPSuivant = Ext.getStore('TCDepForQA').findRecord('id',typesContenus[j]).data.dependantTypes;
+                        var typesDEPSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes;
                         typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
                     }
                     var k=0;
                     for (k=0; k<typesDEP.length; k++) {
 
                         var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
-                        champsRegles.push({nom:typesDEP[k]+' > '+'Création',
+                        champsRegles.push({nom:theTargetType.get("type")+' > '+'Création',
                             valeur: {
                                 cType: 'datefield',
                                 name: 'creation',
-                                label: typesDEP[k]+' > '+'Création'
+                                label: theTargetType.get("type")+' > '+'Création'
                             }
                         });
-                        champsRegles.push({nom:typesDEP[k]+' > '+'Dernière modification',
+                        champsRegles.push({nom:theTargetType.get("type")+' > '+'Dernière modification',
                             valeur: {
                                 cType: 'datefield',
                                 name: 'derniereModification',
-                                label: typesDEP[k]+' > '+'Dernière modification'
+                                label: theTargetType.get("type")+' > '+'Dernière modification'
                             }});  
 
 
                             var champsReq = Ext.clone(theTargetType.get("champs"));
-                            var champsEligibles = ["datefield", "timefield", "checkboxfield", "numberfield"];
+                            var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
                             var champsReqF = Ext.Array.filter(champsReq, function(champ){
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                             });
                             champsReqF = Ext.Array.map(champsReqF, function(champ){
-                                return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label: typesDEP[k]+' > '+champ.config.fieldLabel}});
+                                return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
                             });
 
                             champsRegles = Ext.Array.merge(champsRegles, champsReqF);
@@ -137,10 +138,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
 
 
-                        var vocabulaires = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies, 'id');
+                        var vocabulaires = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies;
                         var j = 1;
                         for (j=1; j<typesContenus.length; j++) {
-                            var vocabSuivant = Ext.Array.pluck(Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies, 'id');
+                            var vocabSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies;
                             vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
                         }
 
@@ -148,31 +149,85 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                         var k =0;
                         for (k=0; k<vocabulaires.length; k++) {
-                            var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', vocabulaires[k]);
+                            var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
                             var vocabAPlat= [ ];
                             //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
 
 
-                            var storeT = Ext.create('Ext.data.Store', {
-                                fields: ['terme'],
-                                data : vocabAPlat
+                            var storeT = Ext.create('Ext.data.JsonStore', {
+                                model:"Rubedo.model.taxonomyTermModel",
+                                remoteFilter:"true",
+                                proxy: {
+                                    type: 'ajax',
+                                    api: {
+                                        read: 'taxonomy-terms'
+                                    },
+                                    reader: {
+                                        type: 'json',
+                                        messageProperty: 'message',
+                                        root: 'data'
+                                    },
+                                    encodeFilters: function(filters) {
+                                        var min = [],
+                                        length = filters.length,
+                                        i = 0;
+
+                                        for (; i < length; i++) {
+                                            min[i] = {
+                                                property: filters[i].property,
+                                                value   : filters[i].value
+                                            };
+                                            if (filters[i].type) {
+                                                min[i].type = filters[i].type;
+                                            }
+                                            if (filters[i].operator) {
+                                                min[i].operator = filters[i].operator;
+                                            }
+                                        }
+                                        return this.applyEncoding(min);
+                                    }
+                                },
+                                filters: {
+                                    property: 'vocabularyId',
+                                    value: leVocab.get("id")
+                                }
+
+                            });
+                            storeT.on("beforeload", function(s,o){
+                                o.filters=Ext.Array.slice(o.filters,0,1);
+                                if (!Ext.isEmpty(o.params.comboQuery)){
+
+                                    var newFilter=Ext.create('Ext.util.Filter', {
+                                        property:"text",
+                                        value:o.params.comboQuery,
+                                        operator:'like'
+                                    });
+
+                                    o.filters.push(newFilter);
+
+                                }
+
+
                             });
 
 
                             var selecteur = Ext.widget('comboboxselect', {
-                                anchor: '100%',
-                                fieldLabel: 'Termes ',
+                                name:leVocab.get("id"),
+                                anchor:"100%",
+                                fieldLabel: leVocab.get("name"),
                                 autoScroll: false,
                                 store: storeT,
-                                queryMode: 'local',
-                                displayField: 'terme',
-                                valueField: 'terme',
+                                queryMode: 'remote',
+                                queryParam: 'comboQuery',
+                                minChars:3,
+                                displayField: 'text',
+                                valueField: 'id',
                                 filterPickList: true,
                                 typeAhead: true,
-                                //   forceSelection: !leVocab.data.etiquettes,
-                                //   createNewOnEnter: leVocab.data.etiquettes,
-                                multiSelect: true,
-                                allowBlank: true
+                                forceSelection: !leVocab.data.expandable,
+                                createNewOnEnter: leVocab.data.expandable,
+                                multiSelect: leVocab.data.multiSelect,
+                                allowBlank: !leVocab.data.mandatory
                             });
 
                             var storeR = Ext.create('Ext.data.Store', {
@@ -200,7 +255,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
 
                             var enrobage = Ext.widget('fieldset', {
-                                title : vocabulaires[k],
+                                title : leVocab.get("name"),
                                 collapsible: true
 
 

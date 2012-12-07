@@ -226,7 +226,8 @@
                 "designer|userClassName": "onAssistantRequetageRender",
                 "fn": "onAssistantRequetageRender",
                 "implHandler": [
-                    "Ext.getStore('TCDepForQA').load();"
+                    "Ext.getStore('TCDepForQA').load();\r",
+                    "Ext.getStore('TaxonomyForQA').load();"
                 ],
                 "name": "render",
                 "scope": "me"
