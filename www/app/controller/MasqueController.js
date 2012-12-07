@@ -791,7 +791,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     var Ouvrir = Ext.clone(champsS[i].ouvrir);
                                     nChampS.onTriggerClick= function() {
                                         var fenetre = Ext.widget(Ouvrir);
-                                        fenetre.showAt(screen.width/2-200, 100);
+                                        fenetre.show();
                                     } ;  
                                 }
                                 nChampS.labelSeparator= ' ';

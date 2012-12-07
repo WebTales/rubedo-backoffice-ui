@@ -233,6 +233,25 @@
                 "scope": "me"
             },
             "designerId": "cdec9ded-7679-4a33-b617-1555e3c16058"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAssistantRequetageBeforeClose",
+                "fn": "onAssistantRequetageBeforeClose",
+                "implHandler": [
+                    "Ext.getStore('TCDepForQA').removeAll();\r",
+                    "Ext.getStore('TaxonomyForQA').removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "fbb0993c-0df1-4caf-8b0c-44b7481d2800"
         }
     ]
 }

@@ -119,6 +119,10 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 render: {
                     fn: me.onAssistantRequetageRender,
                     scope: me
+                },
+                beforeclose: {
+                    fn: me.onAssistantRequetageBeforeClose,
+                    scope: me
                 }
             }
         });
@@ -129,6 +133,11 @@ Ext.define('Rubedo.view.assistantRequetage', {
     onAssistantRequetageRender: function(abstractcomponent, options) {
         Ext.getStore('TCDepForQA').load();
         Ext.getStore('TaxonomyForQA').load();
+    },
+
+    onAssistantRequetageBeforeClose: function(panel, options) {
+        Ext.getStore('TCDepForQA').removeAll();
+        Ext.getStore('TaxonomyForQA').removeAll();
     }
 
 });

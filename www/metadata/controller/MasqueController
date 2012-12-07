@@ -1597,7 +1597,7 @@
                     "                            var Ouvrir = Ext.clone(champsS[i].ouvrir);\r",
                     "                            nChampS.onTriggerClick= function() {\r",
                     "                                var fenetre = Ext.widget(Ouvrir);\r",
-                    "                                fenetre.showAt(screen.width/2-200, 100);\r",
+                    "                                fenetre.show();\r",
                     "                            } ;  \r",
                     "                        }\r",
                     "                        nChampS.labelSeparator= ' ';\r",

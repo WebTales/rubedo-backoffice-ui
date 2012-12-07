@@ -66,6 +66,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Taxonomie',
                                                 name: 'taxonomy'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Trigger',
+                                            ouvrir: 'assistantRequetage',
+                                            config: {
+                                                fieldLabel: 'Requete',
+                                                name: 'query'
+                                            }
                                         }
                                     ]
                                 },
