@@ -43,20 +43,27 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     removeGroup: function(button, e, options) {
-        var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
-        var store = Ext.getCmp("groupsGrid").getStore();
-        if (!Ext.isEmpty(target)) {
-            store.suspendAutoSync();
-            var myParent=target.parentNode;
-            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
-                myParent.set("leaf",true);
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            var target = Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+            var store = Ext.getCmp("groupsGrid").getStore();
+            if (!Ext.isEmpty(target)) {
+                store.suspendAutoSync();
+                var myParent=target.parentNode;
+                if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
+                    myParent.set("leaf",true);
+                }
+                target.remove();
+                store.resumeAutoSync();
+                store.sync();
+                Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                button.disable();
             }
-            target.remove();
-            store.resumeAutoSync();
-            store.sync();
-            Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
-            button.disable();
-        }
+            Ext.getCmp('delConfirmZ').close();
+
+        });  
+
     },
 
     openGroupAddWindow: function(button, e, options) {
@@ -184,9 +191,15 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     userAdminRemove: function(button, e, options) {
-        var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();
-        button.up().up().getComponent(0).getStore().remove(targets);
-        Ext.getCmp("userAdminMainPanel").disable();
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            var targets = button.up().up().getComponent(0).getSelectionModel().getSelection();
+            button.up().up().getComponent(0).getStore().remove(targets);
+            Ext.getCmp("userAdminMainPanel").disable();
+            Ext.getCmp('delConfirmZ').close();
+
+        }); 
     },
 
     deleteAdminPicture: function(button, e, options) {
