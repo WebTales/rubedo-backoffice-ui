@@ -157,6 +157,7 @@
                     "if (!abstractcomponent.isXType(\"messagebox\")){\r",
                     "    var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:\"split\", enableToggle: true,allowDepress: false});\r",
                     "    abstractcomponent.on('close', function(){boutonCompagnon.destroy();});\r",
+                    "    abstractcomponent.onEsc=Ext.emptyFn;\r",
                     "    abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});\r",
                     "    abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});\r",
                     "    abstractcomponent.on('resize', function(){this.focus();});\r",
@@ -173,6 +174,7 @@
                     "    boutonCompagnon.on('render', function(){abstractcomponent.animateTarget=this.getEl();});\r",
                     "    Ext.getCmp('taskbarPrincipal').add(boutonCompagnon);\r",
                     "    abstractcomponent.animateTarget=boutonCompagnon.getEl();\r",
+                    "    \r",
                     "}"
                 ],
                 "name": "render",

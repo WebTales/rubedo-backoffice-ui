@@ -53,6 +53,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         if (!abstractcomponent.isXType("messagebox")){
             var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
             abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
+            abstractcomponent.onEsc=Ext.emptyFn;
             abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});
             abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
             abstractcomponent.on('resize', function(){this.focus();});
@@ -69,6 +70,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             boutonCompagnon.on('render', function(){abstractcomponent.animateTarget=this.getEl();});
             Ext.getCmp('taskbarPrincipal').add(boutonCompagnon);
             abstractcomponent.animateTarget=boutonCompagnon.getEl();
+
         }
     },
 
