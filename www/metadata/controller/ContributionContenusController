@@ -190,14 +190,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowBeforeDestroy",
-                "fn": "onWindowBeforeDestroy",
+                "designer|userClassName": "onWindowBeforeClose",
+                "fn": "onWindowBeforeClose",
                 "implHandler": [
-                    "if (abstractcomponent.isXType(\"window\")){\r",
+                    "if (panel.isXType(\"window\")){\r",
                     "    Ext.getStore(\"TaxonomyForC\").removeAll();\r",
+                    "    Ext.getStore(\"DepContentsCombo\").removeAll();\r",
+                    "Ext.getStore(\"NestedContentsStore\").removeAll();\r",
+                    "Ext.getStore(\"ContenusDataJson\").removeAll();\r",
+                    "Ext.getStore(\"DepTypesForContents\").removeAll();\r",
                     "}"
                 ],
-                "name": "beforedestroy",
+                "name": "beforeclose",
                 "scope": "me",
                 "designer|targetType": "Ext.window.Window",
                 "designer|controlQuery": "#contributionContenus"
@@ -270,7 +274,17 @@
                 "fn": "contentDelete",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
-                    "this.getContenusDataJsonStore().remove(cible);"
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    var fenetre = Ext.widget('delConfirmZ');\r",
+                    "    fenetre.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "        this.getContenusDataJsonStore().remove(cible);\r",
+                    "\r",
+                    "    }, this);  \r",
+                    "\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -902,29 +916,6 @@
                 "designer|controlQuery": "#contributionContenus"
             },
             "designerId": "f3285970-e0ec-4143-bcc6-6cd9ad124687"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onTypesContenusGridDestroy",
-                "fn": "onTypesContenusGridDestroy",
-                "implHandler": [
-                    "Ext.getStore(\"DepContentsCombo\").removeAll();\r",
-                    "Ext.getStore(\"NestedContentsStore\").removeAll();\r",
-                    "Ext.getStore(\"ContenusDataJson\").removeAll();\r",
-                    "Ext.getStore(\"DepTypesForContents\").removeAll();"
-                ],
-                "name": "destroy",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#TypesContenusGrid"
-            },
-            "designerId": "563540e4-b429-442b-901c-77db0c466708"
         },
         {
             "type": "basicfunction",

@@ -348,6 +348,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp('ongletTCDep').destroy();  
         }
     }
+    Ext.getCmp('tabPanTC').enable();
     Ext.getCmp('tabPanTC').setActiveTab(2);
     Ext.getCmp('tabPanTC').setActiveTab(5);
     Ext.getCmp('tabPanTC').setActiveTab(0);
@@ -422,6 +423,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('delConfirmZ').close();
                 Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp("boutonSupprimerTypeContenu").disable();
+                Ext.getCmp('champsEditionTC').removeAll();
+                Ext.getCmp('boiteConfigChampsTC').removeAll();
+                Ext.getCmp('tabPanTC').disable();
 
             });  
 

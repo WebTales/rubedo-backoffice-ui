@@ -81,7 +81,7 @@
                     "Ext.getCmp('boiteAIconesBureau').setHeight(abstractcomponent.getHeight());\r",
                     "Ext.getCmp('boiteAIconesBureau').setWidth(abstractcomponent.getWidth());\r",
                     "if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
-                    "    Ext.getCmp('menuPrincipalInterface').showAt(0, abstractcomponent.getHeight()-310);\r",
+                    "    Ext.getCmp('menuPrincipalInterface').showAt(0, abstractcomponent.getHeight()-340);\r",
                     "}"
                 ],
                 "name": "resize",

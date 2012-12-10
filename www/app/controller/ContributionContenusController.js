@@ -108,15 +108,29 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
     },
 
-    onWindowBeforeDestroy: function(abstractcomponent, options) {
-        if (abstractcomponent.isXType("window")){
+    onWindowBeforeClose: function(panel, options) {
+        if (panel.isXType("window")){
             Ext.getStore("TaxonomyForC").removeAll();
+            Ext.getStore("DepContentsCombo").removeAll();
+            Ext.getStore("NestedContentsStore").removeAll();
+            Ext.getStore("ContenusDataJson").removeAll();
+            Ext.getStore("DepTypesForContents").removeAll();
         }
     },
 
     contentDelete: function(button, e, options) {
         var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();
-        this.getContenusDataJsonStore().remove(cible);
+        if (Ext.isDefined(cible)) {
+            var fenetre = Ext.widget('delConfirmZ');
+            fenetre.show();
+            Ext.getCmp('delConfirmZOui').on('click', function() { 
+
+                Ext.getCmp('delConfirmZ').close();
+                this.getContenusDataJsonStore().remove(cible);
+
+            }, this);  
+
+        }
     },
 
     contentEdit: function(button, e, options) {
@@ -447,13 +461,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
-    onTypesContenusGridDestroy: function(abstractcomponent, options) {
-        Ext.getStore("DepContentsCombo").removeAll();
-        Ext.getStore("NestedContentsStore").removeAll();
-        Ext.getStore("ContenusDataJson").removeAll();
-        Ext.getStore("DepTypesForContents").removeAll();
-    },
-
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -742,8 +749,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     init: function(application) {
         this.control({
             "#TypesContenusGrid": {
-                select: this.typeSelect,
-                destroy: this.onTypesContenusGridDestroy
+                select: this.typeSelect
             },
             "#boutonPublierNouveauContenu": {
                 click: this.contentSaveAndPublish
@@ -759,7 +765,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 itemdblclick: this.NCDblClickEdit
             },
             "#contributionContenus": {
-                beforedestroy: this.onWindowBeforeDestroy,
+                beforeclose: this.onWindowBeforeClose,
                 render: this.onWindowRender
             },
             "#boutonSupprimerContenu": {
