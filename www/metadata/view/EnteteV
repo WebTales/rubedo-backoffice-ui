@@ -57,14 +57,17 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyButton1",
-                "id": "boutonPanierEntete",
-                "icon": null,
-                "iconCls": "shopping_cart_med",
+                "designer|userClassName": "MyButton17",
+                "id": "desktopHomeBtn",
+                "iconCls": "desktopHome_med",
                 "scale": "medium",
-                "text": "Panier"
+                "text": "",
+                "tooltip": "Afficher le bureau"
             },
-            "designerId": "8a361570-44b9-4ea6-b6f2-300c49f6f1b0"
+            "configAlternates": {
+                "tooltip": "string"
+            },
+            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4"
         },
         {
             "type": "tbseparator",

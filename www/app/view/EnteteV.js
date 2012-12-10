@@ -37,10 +37,11 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'button',
-                    id: 'boutonPanierEntete',
-                    iconCls: 'shopping_cart_med',
+                    id: 'desktopHomeBtn',
+                    iconCls: 'desktopHome_med',
                     scale: 'medium',
-                    text: 'Panier'
+                    text: '',
+                    tooltip: 'Afficher le bureau'
                 },
                 {
                     xtype: 'tbseparator'

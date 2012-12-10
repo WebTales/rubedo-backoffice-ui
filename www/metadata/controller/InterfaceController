@@ -862,6 +862,30 @@
                 "designer|controlQuery": "#esWindowButton"
             },
             "designerId": "dfb50cfb-9242-4189-acc8-25879407d359"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDesktopHomeBtnClick",
+                "fn": "onDesktopHomeBtnClick",
+                "implHandler": [
+                    "Ext.WindowManager.each(function(thing){\r",
+                    "    if (thing.isWindow){\r",
+                    "        thing.minimize();\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#desktopHomeBtn"
+            },
+            "designerId": "ba840fa0-4912-4427-a732-0b7ed6ac0d71"
         }
     ]
 }

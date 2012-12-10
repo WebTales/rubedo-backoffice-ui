@@ -320,6 +320,14 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }else {Ext.getCmp('ESWindow').toFront();}
     },
 
+    onDesktopHomeBtnClick: function(button, e, options) {
+        Ext.WindowManager.each(function(thing){
+            if (thing.isWindow){
+                thing.minimize();
+            }
+        });
+    },
+
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
@@ -445,6 +453,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#esWindowButton": {
                 click: this.launchESWindow
+            },
+            "#desktopHomeBtn": {
+                click: this.onDesktopHomeBtnClick
             }
         });
     },
