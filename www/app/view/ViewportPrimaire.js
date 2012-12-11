@@ -46,8 +46,7 @@ Ext.define('Rubedo.view.ViewportPrimaire', {
                             anchor: '105%',
                             x: 0,
                             y: 0,
-                            id: 'desktopBackGround',
-                            src: 'resources/wallpapers/rubedo.jpg'
+                            id: 'desktopBackGround'
                         },
                         {
                             xtype: 'container',
