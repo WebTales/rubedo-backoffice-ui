@@ -31,7 +31,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     iconCls: 'content-icon',
     title: 'Nouveau Contenu',
     constrainHeader: true,
-    maximizable: true,
+    maximizable: false,
     modal: true,
 
     initComponent: function() {

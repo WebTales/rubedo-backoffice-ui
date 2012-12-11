@@ -31,7 +31,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.UnBloc',
         'Rubedo.view.termContextMenu',
         'Rubedo.view.ViewportPrimaire',
-        'Rubedo.view.Zone',
         'Rubedo.view.accessibilityPicker',
         'Rubedo.view.adminFTDC',
         'Rubedo.view.adminFTaxonomie',

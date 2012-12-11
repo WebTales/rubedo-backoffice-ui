@@ -29,32 +29,30 @@
     ],
     "cn": [
         {
-            "type": "tool",
+            "type": "linkedinstance",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool16",
-                "itemId": "windowMinimize",
-                "type": "minimize"
+                "layout|flex": 1
             },
-            "designerId": "7263f6b0-1331-4499-84af-95500ad7f815"
+            "designerId": "47d66548-f2d8-44fc-abd8-36d286a67a1e",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
         },
         {
-            "type": "tool",
+            "type": "linkedinstance",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool17",
-                "itemId": "windowMaximize",
-                "type": "maximize"
+                "layout|flex": 1
             },
-            "designerId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+            "designerId": "345b89ba-b332-46f7-969d-3867c835551f",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         },
         {
             "type": "toolbar",

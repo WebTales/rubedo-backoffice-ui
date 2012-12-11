@@ -18,7 +18,9 @@ Ext.define('Rubedo.view.monitoringTools', {
     alias: 'widget.monitoringTools',
 
     requires: [
-        'Rubedo.view.SystemStatusPanel'
+        'Rubedo.view.SystemStatusPanel',
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17'
     ],
 
     ACL: 'exe.ui.elasticSearch',
@@ -31,8 +33,8 @@ Ext.define('Rubedo.view.monitoringTools', {
     iconCls: 'monitoring',
     title: 'Supervision',
     constrainHeader: true,
-    maximizable: true,
-    minimizable: true,
+    maximizable: false,
+    minimizable: false,
 
     initComponent: function() {
         var me = this;
@@ -129,6 +131,14 @@ Ext.define('Rubedo.view.monitoringTools', {
                             ]
                         }
                     ]
+                }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool16'
+                },
+                {
+                    xtype: 'mytool17'
                 }
             ]
         });

@@ -16,8 +16,8 @@
         "iconCls": "referencement_icon",
         "title": "Sites",
         "constrainHeader": true,
-        "maximizable": true,
-        "minimizable": true
+        "maximizable": false,
+        "minimizable": false
     },
     "id": "ExtBox1-ext-gen10446",
     "designerId": "08c3601d-6da2-4434-bbf8-03968b08ffe4",
@@ -542,6 +542,32 @@
                     "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

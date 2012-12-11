@@ -18,7 +18,9 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     alias: 'widget.searchResultsWindow',
 
     requires: [
-        'Rubedo.view.MyGridPanel20'
+        'Rubedo.view.MyGridPanel20',
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17'
     ],
 
     height: 350,
@@ -30,8 +32,8 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     iconCls: 'search',
     title: 'Résultats de recherche',
     constrainHeader: true,
-    maximizable: true,
-    minimizable: true,
+    maximizable: false,
+    minimizable: false,
 
     initComponent: function() {
         var me = this;
@@ -48,7 +50,15 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     fn: me.onSearchResultsWindowBeforeClose,
                     scope: me
                 }
-            }
+            },
+            tools: [
+                {
+                    xtype: 'mytool16'
+                },
+                {
+                    xtype: 'mytool17'
+                }
+            ]
         });
 
         me.callParent(arguments);

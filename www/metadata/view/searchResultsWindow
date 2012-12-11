@@ -15,8 +15,8 @@
         "iconCls": "search",
         "title": "Résultats de recherche",
         "constrainHeader": true,
-        "maximizable": true,
-        "minimizable": true
+        "maximizable": false,
+        "minimizable": false
     },
     "id": "ExtBox1-ext-gen9089",
     "designerId": "f720ad71-dfb5-436d-95de-957b47102cb6",
@@ -51,6 +51,26 @@
                 "scope": "me"
             },
             "designerId": "3c8c07db-76a3-49f2-b1df-f29002e3b9d4"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "e2a3863b-0d18-42a3-ace3-b1c83d8bdde2",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "3817e883-13c7-41a2-86d5-0ea327a084eb",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

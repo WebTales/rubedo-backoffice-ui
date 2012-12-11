@@ -18,7 +18,9 @@ Ext.define('Rubedo.view.UserAdminWindow', {
     alias: 'widget.UserAdminWindow',
 
     requires: [
-        'Rubedo.view.MyGridPanel16'
+        'Rubedo.view.MyGridPanel16',
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17'
     ],
 
     height: 490,
@@ -31,8 +33,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
     iconCls: 'user_edit',
     title: 'Utilisateurs',
     constrainHeader: true,
-    maximizable: true,
-    minimizable: true,
+    maximizable: false,
+    minimizable: false,
     modal: false,
 
     initComponent: function() {
@@ -390,6 +392,14 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                             text: 'Supprimer'
                         }
                     ]
+                }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool16'
+                },
+                {
+                    xtype: 'mytool17'
                 }
             ]
         });

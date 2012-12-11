@@ -142,14 +142,6 @@
             ],
             "className": "versionsDataModel"
         },
-        "6d2b328f-44e4-4f9d-88ca-fe3c9a77a1f9": {
-            "paths": [
-                "metadata/view/Zone",
-                "app/view/override/Zone.js",
-                "app/view/Zone.js"
-            ],
-            "className": "Zone"
-        },
         "2de13705-89e4-4cfe-abe7-36d5129e9aca": {
             "paths": [
                 "metadata/view/Colonne",
@@ -1438,6 +1430,22 @@
                 "app/view/SystemStatusPanel.js"
             ],
             "className": "SystemStatusPanel"
+        },
+        "7263f6b0-1331-4499-84af-95500ad7f815": {
+            "paths": [
+                "metadata/view/MyTool16",
+                "app/view/override/MyTool16.js",
+                "app/view/MyTool16.js"
+            ],
+            "className": "MyTool16"
+        },
+        "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237": {
+            "paths": [
+                "metadata/view/MyTool17",
+                "app/view/override/MyTool17.js",
+                "app/view/MyTool17.js"
+            ],
+            "className": "MyTool17"
         }
     },
     "viewOrderMap": {
@@ -1462,7 +1470,6 @@
             "3c5f989b-aadc-4101-b8f1-eecb9b463a6b",
             "b7f01d02-1b3a-4b25-a151-46fe64190510",
             "55cc6025-4d04-4a9d-807b-f99435c04a90",
-            "6d2b328f-44e4-4f9d-88ca-fe3c9a77a1f9",
             "035b8ace-5d4c-4fbd-be9b-35ee907849d9",
             "6267ab43-4966-465c-9ab8-2585191a245f",
             "6422f6a9-9b88-4951-b942-22332afd3f8d",
@@ -1515,7 +1522,9 @@
             "29ccd34b-610a-4d7f-84de-be664235a5e8",
             "c731a69e-dd8d-4064-b123-ea9f9fbdc128",
             "8358557d-a673-413c-9932-235a249e7220",
-            "aad4192f-6fb1-4dbc-946e-1204a1cea801"
+            "aad4192f-6fb1-4dbc-946e-1204a1cea801",
+            "7263f6b0-1331-4499-84af-95500ad7f815",
+            "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

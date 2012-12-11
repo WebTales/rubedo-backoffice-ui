@@ -17,6 +17,11 @@ Ext.define('Rubedo.view.userSettings', {
     extend: 'Ext.window.Window',
     alias: 'widget.userSettings',
 
+    requires: [
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17'
+    ],
+
     height: 468,
     id: 'userSettings',
     width: 600,
@@ -26,8 +31,8 @@ Ext.define('Rubedo.view.userSettings', {
     iconCls: 'parametres',
     title: 'Paramètres',
     constrainHeader: true,
-    maximizable: true,
-    minimizable: true,
+    maximizable: false,
+    minimizable: false,
 
     initComponent: function() {
         var me = this;
@@ -243,6 +248,14 @@ Ext.define('Rubedo.view.userSettings', {
                             ]
                         }
                     ]
+                }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool16'
+                },
+                {
+                    xtype: 'mytool17'
                 }
             ]
         });

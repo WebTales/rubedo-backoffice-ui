@@ -15,8 +15,8 @@
         "iconCls": "parametres",
         "title": "Paramètres",
         "constrainHeader": true,
-        "maximizable": true,
-        "minimizable": true
+        "maximizable": false,
+        "minimizable": false
     },
     "id": "ExtBox1-ext-gen4357",
     "designerId": "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
@@ -503,6 +503,26 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "9f25a5aa-bf06-428c-92ea-2f2e7d22e98b",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "4f5ee275-b0cd-4972-967f-9e6c79004ab7",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

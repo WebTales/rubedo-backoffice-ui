@@ -158,7 +158,10 @@
                     "    var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:\"split\", enableToggle: true,allowDepress: false});\r",
                     "    abstractcomponent.on('close', function(){boutonCompagnon.destroy();});\r",
                     "    abstractcomponent.onEsc=Ext.emptyFn;\r",
-                    "    abstractcomponent.getHeader().on(\"dblclick\", function(thing){thing.up().toggleMaximize();});\r",
+                    "    abstractcomponent.getHeader().on(\"dblclick\", function(thing){\r",
+                    "        thing.up().toggleMaximize();\r",
+                    "    \r",
+                    "    });\r",
                     "    abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});\r",
                     "    abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});\r",
                     "    abstractcomponent.on('resize', function(){this.focus();});\r",
@@ -204,28 +207,6 @@
                 "designer|controlQuery": "[itemId='windowMinimize']"
             },
             "designerId": "d2d6b13a-8dbe-45e8-bccc-ea158a727004"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "showDesktop",
-                "fn": "showDesktop",
-                "implHandler": [
-                    "Ext.WindowManager.each(function(window){\r",
-                    "    if (window.isVisible()) {window.minimize();}\r",
-                    "});"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonShowDesktop"
-            },
-            "designerId": "315bf162-3a25-4a0a-90f4-ecb07054a136"
         },
         {
             "type": "controlleraction",

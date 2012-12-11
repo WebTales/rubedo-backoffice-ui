@@ -16,8 +16,8 @@
         "iconCls": "user_edit",
         "title": "Utilisateurs",
         "constrainHeader": true,
-        "maximizable": true,
-        "minimizable": true,
+        "maximizable": false,
+        "minimizable": false,
         "modal": false
     },
     "configAlternates": {
@@ -984,6 +984,32 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "95a541af-1468-47fa-9f82-752b3d3bc714",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "7d41580f-2343-4bd2-a0ee-ccbc5583cd2b",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

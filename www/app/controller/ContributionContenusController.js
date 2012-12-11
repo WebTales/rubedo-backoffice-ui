@@ -526,6 +526,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     unitaryContentEdit: function(id) {
         var me=this;
+        Ext.getStore('TaxonomyForC2').load();
         Ext.getStore("CurrentContent").getProxy().extraParams.id = id;
         Ext.getStore("CurrentContent").addListener("load",function(theStore,records,successful){
             if (successful){
@@ -727,7 +728,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     prepareContext: function(content, editMode) {
         var me=this;
-        Ext.getStore('TaxonomyForC2').load();
         Ext.getStore("ContentTypesForContent").addListener("load",function(theStore,records,successful){
             if (successful){
                 var myContentType=theStore.findRecord("id",content.get("typeId"));

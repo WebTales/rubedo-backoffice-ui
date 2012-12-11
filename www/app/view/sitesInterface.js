@@ -17,6 +17,11 @@ Ext.define('Rubedo.view.sitesInterface', {
     extend: 'Ext.window.Window',
     alias: 'widget.sitesInterface',
 
+    requires: [
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17'
+    ],
+
     height: 449,
     id: 'sitesInterface',
     width: 753,
@@ -27,8 +32,8 @@ Ext.define('Rubedo.view.sitesInterface', {
     iconCls: 'referencement_icon',
     title: 'Sites',
     constrainHeader: true,
-    maximizable: true,
-    minimizable: true,
+    maximizable: false,
+    minimizable: false,
 
     initComponent: function() {
         var me = this;
@@ -247,6 +252,14 @@ Ext.define('Rubedo.view.sitesInterface', {
                             text: 'Appliquer'
                         }
                     ]
+                }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool16'
+                },
+                {
+                    xtype: 'mytool17'
                 }
             ]
         });

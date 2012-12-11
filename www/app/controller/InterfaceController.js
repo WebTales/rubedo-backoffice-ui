@@ -54,7 +54,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
             abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
             abstractcomponent.onEsc=Ext.emptyFn;
-            abstractcomponent.getHeader().on("dblclick", function(thing){thing.up().toggleMaximize();});
+            abstractcomponent.getHeader().on("dblclick", function(thing){
+                thing.up().toggleMaximize();
+
+            });
             abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});
             abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
             abstractcomponent.on('resize', function(){this.focus();});
@@ -77,12 +80,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     minimize: function(tool, e, options) {
         tool.up().up().minimize();
-    },
-
-    showDesktop: function(button, e, options) {
-        Ext.WindowManager.each(function(window){
-            if (window.isVisible()) {window.minimize();}
-        });
     },
 
     comportementIcones: function(abstractcomponent, options) {
@@ -403,9 +400,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "[itemId='windowMinimize']": {
                 click: this.minimize
-            },
-            "#boutonShowDesktop": {
-                click: this.showDesktop
             },
             "iconeBureau": {
                 render: this.comportementIcones

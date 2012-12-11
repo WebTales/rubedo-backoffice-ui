@@ -16,8 +16,8 @@
         "iconCls": "monitoring",
         "title": "Supervision",
         "constrainHeader": true,
-        "maximizable": true,
-        "minimizable": true
+        "maximizable": false,
+        "minimizable": false
     },
     "id": "ExtBox1-ext-gen6055",
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
@@ -263,6 +263,26 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "5d0f7b8f-4e50-4973-aa72-46073dcab348",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

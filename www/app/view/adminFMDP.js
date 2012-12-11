@@ -18,6 +18,8 @@ Ext.define('Rubedo.view.adminFMDP', {
     alias: 'widget.adminFMDP',
 
     requires: [
+        'Rubedo.view.MyTool16',
+        'Rubedo.view.MyTool17',
         'Rubedo.view.MyGridPanel3'
     ],
 
@@ -39,14 +41,12 @@ Ext.define('Rubedo.view.adminFMDP', {
         Ext.applyIf(me, {
             tools: [
                 {
-                    xtype: 'tool',
-                    itemId: 'windowMinimize',
-                    type: 'minimize'
+                    xtype: 'mytool16',
+                    flex: 1
                 },
                 {
-                    xtype: 'tool',
-                    itemId: 'windowMaximize',
-                    type: 'maximize'
+                    xtype: 'mytool17',
+                    flex: 1
                 }
             ],
             dockedItems: [
