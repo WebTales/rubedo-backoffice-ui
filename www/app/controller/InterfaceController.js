@@ -54,6 +54,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
             abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
             abstractcomponent.onEsc=Ext.emptyFn;
+            abstractcomponent.getHeader().on("dblclick", function(thing){thing.up().toggleMaximize();});
             abstractcomponent.on('minimize', function(){abstractcomponent.hide(); boutonCompagnon.toggle(false);});
             abstractcomponent.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
             abstractcomponent.on('resize', function(){this.focus();});
