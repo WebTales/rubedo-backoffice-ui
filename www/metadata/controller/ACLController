@@ -112,7 +112,6 @@
                     "    success:function(response){\r",
                     "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);\r",
                     "        Ext.getCmp('boutonPincipalInterface').enable();\r",
-                    "        Ext.getCmp('entete').add(Ext.widget('esWindowButton'));\r",
                     "    },\r",
                     "    failure:function(){\r",
                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",

@@ -29,7 +29,7 @@ Ext.define('Rubedo.view.monitoringTools', {
         type: 'fit'
     },
     iconCls: 'monitoring',
-    title: 'Monitoring',
+    title: 'Supervision',
     constrainHeader: true,
     maximizable: true,
     minimizable: true,
@@ -41,6 +41,7 @@ Ext.define('Rubedo.view.monitoringTools', {
             items: [
                 {
                     xtype: 'tabpanel',
+                    activeTab: 0,
                     items: [
                         {
                             xtype: 'panel',
@@ -67,6 +68,63 @@ Ext.define('Rubedo.view.monitoringTools', {
                             items: [
                                 {
                                     xtype: 'SystemStatusPanel'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            height: 500,
+                            id: 'ESWindow',
+                            width: 1100,
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'ElasticSearch',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    autoEl: {
+                                        tag: 'iframe',
+                                        src: 'http://178.32.8.116:9200/_plugin/head/'
+                                    }
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'bottom',
+                                    height: 30,
+                                    items: [
+                                        {
+                                            xtype: 'tbfill'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            handler: function(button, event) {
+                                                button.setLoading(true);
+                                                Ext.Ajax.request({
+                                                    url: 'elastic-indexer',
+                                                    success: function(response){
+                                                        var answerMe = Ext.widget("esResponseWindow");
+                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                        answerMe.show();
+                                                        button.setLoading(false);
+                                                    },
+                                                    failure: function(form, action) {
+                                                        switch (action.failureType) {
+                                                            case Ext.form.action.Action.CONNECT_FAILURE:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                            break;
+                                                            case Ext.form.action.Action.SERVER_INVALID:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                        }
+                                                    }
+                                                });
+                                            },
+                                            text: '<b>Lancer une indexation complète</b>'
+                                        }
+                                    ]
                                 }
                             ]
                         }

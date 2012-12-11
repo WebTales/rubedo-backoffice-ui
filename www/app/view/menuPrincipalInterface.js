@@ -145,7 +145,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             ACL: 'exe.ui.elasticSearch',
                             itemId: 'monitoringTools',
                             iconCls: 'monitoring',
-                            text: 'Monitoring'
+                            text: 'Supervision'
                         },
                         {
                             xtype: 'tbseparator'
