@@ -72,35 +72,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "publishMask",
-                "fn": "publishMask",
-                "implHandler": [
-                    "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
-                    "if (Ext.isDefined(cible)) {\r",
-                    "    cible.beginEdit();\r",
-                    "    cible.set(\"rows\",this.saveRows(this.getMasqueEdition()));\r",
-                    "    cible.set(\"etat\",\"publié\");\r",
-                    "    cible.set(\"derniereModification\",new Date());\r",
-                    "    //cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});\r",
-                    "    cible.endEdit();\r",
-                    "\r",
-                    "}"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#AdminfMasquesPublier"
-            },
-            "designerId": "cf67521a-8173-4dc9-8aa3-0e9cb3c97b0b"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|userClassName": "masquesDisplay",
                 "fn": "masquesDisplay",
                 "implHandler": [
@@ -639,7 +610,6 @@
                     "    var nouvMasque = Ext.create('model.masquesDataModel', {\r",
                     "        text: nTitre,\r",
                     "        site: nSite,\r",
-                    "        etat: 'brouillon',        \r",
                     "        rows: [ \r",
                     "        {\r",
                     "            \"height\":null,\r",
@@ -670,7 +640,7 @@
                     "    });\r",
                     "    this.getMasquesDataJsonStore().add(nouvMasque);\r",
                     "    this.getMasquesDataJsonStore().addListener(\"datachanged\",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});\r",
-                    "    \r",
+                    "\r",
                     "    Ext.getCmp('nouveauMasqueFenetre').close();\r",
                     "    this.masquesDisplay(Ext.getCmp('masquesGridView'),nouvMasque);\r",
                     "\r",
@@ -698,7 +668,6 @@
                     "if (Ext.isDefined(cible)) {\r",
                     "    cible.beginEdit();\r",
                     "    cible.set(\"rows\",this.saveRows(this.getMasqueEdition()));\r",
-                    "    cible.set(\"etat\",\"brouillon\");\r",
                     "    cible.endEdit();\r",
                     "\r",
                     "}"

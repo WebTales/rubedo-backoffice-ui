@@ -61,19 +61,6 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     },
 
-    publishMask: function(button, e, options) {
-        var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
-        if (Ext.isDefined(cible)) {
-            cible.beginEdit();
-            cible.set("rows",this.saveRows(this.getMasqueEdition()));
-            cible.set("etat","publié");
-            cible.set("derniereModification",new Date());
-            //cible.data.versions.push({text: cible.data.version, etat:'brouillon', date: new Date(), auteur: MyPrefData.myName});
-            cible.endEdit();
-
-        }
-    },
-
     masquesDisplay: function(selModel, record, index, options) {
         var dataview = Ext.getCmp("masquesGrid");
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
@@ -164,7 +151,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
-                etat: 'brouillon',        
                 rows: [ 
                 {
                     "height":null,
@@ -207,7 +193,6 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (Ext.isDefined(cible)) {
             cible.beginEdit();
             cible.set("rows",this.saveRows(this.getMasqueEdition()));
-            cible.set("etat","brouillon");
             cible.endEdit();
 
         }
@@ -1245,9 +1230,6 @@ Ext.define('Rubedo.controller.MasqueController', {
         this.control({
             "#boutonSupprimerMasque": {
                 click: this.deleteMask
-            },
-            "#AdminfMasquesPublier": {
-                click: this.publishMask
             },
             "#masquesGrid": {
                 select: this.masquesDisplay

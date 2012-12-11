@@ -36,7 +36,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1
+                "layout|flex": null
             },
             "designerId": "47d66548-f2d8-44fc-abd8-36d286a67a1e",
             "masterInstanceId": "ExtBox1-ext-gen2735"
@@ -49,7 +49,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1
+                "layout|flex": null
             },
             "designerId": "345b89ba-b332-46f7-969d-3867c835551f",
             "masterInstanceId": "ExtBox1-ext-gen2736"
@@ -567,25 +567,6 @@
                                 "text": "Enregistrer"
                             },
                             "designerId": "68c3d963-6bad-4417-8d6c-11dc80cc460f"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton12",
-                                "id": "AdminfMasquesPublier",
-                                "maxWidth": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "floppy_disc_accept_big",
-                                "scale": "large",
-                                "text": "Enregistrer et publier"
-                            },
-                            "designerId": "3740bbe1-f4f4-49d0-9048-11706bf1870b"
                         }
                     ]
                 },
@@ -836,22 +817,6 @@
                             "designerId": "809a4f59-db92-42ba-b6b5-d6220a708ba6"
                         }
                     ]
-                },
-                {
-                    "type": "gridcolumn",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn12",
-                        "dataIndex": "etat",
-                        "flex": 1,
-                        "groupable": false,
-                        "text": "Etat"
-                    },
-                    "designerId": "eaa77c6d-f664-410b-bb91-e1ebc596c22f"
                 },
                 {
                     "type": "gridcelleditingplugin",

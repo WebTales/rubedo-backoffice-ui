@@ -26,10 +26,6 @@ Ext.define('Rubedo.model.masquesDataModel', {
             name: 'site'
         },
         {
-            name: 'etat',
-            type: 'string'
-        },
-        {
             name: 'rows',
             type: 'auto'
         },

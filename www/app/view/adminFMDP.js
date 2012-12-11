@@ -41,12 +41,10 @@ Ext.define('Rubedo.view.adminFMDP', {
         Ext.applyIf(me, {
             tools: [
                 {
-                    xtype: 'mytool16',
-                    flex: 1
+                    xtype: 'mytool16'
                 },
                 {
-                    xtype: 'mytool17',
-                    flex: 1
+                    xtype: 'mytool17'
                 }
             ],
             dockedItems: [
@@ -262,14 +260,6 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
                                     text: 'Enregistrer'
-                                },
-                                {
-                                    xtype: 'button',
-                                    id: 'AdminfMasquesPublier',
-                                    iconAlign: 'top',
-                                    iconCls: 'floppy_disc_accept_big',
-                                    scale: 'large',
-                                    text: 'Enregistrer et publier'
                                 }
                             ]
                         },
@@ -357,13 +347,6 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 xtype: 'textfield',
                                 allowBlank: false
                             }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'etat',
-                            flex: 1,
-                            groupable: false,
-                            text: 'Etat'
                         }
                     ],
                     plugins: [
