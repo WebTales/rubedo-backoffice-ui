@@ -462,7 +462,7 @@
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Test",
+                        "title": "Prévisualisation",
                         "columns": 4
                     },
                     "designerId": "d4fd9107-1266-4188-a0d6-ac3a0660200c",
@@ -489,7 +489,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "page_preview_big",
                                 "scale": "large",
-                                "text": "Prévisualisation"
+                                "text": "Prévisualiser"
                             },
                             "designerId": "37a74d33-ce15-40db-b2ad-b2437b443565"
                         }
@@ -629,35 +629,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel40",
-                        "id": "pagesInternalPreview",
-                        "layout": "fit",
-                        "title": "Contribution"
-                    },
-                    "designerId": "95e16f35-228a-4f1b-a587-d3ff5beb1f36",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig27"
-                            },
-                            "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
-                        }
-                    ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
                         "container|align": "stretch",
                         "designer|userClassName": "MyPanel41",
                         "layout": "hbox",
@@ -743,6 +714,65 @@
                                         "fieldLabel": "Label"
                                     },
                                     "designerId": "0aae9eaa-8caf-4cc9-9b8d-99911592506f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel40",
+                        "id": "pagesInternalPreview",
+                        "layout": "fit",
+                        "title": "Aperçu"
+                    },
+                    "designerId": "95e16f35-228a-4f1b-a587-d3ff5beb1f36",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig27"
+                            },
+                            "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764"
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "designer|userClassName": "MyToolbar45"
+                            },
+                            "designerId": "ef276fcd-932b-4674-a53c-9d3198467bb3",
+                            "cn": [
+                                {
+                                    "type": "tbtext",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyTextItem1",
+                                        "id": "pagePreviewTextItem",
+                                        "text": "Ceci est un apercçu de cette page telle que disponnible en ligne à l'heure"
+                                    },
+                                    "designerId": "e0c6307c-bd0d-4714-9aa4-a418f6b2b6da"
                                 }
                             ]
                         }

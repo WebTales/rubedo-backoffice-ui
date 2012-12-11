@@ -217,7 +217,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             ACL: 'write.ui.masks',
                             disabled: true,
                             headerPosition: 'bottom',
-                            title: 'Test',
+                            title: 'Prévisualisation',
                             columns: 4,
                             layout: {
                                 columns: 2,
@@ -230,7 +230,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'page_preview_big',
                                     scale: 'large',
-                                    text: 'Prévisualisation'
+                                    text: 'Prévisualiser'
                                 }
                             ]
                         },
@@ -287,14 +287,6 @@ Ext.define('Rubedo.view.contributionPages', {
                     items: [
                         {
                             xtype: 'panel',
-                            id: 'pagesInternalPreview',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Contribution'
-                        },
-                        {
-                            xtype: 'panel',
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'
@@ -331,6 +323,27 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'hiddenfield',
                                             id: 'pageElementIdField',
                                             fieldLabel: 'Label'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            id: 'pagesInternalPreview',
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Aperçu',
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'tbtext',
+                                            id: 'pagePreviewTextItem',
+                                            text: 'Ceci est un apercçu de cette page telle que disponnible en ligne à l\'heure'
                                         }
                                     ]
                                 }

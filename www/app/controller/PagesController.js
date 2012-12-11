@@ -104,6 +104,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     src: "http://"+window.location.host+"/index/"+record.get("text")
                 }
             }));
+            Ext.getCmp("pagePreviewTextItem").setText('Ceci est un apercçu de cette page telle que disponnible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
         }
     },
 
