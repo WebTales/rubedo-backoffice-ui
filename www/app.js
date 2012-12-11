@@ -130,7 +130,6 @@ Ext.application({
         'NestedContentAddWindow',
         'MyWindow31',
         'esResponseWindow',
-        'esWindowButton',
         'searchResultsWindow',
         'MyGridPanel20',
         'sitesInterface',

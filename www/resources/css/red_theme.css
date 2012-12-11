@@ -17,6 +17,13 @@ border-style:dotted !important;
 .contrastRow{
 border-style:dashed !important;
 }
+.x-toolbar .x-btn-split-right:hover {
+    background: url(../images/delete_item.png) right center no-repeat !important;
+}
+.x-toolbar .x-btn-split-right {
+    background: transparent !important;
+    padding-right:10px !important;
+}
 .referencement_icon{
 	background: url(../icones/red/16x16/globe_computer.png) left center no-repeat !important;
 }

@@ -64,7 +64,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFMDP',
         'Rubedo.view.contributionPages',
         'Rubedo.view.esResponseWindow',
-        'Rubedo.view.esWindowButton',
         'Rubedo.view.searchResultsWindow',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.newSiteWindow',
