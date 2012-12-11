@@ -415,11 +415,14 @@ Ext.define('Rubedo.controller.PagesController', {
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
+            if (row.id.indexOf("page-")==-1) {
+                row.id="page-"+row.id;
+            }
             var newRow = Ext.widget('panel', {
                 header:false,
                 mType:"row",
                 eTitle:row.eTitle,
-                id:"page-"+row.id,
+                id:row.id,
                 responsive:row.responsive,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
@@ -441,12 +444,15 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
                 var isFinalCol=false;
                 if (its<=0){isFinalCol=true;}
+                if (column.id.indexOf("page-")==-1) {
+                    column.id="page-"+column.id;
+                }
                 var newCol=Ext.widget('panel', {
                     header:false,
                     flex:column.span,
                     final:isFinalCol,
                     mType:'col',
-                    id:"page-"+column.id,
+                    id:column.id,
                     eTitle:column.eTitle,
                     responsive:column.responsive,
                     classHTML:column.classHTML,
@@ -464,7 +470,10 @@ Ext.define('Rubedo.controller.PagesController', {
                 else {
                     if (Ext.isEmpty(column.blocks)){} else {
                     Ext.Array.forEach(column.blocks, function(bl){
-                        bl.id="page-"+bl.id;
+                        if (bl.id.indexOf("page-")==-1) {
+                            bl.id="page-"+bl.id;
+                        }
+
                         newCol.add(Ext.widget("unBloc",bl));
                     });
                 }

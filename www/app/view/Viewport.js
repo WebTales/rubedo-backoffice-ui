@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.AjouterContenu',
         'Rubedo.view.NestedContentAddWindow',
         'Rubedo.view.ChampTC',
+        'Rubedo.view.Colonne',
         'Rubedo.view.ConfigSpecBloc',
         'Rubedo.view.DelConfirmZ',
         'Rubedo.view.DesktopCustomizeWindow',
