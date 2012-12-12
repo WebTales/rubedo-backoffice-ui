@@ -19,7 +19,6 @@ Ext.define('Rubedo.view.CTCField', {
 
     managesStore: true,
     fieldLabel: 'Label',
-    editable: false,
     displayField: 'type',
     forceSelection: true,
     multiSelect: true,

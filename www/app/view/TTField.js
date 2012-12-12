@@ -19,7 +19,6 @@ Ext.define('Rubedo.view.TTField', {
 
     managesStore: true,
     fieldLabel: 'Label',
-    editable: false,
     forceSelection: true,
     multiSelect: true,
     queryMode: 'local',
