@@ -90,7 +90,9 @@ Ext.application({
         'TaxonomyForC2',
         'TCDepForQA',
         'ImagePickerStore',
-        'TaxonomyForQA'
+        'TaxonomyForQA',
+        'SitesComboPreview',
+        'PagesPreviewStore'
     ],
     views: [
         'MyContainer',
@@ -145,7 +147,8 @@ Ext.application({
         'monitoringTools',
         'SystemStatusPanel',
         'MyTool16',
-        'MyTool17'
+        'MyTool17',
+        'MyWindow39'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

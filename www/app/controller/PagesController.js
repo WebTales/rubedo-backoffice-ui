@@ -409,8 +409,32 @@ Ext.define('Rubedo.controller.PagesController', {
         var me=this;
         abstractcomponent.getStore().addListener("load",function(store,records){
             abstractcomponent.select(records[0]);
-            me.pageSiteSelect(abstractcomponent, [records[0]]);
+            if (abstractcomponent.id=="previewSitesCombo"){
+                me.pagePreviewSelect(abstractcomponent, [records[0]]);
+            } else {
+                me.pageSiteSelect(abstractcomponent, [records[0]]);
+            }
         },this,{single:true});
+    },
+
+    pagePreviewSelect: function(combo, records, options) {
+        Ext.getStore("PagesPreviewStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
+        Ext.getStore("PagesPreviewStore").load();
+        Ext.getCmp("contribPreviewMain").removeAll();
+    },
+
+    onContributionPrevisualisationBeforeClose: function(panel, options) {
+
+    },
+
+    onPreviewPageTreeSelect: function(selModel, record, index, options) {
+        Ext.getCmp("contribPreviewMain").removeAll();
+        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+            autoEl: {
+                tag: 'iframe',
+                src: "resources/responsiveShow/?url="+"http://"+window.location.host+"/index/"+record.get("text")
+            }
+        }));
     },
 
     renderPage: function(mRows, its, cible) {
@@ -515,8 +539,7 @@ Ext.define('Rubedo.controller.PagesController', {
     init: function(application) {
         this.control({
             "#pagesSitesCombo": {
-                select: this.pageSiteSelect,
-                beforerender: this.onPagesSitesComboBeforeRender
+                select: this.pageSiteSelect
             },
             "#addPageBtn": {
                 click: this.openPageAddWindow
@@ -559,6 +582,18 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#contributionPages": {
                 beforedestroy: this.onWindowBeforeDestroy
+            },
+            "#pagesSitesCombo, #previewSitesCombo": {
+                beforerender: this.onPagesSitesComboBeforeRender
+            },
+            "#previewSitesCombo": {
+                select: this.pagePreviewSelect
+            },
+            "#contributionPrevisualisation": {
+                beforeclose: this.onContributionPrevisualisationBeforeClose
+            },
+            "#previewPageTree": {
+                select: this.onPreviewPageTreeSelect
             }
         });
     }

@@ -782,15 +782,87 @@
                     "var me=this;\r",
                     "abstractcomponent.getStore().addListener(\"load\",function(store,records){\r",
                     "    abstractcomponent.select(records[0]);\r",
-                    "    me.pageSiteSelect(abstractcomponent, [records[0]]);\r",
+                    "    if (abstractcomponent.id==\"previewSitesCombo\"){\r",
+                    "        me.pagePreviewSelect(abstractcomponent, [records[0]]);\r",
+                    "    } else {\r",
+                    "        me.pageSiteSelect(abstractcomponent, [records[0]]);\r",
+                    "    }\r",
                     "},this,{single:true});"
                 ],
                 "name": "beforerender",
                 "scope": "me",
                 "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#pagesSitesCombo"
+                "designer|controlQuery": "#pagesSitesCombo, #previewSitesCombo"
             },
             "designerId": "fed768ea-12ff-49c5-8386-55e42679392e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "pagePreviewSelect",
+                "fn": "pagePreviewSelect",
+                "implHandler": [
+                    "Ext.getStore(\"PagesPreviewStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
+                    "Ext.getStore(\"PagesPreviewStore\").load();\r",
+                    "Ext.getCmp(\"contribPreviewMain\").removeAll();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#previewSitesCombo"
+            },
+            "designerId": "7d7ddd9d-d877-4060-9865-9fec1199851e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContributionPrevisualisationBeforeClose",
+                "fn": "onContributionPrevisualisationBeforeClose",
+                "implHandler": [
+                    ""
+                ],
+                "name": "beforeclose",
+                "scope": "me",
+                "designer|targetType": "Ext.window.Window",
+                "designer|controlQuery": "#contributionPrevisualisation"
+            },
+            "designerId": "c34720eb-4128-49af-9f3c-98147560a2ec"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPreviewPageTreeSelect",
+                "fn": "onPreviewPageTreeSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"contribPreviewMain\").removeAll();\r",
+                    "Ext.getCmp(\"contribPreviewMain\").add(Ext.widget(\"container\",{\r",
+                    "    autoEl: {\r",
+                    "        tag: 'iframe',\r",
+                    "        src: \"resources/responsiveShow/?url=\"+\"http://\"+window.location.host+\"/index/\"+record.get(\"text\")\r",
+                    "    }\r",
+                    "}));"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#previewPageTree"
+            },
+            "designerId": "56a373a5-6913-4cda-b321-5fb604f616bd"
         }
     ]
 }

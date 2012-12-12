@@ -1,0 +1,149 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "ACL": "read.ui.pages",
+        "designer|userClassName": "contributionPrevisualisation",
+        "designer|userAlias": "contributionPrevisualisation",
+        "height": 548,
+        "id": "contributionPrevisualisation",
+        "width": 1200,
+        "layout": "hbox",
+        "iconCls": "personalize",
+        "title": "Prévisualisation",
+        "constrainHeader": true,
+        "maximized": true
+    },
+    "id": "ExtBox1-ext-gen5855",
+    "designerId": "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "f0175ec0-5a4b-4e87-b65a-a6be595ad487",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "79461449-0ebc-4168-8d4e-b6c8c3487fa8",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "treepanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyTreePanel2",
+                "id": "previewPageTree",
+                "width": 225,
+                "collapseDirection": "left",
+                "collapsible": true,
+                "title": "Sélecteur de pages",
+                "store": "PagesPreviewStore",
+                "useArrows": true
+            },
+            "designerId": "e8970f61-6672-4bea-83c1-2eb06de4184b",
+            "cn": [
+                {
+                    "type": "treeview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeView2"
+                    },
+                    "designerId": "0bb850f9-ae8a-4f9a-b976-b10ddb990c6c"
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "designer|userClassName": "MyToolbar42"
+                    },
+                    "designerId": "8ac0ebfb-9f90-40b6-86ed-3f73f2aa3a5b",
+                    "cn": [
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "managesStore": true,
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyComboBox12",
+                                "id": "previewSitesCombo",
+                                "fieldLabel": "Site ",
+                                "labelWidth": 40,
+                                "editable": false,
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": "SitesComboPreview",
+                                "valueField": "id"
+                            },
+                            "configAlternates": {
+                                "managesStore": "boolean"
+                            },
+                            "designerId": "d2e3a5e8-7c98-4561-ade7-4d9b9ee8357f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "managesStore",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyContainer28",
+                "id": "contribPreviewMain",
+                "layout": "fit"
+            },
+            "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7"
+        }
+    ]
+}

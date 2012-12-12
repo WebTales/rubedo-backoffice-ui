@@ -1,0 +1,110 @@
+{
+    "type": "treestore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PagesPreviewStore",
+        "designer|userAlias": "PagesPreviewStore",
+        "autoLoad": false,
+        "autoSync": true,
+        "storeId": "PagesPreviewStore",
+        "model": "pageDataModel"
+    },
+    "id": "ExtBox1-ext-gen10422",
+    "designerId": "54a8cac1-8012-4cb2-957c-18ab02aa80e1",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
+                "api": [
+                    "{\r",
+                    "                    create: 'pages/create',\r",
+                    "                    read: 'pages/read-child',\r",
+                    "                    update: 'pages/update',\r",
+                    "                    destroy: 'pages/delete'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "d9591534-e83b-4137-83ed-115e4f992a60",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader",
+                        "messageProperty": "message"
+                    },
+                    "designerId": "926c301b-b8b8-49e7-a009-9bda2b162e74",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "getResponseData",
+                                "fn": "getResponseData",
+                                "designer|params": [
+                                    "response"
+                                ],
+                                "implHandler": [
+                                    "var data, error;\r",
+                                    "\r",
+                                    "try {\r",
+                                    "    data = Ext.decode(response.responseText);\r",
+                                    "    if (Ext.isDefined(data.data)){data.children=data.data;}// error fix\r",
+                                    "    return this.readRecords(data);\r",
+                                    "} catch (ex) {\r",
+                                    "    error = new Ext.data.ResultSet({\r",
+                                    "        total  : 0,\r",
+                                    "        count  : 0,\r",
+                                    "        records: [],\r",
+                                    "        success: false,\r",
+                                    "        message: ex.message\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    this.fireEvent('exception', this, response, error);\r",
+                                    "\r",
+                                    "    Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                    "\r",
+                                    "    return error;\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "fc12c37b-c4b3-4180-bd8c-2350f35efca5"
+                        }
+                    ]
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter20",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "04f0c5f5-88e2-46f2-81d6-d9d58f5a5ba8"
+                }
+            ]
+        }
+    ]
+}

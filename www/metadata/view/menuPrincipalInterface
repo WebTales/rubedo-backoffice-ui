@@ -139,6 +139,31 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.pages",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "contributionPrevisualisation",
+                        "margin": null,
+                        "iconCls": "personalize",
+                        "text": "Prévisualisation"
+                    },
+                    "designerId": "dd27c150-88ed-41bc-8761-c66132f2b8ab",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "read.ui.contents",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton2",

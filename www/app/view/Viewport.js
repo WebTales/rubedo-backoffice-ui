@@ -63,7 +63,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.userSettings',
         'Rubedo.view.FOShowWindow',
         'Rubedo.view.adminFMDP',
-        'Rubedo.view.contributionPages',
         'Rubedo.view.esResponseWindow',
         'Rubedo.view.searchResultsWindow',
         'Rubedo.view.sitesInterface',
@@ -76,6 +75,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.ImagePickerWindow',
         'Rubedo.view.ImagePickerField',
         'Rubedo.view.ImageFieldComponent',
-        'Rubedo.view.monitoringTools'
+        'Rubedo.view.monitoringTools',
+        'Rubedo.view.contributionPages',
+        'Rubedo.view.contributionPrevisualisation'
     ]
 });

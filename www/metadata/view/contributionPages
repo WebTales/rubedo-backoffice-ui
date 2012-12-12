@@ -8,6 +8,7 @@
     "userConfig": {
         "favoriteIcon": "application.png",
         "container|align": "stretch",
+        "ACL": "read.ui.pages",
         "designer|userClassName": "contributionPages",
         "designer|userAlias": "contributionPages",
         "height": 578,
@@ -24,6 +25,11 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
             "type": "string"
         }
     ],

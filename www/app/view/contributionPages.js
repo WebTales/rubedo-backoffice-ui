@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.contributionPages', {
     alias: 'widget.contributionPages',
 
     favoriteIcon: 'application.png',
+    ACL: 'read.ui.pages',
     height: 578,
     id: 'contributionPages',
     width: 1200,

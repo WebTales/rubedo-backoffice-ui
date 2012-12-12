@@ -77,6 +77,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.pages',
+                            itemId: 'contributionPrevisualisation',
+                            iconCls: 'personalize',
+                            text: 'Prévisualisation'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'read.ui.contents',
                             itemId: 'contributionContenus',
                             iconCls: 'content-icon',
