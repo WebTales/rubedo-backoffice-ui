@@ -105,6 +105,19 @@
                     "designerId": "04f0c5f5-88e2-46f2-81d6-d9d58f5a5ba8"
                 }
             ]
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter2",
+                "property": "orderValue"
+            },
+            "designerId": "340df9d5-9726-4bee-b133-bcdb801fd52d"
         }
     ]
 }
