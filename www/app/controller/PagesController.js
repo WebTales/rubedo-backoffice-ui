@@ -224,156 +224,140 @@ Ext.define('Rubedo.controller.PagesController', {
             propEdit.setTitle(abstractcomponent.id.replace("unBloc", "Bloc"));
             propEdit.setIconCls('editBloc');
             propEdit.removeAll();
+            var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-            propEdit.add(Ext.widget('textfield',{
+            configSpec.getComponent(0).add(Ext.widget('textfield',{
                 itemId:"eTitleField",
                 fieldLabel:"Titre ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.setTitle(this.getValue());
+                    }
+                },
                 labelWidth:40,
                 allowBlank:false,
-                anchor:"60%",
+                anchor:"100%",
                 margin:"10 0 10 0",
-                style:"{float:left;}",
                 value:abstractcomponent.title
             }));
-            propEdit.add(Ext.widget('button',{
-                text:"Appliquer",
-                anchor:"38%",
+
+
+
+
+            configSpec.getComponent(0).add(Ext.widget('numberfield',{
+                fieldLabel:"Hauteur fluide ",
+                onChange:function(){
+                    if(this.isValid()) {
+                        abstractcomponent.flex=this.getValue();
+                        abstractcomponent.up().doLayout();
+                    }
+                },
+                labelWidth:90,
+                allowDecimals:false,
+                allowBlank:false,
+                minValue:1,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.flex
+            }));
+
+
+
+            configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+                fieldLabel:"Visibilité ",
+                anchor:"100%",
+                labelWidth:60,
+                margin:"0 0 10 0",
+                vertical:true,
+                columns:1,
+                items: [
+                { boxLabel: 'Téléphone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                ]
+
+            }));  
+
+
+
+
+
+
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eClassHTMLField",
+                fieldLabel:"Classe HTML ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.classHTML=this.getValue();
+                    }
+                },
+                labelWidth:40,
+                allowBlank:true,
+                anchor:"100%",
                 margin:"10 0 10 0",
-                style:"{float:right;}",
-                handler:function(){
-                    if (propEdit.getComponent("eTitleField").isValid()){
-                        abstractcomponent.setTitle(propEdit.getComponent("eTitleField").getValue());
-                    }}
-                }));
+                value:abstractcomponent.classHTML
+            }));
 
-                propEdit.add(Ext.widget('textfield',{
-                    itemId:"eClassHTMLField",
-                    fieldLabel:"Classe HTML ",
-                    labelWidth:40,
-                    allowBlank:true,
-                    anchor:"60%",
-                    margin:"10 0 10 0",
-                    style:"{float:left;}",
-                    value:abstractcomponent.classHTML
-                }));
-                propEdit.add(Ext.widget('button',{
-                    text:"Appliquer",
-                    anchor:"38%",
-                    margin:"10 0 10 0",
-                    style:"{float:right;}",
-                    handler:function(){
-                        if (propEdit.getComponent("eClassHTMLField").isValid()){
-                            abstractcomponent.classHTML=propEdit.getComponent("eClassHTMLField").getValue();
-                        }}
-                    }));
-                    propEdit.add(Ext.widget('textfield',{
-                        itemId:"eidHTMLField",
-                        fieldLabel:"Id HTML ",
-                        labelWidth:40,
-                        allowBlank:true,
-                        anchor:"60%",
-                        margin:"10 0 10 0",
-                        style:"{float:left;}",
-                        value:abstractcomponent.idHTML
-                    }));
-                    propEdit.add(Ext.widget('button',{
-                        text:"Appliquer",
-                        anchor:"38%",
-                        margin:"10 0 10 0",
-                        style:"{float:right;}",
-                        handler:function(){
-                            if (propEdit.getComponent("eidHTMLField").isValid()){
-                                abstractcomponent.idHTML=propEdit.getComponent("eidHTMLField").getValue();
-                            }}
-                        }));
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eidHTMLField",
+                fieldLabel:"Id HTML ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.idHTML=this.getValue();
+                    }
+                },
+                labelWidth:40,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 10 0",
+                value:abstractcomponent.idHTML
+            }));
 
-                        propEdit.add(Ext.widget('numberfield',{
-                            itemId:"rowHeightFixed",
-                            fieldLabel:"Hauteur fluide ",
-                            labelWidth:90,
-                            allowDecimals:false,
-                            allowBlank:false,
-                            minValue:1,
-                            anchor:"60%",
-                            margin:"10 0 0 0",
-                            style:"{float:left;}",
-                            value:abstractcomponent.flex
-                        }));
-                        propEdit.add(Ext.widget('button',{
-                            text:"Appliquer",
-                            anchor:"38%",
-                            margin:"10 0 0 0",
-                            style:"{float:right;}",
-                            handler:function(){
-                                if (propEdit.getComponent("rowHeightFixed").isValid()){
-                                    abstractcomponent.flex=propEdit.getComponent("rowHeightFixed").getValue();
-                                    abstractcomponent.up().doLayout();
-                                }}
-                            }));
+            var categories = Ext.clone(abstractcomponent.champsConfig.simple);
+            for (j=0; j<categories.length; j++){
+                var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+
+                var champsS = Ext.clone(categories[j].champs);
+                for (i=0; i<champsS.length; i++) {
+                    if (champsS[i].type =='Ext.form.field.ComboBox') {
+                        var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
+                        champsS[i].config.store= monStore;
+                    }
+                    var nChampS = Ext.create(champsS[i].type, champsS[i].config);
+                    if (champsS[i].type =='Ext.form.field.Trigger'){
+                        var Ouvrir = Ext.clone(champsS[i].ouvrir);
+                        nChampS.onTriggerClick= function() {
+                            var fenetre = Ext.widget(Ouvrir);
+                            fenetre.show();
+                        } ;  
+                    }
+                    nChampS.labelSeparator= ' ';
+                    nChampS.anchor= '100%';
+                    nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
+                    if (nChampS.isXType("combobox")){
+                        nChampS.getStore().fieldId=Ext.clone(nChampS.id);
+                        nChampS.getStore().fieldValue=Ext.clone(abstractcomponent.configBloc[nChampS.name]);
+                        nChampS.getStore().addListener("load",function(storeThing){
+                            Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
+                        },this,{single:true});
+                        }
+                        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                        nCateg.add(nChampS);
+                    }
+                    configSpec.items.items[0].add(nCateg);
+
+                }
+                propEdit.add(configSpec);
 
 
-                            propEdit.add(Ext.widget('checkboxgroup',{
-                                fieldLabel:"Visibilité ",
-                                anchor:"100%",
-                                labelWidth:60,
-                                margin:"0 0 10 0",
-                                vertical:true,
-                                columns:1,
-                                items: [
-                                { boxLabel: 'Téléphone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
-                                { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
-                                { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
-                                ]
+                if (!ACL.interfaceRights['write.ui.masks']){
+                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                }
+                e.stopEvent();
 
-                            }));  
-
-
-                            var configSpec = Ext.widget('ConfigSpecBloc');
-                            var categories = Ext.clone(abstractcomponent.champsConfig.simple);
-                            for (j=0; j<categories.length; j++){
-                                var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
-
-                                var champsS = Ext.clone(categories[j].champs);
-                                for (i=0; i<champsS.length; i++) {
-                                    if (champsS[i].type =='Ext.form.field.ComboBox') {
-                                        var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
-                                        champsS[i].config.store= monStore;
-                                    }
-                                    var nChampS = Ext.create(champsS[i].type, champsS[i].config);
-                                    if (champsS[i].type =='Ext.form.field.Trigger'){
-                                        var Ouvrir = Ext.clone(champsS[i].ouvrir);
-                                        nChampS.onTriggerClick= function() {
-                                            var fenetre = Ext.widget(Ouvrir);
-                                            fenetre.show();
-                                        } ;  
-                                    }
-                                    nChampS.labelSeparator= ' ';
-                                    nChampS.anchor= '100%';
-                                    nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
-                                    if (nChampS.isXType("combobox")){
-                                        nChampS.getStore().fieldId=Ext.clone(nChampS.id);
-                                        nChampS.getStore().fieldValue=Ext.clone(abstractcomponent.configBloc[nChampS.name]);
-                                        nChampS.getStore().addListener("load",function(storeThing){
-                                            Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
-                                        },this,{single:true});
-                                        }
-                                        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
-                                        nCateg.add(nChampS);
-                                    }
-                                    configSpec.items.items[0].add(nCateg);
-
-                                }
-                                propEdit.add(configSpec);
-
-
-                                if (!ACL.interfaceRights['write.ui.masks']){
-                                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
-                                }
-                                e.stopEvent();
-
-                            });}
+            });}
     },
 
     pagePreview: function(button, e, options) {

@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.ConfigSpecBloc', {
 
     id: 'ConfigSpecBloc',
     activeTab: 0,
+    plain: false,
 
     initComponent: function() {
         var me = this;

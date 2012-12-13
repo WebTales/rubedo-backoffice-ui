@@ -327,11 +327,11 @@ Ext.define('Rubedo.view.contributionPages', {
                                     collapseDirection: 'right',
                                     collapsible: true,
                                     title: 'Propriétés',
+                                    titleCollapse: false,
                                     items: [
                                         {
                                             xtype: 'form',
                                             id: 'pageElementPropsPanel',
-                                            bodyPadding: 10,
                                             title: 'Sélectionnez un élément'
                                         },
                                         {
@@ -440,8 +440,6 @@ Ext.define('Rubedo.view.contributionPages', {
     onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
         Ext.getStore("PagesDataStore").resumeAutoSync();
         Ext.getStore("PagesDataStore").sync();
-
-
     }
 
 });
