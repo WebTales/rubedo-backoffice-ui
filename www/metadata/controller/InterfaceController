@@ -868,6 +868,38 @@
                 "designer|controlQuery": "#desktopHomeBtn"
             },
             "designerId": "ba840fa0-4912-4427-a732-0b7ed6ac0d71"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mainToolsContextShow",
+                "fn": "mainToolsContextShow",
+                "implHandler": [
+                    "abstractcomponent.getEl().on(\"contextmenu\",function(e){\r",
+                    "    var menu= Ext.getCmp('MainToolsContextMenu');\r",
+                    "    if (Ext.isEmpty(menu)){\r",
+                    "        menu = Ext.widget('MainToolsContextMenu');\r",
+                    "        menu.on('blur', function(){this.destroy();});\r",
+                    "        menu.getComponent(0).on(\"click\", function(){\r",
+                    "            \r",
+                    "\r",
+                    "        });\r",
+                    "    }\r",
+                    "    menu.showAt(Ext.EventObject.getXY());\r",
+                    "    e.stopEvent();\r",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#menuPrincipalDroite button"
+            },
+            "designerId": "f38c0e6a-bfb2-430d-a501-82dd290d4f5c"
         }
     ]
 }

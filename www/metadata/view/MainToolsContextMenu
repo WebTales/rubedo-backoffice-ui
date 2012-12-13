@@ -1,0 +1,34 @@
+{
+    "type": "menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainToolsContextMenu",
+        "designer|userAlias": "MainToolsContextMenu",
+        "frame": true,
+        "id": "MainToolsContextMenu",
+        "width": null
+    },
+    "id": "ExtBox1-ext-gen22285",
+    "designerId": "f5e1fe64-162b-493f-8422-36f38e8a8230",
+    "cn": [
+        {
+            "type": "menuitem",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyMenuItem7",
+                "id": null,
+                "iconCls": "add",
+                "text": "Créer un raccourci sur le bureau"
+            },
+            "designerId": "90799c6c-f8f2-498e-932d-87b5bfc1d7c2"
+        }
+    ]
+}

@@ -77,6 +77,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.ImageFieldComponent',
         'Rubedo.view.monitoringTools',
         'Rubedo.view.contributionPages',
-        'Rubedo.view.contributionPrevisualisation'
+        'Rubedo.view.contributionPrevisualisation',
+        'Rubedo.view.MainToolsContextMenu'
     ]
 });

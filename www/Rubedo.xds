@@ -1462,6 +1462,14 @@
                 "app/store/PagesPreviewStore.js"
             ],
             "className": "PagesPreviewStore"
+        },
+        "f5e1fe64-162b-493f-8422-36f38e8a8230": {
+            "paths": [
+                "metadata/view/MainToolsContextMenu",
+                "app/view/override/MainToolsContextMenu.js",
+                "app/view/MainToolsContextMenu.js"
+            ],
+            "className": "MainToolsContextMenu"
         }
     },
     "viewOrderMap": {
@@ -1540,7 +1548,8 @@
             "7263f6b0-1331-4499-84af-95500ad7f815",
             "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237",
             "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
-            "1791c159-0c2b-4db0-89ea-cf3f1eb008c8"
+            "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
+            "f5e1fe64-162b-493f-8422-36f38e8a8230"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

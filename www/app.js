@@ -148,7 +148,8 @@ Ext.application({
         'SystemStatusPanel',
         'MyTool16',
         'MyTool17',
-        'MyWindow39'
+        'MyWindow39',
+        'MainToolsContextMenu'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

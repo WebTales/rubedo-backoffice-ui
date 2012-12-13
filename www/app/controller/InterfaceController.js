@@ -326,6 +326,22 @@ Ext.define('Rubedo.controller.InterfaceController', {
         });
     },
 
+    mainToolsContextShow: function(abstractcomponent, options) {
+        abstractcomponent.getEl().on("contextmenu",function(e){
+            var menu= Ext.getCmp('MainToolsContextMenu');
+            if (Ext.isEmpty(menu)){
+                menu = Ext.widget('MainToolsContextMenu');
+                menu.on('blur', function(){this.destroy();});
+                menu.getComponent(0).on("click", function(){
+
+
+                });
+            }
+            menu.showAt(Ext.EventObject.getXY());
+            e.stopEvent();
+        });
+    },
+
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
@@ -405,7 +421,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 render: this.comportementIcones
             },
             "#menuPrincipalDroite button": {
-                click: this.ouvrirFenteresMenuDroite
+                click: this.ouvrirFenteresMenuDroite,
+                render: this.mainToolsContextShow
             },
             "#boiteAIconesBureau": {
                 render: this.majIcones
