@@ -295,7 +295,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 labelWidth:40,
                 allowBlank:true,
                 anchor:"100%",
-                margin:"10 0 10 0",
+                margin:"10 0 0 0",
                 value:abstractcomponent.classHTML
             }));
 
@@ -310,7 +310,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 labelWidth:40,
                 allowBlank:true,
                 anchor:"100%",
-                margin:"10 0 10 0",
+                margin:"10 0 0 0",
                 value:abstractcomponent.idHTML
             }));
 

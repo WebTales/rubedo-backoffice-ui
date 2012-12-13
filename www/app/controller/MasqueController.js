@@ -265,196 +265,188 @@ Ext.define('Rubedo.controller.MasqueController', {
 
 
             propEdit.removeAll();
+            var configSpec = Ext.widget('ConfigSpecBloc');
 
-            propEdit.add(Ext.widget('textfield',{
+
+            configSpec.getComponent(0).add(Ext.widget('textfield',{
                 itemId:"eTitleField",
                 fieldLabel:"Titre ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.eTitle=this.getValue();
+                    }
+                },
                 labelWidth:40,
                 allowBlank:false,
-                anchor:"60%",
+                anchor:"100%",
                 margin:"10 0 10 0",
-                style:"{float:left;}",
                 value:abstractcomponent.eTitle
             }));
-            propEdit.add(Ext.widget('button',{
-                text:"Appliquer",
-                anchor:"38%",
-                margin:"10 0 10 0",
-                style:"{float:right;}",
-                handler:function(){
-                    if (propEdit.getComponent("eTitleField").isValid()){
-                        abstractcomponent.eTitle=propEdit.getComponent("eTitleField").getValue();
-                    }}
-                }));
 
-                propEdit.add(Ext.widget('textfield',{
-                    itemId:"eClassHTMLField",
-                    fieldLabel:"Classe HTML ",
-                    labelWidth:40,
-                    allowBlank:true,
-                    anchor:"60%",
-                    margin:"10 0 10 0",
-                    style:"{float:left;}",
-                    value:abstractcomponent.classHTML
+            configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+                fieldLabel:"Visibilité ",
+                anchor:"100%",
+                labelWidth:60,
+                margin:"0 0 10 0",
+                vertical:true,
+                columns:1,
+                items: [
+                { boxLabel: 'Téléphone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
+                { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
+                { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
+                ]
+
+            }));  
+
+
+
+
+
+
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eClassHTMLField",
+                fieldLabel:"Classe HTML ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.classHTML=this.getValue();
+                    }
+                },
+                labelWidth:40,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.classHTML
+            }));
+
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eidHTMLField",
+                fieldLabel:"Id HTML ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.idHTML=this.getValue();
+                    }
+                },
+                labelWidth:40,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.idHTML
+            }));
+            if (abstractcomponent.mType=="row"){
+                Ext.getCmp("moveElementUp").enable();
+                Ext.getCmp("moveElementDown").enable();
+                Ext.getCmp('newRow').disable();
+                Ext.getCmp("newBloc").disable();
+                if (abstractcomponent.getComponent("eol").flex===0){
+                    Ext.getCmp('newCol').disable();
+                } else {
+                    Ext.getCmp('newCol').enable();
+                }
+                configSpec.getComponent(0).add(Ext.widget('button',{
+                    itemId:"rowAutoHeight",
+                    text:"Hauteur automatique",
+                    anchor:"100%",
+                    tooltip:"La hauteur s'adapte au contenu lors du rendu final",
+                    hidden:true,
+                    handler:function(){
+                        abstractcomponent.setHeight(null);
+                        abstractcomponent.flex=1;
+                        abstractcomponent.up().doLayout();
+                        configSpec.getComponent(0).getComponent("rowHeightFixed").setValue();
+                        this.hide();
+                    }
                 }));
-                propEdit.add(Ext.widget('button',{
+                if (!Ext.isEmpty(abstractcomponent.height)){configSpec.getComponent(0).getComponent("rowAutoHeight").show();}
+                configSpec.getComponent(0).add(Ext.widget('numberfield',{
+                    itemId:"rowHeightFixed",
+                    fieldLabel:"Hauteur fixe ",
+                    labelWidth:80,
+                    allowDecimals:false,
+                    allowBlank:false,
+                    minValue:20,
+                    anchor:"60%",
+                    margin:"10 0 0 0",
+                    style:"{float:left;}",
+                    value:abstractcomponent.height
+                }));
+                configSpec.getComponent(0).add(Ext.widget('button',{
                     text:"Appliquer",
                     anchor:"38%",
-                    margin:"10 0 10 0",
+                    margin:"10 0 0 0",
                     style:"{float:right;}",
                     handler:function(){
-                        if (propEdit.getComponent("eClassHTMLField").isValid()){
-                            abstractcomponent.classHTML=propEdit.getComponent("eClassHTMLField").getValue();
+                        if (configSpec.getComponent(0).getComponent("rowHeightFixed").isValid()){
+                            abstractcomponent.flex=null;
+                            abstractcomponent.setHeight(configSpec.getComponent(0).getComponent("rowHeightFixed").getValue());
+                            abstractcomponent.up().doLayout();
+                            configSpec.getComponent(0).getComponent("rowAutoHeight").show();
                         }}
                     }));
-                    propEdit.add(Ext.widget('textfield',{
-                        itemId:"eidHTMLField",
-                        fieldLabel:"Id HTML ",
-                        labelWidth:40,
-                        allowBlank:true,
-                        anchor:"60%",
-                        margin:"10 0 10 0",
-                        style:"{float:left;}",
-                        value:abstractcomponent.idHTML
-                    }));
-                    propEdit.add(Ext.widget('button',{
-                        text:"Appliquer",
-                        anchor:"38%",
-                        margin:"10 0 10 0",
-                        style:"{float:right;}",
-                        handler:function(){
-                            if (propEdit.getComponent("eidHTMLField").isValid()){
-                                abstractcomponent.idHTML=propEdit.getComponent("eidHTMLField").getValue();
-                            }}
-                        }));
-                        propEdit.add(Ext.widget('checkboxgroup',{
-                            fieldLabel:"Visibilité ",
-                            anchor:"100%",
-                            labelWidth:60,
-                            margin:"0 0 10 0",
-                            vertical:true,
-                            columns:1,
-                            items: [
-                            { boxLabel: 'Téléphone', checked:abstractcomponent.responsive.phone, handler:function(){abstractcomponent.responsive.phone=this.getValue();} },
-                            { boxLabel: 'Tablette',checked:abstractcomponent.responsive.tablet, handler:function(){abstractcomponent.responsive.tablet=this.getValue();}},
-                            { boxLabel: 'Ordinateur',checked:abstractcomponent.responsive.desktop, handler:function(){abstractcomponent.responsive.desktop=this.getValue();}}
-                            ]
-
-                        }));
-                        if (abstractcomponent.mType=="row"){
-                            Ext.getCmp("moveElementUp").enable();
-                            Ext.getCmp("moveElementDown").enable();
-                            Ext.getCmp('newRow').disable();
-                            Ext.getCmp("newBloc").disable();
-                            if (abstractcomponent.getComponent("eol").flex===0){
-                                Ext.getCmp('newCol').disable();
-                            } else {
-                                Ext.getCmp('newCol').enable();
-                            }
-                            propEdit.add(Ext.widget('button',{
-                                itemId:"rowAutoHeight",
-                                text:"Hauteur automatique",
-                                anchor:"100%",
-                                tooltip:"La hauteur s'adapte au contenu lors du rendu final",
-                                hidden:true,
-                                handler:function(){
-                                    abstractcomponent.setHeight(null);
-                                    abstractcomponent.flex=1;
-                                    abstractcomponent.up().doLayout();
-                                    propEdit.getComponent("rowHeightFixed").setValue();
-                                    this.hide();
-                                }
-                            }));
-                            if (!Ext.isEmpty(abstractcomponent.height)){propEdit.getComponent("rowAutoHeight").show();}
-                            propEdit.add(Ext.widget('numberfield',{
-                                itemId:"rowHeightFixed",
-                                fieldLabel:"Hauteur fixe ",
-                                labelWidth:80,
-                                allowDecimals:false,
-                                allowBlank:false,
-                                minValue:20,
-                                anchor:"60%",
-                                margin:"10 0 0 0",
-                                style:"{float:left;}",
-                                value:abstractcomponent.height
-                            }));
-                            propEdit.add(Ext.widget('button',{
-                                text:"Appliquer",
-                                anchor:"38%",
-                                margin:"10 0 0 0",
-                                style:"{float:right;}",
-                                handler:function(){
-                                    if (propEdit.getComponent("rowHeightFixed").isValid()){
-                                        abstractcomponent.flex=null;
-                                        abstractcomponent.setHeight(propEdit.getComponent("rowHeightFixed").getValue());
-                                        abstractcomponent.up().doLayout();
-                                        propEdit.getComponent("rowAutoHeight").show();
-                                    }}
-                                }));
 
 
 
-                            }    
+                }    
 
-                            else if (abstractcomponent.mType=="col"){
-                                Ext.getCmp("moveElementUp").disable();
-                                Ext.getCmp("moveElementDown").disable();
-                                if ((abstractcomponent.final)){
-                                Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
-                                    Ext.getCmp('newRow').disable();
-                                }else {
-                                    Ext.getCmp('newRow').enable();
-                                }
+                else if (abstractcomponent.mType=="col"){
+                    Ext.getCmp("moveElementUp").disable();
+                    Ext.getCmp("moveElementDown").disable();
+                    if ((abstractcomponent.final)){
+                    Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
+                        Ext.getCmp('newRow').disable();
+                    }else {
+                        Ext.getCmp('newRow').enable();
+                    }
 
-                                Ext.getCmp('newCol').disable();
-                                if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
-                                Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
+                    Ext.getCmp('newCol').disable();
+                    if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
+                    Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
 
-                                    var offsetEdit=Ext.widget('numberfield',{
-                                        itemId:"offsetEditor",
-                                        fieldLabel:"Offset ",
-                                        editable:false,
-                                        labelWidth:45,
-                                        allowDecimals:false,
-                                        anchor:"50%",
-                                        margin:"10 0 0 0",
-                                        style:"{float:left;}",
-                                        value:0,
-                                        minValue:0
-                                    });
+                        var offsetEdit=Ext.widget('numberfield',{
+                            itemId:"offsetEditor",
+                            fieldLabel:"Offset ",
+                            editable:false,
+                            labelWidth:45,
+                            allowDecimals:false,
+                            anchor:"50%",
+                            margin:"10 0 0 0",
+                            style:"{float:left;}",
+                            value:0,
+                            minValue:0
+                        });
 
-                                    var spanEdit=Ext.widget('numberfield',{
-                                        itemId:"spanEditor",
-                                        fieldLabel:"Span ",
-                                        labelWidth:45,
-                                        editable:false,
-                                        allowDecimals:false,
-                                        anchor:"50%",
-                                        margin:"10 0 0 10",
-                                        style:"{float:right;}",
-                                        value:abstractcomponent.flex,
-                                        minValue:1
-                                    });
+                        var spanEdit=Ext.widget('numberfield',{
+                            itemId:"spanEditor",
+                            fieldLabel:"Span ",
+                            labelWidth:45,
+                            editable:false,
+                            allowDecimals:false,
+                            anchor:"50%",
+                            margin:"10 0 0 10",
+                            style:"{float:right;}",
+                            value:abstractcomponent.flex,
+                            minValue:1
+                        });
 
 
 
-                                    propEdit.add(offsetEdit);
-                                    propEdit.add(spanEdit);
-                                    me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
-                                    offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
-                                    spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                        configSpec.getComponent(0).add(offsetEdit);
+                        configSpec.getComponent(0).add(spanEdit);
+                        me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
+                        offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                        spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
 
 
 
 
 
-                                }
-                                if (!ACL.interfaceRights['write.ui.masks']){
-                                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
-                                }
-                                e.stopEvent();
-                            });}
+                    }
+                    propEdit.add(configSpec);
+                    if (!ACL.interfaceRights['write.ui.masks']){
+                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                    }
+                    e.stopEvent();
+                });}
     },
 
     deleteMaskElement: function(button, e, options) {
@@ -729,7 +721,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             labelWidth:40,
             allowBlank:true,
             anchor:"100%",
-            margin:"10 0 10 0",
+            margin:"10 0 0 0",
             value:abstractcomponent.classHTML
         }));
 
@@ -744,7 +736,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             labelWidth:40,
             allowBlank:true,
             anchor:"100%",
-            margin:"10 0 10 0",
+            margin:"10 0 0 0",
             value:abstractcomponent.idHTML
         }));
 
