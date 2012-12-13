@@ -208,7 +208,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         {
                                             xtype: 'datecolumn',
                                             dataIndex: 'createTime',
-                                            text: 'Date d\'enregistrement'
+                                            text: 'Date d\'enregistrement',
+                                            format: 'timestamp'
                                         }
                                     ]
                                 }
