@@ -146,6 +146,21 @@
                 "name": "pageURL"
             },
             "designerId": "045b5fc2-bdac-42b6-8bbe-22f13ebdaa90"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field194",
+                "name": "orderValue",
+                "sortType": "asFloat",
+                "type": "float"
+            },
+            "designerId": "c955e701-4400-4bfa-90be-ccc25364b7b4"
         }
     ]
 }

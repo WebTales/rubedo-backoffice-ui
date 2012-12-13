@@ -51,6 +51,11 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'pageURL'
+        },
+        {
+            name: 'orderValue',
+            sortType: 'asFloat',
+            type: 'float'
         }
     ]
 });

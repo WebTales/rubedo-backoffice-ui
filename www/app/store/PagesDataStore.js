@@ -69,6 +69,9 @@ Ext.define('Rubedo.store.PagesDataStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            sorters: {
+                property: 'orderValue'
             }
         }, cfg)]);
     }

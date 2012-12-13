@@ -584,16 +584,50 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|userClassName": "onTreedragdroppluginBeforeDrop",
+                                        "fn": "onTreedragdroppluginBeforeDrop",
+                                        "implHandler": [
+                                            "Ext.getStore(\"PagesDataStore\").suspendAutoSync();\r",
+                                            "var movedOne=data.records[0];\r",
+                                            "var interm=0;\r",
+                                            "var targeted=overModel.get(\"orderValue\");\r",
+                                            "if (dropPosition==\"before\"){\r",
+                                            "    if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get(\"orderValue\");}\r",
+                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                            "} else if (dropPosition==\"after\"){\r",
+                                            "    if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get(\"orderValue\");}\r",
+                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                            "} else if (dropPosition==\"append\"){\r",
+                                            "    if (overModel.hasChildNodes()){\r",
+                                            "        movedOne.set(\"orderValue\", overModel.lastChild.get(\"orderValue\")+100);\r",
+                                            "    }\r",
+                                            "}"
+                                        ],
+                                        "name": "beforedrop",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "39596bf5-7a77-472e-af61-fd9075bf6a18"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
                                         "designer|userClassName": "onTreedragdroppluginDrop",
                                         "fn": "onTreedragdroppluginDrop",
                                         "implHandler": [
-                                            "console.log(dropPosition);\r",
-                                            "console.log(overModel.getData());"
+                                            "Ext.getStore(\"PagesDataStore\").resumeAutoSync();\r",
+                                            "Ext.getStore(\"PagesDataStore\").sync();\r",
+                                            "\r",
+                                            ""
                                         ],
                                         "name": "drop",
                                         "scope": "me"
                                     },
-                                    "designerId": "39596bf5-7a77-472e-af61-fd9075bf6a18"
+                                    "designerId": "13fa592c-bcbe-48b2-8b75-e412c9bf2eea"
                                 }
                             ]
                         }
@@ -811,7 +845,7 @@
                                         "layout|flex": null,
                                         "designer|userClassName": "MyTextItem1",
                                         "id": "pagePreviewTextItem",
-                                        "text": "Ceci est un apercçu de cette page telle que disponnible en ligne à l'heure"
+                                        "text": "Ceci est un aperçu de cette page telle que disponible en ligne à l'heure"
                                     },
                                     "designerId": "e0c6307c-bd0d-4714-9aa4-a418f6b2b6da"
                                 }

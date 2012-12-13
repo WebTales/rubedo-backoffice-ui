@@ -48,6 +48,11 @@ Ext.define('Rubedo.controller.PagesController', {
             var newPage=form.getValues();
             newPage.rows=newRows;
             newPage.leaf=true;
+            if (!target.hasChildNodes()){
+                newPage.orderValue=100;
+            } else {
+                newPage.orderValue=target.lastChild.get("orderValue")+100;
+            }
             newPage.iconCls="masque-icon";
             newPage.site=Ext.getCmp("pagesSitesCombo").getValue();
             var store=Ext.getCmp("mainPageTree").getStore();

@@ -263,6 +263,10 @@ Ext.define('Rubedo.view.contributionPages', {
                             })
                         ],
                         listeners: {
+                            beforedrop: {
+                                fn: me.onTreedragdroppluginBeforeDrop,
+                                scope: me
+                            },
                             drop: {
                                 fn: me.onTreedragdroppluginDrop,
                                 scope: me
@@ -354,7 +358,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         {
                                             xtype: 'tbtext',
                                             id: 'pagePreviewTextItem',
-                                            text: 'Ceci est un apercçu de cette page telle que disponnible en ligne à l\'heure'
+                                            text: 'Ceci est un aperçu de cette page telle que disponible en ligne à l\'heure'
                                         }
                                     ]
                                 }
@@ -415,9 +419,29 @@ Ext.define('Rubedo.view.contributionPages', {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
     },
 
+    onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
+        Ext.getStore("PagesDataStore").suspendAutoSync();
+        var movedOne=data.records[0];
+        var interm=0;
+        var targeted=overModel.get("orderValue");
+        if (dropPosition=="before"){
+            if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get("orderValue");}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="after"){
+            if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="append"){
+            if (overModel.hasChildNodes()){
+                movedOne.set("orderValue", overModel.lastChild.get("orderValue")+100);
+            }
+        }
+    },
+
     onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
-        console.log(dropPosition);
-        console.log(overModel.getData());
+        Ext.getStore("PagesDataStore").resumeAutoSync();
+        Ext.getStore("PagesDataStore").sync();
+
+
     }
 
 });
