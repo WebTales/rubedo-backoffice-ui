@@ -163,7 +163,56 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'panel',
-                            title: 'Versions'
+                            layout: {
+                                type: 'fit'
+                            },
+                            title: 'Versions',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    title: '',
+                                    forceFit: true,
+                                    store: 'VersioningStore',
+                                    viewConfig: {
+
+                                    },
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                if (record.get("status")=="published") {
+                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
+                                                } else if (record.get("status")=="pending") {
+                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
+                                                } else if (record.get("status")=="draft") {
+                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
+                                                }
+                                            },
+                                            dataIndex: 'text',
+                                            text: 'Titre au moment de l\'enregistement'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                if (value=="published") {
+                                                    return("publié");
+                                                } else if (value=="pending") {
+                                                    return("en attente de validation");
+                                                } else if (value=="draft") {
+                                                    return("brouillon");
+                                                }
+                                            },
+                                            dataIndex: 'status',
+                                            text: 'Etat au moment de l\'enregistrement'
+                                        },
+                                        {
+                                            xtype: 'datecolumn',
+                                            dataIndex: 'createTime',
+                                            text: 'Date d\'enregistrement'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',

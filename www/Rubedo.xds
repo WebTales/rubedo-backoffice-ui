@@ -1470,6 +1470,14 @@
                 "app/view/MainToolsContextMenu.js"
             ],
             "className": "MainToolsContextMenu"
+        },
+        "92e390a8-ea67-46ec-b1f0-678267ecc7ce": {
+            "paths": [
+                "metadata/store/VersioningStore",
+                "app/store/override/VersioningStore.js",
+                "app/store/VersioningStore.js"
+            ],
+            "className": "VersioningStore"
         }
     },
     "viewOrderMap": {
@@ -1560,6 +1568,7 @@
             "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
             "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
             "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
+            "92e390a8-ea67-46ec-b1f0-678267ecc7ce",
             "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
             "1b50c020-4b46-495e-ae47-295cf55314b2",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",

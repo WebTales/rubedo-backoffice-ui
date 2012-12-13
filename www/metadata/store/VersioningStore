@@ -1,0 +1,58 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VersioningStore",
+        "designer|userAlias": "VersioningStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "remoteFilter": true,
+        "storeId": "VersioningStore",
+        "model": "versionsDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen8951",
+    "designerId": "92e390a8-ea67-46ec-b1f0-678267ecc7ce",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy10",
+                "api": [
+                    "{\r",
+                    "read : 'versioning'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "3f23be2a-11eb-42be-8116-d122b26ecc43",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader8",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "482a708d-1e4f-45db-a3f4-2014c1b5b68e"
+                }
+            ]
+        }
+    ]
+}

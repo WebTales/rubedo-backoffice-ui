@@ -35,7 +35,7 @@ Ext.define('Rubedo.view.MyGridPanel3', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'etat',
+                    dataIndex: 'status',
                     text: 'Etat'
                 },
                 {

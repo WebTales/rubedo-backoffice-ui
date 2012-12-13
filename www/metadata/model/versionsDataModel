@@ -21,7 +21,8 @@
             "userConfig": {
                 "designer|userClassName": "MyField2",
                 "name": "text",
-                "type": "int"
+                "mapping": "fields.text",
+                "type": null
             },
             "designerId": "c3a5d357-2bc4-46d7-b53a-0132ae71d104"
         },
@@ -34,7 +35,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField2",
-                "name": "etat",
+                "name": "status",
                 "type": "string"
             },
             "designerId": "e3aafcb4-4b1e-4657-882e-f6238b125b86"
@@ -47,12 +48,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "date",
-                "dateFormat": null,
-                "type": "date"
+                "designer|userClassName": "field61",
+                "name": "id"
             },
-            "designerId": "98dbd4eb-76a0-4fcc-ab77-f632080b9aa0"
+            "designerId": "877b1a5f-83d7-496b-b71a-6e19d1e28fef"
         },
         {
             "type": "datafield",
@@ -62,11 +61,37 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "auteur",
-                "type": "string"
+                "designer|userClassName": "field62",
+                "name": "version"
             },
-            "designerId": "6c4c4e8c-e2b5-4e46-8142-067965511a6a"
+            "designerId": "350da856-241b-44e8-ba38-8a49ef014c18"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field196",
+                "name": "createTime",
+                "dateFormat": "timestamp"
+            },
+            "designerId": "e4826572-c26c-46a4-acbb-2c15a5bf843f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field62",
+                "name": "contentId"
+            },
+            "designerId": "07e87087-e00b-4a5f-bc13-55f796d5cbde"
         }
     ]
 }

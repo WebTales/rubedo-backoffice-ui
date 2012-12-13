@@ -138,6 +138,8 @@ Ext.define('Rubedo.view.assistantRequetage', {
     onAssistantRequetageBeforeClose: function(panel, options) {
         Ext.getStore('TCDepForQA').removeAll();
         Ext.getStore('TaxonomyForQA').removeAll();
+        Ext.getStore("VersioningStore").clearFilter(true);
+        Ext.getStore("VersioningStore").removeAll();
     }
 
 });

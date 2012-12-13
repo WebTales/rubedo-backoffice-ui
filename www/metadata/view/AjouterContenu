@@ -409,6 +409,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel48",
+                        "layout": "fit",
                         "title": "Versions"
                     },
                     "designerId": "8d6cd2cd-6bbe-45d7-b1fe-21e05a5eaa5e",
@@ -424,6 +425,143 @@
                                 "designer|userClassName": "TabConfig29"
                             },
                             "designerId": "b2841907-99b4-46e8-8359-cc0ad3ef9eaa"
+                        },
+                        {
+                            "type": "gridpanel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridPanel23",
+                                "title": "",
+                                "forceFit": true,
+                                "store": "VersioningStore"
+                            },
+                            "designerId": "6638f464-76f1-42c7-8306-3f6a9b2f63f2",
+                            "cn": [
+                                {
+                                    "type": "gridview",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridView23"
+                                    },
+                                    "designerId": "7e5cf955-3bc0-4a91-a9a3-1e754ebee449"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn47",
+                                        "dataIndex": "text",
+                                        "text": "Titre au moment de l'enregistement"
+                                    },
+                                    "designerId": "72c1229a-c142-4441-b47d-8f11b7883ce4",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "renderer",
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "if (record.get(\"status\")==\"published\") {\r",
+                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
+                                                    "} else if (record.get(\"status\")==\"pending\") {\r",
+                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
+                                                    "} else if (record.get(\"status\")==\"draft\") {\r",
+                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "0df21da1-b202-4f8e-9a00-a3c3c272b968"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn48",
+                                        "dataIndex": "status",
+                                        "text": "Etat au moment de l'enregistrement"
+                                    },
+                                    "designerId": "1a959d75-e977-4328-8769-e9c07e189964",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "renderer",
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "if (value==\"published\") {\r",
+                                                    "    return(\"publié\");\r",
+                                                    "} else if (value==\"pending\") {\r",
+                                                    "    return(\"en attente de validation\");\r",
+                                                    "} else if (value==\"draft\") {\r",
+                                                    "    return(\"brouillon\");\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "75ba17fd-c0f2-4661-9b2c-97995dc98853"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "datecolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyDateColumn7",
+                                        "dataIndex": "createTime",
+                                        "text": "Date d'enregistrement"
+                                    },
+                                    "designerId": "a32e839a-c419-46cd-9ca6-dc6ec5b13a89"
+                                }
+                            ]
                         }
                     ]
                 },

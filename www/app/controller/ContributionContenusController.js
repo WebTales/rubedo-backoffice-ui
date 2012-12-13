@@ -554,6 +554,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
         fenetre.show();
         Ext.getCmp("nestedContentsAddCombo").bindStore(Ext.getStore("DepContentsCombo2"));
+        Ext.getStore("VersioningStore").filter("contentId",content.get("id"));
         var formulaireTC = Ext.getCmp('boiteAChampsContenus');
         var champsD =contentType.get("champs");
         for (g=0; g<champsD.length; g++) {

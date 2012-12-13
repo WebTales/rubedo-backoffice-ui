@@ -19,19 +19,24 @@ Ext.define('Rubedo.model.versionsDataModel', {
     fields: [
         {
             name: 'text',
-            type: 'int'
+            mapping: 'fields.text'
         },
         {
-            name: 'etat',
+            name: 'status',
             type: 'string'
         },
         {
-            name: 'date',
-            type: 'date'
+            name: 'id'
         },
         {
-            name: 'auteur',
-            type: 'string'
+            name: 'version'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp'
+        },
+        {
+            name: 'contentId'
         }
     ]
 });

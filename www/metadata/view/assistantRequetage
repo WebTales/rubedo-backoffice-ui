@@ -246,7 +246,9 @@
                 "fn": "onAssistantRequetageBeforeClose",
                 "implHandler": [
                     "Ext.getStore('TCDepForQA').removeAll();\r",
-                    "Ext.getStore('TaxonomyForQA').removeAll();"
+                    "Ext.getStore('TaxonomyForQA').removeAll();\r",
+                    "Ext.getStore(\"VersioningStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"VersioningStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

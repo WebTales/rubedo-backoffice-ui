@@ -92,7 +92,8 @@ Ext.application({
         'ImagePickerStore',
         'TaxonomyForQA',
         'SitesComboPreview',
-        'PagesPreviewStore'
+        'PagesPreviewStore',
+        'VersioningStore'
     ],
     views: [
         'MyContainer',
