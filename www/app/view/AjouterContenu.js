@@ -204,12 +204,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             },
                                             dataIndex: 'status',
                                             text: 'Etat au moment de l\'enregistrement'
-                                        },
-                                        {
-                                            xtype: 'datecolumn',
-                                            dataIndex: 'createTime',
-                                            text: 'Date d\'enregistrement',
-                                            format: 'timestamp'
                                         }
                                     ]
                                 }

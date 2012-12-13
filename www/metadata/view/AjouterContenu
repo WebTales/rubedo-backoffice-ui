@@ -546,21 +546,6 @@
                                             "designerId": "75ba17fd-c0f2-4661-9b2c-97995dc98853"
                                         }
                                     ]
-                                },
-                                {
-                                    "type": "datecolumn",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyDateColumn7",
-                                        "dataIndex": "createTime",
-                                        "text": "Date d'enregistrement",
-                                        "format": "timestamp"
-                                    },
-                                    "designerId": "a32e839a-c419-46cd-9ca6-dc6ec5b13a89"
                                 }
                             ]
                         }

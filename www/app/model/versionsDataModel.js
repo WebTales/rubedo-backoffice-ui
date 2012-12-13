@@ -32,10 +32,6 @@ Ext.define('Rubedo.model.versionsDataModel', {
             name: 'version'
         },
         {
-            name: 'createTime',
-            dateFormat: 'timestamp'
-        },
-        {
             name: 'contentId'
         }
     ]
