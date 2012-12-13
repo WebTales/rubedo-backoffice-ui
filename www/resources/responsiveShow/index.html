@@ -282,6 +282,10 @@ function gup( name )
 }
 		
 		$('#displayframe').attr('src', gup('url'));
+		$("#screen-options li").removeClass("active");
+			$(this).addClass("active");
+			$('#viewport').attr('class', 'desktop');
+			$('#device-detail').attr('class', 'desktop-detail');
 
 	}); 
 </script>
