@@ -64,6 +64,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.sites',
+                            favoriteIcon: 'globe_computer.png',
                             itemId: 'sitesInterface',
                             iconCls: 'referencement_icon',
                             text: 'Sites'
@@ -71,6 +72,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.pages',
+                            favoriteIcon: 'application.png',
                             itemId: 'contributionPages',
                             iconCls: 'site-icon',
                             text: 'Pages'
@@ -78,6 +80,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.pages',
+                            favoriteIcon: 'computer.png',
                             itemId: 'contributionPrevisualisation',
                             iconCls: 'personalize',
                             text: 'Prévisualisation'
@@ -85,6 +88,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.contents',
+                            favoriteIcon: 'page_full.png',
                             itemId: 'contributionContenus',
                             iconCls: 'content-icon',
                             text: 'Contenus'
@@ -92,6 +96,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.medias',
+                            favoriteIcon: 'database.png',
                             itemId: 'contributionMedias',
                             iconCls: 'media-icon',
                             text: 'Médiathèque'
@@ -103,6 +108,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.masks',
+                            favoriteIcon: 'application.png',
                             itemId: 'adminFMDP',
                             iconCls: 'masque-icon',
                             text: 'Masques de page'
@@ -110,6 +116,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.contentTypes',
+                            favoriteIcon: 'page_full.png',
                             itemId: 'adminFTDC',
                             iconCls: 'content-icon',
                             text: 'Types de contenus'
@@ -117,6 +124,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.taxonomy',
+                            favoriteIcon: 'tag.png',
                             itemId: 'adminFTaxonomie',
                             iconCls: 'page_taxonomy',
                             text: 'Taxonomie'
@@ -124,6 +132,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.workflows',
+                            favoriteIcon: 'processes.png',
                             itemId: 'menuWorkflows',
                             iconCls: 'process-icon',
                             text: 'Workflows'
@@ -135,6 +144,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.groups',
+                            favoriteIcon: 'users.png',
                             itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
                             text: 'Groupes'
@@ -142,6 +152,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'read.ui.users',
+                            favoriteIcon: 'user_edit.png',
                             floating: false,
                             itemId: 'UserAdminWindow',
                             iconCls: 'user_edit',
@@ -150,6 +161,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             ACL: 'exe.ui.elasticSearch',
+                            favoriteIcon: 'chart.png',
                             itemId: 'monitoringTools',
                             iconCls: 'monitoring',
                             text: 'Supervision'
@@ -159,6 +171,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            favoriteIcon: 'tools.png',
                             itemId: 'userSettings',
                             iconCls: 'parametres',
                             text: 'Paramètres'

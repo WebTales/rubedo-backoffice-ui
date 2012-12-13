@@ -327,19 +327,40 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     mainToolsContextShow: function(abstractcomponent, options) {
-        abstractcomponent.getEl().on("contextmenu",function(e){
-            var menu= Ext.getCmp('MainToolsContextMenu');
-            if (Ext.isEmpty(menu)){
+        var me=this;
+        if (abstractcomponent.itemId!='deconnexionMenuPrincipal') {
+            abstractcomponent.getEl().on("contextmenu",function(e){
+                var menu= Ext.getCmp('MainToolsContextMenu');
+                if (!Ext.isEmpty(menu)){menu.destroy();}
                 menu = Ext.widget('MainToolsContextMenu');
                 menu.on('blur', function(){this.destroy();});
                 menu.getComponent(0).on("click", function(){
+                    var actions = [ ];
+                    actions.push({
+                        type:"openWindow",
+                        target:abstractcomponent.itemId			
+                    });
+                    var myText = abstractcomponent.text;
+                    var newIcon = Ext.create("Rubedo.model.iconDataModel",{
+                        text:myText,
+                        posX:0,
+                        posY:0,
+                        image: abstractcomponent.favoriteIcon||"favorite.png",
+                        actions:actions
 
+                    });
+                    Ext.getStore("IconesDataJson").add(newIcon);
+                    Ext.getStore("IconesDataJson").on("datachanged", function(){
+                        me.refreshIcons();
+                        Ext.getStore("IconesDataJson").clearListeners();
+                    });
 
                 });
-            }
-            menu.showAt(Ext.EventObject.getXY());
-            e.stopEvent();
-        });
+
+                menu.showAt(Ext.EventObject.getXY());
+                e.stopEvent();
+            });
+        }
     },
 
     onLaunch: function() {

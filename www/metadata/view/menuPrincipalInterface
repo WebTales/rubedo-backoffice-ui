@@ -91,6 +91,7 @@
                     "userConfig": {
                         "ACL": "read.ui.sites",
                         "layout|flex": null,
+                        "favoriteIcon": "globe_computer.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "sitesInterface",
                         "margin": null,
@@ -103,30 +104,10 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.pages",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "contributionPages",
-                        "margin": null,
-                        "iconCls": "site-icon",
-                        "text": "Pages"
-                    },
-                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
-                    "customConfigs": [
+                        },
                         {
                             "group": "(Custom Properties)",
-                            "name": "ACL",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -141,6 +122,38 @@
                     "userConfig": {
                         "ACL": "read.ui.pages",
                         "layout|flex": null,
+                        "favoriteIcon": "application.png",
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "contributionPages",
+                        "margin": null,
+                        "iconCls": "site-icon",
+                        "text": "Pages"
+                    },
+                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.pages",
+                        "layout|flex": null,
+                        "favoriteIcon": "computer.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionPrevisualisation",
                         "margin": null,
@@ -152,6 +165,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -166,6 +184,7 @@
                     "userConfig": {
                         "ACL": "read.ui.contents",
                         "layout|flex": null,
+                        "favoriteIcon": "page_full.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionContenus",
                         "margin": null,
@@ -177,6 +196,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -191,6 +215,7 @@
                     "userConfig": {
                         "ACL": "read.ui.medias",
                         "layout|flex": null,
+                        "favoriteIcon": "database.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "contributionMedias",
                         "margin": null,
@@ -202,6 +227,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -237,6 +267,7 @@
                     "userConfig": {
                         "ACL": "read.ui.masks",
                         "layout|flex": null,
+                        "favoriteIcon": "application.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFMDP",
                         "margin": null,
@@ -248,6 +279,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -262,6 +298,7 @@
                     "userConfig": {
                         "ACL": "read.ui.contentTypes",
                         "layout|flex": null,
+                        "favoriteIcon": "page_full.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTDC",
                         "margin": null,
@@ -273,6 +310,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -287,6 +329,7 @@
                     "userConfig": {
                         "ACL": "read.ui.taxonomy",
                         "layout|flex": null,
+                        "favoriteIcon": "tag.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFTaxonomie",
                         "margin": null,
@@ -298,6 +341,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -312,6 +360,7 @@
                     "userConfig": {
                         "ACL": "read.ui.workflows",
                         "layout|flex": null,
+                        "favoriteIcon": "processes.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "menuWorkflows",
                         "margin": null,
@@ -323,6 +372,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -358,6 +412,7 @@
                     "userConfig": {
                         "ACL": "read.ui.groups",
                         "layout|flex": null,
+                        "favoriteIcon": "users.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "adminFUtilisateurs",
                         "margin": null,
@@ -369,6 +424,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -383,6 +443,7 @@
                     "userConfig": {
                         "ACL": "read.ui.users",
                         "layout|flex": null,
+                        "favoriteIcon": "user_edit.png",
                         "designer|userClassName": "MyButton2",
                         "floating": false,
                         "itemId": "UserAdminWindow",
@@ -395,6 +456,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -409,6 +475,7 @@
                     "userConfig": {
                         "ACL": "exe.ui.elasticSearch",
                         "layout|flex": null,
+                        "favoriteIcon": "chart.png",
                         "designer|userClassName": "MyButton172",
                         "itemId": "monitoringTools",
                         "iconCls": "monitoring",
@@ -419,6 +486,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
                             "type": "string"
                         }
                     ]
@@ -445,13 +517,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "favoriteIcon": "tools.png",
                         "designer|userClassName": "MyButton2",
                         "itemId": "userSettings",
                         "margin": null,
                         "iconCls": "parametres",
                         "text": "Paramètres"
                     },
-                    "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff"
+                    "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",
