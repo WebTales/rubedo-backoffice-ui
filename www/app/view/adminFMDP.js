@@ -428,7 +428,6 @@ Ext.define('Rubedo.view.adminFMDP', {
                                             xtype: 'form',
                                             id: 'elementEditControl',
                                             autoScroll: false,
-                                            bodyPadding: 10,
                                             title: 'Sélectionnez un élément'
                                         }
                                     ],
