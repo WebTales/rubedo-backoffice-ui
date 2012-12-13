@@ -257,7 +257,17 @@ Ext.define('Rubedo.view.contributionPages', {
                     store: 'PagesDataStore',
                     useArrows: true,
                     viewConfig: {
-
+                        plugins: [
+                            Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
+                                ptype: 'treeviewdragdrop'
+                            })
+                        ],
+                        listeners: {
+                            drop: {
+                                fn: me.onTreedragdroppluginDrop,
+                                scope: me
+                            }
+                        }
                     },
                     dockedItems: [
                         {
@@ -403,6 +413,11 @@ Ext.define('Rubedo.view.contributionPages', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
+        console.log(dropPosition);
+        console.log(overModel.getData());
     }
 
 });

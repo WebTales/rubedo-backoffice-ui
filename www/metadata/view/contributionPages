@@ -562,7 +562,42 @@
                     "userConfig": {
                         "designer|userClassName": "MyTreeView2"
                     },
-                    "designerId": "0faed59a-eddb-494c-b8ce-f2b22fe628b7"
+                    "designerId": "0faed59a-eddb-494c-b8ce-f2b22fe628b7",
+                    "cn": [
+                        {
+                            "type": "treedragdropplugin",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyTreeDragDropPlugin2"
+                            },
+                            "designerId": "89b7136f-756c-4721-a7f3-aa01a0e66964",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTreedragdroppluginDrop",
+                                        "fn": "onTreedragdroppluginDrop",
+                                        "implHandler": [
+                                            "console.log(dropPosition);\r",
+                                            "console.log(overModel.getData());"
+                                        ],
+                                        "name": "drop",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "39596bf5-7a77-472e-af61-fd9075bf6a18"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "toolbar",
