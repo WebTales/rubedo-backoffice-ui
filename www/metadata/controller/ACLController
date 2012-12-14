@@ -28,6 +28,7 @@
                 "implHandler": [
                     "Ext.define('ACL', {\r",
                     "    singleton:true,\r",
+                    "    CSRFToken:\"notYetSet\",\r",
                     "    interfaceRights:{\r",
                     "        \"read.ui.taxonomy\":false,\r",
                     "        \"write.ui.taxonomy\":false,\r",
@@ -62,6 +63,9 @@
                     "        \"write.ui.workflows\":false,\r",
                     "        \"exe.ui.elasticSearch\":false\r",
                     "    }\r",
+                    "});\r",
+                    "Ext.Ajax.on(\"beforerequest\", function(conn, options){\r",
+                    "    options.params.token=ACL.CSRFToken;\r",
                     "});"
                 ]
             },
@@ -104,6 +108,17 @@
                 "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url:'current-user/get-token',\r",
+                    "    params:{\r",
+                    "    },\r",
+                    "    success:function(response){\r",
+                    "        ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;\r",
+                    "    },\r",
+                    "    failure:function(){\r",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton CSRF');\r",
+                    "    }\r",
+                    "});\r",
                     "Ext.Ajax.request({\r",
                     "    url:'acl',\r",
                     "    params:{\r",

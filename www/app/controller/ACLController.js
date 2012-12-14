@@ -30,6 +30,7 @@ Ext.define('Rubedo.controller.ACLController', {
     init: function(application) {
         Ext.define('ACL', {
             singleton:true,
+            CSRFToken:"notYetSet",
             interfaceRights:{
                 "read.ui.taxonomy":false,
                 "write.ui.taxonomy":false,
@@ -65,6 +66,9 @@ Ext.define('Rubedo.controller.ACLController', {
                 "exe.ui.elasticSearch":false
             }
         });
+        Ext.Ajax.on("beforerequest", function(conn, options){
+            options.params.token=ACL.CSRFToken;
+        });
 
         this.control({
             "component": {
@@ -74,6 +78,17 @@ Ext.define('Rubedo.controller.ACLController', {
     },
 
     onLaunch: function() {
+        Ext.Ajax.request({
+            url:'current-user/get-token',
+            params:{
+            },
+            success:function(response){
+                ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton CSRF');
+            }
+        });
         Ext.Ajax.request({
             url:'acl',
             params:{
