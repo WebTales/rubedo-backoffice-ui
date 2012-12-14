@@ -25,7 +25,8 @@
             "delegationDataModel",
             "nestedContentModel",
             "pageDataModel",
-            "imageDataModel"
+            "imageDataModel",
+            "meidaTypeModel"
         ],
         "stores": [
             "SitesJson",
@@ -77,7 +78,8 @@
             "TaxonomyForQA",
             "SitesComboPreview",
             "PagesPreviewStore",
-            "VersioningStore"
+            "VersioningStore",
+            "MediaTypes"
         ],
         "views": [
             "MyContainer",

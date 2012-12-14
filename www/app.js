@@ -41,7 +41,8 @@ Ext.application({
         'delegationDataModel',
         'nestedContentModel',
         'pageDataModel',
-        'imageDataModel'
+        'imageDataModel',
+        'meidaTypeModel'
     ],
     stores: [
         'SitesJson',
@@ -93,7 +94,8 @@ Ext.application({
         'TaxonomyForQA',
         'SitesComboPreview',
         'PagesPreviewStore',
-        'VersioningStore'
+        'VersioningStore',
+        'MediaTypes'
     ],
     views: [
         'MyContainer',

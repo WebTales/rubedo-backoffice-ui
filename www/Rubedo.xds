@@ -1486,6 +1486,22 @@
                 "app/view/mediaTypesInterface.js"
             ],
             "className": "mediaTypesInterface"
+        },
+        "42485569-d0e5-4710-b0aa-104840533721": {
+            "paths": [
+                "metadata/store/MediaTypes",
+                "app/store/override/MediaTypes.js",
+                "app/store/MediaTypes.js"
+            ],
+            "className": "MediaTypes"
+        },
+        "7e296689-62ae-4f0e-b262-80ab5d8aa99f": {
+            "paths": [
+                "metadata/model/meidaTypeModel",
+                "app/model/override/meidaTypeModel.js",
+                "app/model/meidaTypeModel.js"
+            ],
+            "className": "meidaTypeModel"
         }
     },
     "viewOrderMap": {
@@ -1620,7 +1636,8 @@
             "4116a2e3-9249-4bd3-9cb8-0dfe02c9a66b",
             "98a1d671-046d-4829-b790-2d84feb7eacc",
             "22ba5094-835c-4318-a1c2-2d6da1f35089",
-            "d8f6752f-2ba3-491c-832a-e8456b095138"
+            "d8f6752f-2ba3-491c-832a-e8456b095138",
+            "42485569-d0e5-4710-b0aa-104840533721"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1663,7 +1680,8 @@
             "7c00f7d2-315c-404d-bd66-0e38a6b0cf4d",
             "3387fa23-11a9-43c0-a57c-f14978feff02",
             "0817bd4b-dad6-4ba8-a953-6e51126364d2",
-            "5c997a93-3afc-42e9-9098-74110e9872bf"
+            "5c997a93-3afc-42e9-9098-74110e9872bf",
+            "7e296689-62ae-4f0e-b262-80ab5d8aa99f"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

@@ -22,9 +22,13 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         'Rubedo.view.MyTool17'
     ],
 
-    height: 494,
+    height: 627,
     id: 'mediaTypesInterface',
-    width: 1035,
+    width: 1056,
+    layout: {
+        align: 'stretch',
+        type: 'hbox'
+    },
     iconCls: 'mediaTypes',
     title: 'Types de médias',
     constrainHeader: true,
@@ -40,10 +44,88 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                 {
                     xtype: 'mytool17'
                 }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'bottom',
+                    height: 50,
+                    itemId: 'barreMeta',
+                    items: [
+                        {
+                            xtype: 'image',
+                            height: 45,
+                            width: 48,
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender1,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'container',
+                            itemId: 'boiteBarreMeta',
+                            tpl: [
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 30,
+                    itemId: 'filArianne'
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 86,
+                    itemId: 'contextBar',
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'boutonAide',
+                            iconCls: 'info_big',
+                            scale: 'large',
+                            text: ''
+                        }
+                    ]
+                }
+            ],
+            items: [
+                {
+                    xtype: 'gridpanel',
+                    width: 200,
+                    title: '',
+                    forceFit: true,
+                    store: 'MediaTypes',
+                    viewConfig: {
+
+                    },
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'type',
+                            text: 'Type'
+                        }
+                    ]
+                }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender1: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
     }
 
 });
