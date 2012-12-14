@@ -52,7 +52,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                     flex: 1,
                     dock: 'top',
                     height: 30,
-                    itemId: 'filArianne'
+                    itemId: 'breadcrumb'
                 },
                 {
                     xtype: 'toolbar',
@@ -270,6 +270,9 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value );
+                            },
                             dataIndex: 'type',
                             text: 'Type'
                         }

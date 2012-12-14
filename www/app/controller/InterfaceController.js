@@ -138,6 +138,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
         if (button.itemId=='deconnexionMenuPrincipal') {
             Ext.Ajax.request({
                 url: 'logout',
+                params:{
+                },
                 success: function(response){
                     window.location.href="login";
                 }

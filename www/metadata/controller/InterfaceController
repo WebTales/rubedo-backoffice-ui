@@ -316,6 +316,8 @@
                     "if (button.itemId=='deconnexionMenuPrincipal') {\r",
                     "    Ext.Ajax.request({\r",
                     "        url: 'logout',\r",
+                    "        params:{\r",
+                    "        },\r",
                     "        success: function(response){\r",
                     "            window.location.href=\"login\";\r",
                     "        }\r",
