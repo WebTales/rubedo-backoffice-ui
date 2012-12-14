@@ -26,7 +26,7 @@
             "nestedContentModel",
             "pageDataModel",
             "imageDataModel",
-            "meidaTypeModel"
+            "mediaTypeModel"
         ],
         "stores": [
             "SitesJson",
@@ -137,7 +137,8 @@
             "MyTool17",
             "MyWindow39",
             "MainToolsContextMenu",
-            "mediaTypesInterface"
+            "mediaTypesInterface",
+            "newMTWindow"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
@@ -156,7 +157,8 @@
             "ACLController",
             "SearchController",
             "SitesController",
-            "PagesController"
+            "PagesController",
+            "MediaTypesController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

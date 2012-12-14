@@ -42,7 +42,7 @@ Ext.application({
         'nestedContentModel',
         'pageDataModel',
         'imageDataModel',
-        'meidaTypeModel'
+        'mediaTypeModel'
     ],
     stores: [
         'SitesJson',
@@ -153,7 +153,8 @@ Ext.application({
         'MyTool17',
         'MyWindow39',
         'MainToolsContextMenu',
-        'mediaTypesInterface'
+        'mediaTypesInterface',
+        'newMTWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -172,6 +173,7 @@ Ext.application({
         'ACLController',
         'SearchController',
         'SitesController',
-        'PagesController'
+        'PagesController',
+        'MediaTypesController'
     ]
 });

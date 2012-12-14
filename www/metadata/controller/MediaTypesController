@@ -1,0 +1,146 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MediaTypesController",
+        "designer|userAlias": "MediaTypesController"
+    },
+    "id": "ExtBox1-ext-gen33499",
+    "designerId": "2a85a03b-de9d-4abc-80a4-82114d4267cf",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewMTBtnClick",
+                "fn": "onNewMTBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newMTWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newMTBtn"
+            },
+            "designerId": "8e5babb4-2faa-4faf-a51f-9b4c3d7849d8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCreateNewMTBtnClick",
+                "fn": "onCreateNewMTBtnClick",
+                "implHandler": [
+                    "if (button.up().getForm().isValid()) {\r",
+                    "    var newMT=Ext.create(\"Rubedo.model.mediaTypeModel\",button.up().getForm().getValues());\r",
+                    "    Ext.getStore(\"MediaTypes\").add(newMT);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#createNewMTBtn"
+            },
+            "designerId": "c2ea7078-1d68-4214-84af-6a2dfcb589ca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "resetInterfaceNoSelect",
+                "fn": "resetInterfaceNoSelect",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.disable();});\r",
+                    "Ext.getCmp(\"removeMTBtn\").disable();"
+                ]
+            },
+            "designerId": "22525587-131f-47d2-adad-c4b415572d62"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "resetInterfaceSelect",
+                "fn": "resetInterfaceSelect",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.enable();});\r",
+                    "Ext.getCmp(\"removeMTBtn\").enable();"
+                ]
+            },
+            "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainMTGridSelect",
+                "fn": "onMainMTGridSelect",
+                "implHandler": [
+                    "this.resetInterfaceSelect();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainMTGrid"
+            },
+            "designerId": "d77217b6-a7a4-4f45-9993-a859e9d721a8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRemoveMTBtnClick",
+                "fn": "onRemoveMTBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var target = Ext.getCmp('mainMTGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(target)) {\r",
+                    "    var delCon = Ext.widget('delConfirmZ');\r",
+                    "    delCon.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getCmp('mainMTGrid').getStore().remove(target);\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "        me.resetInterfaceNoSelect();\r",
+                    "\r",
+                    "    });  \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeMTBtn"
+            },
+            "designerId": "b44db20e-1956-4783-9446-c9967f5f33a9"
+        }
+    ]
+}

@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         'Rubedo.view.MyTool17'
     ],
 
+    favoriteIcon: 'images.png',
     height: 627,
     id: 'mediaTypesInterface',
     width: 1056,
@@ -49,6 +50,184 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                 {
                     xtype: 'toolbar',
                     flex: 1,
+                    dock: 'top',
+                    height: 30,
+                    itemId: 'filArianne'
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 86,
+                    itemId: 'contextBar',
+                    items: [
+                        {
+                            xtype: 'button',
+                            id: 'newMTBtn',
+                            iconAlign: 'top',
+                            iconCls: 'add_big',
+                            scale: 'large',
+                            text: 'Ajouter'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'removeMTBtn',
+                            iconAlign: 'top',
+                            iconCls: 'remove_big',
+                            scale: 'large',
+                            text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Edition',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'newMTFieldBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Nouveau champ'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'MTfieldUp',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_up_big',
+                                    scale: 'large',
+                                    text: 'Dèplacer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'MTfieldDown',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_down_big',
+                                    scale: 'large',
+                                    text: 'Dèplacer'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'MTfieldDeleter',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Supprimer champ'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'copyMTBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'addToSCMTBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Sauvegarde',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'saveMTBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Enregistrer'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Fichier',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'MTexportBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'MTImportBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'boutonAide',
+                            iconCls: 'info_big',
+                            scale: 'large',
+                            text: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
                     dock: 'bottom',
                     height: 50,
                     itemId: 'barreMeta',
@@ -72,39 +251,16 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             ]
                         }
                     ]
-                },
-                {
-                    xtype: 'toolbar',
-                    flex: 1,
-                    dock: 'top',
-                    height: 30,
-                    itemId: 'filArianne'
-                },
-                {
-                    xtype: 'toolbar',
-                    flex: 1,
-                    dock: 'top',
-                    height: 86,
-                    itemId: 'contextBar',
-                    items: [
-                        {
-                            xtype: 'tbfill'
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'boutonAide',
-                            iconCls: 'info_big',
-                            scale: 'large',
-                            text: ''
-                        }
-                    ]
                 }
             ],
             items: [
                 {
                     xtype: 'gridpanel',
                     managesStore: true,
+                    id: 'mainMTGrid',
                     width: 200,
+                    resizable: true,
+                    resizeHandles: 'e',
                     title: '',
                     forceFit: true,
                     store: 'MediaTypes',

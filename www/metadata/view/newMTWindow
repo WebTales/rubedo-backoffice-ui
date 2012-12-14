@@ -1,0 +1,75 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "newMTWindow",
+        "designer|userAlias": "newMTWindow",
+        "height": 101,
+        "id": "newMTWindow",
+        "width": 334,
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": "mediaTypes",
+        "title": "Nouveau type de média",
+        "constrainHeader": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen33845",
+    "designerId": "eaea8fd3-deb9-427e-8709-b7a7a3a32c08",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm32",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "c237af45-1ca4-4909-a5f9-23342d5e08b0",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField61",
+                        "name": "type",
+                        "fieldLabel": "Nom ",
+                        "allowBlank": false
+                    },
+                    "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton186",
+                        "id": "createNewMTBtn",
+                        "text": "Créer un nouveau type de média"
+                    },
+                    "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23"
+                }
+            ]
+        }
+    ]
+}

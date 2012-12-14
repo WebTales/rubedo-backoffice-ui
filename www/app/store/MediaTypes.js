@@ -18,7 +18,7 @@ Ext.define('Rubedo.store.MediaTypes', {
     alias: 'store.MediaTypes',
 
     requires: [
-        'Rubedo.model.meidaTypeModel'
+        'Rubedo.model.mediaTypeModel'
     ],
 
     constructor: function(cfg) {
@@ -30,7 +30,7 @@ Ext.define('Rubedo.store.MediaTypes', {
             autoLoad: false,
             autoSync: true,
             storeId: 'MediaTypes',
-            model: 'Rubedo.model.meidaTypeModel',
+            model: 'Rubedo.model.mediaTypeModel',
             proxy: {
                 type: 'ajax',
                 api: {

@@ -1497,11 +1497,27 @@
         },
         "7e296689-62ae-4f0e-b262-80ab5d8aa99f": {
             "paths": [
-                "metadata/model/meidaTypeModel",
-                "app/model/override/meidaTypeModel.js",
-                "app/model/meidaTypeModel.js"
+                "metadata/model/mediaTypeModel",
+                "app/model/override/mediaTypeModel.js",
+                "app/model/mediaTypeModel.js"
             ],
-            "className": "meidaTypeModel"
+            "className": "mediaTypeModel"
+        },
+        "eaea8fd3-deb9-427e-8709-b7a7a3a32c08": {
+            "paths": [
+                "metadata/view/newMTWindow",
+                "app/view/override/newMTWindow.js",
+                "app/view/newMTWindow.js"
+            ],
+            "className": "newMTWindow"
+        },
+        "2a85a03b-de9d-4abc-80a4-82114d4267cf": {
+            "paths": [
+                "metadata/controller/MediaTypesController",
+                "app/controller/override/MediaTypesController.js",
+                "app/controller/MediaTypesController.js"
+            ],
+            "className": "MediaTypesController"
         }
     },
     "viewOrderMap": {
@@ -1582,7 +1598,8 @@
             "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
             "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
             "f5e1fe64-162b-493f-8422-36f38e8a8230",
-            "42f4214b-1c84-4039-bad0-2ae468294ac0"
+            "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "eaea8fd3-deb9-427e-8709-b7a7a3a32c08"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1655,7 +1672,8 @@
             "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c",
             "b29235f7-9588-4632-b7ab-b0f2633b21ec",
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
-            "da7dabb6-9585-4ae7-8847-4b4d76cdb27e"
+            "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
+            "2a85a03b-de9d-4abc-80a4-82114d4267cf"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",

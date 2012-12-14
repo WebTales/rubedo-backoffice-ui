@@ -6,12 +6,25 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "meidaTypeModel",
-        "designer|userAlias": "meidaTypeModel"
+        "designer|userClassName": "mediaTypeModel",
+        "designer|userAlias": "mediaTypeModel"
     },
     "id": "ExtBox1-ext-gen15241",
     "designerId": "7e296689-62ae-4f0e-b262-80ab5d8aa99f",
     "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field198",
+                "name": "type"
+            },
+            "designerId": "ac02981b-3018-43f4-88d6-626c04bb5eef"
+        },
         {
             "type": "datafield",
             "reference": {
@@ -46,10 +59,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field198",
-                "name": "type"
+                "designer|userClassName": "field199",
+                "name": "fields"
             },
-            "designerId": "ac02981b-3018-43f4-88d6-626c04bb5eef"
+            "designerId": "02cc6d60-cea6-4885-87f5-9d0ccab2fb57"
         }
     ]
 }

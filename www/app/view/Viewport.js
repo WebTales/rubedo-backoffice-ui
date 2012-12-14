@@ -79,6 +79,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.contributionPages',
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.MainToolsContextMenu',
-        'Rubedo.view.mediaTypesInterface'
+        'Rubedo.view.mediaTypesInterface',
+        'Rubedo.view.newMTWindow'
     ]
 });
