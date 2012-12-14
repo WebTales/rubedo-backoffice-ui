@@ -1478,6 +1478,14 @@
                 "app/store/VersioningStore.js"
             ],
             "className": "VersioningStore"
+        },
+        "42f4214b-1c84-4039-bad0-2ae468294ac0": {
+            "paths": [
+                "metadata/view/mediaTypesInterface",
+                "app/view/override/mediaTypesInterface.js",
+                "app/view/mediaTypesInterface.js"
+            ],
+            "className": "mediaTypesInterface"
         }
     },
     "viewOrderMap": {
@@ -1557,7 +1565,8 @@
             "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237",
             "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
             "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
-            "f5e1fe64-162b-493f-8422-36f38e8a8230"
+            "f5e1fe64-162b-493f-8422-36f38e8a8230",
+            "42f4214b-1c84-4039-bad0-2ae468294ac0"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

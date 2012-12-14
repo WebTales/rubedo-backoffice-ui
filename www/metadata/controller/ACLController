@@ -116,7 +116,7 @@
                     "        ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;\r",
                     "    },\r",
                     "    failure:function(){\r",
-                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton CSRF');\r",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');\r",
                     "    }\r",
                     "});\r",
                     "Ext.Ajax.request({\r",

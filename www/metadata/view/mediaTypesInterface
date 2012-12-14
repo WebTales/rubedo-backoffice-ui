@@ -1,0 +1,42 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mediaTypesInterface",
+        "designer|userAlias": "mediaTypesInterface",
+        "height": 494,
+        "id": "mediaTypesInterface",
+        "width": 1035,
+        "iconCls": "mediaTypes",
+        "title": "Types de médias",
+        "constrainHeader": true
+    },
+    "id": "ExtBox1-ext-gen10084",
+    "designerId": "42f4214b-1c84-4039-bad0-2ae468294ac0",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "5500b26d-6777-4fd1-8157-ea50cfe1804f",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "dcfefe17-dc9d-4b0e-a9c9-d6ccde35b47f",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        }
+    ]
+}

@@ -150,7 +150,8 @@ Ext.application({
         'MyTool16',
         'MyTool17',
         'MyWindow39',
-        'MainToolsContextMenu'
+        'MainToolsContextMenu',
+        'mediaTypesInterface'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -86,7 +86,7 @@ Ext.define('Rubedo.controller.ACLController', {
                 ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;
             },
             failure:function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton CSRF');
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');
             }
         });
         Ext.Ajax.request({

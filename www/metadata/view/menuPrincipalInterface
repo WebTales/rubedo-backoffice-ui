@@ -13,7 +13,7 @@
         "border": 0,
         "floating": true,
         "frame": false,
-        "height": 340,
+        "height": 380,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
@@ -306,6 +306,37 @@
                         "text": "Types de contenus"
                     },
                     "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.contentTypes",
+                        "favoriteIcon": "images.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "mediaTypesInterface",
+                        "margin": null,
+                        "iconCls": "mediaTypes",
+                        "text": "Types de médias"
+                    },
+                    "designerId": "9f94e87c-60ce-4a7e-abb1-839dc8b9c70b",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

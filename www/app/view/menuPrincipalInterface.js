@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 340,
+    height: 380,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -120,6 +120,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             itemId: 'adminFTDC',
                             iconCls: 'content-icon',
                             text: 'Types de contenus'
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'read.ui.contentTypes',
+                            favoriteIcon: 'images.png',
+                            itemId: 'mediaTypesInterface',
+                            iconCls: 'mediaTypes',
+                            text: 'Types de médias'
                         },
                         {
                             xtype: 'button',
