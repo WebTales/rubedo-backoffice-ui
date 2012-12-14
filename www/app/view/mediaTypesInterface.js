@@ -103,6 +103,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    managesStore: true,
                     width: 200,
                     title: '',
                     forceFit: true,
@@ -125,7 +126,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     },
 
     onImageRender1: function(abstractcomponent, options) {
-        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
     }
 
 });
