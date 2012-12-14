@@ -30,7 +30,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     onMainMTGridSelect: function(selModel, record, index, options) {
-        this.resetInterfaceSelect();
+        this.resetInterfaceSelect(record);
     },
 
     onRemoveMTBtnClick: function(button, e, options) {
@@ -52,11 +52,16 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes"}));
     },
 
-    resetInterfaceSelect: function() {
+    resetInterfaceSelect: function(record) {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.enable();});
         Ext.getCmp("removeMTBtn").enable();
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias <b> > </b>", iconCls:"mediaTypes"}));
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"mediaTypes"}));
     },
 
     init: function(application) {
