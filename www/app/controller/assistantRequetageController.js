@@ -69,6 +69,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     valeur: {
                         cType: 'datefield',
                         name: 'creation',
+                        ruleId:'createDate',
                         label: 'Création'
                     }
                 });
@@ -76,6 +77,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     valeur: {
                         cType: 'datefield',
                         name: 'derniereModification',
+                        ruleId:'lastUpdateDate',
                         label: 'Dernière modification'
                     }});
                     if (typesContenus.length<2) {
@@ -86,7 +88,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                         });
                         champsReqF = Ext.Array.map(champsReqF, function(champ){
-                            return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
+                            return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: myThingType.get("id")+'>>'+champ.config.name, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
                         });
 
                         champsRegles = Ext.Array.merge(champsRegles, champsReqF);
@@ -107,6 +109,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             valeur: {
                                 cType: 'datefield',
                                 name: 'creation',
+                                ruleId:'createDate',
                                 label: theTargetType.get("type")+' > '+'Création'
                             }
                         });
@@ -114,6 +117,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             valeur: {
                                 cType: 'datefield',
                                 name: 'derniereModification',
+                                ruleId:'lastUpdateDate',
                                 label: theTargetType.get("type")+' > '+'Dernière modification'
                             }});  
 
@@ -124,7 +128,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                             });
                             champsReqF = Ext.Array.map(champsReqF, function(champ){
-                                return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
+                                return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: theTargetType.get("id")+'>>'+champ.config.name , name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
                             });
 
                             champsRegles = Ext.Array.merge(champsRegles, champsReqF);
@@ -213,6 +217,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                             var selecteur = Ext.widget('comboboxselect', {
                                 name:leVocab.get("id"),
+                                vocabularyId:leVocab.get("id"),
+                                isVocabularyField:true,
+                                usedRole:"terms",
                                 anchor:"100%",
                                 fieldLabel: leVocab.get("name"),
                                 autoScroll: false,
@@ -243,6 +250,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             var regle = Ext.create('Ext.form.ComboBox', {
                                 name:leVocab.get("id")+"QueryRule",
                                 anchor: '100%',
+                                vocabularyId:leVocab.get("id"),
+                                isVocabularyField:true,
+                                usedRole:"rule",
                                 fieldLabel: 'Règle',
                                 store: storeR,
                                 queryMode: 'local',
@@ -316,6 +326,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
             var mainThing = Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name});
             mainThing.name=nRegle.name;
+            mainThing.usedRole="value";
+            mainThing.ruleId=nRegle.ruleId;
+            mainThing.isAddedRuleField=true;
             enrobage.getComponent(0).insert(1,mainThing);
             if (nRegle.cType== 'checkboxfield') {
                 var operateur= Ext.widget('tbtext', {text: ' = '});
@@ -335,6 +348,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 var operateur= Ext.create('Ext.form.ComboBox', {
                     name:nRegle.name+"Operator",
                     store: storeOper,
+                    usedRole:"rule",
+                    isAddedRuleField:true,
+                    ruleId:nRegle.ruleId,
                     flex:1,
                     queryMode: 'local',
                     displayField: 'operateur',
@@ -359,9 +375,24 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     onQueryBuildSaveBtnClick: function(button, e, options) {
         var mainWin= button.up().up();
         var result = {};
+        result.vocabularies={ };
+        result.fieldRules={ };
         Ext.Array.forEach(mainWin.query("field"),function(field){
             if (field.submitValue){
-                result[field.name]=field.getValue();
+                if (field.isVocabularyField) {
+                    if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
+                        result.vocabularies[field.vocabularyId]={ };                
+                    }
+                    result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+
+                } else if (field.isAddedRuleField){
+                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
+                        result.fieldRules[field.ruleId]={ };           
+                    }
+                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+                } else { 
+                    result[field.name]=field.getValue();
+                }
             }
         });
         console.log(result);

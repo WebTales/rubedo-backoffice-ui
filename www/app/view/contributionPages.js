@@ -389,7 +389,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'textareafield',
                                     anchor: '100%',
                                     name: 'description',
-                                    fieldLabel: 'Description :',
+                                    fieldLabel: 'Description ',
                                     maxLength: 250
                                 },
                                 {
