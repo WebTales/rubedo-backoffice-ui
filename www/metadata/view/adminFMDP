@@ -901,18 +901,23 @@
             ]
         },
         {
-            "type": "tabpanel",
+            "type": "panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "container|align": "stretch",
                 "layout|flex": 1,
-                "designer|userClassName": "MyTabPanel",
-                "activeTab": 0
+                "designer|userClassName": "MyPanel4",
+                "height": null,
+                "layout": "hbox",
+                "header": false,
+                "iconCls": "edit",
+                "title": ""
             },
-            "designerId": "7d9bf442-2f67-4f9d-b184-9b0ffac323c3",
+            "designerId": "56047962-a175-46cd-b135-10443957f491",
             "cn": [
                 {
                     "type": "panel",
@@ -922,137 +927,21 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": 1,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel4",
-                        "height": null,
-                        "layout": "hbox",
-                        "iconCls": "edit",
-                        "title": "Edition"
+                        "container|pack": null,
+                        "designer|userClassName": "MyPanel61",
+                        "border": 0,
+                        "frame": false,
+                        "id": "masqueEdition",
+                        "margin": null,
+                        "style": null,
+                        "width": null,
+                        "autoScroll": false,
+                        "layout": "vbox",
+                        "bodyStyle": null
                     },
-                    "designerId": "56047962-a175-46cd-b135-10443957f491",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "TabConfig1"
-                            },
-                            "designerId": "13d9b88e-9162-4a71-9de0-53ccb2814cc2"
-                        },
-                        {
-                            "type": "panel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1,
-                                "container|align": "stretch",
-                                "container|pack": null,
-                                "designer|userClassName": "MyPanel61",
-                                "border": 0,
-                                "frame": false,
-                                "id": "masqueEdition",
-                                "margin": null,
-                                "style": null,
-                                "width": null,
-                                "autoScroll": false,
-                                "layout": "vbox",
-                                "bodyStyle": null
-                            },
-                            "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb"
-                        },
-                        {
-                            "type": "panel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "layout|margins": "0, 0, 0, 2",
-                                "dock": null,
-                                "designer|userClassName": "MyPanel59",
-                                "frame": true,
-                                "id": "paneauPropMasque",
-                                "margin": null,
-                                "width": 300,
-                                "autoScroll": true,
-                                "resizable": [
-                                    "true"
-                                ],
-                                "resizeHandles": "w",
-                                "layout": "anchor",
-                                "collapseDirection": "right",
-                                "collapsed": false,
-                                "collapsible": true,
-                                "iconCls": "parametres",
-                                "title": "Propriétés",
-                                "titleCollapse": false
-                            },
-                            "designerId": "b17d65c2-1c11-4ad6-ba71-3635259504e2",
-                            "cn": [
-                                {
-                                    "type": "hiddenfield",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyHiddenField",
-                                        "id": "elementIdField",
-                                        "fieldLabel": "Label"
-                                    },
-                                    "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
-                                },
-                                {
-                                    "type": "form",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyForm4",
-                                        "height": null,
-                                        "id": "elementEditControl",
-                                        "margin": null,
-                                        "autoScroll": false,
-                                        "bodyPadding": null,
-                                        "iconCls": null,
-                                        "title": "Sélectionnez un élément"
-                                    },
-                                    "designerId": "a07c7761-a08c-4f96-a3a0-8c24a5d5e33b"
-                                },
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "onPaneauPropMasqueResize",
-                                        "fn": "onPaneauPropMasqueResize",
-                                        "implHandler": [
-                                            "this.doLayout();"
-                                        ],
-                                        "name": "resize",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "b6455491-8d4a-474d-9c6f-2c1c6c76381b"
-                                }
-                            ]
-                        }
-                    ]
+                    "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb"
                 },
                 {
                     "type": "panel",
@@ -1062,33 +951,79 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel5",
-                        "iconCls": "versions",
-                        "title": "Historique"
+                        "layout|flex": null,
+                        "layout|margins": "0, 0, 0, 2",
+                        "dock": null,
+                        "designer|userClassName": "MyPanel59",
+                        "frame": true,
+                        "id": "paneauPropMasque",
+                        "margin": null,
+                        "width": 300,
+                        "autoScroll": true,
+                        "resizable": [
+                            "true"
+                        ],
+                        "resizeHandles": "w",
+                        "layout": "anchor",
+                        "collapseDirection": "right",
+                        "collapsed": false,
+                        "collapsible": true,
+                        "iconCls": "parametres",
+                        "title": "Propriétés",
+                        "titleCollapse": false
                     },
-                    "designerId": "c1cf36db-c972-4c7b-91f9-0a609482114d",
+                    "designerId": "b17d65c2-1c11-4ad6-ba71-3635259504e2",
                     "cn": [
                         {
-                            "type": "linkedinstance",
+                            "type": "hiddenfield",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "designerId": "83bfe81f-9b25-41ad-85f6-ad8b374f41b0",
-                            "masterInstanceId": "ExtBox1-ext-gen15897"
+                            "userConfig": {
+                                "designer|userClassName": "MyHiddenField",
+                                "id": "elementIdField",
+                                "fieldLabel": "Label"
+                            },
+                            "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
                         },
                         {
-                            "type": "tab",
+                            "type": "form",
                             "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
+                                "name": "items",
+                                "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "TabConfig2"
+                                "designer|userClassName": "MyForm4",
+                                "height": null,
+                                "id": "elementEditControl",
+                                "margin": null,
+                                "autoScroll": false,
+                                "bodyPadding": null,
+                                "iconCls": null,
+                                "title": "Sélectionnez un élément"
                             },
-                            "designerId": "37b17be9-d46a-4b56-8ed8-a13ce1381924"
+                            "designerId": "a07c7761-a08c-4f96-a3a0-8c24a5d5e33b"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onPaneauPropMasqueResize",
+                                "fn": "onPaneauPropMasqueResize",
+                                "implHandler": [
+                                    "this.doLayout();"
+                                ],
+                                "name": "resize",
+                                "scope": "me"
+                            },
+                            "designerId": "b6455491-8d4a-474d-9c6f-2c1c6c76381b"
                         }
                     ]
                 }

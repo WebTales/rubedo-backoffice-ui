@@ -19,8 +19,7 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17',
-        'Rubedo.view.MyGridPanel3'
+        'Rubedo.view.MyTool17'
     ],
 
     favoriteIcon: 'application.png',
@@ -375,80 +374,65 @@ Ext.define('Rubedo.view.adminFMDP', {
                     }
                 },
                 {
-                    xtype: 'tabpanel',
+                    xtype: 'panel',
                     flex: 1,
-                    activeTab: 0,
+                    layout: {
+                        align: 'stretch',
+                        type: 'hbox'
+                    },
+                    header: false,
+                    iconCls: 'edit',
+                    title: '',
                     items: [
                         {
                             xtype: 'panel',
+                            flex: 1,
+                            border: 0,
+                            frame: false,
+                            id: 'masqueEdition',
+                            autoScroll: false,
                             layout: {
                                 align: 'stretch',
-                                type: 'hbox'
-                            },
-                            iconCls: 'edit',
-                            title: 'Edition',
-                            items: [
-                                {
-                                    xtype: 'panel',
-                                    flex: 1,
-                                    border: 0,
-                                    frame: false,
-                                    id: 'masqueEdition',
-                                    autoScroll: false,
-                                    layout: {
-                                        align: 'stretch',
-                                        type: 'vbox'
-                                    }
-                                },
-                                {
-                                    xtype: 'panel',
-                                    margins: '0, 0, 0, 2',
-                                    frame: true,
-                                    id: 'paneauPropMasque',
-                                    width: 300,
-                                    autoScroll: true,
-                                    resizable: true,
-                                    resizeHandles: 'w',
-                                    layout: {
-                                        type: 'anchor'
-                                    },
-                                    collapseDirection: 'right',
-                                    collapsed: false,
-                                    collapsible: true,
-                                    iconCls: 'parametres',
-                                    title: 'Propriétés',
-                                    titleCollapse: false,
-                                    items: [
-                                        {
-                                            xtype: 'hiddenfield',
-                                            id: 'elementIdField',
-                                            fieldLabel: 'Label'
-                                        },
-                                        {
-                                            xtype: 'form',
-                                            id: 'elementEditControl',
-                                            autoScroll: false,
-                                            title: 'Sélectionnez un élément'
-                                        }
-                                    ],
-                                    listeners: {
-                                        resize: {
-                                            fn: me.onPaneauPropMasqueResize,
-                                            scope: me
-                                        }
-                                    }
-                                }
-                            ]
+                                type: 'vbox'
+                            }
                         },
                         {
                             xtype: 'panel',
-                            iconCls: 'versions',
-                            title: 'Historique',
+                            margins: '0, 0, 0, 2',
+                            frame: true,
+                            id: 'paneauPropMasque',
+                            width: 300,
+                            autoScroll: true,
+                            resizable: true,
+                            resizeHandles: 'w',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            collapseDirection: 'right',
+                            collapsed: false,
+                            collapsible: true,
+                            iconCls: 'parametres',
+                            title: 'Propriétés',
+                            titleCollapse: false,
                             items: [
                                 {
-                                    xtype: 'mygridpanel3'
+                                    xtype: 'hiddenfield',
+                                    id: 'elementIdField',
+                                    fieldLabel: 'Label'
+                                },
+                                {
+                                    xtype: 'form',
+                                    id: 'elementEditControl',
+                                    autoScroll: false,
+                                    title: 'Sélectionnez un élément'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                resize: {
+                                    fn: me.onPaneauPropMasqueResize,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
