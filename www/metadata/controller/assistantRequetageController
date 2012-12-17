@@ -448,7 +448,8 @@
                     "    result[field.name]=field.getValue();\r",
                     "    }\r",
                     "});\r",
-                    "console.log(result);"
+                    "Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).setValue(result);\r",
+                    "Ext.getCmp(\"assistantRequetage\").close();"
                 ],
                 "name": "click",
                 "scope": "me",

@@ -72,7 +72,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             ouvrir: 'assistantRequetage',
                                             config: {
                                                 fieldLabel: 'Requete',
-                                                name: 'query'
+                                                name: 'query',
+                                                editable: false
                                             }
                                         }
                                     ]

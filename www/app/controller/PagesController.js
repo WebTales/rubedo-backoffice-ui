@@ -327,9 +327,12 @@ Ext.define('Rubedo.controller.PagesController', {
                     var nChampS = Ext.create(champsS[i].type, champsS[i].config);
                     if (champsS[i].type =='Ext.form.field.Trigger'){
                         var Ouvrir = Ext.clone(champsS[i].ouvrir);
+                        var targeting=Ext.clone(nChampS.id);
                         nChampS.onTriggerClick= function() {
                             var fenetre = Ext.widget(Ouvrir);
                             fenetre.show();
+                            fenetre.mainFieldId=targeting;
+
                         } ;  
                     }
                     nChampS.labelSeparator= ' ';

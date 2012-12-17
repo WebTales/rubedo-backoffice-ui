@@ -364,7 +364,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 result[field.name]=field.getValue();
             }
         });
-        console.log(result);
+        Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(result);
+        Ext.getCmp("assistantRequetage").close();
     },
 
     init: function(application) {
