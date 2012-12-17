@@ -358,12 +358,13 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
         var mainWin= button.up().up();
-        var result = { };
+        var result = [ ];
         Ext.Array.forEach(mainWin.query("field"),function(field){
             if (field.submitValue){
                 result[field.name]=field.getValue();
             }
         });
+        console.log(result);
         Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(result);
         Ext.getCmp("assistantRequetage").close();
     },
