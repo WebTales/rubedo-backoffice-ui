@@ -25,6 +25,12 @@ Ext.define('Rubedo.model.wallpaperDataModel', {
         {
             name: 'file',
             type: 'string'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'version'
         }
     ]
 });

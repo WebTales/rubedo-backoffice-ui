@@ -30,7 +30,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
         type: 'hbox'
     },
     iconCls: 'personalize',
-    title: 'Personalisation du bureau',
+    title: 'Personanlisation du bureau',
     constrainHeader: true,
     maximizable: false,
     minimizable: true,
@@ -71,7 +71,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                             managesStore: true,
                             id: 'themeGrid',
                             collapsed: true,
-                            title: 'Themes',
+                            title: 'Thèmes',
                             store: 'ThemesDataJson',
                             viewConfig: {
 

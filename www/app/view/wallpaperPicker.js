@@ -38,7 +38,7 @@ Ext.define('Rubedo.view.wallpaperPicker', {
                     anchor: '100%',
                     id: 'wallpaperPickerButton',
                     margin: '10 0 0 0',
-                    text: 'Choisir en tant que nouveau fond \'écran'
+                    text: 'Choisir en tant que nouveau fond d\'écran'
                 }
             ]
         });

@@ -38,7 +38,7 @@ Ext.define('Rubedo.view.themePicker', {
                     anchor: '100%',
                     id: 'themePickerButton',
                     margin: '10 0 0 0',
-                    text: 'Appliquer ce theme'
+                    text: 'Appliquer ce thème'
                 }
             ]
         });
