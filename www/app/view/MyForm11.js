@@ -30,12 +30,14 @@ Ext.define('Rubedo.view.MyForm11', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    name: 'queryName',
                     fieldLabel: 'Nom ',
                     allowBlank: false
                 },
                 {
                     xtype: 'button',
                     anchor: '100%',
+                    id: 'queryBuildSaveBtn',
                     text: '<b>Enregistrer la requête </b>'
                 }
             ]

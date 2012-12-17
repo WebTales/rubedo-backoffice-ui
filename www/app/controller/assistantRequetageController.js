@@ -241,6 +241,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             });
 
                             var regle = Ext.create('Ext.form.ComboBox', {
+                                name:leVocab.get("id")+"QueryRule",
                                 anchor: '100%',
                                 fieldLabel: 'Règle',
                                 store: storeR,
@@ -313,7 +314,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if (nRegle !== null) {
             var enrobage = Ext.widget('regleChampAR');
             enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
-            enrobage.getComponent(0).insert(1,Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name}));
+            var mainThing = Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name});
+            mainThing.name=nRegle.name;
+            enrobage.getComponent(0).insert(1,mainThing);
             if (nRegle.cType== 'checkboxfield') {
                 var operateur= Ext.widget('tbtext', {text: ' = '});
             }
@@ -330,6 +333,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     ]
                 });
                 var operateur= Ext.create('Ext.form.ComboBox', {
+                    name:nRegle.name+"Operator",
                     store: storeOper,
                     flex:1,
                     queryMode: 'local',
@@ -352,6 +356,17 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         }
     },
 
+    onQueryBuildSaveBtnClick: function(button, e, options) {
+        var mainWin= button.up().up();
+        var result = { };
+        Ext.Array.forEach(mainWin.query("field"),function(field){
+            if (field.submitValue){
+                result[field.name]=field.getValue();
+            }
+        });
+        console.log(result);
+    },
+
     init: function(application) {
         this.control({
             "#boutonNextRequeteur": {
@@ -368,6 +383,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             },
             "#boutonCreateurReglesChampsAR": {
                 click: this.ajoutRegleChamp
+            },
+            "#queryBuildSaveBtn": {
+                click: this.onQueryBuildSaveBtnClick
             }
         });
     }

@@ -80,6 +80,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
                             anchor: '90%',
                             id: 'champTCRequeteur',
                             style: '{float:left}',
+                            name: 'fieldTypes',
                             fieldLabel: '',
                             allowBlank: false,
                             editable: false,

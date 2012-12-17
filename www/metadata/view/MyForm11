@@ -33,6 +33,7 @@
             "userConfig": {
                 "layout|anchor": "100%",
                 "designer|userClassName": "MyTextField12",
+                "name": "queryName",
                 "fieldLabel": "Nom ",
                 "allowBlank": false
             },
@@ -48,6 +49,7 @@
             "userConfig": {
                 "layout|anchor": "100%",
                 "designer|userClassName": "MyButton76",
+                "id": "queryBuildSaveBtn",
                 "margin": null,
                 "style": null,
                 "iconCls": null,

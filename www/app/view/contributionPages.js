@@ -429,6 +429,7 @@ Ext.define('Rubedo.view.contributionPages', {
             movedOne.set("orderValue", (interm+targeted)/2);
         } else if (dropPosition=="after"){
             if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
+            else{interm=10000;}
             movedOne.set("orderValue", (interm+targeted)/2);
         } else if (dropPosition=="append"){
             if (overModel.hasChildNodes()){

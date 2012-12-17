@@ -32,6 +32,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
                     anchor: '90%',
                     id: 'createurReglesChampsAR',
                     style: '{float: left}',
+                    submitValue: false,
                     fieldLabel: 'Ajouter une régle sur ',
                     labelWidth: 140,
                     editable: false,

@@ -596,6 +596,7 @@
                                             "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
                                             "} else if (dropPosition==\"after\"){\r",
                                             "    if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get(\"orderValue\");}\r",
+                                            "    else{interm=10000;}\r",
                                             "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
                                             "} else if (dropPosition==\"append\"){\r",
                                             "    if (overModel.hasChildNodes()){\r",
