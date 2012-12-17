@@ -56,6 +56,20 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'orderValue',
             sortType: 'asFloat',
             type: 'float'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createUser',
+            mapping: 'createUser.fullName'
         }
     ]
 });

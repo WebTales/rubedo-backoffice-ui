@@ -142,7 +142,6 @@ Ext.application({
         'CTCField',
         'TTField',
         'FCCField',
-        'FOShowWindow',
         'assistantRequetage',
         'ImagePickerWindow',
         'ImageFieldComponent',

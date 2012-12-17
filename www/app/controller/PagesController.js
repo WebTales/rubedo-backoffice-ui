@@ -109,7 +109,18 @@ Ext.define('Rubedo.controller.PagesController', {
                     src: "http://"+window.location.host+"/index/"+record.get("text")
                 }
             }));
-            Ext.getCmp("pagePreviewTextItem").setText('Ceci est un apercçu de cette page telle que disponnible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
+            Ext.getCmp("pagePreviewTextItem").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
+            var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+            var values= record.getData();
+            values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
+            values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+            metaBox.update(values);
+        } else {
+            Ext.getCmp("addPageBtn").enable();
+            Ext.getCmp("removePageBtn").disable();
+            Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+            Ext.getCmp("mainPageEdition").removeAll();
+            me.resetInterface();
         }
     },
 
@@ -363,11 +374,6 @@ Ext.define('Rubedo.controller.PagesController', {
             });}
     },
 
-    pagePreview: function(button, e, options) {
-        var target=Ext.getCmp('mainPageTree').getSelectionModel().getLastSelected().get("text");
-        Ext.widget("FOShowWindow",{targetURL:"http://"+window.location.host+"/index/"+target}).show();
-    },
-
     savePage: function(button, e, options) {
         if (Ext.getCmp("mainPageAttributeForm").getForm().isValid()) {
             var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
@@ -526,6 +532,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("pagesInternalPreview").removeAll();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
         Ext.getCmp("mainPageAttributeForm").disable();
+        Ext.getCmp("pagePreviewTextItem").setText();
     },
 
     init: function(application) {
@@ -565,9 +572,6 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#mainPageEdition unBloc": {
                 render: this.blocSelection
-            },
-            "#pagePreviewBtn": {
-                click: this.pagePreview
             },
             "#pageSaveBtn": {
                 click: this.savePage

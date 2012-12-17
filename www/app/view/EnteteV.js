@@ -55,10 +55,6 @@ Ext.define('Rubedo.view.EnteteV', {
                     enableOverflow: true
                 },
                 {
-                    xtype: 'tbseparator',
-                    margins: '0, 0, 0, 20'
-                },
-                {
                     xtype: 'textfield',
                     id: 'ESSearchField',
                     itemId: 'filterField',
@@ -83,9 +79,6 @@ Ext.define('Rubedo.view.EnteteV', {
                     xtype: 'button',
                     id: 'ESSearchButton',
                     iconCls: 'search'
-                },
-                {
-                    xtype: 'tbseparator'
                 }
             ]
         });

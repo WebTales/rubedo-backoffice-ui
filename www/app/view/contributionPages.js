@@ -84,7 +84,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
                             ]
                         }
                     ]
@@ -214,28 +214,6 @@ Ext.define('Rubedo.view.contributionPages', {
                             ]
                         },
                         {
-                            xtype: 'buttongroup',
-                            ACL: 'write.ui.masks',
-                            disabled: true,
-                            headerPosition: 'bottom',
-                            title: 'Prévisualisation',
-                            columns: 4,
-                            layout: {
-                                columns: 2,
-                                type: 'table'
-                            },
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    id: 'pagePreviewBtn',
-                                    iconAlign: 'top',
-                                    iconCls: 'page_preview_big',
-                                    scale: 'large',
-                                    text: 'Prévisualiser'
-                                }
-                            ]
-                        },
-                        {
                             xtype: 'tbfill'
                         },
                         {
@@ -354,11 +332,12 @@ Ext.define('Rubedo.view.contributionPages', {
                                 {
                                     xtype: 'toolbar',
                                     dock: 'top',
+                                    height: 24,
                                     items: [
                                         {
                                             xtype: 'tbtext',
                                             id: 'pagePreviewTextItem',
-                                            text: 'Ceci est un aperçu de cette page telle que disponible en ligne à l\'heure'
+                                            text: ''
                                         }
                                     ]
                                 }

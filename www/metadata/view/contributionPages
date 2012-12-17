@@ -173,7 +173,7 @@
                             "userConfig": {
                                 "designer|userClassName": "tpl",
                                 "implHandler": [
-                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}"
+                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],
                                 "designer|displayName": "tpl"
                             },
@@ -451,53 +451,6 @@
                                 "text": "Enregistrer"
                             },
                             "designerId": "8553bcef-32fb-4da9-9209-4694f0344fbb"
-                        }
-                    ]
-                },
-                {
-                    "type": "buttongroup",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "write.ui.masks",
-                        "layout|flex": null,
-                        "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
-                        "disabled": true,
-                        "headerPosition": "bottom",
-                        "title": "Prévisualisation",
-                        "columns": 4
-                    },
-                    "designerId": "d4fd9107-1266-4188-a0d6-ac3a0660200c",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        }
-                    ],
-                    "cn": [
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton13",
-                                "id": "pagePreviewBtn",
-                                "itemId": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "page_preview_big",
-                                "scale": "large",
-                                "text": "Prévisualiser"
-                            },
-                            "designerId": "37a74d33-ce15-40db-b2ad-b2437b443565"
                         }
                     ]
                 },
@@ -831,7 +784,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "top",
-                                "designer|userClassName": "MyToolbar45"
+                                "designer|userClassName": "MyToolbar45",
+                                "height": 24
                             },
                             "designerId": "ef276fcd-932b-4674-a53c-9d3198467bb3",
                             "cn": [
@@ -846,7 +800,7 @@
                                         "layout|flex": null,
                                         "designer|userClassName": "MyTextItem1",
                                         "id": "pagePreviewTextItem",
-                                        "text": "Ceci est un aperçu de cette page telle que disponible en ligne à l'heure"
+                                        "text": ""
                                     },
                                     "designerId": "e0c6307c-bd0d-4714-9aa4-a418f6b2b6da"
                                 }

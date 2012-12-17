@@ -178,7 +178,18 @@
                     "            src: \"http://\"+window.location.host+\"/index/\"+record.get(\"text\")\r",
                     "        }\r",
                     "    }));\r",
-                    "    Ext.getCmp(\"pagePreviewTextItem\").setText('Ceci est un apercçu de cette page telle que disponnible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));\r",
+                    "    Ext.getCmp(\"pagePreviewTextItem\").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));\r",
+                    "    var metaBox = Ext.getCmp(\"contributionPages\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "    var values= record.getData();\r",
+                    "    values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
+                    "    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
+                    "    metaBox.update(values);\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"addPageBtn\").enable();\r",
+                    "    Ext.getCmp(\"removePageBtn\").disable();\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
+                    "    me.resetInterface();\r",
                     "}"
                 ],
                 "name": "select",
@@ -307,9 +318,9 @@
                     "        }\r",
                     "        var isFinalCol=false;\r",
                     "        if (its<=0){isFinalCol=true;}\r",
-                    "            if (column.id.indexOf(\"page-\")==-1) {\r",
-                    "        column.id=\"page-\"+column.id;\r",
-                    "    }\r",
+                    "        if (column.id.indexOf(\"page-\")==-1) {\r",
+                    "            column.id=\"page-\"+column.id;\r",
+                    "        }\r",
                     "        var newCol=Ext.widget('panel', {\r",
                     "            header:false,\r",
                     "            flex:column.span,\r",
@@ -333,10 +344,10 @@
                     "        else {\r",
                     "            if (Ext.isEmpty(column.blocks)){} else {\r",
                     "            Ext.Array.forEach(column.blocks, function(bl){\r",
-                    "                   if (bl.id.indexOf(\"page-\")==-1) {\r",
-                    "        bl.id=\"page-\"+bl.id;\r",
-                    "    }\r",
-                    "     \r",
+                    "                if (bl.id.indexOf(\"page-\")==-1) {\r",
+                    "                    bl.id=\"page-\"+bl.id;\r",
+                    "                }\r",
+                    "\r",
                     "                newCol.add(Ext.widget(\"unBloc\",bl));\r",
                     "            });\r",
                     "        }\r",
@@ -433,7 +444,8 @@
                     "Ext.getCmp('pageElementIdField').setValue();\r",
                     "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();\r",
-                    "Ext.getCmp(\"mainPageAttributeForm\").disable();"
+                    "Ext.getCmp(\"mainPageAttributeForm\").disable();\r",
+                    "Ext.getCmp(\"pagePreviewTextItem\").setText();"
                 ]
             },
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"
@@ -677,27 +689,6 @@
                 "designer|controlQuery": "#mainPageEdition unBloc"
             },
             "designerId": "14fe1e98-83ce-46a5-be63-48558f1afbcb"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "pagePreview",
-                "fn": "pagePreview",
-                "implHandler": [
-                    "var target=Ext.getCmp('mainPageTree').getSelectionModel().getLastSelected().get(\"text\");\r",
-                    "Ext.widget(\"FOShowWindow\",{targetURL:\"http://\"+window.location.host+\"/index/\"+target}).show();"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pagePreviewBtn"
-            },
-            "designerId": "4f7bd498-a361-4972-833d-acb144cc99c0"
         },
         {
             "type": "controlleraction",

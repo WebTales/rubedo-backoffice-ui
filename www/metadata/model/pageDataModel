@@ -161,6 +161,50 @@
                 "type": "float"
             },
             "designerId": "c955e701-4400-4bfa-90be-ccc25364b7b4"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "baa62a16-1d62-4e06-9116-4b500eeddf96"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "66d98fce-e321-44ea-a32f-3e5f4633996f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser",
+                "mapping": "createUser.fullName"
+            },
+            "designerId": "85428626-d513-4a0d-8350-dbb2d0f5558c"
         }
     ]
 }
