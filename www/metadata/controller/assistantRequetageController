@@ -442,14 +442,14 @@
                 "fn": "onQueryBuildSaveBtnClick",
                 "implHandler": [
                     "var mainWin= button.up().up();\r",
-                    "var result = [ ];\r",
+                    "var result = {};\r",
                     "Ext.Array.forEach(mainWin.query(\"field\"),function(field){\r",
                     "    if (field.submitValue){\r",
                     "        result[field.name]=field.getValue();\r",
                     "    }\r",
                     "});\r",
                     "console.log(result);\r",
-                    "Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).setValue(result);\r",
+                    "Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).setValue(Ext.JSON.encode(result));\r",
                     "Ext.getCmp(\"assistantRequetage\").close();"
                 ],
                 "name": "click",
