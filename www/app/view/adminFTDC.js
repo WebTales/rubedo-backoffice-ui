@@ -330,7 +330,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             xtype: 'panel',
                                             frame: true,
                                             margin: 20,
-                                            title: 'Champs obligatoires',
+                                            title: 'Champs système',
                                             items: [
                                                 {
                                                     xtype: 'container',
@@ -378,7 +378,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     frame: true,
                                     id: 'PaneauConfigChamps',
                                     width: 300,
-                                    autoScroll: false,
+                                    overflowY: 'auto',
                                     layout: {
                                         type: 'fit'
                                     },
@@ -392,7 +392,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         {
                                             xtype: 'container',
                                             id: 'boiteConfigChampsTC',
-                                            autoScroll: true,
+                                            autoScroll: false,
                                             layout: {
                                                 type: 'anchor'
                                             }
@@ -408,6 +408,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'panel',
+                            hidden: true,
                             iconCls: 'page_meta',
                             title: 'Métadonnées'
                         },
@@ -495,6 +496,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'panel',
+                            hidden: true,
                             iconCls: 'versions',
                             title: 'Historique'
                         }

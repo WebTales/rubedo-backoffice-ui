@@ -778,7 +778,7 @@
                                         "designer|userClassName": "MyPanel43",
                                         "frame": true,
                                         "margin": 20,
-                                        "title": "Champs obligatoires"
+                                        "title": "Champs système"
                                     },
                                     "designerId": "75afc2fc-c004-4c43-9dd4-a2f48682cd6b",
                                     "cn": [
@@ -885,7 +885,7 @@
                                 "id": "PaneauConfigChamps",
                                 "style": null,
                                 "width": 300,
-                                "autoScroll": false,
+                                "overflowY": "auto",
                                 "layout": "fit",
                                 "bodyPadding": 8,
                                 "bodyStyle": null,
@@ -907,7 +907,7 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyContainer10",
                                         "id": "boiteConfigChampsTC",
-                                        "autoScroll": true,
+                                        "autoScroll": false,
                                         "layout": "anchor"
                                     },
                                     "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801"
@@ -939,6 +939,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel5",
+                        "hidden": true,
                         "iconCls": "page_meta",
                         "title": "Métadonnées"
                     },
@@ -1198,6 +1199,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel5",
+                        "hidden": true,
                         "iconCls": "versions",
                         "title": "Historique"
                     },
