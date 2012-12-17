@@ -487,6 +487,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     text: champs.text,
                     champs: champs,
                     taxonomie:taxonomie,
+                    online:true,
                     status: status,
                     typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
 

@@ -248,6 +248,7 @@
                     "            text: champs.text,\r",
                     "            champs: champs,\r",
                     "            taxonomie:taxonomie,\r",
+                    "            online:true,\r",
                     "            status: status,\r",
                     "            typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get(\"id\")\r",
                     "\r",
