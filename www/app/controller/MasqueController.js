@@ -55,6 +55,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 Ext.getCmp('delConfirmZ').close();
                 Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 Ext.getCmp("boutonSupprimerMasque").disable();
+                Ext.getCmp("adminFMDP").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
             });  
 
         }
@@ -68,6 +69,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
         valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');
         boiteMeta.update(valeurs);
+        boiteMeta.show();
 
         var filArianne = dataview.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');

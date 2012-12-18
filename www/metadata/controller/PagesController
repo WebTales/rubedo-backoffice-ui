@@ -187,6 +187,7 @@
                     "    values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
                     "    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
                     "    metaBox.update(values);\r",
+                    "    metaBox.show();\r",
                     "} else {\r",
                     "    Ext.getCmp(\"addPageBtn\").enable();\r",
                     "    Ext.getCmp(\"removePageBtn\").disable();\r",
@@ -448,7 +449,8 @@
                     "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").disable();\r",
-                    "Ext.getCmp(\"pagePreviewTextItem\").setText();"
+                    "Ext.getCmp(\"pagePreviewTextItem\").setText();\r",
+                    "Ext.getCmp(\"contributionPages\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
             },
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"

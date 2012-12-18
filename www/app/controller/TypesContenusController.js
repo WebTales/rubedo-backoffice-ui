@@ -446,6 +446,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
     values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
     metaBox.update(values);
+    metaBox.show();
 
     },
 
@@ -462,6 +463,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('champsEditionTC').removeAll();
                 Ext.getCmp('boiteConfigChampsTC').removeAll();
                 Ext.getCmp('tabPanTC').disable();
+                Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
 
             });  
 

@@ -118,6 +118,7 @@ Ext.define('Rubedo.controller.PagesController', {
             values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
             values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
             metaBox.update(values);
+            metaBox.show();
         } else {
             Ext.getCmp("addPageBtn").enable();
             Ext.getCmp("removePageBtn").disable();
@@ -536,6 +537,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
         Ext.getCmp("mainPageAttributeForm").disable();
         Ext.getCmp("pagePreviewTextItem").setText();
+        Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
     },
 
     init: function(application) {

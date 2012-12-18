@@ -546,6 +546,7 @@
                     "    values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
                     "    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
                     "    metaBox.update(values);\r",
+                    "metaBox.show();\r",
                     ""
                 ],
                 "name": "select",
@@ -578,6 +579,7 @@
                     "        Ext.getCmp('champsEditionTC').removeAll();\r",
                     "        Ext.getCmp('boiteConfigChampsTC').removeAll();\r",
                     "        Ext.getCmp('tabPanTC').disable();\r",
+                    "        Ext.getCmp(\"adminFTDC\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
                     "\r",
                     "    });  \r",
                     "\r",
