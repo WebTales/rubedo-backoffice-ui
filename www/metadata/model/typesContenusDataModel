@@ -134,11 +134,55 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser",
+                "mapping": "createUser.fullName"
+            },
+            "designerId": "d2203896-ffd1-4be1-8c05-fc6c39766f50"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "field92",
                 "name": "updateTime",
                 "type": "date"
             },
             "designerId": "a5a2780c-7ffb-4a89-bb92-9a142403659a"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "2d4cd5a8-5e3e-48d2-9a00-ddc0ed6559e7"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "65c9ea64-97e4-41f1-bda4-f84c50cfccac"
         }
     ]
 }

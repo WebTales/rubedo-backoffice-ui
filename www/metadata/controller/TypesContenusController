@@ -539,7 +539,14 @@
                     "});\r",
                     "tableauTCI.getSelectionModel().select(selector);\r",
                     "}\r",
-                    "Ext.getCmp('champsEditionTC').doLayout();"
+                    "Ext.getCmp('champsEditionTC').doLayout();\r",
+                    "\r",
+                    "var metaBox = Ext.getCmp(\"adminFTDC\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "    var values= record.getData();\r",
+                    "    values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
+                    "    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
+                    "    metaBox.update(values);\r",
+                    ""
                 ],
                 "name": "select",
                 "scope": "me",

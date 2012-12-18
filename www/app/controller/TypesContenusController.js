@@ -440,6 +440,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         tableauTCI.getSelectionModel().select(selector);
     }
     Ext.getCmp('champsEditionTC').doLayout();
+
+    var metaBox = Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+    var values= record.getData();
+    values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
+    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+    metaBox.update(values);
+
     },
 
     supprimeTypeContenu: function(button, e, options) {

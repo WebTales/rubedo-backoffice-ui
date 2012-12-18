@@ -48,7 +48,21 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             type: 'date'
         },
         {
+            name: 'createUser',
+            mapping: 'createUser.fullName'
+        },
+        {
             name: 'updateTime',
+            type: 'date'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
             type: 'date'
         }
     ]
