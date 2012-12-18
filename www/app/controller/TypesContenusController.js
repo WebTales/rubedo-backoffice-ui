@@ -285,6 +285,20 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             else if (this.name=='value') {
                                 TCfield.setValue(this.getValue());
                             }
+                            else if (this.name=='allowBlank') {
+                                var currentOne=TCfield.config.fieldLabel;
+                                if (this.getValue()) {
+                                    currentOne=currentOne.replace(" *","");
+                                } else {
+                                    currentOne=currentOne+" *";
+                                } 
+                                TCfield.config.fieldLabel=currentOne;
+                                if (TCfield.isXType("ImagePickerField")) {
+                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
+                                } else {
+                                    TCfield.setFieldLabel(currentOne);
+                                }
+                            }
                             else if (this.name=='editable') {
                                 TCfield.setEditable(this.getValue());
                                 TCfield.reset();
