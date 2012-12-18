@@ -442,6 +442,8 @@ Ext.define('Rubedo.controller.PagesController', {
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
+            row.id=row.id.slice(row.id.indexOf("pan"));//remove after
+
             if (row.id.indexOf("page-")==-1) {
                 row.id="page-"+row.id;
             }
@@ -471,6 +473,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
                 var isFinalCol=false;
                 if (its<=0){isFinalCol=true;}
+                column.id=column.id.slice(column.id.indexOf("pan"));//remove after
+
                 if (column.id.indexOf("page-")==-1) {
                     column.id="page-"+column.id;
                 }
@@ -497,6 +501,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 else {
                     if (Ext.isEmpty(column.blocks)){} else {
                     Ext.Array.forEach(column.blocks, function(bl){
+                        bl.id=bl.id.slice(bl.id.indexOf("unBloc"));//remove after
                         if (bl.id.indexOf("page-")==-1) {
                             bl.id="page-"+bl.id;
                         }
