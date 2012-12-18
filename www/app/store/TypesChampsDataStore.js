@@ -45,7 +45,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         searchable: false,
                         multivalued: false,
                         tooltip: '',
-                        vtype: null
+                        vtype: null,
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {

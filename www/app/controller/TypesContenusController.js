@@ -69,6 +69,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var enrobage =Ext.widget('ChampTC');
                 enrobage.add(nouvChamp);
                 enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+                if (Ext.isEmpty(nouvChamp.config.tooltip)){
+                    enrobage.getComponent('helpBouton').hidden=true;
+                } 
                 if (nouvChamp.multivalued) {
                     enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
 
@@ -210,6 +213,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
         enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+        if (Ext.isEmpty(nouvChamp.config.tooltip)){
+            enrobage.getComponent('helpBouton').hidden=true;
+        } 
         if (!me.nameAvailable(nouvChamp.name)) {
             var duplic = 1;
             while (!me.nameAvailable(nouvChamp.name+duplic)){
@@ -270,7 +276,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             TCfield.config[this.name]= this.getValue();
                             if (this.name=='fieldLabel') {
                                 if (TCfield.isXType("ImagePickerField")) {
-                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+":");
+                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
                                 } else {
                                     TCfield.setFieldLabel(this.getValue());
                                 }
@@ -288,6 +294,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             }
                             else if (this.name=='tooltip') {
                                 abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());
+                                if (Ext.isEmpty(this.getValue())){
+                                    abstractcomponent.getComponent('helpBouton').hide();
+                                } else {
+                                    abstractcomponent.getComponent('helpBouton').show();
+                                }
                             }
                             else if (this.name=='regex') {
                                 TCfield.regex = new RegExp(this.getValue());
@@ -387,6 +398,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
         enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+        if (Ext.isEmpty(nouvChamp.config.tooltip)){
+            enrobage.getComponent('helpBouton').hidden=true;
+        }    
         formulaireTC.add(enrobage);
 
     }
