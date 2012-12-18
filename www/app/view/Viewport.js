@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.DesktopCustomizeWindow',
         'Rubedo.view.ImagePreviewWindow',
         'Rubedo.view.ImportationMasques',
+        'Rubedo.view.MyGridPanel3',
         'Rubedo.view.PDFPreviewWindow',
         'Rubedo.view.Panier',
         'Rubedo.view.UnBloc',

@@ -698,7 +698,7 @@
                     "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
                     "myStore.suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection(), function(nesC){\r",
-                    "nesC.set(\"online\", true);\r",
+                    "    nesC.set(\"online\", true);\r",
                     "});\r",
                     "myStore.resumeAutoSync();\r",
                     "myStore.sync();"

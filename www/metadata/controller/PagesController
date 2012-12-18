@@ -80,6 +80,9 @@
                 "implHandler": [
                     "var form=button.up().getForm();\r",
                     "var target=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                    "if (Ext.isEmpty(target)) {\r",
+                    "    target=Ext.getCmp(\"mainPageTree\").getRootNode();\r",
+                    "}\r",
                     "if (form.isValid()){\r",
                     "    var newRows=button.previousSibling().getStore().findRecord(\"id\",button.previousSibling().getValue()).get(\"rows\");\r",
                     "    var newPage=form.getValues();\r",

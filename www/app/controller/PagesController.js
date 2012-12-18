@@ -43,6 +43,9 @@ Ext.define('Rubedo.controller.PagesController', {
     createNewPage: function(button, e, options) {
         var form=button.up().getForm();
         var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if (Ext.isEmpty(target)) {
+            target=Ext.getCmp("mainPageTree").getRootNode();
+        }
         if (form.isValid()){
             var newRows=button.previousSibling().getStore().findRecord("id",button.previousSibling().getValue()).get("rows");
             var newPage=form.getValues();
