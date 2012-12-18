@@ -380,7 +380,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     frame: true,
                                     id: 'PaneauConfigChamps',
                                     width: 300,
-                                    overflowY: 'auto',
                                     layout: {
                                         type: 'fit'
                                     },
@@ -394,7 +393,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         {
                                             xtype: 'container',
                                             id: 'boiteConfigChampsTC',
-                                            autoScroll: false,
+                                            overflowY: 'auto',
                                             layout: {
                                                 type: 'anchor'
                                             }

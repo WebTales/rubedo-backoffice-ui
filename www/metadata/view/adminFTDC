@@ -888,7 +888,7 @@
                                 "id": "PaneauConfigChamps",
                                 "style": null,
                                 "width": 300,
-                                "overflowY": "auto",
+                                "overflowY": null,
                                 "layout": "fit",
                                 "bodyPadding": 8,
                                 "bodyStyle": null,
@@ -910,7 +910,7 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyContainer10",
                                         "id": "boiteConfigChampsTC",
-                                        "autoScroll": false,
+                                        "overflowY": "auto",
                                         "layout": "anchor"
                                     },
                                     "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801"
