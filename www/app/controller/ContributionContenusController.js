@@ -555,7 +555,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
         fenetre.show();
         Ext.getCmp("nestedContentsAddCombo").bindStore(Ext.getStore("DepContentsCombo2"));
-        Ext.getStore("VersioningStore").filter("contentId",content.get("id"));
+        Ext.getStore("VersioningStore").removeAll();
+        Ext.getStore("VersioningStore").clearFilter(true);
+        if (contentType.get("id")!="50c0c8cf9a199dd40f000000"){
+            Ext.getStore("VersioningStore").filter("contentId",content.get("id"));
+        }
         var formulaireTC = Ext.getCmp('boiteAChampsContenus');
         var champsD =contentType.get("champs");
         for (g=0; g<champsD.length; g++) {
