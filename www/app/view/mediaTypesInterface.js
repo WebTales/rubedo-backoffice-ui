@@ -147,6 +147,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    hidden: true,
                                     id: 'addToSCMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',

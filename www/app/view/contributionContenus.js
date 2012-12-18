@@ -154,6 +154,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     disabled: true,
+                                    hidden: true,
                                     id: 'ajoutPanierContenus',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',

@@ -177,6 +177,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    hidden: true,
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',
                                     scale: 'large',

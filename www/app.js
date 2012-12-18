@@ -159,7 +159,6 @@ Ext.application({
     name: 'Rubedo',
     controllers: [
         'ContributionSitesController',
-        'PanierController',
         'ContributionContenusController',
         'MasqueController',
         'TypesContenusController',

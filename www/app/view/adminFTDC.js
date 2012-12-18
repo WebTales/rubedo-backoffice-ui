@@ -185,6 +185,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    hidden: true,
                                     id: 'ajouterPanierTC',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',

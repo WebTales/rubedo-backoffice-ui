@@ -224,6 +224,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    hidden: true,
                                     id: 'ajouterPanierMasques',
                                     iconAlign: 'top',
                                     iconCls: 'shopping_cart_add_big',

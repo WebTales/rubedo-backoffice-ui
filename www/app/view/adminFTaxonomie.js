@@ -128,6 +128,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            hidden: true,
                             itemId: 'boutonCreerRaccourci',
                             iconCls: 'favorite_add_big',
                             scale: 'large',
