@@ -133,8 +133,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     style: '{float:left}',
                                                     name: 'summary',
                                                     fieldLabel: 'Résumé',
-                                                    labelSeparator: ' ',
-                                                    allowBlank: false
+                                                    labelSeparator: ' '
                                                 },
                                                 {
                                                     xtype: 'button',
