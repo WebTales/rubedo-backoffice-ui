@@ -347,7 +347,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             style: '{float:left}',
                                                             name: 'text',
                                                             fieldLabel: 'Titre ',
-                                                            labelSeparator: ' ',
+                                                            labelSeparator: ' *',
                                                             allowBlank: false
                                                         },
                                                         {

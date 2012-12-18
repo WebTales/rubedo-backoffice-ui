@@ -105,7 +105,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     style: '{float:left}',
                                                     name: 'text',
                                                     fieldLabel: 'Titre ',
-                                                    labelSeparator: ' ',
+                                                    labelSeparator: ' *',
                                                     allowBlank: false
                                                 },
                                                 {
