@@ -1033,10 +1033,9 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
-                        tooltip: 'help text',
-                        vtype: null
+                        tooltip: '',
+                        vtype: null,
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1060,7 +1059,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1119,7 +1118,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Peut \u00eatre vide',
+                                fieldLabel: 'Facultatif',
                                 name: 'allowBlank'
                             }
                         },
@@ -1142,20 +1141,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],
@@ -1187,11 +1172,10 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
                         multiSelect: true,
                         editable: true,
-                        tooltip: 'help text'
+                        tooltip: '',
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1215,7 +1199,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1251,20 +1235,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],
@@ -1312,10 +1282,9 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
                         editable: false,
-                        tooltip: 'help text'
+                        tooltip: '',
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1339,7 +1308,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1361,20 +1330,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],
@@ -1404,9 +1359,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
-                        tooltip: 'help text'
+                        tooltip: '',
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1430,7 +1384,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1452,20 +1406,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],
@@ -1494,9 +1434,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
-                        tooltip: 'help text'
+                        tooltip: '',
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1520,7 +1459,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1542,20 +1481,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],
@@ -1584,10 +1509,9 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
-                        resumed: false,
-                        hidden: false,
-                        tooltip: 'help text',
-                        value: 'ffffff'
+                        tooltip: '',
+                        value: 'ffffff',
+                        labelSeparator: ' '
                     },
                     configFields: [
                         {
@@ -1611,7 +1535,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {
@@ -1625,7 +1549,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Peut \u00eatre vide',
+                                fieldLabel: 'Facultatif',
                                 name: 'allowBlank'
                             }
                         },
@@ -1648,20 +1572,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multivalu\u00e9',
                                 name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'R\u00e9sum\u00e9',
-                                name: 'resumed'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Cach\u00e9',
-                                name: 'hidden'
                             }
                         }
                     ],

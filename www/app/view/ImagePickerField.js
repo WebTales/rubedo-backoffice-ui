@@ -37,7 +37,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
 
     onHiddenfieldRender: function(abstractcomponent, options) {
         var myComponent = Ext.widget("ImageFieldComponent");
-        myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+":");
+        myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+" ");
         myComponent.on("afterrender",function(){
             myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
             myComponent.getEl().on("click",function(){
