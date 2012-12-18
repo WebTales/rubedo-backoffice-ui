@@ -347,6 +347,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             style: '{float:left}',
                                                             name: 'text',
                                                             fieldLabel: 'Titre ',
+                                                            labelSeparator: ' ',
                                                             allowBlank: false
                                                         },
                                                         {
@@ -358,6 +359,33 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             pressedCls: 'x-btn',
                                                             text: '',
                                                             tooltip: 'Titre du contenu. Obligatoire.'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textareafield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'summary',
+                                                            fieldLabel: 'Résumé',
+                                                            labelSeparator: ' '
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'helpBouton',
+                                                            style: '{float:right;}',
+                                                            handleMouseEvents: false,
+                                                            iconCls: 'help',
+                                                            pressedCls: 'x-btn',
+                                                            text: '',
+                                                            tooltip: 'Resumé facultatif du contenu'
                                                         }
                                                     ]
                                                 }
