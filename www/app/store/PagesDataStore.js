@@ -56,6 +56,7 @@ Ext.define('Rubedo.store.PagesDataStore', {
                             });
 
                             this.fireEvent('exception', this, response, error);
+                            console.log(ex);
 
                             Ext.Logger.warn('Unable to parse the JSON returned by the server');
 

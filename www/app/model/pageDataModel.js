@@ -66,10 +66,6 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'createTime',
             dateFormat: 'timestamp',
             type: 'date'
-        },
-        {
-            name: 'createUser',
-            mapping: 'createUser.fullName'
         }
     ]
 });

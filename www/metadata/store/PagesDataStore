@@ -79,6 +79,7 @@
                                     "    });\r",
                                     "\r",
                                     "    this.fireEvent('exception', this, response, error);\r",
+                                    "    console.log(ex);\r",
                                     "\r",
                                     "    Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
                                     "\r",

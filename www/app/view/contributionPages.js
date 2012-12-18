@@ -84,7 +84,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> Admin  <b>Version : </b>{version}'
                             ]
                         }
                     ]
