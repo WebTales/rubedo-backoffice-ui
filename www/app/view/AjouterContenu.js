@@ -52,7 +52,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             ACL: 'write.ui.contents.draft',
                             id: 'boutonEnregistrerNouveauContenu',
                             iconCls: 'save',
-                            text: 'Enregistrer en tant que brouillon'
+                            text: 'Brouillon'
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'write.ui.contents.pending',
+                            id: 'boutonSoumettreNouveauContenu',
+                            iconCls: 'save',
+                            text: 'Soumettre'
                         },
                         {
                             xtype: 'button',
@@ -60,14 +67,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             ACL: 'write.ui.contents.published',
                             id: 'boutonPublierNouveauContenu',
                             iconCls: 'publish',
-                            text: 'Enregistrer et publier'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'write.ui.contents.pending',
-                            id: 'boutonSoumettreNouveauContenu',
-                            iconCls: 'save',
-                            text: 'Enregistrer et soumettre'
+                            text: 'Publier'
                         }
                     ]
                 }

@@ -730,8 +730,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dock": null,
                         "container|align": "stretch",
                         "designer|userClassName": "MyPanel4",
+                        "floating": false,
+                        "autoScroll": false,
                         "layout": "hbox",
                         "iconCls": "edit",
                         "title": "Edition"

@@ -66,7 +66,7 @@
                         "designer|userClassName": "MyButton49",
                         "id": "boutonEnregistrerNouveauContenu",
                         "iconCls": "save",
-                        "text": "Enregistrer en tant que brouillon"
+                        "text": "Brouillon"
                     },
                     "configAlternates": {
                         "isUpdate": "boolean"
@@ -93,25 +93,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "isUpdate": false,
-                        "ACL": "write.ui.contents.published",
+                        "ACL": "write.ui.contents.pending",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton50",
-                        "id": "boutonPublierNouveauContenu",
-                        "iconAlign": null,
-                        "iconCls": "publish",
-                        "text": "Enregistrer et publier"
+                        "designer|userClassName": "MyButton141",
+                        "id": "boutonSoumettreNouveauContenu",
+                        "iconCls": "save",
+                        "text": "Soumettre"
                     },
-                    "configAlternates": {
-                        "isUpdate": "boolean"
-                    },
-                    "designerId": "dde47fdf-a021-49c5-bd8e-45465df11ddd",
+                    "designerId": "6b1e908f-be02-45b8-87d8-2da37baeb671",
                     "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "isUpdate",
-                            "type": "string"
-                        },
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
@@ -127,15 +117,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.contents.pending",
+                        "isUpdate": false,
+                        "ACL": "write.ui.contents.published",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton141",
-                        "id": "boutonSoumettreNouveauContenu",
-                        "iconCls": "save",
-                        "text": "Enregistrer et soumettre"
+                        "designer|userClassName": "MyButton50",
+                        "id": "boutonPublierNouveauContenu",
+                        "iconAlign": null,
+                        "iconCls": "publish",
+                        "text": "Publier"
                     },
-                    "designerId": "6b1e908f-be02-45b8-87d8-2da37baeb671",
+                    "configAlternates": {
+                        "isUpdate": "boolean"
+                    },
+                    "designerId": "dde47fdf-a021-49c5-bd8e-45465df11ddd",
                     "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "isUpdate",
+                            "type": "string"
+                        },
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",

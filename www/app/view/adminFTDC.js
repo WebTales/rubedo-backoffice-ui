@@ -313,6 +313,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                     items: [
                         {
                             xtype: 'panel',
+                            floating: false,
+                            autoScroll: false,
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'
