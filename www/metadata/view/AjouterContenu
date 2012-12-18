@@ -231,6 +231,7 @@
                                                 ],
                                                 "name": "text",
                                                 "fieldLabel": "Titre ",
+                                                "labelSeparator": " ",
                                                 "allowBlank": false
                                             },
                                             "designerId": "a1c40ec8-11e9-4786-995b-514d97b359ba"
@@ -261,6 +262,70 @@
                                                 ]
                                             },
                                             "designerId": "aca71617-cf95-468c-8248-0f1d34b64832"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "ChampTC",
+                                        "designer|userAlias": "ChampTC",
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "28c92b29-92d3-47c3-853a-0fbbd944db2d",
+                                    "cn": [
+                                        {
+                                            "type": "textareafield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextArea7",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "summary",
+                                                "fieldLabel": "Résumé",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "6848a18f-c463-4d34-a3d0-1f3dfdf31a01"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton17",
+                                                "itemId": "helpBouton",
+                                                "margin": null,
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
+                                                "allowDepress": null,
+                                                "enableToggle": null,
+                                                "handleMouseEvents": false,
+                                                "iconCls": "help",
+                                                "pressed": null,
+                                                "pressedCls": "x-btn",
+                                                "text": "",
+                                                "tooltip": [
+                                                    "'Résumé facultatif du contenu.'"
+                                                ]
+                                            },
+                                            "designerId": "1a3bffbf-c894-40bc-85a3-461c3c0359ce"
                                         }
                                     ]
                                 }
@@ -409,6 +474,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel48",
+                        "hidden": false,
+                        "id": "contentsVersionPanel",
                         "layout": "fit",
                         "title": "Versions"
                     },

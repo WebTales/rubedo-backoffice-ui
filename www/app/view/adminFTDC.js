@@ -385,7 +385,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             iconCls: 'help',
                                                             pressedCls: 'x-btn',
                                                             text: '',
-                                                            tooltip: 'Resumé facultatif du contenu'
+                                                            tooltip: 'Resumé facultatif du contenu.'
                                                         }
                                                     ]
                                                 }

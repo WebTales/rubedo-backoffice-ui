@@ -41,6 +41,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             }
             fenetre.show();
             var formulaireTC = Ext.getCmp('boiteAChampsContenus');
+            Ext.getCmp("contentsVersionPanel").up().remove( Ext.getCmp("contentsVersionPanel"));
             var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;
             for (g=0; g<champsD.length; g++) {
                 var donnees=champsD[g];

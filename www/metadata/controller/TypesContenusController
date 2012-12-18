@@ -45,6 +45,7 @@
                     "    }\r",
                     "    fenetre.show();\r",
                     "    var formulaireTC = Ext.getCmp('boiteAChampsContenus');\r",
+                    "    Ext.getCmp(\"contentsVersionPanel\").up().remove( Ext.getCmp(\"contentsVersionPanel\"));\r",
                     "    var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;\r",
                     "    for (g=0; g<champsD.length; g++) {\r",
                     "        var donnees=champsD[g];\r",
@@ -176,7 +177,7 @@
                     "        nct.destroy();\r",
                     "\r",
                     "    }\r",
-                    "\r",
+                    "    \r",
                     "\r",
                     "\r",
                     "}"
