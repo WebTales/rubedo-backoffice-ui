@@ -55,8 +55,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
                     configurateur.store = monStore;
                 }
+                //begin temporary fix
+                configurateur.labelSeparator=" ";
+                //end temporary fix
                 var nouvChamp = Ext.widget(donnees.cType, configurateur);
                 nouvChamp.config=Ext.clone(donnees.config);
+                //begin temporary fix
+                if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+                //end temporary fix
                 if (donnees.cType =='triggerfield'){ 
                     var Ouvrir = Ext.clone(donnees.openWindow);
                     nouvChamp.onTriggerClick= function() {
@@ -394,8 +400,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
             configurateur.store = monStore;
         }
+        //begin temporary fix
+        configurateur.labelSeparator=" ";
+        //end temporary fix
+
         var nouvChamp = Ext.widget(donnees.cType, configurateur);
         nouvChamp.config=Ext.clone(donnees.config);
+
+        //begin temporary fix
+        if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+        //end temporary fix
+
         nouvChamp.configFields=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("configFields");
         if (donnees.cType =='triggerfield'){ 
             var Ouvrir = Ext.clone(donnees.openWindow);

@@ -570,8 +570,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
                 configurateur.store = monStore;
             }
+            //begin temporary fix
+            configurateur.labelSeparator=" ";
+            //end temporary fix
             var nouvChamp = Ext.widget(donnees.cType, configurateur);
             nouvChamp.config=Ext.clone(donnees.config);
+            //begin temporary fix
+            if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+            //end temporary fix
             if (donnees.cType =='triggerfield'){ 
                 var Ouvrir = Ext.clone(donnees.ouvrir);
                 nouvChamp.onTriggerClick= function() {
