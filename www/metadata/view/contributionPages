@@ -901,7 +901,7 @@
                                 "designer|userClassName": "MyTextField49",
                                 "name": "pageURL",
                                 "fieldLabel": "URL ",
-                                "regex": null,
+                                "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)",
                                 "vtype": null
                             },
                             "designerId": "e23827bb-bedc-46be-9cd4-71433c232443"
