@@ -376,7 +376,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     anchor: '100%',
                                     name: 'pageURL',
                                     fieldLabel: 'URL ',
-                                    vtype: 'url'
+                                    regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)
                                 }
                             ],
                             listeners: {
