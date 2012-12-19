@@ -58,7 +58,8 @@ Ext.define('Rubedo.model.contenusDataModel', {
             type: 'date'
         },
         {
-            name: 'createUser'
+            name: 'createUser',
+            persist: false
         },
         {
             name: 'startPublicationDate',

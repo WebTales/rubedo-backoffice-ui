@@ -49,7 +49,8 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'createUser',
-            mapping: 'createUser.fullName'
+            mapping: 'createUser.fullName',
+            persist: false
         },
         {
             name: 'updateTime',

@@ -136,7 +136,8 @@
             "userConfig": {
                 "designer|userClassName": "field60",
                 "name": "createUser",
-                "mapping": "createUser.fullName"
+                "mapping": "createUser.fullName",
+                "persist": false
             },
             "designerId": "d2203896-ffd1-4be1-8c05-fc6c39766f50"
         },
