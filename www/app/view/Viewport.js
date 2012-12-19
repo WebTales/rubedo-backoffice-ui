@@ -68,7 +68,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sitesInterface',
         'Rubedo.view.newSiteWindow',
         'Rubedo.view.newPageWindow',
-        'Rubedo.view.testingGround',
         'Rubedo.view.CTCField',
         'Rubedo.view.TTField',
         'Rubedo.view.FCCField',
@@ -80,6 +79,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.MainToolsContextMenu',
         'Rubedo.view.mediaTypesInterface',
-        'Rubedo.view.newMTWindow'
+        'Rubedo.view.newMTWindow',
+        'Rubedo.view.testingGround'
     ]
 });

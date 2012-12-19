@@ -44,6 +44,36 @@
                 "fieldLabel": "Label"
             },
             "designerId": "f67fb604-f507-4fb1-8329-2b7dc5c6515b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTestingGroundRender",
+                "fn": "onTestingGroundRender",
+                "implHandler": [
+                    "var thing = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                    "    store:[],\r",
+                    "    anchor:\"100%\",\r",
+                    "    fieldLabel:\"Mots clés\",\r",
+                    "    multiSelect:true,\r",
+                    "    forceSelection:false,\r",
+                    "    createNewOnEnter:true,\r",
+                    "    hideTrigger:true,\r",
+                    "    triggerOnClick:false,\r",
+                    "    pinList:false,\r",
+                    "    id:\"oink\"\r",
+                    "});\r",
+                    "abstractcomponent.add(thing);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "f3cae3b2-ed13-4cf6-9ec1-97c9ab700b3a"
         }
     ]
 }

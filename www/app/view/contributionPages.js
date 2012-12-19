@@ -375,17 +375,17 @@ Ext.define('Rubedo.view.contributionPages', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
-                                    name: 'keywords',
-                                    fieldLabel: 'Mots clés '
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
                                     name: 'pageURL',
                                     fieldLabel: 'URL ',
                                     vtype: 'url'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onMainPageAttributeFormRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -421,6 +421,22 @@ Ext.define('Rubedo.view.contributionPages', {
     onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
         Ext.getStore("PagesDataStore").resumeAutoSync();
         Ext.getStore("PagesDataStore").sync();
+    },
+
+    onMainPageAttributeFormRender: function(abstractcomponent, options) {
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"keywords",
+            fieldLabel:"Mots clés",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            pinList:false
+        });
+        abstractcomponent.add(tagPicker);
     }
 
 });

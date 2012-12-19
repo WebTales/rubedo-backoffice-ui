@@ -40,10 +40,32 @@ Ext.define('Rubedo.view.testingGround', {
                     anchor: '100%',
                     fieldLabel: 'Label'
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onTestingGroundRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onTestingGroundRender: function(abstractcomponent, options) {
+        var thing = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            fieldLabel:"Mots clés",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            pinList:false,
+            id:"oink"
+        });
+        abstractcomponent.add(thing);
     }
 
 });

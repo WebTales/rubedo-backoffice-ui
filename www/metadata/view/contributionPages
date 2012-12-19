@@ -896,27 +896,42 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField48",
-                                "name": "keywords",
-                                "fieldLabel": "Mots clés "
-                            },
-                            "designerId": "ce71e39f-71a4-456a-b6c8-f26e1dc3f63d"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField49",
                                 "name": "pageURL",
                                 "fieldLabel": "URL ",
                                 "vtype": "url"
                             },
                             "designerId": "e23827bb-bedc-46be-9cd4-71433c232443"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMainPageAttributeFormRender",
+                                "fn": "onMainPageAttributeFormRender",
+                                "implHandler": [
+                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    store:[],\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"keywords\",\r",
+                                    "    fieldLabel:\"Mots clés\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    forceSelection:false,\r",
+                                    "    createNewOnEnter:true,\r",
+                                    "    hideTrigger:true,\r",
+                                    "    triggerOnClick:false,\r",
+                                    "    pinList:false\r",
+                                    "});\r",
+                                    "abstractcomponent.add(tagPicker);"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
                         }
                     ]
                 }
