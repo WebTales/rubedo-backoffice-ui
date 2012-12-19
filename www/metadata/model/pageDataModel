@@ -191,6 +191,21 @@
                 "type": "date"
             },
             "designerId": "66d98fce-e321-44ea-a32f-3e5f4633996f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser",
+                "mapping": "createUser.fullName",
+                "persist": false
+            },
+            "designerId": "d958c7c8-b373-4cb7-9532-db6f1319c498"
         }
     ]
 }
