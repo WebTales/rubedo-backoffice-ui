@@ -1,32 +1,38 @@
 {
-    "type": "combobox",
+    "type": "triggerfield",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": true,
         "designer|userClassName": "FCCField",
         "designer|userAlias": "FCCField",
-        "fieldLabel": "Label",
-        "forceSelection": true,
-        "minChars": 3,
-        "queryParam": "comboQuery",
-        "store": "ContentSelectorStore",
-        "typeAhead": true,
-        "valueField": "id"
+        "fieldLabel": "Label"
     },
     "configAlternates": {
         "managesStore": "boolean"
     },
     "id": "ExtBox1-ext-gen3062",
     "designerId": "71505c40-5587-40f5-be0e-bea55fa8806d",
-    "customConfigs": [
+    "cn": [
         {
-            "group": "(Custom Properties)",
-            "name": "managesStore",
-            "type": "string"
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTriggerClick",
+                "fn": "onTriggerClick",
+                "implHandler": [
+                    "var companion = Ext.widget(\"contentPickerWindow\");\r",
+                    "companion.targetId=this.getId();\r",
+                    "companion.show();"
+                ]
+            },
+            "designerId": "a3cd4584-2209-446a-b4d6-ca2a88561f2e"
         }
     ]
 }

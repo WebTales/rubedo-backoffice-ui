@@ -1502,6 +1502,22 @@
                 "app/controller/MediaTypesController.js"
             ],
             "className": "MediaTypesController"
+        },
+        "5ea758ff-277e-480f-8910-8611d58b581e": {
+            "paths": [
+                "metadata/view/contentPickerGrid",
+                "app/view/override/contentPickerGrid.js",
+                "app/view/contentPickerGrid.js"
+            ],
+            "className": "contentPickerGrid"
+        },
+        "6d174482-b97c-435a-b6aa-7fd530bd5680": {
+            "paths": [
+                "metadata/view/contentPickerWindow",
+                "app/view/override/contentPickerWindow.js",
+                "app/view/contentPickerWindow.js"
+            ],
+            "className": "contentPickerWindow"
         }
     },
     "viewOrderMap": {
@@ -1570,6 +1586,8 @@
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
             "71505c40-5587-40f5-be0e-bea55fa8806d",
+            "6d174482-b97c-435a-b6aa-7fd530bd5680",
+            "5ea758ff-277e-480f-8910-8611d58b581e",
             "529b2508-9046-4453-930b-c1aa11abce73",
             "29ccd34b-610a-4d7f-84de-be664235a5e8",
             "c731a69e-dd8d-4064-b123-ea9f9fbdc128",

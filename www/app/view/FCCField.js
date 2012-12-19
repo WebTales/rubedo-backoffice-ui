@@ -14,22 +14,21 @@
  */
 
 Ext.define('Rubedo.view.FCCField', {
-    extend: 'Ext.form.field.ComboBox',
+    extend: 'Ext.form.field.Trigger',
     alias: 'widget.FCCField',
 
-    managesStore: true,
     fieldLabel: 'Label',
-    forceSelection: true,
-    minChars: 3,
-    queryParam: 'comboQuery',
-    store: 'ContentSelectorStore',
-    typeAhead: true,
-    valueField: 'id',
 
     initComponent: function() {
         var me = this;
 
         me.callParent(arguments);
+    },
+
+    onTriggerClick: function() {
+        var companion = Ext.widget("contentPickerWindow");
+        companion.targetId=this.getId();
+        companion.show();
     }
 
 });

@@ -26,29 +26,12 @@ Ext.define('Rubedo.store.ContentSelectorStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             remoteFilter: true,
+            remoteSort: true,
             storeId: 'ContentSelectorStore',
             model: 'Rubedo.model.contenusDataModel',
+            pageSize: 25,
             proxy: {
                 type: 'ajax',
-                encodeFilters: function(filters) {
-                    var min = [],
-                    length = filters.length,
-                    i = 0;
-
-                    for (; i < length; i++) {
-                        min[i] = {
-                            property: filters[i].property,
-                            value   : filters[i].value
-                        };
-                        if (filters[i].type) {
-                            min[i].type = filters[i].type;
-                        }
-                        if (filters[i].operator) {
-                            min[i].operator = filters[i].operator;
-                        }
-                    }
-                    return this.applyEncoding(min);
-                },
                 api: {
                     read: 'contents'
                 },
@@ -57,34 +40,7 @@ Ext.define('Rubedo.store.ContentSelectorStore', {
                     messageProperty: 'message',
                     root: 'data'
                 }
-            },
-            listeners: {
-                beforeload: {
-                    fn: me.onJsonstoreBeforeLoad,
-                    scope: me
-                }
             }
         }, cfg)]);
-    },
-
-    onJsonstoreBeforeLoad: function(store, operation, options) {
-        var o=operation;
-        o.filters=[ ];
-        if (!Ext.isEmpty(o.params)){
-            if (!Ext.isEmpty(o.params.comboQuery)){
-
-                var newFilter=Ext.create('Ext.util.Filter', {
-                    property:"text",
-                    value:o.params.comboQuery,
-                    type:"string",
-                    operator:"like"
-                });
-
-
-                o.filters.push(newFilter);
-
-            }
-        }
     }
-
 });

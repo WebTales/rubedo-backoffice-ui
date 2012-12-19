@@ -153,7 +153,9 @@ Ext.application({
         'MyWindow39',
         'MainToolsContextMenu',
         'mediaTypesInterface',
-        'newMTWindow'
+        'newMTWindow',
+        'contentPickerWindow',
+        'contentPickerGrid'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

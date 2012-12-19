@@ -1,0 +1,322 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "contentPickerGrid",
+        "designer|userAlias": "contentPickerGrid",
+        "id": "contentPickerGrid",
+        "itemId": null,
+        "title": "",
+        "store": "ContentSelectorStore"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen18689",
+    "designerId": "5ea758ff-277e-480f-8910-8611d58b581e",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView2"
+            },
+            "designerId": "490172d4-b5b9-41ae-94d2-aca2d4d25780"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn5",
+                "dataIndex": "text",
+                "flex": 1,
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "e2803e7a-812d-4587-becf-1e3e1314aded",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (record.get(\"status\")==\"published\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
+                            "} else if (record.get(\"status\")==\"pending\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
+                            "} else if (record.get(\"status\")==\"draft\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "b463c0c7-453c-4354-8b3f-2fbbe22f0f29"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
+                    "    store: [\r",
+                    "                [\"draft\", \"brouillon\"],\r",
+                    "                [\"pending\", \"en attente de validation\"],\r",
+                    "                [\"published\", \"publié\"]\r",
+                    "            ]\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyColumn6",
+                "dataIndex": "status",
+                "flex": 1,
+                "text": "Etat"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "c9254786-82d2-4561-adae-8efe60fca743",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (value==\"published\") {\r",
+                            "    return(\"publié\");\r",
+                            "} else if (value==\"pending\") {\r",
+                            "    return(\"en attente de validation\");\r",
+                            "} else if (value==\"draft\") {\r",
+                            "    return(\"brouillon\");\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "6f49f994-2220-49f3-8301-aa7aa449a963"
+                }
+            ]
+        },
+        {
+            "type": "booleancolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
+                    "    store: [\r",
+                    "                [true, 'Oui'],\r",
+                    "                [false, 'Non']\r",
+                    "            ]\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyBooleanColumn3",
+                "width": 60,
+                "dataIndex": "online",
+                "text": "En ligne",
+                "falseText": "Non",
+                "trueText": "Oui"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "9ac27825-1ad8-46f5-9ebd-a98bca326656",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "pagingtoolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyPagingToolbar",
+                "width": 360,
+                "displayInfo": true,
+                "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
+                "emptyMsg": "Rien à afficher",
+                "firstText": "Première page",
+                "lastText": "Dernière page",
+                "nextText": "Page suivante",
+                "prevText": "Page prècèdente",
+                "refreshText": "Rafraichir",
+                "store": "ContentSelectorStore"
+            },
+            "designerId": "dd52bba2-d8d2-4f4a-af5e-dfc758ecaf49",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill20"
+                    },
+                    "designerId": "0edcbb1a-9c32-4c1f-b62e-b43886318b56"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton188",
+                        "disabled": true,
+                        "id": "contentPickerSelectBtn",
+                        "iconCls": "ouiSpetit",
+                        "text": "<b>Choisir ce contenu</b>"
+                    },
+                    "designerId": "0362fb29-8b32-4261-9691-979ceac0a7b2",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "var chosenOne = button.up().up().getSelectionModel().getLastSelected();\r",
+                                    "Ext.getCmp(button.up().up().up().targetId).setValue(chosenOne.get(\"id\"));\r",
+                                    "button.up().up().up().close();\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "d0051433-c5ce-4541-9e25-f5de541a5641"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContentPickerGridSelectionChange",
+                "fn": "onContentPickerGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)) {\r",
+                    "    Ext.getCmp(\"contentPickerSelectBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"contentPickerSelectBtn\").enable();\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "designerId": "02b109c5-bfc3-44e0-ae01-b785874f814c"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContentPickerGridItemDblClick",
+                "fn": "onContentPickerGridItemDblClick",
+                "implHandler": [
+                    "Ext.getCmp(\"contentPickerSelectBtn\").handler(Ext.getCmp(\"contentPickerSelectBtn\"));\r",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "designerId": "04e8d318-5c37-4c14-a658-448547dcc971"
+        }
+    ]
+}

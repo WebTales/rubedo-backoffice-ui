@@ -1,0 +1,82 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "contentPickerWindow",
+        "designer|userAlias": "contentPickerWindow",
+        "height": 434,
+        "id": "contentPickerWindow",
+        "width": 751,
+        "layout": "fit",
+        "iconCls": null,
+        "title": "Sélecteur de contenu",
+        "constrainHeader": true,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen17928",
+    "designerId": "6d174482-b97c-435a-b6aa-7fd530bd5680",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "6c25c6df-53b6-45e7-ad98-a9dfcf9d5bbe",
+            "masterInstanceId": "ExtBox1-ext-gen18689"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "7b3c9396-fcf0-4a3c-8002-a399c42c0b5f",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContentPickerWindowRender",
+                "fn": "onContentPickerWindowRender",
+                "implHandler": [
+                    "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"ContentSelectorStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "034d1993-13c5-4a6c-9f2b-61dfa4e6f312"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContentPickerWindowBeforeClose",
+                "fn": "onContentPickerWindowBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"ContentSelectorStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "ebe4bf4e-7d48-4251-974b-a55bca1978c3"
+        }
+    ]
+}
