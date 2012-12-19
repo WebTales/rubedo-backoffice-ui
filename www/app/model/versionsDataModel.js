@@ -18,8 +18,7 @@ Ext.define('Rubedo.model.versionsDataModel', {
 
     fields: [
         {
-            name: 'text',
-            mapping: 'fields.text'
+            name: 'text'
         },
         {
             name: 'id'
