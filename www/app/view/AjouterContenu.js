@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
     alias: 'widget.ajouterContenu',
 
     requires: [
-        'Rubedo.view.NestedContentsGrid'
+        'Rubedo.view.NestedContentsGrid',
+        'Rubedo.view.MyTool17'
     ],
 
     floating: true,
@@ -342,6 +343,11 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             ]
                         }
                     ]
+                }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool17'
                 }
             ]
         });
