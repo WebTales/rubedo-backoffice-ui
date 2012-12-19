@@ -849,6 +849,7 @@
                                 "designer|userClassName": "MyTextField46",
                                 "name": "text",
                                 "fieldLabel": "Nom ",
+                                "labelSeparator": null,
                                 "allowBlank": false,
                                 "vtype": "alphanum"
                             },
@@ -865,7 +866,8 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField47",
                                 "name": "title",
-                                "fieldLabel": "Titre "
+                                "fieldLabel": "Titre ",
+                                "labelSeparator": null
                             },
                             "designerId": "4aac2896-fd55-4956-b889-63edbbda59c3"
                         },

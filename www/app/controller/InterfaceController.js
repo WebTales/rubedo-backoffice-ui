@@ -365,6 +365,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }
     },
 
+    onComponentBeforeRender: function(abstractcomponent, options) {
+        if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))){
+            abstractcomponent.labelSeparator=" ";
+        }
+    },
+
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
@@ -491,6 +497,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#desktopHomeBtn": {
                 click: this.onDesktopHomeBtnClick
+            },
+            "component": {
+                beforerender: this.onComponentBeforeRender
             }
         });
     },

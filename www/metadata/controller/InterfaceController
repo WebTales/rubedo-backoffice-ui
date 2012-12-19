@@ -923,6 +923,28 @@
                 "designer|controlQuery": "#menuPrincipalDroite button"
             },
             "designerId": "f38c0e6a-bfb2-430d-a501-82dd290d4f5c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComponentBeforeRender",
+                "fn": "onComponentBeforeRender",
+                "implHandler": [
+                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
+                    "    abstractcomponent.labelSeparator=\" \";\r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": "Ext.Component",
+                "designer|controlQuery": "component"
+            },
+            "designerId": "20545d3d-55c2-4f5f-b471-7cfc1046dd2b"
         }
     ]
 }
