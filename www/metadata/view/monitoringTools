@@ -223,6 +223,8 @@
                                                     "button.setLoading(true);\r",
                                                     "Ext.Ajax.request({\r",
                                                     "    url: 'elastic-indexer',\r",
+                                                    "    params:{\r",
+                                                    "    },\r",
                                                     "    success: function(response){\r",
                                                     "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
                                                     "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
