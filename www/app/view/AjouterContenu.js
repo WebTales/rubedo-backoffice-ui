@@ -222,7 +222,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         {
                                             xtype: 'gridcolumn',
                                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                console.log(value);
                                                 return(Ext.Date.format(new Date(value),"F j, Y, G:i"));
                                             },
                                             dataIndex: 'publishTime',

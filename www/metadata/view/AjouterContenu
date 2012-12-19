@@ -582,7 +582,6 @@
                                                     "view"
                                                 ],
                                                 "implHandler": [
-                                                    "console.log(value);\r",
                                                     "return(Ext.Date.format(new Date(value),\"F j, Y, G:i\"));"
                                                 ]
                                             },

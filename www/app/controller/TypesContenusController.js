@@ -632,7 +632,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     nameValidator: function(name) {
-        var usedNames=[];
+        var usedNames=["text","summary"];
         Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
             if (field.getId()!=Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getId()){
                 Ext.Array.include(usedNames,field.name);
@@ -646,7 +646,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     nameAvailable: function(name) {
-        var usedNames=[];
+        var usedNames=["text","summary"];
         Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
             Ext.Array.include(usedNames,field.name);
         });

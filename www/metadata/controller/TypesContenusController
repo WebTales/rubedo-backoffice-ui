@@ -975,7 +975,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[];\r",
+                    "var usedNames=[\"text\",\"summary\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
                     "    if (field.getId()!=Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getId()){\r",
                     "        Ext.Array.include(usedNames,field.name);\r",
@@ -1004,7 +1004,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[];\r",
+                    "var usedNames=[\"text\",\"summary\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
                     "    Ext.Array.include(usedNames,field.name);\r",
                     "});\r",
