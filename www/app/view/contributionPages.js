@@ -375,8 +375,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'pageURL',
-                                    fieldLabel: 'URL ',
-                                    vtype: 'url'
+                                    fieldLabel: 'URL '
                                 }
                             ],
                             listeners: {
