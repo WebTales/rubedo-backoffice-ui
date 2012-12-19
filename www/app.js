@@ -95,7 +95,8 @@ Ext.application({
         'SitesComboPreview',
         'PagesPreviewStore',
         'VersioningStore',
-        'MediaTypes'
+        'MediaTypes',
+        'TCNDepComboCS'
     ],
     views: [
         'MyContainer',

@@ -1,0 +1,89 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "ContentTypes",
+        "designer|userClassName": "TCNDepComboCS",
+        "designer|userAlias": "TCNDepComboCS",
+        "autoLoad": false,
+        "storeId": "TCNDepComboCS",
+        "model": "typesContenusDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen49077",
+    "designerId": "f111f40a-db0f-4126-b5c8-43a26057522d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "api": [
+                    "{\r",
+                    "                    create: 'content-types/create',\r",
+                    "                    read: 'content-types',\r",
+                    "                    update: 'content-types/update',\r",
+                    "                    destroy: 'content-types/delete'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "f483a415-5858-46c2-afcf-e29ffd0ad330",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "f99966a1-2816-46fc-981c-ab35da9fcc3f"
+                }
+            ]
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter",
+                "property": "dependant",
+                "value": [
+                    "false"
+                ]
+            },
+            "designerId": "9c750fb1-6da6-486c-881f-ef46b32e7fb0"
+        }
+    ]
+}

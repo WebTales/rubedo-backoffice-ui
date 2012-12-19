@@ -104,6 +104,66 @@
                 "filter": [
                     "{\r",
                     "    type:\"combo\",\r",
+                    "    valueField:\"id\",\r",
+                    "    displayField:\"type\",\r",
+                    "    store: \"TCNDepComboCS\"\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyColumn53",
+                "dataIndex": "typeId",
+                "flex": 1,
+                "text": "Type"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "a4eee99c-f024-4d18-97e0-cb45f0c77e13",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "return(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value).get(\"type\"));"
+                        ]
+                    },
+                    "designerId": "69544424-82b8-43fe-b334-d6b29d08db4d"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
                     "    store: [\r",
                     "                [\"draft\", \"brouillon\"],\r",
                     "                [\"pending\", \"en attente de validation\"],\r",

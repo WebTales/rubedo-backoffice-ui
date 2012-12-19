@@ -51,8 +51,11 @@
                 "designer|userClassName": "onContentPickerWindowRender",
                 "fn": "onContentPickerWindowRender",
                 "implHandler": [
+                    "Ext.getStore(\"TCNDepComboCS\").addListener(\"load\",function(){\r",
                     "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"ContentSelectorStore\").load();"
+                    "Ext.getStore(\"ContentSelectorStore\").load();\r",
+                    "},this,{single:true});\r",
+                    "Ext.getStore(\"TCNDepComboCS\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -71,7 +74,8 @@
                 "fn": "onContentPickerWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"ContentSelectorStore\").removeAll();"
+                    "Ext.getStore(\"ContentSelectorStore\").removeAll();\r",
+                    "Ext.getStore(\"TCNDepComboCS\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

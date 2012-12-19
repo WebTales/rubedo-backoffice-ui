@@ -55,6 +55,21 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        return(Ext.getStore("TCNDepComboCS").findRecord("id",value).get("type"));
+                    },
+                    filter: {
+                        type: 'combo',
+                        valueField: 'id',
+                        displayField: 'type',
+                        store: 'TCNDepComboCS'
+                    },
+                    dataIndex: 'typeId',
+                    flex: 1,
+                    text: 'Type'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (value=="published") {
                             return("publié");
                         } else if (value=="pending") {
