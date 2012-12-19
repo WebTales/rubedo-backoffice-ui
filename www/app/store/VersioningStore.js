@@ -40,6 +40,10 @@ Ext.define('Rubedo.store.VersioningStore', {
                     messageProperty: 'message',
                     root: 'data'
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'publishVersion'
             }
         }, cfg)]);
     }

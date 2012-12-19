@@ -529,9 +529,38 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyColumn47",
                                         "dataIndex": "text",
-                                        "text": "Titre au moment de l'enregistement"
+                                        "text": "Titre"
                                     },
-                                    "designerId": "72c1229a-c142-4441-b47d-8f11b7883ce4",
+                                    "designerId": "72c1229a-c142-4441-b47d-8f11b7883ce4"
+                                },
+                                {
+                                    "type": "numbercolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyNumberColumn",
+                                        "dataIndex": "publishVersion",
+                                        "text": "Version",
+                                        "format": "0"
+                                    },
+                                    "designerId": "66d0247d-54ee-4a56-91ca-63419a13c2d9"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn52",
+                                        "dataIndex": "publishTime",
+                                        "text": "Date de publication"
+                                    },
+                                    "designerId": "dc810999-8bb5-457c-a815-ac91addb696b",
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -553,16 +582,11 @@
                                                     "view"
                                                 ],
                                                 "implHandler": [
-                                                    "if (record.get(\"status\")==\"published\") {\r",
-                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
-                                                    "} else if (record.get(\"status\")==\"pending\") {\r",
-                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
-                                                    "} else if (record.get(\"status\")==\"draft\") {\r",
-                                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
-                                                    "}"
+                                                    "console.log(value);\r",
+                                                    "return(Ext.Date.format(new Date(value),\"F j, Y, G:i\"));"
                                                 ]
                                             },
-                                            "designerId": "0df21da1-b202-4f8e-9a00-a3c3c272b968"
+                                            "designerId": "b6a3e2fc-f9d9-4705-a117-38a044cc5ed8"
                                         }
                                     ]
                                 },
@@ -574,44 +598,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyColumn48",
-                                        "dataIndex": "status",
-                                        "text": "Etat au moment de l'enregistrement"
+                                        "designer|userClassName": "MyColumn2",
+                                        "dataIndex": "publishUser",
+                                        "text": "Auteur"
                                     },
-                                    "designerId": "1a959d75-e977-4328-8769-e9c07e189964",
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "renderer",
-                                                "fn": "renderer",
-                                                "designer|params": [
-                                                    "value",
-                                                    "metaData",
-                                                    "record",
-                                                    "rowIndex",
-                                                    "colIndex",
-                                                    "store",
-                                                    "view"
-                                                ],
-                                                "implHandler": [
-                                                    "if (value==\"published\") {\r",
-                                                    "    return(\"publié\");\r",
-                                                    "} else if (value==\"pending\") {\r",
-                                                    "    return(\"en attente de validation\");\r",
-                                                    "} else if (value==\"draft\") {\r",
-                                                    "    return(\"brouillon\");\r",
-                                                    "}"
-                                                ]
-                                            },
-                                            "designerId": "75ba17fd-c0f2-4661-9b2c-97995dc98853"
-                                        }
-                                    ]
+                                    "designerId": "f6b3d90f-8c76-44c0-b9ad-d20c90de8cb4"
                                 }
                             ]
                         }

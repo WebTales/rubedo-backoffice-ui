@@ -22,10 +22,6 @@ Ext.define('Rubedo.model.versionsDataModel', {
             mapping: 'fields.text'
         },
         {
-            name: 'status',
-            type: 'string'
-        },
-        {
             name: 'id'
         },
         {
@@ -33,6 +29,19 @@ Ext.define('Rubedo.model.versionsDataModel', {
         },
         {
             name: 'contentId'
+        },
+        {
+            name: 'publishVersion',
+            sortType: 'asInt',
+            type: 'int'
+        },
+        {
+            name: 'publishTime',
+            dateFormat: 'timestamp'
+        },
+        {
+            name: 'publishUser',
+            mapping: 'publishUser.fullName'
         }
     ]
 });

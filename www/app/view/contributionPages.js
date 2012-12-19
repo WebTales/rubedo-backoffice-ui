@@ -306,7 +306,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                     collapseDirection: 'right',
                                     collapsible: true,
                                     title: 'Propriétés',
-                                    titleCollapse: false,
                                     items: [
                                         {
                                             xtype: 'form',

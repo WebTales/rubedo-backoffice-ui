@@ -34,20 +34,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "status",
-                "type": "string"
-            },
-            "designerId": "e3aafcb4-4b1e-4657-882e-f6238b125b86"
-        },
-        {
-            "type": "datafield",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|userClassName": "field61",
                 "name": "id"
             },
@@ -78,6 +64,49 @@
                 "name": "contentId"
             },
             "designerId": "07e87087-e00b-4a5f-bc13-55f796d5cbde"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field208",
+                "name": "publishVersion",
+                "sortType": "asInt",
+                "type": "int"
+            },
+            "designerId": "429457ff-501a-4b91-b1a0-a64931be67ca"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field209",
+                "name": "publishTime",
+                "dateFormat": "timestamp"
+            },
+            "designerId": "7ac67c71-e102-44a6-926d-136b2cc44744"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field63",
+                "name": "publishUser",
+                "mapping": "publishUser.fullName"
+            },
+            "designerId": "00ad6d49-3475-4ae4-aadf-455a625ecaef"
         }
     ]
 }

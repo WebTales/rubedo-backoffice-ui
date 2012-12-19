@@ -210,31 +210,28 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                if (record.get("status")=="published") {
-                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
-                                                } else if (record.get("status")=="pending") {
-                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
-                                                } else if (record.get("status")=="draft") {
-                                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
-                                                }
-                                            },
                                             dataIndex: 'text',
-                                            text: 'Titre au moment de l\'enregistement'
+                                            text: 'Titre'
+                                        },
+                                        {
+                                            xtype: 'numbercolumn',
+                                            dataIndex: 'publishVersion',
+                                            text: 'Version',
+                                            format: '0'
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                if (value=="published") {
-                                                    return("publié");
-                                                } else if (value=="pending") {
-                                                    return("en attente de validation");
-                                                } else if (value=="draft") {
-                                                    return("brouillon");
-                                                }
+                                                console.log(value);
+                                                return(Ext.Date.format(new Date(value),"F j, Y, G:i"));
                                             },
-                                            dataIndex: 'status',
-                                            text: 'Etat au moment de l\'enregistrement'
+                                            dataIndex: 'publishTime',
+                                            text: 'Date de publication'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'publishUser',
+                                            text: 'Auteur'
                                         }
                                     ]
                                 }
