@@ -7,10 +7,10 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "ajoutChampTCFenetre",
-        "designer|userAlias": "ajoutChampTCFenetre",
+        "designer|userClassName": "MTFieldAddWindow",
+        "designer|userAlias": "MTFieldAddWindow",
         "height": 300,
-        "id": "ajoutChampTCFenetre",
+        "id": "MTFieldAddWindow",
         "width": 500,
         "resizable": [
             "false"
@@ -20,8 +20,8 @@
         "constrainHeader": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen29819",
-    "designerId": "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
+    "id": "ExtBox1-ext-gen7440",
+    "designerId": "930bd7cd-dcce-4789-a701-014e8fbe373e",
     "cn": [
         {
             "type": "gridpanel",
@@ -33,11 +33,11 @@
             "userConfig": {
                 "layout|flex": 0.5,
                 "designer|userClassName": "MyGridPanel8",
-                "id": "ChampTCSelectGrid",
+                "id": "MTFieldSelectGrid",
                 "title": "",
-                "store": "TypesChampsDataStore"
+                "store": "MTFieldsStore"
             },
-            "designerId": "4e0ad331-3355-4204-9b00-b51e9a390814",
+            "designerId": "0af55f0e-17ed-4d8c-9ee4-45f9e44e182c",
             "cn": [
                 {
                     "type": "gridview",
@@ -49,7 +49,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyGridView6"
                     },
-                    "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c"
+                    "designerId": "1bf7b279-363d-41b4-b960-28d78754c090"
                 },
                 {
                     "type": "gridcolumn",
@@ -64,7 +64,26 @@
                         "flex": 1,
                         "text": "Type"
                     },
-                    "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de"
+                    "designerId": "447f1dab-6ffd-4df9-aa71-728f46314c3f"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onMTFieldSelectGridSelect",
+                        "fn": "onMTFieldSelectGridSelect",
+                        "implHandler": [
+                            "Ext.getCmp(\"MTFieldInsertBtn\").enable();\r",
+                            "Ext.getCmp(\"MTFieldDescriber\").update(record.get(\"description\"));"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "195820d6-57b4-47fa-b9fb-086d30f583b4"
                 }
             ]
         },
@@ -78,7 +97,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "designer|userClassName": "MyPanel61",
-                "id": "PaneauTCDetail",
+                "id": "MTFieldDescriber",
                 "styleHtmlContent": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
@@ -86,7 +105,7 @@
                 ],
                 "title": ""
             },
-            "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
+            "designerId": "d3cab85f-7d88-4463-a430-8b7a41b804b4",
             "cn": [
                 {
                     "type": "template",
@@ -102,7 +121,7 @@
                         ],
                         "designer|displayName": "tpl"
                     },
-                    "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
+                    "designerId": "35f51a9a-a1d5-436f-a1ca-91f20de24a64"
                 }
             ]
         },
@@ -118,7 +137,7 @@
                 "dock": "bottom",
                 "designer|userClassName": "MyToolbar16"
             },
-            "designerId": "0e376d6c-8ec1-4c44-9c32-678fb7579a6e",
+            "designerId": "e56c1783-791c-42c2-ac91-adb52e44c9a9",
             "cn": [
                 {
                     "type": "tbfill",
@@ -131,7 +150,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyFill9"
                     },
-                    "designerId": "7318e19f-be26-4061-a70e-0fcfdee1a901"
+                    "designerId": "e99ea634-5786-4590-9722-25bc74138bc0"
                 },
                 {
                     "type": "button",
@@ -143,12 +162,13 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton72",
-                        "id": "boutonAjouterChampTC",
+                        "disabled": true,
+                        "id": "MTFieldInsertBtn",
                         "margin": null,
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
-                    "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe"
+                    "designerId": "14964286-01fe-4b3d-a335-80ff972168f7"
                 }
             ]
         }

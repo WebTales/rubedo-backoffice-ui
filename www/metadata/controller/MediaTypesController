@@ -200,6 +200,26 @@
                 "designer|controlQuery": "#saveMTBtn"
             },
             "designerId": "465a0fde-261b-4daa-a451-461beaa7941e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewMTFieldBtnClick",
+                "fn": "onNewMTFieldBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"MTFieldAddWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newMTFieldBtn"
+            },
+            "designerId": "cfb4f6da-26ac-48b7-8c2b-61b9675b398b"
         }
     ]
 }

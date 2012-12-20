@@ -38,6 +38,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFUtilisateurs',
         'Rubedo.view.ajoutBlocFenetre',
         'Rubedo.view.ajoutChampTCFenetre',
+        'Rubedo.view.MTFieldAddWindow',
         'Rubedo.view.contributionContenus',
         'Rubedo.view.contributionMedias',
         'Rubedo.view.copierMasque',

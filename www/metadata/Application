@@ -26,7 +26,8 @@
             "nestedContentModel",
             "pageDataModel",
             "imageDataModel",
-            "mediaTypeModel"
+            "mediaTypeModel",
+            "MTFieldModel"
         ],
         "stores": [
             "SitesJson",
@@ -81,7 +82,8 @@
             "VersioningStore",
             "MediaTypes",
             "TCNDepComboCS",
-            "TaxonomyForMT"
+            "TaxonomyForMT",
+            "MTFieldsStore"
         ],
         "views": [
             "MyContainer",
@@ -141,7 +143,8 @@
             "mediaTypesInterface",
             "newMTWindow",
             "contentPickerWindow",
-            "contentPickerGrid"
+            "contentPickerGrid",
+            "MTFieldAddWindow"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

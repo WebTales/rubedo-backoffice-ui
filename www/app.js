@@ -42,7 +42,8 @@ Ext.application({
         'nestedContentModel',
         'pageDataModel',
         'imageDataModel',
-        'mediaTypeModel'
+        'mediaTypeModel',
+        'MTFieldModel'
     ],
     stores: [
         'SitesJson',
@@ -97,7 +98,8 @@ Ext.application({
         'VersioningStore',
         'MediaTypes',
         'TCNDepComboCS',
-        'TaxonomyForMT'
+        'TaxonomyForMT',
+        'MTFieldsStore'
     ],
     views: [
         'MyContainer',
@@ -157,7 +159,8 @@ Ext.application({
         'mediaTypesInterface',
         'newMTWindow',
         'contentPickerWindow',
-        'contentPickerGrid'
+        'contentPickerGrid',
+        'MTFieldAddWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

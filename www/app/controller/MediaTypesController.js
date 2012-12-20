@@ -55,6 +55,10 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         this.updateMT(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected());
     },
 
+    onNewMTFieldBtnClick: function(button, e, options) {
+        Ext.widget("MTFieldAddWindow").show();
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
@@ -100,6 +104,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#saveMTBtn": {
                 click: this.onSaveMTBtnClick
+            },
+            "#newMTFieldBtn": {
+                click: this.onNewMTFieldBtnClick
             }
         });
     }

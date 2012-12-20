@@ -1534,6 +1534,30 @@
                 "app/store/TaxonomyForMT.js"
             ],
             "className": "TaxonomyForMT"
+        },
+        "6141ab25-f5c9-4413-a10a-f0e2e781e9f7": {
+            "paths": [
+                "metadata/store/MTFieldsStore",
+                "app/store/override/MTFieldsStore.js",
+                "app/store/MTFieldsStore.js"
+            ],
+            "className": "MTFieldsStore"
+        },
+        "0d7a70b9-8e94-4274-9b36-3d49f6dcc936": {
+            "paths": [
+                "metadata/model/MTFieldModel",
+                "app/model/override/MTFieldModel.js",
+                "app/model/MTFieldModel.js"
+            ],
+            "className": "MTFieldModel"
+        },
+        "930bd7cd-dcce-4789-a701-014e8fbe373e": {
+            "paths": [
+                "metadata/view/MTFieldAddWindow",
+                "app/view/override/MTFieldAddWindow.js",
+                "app/view/MTFieldAddWindow.js"
+            ],
+            "className": "MTFieldAddWindow"
         }
     },
     "viewOrderMap": {
@@ -1563,6 +1587,7 @@
             "fb146702-039a-47f8-8142-bd4572c13135",
             "98fcade8-7344-415c-99cd-f6e6e08ad540",
             "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
+            "930bd7cd-dcce-4789-a701-014e8fbe373e",
             "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
             "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265",
             "65bb8cb3-a5cd-4190-a57a-aee4326f88e2",
@@ -1673,7 +1698,8 @@
             "22ba5094-835c-4318-a1c2-2d6da1f35089",
             "f111f40a-db0f-4126-b5c8-43a26057522d",
             "d8f6752f-2ba3-491c-832a-e8456b095138",
-            "42485569-d0e5-4710-b0aa-104840533721"
+            "42485569-d0e5-4710-b0aa-104840533721",
+            "6141ab25-f5c9-4413-a10a-f0e2e781e9f7"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1700,6 +1726,7 @@
             "3895db21-6cb0-4c47-bbdb-6733b5e4684f",
             "8130c927-1032-4d5f-b157-d56672d37d52",
             "b22a93f8-8da7-4af9-9421-f70e6693b540",
+            "0d7a70b9-8e94-4274-9b36-3d49f6dcc936",
             "fe5d7737-8a9a-41fb-bffc-cc004c69d906",
             "959aada9-4d0a-400b-bb01-0907998b9c82",
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
