@@ -24,6 +24,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     onCreateNewMTBtnClick: function(button, e, options) {
         if (button.up().getForm().isValid()) {
             var newMT=Ext.create("Rubedo.model.mediaTypeModel",button.up().getForm().getValues());
+            newMT.set("vocabularies", [ ]);
+            newMT.set("fields", [ ]);
             Ext.getStore("MediaTypes").add(newMT);
             button.up().up().close();
         }
@@ -49,6 +51,10 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         }
     },
 
+    onSaveMTBtnClick: function(button, e, options) {
+        this.updateMT(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected());
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
@@ -64,6 +70,18 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias <b> > </b>", iconCls:"mediaTypes"}));
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"mediaTypes"}));
         Ext.getCmp("MTcenterZone").enable();
+        var selector= [];
+        Ext.Array.forEach(record.get("vocabularies"),function(vocabId){
+            selector.push(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId));
+        });
+        Ext.getCmp("vocabulariesMTGrid").getSelectionModel().select(selector);
+    },
+
+    updateMT: function(record) {
+        record.beginEdit();
+        var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesMTGrid").getSelectionModel().getSelection(), "data"), "id");
+        record.set("vocabularies", newVocabularies);
+        record.endEdit();
     },
 
     init: function(application) {
@@ -79,6 +97,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#removeMTBtn": {
                 click: this.onRemoveMTBtnClick
+            },
+            "#saveMTBtn": {
+                click: this.onSaveMTBtnClick
             }
         });
     }

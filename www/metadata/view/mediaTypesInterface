@@ -12,7 +12,7 @@
         "designer|userAlias": "mediaTypesInterface",
         "height": 627,
         "id": "mediaTypesInterface",
-        "width": 1056,
+        "width": 1080,
         "layout": "hbox",
         "iconCls": "mediaTypes",
         "title": "Types de médias",
@@ -548,8 +548,53 @@
                                 ]
                             },
                             "designerId": "bd96e035-9fad-4068-9d12-3039cf95691f"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField61",
+                                "allowBlank": false
+                            },
+                            "designerId": "d7c5e77d-fe61-4266-95f9-1225bc76396d"
                         }
                     ]
+                },
+                {
+                    "type": "gridcelleditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin3"
+                    },
+                    "designerId": "5f7cf847-b847-4f49-8d7b-bd250b2b051e"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onMainMTGridSelect",
+                        "fn": "onMainMTGridSelect",
+                        "implHandler": [
+                            "Ext.getCmp(\"MTcenterZone\").setActiveTab(2);\r",
+                            "Ext.getCmp(\"MTcenterZone\").setActiveTab(0);"
+                        ],
+                        "single": true,
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "8edd6541-5d56-43d2-849b-80b6da2684f5"
                 }
             ]
         },

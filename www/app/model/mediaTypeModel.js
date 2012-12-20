@@ -29,6 +29,9 @@ Ext.define('Rubedo.model.mediaTypeModel', {
         },
         {
             name: 'fields'
+        },
+        {
+            name: 'vocabularies'
         }
     ]
 });

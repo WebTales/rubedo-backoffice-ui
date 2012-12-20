@@ -25,7 +25,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     favoriteIcon: 'images.png',
     height: 627,
     id: 'mediaTypesInterface',
-    width: 1056,
+    width: 1080,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -275,9 +275,25 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value );
                             },
                             dataIndex: 'type',
-                            text: 'Type'
+                            text: 'Type',
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false
+                            }
                         }
-                    ]
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+                            ptype: 'cellediting'
+                        })
+                    ],
+                    listeners: {
+                        select: {
+                            fn: me.onMainMTGridSelect,
+                            single: true,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'tabpanel',
@@ -451,6 +467,11 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onMainMTGridSelect: function(selModel, record, index, options) {
+        Ext.getCmp("MTcenterZone").setActiveTab(2);
+        Ext.getCmp("MTcenterZone").setActiveTab(0);
     },
 
     onImageRender1: function(abstractcomponent, options) {

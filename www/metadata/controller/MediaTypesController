@@ -45,6 +45,8 @@
                 "implHandler": [
                     "if (button.up().getForm().isValid()) {\r",
                     "    var newMT=Ext.create(\"Rubedo.model.mediaTypeModel\",button.up().getForm().getValues());\r",
+                    "    newMT.set(\"vocabularies\", [ ]);\r",
+                    "    newMT.set(\"fields\", [ ]);\r",
                     "    Ext.getStore(\"MediaTypes\").add(newMT);\r",
                     "    button.up().up().close();\r",
                     "}"
@@ -95,7 +97,12 @@
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias <b> > </b>\", iconCls:\"mediaTypes\"}));\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"mediaTypes\"}));\r",
-                    "Ext.getCmp(\"MTcenterZone\").enable();"
+                    "Ext.getCmp(\"MTcenterZone\").enable();\r",
+                    "var selector= [];\r",
+                    "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabId){\r",
+                    "    selector.push(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId));\r",
+                    "});\r",
+                    "Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().select(selector);"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
@@ -151,6 +158,48 @@
                 "designer|controlQuery": "#removeMTBtn"
             },
             "designerId": "b44db20e-1956-4783-9446-c9967f5f33a9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "updateMT",
+                "fn": "updateMT",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "record.beginEdit();\r",
+                    "var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().getSelection(), \"data\"), \"id\");\r",
+                    "record.set(\"vocabularies\", newVocabularies);\r",
+                    "record.endEdit();"
+                ]
+            },
+            "designerId": "1170ac62-74f1-47f2-858d-bb865b9c5a83"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveMTBtnClick",
+                "fn": "onSaveMTBtnClick",
+                "implHandler": [
+                    "this.updateMT(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#saveMTBtn"
+            },
+            "designerId": "465a0fde-261b-4daa-a451-461beaa7941e"
         }
     ]
 }
