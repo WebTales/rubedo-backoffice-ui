@@ -59,6 +59,13 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.widget("MTFieldAddWindow").show();
     },
 
+    onMTFieldInsertBtnClick: function(button, e, options) {
+        var proto=Ext.clone(Ext.getCmp("MTFieldSelectGrid").getSelectionModel().getLastSelected().getData());
+        proto.protoId=proto.id;
+        this.renderMTField(proto, Ext.getCmp('MTeditFields'));
+        button.up().up().close();
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
@@ -88,6 +95,44 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         record.endEdit();
     },
 
+    renderMTField: function(protoData, renderTarget) {
+        var me=this;
+        var newField= Ext.create(protoData.cType, protoData.config);
+        newField.config=protoData.config;
+        newField.configFields=protoData.configFields;
+        newField.protoId=protoData.protoId;
+        newField.anchor = '90%';
+        newField.style = '{float:left;}';
+        var casing =Ext.widget('ChampTC');
+        casing.add(newField);
+        casing.getComponent('helpBouton').setTooltip(newField.config.tooltip);
+        if (Ext.isEmpty(newField.config.tooltip)){
+            casing.getComponent('helpBouton').hidden=true;
+        } 
+        if (!me.nameAvailable(newField.name)) {
+            var duplic = 1;
+            while (!me.nameAvailable(newField.name+duplic)){
+                duplic++;
+            }
+            newField.name=newField.name+duplic;
+            newField.config.name=newField.config.name+duplic;
+
+        }
+        renderTarget.add(casing);
+    },
+
+    nameAvailable: function(name) {
+        var usedNames=[];
+        Ext.Array.forEach(Ext.getCmp('MTeditFields').query("field"), function(field){
+            Ext.Array.include(usedNames,field.name);
+        });
+        if (Ext.Array.contains(usedNames,name)){
+            return(false);
+        } else {
+            return(true);
+        }
+    },
+
     init: function(application) {
         this.control({
             "#newMTBtn": {
@@ -107,6 +152,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#newMTFieldBtn": {
                 click: this.onNewMTFieldBtnClick
+            },
+            "#MTFieldInsertBtn": {
+                click: this.onMTFieldInsertBtnClick
             }
         });
     }

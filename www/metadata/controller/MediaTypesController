@@ -220,6 +220,98 @@
                 "designer|controlQuery": "#newMTFieldBtn"
             },
             "designerId": "cfb4f6da-26ac-48b7-8c2b-61b9675b398b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "renderMTField",
+                "fn": "renderMTField",
+                "designer|params": [
+                    "protoData",
+                    "renderTarget"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var newField= Ext.create(protoData.cType, protoData.config);\r",
+                    "newField.config=protoData.config;\r",
+                    "newField.configFields=protoData.configFields;\r",
+                    "newField.protoId=protoData.protoId;\r",
+                    "newField.anchor = '90%';\r",
+                    "newField.style = '{float:left;}';\r",
+                    "var casing =Ext.widget('ChampTC');\r",
+                    "casing.add(newField);\r",
+                    "casing.getComponent('helpBouton').setTooltip(newField.config.tooltip);\r",
+                    "if (Ext.isEmpty(newField.config.tooltip)){\r",
+                    "    casing.getComponent('helpBouton').hidden=true;\r",
+                    "} \r",
+                    "if (!me.nameAvailable(newField.name)) {\r",
+                    "    var duplic = 1;\r",
+                    "    while (!me.nameAvailable(newField.name+duplic)){\r",
+                    "        duplic++;\r",
+                    "    }\r",
+                    "    newField.name=newField.name+duplic;\r",
+                    "    newField.config.name=newField.config.name+duplic;\r",
+                    "\r",
+                    "}\r",
+                    "renderTarget.add(casing);"
+                ]
+            },
+            "designerId": "547a1bc7-fd3d-412f-aa2a-b78c6b945034"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "nameAvailable",
+                "fn": "nameAvailable",
+                "designer|params": [
+                    "name"
+                ],
+                "implHandler": [
+                    "var usedNames=[];\r",
+                    "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
+                    "    Ext.Array.include(usedNames,field.name);\r",
+                    "});\r",
+                    "if (Ext.Array.contains(usedNames,name)){\r",
+                    "    return(false);\r",
+                    "} else {\r",
+                    "    return(true);\r",
+                    "}"
+                ]
+            },
+            "designerId": "50521139-945b-40a3-864c-341e337addf3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMTFieldInsertBtnClick",
+                "fn": "onMTFieldInsertBtnClick",
+                "implHandler": [
+                    "var proto=Ext.clone(Ext.getCmp(\"MTFieldSelectGrid\").getSelectionModel().getLastSelected().getData());\r",
+                    "proto.protoId=proto.id;\r",
+                    "this.renderMTField(proto, Ext.getCmp('MTeditFields'));\r",
+                    "button.up().up().close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MTFieldInsertBtn"
+            },
+            "designerId": "f2107c8d-ed5c-47c6-8e79-059e32c1e129"
         }
     ]
 }

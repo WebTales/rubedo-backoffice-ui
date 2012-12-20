@@ -257,7 +257,7 @@
                     "enrobage.add(nouvChamp);\r",
                     "enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);\r",
                     "if (Ext.isEmpty(nouvChamp.config.tooltip)){\r",
-                    "   enrobage.getComponent('helpBouton').hidden=true;\r",
+                    "    enrobage.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
                     "if (!me.nameAvailable(nouvChamp.name)) {\r",
                     "    var duplic = 1;\r",
