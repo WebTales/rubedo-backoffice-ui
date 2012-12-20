@@ -96,7 +96,8 @@ Ext.application({
         'PagesPreviewStore',
         'VersioningStore',
         'MediaTypes',
-        'TCNDepComboCS'
+        'TCNDepComboCS',
+        'TaxonomyForMT'
     ],
     views: [
         'MyContainer',

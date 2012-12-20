@@ -639,6 +639,460 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyTabPanel",
+                "disabled": true,
+                "id": "MTcenterZone",
+                "iconCls": null,
+                "activeTab": 0
+            },
+            "designerId": "04368937-8e13-4414-8683-1fbeba38e21b",
+            "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "container|align": "stretch",
+                        "designer|userClassName": "MyPanel4",
+                        "floating": false,
+                        "autoScroll": false,
+                        "layout": "hbox",
+                        "iconCls": "edit",
+                        "title": "Edition"
+                    },
+                    "designerId": "ea2ea369-4a28-4944-af96-7604dc2d2aa1",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "TabConfig1"
+                            },
+                            "designerId": "25a20889-bbff-428b-9513-ca0a1f6141ae"
+                        },
+                        {
+                            "type": "container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyContainer4",
+                                "id": "MTEditContainer",
+                                "width": null,
+                                "autoScroll": true
+                            },
+                            "designerId": "10750f8a-2696-429d-b269-b56e40eca868",
+                            "cn": [
+                                {
+                                    "type": "form",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyForm15",
+                                        "frame": true,
+                                        "id": "MTeditFields",
+                                        "margin": 20,
+                                        "autoScroll": false,
+                                        "resizable": [
+                                            "false"
+                                        ],
+                                        "bodyPadding": 0,
+                                        "title": "Champs"
+                                    },
+                                    "designerId": "7120e487-8033-4805-b435-a863418861d9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "form",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyForm7",
+                                "frame": true,
+                                "id": "MTPropPanel",
+                                "style": null,
+                                "width": 300,
+                                "overflowY": null,
+                                "layout": "fit",
+                                "bodyPadding": 8,
+                                "bodyStyle": null,
+                                "collapseDirection": "right",
+                                "collapsed": false,
+                                "collapsible": true,
+                                "iconCls": "parametres",
+                                "title": "Propriétés"
+                            },
+                            "designerId": "c13c08bb-d64c-45e5-9e3e-d3a347311261",
+                            "cn": [
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyContainer10",
+                                        "id": "MTFieldConfigsBox",
+                                        "overflowY": "auto",
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "976b35af-804f-466c-99ed-5989f87202cd"
+                                },
+                                {
+                                    "type": "hiddenfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyHiddenField3",
+                                        "id": "MTFieldId",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "356f5e0b-4fab-4377-aa18-528a1561875f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel5",
+                        "hidden": true,
+                        "iconCls": "page_meta",
+                        "title": "Métadonnées"
+                    },
+                    "designerId": "2d463e87-8816-4ac7-a4ee-126de8457b1b",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig2"
+                            },
+                            "designerId": "be514313-7574-464c-900a-00dc95ded89e"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|userClassName": "MyPanel5",
+                        "layout": "hbox",
+                        "iconCls": "page_taxonomy",
+                        "title": "Taxonomie"
+                    },
+                    "designerId": "9a8b8b4b-1394-4ff2-b557-2fac9b085416",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "TabConfig2"
+                            },
+                            "designerId": "a4f9afda-b5c3-49a2-80d6-72167bd765f7"
+                        },
+                        {
+                            "type": "gridpanel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "managesStore": false,
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyGridPanel12",
+                                "autoRender": false,
+                                "autoShow": false,
+                                "id": "vocabulariesMTGrid",
+                                "title": "Vocabulaires utilisables comme plan de classement",
+                                "store": "TaxonomyForMT"
+                            },
+                            "configAlternates": {
+                                "managesStore": "boolean"
+                            },
+                            "designerId": "14203afa-a5e0-44aa-a80d-43613e3dfd2e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "managesStore",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "gridview",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridView10",
+                                        "autoRender": false
+                                    },
+                                    "designerId": "795abd4b-43b6-464c-8aef-80935b0662a9"
+                                },
+                                {
+                                    "type": "checkboxselectionmodel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": "Ext.selection.CheckboxModel",
+                                    "userConfig": {
+                                        "designer|userClassName": "MyCheckboxSelectionModel2"
+                                    },
+                                    "designerId": "72a9b067-797a-4669-bb32-92cbc824353a"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn18",
+                                        "dataIndex": "name",
+                                        "flex": 1,
+                                        "text": "Titre"
+                                    },
+                                    "designerId": "7e15e4bc-3616-4d66-91bd-2b5ba95ca28f"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn21",
+                                        "dataIndex": "description",
+                                        "flex": 3,
+                                        "text": "Description"
+                                    },
+                                    "designerId": "c313f37b-ff0e-474c-8ce9-44199d69180f"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn22",
+                                        "dataIndex": "helpText",
+                                        "flex": 2,
+                                        "text": "HelpText"
+                                    },
+                                    "designerId": "b93bcf84-58ff-4386-9421-cf64a0e93546"
+                                },
+                                {
+                                    "type": "booleancolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyBooleanColumn",
+                                        "dataIndex": "expandable",
+                                        "flex": 1,
+                                        "text": "Etiquettes",
+                                        "falseText": "non",
+                                        "trueText": "oui"
+                                    },
+                                    "designerId": "4918e480-af4f-4b6c-b4aa-8009bf896d84"
+                                },
+                                {
+                                    "type": "booleancolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyBooleanColumn1",
+                                        "dataIndex": "mandatory",
+                                        "flex": 1,
+                                        "text": "ChoixMultiple",
+                                        "falseText": "non",
+                                        "trueText": "oui"
+                                    },
+                                    "designerId": "3ec584b3-b172-4e48-b7f8-001a3fed1fba"
+                                },
+                                {
+                                    "type": "booleancolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyBooleanColumn2",
+                                        "dataIndex": "mandatory",
+                                        "flex": 1,
+                                        "text": "Obligatoire",
+                                        "falseText": "non",
+                                        "trueText": "oui"
+                                    },
+                                    "designerId": "9e400444-c1c9-47bf-88f9-d1a36eb72a3e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel5",
+                        "iconCls": "user",
+                        "title": "Droits"
+                    },
+                    "designerId": "19d9c471-f1cc-4aee-bf63-f7c247740bac",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig2"
+                            },
+                            "designerId": "c36ee29f-bdea-4d70-b845-15be0524073b"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel5",
+                        "hidden": true,
+                        "iconCls": "versions",
+                        "title": "Historique"
+                    },
+                    "designerId": "bfcb324d-7f16-4caa-8912-bf79c42cf8c6",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig2"
+                            },
+                            "designerId": "6626813d-036b-421d-9dcd-cbc290d68363"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMediaTypesInterfaceRender",
+                "fn": "onMediaTypesInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"TaxonomyForMT\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "70aa12bc-c544-46a2-b77a-4b298c86f66e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMediaTypesInterfaceBeforeClose",
+                "fn": "onMediaTypesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"TaxonomyForMT\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "697270b0-5d38-4153-9388-0a33e56ea620"
         }
     ]
 }

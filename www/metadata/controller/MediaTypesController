@@ -70,7 +70,8 @@
                     "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.disable();});\r",
                     "Ext.getCmp(\"removeMTBtn\").disable();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
-                    "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias\", iconCls:\"mediaTypes\"}));"
+                    "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias\", iconCls:\"mediaTypes\"}));\r",
+                    "Ext.getCmp(\"MTcenterZone\").disable();"
                 ]
             },
             "designerId": "22525587-131f-47d2-adad-c4b415572d62"
@@ -93,7 +94,8 @@
                     "Ext.getCmp(\"removeMTBtn\").enable();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias <b> > </b>\", iconCls:\"mediaTypes\"}));\r",
-                    "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"mediaTypes\"}));"
+                    "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"mediaTypes\"}));\r",
+                    "Ext.getCmp(\"MTcenterZone\").enable();"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"

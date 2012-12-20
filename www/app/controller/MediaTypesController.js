@@ -54,6 +54,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("removeMTBtn").disable();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes"}));
+        Ext.getCmp("MTcenterZone").disable();
     },
 
     resetInterfaceSelect: function(record) {
@@ -62,6 +63,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias <b> > </b>", iconCls:"mediaTypes"}));
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"mediaTypes"}));
+        Ext.getCmp("MTcenterZone").enable();
     },
 
     init: function(application) {

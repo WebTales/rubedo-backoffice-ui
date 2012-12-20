@@ -34,7 +34,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.termContextMenu',
         'Rubedo.view.ViewportPrimaire',
         'Rubedo.view.accessibilityPicker',
-        'Rubedo.view.adminFTDC',
         'Rubedo.view.adminFTaxonomie',
         'Rubedo.view.adminFUtilisateurs',
         'Rubedo.view.ajoutBlocFenetre',
@@ -79,6 +78,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.contributionPages',
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.MainToolsContextMenu',
+        'Rubedo.view.adminFTDC',
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround'

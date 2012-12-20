@@ -1,0 +1,88 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Taxonomy",
+        "designer|userClassName": "TaxonomyForMT",
+        "designer|userAlias": "TaxonomyForMT",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "TaxonomyForMT",
+        "model": "taxonomieDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen10928",
+    "designerId": "40961f33-7d90-45dc-9954-ebf0d0856a4b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy10",
+                "api": [
+                    "{\r",
+                    "create : 'taxonomy/create',\r",
+                    "read : 'taxonomy',\r",
+                    "update : 'taxonomy/update',\r",
+                    "destroy : 'taxonomy/delete'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "288db0c4-a3f5-4b02-981a-e026de6bba99",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader8",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "e7ae8899-f61e-4892-80fb-812296cddb7d"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter1",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "5ce42c0e-1539-403e-8e84-2b4fc69712fb"
+                }
+            ]
+        }
+    ]
+}

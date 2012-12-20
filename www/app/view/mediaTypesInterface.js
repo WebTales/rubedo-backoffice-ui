@@ -278,8 +278,176 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             text: 'Type'
                         }
                     ]
+                },
+                {
+                    xtype: 'tabpanel',
+                    flex: 1,
+                    disabled: true,
+                    id: 'MTcenterZone',
+                    activeTab: 0,
+                    items: [
+                        {
+                            xtype: 'panel',
+                            floating: false,
+                            autoScroll: false,
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            iconCls: 'edit',
+                            title: 'Edition',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    flex: 1,
+                                    id: 'MTEditContainer',
+                                    autoScroll: true,
+                                    items: [
+                                        {
+                                            xtype: 'form',
+                                            frame: true,
+                                            id: 'MTeditFields',
+                                            margin: 20,
+                                            autoScroll: false,
+                                            resizable: false,
+                                            bodyPadding: 0,
+                                            title: 'Champs'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'form',
+                                    frame: true,
+                                    id: 'MTPropPanel',
+                                    width: 300,
+                                    layout: {
+                                        type: 'fit'
+                                    },
+                                    bodyPadding: 8,
+                                    collapseDirection: 'right',
+                                    collapsed: false,
+                                    collapsible: true,
+                                    iconCls: 'parametres',
+                                    title: 'Propriétés',
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            id: 'MTFieldConfigsBox',
+                                            overflowY: 'auto',
+                                            layout: {
+                                                type: 'anchor'
+                                            }
+                                        },
+                                        {
+                                            xtype: 'hiddenfield',
+                                            id: 'MTFieldId',
+                                            fieldLabel: 'Label'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            hidden: true,
+                            iconCls: 'page_meta',
+                            title: 'Métadonnées'
+                        },
+                        {
+                            xtype: 'panel',
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            iconCls: 'page_taxonomy',
+                            title: 'Taxonomie',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    managesStore: false,
+                                    flex: 1,
+                                    autoRender: false,
+                                    autoShow: false,
+                                    id: 'vocabulariesMTGrid',
+                                    title: 'Vocabulaires utilisables comme plan de classement',
+                                    store: 'TaxonomyForMT',
+                                    viewConfig: {
+                                        autoRender: false
+                                    },
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                                    }),
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'name',
+                                            flex: 1,
+                                            text: 'Titre'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'description',
+                                            flex: 3,
+                                            text: 'Description'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'helpText',
+                                            flex: 2,
+                                            text: 'HelpText'
+                                        },
+                                        {
+                                            xtype: 'booleancolumn',
+                                            dataIndex: 'expandable',
+                                            flex: 1,
+                                            text: 'Etiquettes',
+                                            falseText: 'non',
+                                            trueText: 'oui'
+                                        },
+                                        {
+                                            xtype: 'booleancolumn',
+                                            dataIndex: 'mandatory',
+                                            flex: 1,
+                                            text: 'ChoixMultiple',
+                                            falseText: 'non',
+                                            trueText: 'oui'
+                                        },
+                                        {
+                                            xtype: 'booleancolumn',
+                                            dataIndex: 'mandatory',
+                                            flex: 1,
+                                            text: 'Obligatoire',
+                                            falseText: 'non',
+                                            trueText: 'oui'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            iconCls: 'user',
+                            title: 'Droits'
+                        },
+                        {
+                            xtype: 'panel',
+                            hidden: true,
+                            iconCls: 'versions',
+                            title: 'Historique'
+                        }
+                    ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onMediaTypesInterfaceRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onMediaTypesInterfaceBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -287,6 +455,14 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
 
     onImageRender1: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+    },
+
+    onMediaTypesInterfaceRender: function(abstractcomponent, options) {
+        Ext.getStore("TaxonomyForMT").load();
+    },
+
+    onMediaTypesInterfaceBeforeClose: function(panel, options) {
+        Ext.getStore("TaxonomyForMT").removeAll();
     }
 
 });
