@@ -178,7 +178,7 @@
                     "    Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "        autoEl: {\r",
                     "            tag: 'iframe',\r",
-                    "            src: \"http://\"+window.location.host+\"/index/\"+record.get(\"text\")\r",
+                    "            src: \"http://\"+window.location.host+\"/index/\"+record.get(\"text\")+\"?preview=1\"\r",
                     "        }\r",
                     "    }));\r",
                     "    Ext.getCmp(\"pagePreviewTextItem\").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));\r",
@@ -846,7 +846,7 @@
                     "Ext.getCmp(\"contribPreviewMain\").add(Ext.widget(\"container\",{\r",
                     "    autoEl: {\r",
                     "        tag: 'iframe',\r",
-                    "        src: \"resources/responsiveShow/?url=\"+\"http://\"+window.location.host+\"/index/\"+record.get(\"text\")\r",
+                    "        src: \"resources/responsiveShow/?url=\"+\"http://\"+window.location.host+\"/index/\"+record.get(\"text\")+\"?preview=1\"\r",
                     "    }\r",
                     "}));"
                 ],

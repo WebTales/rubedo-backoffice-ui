@@ -109,7 +109,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                 autoEl: {
                     tag: 'iframe',
-                    src: "http://"+window.location.host+"/index/"+record.get("text")
+                    src: "http://"+window.location.host+"/index/"+record.get("text")+"?preview=1"
                 }
             }));
             Ext.getCmp("pagePreviewTextItem").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
@@ -434,7 +434,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
             autoEl: {
                 tag: 'iframe',
-                src: "resources/responsiveShow/?url="+"http://"+window.location.host+"/index/"+record.get("text")
+                src: "resources/responsiveShow/?url="+"http://"+window.location.host+"/index/"+record.get("text")+"?preview=1"
             }
         }));
     },
