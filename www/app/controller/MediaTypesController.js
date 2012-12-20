@@ -66,15 +66,21 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         button.up().up().close();
     },
 
+    onMTFieldSelectGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        this.onMTFieldInsertBtnClick(Ext.getCmp("MTFieldInsertBtn"));
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes"}));
+        Ext.getCmp('MTeditFields').removeAll();
         Ext.getCmp("MTcenterZone").disable();
     },
 
     resetInterfaceSelect: function(record) {
+        var me =this;
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.enable();});
         Ext.getCmp("removeMTBtn").enable();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
@@ -86,12 +92,19 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             selector.push(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId));
         });
         Ext.getCmp("vocabulariesMTGrid").getSelectionModel().select(selector);
+        var targetZone=Ext.getCmp('MTeditFields');
+        targetZone.removeAll();
+        Ext.Array.forEach(record.get("fields"),function(field){
+            me.renderMTField(field, targetZone);
+        });
     },
 
     updateMT: function(record) {
+        var me=this;
         record.beginEdit();
         var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesMTGrid").getSelectionModel().getSelection(), "data"), "id");
         record.set("vocabularies", newVocabularies);
+        record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
         record.endEdit();
     },
 
@@ -99,8 +112,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         var me=this;
         var newField= Ext.create(protoData.cType, protoData.config);
         newField.config=protoData.config;
-        newField.configFields=protoData.configFields;
         newField.protoId=protoData.protoId;
+        newField.cType=protoData.cType;
         newField.anchor = '90%';
         newField.style = '{float:left;}';
         var casing =Ext.widget('ChampTC');
@@ -133,6 +146,18 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         }
     },
 
+    recordFields: function(target) {
+        var result = [ ];
+        Ext.Array.forEach(target.query("field"), function(field){
+            result.push({
+                cType:field.cType,
+                config:field.config,
+                protoId:field.protoId
+            });
+        });
+        return(result);
+    },
+
     init: function(application) {
         this.control({
             "#newMTBtn": {
@@ -155,6 +180,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#MTFieldInsertBtn": {
                 click: this.onMTFieldInsertBtnClick
+            },
+            "#MTFieldSelectGrid": {
+                itemdblclick: this.onMTFieldSelectGridItemDblClick
             }
         });
     }

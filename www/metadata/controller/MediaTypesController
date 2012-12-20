@@ -73,6 +73,7 @@
                     "Ext.getCmp(\"removeMTBtn\").disable();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias\", iconCls:\"mediaTypes\"}));\r",
+                    "Ext.getCmp('MTeditFields').removeAll();\r",
                     "Ext.getCmp(\"MTcenterZone\").disable();"
                 ]
             },
@@ -92,6 +93,7 @@
                     "record"
                 ],
                 "implHandler": [
+                    "var me =this;\r",
                     "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.enable();});\r",
                     "Ext.getCmp(\"removeMTBtn\").enable();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
@@ -102,7 +104,12 @@
                     "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabId){\r",
                     "    selector.push(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId));\r",
                     "});\r",
-                    "Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().select(selector);"
+                    "Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().select(selector);\r",
+                    "var targetZone=Ext.getCmp('MTeditFields');\r",
+                    "targetZone.removeAll();\r",
+                    "Ext.Array.forEach(record.get(\"fields\"),function(field){\r",
+                    "    me.renderMTField(field, targetZone);\r",
+                    "});"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
@@ -173,9 +180,11 @@
                     "record"
                 ],
                 "implHandler": [
+                    "var me=this;\r",
                     "record.beginEdit();\r",
                     "var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().getSelection(), \"data\"), \"id\");\r",
                     "record.set(\"vocabularies\", newVocabularies);\r",
+                    "record.set(\"fields\", me.recordFields(Ext.getCmp('MTeditFields')));\r",
                     "record.endEdit();"
                 ]
             },
@@ -239,8 +248,8 @@
                     "var me=this;\r",
                     "var newField= Ext.create(protoData.cType, protoData.config);\r",
                     "newField.config=protoData.config;\r",
-                    "newField.configFields=protoData.configFields;\r",
                     "newField.protoId=protoData.protoId;\r",
+                    "newField.cType=protoData.cType;\r",
                     "newField.anchor = '90%';\r",
                     "newField.style = '{float:left;}';\r",
                     "var casing =Ext.widget('ChampTC');\r",
@@ -312,6 +321,53 @@
                 "designer|controlQuery": "#MTFieldInsertBtn"
             },
             "designerId": "f2107c8d-ed5c-47c6-8e79-059e32c1e129"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "recordFields",
+                "fn": "recordFields",
+                "designer|params": [
+                    "target"
+                ],
+                "implHandler": [
+                    "var result = [ ];\r",
+                    "Ext.Array.forEach(target.query(\"field\"), function(field){\r",
+                    "    result.push({\r",
+                    "        cType:field.cType,\r",
+                    "        config:field.config,\r",
+                    "        protoId:field.protoId\r",
+                    "    });\r",
+                    "});\r",
+                    "return(result);"
+                ]
+            },
+            "designerId": "db2e8d2e-fa18-467d-ba4b-53c64981ee24"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMTFieldSelectGridItemDblClick",
+                "fn": "onMTFieldSelectGridItemDblClick",
+                "implHandler": [
+                    "this.onMTFieldInsertBtnClick(Ext.getCmp(\"MTFieldInsertBtn\"));"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#MTFieldSelectGrid"
+            },
+            "designerId": "714350f7-49ac-43ca-baa5-9ac28facd8dd"
         }
     ]
 }
