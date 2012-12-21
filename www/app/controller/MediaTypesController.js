@@ -93,10 +93,13 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         });
         Ext.getCmp("vocabulariesMTGrid").getSelectionModel().select(selector);
         var targetZone=Ext.getCmp('MTeditFields');
+        Ext.suspendLayouts();
         targetZone.removeAll();
         Ext.Array.forEach(record.get("fields"),function(field){
             me.renderMTField(field, targetZone);
         });
+        Ext.resumeLayouts();
+        Ext.getCmp("MTeditFields").doLayout();
     },
 
     updateMT: function(record) {

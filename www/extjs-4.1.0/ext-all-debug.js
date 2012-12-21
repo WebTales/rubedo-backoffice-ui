@@ -5652,7 +5652,7 @@ Ext.Loader = new function() {
                 ) {
                     
                     
-                    Ext.globalEval(xhr.responseText + "\n//@ sourceURL=" + url);
+                    Ext.globalEval(xhr.responseText);
 
                     onLoad.call(scope);
                 }

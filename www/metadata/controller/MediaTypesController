@@ -106,10 +106,13 @@
                     "});\r",
                     "Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().select(selector);\r",
                     "var targetZone=Ext.getCmp('MTeditFields');\r",
+                    "Ext.suspendLayouts();\r",
                     "targetZone.removeAll();\r",
                     "Ext.Array.forEach(record.get(\"fields\"),function(field){\r",
                     "    me.renderMTField(field, targetZone);\r",
-                    "});"
+                    "});\r",
+                    "Ext.resumeLayouts();\r",
+                    "Ext.getCmp(\"MTeditFields\").doLayout();"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
