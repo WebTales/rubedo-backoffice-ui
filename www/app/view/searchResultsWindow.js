@@ -23,11 +23,12 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         'Rubedo.view.MyTool17'
     ],
 
-    height: 350,
+    height: 512,
     id: 'searchResultsWindow',
-    width: 607,
+    width: 860,
     layout: {
-        type: 'fit'
+        align: 'stretch',
+        type: 'hbox'
     },
     iconCls: 'search',
     title: 'Résultats de recherche',
@@ -41,8 +42,17 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         Ext.applyIf(me, {
             items: [
                 {
+                    xtype: 'form',
+                    flex: 0.4,
+                    id: 'searchFacetBox',
+                    overflowY: 'auto',
+                    bodyPadding: 10,
+                    title: 'Filtres'
+                },
+                {
                     xtype: 'mygridpanel20',
-                    overflowY: 'auto'
+                    overflowY: 'auto',
+                    flex: 1
                 }
             ],
             listeners: {
@@ -65,7 +75,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     },
 
     onSearchResultsWindowBeforeClose: function(panel, options) {
-        panel.getComponent(0).getStore().removeAll();
+        panel.getComponent(1).getStore().removeAll();
     }
 
 });

@@ -18,6 +18,7 @@ Ext.define('Rubedo.controller.SearchController', {
     alias: 'controller.SearchController',
 
     mainSearchLaunch: function(button, e, options) {
+        var me=this;
         if (Ext.getCmp('ESSearchField').isValid()){
             var DisplayResults=Ext.getCmp('searchResultsWindow');
             if (Ext.isEmpty(DisplayResults)){
@@ -28,7 +29,8 @@ Ext.define('Rubedo.controller.SearchController', {
                 DisplayResults.show();
                 DisplayResults.toFront();
             }
-            DisplayResults.getComponent(0).getStore().removeAll();
+            DisplayResults.getComponent(1).getStore().removeAll();
+            DisplayResults.queryContext={ };
             DisplayResults.setLoading(true);
             Ext.Ajax.request({
                 url: 'elastic-search',
@@ -38,7 +40,7 @@ Ext.define('Rubedo.controller.SearchController', {
                 success: function(response){
                     var data=[];
                     var bigRez=Ext.JSON.decode(response.responseText);
-                    Ext.Array.forEach(bigRez, function(rez){
+                    Ext.Array.forEach(bigRez.results, function(rez){
                         var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
                         data.push({
                             text:thing.text,
@@ -46,9 +48,9 @@ Ext.define('Rubedo.controller.SearchController', {
                             id:rez[Ext.Object.getKeys(rez)[0]]._id
                         });
                     });
-                    DisplayResults.getComponent(0).getStore().loadData(data);
+                    DisplayResults.getComponent(1).getStore().loadData(data);
                     DisplayResults.setLoading(false);
-
+                    me.renderFacets(bigRez.facets);
                 }
             });
         }
@@ -57,22 +59,70 @@ Ext.define('Rubedo.controller.SearchController', {
     mainResultWindowGetContext: function(tablepanel, record, item, index, e, options) {
         if (ACL.interfaceRights['read.ui.contents']){
             Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
-            /*var fenetre=Ext.getCmp("contributionContenus");
-            if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }
-            else {
-            fenetre = Ext.widget("contributionContenus");
-            Ext.getCmp('desktopCont').add(fenetre);
-            if (Ext.isDefined(window.innerHeight)) {
-            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
-            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
-            }
-            fenetre.show();
-            }
-            Ext.getCmp("TypesContenusGrid").getSelectionModel().select(Ext.getCmp("TypesContenusGrid").getStore().findRecord("type",record.get("type")));
-            Ext.getCmp("ContenusGrid").getStore().addListener("load", function(){
-            Ext.getCmp("ContenusGrid").getSelectionModel().select(Ext.getCmp("ContenusGrid").getStore().findRecord("id",record.get("id")));
-            }, this, {single:true});*/
         }
+    },
+
+    renderFacets: function(facets) {
+        var context=Ext.getCmp('searchResultsWindow').queryContext;
+        var me=this;
+        var target=Ext.getCmp("searchFacetBox");
+        target.removeAll();
+        Ext.suspendLayouts();
+        Ext.Array.forEach(facets, function(facet){
+            var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
+            newFacet.usedProperty=facet.name;
+            if (!Ext.isEmpty(facet.terms)){
+                Ext.Array.forEach(facet.terms, function(term){
+                    var newTerm=Ext.widget("checkbox", {fieldLabel:term.term+" ("+term.count+")", name:term.term, checked:context[term.term]||false});
+                    newTerm.on("change",function(){me.readAndSearch();});
+                    newFacet.add(newTerm);
+                });
+            }
+            target.add(newFacet);
+
+        });
+        Ext.resumeLayouts(true);
+    },
+
+    readAndSearch: function() {
+        var target=Ext.getCmp("searchFacetBox");
+        var me=this;
+        var paramObject={ };
+        var context={ };
+        Ext.Array.forEach(target.query("field"),function(field){
+            if ((field.isXType("checkboxfield"))&&(field.getValue())){
+                paramObject[field.up().usedProperty]=field.name;
+                context[field.name]=true;
+            }
+        });
+        me.launchQuery(paramObject);
+        Ext.getCmp('searchResultsWindow').queryContext=context;
+    },
+
+    launchQuery: function(paramObject) {
+        var DisplayResults=Ext.getCmp('searchResultsWindow');
+        var me=this;
+        DisplayResults.setLoading(true);
+        Ext.Ajax.request({
+            url: 'elastic-search',
+            params: paramObject,
+            success: function(response){
+                var data=[];
+                var bigRez=Ext.JSON.decode(response.responseText);
+                Ext.Array.forEach(bigRez.results, function(rez){
+                    var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
+                    data.push({
+                        text:thing.text,
+                        type:thing.contentType,
+                        id:rez[Ext.Object.getKeys(rez)[0]]._id
+                    });
+                });
+                DisplayResults.getComponent(1).getStore().loadData(data);
+                DisplayResults.setLoading(false);
+                me.renderFacets(bigRez.facets);
+            }
+        });
+
     },
 
     init: function(application) {

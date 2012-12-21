@@ -23,6 +23,7 @@
                 "designer|userClassName": "mainSearchLaunch",
                 "fn": "mainSearchLaunch",
                 "implHandler": [
+                    "var me=this;\r",
                     "if (Ext.getCmp('ESSearchField').isValid()){\r",
                     "    var DisplayResults=Ext.getCmp('searchResultsWindow');\r",
                     "    if (Ext.isEmpty(DisplayResults)){\r",
@@ -33,7 +34,8 @@
                     "        DisplayResults.show();\r",
                     "        DisplayResults.toFront();\r",
                     "    }\r",
-                    "    DisplayResults.getComponent(0).getStore().removeAll();\r",
+                    "    DisplayResults.getComponent(1).getStore().removeAll();\r",
+                    "    DisplayResults.queryContext={ };\r",
                     "    DisplayResults.setLoading(true);\r",
                     "    Ext.Ajax.request({\r",
                     "        url: 'elastic-search',\r",
@@ -43,7 +45,7 @@
                     "        success: function(response){\r",
                     "            var data=[];\r",
                     "            var bigRez=Ext.JSON.decode(response.responseText);\r",
-                    "            Ext.Array.forEach(bigRez, function(rez){\r",
+                    "            Ext.Array.forEach(bigRez.results, function(rez){\r",
                     "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
                     "                data.push({\r",
                     "                    text:thing.text,\r",
@@ -51,9 +53,9 @@
                     "                    id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
                     "                });\r",
                     "            });\r",
-                    "            DisplayResults.getComponent(0).getStore().loadData(data);\r",
+                    "            DisplayResults.getComponent(1).getStore().loadData(data);\r",
                     "            DisplayResults.setLoading(false);\r",
-                    "\r",
+                    "            me.renderFacets(bigRez.facets);\r",
                     "        }\r",
                     "    });\r",
                     "}"
@@ -78,21 +80,6 @@
                 "implHandler": [
                     "if (ACL.interfaceRights['read.ui.contents']){\r",
                     "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));\r",
-                    "    /*var fenetre=Ext.getCmp(\"contributionContenus\");\r",
-                    "    if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }\r",
-                    "    else {\r",
-                    "    fenetre = Ext.widget(\"contributionContenus\");\r",
-                    "    Ext.getCmp('desktopCont').add(fenetre);\r",
-                    "    if (Ext.isDefined(window.innerHeight)) {\r",
-                    "    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
-                    "    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
-                    "    }\r",
-                    "    fenetre.show();\r",
-                    "    }\r",
-                    "    Ext.getCmp(\"TypesContenusGrid\").getSelectionModel().select(Ext.getCmp(\"TypesContenusGrid\").getStore().findRecord(\"type\",record.get(\"type\")));\r",
-                    "    Ext.getCmp(\"ContenusGrid\").getStore().addListener(\"load\", function(){\r",
-                    "    Ext.getCmp(\"ContenusGrid\").getSelectionModel().select(Ext.getCmp(\"ContenusGrid\").getStore().findRecord(\"id\",record.get(\"id\")));\r",
-                    "    }, this, {single:true});*/\r",
                     "}"
                 ],
                 "name": "itemdblclick",
@@ -101,6 +88,111 @@
                 "designer|controlQuery": "#ResultContentsGrid"
             },
             "designerId": "fea6c637-212a-4372-a699-1d94b9313c48"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "renderFacets",
+                "fn": "renderFacets",
+                "designer|params": [
+                    "facets"
+                ],
+                "implHandler": [
+                    "var context=Ext.getCmp('searchResultsWindow').queryContext;\r",
+                    "var me=this;\r",
+                    "var target=Ext.getCmp(\"searchFacetBox\");\r",
+                    "target.removeAll();\r",
+                    "Ext.suspendLayouts();\r",
+                    "Ext.Array.forEach(facets, function(facet){\r",
+                    "    var newFacet = Ext.widget(\"fieldset\", {title:facet.name, collapsible:true});\r",
+                    "    newFacet.usedProperty=facet.name;\r",
+                    "    if (!Ext.isEmpty(facet.terms)){\r",
+                    "    Ext.Array.forEach(facet.terms, function(term){\r",
+                    "        var newTerm=Ext.widget(\"checkbox\", {fieldLabel:term.term+\" (\"+term.count+\")\", name:term.term, checked:context[term.term]||false});\r",
+                    "        newTerm.on(\"change\",function(){me.readAndSearch();});\r",
+                    "        newFacet.add(newTerm);\r",
+                    "    });\r",
+                    "    }\r",
+                    "    target.add(newFacet);\r",
+                    "\r",
+                    "});\r",
+                    "Ext.resumeLayouts(true);"
+                ]
+            },
+            "designerId": "0bf37f2e-bd96-4dc3-b672-d37d65fbc7e7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "readAndSearch",
+                "fn": "readAndSearch",
+                "implHandler": [
+                    "var target=Ext.getCmp(\"searchFacetBox\");\r",
+                    "var me=this;\r",
+                    "var paramObject={ };\r",
+                    "var context={ };\r",
+                    "Ext.Array.forEach(target.query(\"field\"),function(field){\r",
+                    "    if ((field.isXType(\"checkboxfield\"))&&(field.getValue())){\r",
+                    "        paramObject[field.up().usedProperty]=field.name;\r",
+                    "        context[field.name]=true;\r",
+                    "    }\r",
+                    "});\r",
+                    "me.launchQuery(paramObject);\r",
+                    "Ext.getCmp('searchResultsWindow').queryContext=context;"
+                ]
+            },
+            "designerId": "491bda99-fa1f-45ee-93c1-b2f35de9467c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "launchQuery",
+                "fn": "launchQuery",
+                "designer|params": [
+                    "paramObject"
+                ],
+                "implHandler": [
+                    "var DisplayResults=Ext.getCmp('searchResultsWindow');\r",
+                    "var me=this;\r",
+                    "DisplayResults.setLoading(true);\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'elastic-search',\r",
+                    "        params: paramObject,\r",
+                    "        success: function(response){\r",
+                    "            var data=[];\r",
+                    "            var bigRez=Ext.JSON.decode(response.responseText);\r",
+                    "            Ext.Array.forEach(bigRez.results, function(rez){\r",
+                    "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
+                    "                data.push({\r",
+                    "                    text:thing.text,\r",
+                    "                    type:thing.contentType,\r",
+                    "                    id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
+                    "                });\r",
+                    "            });\r",
+                    "            DisplayResults.getComponent(1).getStore().loadData(data);\r",
+                    "            DisplayResults.setLoading(false);\r",
+                    "            me.renderFacets(bigRez.facets);\r",
+                    "        }\r",
+                    "    });\r",
+                    ""
+                ]
+            },
+            "designerId": "3ccda6b2-2528-431c-919a-d388e299184f"
         }
     ]
 }

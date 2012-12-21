@@ -62,7 +62,6 @@ Ext.define('Rubedo.view.EnteteV', {
                     fieldLabel: '',
                     labelSeparator: ' ',
                     labelWidth: 68,
-                    allowBlank: false,
                     listeners: {
                         focus: {
                             fn: me.onESSearchFieldFocus,

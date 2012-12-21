@@ -6,12 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "container|align": "stretch",
         "designer|userClassName": "searchResultsWindow",
         "designer|userAlias": "searchResultsWindow",
-        "height": 350,
+        "height": 512,
         "id": "searchResultsWindow",
-        "width": 607,
-        "layout": "fit",
+        "width": 860,
+        "layout": "hbox",
         "iconCls": "search",
         "title": "Résultats de recherche",
         "constrainHeader": true,
@@ -22,6 +23,23 @@
     "designerId": "f720ad71-dfb5-436d-95de-957b47102cb6",
     "cn": [
         {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.4,
+                "designer|userClassName": "MyForm35",
+                "id": "searchFacetBox",
+                "overflowY": "auto",
+                "bodyPadding": 10,
+                "title": "Filtres"
+            },
+            "designerId": "35d80392-506f-4f26-89c9-d833f433870d"
+        },
+        {
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -29,7 +47,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "overflowY": "auto"
+                "overflowY": "auto",
+                "layout|flex": 1
             },
             "designerId": "e0c87a36-f0b1-4300-8367-fd019bd614ef",
             "masterInstanceId": "ExtBox1-ext-gen12006"
@@ -45,7 +64,7 @@
                 "designer|userClassName": "onSearchResultsWindowBeforeClose",
                 "fn": "onSearchResultsWindowBeforeClose",
                 "implHandler": [
-                    "panel.getComponent(0).getStore().removeAll();"
+                    "panel.getComponent(1).getStore().removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
