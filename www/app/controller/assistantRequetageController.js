@@ -69,7 +69,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     valeur: {
                         cType: 'datefield',
                         name: 'creation',
-                        ruleId:'createDate',
+                        ruleId:'createTime',
                         label: 'Création'
                     }
                 });
@@ -77,7 +77,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     valeur: {
                         cType: 'datefield',
                         name: 'derniereModification',
-                        ruleId:'lastUpdateDate',
+                        ruleId:'lastUpdateTime',
                         label: 'Dernière modification'
                     }});
                     if (typesContenus.length<2) {
@@ -109,7 +109,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             valeur: {
                                 cType: 'datefield',
                                 name: 'creation',
-                                ruleId:'createDate',
+                                ruleId:'createTime',
                                 label: theTargetType.get("type")+' > '+'Création'
                             }
                         });
@@ -117,7 +117,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             valeur: {
                                 cType: 'datefield',
                                 name: 'derniereModification',
-                                ruleId:'lastUpdateDate',
+                                ruleId:'lastUpdateTime',
                                 label: theTargetType.get("type")+' > '+'Dernière modification'
                             }});  
 
