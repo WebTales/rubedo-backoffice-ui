@@ -254,6 +254,40 @@
                             "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
                         },
                         {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox18",
+                                "name": "protocol",
+                                "fieldLabel": "Protocole ",
+                                "store": "[\"HTTP\", \"HTTPS\"]"
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "401f0fd8-8f20-424a-a3d0-caf5f893f9b5"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea8",
+                                "name": "filter",
+                                "fieldLabel": "Filtre "
+                            },
+                            "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
+                        },
+                        {
                             "type": "textareafield",
                             "reference": {
                                 "name": "items",

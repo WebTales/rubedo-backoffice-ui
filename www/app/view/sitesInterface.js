@@ -125,6 +125,22 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     fieldLabel: 'Alias '
                                 },
                                 {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    name: 'protocol',
+                                    fieldLabel: 'Protocole ',
+                                    store: [
+                                        'HTTP',
+                                        'HTTPS'
+                                    ]
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'filter',
+                                    fieldLabel: 'Filtre '
+                                },
+                                {
                                     xtype: 'textareafield',
                                     anchor: '100%',
                                     name: 'description',

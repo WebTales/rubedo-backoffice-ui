@@ -119,6 +119,9 @@ Ext.define('Rubedo.controller.PagesController', {
                             src: targetedUrl+"?preview=1"
                         }
                     }));
+                },
+                failure:function(){
+                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
                 }
             });
 
@@ -454,6 +457,9 @@ Ext.define('Rubedo.controller.PagesController', {
                         src: targetedUrl+"?preview=1"
                     }
                 }));
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
             }
         });
 

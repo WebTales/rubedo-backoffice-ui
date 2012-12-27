@@ -232,6 +232,32 @@
                 "name": "opquastPassword"
             },
             "designerId": "c352ec7c-1f79-431e-8786-af832d1acca6"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field217",
+                "name": "protocol"
+            },
+            "designerId": "c1e266ff-9e17-4449-957b-2d0dee097c74"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field218",
+                "name": "filter"
+            },
+            "designerId": "963be6b8-2f1b-4c9d-bd3b-4669cd10f584"
         }
     ]
 }

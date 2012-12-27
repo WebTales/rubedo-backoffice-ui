@@ -68,6 +68,12 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'opquastPassword'
+        },
+        {
+            name: 'protocol'
+        },
+        {
+            name: 'filter'
         }
     ]
 });
