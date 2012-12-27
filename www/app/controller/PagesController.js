@@ -106,12 +106,22 @@ Ext.define('Rubedo.controller.PagesController', {
             me.resetInterface();
             Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
-            Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
-                autoEl: {
-                    tag: 'iframe',
-                    src: "http://"+window.location.host+"/index/"+record.get("text")+"?preview=1"
+            Ext.Ajax.request({
+                url: 'xhr-get-page-url',
+                params: {
+                    "page-id": record.get("id")
+                },
+                success: function(response){
+                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                        autoEl: {
+                            tag: 'iframe',
+                            src: targetedUrl+"?preview=1"
+                        }
+                    }));
                 }
-            }));
+            });
+
             Ext.getCmp("pagePreviewTextItem").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
             var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
             var values= record.getData();
@@ -431,12 +441,22 @@ Ext.define('Rubedo.controller.PagesController', {
 
     onPreviewPageTreeSelect: function(selModel, record, index, options) {
         Ext.getCmp("contribPreviewMain").removeAll();
-        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
-            autoEl: {
-                tag: 'iframe',
-                src: "resources/responsiveShow/?url="+"http://"+window.location.host+"/index/"+record.get("text")+"?preview=1"
+        Ext.Ajax.request({
+            url: 'xhr-get-page-url',
+            params: {
+                "page-id": record.get("id")
+            },
+            success: function(response){
+                var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                    autoEl: {
+                        tag: 'iframe',
+                        src: targetedUrl+"?preview=1"
+                    }
+                }));
             }
-        }));
+        });
+
     },
 
     renderPage: function(mRows, its, cible) {
