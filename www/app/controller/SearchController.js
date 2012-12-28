@@ -49,7 +49,8 @@ Ext.define('Rubedo.controller.SearchController', {
                         });
                     });
                     DisplayResults.getComponent(1).getStore().loadData(data);
-                    DisplayResults.setLoading(false);
+                    DisplayResults.setLoading(false);            
+                    Ext.getCmp("ESFacetQueryField").setValue(Ext.getCmp('ESSearchField').getValue());
                     me.renderFacets(bigRez.facets);
                 }
             });
@@ -60,6 +61,10 @@ Ext.define('Rubedo.controller.SearchController', {
         if (ACL.interfaceRights['read.ui.contents']){
             Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
         }
+    },
+
+    onESFacetQueryBtnClick: function(button, e, options) {
+        this.readAndSearch();
     },
 
     renderFacets: function(facets) {
@@ -95,6 +100,7 @@ Ext.define('Rubedo.controller.SearchController', {
                 context[field.name]=true;
             }
         });
+        paramObject.query=Ext.getCmp("ESFacetQueryField").getValue();
         me.launchQuery(paramObject);
         Ext.getCmp('searchResultsWindow').queryContext=context;
     },
@@ -132,6 +138,9 @@ Ext.define('Rubedo.controller.SearchController', {
             },
             "#ResultContentsGrid": {
                 itemdblclick: this.mainResultWindowGetContext
+            },
+            "#ESFacetQueryBtn": {
+                click: this.onESFacetQueryBtnClick
             }
         });
     }

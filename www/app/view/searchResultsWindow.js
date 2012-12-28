@@ -47,7 +47,33 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     id: 'searchFacetBox',
                     overflowY: 'auto',
                     bodyPadding: 10,
-                    title: 'Filtres'
+                    title: 'Filtres',
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    flex: 1,
+                                    id: 'ESFacetQueryField',
+                                    name: 'query',
+                                    fieldLabel: '',
+                                    labelWidth: 40
+                                },
+                                {
+                                    xtype: 'tbfill',
+                                    flex: 0.01
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'ESFacetQueryBtn',
+                                    iconCls: 'search',
+                                    text: ''
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     xtype: 'mygridpanel20',

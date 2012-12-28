@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.MyGridPanel20', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.mygridpanel20',
 
-    requires: [
-        'Rubedo.view.override.MyGridPanel20'
-    ],
-
     id: 'ResultContentsGrid',
     title: '',
     store: 'searchResultsStore',
@@ -35,7 +31,6 @@ Ext.define('Rubedo.view.MyGridPanel20', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    filter: true,
                     dataIndex: 'text',
                     flex: 1,
                     text: 'Titre'

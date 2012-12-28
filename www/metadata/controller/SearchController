@@ -54,7 +54,8 @@
                     "                });\r",
                     "            });\r",
                     "            DisplayResults.getComponent(1).getStore().loadData(data);\r",
-                    "            DisplayResults.setLoading(false);\r",
+                    "            DisplayResults.setLoading(false);            \r",
+                    "            Ext.getCmp(\"ESFacetQueryField\").setValue(Ext.getCmp('ESSearchField').getValue());\r",
                     "            me.renderFacets(bigRez.facets);\r",
                     "        }\r",
                     "    });\r",
@@ -112,11 +113,11 @@
                     "    var newFacet = Ext.widget(\"fieldset\", {title:facet.name, collapsible:true});\r",
                     "    newFacet.usedProperty=facet.name;\r",
                     "    if (!Ext.isEmpty(facet.terms)){\r",
-                    "    Ext.Array.forEach(facet.terms, function(term){\r",
-                    "        var newTerm=Ext.widget(\"checkbox\", {fieldLabel:term.term+\" (\"+term.count+\")\", name:term.term, checked:context[term.term]||false});\r",
-                    "        newTerm.on(\"change\",function(){me.readAndSearch();});\r",
-                    "        newFacet.add(newTerm);\r",
-                    "    });\r",
+                    "        Ext.Array.forEach(facet.terms, function(term){\r",
+                    "            var newTerm=Ext.widget(\"checkbox\", {fieldLabel:term.term+\" (\"+term.count+\")\", name:term.term, checked:context[term.term]||false});\r",
+                    "            newTerm.on(\"change\",function(){me.readAndSearch();});\r",
+                    "            newFacet.add(newTerm);\r",
+                    "        });\r",
                     "    }\r",
                     "    target.add(newFacet);\r",
                     "\r",
@@ -147,6 +148,7 @@
                     "        context[field.name]=true;\r",
                     "    }\r",
                     "});\r",
+                    "paramObject.query=Ext.getCmp(\"ESFacetQueryField\").getValue();\r",
                     "me.launchQuery(paramObject);\r",
                     "Ext.getCmp('searchResultsWindow').queryContext=context;"
                 ]
@@ -170,29 +172,49 @@
                     "var DisplayResults=Ext.getCmp('searchResultsWindow');\r",
                     "var me=this;\r",
                     "DisplayResults.setLoading(true);\r",
-                    "    Ext.Ajax.request({\r",
-                    "        url: 'elastic-search',\r",
-                    "        params: paramObject,\r",
-                    "        success: function(response){\r",
-                    "            var data=[];\r",
-                    "            var bigRez=Ext.JSON.decode(response.responseText);\r",
-                    "            Ext.Array.forEach(bigRez.results, function(rez){\r",
-                    "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
-                    "                data.push({\r",
-                    "                    text:thing.text,\r",
-                    "                    type:thing.contentType,\r",
-                    "                    id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
-                    "                });\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'elastic-search',\r",
+                    "    params: paramObject,\r",
+                    "    success: function(response){\r",
+                    "        var data=[];\r",
+                    "        var bigRez=Ext.JSON.decode(response.responseText);\r",
+                    "        Ext.Array.forEach(bigRez.results, function(rez){\r",
+                    "            var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
+                    "            data.push({\r",
+                    "                text:thing.text,\r",
+                    "                type:thing.contentType,\r",
+                    "                id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
                     "            });\r",
-                    "            DisplayResults.getComponent(1).getStore().loadData(data);\r",
-                    "            DisplayResults.setLoading(false);\r",
-                    "            me.renderFacets(bigRez.facets);\r",
-                    "        }\r",
-                    "    });\r",
+                    "        });\r",
+                    "        DisplayResults.getComponent(1).getStore().loadData(data);\r",
+                    "        DisplayResults.setLoading(false);\r",
+                    "        me.renderFacets(bigRez.facets);\r",
+                    "    }\r",
+                    "});\r",
                     ""
                 ]
             },
             "designerId": "3ccda6b2-2528-431c-919a-d388e299184f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onESFacetQueryBtnClick",
+                "fn": "onESFacetQueryBtnClick",
+                "implHandler": [
+                    "this.readAndSearch();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ESFacetQueryBtn"
+            },
+            "designerId": "73bc0a8e-d559-4934-9ab9-dcf87216a470"
         }
     ]
 }

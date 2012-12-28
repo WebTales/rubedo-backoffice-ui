@@ -36,7 +36,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
                 "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "flex": 1,
@@ -45,14 +44,7 @@
             "configAlternates": {
                 "filter": "boolean"
             },
-            "designerId": "e3587e55-0229-4cf6-b84f-d922e423dbf2",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                }
-            ]
+            "designerId": "e3587e55-0229-4cf6-b84f-d922e423dbf2"
         },
         {
             "type": "groupinggridfeature",
