@@ -151,6 +151,15 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Taxonomie',
                                                 name: 'taxonomy'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Trigger',
+                                            ouvrir: 'assistantRequetage',
+                                            config: {
+                                                fieldLabel: 'Requete',
+                                                name: 'query',
+                                                editable: false
+                                            }
                                         }
                                     ]
                                 },
@@ -295,14 +304,27 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                
+                                {
+                                    type: 'Ext.form.field.Checkbox',
+                                    config: {
+                                        fieldLabel: 'Restreindre au site',
+                                        name: 'constrainToSite'
+                                    }
+                                },
+                                {
+                                    type: 'Ext.form.field.TextArea',
+                                    config: {
+                                        fieldLabel: 'Filtres',
+                                        name: 'filters'
+                                    }
+                                }
                             ],
                             avance: [
                                 
                             ]
                         },
                         configBloc: {
-                            
+                            constrainToSite: true
                         }
                     },
                     version: 1,
