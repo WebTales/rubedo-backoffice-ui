@@ -377,6 +377,14 @@ Ext.define('Rubedo.view.contributionPages', {
                                     name: 'pageURL',
                                     fieldLabel: 'URL ',
                                     regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'excludeFromMenu',
+                                    fieldLabel: 'Hors navigation',
+                                    boxLabel: '',
+                                    inputValue: 'true'
                                 }
                             ],
                             listeners: {

@@ -935,6 +935,23 @@
                                 "scope": "me"
                             },
                             "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox5",
+                                "name": "excludeFromMenu",
+                                "fieldLabel": "Hors navigation",
+                                "boxLabel": "",
+                                "inputValue": "true"
+                            },
+                            "designerId": "9780587d-3fe2-44a4-ab33-b8ae5ce82e1d"
                         }
                     ]
                 }

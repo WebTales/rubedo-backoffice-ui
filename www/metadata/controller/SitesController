@@ -32,7 +32,7 @@
                     "    Ext.getCmp(\"mainSiteProps\").enable();\r",
                     "    Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+selections[0].get(\"id\")+\"\\\"}]\";\r",
                     "    Ext.getStore(\"PagePickerStore\").load();\r",
-                    "        Ext.getCmp(\"mainSiteProps\").getForm().setValues(selections[0].getData());\r",
+                    "    Ext.getCmp(\"mainSiteProps\").getForm().setValues(selections[0].getData());\r",
                     "\r",
                     "\r",
                     "}"
@@ -154,7 +154,8 @@
                 "designer|userClassName": "onSitesInterfaceBeforeClose",
                 "fn": "onSitesInterfaceBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"SitesJson\").removeAll();"
+                    "Ext.getStore(\"SitesJson\").removeAll();\r",
+                    "Ext.getStore(\"PagePickerStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me",

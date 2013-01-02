@@ -71,6 +71,10 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'createUser',
             mapping: 'createUser.fullName',
             persist: false
+        },
+        {
+            name: 'excludeFromMenu',
+            type: 'boolean'
         }
     ]
 });

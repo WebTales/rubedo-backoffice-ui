@@ -206,6 +206,20 @@
                 "persist": false
             },
             "designerId": "d958c7c8-b373-4cb7-9532-db6f1319c498"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field223",
+                "name": "excludeFromMenu",
+                "type": "boolean"
+            },
+            "designerId": "ebd7ddc6-80af-4149-928b-3b82c8d5a5bb"
         }
     ]
 }
