@@ -327,6 +327,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 value:abstractcomponent.classHTML
             }));
 
+
+
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"eidHTMLField",
                 fieldLabel:"Id HTML ",
@@ -340,6 +342,21 @@ Ext.define('Rubedo.controller.PagesController', {
                 anchor:"100%",
                 margin:"10 0 0 0",
                 value:abstractcomponent.idHTML
+            }));
+
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"urlPrefixHTMLField",
+                fieldLabel:"Préfixe URL ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.urlPrefix=this.getValue();
+                    }
+                },
+                labelWidth:40,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.urlPrefix
             }));
 
             var categories = Ext.clone(abstractcomponent.champsConfig.simple);

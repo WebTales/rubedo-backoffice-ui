@@ -742,6 +742,21 @@ Ext.define('Rubedo.controller.MasqueController', {
             value:abstractcomponent.idHTML
         }));
 
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"urlPrefixHTMLField",
+            fieldLabel:"Préfixe URL ",
+            onChange:function(){
+                if (this.isValid()){
+                    abstractcomponent.urlPrefix=this.getValue();
+                }
+            },
+            labelWidth:40,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.urlPrefix
+        }));
+
         var categories = Ext.clone(abstractcomponent.champsConfig.simple);
         for (j=0; j<categories.length; j++){
             var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
@@ -1137,6 +1152,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     responsive:nBloc.responsive,
                                     classHTML:nBloc.classHTML,
                                     idHTML:nBloc.idHTML,
+                                    urlPrefix:nBloc.urlPrefix,
                                     flex:nBloc.flex,
                                     canEdit:nBloc.canEdit
 
@@ -1163,6 +1179,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     responsive:nBloc.responsive,
                                     classHTML:nBloc.classHTML,
                                     idHTML:nBloc.idHTML,
+                                    urlPrefix:nBloc.urlPrefix,
                                     flex:nBloc.flex,
                                     canEdit:nBloc.canEdit
 
