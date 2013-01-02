@@ -58,12 +58,15 @@
                 "implHandler": [
                     "var thing = Ext.create(\"Ext.ux.TreePicker\", {\r",
                     "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                    "    managesFilteredStore:true,\r",
+                    "    filteredProperty:\"site\",\r",
+                    "    filteredArgument:\"50c09a729a199d7304000015\",\r",
                     "    displayField:\"text\",\r",
-                    "    valueField:\"id\"\r",
+                    "    valueField:\"id\",\r",
+                    "    label:\"Test\",\r",
+                    "    name:\"homePage\"\r",
                     "    \r",
                     "});\r",
-                    "Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+\"50c09a729a199d7304000015\"+\"\\\"}]\";\r",
-                    "Ext.getStore(\"PagePickerStore\").load();\r",
                     "abstractcomponent.add(thing);"
                 ],
                 "name": "render",

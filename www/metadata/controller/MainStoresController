@@ -116,6 +116,11 @@
                     "    abstractcomponent.getStore().load();\r",
                     "\r",
                     "    abstractcomponent.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
+                    "} else if ((abstractcomponent.managesFilteredStore)&&(abstractcomponent.store)) {\r",
+                    "    abstractcomponent.getStore().getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"\"+abstractcomponent.filteredProperty+\"\\\",\\\"value\\\":\\\"\"+abstractcomponent.filteredArgument+\"\\\"}]\";\r",
+                    "    abstractcomponent.getStore().load();\r",
+                    "\r",
+                    "    abstractcomponent.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
                     "}"
                 ],
                 "name": "render",

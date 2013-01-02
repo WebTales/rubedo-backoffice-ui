@@ -376,6 +376,32 @@
                                 "fieldLabel": "Langues "
                             },
                             "designerId": "ada022ae-82c9-415b-9926-ea61dd1649fe"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onFieldsetRender",
+                                "fn": "onFieldsetRender",
+                                "implHandler": [
+                                    "var thing = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                                    "    id:12,\r",
+                                    "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                                    "    displayField:\"text\",\r",
+                                    "    fieldLabel:\"Page d'accueil\",\r",
+                                    "    anchor: \"100%\",\r",
+                                    "    name:\"homePage\"\r",
+                                    "});\r",
+                                    "abstractcomponent.add(thing);"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "2eb2e8d2-075f-4d54-ae3a-64aa95ef222b"
                         }
                     ]
                 },

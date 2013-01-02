@@ -24,8 +24,10 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("mainSiteProps").getForm().setValues();
         } else {
             Ext.getCmp("siteRemoveBtn").enable();
-            Ext.getCmp("mainSiteProps").getForm().loadRecord(selections[0]);
             Ext.getCmp("mainSiteProps").enable();
+            Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+selections[0].get("id")+"\"}]";
+            Ext.getStore("PagePickerStore").load();
+            Ext.getCmp("mainSiteProps").getForm().setValues(selections[0].getData());
 
 
         }
@@ -62,7 +64,7 @@ Ext.define('Rubedo.controller.SitesController', {
     updateSiteSubmit: function(button, e, options) {
         var form = button.up().getForm();
         if (form.isValid()){
-            Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues());
+            Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
         }
     },
 

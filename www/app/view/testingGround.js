@@ -55,12 +55,15 @@ Ext.define('Rubedo.view.testingGround', {
     onTestingGroundRender: function(abstractcomponent, options) {
         var thing = Ext.create("Ext.ux.TreePicker", {
             store:Ext.getStore("PagePickerStore"),
+            managesFilteredStore:true,
+            filteredProperty:"site",
+            filteredArgument:"50c09a729a199d7304000015",
             displayField:"text",
-            valueField:"id"
+            valueField:"id",
+            label:"Test",
+            name:"homePage"
 
         });
-        Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+"50c09a729a199d7304000015"+"\"}]";
-        Ext.getStore("PagePickerStore").load();
         abstractcomponent.add(thing);
     }
 

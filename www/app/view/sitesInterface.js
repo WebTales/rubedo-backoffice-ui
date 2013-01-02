@@ -176,7 +176,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     name: 'languages',
                                     fieldLabel: 'Langues '
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onFieldsetRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'fieldset',
@@ -296,6 +302,18 @@ Ext.define('Rubedo.view.sitesInterface', {
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
         if (!ACL.interfaceRights['write.ui.sites']){return(false);}
+    },
+
+    onFieldsetRender: function(abstractcomponent, options) {
+        var thing = Ext.create("Ext.ux.TreePicker", {
+            id:12,
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            fieldLabel:"Page d'accueil",
+            anchor: "100%",
+            name:"homePage"
+        });
+        abstractcomponent.add(thing);
     }
 
 });

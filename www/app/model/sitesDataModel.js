@@ -77,6 +77,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'theme'
+        },
+        {
+            name: 'homePage'
         }
     ]
 });
