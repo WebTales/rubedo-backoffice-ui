@@ -208,7 +208,39 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                
+                                {
+                                    categorie: 'Pages',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Racine',
+                                                name: 'rootPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page de recherche',
+                                                name: 'searchPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Moteur de recherche',
+                                                name: 'useSearchEngine'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Logo',
+                                                name: 'logo'
+                                            }
+                                        }
+                                    ]
+                                }
                             ],
                             avance: [
                                 
