@@ -100,7 +100,8 @@ Ext.application({
         'TCNDepComboCS',
         'TaxonomyForMT',
         'MTFieldsStore',
-        'SiteThemesStore'
+        'SiteThemesStore',
+        'PagePickerStore'
     ],
     views: [
         'MyContainer',

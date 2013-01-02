@@ -53,18 +53,14 @@ Ext.define('Rubedo.view.testingGround', {
     },
 
     onTestingGroundRender: function(abstractcomponent, options) {
-        var thing = Ext.create("Ext.ux.form.field.BoxSelect", {
-            store:[],
-            anchor:"100%",
-            fieldLabel:"Mots clés",
-            multiSelect:true,
-            forceSelection:false,
-            createNewOnEnter:true,
-            hideTrigger:true,
-            triggerOnClick:false,
-            pinList:false,
-            id:"oink"
+        var thing = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            valueField:"id"
+
         });
+        Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+"50c09a729a199d7304000015"+"\"}]";
+        Ext.getStore("PagePickerStore").load();
         abstractcomponent.add(thing);
     }
 
