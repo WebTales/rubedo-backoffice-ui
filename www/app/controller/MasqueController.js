@@ -751,6 +751,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
             },
             labelWidth:40,
+            regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
             allowBlank:true,
             anchor:"100%",
             margin:"10 0 0 0",

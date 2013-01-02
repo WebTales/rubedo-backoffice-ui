@@ -1543,6 +1543,7 @@
                     "            }\r",
                     "        },\r",
                     "        labelWidth:40,\r",
+                    "        regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),\r",
                     "        allowBlank:true,\r",
                     "        anchor:\"100%\",\r",
                     "        margin:\"10 0 0 0\",\r",

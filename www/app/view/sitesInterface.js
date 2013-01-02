@@ -131,7 +131,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     fieldLabel: 'Protocole ',
                                     store: [
                                         'HTTP',
-                                        'HTTPS'
+                                        'HTTPS',
+                                        'HTTP + HTTPS'
                                     ]
                                 },
                                 {
