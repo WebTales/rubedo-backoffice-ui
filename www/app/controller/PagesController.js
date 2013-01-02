@@ -444,25 +444,26 @@ Ext.define('Rubedo.controller.PagesController', {
 
     onPreviewPageTreeSelect: function(selModel, record, index, options) {
         Ext.getCmp("contribPreviewMain").removeAll();
-        Ext.Ajax.request({
-            url: 'xhr-get-page-url',
-            params: {
-                "page-id": record.get("id")
-            },
-            success: function(response){
-                var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
-                    autoEl: {
-                        tag: 'iframe',
-                        src: targetedUrl+"?preview=1"
-                    }
-                }));
-            },
-            failure:function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
-            }
-        });
-
+        if(!record.isRoot()){
+            Ext.Ajax.request({
+                url: 'xhr-get-page-url',
+                params: {
+                    "page-id": record.get("id")
+                },
+                success: function(response){
+                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                    Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                        autoEl: {
+                            tag: 'iframe',
+                            src: targetedUrl+"?preview=1"
+                        }
+                    }));
+                },
+                failure:function(){
+                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                }
+            });
+        }
     },
 
     renderPage: function(mRows, its, cible) {
