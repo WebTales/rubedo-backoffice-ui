@@ -22,12 +22,7 @@ Ext.define('Rubedo.controller.MainStoresController', {
             abstractcomponent.getStore().load();
 
             abstractcomponent.on("beforedestroy", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });
-        } else if ((abstractcomponent.managesFilteredStore)&&(abstractcomponent.store)) {
-            abstractcomponent.getStore().getProxy().extraParams.filter="[{\"property\":\""+abstractcomponent.filteredProperty+"\",\"value\":\""+abstractcomponent.filteredArgument+"\"}]";
-            abstractcomponent.getStore().load();
-
-            abstractcomponent.on("beforedestroy", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });
-        }
+        } 
     },
 
     init: function(application) {

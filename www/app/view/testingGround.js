@@ -40,31 +40,10 @@ Ext.define('Rubedo.view.testingGround', {
                     anchor: '100%',
                     fieldLabel: 'Label'
                 }
-            ],
-            listeners: {
-                render: {
-                    fn: me.onTestingGroundRender,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
-    },
-
-    onTestingGroundRender: function(abstractcomponent, options) {
-        var thing = Ext.create("Ext.ux.TreePicker", {
-            store:Ext.getStore("PagePickerStore"),
-            managesFilteredStore:true,
-            filteredProperty:"site",
-            filteredArgument:"50c09a729a199d7304000015",
-            displayField:"text",
-            valueField:"id",
-            label:"Test",
-            name:"homePage"
-
-        });
-        abstractcomponent.add(thing);
     }
 
 });

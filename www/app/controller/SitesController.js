@@ -70,7 +70,8 @@ Ext.define('Rubedo.controller.SitesController', {
 
     onSitesInterfaceBeforeClose: function(panel, options) {
         Ext.getStore("SitesJson").removeAll();
-        Ext.getStore("PagePickerStore").removeAll();
+        Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\"emptyDecoy\"}]";
+        Ext.getStore("PagePickerStore").load();
     },
 
     onMainSitesGridRender: function(abstractcomponent, options) {

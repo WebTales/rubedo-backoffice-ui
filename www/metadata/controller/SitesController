@@ -155,7 +155,8 @@
                 "fn": "onSitesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").removeAll();\r",
-                    "Ext.getStore(\"PagePickerStore\").removeAll();"
+                    "    Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
+                    "    Ext.getStore(\"PagePickerStore\").load();"
                 ],
                 "name": "beforeclose",
                 "scope": "me",

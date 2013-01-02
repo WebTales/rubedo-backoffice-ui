@@ -388,15 +388,15 @@
                                 "designer|userClassName": "onFieldsetRender",
                                 "fn": "onFieldsetRender",
                                 "implHandler": [
-                                    "var thing = Ext.create(\"Ext.ux.TreePicker\", {\r",
-                                    "    id:12,\r",
+                                    "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
                                     "    store:Ext.getStore(\"PagePickerStore\"),\r",
                                     "    displayField:\"text\",\r",
                                     "    fieldLabel:\"Page d'accueil\",\r",
                                     "    anchor: \"100%\",\r",
                                     "    name:\"homePage\"\r",
                                     "});\r",
-                                    "abstractcomponent.add(thing);"
+                                    "\r",
+                                    "abstractcomponent.add(homePageSelector);"
                                 ],
                                 "name": "render",
                                 "scope": "me"

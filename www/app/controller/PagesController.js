@@ -366,10 +366,63 @@ Ext.define('Rubedo.controller.PagesController', {
 
                 var champsS = Ext.clone(categories[j].champs);
                 for (i=0; i<champsS.length; i++) {
-                    if (champsS[i].type =='Ext.form.field.ComboBox') {
+                    if (champsS[i].type =='Ext.ux.TreePicker') {
+                        var filteredStore=  Ext.create("Ext.data.TreeStore",{autoLoad: false,
+                            autoSync: false,
+                            model: 'Rubedo.model.pageDataModel',
+                            proxy: {
+                                type: 'ajax',
+                                api: {
+                                    create: 'pages/create',
+                                    read: 'pages/read-child',
+                                    update: 'pages/update',
+                                    destroy: 'pages/delete'
+                                },
+                                reader: {
+                                    type: 'json',
+                                    getResponseData: function(response) {
+                                        var data, error;
+
+                                        try {
+                                            data = Ext.decode(response.responseText);
+                                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                            return this.readRecords(data);
+                                        } catch (ex) {
+                                            error = new Ext.data.ResultSet({
+                                                total  : 0,
+                                                count  : 0,
+                                                records: [],
+                                                success: false,
+                                                message: ex.message
+                                            });
+
+                                            this.fireEvent('exception', this, response, error);
+                                            console.log(ex);
+
+                                            Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                            return error;
+                                        }
+                                    },
+                                    messageProperty: 'message'
+                                }
+                            },
+                            sorters: {
+                                property: 'orderValue'
+                            }
+                        }); 
+
+                        filteredStore.getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("site")+"\"}]";
+                        filteredStore.load();
+                        champsS[i].config.store= filteredStore;
+                        champsS[i].config.displayField="text";
+
+
+
+                    } else if (champsS[i].type =='Ext.form.field.ComboBox') {
                         var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
                         champsS[i].config.store= monStore;
-                    }
+                    } 
                     var nChampS = Ext.create(champsS[i].type, champsS[i].config);
                     if (champsS[i].type =='Ext.form.field.Trigger'){
                         var Ouvrir = Ext.clone(champsS[i].ouvrir);
@@ -384,14 +437,18 @@ Ext.define('Rubedo.controller.PagesController', {
                     nChampS.labelSeparator= ' ';
                     nChampS.anchor= '100%';
                     nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
-                    if (nChampS.isXType("combobox")){
+                    if ((nChampS.isXType("combobox"))&&(!nChampS.isXType("treepicker"))){
                         nChampS.getStore().fieldId=Ext.clone(nChampS.id);
                         nChampS.getStore().fieldValue=Ext.clone(abstractcomponent.configBloc[nChampS.name]);
                         nChampS.getStore().addListener("load",function(storeThing){
                             Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
                         },this,{single:true});
                         }
-                        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+                        if (nChampS.isXType("treepicker")){
+                            nChampS.on('select', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
+
+                        }
+                        nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue();});
                         nCateg.add(nChampS);
                     }
                     configSpec.items.items[0].add(nCateg);

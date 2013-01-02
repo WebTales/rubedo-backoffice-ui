@@ -305,15 +305,15 @@ Ext.define('Rubedo.view.sitesInterface', {
     },
 
     onFieldsetRender: function(abstractcomponent, options) {
-        var thing = Ext.create("Ext.ux.TreePicker", {
-            id:12,
+        var homePageSelector = Ext.create("Ext.ux.TreePicker", {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
             fieldLabel:"Page d'accueil",
             anchor: "100%",
             name:"homePage"
         });
-        abstractcomponent.add(thing);
+
+        abstractcomponent.add(homePageSelector);
     }
 
 });

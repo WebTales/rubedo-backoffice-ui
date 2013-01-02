@@ -240,7 +240,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                
+                                {
+                                    categorie: 'Pages',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Racine',
+                                                name: 'rootPage'
+                                            }
+                                        }
+                                    ]
+                                }
                             ],
                             avance: [
                                 
@@ -305,18 +316,23 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    type: 'Ext.form.field.Checkbox',
-                                    config: {
-                                        fieldLabel: 'Restreindre au site',
-                                        name: 'constrainToSite'
-                                    }
-                                },
-                                {
-                                    type: 'Ext.form.field.TextArea',
-                                    config: {
-                                        fieldLabel: 'Filtres',
-                                        name: 'filters'
-                                    }
+                                    categorie: 'Filtrage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Restreindre au site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.TextArea',
+                                            config: {
+                                                fieldLabel: 'Filtres',
+                                                name: 'filters'
+                                            }
+                                        }
+                                    ]
                                 }
                             ],
                             avance: [
