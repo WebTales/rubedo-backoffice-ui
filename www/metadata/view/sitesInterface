@@ -262,6 +262,35 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "managesStore": true,
+                                "designer|userClassName": "MyComboBox19",
+                                "name": "theme",
+                                "fieldLabel": "Theme ",
+                                "displayField": "label",
+                                "store": "SiteThemesStore",
+                                "valueField": "text"
+                            },
+                            "configAlternates": {
+                                "managesStore": "boolean"
+                            },
+                            "designerId": "f83b40eb-826d-4788-8e4f-b5b4edc0ffc3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "managesStore",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox18",
                                 "name": "protocol",
                                 "fieldLabel": "Protocole ",

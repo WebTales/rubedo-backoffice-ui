@@ -418,12 +418,24 @@ Ext.define('Rubedo.controller.PagesController', {
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
             editedPage.endEdit();
             Ext.getCmp("pagesInternalPreview").removeAll();
-            Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
-                autoEl: {
-                    tag: 'iframe',
-                    src: "http://"+window.location.host+"/index/"+editedPage.get("text")
+            Ext.Ajax.request({
+                url: 'xhr-get-page-url',
+                params: {
+                    "page-id": editedPage.get("id")
+                },
+                success: function(response){
+                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                        autoEl: {
+                            tag: 'iframe',
+                            src: targetedUrl+"?preview=1"
+                        }
+                    }));
+                },
+                failure:function(){
+                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
                 }
-            }));
+            });
         } else {
             Ext.getCmp("mainPageAttributeForm").up().setActiveTab(1);
             Ext.Msg.alert("Erreur", "Les propriérés de la page sont invalides.");

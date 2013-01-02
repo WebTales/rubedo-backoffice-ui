@@ -1558,6 +1558,14 @@
                 "app/view/MTFieldAddWindow.js"
             ],
             "className": "MTFieldAddWindow"
+        },
+        "d83aaaaf-494e-4b1d-961c-a90b48ca6b12": {
+            "paths": [
+                "metadata/store/SiteThemesStore",
+                "app/store/override/SiteThemesStore.js",
+                "app/store/SiteThemesStore.js"
+            ],
+            "className": "SiteThemesStore"
         }
     },
     "viewOrderMap": {
@@ -1645,6 +1653,7 @@
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
+            "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
             "5fb72a18-9339-4c3a-9c9d-c5edd63b5362",
             "1429abea-2977-46c7-993e-339569e76d1a",
             "5640d13d-589e-4233-a94f-d4e11749b140",

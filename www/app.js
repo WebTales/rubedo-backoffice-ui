@@ -99,7 +99,8 @@ Ext.application({
         'MediaTypes',
         'TCNDepComboCS',
         'TaxonomyForMT',
-        'MTFieldsStore'
+        'MTFieldsStore',
+        'SiteThemesStore'
     ],
     views: [
         'MyContainer',

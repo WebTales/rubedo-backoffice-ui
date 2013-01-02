@@ -74,6 +74,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'filter'
+        },
+        {
+            name: 'theme'
         }
     ]
 });

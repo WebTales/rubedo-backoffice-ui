@@ -1,0 +1,85 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SiteThemesStore",
+        "designer|userAlias": "SiteThemesStore",
+        "autoLoad": false,
+        "autoSync": true,
+        "storeId": "SiteThemesStore",
+        "model": null
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen9074",
+    "designerId": "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy6",
+                "api": [
+                    "{\r",
+                    "\r",
+                    "                    read: 'fo-themes'\r",
+                    "                    \r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "2b4cf942-8c8c-4613-91f2-b9e7ef0e6eaf",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader4",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "9e86a502-7d91-46ff-9d67-1f584e182e48"
+                }
+            ]
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field219",
+                "name": "text"
+            },
+            "designerId": "96090cd7-d092-4741-a428-db76c9b06dcd"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field220",
+                "name": "label"
+            },
+            "designerId": "9b5affc0-dadd-44ac-8dad-654270b1b065"
+        }
+    ]
+}
