@@ -265,7 +265,7 @@
                                     "\r",
                                     "    uploader: \r",
                                     "    {\r",
-                                    "        url: 'image/put',\r",
+                                    "        url: 'image/put?token='+ACL.CSRFToken,\r",
                                     "        autoStart: false,\r",
                                     "        max_file_size: '2mb',\t\t\t\r",
                                     "        drop_element: 'dragload',\r",

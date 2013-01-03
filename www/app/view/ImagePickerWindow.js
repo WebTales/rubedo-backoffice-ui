@@ -132,7 +132,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
             uploader: 
             {
-                url: 'image/put',
+                url: 'image/put?token='+ACL.CSRFToken,
                 autoStart: false,
                 max_file_size: '2mb',			
                 drop_element: 'dragload',
