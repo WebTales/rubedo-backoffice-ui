@@ -551,6 +551,31 @@ Ext.define('Rubedo.controller.PagesController', {
         }
     },
 
+    onPagePreviewRefreshBtnClick: function(button, e, options) {
+        var record = Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if ((!Ext.isEmpty(record))&&(!record.isRoot())){
+            Ext.getCmp("pagesInternalPreview").removeAll();
+            Ext.Ajax.request({
+                url: 'xhr-get-page-url',
+                params: {
+                    "page-id": record.get("id")
+                },
+                success: function(response){
+                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                        autoEl: {
+                            tag: 'iframe',
+                            src: targetedUrl+"?preview=1"
+                        }
+                    }));
+                },
+                failure:function(){
+                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                }
+            });
+        }
+    },
+
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -712,6 +737,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#previewPageTree": {
                 select: this.onPreviewPageTreeSelect
+            },
+            "#pagePreviewRefreshBtn": {
+                click: this.onPagePreviewRefreshBtnClick
             }
         });
     }

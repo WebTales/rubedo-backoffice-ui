@@ -344,6 +344,15 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'tbtext',
                                             id: 'pagePreviewTextItem',
                                             text: ''
+                                        },
+                                        {
+                                            xtype: 'tbfill'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            id: 'pagePreviewRefreshBtn',
+                                            iconCls: 'refresh',
+                                            text: 'Actualiser'
                                         }
                                     ]
                                 }

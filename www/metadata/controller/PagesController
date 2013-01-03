@@ -968,6 +968,47 @@
                 "designer|controlQuery": "#previewPageTree"
             },
             "designerId": "56a373a5-6913-4cda-b321-5fb604f616bd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPagePreviewRefreshBtnClick",
+                "fn": "onPagePreviewRefreshBtnClick",
+                "implHandler": [
+                    "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                    "if ((!Ext.isEmpty(record))&&(!record.isRoot())){\r",
+                    "    Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'xhr-get-page-url',\r",
+                    "        params: {\r",
+                    "            \"page-id\": record.get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var targetedUrl = Ext.JSON.decode(response.responseText).url;\r",
+                    "            Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
+                    "                autoEl: {\r",
+                    "                    tag: 'iframe',\r",
+                    "                    src: targetedUrl+\"?preview=1\"\r",
+                    "                }\r",
+                    "            }));\r",
+                    "        },\r",
+                    "        failure:function(){\r",
+                    "            Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\\'url de la page');\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#pagePreviewRefreshBtn"
+            },
+            "designerId": "c918931f-c27c-4264-9d18-6cc8b64eb2c2"
         }
     ]
 }

@@ -813,6 +813,35 @@
                                         "text": ""
                                     },
                                     "designerId": "e0c6307c-bd0d-4714-9aa4-a418f6b2b6da"
+                                },
+                                {
+                                    "type": "tbfill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyFill23"
+                                    },
+                                    "designerId": "97c2f5ff-5fb4-4640-a5c6-9ec9df00136d"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton192",
+                                        "id": "pagePreviewRefreshBtn",
+                                        "iconCls": "refresh",
+                                        "text": "Actualiser"
+                                    },
+                                    "designerId": "a7a67c7f-7e87-4f4f-89f2-0376d567e8d8"
                                 }
                             ]
                         }
