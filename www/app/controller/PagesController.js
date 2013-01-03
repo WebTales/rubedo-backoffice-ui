@@ -263,7 +263,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         abstractcomponent.setTitle(this.getValue());
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:false,
                 anchor:"100%",
                 margin:"10 0 10 0",
@@ -281,7 +281,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         abstractcomponent.up().doLayout();
                     }
                 },
-                labelWidth:90,
+                labelWidth:60,
                 allowDecimals:false,
                 allowBlank:false,
                 minValue:1,
@@ -320,7 +320,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         abstractcomponent.classHTML=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:true,
                 anchor:"100%",
                 margin:"10 0 0 0",
@@ -337,7 +337,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         abstractcomponent.idHTML=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:true,
                 anchor:"100%",
                 margin:"10 0 0 0",
@@ -352,7 +352,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         abstractcomponent.urlPrefix=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
                 allowBlank:true,
                 anchor:"100%",
@@ -432,7 +432,8 @@ Ext.define('Rubedo.controller.PagesController', {
                         } ;  
                     }
                     nChampS.labelSeparator= ' ';
-                    nChampS.anchor= '100%';
+                    nChampS.anchor= '100%';   
+                    nChampS.labelWidth=60;
                     nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
                     if ((nChampS.isXType("combobox"))&&(!nChampS.isXType("treepicker"))){
                         nChampS.getStore().fieldId=Ext.clone(nChampS.id);

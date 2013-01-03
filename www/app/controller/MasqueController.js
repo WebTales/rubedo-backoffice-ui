@@ -252,7 +252,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         abstractcomponent.eTitle=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:false,
                 anchor:"100%",
                 margin:"10 0 10 0",
@@ -287,7 +287,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         abstractcomponent.classHTML=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:true,
                 anchor:"100%",
                 margin:"10 0 0 0",
@@ -302,7 +302,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         abstractcomponent.idHTML=this.getValue();
                     }
                 },
-                labelWidth:40,
+                labelWidth:60,
                 allowBlank:true,
                 anchor:"100%",
                 margin:"10 0 0 0",
@@ -336,7 +336,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 configSpec.getComponent(0).add(Ext.widget('numberfield',{
                     itemId:"rowHeightFixed",
                     fieldLabel:"Hauteur fixe ",
-                    labelWidth:80,
+                    labelWidth:60,
                     allowDecimals:false,
                     allowBlank:false,
                     minValue:20,
@@ -381,7 +381,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             itemId:"offsetEditor",
                             fieldLabel:"Offset ",
                             editable:false,
-                            labelWidth:45,
+                            labelWidth:60,
                             allowDecimals:false,
                             anchor:"50%",
                             margin:"10 0 0 0",
@@ -393,7 +393,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         var spanEdit=Ext.widget('numberfield',{
                             itemId:"spanEditor",
                             fieldLabel:"Span ",
-                            labelWidth:45,
+                            labelWidth:60,
                             editable:false,
                             allowDecimals:false,
                             anchor:"50%",
@@ -637,7 +637,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     abstractcomponent.setTitle(this.getValue());
                 }
             },
-            labelWidth:40,
+            labelWidth:60,
             allowBlank:false,
             anchor:"100%",
             margin:"10 0 10 0",
@@ -655,7 +655,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     abstractcomponent.up().doLayout();
                 }
             },
-            labelWidth:90,
+            labelWidth:60,
             allowDecimals:false,
             allowBlank:false,
             minValue:1,
@@ -694,7 +694,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     abstractcomponent.classHTML=this.getValue();
                 }
             },
-            labelWidth:40,
+            labelWidth:60,
             allowBlank:true,
             anchor:"100%",
             margin:"10 0 0 0",
@@ -709,7 +709,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     abstractcomponent.idHTML=this.getValue();
                 }
             },
-            labelWidth:40,
+            labelWidth:60,
             allowBlank:true,
             anchor:"100%",
             margin:"10 0 0 0",
@@ -724,7 +724,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     abstractcomponent.urlPrefix=this.getValue();
                 }
             },
-            labelWidth:40,
+            labelWidth:60,
             regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
             allowBlank:true,
             anchor:"100%",
@@ -805,6 +805,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
                 nChampS.labelSeparator= ' ';
                 nChampS.anchor= '100%';
+                nChampS.labelWidth=60;
                 nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
                 if ((nChampS.isXType("combobox"))&&(!nChampS.isXType("treepicker"))){
                     nChampS.getStore().fieldId=Ext.clone(nChampS.id);
