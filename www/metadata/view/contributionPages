@@ -963,6 +963,7 @@
                                     "    createNewOnEnter:true,\r",
                                     "    hideTrigger:true,\r",
                                     "    triggerOnClick:false,\r",
+                                    "    createNewOnBlur:true,\r",
                                     "    pinList:false\r",
                                     "});\r",
                                     "abstractcomponent.add(tagPicker);"

@@ -59,6 +59,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 multiSelect: true,
                                                 forceSelection: false,
                                                 createNewOnEnter: true,
+                                                createNewOnBlur: true,
                                                 hideTrigger: true,
                                                 triggerOnClick: false,
                                                 pinList: false

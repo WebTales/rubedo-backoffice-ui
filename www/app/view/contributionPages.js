@@ -456,6 +456,7 @@ Ext.define('Rubedo.view.contributionPages', {
             createNewOnEnter:true,
             hideTrigger:true,
             triggerOnClick:false,
+            createNewOnBlur:true,
             pinList:false
         });
         abstractcomponent.add(tagPicker);
