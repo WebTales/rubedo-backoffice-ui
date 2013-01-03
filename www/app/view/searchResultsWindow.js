@@ -18,7 +18,6 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     alias: 'widget.searchResultsWindow',
 
     requires: [
-        'Rubedo.view.MyGridPanel20',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -76,9 +75,22 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     ]
                 },
                 {
-                    xtype: 'mygridpanel20',
-                    overflowY: 'auto',
-                    flex: 1
+                    xtype: 'gridpanel',
+                    flex: 1,
+                    id: 'ResultContentsGrid',
+                    title: '',
+                    store: 'searchResultsStore',
+                    viewConfig: {
+
+                    },
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'text',
+                            flex: 1,
+                            text: 'Titre'
+                        }
+                    ]
                 }
             ],
             listeners: {

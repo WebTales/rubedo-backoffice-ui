@@ -142,7 +142,6 @@ Ext.application({
         'MyWindow31',
         'esResponseWindow',
         'searchResultsWindow',
-        'MyGridPanel20',
         'sitesInterface',
         'MyWindow35',
         'CTCField',

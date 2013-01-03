@@ -32,10 +32,7 @@ Ext.define('Rubedo.store.searchResultsStore', {
                 {
                     name: 'id'
                 }
-            ],
-            groupers: {
-                property: 'type'
-            }
+            ]
         }, cfg)]);
     }
 });
