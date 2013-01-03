@@ -40,7 +40,6 @@ Ext.define('Rubedo.controller.SearchController', {
                 success: function(response){
                     var data=[];
                     var bigRez=Ext.JSON.decode(response.responseText);
-                    console.log(bigRez);
                     Ext.Array.forEach(bigRez.results, function(rez){
                         var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
                         data.push({

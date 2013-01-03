@@ -45,7 +45,6 @@
                     "        success: function(response){\r",
                     "            var data=[];\r",
                     "            var bigRez=Ext.JSON.decode(response.responseText);\r",
-                    "            console.log(bigRez);\r",
                     "            Ext.Array.forEach(bigRez.results, function(rez){\r",
                     "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
                     "                data.push({\r",
