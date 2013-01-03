@@ -189,7 +189,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
                                     scale: 'large',
-                                    text: 'Dèplacer'
+                                    text: 'Déplacer'
                                 },
                                 {
                                     xtype: 'button',
@@ -198,7 +198,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
-                                    text: 'Dèplacer'
+                                    text: 'Déplacer'
                                 }
                             ]
                         },
