@@ -851,6 +851,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
                 configSpec.items.items[0].add(nCateg);
 
+
             }
             propEdit.add(configSpec);
 
