@@ -161,12 +161,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
-                                    name: 'keywords',
-                                    fieldLabel: 'Mots clés '
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
                                     name: 'mainLanguage',
                                     fieldLabel: 'Langue principale '
                                 },
@@ -314,6 +308,20 @@ Ext.define('Rubedo.view.sitesInterface', {
         });
 
         abstractcomponent.add(homePageSelector);
+
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"keywords",
+            fieldLabel:"Mots clés",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            pinList:false
+        });
+        abstractcomponent.add(tagPicker);
     }
 
 });

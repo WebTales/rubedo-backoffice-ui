@@ -341,21 +341,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField51",
-                                "name": "keywords",
-                                "fieldLabel": "Mots clés "
-                            },
-                            "designerId": "03adf42a-bb84-4d33-ba51-b98d567d8027"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField52",
                                 "name": "mainLanguage",
                                 "fieldLabel": "Langue principale "
@@ -396,7 +381,21 @@
                                     "    name:\"homePage\"\r",
                                     "});\r",
                                     "\r",
-                                    "abstractcomponent.add(homePageSelector);"
+                                    "abstractcomponent.add(homePageSelector);\r",
+                                    "\r",
+                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    store:[],\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"keywords\",\r",
+                                    "    fieldLabel:\"Mots clés\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    forceSelection:false,\r",
+                                    "    createNewOnEnter:true,\r",
+                                    "    hideTrigger:true,\r",
+                                    "    triggerOnClick:false,\r",
+                                    "    pinList:false\r",
+                                    "});\r",
+                                    "abstractcomponent.add(tagPicker);"
                                 ],
                                 "name": "render",
                                 "scope": "me"
