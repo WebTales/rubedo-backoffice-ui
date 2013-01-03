@@ -30,6 +30,97 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
+                    type: 'Gallerie Flickr',
+                    description: '<h2>Bloc Gallerie Flickr<\/h2> <\/br><p>Ce bloc affiche des images hébergées sur Flickr.<\/p>',
+                    configBasique: {
+                        title: 'Gallerie Flickr',
+                        bType: 'Gallerie Flickr',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Source',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Utilisateur',
+                                                name: 'user'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.form.field.BoxSelect',
+                                            config: {
+                                                fieldLabel: 'Tags',
+                                                name: 'tags',
+                                                store: [
+                                                    
+                                                ],
+                                                multiSelect: true,
+                                                forceSelection: false,
+                                                createNewOnEnter: true,
+                                                hideTrigger: true,
+                                                triggerOnClick: false,
+                                                pinList: false
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Règle sur tags',
+                                                name: 'tagmode',
+                                                store: [
+                                                    'ANY',
+                                                    'ALL'
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Extra',
+                                                name: 'extra'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Options',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Images par page',
+                                                name: 'itemsPerPage',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514044123'
+                },
+                {
                     type: 'Liste de Contenus',
                     description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {

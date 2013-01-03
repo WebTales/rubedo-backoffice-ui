@@ -817,9 +817,6 @@ Ext.define('Rubedo.controller.MasqueController', {
 
 
 
-                } else if (champsS[i].type =='Ext.form.field.ComboBox') {
-                    var monStore=  Ext.create('Ext.data.Store', champsS[i].store);
-                    champsS[i].config.store= monStore;
                 } 
                 var nChampS = Ext.create(champsS[i].type, champsS[i].config);
                 if (champsS[i].type =='Ext.form.field.Trigger'){
