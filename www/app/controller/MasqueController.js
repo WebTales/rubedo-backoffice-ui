@@ -153,33 +153,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
-                rows: [ 
-                {
-                    "height":null,
-                    "responsive":{
-                        "phone":true,
-                        "tablet":true,
-                        "desktop":true
-                    },
-                    "eTitle":"titre",
-                    "columns": [
-                    {
-                        "isTerminal":true,
-                        "eTitle":"titre",
-                        "responsive":{
-                            "phone":true,
-                            "tablet":true,
-                            "desktop":true
-                        },
-                        "span":12,
-                        "offset":0,
-                        "blocks": null,
-                        "rows":null	
-                    }
-                    ]
-                }
-                ]
-
+                rows: [ ]
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
             this.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});
