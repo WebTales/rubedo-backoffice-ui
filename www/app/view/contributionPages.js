@@ -210,7 +210,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
-                                    text: 'Enregistrer'
+                                    text: 'Enregistrer',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onPageSaveBtnAfterRender,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -419,6 +425,15 @@ Ext.define('Rubedo.view.contributionPages', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onPageSaveBtnAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     },
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
