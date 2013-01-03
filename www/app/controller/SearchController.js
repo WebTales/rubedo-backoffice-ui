@@ -40,11 +40,14 @@ Ext.define('Rubedo.controller.SearchController', {
                 success: function(response){
                     var data=[];
                     var bigRez=Ext.JSON.decode(response.responseText);
+                    console.log(bigRez);
                     Ext.Array.forEach(bigRez.results, function(rez){
                         var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
                         data.push({
                             text:thing.text,
                             type:thing.contentType,
+                            author:thing.author,
+                            lastUpdateTime:thing.lastUpdateTime,
                             id:rez[Ext.Object.getKeys(rez)[0]]._id
                         });
                     });
@@ -120,6 +123,8 @@ Ext.define('Rubedo.controller.SearchController', {
                     data.push({
                         text:thing.text,
                         type:thing.contentType,
+                        author:thing.author,
+                        lastUpdateTime:thing.lastUpdateTime,
                         id:rez[Ext.Object.getKeys(rez)[0]]._id
                     });
                 });

@@ -87,8 +87,21 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'text',
-                            flex: 1,
+                            flex: 2,
                             text: 'Titre'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'author',
+                            flex: 1,
+                            text: 'Auteur'
+                        },
+                        {
+                            xtype: 'datecolumn',
+                            dataIndex: 'lastUpdateTime',
+                            flex: 1.2,
+                            text: 'Date de dernière modification',
+                            format: 'F j, Y, G:i '
                         }
                     ]
                 }

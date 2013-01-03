@@ -180,13 +180,44 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn5",
                         "dataIndex": "text",
-                        "flex": 1,
+                        "flex": 2,
                         "text": "Titre"
                     },
                     "configAlternates": {
                         "filter": "boolean"
                     },
                     "designerId": "e3587e55-0229-4cf6-b84f-d922e423dbf2"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn58",
+                        "dataIndex": "author",
+                        "flex": 1,
+                        "text": "Auteur"
+                    },
+                    "designerId": "302e7c0e-40b0-4342-ace9-aa72863c4baa"
+                },
+                {
+                    "type": "datecolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateColumn7",
+                        "dataIndex": "lastUpdateTime",
+                        "flex": 1.2,
+                        "text": "Date de dernière modification",
+                        "format": "F j, Y, G:i "
+                    },
+                    "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c"
                 }
             ]
         }

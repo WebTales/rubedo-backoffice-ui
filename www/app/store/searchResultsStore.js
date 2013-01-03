@@ -31,6 +31,14 @@ Ext.define('Rubedo.store.searchResultsStore', {
                 },
                 {
                     name: 'id'
+                },
+                {
+                    name: 'author'
+                },
+                {
+                    name: 'lastUpdateTime',
+                    dateFormat: 'timestamp',
+                    type: 'date'
                 }
             ]
         }, cfg)]);
