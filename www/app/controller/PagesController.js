@@ -272,25 +272,25 @@ Ext.define('Rubedo.controller.PagesController', {
 
 
 
-
+            /*
             configSpec.getComponent(0).add(Ext.widget('numberfield',{
-                fieldLabel:"Hauteur fluide ",
-                onChange:function(){
-                    if(this.isValid()) {
-                        abstractcomponent.flex=this.getValue();
-                        abstractcomponent.up().doLayout();
-                    }
-                },
-                labelWidth:60,
-                allowDecimals:false,
-                allowBlank:false,
-                minValue:1,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:abstractcomponent.flex
+            fieldLabel:"Hauteur fluide ",
+            onChange:function(){
+            if(this.isValid()) {
+            abstractcomponent.flex=this.getValue();
+            abstractcomponent.up().doLayout();
+            }
+            },
+            labelWidth:60,
+            allowDecimals:false,
+            allowBlank:false,
+            minValue:1,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.flex
             }));
 
-
+            */
 
             configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
                 fieldLabel:"Visibilité ",
