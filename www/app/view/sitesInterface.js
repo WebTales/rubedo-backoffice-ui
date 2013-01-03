@@ -126,8 +126,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'combobox',
-                                    anchor: '100%',
                                     managesStore: true,
+                                    anchor: '100%',
                                     name: 'theme',
                                     fieldLabel: 'Theme ',
                                     displayField: 'label',
