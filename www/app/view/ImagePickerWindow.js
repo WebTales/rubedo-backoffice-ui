@@ -121,14 +121,14 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     },
 
     onToolbarAfterRender: function(abstractcomponent, options) {
-
+        var contained = Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440});
         abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
             text: 'Uploader des images',
             iconCls:"arrow_up",
             hidden:true,
             //singleFile: true,
-            plugins: [Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440})
-            ],
+
+            plugins: [contained],
 
             uploader: 
             {
@@ -164,7 +164,8 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
                 uploadcomplete: function(uploader, success, failed)								
                 {
-                    abstractcomponent.up().getStore().load();				
+                    abstractcomponent.up().getStore().load();
+                    contained.window.close();
                 },
                 scope: this
             }
