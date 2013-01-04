@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.MyForm11', {
 
     etape: '4',
     id: 'assisstantRE6',
+    overflowY: 'auto',
     bodyPadding: 10,
     title: 'Finalisation et enregistrement',
 

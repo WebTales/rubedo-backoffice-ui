@@ -263,6 +263,7 @@
                     "                        displayField: 'nom',\r",
                     "                        valueField: 'valeur',\r",
                     "                        editable: false,\r",
+                    "                        value: 'some',\r",
                     "                        forceSelect: true,\r",
                     "                        allowBlank: false\r",
                     "\r",
@@ -346,7 +347,9 @@
                 "fn": "enleveRegle",
                 "implHandler": [
                     "if (Ext.getCmp('assisstantRE4').items.items.indexOf(button.up().up())==2) {\r",
-                    "    Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();  \r",
+                    "    if (!Ext.isEmpty(Ext.getCmp('assisstantRE4').getComponent(3))){\r",
+                    "    Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();\r",
+                    "    }\r",
                     "}\r",
                     "button.up().up().destroy();"
                 ],

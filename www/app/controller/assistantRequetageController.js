@@ -259,6 +259,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 displayField: 'nom',
                                 valueField: 'valeur',
                                 editable: false,
+                                value: 'some',
                                 forceSelect: true,
                                 allowBlank: false
 
@@ -310,7 +311,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     enleveRegle: function(button, e, options) {
         if (Ext.getCmp('assisstantRE4').items.items.indexOf(button.up().up())==2) {
-            Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();  
+            if (!Ext.isEmpty(Ext.getCmp('assisstantRE4').getComponent(3))){
+                Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();
+            }
         }
         button.up().up().destroy();
     },

@@ -161,7 +161,9 @@ Ext.application({
         'newMTWindow',
         'contentPickerWindow',
         'contentPickerGrid',
-        'MTFieldAddWindow'
+        'MTFieldAddWindow',
+        'assisstantRE4',
+        'MyForm11'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
