@@ -303,6 +303,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
             fieldLabel:"Page d'accueil",
+            id:"sitesHomePicker",
             anchor: "100%",
             name:"homePage"
         });

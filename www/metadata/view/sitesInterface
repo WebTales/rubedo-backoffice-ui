@@ -377,6 +377,7 @@
                                     "    store:Ext.getStore(\"PagePickerStore\"),\r",
                                     "    displayField:\"text\",\r",
                                     "    fieldLabel:\"Page d'accueil\",\r",
+                                    "    id:\"sitesHomePicker\",\r",
                                     "    anchor: \"100%\",\r",
                                     "    name:\"homePage\"\r",
                                     "});\r",
