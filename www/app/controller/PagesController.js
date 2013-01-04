@@ -468,10 +468,14 @@ Ext.define('Rubedo.controller.PagesController', {
         if (Ext.getCmp("mainPageAttributeForm").getForm().isValid()) {
             var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
             var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
+            var store=Ext.getCmp("mainPageTree").getStore();
+            store.suspendAutoSync();
             editedPage.beginEdit();
             editedPage.set("rows",newRows);
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
             editedPage.endEdit();
+            store.resumeAutoSync();
+            store.sync();
             Ext.getCmp("pagesInternalPreview").removeAll();
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
