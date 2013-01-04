@@ -57,12 +57,47 @@
                                 "implHandler": [
                                     "if (!ACL.interfaceRights[\"write.ui.taxonomy\"]){\r",
                                     "    return(false);\r",
+                                    "}\r",
+                                    "Ext.getCmp(\"TermesTaxonomieTree\").getStore().suspendAutoSync();\r",
+                                    "var movedOne=data.records[0];\r",
+                                    "var interm=0;\r",
+                                    "var targeted=overModel.get(\"orderValue\");\r",
+                                    "if (dropPosition==\"before\"){\r",
+                                    "    if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get(\"orderValue\");}\r",
+                                    "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                    "} else if (dropPosition==\"after\"){\r",
+                                    "    if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get(\"orderValue\");}\r",
+                                    "    else{interm=10000;}\r",
+                                    "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                    "} else if (dropPosition==\"append\"){\r",
+                                    "    if (overModel.hasChildNodes()){\r",
+                                    "        movedOne.set(\"orderValue\", overModel.lastChild.get(\"orderValue\")+100);\r",
+                                    "    }\r",
                                     "}"
                                 ],
                                 "name": "beforedrop",
                                 "scope": "me"
                             },
                             "designerId": "8c3b19f9-6624-432b-8e65-7e0ca23cc88a"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onTreedragdroppluginDrop",
+                                "fn": "onTreedragdroppluginDrop",
+                                "implHandler": [
+                                    "Ext.getCmp(\"TermesTaxonomieTree\").getStore().resumeAutoSync();\r",
+                                    "Ext.getCmp(\"TermesTaxonomieTree\").getStore().sync();"
+                                ],
+                                "name": "drop",
+                                "scope": "me"
+                            },
+                            "designerId": "8a5d9f92-8515-4ee6-a425-a9e0b8d82ef3"
                         }
                     ]
                 }

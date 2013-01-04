@@ -131,7 +131,11 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 if (cibleI !== null) {
                     Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
                     cibleI.set("leaf",false);
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true});
+                    var orderValue = 100;
+                    if (cibleI.hasChildNodes()){              
+                        orderValue=cibleI.lastChild.get("orderValue")+100;
+                    }
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true, orderValue: orderValue});
                     cibleI.expand();
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
                     Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();

@@ -566,6 +566,10 @@
                                         "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                         "fn": "onTreedragdroppluginBeforeDrop",
                                         "implHandler": [
+                                            "\r",
+                                            "if (!ACL.interfaceRights[\"write.ui.masks\"]){\r",
+                                            "    return(false);\r",
+                                            "}\r",
                                             "Ext.getStore(\"PagesDataStore\").suspendAutoSync();\r",
                                             "var movedOne=data.records[0];\r",
                                             "var interm=0;\r",

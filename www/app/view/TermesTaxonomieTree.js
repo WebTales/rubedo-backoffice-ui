@@ -38,6 +38,10 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     beforedrop: {
                         fn: me.onTreedragdroppluginBeforeDrop,
                         scope: me
+                    },
+                    drop: {
+                        fn: me.onTreedragdroppluginDrop,
+                        scope: me
                     }
                 }
             }
@@ -50,6 +54,27 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
         if (!ACL.interfaceRights["write.ui.taxonomy"]){
             return(false);
         }
+        Ext.getCmp("TermesTaxonomieTree").getStore().suspendAutoSync();
+        var movedOne=data.records[0];
+        var interm=0;
+        var targeted=overModel.get("orderValue");
+        if (dropPosition=="before"){
+            if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get("orderValue");}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="after"){
+            if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
+            else{interm=10000;}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="append"){
+            if (overModel.hasChildNodes()){
+                movedOne.set("orderValue", overModel.lastChild.get("orderValue")+100);
+            }
+        }
+    },
+
+    onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
+        Ext.getCmp("TermesTaxonomieTree").getStore().resumeAutoSync();
+        Ext.getCmp("TermesTaxonomieTree").getStore().sync();
     }
 
 });

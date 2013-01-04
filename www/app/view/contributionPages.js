@@ -437,6 +437,10 @@ Ext.define('Rubedo.view.contributionPages', {
     },
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
+
+        if (!ACL.interfaceRights["write.ui.masks"]){
+            return(false);
+        }
         Ext.getStore("PagesDataStore").suspendAutoSync();
         var movedOne=data.records[0];
         var interm=0;
