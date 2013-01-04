@@ -537,7 +537,7 @@
                 "designer|userClassName": "blocSelection",
                 "fn": "blocSelection",
                 "implHandler": [
-                    "if (abstractcomponent.canEdit){\r",
+                    "if (/*abstractcomponent.canEdit*/true){\r",
                     "    abstractcomponent.getEl().on(\"mouseover\", function(e){\r",
                     "        var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
                     "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {\r",

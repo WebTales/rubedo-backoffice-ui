@@ -221,7 +221,7 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     blocSelection: function(abstractcomponent, options) {
-        if (abstractcomponent.canEdit){
+        if (/*abstractcomponent.canEdit*/true){
             abstractcomponent.getEl().on("mouseover", function(e){
                 var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
                 if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
