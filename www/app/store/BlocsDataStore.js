@@ -146,20 +146,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Contenus',
                                     champs: [
                                         {
-                                            type: 'Rubedo.view.CTCField',
-                                            config: {
-                                                fieldLabel: 'Types de contenus',
-                                                name: 'contentTypes'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.TTField',
-                                            config: {
-                                                fieldLabel: 'Taxonomie',
-                                                name: 'taxonomy'
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.form.field.Trigger',
                                             ouvrir: 'assistantRequetage',
                                             config: {
@@ -230,20 +216,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 {
                                     categorie: 'Contenus',
                                     champs: [
-                                        {
-                                            type: 'Rubedo.view.CTCField',
-                                            config: {
-                                                fieldLabel: 'Types de contenus',
-                                                name: 'contentTypes'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.TTField',
-                                            config: {
-                                                fieldLabel: 'Taxonomie',
-                                                name: 'taxonomy'
-                                            }
-                                        },
                                         {
                                             type: 'Ext.form.field.Trigger',
                                             ouvrir: 'assistantRequetage',
