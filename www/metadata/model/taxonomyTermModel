@@ -64,6 +64,21 @@
                 "name": "vocabularyId"
             },
             "designerId": "383ca66c-c602-47b3-b5d8-c37fcbee5936"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field226",
+                "name": "orderValue",
+                "sortType": "asFloat",
+                "type": "float"
+            },
+            "designerId": "3fb42404-61ae-4bfa-809e-e974662edcd3"
         }
     ]
 }

@@ -523,10 +523,6 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("contribPreviewMain").removeAll();
     },
 
-    onContributionPrevisualisationBeforeClose: function(panel, options) {
-
-    },
-
     onPreviewPageTreeSelect: function(selModel, record, index, options) {
         Ext.getCmp("contribPreviewMain").removeAll();
         if(!record.isRoot()){
@@ -731,9 +727,6 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#previewSitesCombo": {
                 select: this.pagePreviewSelect
-            },
-            "#contributionPrevisualisation": {
-                beforeclose: this.onContributionPrevisualisationBeforeClose
             },
             "#previewPageTree": {
                 select: this.onPreviewPageTreeSelect

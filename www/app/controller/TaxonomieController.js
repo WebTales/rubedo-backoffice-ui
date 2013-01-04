@@ -90,6 +90,9 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         filters: {
             property: 'vocabularyId',
             value: record.get("id")
+        },
+        sorters: {
+            property: 'orderValue'
         }
     });
     var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1});

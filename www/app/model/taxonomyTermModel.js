@@ -30,6 +30,11 @@ Ext.define('Rubedo.model.taxonomyTermModel', {
         },
         {
             name: 'vocabularyId'
+        },
+        {
+            name: 'orderValue',
+            sortType: 'asFloat',
+            type: 'float'
         }
     ]
 });

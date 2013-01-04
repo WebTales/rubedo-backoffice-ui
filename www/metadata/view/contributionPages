@@ -465,10 +465,10 @@
                                         "fn": "onPageSaveBtnAfterRender",
                                         "implHandler": [
                                             "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
-                                            "    if (!abstractcomponent.disabled){\r",
+                                            "if (!abstractcomponent.disabled){\r",
                                             "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
                                             "    t.stopEvent();\r",
-                                            "    }\r",
+                                            "}\r",
                                             "});"
                                         ],
                                         "name": "afterrender",
