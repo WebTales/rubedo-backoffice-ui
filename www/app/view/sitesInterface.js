@@ -43,12 +43,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                 {
                     xtype: 'toolbar',
                     dock: 'top',
+                    height: 64,
                     items: [
                         {
                             xtype: 'button',
                             ACL: 'write.ui.sites',
                             id: 'siteAddBtn',
-                            iconCls: 'add',
+                            iconAlign: 'top',
+                            iconCls: 'add_big',
+                            scale: 'large',
                             text: 'Ajouter'
                         },
                         {
@@ -56,8 +59,19 @@ Ext.define('Rubedo.view.sitesInterface', {
                             ACL: 'write.ui.sites',
                             disabled: true,
                             id: 'siteRemoveBtn',
-                            iconCls: 'close',
+                            iconAlign: 'top',
+                            iconCls: 'remove_big',
+                            scale: 'large',
                             text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'updateSiteBtn',
+                            iconAlign: 'top',
+                            iconCls: 'floppy_disc_big',
+                            scale: 'large',
+                            text: 'Enregistrer'
                         }
                     ]
                 }
@@ -270,13 +284,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     fieldLabel: 'Mot de passe Optquast '
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'button',
-                            anchor: '100%',
-                            id: 'updateSiteBtn',
-                            scale: 'large',
-                            text: 'Appliquer'
                         }
                     ]
                 }

@@ -21,10 +21,12 @@ Ext.define('Rubedo.controller.SitesController', {
         if (Ext.isEmpty(selections)) {
             Ext.getCmp("siteRemoveBtn").disable();
             Ext.getCmp("mainSiteProps").disable();
+            Ext.getCmp("updateSiteBtn").disable();
             Ext.getCmp("mainSiteProps").getForm().setValues();
         } else {
             Ext.getCmp("siteRemoveBtn").enable();
             Ext.getCmp("mainSiteProps").enable();
+            Ext.getCmp("updateSiteBtn").enable();
             Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+selections[0].get("id")+"\"}]";
             Ext.getStore("PagePickerStore").load();
 

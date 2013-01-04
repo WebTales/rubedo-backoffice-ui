@@ -31,7 +31,8 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
-                "designer|userClassName": "MyToolbar41"
+                "designer|userClassName": "MyToolbar41",
+                "height": 64
             },
             "designerId": "41095a8f-523a-40a9-a8ed-85fa9e8bfb0b",
             "cn": [
@@ -47,7 +48,9 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton155",
                         "id": "siteAddBtn",
-                        "iconCls": "add",
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
                         "text": "Ajouter"
                     },
                     "designerId": "9716f05d-2866-4623-8a0b-5b690412ca10",
@@ -72,7 +75,9 @@
                         "designer|userClassName": "MyButton156",
                         "disabled": true,
                         "id": "siteRemoveBtn",
-                        "iconCls": "close",
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
                         "text": "Supprimer"
                     },
                     "designerId": "36e0c9e4-ff5c-4000-8e12-72d241096cb5",
@@ -83,6 +88,25 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton165",
+                        "disabled": true,
+                        "id": "updateSiteBtn",
+                        "iconAlign": "top",
+                        "iconCls": "floppy_disc_big",
+                        "scale": "large",
+                        "text": "Enregistrer"
+                    },
+                    "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a"
                 }
             ]
         },
@@ -614,22 +638,6 @@
                             "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4"
                         }
                     ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton165",
-                        "id": "updateSiteBtn",
-                        "scale": "large",
-                        "text": "Appliquer"
-                    },
-                    "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a"
                 }
             ]
         },
