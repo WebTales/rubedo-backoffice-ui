@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.PagePickerStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'Pages',
             autoLoad: false,
             autoSync: false,
             storeId: 'PagePickerStore',

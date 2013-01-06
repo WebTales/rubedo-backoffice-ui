@@ -163,7 +163,8 @@ Ext.application({
         'contentPickerGrid',
         'MTFieldAddWindow',
         'assisstantRE4',
-        'MyForm11'
+        'MyForm11',
+        'assisstantRE5'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

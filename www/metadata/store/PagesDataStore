@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Pages",
         "designer|userClassName": "PagesDataStore",
         "designer|userAlias": "PagesDataStore",
         "autoLoad": false,
@@ -13,8 +15,23 @@
         "storeId": "PagesDataStore",
         "model": "pageDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen37573",
     "designerId": "1c2adda2-e782-40ff-b3f4-9e592104046f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

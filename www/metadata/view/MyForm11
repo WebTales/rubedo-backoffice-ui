@@ -25,22 +25,6 @@
     ],
     "cn": [
         {
-            "type": "textfield",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|anchor": "100%",
-                "designer|userClassName": "MyTextField12",
-                "name": "queryName",
-                "fieldLabel": "Nom ",
-                "allowBlank": false
-            },
-            "designerId": "a390587b-db4f-4850-93eb-b20c8f8eb22a"
-        },
-        {
             "type": "button",
             "reference": {
                 "name": "items",

@@ -1,0 +1,72 @@
+{
+    "type": "form",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "etape": "3",
+        "designer|userClassName": "assisstantRE5",
+        "designer|userAlias": "assisstantRE5",
+        "id": "assisstantRE5",
+        "overflowY": "auto",
+        "bodyPadding": 10,
+        "title": "Choix des tris sur les champs"
+    },
+    "id": "ExtBox1-ext-gen5650",
+    "designerId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "etape",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "combobox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "90%",
+                "designer|userClassName": "MyComboBox3",
+                "id": "createurTrisChampsAR",
+                "style": [
+                    "{float: left}"
+                ],
+                "submitValue": false,
+                "fieldLabel": "Ajouter un tri sur ",
+                "labelWidth": 140,
+                "editable": false,
+                "displayField": "nom",
+                "forceSelection": true,
+                "queryMode": "local",
+                "store": "champsTCARStore",
+                "valueField": "valeur"
+            },
+            "designerId": "a7a53da1-ed28-4ce8-9bcd-f847de6cd1d1"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton73",
+                "id": "boutonCreateurTrisChampsAR",
+                "style": [
+                    "{float:right}"
+                ],
+                "iconCls": "add",
+                "text": ""
+            },
+            "designerId": "6dd2a4c2-6c56-47b1-80fe-0aa79432f684"
+        }
+    ]
+}

@@ -685,6 +685,8 @@
                     "            if (champsS[i].type =='Ext.ux.TreePicker') {\r",
                     "                var filteredStore=  Ext.create(\"Ext.data.TreeStore\",{autoLoad: false,\r",
                     "                    autoSync: false,\r",
+                    "                    isOptimised:true,\r",
+                    "                    usedCollection:\"Pages\",\r",
                     "                    model: 'Rubedo.model.pageDataModel',\r",
                     "                    proxy: {\r",
                     "                        type: 'ajax',\r",

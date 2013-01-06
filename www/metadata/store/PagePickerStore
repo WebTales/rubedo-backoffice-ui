@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Pages",
         "designer|userClassName": "PagePickerStore",
         "designer|userAlias": "PagePickerStore",
         "autoLoad": false,
@@ -13,8 +15,23 @@
         "storeId": "PagePickerStore",
         "model": "pageDataModel"
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen14140",
     "designerId": "4cebc2cb-f5cf-4cd0-aac6-d1e007b3dd02",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

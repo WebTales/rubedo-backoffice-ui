@@ -46,8 +46,8 @@
                     "        var storeL = Ext.create('Ext.data.Store', {\r",
                     "            fields: ['valeur', 'nom'],\r",
                     "            data : [\r",
-                    "            {valeur: 'et', nom :'ET'},\r",
-                    "            {valeur: 'ou', nom :'OU'}\r",
+                    "            {valeur: 'AND', nom :'ET'},\r",
+                    "            {valeur: 'OR', nom :'OU'}\r",
                     "            ]\r",
                     "        });\r",
                     "\r",
@@ -56,6 +56,7 @@
                     "            fieldLabel: 'Relation entre les règles ',\r",
                     "            store: storeL,\r",
                     "            value: 'OU',\r",
+                    "            name: \"vocabulariesRule\",\r",
                     "            queryMode: 'local',\r",
                     "            displayField: 'nom',\r",
                     "            valueField: 'valeur',\r",
@@ -346,9 +347,9 @@
                 "designer|userClassName": "enleveRegle",
                 "fn": "enleveRegle",
                 "implHandler": [
-                    "if (Ext.getCmp('assisstantRE4').items.items.indexOf(button.up().up())==2) {\r",
-                    "    if (!Ext.isEmpty(Ext.getCmp('assisstantRE4').getComponent(3))){\r",
-                    "    Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();\r",
+                    "if (button.up().up().up().items.items.indexOf(button.up().up())==2) {\r",
+                    "    if (!Ext.isEmpty(button.up().up().up().getComponent(3))){\r",
+                    "        button.up().up().up().getComponent(3).getComponent(0).getComponent(0).destroy();\r",
                     "    }\r",
                     "}\r",
                     "button.up().up().destroy();"
@@ -492,6 +493,63 @@
                 "designer|controlQuery": "#queryBuildSaveBtn"
             },
             "designerId": "c8e41169-098f-4231-9aa3-cc2f77cbe89d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBoutonCreateurTrisChampsARClick",
+                "fn": "onBoutonCreateurTrisChampsARClick",
+                "implHandler": [
+                    "var nRegle= Ext.getCmp('createurTrisChampsAR').getValue();\r",
+                    "if (nRegle !== null) {\r",
+                    "    var enrobage = Ext.widget('regleChampAR');\r",
+                    "    enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);\r",
+                    "    \r",
+                    "    \r",
+                    "        var storeOper = Ext.create('Ext.data.Store', {\r",
+                    "            fields: ['operateur', 'label'],\r",
+                    "            data : [\r",
+                    "                {\"operateur\":\"ASC\", \"label\": \"Croissant\"},\r",
+                    "                {\"operateur\":\"DESC\", \"label\": \"Decroissant\"}\r",
+                    "            ]\r",
+                    "        });\r",
+                    "        var operateur= Ext.create('Ext.form.ComboBox', {\r",
+                    "            name:nRegle.name+\"Direction\",\r",
+                    "            store: storeOper,\r",
+                    "            usedRole:\"sort\",\r",
+                    "            isAddedRuleField:true,\r",
+                    "            ruleId:nRegle.ruleId,\r",
+                    "            flex:1,\r",
+                    "            queryMode: 'local',\r",
+                    "            displayField: 'label',\r",
+                    "            valueField: 'operateur',\r",
+                    "            editable: false,\r",
+                    "            multiSelect:false,\r",
+                    "            allowBlank:false,\r",
+                    "            forceSelect: true\r",
+                    "        });\r",
+                    "\r",
+                    "\r",
+                    "    \r",
+                    "    enrobage.getComponent(0).insert(1,operateur);\r",
+                    "    if (Ext.getCmp('assisstantRE5').items.items.length>2){\r",
+                    "        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));\r",
+                    "    }\r",
+                    "\r",
+                    "    Ext.getCmp('assisstantRE5').add(enrobage);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCreateurTrisChampsAR"
+            },
+            "designerId": "f1495402-66f3-4688-9ffc-1f0fc1301fa9"
         }
     ]
 }

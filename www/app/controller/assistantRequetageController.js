@@ -42,8 +42,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 var storeL = Ext.create('Ext.data.Store', {
                     fields: ['valeur', 'nom'],
                     data : [
-                    {valeur: 'et', nom :'ET'},
-                    {valeur: 'ou', nom :'OU'}
+                    {valeur: 'AND', nom :'ET'},
+                    {valeur: 'OR', nom :'OU'}
                     ]
                 });
 
@@ -52,6 +52,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     fieldLabel: 'Relation entre les règles ',
                     store: storeL,
                     value: 'OU',
+                    name: "vocabulariesRule",
                     queryMode: 'local',
                     displayField: 'nom',
                     valueField: 'valeur',
@@ -310,9 +311,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     enleveRegle: function(button, e, options) {
-        if (Ext.getCmp('assisstantRE4').items.items.indexOf(button.up().up())==2) {
-            if (!Ext.isEmpty(Ext.getCmp('assisstantRE4').getComponent(3))){
-                Ext.getCmp('assisstantRE4').getComponent(3).getComponent(0).getComponent(0).destroy();
+        if (button.up().up().up().items.items.indexOf(button.up().up())==2) {
+            if (!Ext.isEmpty(button.up().up().up().getComponent(3))){
+                button.up().up().up().getComponent(3).getComponent(0).getComponent(0).destroy();
             }
         }
         button.up().up().destroy();
@@ -403,6 +404,47 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         Ext.getCmp("assistantRequetage").close();
     },
 
+    onBoutonCreateurTrisChampsARClick: function(button, e, options) {
+        var nRegle= Ext.getCmp('createurTrisChampsAR').getValue();
+        if (nRegle !== null) {
+            var enrobage = Ext.widget('regleChampAR');
+            enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
+
+
+            var storeOper = Ext.create('Ext.data.Store', {
+                fields: ['operateur', 'label'],
+                data : [
+                {"operateur":"ASC", "label": "Croissant"},
+                {"operateur":"DESC", "label": "Decroissant"}
+                ]
+            });
+            var operateur= Ext.create('Ext.form.ComboBox', {
+                name:nRegle.name+"Direction",
+                store: storeOper,
+                usedRole:"sort",
+                isAddedRuleField:true,
+                ruleId:nRegle.ruleId,
+                flex:1,
+                queryMode: 'local',
+                displayField: 'label',
+                valueField: 'operateur',
+                editable: false,
+                multiSelect:false,
+                allowBlank:false,
+                forceSelect: true
+            });
+
+
+
+            enrobage.getComponent(0).insert(1,operateur);
+            if (Ext.getCmp('assisstantRE5').items.items.length>2){
+                enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
+            }
+
+            Ext.getCmp('assisstantRE5').add(enrobage);
+        }
+    },
+
     init: function(application) {
         this.control({
             "#boutonNextRequeteur": {
@@ -422,6 +464,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             },
             "#queryBuildSaveBtn": {
                 click: this.onQueryBuildSaveBtnClick
+            },
+            "#boutonCreateurTrisChampsAR": {
+                click: this.onBoutonCreateurTrisChampsARClick
             }
         });
     }

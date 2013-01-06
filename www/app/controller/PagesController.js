@@ -369,6 +369,8 @@ Ext.define('Rubedo.controller.PagesController', {
                     if (champsS[i].type =='Ext.ux.TreePicker') {
                         var filteredStore=  Ext.create("Ext.data.TreeStore",{autoLoad: false,
                             autoSync: false,
+                            isOptimised:true,
+                            usedCollection:"Pages",
                             model: 'Rubedo.model.pageDataModel',
                             proxy: {
                                 type: 'ajax',

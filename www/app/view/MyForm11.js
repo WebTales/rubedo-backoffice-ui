@@ -29,13 +29,6 @@ Ext.define('Rubedo.view.MyForm11', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    name: 'queryName',
-                    fieldLabel: 'Nom ',
-                    allowBlank: false
-                },
-                {
                     xtype: 'button',
                     anchor: '100%',
                     id: 'queryBuildSaveBtn',

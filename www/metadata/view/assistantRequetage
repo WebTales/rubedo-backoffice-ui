@@ -48,7 +48,7 @@
                         "id": "progressAR",
                         "width": null,
                         "animate": true,
-                        "text": "Etape 1 sur 4",
+                        "text": "Etape 1 sur 5",
                         "value": 0.2
                     },
                     "designerId": "1232c257-4234-493b-8154-4cf2735d6afe"
@@ -205,6 +205,16 @@
             "codeClass": null,
             "designerId": "2c1daa0c-44c9-4c06-a40e-8762056bda2b",
             "masterInstanceId": "ExtBox1-ext-gen5907"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "6728f853-c881-488d-aa8a-5f02078c982c",
+            "masterInstanceId": "ExtBox1-ext-gen5650"
         },
         {
             "type": "linkedinstance",

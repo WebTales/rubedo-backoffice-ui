@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
 
     requires: [
         'Rubedo.view.assisstantRE4',
+        'Rubedo.view.assisstantRE5',
         'Rubedo.view.MyForm11'
     ],
 
@@ -47,7 +48,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
                             flex: 1,
                             id: 'progressAR',
                             animate: true,
-                            text: 'Etape 1 sur 4',
+                            text: 'Etape 1 sur 5',
                             value: 0.2
                         },
                         {
@@ -111,6 +112,9 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 },
                 {
                     xtype: 'assisstantRE4'
+                },
+                {
+                    xtype: 'assisstantRE5'
                 },
                 {
                     xtype: 'myform11'
