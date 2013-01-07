@@ -462,9 +462,11 @@
                 "fn": "onQueryBuildSaveBtnClick",
                 "implHandler": [
                     "var result=this.readQuery();\r",
+                    "this.displayQuery(result);\r",
                     "console.log(result);\r",
+                    "/*\r",
                     "Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).setValue(Ext.JSON.encode(result));\r",
-                    "Ext.getCmp(\"assistantRequetage\").close();"
+                    "Ext.getCmp(\"assistantRequetage\").close();*/"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -580,6 +582,36 @@
                 "fn": "displayQuery",
                 "designer|params": [
                     "query"
+                ],
+                "implHandler": [
+                    "var htmlDisplay=\"<h3>Types de contenus</h3><ul>\";\r",
+                    "console.log(query.contentTypes);\r",
+                    "Ext.Array.forEach(query.contentTypes, function(ctid){\r",
+                    "    htmlDisplay+=\"<li>\"+Ext.getStore('TCNDepCombo').findRecord(\"id\",ctid).get(\"type\")+\"</li>\";\r",
+                    "});\r",
+                    "htmlDisplay+=\"</ul><h3>Taxonomie : règle \"+query.vocabulariesRule+\"</h3>\";\r",
+                    "Ext.Object.each(query.vocabularies, function(key, value, myself){\r",
+                    "    if(!Ext.isEmpty(value.terms)){\r",
+                    "    var myFields = Ext.getCmp(\"assisstantRE2\").query(\"field[vocabularyId=\"+key+\"]\");\r",
+                    "    console.log(myFields);\r",
+                    "    htmlDisplay+=\"<h4>\"+Ext.getStore('TaxonomyForQA').findRecord(\"id\",key).get(\"name\")+\" : \"+myFields[1].getStore().findRecord(\"valeur\",value.rule).get(\"nom\")+\"</h4><ul>\";\r",
+                    "    Ext.Array.forEach(value.terms, function(term){\r",
+                    "        htmlDisplay+=\"<li>\"+myFields[0].getStore().findRecord(\"id\",term).get(\"text\")+\"</li>\";\r",
+                    "    });\r",
+                    "    htmlDisplay+=\"</ul>\";\r",
+                    "    }\r",
+                    "});\r",
+                    "htmlDisplay+=\"<h3>Règles sur les champs</h3><ul>\";\r",
+                    "Ext.Object.each(query.fieldRules, function(key, value, myself){\r",
+                    "    var tri = \"\";\r",
+                    "    if (!Ext.isEmpty(value.sort)){\r",
+                    "        if (value.sort==\"ASC\") {tri=\", tri croissant\";} else {tri=\", tri decroissant\";}\r",
+                    "    }\r",
+                    "    htmlDisplay+=\"<li>\"+key+value.rule+value.value+tri+\"</li>\";\r",
+                    "    });\r",
+                    "htmlDisplay+=\"</ul>\";\r",
+                    "var target= Ext.getCmp(\"querySummaryBox\");\r",
+                    "target.update(htmlDisplay);"
                 ]
             },
             "designerId": "d3bac03a-cde0-4bb8-8fdf-ef18d886ec1a"

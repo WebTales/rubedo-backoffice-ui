@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
     requires: [
         'Rubedo.view.assisstantRE4',
         'Rubedo.view.assisstantRE5',
-        'Rubedo.view.MyForm11'
+        'Rubedo.view.assisstantRE6'
     ],
 
     height: 400,
@@ -117,7 +117,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
                     xtype: 'assisstantRE5'
                 },
                 {
-                    xtype: 'myform11'
+                    xtype: 'assisstantRE6'
                 }
             ],
             listeners: {

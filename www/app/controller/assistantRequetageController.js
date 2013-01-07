@@ -378,9 +378,11 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
         var result=this.readQuery();
+        this.displayQuery(result);
         console.log(result);
+        /*
         Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(Ext.JSON.encode(result));
-        Ext.getCmp("assistantRequetage").close();
+        Ext.getCmp("assistantRequetage").close();*/
     },
 
     onBoutonCreateurTrisChampsARClick: function(button, e, options) {
@@ -451,7 +453,34 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     displayQuery: function(query) {
-
+        var htmlDisplay="<h3>Types de contenus</h3><ul>";
+        console.log(query.contentTypes);
+        Ext.Array.forEach(query.contentTypes, function(ctid){
+            htmlDisplay+="<li>"+Ext.getStore('TCNDepCombo').findRecord("id",ctid).get("type")+"</li>";
+        });
+        htmlDisplay+="</ul><h3>Taxonomie : règle "+query.vocabulariesRule+"</h3>";
+        Ext.Object.each(query.vocabularies, function(key, value, myself){
+            if(!Ext.isEmpty(value.terms)){
+                var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
+                console.log(myFields);
+                htmlDisplay+="<h4>"+Ext.getStore('TaxonomyForQA').findRecord("id",key).get("name")+" : "+myFields[1].getStore().findRecord("valeur",value.rule).get("nom")+"</h4><ul>";
+                Ext.Array.forEach(value.terms, function(term){
+                    htmlDisplay+="<li>"+myFields[0].getStore().findRecord("id",term).get("text")+"</li>";
+                });
+                htmlDisplay+="</ul>";
+            }
+        });
+        htmlDisplay+="<h3>Règles sur les champs</h3><ul>";
+        Ext.Object.each(query.fieldRules, function(key, value, myself){
+            var tri = "";
+            if (!Ext.isEmpty(value.sort)){
+                if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
+            }
+            htmlDisplay+="<li>"+key+value.rule+value.value+tri+"</li>";
+        });
+        htmlDisplay+="</ul>";
+        var target= Ext.getCmp("querySummaryBox");
+        target.update(htmlDisplay);
     },
 
     init: function(application) {

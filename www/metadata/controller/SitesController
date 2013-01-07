@@ -136,7 +136,7 @@
                 "designer|userClassName": "updateSiteSubmit",
                 "fn": "updateSiteSubmit",
                 "implHandler": [
-                    "var form = button.up().getForm();\r",
+                    "var form = Ext.getCmp(\"mainSiteProps\").getForm();\r",
                     "if (form.isValid()){\r",
                     "    Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));\r",
                     "}"

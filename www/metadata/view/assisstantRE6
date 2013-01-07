@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "etape": "5",
-        "designer|userClassName": "MyForm11",
-        "designer|userAlias": "myform11",
+        "designer|userClassName": "assisstantRE6",
+        "designer|userAlias": "assisstantRE6",
         "id": "assisstantRE6",
         "overflowY": "auto",
         "bodyPadding": 10,
@@ -25,6 +25,22 @@
     ],
     "cn": [
         {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet15",
+                "id": "querySummaryBox",
+                "padding": 10,
+                "styleHtmlContent": true,
+                "title": "<b>Récapitulatif</b>"
+            },
+            "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b"
+        },
+        {
             "type": "button",
             "reference": {
                 "name": "items",
@@ -38,6 +54,7 @@
                 "margin": null,
                 "style": null,
                 "iconCls": null,
+                "scale": "large",
                 "text": "<b>Enregistrer la requête </b>"
             },
             "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b"
