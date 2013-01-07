@@ -166,7 +166,8 @@ Ext.application({
         'MTFieldAddWindow',
         'assisstantRE4',
         'assisstantRE6',
-        'assisstantRE5'
+        'assisstantRE5',
+        'queryBuilderField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

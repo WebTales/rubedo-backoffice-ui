@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
+    requires: [
+        'Rubedo.view.queryBuilderField'
+    ],
+
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -34,6 +38,9 @@ Ext.define('Rubedo.view.testingGround', {
                     xtype: 'textareafield',
                     anchor: '90%',
                     fieldLabel: 'Label'
+                },
+                {
+                    xtype: 'queryBuilderField'
                 },
                 {
                     xtype: 'textfield',

@@ -1590,6 +1590,14 @@
                 "app/model/queryDataModel.js"
             ],
             "className": "queryDataModel"
+        },
+        "074f018d-a0e3-4a1e-a693-b6defc4b819c": {
+            "paths": [
+                "metadata/view/queryBuilderField",
+                "app/view/override/queryBuilderField.js",
+                "app/view/queryBuilderField.js"
+            ],
+            "className": "queryBuilderField"
         }
     },
     "viewOrderMap": {
@@ -1673,7 +1681,8 @@
             "6267ab43-4966-465c-9ab8-2585191a245f",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
             "eaea8fd3-deb9-427e-8709-b7a7a3a32c08",
-            "66174f28-03d3-4c02-855f-65706d91852a"
+            "66174f28-03d3-4c02-855f-65706d91852a",
+            "074f018d-a0e3-4a1e-a693-b6defc4b819c"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

@@ -146,12 +146,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Contenus',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Trigger',
-                                            ouvrir: 'assistantRequetage',
+                                            type: 'Rubedo.view.queryBuilderField',
                                             config: {
                                                 fieldLabel: 'Requete',
                                                 name: 'query',
-                                                editable: false
+                                                
                                             }
                                         }
                                     ]
@@ -217,12 +216,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Contenus',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Trigger',
-                                            ouvrir: 'assistantRequetage',
+                                            type: 'Rubedo.view.queryBuilderField',
                                             config: {
                                                 fieldLabel: 'Requete',
                                                 name: 'query',
-                                                editable: false
+                                                
                                             }
                                         }
                                     ]

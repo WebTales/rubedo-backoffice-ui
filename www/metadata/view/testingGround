@@ -32,6 +32,19 @@
             "designerId": "fbb9c85a-68db-4b71-b649-ffe7385ec56e"
         },
         {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": null
+            },
+            "designerId": "b7d2cab6-29da-40e2-a248-ab14231b3cfd",
+            "masterInstanceId": "ExtBox1-ext-gen13418"
+        },
+        {
             "type": "textfield",
             "reference": {
                 "name": "items",

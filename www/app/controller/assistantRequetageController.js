@@ -380,11 +380,20 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
-        var result=this.readQuery();
-        console.log(result);
-        /*
-        Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(Ext.JSON.encode(result));
-        Ext.getCmp("assistantRequetage").close();*/
+        if (button.up().getForm().isValid()){
+            var result=this.readQuery();
+            console.log(result);
+            var newQuery = Ext.create("Rubedo.model.queryDataModel", {
+                name:result.queryName,
+                query:result,
+                averageDuration:0,
+                count:0,
+                usage:[]
+            });
+            Ext.getStore("QueriesStore").add(newQuery);
+            Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+            Ext.getCmp("assistantRequetage").close();
+        }
     },
 
     onBoutonCreateurTrisChampsARClick: function(button, e, options) {
@@ -463,7 +472,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         Ext.Object.each(query.vocabularies, function(key, value, myself){
             if(!Ext.isEmpty(value.terms)){
                 var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
-                console.log(myFields);
                 htmlDisplay+="<h4>"+Ext.getStore('TaxonomyForQA').findRecord("id",key).get("name")+" : "+myFields[1].getStore().findRecord("valeur",value.rule).get("nom")+"</h4><ul>";
                 Ext.Array.forEach(value.terms, function(term){
                     htmlDisplay+="<li>"+myFields[0].getStore().findRecord("id",term).get("text")+"</li>";

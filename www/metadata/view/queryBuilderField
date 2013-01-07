@@ -1,0 +1,67 @@
+{
+    "type": "combobox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "90%",
+        "managesStore": true,
+        "designer|userClassName": "queryBuilderField",
+        "designer|userAlias": "queryBuilderField",
+        "style": "float: left;",
+        "fieldLabel": "Label",
+        "displayField": "name",
+        "forceSelection": true,
+        "queryMode": "local",
+        "store": "QueriesStore",
+        "valueField": "id"
+    },
+    "configAlternates": {
+        "style": "string",
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen13418",
+    "designerId": "074f018d-a0e3-4a1e-a693-b6defc4b819c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboboxAdded",
+                "fn": "onComboboxAdded",
+                "implHandler": [
+                    "Ext.apply(abstractcomponent, {anchor:\"86%\"});\r",
+                    "var companion = Ext.widget(\"button\", {style: \"float: right;\", text:\"\", iconCls:\"add\"});\r",
+                    "companion.on(\"click\", function(){\r",
+                    "    var myWin = Ext.widget(\"assistantRequetage\");\r",
+                    "    myWin.mainFieldId=abstractcomponent.getId();\r",
+                    "    myWin.initialValue=abstractcomponent.getValue();\r",
+                    "    myWin.show();\r",
+                    "});\r",
+                    "container.add(companion);"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "58bf18b0-ebaa-4351-85e9-68b0175abd4a"
+        }
+    ]
+}
