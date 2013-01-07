@@ -288,7 +288,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                     var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
                     var suivET= Ext.getCmp('assistantRequetage').getLayout().getNext().etape;
-                    if (suivET==4) { Ext.getCmp('boutonNextRequeteur').hide();}
+                    if (suivET==5) { Ext.getCmp('boutonNextRequeteur').hide();}
                     else if (suivET==2) { Ext.getCmp('boutonPrevRequeteur').show();}
                     if (Ext.isDefined(suivET)) {
                         button.up().up().getLayout().next();
@@ -302,7 +302,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     precedent: function(button, e, options) {
         var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
         var suivET= Ext.getCmp('assistantRequetage').getLayout().getPrev().etape;
-        if (suivET==3) { Ext.getCmp('boutonNextRequeteur').show();}
+        if (suivET==4) { Ext.getCmp('boutonNextRequeteur').show();}
         else if (suivET==1) { Ext.getCmp('boutonPrevRequeteur').hide();}
         if (Ext.isDefined(suivET)) {
             button.up().up().getLayout().prev();
@@ -377,28 +377,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
-        var mainWin= button.up().up();
-        var result = {};
-        result.vocabularies={ };
-        result.fieldRules={ };
-        Ext.Array.forEach(mainWin.query("field"),function(field){
-            if (field.submitValue){
-                if (field.isVocabularyField) {
-                    if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
-                        result.vocabularies[field.vocabularyId]={ };                
-                    }
-                    result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
-
-                } else if (field.isAddedRuleField){
-                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
-                        result.fieldRules[field.ruleId]={ };           
-                    }
-                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
-                } else { 
-                    result[field.name]=field.getValue();
-                }
-            }
-        });
+        var result=this.readQuery();
         console.log(result);
         Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(Ext.JSON.encode(result));
         Ext.getCmp("assistantRequetage").close();
@@ -443,6 +422,36 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             Ext.getCmp('assisstantRE5').add(enrobage);
         }
+    },
+
+    readQuery: function() {
+        var mainWin= Ext.getCmp("assistantRequetage");
+        var result = {};
+        result.vocabularies={ };
+        result.fieldRules={ };
+        Ext.Array.forEach(mainWin.query("field"),function(field){
+            if (field.submitValue){
+                if (field.isVocabularyField) {
+                    if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
+                        result.vocabularies[field.vocabularyId]={ };                
+                    }
+                    result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+
+                } else if (field.isAddedRuleField){
+                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
+                        result.fieldRules[field.ruleId]={ };           
+                    }
+                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+                } else { 
+                    result[field.name]=field.getValue();
+                }
+            }
+        });
+        return(result);
+    },
+
+    displayQuery: function(query) {
+
     },
 
     init: function(application) {

@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
     extend: 'Ext.form.Panel',
     alias: 'widget.assisstantRE5',
 
-    etape: '3',
+    etape: '4',
     id: 'assisstantRE5',
     overflowY: 'auto',
     bodyPadding: 10,
