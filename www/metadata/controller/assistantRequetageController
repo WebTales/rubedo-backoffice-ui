@@ -35,7 +35,10 @@
                     "if (nextOK == 1) {\r",
                     "\r",
                     "    var etape = button.up().up().getLayout().getActiveItem();\r",
-                    "    if (etape.id=='assisstantRE1') {\r",
+                    "    if (etape.id=='assisstantRE5'){\r",
+                    "        this.displayQuery(this.readQuery());\r",
+                    "    }\r",
+                    "    else if (etape.id=='assisstantRE1') {\r",
                     "        Ext.getCmp('assisstantRE2').removeAll();\r",
                     "        var reglesAnciennes= Ext.clone(Ext.getCmp('assisstantRE4').items.items.length);\r",
                     "        var m =2;\r",
@@ -462,7 +465,6 @@
                 "fn": "onQueryBuildSaveBtnClick",
                 "implHandler": [
                     "var result=this.readQuery();\r",
-                    "this.displayQuery(result);\r",
                     "console.log(result);\r",
                     "/*\r",
                     "Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).setValue(Ext.JSON.encode(result));\r",
@@ -585,7 +587,6 @@
                 ],
                 "implHandler": [
                     "var htmlDisplay=\"<h3>Types de contenus</h3><ul>\";\r",
-                    "console.log(query.contentTypes);\r",
                     "Ext.Array.forEach(query.contentTypes, function(ctid){\r",
                     "    htmlDisplay+=\"<li>\"+Ext.getStore('TCNDepCombo').findRecord(\"id\",ctid).get(\"type\")+\"</li>\";\r",
                     "});\r",

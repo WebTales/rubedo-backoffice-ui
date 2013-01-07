@@ -27,7 +27,8 @@
             "pageDataModel",
             "imageDataModel",
             "mediaTypeModel",
-            "MTFieldModel"
+            "MTFieldModel",
+            "queryDataModel"
         ],
         "stores": [
             "SitesJson",
@@ -85,7 +86,8 @@
             "TaxonomyForMT",
             "MTFieldsStore",
             "SiteThemesStore",
-            "PagePickerStore"
+            "PagePickerStore",
+            "QueriesStore"
         ],
         "views": [
             "MyContainer",

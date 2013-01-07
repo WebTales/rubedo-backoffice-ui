@@ -41,6 +41,24 @@
             "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b"
         },
         {
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "designer|userClassName": "MyTextField61",
+                "id": "queryNameField",
+                "name": "queryName",
+                "fieldLabel": "Nom de la requête",
+                "labelWidth": 130,
+                "allowBlank": false
+            },
+            "designerId": "a89a5a01-5925-41ab-9032-04ee64189047"
+        },
+        {
             "type": "button",
             "reference": {
                 "name": "items",

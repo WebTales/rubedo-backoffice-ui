@@ -36,6 +36,15 @@ Ext.define('Rubedo.view.assisstantRE6', {
                     title: '<b>Récapitulatif</b>'
                 },
                 {
+                    xtype: 'textfield',
+                    anchor: '100%',
+                    id: 'queryNameField',
+                    name: 'queryName',
+                    fieldLabel: 'Nom de la requête',
+                    labelWidth: 130,
+                    allowBlank: false
+                },
+                {
                     xtype: 'button',
                     anchor: '100%',
                     id: 'queryBuildSaveBtn',

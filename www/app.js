@@ -43,7 +43,8 @@ Ext.application({
         'pageDataModel',
         'imageDataModel',
         'mediaTypeModel',
-        'MTFieldModel'
+        'MTFieldModel',
+        'queryDataModel'
     ],
     stores: [
         'SitesJson',
@@ -101,7 +102,8 @@ Ext.application({
         'TaxonomyForMT',
         'MTFieldsStore',
         'SiteThemesStore',
-        'PagePickerStore'
+        'PagePickerStore',
+        'QueriesStore'
     ],
     views: [
         'MyContainer',

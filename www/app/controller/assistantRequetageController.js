@@ -31,7 +31,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if (nextOK == 1) {
 
             var etape = button.up().up().getLayout().getActiveItem();
-            if (etape.id=='assisstantRE1') {
+            if (etape.id=='assisstantRE5'){
+                this.displayQuery(this.readQuery());
+            }
+            else if (etape.id=='assisstantRE1') {
                 Ext.getCmp('assisstantRE2').removeAll();
                 var reglesAnciennes= Ext.clone(Ext.getCmp('assisstantRE4').items.items.length);
                 var m =2;
@@ -378,7 +381,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
         var result=this.readQuery();
-        this.displayQuery(result);
         console.log(result);
         /*
         Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).setValue(Ext.JSON.encode(result));
@@ -454,7 +456,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     displayQuery: function(query) {
         var htmlDisplay="<h3>Types de contenus</h3><ul>";
-        console.log(query.contentTypes);
         Ext.Array.forEach(query.contentTypes, function(ctid){
             htmlDisplay+="<li>"+Ext.getStore('TCNDepCombo').findRecord("id",ctid).get("type")+"</li>";
         });

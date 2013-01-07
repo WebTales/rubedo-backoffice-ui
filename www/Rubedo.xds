@@ -1574,6 +1574,22 @@
                 "app/view/assisstantRE5.js"
             ],
             "className": "assisstantRE5"
+        },
+        "31be942a-1630-4c10-9fb4-790b2d825c55": {
+            "paths": [
+                "metadata/store/QueriesStore",
+                "app/store/override/QueriesStore.js",
+                "app/store/QueriesStore.js"
+            ],
+            "className": "QueriesStore"
+        },
+        "98410e9a-0d71-4266-9879-fb34f77e26e0": {
+            "paths": [
+                "metadata/model/queryDataModel",
+                "app/model/override/queryDataModel.js",
+                "app/model/queryDataModel.js"
+            ],
+            "className": "queryDataModel"
         }
     },
     "viewOrderMap": {
@@ -1717,7 +1733,8 @@
             "f111f40a-db0f-4126-b5c8-43a26057522d",
             "d8f6752f-2ba3-491c-832a-e8456b095138",
             "42485569-d0e5-4710-b0aa-104840533721",
-            "6141ab25-f5c9-4413-a10a-f0e2e781e9f7"
+            "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
+            "31be942a-1630-4c10-9fb4-790b2d825c55"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -1762,7 +1779,8 @@
             "3387fa23-11a9-43c0-a57c-f14978feff02",
             "0817bd4b-dad6-4ba8-a953-6e51126364d2",
             "5c997a93-3afc-42e9-9098-74110e9872bf",
-            "7e296689-62ae-4f0e-b262-80ab5d8aa99f"
+            "7e296689-62ae-4f0e-b262-80ab5d8aa99f",
+            "98410e9a-0d71-4266-9879-fb34f77e26e0"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",
