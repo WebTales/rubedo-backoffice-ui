@@ -65,33 +65,6 @@ Ext.define('Rubedo.view.contributionPages', {
                 {
                     xtype: 'toolbar',
                     flex: 1,
-                    dock: 'bottom',
-                    height: 50,
-                    itemId: 'barreMeta',
-                    items: [
-                        {
-                            xtype: 'image',
-                            height: 45,
-                            width: 48,
-                            listeners: {
-                                render: {
-                                    fn: me.onImageRender,
-                                    scope: me
-                                }
-                            }
-                        },
-                        {
-                            xtype: 'container',
-                            itemId: 'boiteBarreMeta',
-                            tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    xtype: 'toolbar',
-                    flex: 1,
                     dock: 'top',
                     height: 86,
                     itemId: 'contextBar',
@@ -229,6 +202,33 @@ Ext.define('Rubedo.view.contributionPages', {
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'bottom',
+                    height: 50,
+                    itemId: 'barreMeta',
+                    items: [
+                        {
+                            xtype: 'image',
+                            height: 45,
+                            width: 48,
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender1,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'container',
+                            itemId: 'boiteBarreMeta',
+                            tpl: [
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
+                            ]
                         }
                     ]
                 }
@@ -423,10 +423,6 @@ Ext.define('Rubedo.view.contributionPages', {
         me.callParent(arguments);
     },
 
-    onImageRender: function(abstractcomponent, options) {
-        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
-    },
-
     onPageSaveBtnAfterRender: function(abstractcomponent, options) {
         abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
         if (!abstractcomponent.disabled){
@@ -479,6 +475,10 @@ Ext.define('Rubedo.view.contributionPages', {
             pinList:false
         });
         abstractcomponent.add(tagPicker);
+    },
+
+    onImageRender1: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
     }
 
 });

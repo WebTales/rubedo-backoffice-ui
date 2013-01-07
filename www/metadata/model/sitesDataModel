@@ -284,6 +284,51 @@
                 "name": "homePage"
             },
             "designerId": "38d0cda9-a350-44b3-8836-fcc04409e564"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser",
+                "mapping": "createUser.fullName",
+                "persist": false
+            },
+            "designerId": "86be2dd9-341b-4272-920a-d47e90e3a5d2"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "05b87300-178a-420c-81e9-c863554bb795"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "7f5f49cc-e4c2-49cc-a5a2-a1cbe21ef092"
         }
     ]
 }

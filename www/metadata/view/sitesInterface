@@ -30,6 +30,40 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "designer|userClassName": "MyToolbar26",
+                "height": 30,
+                "itemId": "breadcrumb"
+            },
+            "designerId": "324828ce-5810-4308-8b33-371d5f59c908",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton88",
+                        "itemId": "origine",
+                        "iconCls": "referencement_icon",
+                        "text": "Sites"
+                    },
+                    "designerId": "a7e804dd-6cd3-4327-a0ff-f18b14fb58b6"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "dock": "top",
                 "designer|userClassName": "MyToolbar41",
                 "height": 64
@@ -666,6 +700,93 @@
             },
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar27",
+                "height": 50,
+                "itemId": "barreMeta",
+                "width": null
+            },
+            "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
+            "cn": [
+                {
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyImg2",
+                        "height": 45,
+                        "width": 48,
+                        "src": null
+                    },
+                    "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onImageRender",
+                                "fn": "onImageRender",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/globe_computer.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "7ee69449-a5b0-4e8f-8288-c96db1ec0f15"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyContainer9",
+                        "itemId": "boiteBarreMeta"
+                    },
+                    "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "tpl",
+                                "implHandler": [
+                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "81960d12-b108-4a15-9c88-5749ff0e6d64"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

@@ -105,93 +105,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar27",
-                "height": 50,
-                "itemId": "barreMeta",
-                "width": null
-            },
-            "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
-            "cn": [
-                {
-                    "type": "image",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyImg2",
-                        "height": 45,
-                        "width": 48,
-                        "src": null
-                    },
-                    "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onImageRender",
-                                "fn": "onImageRender",
-                                "implHandler": [
-                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "7ee69449-a5b0-4e8f-8288-c96db1ec0f15"
-                        }
-                    ]
-                },
-                {
-                    "type": "container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
-                    },
-                    "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
-                    "cn": [
-                        {
-                            "type": "template",
-                            "reference": {
-                                "name": "tpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "tpl",
-                                "implHandler": [
-                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
-                                ],
-                                "designer|displayName": "tpl"
-                            },
-                            "designerId": "81960d12-b108-4a15-9c88-5749ff0e6d64"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "designer|userClassName": "menuContenusTools",
                 "designer|userAlias": "menuContenusTools",
@@ -1018,6 +931,93 @@
                                 "inputValue": "true"
                             },
                             "designerId": "9780587d-3fe2-44a4-ab33-b8ae5ce82e1d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar27",
+                "height": 50,
+                "itemId": "barreMeta",
+                "width": null
+            },
+            "designerId": "0267550c-9782-4d39-9c37-e8d5ce708eac",
+            "cn": [
+                {
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyImg2",
+                        "height": 45,
+                        "width": 48,
+                        "src": null
+                    },
+                    "designerId": "ee03d990-076f-4d27-b03c-2c589e1e409a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onImageRender1",
+                                "fn": "onImageRender1",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "a083f183-1958-4f5c-93fc-57266aa324d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyContainer9",
+                        "itemId": "boiteBarreMeta"
+                    },
+                    "designerId": "fa120237-07ec-4865-8ed6-3ec70f8c6513",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "tpl",
+                                "implHandler": [
+                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "a0708fd5-5b2f-4615-84c1-a0b9d53ddd4c"
                         }
                     ]
                 }

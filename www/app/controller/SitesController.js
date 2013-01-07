@@ -19,11 +19,16 @@ Ext.define('Rubedo.controller.SitesController', {
 
     selectSite: function(tablepanel, selections, options) {
         if (Ext.isEmpty(selections)) {
+            Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+            Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
             Ext.getCmp("siteRemoveBtn").disable();
             Ext.getCmp("mainSiteProps").disable();
             Ext.getCmp("updateSiteBtn").disable();
             Ext.getCmp("mainSiteProps").getForm().setValues();
         } else {
+            Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+            Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites <b> > </b>", iconCls:"referencement_icon"}));
+            Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: selections[0].get("text"), iconCls:"referencement_icon"}));
             Ext.getCmp("siteRemoveBtn").enable();
             Ext.getCmp("mainSiteProps").enable();
             Ext.getCmp("updateSiteBtn").enable();
@@ -34,6 +39,13 @@ Ext.define('Rubedo.controller.SitesController', {
             if (Ext.isEmpty(Ext.getCmp("sitesHomePicker").getValue())){
                 Ext.getCmp("sitesHomePicker").setValue([]);
             }
+
+            var boiteMeta = Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+            var valeurs= Ext.clone(selections[0].data);
+            valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
+            valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');
+            boiteMeta.update(valeurs);
+            boiteMeta.show();
 
         }
     },
@@ -46,6 +58,9 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('mainSitesGrid').getStore().remove(target);
                 //button.disable();
+                Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+                Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
+                Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
                 Ext.getCmp('delConfirmZ').close();
 
             });  

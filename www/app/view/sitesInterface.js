@@ -42,6 +42,21 @@ Ext.define('Rubedo.view.sitesInterface', {
             dockedItems: [
                 {
                     xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 30,
+                    itemId: 'breadcrumb',
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'origine',
+                            iconCls: 'referencement_icon',
+                            text: 'Sites'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
                     dock: 'top',
                     height: 64,
                     items: [
@@ -72,6 +87,33 @@ Ext.define('Rubedo.view.sitesInterface', {
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'bottom',
+                    height: 50,
+                    itemId: 'barreMeta',
+                    items: [
+                        {
+                            xtype: 'image',
+                            height: 45,
+                            width: 48,
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'container',
+                            itemId: 'boiteBarreMeta',
+                            tpl: [
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
+                            ]
                         }
                     ]
                 }
@@ -331,6 +373,10 @@ Ext.define('Rubedo.view.sitesInterface', {
             pinList:false
         });
         abstractcomponent.add(tagPicker);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/globe_computer.png');
     }
 
 });

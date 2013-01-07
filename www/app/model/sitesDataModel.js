@@ -80,6 +80,21 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'homePage'
+        },
+        {
+            name: 'createUser',
+            mapping: 'createUser.fullName',
+            persist: false
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
         }
     ]
 });
