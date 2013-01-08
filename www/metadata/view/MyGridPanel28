@@ -38,79 +38,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridView28"
+                "designer|userClassName": "MyGridView28",
+                "id": "DAMImageDrop"
             },
-            "designerId": "9a140dd1-2846-4dec-a281-a995318e1c5c",
-            "cn": [
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onGridviewAfterRender",
-                        "fn": "onGridviewAfterRender",
-                        "implHandler": [
-                            "var contained = Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"Ajoutez des images\",height:300,width:440});\r",
-                            "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {\r",
-                            "    text: 'Uploader des images',\r",
-                            "    iconCls:\"arrow_up\",\r",
-                            "    hidden:true,\r",
-                            "    //singleFile: true,\r",
-                            "\r",
-                            "    plugins: [contained],\r",
-                            "\r",
-                            "    uploader: \r",
-                            "    {\r",
-                            "        url: 'image/put?token='+ACL.CSRFToken,\r",
-                            "        autoStart: false,\r",
-                            "        max_file_size: '2mb',\t\t\t\r",
-                            "        drop_element: abstractcomponent.getEl().id,\r",
-                            "        statusQueuedText: 'Pret à télécharger',\r",
-                            "        statusUploadingText: 'Téléchargement ({0}%)',\r",
-                            "        statusFailedText: '<span style=\"color: red\">Erreur</span>',\r",
-                            "        statusDoneText: '<span style=\"color: green\">Fini</span>',\r",
-                            "\r",
-                            "        statusInvalidSizeText: 'Fichier trop volumineux',\r",
-                            "        statusInvalidExtensionText: 'Type de fichier invalide'\r",
-                            "    },\r",
-                            "    listeners: \r",
-                            "    {\r",
-                            "        filesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
-                            "        {\r",
-                            "            //console.log('filesadded');\r",
-                            "            return true;\r",
-                            "        },\r",
-                            "\r",
-                            "        beforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
-                            "        {\r",
-                            "            //console.log('beforeupload');\t\t\t\r",
-                            "        },\r",
-                            "\r",
-                            "        fileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
-                            "        {\r",
-                            "            //console.log('fileuploaded');\r",
-                            "        },\r",
-                            "\r",
-                            "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
-                            "        {\r",
-                            "            abstractcomponent.up().getStore().load();\r",
-                            "            contained.window.close();\r",
-                            "        },\r",
-                            "        scope: this\r",
-                            "    }\r",
-                            "\r",
-                            "\r",
-                            "}));"
-                        ],
-                        "name": "afterrender",
-                        "scope": "me"
-                    },
-                    "designerId": "c750cfb5-2361-4b29-8dc1-eb8560b8288b"
-                }
-            ]
+            "designerId": "9a140dd1-2846-4dec-a281-a995318e1c5c"
         },
         {
             "type": "gridcolumn",
@@ -194,19 +125,104 @@
                 "designer|userClassName": "onImagesSpecialGridItemDblClick",
                 "fn": "onImagesSpecialGridItemDblClick",
                 "implHandler": [
-                    "    var fenetre = Ext.getCmp(record.get(\"filename\")+\"NadPreview\");\r",
-                    "    if (Ext.isDefined(fenetre)){ fenetre.toFront(); }\r",
-                    "    else {\r",
-                    "        fenetre = Ext.widget('ImagePreviewWindow', {title:record.get(\"filename\"), id:record.get(\"filename\")+\"NadPreview\"});\r",
-                    "        fenetre.getComponent(0).setSrc(\"file/get/file-id/\"+record.get(\"id\"));\r",
-                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
-                    "        fenetre.show();\r",
-                    "    }"
+                    "var fenetre = Ext.getCmp(record.get(\"filename\")+\"NadPreview\");\r",
+                    "if (Ext.isDefined(fenetre)){ fenetre.toFront(); }\r",
+                    "else {\r",
+                    "    fenetre = Ext.widget('ImagePreviewWindow', {title:record.get(\"filename\"), id:record.get(\"filename\")+\"NadPreview\"});\r",
+                    "    fenetre.getComponent(0).setSrc(\"file/get/file-id/\"+record.get(\"id\"));\r",
+                    "    Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "    fenetre.show();\r",
+                    "}"
                 ],
                 "name": "itemdblclick",
                 "scope": "me"
             },
             "designerId": "77521931-a6b4-4ec8-b85e-87b5c122c5d0"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar53",
+                "hidden": true
+            },
+            "designerId": "9c2cc46d-7c4c-4288-a26c-7dc740266f22",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onGridviewAfterRender",
+                        "fn": "onGridviewAfterRender",
+                        "implHandler": [
+                            "var contained = Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"Ajoutez des images\",height:300,width:440});\r",
+                            "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {\r",
+                            "    text: 'Uploader des images',\r",
+                            "    iconCls:\"arrow_up\",\r",
+                            "    hidden:false,\r",
+                            "    id:1234,\r",
+                            "    //singleFile: true,\r",
+                            "\r",
+                            "    plugins: [contained],\r",
+                            "\r",
+                            "    uploader: \r",
+                            "    {\r",
+                            "        url: 'image/put?token='+ACL.CSRFToken,\r",
+                            "        autoStart: false,\r",
+                            "        max_file_size: '2mb',\t\t\t\r",
+                            "        drop_element: \"imagesSpecialGrid\",\r",
+                            "        statusQueuedText: 'Pret à télécharger',\r",
+                            "        statusUploadingText: 'Téléchargement ({0}%)',\r",
+                            "        statusFailedText: '<span style=\"color: red\">Erreur</span>',\r",
+                            "        statusDoneText: '<span style=\"color: green\">Fini</span>',\r",
+                            "\r",
+                            "        statusInvalidSizeText: 'Fichier trop volumineux',\r",
+                            "        statusInvalidExtensionText: 'Type de fichier invalide'\r",
+                            "    },\r",
+                            "    listeners: \r",
+                            "    {\r",
+                            "        filesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            //console.log('filesadded');\r",
+                            "            return true;\r",
+                            "        },\r",
+                            "\r",
+                            "        beforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            //console.log('beforeupload');\t\t\t\r",
+                            "        },\r",
+                            "\r",
+                            "        fileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            //console.log('fileuploaded');\r",
+                            "        },\r",
+                            "\r",
+                            "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            abstractcomponent.up().getStore().load();\r",
+                            "            contained.window.close();\r",
+                            "        },\r",
+                            "        scope: this\r",
+                            "    }\r",
+                            "\r",
+                            "\r",
+                            "}));"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "c750cfb5-2361-4b29-8dc1-eb8560b8288b"
+                }
+            ]
         }
     ]
 }

@@ -33,12 +33,7 @@ Ext.define('Rubedo.view.MyGridPanel28', {
 
         Ext.applyIf(me, {
             viewConfig: {
-                listeners: {
-                    afterrender: {
-                        fn: me.onGridviewAfterRender,
-                        scope: me
-                    }
-                }
+                id: 'DAMImageDrop'
             },
             columns: [
                 {
@@ -66,10 +61,34 @@ Ext.define('Rubedo.view.MyGridPanel28', {
                     fn: me.onImagesSpecialGridItemDblClick,
                     scope: me
                 }
-            }
+            },
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    hidden: true,
+                    listeners: {
+                        afterrender: {
+                            fn: me.onGridviewAfterRender,
+                            scope: me
+                        }
+                    }
+                }
+            ]
         });
 
         me.callParent(arguments);
+    },
+
+    onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        var fenetre = Ext.getCmp(record.get("filename")+"NadPreview");
+        if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+        else {
+            fenetre = Ext.widget('ImagePreviewWindow', {title:record.get("filename"), id:record.get("filename")+"NadPreview"});
+            fenetre.getComponent(0).setSrc("file/get/file-id/"+record.get("id"));
+            Ext.getCmp('desktopCont').add(fenetre);
+            fenetre.show();
+        }
     },
 
     onGridviewAfterRender: function(abstractcomponent, options) {
@@ -77,7 +96,8 @@ Ext.define('Rubedo.view.MyGridPanel28', {
         abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
             text: 'Uploader des images',
             iconCls:"arrow_up",
-            hidden:true,
+            hidden:false,
+            id:1234,
             //singleFile: true,
 
             plugins: [contained],
@@ -87,7 +107,7 @@ Ext.define('Rubedo.view.MyGridPanel28', {
                 url: 'image/put?token='+ACL.CSRFToken,
                 autoStart: false,
                 max_file_size: '2mb',			
-                drop_element: abstractcomponent.getEl().id,
+                drop_element: "imagesSpecialGrid",
                 statusQueuedText: 'Pret à télécharger',
                 statusUploadingText: 'Téléchargement ({0}%)',
                 statusFailedText: '<span style="color: red">Erreur</span>',
@@ -124,17 +144,6 @@ Ext.define('Rubedo.view.MyGridPanel28', {
 
 
         }));
-    },
-
-    onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-        var fenetre = Ext.getCmp(record.get("filename")+"NadPreview");
-        if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
-        else {
-            fenetre = Ext.widget('ImagePreviewWindow', {title:record.get("filename"), id:record.get("filename")+"NadPreview"});
-            fenetre.getComponent(0).setSrc("file/get/file-id/"+record.get("id"));
-            Ext.getCmp('desktopCont').add(fenetre);
-            fenetre.show();
-        }
     }
 
 });
