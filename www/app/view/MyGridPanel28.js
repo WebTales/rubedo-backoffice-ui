@@ -26,14 +26,19 @@ Ext.define('Rubedo.view.MyGridPanel28', {
     id: 'imagesSpecialGrid',
     title: '',
     forceFit: true,
-    store: 'ImagePickerStore',
+    store: 'MainImageStore',
 
     initComponent: function() {
         var me = this;
 
         Ext.applyIf(me, {
             viewConfig: {
-
+                listeners: {
+                    afterrender: {
+                        fn: me.onGridviewAfterRender,
+                        scope: me
+                    }
+                }
             },
             columns: [
                 {
@@ -65,6 +70,60 @@ Ext.define('Rubedo.view.MyGridPanel28', {
         });
 
         me.callParent(arguments);
+    },
+
+    onGridviewAfterRender: function(abstractcomponent, options) {
+        var contained = Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440});
+        abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
+            text: 'Uploader des images',
+            iconCls:"arrow_up",
+            hidden:true,
+            //singleFile: true,
+
+            plugins: [contained],
+
+            uploader: 
+            {
+                url: 'image/put?token='+ACL.CSRFToken,
+                autoStart: false,
+                max_file_size: '2mb',			
+                drop_element: abstractcomponent.getEl().id,
+                statusQueuedText: 'Pret à télécharger',
+                statusUploadingText: 'Téléchargement ({0}%)',
+                statusFailedText: '<span style="color: red">Erreur</span>',
+                statusDoneText: '<span style="color: green">Fini</span>',
+
+                statusInvalidSizeText: 'Fichier trop volumineux',
+                statusInvalidExtensionText: 'Type de fichier invalide'
+            },
+            listeners: 
+            {
+                filesadded: function(uploader, files)								
+                {
+                    //console.log('filesadded');
+                    return true;
+                },
+
+                beforeupload: function(uploader, file)								
+                {
+                    //console.log('beforeupload');			
+                },
+
+                fileuploaded: function(uploader, file)								
+                {
+                    //console.log('fileuploaded');
+                },
+
+                uploadcomplete: function(uploader, success, failed)								
+                {
+                    abstractcomponent.up().getStore().load();
+                    contained.window.close();
+                },
+                scope: this
+            }
+
+
+        }));
     },
 
     onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {

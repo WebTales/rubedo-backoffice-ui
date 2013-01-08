@@ -101,7 +101,8 @@ Ext.application({
         'MTFieldsStore',
         'SiteThemesStore',
         'PagePickerStore',
-        'QueriesStore'
+        'QueriesStore',
+        'MainImageStore'
     ],
     views: [
         'MyContainer',

@@ -29,6 +29,7 @@ Ext.define('Rubedo.view.DAMInterface', {
     layout: {
         type: 'fit'
     },
+    iconCls: 'mediaTypes',
     title: 'Mèdiathéque',
     constrainHeader: true,
 
