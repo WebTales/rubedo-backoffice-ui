@@ -258,6 +258,20 @@ Ext.define('Rubedo.controller.MasqueController', {
                 margin:"10 0 10 0",
                 value:abstractcomponent.eTitle
             }));
+            configSpec.getComponent(0).add(Ext.widget('checkbox',{
+                itemId:"eTitleShowField",
+                fieldLabel:"Afficher le titre ",
+                onChange:function(){
+
+                    abstractcomponent.displayTitle=this.getValue();
+
+                },
+                labelWidth:60,
+                inputValue:true,
+                anchor:"100%",
+                margin:"10 0 10 0",
+                checked:abstractcomponent.displayTitle
+            }));
 
             configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
                 fieldLabel:"Visibilité ",
@@ -644,7 +658,20 @@ Ext.define('Rubedo.controller.MasqueController', {
             value:abstractcomponent.title
         }));
 
+        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+            itemId:"eTitleShowField",
+            fieldLabel:"Afficher le titre ",
+            onChange:function(){
 
+                abstractcomponent.displayTitle=this.getValue();
+
+            },
+            labelWidth:60,
+            inputValue:true,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            checked:abstractcomponent.displayTitle
+        }));
 
 
         /*configSpec.getComponent(0).add(Ext.widget('numberfield',{
@@ -1086,6 +1113,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 responsive:row.responsive,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
+                displayTitle:row.displayTitle,
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -1113,6 +1141,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     eTitle:column.eTitle,
                     responsive:column.responsive,
                     classHTML:column.classHTML,
+                    displayTitle:column.displayTitle,
                     idHTML:column.idHTML,
                     margin:4,
                     layout: {
@@ -1184,6 +1213,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     title:nBloc.title,
                                     responsive:nBloc.responsive,
                                     classHTML:nBloc.classHTML,
+                                    displayTitle:nBloc.displayTitle,
                                     idHTML:nBloc.idHTML,
                                     urlPrefix:nBloc.urlPrefix,
                                     flex:nBloc.flex,
@@ -1211,6 +1241,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                                     title:nBloc.title,
                                     responsive:nBloc.responsive,
                                     classHTML:nBloc.classHTML,
+                                    displayTitle:nBloc.displayTitle,
                                     idHTML:nBloc.idHTML,
                                     urlPrefix:nBloc.urlPrefix,
                                     flex:nBloc.flex,
@@ -1232,6 +1263,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     responsive:col.responsive,
                     classHTML:col.classHTML,
                     idHTML:col.idHTML,
+                    displayTitle:col.displayTitle,
                     span:col.flex,
                     id:col.id,
                     mType:"col",
@@ -1251,6 +1283,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 id:row.id,
                 mType:"row",
                 responsive:row.responsive,
+                displayTitle:row.displayTitle,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
                 columns: newCols

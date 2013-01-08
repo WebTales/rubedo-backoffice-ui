@@ -269,7 +269,20 @@ Ext.define('Rubedo.controller.PagesController', {
                 margin:"10 0 10 0",
                 value:abstractcomponent.title
             }));
+            configSpec.getComponent(0).add(Ext.widget('checkbox',{
+                itemId:"eTitleShowField",
+                fieldLabel:"Afficher le titre ",
+                onChange:function(){
 
+                    abstractcomponent.displayTitle=this.getValue();
+
+                },
+                labelWidth:60,
+                inputValue:true,
+                anchor:"100%",
+                margin:"10 0 10 0",
+                checked:abstractcomponent.displayTitle
+            }));
 
 
             /*
@@ -594,6 +607,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 responsive:row.responsive,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
+                displayTitle:row.displayTitle,
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -626,6 +640,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     eTitle:column.eTitle,
                     responsive:column.responsive,
                     classHTML:column.classHTML,
+                    displayTitle:column.displayTitle,
                     idHTML:column.idHTML,
                     margin:4,
                     layout: {
