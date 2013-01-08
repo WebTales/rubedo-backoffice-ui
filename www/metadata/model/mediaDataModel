@@ -20,11 +20,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField63",
-                "name": "titre",
-                "type": "string"
+                "designer|userClassName": "field132",
+                "name": "field132"
             },
-            "designerId": "3a882bfe-56d6-488a-8784-10d4b57b8206"
+            "designerId": "7e022dda-840f-4c4d-ba3e-8ba55acccd50"
         },
         {
             "type": "datafield",
@@ -34,11 +33,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField64",
-                "name": "type",
-                "type": "string"
+                "designer|userClassName": "field133",
+                "name": "field133"
             },
-            "designerId": "4a39a168-793a-443e-ad2c-04a9c2f5ed00"
+            "designerId": "39aa9cad-7b8d-4c36-9746-22ca23d3fb6a"
         },
         {
             "type": "datafield",
@@ -48,11 +46,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField65",
-                "name": "medias",
-                "type": "auto"
+                "designer|userClassName": "field134",
+                "name": "field134"
             },
-            "designerId": "e455c9b0-6908-429e-ac6e-076fcec92194"
+            "designerId": "580ea868-6b24-45f9-8939-876b385f033e"
         },
         {
             "type": "datafield",
@@ -62,10 +59,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField87",
-                "name": "version"
+                "designer|userClassName": "field135",
+                "name": "field135"
             },
-            "designerId": "ad4170c1-9790-4fe4-adb6-6d00d20f570d"
+            "designerId": "bdfd89e9-1855-44e7-83a4-c51fb3e76939"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field136",
+                "name": "field136"
+            },
+            "designerId": "3ba4cd06-b307-40e8-8f30-5b040db98c17"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field137",
+                "name": "field137"
+            },
+            "designerId": "54a95860-23c2-4f1d-83c4-ce70923649eb"
         }
     ]
 }

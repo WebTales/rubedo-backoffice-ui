@@ -28,7 +28,6 @@ Ext.define('Rubedo.view.mediaWindowsView', {
     itemSelector: 'div.thumb-wrap',
     multiSelect: true,
     overItemCls: 'x-item-over',
-    store: 'MediaViewStore',
     trackOver: true,
 
     initComponent: function() {

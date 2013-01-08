@@ -46,9 +46,6 @@ Ext.define('Rubedo.store.MediasDataStore', {
                     encode: true,
                     root: 'data'
                 }
-            },
-            groupers: {
-                property: 'type'
             }
         }, cfg)]);
     }

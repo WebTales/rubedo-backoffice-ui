@@ -19,19 +19,22 @@ Ext.define('Rubedo.model.mediaDataModel', {
 
     fields: [
         {
-            name: 'titre',
-            type: 'string'
+            name: 'field132'
         },
         {
-            name: 'type',
-            type: 'string'
+            name: 'field133'
         },
         {
-            name: 'medias',
-            type: 'auto'
+            name: 'field134'
         },
         {
-            name: 'version'
+            name: 'field135'
+        },
+        {
+            name: 'field136'
+        },
+        {
+            name: 'field137'
         }
     ]
 });

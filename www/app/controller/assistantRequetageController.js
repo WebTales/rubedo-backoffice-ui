@@ -382,7 +382,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     onQueryBuildSaveBtnClick: function(button, e, options) {
         if (button.up().getForm().isValid()){
             var result=this.readQuery();
-            console.log(result);
             var newQuery = Ext.create("Rubedo.model.queryDataModel", {
                 name:result.queryName,
                 query:result,
@@ -484,10 +483,14 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         htmlDisplay+="<h3>Règles sur les champs</h3><ul>";
         Ext.Object.each(query.fieldRules, function(key, value, myself){
             var tri = "";
+            var a = value.rule||"";
+            var b = value.value||"";
+            console.log(tri);
             if (!Ext.isEmpty(value.sort)){
                 if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
             }
-            htmlDisplay+="<li>"+key+value.rule+value.value+tri+"</li>";
+
+            htmlDisplay+="<li>"+key+" "+a+" "+b+" "+tri+"</li>";
         });
         htmlDisplay+="</ul>";
         var target= Ext.getCmp("querySummaryBox");
