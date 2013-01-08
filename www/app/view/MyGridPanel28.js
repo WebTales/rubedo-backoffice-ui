@@ -55,10 +55,27 @@ Ext.define('Rubedo.view.MyGridPanel28', {
                     text: 'Date de création',
                     format: 'd-m-Y'
                 }
-            ]
+            ],
+            listeners: {
+                itemdblclick: {
+                    fn: me.onImagesSpecialGridItemDblClick,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        var fenetre = Ext.getCmp(record.get("filename")+"NadPreview");
+        if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
+        else {
+            fenetre = Ext.widget('ImagePreviewWindow', {title:record.get("filename"), id:record.get("filename")+"NadPreview"});
+            fenetre.getComponent(0).setSrc("file/get/file-id/"+record.get("id"));
+            Ext.getCmp('desktopCont').add(fenetre);
+            fenetre.show();
+        }
     }
 
 });

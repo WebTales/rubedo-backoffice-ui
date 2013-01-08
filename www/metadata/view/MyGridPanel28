@@ -112,6 +112,31 @@
                 "format": "d-m-Y"
             },
             "designerId": "addede1e-55ae-4481-bca0-c98d7b7a015c"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onImagesSpecialGridItemDblClick",
+                "fn": "onImagesSpecialGridItemDblClick",
+                "implHandler": [
+                    "    var fenetre = Ext.getCmp(record.get(\"filename\")+\"NadPreview\");\r",
+                    "    if (Ext.isDefined(fenetre)){ fenetre.toFront(); }\r",
+                    "    else {\r",
+                    "        fenetre = Ext.widget('ImagePreviewWindow', {title:record.get(\"filename\"), id:record.get(\"filename\")+\"NadPreview\"});\r",
+                    "        fenetre.getComponent(0).setSrc(\"file/get/file-id/\"+record.get(\"id\"));\r",
+                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "        fenetre.show();\r",
+                    "    }"
+                ],
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "designerId": "77521931-a6b4-4ec8-b85e-87b5c122c5d0"
         }
     ]
 }

@@ -17,10 +17,9 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePreviewWindow',
 
+    minHeight: 100,
+    minWidth: 100,
     resizable: false,
-    layout: {
-        type: 'fit'
-    },
     iconCls: 'imageIco',
     title: 'Titre',
     constrain: false,
@@ -35,12 +34,22 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
                 {
                     xtype: 'image',
                     resizable: false,
-                    src: '%20'
+                    src: '%20',
+                    listeners: {
+                        render: {
+                            fn: me.onImageRender,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender: function(abstractcomponent, options) {
+        abstractcomponent.getEl().on("load", function(){abstractcomponent.up().doLayout();});
     }
 
 });

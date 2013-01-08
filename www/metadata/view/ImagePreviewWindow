@@ -12,11 +12,12 @@
         "id": null,
         "maxHeight": null,
         "maxWidth": null,
+        "minHeight": 100,
+        "minWidth": 100,
         "width": null,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
         "iconCls": "imageIco",
         "title": "Titre",
         "constrain": false,
@@ -41,7 +42,27 @@
                 ],
                 "src": " "
             },
-            "designerId": "cd57e8c2-1ed9-432b-8d95-8b42e6d62348"
+            "designerId": "cd57e8c2-1ed9-432b-8d95-8b42e6d62348",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onImageRender",
+                        "fn": "onImageRender",
+                        "implHandler": [
+                            "abstractcomponent.getEl().on(\"load\", function(){abstractcomponent.up().doLayout();});"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "c2ae0262-fd66-4a65-8e6b-401a7a016bbe"
+                }
+            ]
         }
     ]
 }
