@@ -165,7 +165,9 @@ Ext.application({
         'assisstantRE4',
         'assisstantRE6',
         'assisstantRE5',
-        'queryBuilderField'
+        'queryBuilderField',
+        'DAMInterface',
+        'MyGridPanel28'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -184,6 +186,7 @@ Ext.application({
         'SearchController',
         'SitesController',
         'PagesController',
-        'MediaTypesController'
+        'MediaTypesController',
+        'DAMController'
     ]
 });

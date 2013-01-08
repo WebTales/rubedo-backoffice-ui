@@ -34,7 +34,11 @@ Ext.define('Rubedo.model.imageDataModel', {
             name: 'createUser'
         },
         {
-            name: 'createTime'
+            convert: function(v, rec) {
+                return (new Date(v));
+            },
+            name: 'createTime',
+            type: 'date'
         },
         {
             name: 'lastUpdateTime'

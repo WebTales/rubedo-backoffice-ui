@@ -1582,11 +1582,49 @@
                 "app/view/queryBuilderField.js"
             ],
             "className": "queryBuilderField"
+        },
+        "be2b5e1d-97ad-4d34-bac5-6baea7859c11": {
+            "paths": [
+                "metadata/controller/DAMController",
+                "app/controller/override/DAMController.js",
+                "app/controller/DAMController.js"
+            ],
+            "className": "DAMController"
+        },
+        "3466e0f3-f38c-425c-be4b-04fa3282d0a2": {
+            "paths": [
+                "metadata/view/DAMInterface",
+                "app/view/override/DAMInterface.js",
+                "app/view/DAMInterface.js"
+            ],
+            "className": "DAMInterface"
+        },
+        "a73c0e16-a2de-48ef-a74d-62d0a0e41988": {
+            "paths": [
+                "metadata/view/MyGridPanel28",
+                "app/view/override/MyGridPanel28.js",
+                "app/view/MyGridPanel28.js"
+            ],
+            "className": "MyGridPanel28"
+        },
+        "728e3284-6d29-48dd-afd7-e7ef398f50b1": {
+            "paths": [
+                "metadata/resource/css6"
+            ],
+            "className": "css6"
+        },
+        "e5f5a2f5-c675-42f3-b656-b6120fabf47e": {
+            "paths": [
+                "metadata/resource/css7"
+            ],
+            "className": "css7"
         }
     },
     "viewOrderMap": {
         "view": [
+            "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
+            "a73c0e16-a2de-48ef-a74d-62d0a0e41988",
             "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
             "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
             "600b0e52-e465-45ce-ac64-6b6f98c6a6a6",
@@ -1744,7 +1782,8 @@
             "b29235f7-9588-4632-b7ab-b0f2633b21ec",
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
-            "2a85a03b-de9d-4abc-80a4-82114d4267cf"
+            "2a85a03b-de9d-4abc-80a4-82114d4267cf",
+            "be2b5e1d-97ad-4d34-bac5-6baea7859c11"
         ],
         "model": [
             "67923df0-d312-4a3c-90d6-447c7e04828e",
@@ -1793,7 +1832,9 @@
             "3806ecbf-219d-4724-9a6b-0d2d2bdb27b0",
             "9d7e19ce-359c-4e48-b908-fbf4e8ba7fe6",
             "f0d5f198-1c7e-4992-824b-456dbe398b86",
-            "2b105ea2-3fa6-4f51-9781-bec377bc8f66"
+            "2b105ea2-3fa6-4f51-9781-bec377bc8f66",
+            "728e3284-6d29-48dd-afd7-e7ef398f50b1",
+            "e5f5a2f5-c675-42f3-b656-b6120fabf47e"
         ],
         "app": [
             "application"

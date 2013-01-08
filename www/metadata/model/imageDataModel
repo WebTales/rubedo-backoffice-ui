@@ -86,9 +86,32 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field193",
-                "name": "createTime"
+                "name": "createTime",
+                "type": "date"
             },
-            "designerId": "a1968b07-da0f-44ec-aca2-1444ab91c6b3"
+            "designerId": "a1968b07-da0f-44ec-aca2-1444ab91c6b3",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "convert",
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return (new Date(v));"
+                        ]
+                    },
+                    "designerId": "da939095-1375-4b24-9c24-a389de4487fc"
+                }
+            ]
         },
         {
             "type": "datafield",

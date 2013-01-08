@@ -97,7 +97,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.medias',
                             favoriteIcon: 'database.png',
-                            itemId: 'contributionMedias',
+                            itemId: 'DAMInterface',
                             iconCls: 'media-icon',
                             text: 'Médiathèque'
                         },

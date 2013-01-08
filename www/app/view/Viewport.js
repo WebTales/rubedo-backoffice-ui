@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.Viewport', {
     extend: 'Rubedo.view.ViewportPrimaire',
     renderTo: Ext.getBody(),
     requires: [
+        'Rubedo.view.DAMInterface',
         'Rubedo.view.assistantRequetage',
         'Rubedo.view.AjouterContenu',
         'Rubedo.view.NestedContentAddWindow',

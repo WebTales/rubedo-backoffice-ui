@@ -1,0 +1,68 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DAMInterface",
+        "designer|userAlias": "DAMInterface",
+        "height": 403,
+        "id": "DAMInterface",
+        "width": 947,
+        "layout": "fit",
+        "title": "Mèdiathéque",
+        "constrainHeader": true
+    },
+    "id": "ExtBox1-ext-gen19544",
+    "designerId": "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "43f13d85-63a5-47b7-a321-9f13588256ea",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "69291d3a-610c-45f2-bdf9-c498a213ec2a",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer36",
+                "overflowY": "auto",
+                "layout": "fit"
+            },
+            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "cc8f8fc2-c199-4197-8ab3-cd56be04e912",
+                    "masterInstanceId": "ExtBox1-ext-gen22453"
+                }
+            ]
+        }
+    ]
+}

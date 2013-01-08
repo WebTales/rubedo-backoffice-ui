@@ -1,0 +1,117 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "managesStore": true,
+        "designer|userClassName": "MyGridPanel28",
+        "designer|userAlias": "mygridpanel28",
+        "requires": [
+            "Ext.ux.container.SwitchButtonSegment"
+        ],
+        "id": "imagesSpecialGrid",
+        "title": "",
+        "forceFit": true,
+        "store": "ImagePickerStore"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen22453",
+    "designerId": "a73c0e16-a2de-48ef-a74d-62d0a0e41988",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView28"
+            },
+            "designerId": "9a140dd1-2846-4dec-a281-a995318e1c5c"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn47",
+                "align": null,
+                "dataIndex": "filename",
+                "text": "Fichier"
+            },
+            "designerId": "0a9560c9-8c1a-4370-be1d-312b4c26d913"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn49",
+                "dataIndex": "createUser",
+                "text": "Auteur"
+            },
+            "designerId": "f2a4d631-f6d3-484e-86fd-6aaad932a3b1",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "return(value.fullName);"
+                        ]
+                    },
+                    "designerId": "31c3bc35-b5b9-46b2-8a1e-66bc9dd6fc30"
+                }
+            ]
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn8",
+                "dataIndex": "createTime",
+                "text": "Date de création",
+                "format": "d-m-Y"
+            },
+            "designerId": "addede1e-55ae-4481-bca0-c98d7b7a015c"
+        }
+    ]
+}
