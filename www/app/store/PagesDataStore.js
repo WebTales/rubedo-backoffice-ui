@@ -33,6 +33,7 @@ Ext.define('Rubedo.store.PagesDataStore', {
             model: 'Rubedo.model.pageDataModel',
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'pages/create',
                     read: 'pages/read-child',
