@@ -73,7 +73,7 @@ Ext.define('Rubedo.view.override.MyGridPanel28', {
             groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
             disabled: false
         }],
-    tbar: ['->', {
+    tbar: [{},'->', {
             xtype: 'switchbuttonsegment',
             activeItem: 1,
             scope: this,

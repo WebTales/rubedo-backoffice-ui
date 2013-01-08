@@ -71,7 +71,7 @@ Ext.define('Rubedo.view.MyGridPanel28', {
                     xtype: 'toolbar',
                     dock: 'top',
                     height: 64,
-                    hidden: false,
+                    hidden: true,
                     listeners: {
                         afterrender: {
                             fn: me.onGridviewAfterRender,
