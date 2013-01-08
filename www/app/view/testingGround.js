@@ -40,7 +40,8 @@ Ext.define('Rubedo.view.testingGround', {
                     fieldLabel: 'Label'
                 },
                 {
-                    xtype: 'queryBuilderField'
+                    xtype: 'queryBuilderField',
+                    id: 'test123'
                 },
                 {
                     xtype: 'textfield',

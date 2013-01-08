@@ -391,9 +391,11 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 usage:[]
             });
             Ext.getStore("QueriesStore").add(newQuery);
-            Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
-            Ext.getCmp("assistantRequetage").close();
-        }
+            Ext.getStore("QueriesStore").addListener("update", function(){
+                Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+            },this,{single:true});
+                Ext.getCmp("assistantRequetage").close();
+            }
     },
 
     onBoutonCreateurTrisChampsARClick: function(button, e, options) {
