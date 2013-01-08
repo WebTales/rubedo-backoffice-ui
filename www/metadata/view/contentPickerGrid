@@ -146,7 +146,11 @@
                             "view"
                         ],
                         "implHandler": [
-                            "return(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value).get(\"type\"));"
+                            "if (Ext.isEmpty(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value))) {\r",
+                            "    return(value);\r",
+                            "} else {\r",
+                            "    return(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value).get(\"type\"));\r",
+                            "}"
                         ]
                     },
                     "designerId": "69544424-82b8-43fe-b334-d6b29d08db4d"

@@ -55,7 +55,11 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        return(Ext.getStore("TCNDepComboCS").findRecord("id",value).get("type"));
+                        if (Ext.isEmpty(Ext.getStore("TCNDepComboCS").findRecord("id",value))) {
+                            return(value);
+                        } else {
+                            return(Ext.getStore("TCNDepComboCS").findRecord("id",value).get("type"));
+                        }
                     },
                     filter: {
                         type: 'combo',
