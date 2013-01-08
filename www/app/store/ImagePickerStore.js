@@ -32,7 +32,10 @@ Ext.define('Rubedo.store.ImagePickerStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'image'
+                    create: 'image/create',
+                    read: 'image',
+                    update: 'image/update',
+                    destroy: 'image/delete'
                 },
                 reader: {
                     type: 'json',

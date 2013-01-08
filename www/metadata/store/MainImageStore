@@ -30,10 +30,11 @@
                 "designer|userClassName": "MyAjaxProxy21",
                 "api": [
                     "{\r",
-                    "\r",
-                    "     read: 'image'\r",
-                    "\r",
-                    "}"
+                    "                    create: 'image/create',\r",
+                    "                    read: 'image',\r",
+                    "                    update: 'image/update',\r",
+                    "                    destroy: 'image/delete'\r",
+                    "                }"
                 ],
                 "url": null
             },

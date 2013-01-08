@@ -132,12 +132,14 @@ Ext.define('Rubedo.controller.PagesController', {
             values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
             metaBox.update(values);
             metaBox.show();
+            Ext.getCmp("addPageBtn").enable();
         } else {
             Ext.getCmp("addPageBtn").enable();
             Ext.getCmp("removePageBtn").disable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             Ext.getCmp("mainPageEdition").removeAll();
             me.resetInterface();
+            Ext.getCmp("addPageBtn").enable();
         }
     },
 
@@ -686,6 +688,7 @@ Ext.define('Rubedo.controller.PagesController', {
     resetInterface: function() {
         Ext.getCmp("newPageBloc").disable();
         Ext.getCmp("deletePageElement").disable();
+        Ext.getCmp("addPageBtn").disable();
         Ext.getCmp("pageElementUp").disable();
         Ext.getCmp("pageElementDown").disable();
         Ext.getCmp('pageElementPropsPanel').removeAll();

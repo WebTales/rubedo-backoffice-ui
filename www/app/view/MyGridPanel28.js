@@ -60,19 +60,41 @@ Ext.define('Rubedo.view.MyGridPanel28', {
                 itemdblclick: {
                     fn: me.onImagesSpecialGridItemDblClick,
                     scope: me
+                },
+                selectionchange: {
+                    fn: me.onImagesSpecialGridSelectionChange,
+                    scope: me
                 }
             },
             dockedItems: [
                 {
                     xtype: 'toolbar',
                     dock: 'top',
-                    hidden: true,
+                    height: 64,
+                    hidden: false,
                     listeners: {
                         afterrender: {
                             fn: me.onGridviewAfterRender,
                             scope: me
                         }
-                    }
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'DAMmainImageDeleteBtn',
+                            iconAlign: 'top',
+                            iconCls: 'remove_big',
+                            scale: 'large',
+                            text: 'Supprimer',
+                            listeners: {
+                                click: {
+                                    fn: me.onDAMmainImageDeleteBtnClick,
+                                    scope: me
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         });
@@ -96,8 +118,7 @@ Ext.define('Rubedo.view.MyGridPanel28', {
         abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
             text: 'Uploader des images',
             iconCls:"arrow_up",
-            hidden:false,
-            id:1234,
+            hidden:true,
             //singleFile: true,
 
             plugins: [contained],
@@ -144,6 +165,19 @@ Ext.define('Rubedo.view.MyGridPanel28', {
 
 
         }));
+    },
+
+    onDAMmainImageDeleteBtnClick: function(button, e, options) {
+        Ext.getCmp("imagesSpecialGrid").getStore().remove(Ext.getCmp("imagesSpecialGrid").getSelectionModel().getSelection());
+    },
+
+    onImagesSpecialGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("DAMmainImageDeleteBtn").disable();
+        } else {
+            Ext.getCmp("DAMmainImageDeleteBtn").enable();
+
+        }
     }
 
 });

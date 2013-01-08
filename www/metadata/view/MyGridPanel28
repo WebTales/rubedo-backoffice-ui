@@ -149,7 +149,8 @@
             "userConfig": {
                 "dock": "top",
                 "designer|userClassName": "MyToolbar53",
-                "hidden": true
+                "height": 64,
+                "hidden": false
             },
             "designerId": "9c2cc46d-7c4c-4288-a26c-7dc740266f22",
             "cn": [
@@ -168,8 +169,7 @@
                             "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {\r",
                             "    text: 'Uploader des images',\r",
                             "    iconCls:\"arrow_up\",\r",
-                            "    hidden:false,\r",
-                            "    id:1234,\r",
+                            "    hidden:true,\r",
                             "    //singleFile: true,\r",
                             "\r",
                             "    plugins: [contained],\r",
@@ -221,8 +221,70 @@
                         "scope": "me"
                     },
                     "designerId": "c750cfb5-2361-4b29-8dc1-eb8560b8288b"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton195",
+                        "disabled": true,
+                        "id": "DAMmainImageDeleteBtn",
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "Supprimer"
+                    },
+                    "designerId": "a4d5e1d8-4139-4bbe-b64d-1ae56a9c9704",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onDAMmainImageDeleteBtnClick",
+                                "fn": "onDAMmainImageDeleteBtnClick",
+                                "implHandler": [
+                                    "Ext.getCmp(\"imagesSpecialGrid\").getStore().remove(Ext.getCmp(\"imagesSpecialGrid\").getSelectionModel().getSelection());"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "86afc33c-b49f-4303-87d8-ee94a6cca1ac"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onImagesSpecialGridSelectionChange",
+                "fn": "onImagesSpecialGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    Ext.getCmp(\"DAMmainImageDeleteBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"DAMmainImageDeleteBtn\").enable();\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "designerId": "b184318a-3cd4-4199-ab2d-2800594c5361"
         }
     ]
 }

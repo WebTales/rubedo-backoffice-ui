@@ -32,7 +32,10 @@ Ext.define('Rubedo.store.MainImageStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'image'
+                    create: 'image/create',
+                    read: 'image',
+                    update: 'image/update',
+                    destroy: 'image/delete'
                 },
                 reader: {
                     type: 'json',

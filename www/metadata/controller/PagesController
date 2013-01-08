@@ -201,12 +201,14 @@
                     "    values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
                     "    metaBox.update(values);\r",
                     "    metaBox.show();\r",
+                    "    Ext.getCmp(\"addPageBtn\").enable();\r",
                     "} else {\r",
                     "    Ext.getCmp(\"addPageBtn\").enable();\r",
                     "    Ext.getCmp(\"removePageBtn\").disable();\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "    me.resetInterface();\r",
+                    "    Ext.getCmp(\"addPageBtn\").enable();\r",
                     "}"
                 ],
                 "name": "select",
@@ -460,6 +462,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"newPageBloc\").disable();\r",
                     "Ext.getCmp(\"deletePageElement\").disable();\r",
+                    "Ext.getCmp(\"addPageBtn\").disable();\r",
                     "Ext.getCmp(\"pageElementUp\").disable();\r",
                     "Ext.getCmp(\"pageElementDown\").disable();\r",
                     "Ext.getCmp('pageElementPropsPanel').removeAll();\r",
