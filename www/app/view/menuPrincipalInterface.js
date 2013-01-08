@@ -125,6 +125,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.contentTypes',
                             favoriteIcon: 'images.png',
+                            hidden: true,
                             itemId: 'mediaTypesInterface',
                             iconCls: 'mediaTypes',
                             text: 'Types de médias'

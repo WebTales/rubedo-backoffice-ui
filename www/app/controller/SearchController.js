@@ -76,17 +76,18 @@ Ext.define('Rubedo.controller.SearchController', {
         target.removeAll();
         Ext.suspendLayouts();
         Ext.Array.forEach(facets, function(facet){
-            var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
-            newFacet.usedProperty=facet.name;
             if (!Ext.isEmpty(facet.terms)){
+                var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
+                newFacet.usedProperty=facet.name;
+
                 Ext.Array.forEach(facet.terms, function(term){
                     var newTerm=Ext.widget("checkbox", {fieldLabel:term.term+" ("+term.count+")", name:term.term, checked:context[term.term]||false});
                     newTerm.on("change",function(){me.readAndSearch();});
                     newFacet.add(newTerm);
                 });
-            }
-            target.add(newFacet);
 
+                target.add(newFacet);
+            }
         });
         Ext.resumeLayouts(true);
     },
