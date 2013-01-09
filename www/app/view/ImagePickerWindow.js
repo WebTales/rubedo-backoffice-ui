@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePickerWindow',
 
+    requires: [
+        'Rubedo.view.MyGridPanel29'
+    ],
+
     height: 406,
     id: 'ImagePickerWindow',
     width: 516,
@@ -34,156 +38,12 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'gridpanel',
-                    managesStore: true,
-                    title: '',
-                    forceFit: true,
-                    store: 'ImagePickerStore',
-                    viewConfig: {
-                        id: 'dragload'
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return("<img src=\"file/get/file-id/"+record.get("id")+"\"  height=\"100\">");
-                            },
-                            dataIndex: 'filename',
-                            text: 'Prévisualisation'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return(value.fullName);
-                            },
-                            dataIndex: 'createUser',
-                            text: 'Auteur'
-                        }
-                    ],
-                    dockedItems: [
-                        {
-                            xtype: 'toolbar',
-                            dock: 'bottom',
-                            items: [
-                                {
-                                    xtype: 'tbfill'
-                                },
-                                {
-                                    xtype: 'button',
-                                    disabled: true,
-                                    id: 'ImagePickerChooseBtn',
-                                    iconCls: 'ouiSpetit',
-                                    text: 'Choisir',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onButtonClick,
-                                            scope: me
-                                        }
-                                    }
-                                },
-                                {
-                                    xtype: 'button',
-                                    handler: function(button, event) {
-                                        button.up().up().up().close();
-                                    },
-                                    iconCls: 'close',
-                                    text: 'Annuler'
-                                }
-                            ],
-                            listeners: {
-                                afterrender: {
-                                    fn: me.onToolbarAfterRender,
-                                    scope: me
-                                }
-                            }
-                        }
-                    ],
-                    listeners: {
-                        selectionchange: {
-                            fn: me.onGridpanelSelectionChange,
-                            scope: me
-                        },
-                        itemdblclick: {
-                            fn: me.onGridpanelItemDblClick,
-                            scope: me
-                        }
-                    }
+                    xtype: 'mygridpanel29'
                 }
             ]
         });
 
         me.callParent(arguments);
-    },
-
-    onButtonClick: function(button, e, options) {
-        Ext.getCmp(button.up().up().up().targetField).setValue(button.up().up().getSelectionModel().getLastSelected().get("id"));
-        button.up().up().up().close();
-    },
-
-    onToolbarAfterRender: function(abstractcomponent, options) {
-        var contained = Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440});
-        abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
-            text: 'Uploader des images',
-            iconCls:"arrow_up",
-            hidden:true,
-            //singleFile: true,
-
-            plugins: [contained],
-
-            uploader: 
-            {
-                url: 'image/put?token='+ACL.CSRFToken,
-                autoStart: false,
-                max_file_size: '2mb',			
-                drop_element: 'dragload',
-                statusQueuedText: 'Pret à télécharger',
-                statusUploadingText: 'Téléchargement ({0}%)',
-                statusFailedText: '<span style="color: red">Erreur</span>',
-                statusDoneText: '<span style="color: green">Fini</span>',
-
-                statusInvalidSizeText: 'Fichier trop volumineux',
-                statusInvalidExtensionText: 'Type de fichier invalide'
-            },
-            listeners: 
-            {
-                filesadded: function(uploader, files)								
-                {
-                    //console.log('filesadded');
-                    return true;
-                },
-
-                beforeupload: function(uploader, file)								
-                {
-                    //console.log('beforeupload');			
-                },
-
-                fileuploaded: function(uploader, file)								
-                {
-                    //console.log('fileuploaded');
-                },
-
-                uploadcomplete: function(uploader, success, failed)								
-                {
-                    abstractcomponent.up().getStore().load();
-                    contained.window.close();
-                },
-                scope: this
-            }
-
-
-        }));
-    },
-
-    onGridpanelSelectionChange: function(tablepanel, selections, options) {
-        if (Ext.isEmpty(selections)){
-            Ext.getCmp("ImagePickerChooseBtn").disable();
-        } else {
-            Ext.getCmp("ImagePickerChooseBtn").enable();
-        }
-    },
-
-    onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
-        Ext.getCmp("ImagePickerChooseBtn").fireEvent("click",Ext.getCmp("ImagePickerChooseBtn"));
     }
 
 });

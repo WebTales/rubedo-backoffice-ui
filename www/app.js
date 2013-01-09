@@ -168,7 +168,8 @@ Ext.application({
         'assisstantRE5',
         'queryBuilderField',
         'DAMInterface',
-        'MyGridPanel28'
+        'MyGridPanel28',
+        'MyGridPanel29'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
