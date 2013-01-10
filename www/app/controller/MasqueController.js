@@ -183,6 +183,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nTitre = Ext.getCmp('copierMasqueTitre').getValue();
             var nSite = Ext.getCmp('copierMasqueSite').getValue();
             var nRows = Ext.clone(cible.data.rows);
+            var nBlocks=Ext.clone(cible.data.blocks);
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
@@ -190,11 +191,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 auteur: 'Alexandru Dobre',
                 creation: new Date(),
                 derniereModification: new Date(),
-                version: 1.0,
-                versions:[
-                {text: '1.0', etat: 'brouillon', date: new Date(), auteur: 'Alexandru Dobre'}
-                ],
-                rows: nRows
+                rows: nRows,
+                blocks:nBlocks
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
