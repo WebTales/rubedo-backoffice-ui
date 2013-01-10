@@ -84,6 +84,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     }
     this.getMasqueEdition().removeAll();
     this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
+    this.restoreBlocks(masque.blocks);
 
     Ext.getCmp("newRow").disable();
     Ext.getCmp("newCol").disable();
@@ -153,7 +154,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
-                rows: [ ]
+                rows: [ ],
+                blocks:[ ]
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
             this.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});
@@ -169,6 +171,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (Ext.isDefined(cible)) {
             cible.beginEdit();
             cible.set("rows",this.saveRows(this.getMasqueEdition()));
+            cible.set("blocks",this.saveBlocks(this.getMasqueEdition()));
             cible.endEdit();
 
         }
@@ -1153,30 +1156,31 @@ Ext.define('Rubedo.controller.MasqueController', {
                     rFlex=Ext.Array.max([rFlex,column.rows.length]);
                     me.masqueRestit(column.rows,its-1,newCol);    
                 }
-                else {
-                    if (Ext.isEmpty(column.blocks)){} else {
-                    Ext.Array.forEach(column.blocks, function(bl){
-                        newCol.add(Ext.widget("unBloc",bl));
-                    });
-                }
+
+                eolWidth=eolWidth-column.span;
+                newRow.add(newCol);
+
+            });
+            newRow.add(Ext.widget("container",{
+                flex:eolWidth,
+                itemId:"eol"
+            }));
+            if (Ext.isEmpty(row.height)) {
+                newRow.flex=rFlex;
+            } else {
+                newRow.height=row.height;
             }
-            eolWidth=eolWidth-column.span;
-            newRow.add(newCol);
-
+            cible.add(newRow);  
         });
-        newRow.add(Ext.widget("container",{
-            flex:eolWidth,
-            itemId:"eol"
-        }));
-        if (Ext.isEmpty(row.height)) {
-            newRow.flex=rFlex;
-        } else {
-            newRow.height=row.height;
-        }
-        cible.add(newRow);  
+    },
 
-
-    });
+    restoreBlocks: function(mBlocks) {
+        Ext.Array.forEach(mBlocks, function(block){
+            var targetCol=Ext.getCmp(block.parentCol);
+            if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
+                targetCol.add(Ext.widget("unBloc",block));
+            }
+        });
     },
 
     getElementLevel: function(element, level) {
@@ -1199,59 +1203,11 @@ Ext.define('Rubedo.controller.MasqueController', {
                     var rows = null;
                     var isTerminal=true;
                     if (col.final) { 
-                        var nBlocs=col.items.items;
-                        if (!Ext.isEmpty(nBlocs)) {
-                            blocks=[ ];
-                            Ext.Array.forEach(nBlocs, function(nBloc){
-                                blocks.push({
 
-                                    bType:nBloc.bType,
-                                    id:nBloc.id,
-                                    mType:"bloc",
-                                    champsConfig:nBloc.champsConfig,
-                                    configBloc:nBloc.configBloc,
-                                    title:nBloc.title,
-                                    responsive:nBloc.responsive,
-                                    classHTML:nBloc.classHTML,
-                                    displayTitle:nBloc.displayTitle,
-                                    idHTML:nBloc.idHTML,
-                                    urlPrefix:nBloc.urlPrefix,
-                                    flex:nBloc.flex,
-                                    canEdit:nBloc.canEdit
-
-                                });
-
-                            });
-
-                        }
                     }else {
                         var thing=col.items.items[0];
                         if (Ext.isEmpty(thing)){} else if (thing.isXType("unBloc")) {
-                        var nBlocs=col.items.items;
-                        if (!Ext.isEmpty(nBlocs)) {
-                            blocks=[ ];
-                            Ext.Array.forEach(nBlocs, function(nBloc){
-                                blocks.push({
 
-                                    bType:nBloc.bType,
-                                    id:nBloc.id,
-                                    mType:"block",
-                                    champsConfig:nBloc.champsConfig,
-                                    configBloc:nBloc.configBloc,
-                                    title:nBloc.title,
-                                    responsive:nBloc.responsive,
-                                    classHTML:nBloc.classHTML,
-                                    displayTitle:nBloc.displayTitle,
-                                    idHTML:nBloc.idHTML,
-                                    urlPrefix:nBloc.urlPrefix,
-                                    flex:nBloc.flex,
-                                    canEdit:nBloc.canEdit
-
-                                });
-
-                            });
-
-                        }
                     } else {
                         isTerminal=false;
                         rows=me.saveRows(col);
@@ -1291,6 +1247,32 @@ Ext.define('Rubedo.controller.MasqueController', {
             });
         });
         return nRows;
+    },
+
+    saveBlocks: function(startComp) {
+        var newBlocks = [ ];
+        Ext.Array.forEach(startComp.query("unBloc"), function(nBloc){
+            newBlocks.push({
+
+                bType:nBloc.bType,
+                id:nBloc.id,
+                parentCol:nBloc.up().getId(),
+                mType:"block",
+                champsConfig:nBloc.champsConfig,
+                configBloc:nBloc.configBloc,
+                title:nBloc.title,
+                responsive:nBloc.responsive,
+                classHTML:nBloc.classHTML,
+                displayTitle:nBloc.displayTitle,
+                idHTML:nBloc.idHTML,
+                urlPrefix:nBloc.urlPrefix,
+                flex:nBloc.flex,
+                canEdit:nBloc.canEdit
+
+            });
+
+        });
+        return(newBlocks);
     },
 
     init: function(application) {
