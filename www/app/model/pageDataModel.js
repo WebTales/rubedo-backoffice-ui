@@ -34,11 +34,10 @@ Ext.define('Rubedo.model.pageDataModel', {
             type: 'int'
         },
         {
-            name: 'rows',
-            type: 'auto'
+            name: 'id'
         },
         {
-            name: 'id'
+            name: 'blocks'
         },
         {
             name: 'title'

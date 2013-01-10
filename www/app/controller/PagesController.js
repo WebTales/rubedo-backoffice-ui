@@ -47,9 +47,8 @@ Ext.define('Rubedo.controller.PagesController', {
             target=Ext.getCmp("mainPageTree").getRootNode();
         }
         if (form.isValid()){
-            var newRows=button.previousSibling().getStore().findRecord("id",button.previousSibling().getValue()).get("rows");
             var newPage=form.getValues();
-            newPage.rows=newRows;
+            newPage.blocks=[ ];
             newPage.leaf=true;
             if (!target.hasChildNodes()){
                 newPage.orderValue=100;
@@ -102,7 +101,10 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("removePageBtn").enable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
-            me.renderPage(record.get("rows"),1,Ext.getCmp("mainPageEdition"));
+            var myMask =Ext.getStore("MasksComboStore").findRecord("id", record.get("maskId")); 
+            me.renderPage(myMask.get("rows"),1,Ext.getCmp("mainPageEdition"));
+            me.renderBlocks(myMask.get("blocks"), false);
+            me.renderBlocks(record.get("blocks"), true);
             me.resetInterface();
             Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
@@ -223,7 +225,7 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     blocSelection: function(abstractcomponent, options) {
-        if (/*abstractcomponent.canEdit*/true){
+        if (abstractcomponent.canEdit){
             abstractcomponent.getEl().on("mouseover", function(e){
                 var prevSelected = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
                 if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
@@ -484,11 +486,11 @@ Ext.define('Rubedo.controller.PagesController', {
     savePage: function(button, e, options) {
         if (Ext.getCmp("mainPageAttributeForm").getForm().isValid()) {
             var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
-            var newRows=Rubedo.controller.MasqueController.prototype.saveRows(Ext.getCmp("mainPageEdition"));
+            var newBlocks=this.saveBlocks(Ext.getCmp("mainPageEdition"));
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
             editedPage.beginEdit();
-            editedPage.set("rows",newRows);
+            editedPage.set("blocks",newBlocks);
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
             editedPage.endEdit();
             store.resumeAutoSync();
@@ -652,37 +654,26 @@ Ext.define('Rubedo.controller.PagesController', {
                 });
                 if ((its>0)&&(column.isTerminal===false)) {
                     rFlex=Ext.Array.max([rFlex,column.rows.length]);
-                    me.masqueRestit(column.rows,its-1,newCol);    
+                    me.renderPage(column.rows,its-1,newCol);    
                 }
-                else {
-                    if (Ext.isEmpty(column.blocks)){} else {
-                    Ext.Array.forEach(column.blocks, function(bl){
-                        bl.id=bl.id.slice(bl.id.indexOf("unBloc"));//remove after
-                        if (bl.id.indexOf("page-")==-1) {
-                            bl.id="page-"+bl.id;
-                        }
 
-                        newCol.add(Ext.widget("unBloc",bl));
-                    });
-                }
+                eolWidth=eolWidth-column.span;
+                newRow.add(newCol);
+
+            });
+            newRow.add(Ext.widget("container",{
+                flex:eolWidth,
+                itemId:"eol"
+            }));
+            if (Ext.isEmpty(row.height)) {
+                newRow.flex=rFlex;
+            } else {
+                newRow.height=row.height;
             }
-            eolWidth=eolWidth-column.span;
-            newRow.add(newCol);
+            cible.add(newRow);  
+
 
         });
-        newRow.add(Ext.widget("container",{
-            flex:eolWidth,
-            itemId:"eol"
-        }));
-        if (Ext.isEmpty(row.height)) {
-            newRow.flex=rFlex;
-        } else {
-            newRow.height=row.height;
-        }
-        cible.add(newRow);  
-
-
-    });
     },
 
     resetInterface: function() {
@@ -700,6 +691,47 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("mainPageAttributeForm").disable();
         Ext.getCmp("pagePreviewTextItem").setText();
         Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+    },
+
+    renderBlocks: function(mBlocks, editable) {
+        Ext.Array.forEach(mBlocks, function(block){
+            if (block.parentCol.indexOf("page-")==-1) {
+                block.parentCol="page-"+block.parentCol;
+            }
+            var targetCol=Ext.getCmp(block.parentCol);
+            if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
+                block.canEdit=editable;
+                targetCol.add(Ext.widget("unBloc",block));
+            }
+        });
+    },
+
+    saveBlocks: function(startComp) {
+        var newBlocks = [ ];
+        Ext.Array.forEach(startComp.query("unBloc"), function(nBloc){
+            if (nBloc.canEdit){
+                newBlocks.push({
+
+                    bType:nBloc.bType,
+                    id:nBloc.id,
+                    parentCol:nBloc.up().getId().replace("page-",""),
+                    mType:"block",
+                    champsConfig:nBloc.champsConfig,
+                    configBloc:nBloc.configBloc,
+                    title:nBloc.title,
+                    responsive:nBloc.responsive,
+                    classHTML:nBloc.classHTML,
+                    displayTitle:nBloc.displayTitle,
+                    idHTML:nBloc.idHTML,
+                    urlPrefix:nBloc.urlPrefix,
+                    flex:nBloc.flex,
+                    canEdit:nBloc.canEdit
+
+                });
+            }
+
+        });
+        return(newBlocks);
     },
 
     init: function(application) {
