@@ -151,6 +151,11 @@ Ext.define('Rubedo.controller.PagesController', {
             var pos = target.up().items.indexOf(target);
             if (pos > 0) {
                 target.up().move(pos,pos-1);
+                if (Ext.isEmpty(target.previousSibling())){
+                    target.orderValue=target.nextSibling().orderValue-1;
+                } else {
+                    target.orderValue=(target.nextSibling().orderValue+target.previousSibling().orderValue)/2;
+                }
             }
         }
     },
@@ -158,8 +163,16 @@ Ext.define('Rubedo.controller.PagesController', {
     moveElementDown: function(button, e, options) {
         var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
         if (!Ext.isEmpty(target)) {
-            var pos = target.up().items.indexOf(target);
-            target.up().move(pos,pos+1);
+            if (!Ext.isEmpty(target.nextSibling())){
+                var pos = target.up().items.indexOf(target);
+                target.up().move(pos,pos+1);
+                if (Ext.isEmpty(target.nextSibling())){
+                    target.orderValue=target.previousSibling().orderValue+1;
+                } else {
+                    target.orderValue=(target.nextSibling().orderValue+target.previousSibling().orderValue)/2;
+                }
+            }
+
         }
     },
 
@@ -219,7 +232,13 @@ Ext.define('Rubedo.controller.PagesController', {
             "desktop":true
         };
         nouvBloc.canEdit=true;
-        Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).add(nouvBloc);
+        var target = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
+        var orderValue = 1;
+        if (!Ext.isEmpty(target.items.items)) {
+            orderValue=target.items.items[target.items.items.length-1].orderValue+1;
+        }
+        nouvBloc.orderValue=orderValue;
+        target.add(nouvBloc);
         Ext.getCmp("ajoutBlocFenetre").close();
         nouvBloc.getEl().dom.click();
     },
@@ -598,7 +617,6 @@ Ext.define('Rubedo.controller.PagesController', {
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
-            row.id=row.id.slice(row.id.indexOf("pan"));//remove after
 
             if (row.id.indexOf("page-")==-1) {
                 row.id="page-"+row.id;
@@ -630,7 +648,6 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
                 var isFinalCol=false;
                 if (its<=0){isFinalCol=true;}
-                column.id=column.id.slice(column.id.indexOf("pan"));//remove after
 
                 if (column.id.indexOf("page-")==-1) {
                     column.id="page-"+column.id;
@@ -704,7 +721,17 @@ Ext.define('Rubedo.controller.PagesController', {
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 block.canEdit=editable;
-                targetCol.add(Ext.widget("unBloc",block));
+                if (editable) {
+                    var insertIndex=0;
+                    Ext.Array.forEach(targetCol.items.items, function(brother){
+                        if (brother.orderValue<block.orderValue){
+                            insertIndex=insertIndex+1;
+                        }
+                    });
+                    targetCol.insert(insertIndex, Ext.widget("unBloc",block));
+                } else{
+                    targetCol.add(Ext.widget("unBloc",block));
+                }
             }
         });
     },
@@ -721,6 +748,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     mType:"block",
                     champsConfig:nBloc.champsConfig,
                     configBloc:nBloc.configBloc,
+                    orderValue:nBloc.orderValue,
                     title:nBloc.title,
                     responsive:nBloc.responsive,
                     classHTML:nBloc.classHTML,

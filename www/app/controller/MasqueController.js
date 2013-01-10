@@ -578,7 +578,13 @@ Ext.define('Rubedo.controller.MasqueController', {
             "tablet":true,
             "desktop":true
         };
-        Ext.getCmp(Ext.getCmp('elementIdField').getValue()).add(nouvBloc);
+        var target = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+        var orderValue = 100;
+        if (!Ext.isEmpty(target.items.items)) {
+            orderValue=target.items.items[target.items.items.length-1].orderValue+100;
+        }
+        nouvBloc.orderValue=orderValue;
+        target.add(nouvBloc);
         button.up().up().close();
         Ext.getCmp('newRow').disable();
         nouvBloc.getEl().dom.click();
@@ -944,6 +950,11 @@ Ext.define('Rubedo.controller.MasqueController', {
             var pos = target.up().items.indexOf(target);
             if (pos > 0) {
                 target.up().move(pos,pos-1);
+                if (target.isXType('unBloc')){
+                    Ext.Array.forEach(target.up().items.items, function(item, index){
+                        if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}
+                    });
+                }
             }
         }
     },
@@ -953,6 +964,11 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (!Ext.isEmpty(target)) {
             var pos = target.up().items.indexOf(target);
             target.up().move(pos,pos+1);
+            if (target.isXType('unBloc')){
+                Ext.Array.forEach(target.up().items.items, function(item, index){
+                    if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}
+                });
+            }
         }
     },
 
@@ -1275,6 +1291,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 parentCol:nBloc.up().getId(),
                 mType:"block",
                 champsConfig:nBloc.champsConfig,
+                orderValue:nBloc.orderValue,
                 configBloc:nBloc.configBloc,
                 title:nBloc.title,
                 responsive:nBloc.responsive,
