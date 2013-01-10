@@ -473,39 +473,57 @@ Ext.define('Rubedo.controller.MasqueController', {
     },
 
     addCol: function(button, e, options) {
-        var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
-        var myEol=cible.getComponent('eol');
+        Ext.Ajax.request({
+            url: 'xhr-get-mongo-id',
+            params: { },
+            success: function(response){
+                var servedId = Ext.JSON.decode(response.responseText).mongoID;
 
-        if (myEol.flex>0) {
-            var isFinalCol=false;
-            if (cible.up().mType=="col"){
-                isFinalCol=true;
-            }
-            var newCol=Ext.widget('panel', {
-                header:false,
-                flex:1,
-                final:isFinalCol,
-                eTitle:"titre",
-                responsive:{
-                    phone:true,
-                    tablet:true,
-                    desktop:true
-                },
-                mType:'col',
-                margin:4,
-                layout: {
-                    type: 'vbox',
-                    align: 'stretch'
+                var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
+                var myEol=cible.getComponent('eol');
+
+                if (myEol.flex>0) {
+                    var isFinalCol=false;
+                    if (cible.up().mType=="col"){
+                        isFinalCol=true;
+                    }
+                    var newCol=Ext.widget('panel', {
+                        header:false,
+                        flex:1,
+                        final:isFinalCol,
+                        id:servedId,
+                        eTitle:"titre",
+                        responsive:{
+                            phone:true,
+                            tablet:true,
+                            desktop:true
+                        },
+                        mType:'col',
+                        margin:4,
+                        layout: {
+                            type: 'vbox',
+                            align: 'stretch'
+                        }
+                    });
+                    myEol.flex=myEol.flex-1;
+                    cible.insert(cible.items.items.length-1,newCol);
+                    if (myEol.flex===0){
+                        button.disable();
+                    }
+
                 }
-            });
-            myEol.flex=myEol.flex-1;
-            cible.insert(cible.items.items.length-1,newCol);
-            if (myEol.flex===0){
-                button.disable();
-            }
+                newCol.getEl().dom.click();
 
-        }
-        newCol.getEl().dom.click();
+
+            },
+            failure: function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant de colonne');
+
+            }
+        });
+
+
+
     },
 
     addRow: function(button, e, options) {
@@ -554,8 +572,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     addBloc: function(button, e, options) {
         var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
-        var configuratus = Ext.clone(donnees.configBasique);
-        var nouvBloc = Ext.widget('unBloc', configuratus);
+        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
         nouvBloc.responsive={
             "phone":true,
             "tablet":true,
