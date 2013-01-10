@@ -17,7 +17,7 @@ Ext.Loader.setConfig({
     enabled: true,
     paths: {
         Ext: '.',
-        'Ext.ux': 'extjs-4.1.0/examples/ux'
+        'Ext.ux': 'resources/ux'
     }
 });
 

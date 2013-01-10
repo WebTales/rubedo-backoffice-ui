@@ -1,0 +1,132 @@
+/*
+.x-grid-view
+{
+	overflow-y: scroll;
+}
+*/
+.x-grid-table.tileview .x-grid-row-alt
+{
+	background-color: transparent;
+}
+
+.x-grid-table.tileview .x-grid-row-table
+{
+	table-layout: fixed;
+}
+
+.x-grid-table.tileview .x-grid-row
+{
+	float: left;
+	margin: 8px 0 0 8px;
+	display: inline-block;
+}
+
+.x-grid-table.tileview .x-grid-cell
+{
+	border: none;
+	background: transparent;
+}
+
+.x-grid-table.tileview .x-grid-col
+{
+	border: none;
+}
+.icon-default
+		{
+			background: transparent no-repeat;
+			background-image: url('switch.png');
+			background-position: 0 0 !important;
+		}
+		.icon-tile
+		{
+			background: transparent no-repeat;
+			background-image: url('switch.png');
+			background-position: -16px 0 !important;
+		}
+		.icon-medium
+		{
+			background: transparent no-repeat;
+			background-image: url('switch.png');
+			background-position: -32px 0 !important;
+		}
+        
+		
+		
+		/**
+		 * Medium View
+		 */
+		.ux-explorerview-medium-icon-row
+		{
+			width: 114px;
+			height: 120px;
+			float: left;
+			border: none;
+			padding: 1px;
+		}
+		
+		.x-grid-table.thumbnails .x-grid-row-over .ux-explorerview-medium-icon-row
+		{
+			border: 1px solid #dddddd;
+			padding: 0px;
+			background: #efefef;
+		}
+		
+		.ux-explorerview-medium-icon-row .x-grid-row-table
+		{
+			width: 100%;
+		}
+		
+		.ux-explorerview-medium-icon-row .x-grid-row-table td
+		{
+			text-align: center;
+		}
+		
+		.ux-explorerview-medium-icon-row .x-grid-row-table td.ux-explorerview-icon
+		{
+			height: 100px;
+			text-align: center;
+			vertical-align: bottom;
+		}
+		
+		
+		/**
+		 * Tile View
+		 */
+		.ux-explorerview-detailed-icon-row
+		{
+			width: 200px;
+			height: 53px;
+			float: left;
+			padding: 1px;
+			border: 0px solid #FFF;
+		}
+		
+		.x-grid-table.thumbnails .x-grid-row-over .ux-explorerview-detailed-icon-row
+		{
+			border: 1px solid #dddddd;
+			padding: 0px;
+			background: #efefef;
+		}
+		
+		.ux-explorerview-detailed-icon-row .x-grid-row-table
+		{
+			width: 100%;
+		}
+		
+		.ux-explorerview-detailed-icon-row .x-grid-row-table td
+		{
+			vertical-align: bottom;
+		}
+		
+		.ux-explorerview-detailed-icon-row .x-grid-row-table td.ux-explorerview-icon
+		{
+			width: 56px;
+			height: 50px;
+			text-align: center;
+			vertical-align: middle;
+		}
+		
+		.ux-explorerview-detailed-icon-row .x-grid-row-table td span
+		{
+			color: #aaaaaa;
+		}
