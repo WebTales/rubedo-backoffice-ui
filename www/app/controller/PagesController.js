@@ -102,9 +102,9 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
             var myMask =Ext.getStore("MasksComboStore").findRecord("id", record.get("maskId")); 
-            me.renderPage(myMask.get("rows"),1,Ext.getCmp("mainPageEdition"));
-            me.renderBlocks(myMask.get("blocks"), false);
-            me.renderBlocks(record.get("blocks"), true);
+            me.renderPage(Ext.clone(myMask.get("rows")),1,Ext.getCmp("mainPageEdition"));
+            me.renderBlocks(Ext.clone(myMask.get("blocks")), false);
+            me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
             Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
@@ -698,6 +698,9 @@ Ext.define('Rubedo.controller.PagesController', {
             if (block.parentCol.indexOf("page-")==-1) {
                 block.parentCol="page-"+block.parentCol;
             }
+            if (block.id.indexOf("page-")==-1) {
+                block.id="page-"+block.id;
+            }
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 block.canEdit=editable;
@@ -713,7 +716,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 newBlocks.push({
 
                     bType:nBloc.bType,
-                    id:nBloc.id,
+                    id:nBloc.getId().replace("page-",""),
                     parentCol:nBloc.up().getId().replace("page-",""),
                     mType:"block",
                     champsConfig:nBloc.champsConfig,

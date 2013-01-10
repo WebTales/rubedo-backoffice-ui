@@ -83,8 +83,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         prevSelected.removeBodyCls('selectedelement');
     }
     this.getMasqueEdition().removeAll();
-    this.masqueRestit(masque.rows,1,this.getMasqueEdition()); 
-    this.restoreBlocks(masque.blocks);
+    this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition()); 
+    this.restoreBlocks(Ext.clone(masque.blocks));
 
     Ext.getCmp("newRow").disable();
     Ext.getCmp("newCol").disable();
@@ -554,7 +554,8 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     addBloc: function(button, e, options) {
         var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
-        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
+        var configuratus = Ext.clone(donnees.configBasique);
+        var nouvBloc = Ext.widget('unBloc', configuratus);
         nouvBloc.responsive={
             "phone":true,
             "tablet":true,
@@ -1199,7 +1200,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             var offset=0;
             Ext.Array.forEach(row.items.items, function(col){
                 if (col.isXType("panel")) {
-                    var blocks = null;
                     var rows = null;
                     var isTerminal=true;
                     if (col.final) { 
@@ -1224,7 +1224,6 @@ Ext.define('Rubedo.controller.MasqueController', {
                     id:col.id,
                     mType:"col",
                     offset:offset,
-                    blocks: blocks,
                     rows: rows,
                     isTerminal:isTerminal
 
