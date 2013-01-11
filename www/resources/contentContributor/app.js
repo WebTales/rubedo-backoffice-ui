@@ -34,7 +34,8 @@ Ext.application({
         'fieldWrapper',
         'ImageFieldComponent',
         'ImagePickerWindow',
-        'ImagePickerField'
+        'ImagePickerField',
+        'MainViewport'
     ],
     autoCreateViewport: true,
     name: 'ContentContributor',

@@ -17,31 +17,25 @@ Ext.define('ContentContributor.controller.MainController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.MainController',
 
-    onLaunch: function() {
-        var me=this;
-        var options = decodeURIComponent(window.location.search.slice(1))
-        .split('&')
-        .reduce(function _reduce (a, b) {
-            b = b.split('=');
-            a[b[0]] = b[1];
-            return a;
-        }, {});
-            if (!Ext.isEmpty(options.typeId)){
-                Ext.Ajax.request({
-                    url: '../../content-types/find-one',
-                    params: {
-                        id: options.typeId
-                    },
-                    success: function(response){
-                        var result = Ext.JSON.decode(response.responseText).data;
-                        me.initializeContentForm(result);
-                    }
-                });
-            }
-
+    fieldReplicate: function(button, e, options) {
+        var nouvChamp=button.up().getComponent(1).cloneConfig();
+        nouvChamp.anchor = '90%';
+        nouvChamp.style = '{float:left;}';
+        var enrobage =Ext.widget('fieldWrapper');
+        enrobage.add(nouvChamp);
+        enrobage.getComponent('helpBouton').setTooltip("Réplique du champ "+button.up().getComponent(1).fieldLabel);
+        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
+        supprimeur.on('click', function(){
+            button.valeursM--;
+            button.up().up().remove(supprimeur.up());
+        });
+        enrobage.add(supprimeur);
+        button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);
+        button.valeursM++;
     },
 
     initializeContentForm: function(contentType) {
+        Ext.getCmp("MainForm").setTitle("Nouveau contenu "+contentType.type);
         this.renderMainFields(contentType.fields);
     },
 
@@ -51,7 +45,6 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.Array.forEach(fields, function(field,index){
             var configurator=Ext.clone(field.config);
             configurator.labelSeparator=" ";
-            //console.log(field);
             var newField= Ext.widget(field.cType, configurator);
             var wrapping= Ext.widget("fieldWrapper");
             newField.anchor = '90%';
@@ -61,10 +54,10 @@ Ext.define('ContentContributor.controller.MainController', {
             if (Ext.isEmpty(configurator.tooltip)){
                 wrapping.getComponent('helpBouton').hidden=true;
             } 
-            /*if (nouvChamp.multivalued) {
-            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
+            if (newField.multivalued) {
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
 
-            }*/
+            }
             target.add(wrapping);
 
 
@@ -123,6 +116,36 @@ Ext.define('ContentContributor.controller.MainController', {
 
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
+
+        this.control({
+            "[itemId= 'boutonReplicateurChamps']": {
+                click: this.fieldReplicate
+            }
+        });
+    },
+
+    mainAction: function() {
+        var me=this;
+        var options = decodeURIComponent(window.location.search.slice(1))
+        .split('&')
+        .reduce(function _reduce (a, b) {
+            b = b.split('=');
+            a[b[0]] = b[1];
+            return a;
+        }, {});
+            if (!Ext.isEmpty(options.typeId)){
+                Ext.Ajax.request({
+                    url: '../../content-types/find-one',
+                    params: {
+                        id: options.typeId
+                    },
+                    success: function(response){
+                        var result = Ext.JSON.decode(response.responseText).data;
+                        me.initializeContentForm(result);
+                    }
+                });
+            }
+
     }
 
 });

@@ -25,8 +25,7 @@
             "paths": [
                 "metadata/view/MainForm",
                 "app/view/override/MainForm.js",
-                "app/view/MainForm.js",
-                "app/view/Viewport.js"
+                "app/view/MainForm.js"
             ],
             "className": "MainForm"
         },
@@ -149,10 +148,20 @@
                 "metadata/resource/css1"
             ],
             "className": "css1"
+        },
+        "fdfc62ca-7705-4dbb-9b13-8d528a0451c8": {
+            "paths": [
+                "metadata/view/MainViewport",
+                "app/view/override/MainViewport.js",
+                "app/view/MainViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainViewport"
         }
     },
     "viewOrderMap": {
         "view": [
+            "fdfc62ca-7705-4dbb-9b13-8d528a0451c8",
             "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
             "33902aa5-6d2c-42d9-9095-f7ffe3229abf",
             "333eb061-a86e-4ff9-993f-6d65e9398883",

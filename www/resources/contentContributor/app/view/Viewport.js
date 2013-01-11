@@ -14,9 +14,10 @@
  */
 
 Ext.define('ContentContributor.view.Viewport', {
-    extend: 'ContentContributor.view.MainForm',
+    extend: 'ContentContributor.view.MainViewport',
     renderTo: Ext.getBody(),
     requires: [
+        'ContentContributor.view.MainViewport',
         'ContentContributor.view.MainForm',
         'ContentContributor.view.fieldWrapper',
         'ContentContributor.view.ImageFieldComponent',

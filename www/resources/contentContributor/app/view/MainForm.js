@@ -19,11 +19,66 @@ Ext.define('ContentContributor.view.MainForm', {
 
     border: 0,
     id: 'MainForm',
-    bodyPadding: 10,
-    header: false,
+    overflowY: 'auto',
+    bodyPadding: 20,
+    header: true,
+    title: 'Nouveau Contenu',
+    titleAlign: 'center',
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    ACL: 'write.ui.contents',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbspacer',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'write.ui.contents.draft',
+                            cStatus: 'draft',
+                            id: 'mainDraftBtn',
+                            scale: 'large',
+                            text: 'Brouillon'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            flex: 0.1
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'write.ui.contents.pending',
+                            cStatus: 'pending',
+                            id: 'mainSubmitBtn',
+                            scale: 'large',
+                            text: 'Soumettre'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            flex: 0.1
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'write.ui.contents.published',
+                            cStatus: 'published',
+                            id: 'mainPublishBtn',
+                            scale: 'large',
+                            text: 'Publier'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            flex: 1
+                        }
+                    ]
+                }
+            ]
+        });
 
         me.callParent(arguments);
     }

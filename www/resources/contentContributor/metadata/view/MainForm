@@ -8,15 +8,188 @@
     "userConfig": {
         "designer|userClassName": "MainForm",
         "designer|userAlias": "MainForm",
-        "designer|initialView": true,
         "border": 0,
         "height": null,
         "id": "MainForm",
         "width": null,
-        "bodyPadding": 10,
-        "header": false,
-        "title": null
+        "overflowY": "auto",
+        "bodyPadding": 20,
+        "header": true,
+        "title": "Nouveau Contenu",
+        "titleAlign": "center"
     },
     "id": "ExtBox1-ext-gen2309",
-    "designerId": "7e993cf9-0647-41b1-9a43-5a8a0b09e568"
+    "designerId": "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "write.ui.contents",
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar1"
+            },
+            "designerId": "37143275-eea3-428d-8a1b-08ac13a7b387",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "button",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MySpacer"
+                    },
+                    "designerId": "2c1a08ea-cc79-430b-a82d-a5e33a6763fd"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.contents.draft",
+                        "cStatus": "draft",
+                        "designer|userClassName": "MyButton5",
+                        "id": "mainDraftBtn",
+                        "scale": "large",
+                        "text": "Brouillon"
+                    },
+                    "designerId": "924f5071-4dc5-486f-9178-91e922d1c59c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "cStatus",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 0.1,
+                        "designer|userClassName": "MySpacer2"
+                    },
+                    "designerId": "7ab140b5-8c7d-4d9e-a6f9-8f0a012dda6d"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.contents.pending",
+                        "cStatus": "pending",
+                        "designer|userClassName": "MyButton6",
+                        "id": "mainSubmitBtn",
+                        "scale": "large",
+                        "text": "Soumettre"
+                    },
+                    "designerId": "7df13ab8-ca29-44b1-9f2a-37391a36d4e9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "cStatus",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 0.1,
+                        "designer|userClassName": "MySpacer3"
+                    },
+                    "designerId": "b49df691-bad3-4d80-a3e9-7869837df831"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.contents.published",
+                        "cStatus": "published",
+                        "designer|userClassName": "MyButton7",
+                        "id": "mainPublishBtn",
+                        "scale": "large",
+                        "text": "Publier"
+                    },
+                    "designerId": "090f904c-d738-44a0-bd09-bcfbf900dcaa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "cStatus",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MySpacer1"
+                    },
+                    "designerId": "91da9d27-7fa3-47d1-b7b1-a4c0e2bb2281"
+                }
+            ]
+        }
+    ]
 }

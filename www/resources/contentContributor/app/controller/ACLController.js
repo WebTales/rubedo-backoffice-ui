@@ -78,30 +78,31 @@ Ext.define('ContentContributor.controller.ACLController', {
     },
 
     onLaunch: function() {
-        /*Ext.Ajax.request({
-        url:'../../current-user/get-token',
-        params:{
-        },
-        success:function(response){
-        ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;
-        },
-        failure:function(){
-        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');
-        }
+        Ext.Ajax.request({
+            url:'../../current-user/get-token',
+            params:{
+            },
+            success:function(response){
+                ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');
+            }
         });
         Ext.Ajax.request({
-        url:'../../acl',
-        params:{
-        data: Ext.JSON.encode(ACL.interfaceRights)
-        },
-        success:function(response){
-        ACL.interfaceRights=Ext.JSON.decode(response.responseText);
-        Ext.getCmp('boutonPincipalInterface').enable();
-        },
-        failure:function(){
-        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
-        }
-        });*/
+            url:'../../acl',
+            params:{
+                data: Ext.JSON.encode(ACL.interfaceRights)
+            },
+            success:function(response){
+                ACL.interfaceRights=Ext.JSON.decode(response.responseText);
+                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                ContentContributor.controller.MainController.prototype.mainAction();
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
+            }
+        });
     }
 
 });

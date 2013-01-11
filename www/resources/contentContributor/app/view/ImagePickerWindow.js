@@ -25,7 +25,7 @@ Ext.define('ContentContributor.view.ImagePickerWindow', {
     },
     title: 'Choisissez une image',
     constrainHeader: true,
-    maximizable: true,
+    maximizable: false,
     modal: true,
 
     initComponent: function() {
