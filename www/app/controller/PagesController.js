@@ -484,6 +484,10 @@ Ext.define('Rubedo.controller.PagesController', {
                             nChampS.on('select', function(){abstractcomponent.configBloc[this.name]=this.getValue(); });
 
                         }
+                        if (nChampS.isXType("comboboxselect")){
+                            nChampS.on('afterrender', function(thing){thing.fireEvent("change");});
+
+                        }
                         nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue();});
                         nCateg.add(nChampS);
                     }
