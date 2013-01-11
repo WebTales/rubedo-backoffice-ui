@@ -34,6 +34,34 @@ Ext.define('ContentContributor.controller.MainController', {
         button.valeursM++;
     },
 
+    saveContent: function(button, e, options) {
+        if (Ext.getCmp("MainForm").getForm().isValid()){
+            if (Ext.getCmp("MainForm").isUpdatingContent){
+
+            } else {
+                var myFields = Ext.getCmp("MainForm").getForm().getValues();
+                var newContent = Ext.create('ContentContributor.model.contentDataModel', {
+                    text:myFields.text,
+                    fields:myFields,
+                    taxonomy: { },
+                    online:true,
+                    status:button.cStatus,
+                    typeId:AppGlobals.typeId
+
+                });
+                Ext.getCmp("MainForm").setLoading(true);
+                Ext.getStore("Contents").addListener("write", function(){
+                    Ext.getCmp("MainForm").setLoading(false);
+                    Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré');
+                },this, {single:true});
+                    Ext.getStore("Contents").add(newContent);
+
+                }
+            } else {
+                Ext.Msg.alert('Erreur', 'Certains champs ne sont pas valides');
+            }
+    },
+
     initializeContentForm: function(contentType) {
         Ext.getCmp("MainForm").setTitle("Nouveau contenu "+contentType.type);
         this.renderMainFields(contentType.fields);
@@ -41,7 +69,6 @@ Ext.define('ContentContributor.controller.MainController', {
 
     renderMainFields: function(fields) {
         var target = Ext.getCmp("MainForm");
-        target.removeAll();
         Ext.Array.forEach(fields, function(field,index){
             var configurator=Ext.clone(field.config);
             configurator.labelSeparator=" ";
@@ -116,10 +143,14 @@ Ext.define('ContentContributor.controller.MainController', {
 
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
+        Ext.define('AppGlobals', {singleton: true});
 
         this.control({
             "[itemId= 'boutonReplicateurChamps']": {
                 click: this.fieldReplicate
+            },
+            "#mainDraftBtn, #mainSubmitBtn, #mainPublishBtn": {
+                click: this.saveContent
             }
         });
     },
@@ -141,6 +172,8 @@ Ext.define('ContentContributor.controller.MainController', {
                     },
                     success: function(response){
                         var result = Ext.JSON.decode(response.responseText).data;
+                        AppGlobals.typeId=options.typeId;
+                        Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
                         me.initializeContentForm(result);
                     }
                 });

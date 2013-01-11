@@ -47,7 +47,6 @@
                 ],
                 "implHandler": [
                     "var target = Ext.getCmp(\"MainForm\");",
-                    "target.removeAll();",
                     "Ext.Array.forEach(fields, function(field,index){",
                     "    var configurator=Ext.clone(field.config);",
                     "    configurator.labelSeparator=\" \";",
@@ -61,7 +60,7 @@
                     "        wrapping.getComponent('helpBouton').hidden=true;",
                     "    } ",
                     "    if (newField.multivalued) {",
-                    "    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));",
+                    "        enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));",
                     "",
                     "    }",
                     "    target.add(wrapping);",
@@ -136,7 +135,8 @@
                     "application"
                 ],
                 "implHandler": [
-                    "Ext.require(\"Rubedo.view.CKEField\");"
+                    "Ext.require(\"Rubedo.view.CKEField\");",
+                    "Ext.define('AppGlobals', {singleton: true});"
                 ]
             },
             "designerId": "c843c4bc-1c2b-4f28-be4e-8a92031da0a1"
@@ -201,6 +201,8 @@
                     "            },",
                     "            success: function(response){",
                     "                var result = Ext.JSON.decode(response.responseText).data;",
+                    "                AppGlobals.typeId=options.typeId;",
+                    "                Ext.getCmp(\"MainViewport\").add(Ext.widget(\"MainForm\"));",
                     "                me.initializeContentForm(result);",
                     "            }",
                     "        });",
@@ -209,6 +211,50 @@
                 ]
             },
             "designerId": "fa0a12fd-4dbb-420d-b7fd-449bbd76522c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveContent",
+                "fn": "saveContent",
+                "implHandler": [
+                    "if (Ext.getCmp(\"MainForm\").getForm().isValid()){",
+                    "    if (Ext.getCmp(\"MainForm\").isUpdatingContent){",
+                    "    ",
+                    "    } else {",
+                    "        var myFields = Ext.getCmp(\"MainForm\").getForm().getValues();",
+                    "        var newContent = Ext.create('ContentContributor.model.contentDataModel', {",
+                    "            text:myFields.text,",
+                    "            fields:myFields,",
+                    "            taxonomy: { },",
+                    "            online:true,",
+                    "            status:button.cStatus,",
+                    "            typeId:AppGlobals.typeId",
+                    "        ",
+                    "        });",
+                    "        Ext.getCmp(\"MainForm\").setLoading(true);",
+                    "        Ext.getStore(\"Contents\").addListener(\"write\", function(){",
+                    "            Ext.getCmp(\"MainForm\").setLoading(false);",
+                    "            Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré');",
+                    "        },this, {single:true});",
+                    "        Ext.getStore(\"Contents\").add(newContent);",
+                    "        ",
+                    "    }",
+                    "} else {",
+                    "    Ext.Msg.alert('Erreur', 'Certains champs ne sont pas valides');",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mainDraftBtn, #mainSubmitBtn, #mainPublishBtn"
+            },
+            "designerId": "289b0552-ea1b-433c-b490-5505ee4dcecc"
         }
     ]
 }

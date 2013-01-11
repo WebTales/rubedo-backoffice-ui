@@ -95,8 +95,7 @@ Ext.define('ContentContributor.controller.ACLController', {
                 data: Ext.JSON.encode(ACL.interfaceRights)
             },
             success:function(response){
-                ACL.interfaceRights=Ext.JSON.decode(response.responseText);
-                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                ACL.interfaceRights=Ext.JSON.decode(response.responseText);        
                 ContentContributor.controller.MainController.prototype.mainAction();
             },
             failure:function(){

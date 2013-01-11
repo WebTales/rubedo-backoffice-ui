@@ -157,6 +157,28 @@
                 "app/view/Viewport.js"
             ],
             "className": "MainViewport"
+        },
+        "878fb62d-cad8-432c-8ada-7c747d0df220": {
+            "paths": [
+                "metadata/store/Contents",
+                "app/store/override/Contents.js",
+                "app/store/Contents.js"
+            ],
+            "className": "Contents"
+        },
+        "92a46cff-c0b3-47bd-a001-91780b452b14": {
+            "paths": [
+                "metadata/model/contentDataModel",
+                "app/model/override/contentDataModel.js",
+                "app/model/contentDataModel.js"
+            ],
+            "className": "contentDataModel"
+        },
+        "7a6a8f52-4d97-4ad0-9566-34025f91cc07": {
+            "paths": [
+                "metadata/resource/js6"
+            ],
+            "className": "js6"
         }
     },
     "viewOrderMap": {
@@ -169,7 +191,8 @@
             "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d"
         ],
         "store": [
-            "fdb6ac10-082f-4726-bbbb-44a0ba4a1936"
+            "fdb6ac10-082f-4726-bbbb-44a0ba4a1936",
+            "878fb62d-cad8-432c-8ada-7c747d0df220"
         ],
         "controller": [
             "7b179740-bc32-424a-9f22-d87b248d4bef",
@@ -177,7 +200,8 @@
             "5affe889-8d2a-4e2c-b305-55cc48a45c07"
         ],
         "model": [
-            "16a71200-d464-4495-844e-815ee3b481fb"
+            "16a71200-d464-4495-844e-815ee3b481fb",
+            "92a46cff-c0b3-47bd-a001-91780b452b14"
         ],
         "resource": [
             "7374cafb-8817-43a0-8fa4-7a363ba65a53",
@@ -188,7 +212,8 @@
             "694f45ed-6833-48ad-9d87-1a2db9cc12ab",
             "a34ed683-63a6-493e-9ff9-ad3ac906f351",
             "edb99e4e-a342-4da2-ab99-fc87a0c1731b",
-            "92224966-634d-4ac8-b6ee-835828df8304"
+            "92224966-634d-4ac8-b6ee-835828df8304",
+            "7a6a8f52-4d97-4ad0-9566-34025f91cc07"
         ],
         "app": [
             "application"

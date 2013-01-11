@@ -981,7 +981,7 @@
                     "Ext.getStore(\"VersioningStore\").removeAll();\r",
                     "Ext.getStore(\"VersioningStore\").clearFilter(true);\r",
                     "\r",
-                    "    Ext.getStore(\"VersioningStore\").filter(\"contentId\",content.get(\"id\"));\r",
+                    "Ext.getStore(\"VersioningStore\").filter(\"contentId\",content.get(\"id\"));\r",
                     "\r",
                     "var formulaireTC = Ext.getCmp('boiteAChampsContenus');\r",
                     "var champsD =contentType.get(\"champs\");\r",

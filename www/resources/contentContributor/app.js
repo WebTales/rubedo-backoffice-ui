@@ -27,7 +27,8 @@ Ext.application({
         'imageDataModel'
     ],
     stores: [
-        'ImagePickerStore'
+        'ImagePickerStore',
+        'Contents'
     ],
     views: [
         'MyPanel',

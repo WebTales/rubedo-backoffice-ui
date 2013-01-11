@@ -190,6 +190,133 @@
                     "designerId": "91da9d27-7fa3-47d1-b7b1-a4c0e2bb2281"
                 }
             ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "ChampTC",
+                "designer|userAlias": "ChampTC",
+                "padding": 10,
+                "layout": "anchor"
+            },
+            "designerId": "4a7cdb2c-01e1-469c-bd26-34d7d9d31835",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "90%",
+                        "designer|userClassName": "MyTextField1",
+                        "style": [
+                            "{float:left}"
+                        ],
+                        "name": "text",
+                        "fieldLabel": "Titre ",
+                        "labelSeparator": " *",
+                        "allowBlank": false
+                    },
+                    "designerId": "fcc42d21-45b5-4cd2-9fe6-aaac70ce9077"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton17",
+                        "itemId": "helpBouton",
+                        "margin": null,
+                        "style": [
+                            "{float:right;}"
+                        ],
+                        "allowDepress": null,
+                        "enableToggle": null,
+                        "handleMouseEvents": false,
+                        "iconCls": "help",
+                        "pressed": null,
+                        "pressedCls": "x-btn",
+                        "text": "",
+                        "tooltip": [
+                            "'Titre du contenu. Obligatoire.'"
+                        ]
+                    },
+                    "designerId": "e54d993d-1075-4fd5-9968-1975ccb55bdd"
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "ChampTC",
+                "designer|userAlias": "ChampTC",
+                "padding": 10,
+                "layout": "anchor"
+            },
+            "designerId": "b4114e94-d33c-409b-a71d-39fab9e0e570",
+            "cn": [
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "90%",
+                        "designer|userClassName": "MyTextArea7",
+                        "style": [
+                            "{float:left}"
+                        ],
+                        "name": "summary",
+                        "fieldLabel": "Résumé",
+                        "labelSeparator": " "
+                    },
+                    "designerId": "dc13d5b3-c805-4e0b-8f99-e92aefc24f9f"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton17",
+                        "itemId": "helpBouton",
+                        "margin": null,
+                        "style": [
+                            "{float:right;}"
+                        ],
+                        "allowDepress": null,
+                        "enableToggle": null,
+                        "handleMouseEvents": false,
+                        "iconCls": "help",
+                        "pressed": null,
+                        "pressedCls": "x-btn",
+                        "text": "",
+                        "tooltip": [
+                            "'Résumé facultatif du contenu.'"
+                        ]
+                    },
+                    "designerId": "689df833-f80a-4647-a105-291d0f154b8a"
+                }
+            ]
         }
     ]
 }
