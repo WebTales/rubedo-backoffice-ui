@@ -1,0 +1,63 @@
+{
+    "type": "hiddenfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImagePickerField",
+        "designer|userAlias": "ImagePickerField",
+        "height": 0,
+        "id": null,
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen23487",
+    "designerId": "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"ImageFieldComponent\");",
+                    "myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+\" \");",
+                    "myComponent.on(\"afterrender\",function(){",
+                    "    if (Ext.isEmpty(abstractcomponent.getValue())){",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/blue/128x128/image_remove.png\");",
+                    "    } else {",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../file/get/file-id/\"+abstractcomponent.getValue());",
+                    "    }",
+                    "    myComponent.getEl().on(\"click\",function(){",
+                    "",
+                    "        abstractcomponent.getEl().dom.click();",
+                    "    });",
+                    "});",
+                    "abstractcomponent.up().add(myComponent);",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldChangeImage\").on(\"click\",function(){",
+                    "    Ext.widget(\"ImagePickerWindow\",{targetField:abstractcomponent.id}).show();",
+                    "});",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearImage\").on(\"click\",function(){",
+                    "    abstractcomponent.setValue();",
+                    "});",
+                    "abstractcomponent.on(\"change\",function(theField,newValue){",
+                    "    if ((newValue===\"\")||(Ext.isEmpty(newValue))){",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/blue/128x128/image_remove.png\");",
+                    "    } else {",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../file/get/file-id/\"+newValue);",
+                    "    }",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "bf6386f0-f154-4cc9-b4a0-272e629f3ff6"
+        }
+    ]
+}

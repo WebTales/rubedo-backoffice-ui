@@ -1,0 +1,148 @@
+{
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "90%",
+        "container|align": "stretch",
+        "designer|userClassName": "ImageFieldComponent",
+        "designer|userAlias": "ImageFieldComponent",
+        "height": 120,
+        "itemId": "imageFieldComponent",
+        "width": 338,
+        "layout": "hbox"
+    },
+    "id": "ExtBox1-ext-gen21448",
+    "designerId": "333eb061-a86e-4ff9-993f-6d65e9398883",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyLabel",
+                "width": 105,
+                "text": "My Label :"
+            },
+            "designerId": "e6cde08f-3005-495e-adea-d5933624c86b"
+        },
+        {
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyImg14",
+                "height": 120,
+                "itemId": "fieldImagePreview",
+                "minWidth": null,
+                "style": null,
+                "width": null,
+                "src": null
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "3866ae47-e900-4c65-a7a4-c677424be19f",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFieldImagePreviewRender",
+                        "fn": "onFieldImagePreviewRender",
+                        "implHandler": [
+                            "abstractcomponent.getEl().on(\"load\", function(){abstractcomponent.up().doLayout();});"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "9358546b-6e59-4e21-9872-af0f9332042b"
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyContainer25",
+                "itemId": "buttonHolder",
+                "margin": "0 0 0 10",
+                "width": 60,
+                "layout": "absolute"
+            },
+            "designerId": "d3f9deeb-3cc3-4476-b0da-1d814634b208",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 10,
+                        "layout|y": 5,
+                        "designer|userClassName": "MyButton170",
+                        "itemId": "fieldChangeImage",
+                        "iconCls": "pencil_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Choisir l'image"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "74b940c2-9387-4923-9ed4-7532dcab3227"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 10,
+                        "layout|y": 65,
+                        "designer|userClassName": "MyButton171",
+                        "itemId": "fieldClearImage",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Supprimer l'image"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "349cd485-19e2-4d96-881b-ac0025d0f7a4"
+                }
+            ]
+        }
+    ]
+}

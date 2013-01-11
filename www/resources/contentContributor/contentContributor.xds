@@ -1,0 +1,188 @@
+{
+    "name": "contentContributor",
+    "settings": {
+        "urlPrefix": "http://rubedo.alexandru.local/backoffice/resources/contentContributor/",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 676,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "7374cafb-8817-43a0-8fa4-7a363ba65a53": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "7e993cf9-0647-41b1-9a43-5a8a0b09e568": {
+            "paths": [
+                "metadata/view/MainForm",
+                "app/view/override/MainForm.js",
+                "app/view/MainForm.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainForm"
+        },
+        "a4b299f1-ded0-4958-9bc9-9bad82056c30": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "7b179740-bc32-424a-9f22-d87b248d4bef": {
+            "paths": [
+                "metadata/controller/MainController",
+                "app/controller/override/MainController.js",
+                "app/controller/MainController.js"
+            ],
+            "className": "MainController"
+        },
+        "6cfeb0f4-f1fe-474f-bb55-fa4d1dd695ac": {
+            "paths": [
+                "metadata/controller/ACLController",
+                "app/controller/override/ACLController.js",
+                "app/controller/ACLController.js"
+            ],
+            "className": "ACLController"
+        },
+        "33902aa5-6d2c-42d9-9095-f7ffe3229abf": {
+            "paths": [
+                "metadata/view/fieldWrapper",
+                "app/view/override/fieldWrapper.js",
+                "app/view/fieldWrapper.js"
+            ],
+            "className": "fieldWrapper"
+        },
+        "394874e7-fff5-4a88-a765-c051168a7398": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "333eb061-a86e-4ff9-993f-6d65e9398883": {
+            "paths": [
+                "metadata/view/ImageFieldComponent",
+                "app/view/override/ImageFieldComponent.js",
+                "app/view/ImageFieldComponent.js"
+            ],
+            "className": "ImageFieldComponent"
+        },
+        "66bc9f63-6118-4f2d-bd87-201929e19fc2": {
+            "paths": [
+                "metadata/view/ImagePickerWindow",
+                "app/view/override/ImagePickerWindow.js",
+                "app/view/ImagePickerWindow.js"
+            ],
+            "className": "ImagePickerWindow"
+        },
+        "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d": {
+            "paths": [
+                "metadata/view/ImagePickerField",
+                "app/view/override/ImagePickerField.js",
+                "app/view/ImagePickerField.js"
+            ],
+            "className": "ImagePickerField"
+        },
+        "fdb6ac10-082f-4726-bbbb-44a0ba4a1936": {
+            "paths": [
+                "metadata/store/ImagePickerStore",
+                "app/store/override/ImagePickerStore.js",
+                "app/store/ImagePickerStore.js"
+            ],
+            "className": "ImagePickerStore"
+        },
+        "16a71200-d464-4495-844e-815ee3b481fb": {
+            "paths": [
+                "metadata/model/imageDataModel",
+                "app/model/override/imageDataModel.js",
+                "app/model/imageDataModel.js"
+            ],
+            "className": "imageDataModel"
+        },
+        "ea3d2462-0153-4cf4-bcbe-de1b901ae830": {
+            "paths": [
+                "metadata/resource/js1"
+            ],
+            "className": "js1"
+        },
+        "4461edd5-141b-4fe7-8e43-0d1ebe8e286a": {
+            "paths": [
+                "metadata/resource/js2"
+            ],
+            "className": "js2"
+        },
+        "694f45ed-6833-48ad-9d87-1a2db9cc12ab": {
+            "paths": [
+                "metadata/resource/js3"
+            ],
+            "className": "js3"
+        },
+        "a34ed683-63a6-493e-9ff9-ad3ac906f351": {
+            "paths": [
+                "metadata/resource/js4"
+            ],
+            "className": "js4"
+        },
+        "edb99e4e-a342-4da2-ab99-fc87a0c1731b": {
+            "paths": [
+                "metadata/resource/js5"
+            ],
+            "className": "js5"
+        },
+        "5affe889-8d2a-4e2c-b305-55cc48a45c07": {
+            "paths": [
+                "metadata/controller/MainStoresController",
+                "app/controller/override/MainStoresController.js",
+                "app/controller/MainStoresController.js"
+            ],
+            "className": "MainStoresController"
+        },
+        "92224966-634d-4ac8-b6ee-835828df8304": {
+            "paths": [
+                "metadata/resource/css1"
+            ],
+            "className": "css1"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
+            "33902aa5-6d2c-42d9-9095-f7ffe3229abf",
+            "333eb061-a86e-4ff9-993f-6d65e9398883",
+            "66bc9f63-6118-4f2d-bd87-201929e19fc2",
+            "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d"
+        ],
+        "store": [
+            "fdb6ac10-082f-4726-bbbb-44a0ba4a1936"
+        ],
+        "controller": [
+            "7b179740-bc32-424a-9f22-d87b248d4bef",
+            "6cfeb0f4-f1fe-474f-bb55-fa4d1dd695ac",
+            "5affe889-8d2a-4e2c-b305-55cc48a45c07"
+        ],
+        "model": [
+            "16a71200-d464-4495-844e-815ee3b481fb"
+        ],
+        "resource": [
+            "7374cafb-8817-43a0-8fa4-7a363ba65a53",
+            "a4b299f1-ded0-4958-9bc9-9bad82056c30",
+            "394874e7-fff5-4a88-a765-c051168a7398",
+            "ea3d2462-0153-4cf4-bcbe-de1b901ae830",
+            "4461edd5-141b-4fe7-8e43-0d1ebe8e286a",
+            "694f45ed-6833-48ad-9d87-1a2db9cc12ab",
+            "a34ed683-63a6-493e-9ff9-ad3ac906f351",
+            "edb99e4e-a342-4da2-ab99-fc87a0c1731b",
+            "92224966-634d-4ac8-b6ee-835828df8304"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

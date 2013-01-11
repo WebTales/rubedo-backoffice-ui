@@ -1,0 +1,50 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "imageDataModel"
+        ],
+        "stores": [
+            "ImagePickerStore"
+        ],
+        "views": [
+            "MyPanel",
+            "fieldWrapper",
+            "ImageFieldComponent",
+            "ImagePickerWindow",
+            "ImagePickerField"
+        ],
+        "autoCreateViewport": true,
+        "name": "ContentContributor",
+        "controllers": [
+            "MainController",
+            "ACLController",
+            "MainStoresController"
+        ]
+    },
+    "id": "ExtBox1-ext-gen1587",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Loader56",
+                "enabled": true,
+                "paths": [
+                    "{\"Ext\":\".\", \"Ext.ux\":\"../ux\", \"Rubedo\":\"../../app\"}"
+                ]
+            },
+            "designerId": "f9d0677b-f403-41ef-a206-41dcaa1fb701"
+        }
+    ]
+}
