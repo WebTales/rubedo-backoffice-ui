@@ -13,10 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.Viewport', {
-    extend: 'MyApp.view.MyViewport',
+Ext.define('extFinder.view.Viewport', {
+    extend: 'extFinder.view.MainViewport',
     renderTo: Ext.getBody(),
     requires: [
-        'MyApp.view.MyViewport'
+        'extFinder.view.MainViewport',
+        'extFinder.view.MyGridPanel29'
     ]
 });

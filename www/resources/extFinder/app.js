@@ -14,13 +14,27 @@
  */
 
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: {
+        Ext: '.',
+        'Ext.ux': '../ux'
+    }
 });
 
 Ext.application({
+    models: [
+        'imageDataModel'
+    ],
+    stores: [
+        'ImagePickerStore'
+    ],
     views: [
-        'MyViewport'
+        'MyViewport',
+        'MyGridPanel29'
     ],
     autoCreateViewport: true,
-    name: 'MyApp'
+    name: 'extFinder',
+    controllers: [
+        'ACLController'
+    ]
 });

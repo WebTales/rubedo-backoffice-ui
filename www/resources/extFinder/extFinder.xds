@@ -23,23 +23,90 @@
         },
         "e6679921-3efa-43ea-aeba-a4878fdadbce": {
             "paths": [
-                "metadata/view/MyViewport",
-                "app/view/override/MyViewport.js",
-                "app/view/MyViewport.js",
+                "metadata/view/MainViewport",
+                "app/view/override/MainViewport.js",
+                "app/view/MainViewport.js",
                 "app/view/Viewport.js"
             ],
-            "className": "MyViewport"
+            "className": "MainViewport"
+        },
+        "8e2f39e3-45e3-4c01-8905-1178a5b1243c": {
+            "paths": [
+                "metadata/store/ImagePickerStore",
+                "app/store/override/ImagePickerStore.js",
+                "app/store/ImagePickerStore.js"
+            ],
+            "className": "ImagePickerStore"
+        },
+        "5c343691-ff31-4da1-8703-689f77f8c21c": {
+            "paths": [
+                "metadata/model/imageDataModel",
+                "app/model/override/imageDataModel.js",
+                "app/model/imageDataModel.js"
+            ],
+            "className": "imageDataModel"
+        },
+        "72c4e490-bdaa-4cab-b47a-a2bb24f27c40": {
+            "paths": [
+                "metadata/controller/ACLController",
+                "app/controller/override/ACLController.js",
+                "app/controller/ACLController.js"
+            ],
+            "className": "ACLController"
+        },
+        "3904f909-0f90-4633-b361-56c6b7e286a5": {
+            "paths": [
+                "metadata/view/MyGridPanel29",
+                "app/view/override/MyGridPanel29.js",
+                "app/view/MyGridPanel29.js"
+            ],
+            "className": "MyGridPanel29"
+        },
+        "68c9705e-104d-4815-8463-1236c8453eab": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "4b3c5628-4711-46a3-8747-616fefae7df1": {
+            "paths": [
+                "metadata/resource/css1"
+            ],
+            "className": "css1"
+        },
+        "c431e313-f28f-4ea9-8fc8-6772bfe58391": {
+            "paths": [
+                "metadata/resource/css2"
+            ],
+            "className": "css2"
+        },
+        "8ca82961-f861-41d4-8b98-425bef013719": {
+            "paths": [
+                "metadata/resource/css3"
+            ],
+            "className": "css3"
         }
     },
     "viewOrderMap": {
         "view": [
-            "e6679921-3efa-43ea-aeba-a4878fdadbce"
+            "e6679921-3efa-43ea-aeba-a4878fdadbce",
+            "3904f909-0f90-4633-b361-56c6b7e286a5"
         ],
-        "store": [],
-        "controller": [],
-        "model": [],
+        "store": [
+            "8e2f39e3-45e3-4c01-8905-1178a5b1243c"
+        ],
+        "controller": [
+            "72c4e490-bdaa-4cab-b47a-a2bb24f27c40"
+        ],
+        "model": [
+            "5c343691-ff31-4da1-8703-689f77f8c21c"
+        ],
         "resource": [
-            "cf6e37a9-ef7d-407a-b064-b3c3beead833"
+            "cf6e37a9-ef7d-407a-b064-b3c3beead833",
+            "68c9705e-104d-4815-8463-1236c8453eab",
+            "4b3c5628-4711-46a3-8747-616fefae7df1",
+            "c431e313-f28f-4ea9-8fc8-6772bfe58391",
+            "8ca82961-f861-41d4-8b98-425bef013719"
         ],
         "app": [
             "application"

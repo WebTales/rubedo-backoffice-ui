@@ -6,12 +6,40 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "imageDataModel"
+        ],
+        "stores": [
+            "ImagePickerStore"
+        ],
         "views": [
-            "MyViewport"
+            "MyViewport",
+            "MyGridPanel29"
         ],
         "autoCreateViewport": true,
-        "name": "MyApp"
+        "name": "extFinder",
+        "controllers": [
+            "ACLController"
+        ]
     },
     "id": "ExtBox1-ext-gen1619",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Loader8",
+                "enabled": true,
+                "paths": [
+                    "{\"Ext\":\".\", \"Ext.ux\":\"../ux\"}"
+                ]
+            },
+            "designerId": "89e9148c-25f4-4c98-bcec-cd79d8f29691"
+        }
+    ]
 }
