@@ -831,6 +831,7 @@
                                 "fieldLabel": "Nom ",
                                 "labelSeparator": null,
                                 "allowBlank": false,
+                                "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)",
                                 "vtype": "alphanum"
                             },
                             "designerId": "f6278924-efcd-4e74-8398-758aee1678e9"
@@ -847,7 +848,8 @@
                                 "designer|userClassName": "MyTextField47",
                                 "name": "title",
                                 "fieldLabel": "Titre ",
-                                "labelSeparator": null
+                                "labelSeparator": null,
+                                "allowBlank": false
                             },
                             "designerId": "4aac2896-fd55-4956-b889-63edbbda59c3"
                         },

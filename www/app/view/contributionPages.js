@@ -377,13 +377,15 @@ Ext.define('Rubedo.view.contributionPages', {
                                     name: 'text',
                                     fieldLabel: 'Nom ',
                                     allowBlank: false,
+                                    regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
                                     vtype: 'alphanum'
                                 },
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'title',
-                                    fieldLabel: 'Titre '
+                                    fieldLabel: 'Titre ',
+                                    allowBlank: false
                                 },
                                 {
                                     xtype: 'textareafield',

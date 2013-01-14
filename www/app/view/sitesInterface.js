@@ -172,7 +172,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     anchor: '100%',
                                     name: 'text',
                                     fieldLabel: 'Nom ',
-                                    allowBlank: false
+                                    allowBlank: false,
+                                    regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)
                                 },
                                 {
                                     xtype: 'textfield',

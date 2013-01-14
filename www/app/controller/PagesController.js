@@ -538,7 +538,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
             });
         } else {
-            Ext.getCmp("mainPageAttributeForm").up().setActiveTab(1);
+            Ext.getCmp("mainPageAttributeForm").up().setActiveTab(2);
             Ext.Msg.alert("Erreur", "Les propriérés de la page sont invalides.");
         }
     },

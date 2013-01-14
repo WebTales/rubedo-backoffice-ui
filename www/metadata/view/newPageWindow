@@ -9,7 +9,7 @@
         "usedStores": null,
         "designer|userClassName": "newPageWindow",
         "designer|userAlias": "newPageWindow",
-        "height": 126,
+        "height": 153,
         "id": "newPageWindow",
         "width": 400,
         "resizable": false,
@@ -61,9 +61,29 @@
                         "fieldLabel": "Nom  ",
                         "labelWidth": 110,
                         "allowBlank": false,
+                        "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)",
                         "vtype": "alphanum"
                     },
                     "designerId": "d31f0307-4d9d-418b-aafc-f22ffef2078a"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField44",
+                        "name": "title",
+                        "fieldLabel": "Titre ",
+                        "labelWidth": 110,
+                        "allowBlank": false,
+                        "regex": null,
+                        "vtype": "alphanum"
+                    },
+                    "designerId": "8eacd9e1-5cc1-4c2d-811f-d77b4bfe96de"
                 },
                 {
                     "type": "combobox",
