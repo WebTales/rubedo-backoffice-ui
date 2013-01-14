@@ -300,7 +300,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"original\"];\r",
+                    "var usedNames=[\"original\", \"text\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    Ext.Array.include(usedNames,field.name);\r",
                     "});\r",
@@ -394,6 +394,7 @@
                 "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
+                    "var usedNames=[\"original\", \"text\"];\r",
                     "//MTFieldId\r",
                     "//MTFieldConfigsBox\r",
                     "var me=this;\r",
@@ -401,7 +402,7 @@
                     "TCfield.getEl().on('click', function() {\r",
                     "    Ext.getCmp(\"MTfieldUp\").enable();\r",
                     "    Ext.getCmp(\"MTfieldDown\").enable();\r",
-                    "    Ext.getCmp(\"MTfieldDeleter\").enable();\r",
+                    "    Ext.getCmp(\"MTfieldDeleter\").enable();   \r",
                     "    if (Ext.getCmp('MTFieldId').getValue() != TCfield.id) {\r",
                     "        if (Ext.isDefined(Ext.getCmp(Ext.getCmp('MTFieldId').getValue()))){    \r",
                     "            Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getEl().applyStyles('color:#000000');\r",
@@ -517,7 +518,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"original\"];\r",
+                    "var usedNames=[\"original\", \"text\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    if (field.getId()!=Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getId()){\r",
                     "        Ext.Array.include(usedNames,field.name);\r",

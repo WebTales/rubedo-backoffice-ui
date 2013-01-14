@@ -544,7 +544,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + value );"
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
                                 ]
                             },
                             "designerId": "bd96e035-9fad-4068-9d12-3039cf95691f"
@@ -750,6 +750,153 @@
                             },
                             "designerId": "10750f8a-2696-429d-b269-b56e40eca868",
                             "cn": [
+                                {
+                                    "type": "panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyPanel43",
+                                        "frame": true,
+                                        "margin": 20,
+                                        "title": "Champs système"
+                                    },
+                                    "designerId": "73db3630-d4db-4a2e-91a3-68280cec0ace",
+                                    "cn": [
+                                        {
+                                            "type": "container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "ChampTC",
+                                                "designer|userAlias": "ChampTC",
+                                                "designer|displayName": null,
+                                                "padding": 10,
+                                                "layout": "anchor"
+                                            },
+                                            "designerId": "aa06f2ff-84bf-4a7a-8e8f-952627b96b50",
+                                            "cn": [
+                                                {
+                                                    "type": "textfield",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|anchor": "90%",
+                                                        "designer|userClassName": "MyTextField1",
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ],
+                                                        "name": "text",
+                                                        "fieldLabel": "Titre *",
+                                                        "labelSeparator": null,
+                                                        "allowBlank": false
+                                                    },
+                                                    "designerId": "1a4e9e40-1a80-4767-9931-53d09d470dc1"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyButton17",
+                                                        "itemId": "helpBouton",
+                                                        "margin": null,
+                                                        "style": [
+                                                            "{float:right;}"
+                                                        ],
+                                                        "allowDepress": null,
+                                                        "enableToggle": null,
+                                                        "handleMouseEvents": false,
+                                                        "iconCls": "help",
+                                                        "pressed": null,
+                                                        "pressedCls": "x-btn",
+                                                        "text": "",
+                                                        "tooltip": [
+                                                            "'Titre du média. Obligatoire.'"
+                                                        ]
+                                                    },
+                                                    "designerId": "186d58b5-abd3-49b7-8ca3-127616c41418"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "ChampTC",
+                                                "designer|userAlias": "ChampTC",
+                                                "designer|displayName": null,
+                                                "padding": 10,
+                                                "layout": "anchor"
+                                            },
+                                            "designerId": "fc8e5654-bddd-4b97-8664-501c22aba5a1",
+                                            "cn": [
+                                                {
+                                                    "type": "filefield",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|anchor": "90%",
+                                                        "designer|userClassName": "MyFileUpload3",
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ],
+                                                        "name": "original",
+                                                        "fieldLabel": "Original *",
+                                                        "labelSeparator": " ",
+                                                        "allowBlank": false
+                                                    },
+                                                    "designerId": "74ccdca7-2b16-41bc-86c4-3d060bf4bb4d"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyButton17",
+                                                        "itemId": "helpBouton",
+                                                        "margin": null,
+                                                        "style": [
+                                                            "{float:right;}"
+                                                        ],
+                                                        "allowDepress": null,
+                                                        "enableToggle": null,
+                                                        "handleMouseEvents": false,
+                                                        "iconCls": "help",
+                                                        "pressed": null,
+                                                        "pressedCls": "x-btn",
+                                                        "text": "",
+                                                        "tooltip": [
+                                                            "'Fichier principal du média.'"
+                                                        ]
+                                                    },
+                                                    "designerId": "b88ea4e8-52ad-4871-9a48-0aa0dbdba768"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
                                 {
                                     "type": "form",
                                     "reference": {

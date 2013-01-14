@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.newMTWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newMTWindow',
 
-    height: 101,
+    height: 137,
     id: 'newMTWindow',
     width: 334,
     resizable: false,
@@ -45,6 +45,23 @@ Ext.define('Rubedo.view.newMTWindow', {
                             name: 'type',
                             fieldLabel: 'Nom ',
                             allowBlank: false
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            name: 'mainFileType',
+                            fieldLabel: 'Type de fichier principal',
+                            allowBlank: false,
+                            editable: false,
+                            forceSelection: true,
+                            store: [
+                                'Image',
+                                'Office',
+                                'Video',
+                                'Flash',
+                                'Audio',
+                                'PDF'
+                            ]
                         },
                         {
                             xtype: 'button',

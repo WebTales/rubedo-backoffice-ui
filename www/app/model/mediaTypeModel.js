@@ -32,6 +32,9 @@ Ext.define('Rubedo.model.mediaTypeModel', {
         },
         {
             name: 'vocabularies'
+        },
+        {
+            name: 'mainFileType'
         }
     ]
 });

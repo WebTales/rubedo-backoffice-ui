@@ -76,6 +76,19 @@
                 "name": "vocabularies"
             },
             "designerId": "f29d2202-5367-4bb2-bd4c-3b0382cd0429"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field234",
+                "name": "mainFileType"
+            },
+            "designerId": "aa8dfeae-d321-44c4-a6c4-6aaed0591d79"
         }
     ]
 }

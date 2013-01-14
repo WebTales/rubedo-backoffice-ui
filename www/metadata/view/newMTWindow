@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "newMTWindow",
         "designer|userAlias": "newMTWindow",
-        "height": 101,
+        "height": 137,
         "id": "newMTWindow",
         "width": 334,
         "resizable": false,
@@ -53,6 +53,28 @@
                         "allowBlank": false
                     },
                     "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320"
+                },
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyComboBox22",
+                        "name": "mainFileType",
+                        "fieldLabel": "Type de fichier principal",
+                        "allowBlank": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "store": "[\"Image\", \"Office\", \"Video\", \"Flash\", \"Audio\", \"PDF\"]"
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "caa9f4cf-fa7e-4fd1-be29-bd1e9481d131"
                 },
                 {
                     "type": "button",

@@ -272,7 +272,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value );
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
                             },
                             dataIndex: 'type',
                             text: 'Type',
@@ -319,6 +319,69 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     id: 'MTEditContainer',
                                     autoScroll: true,
                                     items: [
+                                        {
+                                            xtype: 'panel',
+                                            frame: true,
+                                            margin: 20,
+                                            title: 'Champs système',
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'text',
+                                                            fieldLabel: 'Titre *',
+                                                            allowBlank: false
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'helpBouton',
+                                                            style: '{float:right;}',
+                                                            handleMouseEvents: false,
+                                                            iconCls: 'help',
+                                                            pressedCls: 'x-btn',
+                                                            text: '',
+                                                            tooltip: 'Titre du média. Obligatoire.'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'filefield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'original',
+                                                            fieldLabel: 'Original *',
+                                                            labelSeparator: ' ',
+                                                            allowBlank: false
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'helpBouton',
+                                                            style: '{float:right;}',
+                                                            handleMouseEvents: false,
+                                                            iconCls: 'help',
+                                                            pressedCls: 'x-btn',
+                                                            text: '',
+                                                            tooltip: 'Fichier principal du média.'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         {
                                             xtype: 'form',
                                             frame: true,

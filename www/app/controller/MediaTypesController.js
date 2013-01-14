@@ -71,6 +71,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     selectionEvents: function(abstractcomponent, options) {
+        var usedNames=["original", "text"];
         //MTFieldId
         //MTFieldConfigsBox
         var me=this;
@@ -78,7 +79,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         TCfield.getEl().on('click', function() {
             Ext.getCmp("MTfieldUp").enable();
             Ext.getCmp("MTfieldDown").enable();
-            Ext.getCmp("MTfieldDeleter").enable();
+            Ext.getCmp("MTfieldDeleter").enable();   
             if (Ext.getCmp('MTFieldId').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('MTFieldId').getValue()))){    
                     Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getEl().applyStyles('color:#000000');
@@ -283,7 +284,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     nameAvailable: function(name) {
-        var usedNames=["original"];
+        var usedNames=["original", "text"];
         Ext.Array.forEach(Ext.getCmp('MTeditFields').query("field"), function(field){
             Ext.Array.include(usedNames,field.name);
         });
@@ -307,7 +308,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     nameValidator: function(name) {
-        var usedNames=["original"];
+        var usedNames=["original", "text"];
         Ext.Array.forEach(Ext.getCmp('MTeditFields').query("field"), function(field){
             if (field.getId()!=Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getId()){
                 Ext.Array.include(usedNames,field.name);
