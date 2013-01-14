@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.Viewport', {
     extend: 'Rubedo.view.ViewportPrimaire',
     renderTo: Ext.getBody(),
     requires: [
+        'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.DAMInterface',
         'Rubedo.view.assistantRequetage',
         'Rubedo.view.AjouterContenu',
@@ -81,7 +82,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.MainToolsContextMenu',
         'Rubedo.view.adminFTDC',
-        'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround'
     ]
