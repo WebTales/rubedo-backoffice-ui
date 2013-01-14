@@ -174,6 +174,36 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             });
     },
 
+    onMTfieldUpClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().up().items.indexOf(field.up());
+            if (pos > 0) {
+                field.up().up().move(pos,pos-1);
+            }
+        }
+    },
+
+    onMTfieldDownClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().up().items.indexOf(field.up());
+            field.up().up().move(pos,pos+1);
+        }
+    },
+
+    onMTfieldDeleterClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            field.up().destroy();
+            Ext.getCmp("MTfieldUp").disable();
+            Ext.getCmp("MTfieldDown").disable();
+            Ext.getCmp('MTFieldId').setValue();
+            Ext.getCmp("MTfieldDeleter").disable();
+            Ext.getCmp("MTFieldConfigsBox").removeAll();
+        }
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
@@ -318,6 +348,15 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#MTeditFields ChampTC": {
                 afterrender: this.selectionEvents
+            },
+            "#MTfieldUp": {
+                click: this.onMTfieldUpClick
+            },
+            "#MTfieldDown": {
+                click: this.onMTfieldDownClick
+            },
+            "#MTfieldDeleter": {
+                click: this.onMTfieldDeleterClick
             }
         });
     }

@@ -531,6 +531,84 @@
                 ]
             },
             "designerId": "83e2eceb-7be1-4cda-854b-08eb3544d587"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMTfieldUpClick",
+                "fn": "onMTfieldUpClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().up().items.indexOf(field.up());\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MTfieldUp"
+            },
+            "designerId": "cc03035e-3bda-4d69-a0b0-3411d1ea9a50"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMTfieldDownClick",
+                "fn": "onMTfieldDownClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().up().items.indexOf(field.up());\r",
+                    "    field.up().up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MTfieldDown"
+            },
+            "designerId": "9027f1c5-ddf1-4a26-845e-143bd0428347"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMTfieldDeleterClick",
+                "fn": "onMTfieldDeleterClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    field.up().destroy();\r",
+                    "    Ext.getCmp(\"MTfieldUp\").disable();\r",
+                    "    Ext.getCmp(\"MTfieldDown\").disable();\r",
+                    "    Ext.getCmp('MTFieldId').setValue();\r",
+                    "    Ext.getCmp(\"MTfieldDeleter\").disable();\r",
+                    "    Ext.getCmp(\"MTFieldConfigsBox\").removeAll();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MTfieldDeleter"
+            },
+            "designerId": "624b2097-493d-4bc5-b0b4-53ebef83458a"
         }
     ]
 }
