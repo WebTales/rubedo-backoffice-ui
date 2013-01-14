@@ -39,7 +39,7 @@
                     "    { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },\r",
                     "    { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },\r",
                     "    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }\r",
-                    "], resize_enabled:false, filebrowserBrowseUrl:\"image\"});\r",
+                    "], resize_enabled:false, filebrowserBrowseUrl:\"resources/extFinder/app.html\", filebrowserUploadUrl:\"resources/extFinder/app.html\"});\r",
                     "//CKFinder.setupCKEditor(abstractcomponent.editor, \"resources/ckfinder/\");\r",
                     "abstractcomponent.editor.on('instanceReady', function(){\r",
                     "    abstractcomponent.up().doLayout();\r",

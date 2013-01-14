@@ -1,0 +1,48 @@
+{
+    "name": "extFinder",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 676,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "cf6e37a9-ef7d-407a-b064-b3c3beead833": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "e6679921-3efa-43ea-aeba-a4878fdadbce": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "e6679921-3efa-43ea-aeba-a4878fdadbce"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "cf6e37a9-ef7d-407a-b064-b3c3beead833"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
