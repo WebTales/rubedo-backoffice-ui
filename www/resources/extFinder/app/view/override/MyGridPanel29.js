@@ -1,6 +1,6 @@
 Ext.define('extFinder.view.override.MyGridPanel29', {
     override: 'extFinder.view.MyGridPanel29',
-    multiSelect: true,
+    multiSelect: false,
     viewConfig: {
             stripeRows: true,
             chunker: Ext.view.TableChunker

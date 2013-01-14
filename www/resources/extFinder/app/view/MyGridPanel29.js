@@ -70,6 +70,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
                 {
                     xtype: 'toolbar',
                     dock: 'top',
+                    ACL: 'write.ui.medias',
                     height: 64,
                     hidden: true,
                     items: [
@@ -101,6 +102,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
                             xtype: 'button',
                             disabled: true,
                             id: 'ImagePickerChooseBtn',
+                            icon: '../icones/blue/24x24/accept.png',
                             scale: 'medium',
                             text: 'Choisir',
                             listeners: {
@@ -109,15 +111,6 @@ Ext.define('extFinder.view.MyGridPanel29', {
                                     scope: me
                                 }
                             }
-                        },
-                        {
-                            xtype: 'button',
-                            handler: function(button, event) {
-                                button.up().up().up().close();
-                            },
-                            iconCls: 'close',
-                            scale: 'medium',
-                            text: 'Annuler'
                         }
                     ],
                     listeners: {
@@ -134,14 +127,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-        var fenetre = Ext.getCmp(record.get("filename")+"NadPreview");
-        if (Ext.isDefined(fenetre)){ fenetre.toFront(); }
-        else {
-            fenetre = Ext.widget('ImagePreviewWindow', {title:record.get("filename"), id:record.get("filename")+"NadPreview"});
-            fenetre.getComponent(0).setSrc("file/get/file-id/"+record.get("id"));
-            Ext.getCmp('desktopCont').add(fenetre);
-            fenetre.show();
-        }
+
     },
 
     onDAMmainImageDeleteBtnClick: function(button, e, options) {
@@ -160,62 +146,62 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onButtonClick: function(button, e, options) {
-        Ext.getCmp(button.up().up().up().targetField).setValue(button.up().up().getSelectionModel().getLastSelected().get("id"));
-        button.up().up().up().close();
+        var fileURL="file/get/file-id/"+button.up().up().getSelectionModel().getLastSelected().get("id");
+        window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
     },
 
     onToolbarAfterRender: function(abstractcomponent, options) {
-        /*var contained = Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440});
+        if (ACL["write.ui.medias"]){var contained = Ext.create("Ext.ux.upload.plugin.Window",{title:"Ajoutez des images",height:300,width:440});
         abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {
-        text: 'Uploader des images',
-        iconCls:"arrow_up",
-        hidden:true,
-        //singleFile: true,
+            text: 'Uploader des images',
+            iconCls:"arrow_up",
+            hidden:true,
+            //singleFile: true,
 
-        plugins: [contained],
+            plugins: [contained],
 
-        uploader: 
-        {
-            url: 'image/put?token='+ACL.CSRFToken,
-            autoStart: false,
-            max_file_size: '2mb',			
-            drop_element: 'dragload',
-            statusQueuedText: 'Pret à télécharger',
-            statusUploadingText: 'Téléchargement ({0}%)',
-            statusFailedText: '<span style="color: red">Erreur</span>',
-            statusDoneText: '<span style="color: green">Fini</span>',
-
-            statusInvalidSizeText: 'Fichier trop volumineux',
-            statusInvalidExtensionText: 'Type de fichier invalide'
-        },
-        listeners: 
-        {
-            filesadded: function(uploader, files)								
+            uploader: 
             {
-                //console.log('filesadded');
-                return true;
-            },
+                url: '../../image/put?token='+ACL.CSRFToken,
+                autoStart: false,
+                max_file_size: '2mb',			
+                drop_element: 'dragload',
+                statusQueuedText: 'Pret à télécharger',
+                statusUploadingText: 'Téléchargement ({0}%)',
+                statusFailedText: '<span style="color: red">Erreur</span>',
+                statusDoneText: '<span style="color: green">Fini</span>',
 
-            beforeupload: function(uploader, file)								
+                statusInvalidSizeText: 'Fichier trop volumineux',
+                statusInvalidExtensionText: 'Type de fichier invalide'
+            },
+            listeners: 
             {
-                //console.log('beforeupload');			
-            },
+                filesadded: function(uploader, files)								
+                {
+                    //console.log('filesadded');
+                    return true;
+                },
 
-            fileuploaded: function(uploader, file)								
-            {
-                //console.log('fileuploaded');
-            },
+                beforeupload: function(uploader, file)								
+                {
+                    //console.log('beforeupload');			
+                },
 
-            uploadcomplete: function(uploader, success, failed)								
-            {
-                abstractcomponent.up().getStore().load();
-                contained.window.close();
-            },
-            scope: this
-        }
+                fileuploaded: function(uploader, file)								
+                {
+                    //console.log('fileuploaded');
+                },
+
+                uploadcomplete: function(uploader, success, failed)								
+                {
+                    abstractcomponent.up().getStore().load();
+                    contained.window.close();
+                },
+                scope: this
+            }
 
 
-    }));*/
+        }));}
     }
 
 });

@@ -125,14 +125,7 @@
                 "designer|userClassName": "onImagesSpecialGridItemDblClick",
                 "fn": "onImagesSpecialGridItemDblClick",
                 "implHandler": [
-                    "var fenetre = Ext.getCmp(record.get(\"filename\")+\"NadPreview\");",
-                    "if (Ext.isDefined(fenetre)){ fenetre.toFront(); }",
-                    "else {",
-                    "    fenetre = Ext.widget('ImagePreviewWindow', {title:record.get(\"filename\"), id:record.get(\"filename\")+\"NadPreview\"});",
-                    "    fenetre.getComponent(0).setSrc(\"file/get/file-id/\"+record.get(\"id\"));",
-                    "    Ext.getCmp('desktopCont').add(fenetre);",
-                    "    fenetre.show();",
-                    "}"
+                    ""
                 ],
                 "name": "itemdblclick",
                 "scope": "me"
@@ -148,11 +141,19 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
+                "ACL": "write.ui.medias",
                 "designer|userClassName": "MyToolbar53",
                 "height": 64,
                 "hidden": true
             },
             "designerId": "c2d520fd-753f-4e90-8946-01bc044e4351",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "button",
@@ -258,6 +259,7 @@
                         "designer|userClassName": "MyButton168",
                         "disabled": true,
                         "id": "ImagePickerChooseBtn",
+                        "icon": "../icones/blue/24x24/accept.png",
                         "iconCls": null,
                         "scale": "medium",
                         "text": "Choisir"
@@ -275,51 +277,13 @@
                                 "designer|userClassName": "onButtonClick",
                                 "fn": "onButtonClick",
                                 "implHandler": [
-                                    "Ext.getCmp(button.up().up().up().targetField).setValue(button.up().up().getSelectionModel().getLastSelected().get(\"id\"));\r",
-                                    "button.up().up().up().close();"
+                                    "var fileURL=\"file/get/file-id/\"+button.up().up().getSelectionModel().getLastSelected().get(\"id\");",
+                                    "window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );"
                                 ],
                                 "name": "click",
                                 "scope": "me"
                             },
                             "designerId": "a40aad4e-b73e-49a7-8ebb-6fd7c1d143d2"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton169",
-                        "iconCls": "close",
-                        "scale": "medium",
-                        "text": "Annuler"
-                    },
-                    "designerId": "c0bdead8-32b7-4b4a-85fe-d238f3ea98fe",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "handler",
-                                "fn": "handler",
-                                "designer|params": [
-                                    "button",
-                                    "event"
-                                ],
-                                "implHandler": [
-                                    "button.up().up().up().close();"
-                                ]
-                            },
-                            "designerId": "19514d96-4a80-49e2-883e-ae3c41404c58"
                         }
                     ]
                 },
@@ -334,7 +298,7 @@
                         "designer|userClassName": "onToolbarAfterRender",
                         "fn": "onToolbarAfterRender",
                         "implHandler": [
-                            "/*var contained = Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"Ajoutez des images\",height:300,width:440});",
+                            "if (ACL[\"write.ui.medias\"]){var contained = Ext.create(\"Ext.ux.upload.plugin.Window\",{title:\"Ajoutez des images\",height:300,width:440});",
                             "abstractcomponent.add(Ext.create('Ext.ux.upload.Button', {",
                             "text: 'Uploader des images',",
                             "iconCls:\"arrow_up\",",
@@ -345,7 +309,7 @@
                             "",
                             "uploader: ",
                             "{",
-                            "    url: 'image/put?token='+ACL.CSRFToken,",
+                            "    url: '../../image/put?token='+ACL.CSRFToken,",
                             "    autoStart: false,",
                             "    max_file_size: '2mb',\t\t\t",
                             "    drop_element: 'dragload',",
@@ -384,7 +348,7 @@
                             "}",
                             "",
                             "",
-                            "}));*/"
+                            "}));}"
                         ],
                         "name": "afterrender",
                         "scope": "me"

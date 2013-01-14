@@ -28,53 +28,70 @@ Ext.define('extFinder.controller.ACLController', {
     },
 
     init: function(application) {
-        Ext.define('ACL', {
-            singleton:true,
-            CSRFToken:"notYetSet",
-            interfaceRights:{
-                "read.ui.taxonomy":false,
-                "write.ui.taxonomy":false,
-                "read.ui.contentTypes":false,
-                "write.ui.contentTypes":false,
-                "read.ui.contents":false,
-                "write.ui.contents":false,
-                "read.ui.contents.draft":false,
-                "read.ui.contents.pending":false,
-                "read.ui.contents.published":false,
-                "write.ui.contents.draft":false,
-                "write.ui.contents.pending":false,
-                "write.ui.contents.published":false,
-                "write.ui.contents.draftToPending":false,
-                "write.ui.contents.pendingToDraft":false,
-                "write.ui.contents.pendingToPublished":false,
-                "write.ui.contents.putOnline":false,
-                "write.ui.contents.putOffline":false,
-                "read.ui.masks":false,
-                "write.ui.masks":false,
-                "read.ui.users":false,
-                "write.ui.users":false,
-                "read.ui.sites":false,
-                "write.ui.sites":false,
-                "read.ui.pages":false,
-                "write.ui.pages":false,
-                "read.ui.medias":false,
-                "write.ui.medias":false,
-                "read.ui.groups":false,
-                "write.ui.groups":false,
-                "read.ui.workflows":false,
-                "write.ui.workflows":false,
-                "exe.ui.elasticSearch":false
-            }
-        });
-        Ext.Ajax.on("beforerequest", function(conn, options){
-            options.params.token=ACL.CSRFToken;
-        });
+        var me=this;
+        var options = decodeURIComponent(window.location.search.slice(1))
+        .split('&')
+        .reduce(function _reduce (a, b) {
+            b = b.split('=');
+            a[b[0]] = b[1];
+            return a;
+        }, {});
+            if (!Ext.isEmpty(options.CKEditorFuncNum)){
+                Ext.define('CKEOptions', {
+                    singleton:true,
+                    CKEditorFuncNum:options.CKEditorFuncNum
+                });
 
-        this.control({
-            "component": {
-                render: this.onComponentRender
             }
-        });
+
+
+            Ext.define('ACL', {
+                singleton:true,
+                CSRFToken:"notYetSet",
+                interfaceRights:{
+                    "read.ui.taxonomy":false,
+                    "write.ui.taxonomy":false,
+                    "read.ui.contentTypes":false,
+                    "write.ui.contentTypes":false,
+                    "read.ui.contents":false,
+                    "write.ui.contents":false,
+                    "read.ui.contents.draft":false,
+                    "read.ui.contents.pending":false,
+                    "read.ui.contents.published":false,
+                    "write.ui.contents.draft":false,
+                    "write.ui.contents.pending":false,
+                    "write.ui.contents.published":false,
+                    "write.ui.contents.draftToPending":false,
+                    "write.ui.contents.pendingToDraft":false,
+                    "write.ui.contents.pendingToPublished":false,
+                    "write.ui.contents.putOnline":false,
+                    "write.ui.contents.putOffline":false,
+                    "read.ui.masks":false,
+                    "write.ui.masks":false,
+                    "read.ui.users":false,
+                    "write.ui.users":false,
+                    "read.ui.sites":false,
+                    "write.ui.sites":false,
+                    "read.ui.pages":false,
+                    "write.ui.pages":false,
+                    "read.ui.medias":false,
+                    "write.ui.medias":false,
+                    "read.ui.groups":false,
+                    "write.ui.groups":false,
+                    "read.ui.workflows":false,
+                    "write.ui.workflows":false,
+                    "exe.ui.elasticSearch":false
+                }
+            });
+            Ext.Ajax.on("beforerequest", function(conn, options){
+                options.params.token=ACL.CSRFToken;
+            });
+
+            this.control({
+                "component": {
+                    render: this.onComponentRender
+                }
+            });
     },
 
     onLaunch: function() {
