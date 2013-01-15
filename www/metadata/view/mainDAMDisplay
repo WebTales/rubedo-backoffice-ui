@@ -7,11 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "managesStore": true,
-        "designer|userClassName": "MyGridPanel31",
+        "designer|userClassName": "mainDAMDisplay",
+        "designer|userAlias": "mainDAMDisplay",
         "requires": [
             "Ext.ux.container.SwitchButtonSegment"
         ],
-        "id": "imagesSpecialGrid",
+        "id": "mainDAMDisplay",
         "title": "",
         "forceFit": true,
         "store": "MainImageStore"

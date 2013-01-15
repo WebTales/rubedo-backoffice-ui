@@ -171,7 +171,7 @@ Ext.application({
         'DAMInterface',
         'MyGridPanel28',
         'MyGridPanel29',
-        'MyGridPanel31'
+        'mainDAMDisplay'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

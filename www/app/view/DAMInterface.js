@@ -63,7 +63,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
                             },
                             dataIndex: 'type',
                             text: 'Type',
@@ -87,10 +87,151 @@ Ext.define('Rubedo.view.DAMInterface', {
                         type: 'fit'
                     }
                 }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'bottom',
+                    height: 50,
+                    itemId: 'barreMeta',
+                    items: [
+                        {
+                            xtype: 'image',
+                            height: 45,
+                            width: 48,
+                            listeners: {
+                                render: {
+                                    fn: me.onImageRender11,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'container',
+                            itemId: 'boiteBarreMeta',
+                            tpl: [
+                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 30,
+                    itemId: 'breadcrumb'
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 86,
+                    itemId: 'contextBar',
+                    items: [
+                        {
+                            xtype: 'button',
+                            iconAlign: 'top',
+                            iconCls: 'add_big',
+                            scale: 'large',
+                            text: 'Ajouter'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            iconAlign: 'top',
+                            iconCls: 'remove_big',
+                            scale: 'large',
+                            text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Presse-papiers',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'copyMTBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    hidden: true,
+                                    id: 'addToSCMTBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'shopping_cart_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter au panier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
+                                    iconAlign: 'top',
+                                    iconCls: 'favorite_add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter aux favoris'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Fichier',
+                            columns: 4,
+                            layout: {
+                                columns: 2,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'MTexportBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_down_big',
+                                    scale: 'large',
+                                    text: 'Exporter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'MTImportBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'application_up_big',
+                                    scale: 'large',
+                                    text: 'Importer'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'boutonAide',
+                            iconCls: 'info_big',
+                            scale: 'large',
+                            text: ''
+                        }
+                    ]
+                }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onImageRender11: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
     }
 
 });

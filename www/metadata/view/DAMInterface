@@ -118,7 +118,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
                                 ]
                             },
                             "designerId": "1b27ec99-0e13-4bf4-9420-39c1f9091f76"
@@ -166,6 +166,365 @@
                 "layout": "fit"
             },
             "designerId": "2d75551f-3366-42d8-a959-da1463401fc2"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar27",
+                "height": 50,
+                "itemId": "barreMeta",
+                "width": null
+            },
+            "designerId": "2ec98bdc-7ba5-485e-9571-0594da1e0c3a",
+            "cn": [
+                {
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyImg2",
+                        "height": 45,
+                        "width": 48,
+                        "src": null
+                    },
+                    "designerId": "35bf1649-d74b-4d34-a212-8bfd964817e8",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onImageRender11",
+                                "fn": "onImageRender11",
+                                "implHandler": [
+                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "a9106a85-e30f-42e3-b9de-da04b9ac836a"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyContainer9",
+                        "itemId": "boiteBarreMeta"
+                    },
+                    "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "tpl",
+                                "implHandler": [
+                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "7ddb5483-1fad-495a-8f31-da354136f491"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "designer|userClassName": "MyToolbar26",
+                "height": 30,
+                "itemId": "breadcrumb"
+            },
+            "designerId": "acce50ea-4790-4c3f-a1d2-c3e8d32c0a12"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "designer|userClassName": "menuContenusTools",
+                "designer|userAlias": "menuContenusTools",
+                "height": 86,
+                "itemId": "contextBar",
+                "width": null
+            },
+            "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": null,
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton11",
+                        "id": null,
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "2e90a36a-9dbe-450e-8b87-be1cc70d51d2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": null,
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton13",
+                        "disabled": true,
+                        "id": null,
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "Supprimer"
+                    },
+                    "designerId": "41e0846c-c38a-445a-a6aa-9633ef082ca9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Presse-papiers",
+                        "columns": 4
+                    },
+                    "designerId": "d542e06d-f92d-4938-a24b-0a4bbf60c3b9",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": null,
+                                "designer|userClassName": "MyButton17",
+                                "id": "copyMTBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "c2c97af7-20aa-4a62-9d8b-1fddfc5dcd92",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton15",
+                                "hidden": true,
+                                "id": "addToSCMTBtn",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "shopping_cart_add_big",
+                                "scale": "large",
+                                "text": "Ajouter au panier"
+                            },
+                            "designerId": "02d2ab8a-4ddc-44e1-ad4e-f5fe11f7ce6d"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton14",
+                                "itemId": "boutonCreerRaccourci",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "favorite_add_big",
+                                "scale": "large",
+                                "text": "Ajouter aux favoris"
+                            },
+                            "designerId": "0a3c0105-408d-422d-b29f-174885e1acdc"
+                        }
+                    ]
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Fichier",
+                        "columns": 4
+                    },
+                    "designerId": "916f1b11-bfcd-4c11-ad24-8c1393c8d71c",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton62",
+                                "id": "MTexportBtn",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_down_big",
+                                "scale": "large",
+                                "text": "Exporter"
+                            },
+                            "designerId": "c2cc59b1-6702-40e5-8538-9af3426bbfa1"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": null,
+                                "designer|userClassName": "MyButton63",
+                                "id": "MTImportBtn",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "application_up_big",
+                                "scale": "large",
+                                "text": "Importer"
+                            },
+                            "designerId": "1d892a59-5971-4060-ab7d-72f5ab543ffe",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill10"
+                    },
+                    "designerId": "1a661f33-69b8-437e-8bae-79ea26ea5094"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton94",
+                        "itemId": "boutonAide",
+                        "icon": null,
+                        "iconCls": "info_big",
+                        "scale": "large",
+                        "text": ""
+                    },
+                    "designerId": "96d44f53-3480-419a-80f3-50adc4c804b5"
+                }
+            ]
         }
     ]
 }
