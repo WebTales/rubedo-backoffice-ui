@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.newPageWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newPageWindow',
 
-    height: 153,
+    height: 127,
     id: 'newPageWindow',
     width: 400,
     resizable: false,
@@ -41,21 +41,10 @@ Ext.define('Rubedo.view.newPageWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
-                            name: 'text',
-                            fieldLabel: 'Nom  ',
-                            labelWidth: 110,
-                            allowBlank: false,
-                            regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
-                            vtype: 'alphanum'
-                        },
-                        {
-                            xtype: 'textfield',
-                            anchor: '100%',
                             name: 'title',
                             fieldLabel: 'Titre ',
                             labelWidth: 110,
-                            allowBlank: false,
-                            vtype: 'alphanum'
+                            allowBlank: false
                         },
                         {
                             xtype: 'combobox',
