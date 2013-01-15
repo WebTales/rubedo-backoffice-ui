@@ -509,7 +509,7 @@
                     "            if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {\r",
                     "                var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});\r",
                     "                boiteParam.add(optionsLC);\r",
-                    "               \r",
+                    "\r",
                     "            }\r",
                     "        }\r",
                     "    });"
