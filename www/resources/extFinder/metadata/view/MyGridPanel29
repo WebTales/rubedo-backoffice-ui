@@ -125,7 +125,7 @@
                 "designer|userClassName": "onImagesSpecialGridItemDblClick",
                 "fn": "onImagesSpecialGridItemDblClick",
                 "implHandler": [
-                    "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\");"
+                    "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\", Ext.getCmp(\"ImagePickerChooseBtn\"));"
                 ],
                 "name": "itemdblclick",
                 "scope": "me"

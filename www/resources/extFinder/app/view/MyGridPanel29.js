@@ -127,7 +127,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-        Ext.getCmp("ImagePickerChooseBtn").fireEvent("click");
+        Ext.getCmp("ImagePickerChooseBtn").fireEvent("click", Ext.getCmp("ImagePickerChooseBtn"));
     },
 
     onDAMmainImageDeleteBtnClick: function(button, e, options) {
