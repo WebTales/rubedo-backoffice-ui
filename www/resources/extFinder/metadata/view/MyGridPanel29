@@ -125,7 +125,7 @@
                 "designer|userClassName": "onImagesSpecialGridItemDblClick",
                 "fn": "onImagesSpecialGridItemDblClick",
                 "implHandler": [
-                    ""
+                    "Ext.getCmp(\"ImagePickerChooseBtn\").fireEvent(\"click\");"
                 ],
                 "name": "itemdblclick",
                 "scope": "me"
@@ -140,8 +140,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
                 "ACL": "write.ui.medias",
+                "dock": "top",
                 "designer|userClassName": "MyToolbar53",
                 "height": 64,
                 "hidden": true
@@ -277,8 +277,13 @@
                                 "designer|userClassName": "onButtonClick",
                                 "fn": "onButtonClick",
                                 "implHandler": [
+                                    "var myPrefix= \"\";",
+                                    "if(window.opener.location.href.indexOf(\"backoffice\")==-1){",
+                                    "    myPrefix= \"backoffice/\";",
+                                    "}",
                                     "var fileURL=\"file/get/file-id/\"+button.up().up().getSelectionModel().getLastSelected().get(\"id\");",
-                                    "window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );"
+                                    "window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );",
+                                    "window.close();"
                                 ],
                                 "name": "click",
                                 "scope": "me"

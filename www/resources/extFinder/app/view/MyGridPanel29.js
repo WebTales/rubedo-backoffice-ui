@@ -69,8 +69,8 @@ Ext.define('extFinder.view.MyGridPanel29', {
             dockedItems: [
                 {
                     xtype: 'toolbar',
-                    dock: 'top',
                     ACL: 'write.ui.medias',
+                    dock: 'top',
                     height: 64,
                     hidden: true,
                     items: [
@@ -127,7 +127,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onImagesSpecialGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-
+        Ext.getCmp("ImagePickerChooseBtn").fireEvent("click");
     },
 
     onDAMmainImageDeleteBtnClick: function(button, e, options) {
@@ -146,8 +146,13 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onButtonClick: function(button, e, options) {
+        var myPrefix= "";
+        if(window.opener.location.href.indexOf("backoffice")==-1){
+            myPrefix= "backoffice/";
+        }
         var fileURL="file/get/file-id/"+button.up().up().getSelectionModel().getLastSelected().get("id");
         window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
+        window.close();
     },
 
     onToolbarAfterRender: function(abstractcomponent, options) {
