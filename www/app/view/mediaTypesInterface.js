@@ -376,7 +376,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             iconCls: 'help',
                                                             pressedCls: 'x-btn',
                                                             text: '',
-                                                            tooltip: 'Fichier principal du média.'
+                                                            tooltip: 'Fichier principal du média. Obligatoire.'
                                                         }
                                                     ]
                                                 }

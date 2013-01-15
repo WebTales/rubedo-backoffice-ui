@@ -168,7 +168,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                     }
                     if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
                         var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
-                        boiteParam.add(optionsLC); 
+                        boiteParam.add(optionsLC);
 
                     }
                 }
@@ -258,7 +258,12 @@ Ext.define('Rubedo.controller.MediaTypesController', {
 
     renderMTField: function(protoData, renderTarget) {
         var me=this;
-        var newField= Ext.create(protoData.cType, protoData.config);
+        var configurator=protoData.config;
+        if (protoData.cType == 'combobox') {
+            var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
+            configurator.store = myStore;
+        }
+        var newField= Ext.create(protoData.cType, configurator);
         newField.config=protoData.config;
         newField.protoId=protoData.protoId;
         newField.configFields=Ext.getStore("MTFieldsStore").findRecord("id", protoData.protoId).get("configFields");
@@ -298,11 +303,23 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     recordFields: function(target) {
         var result = [ ];
         Ext.Array.forEach(target.query("field"), function(field){
-            result.push({
+            var newField = {
                 cType:field.cType,
                 config:field.config,
                 protoId:field.protoId
-            });
+            };
+            if (field.isXType('combobox')) {
+                var dones = field.getStore().data.items;
+                var donesR = [ ];
+                for (i=0; i<dones.length; i++) {
+                    donesR.push({valeur: dones[i].data.valeur, nom: dones[i].data.nom });
+                }
+                newField.config.store = {
+                    fields: ['valeur', 'nom'],
+                    data: donesR
+                };
+            }
+            result.push(newField);
         });
         return(result);
     },

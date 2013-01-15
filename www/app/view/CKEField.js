@@ -53,7 +53,6 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
             { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
         ], resize_enabled:false, filebrowserBrowseUrl:"resources/extFinder/app.html", filebrowserUploadUrl:"resources/extFinder/app.html"});
-        //CKFinder.setupCKEditor(abstractcomponent.editor, "resources/ckfinder/");
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){
