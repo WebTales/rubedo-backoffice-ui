@@ -19,15 +19,15 @@ Ext.define('Rubedo.view.DAMInterface', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17',
-        'Rubedo.view.MyGridPanel28'
+        'Rubedo.view.MyTool17'
     ],
 
     height: 403,
     id: 'DAMInterface',
     width: 947,
     layout: {
-        type: 'fit'
+        align: 'stretch',
+        type: 'hbox'
     },
     iconCls: 'mediaTypes',
     title: 'Mèdiathéque',
@@ -47,16 +47,45 @@ Ext.define('Rubedo.view.DAMInterface', {
             ],
             items: [
                 {
+                    xtype: 'gridpanel',
+                    managesStore: true,
+                    id: 'DAMMTGrid',
+                    width: 200,
+                    resizable: true,
+                    resizeHandles: 'e',
+                    title: '',
+                    forceFit: true,
+                    store: 'MediaTypesForDAM',
+                    viewConfig: {
+
+                    },
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
+                            },
+                            dataIndex: 'type',
+                            text: 'Type',
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false
+                            }
+                        }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+                            ptype: 'cellediting'
+                        })
+                    ]
+                },
+                {
                     xtype: 'container',
+                    flex: 1,
                     overflowY: 'auto',
                     layout: {
                         type: 'fit'
-                    },
-                    items: [
-                        {
-                            xtype: 'mygridpanel28'
-                        }
-                    ]
+                    }
                 }
             ]
         });

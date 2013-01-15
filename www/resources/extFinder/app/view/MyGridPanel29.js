@@ -146,11 +146,7 @@ Ext.define('extFinder.view.MyGridPanel29', {
     },
 
     onButtonClick: function(button, e, options) {
-        var myPrefix= "";
-        if(window.opener.location.href.indexOf("backoffice")==-1){
-            myPrefix= "backoffice/";
-        }
-        var fileURL=myPrefix+"file/get/file-id/"+button.up().up().getSelectionModel().getLastSelected().get("id");
+        var fileURL="http://"+window.opener.location.host+"/image?file-id="+button.up().up().getSelectionModel().getLastSelected().get("id");
         window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
         window.close();
     },

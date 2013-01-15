@@ -20,6 +20,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.DAMInterface',
         'Rubedo.view.assistantRequetage',
+        'Rubedo.view.MyGridPanel28',
+        'Rubedo.view.MyGridPanel31',
         'Rubedo.view.AjouterContenu',
         'Rubedo.view.NestedContentAddWindow',
         'Rubedo.view.ChampTC',

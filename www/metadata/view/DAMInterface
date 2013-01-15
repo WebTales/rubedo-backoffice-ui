@@ -6,12 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "container|align": "stretch",
         "designer|userClassName": "DAMInterface",
         "designer|userAlias": "DAMInterface",
         "height": 403,
         "id": "DAMInterface",
         "width": 947,
-        "layout": "fit",
+        "layout": "hbox",
         "iconCls": "mediaTypes",
         "title": "Mèdiathéque",
         "constrainHeader": true
@@ -40,6 +41,118 @@
             "masterInstanceId": "ExtBox1-ext-gen2736"
         },
         {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "managesStore": true,
+                "layout|flex": null,
+                "designer|userClassName": "MyGridPanel24",
+                "id": "DAMMTGrid",
+                "width": 200,
+                "resizable": true,
+                "resizeHandles": "e",
+                "title": "",
+                "forceFit": true,
+                "store": "MediaTypesForDAM"
+            },
+            "configAlternates": {
+                "managesStore": "boolean",
+                "resizable": "boolean"
+            },
+            "designerId": "7b498892-7bac-4167-a854-59126a323993",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "managesStore",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView24"
+                    },
+                    "designerId": "13b4a6ce-2dd5-4449-a7b9-8672ff17c9ef"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn52",
+                        "dataIndex": "type",
+                        "text": "Type"
+                    },
+                    "designerId": "a82a9c3d-d29f-4ad0-bbe1-64a261aad4bf",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
+                                ]
+                            },
+                            "designerId": "1b27ec99-0e13-4bf4-9420-39c1f9091f76"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField61",
+                                "allowBlank": false
+                            },
+                            "designerId": "3bf3ea74-3ed5-4472-b9da-fe02c732c913"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcelleditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin3"
+                    },
+                    "designerId": "231b297a-25e0-4ef1-a3b1-5e23e94c0cd9"
+                }
+            ]
+        },
+        {
             "type": "container",
             "reference": {
                 "name": "items",
@@ -47,23 +160,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout|flex": 1,
                 "designer|userClassName": "MyContainer36",
                 "overflowY": "auto",
                 "layout": "fit"
             },
-            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
-            "cn": [
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "designerId": "cc8f8fc2-c199-4197-8ab3-cd56be04e912",
-                    "masterInstanceId": "ExtBox1-ext-gen22453"
-                }
-            ]
+            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2"
         }
     ]
 }

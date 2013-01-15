@@ -102,7 +102,8 @@ Ext.application({
         'SiteThemesStore',
         'PagePickerStore',
         'QueriesStore',
-        'MainImageStore'
+        'MainImageStore',
+        'MediaTypesForDAM'
     ],
     views: [
         'MyContainer',
@@ -169,7 +170,8 @@ Ext.application({
         'queryBuilderField',
         'DAMInterface',
         'MyGridPanel28',
-        'MyGridPanel29'
+        'MyGridPanel29',
+        'MyGridPanel31'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
