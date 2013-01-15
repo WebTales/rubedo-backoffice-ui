@@ -8,6 +8,9 @@
     "userConfig": {
         "designer|userClassName": "AjouterContenu",
         "designer|userAlias": "ajouterContenu",
+        "requires": [
+            "Ext.ux.TreePicker"
+        ],
         "floating": true,
         "height": 500,
         "id": "ajouterContenu",

@@ -44,7 +44,7 @@
                     "    if (Ext.isEmpty(Ext.getCmp(\"sitesHomePicker\").getValue())){\r",
                     "        Ext.getCmp(\"sitesHomePicker\").setValue([]);\r",
                     "    }\r",
-                    "    \r",
+                    "\r",
                     "    var boiteMeta = Ext.getCmp(\"sitesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
                     "    var valeurs= Ext.clone(selections[0].data);\r",
                     "    valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');\r",

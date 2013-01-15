@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
 
     requires: [
         'Rubedo.view.NestedContentsGrid',
-        'Rubedo.view.MyTool17'
+        'Rubedo.view.MyTool17',
+        'Ext.ux.TreePicker'
     ],
 
     floating: true,

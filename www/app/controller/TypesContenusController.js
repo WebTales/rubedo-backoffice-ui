@@ -47,9 +47,53 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var donnees=champsD[g];
                 var configurateur = Ext.clone(donnees.config);
                 if (donnees.cType =='treepicker'){ 
-                    var monStore= Ext.getStore(donnees.store);
-                    configurateur.store = monStore;
-                    monStore.load();
+                    configurateur.store = Ext.create("Ext.data.TreeStore", {
+                        isOptimised: true,
+                        usedCollection: 'Pages',
+                        autoLoad: false,
+                        autoSync: false,
+                        remoteFilter: true,
+                        model: 'Rubedo.model.taxonomyTermModel',
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms/read-child'
+                            },
+                            reader: {
+                                type: 'json',
+                                getResponseData: function(response) {
+                                    var data, error;
+
+                                    try {
+                                        data = Ext.decode(response.responseText);
+                                        if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                        return this.readRecords(data);
+                                    } catch (ex) {
+                                        error = new Ext.data.ResultSet({
+                                            total  : 0,
+                                            count  : 0,
+                                            records: [],
+                                            success: false,
+                                            message: ex.message
+                                        });
+
+                                        this.fireEvent('exception', this, response, error);
+                                        console.log(ex);
+
+                                        Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                        return error;
+                                    }
+                                },
+                                messageProperty: 'message'
+                            }
+                        },
+                        sorters: {
+                            property: 'orderValue'
+                        }
+                    });
+                    configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
+                    configurateur.store.load();
                 }
                 else if (donnees.cType == 'combobox') {
                     var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
@@ -195,9 +239,53 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;
         var configurateur = Ext.clone(donnees.config);
         if (donnees.cType =='Ext.ux.TreePicker'){ 
-            var monStore= Ext.getStore(donnees.store);
-            configurateur.store = monStore;
-            monStore.load();
+            configurateur.store = Ext.create("Ext.data.TreeStore", {
+                isOptimised: true,
+                usedCollection: 'Pages',
+                autoLoad: false,
+                autoSync: false,
+                remoteFilter: true,
+                model: 'Rubedo.model.taxonomyTermModel',
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms/read-child'
+                    },
+                    reader: {
+                        type: 'json',
+                        getResponseData: function(response) {
+                            var data, error;
+
+                            try {
+                                data = Ext.decode(response.responseText);
+                                if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                return this.readRecords(data);
+                            } catch (ex) {
+                                error = new Ext.data.ResultSet({
+                                    total  : 0,
+                                    count  : 0,
+                                    records: [],
+                                    success: false,
+                                    message: ex.message
+                                });
+
+                                this.fireEvent('exception', this, response, error);
+                                console.log(ex);
+
+                                Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                return error;
+                            }
+                        },
+                        messageProperty: 'message'
+                    }
+                },
+                sorters: {
+                    property: 'orderValue'
+                }
+            });
+            configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
+            configurateur.store.load();
         }
         else if (donnees.cType == 'Ext.form.field.ComboBox') {
             var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
@@ -392,9 +480,53 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var donnees=champsD[g];
         var configurateur = Ext.clone(donnees.config);
         if (donnees.cType =='treepicker'){ 
-            var monStore= Ext.getStore(donnees.store);
-            configurateur.store = monStore;
-            monStore.load();
+            configurateur.store = Ext.create("Ext.data.TreeStore", {
+                isOptimised: true,
+                usedCollection: 'Pages',
+                autoLoad: false,
+                autoSync: false,
+                remoteFilter: true,
+                model: 'Rubedo.model.taxonomyTermModel',
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms/read-child'
+                    },
+                    reader: {
+                        type: 'json',
+                        getResponseData: function(response) {
+                            var data, error;
+
+                            try {
+                                data = Ext.decode(response.responseText);
+                                if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                return this.readRecords(data);
+                            } catch (ex) {
+                                error = new Ext.data.ResultSet({
+                                    total  : 0,
+                                    count  : 0,
+                                    records: [],
+                                    success: false,
+                                    message: ex.message
+                                });
+
+                                this.fireEvent('exception', this, response, error);
+                                console.log(ex);
+
+                                Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                return error;
+                            }
+                        },
+                        messageProperty: 'message'
+                    }
+                },
+                sorters: {
+                    property: 'orderValue'
+                }
+            });
+            configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
+            configurateur.store.load();
         }
         else if (donnees.cType == 'combobox') {
             var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));

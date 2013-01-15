@@ -32,20 +32,6 @@
             "designerId": "fbb9c85a-68db-4b71-b649-ffe7385ec56e"
         },
         {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "id": "test123",
-                "layout|anchor": null
-            },
-            "designerId": "b7d2cab6-29da-40e2-a248-ab14231b3cfd",
-            "masterInstanceId": "ExtBox1-ext-gen13418"
-        },
-        {
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -58,6 +44,34 @@
                 "fieldLabel": "Label"
             },
             "designerId": "f67fb604-f507-4fb1-8329-2b7dc5c6515b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTestingGroundAfterRender",
+                "fn": "onTestingGroundAfterRender",
+                "implHandler": [
+                    "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                    "    store:Ext.getStore(\"pageLinkStore\"),\r",
+                    "    displayField:\"text\",\r",
+                    "    managesStore:true,\r",
+                    "    fieldLabel:\"Page d'accueil\",\r",
+                    "    id:\"lol\",\r",
+                    "    anchor: \"100%\",\r",
+                    "    name:\"homePage\"\r",
+                    "});\r",
+                    "\r",
+                    "abstractcomponent.add(homePageSelector);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "07ccf60c-15cb-4de7-8a97-2973945cf14a"
         }
     ]
 }

@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.adminFTDC', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFTDC',
 
+    requires: [
+        'Ext.ux.TreePicker'
+    ],
+
     favoriteIcon: 'page_full.png',
     height: 578,
     id: 'adminFTDC',

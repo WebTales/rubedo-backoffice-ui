@@ -10,6 +10,9 @@
         "container|align": "stretch",
         "designer|userClassName": "adminFTDC",
         "designer|userAlias": "adminFTDC",
+        "requires": [
+            "Ext.ux.TreePicker"
+        ],
         "height": 578,
         "id": "adminFTDC",
         "width": 1330,
