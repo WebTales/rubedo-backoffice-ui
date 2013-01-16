@@ -169,7 +169,6 @@ Ext.application({
         'assisstantRE5',
         'queryBuilderField',
         'DAMInterface',
-        'MyGridPanel28',
         'MyGridPanel29',
         'MyGridPanel31'
     ],
