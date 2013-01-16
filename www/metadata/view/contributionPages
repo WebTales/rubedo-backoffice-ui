@@ -849,43 +849,10 @@
                                 "fieldLabel": "Nom ",
                                 "labelSeparator": null,
                                 "allowBlank": false,
-                                "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)",
-                                "vtype": "alphanum"
+                                "regex": null,
+                                "vtype": null
                             },
                             "designerId": "f6278924-efcd-4e74-8398-758aee1678e9"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField47",
-                                "name": "title",
-                                "fieldLabel": "Titre ",
-                                "labelSeparator": null,
-                                "allowBlank": false
-                            },
-                            "designerId": "4aac2896-fd55-4956-b889-63edbbda59c3"
-                        },
-                        {
-                            "type": "textareafield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea4",
-                                "name": "description",
-                                "fieldLabel": "Description ",
-                                "maxLength": 250
-                            },
-                            "designerId": "7404f378-38dc-4c94-9309-8719a156f0c9"
                         },
                         {
                             "type": "textfield",
@@ -899,41 +866,10 @@
                                 "designer|userClassName": "MyTextField49",
                                 "name": "pageURL",
                                 "fieldLabel": "URL ",
-                                "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)",
+                                "regex": null,
                                 "vtype": null
                             },
                             "designerId": "e23827bb-bedc-46be-9cd4-71433c232443"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onMainPageAttributeFormRender",
-                                "fn": "onMainPageAttributeFormRender",
-                                "implHandler": [
-                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
-                                    "    store:[],\r",
-                                    "    anchor:\"100%\",\r",
-                                    "    name:\"keywords\",\r",
-                                    "    fieldLabel:\"Mots clés\",\r",
-                                    "    multiSelect:true,\r",
-                                    "    forceSelection:false,\r",
-                                    "    createNewOnEnter:true,\r",
-                                    "    hideTrigger:true,\r",
-                                    "    triggerOnClick:false,\r",
-                                    "    createNewOnBlur:true,\r",
-                                    "    pinList:false\r",
-                                    "});\r",
-                                    "abstractcomponent.add(tagPicker);"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
                         },
                         {
                             "type": "checkboxfield",
@@ -951,6 +887,85 @@
                                 "inputValue": "true"
                             },
                             "designerId": "9780587d-3fe2-44a4-ab33-b8ae5ce82e1d"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet16",
+                                "title": "Referencement"
+                            },
+                            "designerId": "c7ec2131-9c4a-4f2a-8b7d-5a5834bf829e",
+                            "cn": [
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField47",
+                                        "name": "title",
+                                        "fieldLabel": "Titre ",
+                                        "labelSeparator": null,
+                                        "allowBlank": false
+                                    },
+                                    "designerId": "4aac2896-fd55-4956-b889-63edbbda59c3"
+                                },
+                                {
+                                    "type": "textareafield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextArea4",
+                                        "name": "description",
+                                        "fieldLabel": "Description ",
+                                        "maxLength": 250
+                                    },
+                                    "designerId": "7404f378-38dc-4c94-9309-8719a156f0c9"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onMainPageAttributeFormRender",
+                                        "fn": "onMainPageAttributeFormRender",
+                                        "implHandler": [
+                                            "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                            "    store:[],\r",
+                                            "    anchor:\"100%\",\r",
+                                            "    name:\"keywords\",\r",
+                                            "    fieldLabel:\"Mots clés\",\r",
+                                            "    multiSelect:true,\r",
+                                            "    forceSelection:false,\r",
+                                            "    createNewOnEnter:true,\r",
+                                            "    hideTrigger:true,\r",
+                                            "    triggerOnClick:false,\r",
+                                            "    createNewOnBlur:true,\r",
+                                            "    pinList:false\r",
+                                            "});\r",
+                                            "abstractcomponent.add(tagPicker);"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
+                                }
+                            ]
                         }
                     ]
                 }

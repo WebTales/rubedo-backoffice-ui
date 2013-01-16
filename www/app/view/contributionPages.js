@@ -377,30 +377,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                     anchor: '100%',
                                     name: 'text',
                                     fieldLabel: 'Nom ',
-                                    allowBlank: false,
-                                    regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
-                                    vtype: 'alphanum'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    name: 'title',
-                                    fieldLabel: 'Titre ',
                                     allowBlank: false
-                                },
-                                {
-                                    xtype: 'textareafield',
-                                    anchor: '100%',
-                                    name: 'description',
-                                    fieldLabel: 'Description ',
-                                    maxLength: 250
                                 },
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'pageURL',
-                                    fieldLabel: 'URL ',
-                                    regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)
+                                    fieldLabel: 'URL '
                                 },
                                 {
                                     xtype: 'checkboxfield',
@@ -409,14 +392,34 @@ Ext.define('Rubedo.view.contributionPages', {
                                     fieldLabel: 'Hors navigation',
                                     boxLabel: '',
                                     inputValue: 'true'
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Referencement',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            name: 'title',
+                                            fieldLabel: 'Titre ',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'textareafield',
+                                            anchor: '100%',
+                                            name: 'description',
+                                            fieldLabel: 'Description ',
+                                            maxLength: 250
+                                        }
+                                    ],
+                                    listeners: {
+                                        render: {
+                                            fn: me.onMainPageAttributeFormRender,
+                                            scope: me
+                                        }
+                                    }
                                 }
-                            ],
-                            listeners: {
-                                render: {
-                                    fn: me.onMainPageAttributeFormRender,
-                                    scope: me
-                                }
-                            }
+                            ]
                         }
                     ]
                 }
