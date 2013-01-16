@@ -27,6 +27,9 @@ Ext.define('Rubedo.model.reusableElementModel', {
             type: 'string'
         },
         {
+            name: 'mBlocks'
+        },
+        {
             name: 'mCode'
         },
         {

@@ -555,9 +555,14 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     importElement: function(button, e, options) {
         var target=button.up().up().up().insTar;
-        var child=Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected().get("mCode");
-        this.removeIds(child);
+        var child=Ext.clone(Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected().get("mCode"));
+        var cBlocks=Ext.clone(Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected().get("mBlocks"));
+        Ext.Array.forEach(cBlocks,function(someBlock){
+            someBlock.id=undefined;
+        });
+        this.removeIds(child,cBlocks);
         var maskRows = this.saveRows(this.getMasqueEdition());
+        var maskBlocks= this.saveBlocks(this.getMasqueEdition());
         if (target.id=="masqueEdition") {
             maskRows.push(child);
         } else {
@@ -565,6 +570,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
         this.getMasqueEdition().removeAll();
         this.masqueRestit(maskRows,1,this.getMasqueEdition()); 
+        var newBlocks=Ext.Array.merge(maskBlocks, cBlocks);
+        this.restoreBlocks(newBlocks);
         button.up().up().up().close();
     },
 
@@ -902,10 +909,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());
             var maskRows = this.saveRows(this.getMasqueEdition());
             var mCode=this.findElement(maskRows,target.id);
+            var mBlocks=this.saveBlocks(target);
             var newElement=Ext.create("Rubedo.model.reusableElementModel",{
                 name:values.name,
                 description:values.description,
                 mCode:mCode,
+                mBlocks:mBlocks,
                 depth:this.getElementDepth(mCode),
                 mType:target.mType,
                 mLevel:this.getElementLevel(target,0),
@@ -978,9 +987,19 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("PaneauBlocsDetail").update(record.getData());
     },
 
-    removeIds: function(element) {
+    removeIds: function(element, blocks) {
         var me=this;
-        element.id=undefined;
+        if (element.mType="col"){
+            var newId=Ext.id(null,"column-");
+            Ext.Array.forEach(blocks,function(someBlock){
+                if (someBlock.parentCol==element.id){
+                    someBlock.parentCol=newId;
+                }
+            });
+            element.id=newId;
+        } else {
+            element.id=undefined;
+        }
         if (!Ext.isEmpty(element.columns)) {
             Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing);});
         }
@@ -1051,11 +1070,11 @@ Ext.define('Rubedo.controller.MasqueController', {
                 if (continueOK){
                     if (element.id==id) {
                         var leprop="rows";
-                        if (child.mType=="col") { leprop="columns";} else if (child.mType=="block") { leprop="blocks";}
-                        if(Ext.isEmpty(element[leprop])){
-                            element[leprop]=[ ];
-                        }
-                        element[leprop].push(child);
+                        if (child.mType=="col") { leprop="columns";
+                            if(Ext.isEmpty(element[leprop])){
+                                element[leprop]=[ ];
+                            }
+                        element[leprop].push(child);}
                         if ((element.mType=="col")&&(child.mType=="row")){
                             element.isTerminal=false;
                         }
