@@ -46,7 +46,7 @@ Ext.define('Rubedo.view.newSiteWindow', {
                             fieldLabel: 'Nom ',
                             labelWidth: 50,
                             allowBlank: false,
-                            regex: new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)
+                            regex: new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)
                         },
                         {
                             xtype: 'button',

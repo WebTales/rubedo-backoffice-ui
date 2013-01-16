@@ -50,6 +50,7 @@
                     "model: 'Rubedo.model.taxonomyTermModel',\r",
                     "autoSync:true,\r",
                     "proxy: {\r",
+                    "    batchActions:false,\r",
                     "    type: 'ajax',\r",
                     "    api: {\r",
                     "        create: 'taxonomy-terms/create',\r",

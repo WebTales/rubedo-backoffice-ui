@@ -49,7 +49,7 @@ Ext.define('Rubedo.controller.PagesController', {
         if (form.isValid()){
             var newPage=form.getValues();
             newPage.blocks=[ ];
-            newPage.leaf=true;
+            newPage.expandable=false;
             if (!target.hasChildNodes()){
                 newPage.orderValue=100;
             } else {
@@ -60,7 +60,7 @@ Ext.define('Rubedo.controller.PagesController', {
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
             target.appendChild(newPage);
-            target.set("leaf",false);
+            target.set("expandable",true);
             target.expand();
             store.resumeAutoSync();
             store.sync();
@@ -79,7 +79,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 store.suspendAutoSync();
                 var myParent=target.parentNode;
                 if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
-                    myParent.set("leaf",true);
+                    myParent.set("expandable",false);
                 }
                 target.remove();
                 store.resumeAutoSync();

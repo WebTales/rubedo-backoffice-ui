@@ -46,6 +46,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         model: 'Rubedo.model.taxonomyTermModel',
         autoSync:true,
         proxy: {
+            batchActions:false,
             type: 'ajax',
             api: {
                 create: 'taxonomy-terms/create',

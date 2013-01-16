@@ -52,7 +52,7 @@
                         "fieldLabel": "Nom ",
                         "labelWidth": 50,
                         "allowBlank": false,
-                        "regex": "new RegExp(/^([a-z]|[1-9]|[-]){0,}$/)"
+                        "regex": "new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)"
                     },
                     "designerId": "6b87329e-c62a-42c8-bc4c-fbba06c93fb5"
                 },

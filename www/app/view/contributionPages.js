@@ -444,23 +444,40 @@ Ext.define('Rubedo.view.contributionPages', {
         var movedOne=data.records[0];
         var interm=0;
         var targeted=overModel.get("orderValue");
+
         if (dropPosition=="before"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
             if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get("orderValue");}
             movedOne.set("orderValue", (interm+targeted)/2);
         } else if (dropPosition=="after"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
             if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
             else{interm=10000;}
             movedOne.set("orderValue", (interm+targeted)/2);
         } else if (dropPosition=="append"){
+            if (movedOne.parentNode.childNodes.length==1){
+                movedOne.parentNode.set("expandable", false);
+            }
+
             if (overModel.hasChildNodes()){
                 movedOne.set("orderValue", overModel.lastChild.get("orderValue")+100);
+            } else {
+                movedOne.set("orderValue", 100);
+                overModel.set("expandable", true);
             }
         }
     },
 
     onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
-        Ext.getStore("PagesDataStore").resumeAutoSync();
-        Ext.getStore("PagesDataStore").sync();
+        var task= new Ext.util.DelayedTask(function(){
+            Ext.getStore("PagesDataStore").resumeAutoSync();
+            Ext.getStore("PagesDataStore").sync();
+        });
+        task.delay(50);
     },
 
     onMainPageAttributeFormRender: function(abstractcomponent, options) {

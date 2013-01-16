@@ -74,6 +74,18 @@ Ext.define('Rubedo.model.pageDataModel', {
         {
             name: 'excludeFromMenu',
             type: 'boolean'
+        },
+        {
+            convert: function(v, rec) {
+                return(false);
+            },
+            name: 'leaf',
+            type: 'boolean'
+        },
+        {
+            name: 'expandable',
+            defaultValue: true,
+            type: 'boolean'
         }
     ]
 });
