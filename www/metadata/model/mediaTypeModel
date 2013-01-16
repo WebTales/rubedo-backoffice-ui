@@ -89,6 +89,51 @@
                 "name": "mainFileType"
             },
             "designerId": "aa8dfeae-d321-44c4-a6c4-6aaed0591d79"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field60",
+                "name": "createUser",
+                "mapping": "createUser.fullName",
+                "persist": false
+            },
+            "designerId": "103ee67d-d5b0-4e6c-91ff-053df5e8d2ef"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "createTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "adf8331e-1aa4-4e33-8e00-d476843458ce"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "0f1d3254-1e09-4ab8-8ce4-3f80e791ac60"
         }
     ]
 }

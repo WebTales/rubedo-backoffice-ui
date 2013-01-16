@@ -217,6 +217,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp('MTFieldId').setValue();
         Ext.getCmp("MTFieldConfigsBox").removeAll();
         Ext.getCmp("MTcenterZone").disable();
+        Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
     },
 
     resetInterfaceSelect: function(record) {
@@ -232,6 +233,12 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp('MTFieldId').setValue();
         Ext.getCmp("MTfieldDeleter").disable();
         Ext.getCmp("MTFieldConfigsBox").removeAll();
+        var metaBox = Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+        var values= record.getData();
+        values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
+        values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+        metaBox.update(values);
+        metaBox.show();
         var selector= [];
         Ext.Array.forEach(record.get("vocabularies"),function(vocabId){
             selector.push(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId));

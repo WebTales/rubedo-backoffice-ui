@@ -79,7 +79,8 @@
                     "Ext.getCmp(\"MTfieldDeleter\").disable();\r",
                     "Ext.getCmp('MTFieldId').setValue();\r",
                     "Ext.getCmp(\"MTFieldConfigsBox\").removeAll();\r",
-                    "Ext.getCmp(\"MTcenterZone\").disable();"
+                    "Ext.getCmp(\"MTcenterZone\").disable();\r",
+                    "Ext.getCmp(\"mediaTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
             },
             "designerId": "22525587-131f-47d2-adad-c4b415572d62"
@@ -110,6 +111,12 @@
                     "Ext.getCmp('MTFieldId').setValue();\r",
                     "Ext.getCmp(\"MTfieldDeleter\").disable();\r",
                     "Ext.getCmp(\"MTFieldConfigsBox\").removeAll();\r",
+                    "var metaBox = Ext.getCmp(\"mediaTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var values= record.getData();\r",
+                    "values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
+                    "values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
+                    "metaBox.update(values);\r",
+                    "metaBox.show();\r",
                     "var selector= [];\r",
                     "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabId){\r",
                     "    selector.push(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId));\r",

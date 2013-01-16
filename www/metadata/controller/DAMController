@@ -68,9 +68,9 @@
                 "fn": "onGridpanelSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selections)){\r",
-                    " this.resetInterfaceNoSelect();\r",
+                    "    this.resetInterfaceNoSelect();\r",
                     "} else {\r",
-                    " this.resetInterfaceSelect(selections[0]);\r",
+                    "    this.resetInterfaceSelect(selections[0]);\r",
                     "}"
                 ],
                 "name": "selectionchange",

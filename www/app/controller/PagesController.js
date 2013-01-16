@@ -107,7 +107,7 @@ Ext.define('Rubedo.controller.PagesController', {
             me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
             Ext.getCmp("mainPageAttributeForm").enable();
-            Ext.getCmp("mainPageAttributeForm").getForm().setValues(record.getData());
+            Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
                 params: {

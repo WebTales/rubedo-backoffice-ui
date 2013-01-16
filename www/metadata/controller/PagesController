@@ -176,7 +176,7 @@
                     "    me.renderBlocks(Ext.clone(record.get(\"blocks\")), true);\r",
                     "    me.resetInterface();\r",
                     "    Ext.getCmp(\"mainPageAttributeForm\").enable();\r",
-                    "    Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues(record.getData());\r",
+                    "    Ext.getCmp(\"mainPageAttributeForm\").getForm().loadRecord(record);\r",
                     "    Ext.Ajax.request({\r",
                     "        url: 'xhr-get-page-url',\r",
                     "        params: {\r",

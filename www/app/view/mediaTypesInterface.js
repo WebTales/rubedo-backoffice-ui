@@ -248,7 +248,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
                             ]
                         }
                     ]

@@ -35,6 +35,21 @@ Ext.define('Rubedo.model.mediaTypeModel', {
         },
         {
             name: 'mainFileType'
+        },
+        {
+            name: 'createUser',
+            mapping: 'createUser.fullName',
+            persist: false
+        },
+        {
+            name: 'createTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
         }
     ]
 });
