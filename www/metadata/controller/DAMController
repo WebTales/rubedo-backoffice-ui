@@ -28,7 +28,6 @@
                 "implHandler": [
                     "var me =this;\r",
                     "Ext.Array.forEach(Ext.getCmp(\"DAMInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.enable();});\r",
-                    "Ext.getCmp(\"removeMTBtn\").enable();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Mèdiathéque <b> > </b>\", iconCls:\"mediaTypes\"}));\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"folder\"}));\r",

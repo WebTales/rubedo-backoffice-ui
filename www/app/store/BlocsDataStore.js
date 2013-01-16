@@ -30,6 +30,72 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
+                    type: 'Controleur Zend',
+                    description: '<h2>Bloc Controleur Zend<\/h2> ',
+                    configBasique: {
+                        title: 'Controleur Zend',
+                        bType: 'Controleur Zend',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Configuration',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Module',
+                                                name: 'module'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Controleur',
+                                                name: 'controller'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Action',
+                                                name: 'action'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.TextArea',
+                                            config: {
+                                                fieldLabel: 'Options',
+                                                name: 'options'
+                                            }
+                                        },
+                                        
+                                    ],
+                                    
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '50f694edc0e051280d000001'
+                },
+                {
                     type: 'Gallerie Flickr',
                     description: '<h2>Bloc Gallerie Flickr<\/h2> <\/br><p>Ce bloc affiche des images hébergées sur Flickr.<\/p>',
                     configBasique: {

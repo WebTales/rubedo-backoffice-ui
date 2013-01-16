@@ -28,7 +28,6 @@ Ext.define('Rubedo.controller.DAMController', {
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.Array.forEach(Ext.getCmp("DAMInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.enable();});
-        Ext.getCmp("removeMTBtn").enable();
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Mèdiathéque <b> > </b>", iconCls:"mediaTypes"}));
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"folder"}));
