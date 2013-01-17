@@ -27,7 +27,8 @@
             "imageDataModel",
             "mediaTypeModel",
             "MTFieldModel",
-            "queryDataModel"
+            "queryDataModel",
+            "DAMModel"
         ],
         "stores": [
             "SitesJson",
@@ -88,7 +89,8 @@
             "QueriesStore",
             "MainImageStore",
             "MediaTypesForDAM",
-            "TaxonomyForDAM"
+            "TaxonomyForDAM",
+            "DAMStore"
         ],
         "views": [
             "MyContainer",

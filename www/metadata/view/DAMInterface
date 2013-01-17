@@ -550,7 +550,8 @@
                 "fn": "onDAMMTGridBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
-                    "Ext.getStore(\"TaxonomyForDAM\").removeAll();"
+                    "Ext.getStore(\"TaxonomyForDAM\").removeAll();\r",
+                    "Ext.getStore(\"DAMStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

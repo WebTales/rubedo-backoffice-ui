@@ -43,7 +43,8 @@ Ext.application({
         'imageDataModel',
         'mediaTypeModel',
         'MTFieldModel',
-        'queryDataModel'
+        'queryDataModel',
+        'DAMModel'
     ],
     stores: [
         'SitesJson',
@@ -104,7 +105,8 @@ Ext.application({
         'QueriesStore',
         'MainImageStore',
         'MediaTypesForDAM',
-        'TaxonomyForDAM'
+        'TaxonomyForDAM',
+        'DAMStore'
     ],
     views: [
         'MyContainer',

@@ -1,0 +1,90 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "DAM",
+        "designer|userClassName": "DAMStore",
+        "designer|userAlias": "DAMStore",
+        "autoLoad": false,
+        "autoSync": true,
+        "storeId": "DAMStore",
+        "model": "DAMModel",
+        "data": null
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen37718",
+    "designerId": "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "api": [
+                    "{\r",
+                    "                    create: 'dam/create',\r",
+                    "                    read: 'dam',\r",
+                    "                    update: 'dam/update',\r",
+                    "                    destroy: 'dam/delete'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "f1e3f9b8-b4c7-4723-863f-8fab4c54eadb",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "0e0ed780-59f8-43db-b55e-95e6eefad958"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter13",
+                        "nameProperty": null,
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "da436253-e7d7-471d-b979-7c065c7592a5"
+                }
+            ]
+        }
+    ]
+}

@@ -1644,6 +1644,22 @@
                 "app/store/TaxonomyForDAM.js"
             ],
             "className": "TaxonomyForDAM"
+        },
+        "2a71f472-b98f-4bb3-b8eb-5ddda2b175aa": {
+            "paths": [
+                "metadata/model/DAMModel",
+                "app/model/override/DAMModel.js",
+                "app/model/DAMModel.js"
+            ],
+            "className": "DAMModel"
+        },
+        "f57d3ecb-f31a-4c35-86cb-9f51f030613d": {
+            "paths": [
+                "metadata/store/DAMStore",
+                "app/store/override/DAMStore.js",
+                "app/store/DAMStore.js"
+            ],
+            "className": "DAMStore"
         }
     },
     "viewOrderMap": {
@@ -1792,6 +1808,7 @@
             "d8f6752f-2ba3-491c-832a-e8456b095138",
             "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
             "42485569-d0e5-4710-b0aa-104840533721",
+            "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "43314b2e-fa01-4f52-948b-95a4ff336891",
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
             "31be942a-1630-4c10-9fb4-790b2d825c55"
@@ -1820,6 +1837,7 @@
             "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
             "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
             "3895db21-6cb0-4c47-bbdb-6733b5e4684f",
+            "2a71f472-b98f-4bb3-b8eb-5ddda2b175aa",
             "8130c927-1032-4d5f-b157-d56672d37d52",
             "b22a93f8-8da7-4af9-9421-f70e6693b540",
             "0d7a70b9-8e94-4274-9b36-3d49f6dcc936",

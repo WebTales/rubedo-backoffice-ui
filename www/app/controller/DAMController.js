@@ -40,6 +40,8 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Mèdiathéque <b> > </b>", iconCls:"mediaTypes"}));
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"folder"}));
+        Ext.getStore("DAMStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"value\":\""+record.get("id")+"\"}]";
+        Ext.getStore("DAMStore").load();
 
     },
 
