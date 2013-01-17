@@ -48,7 +48,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
                 "layout|flex": null,
                 "designer|userClassName": "MyGridPanel24",
                 "id": "DAMMTGrid",
@@ -64,13 +63,6 @@
                 "resizable": "boolean"
             },
             "designerId": "7b498892-7bac-4167-a854-59126a323993",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "managesStore",
-                    "type": "string"
-                }
-            ],
             "cn": [
                 {
                     "type": "gridview",
@@ -149,6 +141,42 @@
                         "designer|userClassName": "MyCellEditingPlugin3"
                     },
                     "designerId": "231b297a-25e0-4ef1-a3b1-5e23e94c0cd9"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onDAMMTGridRender",
+                        "fn": "onDAMMTGridRender",
+                        "implHandler": [
+                            "Ext.getStore(\"MediaTypesForDAM\").load();"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "42274a0f-cd01-460e-a6c6-5fbb3254cdc5"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onDAMMTGridBeforeClose",
+                        "fn": "onDAMMTGridBeforeClose",
+                        "implHandler": [
+                            "Ext.getStore(\"MediaTypesForDAM\").removeAll();"
+                        ],
+                        "name": "beforeclose",
+                        "scope": "me"
+                    },
+                    "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
                 }
             ]
         },
@@ -373,7 +401,7 @@
                             "userConfig": {
                                 "ACL": null,
                                 "designer|userClassName": "MyButton17",
-                                "id": "copyMTBtn",
+                                "id": null,
                                 "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
@@ -456,7 +484,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyButton62",
-                                "id": "MTexportBtn",
+                                "id": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -475,7 +503,7 @@
                             "userConfig": {
                                 "ACL": null,
                                 "designer|userClassName": "MyButton63",
-                                "id": "MTImportBtn",
+                                "id": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",

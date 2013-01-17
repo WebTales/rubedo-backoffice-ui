@@ -48,7 +48,6 @@ Ext.define('Rubedo.view.DAMInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    managesStore: true,
                     id: 'DAMMTGrid',
                     width: 200,
                     resizable: true,
@@ -77,7 +76,17 @@ Ext.define('Rubedo.view.DAMInterface', {
                         Ext.create('Ext.grid.plugin.CellEditing', {
                             ptype: 'cellediting'
                         })
-                    ]
+                    ],
+                    listeners: {
+                        render: {
+                            fn: me.onDAMMTGridRender,
+                            scope: me
+                        },
+                        beforeclose: {
+                            fn: me.onDAMMTGridBeforeClose,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'container',
@@ -158,7 +167,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    id: 'copyMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
@@ -196,7 +204,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    id: 'MTexportBtn',
                                     iconAlign: 'top',
                                     iconCls: 'application_down_big',
                                     scale: 'large',
@@ -204,7 +211,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
-                                    id: 'MTImportBtn',
                                     iconAlign: 'top',
                                     iconCls: 'application_up_big',
                                     scale: 'large',
@@ -228,6 +234,14 @@ Ext.define('Rubedo.view.DAMInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onDAMMTGridRender: function(abstractcomponent, options) {
+        Ext.getStore("MediaTypesForDAM").load();
+    },
+
+    onDAMMTGridBeforeClose: function(panel, options) {
+        Ext.getStore("MediaTypesForDAM").removeAll();
     },
 
     onImageRender11: function(abstractcomponent, options) {

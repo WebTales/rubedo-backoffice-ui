@@ -56,11 +56,10 @@ Ext.define('Rubedo.view.newMTWindow', {
                             forceSelection: true,
                             store: [
                                 'Image',
-                                'Office',
+                                'Document',
                                 'Video',
-                                'Flash',
-                                'Audio',
-                                'PDF'
+                                'Animation',
+                                'Audio'
                             ]
                         },
                         {
