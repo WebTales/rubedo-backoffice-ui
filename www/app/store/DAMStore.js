@@ -33,6 +33,7 @@ Ext.define('Rubedo.store.DAMStore', {
             model: 'Rubedo.model.DAMModel',
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'dam/create',
                     read: 'dam',

@@ -318,6 +318,54 @@
                 "designer|controlQuery": "#DAMDeleteBtn"
             },
             "designerId": "9b1297a5-1654-43ec-bcea-6a016e1f5293"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMSubmitBtnClick",
+                "fn": "onDAMSubmitBtnClick",
+                "implHandler": [
+                    "button.up().setLoading(true);\r",
+                    "var form=button.up().getForm();\r",
+                    "form.submit({\r",
+                    "    clientValidation: true,\r",
+                    "    url: 'dam/create',\r",
+                    "    params: { \r",
+                    "        typeId: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "    },\r",
+                    "    success: function(form, action) {\r",
+                    "        button.up().setLoading(false);\r",
+                    "        button.up().up().up().close();\r",
+                    "        Ext.getStore(\"DAMStore\").load();\r",
+                    "    },\r",
+                    "    failure: function(form, action) {\r",
+                    "        button.up().setLoading(false);\r",
+                    "        switch (action.failureType) {\r",
+                    "            case Ext.form.action.Action.CLIENT_INVALID:\r",
+                    "            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');\r",
+                    "            break;\r",
+                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
+                    "            break;\r",
+                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                    "            Ext.Msg.alert('Erreur', action.result.msg);\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMSubmitBtn"
+            },
+            "designerId": "57e2450d-d0f1-44d4-b9ea-10613b64c090"
         }
     ]
 }

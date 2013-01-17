@@ -47,6 +47,38 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
     },
 
+    onDAMSubmitBtnClick: function(button, e, options) {
+        button.up().setLoading(true);
+        var form=button.up().getForm();
+        form.submit({
+            clientValidation: true,
+            url: 'dam/create',
+            params: { 
+                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id")
+            },
+            success: function(form, action) {
+                button.up().setLoading(false);
+                button.up().up().up().close();
+                Ext.getStore("DAMStore").load();
+            },
+            failure: function(form, action) {
+                button.up().setLoading(false);
+                switch (action.failureType) {
+                    case Ext.form.action.Action.CLIENT_INVALID:
+                    Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
+                    break;
+                    case Ext.form.action.Action.CONNECT_FAILURE:
+                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                    break;
+                    case Ext.form.action.Action.SERVER_INVALID:
+                    Ext.Msg.alert('Erreur', action.result.msg);
+                }
+            }
+        });
+
+
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -200,6 +232,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMDeleteBtn": {
                 click: this.onDAMDeleteBtnClick
+            },
+            "#DAMSubmitBtn": {
+                click: this.onDAMSubmitBtnClick
             }
         });
     }
