@@ -30,6 +30,69 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
+                    type: 'Média externe',
+                    description: '<h2>Bloc Controleur Zend<\/h2> ',
+                    configBasique: {
+                        title: 'Média externe',
+                        bType: 'Média externe',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Configuration',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'URL',
+                                                name: 'url',
+                                                vtype: 'url'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Largeur max',
+                                                name: 'maxWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur max',
+                                                name: 'maxHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ],
+                                    
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '50f81083c0e0514e10000005'
+                },
+                {
                     type: 'Controleur Zend',
                     description: '<h2>Bloc Controleur Zend<\/h2> ',
                     configBasique: {
