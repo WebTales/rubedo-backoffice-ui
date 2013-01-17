@@ -76,17 +76,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         Ext.create('Ext.grid.plugin.CellEditing', {
                             ptype: 'cellediting'
                         })
-                    ],
-                    listeners: {
-                        render: {
-                            fn: me.onDAMMTGridRender,
-                            scope: me
-                        },
-                        beforeclose: {
-                            fn: me.onDAMMTGridBeforeClose,
-                            scope: me
-                        }
-                    }
+                    ]
                 },
                 {
                     xtype: 'container',
@@ -232,22 +222,34 @@ Ext.define('Rubedo.view.DAMInterface', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onDAMMTGridRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onDAMMTGridBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
     },
 
+    onImageRender11: function(abstractcomponent, options) {
+        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+    },
+
     onDAMMTGridRender: function(abstractcomponent, options) {
         Ext.getStore("MediaTypesForDAM").load();
+        Ext.getStore("TaxonomyForDAM").load();
     },
 
     onDAMMTGridBeforeClose: function(panel, options) {
         Ext.getStore("MediaTypesForDAM").removeAll();
-    },
-
-    onImageRender11: function(abstractcomponent, options) {
-        abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+        Ext.getStore("TaxonomyForDAM").removeAll();
     }
 
 });

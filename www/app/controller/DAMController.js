@@ -30,6 +30,7 @@ Ext.define('Rubedo.controller.DAMController', {
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
         myEditor.show();
         this.renderDAMTypeFields(DAMType);
+        this.renderTaxoFields(DAMType);
     },
 
     resetInterfaceSelect: function(record) {
@@ -79,6 +80,95 @@ Ext.define('Rubedo.controller.DAMController', {
             casing.getComponent('helpBouton').hidden=true;
         } 
         renderTarget.add(casing);
+    },
+
+    renderTaxoFields: function(DAMType) {
+        var formTaxoTC =  Ext.getCmp('DAMTaxoBox');
+        var lesTaxo = DAMType.get("vocabularies");
+        var i=0;
+        for (i=0; i<lesTaxo.length; i++) {
+            var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);
+            var storeT = Ext.create('Ext.data.JsonStore', {
+                model:"Rubedo.model.taxonomyTermModel",
+                remoteFilter:"true",
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms'
+                    },
+                    reader: {
+                        type: 'json',
+                        messageProperty: 'message',
+                        root: 'data'
+                    },
+                    encodeFilters: function(filters) {
+                        var min = [],
+                        length = filters.length,
+                        i = 0;
+
+                        for (; i < length; i++) {
+                            min[i] = {
+                                property: filters[i].property,
+                                value   : filters[i].value
+                            };
+                            if (filters[i].type) {
+                                min[i].type = filters[i].type;
+                            }
+                            if (filters[i].operator) {
+                                min[i].operator = filters[i].operator;
+                            }
+                        }
+                        return this.applyEncoding(min);
+                    }
+                },
+                filters: {
+                    property: 'vocabularyId',
+                    value: leVocab.get("id")
+                }
+
+            });
+            storeT.on("beforeload", function(s,o){
+                o.filters=Ext.Array.slice(o.filters,0,1);
+                if (!Ext.isEmpty(o.params.comboQuery)){
+
+                    var newFilter=Ext.create('Ext.util.Filter', {
+                        property:"text",
+                        value:o.params.comboQuery,
+                        operator:'like'
+                    });
+
+                    o.filters.push(newFilter);
+
+                }
+
+
+            });
+
+
+            var selecteur = Ext.widget('comboboxselect', {
+                name:leVocab.get("id"),
+                width:690,
+                fieldLabel: leVocab.get("name"),
+                autoScroll: false,
+                store: storeT,
+                queryMode: 'remote',
+                queryParam: 'comboQuery',
+                minChars:3,
+                displayField: 'text',
+                valueField: 'id',
+                filterPickList: true,
+                typeAhead: true,
+                forceSelection: !leVocab.data.expandable,
+                createNewOnEnter: leVocab.data.expandable,
+                multiSelect: leVocab.data.multiSelect,
+                allowBlank: !leVocab.data.mandatory
+            });
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(selecteur);
+            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+            formTaxoTC.add(enrobage);
+
+        }
     },
 
     init: function(application) {

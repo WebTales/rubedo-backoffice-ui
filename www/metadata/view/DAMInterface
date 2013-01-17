@@ -141,42 +141,6 @@
                         "designer|userClassName": "MyCellEditingPlugin3"
                     },
                     "designerId": "231b297a-25e0-4ef1-a3b1-5e23e94c0cd9"
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onDAMMTGridRender",
-                        "fn": "onDAMMTGridRender",
-                        "implHandler": [
-                            "Ext.getStore(\"MediaTypesForDAM\").load();"
-                        ],
-                        "name": "render",
-                        "scope": "me"
-                    },
-                    "designerId": "42274a0f-cd01-460e-a6c6-5fbb3254cdc5"
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onDAMMTGridBeforeClose",
-                        "fn": "onDAMMTGridBeforeClose",
-                        "implHandler": [
-                            "Ext.getStore(\"MediaTypesForDAM\").removeAll();"
-                        ],
-                        "name": "beforeclose",
-                        "scope": "me"
-                    },
-                    "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
                 }
             ]
         },
@@ -554,6 +518,44 @@
                     "designerId": "96d44f53-3480-419a-80f3-50adc4c804b5"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMMTGridRender",
+                "fn": "onDAMMTGridRender",
+                "implHandler": [
+                    "Ext.getStore(\"MediaTypesForDAM\").load();\r",
+                    "Ext.getStore(\"TaxonomyForDAM\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "42274a0f-cd01-460e-a6c6-5fbb3254cdc5"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMMTGridBeforeClose",
+                "fn": "onDAMMTGridBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
+                    "Ext.getStore(\"TaxonomyForDAM\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
         }
     ]
 }

@@ -103,7 +103,8 @@ Ext.application({
         'PagePickerStore',
         'QueriesStore',
         'MainImageStore',
-        'MediaTypesForDAM'
+        'MediaTypesForDAM',
+        'TaxonomyForDAM'
     ],
     views: [
         'MyContainer',
