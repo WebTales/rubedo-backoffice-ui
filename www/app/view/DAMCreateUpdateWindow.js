@@ -149,7 +149,9 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         form.submit({
             clientValidation: true,
             url: 'dam/create',
-            params: { },
+            params: { 
+                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id")
+            },
             success: function(form, action) {
                 Ext.Msg.alert('Success', action.result.msg);
             },
