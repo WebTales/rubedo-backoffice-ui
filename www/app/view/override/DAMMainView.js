@@ -95,7 +95,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
             listeners: {
                 change: function(btn, item)
                 {
-					Ext.getCmp("DAMMainView").features[0].setView(btn.viewMode);		
+					btn.up().up().up().features[0].setView(btn.viewMode);		
                 },
                 scope: this
             }

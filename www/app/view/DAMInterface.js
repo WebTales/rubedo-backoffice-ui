@@ -88,7 +88,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                     },
                     items: [
                         {
-                            xtype: 'DAMMainView'
+                            xtype: 'DAMMainView',
+                            id: 'DAMCenter'
                         }
                     ]
                 }

@@ -22,7 +22,6 @@ Ext.define('Rubedo.view.DAMMainView', {
         'Ext.ux.container.SwitchButtonSegment'
     ],
 
-    id: 'DAMMainView',
     title: '',
     forceFit: true,
     store: 'DAMStore',
