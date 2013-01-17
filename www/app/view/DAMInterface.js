@@ -148,6 +148,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'button',
                             disabled: true,
+                            id: 'DAMDeleteBtn',
                             iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',

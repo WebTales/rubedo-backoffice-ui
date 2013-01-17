@@ -67,8 +67,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelSelectionChange",
-                "fn": "onGridpanelSelectionChange",
+                "designer|userClassName": "selectDAMType",
+                "fn": "selectDAMType",
                 "implHandler": [
                     "if (Ext.isEmpty(selections)){\r",
                     "    this.resetInterfaceNoSelect();\r",
@@ -272,6 +272,52 @@
                 ]
             },
             "designerId": "d1ba1045-af86-4901-9aa5-c79962ca4a7d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "selectDAM",
+                "fn": "selectDAM",
+                "implHandler": [
+                    "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
+                    "if (Ext.isEmpty(selections)) {\r",
+                    "Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
+                    "} else if (selections.length==1) {\r",
+                    "\r",
+                    "} else {\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#DAMCenter"
+            },
+            "designerId": "54e84151-7d25-4893-b80a-090e656b60ba"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMDeleteBtnClick",
+                "fn": "onDAMDeleteBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMDeleteBtn"
+            },
+            "designerId": "9b1297a5-1654-43ec-bcea-6a016e1f5293"
         }
     ]
 }

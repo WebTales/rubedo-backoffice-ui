@@ -17,7 +17,7 @@ Ext.define('Rubedo.controller.DAMController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.DAMController',
 
-    onGridpanelSelectionChange: function(tablepanel, selections, options) {
+    selectDAMType: function(tablepanel, selections, options) {
         if (Ext.isEmpty(selections)){
             this.resetInterfaceNoSelect();
         } else {
@@ -31,6 +31,20 @@ Ext.define('Rubedo.controller.DAMController', {
         myEditor.show();
         this.renderDAMTypeFields(DAMType);
         this.renderTaxoFields(DAMType);
+    },
+
+    selectDAM: function(tablepanel, selections, options) {
+        Ext.getCmp("DAMDeleteBtn").enable();
+        if (Ext.isEmpty(selections)) {
+            Ext.getCmp("DAMDeleteBtn").disable();
+        } else if (selections.length==1) {
+
+        } else {
+        }
+    },
+
+    onDAMDeleteBtnClick: function(button, e, options) {
+        Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
     },
 
     resetInterfaceSelect: function(record) {
@@ -176,10 +190,16 @@ Ext.define('Rubedo.controller.DAMController', {
     init: function(application) {
         this.control({
             "#DAMMTGrid": {
-                selectionchange: this.onGridpanelSelectionChange
+                selectionchange: this.selectDAMType
             },
             "#addDAMBtn": {
                 click: this.onAddDAMBtnClick
+            },
+            "#DAMCenter": {
+                selectionchange: this.selectDAM
+            },
+            "#DAMDeleteBtn": {
+                click: this.onDAMDeleteBtnClick
             }
         });
     }

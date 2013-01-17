@@ -126,13 +126,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                     anchor: '100%',
                                     id: 'DAMSubmitBtn',
                                     scale: 'large',
-                                    text: 'Créer ce nouveau média',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onDAMSubmitBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Créer ce nouveau média'
                                 }
                             ]
                         }
@@ -142,37 +136,6 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         });
 
         me.callParent(arguments);
-    },
-
-    onDAMSubmitBtnClick: function(button, e, options) {
-        button.up().setLoading(true);
-        var form=button.up().getForm();
-        form.submit({
-            clientValidation: true,
-            url: 'dam/create',
-            params: { 
-                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id")
-            },
-            success: function(form, action) {
-                button.up().setLoading(false);
-                button.up().up().up().close();
-                Ext.getStore("DAMStore").load();
-            },
-            failure: function(form, action) {
-                button.up().setLoading(false);
-                switch (action.failureType) {
-                    case Ext.form.action.Action.CLIENT_INVALID:
-                    Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
-                    break;
-                    case Ext.form.action.Action.CONNECT_FAILURE:
-                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                    break;
-                    case Ext.form.action.Action.SERVER_INVALID:
-                    Ext.Msg.alert('Erreur', action.result.msg);
-                }
-            }
-        });
-
     }
 
 });

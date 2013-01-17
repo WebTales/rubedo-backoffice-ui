@@ -227,54 +227,7 @@
                                 "scale": "large",
                                 "text": "Créer ce nouveau média"
                             },
-                            "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "onDAMSubmitBtnClick",
-                                        "fn": "onDAMSubmitBtnClick",
-                                        "implHandler": [
-                                            "button.up().setLoading(true);\r",
-                                            "var form=button.up().getForm();\r",
-                                            "form.submit({\r",
-                                            "    clientValidation: true,\r",
-                                            "    url: 'dam/create',\r",
-                                            "    params: { \r",
-                                            "        typeId: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
-                                            "    },\r",
-                                            "    success: function(form, action) {\r",
-                                            "        button.up().setLoading(false);\r",
-                                            "        button.up().up().up().close();\r",
-                                            "        Ext.getStore(\"DAMStore\").load();\r",
-                                            "    },\r",
-                                            "    failure: function(form, action) {\r",
-                                            "        button.up().setLoading(false);\r",
-                                            "        switch (action.failureType) {\r",
-                                            "            case Ext.form.action.Action.CLIENT_INVALID:\r",
-                                            "            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');\r",
-                                            "            break;\r",
-                                            "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
-                                            "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
-                                            "            break;\r",
-                                            "            case Ext.form.action.Action.SERVER_INVALID:\r",
-                                            "            Ext.Msg.alert('Erreur', action.result.msg);\r",
-                                            "        }\r",
-                                            "    }\r",
-                                            "});\r",
-                                            ""
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "2c59e09e-e987-4ff8-a3b6-df000c0a11c7"
-                                }
-                            ]
+                            "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2"
                         }
                     ]
                 }
