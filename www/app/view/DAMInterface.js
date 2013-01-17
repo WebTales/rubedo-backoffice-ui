@@ -141,6 +141,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            disabled: true,
+                            id: 'addDAMBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',

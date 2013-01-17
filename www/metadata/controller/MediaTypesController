@@ -267,7 +267,7 @@
                 "implHandler": [
                     "var me=this;\r",
                     "var configurator=protoData.config;\r",
-                    " if (protoData.cType == 'combobox') {\r",
+                    "if (protoData.cType == 'combobox') {\r",
                     "    var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));\r",
                     "    configurator.store = myStore;\r",
                     "}\r",

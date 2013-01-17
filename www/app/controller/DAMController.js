@@ -25,8 +25,16 @@ Ext.define('Rubedo.controller.DAMController', {
         }
     },
 
+    onAddDAMBtnClick: function(button, e, options) {
+        var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
+        var myEditor = Ext.widget("DAMCreateUpdateWindow");
+        myEditor.show();
+        this.renderDAMTypeFields(DAMType);
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
+        Ext.getCmp("addDAMBtn").enable();
         Ext.Array.forEach(Ext.getCmp("DAMInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.enable();});
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Mèdiathéque <b> > </b>", iconCls:"mediaTypes"}));
@@ -38,13 +46,48 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.Array.forEach(Ext.getCmp("DAMInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("DAMInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes"}));
+        Ext.getCmp("addDAMBtn").disable();
 
+    },
+
+    renderDAMTypeFields: function(DAMType) {
+        var me=this;
+        var fieldBox=Ext.getCmp("DAMFieldBox");
+        Ext.Array.forEach(DAMType.get("fields"),function(field){
+            me.renderMTField(field, fieldBox);
+        });
+    },
+
+    renderMTField: function(protoData, renderTarget) {
+        var me=this;
+        var configurator=protoData.config;
+        if (protoData.cType == 'combobox') {
+            var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
+            configurator.store = myStore;
+        }
+        var newField= Ext.create(protoData.cType, configurator);
+        newField.config=protoData.config;
+        newField.protoId=protoData.protoId;
+        newField.configFields=Ext.getStore("MTFieldsStore").findRecord("id", protoData.protoId).get("configFields");
+        newField.cType=protoData.cType;
+        newField.anchor = '90%';
+        newField.style = '{float:left;}';
+        var casing =Ext.widget('ChampTC');
+        casing.add(newField);
+        casing.getComponent('helpBouton').setTooltip(newField.config.tooltip);
+        if (Ext.isEmpty(newField.config.tooltip)){
+            casing.getComponent('helpBouton').hidden=true;
+        } 
+        renderTarget.add(casing);
     },
 
     init: function(application) {
         this.control({
             "#DAMMTGrid": {
                 selectionchange: this.onGridpanelSelectionChange
+            },
+            "#addDAMBtn": {
+                click: this.onAddDAMBtnClick
             }
         });
     }
