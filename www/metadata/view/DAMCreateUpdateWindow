@@ -1,0 +1,263 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DAMCreateUpdateWindow",
+        "designer|userAlias": "DAMCreateUpdateWindow",
+        "requires": [
+            "Ext.ux.TreePicker"
+        ],
+        "floating": true,
+        "height": 500,
+        "id": "DAMCreateUpdateWindow",
+        "width": 900,
+        "layout": "fit",
+        "iconCls": "mediaTypes",
+        "title": "Nouveau média",
+        "constrainHeader": true,
+        "maximizable": false,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen11144",
+    "designerId": "939ef002-62e9-4ca0-a15f-a368fcab7385",
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabPanel6",
+                "activeTab": 0
+            },
+            "designerId": "f7d384db-5c76-4106-9fa7-c71e4881edf9",
+            "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel46",
+                        "layout": "fit",
+                        "title": "Edition"
+                    },
+                    "designerId": "abd8c9ac-e736-40ef-9bd7-5d467d7e0259",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig27"
+                            },
+                            "designerId": "24b74932-e6d5-40e8-b906-1c12d993a6d0"
+                        },
+                        {
+                            "type": "form",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyForm3",
+                                "height": 101,
+                                "id": "DAMFieldBox",
+                                "autoScroll": true,
+                                "bodyPadding": 10,
+                                "title": ""
+                            },
+                            "designerId": "76120e34-b5c1-40a3-9536-1168e395f143",
+                            "cn": [
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "ChampTC",
+                                        "designer|userAlias": "ChampTC",
+                                        "designer|displayName": null,
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
+                                    "cn": [
+                                        {
+                                            "type": "textfield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextField1",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "title",
+                                                "fieldLabel": "Titre *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton17",
+                                                "itemId": "helpBouton",
+                                                "margin": null,
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
+                                                "allowDepress": null,
+                                                "enableToggle": null,
+                                                "handleMouseEvents": false,
+                                                "iconCls": "help",
+                                                "pressed": null,
+                                                "pressedCls": "x-btn",
+                                                "text": "",
+                                                "tooltip": [
+                                                    "'Titre du média. Obligatoire.'"
+                                                ]
+                                            },
+                                            "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "ChampTC",
+                                        "designer|userAlias": "ChampTC",
+                                        "designer|displayName": null,
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
+                                    "cn": [
+                                        {
+                                            "type": "filefield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyFileUpload3",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "originalFile",
+                                                "fieldLabel": "Fichier original *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton17",
+                                                "itemId": "helpBouton",
+                                                "margin": null,
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
+                                                "allowDepress": null,
+                                                "enableToggle": null,
+                                                "handleMouseEvents": false,
+                                                "iconCls": "help",
+                                                "pressed": null,
+                                                "pressedCls": "x-btn",
+                                                "text": "",
+                                                "tooltip": [
+                                                    "'Fichier principal du média. Obligatoire.'"
+                                                ]
+                                            },
+                                            "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm16",
+                        "id": "DAMTaxoBox",
+                        "bodyPadding": 10,
+                        "title": "Taxonomie"
+                    },
+                    "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig29"
+                            },
+                            "designerId": "e46852e2-e7bc-4f99-9737-8d0d32417389"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "535d186b-c92e-4a59-86ab-42cd2799b34a",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        }
+    ]
+}

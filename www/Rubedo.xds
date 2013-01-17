@@ -1628,11 +1628,20 @@
                 "app/store/MediaTypesForDAM.js"
             ],
             "className": "MediaTypesForDAM"
+        },
+        "939ef002-62e9-4ca0-a15f-a368fcab7385": {
+            "paths": [
+                "metadata/view/DAMCreateUpdateWindow",
+                "app/view/override/DAMCreateUpdateWindow.js",
+                "app/view/DAMCreateUpdateWindow.js"
+            ],
+            "className": "DAMCreateUpdateWindow"
         }
     },
     "viewOrderMap": {
         "view": [
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
             "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",

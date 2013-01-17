@@ -170,7 +170,8 @@ Ext.application({
         'queryBuilderField',
         'DAMInterface',
         'MyGridPanel29',
-        'MyGridPanel31'
+        'MyGridPanel31',
+        'DAMCreateUpdateWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
