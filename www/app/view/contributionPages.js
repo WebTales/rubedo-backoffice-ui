@@ -355,6 +355,22 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'tbfill'
                                         },
                                         {
+                                            xtype: 'checkboxfield',
+                                            id: 'previewDraftField',
+                                            name: 'draft',
+                                            fieldLabel: 'Brouillon ',
+                                            labelWidth: 70,
+                                            boxLabel: '',
+                                            inputValue: 'true'
+                                        },
+                                        {
+                                            xtype: 'datefield',
+                                            id: 'previewDateField',
+                                            name: 'preview_time',
+                                            fieldLabel: 'Date',
+                                            labelWidth: 50
+                                        },
+                                        {
                                             xtype: 'button',
                                             id: 'pagePreviewRefreshBtn',
                                             iconCls: 'refresh',

@@ -1010,7 +1010,7 @@
                     "            Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
                     "                autoEl: {\r",
                     "                    tag: 'iframe',\r",
-                    "                    src: targetedUrl+\"?preview=1\"\r",
+                    "                    src: targetedUrl+\"?preview=1\"+\"&preview_draft=\"+Ext.getCmp(\"previewDraftField\").getValue()+\"&preview_date=\"+Ext.Date.format(Ext.getCmp(\"previewDateField\").getValue(), \"timestamp\")\r",
                     "                }\r",
                     "            }));\r",
                     "        },\r",

@@ -787,6 +787,42 @@
                                     "designerId": "97c2f5ff-5fb4-4640-a5c6-9ec9df00136d"
                                 },
                                 {
+                                    "type": "checkboxfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyCheckbox6",
+                                        "id": "previewDraftField",
+                                        "name": "draft",
+                                        "fieldLabel": "Brouillon ",
+                                        "labelWidth": 70,
+                                        "boxLabel": "",
+                                        "inputValue": "true"
+                                    },
+                                    "designerId": "1e2509e2-b33d-41ac-9f7d-e406d5f9a409"
+                                },
+                                {
+                                    "type": "datefield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyDateField6",
+                                        "id": "previewDateField",
+                                        "name": "preview_time",
+                                        "fieldLabel": "Date",
+                                        "labelWidth": 50
+                                    },
+                                    "designerId": "480bf26e-f679-423a-900e-c8e43cdea16c"
+                                },
+                                {
                                     "type": "button",
                                     "reference": {
                                         "name": "items",

@@ -608,7 +608,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
                         autoEl: {
                             tag: 'iframe',
-                            src: targetedUrl+"?preview=1"
+                            src: targetedUrl+"?preview=1"+"&preview_draft="+Ext.getCmp("previewDraftField").getValue()+"&preview_date="+Ext.Date.format(Ext.getCmp("previewDateField").getValue(), "timestamp")
                         }
                     }));
                 },
