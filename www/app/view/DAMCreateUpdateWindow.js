@@ -145,6 +145,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     },
 
     onDAMSubmitBtnClick: function(button, e, options) {
+        button.up().setLoading(true);
         var form=button.up().getForm();
         form.submit({
             clientValidation: true,
@@ -153,9 +154,12 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                 typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id")
             },
             success: function(form, action) {
-                Ext.Msg.alert('Success', action.result.msg);
+                button.up().setLoading(false);
+                button.up().up().up().close();
+                Ext.getStore("DAMStore").reload();
             },
             failure: function(form, action) {
+                button.up().setLoading(false);
                 switch (action.failureType) {
                     case Ext.form.action.Action.CLIENT_INVALID:
                     Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
