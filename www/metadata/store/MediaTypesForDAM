@@ -45,10 +45,7 @@
                 "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
-                    "                    create: 'media-types/create',\r",
-                    "                    read: 'media-types',\r",
-                    "                    update: 'media-types/update',\r",
-                    "                    destroy: 'media-types/delete'\r",
+                    "                    read: 'dam-types'\r",
                     "                }"
                 ],
                 "url": null
@@ -68,21 +65,6 @@
                         "root": "data"
                     },
                     "designerId": "9331dde6-1142-4835-a8e9-a90af65f0da0"
-                },
-                {
-                    "type": "jsonwriter",
-                    "reference": {
-                        "name": "writer",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyJsonWriter13",
-                        "nameProperty": null,
-                        "encode": true,
-                        "root": "data"
-                    },
-                    "designerId": "5e22d72d-b73f-4eb8-bcc8-481bd7d3548e"
                 }
             ]
         }

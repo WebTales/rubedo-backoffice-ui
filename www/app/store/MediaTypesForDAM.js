@@ -34,19 +34,11 @@ Ext.define('Rubedo.store.MediaTypesForDAM', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'media-types/create',
-                    read: 'media-types',
-                    update: 'media-types/update',
-                    destroy: 'media-types/delete'
+                    read: 'dam-types'
                 },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',
-                    root: 'data'
-                },
-                writer: {
-                    type: 'json',
-                    encode: true,
                     root: 'data'
                 }
             }

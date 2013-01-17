@@ -45,10 +45,10 @@
                 "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
-                    "                    create: 'media-types/create',\r",
-                    "                    read: 'media-types',\r",
-                    "                    update: 'media-types/update',\r",
-                    "                    destroy: 'media-types/delete'\r",
+                    "                    create: 'dam-types/create',\r",
+                    "                    read: 'dam-types',\r",
+                    "                    update: 'dam-types/update',\r",
+                    "                    destroy: 'dam-types/delete'\r",
                     "                }"
                 ],
                 "url": null

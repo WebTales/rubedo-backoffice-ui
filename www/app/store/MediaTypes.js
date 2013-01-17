@@ -34,10 +34,10 @@ Ext.define('Rubedo.store.MediaTypes', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'media-types/create',
-                    read: 'media-types',
-                    update: 'media-types/update',
-                    destroy: 'media-types/delete'
+                    create: 'dam-types/create',
+                    read: 'dam-types',
+                    update: 'dam-types/update',
+                    destroy: 'dam-types/delete'
                 },
                 reader: {
                     type: 'json',
