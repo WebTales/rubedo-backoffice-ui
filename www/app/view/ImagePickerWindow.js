@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePickerWindow',
 
-    requires: [
-        'Rubedo.view.MyGridPanel29'
-    ],
-
     height: 406,
     id: 'ImagePickerWindow',
     width: 516,
@@ -34,14 +30,6 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
     initComponent: function() {
         var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'mygridpanel29'
-                }
-            ]
-        });
 
         me.callParent(arguments);
     }
