@@ -67,6 +67,9 @@ Ext.define('Rubedo.controller.ACLController', {
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){
+            if (Ext.isEmpty(options.params)){
+                options.params={};
+            }
             options.params.token=ACL.CSRFToken;
         });
 

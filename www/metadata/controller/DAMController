@@ -140,7 +140,7 @@
                     "if (Ext.isEmpty(newField.config.tooltip)){\r",
                     "    casing.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
-                    "renderTarget.add(casing);"
+                    "renderTarget.insert(renderTarget.items.items.length-2,casing);"
                 ]
             },
             "designerId": "2092c93a-ac01-475b-ba80-2011248055db"

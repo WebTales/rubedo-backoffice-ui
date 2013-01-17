@@ -81,7 +81,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(newField.config.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
-        renderTarget.add(casing);
+        renderTarget.insert(renderTarget.items.items.length-2,casing);
     },
 
     renderTaxoFields: function(DAMType) {

@@ -65,6 +65,9 @@
                     "    }\r",
                     "});\r",
                     "Ext.Ajax.on(\"beforerequest\", function(conn, options){\r",
+                    "    if (Ext.isEmpty(options.params)){\r",
+                    "        options.params={};\r",
+                    "    }\r",
                     "    options.params.token=ACL.CSRFToken;\r",
                     "});"
                 ]

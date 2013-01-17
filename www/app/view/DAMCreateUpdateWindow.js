@@ -39,103 +39,134 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         var me = this;
 
         Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'tabpanel',
-                    activeTab: 0,
-                    items: [
-                        {
-                            xtype: 'panel',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Edition',
-                            items: [
-                                {
-                                    xtype: 'form',
-                                    height: 101,
-                                    id: 'DAMFieldBox',
-                                    autoScroll: true,
-                                    bodyPadding: 10,
-                                    title: '',
-                                    items: [
-                                        {
-                                            xtype: 'container',
-                                            padding: 10,
-                                            layout: {
-                                                type: 'anchor'
-                                            },
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'title',
-                                                    fieldLabel: 'Titre *',
-                                                    labelSeparator: ' ',
-                                                    allowBlank: false
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Titre du média. Obligatoire.'
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'container',
-                                            padding: 10,
-                                            layout: {
-                                                type: 'anchor'
-                                            },
-                                            items: [
-                                                {
-                                                    xtype: 'filefield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'originalFile',
-                                                    fieldLabel: 'Fichier original *',
-                                                    labelSeparator: ' ',
-                                                    allowBlank: false
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Fichier principal du média. Obligatoire.'
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'form',
-                            id: 'DAMTaxoBox',
-                            bodyPadding: 10,
-                            title: 'Taxonomie'
-                        }
-                    ]
-                }
-            ],
             tools: [
                 {
                     xtype: 'mytool17'
+                }
+            ],
+            items: [
+                {
+                    xtype: 'panel',
+                    layout: {
+                        type: 'fit'
+                    },
+                    title: '',
+                    items: [
+                        {
+                            xtype: 'form',
+                            height: 101,
+                            id: 'DAMFieldBox',
+                            overflowY: 'auto',
+                            bodyPadding: 10,
+                            title: '',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    padding: 10,
+                                    layout: {
+                                        type: 'anchor'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '90%',
+                                            style: '{float:left}',
+                                            name: 'title',
+                                            fieldLabel: 'Titre *',
+                                            labelSeparator: ' ',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            itemId: 'helpBouton',
+                                            style: '{float:right;}',
+                                            handleMouseEvents: false,
+                                            iconCls: 'help',
+                                            pressedCls: 'x-btn',
+                                            text: '',
+                                            tooltip: 'Titre du média. Obligatoire.'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    padding: 10,
+                                    layout: {
+                                        type: 'anchor'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'filefield',
+                                            anchor: '90%',
+                                            style: '{float:left}',
+                                            name: 'originalFile',
+                                            fieldLabel: 'Fichier original *',
+                                            labelSeparator: ' ',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            itemId: 'helpBouton',
+                                            style: '{float:right;}',
+                                            handleMouseEvents: false,
+                                            iconCls: 'help',
+                                            pressedCls: 'x-btn',
+                                            text: '',
+                                            tooltip: 'Fichier principal du média. Obligatoire.'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    id: 'DAMTaxoBox',
+                                    title: 'Taxonomie'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    id: 'DAMSubmitBtn',
+                                    scale: 'large',
+                                    text: 'Créer ce nouveau média',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onDAMSubmitBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onDAMSubmitBtnClick: function(button, e, options) {
+        var form=button.up().getForm();
+        form.submit({
+            clientValidation: true,
+            url: 'dam/create',
+            params: { },
+            success: function(form, action) {
+                Ext.Msg.alert('Success', action.result.msg);
+            },
+            failure: function(form, action) {
+                switch (action.failureType) {
+                    case Ext.form.action.Action.CLIENT_INVALID:
+                    Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
+                    break;
+                    case Ext.form.action.Action.CONNECT_FAILURE:
+                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                    break;
+                    case Ext.form.action.Action.SERVER_INVALID:
+                    Ext.Msg.alert('Erreur', action.result.msg);
+                }
+            }
+        });
+
     }
 
 });
