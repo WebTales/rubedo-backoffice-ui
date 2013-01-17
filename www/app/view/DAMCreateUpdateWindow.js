@@ -156,7 +156,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
             success: function(form, action) {
                 button.up().setLoading(false);
                 button.up().up().up().close();
-                Ext.getStore("DAMStore").reload();
+                Ext.getStore("DAMStore").load();
             },
             failure: function(form, action) {
                 button.up().setLoading(false);

@@ -157,7 +157,19 @@
                 "overflowY": "auto",
                 "layout": "fit"
             },
-            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2"
+            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
+                    "masterInstanceId": "ExtBox1-ext-gen52190"
+                }
+            ]
         },
         {
             "type": "toolbar",

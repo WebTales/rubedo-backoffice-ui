@@ -174,7 +174,8 @@ Ext.application({
         'DAMInterface',
         'MyGridPanel29',
         'MyGridPanel31',
-        'DAMCreateUpdateWindow'
+        'DAMCreateUpdateWindow',
+        'DAMMainView'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

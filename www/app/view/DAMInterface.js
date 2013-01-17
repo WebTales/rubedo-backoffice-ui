@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.DAMInterface', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17'
+        'Rubedo.view.MyTool17',
+        'Rubedo.view.DAMMainView'
     ],
 
     height: 403,
@@ -84,7 +85,12 @@ Ext.define('Rubedo.view.DAMInterface', {
                     overflowY: 'auto',
                     layout: {
                         type: 'fit'
-                    }
+                    },
+                    items: [
+                        {
+                            xtype: 'DAMMainView'
+                        }
+                    ]
                 }
             ],
             dockedItems: [

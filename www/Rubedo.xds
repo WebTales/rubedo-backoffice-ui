@@ -1660,10 +1660,19 @@
                 "app/store/DAMStore.js"
             ],
             "className": "DAMStore"
+        },
+        "bde1968a-cbce-4b3a-872c-548461f2e683": {
+            "paths": [
+                "metadata/view/DAMMainView",
+                "app/view/override/DAMMainView.js",
+                "app/view/DAMMainView.js"
+            ],
+            "className": "DAMMainView"
         }
     },
     "viewOrderMap": {
         "view": [
+            "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",

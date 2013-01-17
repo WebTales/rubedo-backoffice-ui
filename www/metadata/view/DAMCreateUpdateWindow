@@ -251,7 +251,7 @@
                                             "    success: function(form, action) {\r",
                                             "        button.up().setLoading(false);\r",
                                             "        button.up().up().up().close();\r",
-                                            "        Ext.getStore(\"DAMStore\").reload();\r",
+                                            "        Ext.getStore(\"DAMStore\").load();\r",
                                             "    },\r",
                                             "    failure: function(form, action) {\r",
                                             "        button.up().setLoading(false);\r",
