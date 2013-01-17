@@ -37,8 +37,8 @@ Ext.define('Rubedo.view.DAMMainView', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'originalFile',
-                    text: 'Fichier'
+                    dataIndex: 'title',
+                    text: 'Titre'
                 },
                 {
                     xtype: 'gridcolumn',

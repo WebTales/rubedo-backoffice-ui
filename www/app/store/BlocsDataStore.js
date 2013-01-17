@@ -31,7 +31,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             data: [
                 {
                     type: 'Média externe',
-                    description: '<h2>Bloc Controleur Zend<\/h2> ',
+                    description: '<h2>Bloc Média externe<\/h2> ',
                     configBasique: {
                         title: 'Média externe',
                         bType: 'Média externe',

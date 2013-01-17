@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 						thumbnails: generateThumbnail(),
 						author:record.get("createUser").fullName,
                         date: Ext.Date.format(record.get("createTime"), 'd-m-Y'),
-                        filename:record.get("originalFile")
+                        filename:record.get("title")
 					};
 				}
 				return {};
@@ -38,8 +38,9 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 						'<table class="x-grid-row-table">',
 							'<tbody>',
 								'<tr>',
-									'<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: url(&quot;{thumbnails}&quot;) no-repeat scroll 50% 100% transparent;">',
-									'</td>',
+									'<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
+						'<img src=\"{thumbnails}\" height=\"100\" width=\"100\">',			
+                        '</td>',
 								'</tr>',
 								'<tr>',
 									'<td class="x-grid-col x-grid-cell">',
@@ -55,8 +56,9 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 						'<table class="x-grid-row-table">',
 							'<tbody>',
 								'<tr>',
-									'<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: url(&quot;{thumbnails}&quot;) no-repeat scroll 50% 50% transparent;">',
-									'</td>',
+									'<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
+						'<img src=\"{thumbnails}\" height=\"50\" width=\"50\">',			
+                        '</td>',
 								
 									'<td class="x-grid-col x-grid-cell">',
 										'<div class="x-grid-cell-inner" unselectable="on">{filename}<br><span>{author}<br>{date}</span></div>',
