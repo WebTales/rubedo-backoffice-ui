@@ -312,7 +312,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"original\", \"text\"];\r",
+                    "var usedNames=[\"originalFile\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    Ext.Array.include(usedNames,field.name);\r",
                     "});\r",
@@ -542,7 +542,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"original\", \"text\"];\r",
+                    "var usedNames=[\"originalFile\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    if (field.getId()!=Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getId()){\r",
                     "        Ext.Array.include(usedNames,field.name);\r",

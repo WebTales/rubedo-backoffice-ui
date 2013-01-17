@@ -336,7 +336,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             xtype: 'textfield',
                                                             anchor: '90%',
                                                             style: '{float:left}',
-                                                            name: 'text',
+                                                            name: 'title',
                                                             fieldLabel: 'Titre *',
                                                             allowBlank: false
                                                         },
@@ -363,7 +363,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             xtype: 'filefield',
                                                             anchor: '90%',
                                                             style: '{float:left}',
-                                                            name: 'original',
+                                                            name: 'originalFile',
                                                             fieldLabel: 'Original *',
                                                             labelSeparator: ' ',
                                                             allowBlank: false
