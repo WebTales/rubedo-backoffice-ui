@@ -42,7 +42,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
             if (Ext.isEmpty(abstractcomponent.getValue())){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("file/get/file-id/"+abstractcomponent.getValue());
+                myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+abstractcomponent.getValue());
             }
             myComponent.getEl().on("click",function(){
 
@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
             if ((newValue==="")||(Ext.isEmpty(newValue))){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("file/get/file-id/"+newValue);
+                myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+newValue);
             }
         });
     }

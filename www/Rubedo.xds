@@ -1660,6 +1660,14 @@
                 "app/view/DAMMainView.js"
             ],
             "className": "DAMMainView"
+        },
+        "9c372a6b-a40e-4753-9add-88ae21ae9805": {
+            "paths": [
+                "metadata/store/DAMPickerStore",
+                "app/store/override/DAMPickerStore.js",
+                "app/store/DAMPickerStore.js"
+            ],
+            "className": "DAMPickerStore"
         }
     },
     "viewOrderMap": {
@@ -1809,6 +1817,7 @@
             "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
             "42485569-d0e5-4710-b0aa-104840533721",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
+            "9c372a6b-a40e-4753-9add-88ae21ae9805",
             "43314b2e-fa01-4f52-948b-95a4ff336891",
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
             "31be942a-1630-4c10-9fb4-790b2d825c55"

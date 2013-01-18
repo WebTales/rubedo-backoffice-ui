@@ -106,7 +106,8 @@ Ext.application({
         'MainImageStore',
         'MediaTypesForDAM',
         'TaxonomyForDAM',
-        'DAMStore'
+        'DAMStore',
+        'DAMPickerStore'
     ],
     views: [
         'MyContainer',

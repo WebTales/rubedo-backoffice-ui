@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     layout: {
         type: 'fit'
     },
-    title: 'Choisissez une image',
+    title: 'Choisissez un média',
     constrainHeader: true,
     maximizable: true,
     modal: true,
@@ -31,7 +31,75 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     initComponent: function() {
         var me = this;
 
+        Ext.applyIf(me, {
+            listeners: {
+                render: {
+                    fn: me.onImagePickerWindowRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onImagePickerWindowBeforeClose,
+                    scope: me
+                }
+            },
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'imagePickerAcceptBtn',
+                            iconCls: 'ouiSpetit',
+                            text: 'Choisir',
+                            listeners: {
+                                click: {
+                                    fn: me.onImagePickerAcceptBtnClick,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                this.up().up().close();
+                            },
+                            iconCls: 'close',
+                            text: 'Annuler'
+                        }
+                    ]
+                }
+            ]
+        });
+
         me.callParent(arguments);
+    },
+
+    onImagePickerWindowRender: function(abstractcomponent, options) {
+        Ext.getStore("DAMPickerStore").load();
+        var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore")});
+        DAMPicker.on("selectionchange", function(g, s){
+            if (Ext.isEmpty(s)){
+                Ext.getCmp("imagePickerAcceptBtn").disable();
+            } else {
+                Ext.getCmp("imagePickerAcceptBtn").enable();
+            }
+        });
+        abstractcomponent.add(DAMPicker);
+    },
+
+    onImagePickerAcceptBtnClick: function(button, e, options) {
+        var target = button.up().up().getComponent(0).getSelectionModel().getLastSelected();
+        Ext.getCmp(button.up().up().targetField).setValue(target.get("id"));
+        button.up().up().close();
+    },
+
+    onImagePickerWindowBeforeClose: function(panel, options) {
+        Ext.getStore("DAMPickerStore").removeAll();
     }
 
 });
