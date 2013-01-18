@@ -1467,7 +1467,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Types DAM',
                                 name: 'allowedDAMTypes',
-                                allowBlank: false
+                                allowBlank: true
                             }
                         },
                         {

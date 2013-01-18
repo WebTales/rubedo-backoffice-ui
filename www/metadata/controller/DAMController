@@ -286,7 +286,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
                     "if (Ext.isEmpty(selections)) {\r",
-                    "Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
                     "} else if (selections.length==1) {\r",
                     "\r",
                     "} else {\r",
