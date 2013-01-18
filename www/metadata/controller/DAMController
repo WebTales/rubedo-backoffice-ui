@@ -32,7 +32,7 @@
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Mèdiathéque <b> > </b>\", iconCls:\"mediaTypes\"}));\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"folder\"}));\r",
-                    "Ext.getStore(\"DAMStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+record.get(\"id\")+\"\\\"}]\";\r",
+                    "Ext.getStore(\"DAMStore\").getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+record.get(\"id\")+\"\\\"}]\";\r",
                     "Ext.getStore(\"DAMStore\").load();\r",
                     ""
                 ]
@@ -54,7 +54,7 @@
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias\", iconCls:\"mediaTypes\"}));\r",
                     "Ext.getCmp(\"addDAMBtn\").disable();\r",
-                    ""
+                    "Ext.getStore(\"DAMStore\").removeAll();"
                 ]
             },
             "designerId": "8b1bb213-2eb0-46f6-ab5f-4364e1832f7e"

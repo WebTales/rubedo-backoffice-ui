@@ -562,7 +562,8 @@
                 "fn": "onDAMMTGridRender",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").load();\r",
-                    "Ext.getStore(\"TaxonomyForDAM\").load();"
+                    "Ext.getStore(\"TaxonomyForDAM\").load();\r",
+                    "Ext.getStore(\"DAMStore\").clearFilter(true);"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -582,6 +583,7 @@
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
                     "Ext.getStore(\"TaxonomyForDAM\").removeAll();\r",
+                    "Ext.getStore(\"DAMStore\").clearFilter(true);\r",
                     "Ext.getStore(\"DAMStore\").removeAll();"
                 ],
                 "name": "beforeclose",

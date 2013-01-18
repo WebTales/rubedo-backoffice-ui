@@ -6,7 +6,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
             chunker: Ext.view.TableChunker
         },
         
-        plugins: [Ext.create('Ext.ux.grid.plugin.DragSelector')],
+        plugins: [Ext.create('Ext.ux.grid.plugin.DragSelector'),Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})],
         
         features: [Ext.create('Ext.ux.grid.feature.Tileview', {
             viewMode: 'tileIcons',

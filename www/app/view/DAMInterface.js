@@ -262,11 +262,13 @@ Ext.define('Rubedo.view.DAMInterface', {
     onDAMMTGridRender: function(abstractcomponent, options) {
         Ext.getStore("MediaTypesForDAM").load();
         Ext.getStore("TaxonomyForDAM").load();
+        Ext.getStore("DAMStore").clearFilter(true);
     },
 
     onDAMMTGridBeforeClose: function(panel, options) {
         Ext.getStore("MediaTypesForDAM").removeAll();
         Ext.getStore("TaxonomyForDAM").removeAll();
+        Ext.getStore("DAMStore").clearFilter(true);
         Ext.getStore("DAMStore").removeAll();
     }
 
