@@ -91,7 +91,8 @@
             "MediaTypesForDAM",
             "TaxonomyForDAM",
             "DAMStore",
-            "DAMPickerStore"
+            "DAMPickerStore",
+            "MediaTypesForCT"
         ],
         "views": [
             "MyContainer",
@@ -159,7 +160,8 @@
             "DAMInterface",
             "MyGridPanel31",
             "DAMCreateUpdateWindow",
-            "DAMMainView"
+            "DAMMainView",
+            "CTMTField"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

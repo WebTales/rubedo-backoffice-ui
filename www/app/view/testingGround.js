@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
+    requires: [
+        'Rubedo.view.CTMTField'
+    ],
+
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -39,31 +43,14 @@ Ext.define('Rubedo.view.testingGround', {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'Label'
+                },
+                {
+                    xtype: 'CTMTField'
                 }
-            ],
-            listeners: {
-                afterrender: {
-                    fn: me.onTestingGroundAfterRender,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
-    },
-
-    onTestingGroundAfterRender: function(abstractcomponent, options) {
-        var homePageSelector = Ext.create("Ext.ux.TreePicker", {
-            store:Ext.getStore("pageLinkStore"),
-            displayField:"text",
-            managesStore:true,
-            fieldLabel:"Page d'accueil",
-            id:"lol",
-            anchor: "100%",
-            name:"homePage"
-        });
-
-        abstractcomponent.add(homePageSelector);
     }
 
 });

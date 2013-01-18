@@ -107,7 +107,8 @@ Ext.application({
         'MediaTypesForDAM',
         'TaxonomyForDAM',
         'DAMStore',
-        'DAMPickerStore'
+        'DAMPickerStore',
+        'MediaTypesForCT'
     ],
     views: [
         'MyContainer',
@@ -175,7 +176,8 @@ Ext.application({
         'DAMInterface',
         'MyGridPanel31',
         'DAMCreateUpdateWindow',
-        'DAMMainView'
+        'DAMMainView',
+        'CTMTField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

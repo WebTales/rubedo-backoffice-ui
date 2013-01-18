@@ -1,0 +1,32 @@
+{
+    "type": "combobox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "managesStore": true,
+        "designer|userClassName": "CTMTField",
+        "designer|userAlias": "CTMTField",
+        "fieldLabel": "Label",
+        "displayField": "type",
+        "forceSelection": true,
+        "multiSelect": true,
+        "queryMode": "local",
+        "store": "MediaTypesForCT",
+        "valueField": "id"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen26462",
+    "designerId": "756b35af-6a3f-4477-a677-7ff9f148fee7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ]
+}

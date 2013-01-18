@@ -1463,6 +1463,14 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             }
                         },
                         {
+                            type: 'Rubedo.view.CTMTField',
+                            config: {
+                                fieldLabel: 'Types DAM',
+                                name: 'allowedDAMTypes',
+                                allowBlank: false
+                            }
+                        },
+                        {
                             type: 'Ext.form.field.Checkbox',
                             config: {
                                 fieldLabel: 'Localisable',

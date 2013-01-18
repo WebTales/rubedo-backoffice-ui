@@ -365,68 +365,76 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         nouvChamp.validator=me.nameValidator;
                     }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
-                    nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
-                    nouvChamp.on('change', function (thing) {
-                        if (thing.isValid()){
-                            TCfield.config[this.name]= this.getValue();
-                            if (this.name=='fieldLabel') {
-                                if (TCfield.isXType("ImagePickerField")) {
-                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
-                                } else {
-                                    TCfield.setFieldLabel(this.getValue());
-                                }
-                            }
-                            else if (this.name=='value') {
-                                TCfield.setValue(this.getValue());
-                            }
-                            else if (this.name=='allowBlank') {
-                                var currentOne=TCfield.config.fieldLabel;
-                                if (this.getValue()) {
-                                    currentOne=currentOne.replace(" *","");
-                                } else {
-                                    currentOne=currentOne+" *";
-                                } 
-                                TCfield.config.fieldLabel=currentOne;
-                                if (TCfield.isXType("ImagePickerField")) {
-                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
-                                } else {
-                                    TCfield.setFieldLabel(currentOne);
-                                }
-                            }
-                            else if (this.name=='editable') {
-                                TCfield.setEditable(this.getValue());
-                                TCfield.reset();
-                            }
-                            else if (this.name=='multiSelect') {
-                                TCfield.multiSelect = this.getValue();
-                                TCfield.reset();
-                            }
-                            else if (this.name=='tooltip') {
-                                abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());
-                                if (Ext.isEmpty(this.getValue())){
-                                    abstractcomponent.getComponent('helpBouton').hide();
-                                } else {
-                                    abstractcomponent.getComponent('helpBouton').show();
-                                }
-                            }
-                            else if (this.name=='regex') {
-                                TCfield.regex = new RegExp(this.getValue());
-                            }
-                            else {
-                                TCfield[this.name]= this.getValue();
-                            }
-                            TCfield.validate();
-                        }});
-                        boiteParam.add(nouvChamp); 
+                    if (mesChamps[t].type =='Rubedo.view.CTMTField'){
 
-                    }
-                    if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
-                        var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
-                        boiteParam.add(optionsLC); 
+                        var properMT =Ext.clone(TCfield.config[nouvChamp.name]);
+                        nouvChamp.getStore().targetField=nouvChamp.id;
+                        nouvChamp.getStore().addListener("load", function(){  
+                            Ext.getCmp(this.targetField).setValue(properMT);
+                        },nouvChamp.getStore(),{single:true});
+                        }
+                        nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
+                        nouvChamp.on('change', function (thing) {
+                            if (thing.isValid()){
+                                TCfield.config[this.name]= this.getValue();
+                                if (this.name=='fieldLabel') {
+                                    if (TCfield.isXType("ImagePickerField")) {
+                                        TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
+                                    } else {
+                                        TCfield.setFieldLabel(this.getValue());
+                                    }
+                                }
+                                else if (this.name=='value') {
+                                    TCfield.setValue(this.getValue());
+                                }
+                                else if (this.name=='allowBlank') {
+                                    var currentOne=TCfield.config.fieldLabel;
+                                    if (this.getValue()) {
+                                        currentOne=currentOne.replace(" *","");
+                                    } else {
+                                        currentOne=currentOne+" *";
+                                    } 
+                                    TCfield.config.fieldLabel=currentOne;
+                                    if (TCfield.isXType("ImagePickerField")) {
+                                        TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
+                                    } else {
+                                        TCfield.setFieldLabel(currentOne);
+                                    }
+                                }
+                                else if (this.name=='editable') {
+                                    TCfield.setEditable(this.getValue());
+                                    TCfield.reset();
+                                }
+                                else if (this.name=='multiSelect') {
+                                    TCfield.multiSelect = this.getValue();
+                                    TCfield.reset();
+                                }
+                                else if (this.name=='tooltip') {
+                                    abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());
+                                    if (Ext.isEmpty(this.getValue())){
+                                        abstractcomponent.getComponent('helpBouton').hide();
+                                    } else {
+                                        abstractcomponent.getComponent('helpBouton').show();
+                                    }
+                                }
+                                else if (this.name=='regex') {
+                                    TCfield.regex = new RegExp(this.getValue());
+                                }
+                                else {
+                                    TCfield[this.name]= this.getValue();
+                                }
+                                TCfield.validate();
+                            }});
+                            boiteParam.add(nouvChamp); 
 
+                        }
+                        if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
+                            var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
+                            boiteParam.add(optionsLC); 
+
+                        }
                     }
-                }
-            });
+                });
     },
 
     enleveChampTC: function(abstractcomponent, options) {
