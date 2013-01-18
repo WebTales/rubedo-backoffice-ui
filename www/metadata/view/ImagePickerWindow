@@ -41,7 +41,7 @@
                     "    Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+allowedTypes[0]+\"\\\"}]\";\r",
                     "    Ext.getStore(\"DAMPickerStore\").load();\r",
                     "} else {\r",
-                    "    Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"in\\\",\\\"value\\\":\"+Ext.JSON.encode(allowedTypes)+\"}]\";\r",
+                    "    Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(allowedTypes)+\"}]\";\r",
                     "    Ext.getStore(\"DAMPickerStore\").load();\r",
                     "}\r",
                     "var DAMPicker = Ext.widget(\"DAMMainView\", {id:\"DAMPickerView\", store:Ext.getStore(\"DAMPickerStore\"), multiSelect:false, plugins:[ ], features: [Ext.create('Ext.ux.grid.feature.Tileview', {\r",

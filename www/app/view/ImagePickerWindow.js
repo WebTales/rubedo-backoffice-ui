@@ -98,7 +98,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             Ext.getStore("DAMPickerStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";
             Ext.getStore("DAMPickerStore").load();
         } else {
-            Ext.getStore("DAMPickerStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
+            Ext.getStore("DAMPickerStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
             Ext.getStore("DAMPickerStore").load();
         }
         var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore"), multiSelect:false, plugins:[ ], features: [Ext.create('Ext.ux.grid.feature.Tileview', {
