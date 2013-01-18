@@ -145,7 +145,7 @@
             ]
         },
         {
-            "type": "container",
+            "type": "panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -153,7 +153,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyContainer36",
+                "designer|userClassName": "MyPanel52",
                 "overflowY": "auto",
                 "layout": "fit"
             },
@@ -171,6 +171,22 @@
                     },
                     "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
                     "masterInstanceId": "ExtBox1-ext-gen52190"
+                },
+                {
+                    "type": "pagingtoolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyPagingToolbar2",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "DAMStore"
+                    },
+                    "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
                 }
             ]
         },

@@ -10,11 +10,11 @@
         "designer|userAlias": "ImagePickerWindow",
         "height": 406,
         "id": "ImagePickerWindow",
-        "width": 516,
+        "width": 600,
         "layout": "fit",
-        "title": "Choisissez un média",
+        "title": "Choix DAM",
         "constrainHeader": true,
-        "maximizable": true,
+        "maximizable": null,
         "modal": true
     },
     "id": "ExtBox1-ext-gen30568",
@@ -32,7 +32,7 @@
                 "fn": "onImagePickerWindowRender",
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").load();\r",
-                    "var DAMPicker = Ext.widget(\"DAMMainView\", {id:\"DAMPickerView\", store:Ext.getStore(\"DAMPickerStore\")});\r",
+                    "var DAMPicker = Ext.widget(\"DAMMainView\", {id:\"DAMPickerView\", store:Ext.getStore(\"DAMPickerStore\"), multiSelect:false});\r",
                     "DAMPicker.on(\"selectionchange\", function(g, s){\r",
                     "    if (Ext.isEmpty(s)){\r",
                     "        Ext.getCmp(\"imagePickerAcceptBtn\").disable();\r",
@@ -48,7 +48,25 @@
             "designerId": "c5d8bf98-04ca-4bc5-acdf-f03b207127ae"
         },
         {
-            "type": "toolbar",
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onImagePickerWindowBeforeClose",
+                "fn": "onImagePickerWindowBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"DAMPickerStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "32a02590-abaf-438e-a255-dbd261bf0cf6"
+        },
+        {
+            "type": "pagingtoolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -56,23 +74,13 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar55"
+                "designer|userClassName": "MyPagingToolbar3",
+                "width": 360,
+                "displayInfo": true,
+                "store": "DAMPickerStore"
             },
-            "designerId": "a89005d3-a9d7-4df4-abae-0e321501cf52",
+            "designerId": "82616952-af27-4097-a217-c945fd01b259",
             "cn": [
-                {
-                    "type": "tbfill",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill24"
-                    },
-                    "designerId": "7795f034-5107-4e20-a116-91be0d32690a"
-                },
                 {
                     "type": "button",
                     "reference": {
@@ -152,22 +160,14 @@
             ]
         },
         {
-            "type": "basiceventbinding",
+            "type": "linkedinstance",
             "reference": {
-                "name": "listeners",
+                "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onImagePickerWindowBeforeClose",
-                "fn": "onImagePickerWindowBeforeClose",
-                "implHandler": [
-                    "Ext.getStore(\"DAMPickerStore\").removeAll();"
-                ],
-                "name": "beforeclose",
-                "scope": "me"
-            },
-            "designerId": "32a02590-abaf-438e-a255-dbd261bf0cf6"
+            "designerId": "05561d8c-f690-4953-8383-9b280c060bda",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
         }
     ]
 }

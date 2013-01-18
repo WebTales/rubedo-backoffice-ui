@@ -80,7 +80,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                     ]
                 },
                 {
-                    xtype: 'container',
+                    xtype: 'panel',
                     flex: 1,
                     overflowY: 'auto',
                     layout: {
@@ -90,6 +90,15 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'DAMMainView',
                             id: 'DAMCenter'
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'DAMStore'
                         }
                     ]
                 }

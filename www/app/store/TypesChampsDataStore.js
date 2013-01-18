@@ -1424,12 +1424,12 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000023'
                 },
                 {
-                    type: 'Champ Image',
+                    type: 'Champ DAM',
                     cType: 'Rubedo.view.ImagePickerField',
                     openWindow: '',
-                    description: '<h2>Champ Image<\/h2> <\/br> <p><\/p>',
+                    description: '<h2>Champ DAM<\/h2> <\/br> <p><\/p>',
                     config: {
-                        name: 'Nouveau_champ_Champ Image',
+                        name: 'Nouveau_champ_Champ DAM',
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,

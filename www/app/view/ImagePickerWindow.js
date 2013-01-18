@@ -17,15 +17,18 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePickerWindow',
 
+    requires: [
+        'Rubedo.view.MyTool17'
+    ],
+
     height: 406,
     id: 'ImagePickerWindow',
-    width: 516,
+    width: 600,
     layout: {
         type: 'fit'
     },
-    title: 'Choisissez un média',
+    title: 'Choix DAM',
     constrainHeader: true,
-    maximizable: true,
     modal: true,
 
     initComponent: function() {
@@ -44,12 +47,12 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             },
             dockedItems: [
                 {
-                    xtype: 'toolbar',
+                    xtype: 'pagingtoolbar',
                     dock: 'bottom',
+                    width: 360,
+                    displayInfo: true,
+                    store: 'DAMPickerStore',
                     items: [
-                        {
-                            xtype: 'tbfill'
-                        },
                         {
                             xtype: 'button',
                             disabled: true,
@@ -73,6 +76,11 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                         }
                     ]
                 }
+            ],
+            tools: [
+                {
+                    xtype: 'mytool17'
+                }
             ]
         });
 
@@ -81,7 +89,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
     onImagePickerWindowRender: function(abstractcomponent, options) {
         Ext.getStore("DAMPickerStore").load();
-        var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore")});
+        var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore"), multiSelect:false});
         DAMPicker.on("selectionchange", function(g, s){
             if (Ext.isEmpty(s)){
                 Ext.getCmp("imagePickerAcceptBtn").disable();
@@ -92,14 +100,14 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         abstractcomponent.add(DAMPicker);
     },
 
+    onImagePickerWindowBeforeClose: function(panel, options) {
+        Ext.getStore("DAMPickerStore").removeAll();
+    },
+
     onImagePickerAcceptBtnClick: function(button, e, options) {
         var target = button.up().up().getComponent(0).getSelectionModel().getLastSelected();
         Ext.getCmp(button.up().up().targetField).setValue(target.get("id"));
         button.up().up().close();
-    },
-
-    onImagePickerWindowBeforeClose: function(panel, options) {
-        Ext.getStore("DAMPickerStore").removeAll();
     }
 
 });

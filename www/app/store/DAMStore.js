@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.DAMStore', {
             autoSync: true,
             storeId: 'DAMStore',
             model: 'Rubedo.model.DAMModel',
+            pageSize: 25,
             proxy: {
                 type: 'ajax',
                 batchActions: false,
