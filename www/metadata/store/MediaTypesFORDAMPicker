@@ -8,18 +8,19 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "MediaTypes",
-        "designer|userClassName": "MediaTypesForCT",
+        "designer|userClassName": "MediaTypesFORDAMPicker",
+        "designer|userAlias": "MediaTypesFORDAMPicker",
         "autoLoad": false,
         "autoSync": false,
-        "storeId": "MediaTypesForCT",
+        "storeId": "MediaTypesFORDAMPicker",
         "model": "mediaTypeModel",
         "data": null
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen26196",
-    "designerId": "cd7bd070-8e86-4a4f-9831-d227e37bec88",
+    "id": "ExtBox1-ext-gen42616",
+    "designerId": "fe793f86-3a97-401f-bdae-147c54ef0a7d",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -49,7 +50,7 @@
                 ],
                 "url": null
             },
-            "designerId": "033bb8ba-048d-410c-a87c-5a6d1cab6016",
+            "designerId": "99546b72-1bf8-4c89-bc55-553569a584c7",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -63,7 +64,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "a2d27d66-145c-4ad3-898c-1915f33aa670"
+                    "designerId": "5d44dee7-1fc5-4222-a1c9-230cba2d420f"
                 }
             ]
         }

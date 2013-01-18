@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.DAMMainView', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    filter: true,
                     dataIndex: 'title',
                     text: 'Titre'
                 },

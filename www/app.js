@@ -108,7 +108,8 @@ Ext.application({
         'TaxonomyForDAM',
         'DAMStore',
         'DAMPickerStore',
-        'MediaTypesForCT'
+        'MediaTypesForCT',
+        'MediaTypesFORDAMPicker'
     ],
     views: [
         'MyContainer',

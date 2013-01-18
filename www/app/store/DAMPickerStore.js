@@ -29,6 +29,8 @@ Ext.define('Rubedo.store.DAMPickerStore', {
             usedCollection: 'DAM',
             autoLoad: false,
             autoSync: false,
+            remoteFilter: true,
+            remoteSort: true,
             storeId: 'DAMPickerStore',
             model: 'Rubedo.model.DAMModel',
             pageSize: 25,

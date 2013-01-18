@@ -88,124 +88,174 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     },
 
     onImagePickerWindowRender: function(abstractcomponent, options) {
-        //Ext.getStore("DAMPickerStore").load();
+        Ext.getStore("DAMPickerStore").clearFilter(true);
         var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;
-        console.log(allowedTypes);
+        var columnsOver= [
+        {
+            xtype: 'gridcolumn',
+            filter: true,
+            dataIndex: 'title',
+            text: 'Titre'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return(value.fullName);
+            },
+            dataIndex: 'createUser',
+            text: 'Auteur'
+        },
+        {
+            xtype: 'datecolumn',
+            dataIndex: 'createTime',
+            text: 'Date de création',
+            format: 'd-m-Y'
+        }
+        ];
         if (Ext.isEmpty(allowedTypes)){
             delete Ext.getStore("DAMPickerStore").getProxy().extraParams.filter;
             Ext.getStore("DAMPickerStore").load();    
         }else if (allowedTypes.length==1){
-            Ext.getStore("DAMPickerStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";
+            Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";
             Ext.getStore("DAMPickerStore").load();
         } else {
-            Ext.getStore("DAMPickerStore").getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
+            Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.filter="[{\"property\":\"id\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
+            Ext.getStore("MediaTypesFORDAMPicker").load();
+            columnsOver.push({
+                xtype:'gridcolumn',
+                renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                    if (Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value))) {
+                        return(value);
+                    } else {
+                        return(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value).get("type"));
+                    }
+                },
+                filter: {
+                    type: 'combo',
+                    valueField: 'id',
+                    displayField: 'type',
+                    store: 'MediaTypesFORDAMPicker'
+                },
+                dataIndex: 'typeId',
+
+                text: 'Type'
+            });
+
+            Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
             Ext.getStore("DAMPickerStore").load();
         }
-        var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore"), multiSelect:false, plugins:[ ], features: [Ext.create('Ext.ux.grid.feature.Tileview', {
-            viewMode: 'tileIcons',
-            getAdditionalData: function(data, index, record, orig)
-            {
+        var DAMPicker = Ext.widget("DAMMainView", {id:"DAMPickerView", store:Ext.getStore("DAMPickerStore"),columns:columnsOver, multiSelect:false, plugins:[
+            Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})
 
-
-
-                generateThumbnail = function()
+            ], features: [Ext.create('Ext.ux.grid.feature.Tileview', {
+                viewMode: 'tileIcons',
+                getAdditionalData: function(data, index, record, orig)
                 {
-                    return "dam/get-thumbnail?id="+record.get("id");
-                };
 
-                if(this.viewMode)
-                {
-                    return {
-                        thumbnails: generateThumbnail(),
-                        author:record.get("createUser").fullName,
-                        date: Ext.Date.format(record.get("createTime"), 'd-m-Y'),
-                        filename:record.get("title")
+
+
+                    generateThumbnail = function()
+                    {
+                        return "dam/get-thumbnail?id="+record.get("id");
                     };
+
+                    if(this.viewMode)
+                    {
+                        return {
+                            thumbnails: generateThumbnail(),
+                            author:record.get("createUser").fullName,
+                            date: Ext.Date.format(record.get("createTime"), 'd-m-Y'),
+                            filename:record.get("title")
+                        };
+                    }
+                    return {};
+                },
+                viewTpls:
+                {
+                    mediumIcons: [
+                    '<td class="{cls} ux-explorerview-medium-icon-row">',
+                    '<table class="x-grid-row-table">',
+                    '<tbody>',
+                    '<tr>',
+                    '<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
+                    '<img src=\"{thumbnails}\" height=\"100\" width=\"100\">',			
+                    '</td>',
+                    '</tr>',
+                    '<tr>',
+                    '<td class="x-grid-col x-grid-cell">',
+                    '<div class="x-grid-cell-inner" unselectable="on">{filename}</div>',
+                    '</td>',
+                    '</tr>',
+                    '</tbody>',
+                    '</table>',
+                    '</td>'].join(''),
+
+                    tileIcons: [
+                    '<td class="{cls} ux-explorerview-detailed-icon-row">',
+                    '<table class="x-grid-row-table">',
+                    '<tbody>',
+                    '<tr>',
+                    '<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
+                    '<img src=\"{thumbnails}\" height=\"50\" width=\"50\">',			
+                    '</td>',
+
+                    '<td class="x-grid-col x-grid-cell">',
+                    '<div class="x-grid-cell-inner" unselectable="on">{filename}<br><span>{author}<br>{date}</span></div>',
+                    '</td>',
+                    '</tr>',
+                    '</tbody>',
+                    '</table>',
+                    '</td>'].join('')
+
                 }
-                return {};
-            },
-            viewTpls:
+            }),
             {
-                mediumIcons: [
-                '<td class="{cls} ux-explorerview-medium-icon-row">',
-                '<table class="x-grid-row-table">',
-                '<tbody>',
-                '<tr>',
-                '<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
-                '<img src=\"{thumbnails}\" height=\"100\" width=\"100\">',			
-                '</td>',
-                '</tr>',
-                '<tr>',
-                '<td class="x-grid-col x-grid-cell">',
-                '<div class="x-grid-cell-inner" unselectable="on">{filename}</div>',
-                '</td>',
-                '</tr>',
-                '</tbody>',
-                '</table>',
-                '</td>'].join(''),
-
-                tileIcons: [
-                '<td class="{cls} ux-explorerview-detailed-icon-row">',
-                '<table class="x-grid-row-table">',
-                '<tbody>',
-                '<tr>',
-                '<td class="x-grid-col x-grid-cell ux-explorerview-icon" style="background: transparent;">',
-                '<img src=\"{thumbnails}\" height=\"50\" width=\"50\">',			
-                '</td>',
-
-                '<td class="x-grid-col x-grid-cell">',
-                '<div class="x-grid-cell-inner" unselectable="on">{filename}<br><span>{author}<br>{date}</span></div>',
-                '</td>',
-                '</tr>',
-                '</tbody>',
-                '</table>',
-                '</td>'].join('')
-
+                ftype: 'grouping',
+                groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
+                disabled: false
+            }],
+            tbar: [{},'->', {
+            xtype: 'switchbuttonsegment',
+            activeItem: 1,
+            scope: this,
+            items: [{
+                tooltip: 'Details',
+                viewMode: 'default',
+                iconCls: 'icon-default'
+            }, {
+                tooltip: 'Tiles',
+                viewMode: 'tileIcons',
+                iconCls: 'icon-tile'
+            }, {
+                tooltip: 'Icons',
+                viewMode: 'mediumIcons',
+                iconCls: 'icon-medium'
+            }],
+            listeners: {
+                change: function(btn, item)
+                {
+                    btn.up().up().up().features[0].setView(btn.viewMode);		
+                },
+                scope: this
             }
-        }),
-        {
-            ftype: 'grouping',
-            groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
-            disabled: false
-        }],
-        tbar: [{},'->', {
-        xtype: 'switchbuttonsegment',
-        activeItem: 1,
-        scope: this,
-        items: [{
-            tooltip: 'Details',
-            viewMode: 'default',
-            iconCls: 'icon-default'
-        }, {
-            tooltip: 'Tiles',
-            viewMode: 'tileIcons',
-            iconCls: 'icon-tile'
-        }, {
-            tooltip: 'Icons',
-            viewMode: 'mediumIcons',
-            iconCls: 'icon-medium'
-        }],
-        listeners: {
-            change: function(btn, item)
-            {
-                btn.up().up().up().features[0].setView(btn.viewMode);		
-            },
-            scope: this
         }
-    }
-            ]});
-            DAMPicker.on("selectionchange", function(g, s){
-    if (Ext.isEmpty(s)){
-        Ext.getCmp("imagePickerAcceptBtn").disable();
-    } else {
-        Ext.getCmp("imagePickerAcceptBtn").enable();
-    }
-            });
-            abstractcomponent.add(DAMPicker);
+    ]});
+    DAMPicker.on("selectionchange", function(g, s){
+        if (Ext.isEmpty(s)){
+            Ext.getCmp("imagePickerAcceptBtn").disable();
+        } else {
+            Ext.getCmp("imagePickerAcceptBtn").enable();
+        }
+    });
+
+
+    abstractcomponent.add(DAMPicker);
     },
 
     onImagePickerWindowBeforeClose: function(panel, options) {
         Ext.getStore("DAMPickerStore").removeAll();
+        Ext.getStore("DAMPickerStore").clearFilter(true);
+        Ext.getStore("MediaTypesFORDAMPicker").removeAll();
     },
 
     onImagePickerAcceptBtnClick: function(button, e, options) {

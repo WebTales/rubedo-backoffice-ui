@@ -29,6 +29,8 @@ Ext.define('Rubedo.store.DAMStore', {
             usedCollection: 'DAM',
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
+            remoteSort: true,
             storeId: 'DAMStore',
             model: 'Rubedo.model.DAMModel',
             pageSize: 25,

@@ -51,12 +51,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "filter": true,
                 "designer|userClassName": "MyColumn47",
                 "align": null,
                 "dataIndex": "title",
                 "text": "Titre"
             },
-            "designerId": "e7e3fdfa-11c6-42f3-8e08-3f335522b649"
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "e7e3fdfa-11c6-42f3-8e08-3f335522b649",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "gridcolumn",
