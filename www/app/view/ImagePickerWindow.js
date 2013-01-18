@@ -113,7 +113,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         }
         ];
         if (Ext.isEmpty(allowedTypes)){
-            delete Ext.getStore("DAMPickerStore").getProxy().extraParams.filter;
+            delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
             Ext.getStore("DAMPickerStore").load();    
         }else if (allowedTypes.length==1){
             Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";

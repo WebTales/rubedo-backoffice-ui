@@ -56,7 +56,7 @@
                     "                }\r",
                     "            ];\r",
                     "if (Ext.isEmpty(allowedTypes)){\r",
-                    "    delete Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.filter;\r",
+                    "    delete Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.tFilter;\r",
                     "    Ext.getStore(\"DAMPickerStore\").load();    \r",
                     "}else if (allowedTypes.length==1){\r",
                     "    Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+allowedTypes[0]+\"\\\"}]\";\r",
