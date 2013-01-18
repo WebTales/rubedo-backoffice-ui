@@ -203,6 +203,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
+                            hidden: false,
                             headerPosition: 'bottom',
                             title: 'Fichier',
                             columns: 4,

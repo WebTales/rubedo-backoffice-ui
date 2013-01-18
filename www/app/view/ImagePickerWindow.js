@@ -247,6 +247,9 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             Ext.getCmp("imagePickerAcceptBtn").enable();
         }
     });
+    DAMPicker.on("itemdblclick", function(){
+        Ext.getCmp("imagePickerAcceptBtn").fireEvent("click",Ext.getCmp("imagePickerAcceptBtn"));
+    });
 
 
     abstractcomponent.add(DAMPicker);

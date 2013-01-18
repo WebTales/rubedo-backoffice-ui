@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 380,
+    height: 420,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {

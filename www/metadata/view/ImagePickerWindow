@@ -190,6 +190,9 @@
                     "        Ext.getCmp(\"imagePickerAcceptBtn\").enable();\r",
                     "    }\r",
                     "});\r",
+                    "DAMPicker.on(\"itemdblclick\", function(){\r",
+                    "    Ext.getCmp(\"imagePickerAcceptBtn\").fireEvent(\"click\",Ext.getCmp(\"imagePickerAcceptBtn\"));\r",
+                    "});\r",
                     "\r",
                     "\r",
                     "abstractcomponent.add(DAMPicker);"
