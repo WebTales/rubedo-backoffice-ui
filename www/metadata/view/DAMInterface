@@ -381,6 +381,35 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
+                        "id": "DAMROBtn",
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "pencil_big",
+                        "scale": "large",
+                        "text": "Afficher"
+                    },
+                    "designerId": "34089ef9-2c6a-40fe-b62b-d70a5e6c68c5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": null,
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton13",
+                        "disabled": true,
                         "id": "DAMUpdateBtn",
                         "itemId": null,
                         "icon": null,

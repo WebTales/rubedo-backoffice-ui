@@ -38,9 +38,11 @@ Ext.define('Rubedo.controller.DAMController', {
     selectDAM: function(tablepanel, selections, options) {
         Ext.getCmp("DAMDeleteBtn").enable();
         Ext.getCmp("DAMUpdateBtn").enable();
+        Ext.getCmp("DAMROBtn").enable();
         if (Ext.isEmpty(selections)) {
             Ext.getCmp("DAMDeleteBtn").disable();
             Ext.getCmp("DAMUpdateBtn").disable();
+            Ext.getCmp("DAMROBtn").disable();
 
         } else if (selections.length==1) {
 
@@ -121,6 +123,38 @@ Ext.define('Rubedo.controller.DAMController', {
         }
     },
 
+    onDAMROBtnClick: function(button, e, options) {
+        var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+        var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
+        var myEditor = Ext.widget("DAMCreateUpdateWindow");
+        myEditor.setTitle(record.get("title"));
+        Ext.getCmp("DAMSubmitBtn").hide();
+        Ext.getCmp("DAMSubmitUpdateBtn").hide();
+        Ext.getCmp("DAMSwitchEditBtn").show();
+        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(1));
+        myEditor.show();
+        this.renderDAMTypeFields(DAMType, true);
+        this.renderTaxoFields(DAMType);
+        var valueBox=record.get("fields");
+        valueBox.title=record.get("title");
+        valueBox.originalFileId=record.get("originalFileId");
+        valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
+        myEditor.getComponent(0).getForm().setValues(valueBox);
+        Ext.Array.forEach(Ext.getCmp("DAMFieldBox").query("field"), function(thing){thing.setReadOnly(true);});
+        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+    },
+
+    onDAMSwitchEditBtnClick: function(button, e, options) {
+        var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+        var myEditor = Ext.getCmp("DAMCreateUpdateWindow");
+        button.hide();
+        Ext.Array.forEach(Ext.getCmp("DAMFieldBox").query("field"), function(thing){thing.setReadOnly(false);});
+        Ext.getCmp("DAMSubmitUpdateBtn").show();
+        myEditor.setTitle("Edition du DAM \" "+record.get("title")+" \"");
+
+
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -171,7 +205,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(newField.config.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
-        renderTarget.insert(renderTarget.items.items.length-3,casing);
+        renderTarget.insert(renderTarget.items.items.length-4,casing);
     },
 
     renderTaxoFields: function(DAMType) {
@@ -295,6 +329,12 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMSubmitUpdateBtn": {
                 click: this.onDAMSubmitUpdateBtnClick
+            },
+            "#DAMROBtn": {
+                click: this.onDAMROBtnClick
+            },
+            "#DAMSwitchEditBtn": {
+                click: this.onDAMSwitchEditBtnClick
             }
         });
     }

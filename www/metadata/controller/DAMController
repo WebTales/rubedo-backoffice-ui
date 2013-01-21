@@ -144,7 +144,7 @@
                     "if (Ext.isEmpty(newField.config.tooltip)){\r",
                     "    casing.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
-                    "renderTarget.insert(renderTarget.items.items.length-3,casing);"
+                    "renderTarget.insert(renderTarget.items.items.length-4,casing);"
                 ]
             },
             "designerId": "2092c93a-ac01-475b-ba80-2011248055db"
@@ -294,9 +294,11 @@
                 "implHandler": [
                     "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
                     "Ext.getCmp(\"DAMUpdateBtn\").enable();\r",
+                    "Ext.getCmp(\"DAMROBtn\").enable();\r",
                     "if (Ext.isEmpty(selections)) {\r",
                     "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMROBtn\").disable();\r",
                     "\r",
                     "} else if (selections.length==1) {\r",
                     "\r",
@@ -450,14 +452,14 @@
                 "implHandler": [
                     "var me = this;\r",
                     "if(Ext.getCmp(\"DAMFieldBox\").getForm().isValid()){\r",
-                    "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
-                    "record.beginEdit();\r",
-                    "record.set(\"title\",Ext.getCmp(\"DAMFieldBox\").getComponent(0).getComponent(0).getValue());\r",
-                    "record.set(\"originalFileId\",Ext.getCmp(\"DAMFieldBox\").getComponent(1).getComponent(0).getValue());\r",
-                    "record.set(\"fields\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues());\r",
-                    "record.set(\"taxonomy\", me.getTaxoValues());\r",
-                    "record.endEdit();\r",
-                    "button.up().up().close();\r",
+                    "    var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "    record.beginEdit();\r",
+                    "    record.set(\"title\",Ext.getCmp(\"DAMFieldBox\").getComponent(0).getComponent(0).getValue());\r",
+                    "    record.set(\"originalFileId\",Ext.getCmp(\"DAMFieldBox\").getComponent(1).getComponent(0).getValue());\r",
+                    "    record.set(\"fields\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues());\r",
+                    "    record.set(\"taxonomy\", me.getTaxoValues());\r",
+                    "    record.endEdit();\r",
+                    "    button.up().up().close();\r",
                     "}"
                 ],
                 "name": "click",
@@ -466,6 +468,70 @@
                 "designer|controlQuery": "#DAMSubmitUpdateBtn"
             },
             "designerId": "47e4e631-cd13-4d44-89d1-7ac517bbd39c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMROBtnClick",
+                "fn": "onDAMROBtnClick",
+                "implHandler": [
+                    "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
+                    "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "myEditor.setTitle(record.get(\"title\"));\r",
+                    "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
+                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").hide();\r",
+                    "Ext.getCmp(\"DAMSwitchEditBtn\").show();\r",
+                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(1));\r",
+                    "myEditor.show();\r",
+                    "this.renderDAMTypeFields(DAMType, true);\r",
+                    "this.renderTaxoFields(DAMType);\r",
+                    "var valueBox=record.get(\"fields\");\r",
+                    "valueBox.title=record.get(\"title\");\r",
+                    "valueBox.originalFileId=record.get(\"originalFileId\");\r",
+                    "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
+                    "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"DAMFieldBox\").query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMROBtn"
+            },
+            "designerId": "14c187f7-70c8-43d7-9805-9b56e796fd53"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMSwitchEditBtnClick",
+                "fn": "onDAMSwitchEditBtnClick",
+                "implHandler": [
+                    "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "var myEditor = Ext.getCmp(\"DAMCreateUpdateWindow\");\r",
+                    "button.hide();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"DAMFieldBox\").query(\"field\"), function(thing){thing.setReadOnly(false);});\r",
+                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
+                    "myEditor.setTitle(\"Edition du DAM \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMSwitchEditBtn"
+            },
+            "designerId": "80490bdb-13d5-4753-aa36-02d33b8ad112"
         }
     ]
 }

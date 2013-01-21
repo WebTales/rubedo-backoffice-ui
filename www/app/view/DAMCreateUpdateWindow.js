@@ -155,6 +155,14 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                             id: 'DAMSubmitUpdateBtn',
                             scale: 'large',
                             text: 'Enregistrer les modifications'
+                        },
+                        {
+                            xtype: 'button',
+                            anchor: '100%',
+                            hidden: true,
+                            id: 'DAMSwitchEditBtn',
+                            scale: 'large',
+                            text: 'Passer en mode édition'
                         }
                     ]
                 }

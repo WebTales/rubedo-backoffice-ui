@@ -299,6 +299,23 @@
                         "text": "Enregistrer les modifications"
                     },
                     "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton208",
+                        "hidden": true,
+                        "id": "DAMSwitchEditBtn",
+                        "scale": "large",
+                        "text": "Passer en mode édition"
+                    },
+                    "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"
                 }
             ]
         }
