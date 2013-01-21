@@ -355,7 +355,7 @@
                     "    },\r",
                     "    success: function(form, action) {\r",
                     "        button.up().setLoading(false);\r",
-                    "        button.up().up().up().close();\r",
+                    "        button.up().up().close();\r",
                     "        Ext.getStore(\"DAMStore\").load();\r",
                     "    },\r",
                     "    failure: function(form, action) {\r",
@@ -436,6 +436,36 @@
                 ]
             },
             "designerId": "f85bcb7d-72e0-460c-bbae-9eb0a0b746a0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMSubmitUpdateBtnClick",
+                "fn": "onDAMSubmitUpdateBtnClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "if(Ext.getCmp(\"DAMFieldBox\").getForm().isValid()){\r",
+                    "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "record.beginEdit();\r",
+                    "record.set(\"title\",Ext.getCmp(\"DAMFieldBox\").getComponent(0).getComponent(0).getValue());\r",
+                    "record.set(\"originalFileId\",Ext.getCmp(\"DAMFieldBox\").getComponent(1).getComponent(0).getValue());\r",
+                    "record.set(\"fields\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues());\r",
+                    "record.set(\"taxonomy\", me.getTaxoValues());\r",
+                    "record.endEdit();\r",
+                    "button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMSubmitUpdateBtn"
+            },
+            "designerId": "47e4e631-cd13-4d44-89d1-7ac517bbd39c"
         }
     ]
 }

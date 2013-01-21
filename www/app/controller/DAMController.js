@@ -67,7 +67,7 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             success: function(form, action) {
                 button.up().setLoading(false);
-                button.up().up().up().close();
+                button.up().up().close();
                 Ext.getStore("DAMStore").load();
             },
             failure: function(form, action) {
@@ -105,6 +105,20 @@ Ext.define('Rubedo.controller.DAMController', {
         valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
         myEditor.getComponent(0).getForm().setValues(valueBox);
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+    },
+
+    onDAMSubmitUpdateBtnClick: function(button, e, options) {
+        var me = this;
+        if(Ext.getCmp("DAMFieldBox").getForm().isValid()){
+            var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+            record.beginEdit();
+            record.set("title",Ext.getCmp("DAMFieldBox").getComponent(0).getComponent(0).getValue());
+            record.set("originalFileId",Ext.getCmp("DAMFieldBox").getComponent(1).getComponent(0).getValue());
+            record.set("fields",Ext.getCmp("DAMFieldBox").getForm().getValues());
+            record.set("taxonomy", me.getTaxoValues());
+            record.endEdit();
+            button.up().up().close();
+        }
     },
 
     resetInterfaceSelect: function(record) {
@@ -278,6 +292,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMUpdateBtn": {
                 click: this.onDAMUpdateBtnClick
+            },
+            "#DAMSubmitUpdateBtn": {
+                click: this.onDAMSubmitUpdateBtnClick
             }
         });
     }
