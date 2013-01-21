@@ -155,6 +155,10 @@ Ext.define('Rubedo.controller.DAMController', {
 
     },
 
+    onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("DAMROBtn").fireEvent("click", Ext.getCmp("DAMROBtn"));
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -190,7 +194,7 @@ Ext.define('Rubedo.controller.DAMController', {
             var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
             configurator.store = myStore;
         } else if ((updateMode)&&(protoData.cType == 'Ext.form.field.File')){
-            protoData.cType="Ext.form.field.Text";
+            protoData.cType="Rubedo.view.GFSFileField";
         }
         var newField= Ext.create(protoData.cType, configurator);
         newField.config=protoData.config;
@@ -316,7 +320,8 @@ Ext.define('Rubedo.controller.DAMController', {
                 click: this.onAddDAMBtnClick
             },
             "#DAMCenter": {
-                selectionchange: this.selectDAM
+                selectionchange: this.selectDAM,
+                itemdblclick: this.onGridpanelItemDblClick
             },
             "#DAMDeleteBtn": {
                 click: this.onDAMDeleteBtnClick

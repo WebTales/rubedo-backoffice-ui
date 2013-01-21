@@ -129,7 +129,7 @@
                     "    var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));\r",
                     "    configurator.store = myStore;\r",
                     "} else if ((updateMode)&&(protoData.cType == 'Ext.form.field.File')){\r",
-                    "    protoData.cType=\"Ext.form.field.Text\";\r",
+                    "    protoData.cType=\"Rubedo.view.GFSFileField\";\r",
                     "}\r",
                     "var newField= Ext.create(protoData.cType, configurator);\r",
                     "newField.config=protoData.config;\r",
@@ -532,6 +532,26 @@
                 "designer|controlQuery": "#DAMSwitchEditBtn"
             },
             "designerId": "80490bdb-13d5-4753-aa36-02d33b8ad112"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onGridpanelItemDblClick",
+                "fn": "onGridpanelItemDblClick",
+                "implHandler": [
+                    "Ext.getCmp(\"DAMROBtn\").fireEvent(\"click\", Ext.getCmp(\"DAMROBtn\"));"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#DAMCenter"
+            },
+            "designerId": "692cc083-f2d2-4d56-a7f8-58ef4059890d"
         }
     ]
 }

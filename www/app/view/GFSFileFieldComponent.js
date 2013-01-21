@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                     items: [
                         {
                             xtype: 'button',
-                            x: 10,
+                            x: 70,
                             y: 10,
                             itemId: 'fieldChangeFile',
                             iconCls: 'database_up_big',
@@ -68,7 +68,7 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                         },
                         {
                             xtype: 'button',
-                            x: 10,
+                            x: 70,
                             y: 70,
                             itemId: 'fieldClearFile',
                             width: 40,
@@ -79,7 +79,7 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                         },
                         {
                             xtype: 'button',
-                            x: 70,
+                            x: 10,
                             y: 10,
                             itemId: 'fieldDownloadFile',
                             width: 40,
@@ -90,7 +90,7 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                         },
                         {
                             xtype: 'button',
-                            x: 70,
+                            x: 10,
                             y: 70,
                             itemId: 'fieldPreviewFile',
                             width: 40,
