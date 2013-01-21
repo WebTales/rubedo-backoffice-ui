@@ -41,9 +41,18 @@ Ext.define('Rubedo.view.GFSFileField', {
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+abstractcomponent.getValue());
+                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
             }
+
             myComponent.getEl().on("click",function(){
 
                 abstractcomponent.getEl().dom.click();
@@ -59,9 +68,19 @@ Ext.define('Rubedo.view.GFSFileField', {
         abstractcomponent.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
+
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+newValue);
+                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
             }
+
         });
         if (abstractcomponent.fileType!="Image"){
             myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();

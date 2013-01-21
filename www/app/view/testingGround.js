@@ -46,7 +46,7 @@ Ext.define('Rubedo.view.testingGround', {
                 },
                 {
                     xtype: 'GFSFileField',
-                    fileType: 'Image'
+                    fileType: 'Video'
                 }
             ]
         });
