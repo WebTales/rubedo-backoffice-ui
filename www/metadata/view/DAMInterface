@@ -370,6 +370,35 @@
                     ]
                 },
                 {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": null,
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton13",
+                        "disabled": true,
+                        "id": "DAMUpdateBtn",
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "pencil_big",
+                        "scale": "large",
+                        "text": "Editer"
+                    },
+                    "designerId": "d4681572-ba93-47a8-91d0-9c33271d7a92",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
                     "type": "buttongroup",
                     "reference": {
                         "name": "items",

@@ -23,8 +23,8 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     ],
 
     floating: true,
-    height: 500,
     id: 'DAMCreateUpdateWindow',
+    minHeight: 220,
     width: 900,
     layout: {
         type: 'fit'
@@ -46,89 +46,87 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
             ],
             items: [
                 {
-                    xtype: 'panel',
-                    layout: {
-                        type: 'fit'
-                    },
+                    xtype: 'form',
+                    id: 'DAMFieldBox',
+                    overflowY: 'auto',
+                    bodyPadding: 10,
                     title: '',
                     items: [
                         {
-                            xtype: 'form',
-                            height: 101,
-                            id: 'DAMFieldBox',
-                            overflowY: 'auto',
-                            bodyPadding: 10,
-                            title: '',
+                            xtype: 'container',
+                            padding: 10,
+                            layout: {
+                                type: 'anchor'
+                            },
                             items: [
                                 {
-                                    xtype: 'container',
-                                    padding: 10,
-                                    layout: {
-                                        type: 'anchor'
-                                    },
-                                    items: [
-                                        {
-                                            xtype: 'textfield',
-                                            anchor: '90%',
-                                            style: '{float:left}',
-                                            name: 'title',
-                                            fieldLabel: 'Titre *',
-                                            labelSeparator: ' ',
-                                            allowBlank: false
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            itemId: 'helpBouton',
-                                            style: '{float:right;}',
-                                            handleMouseEvents: false,
-                                            iconCls: 'help',
-                                            pressedCls: 'x-btn',
-                                            text: '',
-                                            tooltip: 'Titre du média. Obligatoire.'
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'container',
-                                    padding: 10,
-                                    layout: {
-                                        type: 'anchor'
-                                    },
-                                    items: [
-                                        {
-                                            xtype: 'filefield',
-                                            anchor: '90%',
-                                            style: '{float:left}',
-                                            name: 'originalFile',
-                                            fieldLabel: 'Fichier original *',
-                                            labelSeparator: ' ',
-                                            allowBlank: false
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            itemId: 'helpBouton',
-                                            style: '{float:right;}',
-                                            handleMouseEvents: false,
-                                            iconCls: 'help',
-                                            pressedCls: 'x-btn',
-                                            text: '',
-                                            tooltip: 'Fichier principal du média. Obligatoire.'
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    id: 'DAMTaxoBox',
-                                    title: 'Taxonomie'
+                                    xtype: 'textfield',
+                                    anchor: '90%',
+                                    style: '{float:left}',
+                                    name: 'title',
+                                    fieldLabel: 'Titre *',
+                                    labelSeparator: ' ',
+                                    allowBlank: false
                                 },
                                 {
                                     xtype: 'button',
-                                    anchor: '100%',
-                                    id: 'DAMSubmitBtn',
-                                    scale: 'large',
-                                    text: 'Créer ce nouveau média'
+                                    itemId: 'helpBouton',
+                                    style: '{float:right;}',
+                                    handleMouseEvents: false,
+                                    iconCls: 'help',
+                                    pressedCls: 'x-btn',
+                                    text: '',
+                                    tooltip: 'Titre du média. Obligatoire.'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'container',
+                            padding: 10,
+                            layout: {
+                                type: 'anchor'
+                            },
+                            items: [
+                                {
+                                    xtype: 'filefield',
+                                    anchor: '90%',
+                                    style: '{float:left}',
+                                    name: 'originalFile',
+                                    fieldLabel: 'Fichier original *',
+                                    labelSeparator: ' ',
+                                    allowBlank: false
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'helpBouton',
+                                    style: '{float:right;}',
+                                    handleMouseEvents: false,
+                                    iconCls: 'help',
+                                    pressedCls: 'x-btn',
+                                    text: '',
+                                    tooltip: 'Fichier principal du média. Obligatoire.'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            id: 'DAMTaxoBox',
+                            title: 'Taxonomie'
+                        },
+                        {
+                            xtype: 'button',
+                            anchor: '100%',
+                            id: 'DAMSubmitBtn',
+                            scale: 'large',
+                            text: 'Créer ce nouveau média'
+                        },
+                        {
+                            xtype: 'button',
+                            anchor: '100%',
+                            hidden: true,
+                            id: 'DAMSubmitUpdateBtn',
+                            scale: 'large',
+                            text: 'Enregistrer les modifications'
                         }
                     ]
                 }

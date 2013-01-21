@@ -94,13 +94,14 @@
                 "designer|userClassName": "renderDAMTypeFields",
                 "fn": "renderDAMTypeFields",
                 "designer|params": [
-                    "DAMType"
+                    "DAMType",
+                    "updateMode"
                 ],
                 "implHandler": [
                     "var me=this;\r",
                     "var fieldBox=Ext.getCmp(\"DAMFieldBox\");\r",
                     "Ext.Array.forEach(DAMType.get(\"fields\"),function(field){\r",
-                    "    me.renderMTField(field, fieldBox);\r",
+                    "    me.renderMTField(Ext.clone(field), fieldBox, updateMode);\r",
                     "});"
                 ]
             },
@@ -118,7 +119,8 @@
                 "fn": "renderMTField",
                 "designer|params": [
                     "protoData",
-                    "renderTarget"
+                    "renderTarget",
+                    "updateMode"
                 ],
                 "implHandler": [
                     "var me=this;\r",
@@ -126,6 +128,8 @@
                     "if (protoData.cType == 'combobox') {\r",
                     "    var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));\r",
                     "    configurator.store = myStore;\r",
+                    "} else if ((updateMode)&&(protoData.cType == 'Ext.form.field.File')){\r",
+                    "    protoData.cType=\"Ext.form.field.Text\";\r",
                     "}\r",
                     "var newField= Ext.create(protoData.cType, configurator);\r",
                     "newField.config=protoData.config;\r",
@@ -140,7 +144,7 @@
                     "if (Ext.isEmpty(newField.config.tooltip)){\r",
                     "    casing.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
-                    "renderTarget.insert(renderTarget.items.items.length-2,casing);"
+                    "renderTarget.insert(renderTarget.items.items.length-3,casing);"
                 ]
             },
             "designerId": "2092c93a-ac01-475b-ba80-2011248055db"
@@ -159,8 +163,9 @@
                     "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
                     "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
                     "myEditor.show();\r",
-                    "this.renderDAMTypeFields(DAMType);\r",
-                    "this.renderTaxoFields(DAMType);"
+                    "this.renderDAMTypeFields(DAMType, false);\r",
+                    "this.renderTaxoFields(DAMType);\r",
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -247,7 +252,7 @@
                     "\r",
                     "    var selecteur = Ext.widget('comboboxselect', {\r",
                     "        name:leVocab.get(\"id\"),\r",
-                    "        width:690,\r",
+                    "        anchor:\"90%\",\r",
                     "        fieldLabel: leVocab.get(\"name\"),\r",
                     "        autoScroll: false,\r",
                     "        store: storeT,\r",
@@ -266,6 +271,7 @@
                     "    var enrobage =Ext.widget('ChampTC');\r",
                     "    enrobage.add(selecteur);\r",
                     "    enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);\r",
+                    "    if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}\r",
                     "    formTaxoTC.add(enrobage);\r",
                     "\r",
                     "}"
@@ -285,11 +291,16 @@
                 "fn": "selectDAM",
                 "implHandler": [
                     "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
+                    "Ext.getCmp(\"DAMUpdateBtn\").enable();\r",
                     "if (Ext.isEmpty(selections)) {\r",
                     "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
+                    "\r",
                     "} else if (selections.length==1) {\r",
                     "\r",
                     "} else {\r",
+                    "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
+                    "\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -366,6 +377,39 @@
                 "designer|controlQuery": "#DAMSubmitBtn"
             },
             "designerId": "57e2450d-d0f1-44d4-b9ea-10613b64c090"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMUpdateBtnClick",
+                "fn": "onDAMUpdateBtnClick",
+                "implHandler": [
+                    "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
+                    "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "myEditor.setTitle(\"Edition du DAM \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
+                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
+                    "myEditor.show();\r",
+                    "this.renderDAMTypeFields(DAMType, true);\r",
+                    "this.renderTaxoFields(DAMType);\r",
+                    "var valueBox=record.get(\"fields\");\r",
+                    "valueBox.title=record.get(\"title\");\r",
+                    "valueBox.originalFile=record.get(\"originalFile\");\r",
+                    "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMUpdateBtn"
+            },
+            "designerId": "c586426f-a0ca-4dd4-866b-34a0aa255b20"
         }
     ]
 }

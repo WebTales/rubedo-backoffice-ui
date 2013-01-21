@@ -29,17 +29,23 @@ Ext.define('Rubedo.controller.DAMController', {
         var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
         myEditor.show();
-        this.renderDAMTypeFields(DAMType);
+        this.renderDAMTypeFields(DAMType, false);
         this.renderTaxoFields(DAMType);
+        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
     },
 
     selectDAM: function(tablepanel, selections, options) {
         Ext.getCmp("DAMDeleteBtn").enable();
+        Ext.getCmp("DAMUpdateBtn").enable();
         if (Ext.isEmpty(selections)) {
             Ext.getCmp("DAMDeleteBtn").disable();
+            Ext.getCmp("DAMUpdateBtn").disable();
+
         } else if (selections.length==1) {
 
         } else {
+            Ext.getCmp("DAMUpdateBtn").disable();
+
         }
     },
 
@@ -79,6 +85,23 @@ Ext.define('Rubedo.controller.DAMController', {
 
     },
 
+    onDAMUpdateBtnClick: function(button, e, options) {
+        var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+        var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
+        var myEditor = Ext.widget("DAMCreateUpdateWindow");
+        myEditor.setTitle("Edition du DAM \" "+record.get("title")+" \"");
+        Ext.getCmp("DAMSubmitBtn").hide();
+        Ext.getCmp("DAMSubmitUpdateBtn").show();
+        myEditor.show();
+        this.renderDAMTypeFields(DAMType, true);
+        this.renderTaxoFields(DAMType);
+        var valueBox=record.get("fields");
+        valueBox.title=record.get("title");
+        valueBox.originalFile=record.get("originalFile");
+        myEditor.getComponent(0).getForm().setValues(valueBox);
+        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -99,20 +122,22 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getStore("DAMStore").removeAll();
     },
 
-    renderDAMTypeFields: function(DAMType) {
+    renderDAMTypeFields: function(DAMType, updateMode) {
         var me=this;
         var fieldBox=Ext.getCmp("DAMFieldBox");
         Ext.Array.forEach(DAMType.get("fields"),function(field){
-            me.renderMTField(field, fieldBox);
+            me.renderMTField(Ext.clone(field), fieldBox, updateMode);
         });
     },
 
-    renderMTField: function(protoData, renderTarget) {
+    renderMTField: function(protoData, renderTarget, updateMode) {
         var me=this;
         var configurator=protoData.config;
         if (protoData.cType == 'combobox') {
             var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
             configurator.store = myStore;
+        } else if ((updateMode)&&(protoData.cType == 'Ext.form.field.File')){
+            protoData.cType="Ext.form.field.Text";
         }
         var newField= Ext.create(protoData.cType, configurator);
         newField.config=protoData.config;
@@ -127,7 +152,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(newField.config.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
-        renderTarget.insert(renderTarget.items.items.length-2,casing);
+        renderTarget.insert(renderTarget.items.items.length-3,casing);
     },
 
     renderTaxoFields: function(DAMType) {
@@ -195,7 +220,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
             var selecteur = Ext.widget('comboboxselect', {
                 name:leVocab.get("id"),
-                width:690,
+                anchor:"90%",
                 fieldLabel: leVocab.get("name"),
                 autoScroll: false,
                 store: storeT,
@@ -214,6 +239,7 @@ Ext.define('Rubedo.controller.DAMController', {
             var enrobage =Ext.widget('ChampTC');
             enrobage.add(selecteur);
             enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+            if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
             formTaxoTC.add(enrobage);
 
         }
@@ -235,6 +261,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMSubmitBtn": {
                 click: this.onDAMSubmitBtnClick
+            },
+            "#DAMUpdateBtn": {
+                click: this.onDAMUpdateBtnClick
             }
         });
     }

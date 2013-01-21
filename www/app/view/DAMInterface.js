@@ -164,6 +164,15 @@ Ext.define('Rubedo.view.DAMInterface', {
                             text: 'Supprimer'
                         },
                         {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'DAMUpdateBtn',
+                            iconAlign: 'top',
+                            iconCls: 'pencil_big',
+                            scale: 'large',
+                            text: 'Editer'
+                        },
+                        {
                             xtype: 'buttongroup',
                             disabled: true,
                             headerPosition: 'bottom',
