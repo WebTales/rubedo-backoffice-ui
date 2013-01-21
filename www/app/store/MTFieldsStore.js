@@ -109,6 +109,7 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                                 queryMode: 'local',
                                 displayField: 'nom',
                                 valueField: 'valeur',
+                                value: 'Image',
                                 allowBlank: false,
                                 forceSelect: true,
                                 editable: false,
