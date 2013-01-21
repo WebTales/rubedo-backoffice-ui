@@ -22,7 +22,7 @@ Ext.define('Rubedo.model.DAMModel', {
             name: 'title'
         },
         {
-            name: 'originalFile'
+            name: 'originalFileId'
         },
         {
             name: 'fields'

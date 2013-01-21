@@ -162,6 +162,7 @@
                 "implHandler": [
                     "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
                     "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(2));\r",
                     "myEditor.show();\r",
                     "this.renderDAMTypeFields(DAMType, false);\r",
                     "this.renderTaxoFields(DAMType);\r",
@@ -254,6 +255,7 @@
                     "        name:leVocab.get(\"id\"),\r",
                     "        anchor:\"90%\",\r",
                     "        fieldLabel: leVocab.get(\"name\"),\r",
+                    "        submitValue:false,\r",
                     "        autoScroll: false,\r",
                     "        store: storeT,\r",
                     "        queryMode: 'remote',\r",
@@ -342,12 +344,14 @@
                 "fn": "onDAMSubmitBtnClick",
                 "implHandler": [
                     "button.up().setLoading(true);\r",
+                    "var me=this;\r",
                     "var form=button.up().getForm();\r",
                     "form.submit({\r",
                     "    clientValidation: true,\r",
                     "    url: 'dam/create',\r",
                     "    params: { \r",
-                    "        typeId: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "        typeId: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"id\"),\r",
+                    "        taxonomy: me.getTaxoValues()\r",
                     "    },\r",
                     "    success: function(form, action) {\r",
                     "        button.up().setLoading(false);\r",
@@ -395,12 +399,14 @@
                     "myEditor.setTitle(\"Edition du DAM \\\" \"+record.get(\"title\")+\" \\\"\");\r",
                     "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
                     "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
+                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(1));\r",
                     "myEditor.show();\r",
                     "this.renderDAMTypeFields(DAMType, true);\r",
                     "this.renderTaxoFields(DAMType);\r",
                     "var valueBox=record.get(\"fields\");\r",
                     "valueBox.title=record.get(\"title\");\r",
-                    "valueBox.originalFile=record.get(\"originalFile\");\r",
+                    "valueBox.originalFileId=record.get(\"originalFileId\");\r",
+                    "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
                     "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
                     "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
                 ],
@@ -410,6 +416,26 @@
                 "designer|controlQuery": "#DAMUpdateBtn"
             },
             "designerId": "c586426f-a0ca-4dd4-866b-34a0aa255b20"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getTaxoValues",
+                "fn": "getTaxoValues",
+                "implHandler": [
+                    "var values = { };\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"DAMTaxoBox\").query(\"field\"),function(field){\r",
+                    "    values[field.name]=field.getValue();\r",
+                    "});\r",
+                    "return(values);"
+                ]
+            },
+            "designerId": "f85bcb7d-72e0-460c-bbae-9eb0a0b746a0"
         }
     ]
 }

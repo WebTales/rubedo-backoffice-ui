@@ -91,7 +91,35 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                     xtype: 'filefield',
                                     anchor: '90%',
                                     style: '{float:left}',
-                                    name: 'originalFile',
+                                    name: 'originalFileId',
+                                    fieldLabel: 'Fichier original *',
+                                    labelSeparator: ' ',
+                                    allowBlank: false
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'helpBouton',
+                                    style: '{float:right;}',
+                                    handleMouseEvents: false,
+                                    iconCls: 'help',
+                                    pressedCls: 'x-btn',
+                                    text: '',
+                                    tooltip: 'Fichier principal du média. Obligatoire.'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            padding: 10,
+                            layout: {
+                                type: 'anchor'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '90%',
+                                    style: '{float:left}',
+                                    name: 'originalFileId',
                                     fieldLabel: 'Fichier original *',
                                     labelSeparator: ' ',
                                     allowBlank: false

@@ -312,7 +312,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"originalFile\", \"title\"];\r",
+                    "var usedNames=[\"originalFileId\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    Ext.Array.include(usedNames,field.name);\r",
                     "});\r",
@@ -370,16 +370,16 @@
                     "        protoId:field.protoId\r",
                     "    };\r",
                     "    if (field.isXType('combobox')) {\r",
-                    "            var dones = field.getStore().data.items;\r",
-                    "            var donesR = [ ];\r",
-                    "            for (i=0; i<dones.length; i++) {\r",
-                    "                donesR.push({valeur: dones[i].data.valeur, nom: dones[i].data.nom });\r",
-                    "            }\r",
-                    "            newField.config.store = {\r",
-                    "                fields: ['valeur', 'nom'],\r",
-                    "                data: donesR\r",
-                    "            };\r",
+                    "        var dones = field.getStore().data.items;\r",
+                    "        var donesR = [ ];\r",
+                    "        for (i=0; i<dones.length; i++) {\r",
+                    "            donesR.push({valeur: dones[i].data.valeur, nom: dones[i].data.nom });\r",
                     "        }\r",
+                    "        newField.config.store = {\r",
+                    "            fields: ['valeur', 'nom'],\r",
+                    "            data: donesR\r",
+                    "        };\r",
+                    "    }\r",
                     "    result.push(newField);\r",
                     "});\r",
                     "return(result);"
@@ -542,7 +542,7 @@
                     "name"
                 ],
                 "implHandler": [
-                    "var usedNames=[\"originalFile\", \"title\"];\r",
+                    "var usedNames=[\"originalFileId\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
                     "    if (field.getId()!=Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getId()){\r",
                     "        Ext.Array.include(usedNames,field.name);\r",

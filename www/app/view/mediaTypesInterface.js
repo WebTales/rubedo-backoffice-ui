@@ -363,7 +363,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             xtype: 'filefield',
                                                             anchor: '90%',
                                                             style: '{float:left}',
-                                                            name: 'originalFile',
+                                                            name: 'originalFileId',
                                                             fieldLabel: 'Fichier original *',
                                                             labelSeparator: ' ',
                                                             allowBlank: false

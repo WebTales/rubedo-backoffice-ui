@@ -793,6 +793,7 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,
+                        allowBlanl: true,
                         multivalued: false,
                         multiSelect: true,
                         editable: true,
@@ -842,6 +843,13 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
                                 allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {

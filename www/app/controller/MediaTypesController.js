@@ -296,7 +296,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     nameAvailable: function(name) {
-        var usedNames=["originalFile", "title"];
+        var usedNames=["originalFileId", "title"];
         Ext.Array.forEach(Ext.getCmp('MTeditFields').query("field"), function(field){
             Ext.Array.include(usedNames,field.name);
         });
@@ -332,7 +332,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     },
 
     nameValidator: function(name) {
-        var usedNames=["originalFile", "title"];
+        var usedNames=["originalFileId", "title"];
         Ext.Array.forEach(Ext.getCmp('MTeditFields').query("field"), function(field){
             if (field.getId()!=Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getId()){
                 Ext.Array.include(usedNames,field.name);

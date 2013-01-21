@@ -150,7 +150,7 @@
                                 "style": [
                                     "{float:left}"
                                 ],
-                                "name": "originalFile",
+                                "name": "originalFileId",
                                 "fieldLabel": "Fichier original *",
                                 "labelSeparator": " ",
                                 "allowBlank": false
@@ -183,6 +183,71 @@
                                 ]
                             },
                             "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "ChampTC",
+                        "designer|userAlias": "ChampTC",
+                        "designer|displayName": null,
+                        "padding": 10,
+                        "layout": "anchor"
+                    },
+                    "designerId": "4dc98bb5-5967-4b22-8126-09a3df6665e1",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "90%",
+                                "designer|userClassName": "MyTextField65",
+                                "style": [
+                                    "{float:left}"
+                                ],
+                                "name": "originalFileId",
+                                "fieldLabel": "Fichier original *",
+                                "labelSeparator": " ",
+                                "allowBlank": false
+                            },
+                            "designerId": "47d69c8f-3c16-4f6e-9d9f-25cbceb3b845"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton17",
+                                "itemId": "helpBouton",
+                                "margin": null,
+                                "style": [
+                                    "{float:right;}"
+                                ],
+                                "allowDepress": null,
+                                "enableToggle": null,
+                                "handleMouseEvents": false,
+                                "iconCls": "help",
+                                "pressed": null,
+                                "pressedCls": "x-btn",
+                                "text": "",
+                                "tooltip": [
+                                    "'Fichier principal du média. Obligatoire.'"
+                                ]
+                            },
+                            "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab"
                         }
                     ]
                 },

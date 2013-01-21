@@ -28,6 +28,7 @@ Ext.define('Rubedo.controller.DAMController', {
     onAddDAMBtnClick: function(button, e, options) {
         var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
+        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
         myEditor.show();
         this.renderDAMTypeFields(DAMType, false);
         this.renderTaxoFields(DAMType);
@@ -55,12 +56,14 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMSubmitBtnClick: function(button, e, options) {
         button.up().setLoading(true);
+        var me=this;
         var form=button.up().getForm();
         form.submit({
             clientValidation: true,
             url: 'dam/create',
             params: { 
-                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id")
+                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id"),
+                taxonomy: me.getTaxoValues()
             },
             success: function(form, action) {
                 button.up().setLoading(false);
@@ -92,12 +95,14 @@ Ext.define('Rubedo.controller.DAMController', {
         myEditor.setTitle("Edition du DAM \" "+record.get("title")+" \"");
         Ext.getCmp("DAMSubmitBtn").hide();
         Ext.getCmp("DAMSubmitUpdateBtn").show();
+        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(1));
         myEditor.show();
         this.renderDAMTypeFields(DAMType, true);
         this.renderTaxoFields(DAMType);
         var valueBox=record.get("fields");
         valueBox.title=record.get("title");
-        valueBox.originalFile=record.get("originalFile");
+        valueBox.originalFileId=record.get("originalFileId");
+        valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
         myEditor.getComponent(0).getForm().setValues(valueBox);
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
     },
@@ -222,6 +227,7 @@ Ext.define('Rubedo.controller.DAMController', {
                 name:leVocab.get("id"),
                 anchor:"90%",
                 fieldLabel: leVocab.get("name"),
+                submitValue:false,
                 autoScroll: false,
                 store: storeT,
                 queryMode: 'remote',
@@ -243,6 +249,14 @@ Ext.define('Rubedo.controller.DAMController', {
             formTaxoTC.add(enrobage);
 
         }
+    },
+
+    getTaxoValues: function() {
+        var values = { };
+        Ext.Array.forEach(Ext.getCmp("DAMTaxoBox").query("field"),function(field){
+            values[field.name]=field.getValue();
+        });
+        return(values);
     },
 
     init: function(application) {
