@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.CTMTField'
+        'Rubedo.view.GFSFileField'
     ],
 
     height: 450,
@@ -45,7 +45,8 @@ Ext.define('Rubedo.view.testingGround', {
                     fieldLabel: 'Label'
                 },
                 {
-                    xtype: 'CTMTField'
+                    xtype: 'GFSFileField',
+                    fileType: 'Image'
                 }
             ]
         });

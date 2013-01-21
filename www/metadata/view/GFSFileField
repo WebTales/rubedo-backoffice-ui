@@ -1,0 +1,71 @@
+{
+    "type": "hiddenfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GFSFileField",
+        "designer|userAlias": "GFSFileField",
+        "height": 0,
+        "id": null,
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen19812",
+    "designerId": "ea685b1f-b6a0-400a-82aa-0035cbf60d53",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"GFSFileFieldComponent\");\r",
+                    "myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+\" \");\r",
+                    "myComponent.on(\"afterrender\",function(){\r",
+                    "    if (Ext.isEmpty(abstractcomponent.getValue())){\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image_remove.png\");\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"dam/get-thumbnail?id=\"+abstractcomponent.getValue());\r",
+                    "    }\r",
+                    "    myComponent.getEl().on(\"click\",function(){\r",
+                    "\r",
+                    "        abstractcomponent.getEl().dom.click();\r",
+                    "    });\r",
+                    "});\r",
+                    "abstractcomponent.up().add(myComponent);\r",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldChangeFile\").on(\"click\",function(){\r",
+                    "    Ext.widget(\"ImagePickerWindow\",{targetField:abstractcomponent.id}).show();\r",
+                    "});\r",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearFile\").on(\"click\",function(){\r",
+                    "    abstractcomponent.setValue();\r",
+                    "});\r",
+                    "abstractcomponent.on(\"change\",function(theField,newValue){\r",
+                    "    if ((newValue===\"\")||(Ext.isEmpty(newValue))){\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image_remove.png\");\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"dam/get-thumbnail?id=\"+newValue);\r",
+                    "    }\r",
+                    "});\r",
+                    "if (abstractcomponent.fileType!=\"Image\"){\r",
+                    "    myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldEditFile\").hide();\r",
+                    "} else {\r",
+                    "    //handle image online editing\r",
+                    "}\r",
+                    "if (abstractcomponent.fileType==\"Office\"){\r",
+                    "    myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldPreviewFile\").hide();\r",
+                    "} "
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "3591409c-9d82-41a9-95bd-b545b760cbb4"
+        }
+    ]
+}

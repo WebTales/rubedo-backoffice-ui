@@ -178,7 +178,9 @@ Ext.application({
         'MyGridPanel31',
         'DAMCreateUpdateWindow',
         'DAMMainView',
-        'CTMTField'
+        'CTMTField',
+        'GFSFileFieldComponent',
+        'GFSFileField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -52,8 +52,18 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "4ec5713e-3e4e-40c9-a50f-f31c796c08f0",
-            "masterInstanceId": "ExtBox1-ext-gen26462"
+            "userConfig": {
+                "fileType": "Image"
+            },
+            "designerId": "78aa1bc6-fe93-442e-86ab-e875b539b015",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "fileType",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "ExtBox1-ext-gen19812"
         }
     ]
 }
