@@ -171,7 +171,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
 
     onContainerRender: function(abstractcomponent, options) {
         var mainField= Ext.create("Rubedo.view.GFSFileField", {
-            name:"orginalFileId",
+            name:"originalFileId",
             allowBlank:false,
             fieldLabel:"Fichier original *",
             style:{"float":"left"},

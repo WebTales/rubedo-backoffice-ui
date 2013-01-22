@@ -180,7 +180,8 @@ Ext.application({
         'DAMMainView',
         'CTMTField',
         'GFSFileFieldComponent',
-        'GFSFileField'
+        'GFSFileField',
+        'GFSFieldUploadWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

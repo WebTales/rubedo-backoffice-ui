@@ -243,7 +243,7 @@
                                 "fn": "onContainerRender",
                                 "implHandler": [
                                     "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
-                                    "    name:\"orginalFileId\",\r",
+                                    "    name:\"originalFileId\",\r",
                                     "    allowBlank:false,\r",
                                     "    fieldLabel:\"Fichier original *\",\r",
                                     "    style:{\"float\":\"left\"},\r",

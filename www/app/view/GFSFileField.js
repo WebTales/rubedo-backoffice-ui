@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.GFSFileField', {
         });
         abstractcomponent.up().add(myComponent);
         myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").on("click",function(){
-            //Ext.widget("ImagePickerWindow",{targetField:abstractcomponent.id}).show();
+            Ext.widget("GFSFieldUploadWindow",{targetField:abstractcomponent.id}).show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){
             abstractcomponent.setValue();

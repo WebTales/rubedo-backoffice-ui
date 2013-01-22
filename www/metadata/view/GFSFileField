@@ -50,7 +50,7 @@
                     "});\r",
                     "abstractcomponent.up().add(myComponent);\r",
                     "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldChangeFile\").on(\"click\",function(){\r",
-                    "    //Ext.widget(\"ImagePickerWindow\",{targetField:abstractcomponent.id}).show();\r",
+                    "    Ext.widget(\"GFSFieldUploadWindow\",{targetField:abstractcomponent.id}).show();\r",
                     "});\r",
                     "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearFile\").on(\"click\",function(){\r",
                     "    abstractcomponent.setValue();\r",

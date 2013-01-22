@@ -1,0 +1,163 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GFSFieldUploadWindow",
+        "designer|userAlias": "GFSFieldUploadWindow",
+        "height": 102,
+        "width": 400,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Upload",
+        "constrain": false,
+        "constrainHeader": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen15864",
+    "designerId": "1dd7d2f3-5f63-4221-a070-989924064068",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm38",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "239fdab0-8556-46f4-a37b-eed8ca17ec99",
+            "cn": [
+                {
+                    "type": "filefield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyFileUpload5",
+                        "name": "file",
+                        "fieldLabel": "Fichier",
+                        "allowBlank": false
+                    },
+                    "designerId": "d4ff35cb-e4d7-485a-8008-e327e47c03a8"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "50%",
+                        "designer|userClassName": "MyButton218",
+                        "margin": "0 10 0 0",
+                        "iconCls": "ouiSpetit",
+                        "text": "Valider"
+                    },
+                    "designerId": "dad3da89-4e47-4696-aa44-8711be3d940e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().setLoading(true);\r",
+                                    "var me=this;\r",
+                                    "var form=button.up().getForm();\r",
+                                    "form.submit({\r",
+                                    "    clientValidation: true,\r",
+                                    "    url: 'file/put',\r",
+                                    "    params: { \r",
+                                    "        \r",
+                                    "    },\r",
+                                    "    success: function(form, action) {\r",
+                                    "        button.up().setLoading(false);\r",
+                                    "        Ext.getCmp(button.up().up().targetField).setValue(action.result.data.id);\r",
+                                    "        button.up().up().close();\r",
+                                    "    },\r",
+                                    "    failure: function(form, action) {\r",
+                                    "        button.up().setLoading(false);\r",
+                                    "        switch (action.failureType) {\r",
+                                    "            case Ext.form.action.Action.CLIENT_INVALID:\r",
+                                    "            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');\r",
+                                    "            break;\r",
+                                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
+                                    "            break;\r",
+                                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                                    "            Ext.Msg.alert('Erreur', action.result.msg);\r",
+                                    "        }\r",
+                                    "    }\r",
+                                    "});\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "bf7dc9e4-c15f-4604-b68c-d5d621fbfe44"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "50%",
+                        "designer|userClassName": "MyButton219",
+                        "margin": "0 0 0 10",
+                        "iconCls": "close",
+                        "text": "Annuler"
+                    },
+                    "designerId": "88d8f535-0073-45d6-9c3e-e4c8288b70e4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "e1994626-a74c-40b5-9e4b-442ed80e13d5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

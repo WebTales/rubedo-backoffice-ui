@@ -68,6 +68,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.AdminPasswordChange',
         'Rubedo.view.userSettings',
         'Rubedo.view.adminFMDP',
+        'Rubedo.view.GFSFieldUploadWindow',
         'Rubedo.view.esResponseWindow',
         'Rubedo.view.searchResultsWindow',
         'Rubedo.view.newSiteWindow',
