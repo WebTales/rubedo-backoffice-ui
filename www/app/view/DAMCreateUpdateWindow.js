@@ -116,15 +116,6 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                             },
                             items: [
                                 {
-                                    xtype: 'textfield',
-                                    anchor: '90%',
-                                    style: '{float:left}',
-                                    name: 'originalFileId',
-                                    fieldLabel: 'Fichier original *',
-                                    labelSeparator: ' ',
-                                    allowBlank: false
-                                },
-                                {
                                     xtype: 'button',
                                     itemId: 'helpBouton',
                                     style: '{float:right;}',
@@ -134,7 +125,13 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                     text: '',
                                     tooltip: 'Fichier principal du média. Obligatoire.'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onContainerRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'fieldset',
@@ -170,6 +167,18 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onContainerRender: function(abstractcomponent, options) {
+        var mainField= Ext.create("Rubedo.view.GFSFileField", {
+            name:"orginalFileId",
+            allowBlank:false,
+            fieldLabel:"Fichier original *",
+            style:{"float":"left"},
+            fileType:Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("mainFileType"),
+            anchor:"90%"
+        });
+        abstractcomponent.insert(0, mainField);
     }
 
 });

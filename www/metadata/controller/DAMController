@@ -398,7 +398,7 @@
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
                     "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
                     "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
-                    "myEditor.setTitle(\"Edition du DAM \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "myEditor.setTitle(\"Edition du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
                     "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
                     "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
                     "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(1));\r",
@@ -522,7 +522,7 @@
                     "button.hide();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"DAMFieldBox\").query(\"field\"), function(thing){thing.setReadOnly(false);});\r",
                     "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
-                    "myEditor.setTitle(\"Edition du DAM \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "myEditor.setTitle(\"Edition du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
                     "\r",
                     ""
                 ],

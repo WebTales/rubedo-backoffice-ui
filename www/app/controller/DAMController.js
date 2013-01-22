@@ -94,7 +94,7 @@ Ext.define('Rubedo.controller.DAMController', {
         var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
         var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
-        myEditor.setTitle("Edition du DAM \" "+record.get("title")+" \"");
+        myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
         Ext.getCmp("DAMSubmitBtn").hide();
         Ext.getCmp("DAMSubmitUpdateBtn").show();
         Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(1));
@@ -150,7 +150,7 @@ Ext.define('Rubedo.controller.DAMController', {
         button.hide();
         Ext.Array.forEach(Ext.getCmp("DAMFieldBox").query("field"), function(thing){thing.setReadOnly(false);});
         Ext.getCmp("DAMSubmitUpdateBtn").show();
-        myEditor.setTitle("Edition du DAM \" "+record.get("title")+" \"");
+        myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
 
 
     },

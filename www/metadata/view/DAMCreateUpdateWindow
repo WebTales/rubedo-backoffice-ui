@@ -205,26 +205,6 @@
                     "designerId": "4dc98bb5-5967-4b22-8126-09a3df6665e1",
                     "cn": [
                         {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "90%",
-                                "designer|userClassName": "MyTextField65",
-                                "style": [
-                                    "{float:left}"
-                                ],
-                                "name": "originalFileId",
-                                "fieldLabel": "Fichier original *",
-                                "labelSeparator": " ",
-                                "allowBlank": false
-                            },
-                            "designerId": "47d69c8f-3c16-4f6e-9d9f-25cbceb3b845"
-                        },
-                        {
                             "type": "button",
                             "reference": {
                                 "name": "items",
@@ -250,6 +230,32 @@
                                 ]
                             },
                             "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onContainerRender",
+                                "fn": "onContainerRender",
+                                "implHandler": [
+                                    "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
+                                    "    name:\"orginalFileId\",\r",
+                                    "    allowBlank:false,\r",
+                                    "    fieldLabel:\"Fichier original *\",\r",
+                                    "    style:{\"float\":\"left\"},\r",
+                                    "    fileType:Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\"),\r",
+                                    "    anchor:\"90%\"\r",
+                                    "});\r",
+                                    "abstractcomponent.insert(0, mainField);"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "b2684d09-c1e6-485b-8bfe-7e706bd87607"
                         }
                     ]
                 },

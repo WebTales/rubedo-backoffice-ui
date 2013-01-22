@@ -64,7 +64,7 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                             iconCls: 'database_up_big',
                             scale: 'large',
                             text: '',
-                            tooltip: 'Choisir un autre fichier'
+                            tooltip: 'Uploader un fichier'
                         },
                         {
                             xtype: 'button',

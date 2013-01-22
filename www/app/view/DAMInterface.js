@@ -23,9 +23,9 @@ Ext.define('Rubedo.view.DAMInterface', {
         'Rubedo.view.DAMMainView'
     ],
 
-    height: 403,
+    height: 651,
     id: 'DAMInterface',
-    width: 947,
+    width: 1038,
     layout: {
         align: 'stretch',
         type: 'hbox'
