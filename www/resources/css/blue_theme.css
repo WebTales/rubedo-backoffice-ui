@@ -21,6 +21,21 @@ border-style:dotted !important;
 .contrastRow{
 border-style:dashed !important;
 }
+.prevDesktop{
+	background: url(../icones/generic/desktop32.png) left center no-repeat !important;
+}
+.prevIpad{
+	background: url(../icones/generic/ipad32.png) left center no-repeat !important;
+}
+.prevIpadL{
+	background: url(../icones/generic/ipad-l32.png) left center no-repeat !important;
+}
+.prevIphone{
+	background: url(../icones/generic/iphone32.png) left center no-repeat !important;
+}
+.prevIphoneL{
+	background: url(../icones/generic/iphone-l32.png) left center no-repeat !important;
+}
 .x-toolbar .x-btn-split-right:hover {
     background: url(../images/delete_item.png) right center no-repeat !important;
 }
@@ -33,6 +48,9 @@ border-style:dashed !important;
 }
 .refresh{
 	background: url(../icones/blue/16x16/refresh.png) left center no-repeat !important;
+}
+.refresh_big{
+	background: url(../icones/blue/32x32/refresh.png) left center no-repeat !important;
 }
 .desktopHome_med{
 	background: url(../icones/blue/24x24/home.png)  center no-repeat !important;

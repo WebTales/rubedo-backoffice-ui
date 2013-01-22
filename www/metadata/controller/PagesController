@@ -969,7 +969,7 @@
                     "            Ext.getCmp(\"contribPreviewMain\").add(Ext.widget(\"container\",{\r",
                     "                autoEl: {\r",
                     "                    tag: 'iframe',\r",
-                    "                    src: \"resources/responsiveShow/?url=\"+targetedUrl+\"?preview=1\"\r",
+                    "                    src: \"resources/responsiveShow/?device=\"+Ext.getCmp(\"previewDeviceCombo\").getActiveItem().deviceValue+\"&url=\"+targetedUrl+\"?preview=1\"\r",
                     "                }\r",
                     "            }));\r",
                     "        },\r",
@@ -1112,6 +1112,48 @@
                 ]
             },
             "designerId": "03579757-73d3-4682-95af-acdc91dcfeee"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdvancedPreviewPageRefreshClick",
+                "fn": "onAdvancedPreviewPageRefreshClick",
+                "implHandler": [
+                    "var record=Ext.getCmp(\"previewPageTree\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(record)){\r",
+                    "Ext.getCmp(\"contribPreviewMain\").removeAll();\r",
+                    "if(!record.isRoot()){\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'xhr-get-page-url',\r",
+                    "        params: {\r",
+                    "            \"page-id\": record.get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var targetedUrl = Ext.JSON.decode(response.responseText).url;\r",
+                    "            Ext.getCmp(\"contribPreviewMain\").add(Ext.widget(\"container\",{\r",
+                    "                autoEl: {\r",
+                    "                    tag: 'iframe',\r",
+                    "                    src: \"resources/responsiveShow/?device=\"+Ext.getCmp(\"previewDeviceCombo\").getActiveItem().deviceValue+\"&url=\"+targetedUrl+\"?preview=1\"\r",
+                    "                }\r",
+                    "            }));\r",
+                    "        },\r",
+                    "        failure:function(){\r",
+                    "            Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\\'url de la page');\r",
+                    "        }\r",
+                    "    });\r",
+                    "}}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#advancedPreviewPageRefresh"
+            },
+            "designerId": "f4a5fbda-c3f3-452f-ae1a-7c849557ecdb"
         }
     ]
 }

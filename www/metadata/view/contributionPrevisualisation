@@ -131,7 +131,7 @@
             ]
         },
         {
-            "type": "container",
+            "type": "panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -139,11 +139,284 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyContainer28",
+                "designer|userClassName": "MyPanel52",
                 "id": "contribPreviewMain",
                 "layout": "fit"
             },
-            "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7"
+            "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7",
+            "cn": [
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "designer|userClassName": "MyToolbar55"
+                    },
+                    "designerId": "26fe1274-5cf3-4d80-bb54-b0d19790ecfd",
+                    "cn": [
+                        {
+                            "type": "cyclebutton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyCycleButton",
+                                "id": "previewDeviceCombo",
+                                "margin": "0 20 0 0",
+                                "arrowAlign": "bottom",
+                                "scale": "large",
+                                "showText": true
+                            },
+                            "designerId": "bf4ac652-8888-4e80-93f2-78769c111b91",
+                            "cn": [
+                                {
+                                    "type": "menu",
+                                    "reference": {
+                                        "name": "menu",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyMenu5",
+                                        "width": null,
+                                        "plain": false
+                                    },
+                                    "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
+                                    "cn": [
+                                        {
+                                            "type": "menucheckitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "deviceValue": "desktop",
+                                                "designer|userClassName": "MyCheckItem",
+                                                "height": null,
+                                                "icon": null,
+                                                "iconCls": "prevDesktop",
+                                                "text": "Ordinateur"
+                                            },
+                                            "designerId": "66dbf624-ad21-4c50-826b-2a3572bc30b1",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "deviceValue",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "menucheckitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "deviceValue": "iphone",
+                                                "designer|userClassName": "MyCheckItem1",
+                                                "iconCls": "prevIphone",
+                                                "text": "Téléphone - portrait"
+                                            },
+                                            "designerId": "6ef9ffd2-0096-4928-b706-989103450e1e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "deviceValue",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "menucheckitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "deviceValue": "iphone-l",
+                                                "designer|userClassName": "MyCheckItem2",
+                                                "iconCls": "prevIphoneL",
+                                                "text": "Téléphone - paysage"
+                                            },
+                                            "designerId": "a733b3bd-6123-4c34-a178-c9704a358697",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "deviceValue",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "menucheckitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "deviceValue": "ipad",
+                                                "designer|userClassName": "MyCheckItem2",
+                                                "iconCls": "prevIpad",
+                                                "text": "Tablette - portrait"
+                                            },
+                                            "designerId": "ff5b1895-b0fc-4cc4-9a97-d591d4e4a0ba",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "deviceValue",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "menucheckitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "deviceValue": "ipad-l",
+                                                "designer|userClassName": "MyCheckItem2",
+                                                "iconCls": "prevIpadL",
+                                                "text": "Tablette - paysage"
+                                            },
+                                            "designerId": "0ee5da39-460e-4f73-ad54-afc1bf538b29",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "deviceValue",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onPreviewDeviceComboChange",
+                                        "fn": "onPreviewDeviceComboChange",
+                                        "implHandler": [
+                                            "if (!Ext.isEmpty(Ext.getCmp(\"advancedPreviewPageRefresh\"))){\r",
+                                            "Ext.getCmp(\"advancedPreviewPageRefresh\").fireEvent(\"click\", Ext.getCmp(\"advancedPreviewPageRefresh\"));\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c8ab5984-d075-4c21-b15a-2e38e60bd82f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "tbseparator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MySeparator7"
+                            },
+                            "designerId": "5792268c-d60e-48f5-a285-e97b20db6b26"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyCheckbox6",
+                                "margin": "0 20 0 0",
+                                "fieldLabel": "Mode brouillon",
+                                "labelWidth": 90,
+                                "boxLabel": ""
+                            },
+                            "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9"
+                        },
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyDateField6",
+                                "fieldLabel": "Date",
+                                "labelWidth": 40
+                            },
+                            "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079"
+                        },
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill24"
+                            },
+                            "designerId": "4ba7bf43-f812-44c1-a0d2-8ff0d45e1078"
+                        },
+                        {
+                            "type": "tbseparator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MySeparator8"
+                            },
+                            "designerId": "2baa604d-0e06-4a33-9d2a-cb5738a2d11c"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton220",
+                                "id": "advancedPreviewPageRefresh",
+                                "iconCls": "refresh_big",
+                                "scale": "large",
+                                "text": "Actualiser"
+                            },
+                            "designerId": "10afe836-bc5e-4f49-a68a-aee3f4c6ca2a"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

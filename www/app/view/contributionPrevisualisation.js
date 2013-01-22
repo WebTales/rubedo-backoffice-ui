@@ -83,17 +83,109 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                     ]
                 },
                 {
-                    xtype: 'container',
+                    xtype: 'panel',
                     flex: 1,
                     id: 'contribPreviewMain',
                     layout: {
                         type: 'fit'
-                    }
+                    },
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'cycle',
+                                    id: 'previewDeviceCombo',
+                                    margin: '0 20 0 0',
+                                    arrowAlign: 'bottom',
+                                    scale: 'large',
+                                    showText: true,
+                                    menu: {
+                                        xtype: 'menu',
+                                        plain: false,
+                                        items: [
+                                            {
+                                                xtype: 'menucheckitem',
+                                                deviceValue: 'desktop',
+                                                iconCls: 'prevDesktop',
+                                                text: 'Ordinateur'
+                                            },
+                                            {
+                                                xtype: 'menucheckitem',
+                                                deviceValue: 'iphone',
+                                                iconCls: 'prevIphone',
+                                                text: 'Téléphone - portrait'
+                                            },
+                                            {
+                                                xtype: 'menucheckitem',
+                                                deviceValue: 'iphone-l',
+                                                iconCls: 'prevIphoneL',
+                                                text: 'Téléphone - paysage'
+                                            },
+                                            {
+                                                xtype: 'menucheckitem',
+                                                deviceValue: 'ipad',
+                                                iconCls: 'prevIpad',
+                                                text: 'Tablette - portrait'
+                                            },
+                                            {
+                                                xtype: 'menucheckitem',
+                                                deviceValue: 'ipad-l',
+                                                iconCls: 'prevIpadL',
+                                                text: 'Tablette - paysage'
+                                            }
+                                        ]
+                                    },
+                                    listeners: {
+                                        change: {
+                                            fn: me.onPreviewDeviceComboChange,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
+                                    xtype: 'tbseparator'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margin: '0 20 0 0',
+                                    fieldLabel: 'Mode brouillon',
+                                    labelWidth: 90,
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    fieldLabel: 'Date',
+                                    labelWidth: 40
+                                },
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'tbseparator'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'advancedPreviewPageRefresh',
+                                    iconCls: 'refresh_big',
+                                    scale: 'large',
+                                    text: 'Actualiser'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onPreviewDeviceComboChange: function(cycle, item, options) {
+        if (!Ext.isEmpty(Ext.getCmp("advancedPreviewPageRefresh"))){
+            Ext.getCmp("advancedPreviewPageRefresh").fireEvent("click", Ext.getCmp("advancedPreviewPageRefresh"));
+        }
     }
 
 });

@@ -42,6 +42,7 @@
 	width: 560px;
 	float: left;
 	margin-left: 65px;
+	display:none;
 	}
 
 	#screen-options li {
@@ -91,7 +92,7 @@
 	margin: auto ;
 	background-color:#CCCCCC;
 
-	margin-top: 48px;
+	margin-top: 0px;
 
 	/* trying different values to fix iOS issues with iFrame busting loose and wrecking the joint.   */
 	overflow:hidden;
@@ -282,10 +283,34 @@ function gup( name )
 }
 		
 		$('#displayframe').attr('src', gup('url'));
-		$("#screen-options li").removeClass("active");
+		var responsiveDevice = gup('device');
+		if (responsiveDevice=="iphone"){
+			$("#screen-options li").removeClass("active");
+			$(this).addClass("active");
+			$('#viewport').attr('class', 'iphone');
+			$('#device-detail').attr('class', 'iphone-detail');		
+		}	else	if (responsiveDevice=="iphone-l"){
+			$("#screen-options li").removeClass("active");
+			$(this).addClass("active");
+			$('#viewport').attr('class', 'iphone-l');
+			$('#device-detail').attr('class', 'iphone-l-detail');
+		} else	if (responsiveDevice=="ipad"){
+			$("#screen-options li").removeClass("active");
+			$(this).addClass("active");
+			$('#viewport').attr('class', 'ipad');
+			$('#device-detail').attr('class', 'ipad-detail')
+		} else	if (responsiveDevice=="ipad-l"){
+			$("#screen-options li").removeClass("active");
+			$(this).addClass("active");
+			$('#viewport').attr('class', 'ipad-l');
+			$('#device-detail').attr('class', 'ipad-l-detail');
+		} else {
+		
+			$("#screen-options li").removeClass("active");
 			$(this).addClass("active");
 			$('#viewport').attr('class', 'desktop');
 			$('#device-detail').attr('class', 'desktop-detail');
+		}
 
 	}); 
 </script>

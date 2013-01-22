@@ -583,7 +583,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
                         autoEl: {
                             tag: 'iframe',
-                            src: "resources/responsiveShow/?url="+targetedUrl+"?preview=1"
+                            src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+targetedUrl+"?preview=1"
                         }
                     }));
                 },
@@ -617,6 +617,32 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
             });
         }
+    },
+
+    onAdvancedPreviewPageRefreshClick: function(button, e, options) {
+        var record=Ext.getCmp("previewPageTree").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(record)){
+            Ext.getCmp("contribPreviewMain").removeAll();
+            if(!record.isRoot()){
+                Ext.Ajax.request({
+                    url: 'xhr-get-page-url',
+                    params: {
+                        "page-id": record.get("id")
+                    },
+                    success: function(response){
+                        var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                            autoEl: {
+                                tag: 'iframe',
+                                src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+targetedUrl+"?preview=1"
+                            }
+                        }));
+                    },
+                    failure:function(){
+                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                    }
+                });
+            }}
     },
 
     renderPage: function(mRows, its, cible) {
@@ -825,6 +851,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#pagePreviewRefreshBtn": {
                 click: this.onPagePreviewRefreshBtnClick
+            },
+            "#advancedPreviewPageRefresh": {
+                click: this.onAdvancedPreviewPageRefreshClick
             }
         });
     }

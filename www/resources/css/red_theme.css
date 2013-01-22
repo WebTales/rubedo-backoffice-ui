@@ -28,11 +28,29 @@ border-style:dashed !important;
     background: transparent !important;
     padding-right:10px !important;
 }
+.prevDesktop{
+	background: url(../icones/generic/desktop32.png) left center no-repeat !important;
+}
+.prevIpad{
+	background: url(../icones/generic/ipad32.png) left center no-repeat !important;
+}
+.prevIpadL{
+	background: url(../icones/generic/ipad-l32.png) left center no-repeat !important;
+}
+.prevIphone{
+	background: url(../icones/generic/iphone32.png) left center no-repeat !important;
+}
+.prevIphoneL{
+	background: url(../icones/generic/iphone-l32.png) left center no-repeat !important;
+}
 .mediaTypes{
 	background: url(../icones/red/16x16/images.png) left center no-repeat !important;
 }
 .refresh{
 	background: url(../icones/red/16x16/refresh.png) left center no-repeat !important;
+}
+.refresh_big{
+	background: url(../icones/red/32x32/refresh.png) left center no-repeat !important;
 }
 .referencement_icon{
 	background: url(../icones/red/16x16/globe_computer.png) left center no-repeat !important;
