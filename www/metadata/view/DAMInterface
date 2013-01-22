@@ -218,6 +218,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyImg2",
                         "height": 45,
+                        "margin": "0 10 0 0",
                         "width": 48,
                         "src": null
                     },
@@ -253,7 +254,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "styleHtmlContent": true
                     },
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [
@@ -267,7 +269,7 @@
                             "userConfig": {
                                 "designer|userClassName": "tpl",
                                 "implHandler": [
-                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}"
+                                    "{customMeta}"
                                 ],
                                 "designer|displayName": "tpl"
                             },

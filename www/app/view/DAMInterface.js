@@ -114,6 +114,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'image',
                             height: 45,
+                            margin: '0 10 0 0',
                             width: 48,
                             listeners: {
                                 render: {
@@ -125,8 +126,9 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
+                            styleHtmlContent: true,
                             tpl: [
-                                '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {auteur}  <b>Version : </b>{version}'
+                                '{customMeta}'
                             ]
                         }
                     ]

@@ -34,6 +34,10 @@
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"folder\"}));\r",
                     "Ext.getStore(\"DAMStore\").getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+record.get(\"id\")+\"\\\"}]\";\r",
                     "Ext.getStore(\"DAMStore\").load();\r",
+                    "var customMeta = \"<b> \"+record.get(\"type\")+ \"</b>\";\r",
+                    "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
+                    "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
+                    "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');\r",
                     ""
                 ]
             },
@@ -54,7 +58,9 @@
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Types de médias\", iconCls:\"mediaTypes\"}));\r",
                     "Ext.getCmp(\"addDAMBtn\").disable();\r",
-                    "Ext.getStore(\"DAMStore\").removeAll();"
+                    "Ext.getStore(\"DAMStore\").removeAll();\r",
+                    "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
+                    "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
                 ]
             },
             "designerId": "8b1bb213-2eb0-46f6-ab5f-4364e1832f7e"
@@ -299,11 +305,22 @@
                     "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
                     "    Ext.getCmp(\"DAMROBtn\").disable();\r",
+                    "    var customMeta = \"<b> \"+Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"type\")+ \"</b>\";\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');\r",
                     "\r",
                     "} else if (selections.length==1) {\r",
-                    "\r",
+                    "    var customMeta = \"<b> \"+selections[0].get(\"title\")+\"</b></br><b>Création : </b>\"+Ext.Date.format(selections[0].get(\"createTime\"), 'd-m-Y')+\"<b> Dernière modification : </b>\"+Ext.Date.format(selections[0].get(\"lastUpdateTime\"), 'd-m-Y')+\"<b> Auteur : </b>\"+selections[0].get(\"createUser\").fullName;\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc(\"dam/get-thumbnail?id=\"+selections[0].get(\"id\"));\r",
                     "} else {\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
+                    "    var customMeta = \"<b> \"+selections.length+\" médias\"+ \"</b>\";\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
                     "\r",
                     "}"
                 ],
