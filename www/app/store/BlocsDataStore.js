@@ -30,6 +30,255 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
+                    type: 'Texte',
+                    description: '<h2>Bloc texte<\/h2> ',
+                    configBasique: {
+                        title: 'Texte',
+                        bType: 'Texte',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51000001c0e0512c10000001'
+                },
+                {
+                    type: 'Texte Riche',
+                    description: '<h2>Bloc texte riche<\/h2> ',
+                    configBasique: {
+                        title: 'Texte Riche',
+                        bType: 'Texte Riche',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51000064c0e0519b0c00000d'
+                },
+                {
+                    type: 'Image',
+                    description: '<h2>Bloc image<\/h2> ',
+                    configBasique: {
+                        title: 'Image',
+                        bType: 'Image',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Pages',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Lien',
+                                                name: 'imageLink'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative',
+                                                name: 'imageAlt'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Image',
+                                                name: 'imageFile'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Largeur (px)',
+                                                name: 'imageWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur (px)',
+                                                name: 'imageHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51000880c0e0518010000002'
+                },
+                {
+                    type: 'Menu',
+                    description: '<h2>Bloc menu<\/h2> ',
+                    configBasique: {
+                        title: 'Menu',
+                        bType: 'Menu',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Pages',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Racine',
+                                                name: 'rootPage'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51000140c0e0510d11000001'
+                },
+                {
+                    type: 'Recherche',
+                    description: '<h2>Bloc recherche<\/h2> ',
+                    configBasique: {
+                        title: 'Recherche',
+                        bType: 'Recherche',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Configuration',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page de recherche',
+                                                name: 'searchPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Résultats par page',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0,
+                                                value: 10
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.CTCField',
+                                            config: {
+                                                fieldLabel: 'Types de contenus',
+                                                name: 'contentTypes'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.TTField',
+                                            config: {
+                                                fieldLabel: 'Tags',
+                                                name: 'tags'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '510001e9c0e0510a11000001'
+                },
+                {
                     type: 'Média externe',
                     description: '<h2>Bloc Média externe<\/h2> ',
                     configBasique: {
