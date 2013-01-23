@@ -34,7 +34,7 @@ Ext.define('Rubedo.store.SitesJson', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    create: 'sites/create',
+                    create: 'sites/wizard-create',
                     read: 'sites',
                     update: 'sites/update',
                     destroy: 'sites/delete'

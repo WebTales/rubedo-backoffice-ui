@@ -69,7 +69,7 @@ Ext.define('Rubedo.controller.SitesController', {
     },
 
     openAddSiteWindow: function(button, e, options) {
-        Ext.widget("newSiteWindow").show();
+        Ext.widget("siteBuilderWizzard").show();
     },
 
     createNewSite: function(button, e, options) {
@@ -98,6 +98,15 @@ Ext.define('Rubedo.controller.SitesController', {
         Ext.getStore("SitesJson").load();
     },
 
+    onSiteWizzardCreateBtnClick: function(button, e, options) {
+        var form = button.up().up().getForm();
+        if (form.isValid()){
+            var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
+            Ext.getStore("SitesJson").add(newSite);
+            button.up().up().up().close();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#mainSitesGrid": {
@@ -118,6 +127,9 @@ Ext.define('Rubedo.controller.SitesController', {
             },
             "#sitesInterface": {
                 beforeclose: this.onSitesInterfaceBeforeClose
+            },
+            "#siteWizzardCreateBtn": {
+                click: this.onSiteWizzardCreateBtnClick
             }
         });
     }

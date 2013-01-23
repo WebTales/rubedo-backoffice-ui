@@ -44,7 +44,7 @@
                 "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
-                    "                    create: 'sites/create',\r",
+                    "                    create: 'sites/wizard-create',\r",
                     "                    read: 'sites',\r",
                     "                    update: 'sites/update',\r",
                     "                    destroy: 'sites/delete'\r",

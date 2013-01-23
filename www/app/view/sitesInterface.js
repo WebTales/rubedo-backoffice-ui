@@ -203,19 +203,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     ]
                                 },
                                 {
-                                    xtype: 'textareafield',
-                                    anchor: '100%',
-                                    name: 'filter',
-                                    fieldLabel: 'Filtre '
-                                },
-                                {
-                                    xtype: 'textareafield',
-                                    anchor: '100%',
-                                    name: 'description',
-                                    fieldLabel: 'Description ',
-                                    maxLength: 250
-                                },
-                                {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'mainLanguage',
@@ -226,6 +213,32 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     anchor: '100%',
                                     name: 'languages',
                                     fieldLabel: 'Langues '
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'filter',
+                                    fieldLabel: 'Filtre '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'title',
+                                    fieldLabel: 'Titre par défaut'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'description',
+                                    fieldLabel: 'Description par défaut',
+                                    maxLength: 250
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'author',
+                                    value: 'Powered by Rubedo',
+                                    fieldLabel: 'Auteur par défaut'
                                 }
                             ],
                             listeners: {
@@ -358,13 +371,13 @@ Ext.define('Rubedo.view.sitesInterface', {
             name:"homePage"
         });
 
-        abstractcomponent.add(homePageSelector);
+
 
         var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:[],
             anchor:"100%",
             name:"keywords",
-            fieldLabel:"Mots clés",
+            fieldLabel:"Mots clés par défaut",
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,
@@ -374,6 +387,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             pinList:false
         });
         abstractcomponent.add(tagPicker);
+        abstractcomponent.add(homePageSelector);
     },
 
     onImageRender: function(abstractcomponent, options) {

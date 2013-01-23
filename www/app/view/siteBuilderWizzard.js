@@ -21,13 +21,15 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
         'Rubedo.view.MyToolbar56'
     ],
 
-    height: 405,
+    height: 330,
     id: 'siteBuilderWizzard',
-    width: 443,
+    width: 464,
+    resizable: false,
     layout: {
         type: 'fit'
     },
     title: 'Assistant de création de site',
+    constrainHeader: true,
     modal: true,
 
     initComponent: function() {
@@ -43,36 +45,171 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                     title: '',
                     items: [
                         {
-                            xtype: 'container',
+                            xtype: 'panel',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            bodyPadding: 10,
+                            header: true,
+                            title: 'Etape 1 : Identification',
                             items: [
                                 {
-                                    xtype: 'datefield',
-                                    fieldLabel: 'Label'
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'text',
+                                    fieldLabel: 'Nom de domaine',
+                                    labelWidth: 110,
+                                    allowBlank: false,
+                                    regex: new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    managesStore: true,
+                                    anchor: '100%',
+                                    name: 'theme',
+                                    value: 'Default',
+                                    fieldLabel: 'Theme ',
+                                    labelWidth: 110,
+                                    displayField: 'label',
+                                    store: 'SiteThemesStore',
+                                    valueField: 'text'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    name: 'protocol',
+                                    fieldLabel: 'Protocole ',
+                                    labelWidth: 110,
+                                    store: [
+                                        'HTTP',
+                                        'HTTPS',
+                                        'HTTP + HTTPS'
+                                    ]
                                 }
                             ]
                         },
                         {
-                            xtype: 'container',
+                            xtype: 'panel',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            bodyPadding: 10,
+                            header: true,
+                            title: 'Etape 2 : Modèle',
                             items: [
+                                {
+                                    xtype: 'displayfield',
+                                    anchor: '100%',
+                                    name: 'siteModelId',
+                                    submitValue: false,
+                                    value: 'Site Vide',
+                                    fieldLabel: 'Modèle '
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            bodyPadding: 10,
+                            header: true,
+                            title: 'Etape 3 : Messagerie',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'activeMessagery',
+                                    fieldLabel: 'Activé ',
+                                    boxLabel: ''
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'SMTPServer',
+                                    fieldLabel: 'Serveur SMTP '
+                                },
                                 {
                                     xtype: 'numberfield',
-                                    fieldLabel: 'Label'
+                                    anchor: '100%',
+                                    name: 'SMTPPort',
+                                    fieldLabel: 'Port SMTP ',
+                                    allowDecimals: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'SMTPLogin',
+                                    fieldLabel: 'Login SMTP '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    inputType: 'password',
+                                    name: 'SMTPPassword',
+                                    fieldLabel: 'Mot de passe SMTP '
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'defaultEmail',
+                                    fieldLabel: 'E-mail par défaut ',
+                                    vtype: 'email'
                                 }
                             ]
                         },
                         {
-                            xtype: 'container',
+                            xtype: 'panel',
+                            overflowY: 'auto',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            bodyPadding: 10,
+                            header: true,
+                            title: 'Etape 4 : Référencement',
                             items: [
                                 {
-                                    xtype: 'triggerfield',
-                                    fieldLabel: 'Label'
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'title',
+                                    fieldLabel: 'Titre par défaut'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'description',
+                                    fieldLabel: 'Description par défaut',
+                                    maxLength: 250
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'author',
+                                    value: 'Powered by Rubedo',
+                                    fieldLabel: 'Auteur par défaut'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    id: 'siteWizzardCreateBtn',
+                                    margin: '10 0 0 0',
+                                    scale: 'large',
+                                    text: 'Créer ce site'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onPanelRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ],
                     dockedItems: [
                         {
                             xtype: 'mytoolbar56',
+                            height: 32,
                             dock: 'bottom'
                         }
                     ]
@@ -81,6 +218,23 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
         });
 
         me.callParent(arguments);
+    },
+
+    onPanelRender: function(abstractcomponent, options) {
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"keywords",
+            fieldLabel:"Mots clés par défaut",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            pinList:false
+        });
+        abstractcomponent.insert(3,tagPicker);
     }
 
 });

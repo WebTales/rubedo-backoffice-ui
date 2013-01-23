@@ -8,12 +8,17 @@
     "userConfig": {
         "designer|userClassName": "siteBuilderWizzard",
         "designer|userAlias": "siteBuilderWizzard",
-        "height": 405,
+        "height": 330,
         "id": "siteBuilderWizzard",
-        "width": 443,
+        "width": 464,
+        "resizable": false,
         "layout": "fit",
         "title": "Assistant de création de site",
+        "constrainHeader": true,
         "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen12330",
     "designerId": "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
@@ -34,44 +39,178 @@
             "designerId": "1b063235-cd84-496e-a9ef-5294431763be",
             "cn": [
                 {
-                    "type": "container",
+                    "type": "panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyContainer44"
+                        "designer|userClassName": "MyPanel53",
+                        "layout": "anchor",
+                        "bodyPadding": 10,
+                        "header": true,
+                        "title": "Etape 1 : Identification"
                     },
                     "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
                     "cn": [
                         {
-                            "type": "datefield",
+                            "type": "textfield",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyDateField7",
-                                "fieldLabel": "Label"
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField50",
+                                "name": "text",
+                                "fieldLabel": "Nom de domaine",
+                                "labelWidth": 110,
+                                "allowBlank": false,
+                                "regex": "new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)"
                             },
-                            "designerId": "45463818-10ed-4cd1-a7f3-55b610eaf0df"
+                            "designerId": "1456f507-0159-4113-afb8-e803bb616670"
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "managesStore": true,
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox19",
+                                "name": "theme",
+                                "value": [
+                                    "\"Default\""
+                                ],
+                                "fieldLabel": "Theme ",
+                                "labelWidth": 110,
+                                "displayField": "label",
+                                "store": "SiteThemesStore",
+                                "valueField": "text"
+                            },
+                            "configAlternates": {
+                                "managesStore": "boolean"
+                            },
+                            "designerId": "3271d51b-d7e4-43cd-83b6-d05fb6b4b174",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "managesStore",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox18",
+                                "name": "protocol",
+                                "fieldLabel": "Protocole ",
+                                "labelWidth": 110,
+                                "store": "[\"HTTP\", \"HTTPS\", \"HTTP + HTTPS\"]"
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "21de0fbc-18fc-46eb-8c6d-b5ddea3fb3d6"
                         }
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyContainer45"
+                        "designer|userClassName": "MyPanel53",
+                        "layout": "anchor",
+                        "bodyPadding": 10,
+                        "header": true,
+                        "title": "Etape 2 : Modèle"
                     },
-                    "designerId": "e45493a2-dbad-4eab-b457-44957dc1c1a0",
+                    "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
                     "cn": [
+                        {
+                            "type": "displayfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDisplayField",
+                                "name": "siteModelId",
+                                "submitValue": false,
+                                "value": [
+                                    "Site Vide"
+                                ],
+                                "fieldLabel": "Modèle "
+                            },
+                            "designerId": "e9550238-2ce6-4791-96b8-6dec0ee8a3b6"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel53",
+                        "layout": "anchor",
+                        "bodyPadding": 10,
+                        "header": true,
+                        "title": "Etape 3 : Messagerie"
+                    },
+                    "designerId": "a4f45d84-3c64-4831-bad8-5a68ee404868",
+                    "cn": [
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox4",
+                                "name": "activeMessagery",
+                                "fieldLabel": "Activé ",
+                                "boxLabel": ""
+                            },
+                            "designerId": "0c7ec575-08b7-4e2b-adc1-4146c6e327f5"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField54",
+                                "name": "SMTPServer",
+                                "fieldLabel": "Serveur SMTP "
+                            },
+                            "designerId": "9f6cba5a-151e-488f-a189-bf204ae2cae1"
+                        },
                         {
                             "type": "numberfield",
                             "reference": {
@@ -80,37 +219,177 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyNumberField3",
-                                "fieldLabel": "Label"
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField2",
+                                "name": "SMTPPort",
+                                "fieldLabel": "Port SMTP ",
+                                "allowDecimals": false,
+                                "minValue": 0
                             },
-                            "designerId": "5bb37920-2a4e-4894-8845-a790186d32ba"
-                        }
-                    ]
-                },
-                {
-                    "type": "container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyContainer46"
-                    },
-                    "designerId": "dc559682-9384-4dae-a765-8af1b3837794",
-                    "cn": [
+                            "designerId": "493b539f-ebb0-47ef-bb45-3150085ba686"
+                        },
                         {
-                            "type": "triggerfield",
+                            "type": "textfield",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyTriggerField1",
-                                "fieldLabel": "Label"
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField56",
+                                "name": "SMTPLogin",
+                                "fieldLabel": "Login SMTP "
                             },
-                            "designerId": "520a82d5-0bfd-4196-8b04-26a5b0ce0fbc"
+                            "designerId": "b0cee70b-ed45-4c72-ae25-dd7e707c0bdf"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField55",
+                                "inputType": "password",
+                                "name": "SMTPPassword",
+                                "fieldLabel": "Mot de passe SMTP "
+                            },
+                            "designerId": "c62df499-f368-47a8-9c4c-4278cc238055"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField57",
+                                "name": "defaultEmail",
+                                "fieldLabel": "E-mail par défaut ",
+                                "vtype": "email"
+                            },
+                            "designerId": "da94b941-1126-4e4b-ad3b-1b5cca2c2bc7"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel53",
+                        "overflowY": "auto",
+                        "layout": "anchor",
+                        "bodyPadding": 10,
+                        "header": true,
+                        "title": "Etape 4 : Référencement"
+                    },
+                    "designerId": "d73b14a5-0fc7-4be1-8dbb-f1b51d0f2797",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField70",
+                                "name": "title",
+                                "fieldLabel": "Titre par défaut"
+                            },
+                            "designerId": "d7305811-82cb-4ef6-b95a-3aef28abff0f"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea5",
+                                "name": "description",
+                                "fieldLabel": "Description par défaut",
+                                "maxLength": 250
+                            },
+                            "designerId": "4b1a2339-43f2-4ba2-a853-2a0394f18041"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onPanelRender",
+                                "fn": "onPanelRender",
+                                "implHandler": [
+                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    store:[],\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"keywords\",\r",
+                                    "    fieldLabel:\"Mots clés par défaut\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    forceSelection:false,\r",
+                                    "    createNewOnEnter:true,\r",
+                                    "    hideTrigger:true,\r",
+                                    "    triggerOnClick:false,\r",
+                                    "    createNewOnBlur:true,\r",
+                                    "    pinList:false\r",
+                                    "});\r",
+                                    "abstractcomponent.insert(3,tagPicker);"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "1f4c819b-8f4e-45f8-928a-ff4c7eebd693"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField71",
+                                "name": "author",
+                                "value": [
+                                    "\"Powered by Rubedo\""
+                                ],
+                                "fieldLabel": "Auteur par défaut"
+                            },
+                            "designerId": "478e64af-be52-4519-9966-de958f1ec3df"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyButton223",
+                                "id": "siteWizzardCreateBtn",
+                                "margin": "10 0 0 0",
+                                "scale": "large",
+                                "text": "Créer ce site"
+                            },
+                            "designerId": "c6ead03e-950b-4b1b-b3ac-906084eb1da7"
                         }
                     ]
                 },
@@ -122,6 +401,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "height": 32,
                         "dock": "bottom"
                     },
                     "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",

@@ -35,7 +35,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.Panier',
         'Rubedo.view.UnBloc',
         'Rubedo.view.contributionPages',
-        'Rubedo.view.sitesInterface',
         'Rubedo.view.termContextMenu',
         'Rubedo.view.ViewportPrimaire',
         'Rubedo.view.accessibilityPicker',
@@ -89,6 +88,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround',
         'Rubedo.view.queryBuilderField',
+        'Rubedo.view.sitesInterface',
         'Rubedo.view.siteBuilderWizzard'
     ]
 });

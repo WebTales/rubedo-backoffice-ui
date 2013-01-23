@@ -17,6 +17,8 @@ Ext.define('Rubedo.view.MyToolbar56', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.mytoolbar56',
 
+    ignoreValidation: false,
+
     initComponent: function() {
         var me = this;
 
@@ -41,8 +43,21 @@ Ext.define('Rubedo.view.MyToolbar56', {
                 {
                     xtype: 'button',
                     handler: function(button, event) {
-                        button.up().up().getLayout().next();
-                        button.up().makeCorrect();
+                        if (button.up().ignoreValidation){
+                            button.up().up().getLayout().next();
+                            button.up().makeCorrect();
+                        } else {
+                            var goOK=true;
+                            Ext.Array.forEach(button.up().up().getLayout().getActiveItem().query("field"),function(field){
+                                if(!field.isValid()){
+                                    goOK=false;
+                                }
+                            });
+                            if (goOK){
+                                button.up().up().getLayout().next();
+                                button.up().makeCorrect();
+                            }
+                        }
                     },
                     itemId: 'wizNext',
                     iconAlign: 'right',

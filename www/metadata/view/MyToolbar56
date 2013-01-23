@@ -6,11 +6,22 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ignoreValidation": false,
         "designer|userClassName": "MyToolbar56",
         "designer|userAlias": "mytoolbar56"
     },
+    "configAlternates": {
+        "ignoreValidation": "boolean"
+    },
     "id": "ExtBox1-ext-gen14811",
     "designerId": "98647ca9-632b-4513-8aac-67b99b9af747",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ignoreValidation",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "progressbar",
@@ -98,8 +109,21 @@
                             "event"
                         ],
                         "implHandler": [
+                            "if (button.up().ignoreValidation){\r",
                             "button.up().up().getLayout().next();\r",
-                            "button.up().makeCorrect();"
+                            "button.up().makeCorrect();\r",
+                            "} else {\r",
+                            "    var goOK=true;\r",
+                            "    Ext.Array.forEach(button.up().up().getLayout().getActiveItem().query(\"field\"),function(field){\r",
+                            "        if(!field.isValid()){\r",
+                            "            goOK=false;\r",
+                            "        }\r",
+                            "    });\r",
+                            "    if (goOK){\r",
+                            "        button.up().up().getLayout().next();\r",
+                            "        button.up().makeCorrect();\r",
+                            "    }\r",
+                            "}"
                         ]
                     },
                     "designerId": "bd3b442f-1414-4841-8d01-872433d99007"

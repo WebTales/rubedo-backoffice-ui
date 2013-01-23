@@ -95,6 +95,12 @@ Ext.define('Rubedo.model.sitesDataModel', {
             name: 'createTime',
             dateFormat: 'timestamp',
             type: 'date'
+        },
+        {
+            name: 'title'
+        },
+        {
+            name: 'author'
         }
     ]
 });

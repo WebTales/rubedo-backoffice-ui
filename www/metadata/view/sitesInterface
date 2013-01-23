@@ -361,37 +361,6 @@
                             "designerId": "401f0fd8-8f20-424a-a3d0-caf5f893f9b5"
                         },
                         {
-                            "type": "textareafield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea8",
-                                "name": "filter",
-                                "fieldLabel": "Filtre "
-                            },
-                            "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
-                        },
-                        {
-                            "type": "textareafield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea5",
-                                "name": "description",
-                                "fieldLabel": "Description ",
-                                "maxLength": 250
-                            },
-                            "designerId": "b8f4ce97-2c78-448a-b1a2-6d7b4c53788c"
-                        },
-                        {
                             "type": "textfield",
                             "reference": {
                                 "name": "items",
@@ -422,6 +391,70 @@
                             "designerId": "ada022ae-82c9-415b-9926-ea61dd1649fe"
                         },
                         {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea8",
+                                "name": "filter",
+                                "fieldLabel": "Filtre "
+                            },
+                            "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField70",
+                                "name": "title",
+                                "fieldLabel": "Titre par défaut"
+                            },
+                            "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea5",
+                                "name": "description",
+                                "fieldLabel": "Description par défaut",
+                                "maxLength": 250
+                            },
+                            "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField71",
+                                "name": "author",
+                                "value": [
+                                    "\"Powered by Rubedo\""
+                                ],
+                                "fieldLabel": "Auteur par défaut"
+                            },
+                            "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77"
+                        },
+                        {
                             "type": "basiceventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -441,13 +474,13 @@
                                     "    name:\"homePage\"\r",
                                     "});\r",
                                     "\r",
-                                    "abstractcomponent.add(homePageSelector);\r",
+                                    "\r",
                                     "\r",
                                     "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
                                     "    store:[],\r",
                                     "    anchor:\"100%\",\r",
                                     "    name:\"keywords\",\r",
-                                    "    fieldLabel:\"Mots clés\",\r",
+                                    "    fieldLabel:\"Mots clés par défaut\",\r",
                                     "    multiSelect:true,\r",
                                     "    forceSelection:false,\r",
                                     "    createNewOnEnter:true,\r",
@@ -456,7 +489,8 @@
                                     "    createNewOnBlur:true,\r",
                                     "    pinList:false\r",
                                     "});\r",
-                                    "abstractcomponent.add(tagPicker);"
+                                    "abstractcomponent.add(tagPicker);\r",
+                                    "abstractcomponent.add(homePageSelector);"
                                 ],
                                 "name": "render",
                                 "scope": "me"
