@@ -572,26 +572,34 @@ Ext.define('Rubedo.controller.PagesController', {
 
     onPreviewPageTreeSelect: function(selModel, record, index, options) {
         Ext.getCmp("contribPreviewMain").removeAll();
-        if(!record.isRoot()){
-            Ext.Ajax.request({
-                url: 'xhr-get-page-url',
-                params: {
-                    "page-id": record.get("id")
-                },
-                success: function(response){
-                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
-                        autoEl: {
-                            tag: 'iframe',
-                            src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+targetedUrl+"?preview=1"
-                        }
-                    }));
-                },
-                failure:function(){
-                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
-                }
-            });
+        var dateValue="";
+        if (!Ext.isEmpty(Ext.getCmp("advancedPreviewDateField").getValue())){
+            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "timestamp");
+
         }
+        if (!Ext.isEmpty(record)){
+            Ext.getCmp("contribPreviewMain").removeAll();
+            if(!record.isRoot()){
+                Ext.Ajax.request({
+                    url: 'xhr-get-page-url',
+                    params: {
+                        "page-id": record.get("id")
+                    },
+                    success: function(response){
+                        var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                        var showArg =encodeURIComponent(targetedUrl+"?preview=1"+"&preview_draft="+Ext.getCmp("advancedPreviewDraftField").getValue()+dateValue);
+                        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                            autoEl: {
+                                tag: 'iframe',
+                                src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+showArg
+                            }
+                        }));
+                    },
+                    failure:function(){
+                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                    }
+                });
+            }}
     },
 
     onPagePreviewRefreshBtnClick: function(button, e, options) {
@@ -621,6 +629,11 @@ Ext.define('Rubedo.controller.PagesController', {
 
     onAdvancedPreviewPageRefreshClick: function(button, e, options) {
         var record=Ext.getCmp("previewPageTree").getSelectionModel().getLastSelected();
+        var dateValue="";
+        if (!Ext.isEmpty(Ext.getCmp("advancedPreviewDateField").getValue())){
+            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "timestamp");
+
+        }
         if (!Ext.isEmpty(record)){
             Ext.getCmp("contribPreviewMain").removeAll();
             if(!record.isRoot()){
@@ -631,10 +644,11 @@ Ext.define('Rubedo.controller.PagesController', {
                     },
                     success: function(response){
                         var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                        var showArg =encodeURIComponent(targetedUrl+"?preview=1"+"&preview_draft="+Ext.getCmp("advancedPreviewDraftField").getValue()+dateValue);
                         Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
                             autoEl: {
                                 tag: 'iframe',
-                                src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+targetedUrl+"?preview=1"
+                                src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+showArg
                             }
                         }));
                     },

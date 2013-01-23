@@ -281,8 +281,10 @@ function gup( name )
   else
     return results[1];
 }
+
+console.log(decodeURIComponent(gup('url')));
 		
-		$('#displayframe').attr('src', gup('url'));
+		$('#displayframe').attr('src', decodeURIComponent(gup('url')));
 		var responsiveDevice = gup('device');
 		if (responsiveDevice=="iphone"){
 			$("#screen-options li").removeClass("active");

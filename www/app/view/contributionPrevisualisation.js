@@ -149,13 +149,16 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    id: 'advancedPreviewDraftField',
                                     margin: '0 20 0 0',
                                     fieldLabel: 'Mode brouillon',
                                     labelWidth: 90,
-                                    boxLabel: ''
+                                    boxLabel: '',
+                                    inputValue: 'true'
                                 },
                                 {
                                     xtype: 'datefield',
+                                    id: 'advancedPreviewDateField',
                                     fieldLabel: 'Date',
                                     labelWidth: 40
                                 },

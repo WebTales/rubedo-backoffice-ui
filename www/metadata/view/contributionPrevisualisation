@@ -349,10 +349,12 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "designer|userClassName": "MyCheckbox6",
+                                "id": "advancedPreviewDraftField",
                                 "margin": "0 20 0 0",
                                 "fieldLabel": "Mode brouillon",
                                 "labelWidth": 90,
-                                "boxLabel": ""
+                                "boxLabel": "",
+                                "inputValue": "true"
                             },
                             "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9"
                         },
@@ -366,6 +368,7 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "designer|userClassName": "MyDateField6",
+                                "id": "advancedPreviewDateField",
                                 "fieldLabel": "Date",
                                 "labelWidth": 40
                             },
