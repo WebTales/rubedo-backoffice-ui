@@ -933,7 +933,10 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     },
                     id: '506441f8c64804d514000001'
                 }
-            ]
+            ],
+            sorters: {
+                property: 'type'
+            }
         }, cfg)]);
     }
 });
