@@ -1,0 +1,158 @@
+{
+    "type": "toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyToolbar56",
+        "designer|userAlias": "mytoolbar56"
+    },
+    "id": "ExtBox1-ext-gen14811",
+    "designerId": "98647ca9-632b-4513-8aac-67b99b9af747",
+    "cn": [
+        {
+            "type": "progressbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyProgressBar1",
+                "itemId": "wizProgress",
+                "value": 0.4
+            },
+            "designerId": "e0e43236-cbf8-46df-bc2e-ce8dae7b553f"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton221",
+                "itemId": "wizPrev",
+                "iconCls": "arrow_left",
+                "text": "Précédent"
+            },
+            "designerId": "c032ac34-65b6-4121-b5a4-aeafa5360d8f",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "button.up().up().getLayout().prev();\r",
+                            "button.up().makeCorrect();"
+                        ]
+                    },
+                    "designerId": "c57f634a-92c1-447c-bb56-66077a4c6626"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyButton222",
+                "itemId": "wizNext",
+                "iconAlign": "right",
+                "iconCls": "arrow_right",
+                "text": "Suivant"
+            },
+            "designerId": "954c1089-b17e-4b5c-901f-29facff3b346",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "button.up().up().getLayout().next();\r",
+                            "button.up().makeCorrect();"
+                        ]
+                    },
+                    "designerId": "bd3b442f-1414-4841-8d01-872433d99007"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "makeCorrect",
+                "fn": "makeCorrect",
+                "implHandler": [
+                    "var all = this.up().items.items.length;\r",
+                    "var active = this.up().getLayout().getActiveItem();\r",
+                    "var activeIndex = this.up().items.items.indexOf(active);\r",
+                    "if (activeIndex===0){\r",
+                    "    this.getComponent(\"wizPrev\").hide();\r",
+                    "} else {\r",
+                    "    this.getComponent(\"wizPrev\").show();\r",
+                    "}\r",
+                    "\r",
+                    "if (activeIndex==all-1){\r",
+                    "    this.getComponent(\"wizNext\").hide();\r",
+                    "} else {\r",
+                    "    this.getComponent(\"wizNext\").show();\r",
+                    "}\r",
+                    "this.getComponent(\"wizProgress\").updateProgress((activeIndex+1)/all,\"Etape \"+(activeIndex+1)+\" sur \"+all);"
+                ]
+            },
+            "designerId": "84a2ca78-55d4-40f2-b791-bf0e2d2bdbfc"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onToolbarAfterRender",
+                "fn": "onToolbarAfterRender",
+                "implHandler": [
+                    "this.makeCorrect();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "ac4f1c08-be76-4fa5-a453-4d6e05fb44c7"
+        }
+    ]
+}

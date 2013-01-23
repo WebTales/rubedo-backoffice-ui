@@ -1,0 +1,133 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "siteBuilderWizzard",
+        "designer|userAlias": "siteBuilderWizzard",
+        "height": 405,
+        "id": "siteBuilderWizzard",
+        "width": 443,
+        "layout": "fit",
+        "title": "Assistant de création de site",
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen12330",
+    "designerId": "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm39",
+                "layout": "card",
+                "bodyPadding": null,
+                "title": ""
+            },
+            "designerId": "1b063235-cd84-496e-a9ef-5294431763be",
+            "cn": [
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyContainer44"
+                    },
+                    "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
+                    "cn": [
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyDateField7",
+                                "fieldLabel": "Label"
+                            },
+                            "designerId": "45463818-10ed-4cd1-a7f3-55b610eaf0df"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyContainer45"
+                    },
+                    "designerId": "e45493a2-dbad-4eab-b457-44957dc1c1a0",
+                    "cn": [
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyNumberField3",
+                                "fieldLabel": "Label"
+                            },
+                            "designerId": "5bb37920-2a4e-4894-8845-a790186d32ba"
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyContainer46"
+                    },
+                    "designerId": "dc559682-9384-4dae-a765-8af1b3837794",
+                    "cn": [
+                        {
+                            "type": "triggerfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTriggerField1",
+                                "fieldLabel": "Label"
+                            },
+                            "designerId": "520a82d5-0bfd-4196-8b04-26a5b0ce0fbc"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",
+                    "masterInstanceId": "ExtBox1-ext-gen14811"
+                }
+            ]
+        }
+    ]
+}

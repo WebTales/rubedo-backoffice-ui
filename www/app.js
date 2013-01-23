@@ -181,7 +181,9 @@ Ext.application({
         'CTMTField',
         'GFSFileFieldComponent',
         'GFSFileField',
-        'GFSFieldUploadWindow'
+        'GFSFieldUploadWindow',
+        'siteBuilderWizzard',
+        'MyToolbar56'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
