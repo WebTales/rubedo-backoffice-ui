@@ -46,7 +46,7 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+abstractcomponent.getValue());
+                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
@@ -74,7 +74,7 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
 
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+newValue);
+                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();

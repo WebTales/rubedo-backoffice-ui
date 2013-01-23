@@ -168,6 +168,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'button',
                             disabled: true,
+                            hidden: true,
                             id: 'DAMROBtn',
                             iconAlign: 'top',
                             iconCls: 'pencil_big',

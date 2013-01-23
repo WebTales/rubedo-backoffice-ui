@@ -561,7 +561,7 @@
                 "designer|userClassName": "onGridpanelItemDblClick",
                 "fn": "onGridpanelItemDblClick",
                 "implHandler": [
-                    "Ext.getCmp(\"DAMROBtn\").fireEvent(\"click\", Ext.getCmp(\"DAMROBtn\"));"
+                    "Ext.getCmp(\"DAMUpdateBtn\").fireEvent(\"click\", Ext.getCmp(\"DAMUpdateBtn\"));"
                 ],
                 "name": "itemdblclick",
                 "scope": "me",

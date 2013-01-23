@@ -167,7 +167,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
-        Ext.getCmp("DAMROBtn").fireEvent("click", Ext.getCmp("DAMROBtn"));
+        Ext.getCmp("DAMUpdateBtn").fireEvent("click", Ext.getCmp("DAMUpdateBtn"));
     },
 
     resetInterfaceSelect: function(record) {
