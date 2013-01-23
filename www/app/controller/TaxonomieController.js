@@ -28,8 +28,13 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     selectVocabulary: function(selModel, record, index, options) {
         var tablepanel=Ext.getCmp("AdminfTaxonomieGrid");
         Ext.getCmp("taxonomyCenterBox").enable();
-        Ext.getCmp("boutonEnregistrerTaxo").enable();
-        Ext.getCmp("boutonSupprimerTaxo").enable();
+        if (record.get("id")!="navigation"){
+            Ext.getCmp("boutonEnregistrerTaxo").enable();
+            Ext.getCmp("boutonSupprimerTaxo").enable();
+        } else {
+            Ext.getCmp("boutonEnregistrerTaxo").disable();
+            Ext.getCmp("boutonSupprimerTaxo").disable();
+        } 
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.get("name"));}
