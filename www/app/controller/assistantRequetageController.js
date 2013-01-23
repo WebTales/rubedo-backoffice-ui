@@ -154,9 +154,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         }
 
                         if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
-
+                        Ext.Array.remove(vocabulaires,"navigation");
                         var k =0;
                         for (k=0; k<vocabulaires.length; k++) {
+
                             var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
                             var vocabAPlat= [ ];
                             //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
