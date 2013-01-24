@@ -42,8 +42,8 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             items: [
                 {
                     xtype: 'form',
-                    flex: 0.4,
                     id: 'searchFacetBox',
+                    width: 240,
                     overflowY: 'auto',
                     bodyPadding: '0 20 0 10',
                     title: 'Filtres',
