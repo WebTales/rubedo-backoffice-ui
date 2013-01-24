@@ -1,0 +1,196 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "facettes": "[ ]",
+        "activeFacettes": [
+            "{ }"
+        ],
+        "designer|userClassName": "ESFacetteStore",
+        "designer|userAlias": "ESFacetteStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "ESFacetteStore",
+        "model": "contenusDataModel",
+        "pageSize": 25
+    },
+    "configAlternates": {
+        "facettes": "array",
+        "activeFacettes": "object"
+    },
+    "id": "ExtBox1-ext-gen30052",
+    "designerId": "b1e3cc2f-a43b-450e-8914-242d618f8402",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "facettes",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "activeFacettes",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent",
+                "name": "facettesChanged",
+                "params": [
+                    "facettes",
+                    "activeFacettes"
+                ]
+            },
+            "designerId": "e2366063-d1c6-4f04-ab2f-4b2f47410971"
+        },
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy57",
+                "api": [
+                    "{\r",
+                    "    read:\"elastic-search\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "929a17ea-4cd0-4578-ba38-239fb1b1ee51",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader56",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "7baab310-0fec-4681-af15-dfbcd8b8dac0",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "getResponseData",
+                                "fn": "getResponseData",
+                                "designer|params": [
+                                    "response"
+                                ],
+                                "implHandler": [
+                                    "var data, error;\r",
+                                    "\r",
+                                    "try {\r",
+                                    "    data = Ext.decode(response.responseText);\r",
+                                    "    this.proxy.facettes=data.facets;\r",
+                                    "    if (Ext.isEmpty(data.activeFacets)){\r",
+                                    "        data.activeFacets={ };\r",
+                                    "    }\r",
+                                    "    this.proxy.activeFacettes=data.activeFacets;\r",
+                                    "    return this.readRecords(data);\r",
+                                    "} catch (ex) {\r",
+                                    "    error = new Ext.data.ResultSet({\r",
+                                    "        total  : 0,\r",
+                                    "        count  : 0,\r",
+                                    "        records: [],\r",
+                                    "        success: false,\r",
+                                    "        message: ex.message\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    this.fireEvent('exception', this, response, error);\r",
+                                    "    console.log(ex);\r",
+                                    "\r",
+                                    "    Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                    "\r",
+                                    "    return error;\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "d5c28543-ffc6-46d1-8a5e-b09aa73be956"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreFacettesChanged",
+                "fn": "onJsonstoreFacettesChanged",
+                "implHandler": [
+                    "console.log(\"facettes\");\r",
+                    "console.log(facettes);\r",
+                    "console.log(\"facettes actives\");\r",
+                    "console.log(activeFacettes);"
+                ],
+                "name": "facettesChanged",
+                "scope": "me"
+            },
+            "designerId": "84b7a276-bdb7-4d20-9e9e-6de02a0e542f"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreLoad",
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "store.facettes=store.getProxy().facettes;\r",
+                    "store.activeFacettes=store.getProxy().activeFacettes;\r",
+                    "store.fireEvent(\"facettesChanged\",store.facettes,store.activeFacettes);"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "7938ccd1-1f45-4880-b211-e55b0a635cf0"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "store.getProxy().extraParams=store.activeFacettes;"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "90ae1621-4e81-45b5-bcd6-d7446c6b92ff"
+        }
+    ]
+}

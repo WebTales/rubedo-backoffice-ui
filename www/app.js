@@ -110,7 +110,8 @@ Ext.application({
         'DAMPickerStore',
         'MediaTypesForCT',
         'MediaTypesFORDAMPicker',
-        'MainQueriesStore'
+        'MainQueriesStore',
+        'ESFacetteStore'
     ],
     views: [
         'MyContainer',

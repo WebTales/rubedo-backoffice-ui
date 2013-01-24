@@ -1748,6 +1748,14 @@
                 "app/store/MainQueriesStore.js"
             ],
             "className": "MainQueriesStore"
+        },
+        "b1e3cc2f-a43b-450e-8914-242d618f8402": {
+            "paths": [
+                "metadata/store/ESFacetteStore",
+                "app/store/override/ESFacetteStore.js",
+                "app/store/ESFacetteStore.js"
+            ],
+            "className": "ESFacetteStore"
         }
     },
     "viewOrderMap": {
@@ -1910,7 +1918,8 @@
             "fe793f86-3a97-401f-bdae-147c54ef0a7d",
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
             "31be942a-1630-4c10-9fb4-790b2d825c55",
-            "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a"
+            "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",
+            "b1e3cc2f-a43b-450e-8914-242d618f8402"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
