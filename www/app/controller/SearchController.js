@@ -97,14 +97,28 @@ Ext.define('Rubedo.controller.SearchController', {
         var target=Ext.getCmp("SearchActiveFacetBar");
         target.removeAll();
         Ext.Object.each(facets, function(key, value){
-            var activeOne = Ext.widget('splitbutton',{
-                text:key+" : "+value,
-                arrowHandler:function(){
-                    delete Ext.getStore("ESFacetteStore").activeFacettes[key];
-                    Ext.getStore("ESFacetteStore").load();
-                }
-            });
-            target.add(activeOne);
+            if (Ext.isArray(value)){
+                Ext.Array.forEach(value,function(someValue){
+                    var activeOne = Ext.widget('splitbutton',{
+                        text:key+" : "+someValue,
+                        arrowHandler:function(){
+                            Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[key],someValue);
+                            Ext.getStore("ESFacetteStore").load();
+                        }
+                    });
+                    target.add(activeOne);
+                });
+
+            } else {
+                var activeOne = Ext.widget('splitbutton',{
+                    text:key+" : "+value,
+                    arrowHandler:function(){
+                        delete Ext.getStore("ESFacetteStore").activeFacettes[key];
+                        Ext.getStore("ESFacetteStore").load();
+                    }
+                });
+                target.add(activeOne);
+            }
         });
     },
 
