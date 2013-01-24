@@ -67,9 +67,19 @@ Ext.define('Rubedo.controller.SearchController', {
                         usedValue:term.term,
                         anchor:"100%",
                         handler:function(thing){
+                            var theProp=Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty];
+                            if (!Ext.isEmpty(theProp)){
+                                if (Ext.isArray(theProp)){
+                                    theProp.push(thing.usedValue);
+                                } else {
+                                    theProp=[theProp,thing.usedValue];
+                                }
 
-                            Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty]=thing.usedValue;
+                            } else {
+                                theProp=thing.usedValue;
 
+                            }
+                            Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty]=theProp;
                             Ext.getStore("ESFacetteStore").load();
                         }
                     });

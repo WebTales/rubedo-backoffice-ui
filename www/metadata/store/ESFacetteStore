@@ -187,7 +187,17 @@
                 "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
-                    "store.getProxy().extraParams=store.activeFacettes;"
+                    "var source=Ext.clone(store.activeFacettes);\r",
+                    "var adaptedParams= { };\r",
+                    "Ext.Object.each(source, function(key, value, object){\r",
+                    "    if (Ext.isArray(value)) {\r",
+                    "        adaptedParams[key+\"[]\"]=value;\r",
+                    "        \r",
+                    "    } else {\r",
+                    "        adaptedParams[key]=value;\r",
+                    "    }\r",
+                    "});\r",
+                    "store.getProxy().extraParams=adaptedParams;"
                 ],
                 "name": "beforeload",
                 "scope": "me"

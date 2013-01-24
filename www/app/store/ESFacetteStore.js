@@ -112,7 +112,17 @@ Ext.define('Rubedo.store.ESFacetteStore', {
     },
 
     onJsonstoreBeforeLoad: function(store, operation, options) {
-        store.getProxy().extraParams=store.activeFacettes;
+        var source=Ext.clone(store.activeFacettes);
+        var adaptedParams= { };
+        Ext.Object.each(source, function(key, value, object){
+            if (Ext.isArray(value)) {
+                adaptedParams[key+"[]"]=value;
+
+            } else {
+                adaptedParams[key]=value;
+            }
+        });
+        store.getProxy().extraParams=adaptedParams;
     }
 
 });
