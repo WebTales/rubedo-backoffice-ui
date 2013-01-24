@@ -14,6 +14,7 @@
         "designer|userAlias": "ESFacetteStore",
         "autoLoad": false,
         "autoSync": false,
+        "remoteSort": true,
         "storeId": "ESFacetteStore",
         "model": "contentsSearchModel",
         "pageSize": 25
@@ -203,6 +204,20 @@
                 "scope": "me"
             },
             "designerId": "90ae1621-4e81-45b5-bcd6-d7446c6b92ff"
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter6",
+                "direction": "DESC",
+                "property": "score"
+            },
+            "designerId": "ae10a6c7-5d2e-4ceb-bbdd-1e6945fd0f15"
         }
     ]
 }

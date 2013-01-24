@@ -24,6 +24,11 @@ Ext.define('Rubedo.model.contentsSearchModel', {
             name: 'type'
         },
         {
+            name: 'score',
+            sortType: 'asInt',
+            type: 'int'
+        },
+        {
             name: 'id'
         },
         {

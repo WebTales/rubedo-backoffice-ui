@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
 
     height: 492,
     id: 'searchResultsWindow',
-    width: 860,
+    width: 936,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -102,6 +102,13 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             flex: 1.2,
                             text: 'Date de dernière modification',
                             format: 'F j, Y, G:i '
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            width: 80,
+                            dataIndex: 'score',
+                            text: 'Pertinence',
+                            format: '0'
                         }
                     ],
                     dockedItems: [

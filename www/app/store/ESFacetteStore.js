@@ -37,6 +37,7 @@ Ext.define('Rubedo.store.ESFacetteStore', {
             },
             autoLoad: false,
             autoSync: false,
+            remoteSort: true,
             storeId: 'ESFacetteStore',
             model: 'Rubedo.model.contentsSearchModel',
             pageSize: 25,
@@ -92,6 +93,10 @@ Ext.define('Rubedo.store.ESFacetteStore', {
                     fn: me.onJsonstoreBeforeLoad,
                     scope: me
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'score'
             }
         }, cfg)]);
     },

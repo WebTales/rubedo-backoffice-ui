@@ -11,7 +11,7 @@
         "designer|userAlias": "searchResultsWindow",
         "height": 492,
         "id": "searchResultsWindow",
-        "width": 860,
+        "width": 936,
         "layout": "hbox",
         "iconCls": "search",
         "title": "Résultats de recherche",
@@ -218,6 +218,22 @@
                         "format": "F j, Y, G:i "
                     },
                     "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c"
+                },
+                {
+                    "type": "numbercolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberColumn1",
+                        "width": 80,
+                        "dataIndex": "score",
+                        "text": "Pertinence",
+                        "format": "0"
+                    },
+                    "designerId": "29ffe6fa-f510-43ee-a552-7e882fb3117a"
                 },
                 {
                     "type": "pagingtoolbar",
