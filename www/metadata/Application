@@ -28,7 +28,8 @@
             "mediaTypeModel",
             "MTFieldModel",
             "queryDataModel",
-            "DAMModel"
+            "DAMModel",
+            "contentsSearchModel"
         ],
         "stores": [
             "SitesJson",
@@ -55,7 +56,6 @@
             "CurrentUserDataStore",
             "DepContentsCombo",
             "NestedContentsStore",
-            "searchResultsStore",
             "PagesDataStore",
             "MasksComboStore",
             "contentTypesCombo",

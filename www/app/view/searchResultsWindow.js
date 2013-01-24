@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         'Rubedo.view.MyTool17'
     ],
 
-    height: 512,
+    height: 492,
     id: 'searchResultsWindow',
     width: 860,
     layout: {
@@ -45,7 +45,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     flex: 0.4,
                     id: 'searchFacetBox',
                     overflowY: 'auto',
-                    bodyPadding: 10,
+                    bodyPadding: '0 20 0 10',
                     title: 'Filtres',
                     dockedItems: [
                         {
@@ -79,7 +79,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     flex: 1,
                     id: 'ResultContentsGrid',
                     title: '',
-                    store: 'searchResultsStore',
+                    store: 'ESFacetteStore',
                     viewConfig: {
 
                     },
@@ -103,6 +103,15 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             text: 'Date de dernière modification',
                             format: 'F j, Y, G:i '
                         }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'ESFacetteStore'
+                        }
                     ]
                 }
             ],
@@ -118,6 +127,16 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                 },
                 {
                     xtype: 'mytool17'
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 32,
+                    id: 'SearchActiveFacetBar',
+                    enableOverflow: true
                 }
             ]
         });

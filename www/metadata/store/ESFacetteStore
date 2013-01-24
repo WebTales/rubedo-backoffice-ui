@@ -15,7 +15,7 @@
         "autoLoad": false,
         "autoSync": false,
         "storeId": "ESFacetteStore",
-        "model": "contenusDataModel",
+        "model": "contentsSearchModel",
         "pageSize": 25
     },
     "configAlternates": {
@@ -144,10 +144,12 @@
                 "designer|userClassName": "onJsonstoreFacettesChanged",
                 "fn": "onJsonstoreFacettesChanged",
                 "implHandler": [
-                    "console.log(\"facettes\");\r",
+                    "/*console.log(\"facettes\");\r",
                     "console.log(facettes);\r",
                     "console.log(\"facettes actives\");\r",
-                    "console.log(activeFacettes);"
+                    "console.log(activeFacettes);*/\r",
+                    "Rubedo.controller.SearchController.prototype.renderFacets(facettes);\r",
+                    "Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);"
                 ],
                 "name": "facettesChanged",
                 "scope": "me"

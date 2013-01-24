@@ -9,7 +9,7 @@
         "container|align": "stretch",
         "designer|userClassName": "searchResultsWindow",
         "designer|userAlias": "searchResultsWindow",
-        "height": 512,
+        "height": 492,
         "id": "searchResultsWindow",
         "width": 860,
         "layout": "hbox",
@@ -34,7 +34,7 @@
                 "designer|userClassName": "MyForm35",
                 "id": "searchFacetBox",
                 "overflowY": "auto",
-                "bodyPadding": 10,
+                "bodyPadding": "0 20 0 10",
                 "title": "Filtres"
             },
             "designerId": "35d80392-506f-4f26-89c9-d833f433870d",
@@ -154,7 +154,7 @@
                 "id": "ResultContentsGrid",
                 "itemId": null,
                 "title": "",
-                "store": "searchResultsStore"
+                "store": "ESFacetteStore"
             },
             "designerId": "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
             "cn": [
@@ -218,8 +218,41 @@
                         "format": "F j, Y, G:i "
                     },
                     "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c"
+                },
+                {
+                    "type": "pagingtoolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyPagingToolbar4",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "ESFacetteStore"
+                    },
+                    "designerId": "cccd126e-1f28-4c4e-9e7b-40559bbac696"
                 }
             ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "designer|userClassName": "MyToolbar58",
+                "height": 32,
+                "id": "SearchActiveFacetBar",
+                "enableOverflow": true
+            },
+            "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
         }
     ]
 }

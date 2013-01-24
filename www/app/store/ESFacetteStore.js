@@ -18,7 +18,7 @@ Ext.define('Rubedo.store.ESFacetteStore', {
     alias: 'store.ESFacetteStore',
 
     requires: [
-        'Rubedo.model.contenusDataModel'
+        'Rubedo.model.contentsSearchModel'
     ],
 
     constructor: function(cfg) {
@@ -38,7 +38,7 @@ Ext.define('Rubedo.store.ESFacetteStore', {
             autoLoad: false,
             autoSync: false,
             storeId: 'ESFacetteStore',
-            model: 'Rubedo.model.contenusDataModel',
+            model: 'Rubedo.model.contentsSearchModel',
             pageSize: 25,
             proxy: {
                 type: 'ajax',
@@ -97,10 +97,12 @@ Ext.define('Rubedo.store.ESFacetteStore', {
     },
 
     onJsonstoreFacettesChanged: function(facettes, activeFacettes, eventOptions) {
-        console.log("facettes");
+        /*console.log("facettes");
         console.log(facettes);
         console.log("facettes actives");
-        console.log(activeFacettes);
+        console.log(activeFacettes);*/
+        Rubedo.controller.SearchController.prototype.renderFacets(facettes);
+        Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);
     },
 
     onJsonstoreLoad: function(store, records, successful, options) {

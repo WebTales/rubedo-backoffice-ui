@@ -44,7 +44,8 @@ Ext.application({
         'mediaTypeModel',
         'MTFieldModel',
         'queryDataModel',
-        'DAMModel'
+        'DAMModel',
+        'contentsSearchModel'
     ],
     stores: [
         'SitesJson',
@@ -71,7 +72,6 @@ Ext.application({
         'CurrentUserDataStore',
         'DepContentsCombo',
         'NestedContentsStore',
-        'searchResultsStore',
         'PagesDataStore',
         'MasksComboStore',
         'contentTypesCombo',

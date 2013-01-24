@@ -29,33 +29,13 @@ Ext.define('Rubedo.controller.SearchController', {
                 DisplayResults.show();
                 DisplayResults.toFront();
             }
-            DisplayResults.getComponent(1).getStore().removeAll();
-            DisplayResults.queryContext={ };
-            DisplayResults.setLoading(true);
-            Ext.Ajax.request({
-                url: 'elastic-search',
-                params: {
-                    query: Ext.getCmp('ESSearchField').getValue()
-                },
-                success: function(response){
-                    var data=[];
-                    var bigRez=Ext.JSON.decode(response.responseText);
-                    Ext.Array.forEach(bigRez.results, function(rez){
-                        var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
-                        data.push({
-                            text:thing.text,
-                            type:thing.contentType,
-                            author:thing.author,
-                            lastUpdateTime:thing.lastUpdateTime,
-                            id:rez[Ext.Object.getKeys(rez)[0]]._id
-                        });
-                    });
-                    DisplayResults.getComponent(1).getStore().loadData(data);
-                    DisplayResults.setLoading(false);            
-                    Ext.getCmp("ESFacetQueryField").setValue(Ext.getCmp('ESSearchField').getValue());
-                    me.renderFacets(bigRez.facets);
-                }
-            });
+            var squery= { };
+            if  (!Ext.isEmpty(Ext.getCmp('ESSearchField').getValue())){
+                squery.query=Ext.getCmp('ESSearchField').getValue();
+            }
+            Ext.getStore("ESFacetteStore").activeFacettes=squery;
+            Ext.getStore("ESFacetteStore").load();
+
         }
     },
 
@@ -66,7 +46,8 @@ Ext.define('Rubedo.controller.SearchController', {
     },
 
     onESFacetQueryBtnClick: function(button, e, options) {
-        this.readAndSearch();
+        Ext.getStore("ESFacetteStore").activeFacettes.query=Ext.getCmp("ESFacetQueryField").getValue();
+        Ext.getStore("ESFacetteStore").load();
     },
 
     renderFacets: function(facets) {
@@ -74,66 +55,47 @@ Ext.define('Rubedo.controller.SearchController', {
         var me=this;
         var target=Ext.getCmp("searchFacetBox");
         target.removeAll();
-        Ext.suspendLayouts();
         Ext.Array.forEach(facets, function(facet){
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
+                if(facet.name!="type"){newFacet.collapse();}
                 newFacet.usedProperty=facet.name;
 
                 Ext.Array.forEach(facet.terms, function(term){
-                    var newTerm=Ext.widget("checkbox", {fieldLabel:term.term+" ("+term.count+")", name:term.term, checked:context[term.term]||false});
-                    newTerm.on("change",function(){me.readAndSearch();});
+                    var newTerm=Ext.widget("button",{
+                        text:term.term+" ("+term.count+")",
+                        usedValue:term.term,
+                        anchor:"100%",
+                        handler:function(thing){
+
+                            Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty]=thing.usedValue;
+
+                            Ext.getStore("ESFacetteStore").load();
+                        }
+                    });
                     newFacet.add(newTerm);
                 });
 
                 target.add(newFacet);
             }
         });
-        Ext.resumeLayouts(true);
+
     },
 
-    readAndSearch: function() {
-        var target=Ext.getCmp("searchFacetBox");
-        var me=this;
-        var paramObject={ };
-        var context={ };
-        Ext.Array.forEach(target.query("field"),function(field){
-            if ((field.isXType("checkboxfield"))&&(field.getValue())){
-                paramObject[field.up().usedProperty]=field.name;
-                context[field.name]=true;
-            }
+    renderActiveFacets: function(facets) {
+        Ext.getCmp("ESFacetQueryField").setValue(facets.query);
+        var target=Ext.getCmp("SearchActiveFacetBar");
+        target.removeAll();
+        Ext.Object.each(facets, function(key, value){
+            var activeOne = Ext.widget('splitbutton',{
+                text:key+" : "+value,
+                arrowHandler:function(){
+                    delete Ext.getStore("ESFacetteStore").activeFacettes[key];
+                    Ext.getStore("ESFacetteStore").load();
+                }
+            });
+            target.add(activeOne);
         });
-        paramObject.query=Ext.getCmp("ESFacetQueryField").getValue();
-        me.launchQuery(paramObject);
-        Ext.getCmp('searchResultsWindow').queryContext=context;
-    },
-
-    launchQuery: function(paramObject) {
-        var DisplayResults=Ext.getCmp('searchResultsWindow');
-        var me=this;
-        DisplayResults.setLoading(true);
-        Ext.Ajax.request({
-            url: 'elastic-search',
-            params: paramObject,
-            success: function(response){
-                var data=[];
-                var bigRez=Ext.JSON.decode(response.responseText);
-                Ext.Array.forEach(bigRez.results, function(rez){
-                    var thing=rez[Ext.Object.getKeys(rez)[0]]._source;
-                    data.push({
-                        text:thing.text,
-                        type:thing.contentType,
-                        author:thing.author,
-                        lastUpdateTime:thing.lastUpdateTime,
-                        id:rez[Ext.Object.getKeys(rez)[0]]._id
-                    });
-                });
-                DisplayResults.getComponent(1).getStore().loadData(data);
-                DisplayResults.setLoading(false);
-                me.renderFacets(bigRez.facets);
-            }
-        });
-
     },
 
     init: function(application) {

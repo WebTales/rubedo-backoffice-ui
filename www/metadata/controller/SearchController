@@ -34,33 +34,13 @@
                     "        DisplayResults.show();\r",
                     "        DisplayResults.toFront();\r",
                     "    }\r",
-                    "    DisplayResults.getComponent(1).getStore().removeAll();\r",
-                    "    DisplayResults.queryContext={ };\r",
-                    "    DisplayResults.setLoading(true);\r",
-                    "    Ext.Ajax.request({\r",
-                    "        url: 'elastic-search',\r",
-                    "        params: {\r",
-                    "            query: Ext.getCmp('ESSearchField').getValue()\r",
-                    "        },\r",
-                    "        success: function(response){\r",
-                    "            var data=[];\r",
-                    "            var bigRez=Ext.JSON.decode(response.responseText);\r",
-                    "            Ext.Array.forEach(bigRez.results, function(rez){\r",
-                    "                var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
-                    "                data.push({\r",
-                    "                    text:thing.text,\r",
-                    "                    type:thing.contentType,\r",
-                    "                    author:thing.author,\r",
-                    "                    lastUpdateTime:thing.lastUpdateTime,\r",
-                    "                    id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
-                    "                });\r",
-                    "            });\r",
-                    "            DisplayResults.getComponent(1).getStore().loadData(data);\r",
-                    "            DisplayResults.setLoading(false);            \r",
-                    "            Ext.getCmp(\"ESFacetQueryField\").setValue(Ext.getCmp('ESSearchField').getValue());\r",
-                    "            me.renderFacets(bigRez.facets);\r",
-                    "        }\r",
-                    "    });\r",
+                    "    var squery= { };\r",
+                    "    if  (!Ext.isEmpty(Ext.getCmp('ESSearchField').getValue())){\r",
+                    "        squery.query=Ext.getCmp('ESSearchField').getValue();\r",
+                    "    }\r",
+                    "    Ext.getStore(\"ESFacetteStore\").activeFacettes=squery;\r",
+                    "    Ext.getStore(\"ESFacetteStore\").load();\r",
+                    "    \r",
                     "}"
                 ],
                 "name": "click",
@@ -110,22 +90,31 @@
                     "var me=this;\r",
                     "var target=Ext.getCmp(\"searchFacetBox\");\r",
                     "target.removeAll();\r",
-                    "Ext.suspendLayouts();\r",
                     "Ext.Array.forEach(facets, function(facet){\r",
-                    "    if (!Ext.isEmpty(facet.terms)){\r",
+                    "if (!Ext.isEmpty(facet.terms)){\r",
                     "    var newFacet = Ext.widget(\"fieldset\", {title:facet.name, collapsible:true});\r",
+                    "    if(facet.name!=\"type\"){newFacet.collapse();}\r",
                     "    newFacet.usedProperty=facet.name;\r",
                     "    \r",
-                    "        Ext.Array.forEach(facet.terms, function(term){\r",
-                    "            var newTerm=Ext.widget(\"checkbox\", {fieldLabel:term.term+\" (\"+term.count+\")\", name:term.term, checked:context[term.term]||false});\r",
-                    "            newTerm.on(\"change\",function(){me.readAndSearch();});\r",
-                    "            newFacet.add(newTerm);\r",
+                    "    Ext.Array.forEach(facet.terms, function(term){\r",
+                    "        var newTerm=Ext.widget(\"button\",{\r",
+                    "            text:term.term+\" (\"+term.count+\")\",\r",
+                    "            usedValue:term.term,\r",
+                    "            anchor:\"100%\",\r",
+                    "            handler:function(thing){\r",
+                    "                \r",
+                    "                Ext.getStore(\"ESFacetteStore\").activeFacettes[thing.up().usedProperty]=thing.usedValue;\r",
+                    "                \r",
+                    "                Ext.getStore(\"ESFacetteStore\").load();\r",
+                    "            }\r",
                     "        });\r",
+                    "        newFacet.add(newTerm);\r",
+                    "    });\r",
                     "    \r",
                     "    target.add(newFacet);\r",
                     "}\r",
                     "});\r",
-                    "Ext.resumeLayouts(true);"
+                    ""
                 ]
             },
             "designerId": "0bf37f2e-bd96-4dc3-b672-d37d65fbc7e7"
@@ -138,68 +127,28 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "readAndSearch",
-                "fn": "readAndSearch",
-                "implHandler": [
-                    "var target=Ext.getCmp(\"searchFacetBox\");\r",
-                    "var me=this;\r",
-                    "var paramObject={ };\r",
-                    "var context={ };\r",
-                    "Ext.Array.forEach(target.query(\"field\"),function(field){\r",
-                    "    if ((field.isXType(\"checkboxfield\"))&&(field.getValue())){\r",
-                    "        paramObject[field.up().usedProperty]=field.name;\r",
-                    "        context[field.name]=true;\r",
-                    "    }\r",
-                    "});\r",
-                    "paramObject.query=Ext.getCmp(\"ESFacetQueryField\").getValue();\r",
-                    "me.launchQuery(paramObject);\r",
-                    "Ext.getCmp('searchResultsWindow').queryContext=context;"
-                ]
-            },
-            "designerId": "491bda99-fa1f-45ee-93c1-b2f35de9467c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "launchQuery",
-                "fn": "launchQuery",
+                "designer|userClassName": "renderActiveFacets",
+                "fn": "renderActiveFacets",
                 "designer|params": [
-                    "paramObject"
+                    "facets"
                 ],
                 "implHandler": [
-                    "var DisplayResults=Ext.getCmp('searchResultsWindow');\r",
-                    "var me=this;\r",
-                    "DisplayResults.setLoading(true);\r",
-                    "Ext.Ajax.request({\r",
-                    "    url: 'elastic-search',\r",
-                    "    params: paramObject,\r",
-                    "    success: function(response){\r",
-                    "        var data=[];\r",
-                    "        var bigRez=Ext.JSON.decode(response.responseText);\r",
-                    "        Ext.Array.forEach(bigRez.results, function(rez){\r",
-                    "            var thing=rez[Ext.Object.getKeys(rez)[0]]._source;\r",
-                    "            data.push({\r",
-                    "                text:thing.text,\r",
-                    "                type:thing.contentType,\r",
-                    "                author:thing.author,\r",
-                    "                lastUpdateTime:thing.lastUpdateTime,\r",
-                    "                id:rez[Ext.Object.getKeys(rez)[0]]._id\r",
-                    "            });\r",
-                    "        });\r",
-                    "        DisplayResults.getComponent(1).getStore().loadData(data);\r",
-                    "        DisplayResults.setLoading(false);\r",
-                    "        me.renderFacets(bigRez.facets);\r",
-                    "    }\r",
-                    "});\r",
-                    ""
+                    "Ext.getCmp(\"ESFacetQueryField\").setValue(facets.query);\r",
+                    "var target=Ext.getCmp(\"SearchActiveFacetBar\");\r",
+                    "target.removeAll();\r",
+                    "Ext.Object.each(facets, function(key, value){\r",
+                    "    var activeOne = Ext.widget('splitbutton',{\r",
+                    "        text:key+\" : \"+value,\r",
+                    "        arrowHandler:function(){\r",
+                    "            delete Ext.getStore(\"ESFacetteStore\").activeFacettes[key];\r",
+                    "            Ext.getStore(\"ESFacetteStore\").load();\r",
+                    "        }\r",
+                    "    });\r",
+                    "    target.add(activeOne);\r",
+                    "});"
                 ]
             },
-            "designerId": "3ccda6b2-2528-431c-919a-d388e299184f"
+            "designerId": "eec912e9-4be7-4df4-b0ae-95514ade0554"
         },
         {
             "type": "controlleraction",
@@ -212,14 +161,15 @@
                 "designer|userClassName": "onESFacetQueryBtnClick",
                 "fn": "onESFacetQueryBtnClick",
                 "implHandler": [
-                    "this.readAndSearch();"
+                    "Ext.getStore(\"ESFacetteStore\").activeFacettes.query=Ext.getCmp(\"ESFacetQueryField\").getValue();\r",
+                    "Ext.getStore(\"ESFacetteStore\").load();"
                 ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
                 "designer|controlQuery": "#ESFacetQueryBtn"
             },
-            "designerId": "73bc0a8e-d559-4934-9ab9-dcf87216a470"
+            "designerId": "9b13ba4c-cdde-410c-8ea3-d270023551ef"
         }
     ]
 }

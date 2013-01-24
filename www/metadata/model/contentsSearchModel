@@ -1,18 +1,15 @@
 {
-    "type": "store",
+    "type": "datamodel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "searchResultsStore",
-        "designer|userAlias": "searchResultsStore",
-        "storeId": "searchResultsStore",
-        "model": null
+        "designer|userClassName": "contentsSearchModel"
     },
-    "id": "ExtBox1-ext-gen8899",
-    "designerId": "b43f409a-1426-4a5b-9347-6d7f4103dd6b",
+    "id": "ExtBox1-ext-gen55204",
+    "designerId": "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
     "cn": [
         {
             "type": "datafield",
