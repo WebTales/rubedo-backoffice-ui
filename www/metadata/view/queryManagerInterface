@@ -1,0 +1,279 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "queryManagerInterface",
+        "designer|userAlias": "queryManagerInterface",
+        "height": 434,
+        "id": "queryManagerInterface",
+        "width": 604,
+        "layout": "fit",
+        "iconCls": "database_search",
+        "title": "Requettes",
+        "constrainHeader": true
+    },
+    "id": "ExtBox1-ext-gen5767",
+    "designerId": "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar57",
+                "height": 64
+            },
+            "designerId": "0dc2a5d4-9222-4749-bd50-3f78d0e44772",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton224",
+                        "id": "queryMainAddBtn",
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "aaa77d83-edbc-43ca-80de-b5472fb03688",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onQueryMainAddBtnClick",
+                                "fn": "onQueryMainAddBtnClick",
+                                "implHandler": [
+                                    "Ext.widget(\"assistantRequetage\",{adminMode:true}).show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "86817fd8-109c-4485-beeb-95091e4a0b9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton225",
+                        "disabled": true,
+                        "id": "queryMainRemoveBtn",
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "Supprimer"
+                    },
+                    "designerId": "0c6b28ba-7ff8-4dee-affa-7c5c133c48e3"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton226",
+                        "disabled": true,
+                        "id": "queryMainEditBtn",
+                        "iconAlign": "top",
+                        "iconCls": "pencil_big",
+                        "scale": "large",
+                        "text": "Editer"
+                    },
+                    "designerId": "6b191377-285e-499f-8c56-d19ce20a1745"
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill25"
+                    },
+                    "designerId": "a6663552-432a-4d5a-973f-d8a66a4b4fed"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton227",
+                        "iconCls": "info_big",
+                        "scale": "large",
+                        "text": ""
+                    },
+                    "designerId": "25debced-b2e9-4e3d-93ab-0d811ffb3cd7"
+                }
+            ]
+        },
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel30",
+                "id": "mainQueriesGrid",
+                "title": "",
+                "forceFit": true,
+                "store": "MainQueriesStore"
+            },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
+            "designerId": "9d33135d-1343-4944-b2d8-8f22c606aafd",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView29"
+                    },
+                    "designerId": "892bc1e9-0a5d-422c-8900-ccac56d29a7d"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn61",
+                        "dataIndex": "name",
+                        "text": "Nom"
+                    },
+                    "designerId": "21541e1d-5851-48a4-b480-43a653971c82"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn63",
+                        "dataIndex": "averageDuration",
+                        "text": "Durée moyenne (s)"
+                    },
+                    "designerId": "d50fe20a-3edc-4e9f-a58e-5fae0fa83fc4"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn66",
+                        "dataIndex": "count",
+                        "text": "Compteur"
+                    },
+                    "designerId": "7d0e5986-4652-42c8-b07f-05f9e2b35464"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn67",
+                        "dataIndex": "usage",
+                        "text": "Usage"
+                    },
+                    "designerId": "cc9a1fce-7876-49aa-8695-85b1f9f14a8a"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "f52555ba-3949-45b0-9183-f55c59470c56",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onQueryManagerInterfaceRender",
+                "fn": "onQueryManagerInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"MainQueriesStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "3731136f-72b7-4c9c-97fa-f55f39124010"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onQueryManagerInterfaceBeforeClose",
+                "fn": "onQueryManagerInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"MainQueriesStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "c57cd49a-044d-4f26-8703-cf383e30e1ce"
+        }
+    ]
+}

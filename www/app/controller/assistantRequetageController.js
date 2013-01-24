@@ -390,10 +390,15 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 count:0,
                 usage:[]
             });
-            Ext.getStore("QueriesStore").add(newQuery);
-            Ext.getStore("QueriesStore").addListener("update", function(){
-                Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
-            },this,{single:true});
+            if (Ext.getCmp("assistantRequetage").adminMode){
+                Ext.getStore("MainQueriesStore").add(newQuery);
+            } else {
+                Ext.getStore("QueriesStore").add(newQuery);
+                Ext.getStore("QueriesStore").addListener("update", function(){
+                    Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+                },this,{single:true});
+                }
+
                 Ext.getCmp("assistantRequetage").close();
             }
     },
@@ -437,6 +442,29 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             Ext.getCmp('assisstantRE5').add(enrobage);
         }
+    },
+
+    onMainQueriesGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("queryMainRemoveBtn").disable();
+            Ext.getCmp("queryMainEditBtn").disable();
+        } else {
+            Ext.getCmp("queryMainRemoveBtn").enable();
+            Ext.getCmp("queryMainEditBtn").enable();
+        }
+    },
+
+    onQueryMainRemoveBtnClick: function(button, e, options) {
+
+        var delCon = Ext.widget('delConfirmZ');
+        delCon.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            Ext.getStore("MainQueriesStore").remove(Ext.getCmp("mainQueriesGrid").getSelectionModel().getLastSelected());
+            Ext.getCmp('delConfirmZ').close();
+
+        });  
+
+
     },
 
     readQuery: function() {
@@ -520,6 +548,12 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             },
             "#boutonCreateurTrisChampsAR": {
                 click: this.onBoutonCreateurTrisChampsARClick
+            },
+            "#mainQueriesGrid": {
+                selectionchange: this.onMainQueriesGridSelectionChange
+            },
+            "#queryMainRemoveBtn": {
+                click: this.onQueryMainRemoveBtnClick
             }
         });
     }

@@ -146,6 +146,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             text: 'Workflows'
                         },
                         {
+                            xtype: 'button',
+                            ACL: 'read.ui.masks',
+                            favoriteIcon: 'database_search.png',
+                            itemId: 'queryManagerInterface',
+                            iconCls: 'database_search',
+                            text: 'Requettes'
+                        },
+                        {
                             xtype: 'tbseparator',
                             ACL: 'read.ui.groups'
                         },

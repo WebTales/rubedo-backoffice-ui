@@ -8,18 +8,18 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Queries",
-        "designer|userClassName": "QueriesStore",
-        "designer|userAlias": "QueriesStore",
+        "designer|userClassName": "MainQueriesStore",
+        "designer|userAlias": "MainQueriesStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "QueriesStore",
+        "storeId": "MainQueriesStore",
         "model": "queryDataModel"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen30115",
-    "designerId": "31be942a-1630-4c10-9fb4-790b2d825c55",
+    "id": "ExtBox1-ext-gen10494",
+    "designerId": "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -51,7 +51,7 @@
                     "                }"
                 ]
             },
-            "designerId": "3e9b87ab-95b7-4a3b-becb-f219b2780c72",
+            "designerId": "3dd1673d-49f6-4da4-9e5d-b9caeb924353",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -65,7 +65,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "9a2a470a-e3c4-44db-8ad1-7aedc420d48b"
+                    "designerId": "bcb31127-70f6-4277-8169-51892e753d89"
                 },
                 {
                     "type": "jsonwriter",
@@ -79,7 +79,7 @@
                         "encode": true,
                         "root": "data"
                     },
-                    "designerId": "c82bfe6e-858e-4d03-834a-65fba0b08bf9"
+                    "designerId": "4235a613-5e53-425b-88a3-8a597fa8bedd"
                 }
             ]
         }

@@ -93,7 +93,8 @@
             "DAMStore",
             "DAMPickerStore",
             "MediaTypesForCT",
-            "MediaTypesFORDAMPicker"
+            "MediaTypesFORDAMPicker",
+            "MainQueriesStore"
         ],
         "views": [
             "MyContainer",
@@ -167,7 +168,8 @@
             "GFSFileField",
             "GFSFieldUploadWindow",
             "siteBuilderWizzard",
-            "MyToolbar56"
+            "MyToolbar56",
+            "queryManagerInterface"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

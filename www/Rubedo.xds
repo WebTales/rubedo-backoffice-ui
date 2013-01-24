@@ -1732,6 +1732,22 @@
                 "app/view/MyToolbar56.js"
             ],
             "className": "MyToolbar56"
+        },
+        "dd56c178-5e05-4cfb-9003-9a5734ed7bb8": {
+            "paths": [
+                "metadata/view/queryManagerInterface",
+                "app/view/override/queryManagerInterface.js",
+                "app/view/queryManagerInterface.js"
+            ],
+            "className": "queryManagerInterface"
+        },
+        "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a": {
+            "paths": [
+                "metadata/store/MainQueriesStore",
+                "app/store/override/MainQueriesStore.js",
+                "app/store/MainQueriesStore.js"
+            ],
+            "className": "MainQueriesStore"
         }
     },
     "viewOrderMap": {
@@ -1825,7 +1841,8 @@
             "074f018d-a0e3-4a1e-a693-b6defc4b819c",
             "08c3601d-6da2-4434-bbf8-03968b08ffe4",
             "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
-            "98647ca9-632b-4513-8aac-67b99b9af747"
+            "98647ca9-632b-4513-8aac-67b99b9af747",
+            "dd56c178-5e05-4cfb-9003-9a5734ed7bb8"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1892,7 +1909,8 @@
             "cd7bd070-8e86-4a4f-9831-d227e37bec88",
             "fe793f86-3a97-401f-bdae-147c54ef0a7d",
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
-            "31be942a-1630-4c10-9fb4-790b2d825c55"
+            "31be942a-1630-4c10-9fb4-790b2d825c55",
+            "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

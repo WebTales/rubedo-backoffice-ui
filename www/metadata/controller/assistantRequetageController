@@ -474,10 +474,15 @@
                     "        count:0,\r",
                     "        usage:[]\r",
                     "    });\r",
-                    "    Ext.getStore(\"QueriesStore\").add(newQuery);\r",
-                    "    Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){\r",
-                    "        Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).select(newQuery);\r",
-                    "    },this,{single:true});\r",
+                    "    if (Ext.getCmp(\"assistantRequetage\").adminMode){\r",
+                    "        Ext.getStore(\"MainQueriesStore\").add(newQuery);\r",
+                    "    } else {\r",
+                    "        Ext.getStore(\"QueriesStore\").add(newQuery);\r",
+                    "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){\r",
+                    "            Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).select(newQuery);\r",
+                    "        },this,{single:true});\r",
+                    "    }\r",
+                    "    \r",
                     "        Ext.getCmp(\"assistantRequetage\").close();\r",
                     "    }"
                 ],
@@ -630,6 +635,61 @@
                 ]
             },
             "designerId": "d3bac03a-cde0-4bb8-8fdf-ef18d886ec1a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainQueriesGridSelectionChange",
+                "fn": "onMainQueriesGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
+                    "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"queryMainRemoveBtn\").enable();\r",
+                    "    Ext.getCmp(\"queryMainEditBtn\").enable();\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainQueriesGrid"
+            },
+            "designerId": "bc3641f6-fae2-49cc-bbfe-03dbdbe653c4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onQueryMainRemoveBtnClick",
+                "fn": "onQueryMainRemoveBtnClick",
+                "implHandler": [
+                    "\r",
+                    "    var delCon = Ext.widget('delConfirmZ');\r",
+                    "    delCon.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getStore(\"MainQueriesStore\").remove(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected());\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "\r",
+                    "    });  \r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#queryMainRemoveBtn"
+            },
+            "designerId": "07af0387-d3c5-4652-9b8e-bcb0eea3c16e"
         }
     ]
 }

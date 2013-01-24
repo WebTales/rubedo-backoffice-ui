@@ -414,6 +414,37 @@
                     ]
                 },
                 {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.masks",
+                        "favoriteIcon": "database_search.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "queryManagerInterface",
+                        "margin": null,
+                        "iconCls": "database_search",
+                        "text": "Requettes"
+                    },
+                    "designerId": "fb47a613-65b5-4e85-a770-1d9a2670f49a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
                     "type": "tbseparator",
                     "reference": {
                         "name": "items",

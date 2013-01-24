@@ -109,7 +109,8 @@ Ext.application({
         'DAMStore',
         'DAMPickerStore',
         'MediaTypesForCT',
-        'MediaTypesFORDAMPicker'
+        'MediaTypesFORDAMPicker',
+        'MainQueriesStore'
     ],
     views: [
         'MyContainer',
@@ -183,7 +184,8 @@ Ext.application({
         'GFSFileField',
         'GFSFieldUploadWindow',
         'siteBuilderWizzard',
-        'MyToolbar56'
+        'MyToolbar56',
+        'queryManagerInterface'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
