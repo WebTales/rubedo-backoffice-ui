@@ -28,6 +28,9 @@
                 "implHandler": [
                     "var myComponent = Ext.widget(\"GFSFileFieldComponent\");\r",
                     "myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+\" \");\r",
+                    "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldDownloadFile\").on(\"click\", function(){\r",
+                    "    window.location.href=\"file/get?file-id=\"+abstractcomponent.getValue()+\"&attachment=download\";\r",
+                    "});\r",
                     "myComponent.on(\"afterrender\",function(){\r",
                     "    if (Ext.isEmpty(abstractcomponent.getValue())){\r",
                     "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image_remove.png\");\r",

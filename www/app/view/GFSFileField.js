@@ -38,6 +38,9 @@ Ext.define('Rubedo.view.GFSFileField', {
     onHiddenfieldRender: function(abstractcomponent, options) {
         var myComponent = Ext.widget("GFSFileFieldComponent");
         myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+" ");
+        myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").on("click", function(){
+            window.location.href="file/get?file-id="+abstractcomponent.getValue()+"&attachment=download";
+        });
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");

@@ -12,13 +12,16 @@
             "Ext.ux.TreePicker"
         ],
         "floating": true,
-        "height": null,
+        "height": 400,
         "id": "DAMCreateUpdateWindow",
+        "maxHeight": null,
         "minHeight": 220,
         "width": 900,
+        "overflowY": "auto",
         "layout": "fit",
         "iconCls": "mediaTypes",
         "title": "Nouveau média",
+        "constrain": true,
         "constrainHeader": true,
         "maximizable": false,
         "modal": true

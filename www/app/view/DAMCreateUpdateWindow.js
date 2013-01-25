@@ -23,14 +23,17 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     ],
 
     floating: true,
+    height: 400,
     id: 'DAMCreateUpdateWindow',
     minHeight: 220,
     width: 900,
+    overflowY: 'auto',
     layout: {
         type: 'fit'
     },
     iconCls: 'mediaTypes',
     title: 'Nouveau média',
+    constrain: true,
     constrainHeader: true,
     maximizable: false,
     modal: true,

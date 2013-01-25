@@ -161,7 +161,7 @@
                     "                Ext.Array.remove(vocabulaires,\"navigation\");\r",
                     "                var k =0;\r",
                     "                for (k=0; k<vocabulaires.length; k++) {\r",
-                    "                    \r",
+                    "\r",
                     "                    var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);\r",
                     "                    var vocabAPlat= [ ];\r",
                     "                    //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);\r",
