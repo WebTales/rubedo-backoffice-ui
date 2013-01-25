@@ -19,12 +19,15 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
 
     minHeight: 100,
     minWidth: 100,
+    autoScroll: true,
     resizable: false,
     iconCls: 'imageIco',
     title: 'Titre',
     constrain: false,
     constrainHeader: true,
-    minimizable: true,
+    maximized: true,
+    minimizable: false,
+    modal: true,
 
     initComponent: function() {
         var me = this;

@@ -15,6 +15,7 @@
         "minHeight": 100,
         "minWidth": 100,
         "width": null,
+        "autoScroll": true,
         "resizable": [
             "false"
         ],
@@ -23,7 +24,9 @@
         "constrain": false,
         "constrainHeader": true,
         "maximizable": null,
-        "minimizable": true
+        "maximized": true,
+        "minimizable": false,
+        "modal": true
     },
     "id": "ExtBox1-ext-gen8111",
     "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
@@ -37,6 +40,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyImg8",
+                "maxHeight": null,
+                "maxWidth": null,
                 "resizable": [
                     "false"
                 ],
