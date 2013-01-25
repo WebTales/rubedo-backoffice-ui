@@ -118,7 +118,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                 delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
                 Ext.getStore("DAMPickerStore").load();   
             } else {
-                Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
+                Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.filter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
                 Ext.getStore("MediaTypesFORDAMPicker").load();
                 columnsOver.push({
                     xtype:'gridcolumn',
@@ -139,7 +139,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
                     text: 'Type'
                 });
-                Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":"+allowedFileType+"}]";
+                Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
                 Ext.getStore("DAMPickerStore").load();
             }
         }else if (allowedTypes.length==1){

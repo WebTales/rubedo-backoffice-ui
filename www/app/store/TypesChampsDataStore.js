@@ -1471,6 +1471,47 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             }
                         },
                         {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'Image',
+                                        nom: 'Image'
+                                    },
+                                    {
+                                        valeur: 'Document',
+                                        nom: 'Document'
+                                    },
+                                    {
+                                        valeur: 'Video',
+                                        nom: 'VIdeo'
+                                    },
+                                    {
+                                        valeur: 'Animation',
+                                        nom: 'Animation'
+                                    },
+                                    {
+                                        valeur: 'Audio',
+                                        nom: 'Audio'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Type de fichier',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                allowBlank: false,
+                                forceSelect: true,
+                                editable: false,
+                                name: 'allowedFileType'
+                            }
+                        },
+                        {
                             type: 'Ext.form.field.Checkbox',
                             config: {
                                 fieldLabel: 'Localisable',

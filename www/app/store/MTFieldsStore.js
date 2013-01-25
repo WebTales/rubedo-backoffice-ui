@@ -43,6 +43,7 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                         searchable: false,
                         multivalued: false,
                         tooltip: '',
+                        fileType: 'Image',
                         labelSeparator: ' '
                     },
                     configFields: [
@@ -83,24 +84,20 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                                         nom: 'Image'
                                     },
                                     {
-                                        valeur: 'Office',
-                                        nom: 'Office'
+                                        valeur: 'Document',
+                                        nom: 'Document'
                                     },
                                     {
                                         valeur: 'Video',
                                         nom: 'VIdeo'
                                     },
                                     {
-                                        valeur: 'Flash',
-                                        nom: 'Flash'
+                                        valeur: 'Animation',
+                                        nom: 'Animation'
                                     },
                                     {
                                         valeur: 'Audio',
                                         nom: 'Audio'
-                                    },
-                                    {
-                                        valeur: 'PDF',
-                                        nom: 'PDF'
                                     }
                                 ]
                             },
@@ -109,7 +106,6 @@ Ext.define('Rubedo.store.MTFieldsStore', {
                                 queryMode: 'local',
                                 displayField: 'nom',
                                 valueField: 'valeur',
-                                value: 'Image',
                                 allowBlank: false,
                                 forceSelect: true,
                                 editable: false,
