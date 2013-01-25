@@ -90,6 +90,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     onImagePickerWindowRender: function(abstractcomponent, options) {
         Ext.getStore("DAMPickerStore").clearFilter(true);
         var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;
+        var allowedFileType=Ext.getCmp(abstractcomponent.targetField).allowedFileType;
         var columnsOver= [
         {
             xtype: 'gridcolumn',
@@ -113,8 +114,34 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         }
         ];
         if (Ext.isEmpty(allowedTypes)){
-            delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
-            Ext.getStore("DAMPickerStore").load();    
+            if (Ext.isEmpty(allowedFileType)){            
+                delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
+                Ext.getStore("DAMPickerStore").load();   
+            } else {
+                Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
+                Ext.getStore("MediaTypesFORDAMPicker").load();
+                columnsOver.push({
+                    xtype:'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        if (Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value))) {
+                            return(value);
+                        } else {
+                            return(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value).get("type"));
+                        }
+                    },
+                    filter: {
+                        type: 'combo',
+                        valueField: 'id',
+                        displayField: 'type',
+                        store: 'MediaTypesFORDAMPicker'
+                    },
+                    dataIndex: 'typeId',
+
+                    text: 'Type'
+                });
+                Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":"+allowedFileType+"}]";
+                Ext.getStore("DAMPickerStore").load();
+            }
         }else if (allowedTypes.length==1){
             Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";
             Ext.getStore("DAMPickerStore").load();

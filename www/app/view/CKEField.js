@@ -41,7 +41,7 @@ Ext.define('Rubedo.view.CKEField', {
     onTextareafieldAfterRender: function(abstractcomponent, options) {
         var targetId = abstractcomponent.getInputId();
         abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  [
-            { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+            { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Source' ] },
             { name: 'links', items: [ 'Link', 'Unlink','-', 'Anchor' ] },
             { name: 'insert', items: [ 'Image', 'Flash','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
             '/',

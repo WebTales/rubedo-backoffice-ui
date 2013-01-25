@@ -76,7 +76,8 @@ Ext.define('Rubedo.controller.DAMController', {
             url: 'dam/create',
             params: { 
                 typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id"),
-                taxonomy: me.getTaxoValues()
+                mainFileType: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("mainFileType"),
+                taxonomy: Ext.JSON.encode(me.getTaxoValues())
             },
             success: function(form, action) {
                 button.up().setLoading(false);

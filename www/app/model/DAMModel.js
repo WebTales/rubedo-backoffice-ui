@@ -56,6 +56,9 @@ Ext.define('Rubedo.model.DAMModel', {
         },
         {
             name: 'fileSize'
+        },
+        {
+            name: 'mainFileType'
         }
     ]
 });

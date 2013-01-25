@@ -164,6 +164,19 @@
                 "name": "fileSize"
             },
             "designerId": "365218dc-a326-4670-9c5c-b9f5fae14d16"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field258",
+                "name": "mainFileType"
+            },
+            "designerId": "effa9800-725d-4966-b8e7-ee0ec4e201e8"
         }
     ]
 }
