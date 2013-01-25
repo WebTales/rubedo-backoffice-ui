@@ -1756,6 +1756,14 @@
                 "app/model/contentsSearchModel.js"
             ],
             "className": "contentsSearchModel"
+        },
+        "0c43a14d-fe2c-4ee6-bacc-77b5abe63611": {
+            "paths": [
+                "metadata/store/RoleStore",
+                "app/store/override/RoleStore.js",
+                "app/store/RoleStore.js"
+            ],
+            "className": "RoleStore"
         }
     },
     "viewOrderMap": {
@@ -1918,6 +1926,7 @@
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
             "31be942a-1630-4c10-9fb4-790b2d825c55",
             "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",
+            "0c43a14d-fe2c-4ee6-bacc-77b5abe63611",
             "b1e3cc2f-a43b-450e-8914-242d618f8402"
         ],
         "controller": [

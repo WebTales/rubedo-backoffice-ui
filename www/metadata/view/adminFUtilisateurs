@@ -247,6 +247,59 @@
                     ]
                 },
                 {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.groups",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton13",
+                        "disabled": true,
+                        "id": "groupSaveButton",
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "floppy_disc_big",
+                        "scale": "large",
+                        "text": "Enregistrer"
+                    },
+                    "designerId": "b1cf0cf8-ac11-45b9-bf32-bd3074c61e60",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGroupSaveButtonClick",
+                                "fn": "onGroupSaveButtonClick",
+                                "implHandler": [
+                                    "var form =Ext.getCmp(\"groupPropsForm\").getForm();\r",
+                                    "if (form.isValid()){\r",
+                                    "    var record =Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                                    "    record.set(form.getValues());\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "166fe406-eae6-4655-8c76-65c9ad0bb9cb"
+                        }
+                    ]
+                },
+                {
                     "type": "buttongroup",
                     "reference": {
                         "name": "items",
@@ -782,8 +835,124 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm40",
+                        "id": "groupPropsForm",
+                        "bodyPadding": 10,
+                        "title": "Propriétés"
+                    },
+                    "designerId": "4c5cf7dd-da1a-4dd9-b5e4-ce7ce42e5a04",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig34"
+                            },
+                            "designerId": "0e21e1bb-5e07-446f-af67-51ca5f7e88f3"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField74",
+                                "name": "name",
+                                "fieldLabel": "Nom ",
+                                "allowBlank": false
+                            },
+                            "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onFormRender",
+                                "fn": "onFormRender",
+                                "implHandler": [
+                                    "var rolePicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    store:Ext.getStore(\"RoleStore\"),\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"roles\",\r",
+                                    "    fieldLabel:\"Roles\",\r",
+                                    "    queryMode:\"local\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    valueField:\"id\",\r",
+                                    "    displayField:\"label\",\r",
+                                    "    forceSelection:true,\r",
+                                    "    createNewOnEnter:true,\r",
+                                    "    triggerOnClick:false,\r",
+                                    "    createNewOnBlur:true,\r",
+                                    "    stacked:true,\r",
+                                    "    allowBlank:true\r",
+                                    "\r",
+                                    "});\r",
+                                    "abstractcomponent.add(rolePicker);"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "66ea61d1-da9e-4514-b240-e1c1c4405f21"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminFUtilisateursRender",
+                "fn": "onAdminFUtilisateursRender",
+                "implHandler": [
+                    "Ext.getStore(\"RoleStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "df5a6faa-240a-4189-b113-c33e56fd0063"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminFUtilisateursBeforeClose",
+                "fn": "onAdminFUtilisateursBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"RoleStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "ed8cc51a-6cb2-47aa-9959-b29faa4b6b66"
         }
     ]
 }

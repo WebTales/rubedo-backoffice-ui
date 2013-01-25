@@ -108,6 +108,19 @@
                 "type": "date"
             },
             "designerId": "1ef9ae75-c2f3-4782-944c-051179f47a88"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field256",
+                "name": "roles"
+            },
+            "designerId": "37140909-f954-4c49-8bdc-23a92a8719c8"
         }
     ]
 }

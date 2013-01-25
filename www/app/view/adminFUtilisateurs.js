@@ -116,6 +116,22 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             text: 'Supprimer'
                         },
                         {
+                            xtype: 'button',
+                            ACL: 'write.ui.groups',
+                            disabled: true,
+                            id: 'groupSaveButton',
+                            iconAlign: 'top',
+                            iconCls: 'floppy_disc_big',
+                            scale: 'large',
+                            text: 'Enregistrer',
+                            listeners: {
+                                click: {
+                                    fn: me.onGroupSaveButtonClick,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.groups',
                             disabled: true,
@@ -314,10 +330,41 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'form',
+                            id: 'groupPropsForm',
+                            bodyPadding: 10,
+                            title: 'Propriétés',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    name: 'name',
+                                    fieldLabel: 'Nom ',
+                                    allowBlank: false
+                                }
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onFormRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onAdminFUtilisateursRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onAdminFUtilisateursBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -327,12 +374,49 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png');
     },
 
+    onGroupSaveButtonClick: function(button, e, options) {
+        var form =Ext.getCmp("groupPropsForm").getForm();
+        if (form.isValid()){
+            var record =Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+            record.set(form.getValues());
+        }
+    },
+
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
         if (!ACL.interfaceRights['write.ui.groups']){return(false);}
     },
 
     onUsersInGroupGridDestroy: function(abstractcomponent, options) {
         abstractcomponent.getStore().removeAll();
+    },
+
+    onFormRender: function(abstractcomponent, options) {
+        var rolePicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:Ext.getStore("RoleStore"),
+            anchor:"100%",
+            name:"roles",
+            fieldLabel:"Roles",
+            queryMode:"local",
+            multiSelect:true,
+            valueField:"id",
+            displayField:"label",
+            forceSelection:true,
+            createNewOnEnter:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            stacked:true,
+            allowBlank:true
+
+        });
+        abstractcomponent.add(rolePicker);
+    },
+
+    onAdminFUtilisateursRender: function(abstractcomponent, options) {
+        Ext.getStore("RoleStore").load();
+    },
+
+    onAdminFUtilisateursBeforeClose: function(panel, options) {
+        Ext.getStore("RoleStore").removeAll();
     }
 
 });

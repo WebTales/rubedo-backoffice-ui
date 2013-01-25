@@ -1,0 +1,83 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RoleStore",
+        "designer|userAlias": "RoleStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "RoleStore",
+        "model": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen14899",
+    "designerId": "0c43a14d-fe2c-4ee6-bacc-77b5abe63611",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy48",
+                "api": [
+                    "{\r",
+                    "                    read: 'roles'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "956923a4-c3ad-4ad8-a058-0035a11053d1",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader47",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "996b1fa3-02df-41f5-b0cf-ca09d21b1451"
+                }
+            ]
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field254",
+                "name": "id"
+            },
+            "designerId": "efd1c33c-a253-43c4-8f60-7d64ad347475"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field255",
+                "name": "label"
+            },
+            "designerId": "5b3ecac7-0bb2-4fca-9dee-88ae1e30a04b"
+        }
+    ]
+}

@@ -111,7 +111,8 @@ Ext.application({
         'MediaTypesForCT',
         'MediaTypesFORDAMPicker',
         'MainQueriesStore',
-        'ESFacetteStore'
+        'ESFacetteStore',
+        'RoleStore'
     ],
     views: [
         'MyContainer',

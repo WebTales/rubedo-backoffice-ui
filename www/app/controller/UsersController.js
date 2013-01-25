@@ -23,6 +23,7 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getStore("UsersGroupStore").loadData(users);
         Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
         Ext.getCmp("groupDeleteButton").enable();
+        Ext.getCmp("groupSaveButton").enable();
         var arButtons = [ ];
         this.ArianneBuilder(record,arButtons);
         Ext.getCmp("adminFUtilisateurs").getComponent("filArianne").removeAll();
@@ -40,6 +41,7 @@ Ext.define('Rubedo.controller.UsersController', {
             userNb:userNb,
             calif:calif
         });
+        Ext.getCmp("groupPropsForm").getForm().setValues(record.getData());
     },
 
     removeGroup: function(button, e, options) {
@@ -59,6 +61,7 @@ Ext.define('Rubedo.controller.UsersController', {
                 store.sync();
                 Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                 button.disable();
+                Ext.getCmp("groupSaveButton").disable();
             }
             Ext.getCmp('delConfirmZ').close();
 

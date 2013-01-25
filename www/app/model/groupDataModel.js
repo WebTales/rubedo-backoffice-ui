@@ -41,6 +41,9 @@ Ext.define('Rubedo.model.groupDataModel', {
         {
             name: 'updateTime',
             type: 'date'
+        },
+        {
+            name: 'roles'
         }
     ]
 });
