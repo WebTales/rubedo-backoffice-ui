@@ -151,6 +151,19 @@
                 "persist": false
             },
             "designerId": "381644bc-a061-4cd6-8097-b36f09c36158"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field257",
+                "name": "fileSize"
+            },
+            "designerId": "365218dc-a326-4670-9c5c-b9f5fae14d16"
         }
     ]
 }

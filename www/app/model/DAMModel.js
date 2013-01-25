@@ -53,6 +53,9 @@ Ext.define('Rubedo.model.DAMModel', {
         {
             name: 'createUser',
             persist: false
+        },
+        {
+            name: 'fileSize'
         }
     ]
 });
