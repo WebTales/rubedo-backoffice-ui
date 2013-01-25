@@ -43,7 +43,7 @@ Ext.define('Rubedo.view.CKEField', {
         abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  [
             { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Source' ] },
             { name: 'links', items: [ 'Link', 'Unlink','-', 'Anchor' ] },
-            { name: 'insert', items: [ 'Image', 'Flash','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+            { name: 'insert', items: [ 'Image','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
             '/',
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
@@ -52,7 +52,7 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },
             { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
             { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
-        ], resize_enabled:false, filebrowserBrowseUrl:"resources/extFinder/app.html", filebrowserUploadUrl:"resources/extFinder/app.html"});
+        ], resize_enabled:false, filebrowserImageBrowseUrl:"resources/extFinder/app.html?type=Image", filebrowserImageUploadUrl:"resources/extFinder/app.html?type=Image"});
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){

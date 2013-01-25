@@ -192,7 +192,8 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                             thumbnails: generateThumbnail(),
                             author:record.get("createUser").fullName,
                             date: Ext.Date.format(record.get("createTime"), 'd-m-Y'),
-                            filename:record.get("title")
+                            filename:record.get("title"),
+                            fileSize:Ext.util.Format.fileSize(record.get("fileSize"))
                         };
                     }
                     return {};
@@ -227,7 +228,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                     '</td>',
 
                     '<td class="x-grid-col x-grid-cell">',
-                    '<div class="x-grid-cell-inner" unselectable="on">{filename}<br><span>{author}<br>{date}</span></div>',
+                    '<div class="x-grid-cell-inner" unselectable="on">{filename}<br><span>{fileSize}<br>{author}<br>{date}</span></div>',
                     '</td>',
                     '</tr>',
                     '</tbody>',
