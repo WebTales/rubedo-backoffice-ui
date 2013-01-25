@@ -113,6 +113,7 @@ Ext.define('Rubedo.controller.DAMController', {
         this.renderDAMTypeFields(DAMType, true);
         this.renderTaxoFields(DAMType);
         var valueBox=record.get("fields");
+        if (Ext.isEmpty(valueBox)){valueBox={ };}
         valueBox.title=record.get("title");
         valueBox.originalFileId=record.get("originalFileId");
         valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));

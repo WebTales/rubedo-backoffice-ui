@@ -423,6 +423,7 @@
                     "this.renderDAMTypeFields(DAMType, true);\r",
                     "this.renderTaxoFields(DAMType);\r",
                     "var valueBox=record.get(\"fields\");\r",
+                    "if (Ext.isEmpty(valueBox)){valueBox={ };}\r",
                     "valueBox.title=record.get(\"title\");\r",
                     "valueBox.originalFileId=record.get(\"originalFileId\");\r",
                     "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",

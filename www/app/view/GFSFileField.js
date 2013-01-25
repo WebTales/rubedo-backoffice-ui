@@ -41,6 +41,12 @@ Ext.define('Rubedo.view.GFSFileField', {
         myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").on("click", function(){
             window.location.href="file/get?file-id="+abstractcomponent.getValue()+"&attachment=download";
         });
+        myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").on("click", function(){
+            if (abstractcomponent.fileType=="Image"){
+
+            }
+            //handle cases one by one
+        });
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
