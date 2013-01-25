@@ -640,15 +640,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMMTGridBeforeClose",
-                "fn": "onDAMMTGridBeforeClose",
+                "designer|userClassName": "onDAMInterfaceDestroy",
+                "fn": "onDAMInterfaceDestroy",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
                     "Ext.getStore(\"TaxonomyForDAM\").removeAll();\r",
                     "Ext.getStore(\"DAMStore\").clearFilter(true);\r",
                     "Ext.getStore(\"DAMStore\").removeAll();"
                 ],
-                "name": "beforeclose",
+                "name": "destroy",
                 "scope": "me"
             },
             "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"

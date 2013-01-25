@@ -267,8 +267,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                     fn: me.onDAMMTGridRender,
                     scope: me
                 },
-                beforeclose: {
-                    fn: me.onDAMMTGridBeforeClose,
+                destroy: {
+                    fn: me.onDAMInterfaceDestroy,
                     scope: me
                 }
             }
@@ -287,7 +287,7 @@ Ext.define('Rubedo.view.DAMInterface', {
         Ext.getStore("DAMStore").clearFilter(true);
     },
 
-    onDAMMTGridBeforeClose: function(panel, options) {
+    onDAMInterfaceDestroy: function(abstractcomponent, options) {
         Ext.getStore("MediaTypesForDAM").removeAll();
         Ext.getStore("TaxonomyForDAM").removeAll();
         Ext.getStore("DAMStore").clearFilter(true);
