@@ -1764,6 +1764,30 @@
                 "app/store/RoleStore.js"
             ],
             "className": "RoleStore"
+        },
+        "76cb240a-0759-4696-ab93-7ce71f5ecac6": {
+            "paths": [
+                "metadata/store/TaxonomyForDam2",
+                "app/store/override/TaxonomyForDam2.js",
+                "app/store/TaxonomyForDam2.js"
+            ],
+            "className": "TaxonomyForDam2"
+        },
+        "a57880ef-a159-4f60-bfd8-0d02dacc5f19": {
+            "paths": [
+                "metadata/store/MTForDAMEdit",
+                "app/store/override/MTForDAMEdit.js",
+                "app/store/MTForDAMEdit.js"
+            ],
+            "className": "MTForDAMEdit"
+        },
+        "c9f23424-6a1d-44f7-8050-7127c7ca15b5": {
+            "paths": [
+                "metadata/store/DAMEditStore",
+                "app/store/override/DAMEditStore.js",
+                "app/store/DAMEditStore.js"
+            ],
+            "className": "DAMEditStore"
         }
     },
     "viewOrderMap": {
@@ -1876,6 +1900,7 @@
             "1b50c020-4b46-495e-ae47-295cf55314b2",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",
             "03aa16b1-6613-44b9-ad19-4167a7527f99",
+            "76cb240a-0759-4696-ab93-7ce71f5ecac6",
             "ad9ed2e8-e6a2-4a5c-9180-4d296526fb47",
             "fc5c664a-7c9e-4a94-b81a-c8a116a6fcf0",
             "6cb9f760-e375-46f8-ba70-e52ba7aa5725",
@@ -1923,6 +1948,8 @@
             "43314b2e-fa01-4f52-948b-95a4ff336891",
             "cd7bd070-8e86-4a4f-9831-d227e37bec88",
             "fe793f86-3a97-401f-bdae-147c54ef0a7d",
+            "a57880ef-a159-4f60-bfd8-0d02dacc5f19",
+            "c9f23424-6a1d-44f7-8050-7127c7ca15b5",
             "6141ab25-f5c9-4413-a10a-f0e2e781e9f7",
             "31be942a-1630-4c10-9fb4-790b2d825c55",
             "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",

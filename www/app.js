@@ -112,7 +112,10 @@ Ext.application({
         'MediaTypesFORDAMPicker',
         'MainQueriesStore',
         'ESFacetteStore',
-        'RoleStore'
+        'RoleStore',
+        'MTForDAMEdit',
+        'DAMEditStore',
+        'TaxonomyForDam2'
     ],
     views: [
         'MyContainer',
