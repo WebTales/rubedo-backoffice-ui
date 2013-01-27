@@ -105,6 +105,62 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             handler: function(button, event) {
                                                 button.setLoading(true);
                                                 Ext.Ajax.request({
+                                                    url: 'elastic-indexer?option=content',
+                                                    params:{
+                                                    },
+                                                    success: function(response){
+                                                        var answerMe = Ext.widget("esResponseWindow");
+                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                        answerMe.show();
+                                                        button.setLoading(false);
+                                                    },
+                                                    failure: function(form, action) {
+                                                        switch (action.failureType) {
+                                                            case Ext.form.action.Action.CONNECT_FAILURE:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                            break;
+                                                            case Ext.form.action.Action.SERVER_INVALID:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                        }
+                                                    }
+                                                });
+                                            },
+                                            text: '<b>Indexation des contenus</b>'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            handler: function(button, event) {
+                                                button.setLoading(true);
+                                                Ext.Ajax.request({
+                                                    url: 'elastic-indexer?option=dam',
+                                                    params:{
+                                                    },
+                                                    success: function(response){
+                                                        var answerMe = Ext.widget("esResponseWindow");
+                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                        answerMe.show();
+                                                        button.setLoading(false);
+                                                    },
+                                                    failure: function(form, action) {
+                                                        switch (action.failureType) {
+                                                            case Ext.form.action.Action.CONNECT_FAILURE:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                            break;
+                                                            case Ext.form.action.Action.SERVER_INVALID:
+                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                        }
+                                                    }
+                                                });
+                                            },
+                                            text: '<b>Indexation des médias</b>'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            handler: function(button, event) {
+                                                button.setLoading(true);
+                                                Ext.Ajax.request({
                                                     url: 'elastic-indexer?option=all',
                                                     params:{
                                                     },
@@ -126,7 +182,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                                     }
                                                 });
                                             },
-                                            text: '<b>Lancer une indexation complète</b>'
+                                            text: '<b>Indexation complète</b>'
                                         }
                                     ]
                                 }
