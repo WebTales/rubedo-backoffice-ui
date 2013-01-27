@@ -41,6 +41,9 @@ Ext.define('Rubedo.model.contentsSearchModel', {
         },
         {
             name: 'objectType'
+        },
+        {
+            name: 'typeId'
         }
     ]
 });

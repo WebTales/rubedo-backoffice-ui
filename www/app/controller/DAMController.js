@@ -126,7 +126,11 @@ Ext.define('Rubedo.controller.DAMController', {
     onDAMSubmitUpdateBtnClick: function(button, e, options) {
         var me = this;
         if(Ext.getCmp("DAMFieldBox").getForm().isValid()){
-            var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+            if (button.indepMode){
+                var record = Ext.getStore("DAMEditStore").getRange()[0];
+            } else {
+                var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+            }
             record.beginEdit();
             record.set("title",Ext.getCmp("DAMFieldBox").getComponent(0).getComponent(0).getValue());
             record.set("originalFileId",Ext.getCmp("DAMFieldBox").getComponent(1).getComponent(0).getValue());
@@ -232,12 +236,16 @@ Ext.define('Rubedo.controller.DAMController', {
         renderTarget.insert(renderTarget.items.items.length-4,casing);
     },
 
-    renderTaxoFields: function(DAMType) {
+    renderTaxoFields: function(DAMType, useSep) {
         var formTaxoTC =  Ext.getCmp('DAMTaxoBox');
         var lesTaxo = DAMType.get("vocabularies");
         var i=0;
         for (i=0; i<lesTaxo.length; i++) {
-            var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);
+            if (useSep){
+                var leVocab = Ext.getStore('TaxonomyForDAM2').findRecord('id', lesTaxo[i]);
+            } else {
+                var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);
+            }
             var storeT = Ext.create('Ext.data.JsonStore', {
                 model:"Rubedo.model.taxonomyTermModel",
                 remoteFilter:"true",
@@ -329,6 +337,63 @@ Ext.define('Rubedo.controller.DAMController', {
             values[field.name]=field.getValue();
         });
         return(values);
+    },
+
+    prepareContext: function(damId, typeId) {
+        var me = this;
+        Ext.getStore("DAMEditStore").clearFilter(true);
+        Ext.getStore("MTForDAMEdit").clearFilter(true);
+        Ext.getStore("DAMEditStore").filter("id",damId);
+        Ext.getStore("MTForDAMEdit").filter("id",typeId);
+        var counter = 3;
+        Ext.getStore("MTForDAMEdit").addListener("load", function(){
+            counter = counter - 1;
+            if (counter === 0) {
+                me.fireUnitaryEdit();
+            }
+        },this, {single:true});
+            Ext.getStore("TaxonomyForDam2").addListener("load", function(){
+                counter = counter - 1;
+                if (counter === 0) {
+                    me.fireUnitaryEdit();
+                }
+            },this, {single:true});
+                Ext.getStore("DAMEditStore").addListener("load", function(){
+                    counter = counter - 1;
+                    if (counter === 0) {
+                        me.fireUnitaryEdit();
+                    }
+                },this, {single:true});
+                    Ext.getStore("MTForDAMEdit").load();
+                    Ext.getStore("TaxonomyForDam2").load();
+                    Ext.getStore("DAMEditStore").load();
+
+    },
+
+    fireUnitaryEdit: function() {
+        var record = Ext.getStore("DAMEditStore").getRange()[0];
+        var DAMType= Ext.getStore("MTForDAMEdit").getRange()[0];
+        var myEditor = Ext.widget("DAMCreateUpdateWindow");
+        myEditor.on("beforeclose", function(){
+            Ext.getStore("MTForDAMEdit").removeAll();
+            Ext.getStore("DAMEditStore").removeAll();
+            Ext.getStore("TaxonomyForDam2").removeAll();
+        });
+        myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
+        Ext.getCmp("DAMSubmitBtn").hide();
+        Ext.getCmp("DAMSubmitUpdateBtn").show();
+        Ext.getCmp("DAMSubmitUpdateBtn").indepMode=true;
+        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(1));
+        myEditor.show();
+        this.renderDAMTypeFields(DAMType, true);
+        this.renderTaxoFields(DAMType, true);
+        var valueBox=record.get("fields");
+        if (Ext.isEmpty(valueBox)){valueBox={ };}
+        valueBox.title=record.get("title");
+        valueBox.originalFileId=record.get("originalFileId");
+        valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
+        myEditor.getComponent(0).getForm().setValues(valueBox);
+        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
     },
 
     init: function(application) {

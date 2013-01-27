@@ -105,6 +105,19 @@
                 "name": "objectType"
             },
             "designerId": "f5d1079f-0900-4f43-91fa-c32000fd88c6"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field260",
+                "name": "typeId"
+            },
+            "designerId": "a0e808fb-09ce-41ba-8c7b-4c4e65968f22"
         }
     ]
 }

@@ -245,12 +245,17 @@
                                 "designer|userClassName": "onContainerRender",
                                 "fn": "onContainerRender",
                                 "implHandler": [
+                                    "if (Ext.isEmpty(Ext.getStore(\"MTForDAMEdit\").getRange())){\r",
+                                    "    var leType=Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\");\r",
+                                    "} else {\r",
+                                    "    var leType=Ext.getStore(\"MTForDAMEdit\").getRange()[0].get(\"mainFileType\");\r",
+                                    "}\r",
                                     "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
                                     "    name:\"originalFileId\",\r",
                                     "    allowBlank:false,\r",
                                     "    fieldLabel:\"Fichier original *\",\r",
                                     "    style:{\"float\":\"left\"},\r",
-                                    "    fileType:Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\"),\r",
+                                    "    fileType:leType,\r",
                                     "    anchor:\"90%\"\r",
                                     "});\r",
                                     "abstractcomponent.insert(0, mainField);"

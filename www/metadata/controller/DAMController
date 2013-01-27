@@ -192,14 +192,19 @@
                 "designer|userClassName": "renderTaxoFields",
                 "fn": "renderTaxoFields",
                 "designer|params": [
-                    "DAMType"
+                    "DAMType",
+                    "useSep"
                 ],
                 "implHandler": [
                     "var formTaxoTC =  Ext.getCmp('DAMTaxoBox');\r",
                     "var lesTaxo = DAMType.get(\"vocabularies\");\r",
                     "var i=0;\r",
                     "for (i=0; i<lesTaxo.length; i++) {\r",
+                    "    if (useSep){\r",
+                    "        var leVocab = Ext.getStore('TaxonomyForDAM2').findRecord('id', lesTaxo[i]);\r",
+                    "    } else {\r",
                     "    var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);\r",
+                    "    }\r",
                     "    var storeT = Ext.create('Ext.data.JsonStore', {\r",
                     "        model:\"Rubedo.model.taxonomyTermModel\",\r",
                     "        remoteFilter:\"true\",\r",
@@ -472,7 +477,11 @@
                 "implHandler": [
                     "var me = this;\r",
                     "if(Ext.getCmp(\"DAMFieldBox\").getForm().isValid()){\r",
-                    "    var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "    if (button.indepMode){\r",
+                    "        var record = Ext.getStore(\"DAMEditStore\").getRange()[0];\r",
+                    "    } else {\r",
+                    "        var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "    }\r",
                     "    record.beginEdit();\r",
                     "    record.set(\"title\",Ext.getCmp(\"DAMFieldBox\").getComponent(0).getComponent(0).getValue());\r",
                     "    record.set(\"originalFileId\",Ext.getCmp(\"DAMFieldBox\").getComponent(1).getComponent(0).getValue());\r",
@@ -572,6 +581,91 @@
                 "designer|controlQuery": "#DAMCenter"
             },
             "designerId": "692cc083-f2d2-4d56-a7f8-58ef4059890d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "prepareContext",
+                "fn": "prepareContext",
+                "designer|params": [
+                    "damId",
+                    "typeId"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "Ext.getStore(\"DAMEditStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"MTForDAMEdit\").clearFilter(true);\r",
+                    "Ext.getStore(\"DAMEditStore\").filter(\"id\",damId);\r",
+                    "Ext.getStore(\"MTForDAMEdit\").filter(\"id\",typeId);\r",
+                    "var counter = 3;\r",
+                    "Ext.getStore(\"MTForDAMEdit\").addListener(\"load\", function(){\r",
+                    "    counter = counter - 1;\r",
+                    "    if (counter === 0) {\r",
+                    "        me.fireUnitaryEdit();\r",
+                    "    }\r",
+                    "},this, {single:true});\r",
+                    "Ext.getStore(\"TaxonomyForDam2\").addListener(\"load\", function(){\r",
+                    "    counter = counter - 1;\r",
+                    "    if (counter === 0) {\r",
+                    "        me.fireUnitaryEdit();\r",
+                    "    }\r",
+                    "},this, {single:true});\r",
+                    "Ext.getStore(\"DAMEditStore\").addListener(\"load\", function(){\r",
+                    "    counter = counter - 1;\r",
+                    "    if (counter === 0) {\r",
+                    "        me.fireUnitaryEdit();\r",
+                    "    }\r",
+                    "},this, {single:true});\r",
+                    "Ext.getStore(\"MTForDAMEdit\").load();\r",
+                    "Ext.getStore(\"TaxonomyForDam2\").load();\r",
+                    "Ext.getStore(\"DAMEditStore\").load();\r",
+                    ""
+                ]
+            },
+            "designerId": "496e818b-9326-452b-972b-aa61778fb62e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "fireUnitaryEdit",
+                "fn": "fireUnitaryEdit",
+                "implHandler": [
+                    "var record = Ext.getStore(\"DAMEditStore\").getRange()[0];\r",
+                    "var DAMType= Ext.getStore(\"MTForDAMEdit\").getRange()[0];\r",
+                    "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "myEditor.on(\"beforeclose\", function(){\r",
+                    "    Ext.getStore(\"MTForDAMEdit\").removeAll();\r",
+                    "    Ext.getStore(\"DAMEditStore\").removeAll();\r",
+                    "    Ext.getStore(\"TaxonomyForDam2\").removeAll();\r",
+                    "});\r",
+                    "myEditor.setTitle(\"Edition du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
+                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
+                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").indepMode=true;\r",
+                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(1));\r",
+                    "myEditor.show();\r",
+                    "this.renderDAMTypeFields(DAMType, true);\r",
+                    "this.renderTaxoFields(DAMType, true);\r",
+                    "var valueBox=record.get(\"fields\");\r",
+                    "if (Ext.isEmpty(valueBox)){valueBox={ };}\r",
+                    "valueBox.title=record.get(\"title\");\r",
+                    "valueBox.originalFileId=record.get(\"originalFileId\");\r",
+                    "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
+                    "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                ]
+            },
+            "designerId": "b46baeb9-0cac-4bfa-b961-22357ac8f3bf"
         }
     ]
 }

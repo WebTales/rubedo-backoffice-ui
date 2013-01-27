@@ -42,6 +42,8 @@ Ext.define('Rubedo.controller.SearchController', {
     mainResultWindowGetContext: function(tablepanel, record, item, index, e, options) {
         if ((record.get("objectType")=="content")&&(ACL.interfaceRights['read.ui.contents'])){
             Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
+        } else if ((record.get("objectType")=="dam")&&(ACL.interfaceRights['read.ui.contents'])){
+            Rubedo.controller.DAMController.prototype.prepareContext(record.get("id"),record.get("typeId"));
         }
     },
 

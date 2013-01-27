@@ -173,12 +173,17 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     },
 
     onContainerRender: function(abstractcomponent, options) {
+        if (Ext.isEmpty(Ext.getStore("MTForDAMEdit").getRange())){
+            var leType=Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("mainFileType");
+        } else {
+            var leType=Ext.getStore("MTForDAMEdit").getRange()[0].get("mainFileType");
+        }
         var mainField= Ext.create("Rubedo.view.GFSFileField", {
             name:"originalFileId",
             allowBlank:false,
             fieldLabel:"Fichier original *",
             style:{"float":"left"},
-            fileType:Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("mainFileType"),
+            fileType:leType,
             anchor:"90%"
         });
         abstractcomponent.insert(0, mainField);
