@@ -40,7 +40,7 @@ Ext.define('Rubedo.controller.SearchController', {
     },
 
     mainResultWindowGetContext: function(tablepanel, record, item, index, e, options) {
-        if (ACL.interfaceRights['read.ui.contents']){
+        if ((record.get("objectType")=="content")&&(ACL.interfaceRights['read.ui.contents'])){
             Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
         }
     },

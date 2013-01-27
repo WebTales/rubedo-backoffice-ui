@@ -222,7 +222,7 @@
                                                 "implHandler": [
                                                     "button.setLoading(true);\r",
                                                     "Ext.Ajax.request({\r",
-                                                    "    url: 'elastic-indexer',\r",
+                                                    "    url: 'elastic-indexer?option=all',\r",
                                                     "    params:{\r",
                                                     "    },\r",
                                                     "    success: function(response){\r",

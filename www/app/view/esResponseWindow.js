@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.esResponseWindow', {
     layout: {
         type: 'fit'
     },
-    title: 'Contenus indexés',
+    title: 'Contenus et médias indexés',
     constrainHeader: true,
     modal: true,
 

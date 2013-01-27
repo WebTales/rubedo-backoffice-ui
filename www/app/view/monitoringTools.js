@@ -105,7 +105,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             handler: function(button, event) {
                                                 button.setLoading(true);
                                                 Ext.Ajax.request({
-                                                    url: 'elastic-indexer',
+                                                    url: 'elastic-indexer?option=all',
                                                     params:{
                                                     },
                                                     success: function(response){

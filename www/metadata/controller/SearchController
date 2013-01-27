@@ -61,7 +61,7 @@
                 "designer|userClassName": "mainResultWindowGetContext",
                 "fn": "mainResultWindowGetContext",
                 "implHandler": [
-                    "if (ACL.interfaceRights['read.ui.contents']){\r",
+                    "if ((record.get(\"objectType\")==\"content\")&&(ACL.interfaceRights['read.ui.contents'])){\r",
                     "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));\r",
                     "}"
                 ],

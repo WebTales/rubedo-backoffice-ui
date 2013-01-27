@@ -38,6 +38,9 @@ Ext.define('Rubedo.model.contentsSearchModel', {
             name: 'lastUpdateTime',
             dateFormat: 'timestamp',
             type: 'date'
+        },
+        {
+            name: 'objectType'
         }
     ]
 });
