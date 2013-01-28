@@ -70,8 +70,8 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','-','Image']},
             { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
-            { name: 'styles', items: [ 'Font', 'FontSize' ] }, 
-            ,
+            { name: 'styles', items: [ 'Font', 'FontSize' ] }
+
 
             ];
         }
