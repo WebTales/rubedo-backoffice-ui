@@ -28,7 +28,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         type: 'fit'
     },
     iconCls: 'database_search',
-    title: 'Requettes',
+    title: 'Requêtes',
     constrainHeader: true,
 
     initComponent: function() {

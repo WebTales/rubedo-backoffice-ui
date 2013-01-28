@@ -151,7 +151,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             favoriteIcon: 'database_search.png',
                             itemId: 'queryManagerInterface',
                             iconCls: 'database_search',
-                            text: 'Requettes'
+                            text: 'Requêtes'
                         },
                         {
                             xtype: 'tbseparator',
