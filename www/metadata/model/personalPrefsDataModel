@@ -106,6 +106,19 @@
                 "name": "version"
             },
             "designerId": "d092af3d-6998-4baf-88a0-2ab921580ed3"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field261",
+                "name": "HCMode"
+            },
+            "designerId": "b94641d0-b0df-4e2d-9947-ca94d1ebd946"
         }
     ]
 }

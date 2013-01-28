@@ -42,6 +42,9 @@ Ext.define('Rubedo.model.personalPrefsDataModel', {
         },
         {
             name: 'version'
+        },
+        {
+            name: 'HCMode'
         }
     ]
 });

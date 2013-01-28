@@ -247,18 +247,21 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     HCmode: function(button, e, options) {
-        if (MyPrefData.highContrast===false) {
+        var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];
+        if (MyPrefData.HCMode===false) {
             Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
-            MyPrefData.highContrast=true;
+            MyPrefData.HCMode=true;
+            myPrefs.set("HCMode",true);
             button.setText('Désactiver');
         } else {Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-gray.css');
-            MyPrefData.highContrast=false;
+            MyPrefData.HCMode=false;
+            myPrefs.set("HCMode",false);
             button.setText('Activer');
         }
     },
 
     setHCButtonStatus: function(abstractcomponent, options) {
-        if (MyPrefData.highContrast===true) {
+        if (MyPrefData.HCMode===true) {
             abstractcomponent.setText('Désactiver');
         } 
     },
@@ -387,7 +390,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                     stylesheet:"resources/css/red_theme.css",
                     wallpaper:"resources/wallpapers/rubedo.jpg",
                     iconSet:"red",
-                    themeColor:"#D7251D"
+                    themeColor:"#D7251D",
+                    HCMode:false
                 });
 
                 this.add(myPrefs);
@@ -400,6 +404,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
             Ext.util.CSS.swapStyleSheet('maintheme', myPrefs.get("stylesheet"));
             MyPrefData.iconsDir=myPrefs.get("iconSet");
             MyPrefData.themeColor=myPrefs.get("themeColor");
+            MyPrefData.HCMode=myPrefs.get("HCMode");
+            if (myPrefs.get("HCMode")){
+                Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
+            }
             me.refreshIcons(); 
         });
         Ext.getStore('PersonalPrefsStore').load();
@@ -425,7 +433,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             singleton: true, 
 
             iconsDir: 'red',
-            highContrast:false,
+            HCMode:false,
             myName:'Alexandru Dobre',
             themeColor: '#D7251D'
         }); 
