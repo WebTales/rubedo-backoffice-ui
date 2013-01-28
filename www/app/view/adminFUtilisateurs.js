@@ -344,13 +344,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Nom ',
                                     allowBlank: false
                                 }
-                            ],
-                            listeners: {
-                                render: {
-                                    fn: me.onFormRender,
-                                    scope: me
-                                }
-                            }
+                            ]
                         }
                     ]
                 }
@@ -362,6 +356,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                 },
                 beforeclose: {
                     fn: me.onAdminFUtilisateursBeforeClose,
+                    scope: me
+                },
+                afterrender: {
+                    fn: me.onAdminFUtilisateursAfterRender,
                     scope: me
                 }
             }
@@ -390,7 +388,15 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         abstractcomponent.getStore().removeAll();
     },
 
-    onFormRender: function(abstractcomponent, options) {
+    onAdminFUtilisateursRender: function(abstractcomponent, options) {
+        Ext.getStore("RoleStore").load();
+    },
+
+    onAdminFUtilisateursBeforeClose: function(panel, options) {
+        Ext.getStore("RoleStore").removeAll();
+    },
+
+    onAdminFUtilisateursAfterRender: function(abstractcomponent, options) {
         var rolePicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:Ext.getStore("RoleStore"),
             anchor:"100%",
@@ -408,15 +414,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             allowBlank:true
 
         });
-        abstractcomponent.add(rolePicker);
-    },
-
-    onAdminFUtilisateursRender: function(abstractcomponent, options) {
-        Ext.getStore("RoleStore").load();
-    },
-
-    onAdminFUtilisateursBeforeClose: function(panel, options) {
-        Ext.getStore("RoleStore").removeAll();
+        Ext.getCmp("groupPropsForm").add(rolePicker);
     }
 
 });

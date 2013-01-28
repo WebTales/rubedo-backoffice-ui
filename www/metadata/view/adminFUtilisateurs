@@ -878,41 +878,6 @@
                                 "allowBlank": false
                             },
                             "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onFormRender",
-                                "fn": "onFormRender",
-                                "implHandler": [
-                                    "var rolePicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
-                                    "    store:Ext.getStore(\"RoleStore\"),\r",
-                                    "    anchor:\"100%\",\r",
-                                    "    name:\"roles\",\r",
-                                    "    fieldLabel:\"Roles\",\r",
-                                    "    queryMode:\"local\",\r",
-                                    "    multiSelect:true,\r",
-                                    "    valueField:\"id\",\r",
-                                    "    displayField:\"label\",\r",
-                                    "    forceSelection:true,\r",
-                                    "    createNewOnEnter:true,\r",
-                                    "    triggerOnClick:false,\r",
-                                    "    createNewOnBlur:true,\r",
-                                    "    stacked:true,\r",
-                                    "    allowBlank:true\r",
-                                    "\r",
-                                    "});\r",
-                                    "abstractcomponent.add(rolePicker);"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "66ea61d1-da9e-4514-b240-e1c1c4405f21"
                         }
                     ]
                 }
@@ -953,6 +918,41 @@
                 "scope": "me"
             },
             "designerId": "ed8cc51a-6cb2-47aa-9959-b29faa4b6b66"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminFUtilisateursAfterRender",
+                "fn": "onAdminFUtilisateursAfterRender",
+                "implHandler": [
+                    "var rolePicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                    "    store:Ext.getStore(\"RoleStore\"),\r",
+                    "    anchor:\"100%\",\r",
+                    "    name:\"roles\",\r",
+                    "    fieldLabel:\"Roles\",\r",
+                    "    queryMode:\"local\",\r",
+                    "    multiSelect:true,\r",
+                    "    valueField:\"id\",\r",
+                    "    displayField:\"label\",\r",
+                    "    forceSelection:true,\r",
+                    "    createNewOnEnter:true,\r",
+                    "    triggerOnClick:false,\r",
+                    "    createNewOnBlur:true,\r",
+                    "    stacked:true,\r",
+                    "    allowBlank:true\r",
+                    "\r",
+                    "});\r",
+                    "Ext.getCmp(\"groupPropsForm\").add(rolePicker);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "d406d4c2-98a0-4d80-8030-6252d6f2bdff"
         }
     ]
 }
