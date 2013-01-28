@@ -760,12 +760,24 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
         if (!editMode){
-            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
-            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
-            var nct = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct.destroy(); 
+            if ((content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
+                Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+                Ext.getCmp("boutonPublierNouveauContenu").hide();
+                var nct = Ext.getCmp("nestedContentsTab");
+                if (!Ext.isEmpty(nct)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy(); 
+                }
+            }
+            else
+            {
+                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+                Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+                var nct = Ext.getCmp("nestedContentsTab");
+                if (!Ext.isEmpty(nct)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy(); 
+                }
             }
         } else {
             var myId=cible.get("id");
