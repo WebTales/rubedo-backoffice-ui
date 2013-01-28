@@ -535,7 +535,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 if (ACL.interfaceRights["write.ui.contents."+theContent.get("status")]){
                     me.prepareContext(theContent, true);
                 }else if (ACL.interfaceRights["read.ui.contents."+theContent.get("status")]){
-                    conslole.log("read me");
+                    console.log("read me");
                 } else {
                     Ext.Msg.alert('Erreur',"Vos droits sont insuffisants pour afficher ou modifier ce contenu");
                     theStore.removeAll();
