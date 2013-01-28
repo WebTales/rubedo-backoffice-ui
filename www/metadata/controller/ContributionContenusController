@@ -941,7 +941,7 @@
                     "        if (ACL.interfaceRights[\"write.ui.contents.\"+theContent.get(\"status\")]){\r",
                     "            me.prepareContext(theContent, true);\r",
                     "        }else if (ACL.interfaceRights[\"read.ui.contents.\"+theContent.get(\"status\")]){\r",
-                    "            console.log(\"read me\");\r",
+                    "            me.prepareContext(theContent, false);\r",
                     "        } else {\r",
                     "            Ext.Msg.alert('Erreur',\"Vos droits sont insuffisants pour afficher ou modifier ce contenu\");\r",
                     "            theStore.removeAll();\r",
