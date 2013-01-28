@@ -23,14 +23,17 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'imageDataModel'
+        'DAMModel',
+        'mediaTypeModel'
     ],
     stores: [
-        'ImagePickerStore'
+        'DAMPickerStore',
+        'MediaTypesFORDAMPicker'
     ],
     views: [
         'MyViewport',
-        'MyGridPanel29'
+        'DAMPickerWindow',
+        'DAMMainView'
     ],
     autoCreateViewport: true,
     name: 'extFinder',

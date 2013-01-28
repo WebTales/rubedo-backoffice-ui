@@ -39,7 +39,8 @@ Ext.define('extFinder.controller.ACLController', {
             if (!Ext.isEmpty(options.CKEditorFuncNum)){
                 Ext.define('CKEOptions', {
                     singleton:true,
-                    CKEditorFuncNum:options.CKEditorFuncNum
+                    CKEditorFuncNum:options.CKEditorFuncNum,
+                    type:options.type
                 });
 
             }
@@ -113,7 +114,8 @@ Ext.define('extFinder.controller.ACLController', {
             },
             success:function(response){
                 ACL.interfaceRights=Ext.JSON.decode(response.responseText);
-                Ext.getCmp("MainViewport").add(Ext.widget("mygridpanel29"));
+                console.log("add");
+                Ext.getCmp("MainViewport").add(Ext.widget("DAMPickerWindow"));
             },
             failure:function(){
                 Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');

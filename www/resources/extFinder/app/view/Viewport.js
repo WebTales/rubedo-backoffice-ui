@@ -18,6 +18,7 @@ Ext.define('extFinder.view.Viewport', {
     renderTo: Ext.getBody(),
     requires: [
         'extFinder.view.MainViewport',
-        'extFinder.view.MyGridPanel29'
+        'extFinder.view.DAMPickerWindow',
+        'extFinder.view.DAMMainView'
     ]
 });

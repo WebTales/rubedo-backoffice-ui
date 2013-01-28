@@ -30,22 +30,6 @@
             ],
             "className": "MainViewport"
         },
-        "8e2f39e3-45e3-4c01-8905-1178a5b1243c": {
-            "paths": [
-                "metadata/store/ImagePickerStore",
-                "app/store/override/ImagePickerStore.js",
-                "app/store/ImagePickerStore.js"
-            ],
-            "className": "ImagePickerStore"
-        },
-        "5c343691-ff31-4da1-8703-689f77f8c21c": {
-            "paths": [
-                "metadata/model/imageDataModel",
-                "app/model/override/imageDataModel.js",
-                "app/model/imageDataModel.js"
-            ],
-            "className": "imageDataModel"
-        },
         "72c4e490-bdaa-4cab-b47a-a2bb24f27c40": {
             "paths": [
                 "metadata/controller/ACLController",
@@ -53,14 +37,6 @@
                 "app/controller/ACLController.js"
             ],
             "className": "ACLController"
-        },
-        "3904f909-0f90-4633-b361-56c6b7e286a5": {
-            "paths": [
-                "metadata/view/MyGridPanel29",
-                "app/view/override/MyGridPanel29.js",
-                "app/view/MyGridPanel29.js"
-            ],
-            "className": "MyGridPanel29"
         },
         "68c9705e-104d-4815-8463-1236c8453eab": {
             "paths": [
@@ -109,21 +85,96 @@
                 "metadata/resource/js4"
             ],
             "className": "js4"
+        },
+        "a4680f21-f444-4aa5-9954-5523f4e23fd1": {
+            "paths": [
+                "metadata/view/DAMPickerWindow",
+                "app/view/override/DAMPickerWindow.js",
+                "app/view/DAMPickerWindow.js"
+            ],
+            "className": "DAMPickerWindow"
+        },
+        "a3641d1d-5b3c-46b4-aa1e-cc532f68228f": {
+            "paths": [
+                "metadata/store/DAMPickerStore",
+                "app/store/override/DAMPickerStore.js",
+                "app/store/DAMPickerStore.js"
+            ],
+            "className": "DAMPickerStore"
+        },
+        "1a8b1bd9-acd3-48a5-985b-65285c209b10": {
+            "paths": [
+                "metadata/store/MediaTypesFORDAMPicker",
+                "app/store/override/MediaTypesFORDAMPicker.js",
+                "app/store/MediaTypesFORDAMPicker.js"
+            ],
+            "className": "MediaTypesFORDAMPicker"
+        },
+        "4512fb97-c2df-4b67-9da5-de264ae60e65": {
+            "paths": [
+                "metadata/model/DAMModel",
+                "app/model/override/DAMModel.js",
+                "app/model/DAMModel.js"
+            ],
+            "className": "DAMModel"
+        },
+        "1b54ad21-ee09-4566-aeff-6c0bb63da0a2": {
+            "paths": [
+                "metadata/model/mediaTypeModel",
+                "app/model/override/mediaTypeModel.js",
+                "app/model/mediaTypeModel.js"
+            ],
+            "className": "mediaTypeModel"
+        },
+        "38ad78c6-cdf2-4dab-865c-c753c4933746": {
+            "paths": [
+                "metadata/resource/js5"
+            ],
+            "className": "js5"
+        },
+        "b4f30db8-772d-4770-87e3-a7648e089d79": {
+            "paths": [
+                "metadata/resource/js6"
+            ],
+            "className": "js6"
+        },
+        "0171d531-e44c-4872-9533-36a0c2cf26dd": {
+            "paths": [
+                "metadata/view/DAMMainView",
+                "app/view/override/DAMMainView.js",
+                "app/view/DAMMainView.js"
+            ],
+            "className": "DAMMainView"
+        },
+        "4f49cd0b-e289-45c5-a6e1-c5a441b54b22": {
+            "paths": [
+                "metadata/resource/css3"
+            ],
+            "className": "css3"
+        },
+        "6360ee49-c8e1-46f8-9550-b940e628e1c6": {
+            "paths": [
+                "metadata/resource/css4"
+            ],
+            "className": "css4"
         }
     },
     "viewOrderMap": {
         "view": [
             "e6679921-3efa-43ea-aeba-a4878fdadbce",
-            "3904f909-0f90-4633-b361-56c6b7e286a5"
+            "a4680f21-f444-4aa5-9954-5523f4e23fd1",
+            "0171d531-e44c-4872-9533-36a0c2cf26dd"
         ],
         "store": [
-            "8e2f39e3-45e3-4c01-8905-1178a5b1243c"
+            "a3641d1d-5b3c-46b4-aa1e-cc532f68228f",
+            "1a8b1bd9-acd3-48a5-985b-65285c209b10"
         ],
         "controller": [
             "72c4e490-bdaa-4cab-b47a-a2bb24f27c40"
         ],
         "model": [
-            "5c343691-ff31-4da1-8703-689f77f8c21c"
+            "4512fb97-c2df-4b67-9da5-de264ae60e65",
+            "1b54ad21-ee09-4566-aeff-6c0bb63da0a2"
         ],
         "resource": [
             "cf6e37a9-ef7d-407a-b064-b3c3beead833",
@@ -134,7 +185,11 @@
             "781293f3-107a-446d-bc57-6579a59aea3d",
             "4e8d4923-799c-4c10-90e4-6034e3d2978b",
             "af62f9b2-2818-4d20-9c78-ab7fa61f6d4c",
-            "65bcb699-77c6-4ba8-9086-e59e0664110d"
+            "65bcb699-77c6-4ba8-9086-e59e0664110d",
+            "38ad78c6-cdf2-4dab-865c-c753c4933746",
+            "b4f30db8-772d-4770-87e3-a7648e089d79",
+            "4f49cd0b-e289-45c5-a6e1-c5a441b54b22",
+            "6360ee49-c8e1-46f8-9550-b940e628e1c6"
         ],
         "app": [
             "application"

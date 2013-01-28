@@ -76,14 +76,14 @@ Ext.define('Ext.ux.grid.FilterBar', {
 
 	renderHidden				: true,					// renders the filters hidden by default, use in combination with showShowHideButton
 	showShowHideButton			: true,					// add show/hide button in actioncolumn header if found, if not a new small column is created
-	showHideButtonTooltipDo		: 'Show filter bar',	// button tooltip show
-	showHideButtonTooltipUndo	: 'Hide filter bar',	// button tooltip hide
-	showHideButtonIconCls		: 'user_search',				// button iconCls
+	showHideButtonTooltipDo		: 'Afficher barre de filtres',	// button tooltip show
+	showHideButtonTooltipUndo	: 'Cacher barre de filtres',	// button tooltip hide
+	showHideButtonIconCls		: 'search',				// button iconCls
 
 	showClearButton				: true,					// use Ext.ux.form.field.ClearButton to allow user to clear each filter, the same as showShowHideButton
 	showClearAllButton			: true,					// add clearAll button in actioncolumn header if found, if not a new small column is created
 	clearAllButtonIconCls		: 'close', 		// css class with the icon of the clear all button
-	clearAllButtonTooltip		: 'Clear all filters',	// button tooltip
+	clearAllButtonTooltip		: 'Enlever tous les filtres',	// button tooltip
 
 	autoStoresRemoteProperty	: 'autoStores',			// if no store is configured for a combo filter then stores are created automatically, if remoteFilter is true then use this property to return arrayStores from the server
 	autoStoresNullValue			: '###NULL###',			// value send to the server to expecify null filter

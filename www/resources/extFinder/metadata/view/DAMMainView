@@ -1,0 +1,121 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DAMMainView",
+        "designer|userAlias": "DAMMainView",
+        "requires": [
+            "Ext.ux.container.SwitchButtonSegment"
+        ],
+        "id": null,
+        "title": "",
+        "forceFit": true,
+        "store": "DAMStore"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen15191",
+    "designerId": "0171d531-e44c-4872-9533-36a0c2cf26dd",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView28",
+                "id": "DAMImageDrop"
+            },
+            "designerId": "6e4d0cdc-fc61-4a58-9d20-b3d4faf37043"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn47",
+                "align": null,
+                "dataIndex": "title",
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "666ec183-f2c0-4381-a95d-c6002caf8c11",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn49",
+                "dataIndex": "createUser",
+                "text": "Auteur"
+            },
+            "designerId": "18c8c75f-936b-4f3c-841a-052115fc97ab",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "return(value.fullName);"
+                        ]
+                    },
+                    "designerId": "2d032c4d-f915-41ab-8e96-09345b624af5"
+                }
+            ]
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn8",
+                "dataIndex": "createTime",
+                "text": "Date de création",
+                "format": "d-m-Y"
+            },
+            "designerId": "822d2d57-77d9-46ae-a1fb-3d4d38fd8370"
+        }
+    ]
+}
