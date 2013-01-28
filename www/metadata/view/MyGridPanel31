@@ -1,0 +1,302 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyGridPanel31",
+        "designer|userAlias": "mygridpanel31",
+        "id": null,
+        "itemId": null,
+        "title": "",
+        "store": "ContentSelectorStore"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen35730",
+    "designerId": "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView2"
+            },
+            "designerId": "1da5c9eb-cc3a-4209-a0ec-0f4d951f8625",
+            "cn": [
+                {
+                    "type": "griddragdropplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.DragDrop",
+                    "userConfig": {
+                        "designer|userClassName": "MyGridDragDropPlugin"
+                    },
+                    "designerId": "9775debd-2a36-4c02-b1d3-b97048a98cda"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn5",
+                "dataIndex": "text",
+                "flex": 1,
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "d3a20aed-45f2-4284-85bf-97db0ae68b6b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (record.get(\"status\")==\"published\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
+                            "} else if (record.get(\"status\")==\"pending\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
+                            "} else if (record.get(\"status\")==\"draft\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "a782e756-9f87-4f3a-9c44-3429c261bd6e"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
+                    "    valueField:\"id\",\r",
+                    "    displayField:\"type\",\r",
+                    "    store: \"TCNDepComboCS\"\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyColumn53",
+                "dataIndex": "typeId",
+                "flex": 1,
+                "text": "Type"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "e5935fcd-6807-417e-8a73-57ff3881da61",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (Ext.isEmpty(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value))) {\r",
+                            "    return(value);\r",
+                            "} else {\r",
+                            "    return(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value).get(\"type\"));\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "a3f1c0a0-e643-43d8-941e-35e269d0d171"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
+                    "    store: [\r",
+                    "                [\"draft\", \"brouillon\"],\r",
+                    "                [\"pending\", \"en attente de validation\"],\r",
+                    "                [\"published\", \"publié\"]\r",
+                    "            ]\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyColumn6",
+                "dataIndex": "status",
+                "flex": 1,
+                "text": "Etat"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "a3031f2b-9d3d-4a8d-ac71-9dddca7174f3",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (value==\"published\") {\r",
+                            "    return(\"publié\");\r",
+                            "} else if (value==\"pending\") {\r",
+                            "    return(\"en attente de validation\");\r",
+                            "} else if (value==\"draft\") {\r",
+                            "    return(\"brouillon\");\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "306a74cf-7b67-4c83-ab92-8239faceeee0"
+                }
+            ]
+        },
+        {
+            "type": "booleancolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": [
+                    "{\r",
+                    "    type:\"combo\",\r",
+                    "    store: [\r",
+                    "                [true, 'Oui'],\r",
+                    "                [false, 'Non']\r",
+                    "            ]\r",
+                    "}"
+                ],
+                "designer|userClassName": "MyBooleanColumn3",
+                "width": 60,
+                "dataIndex": "online",
+                "text": "En ligne",
+                "falseText": "Non",
+                "trueText": "Oui"
+            },
+            "configAlternates": {
+                "filter": "object"
+            },
+            "designerId": "f9e3fdf9-ec2e-48c0-8177-fa230d24cee7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "pagingtoolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyPagingToolbar",
+                "width": 360,
+                "displayInfo": true,
+                "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
+                "emptyMsg": "Rien à afficher",
+                "firstText": "Première page",
+                "lastText": "Dernière page",
+                "nextText": "Page suivante",
+                "prevText": "Page prècèdente",
+                "refreshText": "Rafraichir",
+                "store": "ContentSelectorStore"
+            },
+            "designerId": "7fe3b482-113b-4091-a182-24d58b6be45a"
+        }
+    ]
+}

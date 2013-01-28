@@ -115,7 +115,8 @@ Ext.application({
         'RoleStore',
         'MTForDAMEdit',
         'DAMEditStore',
-        'TaxonomyForDam2'
+        'TaxonomyForDam2',
+        'ContentMQueryStore'
     ],
     views: [
         'MyContainer',
@@ -191,7 +192,8 @@ Ext.application({
         'siteBuilderWizzard',
         'MyToolbar56',
         'queryManagerInterface',
-        'queryTypeChooseWindow'
+        'queryTypeChooseWindow',
+        'manualQueryInterface'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

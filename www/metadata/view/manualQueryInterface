@@ -1,0 +1,515 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "manualQueryInterface",
+        "designer|userAlias": "manualQueryInterface",
+        "height": 401,
+        "id": "manualQueryInterface",
+        "width": 946,
+        "layout": "hbox",
+        "title": "Requête manuelle",
+        "constrain": true
+    },
+    "id": "ExtBox1-ext-gen39120",
+    "designerId": "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "designerId": "8d65fe65-7d83-4141-b24b-48375303cb09",
+            "masterInstanceId": "ExtBox1-ext-gen35730"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "dock": null,
+                "designer|userClassName": "MyToolbar59",
+                "height": 50,
+                "vertical": true
+            },
+            "designerId": "aa5a151b-f0df-44be-9850-e5f20df886ec",
+            "cn": [
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MySpacer"
+                    },
+                    "designerId": "9a3cd3e0-f4ed-4265-9acd-a424c2ff7374"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton235",
+                        "iconAlign": "right",
+                        "iconCls": "arrow_right",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "435006e6-e1ec-4292-9d7f-15a360048507"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton236",
+                        "iconCls": "arrow_left",
+                        "text": "Enlever"
+                    },
+                    "designerId": "7d15cc34-9d4b-4289-84ad-1b90db2a9e92"
+                },
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MySpacer1"
+                    },
+                    "designerId": "c90e27be-a02f-4fee-8811-abe5cfe6aac4"
+                }
+            ]
+        },
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyGridPanel32",
+                "id": null,
+                "itemId": null,
+                "title": "",
+                "store": "ContentMQueryStore"
+            },
+            "configAlternates": {
+                "managesStore": "boolean"
+            },
+            "designerId": "533f4f25-12a6-4886-b1ae-d729d8b1fde4",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView2"
+                    },
+                    "designerId": "1aed84d6-e076-4e81-9f24-fb98cf17776d",
+                    "cn": [
+                        {
+                            "type": "griddragdropplugin",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyGridDragDropPlugin1"
+                            },
+                            "designerId": "15a21eb1-6f33-4b8e-8f5b-c498b5bfc1d5"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "filter": true,
+                        "designer|userClassName": "MyColumn5",
+                        "dataIndex": "text",
+                        "flex": 1,
+                        "text": "Titre"
+                    },
+                    "configAlternates": {
+                        "filter": "boolean"
+                    },
+                    "designerId": "7ec2e922-e587-48fb-893a-6de1649d8c5d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"status\")==\"published\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+value);\r",
+                                    "} else if (record.get(\"status\")==\"pending\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+value);\r",
+                                    "} else if (record.get(\"status\")==\"draft\") {\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+value);\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "ab68efa3-ec83-470c-b0f0-57d50f18f186"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "filter": [
+                            "{\r",
+                            "    type:\"combo\",\r",
+                            "    valueField:\"id\",\r",
+                            "    displayField:\"type\",\r",
+                            "    store: \"TCNDepComboCS\"\r",
+                            "}"
+                        ],
+                        "designer|userClassName": "MyColumn53",
+                        "dataIndex": "typeId",
+                        "flex": 1,
+                        "text": "Type"
+                    },
+                    "configAlternates": {
+                        "filter": "object"
+                    },
+                    "designerId": "4934a0ce-c0b1-4199-84e5-b68da574b662",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (Ext.isEmpty(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value))) {\r",
+                                    "    return(value);\r",
+                                    "} else {\r",
+                                    "    return(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value).get(\"type\"));\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "01357aa2-cfd0-472e-b8bb-c3ee501857e1"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "filter": [
+                            "{\r",
+                            "    type:\"combo\",\r",
+                            "    store: [\r",
+                            "                [\"draft\", \"brouillon\"],\r",
+                            "                [\"pending\", \"en attente de validation\"],\r",
+                            "                [\"published\", \"publié\"]\r",
+                            "            ]\r",
+                            "}"
+                        ],
+                        "designer|userClassName": "MyColumn6",
+                        "dataIndex": "status",
+                        "flex": 1,
+                        "text": "Etat"
+                    },
+                    "configAlternates": {
+                        "filter": "object"
+                    },
+                    "designerId": "4479a6d7-2de4-4b30-b32b-11da1c6c5e9b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (value==\"published\") {\r",
+                                    "    return(\"publié\");\r",
+                                    "} else if (value==\"pending\") {\r",
+                                    "    return(\"en attente de validation\");\r",
+                                    "} else if (value==\"draft\") {\r",
+                                    "    return(\"brouillon\");\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "3ddab2d2-7d7a-4251-b160-6eb24091b6f3"
+                        }
+                    ]
+                },
+                {
+                    "type": "booleancolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "filter": [
+                            "{\r",
+                            "    type:\"combo\",\r",
+                            "    store: [\r",
+                            "                [true, 'Oui'],\r",
+                            "                [false, 'Non']\r",
+                            "            ]\r",
+                            "}"
+                        ],
+                        "designer|userClassName": "MyBooleanColumn3",
+                        "width": 60,
+                        "dataIndex": "online",
+                        "text": "En ligne",
+                        "falseText": "Non",
+                        "trueText": "Oui"
+                    },
+                    "configAlternates": {
+                        "filter": "object"
+                    },
+                    "designerId": "9f4b997a-80a1-4dbe-a2f5-2ce417e48f88",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyToolbar60"
+                    },
+                    "designerId": "196df3b1-cb19-48ed-849e-60bb20f182c9",
+                    "cn": [
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill26"
+                            },
+                            "designerId": "a9769fc6-da1e-4f9b-89a2-bad14bb62b68"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton237",
+                                "iconCls": "arrow_up",
+                                "text": ""
+                            },
+                            "designerId": "28500d90-8c0a-494e-88ca-952f6bd75fa8"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton238",
+                                "iconCls": "arrow_down",
+                                "text": ""
+                            },
+                            "designerId": "ac92046e-b8aa-42c2-98db-cc4059766f8b"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton239",
+                                "iconCls": "ouiSpetit",
+                                "text": "Enregistrer la requête"
+                            },
+                            "designerId": "855cdaf0-a7b4-4964-a851-4ae1cb2fb83b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onManualQueryInterfaceRender",
+                "fn": "onManualQueryInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"TCNDepComboCS\").load();\r",
+                    "abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
+                    "abstractcomponent.getComponent(0).getStore().load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "202e57fd-faf0-4df4-bd7b-37408e4423f1"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onManualQueryInterfaceBeforeClose",
+                "fn": "onManualQueryInterfaceBeforeClose",
+                "implHandler": [
+                    "panel.getComponent(0).getStore().clearFilter(true);\r",
+                    "panel.getComponent(0).getStore().removeAll();\r",
+                    "Ext.getStore(\"TCNDepComboCS\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "aa853857-0ae1-450d-a34f-5072655a39dc"
+        }
+    ]
+}

@@ -99,7 +99,8 @@
             "RoleStore",
             "MTForDAMEdit",
             "DAMEditStore",
-            "TaxonomyForDam2"
+            "TaxonomyForDam2",
+            "ContentMQueryStore"
         ],
         "views": [
             "MyContainer",
@@ -175,7 +176,8 @@
             "siteBuilderWizzard",
             "MyToolbar56",
             "queryManagerInterface",
-            "queryTypeChooseWindow"
+            "queryTypeChooseWindow",
+            "manualQueryInterface"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

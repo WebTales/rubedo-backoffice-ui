@@ -1796,6 +1796,30 @@
                 "app/view/queryTypeChooseWindow.js"
             ],
             "className": "queryTypeChooseWindow"
+        },
+        "ed52b806-0827-44f4-9d61-ccf1b77f5f5d": {
+            "paths": [
+                "metadata/view/MyGridPanel31",
+                "app/view/override/MyGridPanel31.js",
+                "app/view/MyGridPanel31.js"
+            ],
+            "className": "MyGridPanel31"
+        },
+        "f87deabd-cd38-47df-aac5-7f9f7d9d6df5": {
+            "paths": [
+                "metadata/view/manualQueryInterface",
+                "app/view/override/manualQueryInterface.js",
+                "app/view/manualQueryInterface.js"
+            ],
+            "className": "manualQueryInterface"
+        },
+        "6b0800f5-70dc-40f0-974a-fd6b12440e4a": {
+            "paths": [
+                "metadata/store/ContentMQueryStore",
+                "app/store/override/ContentMQueryStore.js",
+                "app/store/ContentMQueryStore.js"
+            ],
+            "className": "ContentMQueryStore"
         }
     },
     "viewOrderMap": {
@@ -1891,7 +1915,9 @@
             "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
             "98647ca9-632b-4513-8aac-67b99b9af747",
             "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
-            "c64d842c-64aa-47c3-9b0d-ed0957a46fdd"
+            "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
+            "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
+            "f87deabd-cd38-47df-aac5-7f9f7d9d6df5"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -1926,6 +1952,7 @@
             "ec6d87e1-455e-426b-8458-d7738082aeee",
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
             "8cd88717-2905-4617-b9ff-10d34dec0a0e",
+            "6b0800f5-70dc-40f0-974a-fd6b12440e4a",
             "05756dfd-35f5-4ef8-9b19-273ca508f817",
             "1c783102-7726-4aa1-bd76-fa5d05fa2046",
             "acd4af16-103d-4c31-977e-f958c6cdf2b7",
