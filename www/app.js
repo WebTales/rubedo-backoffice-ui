@@ -190,7 +190,8 @@ Ext.application({
         'GFSFieldUploadWindow',
         'siteBuilderWizzard',
         'MyToolbar56',
-        'queryManagerInterface'
+        'queryManagerInterface',
+        'queryTypeChooseWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

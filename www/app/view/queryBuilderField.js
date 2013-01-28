@@ -46,9 +46,8 @@ Ext.define('Rubedo.view.queryBuilderField', {
         Ext.apply(abstractcomponent, {anchor:"86%"});
         var companion = Ext.widget("button", {style: "float: right;", text:"", iconCls:"add"});
         companion.on("click", function(){
-            var myWin = Ext.widget("assistantRequetage");
+            var myWin = Ext.widget("queryTypeChooseWindow");
             myWin.mainFieldId=abstractcomponent.getId();
-            myWin.initialValue=abstractcomponent.getValue();
             myWin.show();
         });
         container.add(companion);

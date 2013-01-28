@@ -1788,6 +1788,14 @@
                 "app/store/DAMEditStore.js"
             ],
             "className": "DAMEditStore"
+        },
+        "c64d842c-64aa-47c3-9b0d-ed0957a46fdd": {
+            "paths": [
+                "metadata/view/queryTypeChooseWindow",
+                "app/view/override/queryTypeChooseWindow.js",
+                "app/view/queryTypeChooseWindow.js"
+            ],
+            "className": "queryTypeChooseWindow"
         }
     },
     "viewOrderMap": {
@@ -1882,7 +1890,8 @@
             "08c3601d-6da2-4434-bbf8-03968b08ffe4",
             "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
             "98647ca9-632b-4513-8aac-67b99b9af747",
-            "dd56c178-5e05-4cfb-9003-9a5734ed7bb8"
+            "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
+            "c64d842c-64aa-47c3-9b0d-ed0957a46fdd"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

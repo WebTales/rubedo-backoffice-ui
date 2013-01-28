@@ -1,0 +1,98 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "queryTypeChooseWindow",
+        "designer|userAlias": "queryTypeChooseWindow",
+        "height": 141,
+        "id": "queryTypeChooseWindow",
+        "width": 235,
+        "resizable": false,
+        "layout": "vbox",
+        "title": "Choisissez un type de requête",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen28299",
+    "designerId": "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
+    "cn": [
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyButton232",
+                "scale": "large",
+                "text": "Requête manuelle"
+            },
+            "designerId": "0571434f-faed-4349-975c-1efb65ba546d"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyButton233",
+                "scale": "large",
+                "text": "Requête simple"
+            },
+            "designerId": "d6d5a71f-45b6-41f7-a640-8ce2e14281bb"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyButton234",
+                "scale": "large",
+                "text": "Requête avancée"
+            },
+            "designerId": "0d7fd670-af54-4db3-9173-9e0624ee8e17",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "var myWin = Ext.widget(\"assistantRequetage\");\r",
+                            "myWin.mainFieldId=button.up().mainFieldId;\r",
+                            "myWin.show();\r",
+                            "button.up().close();"
+                        ]
+                    },
+                    "designerId": "79bc5169-213d-4ae3-8543-e98c2de91a1b"
+                }
+            ]
+        }
+    ]
+}

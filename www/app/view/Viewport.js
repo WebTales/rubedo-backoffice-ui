@@ -90,6 +90,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.queryBuilderField',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.siteBuilderWizzard',
-        'Rubedo.view.queryManagerInterface'
+        'Rubedo.view.queryManagerInterface',
+        'Rubedo.view.queryTypeChooseWindow'
     ]
 });

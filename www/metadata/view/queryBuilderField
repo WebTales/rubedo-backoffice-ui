@@ -51,9 +51,8 @@
                     "Ext.apply(abstractcomponent, {anchor:\"86%\"});\r",
                     "var companion = Ext.widget(\"button\", {style: \"float: right;\", text:\"\", iconCls:\"add\"});\r",
                     "companion.on(\"click\", function(){\r",
-                    "    var myWin = Ext.widget(\"assistantRequetage\");\r",
+                    "    var myWin = Ext.widget(\"queryTypeChooseWindow\");\r",
                     "    myWin.mainFieldId=abstractcomponent.getId();\r",
-                    "    myWin.initialValue=abstractcomponent.getValue();\r",
                     "    myWin.show();\r",
                     "});\r",
                     "container.add(companion);"
