@@ -1025,7 +1025,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<h2>Champ zone de texte CKEditor<\/h2> <\/br> <p>Ce champ permet la saisie de texte riche avec CKEditor.<\/p>',
                     config: {
-                        name: 'Nouveau_champ_zone_de_texte',
+                        name: 'Nouveau_champ_CKE',
                         fieldLabel: 'Label du champ',
                         maxLength: 6000,
                         minLength: 0,
@@ -1033,6 +1033,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
+                        CKETBConfig: 'Standard',
                         tooltip: '',
                         vtype: null,
                         labelSeparator: ' '
@@ -1067,6 +1068,38 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Valeur par d\u00e9faut',
                                 name: 'value'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'Basic',
+                                        nom: 'Basic'
+                                    },
+                                    {
+                                        valeur: 'Standard',
+                                        nom: 'Standard'
+                                    },
+                                    {
+                                        valeur: 'Complet',
+                                        nom: 'Complet'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'Mode',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                forceSelect: true,
+                                editable: false,
+                                name: 'CKETBConfig'
                             }
                         },
                         {

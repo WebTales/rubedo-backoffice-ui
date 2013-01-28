@@ -39,20 +39,45 @@ Ext.define('Rubedo.view.CKEField', {
     },
 
     onTextareafieldAfterRender: function(abstractcomponent, options) {
-        var targetId = abstractcomponent.getInputId();
-        abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  [
-            { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Source' ] },
-            { name: 'links', items: [ 'Link', 'Unlink','-', 'Anchor' ] },
-            { name: 'insert', items: [ 'Image','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-            '/',
+        var myTBConfig=[
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+
+        '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+
+        '/',
+        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+        { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
+        { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
+        { name: 'links', items: [ 'Link', 'Unlink', '-','Anchor' ] },
+        '/',
+        { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] }
+        ];
+        if (abstractcomponent.CKETBConfig=="Standard"){
+            myTBConfig=[
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            '/',
-            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-            { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },
-            { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
-            { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
-        ], resize_enabled:false, filebrowserImageBrowseUrl:"resources/extFinder/app.html?type=Image", filebrowserImageUploadUrl:"resources/extFinder/app.html?type=Image"});
+            { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },'/',
+            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] }, 
+            { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo'  ] }
+            ];
+        } else if (abstractcomponent.CKETBConfig=="Basic"){
+            myTBConfig=[
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','-','Image']},
+            { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
+            { name: 'styles', items: [ 'Font', 'FontSize' ] }, 
+            ,
+
+            ];
+        }
+
+        var targetId = abstractcomponent.getInputId();
+        abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:"resources/extFinder/app.html?type=Image", filebrowserImageUploadUrl:"resources/extFinder/app.html?type=Image"});
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){
@@ -60,6 +85,25 @@ Ext.define('Rubedo.view.CKEField', {
             });
         });
 
+
+
+
+
+        /* old config 
+        [
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Source' ] },
+        { name: 'links', items: [ 'Link', 'Unlink','-', 'Anchor' ] },
+        { name: 'insert', items: [ 'Image','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+        '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+        '/',
+        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+        { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },
+        { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
+        ]
+        */
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {
