@@ -664,6 +664,128 @@
                 ]
             },
             "designerId": "b46baeb9-0cac-4bfa-b961-22357ac8f3bf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "renderFacets",
+                "fn": "renderFacets",
+                "designer|params": [
+                    "facets"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var target=Ext.getCmp(\"DAMFacetBox\");\r",
+                    "target.removeAll();\r",
+                    "Ext.Array.forEach(facets, function(facet){\r",
+                    "    if (!Ext.isEmpty(facet.terms)){\r",
+                    "        var newFacet = Ext.widget(\"fieldset\", {title:facet.name, collapsible:true});\r",
+                    "        if(facet.name!=\"damType\"){newFacet.collapse();}\r",
+                    "        newFacet.usedProperty=facet.name;\r",
+                    "\r",
+                    "        Ext.Array.forEach(facet.terms, function(term){\r",
+                    "            var newTerm=Ext.widget(\"button\",{\r",
+                    "                text:term.term+\" (\"+term.count+\")\",\r",
+                    "                usedValue:term.term,\r",
+                    "                anchor:\"100%\",\r",
+                    "                handler:function(thing){\r",
+                    "                    var theProp=Ext.getStore(\"ESFacetteStore\").activeFacettes[thing.up().usedProperty];\r",
+                    "                    if (!Ext.isEmpty(theProp)){\r",
+                    "                        if (Ext.isArray(theProp)){\r",
+                    "                            theProp.push(thing.usedValue);\r",
+                    "                        } else {\r",
+                    "                            theProp=[theProp,thing.usedValue];\r",
+                    "                        }\r",
+                    "\r",
+                    "                    } else {\r",
+                    "                        theProp=thing.usedValue;\r",
+                    "\r",
+                    "                    }\r",
+                    "                    Ext.getStore(\"DAMFacetteStore\").activeFacettes[thing.up().usedProperty]=theProp;\r",
+                    "                    Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "                }\r",
+                    "            });\r",
+                    "            newFacet.add(newTerm);\r",
+                    "        });\r",
+                    "\r",
+                    "        target.add(newFacet);\r",
+                    "    }\r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "designerId": "5f142959-7d2b-45a5-8e1e-144e449e9c07"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "renderActiveFacets",
+                "fn": "renderActiveFacets",
+                "designer|params": [
+                    "facets"
+                ],
+                "implHandler": [
+                    "Ext.getCmp(\"DAMSearchField\").setValue(facets.query);\r",
+                    "var target=Ext.getCmp(\"DAMActiveFacetBox\");\r",
+                    "target.removeAll();\r",
+                    "Ext.Object.each(facets, function(key, value){\r",
+                    "    if (Ext.isArray(value)){\r",
+                    "        Ext.Array.forEach(value,function(someValue){\r",
+                    "            var activeOne = Ext.widget('splitbutton',{\r",
+                    "                text:key+\" : \"+someValue,\r",
+                    "                arrowHandler:function(){\r",
+                    "                    Ext.Array.remove(Ext.getStore(\"DAMFacetteStore\").activeFacettes[key],someValue);\r",
+                    "                    Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "                }\r",
+                    "            });\r",
+                    "            target.add(activeOne);\r",
+                    "        });\r",
+                    "\r",
+                    "    } else {\r",
+                    "        var activeOne = Ext.widget('splitbutton',{\r",
+                    "            text:key+\" : \"+value,\r",
+                    "            arrowHandler:function(){\r",
+                    "                delete Ext.getStore(\"DAMFacetteStore\").activeFacettes[key];\r",
+                    "                Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "            }\r",
+                    "        });\r",
+                    "        target.add(activeOne);\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "b0bcac57-f9cc-4a57-a550-cd4e09c212b5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDAMSearchBtnClick",
+                "fn": "onDAMSearchBtnClick",
+                "implHandler": [
+                    "Ext.getStore(\"DAMFacetteStore\").activeFacettes.query=Ext.getCmp(\"DAMSearchField\").getValue();\r",
+                    "Ext.getStore(\"DAMFacetteStore\").load();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMSearchBtn"
+            },
+            "designerId": "39daff7b-7cc8-4a4d-8a1a-c89e9d6e33ba"
         }
     ]
 }

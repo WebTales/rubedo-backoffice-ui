@@ -163,8 +163,9 @@
                 "designer|userClassName": "onJsonstoreFacettesChanged",
                 "fn": "onJsonstoreFacettesChanged",
                 "implHandler": [
-                    "//Rubedo.controller.SearchController.prototype.renderFacets(facettes);\r",
-                    "//Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);"
+                    "Rubedo.controller.DAMController.prototype.renderFacets(facettes);\r",
+                    "Rubedo.controller.DAMController.prototype.renderActiveFacets(activeFacettes);\r",
+                    ""
                 ],
                 "name": "facettesChanged",
                 "scope": "me"

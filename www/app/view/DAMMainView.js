@@ -37,17 +37,17 @@ Ext.define('Rubedo.view.DAMMainView', {
                 {
                     xtype: 'gridcolumn',
                     filter: true,
-                    dataIndex: 'title',
+                    dataIndex: 'text',
                     text: 'Titre'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'createUser',
+                    dataIndex: 'author',
                     text: 'Auteur'
                 },
                 {
                     xtype: 'datecolumn',
-                    dataIndex: 'createTime',
+                    dataIndex: 'lastUpdateTime',
                     text: 'Date de création',
                     format: 'd-m-Y'
                 }

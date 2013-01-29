@@ -175,6 +175,11 @@ Ext.define('Rubedo.controller.DAMController', {
         this.prepareContext(record.get("id"), record.get("typeId"));
     },
 
+    onDAMSearchBtnClick: function(button, e, options) {
+        Ext.getStore("DAMFacetteStore").activeFacettes.query=Ext.getCmp("DAMSearchField").getValue();
+        Ext.getStore("DAMFacetteStore").load();
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -394,6 +399,77 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
     },
 
+    renderFacets: function(facets) {
+        var me=this;
+        var target=Ext.getCmp("DAMFacetBox");
+        target.removeAll();
+        Ext.Array.forEach(facets, function(facet){
+            if (!Ext.isEmpty(facet.terms)){
+                var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
+                if(facet.name!="damType"){newFacet.collapse();}
+                newFacet.usedProperty=facet.name;
+
+                Ext.Array.forEach(facet.terms, function(term){
+                    var newTerm=Ext.widget("button",{
+                        text:term.term+" ("+term.count+")",
+                        usedValue:term.term,
+                        anchor:"100%",
+                        handler:function(thing){
+                            var theProp=Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty];
+                            if (!Ext.isEmpty(theProp)){
+                                if (Ext.isArray(theProp)){
+                                    theProp.push(thing.usedValue);
+                                } else {
+                                    theProp=[theProp,thing.usedValue];
+                                }
+
+                            } else {
+                                theProp=thing.usedValue;
+
+                            }
+                            Ext.getStore("DAMFacetteStore").activeFacettes[thing.up().usedProperty]=theProp;
+                            Ext.getStore("DAMFacetteStore").load();
+                        }
+                    });
+                    newFacet.add(newTerm);
+                });
+
+                target.add(newFacet);
+            }
+        });
+
+    },
+
+    renderActiveFacets: function(facets) {
+        Ext.getCmp("DAMSearchField").setValue(facets.query);
+        var target=Ext.getCmp("DAMActiveFacetBox");
+        target.removeAll();
+        Ext.Object.each(facets, function(key, value){
+            if (Ext.isArray(value)){
+                Ext.Array.forEach(value,function(someValue){
+                    var activeOne = Ext.widget('splitbutton',{
+                        text:key+" : "+someValue,
+                        arrowHandler:function(){
+                            Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[key],someValue);
+                            Ext.getStore("DAMFacetteStore").load();
+                        }
+                    });
+                    target.add(activeOne);
+                });
+
+            } else {
+                var activeOne = Ext.widget('splitbutton',{
+                    text:key+" : "+value,
+                    arrowHandler:function(){
+                        delete Ext.getStore("DAMFacetteStore").activeFacettes[key];
+                        Ext.getStore("DAMFacetteStore").load();
+                    }
+                });
+                target.add(activeOne);
+            }
+        });
+    },
+
     init: function(application) {
         this.control({
             "#DAMMTGrid": {
@@ -423,6 +499,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMSwitchEditBtn": {
                 click: this.onDAMSwitchEditBtnClick
+            },
+            "#DAMSearchBtn": {
+                click: this.onDAMSearchBtnClick
             }
         });
     }

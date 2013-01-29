@@ -110,8 +110,9 @@ Ext.define('Rubedo.store.DAMFacetteStore', {
     },
 
     onJsonstoreFacettesChanged: function(facettes, activeFacettes, eventOptions) {
-        //Rubedo.controller.SearchController.prototype.renderFacets(facettes);
-        //Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);
+        Rubedo.controller.DAMController.prototype.renderFacets(facettes);
+        Rubedo.controller.DAMController.prototype.renderActiveFacets(activeFacettes);
+
     },
 
     onJsonstoreLoad: function(store, records, successful, options) {

@@ -46,7 +46,7 @@
                 "filter": true,
                 "designer|userClassName": "MyColumn47",
                 "align": null,
-                "dataIndex": "title",
+                "dataIndex": "text",
                 "text": "Titre"
             },
             "configAlternates": {
@@ -70,7 +70,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyColumn49",
-                "dataIndex": "createUser",
+                "dataIndex": "author",
                 "text": "Auteur"
             },
             "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45"
@@ -84,7 +84,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyDateColumn8",
-                "dataIndex": "createTime",
+                "dataIndex": "lastUpdateTime",
                 "text": "Date de création",
                 "format": "d-m-Y"
             },
