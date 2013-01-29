@@ -266,7 +266,7 @@ Ext.define('Rubedo.controller.DAMController', {
         var i=0;
         for (i=0; i<lesTaxo.length; i++) {
             if (useSep){
-                var leVocab = Ext.getStore('TaxonomyForDAM2').findRecord('id', lesTaxo[i]);
+                var leVocab = Ext.getStore('TaxonomyForDam2').findRecord('id', lesTaxo[i]);
             } else {
                 var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);
             }

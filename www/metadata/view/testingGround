@@ -11,59 +11,125 @@
         "height": 450,
         "id": "testingGround",
         "width": 959,
-        "layout": "anchor",
+        "layout": "fit",
         "title": "Testing ground"
     },
     "id": "ExtBox1-ext-gen3685",
     "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
     "cn": [
         {
-            "type": "textareafield",
+            "type": "form",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "90%",
-                "designer|userClassName": "MyTextArea5",
-                "fieldLabel": "Label"
+                "designer|userClassName": "MyForm42",
+                "bodyPadding": 10,
+                "title": "My Form"
             },
-            "designerId": "fbb9c85a-68db-4b71-b649-ffe7385ec56e"
-        },
-        {
-            "type": "textfield",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|anchor": "100%",
-                "designer|userClassName": "MyTextField60",
-                "fieldLabel": "Label"
-            },
-            "designerId": "f67fb604-f507-4fb1-8329-2b7dc5c6515b"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fileType": "Image"
-            },
-            "designerId": "78aa1bc6-fe93-442e-86ab-e875b539b015",
-            "customConfigs": [
+            "designerId": "ef778a75-2347-4da6-b0af-513eeb94b93e",
+            "cn": [
                 {
-                    "group": "(Custom Properties)",
-                    "name": "fileType",
-                    "type": "string"
+                    "type": "fieldcontainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldContainer",
+                        "height": null,
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "607c2603-0095-4a69-acd4-1c25605b42ce",
+                    "cn": [
+                        {
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyPanel58",
+                                "frame": true,
+                                "height": 200,
+                                "itemId": "advanceTreeFieldMain",
+                                "collapsed": true,
+                                "collapsible": true,
+                                "title": "Open to  edit"
+                            },
+                            "designerId": "39b9341a-ffce-45e9-b927-42c9231092e1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onAdvanceTreeFieldMainRender",
+                                        "fn": "onAdvanceTreeFieldMainRender",
+                                        "implHandler": [
+                                            "var myStore = Ext.create(\"Ext.data.Store\",{\r",
+                                            "            isOptimised: true,\r",
+                                            "            usedCollection: 'Pages',\r",
+                                            "            autoLoad: false,\r",
+                                            "            autoSync: false,\r",
+                                            "            id:\"zeTest\",\r",
+                                            "            model: 'Rubedo.model.taxonomyTermModel',\r",
+                                            "            proxy: {\r",
+                                            "                type: 'ajax',\r",
+                                            "                api: {                    \r",
+                                            "                    read: 'pages/taxonomy-terms/navigation-tree'\r",
+                                            "                },\r",
+                                            "                reader: {\r",
+                                            "                    type: 'json',\r",
+                                            "                    getResponseData: function(response) {\r",
+                                            "                        var data, error;\r",
+                                            "\r",
+                                            "                        try {\r",
+                                            "                            data = Ext.decode(response.responseText);\r",
+                                            "                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix\r",
+                                            "                            return this.readRecords(data);\r",
+                                            "                        } catch (ex) {\r",
+                                            "                            error = new Ext.data.ResultSet({\r",
+                                            "                                total  : 0,\r",
+                                            "                                count  : 0,\r",
+                                            "                                records: [],\r",
+                                            "                                success: false,\r",
+                                            "                                message: ex.message\r",
+                                            "                            });\r",
+                                            "\r",
+                                            "                            this.fireEvent('exception', this, response, error);\r",
+                                            "                            console.log(ex);\r",
+                                            "\r",
+                                            "                            Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                            "\r",
+                                            "                            return error;\r",
+                                            "                        }\r",
+                                            "                    },\r",
+                                            "                    messageProperty: 'message'\r",
+                                            "                }\r",
+                                            "            },\r",
+                                            "            sorters: {\r",
+                                            "                property: 'orderValue'\r",
+                                            "            }\r",
+                                            "        });"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "cb391d02-ed56-4aa4-8ab2-0de1f9220bbc"
+                                }
+                            ]
+                        }
+                    ]
                 }
-            ],
-            "masterInstanceId": "ExtBox1-ext-gen19812"
+            ]
         }
     ]
 }

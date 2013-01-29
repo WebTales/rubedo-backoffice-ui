@@ -17,15 +17,11 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.GFSFileField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
     layout: {
-        type: 'anchor'
+        type: 'fit'
     },
     title: 'Testing ground',
 
@@ -35,23 +31,85 @@ Ext.define('Rubedo.view.testingGround', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'textareafield',
-                    anchor: '90%',
-                    fieldLabel: 'Label'
-                },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Label'
-                },
-                {
-                    xtype: 'GFSFileField',
-                    fileType: 'Image'
+                    xtype: 'form',
+                    bodyPadding: 10,
+                    title: 'My Form',
+                    items: [
+                        {
+                            xtype: 'fieldcontainer',
+                            fieldLabel: 'Label',
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    frame: true,
+                                    height: 200,
+                                    itemId: 'advanceTreeFieldMain',
+                                    collapsed: true,
+                                    collapsible: true,
+                                    title: 'Open to  edit',
+                                    listeners: {
+                                        render: {
+                                            fn: me.onAdvanceTreeFieldMainRender,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onAdvanceTreeFieldMainRender: function(abstractcomponent, options) {
+        var myStore = Ext.create("Ext.data.Store",{
+            isOptimised: true,
+            usedCollection: 'Pages',
+            autoLoad: false,
+            autoSync: false,
+            id:"zeTest",
+            model: 'Rubedo.model.taxonomyTermModel',
+            proxy: {
+                type: 'ajax',
+                api: {                    
+                    read: 'pages/taxonomy-terms/navigation-tree'
+                },
+                reader: {
+                    type: 'json',
+                    getResponseData: function(response) {
+                        var data, error;
+
+                        try {
+                            data = Ext.decode(response.responseText);
+                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                            return this.readRecords(data);
+                        } catch (ex) {
+                            error = new Ext.data.ResultSet({
+                                total  : 0,
+                                count  : 0,
+                                records: [],
+                                success: false,
+                                message: ex.message
+                            });
+
+                            this.fireEvent('exception', this, response, error);
+                            console.log(ex);
+
+                            Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                            return error;
+                        }
+                    },
+                    messageProperty: 'message'
+                }
+            },
+            sorters: {
+                property: 'orderValue'
+            }
+        });
     }
 
 });

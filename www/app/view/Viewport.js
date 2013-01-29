@@ -80,6 +80,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.ImagePickerWindow',
         'Rubedo.view.ImagePickerField',
         'Rubedo.view.ImageFieldComponent',
+        'Rubedo.view.GFSFileField',
         'Rubedo.view.GFSFileFieldComponent',
         'Rubedo.view.monitoringTools',
         'Rubedo.view.contributionPrevisualisation',
