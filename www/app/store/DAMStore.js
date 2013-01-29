@@ -47,11 +47,6 @@ Ext.define('Rubedo.store.DAMStore', {
                     type: 'json',
                     messageProperty: 'message',
                     root: 'data'
-                },
-                writer: {
-                    type: 'json',
-                    encode: true,
-                    root: 'data'
                 }
             }
         }, cfg)]);

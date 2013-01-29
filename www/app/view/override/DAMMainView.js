@@ -6,7 +6,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
             chunker: Ext.view.TableChunker
         },
         
-        plugins: [Ext.create('Ext.ux.grid.plugin.DragSelector'),Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})],
+        plugins: [Ext.create('Ext.ux.grid.plugin.DragSelector')],
         
         features: [Ext.create('Ext.ux.grid.feature.Tileview', {
             viewMode: 'tileIcons',
@@ -24,9 +24,9 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 				{
 					return {
 						thumbnails: generateThumbnail(),
-						author:record.get("createUser").fullName,
-                        date: Ext.Date.format(record.get("createTime"), 'd-m-Y'),
-                        filename:record.get("title"),
+						author:record.get("author"),
+                        date: Ext.Date.format(record.get("lastUpdateTime"), 'd-m-Y'),
+                        filename:record.get("text"),
                         fileSize:Ext.util.Format.fileSize(record.get("fileSize"))
 					};
 				}

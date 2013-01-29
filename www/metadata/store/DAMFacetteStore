@@ -1,0 +1,237 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "facettes": "[ ]",
+        "activeFacettes": [
+            "{ }"
+        ],
+        "designer|userClassName": "DAMFacetteStore",
+        "designer|userAlias": "DAMFacetteStore",
+        "autoLoad": false,
+        "autoSync": true,
+        "remoteSort": true,
+        "storeId": "DAMFacetteStore",
+        "model": "DAMSearchModel",
+        "pageSize": 25
+    },
+    "configAlternates": {
+        "facettes": "array",
+        "activeFacettes": "object"
+    },
+    "id": "ExtBox1-ext-gen25324",
+    "designerId": "0cb74fd7-8088-4c85-a691-7bc264873bce",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "facettes",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "activeFacettes",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent",
+                "name": "facettesChanged",
+                "params": [
+                    "facettes",
+                    "activeFacettes"
+                ]
+            },
+            "designerId": "105ea355-af9a-48cc-8cb2-6ab5445382d1"
+        },
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy57",
+                "api": [
+                    "{\r",
+                    "         create: 'dam/create',\r",
+                    "         read: 'elastic-search-dam',\r",
+                    "         update: 'dam/update',\r",
+                    "         destroy: 'dam/delete'\r",
+                    "}"
+                ]
+            },
+            "designerId": "5e785b38-6664-49fc-854b-e31abe5bbfc7",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader56",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "19df1797-687f-4d0f-a9d3-6f0860e5ff48",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "getResponseData",
+                                "fn": "getResponseData",
+                                "designer|params": [
+                                    "response"
+                                ],
+                                "implHandler": [
+                                    "var data, error;\r",
+                                    "\r",
+                                    "try {\r",
+                                    "    data = Ext.decode(response.responseText);\r",
+                                    "    this.proxy.facettes=data.facets;\r",
+                                    "    if (Ext.isEmpty(data.activeFacets)){\r",
+                                    "        data.activeFacets={ };\r",
+                                    "    }\r",
+                                    "    this.proxy.activeFacettes=data.activeFacets;\r",
+                                    "    return this.readRecords(data);\r",
+                                    "} catch (ex) {\r",
+                                    "    error = new Ext.data.ResultSet({\r",
+                                    "        total  : 0,\r",
+                                    "        count  : 0,\r",
+                                    "        records: [],\r",
+                                    "        success: false,\r",
+                                    "        message: ex.message\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    this.fireEvent('exception', this, response, error);\r",
+                                    "    console.log(ex);\r",
+                                    "\r",
+                                    "    Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                    "\r",
+                                    "    return error;\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "1ba38c95-a0f0-4be7-a02c-33b901c76a26"
+                        }
+                    ]
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter13",
+                        "nameProperty": null,
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "da436253-e7d7-471d-b979-7c065c7592a5"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreFacettesChanged",
+                "fn": "onJsonstoreFacettesChanged",
+                "implHandler": [
+                    "//Rubedo.controller.SearchController.prototype.renderFacets(facettes);\r",
+                    "//Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);"
+                ],
+                "name": "facettesChanged",
+                "scope": "me"
+            },
+            "designerId": "4f30b3fd-cd4d-4a4d-b52a-306a74ce42a8"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreLoad",
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "store.facettes=store.getProxy().facettes;\r",
+                    "store.activeFacettes=store.getProxy().activeFacettes;\r",
+                    "store.fireEvent(\"facettesChanged\",store.facettes,store.activeFacettes);"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "2c3c1217-78bc-4668-bdd8-dda03698d012"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "var source=Ext.clone(store.activeFacettes);\r",
+                    "var adaptedParams= { };\r",
+                    "Ext.Object.each(source, function(key, value, object){\r",
+                    "    if (Ext.isArray(value)) {\r",
+                    "        adaptedParams[key+\"[]\"]=value;\r",
+                    "        \r",
+                    "    } else {\r",
+                    "        adaptedParams[key]=value;\r",
+                    "    }\r",
+                    "});\r",
+                    "store.getProxy().extraParams=adaptedParams;"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "0a5516d7-99a0-4842-9dd2-3bc9dd725c43"
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter6",
+                "direction": "DESC",
+                "property": "score"
+            },
+            "designerId": "ca4a4559-facf-42c7-9914-0c926c14a775"
+        }
+    ]
+}

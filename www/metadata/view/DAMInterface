@@ -41,156 +41,6 @@
             "masterInstanceId": "ExtBox1-ext-gen2736"
         },
         {
-            "type": "gridpanel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": null,
-                "designer|userClassName": "MyGridPanel24",
-                "id": "DAMMTGrid",
-                "width": 200,
-                "resizable": true,
-                "resizeHandles": "e",
-                "title": "",
-                "forceFit": true,
-                "store": "MediaTypesForDAM"
-            },
-            "configAlternates": {
-                "managesStore": "boolean",
-                "resizable": "boolean"
-            },
-            "designerId": "7b498892-7bac-4167-a854-59126a323993",
-            "cn": [
-                {
-                    "type": "gridview",
-                    "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView24"
-                    },
-                    "designerId": "13b4a6ce-2dd5-4449-a7b9-8672ff17c9ef"
-                },
-                {
-                    "type": "gridcolumn",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn52",
-                        "dataIndex": "type",
-                        "text": "Type"
-                    },
-                    "designerId": "a82a9c3d-d29f-4ad0-bbe1-64a261aad4bf",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "renderer",
-                                "fn": "renderer",
-                                "designer|params": [
-                                    "value",
-                                    "metaData",
-                                    "record",
-                                    "rowIndex",
-                                    "colIndex",
-                                    "store",
-                                    "view"
-                                ],
-                                "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
-                                ]
-                            },
-                            "designerId": "1b27ec99-0e13-4bf4-9420-39c1f9091f76"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyTextField61",
-                                "allowBlank": false
-                            },
-                            "designerId": "3bf3ea74-3ed5-4472-b9da-fe02c732c913"
-                        }
-                    ]
-                },
-                {
-                    "type": "gridcelleditingplugin",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin3"
-                    },
-                    "designerId": "231b297a-25e0-4ef1-a3b1-5e23e94c0cd9"
-                }
-            ]
-        },
-        {
-            "type": "panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": 1,
-                "designer|userClassName": "MyPanel52",
-                "overflowY": "auto",
-                "layout": "fit"
-            },
-            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
-            "cn": [
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "DAMCenter"
-                    },
-                    "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
-                    "masterInstanceId": "ExtBox1-ext-gen52190"
-                },
-                {
-                    "type": "pagingtoolbar",
-                    "reference": {
-                        "name": "dockedItems",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dock": "bottom",
-                        "designer|userClassName": "MyPagingToolbar2",
-                        "width": 360,
-                        "displayInfo": true,
-                        "store": "DAMStore"
-                    },
-                    "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
-                }
-            ]
-        },
-        {
             "type": "toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -278,22 +128,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "type": "toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": 1,
-                "dock": "top",
-                "designer|userClassName": "MyToolbar26",
-                "height": 30,
-                "itemId": "breadcrumb"
-            },
-            "designerId": "acce50ea-4790-4c3f-a1d2-c3e8d32c0a12"
         },
         {
             "type": "toolbar",
@@ -613,6 +447,117 @@
             ]
         },
         {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyPanel57",
+                "id": "DAMFacetBox",
+                "width": 200,
+                "title": ""
+            },
+            "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
+            "cn": [
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "designer|userClassName": "MyToolbar61"
+                    },
+                    "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyTextField4",
+                                "id": "DAMSearchField",
+                                "fieldLabel": ""
+                            },
+                            "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton167",
+                                "id": "DAMSearchBtn",
+                                "iconCls": "search",
+                                "text": ""
+                            },
+                            "designerId": "dab35ff8-c763-496a-91b0-7848a1952486"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyPanel52",
+                "overflowY": "auto",
+                "layout": "fit"
+            },
+            "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "DAMCenter",
+                        "store": "DAMFacetteStore"
+                    },
+                    "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
+                    "masterInstanceId": "ExtBox1-ext-gen52190"
+                },
+                {
+                    "type": "pagingtoolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyPagingToolbar2",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "DAMFacetteStore"
+                    },
+                    "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
+                }
+            ]
+        },
+        {
             "type": "basiceventbinding",
             "reference": {
                 "name": "listeners",
@@ -652,6 +597,22 @@
                 "scope": "me"
             },
             "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "designer|userClassName": "MyToolbar3",
+                "height": 34,
+                "id": "DAMActiveFacetBox"
+            },
+            "designerId": "a933a0ea-82ad-49bf-aef8-b28d0a54fc02"
         }
     ]
 }

@@ -42,9 +42,6 @@ Ext.define('Rubedo.view.DAMMainView', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        return(value.fullName);
-                    },
                     dataIndex: 'createUser',
                     text: 'Auteur'
                 },

@@ -46,63 +46,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                     xtype: 'mytool17'
                 }
             ],
-            items: [
-                {
-                    xtype: 'gridpanel',
-                    id: 'DAMMTGrid',
-                    width: 200,
-                    resizable: true,
-                    resizeHandles: 'e',
-                    title: '',
-                    forceFit: true,
-                    store: 'MediaTypesForDAM',
-                    viewConfig: {
-
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
-                            },
-                            dataIndex: 'type',
-                            text: 'Type',
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false
-                            }
-                        }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting'
-                        })
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    flex: 1,
-                    overflowY: 'auto',
-                    layout: {
-                        type: 'fit'
-                    },
-                    items: [
-                        {
-                            xtype: 'DAMMainView',
-                            id: 'DAMCenter'
-                        }
-                    ],
-                    dockedItems: [
-                        {
-                            xtype: 'pagingtoolbar',
-                            dock: 'bottom',
-                            width: 360,
-                            displayInfo: true,
-                            store: 'DAMStore'
-                        }
-                    ]
-                }
-            ],
             dockedItems: [
                 {
                     xtype: 'toolbar',
@@ -132,13 +75,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                             ]
                         }
                     ]
-                },
-                {
-                    xtype: 'toolbar',
-                    flex: 1,
-                    dock: 'top',
-                    height: 30,
-                    itemId: 'breadcrumb'
                 },
                 {
                     xtype: 'toolbar',
@@ -258,6 +194,65 @@ Ext.define('Rubedo.view.DAMInterface', {
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    height: 34,
+                    id: 'DAMActiveFacetBox'
+                }
+            ],
+            items: [
+                {
+                    xtype: 'panel',
+                    id: 'DAMFacetBox',
+                    width: 200,
+                    title: '',
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    flex: 1,
+                                    id: 'DAMSearchField',
+                                    fieldLabel: ''
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'DAMSearchBtn',
+                                    iconCls: 'search',
+                                    text: ''
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    flex: 1,
+                    overflowY: 'auto',
+                    layout: {
+                        type: 'fit'
+                    },
+                    items: [
+                        {
+                            xtype: 'DAMMainView',
+                            id: 'DAMCenter',
+                            store: 'DAMFacetteStore'
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'DAMFacetteStore'
                         }
                     ]
                 }

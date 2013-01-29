@@ -40,17 +40,15 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMUpdateBtn").enable();
         Ext.getCmp("DAMROBtn").enable();
         if (Ext.isEmpty(selections)) {
-            if (!Ext.isEmpty(Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected())){
-                Ext.getCmp("DAMDeleteBtn").disable();
-                Ext.getCmp("DAMUpdateBtn").disable();
-                Ext.getCmp("DAMROBtn").disable();
-                var customMeta = "<b> "+Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("type")+ "</b>";
-                Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
-                Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
-                Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
-            }
+
+            Ext.getCmp("DAMDeleteBtn").disable();
+            Ext.getCmp("DAMUpdateBtn").disable();
+            Ext.getCmp("DAMROBtn").disable();
+            Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+            Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+
         } else if (selections.length==1) {
-            var customMeta = "<b> "+selections[0].get("title")+"</b></br><b>Création : </b>"+Ext.Date.format(selections[0].get("createTime"), 'd-m-Y')+"<b> Dernière modification : </b>"+Ext.Date.format(selections[0].get("lastUpdateTime"), 'd-m-Y')+"<b> Auteur : </b>"+selections[0].get("createUser").fullName;
+            var customMeta = "<b> "+selections[0].get("text")+"</b></br><b> Dernière modification : </b>"+Ext.Date.format(selections[0].get("lastUpdateTime"), 'd-m-Y')+"<b> Auteur : </b>"+selections[0].get("author");
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc("dam/get-thumbnail?id="+selections[0].get("id"));
@@ -105,7 +103,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMUpdateBtnClick: function(button, e, options) {
         var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
-        var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
+        var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id", record.get("typeId"));
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
         myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
         Ext.getCmp("DAMSubmitBtn").hide();
@@ -174,7 +172,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
-        Ext.getCmp("DAMUpdateBtn").fireEvent("click", Ext.getCmp("DAMUpdateBtn"));
+        this.prepareContext(record.get("id"), record.get("typeId"));
     },
 
     resetInterfaceSelect: function(record) {

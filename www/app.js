@@ -45,7 +45,8 @@ Ext.application({
         'MTFieldModel',
         'queryDataModel',
         'DAMModel',
-        'contentsSearchModel'
+        'contentsSearchModel',
+        'DAMSearchModel'
     ],
     stores: [
         'SitesJson',
@@ -117,7 +118,8 @@ Ext.application({
         'DAMEditStore',
         'TaxonomyForDam2',
         'ContentMQueryStore',
-        'ContentSelectorStore2'
+        'ContentSelectorStore2',
+        'DAMFacetteStore'
     ],
     views: [
         'MyContainer',

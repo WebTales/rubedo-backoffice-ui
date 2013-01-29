@@ -29,7 +29,8 @@
             "MTFieldModel",
             "queryDataModel",
             "DAMModel",
-            "contentsSearchModel"
+            "contentsSearchModel",
+            "DAMSearchModel"
         ],
         "stores": [
             "SitesJson",
@@ -101,7 +102,8 @@
             "DAMEditStore",
             "TaxonomyForDam2",
             "ContentMQueryStore",
-            "ContentSelectorStore2"
+            "ContentSelectorStore2",
+            "DAMFacetteStore"
         ],
         "views": [
             "MyContainer",

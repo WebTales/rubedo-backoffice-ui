@@ -73,34 +73,7 @@
                 "dataIndex": "createUser",
                 "text": "Auteur"
             },
-            "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "renderer",
-                        "fn": "renderer",
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "implHandler": [
-                            "return(value.fullName);"
-                        ]
-                    },
-                    "designerId": "6521a43a-1607-428a-86da-2813c8830fc4"
-                }
-            ]
+            "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45"
         },
         {
             "type": "datecolumn",
