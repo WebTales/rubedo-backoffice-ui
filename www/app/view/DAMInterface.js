@@ -85,7 +85,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            disabled: true,
+                            disabled: false,
                             id: 'addDAMBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -209,7 +209,9 @@ Ext.define('Rubedo.view.DAMInterface', {
                 {
                     xtype: 'panel',
                     id: 'DAMFacetBox',
-                    width: 200,
+                    width: 240,
+                    overflowY: 'auto',
+                    bodyPadding: '10 16 10 10',
                     title: '',
                     dockedItems: [
                         {

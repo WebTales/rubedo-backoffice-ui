@@ -1,0 +1,80 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DAMChooseMTWindow",
+        "designer|userAlias": "DAMChooseMTWindow",
+        "height": 119,
+        "id": "DAMChooseMTWindow",
+        "width": 400,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Choissez un type de média",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen8888",
+    "designerId": "061bd6bb-80de-48a4-af26-f6193448d7a1",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm41",
+                "designer|displayName": null,
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "d02218b1-40b5-4777-ad04-547c57de7f82",
+            "cn": [
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyComboBox26",
+                        "name": "typeId",
+                        "fieldLabel": "Label",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "type",
+                        "forceSelection": true,
+                        "store": "MediaTypesForDAM",
+                        "valueField": "id"
+                    },
+                    "designerId": "752f3e27-d7a0-4035-a499-a1cf11df484c"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton239",
+                        "id": "addDamAfterTypeBtn",
+                        "scale": "large",
+                        "text": "Créer un nouveau média de ce type"
+                    },
+                    "designerId": "90f6669a-85e6-4ada-973d-c9c9869c0eaa"
+                }
+            ]
+        }
+    ]
+}

@@ -26,13 +26,19 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onAddDAMBtnClick: function(button, e, options) {
-        var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
-        var myEditor = Ext.widget("DAMCreateUpdateWindow");
-        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
-        myEditor.show();
-        this.renderDAMTypeFields(DAMType, false);
-        this.renderTaxoFields(DAMType);
-        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        if (!Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
+            var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("type",Ext.getStore("DAMFacetteStore").activeFacettes.damType);
+            var myEditor = Ext.widget("DAMCreateUpdateWindow");
+            Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
+            myEditor.typeId=DAMType.get("id");
+            myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.show();
+            this.renderDAMTypeFields(DAMType, false);
+            this.renderTaxoFields(DAMType);
+            Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        } else {
+            Ext.widget("DAMChooseMTWindow").show();
+        }
     },
 
     selectDAM: function(tablepanel, selections, options) {
@@ -74,14 +80,14 @@ Ext.define('Rubedo.controller.DAMController', {
             clientValidation: true,
             url: 'dam/create',
             params: { 
-                typeId: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("id"),
-                mainFileType: Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected().get("mainFileType"),
+                typeId: button.up().up().typeId,
+                mainFileType: button.up().up().mainFileType,
                 taxonomy: Ext.JSON.encode(me.getTaxoValues())
             },
             success: function(form, action) {
                 button.up().setLoading(false);
                 button.up().up().close();
-                Ext.getStore("DAMStore").load();
+                Ext.getStore("DAMFacetteStore").load();
             },
             failure: function(form, action) {
                 button.up().setLoading(false);
@@ -178,6 +184,21 @@ Ext.define('Rubedo.controller.DAMController', {
     onDAMSearchBtnClick: function(button, e, options) {
         Ext.getStore("DAMFacetteStore").activeFacettes.query=Ext.getCmp("DAMSearchField").getValue();
         Ext.getStore("DAMFacetteStore").load();
+    },
+
+    onAddDamAfterTypeBtnClick: function(button, e, options) {
+        if (button.up().getForm().isValid()){
+            var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id",button.up().getForm().getValues().typeId);
+            var myEditor = Ext.widget("DAMCreateUpdateWindow");
+            Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
+            myEditor.typeId=DAMType.get("id");
+            myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.show();
+            this.renderDAMTypeFields(DAMType, false);
+            this.renderTaxoFields(DAMType);
+            Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+            button.up().up().close();
+        } 
     },
 
     resetInterfaceSelect: function(record) {
@@ -502,6 +523,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMSearchBtn": {
                 click: this.onDAMSearchBtnClick
+            },
+            "#addDamAfterTypeBtn": {
+                click: this.onAddDamAfterTypeBtnClick
             }
         });
     }

@@ -166,13 +166,19 @@
                 "designer|userClassName": "onAddDAMBtnClick",
                 "fn": "onAddDAMBtnClick",
                 "implHandler": [
-                    "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
-                    "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
-                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(2));\r",
-                    "myEditor.show();\r",
-                    "this.renderDAMTypeFields(DAMType, false);\r",
-                    "this.renderTaxoFields(DAMType);\r",
-                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                    "if (!Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType)){\r",
+                    "    var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"type\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType);\r",
+                    "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "    Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(2));\r",
+                    "    myEditor.typeId=DAMType.get(\"id\");\r",
+                    "    myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                    "    myEditor.show();\r",
+                    "    this.renderDAMTypeFields(DAMType, false);\r",
+                    "    this.renderTaxoFields(DAMType);\r",
+                    "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                    "} else {\r",
+                    "    Ext.widget(\"DAMChooseMTWindow\").show();\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -373,14 +379,14 @@
                     "    clientValidation: true,\r",
                     "    url: 'dam/create',\r",
                     "    params: { \r",
-                    "        typeId: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"id\"),\r",
-                    "        mainFileType: Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\"),\r",
+                    "        typeId: button.up().up().typeId,\r",
+                    "        mainFileType: button.up().up().mainFileType,\r",
                     "        taxonomy: Ext.JSON.encode(me.getTaxoValues())\r",
                     "    },\r",
                     "    success: function(form, action) {\r",
                     "        button.up().setLoading(false);\r",
                     "        button.up().up().close();\r",
-                    "        Ext.getStore(\"DAMStore\").load();\r",
+                    "        Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "    },\r",
                     "    failure: function(form, action) {\r",
                     "        button.up().setLoading(false);\r",
@@ -786,6 +792,37 @@
                 "designer|controlQuery": "#DAMSearchBtn"
             },
             "designerId": "39daff7b-7cc8-4a4d-8a1a-c89e9d6e33ba"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddDamAfterTypeBtnClick",
+                "fn": "onAddDamAfterTypeBtnClick",
+                "implHandler": [
+                    "if (button.up().getForm().isValid()){\r",
+                    "    var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",button.up().getForm().getValues().typeId);\r",
+                    "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "    Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(2));\r",
+                    "    myEditor.typeId=DAMType.get(\"id\");\r",
+                    "    myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                    "    myEditor.show();\r",
+                    "    this.renderDAMTypeFields(DAMType, false);\r",
+                    "    this.renderTaxoFields(DAMType);\r",
+                    "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                    "    button.up().up().close();\r",
+                    "} "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addDamAfterTypeBtn"
+            },
+            "designerId": "5b4c25c8-302b-4774-8ebe-f7cce1e6848c"
         }
     ]
 }

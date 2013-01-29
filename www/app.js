@@ -196,7 +196,8 @@ Ext.application({
         'MyToolbar56',
         'queryManagerInterface',
         'queryTypeChooseWindow',
-        'manualQueryInterface'
+        'manualQueryInterface',
+        'DAMChooseMTWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

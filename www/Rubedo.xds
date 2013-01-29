@@ -1844,6 +1844,14 @@
                 "app/model/DAMSearchModel.js"
             ],
             "className": "DAMSearchModel"
+        },
+        "061bd6bb-80de-48a4-af26-f6193448d7a1": {
+            "paths": [
+                "metadata/view/DAMChooseMTWindow",
+                "app/view/override/DAMChooseMTWindow.js",
+                "app/view/DAMChooseMTWindow.js"
+            ],
+            "className": "DAMChooseMTWindow"
         }
     },
     "viewOrderMap": {
@@ -1941,7 +1949,8 @@
             "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
             "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
             "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
-            "f87deabd-cd38-47df-aac5-7f9f7d9d6df5"
+            "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
+            "061bd6bb-80de-48a4-af26-f6193448d7a1"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
