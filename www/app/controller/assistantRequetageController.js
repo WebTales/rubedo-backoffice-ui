@@ -385,6 +385,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             var result=this.readQuery();
             var newQuery = Ext.create("Rubedo.model.queryDataModel", {
                 name:result.queryName,
+                type:"advanced",
                 query:result,
                 averageDuration:0,
                 count:0,

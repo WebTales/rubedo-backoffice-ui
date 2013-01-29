@@ -11,7 +11,7 @@
         "designer|userAlias": "manualQueryInterface",
         "height": 401,
         "id": "manualQueryInterface",
-        "width": 946,
+        "width": 1064,
         "layout": "hbox",
         "title": "Requête manuelle",
         "constrain": true
@@ -30,7 +30,31 @@
                 "layout|flex": 1
             },
             "designerId": "8d65fe65-7d83-4141-b24b-48375303cb09",
-            "masterInstanceId": "ExtBox1-ext-gen35730"
+            "masterInstanceId": "ExtBox1-ext-gen35730",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onManualQueryLeftGridSelectionChange",
+                        "fn": "onManualQueryLeftGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selections)){\r",
+                            "    Ext.getCmp(\"manualQueryAddRecordBtn\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"manualQueryAddRecordBtn\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "ece4c3fd-bade-45aa-979f-2ed4dcdb9620"
+                }
+            ]
         },
         {
             "type": "toolbar",
@@ -71,11 +95,35 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton235",
+                        "disabled": true,
+                        "id": "manualQueryAddRecordBtn",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "text": "Ajouter"
                     },
-                    "designerId": "435006e6-e1ec-4292-9d7f-15a360048507"
+                    "designerId": "435006e6-e1ec-4292-9d7f-15a360048507",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onManualQueryAddRecordBtnClick",
+                                "fn": "onManualQueryAddRecordBtnClick",
+                                "implHandler": [
+                                    "var target = Ext.getCmp(\"manualQueryLeftGrid\").getSelectionModel().getLastSelected();\r",
+                                    "Ext.getCmp(\"manualQueryLeftGrid\").getStore().remove(target);\r",
+                                    "Ext.getCmp(\"manualQueryRightGridGrid\").getStore().add(target);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "17fd850d-2649-4c15-9d8a-7a91addb2cff"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -87,10 +135,34 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton236",
+                        "disabled": true,
+                        "id": "manualQueryRemoveRecordBtn",
                         "iconCls": "arrow_left",
                         "text": "Enlever"
                     },
-                    "designerId": "7d15cc34-9d4b-4289-84ad-1b90db2a9e92"
+                    "designerId": "7d15cc34-9d4b-4289-84ad-1b90db2a9e92",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onManualQueryRemoveRecordBtnClick",
+                                "fn": "onManualQueryRemoveRecordBtnClick",
+                                "implHandler": [
+                                    "var target = Ext.getCmp(\"manualQueryRightGridGrid\").getSelectionModel().getLastSelected();\r",
+                                    "Ext.getCmp(\"manualQueryRightGridGrid\").getStore().remove(target);\r",
+                                    "Ext.getCmp(\"manualQueryLeftGrid\").getStore().add(target);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "c8be1b79-a74d-45c9-bfc4-1fec8e6891fb"
+                        }
+                    ]
                 },
                 {
                     "type": "tbspacer",
@@ -117,7 +189,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "designer|userClassName": "MyGridPanel32",
-                "id": null,
+                "id": "manualQueryRightGridGrid",
                 "itemId": null,
                 "title": "",
                 "store": "ContentMQueryStore"
@@ -418,43 +490,77 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton237",
-                                "iconCls": "arrow_up",
-                                "text": ""
-                            },
-                            "designerId": "28500d90-8c0a-494e-88ca-952f6bd75fa8"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyButton238",
-                                "iconCls": "arrow_down",
-                                "text": ""
-                            },
-                            "designerId": "ac92046e-b8aa-42c2-98db-cc4059766f8b"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
                                 "designer|userClassName": "MyButton239",
+                                "id": "manualQuerySaveBtn",
                                 "iconCls": "ouiSpetit",
                                 "text": "Enregistrer la requête"
                             },
-                            "designerId": "855cdaf0-a7b4-4964-a851-4ae1cb2fb83b"
+                            "designerId": "855cdaf0-a7b4-4964-a851-4ae1cb2fb83b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onManualQuerySaveBtnClick",
+                                        "fn": "onManualQuerySaveBtnClick",
+                                        "implHandler": [
+                                            "var raw = button.up().up().getStore().getRange();\r",
+                                            "var refined = Ext.Array.pluck(Ext.Array.pluck(raw, \"data\"), \"id\");\r",
+                                            "if (!Ext.isEmpty(refined)){\r",
+                                            "    var newQuery = Ext.create(\"Rubedo.model.queryDataModel\", {\r",
+                                            "        name:\"Requête manuelle\",\r",
+                                            "        type:\"manual\",\r",
+                                            "        query:refined,\r",
+                                            "        averageDuration:0,\r",
+                                            "        count:0,\r",
+                                            "        usage:[]\r",
+                                            "    });\r",
+                                            "   \r",
+                                            "        Ext.getStore(\"QueriesStore\").add(newQuery);\r",
+                                            "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){\r",
+                                            "            Ext.getCmp(Ext.getCmp(\"manualQueryInterface\").mainFieldId).select(newQuery);\r",
+                                            "        },this,{single:true});\r",
+                                            "        \r",
+                                            "\r",
+                                            "        Ext.getCmp(\"manualQueryInterface\").close();\r",
+                                            "    }"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b19e57a8-898a-463c-911f-d5180c148beb"
+                                }
+                            ]
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onManualQueryRightGridGridSelectionChange",
+                        "fn": "onManualQueryRightGridGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selections)){\r",
+                            "    Ext.getCmp(\"manualQueryRemoveRecordBtn\").disable();\r",
+                            "\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"manualQueryRemoveRecordBtn\").enable();\r",
+                            "\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "39f83069-238b-43b4-8315-ecea3fd90a4c"
                 }
             ]
         },
@@ -504,6 +610,8 @@
                 "implHandler": [
                     "panel.getComponent(0).getStore().clearFilter(true);\r",
                     "panel.getComponent(0).getStore().removeAll();\r",
+                    "panel.getComponent(2).getStore().clearFilter(true);\r",
+                    "panel.getComponent(2).getStore().removeAll();\r",
                     "Ext.getStore(\"TCNDepComboCS\").removeAll();"
                 ],
                 "name": "beforeclose",

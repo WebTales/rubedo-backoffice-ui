@@ -38,6 +38,9 @@ Ext.define('Rubedo.model.queryDataModel', {
         },
         {
             name: 'usage'
+        },
+        {
+            name: 'type'
         }
     ]
 });

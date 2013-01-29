@@ -37,7 +37,32 @@
                 "scale": "large",
                 "text": "Requête manuelle"
             },
-            "designerId": "0571434f-faed-4349-975c-1efb65ba546d"
+            "designerId": "0571434f-faed-4349-975c-1efb65ba546d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "var myWin = Ext.widget(\"manualQueryInterface\");\r",
+                            "myWin.mainFieldId=button.up().mainFieldId;\r",
+                            "myWin.show();\r",
+                            "button.up().close();"
+                        ]
+                    },
+                    "designerId": "957f4d0d-046a-4a1b-9abf-46bf3fe6017e"
+                }
+            ]
         },
         {
             "type": "button",

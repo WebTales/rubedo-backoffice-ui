@@ -36,6 +36,12 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
             items: [
                 {
                     xtype: 'button',
+                    handler: function(button, event) {
+                        var myWin = Ext.widget("manualQueryInterface");
+                        myWin.mainFieldId=button.up().mainFieldId;
+                        myWin.show();
+                        button.up().close();
+                    },
                     flex: 1,
                     scale: 'large',
                     text: 'Requête manuelle'

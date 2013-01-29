@@ -469,6 +469,7 @@
                     "    var result=this.readQuery();\r",
                     "    var newQuery = Ext.create(\"Rubedo.model.queryDataModel\", {\r",
                     "        name:result.queryName,\r",
+                    "        type:\"advanced\",\r",
                     "        query:result,\r",
                     "        averageDuration:0,\r",
                     "        count:0,\r",
@@ -481,8 +482,8 @@
                     "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){\r",
                     "            Ext.getCmp(Ext.getCmp(\"assistantRequetage\").mainFieldId).select(newQuery);\r",
                     "        },this,{single:true});\r",
-                    "    }\r",
-                    "    \r",
+                    "        }\r",
+                    "\r",
                     "        Ext.getCmp(\"assistantRequetage\").close();\r",
                     "    }"
                 ],

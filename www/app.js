@@ -116,7 +116,8 @@ Ext.application({
         'MTForDAMEdit',
         'DAMEditStore',
         'TaxonomyForDam2',
-        'ContentMQueryStore'
+        'ContentMQueryStore',
+        'ContentSelectorStore2'
     ],
     views: [
         'MyContainer',

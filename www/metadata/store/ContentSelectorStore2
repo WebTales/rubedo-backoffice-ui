@@ -1,0 +1,74 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ContentSelectorStore2",
+        "designer|userAlias": "ContentSelectorStore2",
+        "remoteFilter": true,
+        "remoteSort": true,
+        "storeId": "ContentSelectorStore2",
+        "model": "contenusDataModel",
+        "pageSize": 25
+    },
+    "id": "ExtBox1-ext-gen15896",
+    "designerId": "c1203b34-342c-44b9-b048-d237b3dd290c",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy27",
+                "api": [
+                    "{\r",
+                    "                    read: 'contents'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "172df78a-ef93-418f-aebb-210415b03aa3",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader26",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "cc31fd8d-f029-4aa8-a745-3a7f522372d5"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "var raw = Ext.getStore(\"ContentMQueryStore\").getRange();\r",
+                    "var refined = Ext.Array.pluck(Ext.Array.pluck(raw, \"data\"), \"id\");\r",
+                    "store.getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$nin\\\",\\\"value\\\":\"+Ext.JSON.encode(refined)+\"}]\";"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "fd531cba-e0ce-4138-be21-594db73eaf50"
+        }
+    ]
+}

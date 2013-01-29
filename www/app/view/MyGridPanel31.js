@@ -21,8 +21,9 @@ Ext.define('Rubedo.view.MyGridPanel31', {
         'Rubedo.view.override.MyGridPanel31'
     ],
 
+    id: 'manualQueryLeftGrid',
     title: '',
-    store: 'ContentSelectorStore',
+    store: 'ContentSelectorStore2',
 
     initComponent: function() {
         var me = this;

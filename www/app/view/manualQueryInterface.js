@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
 
     height: 401,
     id: 'manualQueryInterface',
-    width: 946,
+    width: 1064,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -39,7 +39,13 @@ Ext.define('Rubedo.view.manualQueryInterface', {
             items: [
                 {
                     xtype: 'mygridpanel31',
-                    flex: 1
+                    flex: 1,
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onManualQueryLeftGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'toolbar',
@@ -52,14 +58,30 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
+                            id: 'manualQueryAddRecordBtn',
                             iconAlign: 'right',
                             iconCls: 'arrow_right',
-                            text: 'Ajouter'
+                            text: 'Ajouter',
+                            listeners: {
+                                click: {
+                                    fn: me.onManualQueryAddRecordBtnClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
+                            disabled: true,
+                            id: 'manualQueryRemoveRecordBtn',
                             iconCls: 'arrow_left',
-                            text: 'Enlever'
+                            text: 'Enlever',
+                            listeners: {
+                                click: {
+                                    fn: me.onManualQueryRemoveRecordBtnClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'tbspacer',
@@ -70,6 +92,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    id: 'manualQueryRightGridGrid',
                     title: '',
                     store: 'ContentMQueryStore',
                     viewConfig: {
@@ -182,22 +205,25 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                 },
                                 {
                                     xtype: 'button',
-                                    iconCls: 'arrow_up',
-                                    text: ''
-                                },
-                                {
-                                    xtype: 'button',
-                                    iconCls: 'arrow_down',
-                                    text: ''
-                                },
-                                {
-                                    xtype: 'button',
+                                    id: 'manualQuerySaveBtn',
                                     iconCls: 'ouiSpetit',
-                                    text: 'Enregistrer la requête'
+                                    text: 'Enregistrer la requête',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onManualQuerySaveBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onManualQueryRightGridGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 }
             ],
             tools: [
@@ -220,6 +246,59 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         me.callParent(arguments);
     },
 
+    onManualQueryLeftGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("manualQueryAddRecordBtn").disable();
+        } else {
+            Ext.getCmp("manualQueryAddRecordBtn").enable();
+        }
+    },
+
+    onManualQueryAddRecordBtnClick: function(button, e, options) {
+        var target = Ext.getCmp("manualQueryLeftGrid").getSelectionModel().getLastSelected();
+        Ext.getCmp("manualQueryLeftGrid").getStore().remove(target);
+        Ext.getCmp("manualQueryRightGridGrid").getStore().add(target);
+    },
+
+    onManualQueryRemoveRecordBtnClick: function(button, e, options) {
+        var target = Ext.getCmp("manualQueryRightGridGrid").getSelectionModel().getLastSelected();
+        Ext.getCmp("manualQueryRightGridGrid").getStore().remove(target);
+        Ext.getCmp("manualQueryLeftGrid").getStore().add(target);
+    },
+
+    onManualQuerySaveBtnClick: function(button, e, options) {
+        var raw = button.up().up().getStore().getRange();
+        var refined = Ext.Array.pluck(Ext.Array.pluck(raw, "data"), "id");
+        if (!Ext.isEmpty(refined)){
+            var newQuery = Ext.create("Rubedo.model.queryDataModel", {
+                name:"Requête manuelle",
+                type:"manual",
+                query:refined,
+                averageDuration:0,
+                count:0,
+                usage:[]
+            });
+
+            Ext.getStore("QueriesStore").add(newQuery);
+            Ext.getStore("QueriesStore").addListener("update", function(){
+                Ext.getCmp(Ext.getCmp("manualQueryInterface").mainFieldId).select(newQuery);
+            },this,{single:true});
+
+
+                Ext.getCmp("manualQueryInterface").close();
+            }
+    },
+
+    onManualQueryRightGridGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("manualQueryRemoveRecordBtn").disable();
+
+        } else {
+            Ext.getCmp("manualQueryRemoveRecordBtn").enable();
+
+        }
+    },
+
     onManualQueryInterfaceRender: function(abstractcomponent, options) {
         Ext.getStore("TCNDepComboCS").load();
         abstractcomponent.getComponent(0).getStore().clearFilter(true);
@@ -229,6 +308,8 @@ Ext.define('Rubedo.view.manualQueryInterface', {
     onManualQueryInterfaceBeforeClose: function(panel, options) {
         panel.getComponent(0).getStore().clearFilter(true);
         panel.getComponent(0).getStore().removeAll();
+        panel.getComponent(2).getStore().clearFilter(true);
+        panel.getComponent(2).getStore().removeAll();
         Ext.getStore("TCNDepComboCS").removeAll();
     }
 
