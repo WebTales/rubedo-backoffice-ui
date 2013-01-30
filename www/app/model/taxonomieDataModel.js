@@ -60,6 +60,9 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
         },
         {
             name: 'createUser'
+        },
+        {
+            name: 'workspaces'
         }
     ]
 });

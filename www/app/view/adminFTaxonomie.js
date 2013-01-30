@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
     alias: 'widget.adminFTaxonomie',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.TermesTaxonomieTree'
     ],
 
@@ -220,6 +221,13 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                             anchor: '100%',
                                             name: 'helpText',
                                             fieldLabel: 'Texte d\'aide '
+                                        },
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            anchor: '100%',
+                                            name: 'workspaces',
+                                            fieldLabel: 'Espaces de travail',
+                                            multiSelect: true
                                         },
                                         {
                                             xtype: 'checkboxfield',

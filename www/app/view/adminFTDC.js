@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     alias: 'widget.adminFTDC',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Ext.ux.TreePicker'
     ],
 
@@ -523,9 +524,21 @@ Ext.define('Rubedo.view.adminFTDC', {
                             ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'form',
+                            id: 'TDCEditForm',
+                            bodyPadding: 10,
                             iconCls: 'user',
-                            title: 'Droits'
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%',
+                                    name: 'workspaces',
+                                    fieldLabel: 'Espaces de travail',
+                                    labelWidth: 120,
+                                    multiSelect: true
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',

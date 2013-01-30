@@ -184,6 +184,19 @@
                 "type": "date"
             },
             "designerId": "65c9ea64-97e4-41f1-bda4-f84c50cfccac"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field280",
+                "name": "workspaces"
+            },
+            "designerId": "e563e840-0177-4786-98e5-24ebd95917d6"
         }
     ]
 }

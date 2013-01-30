@@ -170,6 +170,19 @@
                 "name": "createUser"
             },
             "designerId": "1e6bebf9-00de-4e47-9421-904f78e0f57d"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field281",
+                "name": "workspaces"
+            },
+            "designerId": "213e03f0-dc54-4970-a4b7-ddc3cbdd6fd9"
         }
     ]
 }

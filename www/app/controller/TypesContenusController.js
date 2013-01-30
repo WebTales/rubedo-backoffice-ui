@@ -456,6 +456,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("TCfieldUp").disable();
         Ext.getCmp("TCfieldDown").disable();
         Ext.getCmp("TCfieldDeleter").disable();
+        Ext.getCmp("TDCEditForm").getForm().setValues(record.getData());
         var filArianne = Ext.getCmp("adminFTDC").getDockedComponent('filArianne');
         var monIco = 'content-icon';
         var monImg = 'resources/icones/48x48/page_full.png';
@@ -618,6 +619,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('champsEditionTC').removeAll();
                 Ext.getCmp('boiteConfigChampsTC').removeAll();
                 Ext.getCmp('tabPanTC').disable();
+                Ext.getCmp("TDCEditForm").getForm().reset();
                 Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
 
             });  
@@ -655,6 +657,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             }
             var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
             target.beginEdit();
+            target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
             target.set("champs", champsR);
             var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
             target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));

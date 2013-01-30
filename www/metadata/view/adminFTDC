@@ -1235,14 +1235,16 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel5",
+                        "designer|userClassName": "MyForm46",
+                        "id": "TDCEditForm",
+                        "bodyPadding": 10,
                         "iconCls": "user",
                         "title": "Droits"
                     },
@@ -1259,6 +1261,23 @@
                                 "designer|userClassName": "TabConfig2"
                             },
                             "designerId": "5d5cba21-5420-46a7-8f88-88d68b334bdd"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "name": "workspaces",
+                                "fieldLabel": "Espaces de travail",
+                                "labelWidth": 120,
+                                "multiSelect": true
+                            },
+                            "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
                 },

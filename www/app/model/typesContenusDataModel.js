@@ -65,6 +65,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             name: 'lastUpdateTime',
             dateFormat: 'timestamp',
             type: 'date'
+        },
+        {
+            name: 'workspaces'
         }
     ]
 });

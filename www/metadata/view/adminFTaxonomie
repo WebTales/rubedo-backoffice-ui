@@ -540,6 +540,22 @@
                                     "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f"
                                 },
                                 {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "name": "workspaces",
+                                        "fieldLabel": "Espaces de travail",
+                                        "multiSelect": true
+                                    },
+                                    "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
+                                    "masterInstanceId": "ExtBox1-ext-gen46360"
+                                },
+                                {
                                     "type": "checkboxfield",
                                     "reference": {
                                         "name": "items",
