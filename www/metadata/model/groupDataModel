@@ -121,6 +121,58 @@
                 "name": "roles"
             },
             "designerId": "37140909-f954-4c49-8bdc-23a92a8719c8"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field282",
+                "name": "readWorkspaces"
+            },
+            "designerId": "6ca811ab-cd4c-4539-aaea-7b1ba1297cc5"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field283",
+                "name": "writeWorkspaces"
+            },
+            "designerId": "4950293a-04fc-4a74-8ffc-797e577bdb40"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field284",
+                "name": "canDeleteElements"
+            },
+            "designerId": "3091cacb-fa39-46fc-82ef-df3450ca9d27"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field285",
+                "name": "canWriteUnownedElements"
+            },
+            "designerId": "b5cb9cc6-2a2c-4815-b1f0-eac5ab266c59"
         }
     ]
 }

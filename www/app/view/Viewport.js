@@ -39,7 +39,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.ViewportPrimaire',
         'Rubedo.view.accessibilityPicker',
         'Rubedo.view.adminFTaxonomie',
-        'Rubedo.view.adminFUtilisateurs',
         'Rubedo.view.ajoutBlocFenetre',
         'Rubedo.view.ajoutChampTCFenetre',
         'Rubedo.view.MTFieldAddWindow',
@@ -97,6 +96,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.DAMChooseMTWindow',
         'Rubedo.view.selectorTreeForField',
         'Rubedo.view.WorkspacesInterface',
-        'Rubedo.view.newWorkspaceWindow'
+        'Rubedo.view.newWorkspaceWindow',
+        'Rubedo.view.adminFUtilisateurs'
     ]
 });

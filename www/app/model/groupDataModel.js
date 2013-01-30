@@ -44,6 +44,18 @@ Ext.define('Rubedo.model.groupDataModel', {
         },
         {
             name: 'roles'
+        },
+        {
+            name: 'readWorkspaces'
+        },
+        {
+            name: 'writeWorkspaces'
+        },
+        {
+            name: 'canDeleteElements'
+        },
+        {
+            name: 'canWriteUnownedElements'
         }
     ]
 });

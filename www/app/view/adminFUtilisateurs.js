@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
     extend: 'Ext.window.Window',
     alias: 'widget.adminFUtilisateurs',
 
+    requires: [
+        'Rubedo.view.WorkspaceCombo'
+    ],
+
     height: 578,
     id: 'adminFUtilisateurs',
     width: 1000,
@@ -342,7 +346,42 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     anchor: '100%',
                                     name: 'name',
                                     fieldLabel: 'Nom ',
+                                    labelWidth: 220,
                                     allowBlank: false
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%',
+                                    name: 'readWorkspaces',
+                                    fieldLabel: 'Espaces de travail en lecture seule',
+                                    labelWidth: 220,
+                                    multiSelect: true
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%',
+                                    name: 'writeWorkspaces',
+                                    fieldLabel: 'Espaces de travail en contribution',
+                                    labelWidth: 220,
+                                    multiSelect: true
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'canDeleteElements',
+                                    fieldLabel: 'Peut supprimer des éléments',
+                                    labelWidth: 220,
+                                    boxLabel: '',
+                                    inputValue: 'true'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'canWriteUnownedElements',
+                                    fieldLabel: 'Peut modifier les éléments des autres utilisateurs',
+                                    labelWidth: 220,
+                                    boxLabel: '',
+                                    inputValue: 'true'
                                 }
                             ]
                         }
@@ -402,6 +441,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             anchor:"100%",
             name:"roles",
             fieldLabel:"Roles",
+            labelWidth:220,
             queryMode:"local",
             multiSelect:true,
             valueField:"id",

@@ -875,9 +875,80 @@
                                 "designer|userClassName": "MyTextField74",
                                 "name": "name",
                                 "fieldLabel": "Nom ",
+                                "labelWidth": 220,
                                 "allowBlank": false
                             },
                             "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "name": "readWorkspaces",
+                                "fieldLabel": "Espaces de travail en lecture seule",
+                                "labelWidth": 220,
+                                "multiSelect": true
+                            },
+                            "designerId": "d010bcf1-789c-4c4b-82a3-f1831b805cbd",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "name": "writeWorkspaces",
+                                "fieldLabel": "Espaces de travail en contribution",
+                                "labelWidth": 220,
+                                "multiSelect": true
+                            },
+                            "designerId": "1d6b29de-19ea-4d17-aea2-95e87dabc7b8",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox9",
+                                "name": "canDeleteElements",
+                                "fieldLabel": "Peut supprimer des éléments",
+                                "labelWidth": 220,
+                                "boxLabel": "",
+                                "inputValue": "true"
+                            },
+                            "designerId": "073affe6-1517-4124-80bf-92aed84d5dce"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox10",
+                                "name": "canWriteUnownedElements",
+                                "fieldLabel": "Peut modifier les éléments des autres utilisateurs",
+                                "labelWidth": 220,
+                                "boxLabel": "",
+                                "inputValue": "true"
+                            },
+                            "designerId": "d071cbf4-8fb1-4f20-b598-8bdcb6c4ac50"
                         }
                     ]
                 }
@@ -935,6 +1006,7 @@
                     "    anchor:\"100%\",\r",
                     "    name:\"roles\",\r",
                     "    fieldLabel:\"Roles\",\r",
+                    "    labelWidth:220,\r",
                     "    queryMode:\"local\",\r",
                     "    multiSelect:true,\r",
                     "    valueField:\"id\",\r",
