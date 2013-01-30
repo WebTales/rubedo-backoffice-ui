@@ -48,13 +48,7 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
                             anchor: '100%',
                             id: 'newWorkspaceSublitBtn',
                             scale: 'medium',
-                            text: 'Créer un nouveau workspace',
-                            listeners: {
-                                click: {
-                                    fn: me.onNewWorkspaceSublitBtnClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Créer un nouveau workspace'
                         }
                     ]
                 }
@@ -62,15 +56,6 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
         });
 
         me.callParent(arguments);
-    },
-
-    onNewWorkspaceSublitBtnClick: function(button, e, options) {
-        var form = button.up().getForm();
-        if (form.isValid()){
-            var newW= Ext.create("Rubedo.model.workspaceModel", form.getValues());
-            Ext.getStore("WorkspacesStore").add(newW);
-            button.up().up().close();
-        }
     }
 
 });

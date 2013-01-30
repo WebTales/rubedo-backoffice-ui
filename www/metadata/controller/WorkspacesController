@@ -110,6 +110,32 @@
                 "designer|controlQuery": "#workspacesGrid"
             },
             "designerId": "30ef5bb1-16cc-4100-821b-c1a78964415e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewWorkspaceSublitBtnClick",
+                "fn": "onNewWorkspaceSublitBtnClick",
+                "implHandler": [
+                    "var form = button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var newW= Ext.create(\"Rubedo.model.workspaceModel\", form.getValues());\r",
+                    "    Ext.getStore(\"WorkspacesStore\").add(newW);\r",
+                    "    Ext.getStore(\"WorkspacesStore\").addListener(\"datachanged\",function(){Ext.getCmp('workspacesGrid').getSelectionModel().select(newW);},this,{single:true});\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newWorkspaceSublitBtn"
+            },
+            "designerId": "3a46c189-59b0-4f0c-b51c-7aa840cea301"
         }
     ]
 }

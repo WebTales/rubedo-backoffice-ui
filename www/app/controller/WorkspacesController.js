@@ -52,6 +52,16 @@ Ext.define('Rubedo.controller.WorkspacesController', {
         }
     },
 
+    onNewWorkspaceSublitBtnClick: function(button, e, options) {
+        var form = button.up().getForm();
+        if (form.isValid()){
+            var newW= Ext.create("Rubedo.model.workspaceModel", form.getValues());
+            Ext.getStore("WorkspacesStore").add(newW);
+            Ext.getStore("WorkspacesStore").addListener("datachanged",function(){Ext.getCmp('workspacesGrid').getSelectionModel().select(newW);},this,{single:true});
+            button.up().up().close();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#workspaceAdd": {
@@ -65,6 +75,9 @@ Ext.define('Rubedo.controller.WorkspacesController', {
             },
             "#workspacesGrid": {
                 selectionchange: this.onWorkspacesGridSelectionChange
+            },
+            "#newWorkspaceSublitBtn": {
+                click: this.onNewWorkspaceSublitBtnClick
             }
         });
     }

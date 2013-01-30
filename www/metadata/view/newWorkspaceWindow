@@ -65,32 +65,7 @@
                         "scale": "medium",
                         "text": "Créer un nouveau workspace"
                     },
-                    "designerId": "4627d258-9390-455f-942a-97d5ba812d44",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onNewWorkspaceSublitBtnClick",
-                                "fn": "onNewWorkspaceSublitBtnClick",
-                                "implHandler": [
-                                    "var form = button.up().getForm();\r",
-                                    "if (form.isValid()){\r",
-                                    "    var newW= Ext.create(\"Rubedo.model.workspaceModel\", form.getValues());\r",
-                                    "    Ext.getStore(\"WorkspacesStore\").add(newW);\r",
-                                    "    button.up().up().close();\r",
-                                    "}"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "c9c46ea4-a820-457e-911d-76786aba8687"
-                        }
-                    ]
+                    "designerId": "4627d258-9390-455f-942a-97d5ba812d44"
                 }
             ]
         }
