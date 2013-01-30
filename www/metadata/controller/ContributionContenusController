@@ -1179,7 +1179,7 @@
                     "});\r",
                     "\r",
                     "Ext.getCmp(\"boiteATaxoContenus\").getForm().setValues(cible.get(\"taxonomie\"));\r",
-                    "Ext.getCmp(\"boiteADroitsContenus\").getForm().setValues(cible.get(\"taxonomie\"));\r",
+                    "Ext.getCmp(\"boiteADroitsContenus\").getForm().setValues(cible.getData());\r",
                     "Ext.getCmp(\"contentMetadataBox\").getForm().loadRecord(cible);\r",
                     "Ext.getCmp(\"boutonEnregistrerNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp(\"boutonPublierNouveauContenu\").isUpdate=true;\r",

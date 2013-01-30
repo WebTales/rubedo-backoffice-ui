@@ -756,7 +756,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         });
 
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
-        Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.get("taxonomie"));
+        Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
         Ext.getCmp("contentMetadataBox").getForm().loadRecord(cible);
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;

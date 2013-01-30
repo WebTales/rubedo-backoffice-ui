@@ -195,11 +195,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    name: 'writeWorkspace',
+                                    submitValue: true,
                                     anchor: '90%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'target',
+                                    submitValue: true,
                                     fieldLabel: 'Cible',
                                     multiSelect: true,
                                     anchor: '90%'

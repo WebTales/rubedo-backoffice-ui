@@ -148,8 +148,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
-                                    anchor: '90%',
-                                    name: 'writeWorkspace'
+                                    anchor: '90%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
