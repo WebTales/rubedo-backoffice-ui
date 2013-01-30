@@ -10,5 +10,106 @@
         "designer|userAlias": "WorkspacesController"
     },
     "id": "ExtBox1-ext-gen22833",
-    "designerId": "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8"
+    "designerId": "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspaceAddClick",
+                "fn": "onWorkspaceAddClick",
+                "implHandler": [
+                    "Ext.widget(\"newWorkspaceWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#workspaceAdd"
+            },
+            "designerId": "08d34480-30e1-4e6b-a848-33483095a80a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspaceRemoveClick",
+                "fn": "onWorkspaceRemoveClick",
+                "implHandler": [
+                    "var delCon = Ext.widget('delConfirmZ');\r",
+                    "delCon.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getStore(\"WorkspacesStore\").remove(Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "});  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#workspaceRemove"
+            },
+            "designerId": "76cc5c66-2596-4416-8046-d8077e524ed2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspaceSaveClick",
+                "fn": "onWorkspaceSaveClick",
+                "implHandler": [
+                    "var target = Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected();\r",
+                    "var form = Ext.getCmp(\"workspacesMainForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    target.set(form.getValues());\r",
+                    "}  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#workspaceSave"
+            },
+            "designerId": "85b3b151-c4d1-419d-b4bc-e494b4d50bff"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspacesGridSelectionChange",
+                "fn": "onWorkspacesGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    Ext.getCmp(\"workspaceRemove\").disable();\r",
+                    "    Ext.getCmp(\"workspaceSave\").disable();\r",
+                    "    Ext.getCmp(\"workspacesMainForm\").getForm().reset();\r",
+                    "    Ext.getCmp(\"workspacesMainForm\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"workspaceRemove\").enable();\r",
+                    "    Ext.getCmp(\"workspaceSave\").enable();\r",
+                    "    Ext.getCmp(\"workspacesMainForm\").enable();\r",
+                    "    Ext.getCmp(\"workspacesMainForm\").getForm().setValues(selections[0].getData());\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#workspacesGrid"
+            },
+            "designerId": "30ef5bb1-16cc-4100-821b-c1a78964415e"
+        }
+    ]
 }

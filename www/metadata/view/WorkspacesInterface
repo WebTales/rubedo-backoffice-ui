@@ -48,27 +48,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onWorkspaceAddClick",
-                                "fn": "onWorkspaceAddClick",
-                                "implHandler": [
-                                    "Ext.widget(\"newWorkspaceWindow\").show();"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "71f484f4-0d9f-47d8-9838-f6f19a95e15b"
-                        }
-                    ]
+                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc"
                 },
                 {
                     "type": "button",
@@ -87,32 +67,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onWorkspaceRemoveClick",
-                                "fn": "onWorkspaceRemoveClick",
-                                "implHandler": [
-                                    "var delCon = Ext.widget('delConfirmZ');\r",
-                                    "delCon.show();\r",
-                                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                                    "    Ext.getStore(\"WorkspacesStore\").remove(Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected());\r",
-                                    "    Ext.getCmp('delConfirmZ').close();\r",
-                                    "});  "
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "532f4473-5134-4a64-b0a7-ad1f8e19fbcb"
-                        }
-                    ]
+                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33"
                 },
                 {
                     "type": "button",
@@ -131,31 +86,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
-                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onWorkspaceSaveClick",
-                                "fn": "onWorkspaceSaveClick",
-                                "implHandler": [
-                                    "var target = Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected();\r",
-                                    "var form = Ext.getCmp(\"workspacesMainForm\").getForm();\r",
-                                    "if (form.isValid()){\r",
-                                    "    target.set(form.getValues());\r",
-                                    "}  "
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "435cf149-3c7b-423a-8eb2-0e0969166c6c"
-                        }
-                    ]
+                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a"
                 },
                 {
                     "type": "tbfill",
@@ -230,30 +161,6 @@
                         "text": "Nom"
                     },
                     "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383"
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onWorkspacesGridSelectionChange",
-                        "fn": "onWorkspacesGridSelectionChange",
-                        "implHandler": [
-                            "if (Ext.isEmpty(selections)){\r",
-                            "    Ext.getCmp(\"workspaceRemove\").disable();\r",
-                            "    Ext.getCmp(\"workspaceSave\").disable();\r",
-                            "} else {\r",
-                            "    Ext.getCmp(\"workspaceRemove\").enable();\r",
-                            "    Ext.getCmp(\"workspaceSave\").enable();\r",
-                            "}"
-                        ],
-                        "name": "selectionchange",
-                        "scope": "me"
-                    },
-                    "designerId": "a0c70006-8b84-4cf5-8c9f-b7705c97b1e7"
                 }
             ]
         },
@@ -267,6 +174,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "designer|userClassName": "MyForm43",
+                "disabled": true,
                 "id": "workspacesMainForm",
                 "bodyPadding": 10,
                 "title": "Propriétés"

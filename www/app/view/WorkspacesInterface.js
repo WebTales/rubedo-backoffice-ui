@@ -47,13 +47,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
-                            text: 'Ajouter',
-                            listeners: {
-                                click: {
-                                    fn: me.onWorkspaceAddClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
@@ -62,13 +56,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                             iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
-                            text: 'Supprimer',
-                            listeners: {
-                                click: {
-                                    fn: me.onWorkspaceRemoveClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Supprimer'
                         },
                         {
                             xtype: 'button',
@@ -77,13 +65,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                             iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
-                            text: 'Enregistrer',
-                            listeners: {
-                                click: {
-                                    fn: me.onWorkspaceSaveClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Enregistrer'
                         },
                         {
                             xtype: 'tbfill'
@@ -114,17 +96,12 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                             dataIndex: 'text',
                             text: 'Nom'
                         }
-                    ],
-                    listeners: {
-                        selectionchange: {
-                            fn: me.onWorkspacesGridSelectionChange,
-                            scope: me
-                        }
-                    }
+                    ]
                 },
                 {
                     xtype: 'form',
                     flex: 1,
+                    disabled: true,
                     id: 'workspacesMainForm',
                     bodyPadding: 10,
                     title: 'Propriétés',
@@ -160,37 +137,6 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
         });
 
         me.callParent(arguments);
-    },
-
-    onWorkspaceAddClick: function(button, e, options) {
-        Ext.widget("newWorkspaceWindow").show();
-    },
-
-    onWorkspaceRemoveClick: function(button, e, options) {
-        var delCon = Ext.widget('delConfirmZ');
-        delCon.show();
-        Ext.getCmp('delConfirmZOui').on('click', function() { 
-            Ext.getStore("WorkspacesStore").remove(Ext.getCmp("workspacesGrid").getSelectionModel().getLastSelected());
-            Ext.getCmp('delConfirmZ').close();
-        });  
-    },
-
-    onWorkspaceSaveClick: function(button, e, options) {
-        var target = Ext.getCmp("workspacesGrid").getSelectionModel().getLastSelected();
-        var form = Ext.getCmp("workspacesMainForm").getForm();
-        if (form.isValid()){
-            target.set(form.getValues());
-        }  
-    },
-
-    onWorkspacesGridSelectionChange: function(tablepanel, selections, options) {
-        if (Ext.isEmpty(selections)){
-            Ext.getCmp("workspaceRemove").disable();
-            Ext.getCmp("workspaceSave").disable();
-        } else {
-            Ext.getCmp("workspaceRemove").enable();
-            Ext.getCmp("workspaceSave").enable();
-        }
     },
 
     onWorkspacesInterfaceRender: function(abstractcomponent, options) {

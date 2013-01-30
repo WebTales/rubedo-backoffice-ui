@@ -15,5 +15,58 @@
 
 Ext.define('Rubedo.controller.WorkspacesController', {
     extend: 'Ext.app.Controller',
-    alias: 'controller.WorkspacesController'
+    alias: 'controller.WorkspacesController',
+
+    onWorkspaceAddClick: function(button, e, options) {
+        Ext.widget("newWorkspaceWindow").show();
+    },
+
+    onWorkspaceRemoveClick: function(button, e, options) {
+        var delCon = Ext.widget('delConfirmZ');
+        delCon.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            Ext.getStore("WorkspacesStore").remove(Ext.getCmp("workspacesGrid").getSelectionModel().getLastSelected());
+            Ext.getCmp('delConfirmZ').close();
+        });  
+    },
+
+    onWorkspaceSaveClick: function(button, e, options) {
+        var target = Ext.getCmp("workspacesGrid").getSelectionModel().getLastSelected();
+        var form = Ext.getCmp("workspacesMainForm").getForm();
+        if (form.isValid()){
+            target.set(form.getValues());
+        }  
+    },
+
+    onWorkspacesGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("workspaceRemove").disable();
+            Ext.getCmp("workspaceSave").disable();
+            Ext.getCmp("workspacesMainForm").getForm().reset();
+            Ext.getCmp("workspacesMainForm").disable();
+        } else {
+            Ext.getCmp("workspaceRemove").enable();
+            Ext.getCmp("workspaceSave").enable();
+            Ext.getCmp("workspacesMainForm").enable();
+            Ext.getCmp("workspacesMainForm").getForm().setValues(selections[0].getData());
+        }
+    },
+
+    init: function(application) {
+        this.control({
+            "#workspaceAdd": {
+                click: this.onWorkspaceAddClick
+            },
+            "#workspaceRemove": {
+                click: this.onWorkspaceRemoveClick
+            },
+            "#workspaceSave": {
+                click: this.onWorkspaceSaveClick
+            },
+            "#workspacesGrid": {
+                selectionchange: this.onWorkspacesGridSelectionChange
+            }
+        });
+    }
+
 });
