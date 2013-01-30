@@ -46,7 +46,8 @@ Ext.application({
         'queryDataModel',
         'DAMModel',
         'contentsSearchModel',
-        'DAMSearchModel'
+        'DAMSearchModel',
+        'workspaceModel'
     ],
     stores: [
         'SitesJson',
@@ -119,7 +120,8 @@ Ext.application({
         'TaxonomyForDam2',
         'ContentMQueryStore',
         'ContentSelectorStore2',
-        'DAMFacetteStore'
+        'DAMFacetteStore',
+        'WorkspacesStore'
     ],
     views: [
         'MyContainer',
@@ -197,7 +199,10 @@ Ext.application({
         'queryManagerInterface',
         'queryTypeChooseWindow',
         'manualQueryInterface',
-        'DAMChooseMTWindow'
+        'DAMChooseMTWindow',
+        'selectorTreeForField',
+        'WorkspacesInterface',
+        'newWorkspaceWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -217,6 +222,7 @@ Ext.application({
         'SitesController',
         'PagesController',
         'MediaTypesController',
-        'DAMController'
+        'DAMController',
+        'WorkspacesController'
     ]
 });

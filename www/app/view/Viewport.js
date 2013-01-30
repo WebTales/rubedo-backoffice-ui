@@ -94,6 +94,9 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.queryManagerInterface',
         'Rubedo.view.queryTypeChooseWindow',
         'Rubedo.view.manualQueryInterface',
-        'Rubedo.view.DAMChooseMTWindow'
+        'Rubedo.view.DAMChooseMTWindow',
+        'Rubedo.view.selectorTreeForField',
+        'Rubedo.view.WorkspacesInterface',
+        'Rubedo.view.newWorkspaceWindow'
     ]
 });

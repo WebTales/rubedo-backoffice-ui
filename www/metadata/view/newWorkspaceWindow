@@ -1,0 +1,98 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "newWorkspaceWindow",
+        "designer|userAlias": "newWorkspaceWindow",
+        "height": 112,
+        "width": 400,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Nouveau workspace",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen32472",
+    "designerId": "3104ec03-3fa9-4813-a58d-51278a48751f",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm44",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "98a1eccf-1a26-4eba-9b07-5c32d5aedc8e",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField75",
+                        "name": "text",
+                        "fieldLabel": "Nom",
+                        "allowBlank": false
+                    },
+                    "designerId": "44dee598-9fa0-4cda-8298-9d0f922e598a"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton244",
+                        "id": "newWorkspaceSublitBtn",
+                        "scale": "medium",
+                        "text": "Créer un nouveau workspace"
+                    },
+                    "designerId": "4627d258-9390-455f-942a-97d5ba812d44",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onNewWorkspaceSublitBtnClick",
+                                "fn": "onNewWorkspaceSublitBtnClick",
+                                "implHandler": [
+                                    "var form = button.up().getForm();\r",
+                                    "if (form.isValid()){\r",
+                                    "    var newW= Ext.create(\"Rubedo.model.workspaceModel\", form.getValues());\r",
+                                    "    Ext.getStore(\"WorkspacesStore\").add(newW);\r",
+                                    "    button.up().up().close();\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "c9c46ea4-a820-457e-911d-76786aba8687"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,357 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "WorkspacesInterface",
+        "designer|userAlias": "WorkspacesInterface",
+        "height": 456,
+        "id": "WorkspacesInterface",
+        "width": 723,
+        "layout": "hbox",
+        "iconCls": "user",
+        "title": "Workspaces"
+    },
+    "id": "ExtBox1-ext-gen15010",
+    "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar62"
+            },
+            "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton240",
+                        "id": "workspaceAdd",
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onWorkspaceAddClick",
+                                "fn": "onWorkspaceAddClick",
+                                "implHandler": [
+                                    "Ext.widget(\"newWorkspaceWindow\").show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "71f484f4-0d9f-47d8-9838-f6f19a95e15b"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton240",
+                        "disabled": true,
+                        "id": "workspaceRemove",
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "Supprimer"
+                    },
+                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onWorkspaceRemoveClick",
+                                "fn": "onWorkspaceRemoveClick",
+                                "implHandler": [
+                                    "var delCon = Ext.widget('delConfirmZ');\r",
+                                    "delCon.show();\r",
+                                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                                    "    Ext.getStore(\"WorkspacesStore\").remove(Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected());\r",
+                                    "    Ext.getCmp('delConfirmZ').close();\r",
+                                    "});  "
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "532f4473-5134-4a64-b0a7-ad1f8e19fbcb"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton240",
+                        "disabled": true,
+                        "id": "workspaceSave",
+                        "iconAlign": "top",
+                        "iconCls": "floppy_disc_big",
+                        "scale": "large",
+                        "text": "Enregistrer"
+                    },
+                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onWorkspaceSaveClick",
+                                "fn": "onWorkspaceSaveClick",
+                                "implHandler": [
+                                    "var target = Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected();\r",
+                                    "var form = Ext.getCmp(\"workspacesMainForm\").getForm();\r",
+                                    "if (form.isValid()){\r",
+                                    "    target.set(form.getValues());\r",
+                                    "}  "
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "435cf149-3c7b-423a-8eb2-0e0969166c6c"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill27"
+                    },
+                    "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton243",
+                        "iconCls": "info_big",
+                        "scale": "large",
+                        "text": ""
+                    },
+                    "designerId": "bbc542ed-95ba-4521-b837-212a373b42a3"
+                }
+            ]
+        },
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel32",
+                "id": "workspacesGrid",
+                "width": 200,
+                "title": "",
+                "forceFit": true,
+                "store": "WorkspacesStore"
+            },
+            "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView31"
+                    },
+                    "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn70",
+                        "dataIndex": "text",
+                        "text": "Nom"
+                    },
+                    "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onWorkspacesGridSelectionChange",
+                        "fn": "onWorkspacesGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selections)){\r",
+                            "    Ext.getCmp(\"workspaceRemove\").disable();\r",
+                            "    Ext.getCmp(\"workspaceSave\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"workspaceRemove\").enable();\r",
+                            "    Ext.getCmp(\"workspaceSave\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "a0c70006-8b84-4cf5-8c9f-b7705c97b1e7"
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyForm43",
+                "id": "workspacesMainForm",
+                "bodyPadding": 10,
+                "title": "Propriétés"
+            },
+            "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField74",
+                        "name": "text",
+                        "fieldLabel": "Nom",
+                        "allowBlank": false
+                    },
+                    "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspacesInterfaceRender",
+                "fn": "onWorkspacesInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"WorkspacesStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "12eab1d4-0d8d-407b-815a-aff4f1b0b51d"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWorkspacesInterfaceBeforeClose",
+                "fn": "onWorkspacesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"WorkspacesStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "1f152444-d439-4016-b605-5b5cf95540ba"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "df2ae591-c05d-4f92-b303-08ddd9f66eb9",
+            "masterInstanceId": "ExtBox1-ext-gen2735"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "565358fc-8689-4644-95d4-fc800b4d4cd2",
+            "masterInstanceId": "ExtBox1-ext-gen2736"
+        }
+    ]
+}

@@ -47,13 +47,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
-                            text: 'Ajouter',
-                            listeners: {
-                                click: {
-                                    fn: me.onQueryMainAddBtnClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
@@ -137,10 +131,6 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         });
 
         me.callParent(arguments);
-    },
-
-    onQueryMainAddBtnClick: function(button, e, options) {
-        Ext.widget("assistantRequetage",{adminMode:true}).show();
     },
 
     onQueryManagerInterfaceRender: function(abstractcomponent, options) {

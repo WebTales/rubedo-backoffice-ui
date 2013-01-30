@@ -468,6 +468,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     },
 
+    onQueryMainAddBtnClick: function(button, e, options) {
+        Ext.widget("assistantRequetage",{adminMode:true}).show();
+    },
+
     readQuery: function() {
         var mainWin= Ext.getCmp("assistantRequetage");
         var result = {};
@@ -555,6 +559,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             },
             "#queryMainRemoveBtn": {
                 click: this.onQueryMainRemoveBtnClick
+            },
+            "#queryMainAddBtn": {
+                click: this.onQueryMainAddBtnClick
             }
         });
     }

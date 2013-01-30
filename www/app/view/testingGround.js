@@ -32,7 +32,8 @@ Ext.define('Rubedo.view.testingGround', {
             items: [
                 {
                     xtype: 'form',
-                    bodyPadding: 10,
+                    overflowY: 'scroll',
+                    bodyPadding: 20,
                     title: 'My Form',
                     items: [
                         {
@@ -44,7 +45,12 @@ Ext.define('Rubedo.view.testingGround', {
                                     frame: true,
                                     height: 200,
                                     itemId: 'advanceTreeFieldMain',
-                                    collapsed: true,
+                                    padding: 0,
+                                    overflowY: 'auto',
+                                    layout: {
+                                        type: 'fit'
+                                    },
+                                    collapsed: false,
                                     collapsible: true,
                                     title: 'Open to  edit',
                                     listeners: {
@@ -55,6 +61,11 @@ Ext.define('Rubedo.view.testingGround', {
                                     }
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'textareafield',
+                            anchor: '100%',
+                            fieldLabel: 'Label'
                         }
                     ]
                 }
@@ -65,17 +76,16 @@ Ext.define('Rubedo.view.testingGround', {
     },
 
     onAdvanceTreeFieldMainRender: function(abstractcomponent, options) {
-        var myStore = Ext.create("Ext.data.Store",{
+        var myStore = Ext.create("Ext.data.TreeStore",{
             isOptimised: true,
             usedCollection: 'Pages',
             autoLoad: false,
             autoSync: false,
-            id:"zeTest",
             model: 'Rubedo.model.taxonomyTermModel',
             proxy: {
                 type: 'ajax',
                 api: {                    
-                    read: 'pages/taxonomy-terms/navigation-tree'
+                    read: 'taxonomy-terms/navigation-tree'
                 },
                 reader: {
                     type: 'json',
@@ -110,6 +120,8 @@ Ext.define('Rubedo.view.testingGround', {
                 property: 'orderValue'
             }
         });
+        abstractcomponent.add(Ext.widget("selectorTreeForField", {store:myStore, id:"zeTest"}));
+        myStore.load();
     }
 
 });

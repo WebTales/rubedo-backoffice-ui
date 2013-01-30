@@ -675,13 +675,13 @@
                 "fn": "onQueryMainRemoveBtnClick",
                 "implHandler": [
                     "\r",
-                    "    var delCon = Ext.widget('delConfirmZ');\r",
-                    "    delCon.show();\r",
-                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                    "        Ext.getStore(\"MainQueriesStore\").remove(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected());\r",
-                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "var delCon = Ext.widget('delConfirmZ');\r",
+                    "delCon.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getStore(\"MainQueriesStore\").remove(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
                     "\r",
-                    "    });  \r",
+                    "});  \r",
                     "\r",
                     ""
                 ],
@@ -691,6 +691,26 @@
                 "designer|controlQuery": "#queryMainRemoveBtn"
             },
             "designerId": "07af0387-d3c5-4652-9b8e-bcb0eea3c16e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onQueryMainAddBtnClick",
+                "fn": "onQueryMainAddBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"assistantRequetage\",{adminMode:true}).show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#queryMainAddBtn"
+            },
+            "designerId": "4cf919e2-c969-4bb3-b6e3-ff5beb12d841"
         }
     ]
 }

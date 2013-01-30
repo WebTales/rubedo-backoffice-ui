@@ -49,27 +49,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "aaa77d83-edbc-43ca-80de-b5472fb03688",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onQueryMainAddBtnClick",
-                                "fn": "onQueryMainAddBtnClick",
-                                "implHandler": [
-                                    "Ext.widget(\"assistantRequetage\",{adminMode:true}).show();"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "86817fd8-109c-4485-beeb-95091e4a0b9f"
-                        }
-                    ]
+                    "designerId": "aaa77d83-edbc-43ca-80de-b5472fb03688"
                 },
                 {
                     "type": "button",

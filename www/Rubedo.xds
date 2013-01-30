@@ -1852,6 +1852,54 @@
                 "app/view/DAMChooseMTWindow.js"
             ],
             "className": "DAMChooseMTWindow"
+        },
+        "94888e53-9ec4-4b43-8669-5443a9700c76": {
+            "paths": [
+                "metadata/view/selectorTreeForField",
+                "app/view/override/selectorTreeForField.js",
+                "app/view/selectorTreeForField.js"
+            ],
+            "className": "selectorTreeForField"
+        },
+        "b94e7429-c79c-43f2-ba86-73666c6e59e3": {
+            "paths": [
+                "metadata/store/WorkspacesStore",
+                "app/store/override/WorkspacesStore.js",
+                "app/store/WorkspacesStore.js"
+            ],
+            "className": "WorkspacesStore"
+        },
+        "1076511d-1d83-4ae9-8589-8911720c4b83": {
+            "paths": [
+                "metadata/model/workspaceModel",
+                "app/model/override/workspaceModel.js",
+                "app/model/workspaceModel.js"
+            ],
+            "className": "workspaceModel"
+        },
+        "a00b8e6b-7b4d-49e9-b016-908679cc1295": {
+            "paths": [
+                "metadata/view/WorkspacesInterface",
+                "app/view/override/WorkspacesInterface.js",
+                "app/view/WorkspacesInterface.js"
+            ],
+            "className": "WorkspacesInterface"
+        },
+        "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8": {
+            "paths": [
+                "metadata/controller/WorkspacesController",
+                "app/controller/override/WorkspacesController.js",
+                "app/controller/WorkspacesController.js"
+            ],
+            "className": "WorkspacesController"
+        },
+        "3104ec03-3fa9-4813-a58d-51278a48751f": {
+            "paths": [
+                "metadata/view/newWorkspaceWindow",
+                "app/view/override/newWorkspaceWindow.js",
+                "app/view/newWorkspaceWindow.js"
+            ],
+            "className": "newWorkspaceWindow"
         }
     },
     "viewOrderMap": {
@@ -1950,7 +1998,10 @@
             "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
             "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
             "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
-            "061bd6bb-80de-48a4-af26-f6193448d7a1"
+            "061bd6bb-80de-48a4-af26-f6193448d7a1",
+            "94888e53-9ec4-4b43-8669-5443a9700c76",
+            "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+            "3104ec03-3fa9-4813-a58d-51278a48751f"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2025,7 +2076,8 @@
             "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",
             "0c43a14d-fe2c-4ee6-bacc-77b5abe63611",
             "b1e3cc2f-a43b-450e-8914-242d618f8402",
-            "0cb74fd7-8088-4c85-a691-7bc264873bce"
+            "0cb74fd7-8088-4c85-a691-7bc264873bce",
+            "b94e7429-c79c-43f2-ba86-73666c6e59e3"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -2044,7 +2096,8 @@
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
             "2a85a03b-de9d-4abc-80a4-82114d4267cf",
-            "be2b5e1d-97ad-4d34-bac5-6baea7859c11"
+            "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
+            "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8"
         ],
         "model": [
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
@@ -2074,7 +2127,8 @@
             "5c997a93-3afc-42e9-9098-74110e9872bf",
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
             "7e296689-62ae-4f0e-b262-80ab5d8aa99f",
-            "98410e9a-0d71-4266-9879-fb34f77e26e0"
+            "98410e9a-0d71-4266-9879-fb34f77e26e0",
+            "1076511d-1d83-4ae9-8589-8911720c4b83"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

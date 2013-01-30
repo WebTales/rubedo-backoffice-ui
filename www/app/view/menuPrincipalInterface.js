@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 420,
+    height: 440,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -164,6 +164,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             itemId: 'adminFUtilisateurs',
                             iconCls: 'user',
                             text: 'Groupes'
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'read.ui.groups',
+                            favoriteIcon: 'users.png',
+                            itemId: 'WorkspacesInterface',
+                            iconCls: 'user',
+                            text: 'Workspaces'
                         },
                         {
                             xtype: 'button',

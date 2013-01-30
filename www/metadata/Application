@@ -30,7 +30,8 @@
             "queryDataModel",
             "DAMModel",
             "contentsSearchModel",
-            "DAMSearchModel"
+            "DAMSearchModel",
+            "workspaceModel"
         ],
         "stores": [
             "SitesJson",
@@ -103,7 +104,8 @@
             "TaxonomyForDam2",
             "ContentMQueryStore",
             "ContentSelectorStore2",
-            "DAMFacetteStore"
+            "DAMFacetteStore",
+            "WorkspacesStore"
         ],
         "views": [
             "MyContainer",
@@ -181,7 +183,10 @@
             "queryManagerInterface",
             "queryTypeChooseWindow",
             "manualQueryInterface",
-            "DAMChooseMTWindow"
+            "DAMChooseMTWindow",
+            "selectorTreeForField",
+            "WorkspacesInterface",
+            "newWorkspaceWindow"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
@@ -201,7 +206,8 @@
             "SitesController",
             "PagesController",
             "MediaTypesController",
-            "DAMController"
+            "DAMController",
+            "WorkspacesController"
         ]
     },
     "id": "ExtBox1-ext-gen12690",

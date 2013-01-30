@@ -13,7 +13,7 @@
         "border": 0,
         "floating": true,
         "frame": false,
-        "height": 420,
+        "height": 440,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
@@ -483,6 +483,37 @@
                         "text": "Groupes"
                     },
                     "designerId": "8ac7f7b1-509a-4157-a960-bae0d2e7c0bb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.groups",
+                        "favoriteIcon": "users.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "WorkspacesInterface",
+                        "margin": null,
+                        "iconCls": "user",
+                        "text": "Workspaces"
+                    },
+                    "designerId": "d56fb895-2e09-481d-b9a9-a23b65e80267",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

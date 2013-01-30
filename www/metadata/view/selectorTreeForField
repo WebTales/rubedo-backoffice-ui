@@ -1,0 +1,41 @@
+{
+    "type": "treepanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "selectorTreeForField",
+        "designer|userAlias": "selectorTreeForField",
+        "title": ""
+    },
+    "id": "ExtBox1-ext-gen7290",
+    "designerId": "94888e53-9ec4-4b43-8669-5443a9700c76",
+    "cn": [
+        {
+            "type": "treeview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTreeView4"
+            },
+            "designerId": "902ab8d2-af80-426a-a0d8-b905f6f197df"
+        },
+        {
+            "type": "checkboxselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.CheckboxModel",
+            "userConfig": {
+                "designer|userClassName": "MyCheckboxSelectionModel9"
+            },
+            "designerId": "e5e366ff-9f3a-4b77-8833-e17e1d879cd6"
+        }
+    ]
+}
