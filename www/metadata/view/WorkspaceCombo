@@ -1,0 +1,21 @@
+{
+    "type": "combobox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "WorkspaceCombo",
+        "designer|userAlias": "WorkspaceCombo",
+        "name": "workspace",
+        "fieldLabel": "Espace de travail",
+        "editable": false,
+        "forceSelection": true,
+        "queryMode": "local",
+        "store": "WorkspacesComboStore",
+        "valueField": "id"
+    },
+    "id": "ExtBox1-ext-gen46360",
+    "designerId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+}

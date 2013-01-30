@@ -50,6 +50,21 @@
                 "name": "version"
             },
             "designerId": "de2a0d3c-ec0c-42f0-81ef-af0e06c9328b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field275",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "ca800a15-a346-4201-8158-3ca66d022f01"
         }
     ]
 }

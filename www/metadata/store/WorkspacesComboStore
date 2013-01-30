@@ -1,0 +1,72 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Workspaces",
+        "designer|userClassName": "WorkspacesComboStore",
+        "designer|userAlias": "WorkspacesComboStore",
+        "autoLoad": true,
+        "autoSync": false,
+        "storeId": "WorkspacesComboStore",
+        "model": "workspaceModel",
+        "data": null
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen44577",
+    "designerId": "68f8be48-2543-47f5-9bb7-0d4de8f16097",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "api": [
+                    "{\r",
+                    "    read: 'workspaces'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "647b420c-0b5e-444e-bbb3-5199c3ee501a",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "9283a151-ac72-46fa-a2e6-c5fb1856a0bf"
+                }
+            ]
+        }
+    ]
+}

@@ -105,7 +105,8 @@
             "ContentMQueryStore",
             "ContentSelectorStore2",
             "DAMFacetteStore",
-            "WorkspacesStore"
+            "WorkspacesStore",
+            "WorkspacesComboStore"
         ],
         "views": [
             "MyContainer",
@@ -186,7 +187,8 @@
             "DAMChooseMTWindow",
             "selectorTreeForField",
             "WorkspacesInterface",
-            "newWorkspaceWindow"
+            "newWorkspaceWindow",
+            "WorkspaceCombo"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",

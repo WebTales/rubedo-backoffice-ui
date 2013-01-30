@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17'
+        'Rubedo.view.MyTool17',
+        'Rubedo.view.WorkspaceCombo'
     ],
 
     favoriteIcon: 'images.png',
@@ -504,9 +505,21 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'form',
+                            id: 'mediaTypesEditForm',
+                            bodyPadding: 10,
                             iconCls: 'user',
-                            title: 'Droits'
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%',
+                                    name: 'workspaces',
+                                    fieldLabel: 'Espaces de travail',
+                                    labelWidth: 120,
+                                    multiSelect: true
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',

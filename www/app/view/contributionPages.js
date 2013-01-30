@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.contributionPages', {
     extend: 'Ext.window.Window',
     alias: 'widget.contributionPages',
 
+    requires: [
+        'Rubedo.view.WorkspaceCombo'
+    ],
+
     favoriteIcon: 'application.png',
     ACL: 'read.ui.pages',
     height: 578,
@@ -390,6 +394,18 @@ Ext.define('Rubedo.view.contributionPages', {
                                     anchor: '100%',
                                     name: 'excludeFromMenu',
                                     fieldLabel: 'Hors navigation',
+                                    boxLabel: '',
+                                    inputValue: 'true'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'inheritWorkspace',
+                                    fieldLabel: 'Hérite de l\'espace de travail',
                                     boxLabel: '',
                                     inputValue: 'true'
                                 },

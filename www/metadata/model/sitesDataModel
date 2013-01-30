@@ -355,6 +355,19 @@
                 "name": "author"
             },
             "designerId": "165eeb8e-cf36-4af7-b185-97f92475ace4"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field276",
+                "name": "workspace"
+            },
+            "designerId": "e901ed9f-5118-4c67-8bd8-b5ea1c702941"
         }
     ]
 }

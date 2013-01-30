@@ -50,6 +50,9 @@ Ext.define('Rubedo.model.mediaTypeModel', {
             name: 'lastUpdateTime',
             dateFormat: 'timestamp',
             type: 'date'
+        },
+        {
+            name: 'workspaces'
         }
     ]
 });

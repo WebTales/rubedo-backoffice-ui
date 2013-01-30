@@ -272,6 +272,32 @@
                 "type": "boolean"
             },
             "designerId": "33ca241d-8d31-4947-a5e3-7c29cccc390a"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field277",
+                "name": "workspace"
+            },
+            "designerId": "4280bb21-456f-476b-b643-03b7207cd1d2"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field278",
+                "name": "inheritWorkspace"
+            },
+            "designerId": "89ef68e0-f68f-476c-a176-f0b3bc47291c"
         }
     ]
 }

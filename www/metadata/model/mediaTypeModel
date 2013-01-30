@@ -134,6 +134,19 @@
                 "type": "date"
             },
             "designerId": "0f1d3254-1e09-4ab8-8ce4-3f80e791ac60"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field279",
+                "name": "workspaces"
+            },
+            "designerId": "130a317b-6ce1-49fc-9aeb-280e934464b8"
         }
     ]
 }

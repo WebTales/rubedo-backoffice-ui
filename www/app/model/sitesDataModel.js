@@ -101,6 +101,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'author'
+        },
+        {
+            name: 'workspace'
         }
     ]
 });

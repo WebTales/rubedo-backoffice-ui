@@ -217,6 +217,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp('MTFieldId').setValue();
         Ext.getCmp("MTFieldConfigsBox").removeAll();
         Ext.getCmp("MTcenterZone").disable();
+        Ext.getCmp("mediaTypesEditForm").getForm().reset();
         Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
     },
 
@@ -231,6 +232,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("MTfieldUp").disable();
         Ext.getCmp("MTfieldDown").disable();
         Ext.getCmp('MTFieldId').setValue();
+        Ext.getCmp("mediaTypesEditForm").getForm().setValues(record.getData());
         Ext.getCmp("MTfieldDeleter").disable();
         Ext.getCmp("MTFieldConfigsBox").removeAll();
         var metaBox = Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
@@ -256,11 +258,17 @@ Ext.define('Rubedo.controller.MediaTypesController', {
 
     updateMT: function(record) {
         var me=this;
-        record.beginEdit();
-        var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesMTGrid").getSelectionModel().getSelection(), "data"), "id");
-        record.set("vocabularies", newVocabularies);
-        record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
-        record.endEdit();
+        var form = Ext.getCmp("mediaTypesEditForm").getForm();
+        if (form.isValid()){
+            record.beginEdit();
+            record.set(form.getValues());
+            var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesMTGrid").getSelectionModel().getSelection(), "data"), "id");
+            record.set("vocabularies", newVocabularies);
+            record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
+            record.endEdit();
+        } else {
+            Ext.Msg.alert('Erreur', 'Propriétés invalides dans l\'onglet "Droits"');
+        }
     },
 
     renderMTField: function(protoData, renderTarget) {

@@ -24,6 +24,7 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
         type: 'fit'
     },
     title: 'Nouveau workspace',
+    constrain: true,
     modal: true,
 
     initComponent: function() {

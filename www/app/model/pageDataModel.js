@@ -86,6 +86,12 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'expandable',
             defaultValue: true,
             type: 'boolean'
+        },
+        {
+            name: 'workspace'
+        },
+        {
+            name: 'inheritWorkspace'
         }
     ]
 });

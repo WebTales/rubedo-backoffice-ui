@@ -31,6 +31,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
     },
     iconCls: 'user',
     title: 'Workspaces',
+    constrainHeader: true,
 
     initComponent: function() {
         var me = this;

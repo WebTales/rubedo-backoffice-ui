@@ -80,6 +80,7 @@
                     "Ext.getCmp('MTFieldId').setValue();\r",
                     "Ext.getCmp(\"MTFieldConfigsBox\").removeAll();\r",
                     "Ext.getCmp(\"MTcenterZone\").disable();\r",
+                    "Ext.getCmp(\"mediaTypesEditForm\").getForm().reset();\r",
                     "Ext.getCmp(\"mediaTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
             },
@@ -109,6 +110,7 @@
                     "Ext.getCmp(\"MTfieldUp\").disable();\r",
                     "Ext.getCmp(\"MTfieldDown\").disable();\r",
                     "Ext.getCmp('MTFieldId').setValue();\r",
+                    "Ext.getCmp(\"mediaTypesEditForm\").getForm().setValues(record.getData());\r",
                     "Ext.getCmp(\"MTfieldDeleter\").disable();\r",
                     "Ext.getCmp(\"MTFieldConfigsBox\").removeAll();\r",
                     "var metaBox = Ext.getCmp(\"mediaTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
@@ -201,11 +203,17 @@
                 ],
                 "implHandler": [
                     "var me=this;\r",
+                    "var form = Ext.getCmp(\"mediaTypesEditForm\").getForm();\r",
+                    "if (form.isValid()){\r",
                     "record.beginEdit();\r",
+                    "record.set(form.getValues());\r",
                     "var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().getSelection(), \"data\"), \"id\");\r",
                     "record.set(\"vocabularies\", newVocabularies);\r",
                     "record.set(\"fields\", me.recordFields(Ext.getCmp('MTeditFields')));\r",
-                    "record.endEdit();"
+                    "record.endEdit();\r",
+                    "} else {\r",
+                    "    Ext.Msg.alert('Erreur', 'Propriétés invalides dans l\\'onglet \"Droits\"');\r",
+                    "}"
                 ]
             },
             "designerId": "1170ac62-74f1-47f2-858d-bb865b9c5a83"

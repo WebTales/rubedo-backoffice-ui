@@ -889,6 +889,36 @@
                             "designerId": "9780587d-3fe2-44a4-ab33-b8ae5ce82e1d"
                         },
                         {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox8",
+                                "name": "inheritWorkspace",
+                                "fieldLabel": "Hérite de l'espace de travail",
+                                "boxLabel": "",
+                                "inputValue": "true"
+                            },
+                            "designerId": "f528c92e-a33d-405c-bd33-7c6a4080d407"
+                        },
+                        {
                             "type": "fieldset",
                             "reference": {
                                 "name": "items",

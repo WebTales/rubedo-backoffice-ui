@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.sitesInterface', {
     alias: 'widget.sitesInterface',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -239,6 +240,10 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     name: 'author',
                                     value: 'Powered by Rubedo',
                                     fieldLabel: 'Auteur par défaut'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '100%'
                                 }
                             ],
                             listeners: {

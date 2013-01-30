@@ -121,7 +121,8 @@ Ext.application({
         'ContentMQueryStore',
         'ContentSelectorStore2',
         'DAMFacetteStore',
-        'WorkspacesStore'
+        'WorkspacesStore',
+        'WorkspacesComboStore'
     ],
     views: [
         'MyContainer',
@@ -202,7 +203,8 @@ Ext.application({
         'DAMChooseMTWindow',
         'selectorTreeForField',
         'WorkspacesInterface',
-        'newWorkspaceWindow'
+        'newWorkspaceWindow',
+        'WorkspaceCombo'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -49,6 +49,17 @@ Ext.define('Rubedo.controller.WorkspacesController', {
             Ext.getCmp("workspaceSave").enable();
             Ext.getCmp("workspacesMainForm").enable();
             Ext.getCmp("workspacesMainForm").getForm().setValues(selections[0].getData());
+            if (selections[0].get("readOnly")){
+                Ext.Array.forEach(Ext.getCmp("workspacesMainForm").query("field"), function(field){
+                    field.setReadOnly(true);
+                });
+                Ext.getCmp("workspaceRemove").disable();
+                Ext.getCmp("workspaceSave").disable();
+            } else {
+                Ext.Array.forEach(Ext.getCmp("workspacesMainForm").query("field"), function(field){
+                    field.setReadOnly(false);
+                });
+            }
         }
     },
 
