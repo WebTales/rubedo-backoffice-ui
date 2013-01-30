@@ -465,6 +465,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
             var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
+            var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
             var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
             if (update) {
                 var myRec =Ext.getStore("CurrentContent").getRange()[0];
@@ -474,6 +475,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 myRec.set("taxonomie",taxonomie);
                 myRec.set("status",status);
                 myRec.set(metaData);
+                myRec.set(droits);
                 myRec.endEdit();
                 Ext.getStore("CurrentContent").removeAll();
                 Ext.getStore('TaxonomyForC2').removeAll();
@@ -754,6 +756,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         });
 
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
+        Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.get("taxonomie"));
         Ext.getCmp("contentMetadataBox").getForm().loadRecord(cible);
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;

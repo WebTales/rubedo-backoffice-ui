@@ -194,6 +194,32 @@
                 "type": "date"
             },
             "designerId": "6bfd7261-8f98-4b47-8034-51084593dcb0"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field289",
+                "name": "target"
+            },
+            "designerId": "e459bbea-01f1-4678-9401-97dc73d76cb5"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field288",
+                "name": "writeWorkspace"
+            },
+            "designerId": "65271155-33c5-40a7-9cc6-0530f99ac7e3"
         }
     ]
 }

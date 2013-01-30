@@ -68,6 +68,12 @@ Ext.define('Rubedo.model.contenusDataModel', {
         {
             name: 'endPublicationDate',
             type: 'date'
+        },
+        {
+            name: 'target'
+        },
+        {
+            name: 'writeWorkspace'
         }
     ]
 });

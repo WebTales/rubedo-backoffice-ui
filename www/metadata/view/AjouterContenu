@@ -441,14 +441,16 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel48",
+                        "designer|userClassName": "MyForm47",
+                        "id": "boiteADroitsContenus",
+                        "bodyPadding": 10,
                         "title": "Droits"
                     },
                     "designerId": "7e3a7635-40e6-413a-a4bd-2f63dc9af76f",
@@ -464,6 +466,35 @@
                                 "designer|userClassName": "TabConfig29"
                             },
                             "designerId": "41a82d8f-cc6c-40e6-bd18-70a0b7441752"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "90%"
+                            },
+                            "designerId": "bbc94904-3819-435a-af3d-aa3906c4edd3",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "name": "target",
+                                "fieldLabel": "Cible",
+                                "multiSelect": true,
+                                "layout|anchor": "90%"
+                            },
+                            "designerId": "a1e27865-898c-4d89-ab44-6f5e1f38bfac",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
                 },

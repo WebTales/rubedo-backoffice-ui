@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     alias: 'widget.ajouterContenu',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.NestedContentsGrid',
         'Rubedo.view.MyTool17',
         'Ext.ux.TreePicker'
@@ -187,8 +188,23 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             title: 'Taxonomie'
                         },
                         {
-                            xtype: 'panel',
-                            title: 'Droits'
+                            xtype: 'form',
+                            id: 'boiteADroitsContenus',
+                            bodyPadding: 10,
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '90%'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    name: 'target',
+                                    fieldLabel: 'Cible',
+                                    multiSelect: true,
+                                    anchor: '90%'
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',
