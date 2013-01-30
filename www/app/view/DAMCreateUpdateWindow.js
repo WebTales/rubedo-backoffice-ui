@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
 
     requires: [
         'Rubedo.view.MyTool17',
+        'Rubedo.view.WorkspaceCombo',
         'Ext.ux.TreePicker'
     ],
 
@@ -140,6 +141,23 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                             xtype: 'fieldset',
                             id: 'DAMTaxoBox',
                             title: 'Taxonomie'
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    anchor: '90%'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    name: 'target',
+                                    fieldLabel: 'Cible',
+                                    multiSelect: true,
+                                    anchor: '90%'
+                                }
+                            ]
                         },
                         {
                             xtype: 'button',

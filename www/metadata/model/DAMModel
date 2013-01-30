@@ -177,6 +177,32 @@
                 "name": "mainFileType"
             },
             "designerId": "effa9800-725d-4966-b8e7-ee0ec4e201e8"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field286",
+                "name": "workspace"
+            },
+            "designerId": "27fc6ae9-aa9b-4585-864a-96b0c09bca98"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field287",
+                "name": "target"
+            },
+            "designerId": "40f1ce15-e633-45ce-bc05-755d1745d29b"
         }
     ]
 }

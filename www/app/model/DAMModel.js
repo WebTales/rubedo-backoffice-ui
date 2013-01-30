@@ -59,6 +59,12 @@ Ext.define('Rubedo.model.DAMModel', {
         },
         {
             name: 'mainFileType'
+        },
+        {
+            name: 'workspace'
+        },
+        {
+            name: 'target'
         }
     ]
 });

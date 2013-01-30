@@ -41,7 +41,7 @@ Ext.define('Rubedo.view.DAMChooseMTWindow', {
                             xtype: 'combobox',
                             anchor: '100%',
                             name: 'typeId',
-                            fieldLabel: 'Label',
+                            fieldLabel: 'Type',
                             allowBlank: false,
                             editable: false,
                             displayField: 'type',
