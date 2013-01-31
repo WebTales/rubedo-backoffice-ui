@@ -515,7 +515,7 @@ Ext.define('Rubedo.controller.PagesController', {
             store.suspendAutoSync();
             editedPage.beginEdit();
             editedPage.set("blocks",newBlocks);
-            editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getValues());
+            editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getFieldValues());
             editedPage.endEdit();
             store.resumeAutoSync();
             store.sync();

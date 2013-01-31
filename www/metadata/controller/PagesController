@@ -837,7 +837,7 @@
                     "    store.suspendAutoSync();\r",
                     "    editedPage.beginEdit();\r",
                     "    editedPage.set(\"blocks\",newBlocks);\r",
-                    "    editedPage.set(Ext.getCmp(\"mainPageAttributeForm\").getForm().getValues());\r",
+                    "    editedPage.set(Ext.getCmp(\"mainPageAttributeForm\").getForm().getFieldValues());\r",
                     "    editedPage.endEdit();\r",
                     "    store.resumeAutoSync();\r",
                     "    store.sync();\r",
