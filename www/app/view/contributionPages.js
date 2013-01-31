@@ -243,6 +243,7 @@ Ext.define('Rubedo.view.contributionPages', {
                     id: 'mainPageTree',
                     width: 225,
                     title: '',
+                    forceFit: true,
                     store: 'PagesDataStore',
                     useArrows: true,
                     viewConfig: {
@@ -281,6 +282,22 @@ Ext.define('Rubedo.view.contributionPages', {
                                     valueField: 'id'
                                 }
                             ]
+                        }
+                    ],
+                    columns: [
+                        {
+                            xtype: 'treecolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("readOnly")) {
+                                    return("<i style=\"color:#BBB;\">"+value+"</i>");
+                                } else {
+                                    return(value);
+                                }
+                            },
+                            dataIndex: 'text',
+                            menuDisabled: false,
+                            menuText: false,
+                            text: 'Nom'
                         }
                     ]
                 },

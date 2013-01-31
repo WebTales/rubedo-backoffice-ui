@@ -298,6 +298,20 @@
                 "name": "inheritWorkspace"
             },
             "designerId": "89ef68e0-f68f-476c-a176-f0b3bc47291c"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field291",
+                "name": "readOnly",
+                "type": "boolean"
+            },
+            "designerId": "2b1cac87-33dd-4822-80af-bc986b21f017"
         }
     ]
 }

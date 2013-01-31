@@ -439,6 +439,7 @@
                 "id": "mainPageTree",
                 "width": 225,
                 "title": "",
+                "forceFit": true,
                 "store": "PagesDataStore",
                 "useArrows": true
             },
@@ -589,6 +590,54 @@
                                     "type": "string"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "treecolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeColumn1",
+                        "dataIndex": "text",
+                        "menuDisabled": false,
+                        "menuText": false,
+                        "text": "Nom",
+                        "tooltip": null
+                    },
+                    "designerId": "32b785a1-1467-42d5-8962-487a7a279488",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"readOnly\")) {\r",
+                                    "    return(\"<i style=\\\"color:#BBB;\\\">\"+value+\"</i>\");\r",
+                                    "} else {\r",
+                                    "    return(value);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "5bc62a2a-1c96-46f8-932f-d4dcc8e416b8"
                         }
                     ]
                 }
