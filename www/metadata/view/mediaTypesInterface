@@ -1228,11 +1228,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "name": "workspaces",
                                 "fieldLabel": "Espaces de travail",
                                 "labelWidth": 120,
-                                "multiSelect": true
+                                "multiSelect": true,
+                                "layout|anchor": "100%"
                             },
                             "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
                             "masterInstanceId": "ExtBox1-ext-gen46360"

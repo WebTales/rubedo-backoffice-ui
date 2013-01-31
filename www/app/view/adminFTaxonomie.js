@@ -224,10 +224,10 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         },
                                         {
                                             xtype: 'WorkspaceCombo',
-                                            anchor: '100%',
                                             name: 'workspaces',
                                             fieldLabel: 'Espaces de travail',
-                                            multiSelect: true
+                                            multiSelect: true,
+                                            anchor: '100%'
                                         },
                                         {
                                             xtype: 'checkboxfield',

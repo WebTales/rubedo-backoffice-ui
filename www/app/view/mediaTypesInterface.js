@@ -513,11 +513,11 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
-                                    anchor: '100%',
                                     name: 'workspaces',
                                     fieldLabel: 'Espaces de travail',
                                     labelWidth: 120,
-                                    multiSelect: true
+                                    multiSelect: true,
+                                    anchor: '100%'
                                 }
                             ]
                         },

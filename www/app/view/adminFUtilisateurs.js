@@ -351,19 +351,19 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
-                                    anchor: '100%',
                                     name: 'readWorkspaces',
                                     fieldLabel: 'Espaces de travail en lecture seule',
                                     labelWidth: 220,
-                                    multiSelect: true
+                                    multiSelect: true,
+                                    anchor: '100%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
-                                    anchor: '100%',
                                     name: 'writeWorkspaces',
                                     fieldLabel: 'Espaces de travail en contribution',
                                     labelWidth: 220,
-                                    multiSelect: true
+                                    multiSelect: true,
+                                    anchor: '100%'
                                 },
                                 {
                                     xtype: 'checkboxfield',
@@ -429,10 +429,12 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
 
     onAdminFUtilisateursRender: function(abstractcomponent, options) {
         Ext.getStore("RoleStore").load();
+        Ext.getStore("UsersDataStore").load();
     },
 
     onAdminFUtilisateursBeforeClose: function(panel, options) {
         Ext.getStore("RoleStore").removeAll();
+        Ext.getStore("UsersDataStore").removeAll();
     },
 
     onAdminFUtilisateursAfterRender: function(abstractcomponent, options) {

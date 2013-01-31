@@ -888,11 +888,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "name": "readWorkspaces",
                                 "fieldLabel": "Espaces de travail en lecture seule",
                                 "labelWidth": 220,
-                                "multiSelect": true
+                                "multiSelect": true,
+                                "layout|anchor": "100%"
                             },
                             "designerId": "d010bcf1-789c-4c4b-82a3-f1831b805cbd",
                             "masterInstanceId": "ExtBox1-ext-gen46360"
@@ -905,11 +905,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "name": "writeWorkspaces",
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
-                                "multiSelect": true
+                                "multiSelect": true,
+                                "layout|anchor": "100%"
                             },
                             "designerId": "1d6b29de-19ea-4d17-aea2-95e87dabc7b8",
                             "masterInstanceId": "ExtBox1-ext-gen46360"
@@ -965,7 +965,8 @@
                 "designer|userClassName": "onAdminFUtilisateursRender",
                 "fn": "onAdminFUtilisateursRender",
                 "implHandler": [
-                    "Ext.getStore(\"RoleStore\").load();"
+                    "Ext.getStore(\"RoleStore\").load();\r",
+                    "Ext.getStore(\"UsersDataStore\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -983,7 +984,8 @@
                 "designer|userClassName": "onAdminFUtilisateursBeforeClose",
                 "fn": "onAdminFUtilisateursBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"RoleStore\").removeAll();"
+                    "Ext.getStore(\"RoleStore\").removeAll();\r",
+                    "Ext.getStore(\"UsersDataStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

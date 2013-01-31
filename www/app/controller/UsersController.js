@@ -41,7 +41,7 @@ Ext.define('Rubedo.controller.UsersController', {
             userNb:userNb,
             calif:calif
         });
-        Ext.getCmp("groupPropsForm").getForm().setValues(record.getData());
+        Ext.getCmp("groupPropsForm").getForm().setValues(Ext.clone(record.getData()));
     },
 
     removeGroup: function(button, e, options) {
@@ -290,14 +290,6 @@ Ext.define('Rubedo.controller.UsersController', {
         }
     },
 
-    onUserAddWindowBeforeClose: function(panel, options) {
-        Ext.getStore("UsersDataStore").removeAll();
-    },
-
-    onUserAddWindowRender: function(abstractcomponent, options) {
-        Ext.getStore("UsersDataStore").load();
-    },
-
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -393,10 +385,6 @@ Ext.define('Rubedo.controller.UsersController', {
             "#UserAdminWindow": {
                 beforeclose: this.onUserAdminWindowBeforeClose,
                 render: this.onUserAdminWindowRender
-            },
-            "#UserAddWindow": {
-                beforeclose: this.onUserAddWindowBeforeClose,
-                render: this.onUserAddWindowRender
             }
         });
     }

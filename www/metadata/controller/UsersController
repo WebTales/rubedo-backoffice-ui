@@ -46,7 +46,7 @@
                     "    userNb:userNb,\r",
                     "    calif:calif\r",
                     "});\r",
-                    "Ext.getCmp(\"groupPropsForm\").getForm().setValues(record.getData());"
+                    "Ext.getCmp(\"groupPropsForm\").getForm().setValues(Ext.clone(record.getData()));"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -711,46 +711,6 @@
                 "designer|controlQuery": "#UserAdminWindow"
             },
             "designerId": "ec7123d4-4f4e-4131-898e-15de7f800068"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onUserAddWindowBeforeClose",
-                "fn": "onUserAddWindowBeforeClose",
-                "implHandler": [
-                    "Ext.getStore(\"UsersDataStore\").removeAll();"
-                ],
-                "name": "beforeclose",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#UserAddWindow"
-            },
-            "designerId": "a68c42ba-6830-4d8c-8780-5b5a7f538aed"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onUserAddWindowRender",
-                "fn": "onUserAddWindowRender",
-                "implHandler": [
-                    "Ext.getStore(\"UsersDataStore\").load();"
-                ],
-                "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#UserAddWindow"
-            },
-            "designerId": "23eeba75-4d5a-4445-8b15-117a3f6f047e"
         }
     ]
 }
