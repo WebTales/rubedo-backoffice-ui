@@ -85,6 +85,7 @@ Ext.define('Rubedo.controller.SitesController', {
         var form = Ext.getCmp("mainSiteProps").getForm();
         if (form.isValid()){
             Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
+
         }
     },
 

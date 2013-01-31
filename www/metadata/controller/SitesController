@@ -154,6 +154,7 @@
                     "var form = Ext.getCmp(\"mainSiteProps\").getForm();\r",
                     "if (form.isValid()){\r",
                     "    Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));\r",
+                    "\r",
                     "}"
                 ],
                 "name": "click",

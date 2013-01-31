@@ -512,7 +512,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
                 if ((!ACL.interfaceRights['write.ui.pages'])||(Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("readOnly"))){
                     Ext.Array.forEach(Ext.getCmp("pageElementPropsPanel").query("field"), function(truc){truc.setReadOnly(true);});
-                    Ext.Array.forEach(Ext.getCmp("pageElementPropsPanel").query("button"), function(truc){truc.disable();});
+                    Ext.Array.forEach(Ext.getCmp("pageElementPropsPanel").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
                 }
                 e.stopEvent();
 
