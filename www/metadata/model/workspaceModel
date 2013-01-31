@@ -65,6 +65,20 @@
                 "type": "boolean"
             },
             "designerId": "ca800a15-a346-4201-8158-3ca66d022f01"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field290",
+                "name": "canContribute",
+                "type": "boolean"
+            },
+            "designerId": "a06083a1-77e3-4c3f-b7fd-683652041bea"
         }
     ]
 }

@@ -31,6 +31,10 @@ Ext.define('Rubedo.model.workspaceModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'canContribute',
+            type: 'boolean'
         }
     ]
 });

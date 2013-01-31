@@ -399,6 +399,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
                                 },
                                 {

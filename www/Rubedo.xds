@@ -1916,6 +1916,14 @@
                 "app/view/WorkspaceCombo.js"
             ],
             "className": "WorkspaceCombo"
+        },
+        "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e": {
+            "paths": [
+                "metadata/store/ContributeWorkspacesCombo",
+                "app/store/override/ContributeWorkspacesCombo.js",
+                "app/store/ContributeWorkspacesCombo.js"
+            ],
+            "className": "ContributeWorkspacesCombo"
         }
     },
     "viewOrderMap": {
@@ -2095,7 +2103,8 @@
             "b1e3cc2f-a43b-450e-8914-242d618f8402",
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
-            "68f8be48-2543-47f5-9bb7-0d4de8f16097"
+            "68f8be48-2543-47f5-9bb7-0d4de8f16097",
+            "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
