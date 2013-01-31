@@ -84,8 +84,16 @@ Ext.define('Rubedo.controller.SitesController', {
     updateSiteSubmit: function(button, e, options) {
         var form = Ext.getCmp("mainSiteProps").getForm();
         if (form.isValid()){
-            Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
-
+            if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
+                Ext.MessageBox.confirm("Attention !","La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?", function(anser){
+                    if (anser=="yes"){
+                        Ext.getCmp("contributionPages").close();
+                        Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
+                    }
+                });
+            } else {
+                Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
+            }
         }
     },
 

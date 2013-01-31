@@ -153,8 +153,16 @@
                 "implHandler": [
                     "var form = Ext.getCmp(\"mainSiteProps\").getForm();\r",
                     "if (form.isValid()){\r",
-                    "    Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));\r",
-                    "\r",
+                    "        if ((!Ext.isEmpty(Ext.getCmp(\"pagesSitesCombo\")))&&(Ext.getCmp(\"pagesSitesCombo\").getValue()==Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().get(\"id\"))) {\r",
+                    "            Ext.MessageBox.confirm(\"Attention !\",\"La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?\", function(anser){\r",
+                    "                if (anser==\"yes\"){\r",
+                    "                    Ext.getCmp(\"contributionPages\").close();\r",
+                    "                    Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));\r",
+                    "                }\r",
+                    "            });\r",
+                    "        } else {\r",
+                    "            Ext.getCmp(\"mainSitesGrid\").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));\r",
+                    "        }\r",
                     "}"
                 ],
                 "name": "click",

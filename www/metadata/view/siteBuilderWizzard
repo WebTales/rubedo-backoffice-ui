@@ -124,6 +124,21 @@
                                 "store": "array"
                             },
                             "designerId": "21de0fbc-18fc-46eb-8c6d-b5ddea3fb3d6"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "labelWidth": 110,
+                                "store": "ContributeWorkspacesCombo",
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
                 },

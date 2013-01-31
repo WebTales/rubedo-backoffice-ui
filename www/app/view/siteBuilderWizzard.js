@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
     alias: 'widget.siteBuilderWizzard',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.MyToolbar56'
     ],
 
@@ -85,6 +86,12 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                         'HTTPS',
                                         'HTTP + HTTPS'
                                     ]
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    labelWidth: 110,
+                                    store: 'ContributeWorkspacesCombo',
+                                    anchor: '100%'
                                 }
                             ]
                         },
