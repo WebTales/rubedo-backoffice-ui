@@ -79,6 +79,20 @@
                 "type": "float"
             },
             "designerId": "3fb42404-61ae-4bfa-809e-e974662edcd3"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "type": "boolean"
+            },
+            "designerId": "b2b58df8-090d-43a7-8a69-2cbe1cf22190"
         }
     ]
 }

@@ -35,6 +35,10 @@ Ext.define('Rubedo.model.taxonomyTermModel', {
             name: 'orderValue',
             sortType: 'asFloat',
             type: 'float'
+        },
+        {
+            name: 'readOnly',
+            type: 'boolean'
         }
     ]
 });
