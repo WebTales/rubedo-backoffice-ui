@@ -42,10 +42,17 @@ Ext.define('Rubedo.store.ContributeWorkspacesCombo', {
                     root: 'data'
                 }
             },
-            filters: {
-                property: 'canContribute',
-                value: true
+            listeners: {
+                load: {
+                    fn: me.onJsonstoreLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreLoad: function(store, records, successful, options) {
+        store.filter("canContribute", true);
     }
+
 });
