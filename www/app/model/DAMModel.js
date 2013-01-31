@@ -61,7 +61,7 @@ Ext.define('Rubedo.model.DAMModel', {
             name: 'mainFileType'
         },
         {
-            name: 'workspace'
+            name: 'writeWorkspace'
         },
         {
             name: 'target'

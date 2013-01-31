@@ -243,6 +243,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
                                 }
                             ],

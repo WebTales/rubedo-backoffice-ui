@@ -536,6 +536,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     fieldLabel: 'Espaces de travail',
                                     labelWidth: 120,
                                     multiSelect: true,
+                                    store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
                                 }
                             ]

@@ -196,6 +196,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'writeWorkspace',
+                                    store: 'ContributeWorkspacesCombo',
                                     anchor: '90%'
                                 },
                                 {

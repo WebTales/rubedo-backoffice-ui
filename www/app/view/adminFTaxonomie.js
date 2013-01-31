@@ -227,6 +227,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                             name: 'workspaces',
                                             fieldLabel: 'Espaces de travail',
                                             multiSelect: true,
+                                            store: 'ContributeWorkspacesCombo',
                                             anchor: '100%'
                                         },
                                         {

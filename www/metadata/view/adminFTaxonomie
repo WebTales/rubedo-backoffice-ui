@@ -550,6 +550,7 @@
                                         "name": "workspaces",
                                         "fieldLabel": "Espaces de travail",
                                         "multiSelect": true,
+                                        "store": "ContributeWorkspacesCombo",
                                         "layout|anchor": "100%"
                                     },
                                     "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
