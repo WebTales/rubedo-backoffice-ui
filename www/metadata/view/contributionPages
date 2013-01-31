@@ -631,7 +631,10 @@
                                 ],
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
+                                    "    record.data.allowDrop=false;\r",
+                                    "    record.data.allowDrag=false;\r",
                                     "    return(\"<i style=\\\"color:#BBB;\\\">\"+value+\"</i>\");\r",
+                                    "\r",
                                     "} else {\r",
                                     "    return(value);\r",
                                     "}"

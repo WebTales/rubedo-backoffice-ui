@@ -109,6 +109,9 @@ Ext.define('Rubedo.controller.PagesController', {
             me.resetInterface();
             Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
+            Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
+                field.setReadOnly(false);
+            });
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
                 params: {
@@ -136,6 +139,14 @@ Ext.define('Rubedo.controller.PagesController', {
             metaBox.update(values);
             metaBox.show();
             Ext.getCmp("addPageBtn").enable();
+            if(record.get("readOnly")){
+                Ext.getCmp("removePageBtn").disable();
+                Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
+                Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
+                Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
+                    field.setReadOnly(true);
+                });
+            }
         } else {
             Ext.getCmp("addPageBtn").enable();
             Ext.getCmp("removePageBtn").disable();
@@ -498,9 +509,9 @@ Ext.define('Rubedo.controller.PagesController', {
                 propEdit.add(configSpec);
 
 
-                if (!ACL.interfaceRights['write.ui.masks']){
-                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                if ((!ACL.interfaceRights['write.ui.pages'])||(Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("readOnly"))){
+                    Ext.Array.forEach(Ext.getCmp("pageElementPropsPanel").query("field"), function(truc){truc.setReadOnly(true);});
+                    Ext.Array.forEach(Ext.getCmp("pageElementPropsPanel").query("button"), function(truc){truc.disable();});
                 }
                 e.stopEvent();
 
@@ -751,6 +762,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp('pageElementIdField').setValue();
         Ext.getCmp("pagesInternalPreview").removeAll();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
+        Ext.getCmp("mainPageAttributeForm").getForm().reset();
         Ext.getCmp("mainPageAttributeForm").disable();
         Ext.getCmp("pagePreviewTextItem").setText();
         Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
