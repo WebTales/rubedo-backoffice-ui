@@ -9,7 +9,8 @@
         "designer|userClassName": "TermesTaxonomieTree",
         "designer|userAlias": "TermesTaxonomieTree",
         "id": "TermesTaxonomieTree",
-        "title": "Termes",
+        "title": "",
+        "forceFit": true,
         "store": null,
         "useArrows": true
     },
@@ -100,6 +101,35 @@
                             "designerId": "8a5d9f92-8515-4ee6-a425-a9e0b8d82ef3"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "treecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTreeColumn2",
+                "dataIndex": "text",
+                "text": "Termes"
+            },
+            "designerId": "fb2e8d1b-8817-43dc-b288-b5a97300ec7c",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField76",
+                        "allowBlank": false
+                    },
+                    "designerId": "5e6180c1-591d-42a9-96b8-f27edff43f95"
                 }
             ]
         }

@@ -17,8 +17,13 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
     extend: 'Ext.tree.Panel',
     alias: 'widget.TermesTaxonomieTree',
 
+    requires: [
+        'Rubedo.view.override.TermesTaxonomieTree'
+    ],
+
     id: 'TermesTaxonomieTree',
-    title: 'Termes',
+    title: '',
+    forceFit: true,
     useArrows: true,
 
     initComponent: function() {
@@ -44,7 +49,18 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                         scope: me
                     }
                 }
-            }
+            },
+            columns: [
+                {
+                    xtype: 'treecolumn',
+                    dataIndex: 'text',
+                    text: 'Termes',
+                    editor: {
+                        xtype: 'textfield',
+                        allowBlank: false
+                    }
+                }
+            ]
         });
 
         me.callParent(arguments);
