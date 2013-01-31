@@ -94,6 +94,7 @@
                     "    }\r",
                     "    newPage.iconCls=\"masque-icon\";\r",
                     "    newPage.site=Ext.getCmp(\"pagesSitesCombo\").getValue();\r",
+                    "    newPage.inheritWorkspace=true;\r",
                     "    var store=Ext.getCmp(\"mainPageTree\").getStore();\r",
                     "    store.suspendAutoSync();\r",
                     "    target.appendChild(newPage);\r",

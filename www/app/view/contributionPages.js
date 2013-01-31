@@ -408,7 +408,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                     name: 'inheritWorkspace',
                                     fieldLabel: 'Hérite de l\'espace de travail',
                                     boxLabel: '',
-                                    inputValue: 'true'
+                                    inputValue: 'true',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onCheckboxfieldChange,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'fieldset',
@@ -498,6 +504,14 @@ Ext.define('Rubedo.view.contributionPages', {
             Ext.getStore("PagesDataStore").sync();
         });
         task.delay(50);
+    },
+
+    onCheckboxfieldChange: function(field, newValue, oldValue, options) {
+        if (newValue) {
+            field.previousSibling().setReadOnly(true);
+        }else {
+            field.previousSibling().setReadOnly(false);
+        }
     },
 
     onMainPageAttributeFormRender: function(abstractcomponent, options) {

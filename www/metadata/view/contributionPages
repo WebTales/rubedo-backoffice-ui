@@ -917,7 +917,31 @@
                                 "boxLabel": "",
                                 "inputValue": "true"
                             },
-                            "designerId": "f528c92e-a33d-405c-bd33-7c6a4080d407"
+                            "designerId": "f528c92e-a33d-405c-bd33-7c6a4080d407",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onCheckboxfieldChange",
+                                        "fn": "onCheckboxfieldChange",
+                                        "implHandler": [
+                                            "if (newValue) {\r",
+                                            "    field.previousSibling().setReadOnly(true);\r",
+                                            "}else {\r",
+                                            "    field.previousSibling().setReadOnly(false);\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "2c9d5793-63d3-465a-90c9-0c854c1c9caf"
+                                }
+                            ]
                         },
                         {
                             "type": "fieldset",

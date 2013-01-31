@@ -57,6 +57,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }
             newPage.iconCls="masque-icon";
             newPage.site=Ext.getCmp("pagesSitesCombo").getValue();
+            newPage.inheritWorkspace=true;
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
             target.appendChild(newPage);
