@@ -102,7 +102,15 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             property: 'orderValue'
         }
     });
-    var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1});
+    var plugins=[
+    Ext.create('Ext.grid.plugin.CellEditing', {
+        clicksToEdit:2
+    })
+    ];
+    if (record.get("id")=="navigation"){
+        plugins = [];
+    }
+    var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1, plugins:plugins});
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
     store.load();

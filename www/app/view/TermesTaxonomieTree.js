@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
     extend: 'Ext.tree.Panel',
     alias: 'widget.TermesTaxonomieTree',
 
-    requires: [
-        'Rubedo.view.override.TermesTaxonomieTree'
-    ],
-
     id: 'TermesTaxonomieTree',
     title: '',
     forceFit: true,
