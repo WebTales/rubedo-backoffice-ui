@@ -19,10 +19,12 @@ Ext.define('Rubedo.model.DAMSearchModel', {
 
     fields: [
         {
-            name: 'text'
+            name: 'text',
+            mapping: 'title'
         },
         {
-            name: 'damType'
+            name: 'damType',
+            mapping: 'type'
         },
         {
             name: 'score',
@@ -33,7 +35,8 @@ Ext.define('Rubedo.model.DAMSearchModel', {
             name: 'id'
         },
         {
-            name: 'author'
+            name: 'author',
+            mapping: 'authorName'
         },
         {
             name: 'lastUpdateTime',

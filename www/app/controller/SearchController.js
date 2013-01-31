@@ -53,27 +53,26 @@ Ext.define('Rubedo.controller.SearchController', {
     },
 
     renderActiveFacets: function(facets) {
-        Ext.getCmp("ESFacetQueryField").setValue(facets.query);
+        Ext.getCmp("ESFacetQueryField").setValue(Ext.getStore("ESFacetteStore").activeFacettes.query);
         var target=Ext.getCmp("SearchActiveFacetBar");
         target.removeAll();
-        Ext.Object.each(facets, function(key, value){
-            if (Ext.isArray(value)){
-                Ext.Array.forEach(value,function(someValue){
+        Ext.Array.forEach(facets, function(thing){
+            if (thing.terms.length>1){
+                Ext.Array.forEach(thing.terms,function(term){
                     var activeOne = Ext.widget('splitbutton',{
-                        text:key+" : "+someValue,
+                        text:thing.label+" : "+term.label,
                         arrowHandler:function(){
-                            Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[key],someValue);
+                            Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
                             Ext.getStore("ESFacetteStore").load();
                         }
                     });
                     target.add(activeOne);
                 });
-
             } else {
                 var activeOne = Ext.widget('splitbutton',{
-                    text:key+" : "+value,
+                    text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
-                        delete Ext.getStore("ESFacetteStore").activeFacettes[key];
+                        delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
                         Ext.getStore("ESFacetteStore").load();
                     }
                 });
@@ -88,13 +87,13 @@ Ext.define('Rubedo.controller.SearchController', {
         target.removeAll();
         Ext.Array.forEach(facets, function(facet){
             if (!Ext.isEmpty(facet.terms)){
-                var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
-                if(facet.name!="type"){newFacet.collapse();}
-                newFacet.usedProperty=facet.name;
+                var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
+                if((facet.id!="type")&&(facet.id!="damType")){newFacet.collapse();}
+                newFacet.usedProperty=facet.id;
 
                 Ext.Array.forEach(facet.terms, function(term){
                     var newTerm=Ext.widget("button",{
-                        text:term.term+" ("+term.count+")",
+                        text:term.label+" ("+term.count+")",
                         usedValue:term.term,
                         anchor:"100%",
                         handler:function(thing){

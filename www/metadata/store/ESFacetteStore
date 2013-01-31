@@ -106,7 +106,7 @@
                                     "    data = Ext.decode(response.responseText);\r",
                                     "    this.proxy.facettes=data.facets;\r",
                                     "    if (Ext.isEmpty(data.activeFacets)){\r",
-                                    "        data.activeFacets={ };\r",
+                                    "        data.activeFacets=[ ];\r",
                                     "    }\r",
                                     "    this.proxy.activeFacettes=data.activeFacets;\r",
                                     "    return this.readRecords(data);\r",
@@ -145,10 +145,6 @@
                 "designer|userClassName": "onJsonstoreFacettesChanged",
                 "fn": "onJsonstoreFacettesChanged",
                 "implHandler": [
-                    "/*console.log(\"facettes\");\r",
-                    "console.log(facettes);\r",
-                    "console.log(\"facettes actives\");\r",
-                    "console.log(activeFacettes);*/\r",
                     "Rubedo.controller.SearchController.prototype.renderFacets(facettes);\r",
                     "Rubedo.controller.SearchController.prototype.renderActiveFacets(activeFacettes);"
                 ],
@@ -168,9 +164,18 @@
                 "designer|userClassName": "onJsonstoreLoad",
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
+                    "var rawActiveFacettes = store.getProxy().activeFacettes;\r",
+                    "var refinedActiveFacettes={};\r",
+                    "Ext.Array.forEach(rawActiveFacettes, function(thing){\r",
+                    "    if (thing.terms.length==1){\r",
+                    "        refinedActiveFacettes[thing.id]=thing.terms[0].term;\r",
+                    "    } else {\r",
+                    "        refinedActiveFacettes[thing.id]=Ext.Array.pluck(thing.terms, \"term\");\r",
+                    "    }\r",
+                    "});\r",
                     "store.facettes=store.getProxy().facettes;\r",
-                    "store.activeFacettes=store.getProxy().activeFacettes;\r",
-                    "store.fireEvent(\"facettesChanged\",store.facettes,store.activeFacettes);"
+                    "store.activeFacettes=refinedActiveFacettes;\r",
+                    "store.fireEvent(\"facettesChanged\",store.facettes,rawActiveFacettes);"
                 ],
                 "name": "load",
                 "scope": "me"
@@ -193,7 +198,7 @@
                     "Ext.Object.each(source, function(key, value, object){\r",
                     "    if (Ext.isArray(value)) {\r",
                     "        adaptedParams[key+\"[]\"]=value;\r",
-                    "        \r",
+                    "\r",
                     "    } else {\r",
                     "        adaptedParams[key]=value;\r",
                     "    }\r",

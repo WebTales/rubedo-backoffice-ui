@@ -21,7 +21,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field164",
-                "name": "text"
+                "name": "text",
+                "mapping": "title"
             },
             "designerId": "cc474df4-d7ab-4e8b-93a6-65d2b1a230cc"
         },
@@ -34,7 +35,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field165",
-                "name": "damType"
+                "name": "damType",
+                "mapping": "type"
             },
             "designerId": "c9a9e0fa-6c9e-4ba5-9dd7-68ac6a681ab5"
         },
@@ -75,7 +77,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field224",
-                "name": "author"
+                "name": "author",
+                "mapping": "authorName"
             },
             "designerId": "0c9f7861-74de-4f98-adbf-76c2c97ae22f"
         },

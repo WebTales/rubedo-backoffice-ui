@@ -18,7 +18,8 @@ Ext.define('Rubedo.model.contentsSearchModel', {
 
     fields: [
         {
-            name: 'text'
+            name: 'text',
+            mapping: 'title'
         },
         {
             name: 'type'
@@ -32,7 +33,8 @@ Ext.define('Rubedo.model.contentsSearchModel', {
             name: 'id'
         },
         {
-            name: 'author'
+            name: 'author',
+            mapping: 'authorName'
         },
         {
             name: 'lastUpdateTime',

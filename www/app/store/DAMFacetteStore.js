@@ -58,7 +58,7 @@ Ext.define('Rubedo.store.DAMFacetteStore', {
                             data = Ext.decode(response.responseText);
                             this.proxy.facettes=data.facets;
                             if (Ext.isEmpty(data.activeFacets)){
-                                data.activeFacets={ };
+                                data.activeFacets=[ ];
                             }
                             this.proxy.activeFacettes=data.activeFacets;
                             return this.readRecords(data);
@@ -116,9 +116,18 @@ Ext.define('Rubedo.store.DAMFacetteStore', {
     },
 
     onJsonstoreLoad: function(store, records, successful, options) {
+        var rawActiveFacettes = store.getProxy().activeFacettes;
+        var refinedActiveFacettes={};
+        Ext.Array.forEach(rawActiveFacettes, function(thing){
+            if (thing.terms.length==1){
+                refinedActiveFacettes[thing.id]=thing.terms[0].term;
+            } else {
+                refinedActiveFacettes[thing.id]=Ext.Array.pluck(thing.terms, "term");
+            }
+        });
         store.facettes=store.getProxy().facettes;
-        store.activeFacettes=store.getProxy().activeFacettes;
-        store.fireEvent("facettesChanged",store.facettes,store.activeFacettes);
+        store.activeFacettes=refinedActiveFacettes;
+        store.fireEvent("facettesChanged",store.facettes,rawActiveFacettes);
     },
 
     onJsonstoreBeforeLoad: function(store, operation, options) {
