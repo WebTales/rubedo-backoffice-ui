@@ -41,7 +41,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         else { typeFil= Ext.widget('button',{iconCls: "page_taxonomy", text:record.get("name"), itemId:'type'});
         filArianne.add(typeFil);
     }
-    Ext.getCmp("ProprietesTaxonomie").getForm().loadRecord(record);
+    Ext.getCmp("ProprietesTaxonomie").getForm().setValues(record.getData());
+    Ext.getCmp("taxoRightsBox").getForm().setValues(record.getData());
     Ext.Array.forEach(Ext.getCmp("ProprietesTaxonomie").items.items, function(thingy){
         thingy.setReadOnly(!ACL.interfaceRights["write.ui.taxonomy"]);
     });
@@ -161,6 +162,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             cibleR.beginEdit();
             if (Ext.getCmp("ProprietesTaxonomie").getForm().isValid()){
                 cibleR.set(Ext.getCmp("ProprietesTaxonomie").getForm().getValues());
+                cibleR.set(Ext.getCmp("taxoRightsBox").getForm().getValues());
             }
             cibleR.endEdit();
         }
@@ -180,6 +182,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 Ext.getCmp("boutonEnregistrerTaxo").disable();
                 Ext.getCmp("boutonSupprimerTaxo").disable();        
                 Ext.getCmp('delConfirmZ').close();
+                Ext.getCmp("ProprietesTaxonomie").getForm().reset();
+                Ext.getCmp("taxoRightsBox").getForm().reset();
             });  
 
         }

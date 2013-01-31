@@ -540,23 +540,6 @@
                                     "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f"
                                 },
                                 {
-                                    "type": "linkedinstance",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "name": "workspaces",
-                                        "fieldLabel": "Espaces de travail",
-                                        "multiSelect": true,
-                                        "store": "ContributeWorkspacesCombo",
-                                        "layout|anchor": "100%"
-                                    },
-                                    "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
-                                    "masterInstanceId": "ExtBox1-ext-gen46360"
-                                },
-                                {
                                     "type": "checkboxfield",
                                     "reference": {
                                         "name": "items",
@@ -631,14 +614,16 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel5",
+                        "designer|userClassName": "MyForm48",
+                        "id": "taxoRightsBox",
+                        "bodyPadding": 10,
                         "iconCls": "user",
                         "title": "Droits"
                     },
@@ -655,6 +640,24 @@
                                 "designer|userClassName": "TabConfig2"
                             },
                             "designerId": "78532db4-7532-4c9f-a660-b33cc6ec4779"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "name": "workspaces",
+                                "fieldLabel": "Espaces de travail",
+                                "labelWidth": 120,
+                                "multiSelect": true,
+                                "store": "ContributeWorkspacesCombo",
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
                 },

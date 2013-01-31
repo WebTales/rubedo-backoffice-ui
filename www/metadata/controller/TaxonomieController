@@ -45,7 +45,8 @@
                     "else { typeFil= Ext.widget('button',{iconCls: \"page_taxonomy\", text:record.get(\"name\"), itemId:'type'});\r",
                     "filArianne.add(typeFil);\r",
                     "}\r",
-                    "Ext.getCmp(\"ProprietesTaxonomie\").getForm().loadRecord(record);\r",
+                    "Ext.getCmp(\"ProprietesTaxonomie\").getForm().setValues(record.getData());\r",
+                    "Ext.getCmp(\"taxoRightsBox\").getForm().setValues(record.getData());\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ProprietesTaxonomie\").items.items, function(thingy){\r",
                     "thingy.setReadOnly(!ACL.interfaceRights[\"write.ui.taxonomy\"]);\r",
                     "});\r",
@@ -213,6 +214,7 @@
                     "    cibleR.beginEdit();\r",
                     "    if (Ext.getCmp(\"ProprietesTaxonomie\").getForm().isValid()){\r",
                     "        cibleR.set(Ext.getCmp(\"ProprietesTaxonomie\").getForm().getValues());\r",
+                    "        cibleR.set(Ext.getCmp(\"taxoRightsBox\").getForm().getValues());\r",
                     "    }\r",
                     "    cibleR.endEdit();\r",
                     "}"
@@ -274,6 +276,8 @@
                     "        Ext.getCmp(\"boutonEnregistrerTaxo\").disable();\r",
                     "        Ext.getCmp(\"boutonSupprimerTaxo\").disable();        \r",
                     "        Ext.getCmp('delConfirmZ').close();\r",
+                    "        Ext.getCmp(\"ProprietesTaxonomie\").getForm().reset();\r",
+                    "        Ext.getCmp(\"taxoRightsBox\").getForm().reset();\r",
                     "    });  \r",
                     "\r",
                     "}"

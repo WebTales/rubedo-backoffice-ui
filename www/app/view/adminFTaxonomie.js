@@ -18,8 +18,8 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
     alias: 'widget.adminFTaxonomie',
 
     requires: [
-        'Rubedo.view.WorkspaceCombo',
-        'Rubedo.view.TermesTaxonomieTree'
+        'Rubedo.view.TermesTaxonomieTree',
+        'Rubedo.view.WorkspaceCombo'
     ],
 
     favoriteIcon: 'tag.png',
@@ -223,14 +223,6 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                             fieldLabel: 'Texte d\'aide '
                                         },
                                         {
-                                            xtype: 'WorkspaceCombo',
-                                            name: 'workspaces',
-                                            fieldLabel: 'Espaces de travail',
-                                            multiSelect: true,
-                                            store: 'ContributeWorkspacesCombo',
-                                            anchor: '100%'
-                                        },
-                                        {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
                                             name: 'expandable',
@@ -266,9 +258,22 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'form',
+                            id: 'taxoRightsBox',
+                            bodyPadding: 10,
                             iconCls: 'user',
-                            title: 'Droits'
+                            title: 'Droits',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    name: 'workspaces',
+                                    fieldLabel: 'Espaces de travail',
+                                    labelWidth: 120,
+                                    multiSelect: true,
+                                    store: 'ContributeWorkspacesCombo',
+                                    anchor: '100%'
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',
