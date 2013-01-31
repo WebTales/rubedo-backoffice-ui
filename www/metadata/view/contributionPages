@@ -630,7 +630,10 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "if (record.get(\"readOnly\")) {\r",
+                                    "if (record.isRoot()){\r",
+                                    "    return(\"<i style=\\\"color:#BBB;\\\">Racine</i>\");\r",
+                                    "}\r",
+                                    "else if (record.get(\"readOnly\")) {\r",
                                     "    record.data.allowDrop=false;\r",
                                     "    record.data.allowDrag=false;\r",
                                     "    return(\"<i style=\\\"color:#BBB;\\\">\"+value+\"</i>\");\r",

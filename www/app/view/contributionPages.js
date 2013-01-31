@@ -288,7 +288,10 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                if (record.get("readOnly")) {
+                                if (record.isRoot()){
+                                    return("<i style=\"color:#BBB;\">Racine</i>");
+                                }
+                                else if (record.get("readOnly")) {
                                     record.data.allowDrop=false;
                                     record.data.allowDrag=false;
                                     return("<i style=\"color:#BBB;\">"+value+"</i>");

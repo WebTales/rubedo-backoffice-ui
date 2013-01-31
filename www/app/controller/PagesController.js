@@ -141,6 +141,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("addPageBtn").enable();
             if(record.get("readOnly")){
                 Ext.getCmp("removePageBtn").disable();
+                Ext.getCmp("addPageBtn").disable();
                 Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
                 Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
                 Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
