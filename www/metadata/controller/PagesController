@@ -855,6 +855,8 @@
                     "    store.resumeAutoSync();\r",
                     "    store.sync();\r",
                     "    store.addListener(\"update\", function(a, record){Ext.getCmp(\"mainPageAttributeForm\").getForm().loadRecord(record);},this,{single:true});\r",
+                    "    Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().collapseChildren(true);\r",
+                    "    Ext.getCmp(\"mainPageTree\").getStore().load({\"node\":Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected()});\r",
                     "    Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
                     "    Ext.Ajax.request({\r",
                     "        url: 'xhr-get-page-url',\r",

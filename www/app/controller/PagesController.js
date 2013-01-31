@@ -532,6 +532,8 @@ Ext.define('Rubedo.controller.PagesController', {
             store.resumeAutoSync();
             store.sync();
             store.addListener("update", function(a, record){Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);},this,{single:true});
+            Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().collapseChildren(true);
+            Ext.getCmp("mainPageTree").getStore().load({"node":Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected()});
             Ext.getCmp("pagesInternalPreview").removeAll();
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
