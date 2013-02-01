@@ -108,6 +108,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         clicksToEdit:2
     })
     ];
+    plugins[0].on("beforeedit", function(a,b){if ((b.record.get("readOnly"))||(b.record.isRoot())){return(false);}});
     if ((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly"))||(record.get("id")=="navigation")){
         plugins = [];
     }

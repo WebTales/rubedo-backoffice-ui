@@ -147,6 +147,41 @@
                         "allowBlank": false
                     },
                     "designerId": "5e6180c1-591d-42a9-96b8-f27edff43f95"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (record.isRoot()){\r",
+                            "    return(\"<i style=\\\"color:#BBB;\\\">Racine</i>\");\r",
+                            "}\r",
+                            "else if (record.get(\"readOnly\")) {\r",
+                            "    record.data.allowDrop=false;\r",
+                            "    record.data.allowDrag=false;\r",
+                            "    return(\"<i style=\\\"color:#BBB;\\\">\"+value+\"</i>\");\r",
+                            "\r",
+                            "} else {\r",
+                            "    return(value);\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "73583cbc-947c-4cf6-8c42-0fd757af6dd0"
                 }
             ]
         }

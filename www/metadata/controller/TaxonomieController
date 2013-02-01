@@ -112,6 +112,7 @@
                     "clicksToEdit:2\r",
                     "})\r",
                     "];\r",
+                    "plugins[0].on(\"beforeedit\", function(a,b){if ((b.record.get(\"readOnly\"))||(b.record.isRoot())){return(false);}});\r",
                     "if ((!ACL.interfaceRights[\"write.ui.taxonomy\"])||(record.get(\"readOnly\"))||(record.get(\"id\")==\"navigation\")){\r",
                     "plugins = [];\r",
                     "}\r",
