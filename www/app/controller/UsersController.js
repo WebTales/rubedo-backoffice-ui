@@ -155,7 +155,7 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     removeUserFromGroup: function(button, e, options) {
-        var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("UsersInGroupGrid").getSelectionModel().getSelection(),"data"),"name");
+        var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("UsersInGroupGrid").getSelectionModel().getSelection(),"data"),"id");
         var record=Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
         record.set("members", Ext.Array.difference(record.get("members"),targets));
         Ext.getCmp("groupsGrid").getSelectionModel().deselectAll();

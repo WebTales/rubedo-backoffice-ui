@@ -347,7 +347,7 @@
                 "designer|userClassName": "removeUserFromGroup",
                 "fn": "removeUserFromGroup",
                 "implHandler": [
-                    "var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"UsersInGroupGrid\").getSelectionModel().getSelection(),\"data\"),\"name\");\r",
+                    "var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"UsersInGroupGrid\").getSelectionModel().getSelection(),\"data\"),\"id\");\r",
                     "var record=Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
                     "record.set(\"members\", Ext.Array.difference(record.get(\"members\"),targets));\r",
                     "Ext.getCmp(\"groupsGrid\").getSelectionModel().deselectAll();\r",
