@@ -80,6 +80,7 @@ Ext.define('Rubedo.model.pageDataModel', {
                 return(false);
             },
             name: 'leaf',
+            persist: false,
             type: 'boolean'
         },
         {

@@ -128,7 +128,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
             var myParent=cible.parentNode;
             if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
-                myParent.set("leaf",true);
+                myParent.set("expandable",false);
             }
             cible.remove();
             Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
@@ -149,12 +149,12 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
                     Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
-                    cibleI.set("leaf",false);
+                    cibleI.set("expandable",true);
                     var orderValue = 100;
                     if (cibleI.hasChildNodes()){              
                         orderValue=cibleI.lastChild.get("orderValue")+100;
                     }
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true, orderValue: orderValue});
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
                     cibleI.expand();
                     Ext.getCmp('nouveauTermeTaxoField').setValue();
                     Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
@@ -281,12 +281,12 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
                 if (cibleI !== null) {
                     Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
-                    cibleI.set("leaf",false);
+                    cibleI.set("expandable",true);
                     var orderValue = 100;
                     if (cibleI.hasChildNodes()){              
                         orderValue=cibleI.lastChild.get("orderValue")+100;
                     }
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true, orderValue: orderValue});
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
                     cibleI.expand();
                     Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
                     Ext.getCmp('TermesTaxonomieTree').getStore().sync();

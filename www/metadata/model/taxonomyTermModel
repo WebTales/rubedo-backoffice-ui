@@ -93,6 +93,60 @@
                 "type": "boolean"
             },
             "designerId": "b2b58df8-090d-43a7-8a69-2cbe1cf22190"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field235",
+                "name": "leaf",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "b72b0393-b2ae-41a1-9fff-052a693ccf2f",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "convert",
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return(false);"
+                        ]
+                    },
+                    "designerId": "12076688-23f7-48f5-8879-d25e0d0591fc"
+                }
+            ]
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field236",
+                "name": "expandable",
+                "defaultValue": [
+                    "true"
+                ],
+                "type": "boolean"
+            },
+            "designerId": "79af3439-7e3b-4f00-b95b-cde333c5c918"
         }
     ]
 }
