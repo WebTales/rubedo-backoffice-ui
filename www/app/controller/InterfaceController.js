@@ -29,7 +29,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});
 
 
-            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-440);   
+            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-300);   
             menuPrincipal.getEl().addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });
             menuPrincipal.getEl().addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
                 Ext.getCmp('menuPrincipalInterface').destroy();
@@ -45,7 +45,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp('boiteAIconesBureau').setHeight(abstractcomponent.getHeight());
         Ext.getCmp('boiteAIconesBureau').setWidth(abstractcomponent.getWidth());
         if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
-            Ext.getCmp('menuPrincipalInterface').showAt(0, abstractcomponent.getHeight()-440);
+            Ext.getCmp('menuPrincipalInterface').showAt(0, abstractcomponent.getHeight()-300);
         }
     },
 
@@ -145,6 +145,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 }
             });
 
+        } else if(button.usesMenu){
+            //nothing special for menu butoons yet
         }
         else{
 
@@ -333,7 +335,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     mainToolsContextShow: function(abstractcomponent, options) {
         var me=this;
-        if (abstractcomponent.itemId!='deconnexionMenuPrincipal') {
+        if ((abstractcomponent.itemId!='deconnexionMenuPrincipal')&&(!abstractcomponent.usesMenu)) {
             abstractcomponent.getEl().on("contextmenu",function(e){
                 var menu= Ext.getCmp('MainToolsContextMenu');
                 if (!Ext.isEmpty(menu)){menu.destroy();}

@@ -13,7 +13,7 @@
         "border": 0,
         "floating": true,
         "frame": false,
-        "height": 440,
+        "height": 300,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
@@ -81,37 +81,6 @@
             },
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
             "cn": [
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.sites",
-                        "favoriteIcon": "globe_computer.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "sitesInterface",
-                        "margin": null,
-                        "iconCls": "referencement_icon",
-                        "text": "Sites"
-                    },
-                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
                 {
                     "type": "button",
                     "reference": {
@@ -244,7 +213,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "read.ui.contentTypes",
+                        "ACL": "read.ui.contents",
                         "layout|flex": null,
                         "designer|userClassName": "MySeparator13"
                     },
@@ -265,26 +234,164 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "read.ui.masks",
-                        "favoriteIcon": "application.png",
+                        "usesMenu": true,
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "adminFMDP",
-                        "margin": null,
-                        "iconCls": "masque-icon",
-                        "text": "Masques de page"
+                        "designer|userClassName": "MyButton248",
+                        "text": "Studio"
                     },
-                    "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914",
+                    "configAlternates": {
+                        "usesMenu": "boolean"
+                    },
+                    "designerId": "2ce81b6f-40d9-40df-9a1a-f7afb491bc46",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
-                            "name": "ACL",
+                            "name": "usesMenu",
                             "type": "string"
-                        },
+                        }
+                    ],
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyMenu8",
+                                "frame": true,
+                                "margin": null,
+                                "width": null
+                            },
+                            "designerId": "019a95e0-2341-436f-a044-9266bdcb84ba",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.sites",
+                                        "favoriteIcon": "globe_computer.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "sitesInterface",
+                                        "margin": null,
+                                        "overCls": null,
+                                        "focusCls": null,
+                                        "iconCls": "referencement_icon",
+                                        "menuActiveCls": null,
+                                        "pressedCls": null,
+                                        "text": "Sites"
+                                    },
+                                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.masks",
+                                        "favoriteIcon": "application.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "adminFMDP",
+                                        "margin": null,
+                                        "iconCls": "masque-icon",
+                                        "text": "Masques de page"
+                                    },
+                                    "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.contentTypes",
+                                        "favoriteIcon": "page_full.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "adminFTDC",
+                                        "margin": null,
+                                        "iconCls": "content-icon",
+                                        "text": "Types de contenus"
+                                    },
+                                    "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.damTypes",
+                                        "favoriteIcon": "images.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "hidden": null,
+                                        "itemId": "mediaTypesInterface",
+                                        "margin": null,
+                                        "iconCls": "mediaTypes",
+                                        "text": "Types de médias"
+                                    },
+                                    "designerId": "9f94e87c-60ce-4a7e-abb1-839dc8b9c70b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -296,311 +403,251 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "read.ui.contentTypes",
-                        "favoriteIcon": "page_full.png",
+                        "usesMenu": true,
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "adminFTDC",
-                        "margin": null,
-                        "iconCls": "content-icon",
-                        "text": "Types de contenus"
+                        "designer|userClassName": "MyButton248",
+                        "text": "Administration"
                     },
-                    "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750",
+                    "configAlternates": {
+                        "usesMenu": "boolean"
+                    },
+                    "designerId": "1fcd1273-35a7-4773-a98a-e36c6916ab40",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
+                            "name": "usesMenu",
                             "type": "string"
                         }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.damTypes",
-                        "favoriteIcon": "images.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "hidden": null,
-                        "itemId": "mediaTypesInterface",
-                        "margin": null,
-                        "iconCls": "mediaTypes",
-                        "text": "Types de médias"
-                    },
-                    "designerId": "9f94e87c-60ce-4a7e-abb1-839dc8b9c70b",
-                    "customConfigs": [
+                    ],
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyMenu8",
+                                "frame": true,
+                                "margin": null,
+                                "width": null
+                            },
+                            "designerId": "b0494c50-c3ce-495b-b9d6-6671ac75fbbf",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.queries",
+                                        "favoriteIcon": "database_search.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "queryManagerInterface",
+                                        "margin": null,
+                                        "iconCls": "database_search",
+                                        "text": "Requêtes"
+                                    },
+                                    "designerId": "fb47a613-65b5-4e85-a770-1d9a2670f49a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.taxonomy",
+                                        "favoriteIcon": "tag.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "adminFTaxonomie",
+                                        "margin": null,
+                                        "iconCls": "page_taxonomy",
+                                        "text": "Taxonomie"
+                                    },
+                                    "designerId": "51ac5c24-9d11-408f-ac2f-0bf9162bc196",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.groups",
+                                        "favoriteIcon": "users.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "adminFUtilisateurs",
+                                        "margin": null,
+                                        "iconCls": "user",
+                                        "text": "Groupes"
+                                    },
+                                    "designerId": "8ac7f7b1-509a-4157-a960-bae0d2e7c0bb",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.workspaces",
+                                        "favoriteIcon": "users.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "WorkspacesInterface",
+                                        "margin": null,
+                                        "iconCls": "user",
+                                        "text": "Workspaces"
+                                    },
+                                    "designerId": "d56fb895-2e09-481d-b9a9-a23b65e80267",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.users",
+                                        "favoriteIcon": "user_edit.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "floating": false,
+                                        "itemId": "UserAdminWindow",
+                                        "margin": null,
+                                        "iconCls": "user_edit",
+                                        "text": "Utilisateurs"
+                                    },
+                                    "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.technicalDashboard",
+                                        "favoriteIcon": "chart.png",
+                                        "designer|userClassName": "MyButton172",
+                                        "itemId": "monitoringTools",
+                                        "iconCls": "monitoring",
+                                        "text": "Supervision"
+                                    },
+                                    "designerId": "cde32027-84e3-423e-aa6b-262d1db05b70",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "ACL": "read.ui.workflows",
+                                        "favoriteIcon": "processes.png",
+                                        "designer|userClassName": "MyButton2",
+                                        "itemId": "menuWorkflows",
+                                        "margin": null,
+                                        "iconCls": "process-icon",
+                                        "text": "Workflows"
+                                    },
+                                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "ACL",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "favoriteIcon",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.taxonomy",
-                        "favoriteIcon": "tag.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "adminFTaxonomie",
-                        "margin": null,
-                        "iconCls": "page_taxonomy",
-                        "text": "Taxonomie"
-                    },
-                    "designerId": "51ac5c24-9d11-408f-ac2f-0bf9162bc196",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.workflows",
-                        "favoriteIcon": "processes.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "menuWorkflows",
-                        "margin": null,
-                        "iconCls": "process-icon",
-                        "text": "Workflows"
-                    },
-                    "designerId": "8a4b3dba-dc0c-433d-b10b-82714f506d7a",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.queries",
-                        "favoriteIcon": "database_search.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "queryManagerInterface",
-                        "margin": null,
-                        "iconCls": "database_search",
-                        "text": "Requêtes"
-                    },
-                    "designerId": "fb47a613-65b5-4e85-a770-1d9a2670f49a",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "tbseparator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.groups",
-                        "layout|flex": null,
-                        "designer|userClassName": "MySeparator13"
-                    },
-                    "designerId": "11306168-fa34-41ee-9f92-f6fd80d03173",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.groups",
-                        "favoriteIcon": "users.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "adminFUtilisateurs",
-                        "margin": null,
-                        "iconCls": "user",
-                        "text": "Groupes"
-                    },
-                    "designerId": "8ac7f7b1-509a-4157-a960-bae0d2e7c0bb",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.workspaces",
-                        "favoriteIcon": "users.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "WorkspacesInterface",
-                        "margin": null,
-                        "iconCls": "user",
-                        "text": "Workspaces"
-                    },
-                    "designerId": "d56fb895-2e09-481d-b9a9-a23b65e80267",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.users",
-                        "favoriteIcon": "user_edit.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "floating": false,
-                        "itemId": "UserAdminWindow",
-                        "margin": null,
-                        "iconCls": "user_edit",
-                        "text": "Utilisateurs"
-                    },
-                    "designerId": "a36130b6-b0e9-45cb-b93b-a938e1dc6c1d",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.technicalDashboard",
-                        "favoriteIcon": "chart.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton172",
-                        "itemId": "monitoringTools",
-                        "iconCls": "monitoring",
-                        "text": "Supervision"
-                    },
-                    "designerId": "cde32027-84e3-423e-aa6b-262d1db05b70",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "tbseparator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MySeparator13"
-                    },
-                    "designerId": "6ecc6d21-afd3-40c6-883f-98ae0b7ad249"
                 },
                 {
                     "type": "button",

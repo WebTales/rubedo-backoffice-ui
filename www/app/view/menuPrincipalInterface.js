@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     border: 0,
     floating: true,
     frame: false,
-    height: 440,
+    height: 300,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -63,14 +63,6 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.sites',
-                            favoriteIcon: 'globe_computer.png',
-                            itemId: 'sitesInterface',
-                            iconCls: 'referencement_icon',
-                            text: 'Sites'
-                        },
-                        {
-                            xtype: 'button',
                             ACL: 'read.ui.pages',
                             favoriteIcon: 'application.png',
                             itemId: 'contributionPages',
@@ -103,95 +95,118 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'tbseparator',
-                            ACL: 'read.ui.contentTypes'
+                            ACL: 'read.ui.contents'
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.masks',
-                            favoriteIcon: 'application.png',
-                            itemId: 'adminFMDP',
-                            iconCls: 'masque-icon',
-                            text: 'Masques de page'
+                            usesMenu: true,
+                            text: 'Studio',
+                            menu: {
+                                xtype: 'menu',
+                                frame: true,
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.sites',
+                                        favoriteIcon: 'globe_computer.png',
+                                        itemId: 'sitesInterface',
+                                        iconCls: 'referencement_icon',
+                                        text: 'Sites'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.masks',
+                                        favoriteIcon: 'application.png',
+                                        itemId: 'adminFMDP',
+                                        iconCls: 'masque-icon',
+                                        text: 'Masques de page'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.contentTypes',
+                                        favoriteIcon: 'page_full.png',
+                                        itemId: 'adminFTDC',
+                                        iconCls: 'content-icon',
+                                        text: 'Types de contenus'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.damTypes',
+                                        favoriteIcon: 'images.png',
+                                        itemId: 'mediaTypesInterface',
+                                        iconCls: 'mediaTypes',
+                                        text: 'Types de médias'
+                                    }
+                                ]
+                            }
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.contentTypes',
-                            favoriteIcon: 'page_full.png',
-                            itemId: 'adminFTDC',
-                            iconCls: 'content-icon',
-                            text: 'Types de contenus'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.damTypes',
-                            favoriteIcon: 'images.png',
-                            itemId: 'mediaTypesInterface',
-                            iconCls: 'mediaTypes',
-                            text: 'Types de médias'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.taxonomy',
-                            favoriteIcon: 'tag.png',
-                            itemId: 'adminFTaxonomie',
-                            iconCls: 'page_taxonomy',
-                            text: 'Taxonomie'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.workflows',
-                            favoriteIcon: 'processes.png',
-                            itemId: 'menuWorkflows',
-                            iconCls: 'process-icon',
-                            text: 'Workflows'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.queries',
-                            favoriteIcon: 'database_search.png',
-                            itemId: 'queryManagerInterface',
-                            iconCls: 'database_search',
-                            text: 'Requêtes'
-                        },
-                        {
-                            xtype: 'tbseparator',
-                            ACL: 'read.ui.groups'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.groups',
-                            favoriteIcon: 'users.png',
-                            itemId: 'adminFUtilisateurs',
-                            iconCls: 'user',
-                            text: 'Groupes'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.workspaces',
-                            favoriteIcon: 'users.png',
-                            itemId: 'WorkspacesInterface',
-                            iconCls: 'user',
-                            text: 'Workspaces'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.users',
-                            favoriteIcon: 'user_edit.png',
-                            floating: false,
-                            itemId: 'UserAdminWindow',
-                            iconCls: 'user_edit',
-                            text: 'Utilisateurs'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'read.ui.technicalDashboard',
-                            favoriteIcon: 'chart.png',
-                            itemId: 'monitoringTools',
-                            iconCls: 'monitoring',
-                            text: 'Supervision'
-                        },
-                        {
-                            xtype: 'tbseparator'
+                            usesMenu: true,
+                            text: 'Administration',
+                            menu: {
+                                xtype: 'menu',
+                                frame: true,
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.queries',
+                                        favoriteIcon: 'database_search.png',
+                                        itemId: 'queryManagerInterface',
+                                        iconCls: 'database_search',
+                                        text: 'Requêtes'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.taxonomy',
+                                        favoriteIcon: 'tag.png',
+                                        itemId: 'adminFTaxonomie',
+                                        iconCls: 'page_taxonomy',
+                                        text: 'Taxonomie'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.groups',
+                                        favoriteIcon: 'users.png',
+                                        itemId: 'adminFUtilisateurs',
+                                        iconCls: 'user',
+                                        text: 'Groupes'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.workspaces',
+                                        favoriteIcon: 'users.png',
+                                        itemId: 'WorkspacesInterface',
+                                        iconCls: 'user',
+                                        text: 'Workspaces'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.users',
+                                        favoriteIcon: 'user_edit.png',
+                                        floating: false,
+                                        itemId: 'UserAdminWindow',
+                                        iconCls: 'user_edit',
+                                        text: 'Utilisateurs'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.technicalDashboard',
+                                        favoriteIcon: 'chart.png',
+                                        itemId: 'monitoringTools',
+                                        iconCls: 'monitoring',
+                                        text: 'Supervision'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        ACL: 'read.ui.workflows',
+                                        favoriteIcon: 'processes.png',
+                                        itemId: 'menuWorkflows',
+                                        iconCls: 'process-icon',
+                                        text: 'Workflows'
+                                    }
+                                ]
+                            }
                         },
                         {
                             xtype: 'button',
