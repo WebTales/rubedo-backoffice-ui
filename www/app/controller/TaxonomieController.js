@@ -35,6 +35,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             Ext.getCmp("boutonEnregistrerTaxo").disable();
             Ext.getCmp("boutonSupprimerTaxo").disable();
         } 
+        Ext.getCmp("taxoTermEditBrnGroup").disable();
         var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.get("name"));}
@@ -132,8 +133,11 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             cible.remove();
             Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
             Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+            Ext.getCmp("taxoTermEditBrnGroup").disable();
         }
-        button.up().destroy();
+        if (button.id!="taxoTermKiller") {
+            button.up().destroy();
+        }
     },
 
     addTerm: function(button, e, options) {
@@ -192,6 +196,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 Ext.getCmp('delConfirmZ').close();
                 Ext.getCmp("ProprietesTaxonomie").getForm().reset();
                 Ext.getCmp("taxoRightsBox").getForm().reset();
+                Ext.getCmp("taxoTermEditBrnGroup").disable();
             });  
 
         }
@@ -240,15 +245,62 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 menu.on('blur', function(){this.destroy();});}
                 menu.showAt(Ext.EventObject.getXY());
                 if (record.get("id")=="root") {
-                    Ext.getCmp("boutonModifierTermesTaxo").hide();
                     Ext.getCmp("boutonSupprimerTermesTaxo").hide();
                 } else {
-                    Ext.getCmp("boutonModifierTermesTaxo").show();
                     Ext.getCmp("boutonSupprimerTermesTaxo").show();
                 }
 
             }
             e.stopEvent();
+    },
+
+    onTermesTaxonomieTreeSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("taxoTermEditBrnGroup").disable();
+        } else {
+            var openVocab =Ext.getCmp("AdminfTaxonomieGrid").getSelectionModel().getLastSelected();
+            if ((!openVocab.get("readOnly"))&&(openVocab.get("name")!="navigation")){
+                Ext.getCmp("taxoTermEditBrnGroup").enable();
+                if (selections[0].isRoot()){
+                    Ext.getCmp("taxoTermKiller").disable();
+                } else {
+                    Ext.getCmp("taxoTermKiller").enable();
+                }
+            } else {
+                Ext.getCmp("taxoTermEditBrnGroup").disable();
+            }
+        }
+    },
+
+    onTaxoTermInsertorBtnClick: function(button, e, options) {
+        var mainTaxo=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();
+        if (mainTaxo !== null) {
+
+            var champT = button.previousSibling();
+            if (champT.isValid()) {
+                var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();
+                if (cibleI !== null) {
+                    Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
+                    cibleI.set("leaf",false);
+                    var orderValue = 100;
+                    if (cibleI.hasChildNodes()){              
+                        orderValue=cibleI.lastChild.get("orderValue")+100;
+                    }
+                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),leaf:true, orderValue: orderValue});
+                    cibleI.expand();
+                    Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
+                    Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                } 
+
+
+
+            }
+        }
+        button.up().up().close();
+    },
+
+    onTaxoOpenInsertBtnClick: function(button, e, options) {
+        Ext.widget("taxoTermInsertWindow").show();
     },
 
     recupereFils: function(cible) {
@@ -267,7 +319,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             "#AdminfTaxonomieGrid": {
                 select: this.selectVocabulary
             },
-            "#boutonSupprimerTermesTaxo": {
+            "#boutonSupprimerTermesTaxo, #taxoTermKiller": {
                 click: this.removeTerm
             },
             "#boutonAjouterTermesTaxo": {
@@ -289,7 +341,14 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 click: this.updateTerm
             },
             "#TermesTaxonomieTree": {
-                itemcontextmenu: this.termsContextMenuDisplay
+                itemcontextmenu: this.termsContextMenuDisplay,
+                selectionchange: this.onTermesTaxonomieTreeSelectionChange
+            },
+            "#taxoTermInsertorBtn": {
+                click: this.onTaxoTermInsertorBtnClick
+            },
+            "#taxoOpenInsertBtn": {
+                click: this.onTaxoOpenInsertBtnClick
             }
         });
     }

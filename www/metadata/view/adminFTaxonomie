@@ -190,7 +190,7 @@
                 "dock": "top",
                 "designer|userClassName": "menuContenusTools",
                 "designer|userAlias": "menuContenusTools",
-                "height": 54,
+                "height": null,
                 "itemId": "contextBar",
                 "width": null
             },
@@ -210,6 +210,7 @@
                         "id": "boutonCreerTaxonomie",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter"
@@ -238,6 +239,7 @@
                         "id": "boutonSupprimerTaxo",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer"
@@ -266,6 +268,7 @@
                         "id": "boutonEnregistrerTaxo",
                         "itemId": null,
                         "icon": null,
+                        "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
                         "text": "Enregistrer"
@@ -297,6 +300,68 @@
                         "text": "Ajouter aux favoris"
                     },
                     "designerId": "2c1a0b63-4300-403a-a331-0c20472a6f8e"
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.taxonomy",
+                        "designer|userClassName": "MyButtonGroup21",
+                        "disabled": true,
+                        "id": "taxoTermEditBrnGroup",
+                        "headerPosition": "bottom",
+                        "title": "Edition des termes",
+                        "columns": 2
+                    },
+                    "designerId": "8cabf1a0-1066-4425-93e8-e58baab7d467",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton239",
+                                "id": "taxoOpenInsertBtn",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Ajouter"
+                            },
+                            "designerId": "fe29f9a6-6b62-46d5-b9eb-23cde9b3742f"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton246",
+                                "id": "taxoTermKiller",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Supprimer"
+                            },
+                            "designerId": "5839ef51-6810-447d-8daf-90243a8073f4"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",

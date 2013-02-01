@@ -39,6 +39,7 @@
                     "    Ext.getCmp(\"boutonEnregistrerTaxo\").disable();\r",
                     "    Ext.getCmp(\"boutonSupprimerTaxo\").disable();\r",
                     "} \r",
+                    "Ext.getCmp(\"taxoTermEditBrnGroup\").disable();\r",
                     "var filArianne = tablepanel.findParentByType('window').getDockedComponent('filArianne');\r",
                     "var typeFil = filArianne.getComponent('type');\r",
                     "if (Ext.isDefined(typeFil)) {typeFil.setText(record.get(\"name\"));}\r",
@@ -152,13 +153,16 @@
                     "    cible.remove();\r",
                     "    Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();\r",
                     "    Ext.getCmp('TermesTaxonomieTree').getStore().sync();\r",
+                    "    Ext.getCmp(\"taxoTermEditBrnGroup\").disable();\r",
                     "}\r",
-                    "button.up().destroy();"
+                    "if (button.id!=\"taxoTermKiller\") {\r",
+                    "    button.up().destroy();\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTermesTaxo"
+                "designer|controlQuery": "#boutonSupprimerTermesTaxo, #taxoTermKiller"
             },
             "designerId": "ce78b2cf-cde8-4749-acbf-369ba7160598"
         },
@@ -286,6 +290,7 @@
                     "        Ext.getCmp('delConfirmZ').close();\r",
                     "        Ext.getCmp(\"ProprietesTaxonomie\").getForm().reset();\r",
                     "        Ext.getCmp(\"taxoRightsBox\").getForm().reset();\r",
+                    "        Ext.getCmp(\"taxoTermEditBrnGroup\").disable();\r",
                     "    });  \r",
                     "\r",
                     "}"
@@ -398,10 +403,8 @@
                     "        menu.on('blur', function(){this.destroy();});}\r",
                     "        menu.showAt(Ext.EventObject.getXY());\r",
                     "        if (record.get(\"id\")==\"root\") {\r",
-                    "            Ext.getCmp(\"boutonModifierTermesTaxo\").hide();\r",
                     "            Ext.getCmp(\"boutonSupprimerTermesTaxo\").hide();\r",
                     "        } else {\r",
-                    "            Ext.getCmp(\"boutonModifierTermesTaxo\").show();\r",
                     "            Ext.getCmp(\"boutonSupprimerTermesTaxo\").show();\r",
                     "        }\r",
                     "\r",
@@ -414,6 +417,103 @@
                 "designer|controlQuery": "#TermesTaxonomieTree"
             },
             "designerId": "309b5f2a-8c86-4dec-b9f7-db5e07610ac1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTermesTaxonomieTreeSelectionChange",
+                "fn": "onTermesTaxonomieTreeSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    Ext.getCmp(\"taxoTermEditBrnGroup\").disable();\r",
+                    "} else {\r",
+                    "    var openVocab =Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected();\r",
+                    "    if ((!openVocab.get(\"readOnly\"))&&(openVocab.get(\"name\")!=\"navigation\")){\r",
+                    "        Ext.getCmp(\"taxoTermEditBrnGroup\").enable();\r",
+                    "        if (selections[0].isRoot()){\r",
+                    "            Ext.getCmp(\"taxoTermKiller\").disable();\r",
+                    "        } else {\r",
+                    "            Ext.getCmp(\"taxoTermKiller\").enable();\r",
+                    "        }\r",
+                    "    } else {\r",
+                    "        Ext.getCmp(\"taxoTermEditBrnGroup\").disable();\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#TermesTaxonomieTree"
+            },
+            "designerId": "91b19d2d-c3e5-42bc-a1d0-2e27d7b4aeed"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTaxoTermInsertorBtnClick",
+                "fn": "onTaxoTermInsertorBtnClick",
+                "implHandler": [
+                    "var mainTaxo=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();\r",
+                    "if (mainTaxo !== null) {\r",
+                    "\r",
+                    "    var champT = button.previousSibling();\r",
+                    "    if (champT.isValid()) {\r",
+                    "        var cibleI = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
+                    "        if (cibleI !== null) {\r",
+                    "            Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();\r",
+                    "            cibleI.set(\"leaf\",false);\r",
+                    "            var orderValue = 100;\r",
+                    "            if (cibleI.hasChildNodes()){              \r",
+                    "                orderValue=cibleI.lastChild.get(\"orderValue\")+100;\r",
+                    "            }\r",
+                    "            cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get(\"id\"),leaf:true, orderValue: orderValue});\r",
+                    "            cibleI.expand();\r",
+                    "            Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();\r",
+                    "            Ext.getCmp('TermesTaxonomieTree').getStore().sync();\r",
+                    "        } \r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    }\r",
+                    "}\r",
+                    "button.up().up().close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#taxoTermInsertorBtn"
+            },
+            "designerId": "192085e9-79c0-4ea9-a753-820eaf11f3df"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTaxoOpenInsertBtnClick",
+                "fn": "onTaxoOpenInsertBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"taxoTermInsertWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#taxoOpenInsertBtn"
+            },
+            "designerId": "e41b00b7-8464-4ddc-b8d3-6c441a3ec826"
         }
     ]
 }

@@ -205,7 +205,8 @@ Ext.application({
         'selectorTreeForField',
         'WorkspacesInterface',
         'newWorkspaceWindow',
-        'WorkspaceCombo'
+        'WorkspaceCombo',
+        'taxoTermInsertWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

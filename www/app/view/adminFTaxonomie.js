@@ -98,13 +98,13 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
-                    height: 54,
                     itemId: 'contextBar',
                     items: [
                         {
                             xtype: 'button',
                             ACL: 'write.ui.taxonomy',
                             id: 'boutonCreerTaxonomie',
+                            iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
                             text: 'Ajouter'
@@ -114,6 +114,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             ACL: 'write.ui.taxonomy',
                             disabled: true,
                             id: 'boutonSupprimerTaxo',
+                            iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
@@ -123,6 +124,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             ACL: 'write.ui.taxonomy',
                             disabled: true,
                             id: 'boutonEnregistrerTaxo',
+                            iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
@@ -134,6 +136,33 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             iconCls: 'favorite_add_big',
                             scale: 'large',
                             text: 'Ajouter aux favoris'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.taxonomy',
+                            disabled: true,
+                            id: 'taxoTermEditBrnGroup',
+                            headerPosition: 'bottom',
+                            title: 'Edition des termes',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'taxoOpenInsertBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Ajouter'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'taxoTermKiller',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Supprimer'
+                                }
+                            ]
                         },
                         {
                             xtype: 'tbfill'

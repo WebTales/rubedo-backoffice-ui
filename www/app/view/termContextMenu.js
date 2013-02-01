@@ -41,13 +41,6 @@ Ext.define('Rubedo.view.termContextMenu', {
                 },
                 {
                     xtype: 'button',
-                    id: 'boutonModifierTermesTaxo',
-                    icon: '',
-                    iconCls: 'edit',
-                    text: 'Substituer'
-                },
-                {
-                    xtype: 'button',
                     id: 'boutonSupprimerTermesTaxo',
                     iconCls: 'close',
                     text: 'Supprimer'
