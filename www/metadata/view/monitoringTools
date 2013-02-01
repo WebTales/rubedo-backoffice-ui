@@ -384,8 +384,7 @@
                                     "    failure:function(){\r",
                                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');\r",
                                     "    }\r",
-                                    "});\r",
-                                    ""
+                                    "});"
                                 ],
                                 "name": "render",
                                 "scope": "me"

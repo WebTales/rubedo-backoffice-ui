@@ -61,7 +61,7 @@
                                 "padding": 0,
                                 "overflowY": "auto",
                                 "layout": "fit",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "collapsible": true,
                                 "title": "Open to  edit"
                             },
@@ -147,6 +147,16 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "244397de-eb25-4869-9344-3c1e0daf258b",
+                    "masterInstanceId": "ExtBox1-ext-gen13418"
                 }
             ]
         }

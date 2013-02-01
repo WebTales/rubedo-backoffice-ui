@@ -95,7 +95,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.medias',
+                            ACL: 'read.ui.dam',
                             favoriteIcon: 'images.png',
                             itemId: 'DAMInterface',
                             iconCls: 'mediaTypes',
@@ -123,7 +123,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.contentTypes',
+                            ACL: 'read.ui.damTypes',
                             favoriteIcon: 'images.png',
                             itemId: 'mediaTypesInterface',
                             iconCls: 'mediaTypes',
@@ -147,7 +147,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.masks',
+                            ACL: 'read.ui.queries',
                             favoriteIcon: 'database_search.png',
                             itemId: 'queryManagerInterface',
                             iconCls: 'database_search',
@@ -167,7 +167,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'read.ui.groups',
+                            ACL: 'read.ui.workspaces',
                             favoriteIcon: 'users.png',
                             itemId: 'WorkspacesInterface',
                             iconCls: 'user',
@@ -184,7 +184,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'exe.ui.elasticSearch',
+                            ACL: 'read.ui.technicalDashboard',
                             favoriteIcon: 'chart.png',
                             itemId: 'monitoringTools',
                             iconCls: 'monitoring',

@@ -218,7 +218,6 @@ Ext.define('Rubedo.view.monitoringTools', {
                 Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');
             }
         });
-
     }
 
 });
