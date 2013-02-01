@@ -754,89 +754,6 @@
                     ]
                 },
                 {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel36",
-                        "layout": "fit",
-                        "title": "Droits"
-                    },
-                    "designerId": "22ffe07e-f4ea-4393-9d3f-e110a815ee29",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig23"
-                            },
-                            "designerId": "3d2c563d-215a-4875-9fff-ad445d15cacd"
-                        },
-                        {
-                            "type": "panel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyPanel37",
-                                "layout": "accordion",
-                                "title": ""
-                            },
-                            "designerId": "25f49e6f-59cb-4824-9b77-59fc5d9fd06c",
-                            "cn": [
-                                {
-                                    "type": "panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyPanel38",
-                                        "title": "Sites"
-                                    },
-                                    "designerId": "c54443be-57bb-412b-918e-b1fe5d8c0ce0"
-                                },
-                                {
-                                    "type": "panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyPanel39",
-                                        "title": "Types de contenus"
-                                    },
-                                    "designerId": "d2157c2c-71a0-48a8-9f6a-bff14e92599f"
-                                },
-                                {
-                                    "type": "panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyPanel40",
-                                        "title": "Médias"
-                                    },
-                                    "designerId": "5f5c6b78-d8db-4354-b6ec-31fd91dbae24"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "form",
                     "reference": {
                         "name": "items",
@@ -847,7 +764,7 @@
                         "designer|userClassName": "MyForm40",
                         "id": "groupPropsForm",
                         "bodyPadding": 10,
-                        "title": "Propriétés"
+                        "title": "Droits"
                     },
                     "designerId": "4c5cf7dd-da1a-4dd9-b5e4-ce7ce42e5a04",
                     "cn": [

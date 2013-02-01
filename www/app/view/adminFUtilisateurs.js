@@ -306,40 +306,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             ]
                         },
                         {
-                            xtype: 'panel',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Droits',
-                            items: [
-                                {
-                                    xtype: 'panel',
-                                    layout: {
-                                        type: 'accordion'
-                                    },
-                                    title: '',
-                                    items: [
-                                        {
-                                            xtype: 'panel',
-                                            title: 'Sites'
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: 'Types de contenus'
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: 'Médias'
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             xtype: 'form',
                             id: 'groupPropsForm',
                             bodyPadding: 10,
-                            title: 'Propriétés',
+                            title: 'Droits',
                             items: [
                                 {
                                     xtype: 'textfield',
