@@ -112,34 +112,14 @@
                 "designer|userClassName": "MyTextField",
                 "id": "ESSearchField",
                 "itemId": "filterField",
-                "value": [
-                    "'Recherche'"
-                ],
+                "value": null,
                 "fieldLabel": "",
                 "labelSeparator": " ",
-                "labelWidth": 68
+                "labelWidth": 68,
+                "emptyText": "Recherche"
             },
             "designerId": "6c99783e-6f06-4dfc-a123-064f5486e953",
             "cn": [
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onESSearchFieldFocus",
-                        "fn": "onESSearchFieldFocus",
-                        "implHandler": [
-                            "field.setValue();"
-                        ],
-                        "single": true,
-                        "name": "focus",
-                        "scope": "me"
-                    },
-                    "designerId": "3f727643-9834-4f15-a59c-112dd9608a57"
-                },
                 {
                     "type": "basiceventbinding",
                     "reference": {

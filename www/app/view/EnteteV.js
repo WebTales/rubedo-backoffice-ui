@@ -58,16 +58,11 @@ Ext.define('Rubedo.view.EnteteV', {
                     xtype: 'textfield',
                     id: 'ESSearchField',
                     itemId: 'filterField',
-                    value: 'Recherche',
                     fieldLabel: '',
                     labelSeparator: ' ',
                     labelWidth: 68,
+                    emptyText: 'Recherche',
                     listeners: {
-                        focus: {
-                            fn: me.onESSearchFieldFocus,
-                            single: true,
-                            scope: me
-                        },
                         specialkey: {
                             fn: me.onESSearchFieldSpecialkey,
                             scope: me
@@ -83,10 +78,6 @@ Ext.define('Rubedo.view.EnteteV', {
         });
 
         me.callParent(arguments);
-    },
-
-    onESSearchFieldFocus: function(field, options) {
-        field.setValue();
     },
 
     onESSearchFieldSpecialkey: function(field, e, options) {
