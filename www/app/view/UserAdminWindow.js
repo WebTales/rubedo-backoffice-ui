@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                         {
                             xtype: 'form',
                             id: 'userAdminInfoDisplay',
+                            overflowY: 'auto',
                             layout: {
                                 type: 'hbox'
                             },
@@ -214,6 +215,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                         {
                             xtype: 'form',
                             id: 'userAdminAccessDisplay',
+                            overflowY: 'auto',
                             bodyPadding: 20,
                             title: 'Accès',
                             items: [
@@ -367,6 +369,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                         },
                         {
                             xtype: 'panel',
+                            overflowY: 'auto',
                             title: 'Droits'
                         }
                     ]

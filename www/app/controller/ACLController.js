@@ -60,7 +60,7 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.dam":false,
                 "write.ui.dam":false,
                 "read.ui.damTypes":false,
-                "write.ui.damtypes":false,
+                "write.ui.damTypes":false,
                 "read.ui.workspaces":false,
                 "write.ui.workspaces":false,
                 "read.ui.queries":false,

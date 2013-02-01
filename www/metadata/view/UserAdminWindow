@@ -144,6 +144,7 @@
                         "designer|userClassName": "MyForm22",
                         "designer|displayName": "",
                         "id": "userAdminInfoDisplay",
+                        "overflowY": "auto",
                         "layout": "hbox",
                         "bodyPadding": 10,
                         "title": "Informations"
@@ -508,6 +509,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyForm21",
                         "id": "userAdminAccessDisplay",
+                        "overflowY": "auto",
                         "bodyPadding": 20,
                         "title": "Accès"
                     },
@@ -965,6 +967,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel44",
+                        "overflowY": "auto",
                         "title": "Droits"
                     },
                     "designerId": "31846d3c-f10c-4e37-96de-bbdb7e707a98",
