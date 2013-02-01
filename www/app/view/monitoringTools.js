@@ -82,15 +82,6 @@ Ext.define('Rubedo.view.monitoringTools', {
                                 type: 'fit'
                             },
                             title: 'ElasticSearch',
-                            items: [
-                                {
-                                    xtype: 'container',
-                                    autoEl: {
-                                        tag: 'iframe',
-                                        src: 'http://178.32.8.116:9200/_plugin/head/'
-                                    }
-                                }
-                            ],
                             dockedItems: [
                                 {
                                     xtype: 'toolbar',
@@ -186,7 +177,13 @@ Ext.define('Rubedo.view.monitoringTools', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onESWindowRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -202,6 +199,26 @@ Ext.define('Rubedo.view.monitoringTools', {
         });
 
         me.callParent(arguments);
+    },
+
+    onESWindowRender: function(abstractcomponent, options) {
+        Ext.Ajax.request({
+            url:'elastic-search/get-options',
+            params:{
+
+            },
+            success:function(response){
+                var result=Ext.JSON.decode(response.responseText).data;
+                abstractcomponent.add(Ext.widget("container",{autoEl: {
+                    tag: 'iframe',
+                    src: 'http://'+result.host+':'+result.port+'/_plugin/head/'
+                }}));
+            },
+            failure:function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');
+            }
+        });
+
     }
 
 });

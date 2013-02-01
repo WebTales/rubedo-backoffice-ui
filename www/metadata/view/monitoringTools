@@ -147,24 +147,6 @@
                     "designerId": "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
                     "cn": [
                         {
-                            "type": "container",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyContainer24",
-                                "autoEl": [
-                                    "{\r",
-                                    "    tag:'iframe',\r",
-                                    "    src:\"http://178.32.8.116:9200/_plugin/head/\"\r",
-                                    "}"
-                                ]
-                            },
-                            "designerId": "08f7f2c2-fcc0-43d8-8ead-d764d2ff74b3"
-                        },
-                        {
                             "type": "toolbar",
                             "reference": {
                                 "name": "dockedItems",
@@ -375,6 +357,40 @@
                                 "designer|userClassName": "TabConfig30"
                             },
                             "designerId": "5d7d8ace-b12e-4978-bfa8-8423343b0cc8"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onESWindowRender",
+                                "fn": "onESWindowRender",
+                                "implHandler": [
+                                    "Ext.Ajax.request({\r",
+                                    "    url:'elastic-search/get-options',\r",
+                                    "    params:{\r",
+                                    "        \r",
+                                    "    },\r",
+                                    "    success:function(response){\r",
+                                    "        var result=Ext.JSON.decode(response.responseText).data;\r",
+                                    "        abstractcomponent.add(Ext.widget(\"container\",{autoEl: {\r",
+                                    "          tag: 'iframe',\r",
+                                    "            src: 'http://'+result.host+':'+result.port+'/_plugin/head/'\r",
+                                    "        }}));\r",
+                                    "    },\r",
+                                    "    failure:function(){\r",
+                                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');\r",
+                                    "    }\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "1eec922d-326a-45aa-bede-f7df7a18c122"
                         }
                     ]
                 }
