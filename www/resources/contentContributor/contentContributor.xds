@@ -195,6 +195,42 @@
                 "app/model/queryDataModel.js"
             ],
             "className": "queryDataModel"
+        },
+        "a5dc879a-ac80-4b73-b059-0d684a28a6aa": {
+            "paths": [
+                "metadata/resource/js7"
+            ],
+            "className": "js7"
+        },
+        "add5f032-0152-4693-9ff8-87560dd13aa6": {
+            "paths": [
+                "metadata/resource/css2"
+            ],
+            "className": "css2"
+        },
+        "7da94d0b-37e6-45c0-a50d-391fb5611e6c": {
+            "paths": [
+                "metadata/store/TaxonomieDataJson",
+                "app/store/override/TaxonomieDataJson.js",
+                "app/store/TaxonomieDataJson.js"
+            ],
+            "className": "TaxonomieDataJson"
+        },
+        "24cee725-ec02-4efd-b587-2ad70cff6795": {
+            "paths": [
+                "metadata/model/taxonomieDataModel",
+                "app/model/override/taxonomieDataModel.js",
+                "app/model/taxonomieDataModel.js"
+            ],
+            "className": "taxonomieDataModel"
+        },
+        "8d2340f7-3ad5-4d77-89df-3da76f4cc35e": {
+            "paths": [
+                "metadata/model/taxonomyTermModel",
+                "app/model/override/taxonomyTermModel.js",
+                "app/model/taxonomyTermModel.js"
+            ],
+            "className": "taxonomyTermModel"
         }
     },
     "viewOrderMap": {
@@ -209,7 +245,8 @@
         "store": [
             "fdb6ac10-082f-4726-bbbb-44a0ba4a1936",
             "878fb62d-cad8-432c-8ada-7c747d0df220",
-            "a7c74968-2e49-41d2-94c2-728098b2f9c9"
+            "a7c74968-2e49-41d2-94c2-728098b2f9c9",
+            "7da94d0b-37e6-45c0-a50d-391fb5611e6c"
         ],
         "controller": [
             "7b179740-bc32-424a-9f22-d87b248d4bef",
@@ -219,7 +256,9 @@
         "model": [
             "16a71200-d464-4495-844e-815ee3b481fb",
             "92a46cff-c0b3-47bd-a001-91780b452b14",
-            "2a4695f1-3173-49db-9f7e-b1b5a41931d3"
+            "2a4695f1-3173-49db-9f7e-b1b5a41931d3",
+            "24cee725-ec02-4efd-b587-2ad70cff6795",
+            "8d2340f7-3ad5-4d77-89df-3da76f4cc35e"
         ],
         "resource": [
             "7374cafb-8817-43a0-8fa4-7a363ba65a53",
@@ -231,7 +270,9 @@
             "a34ed683-63a6-493e-9ff9-ad3ac906f351",
             "edb99e4e-a342-4da2-ab99-fc87a0c1731b",
             "92224966-634d-4ac8-b6ee-835828df8304",
-            "7a6a8f52-4d97-4ad0-9566-34025f91cc07"
+            "7a6a8f52-4d97-4ad0-9566-34025f91cc07",
+            "a5dc879a-ac80-4b73-b059-0d684a28a6aa",
+            "add5f032-0152-4693-9ff8-87560dd13aa6"
         ],
         "app": [
             "application"

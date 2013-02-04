@@ -8,12 +8,15 @@
     "userConfig": {
         "models": [
             "imageDataModel",
-            "queryDataModel"
+            "queryDataModel",
+            "taxonomieDataModel",
+            "taxonomyTermModel"
         ],
         "stores": [
             "ImagePickerStore",
             "Contents",
-            "QueriesStore"
+            "QueriesStore",
+            "TaxonomieDataJson"
         ],
         "views": [
             "MyPanel",

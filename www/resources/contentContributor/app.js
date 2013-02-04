@@ -25,12 +25,15 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'imageDataModel',
-        'queryDataModel'
+        'queryDataModel',
+        'taxonomieDataModel',
+        'taxonomyTermModel'
     ],
     stores: [
         'ImagePickerStore',
         'Contents',
-        'QueriesStore'
+        'QueriesStore',
+        'TaxonomieDataJson'
     ],
     views: [
         'MyPanel',

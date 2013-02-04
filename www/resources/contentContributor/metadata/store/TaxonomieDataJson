@@ -1,0 +1,71 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Taxonomy",
+        "designer|userClassName": "TaxonomieDataJson",
+        "designer|userAlias": "TaxonomieDataJson",
+        "autoLoad": true,
+        "autoSync": false,
+        "storeId": "TaxonomieDataJson",
+        "model": "taxonomieDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen10117",
+    "designerId": "7da94d0b-37e6-45c0-a50d-391fb5611e6c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy10",
+                "api": [
+                    "{",
+                    "read : '../../taxonomy'",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "50d7a94a-29f6-4a2e-9049-a5849e8acfc4",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader8",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "a2cbdaa9-f75a-47ce-851a-7dd9898ceed9"
+                }
+            ]
+        }
+    ]
+}

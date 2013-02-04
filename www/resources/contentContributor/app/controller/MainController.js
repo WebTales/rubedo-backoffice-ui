@@ -17,6 +17,10 @@ Ext.define('ContentContributor.controller.MainController', {
     extend: 'Ext.app.Controller',
     alias: 'controller.MainController',
 
+    models: [
+        'taxonomyTermModel'
+    ],
+
     fieldReplicate: function(button, e, options) {
         var nouvChamp=button.up().getComponent(1).cloneConfig();
         nouvChamp.anchor = '90%';
@@ -90,63 +94,102 @@ Ext.define('ContentContributor.controller.MainController', {
 
 
         });
-
-
-        /*
-        var formulaireTC = Ext.getCmp('boiteAChampsContenus');
-        var champsD =contentType.get("champs");
-        for (g=0; g<champsD.length; g++) {
-        var donnees=champsD[g];
-        var configurateur = Ext.clone(donnees.config);
-        if (donnees.cType =='treepicker'){ 
-        var monStore= Ext.getStore(donnees.store);
-        configurateur.store = monStore;
-        monStore.load();
-        }
-        else if (donnees.cType == 'combobox') {
-        var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
-        configurateur.store = monStore;
-        }
-        //begin temporary fix
-        configurateur.labelSeparator=" ";
-        //end temporary fix
-        var nouvChamp = Ext.widget(donnees.cType, configurateur);
-        nouvChamp.config=Ext.clone(donnees.config);
-        //begin temporary fix
-        if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
-        //end temporary fix
-        if (donnees.cType =='triggerfield'){ 
-            var Ouvrir = Ext.clone(donnees.ouvrir);
-            nouvChamp.onTriggerClick= function() {
-                var fenetre = Ext.widget(Ouvrir);
-                fenetre.showAt(screen.width/2-200, 100);
-            } ; 
-            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
-        }  
-        nouvChamp.anchor = '90%';
-        nouvChamp.style = '{float:left;}';
-        var enrobage =Ext.widget('ChampTC');
-        enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-        if (Ext.isEmpty(nouvChamp.config.tooltip)){
-            enrobage.getComponent('helpBouton').hidden=true;
-        } 
-        if (nouvChamp.multivalued) {
-            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
-
-        };
-        formulaireTC.add(enrobage);
-
-    }
-
-    */
     },
 
     renderTaxoFields: function(vocabularies) {
         Ext.Array.remove(vocabularies, "navigation");
         if (!Ext.isEmpty(vocabularies)){
             var target = Ext.getCmp("MainForm");
-            console.log(vocabularies);
+            var taxoFieldset = Ext.widget("fieldset", {title:"Taxonomie", collapsible:true, id:"taxonomyFieldset"});
+            var lesTaxo = vocabularies;
+            var i=0;
+            for (i=0; i<lesTaxo.length; i++) {
+                var leVocab = Ext.getStore('TaxonomieDataJson').findRecord('id', lesTaxo[i]);
+                var storeT = Ext.create('Ext.data.JsonStore', {
+                    model:"ContentContributor.model.taxonomyTermModel",
+                    remoteFilter:"true",
+                    proxy: {
+                        type: 'ajax',
+                        api: {
+                            read: '../../taxonomy-terms'
+                        },
+                        reader: {
+                            type: 'json',
+                            messageProperty: 'message',
+                            root: 'data'
+                        },
+                        encodeFilters: function(filters) {
+                            var min = [],
+                                length = filters.length,
+                                i = 0;
+
+                            for (; i < length; i++) {
+                                min[i] = {
+                                    property: filters[i].property,
+                                    value   : filters[i].value
+                                };
+                                if (filters[i].type) {
+                                    min[i].type = filters[i].type;
+                                }
+                                if (filters[i].operator) {
+                                    min[i].operator = filters[i].operator;
+                                }
+                            }
+                            return this.applyEncoding(min);
+                        }
+                    },
+                    filters: {
+                        property: 'vocabularyId',
+                        value: leVocab.get("id")
+                    }
+
+                });
+                storeT.on("beforeload", function(s,o){
+                    o.filters=Ext.Array.slice(o.filters,0,1);
+                    if (!Ext.isEmpty(o.params.comboQuery)){
+
+                        var newFilter=Ext.create('Ext.util.Filter', {
+                            property:"text",
+                            value:o.params.comboQuery,
+                            operator:'like'
+                        });
+
+                        o.filters.push(newFilter);
+
+                    }
+
+
+                });
+
+
+                var selecteur = Ext.widget('comboboxselect', {
+                    name:leVocab.get("id"),
+                    anchor:"90%",
+                    fieldLabel: leVocab.get("name"),
+                    submitValue:false,
+                    autoScroll: false,
+                    store: storeT,
+                    queryMode: 'remote',
+                    queryParam: 'comboQuery',
+                    minChars:3,
+                    displayField: 'text',
+                    valueField: 'id',
+                    filterPickList: true,
+                    typeAhead: true,
+                    forceSelection: !leVocab.data.expandable,
+                    createNewOnEnter: leVocab.data.expandable,
+                    multiSelect: leVocab.data.multiSelect,
+                    allowBlank: !leVocab.data.mandatory
+                });
+                var enrobage =Ext.widget('fieldWrapper');
+                enrobage.add(selecteur);
+                enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+                if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
+                taxoFieldset.add(enrobage);
+
+            }
+            target.add(taxoFieldset);
+            Ext.getCmp("taxonomyFieldset").doLayout();
         }
     },
 
