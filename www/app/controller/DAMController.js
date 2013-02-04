@@ -83,7 +83,8 @@ Ext.define('Rubedo.controller.DAMController', {
             params: { 
                 typeId: button.up().up().typeId,
                 mainFileType: button.up().up().mainFileType,
-                taxonomy: Ext.JSON.encode(me.getTaxoValues())
+                taxonomy: Ext.JSON.encode(me.getTaxoValues()),
+                targetArray: Ext.JSON.encode(form.getFieldValues().target)
             },
             success: function(form, action) {
                 button.up().setLoading(false);
