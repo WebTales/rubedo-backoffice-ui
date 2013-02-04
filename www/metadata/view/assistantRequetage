@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "simpleMode": false,
         "designer|userClassName": "assistantRequetage",
         "designer|userAlias": "assistantRequetage",
         "height": 400,
@@ -19,8 +20,18 @@
         "constrainHeader": true,
         "modal": true
     },
+    "configAlternates": {
+        "simpleMode": "boolean"
+    },
     "id": "ExtBox1-ext-gen4339",
     "designerId": "80577966-9127-4f1a-ba7a-faceef3f254a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "simpleMode",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "toolbar",
@@ -266,6 +277,27 @@
                 "scope": "me"
             },
             "designerId": "fbb0993c-0df1-4caf-8b0c-44b7481d2800"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAssistantRequetageAfterRender",
+                "fn": "onAssistantRequetageAfterRender",
+                "implHandler": [
+                    "if (abstractcomponent.simpleMode) {\r",
+                    "    Ext.getCmp(\"champTCRequeteur\").multiSelect=false;\r",
+                    "    Ext.getCmp(\"boutonSelectAllTCAR\").hide();\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "441b5628-1d2a-4763-a904-e51d4b97b234"
         }
     ]
 }

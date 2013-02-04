@@ -48,6 +48,13 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                 },
                 {
                     xtype: 'button',
+                    handler: function(button, event) {
+                        var myWin = Ext.widget("assistantRequetage");
+                        myWin.mainFieldId=button.up().mainFieldId;
+                        myWin.simpleMode=true;
+                        myWin.show();
+                        button.up().close();
+                    },
                     flex: 1,
                     scale: 'large',
                     text: 'Requête simple'

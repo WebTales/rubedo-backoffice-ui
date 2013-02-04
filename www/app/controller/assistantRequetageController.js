@@ -22,6 +22,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     ],
 
     suivant: function(button, e, options) {
+        var simpleMode = Ext.getCmp("assistantRequetage").simpleMode;
         var nextOK = 1;
         var etapeC = button.up().up().getLayout().getActiveItem().items.items;
         var i = 0;
@@ -65,9 +66,16 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     allowBlank: false
 
                 });
+                if (simpleMode) {
+                    lien.setValue('ET');
+                    lien.setReadOnly(true);
+                }
 
 
                 var typesContenus = Ext.getCmp('champTCRequeteur').getValue();
+                if (simpleMode) {
+                    typesContenus=[typesContenus];
+                }
                 var champsRegles = [ ];
                 champsRegles.push({nom:'Création',
                     valeur: {
@@ -238,7 +246,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 typeAhead: true,
                                 forceSelection: !leVocab.data.expandable,
                                 createNewOnEnter: leVocab.data.expandable,
-                                multiSelect: leVocab.data.multiSelect,
+                                multiSelect: Ext.clone(leVocab.data.multiSelect),
                                 allowBlank: !leVocab.data.mandatory
                             });
 
@@ -269,6 +277,11 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 allowBlank: false
 
                             });
+                            if (simpleMode) {
+                                regle.setValue("all");
+                                regle.setReadOnly(true);
+                                selecteur.multiSelect=false;
+                            }
 
 
                             var enrobage = Ext.widget('fieldset', {

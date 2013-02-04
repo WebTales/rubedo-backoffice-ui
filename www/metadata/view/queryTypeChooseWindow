@@ -77,7 +77,33 @@
                 "scale": "large",
                 "text": "Requête simple"
             },
-            "designerId": "d6d5a71f-45b6-41f7-a640-8ce2e14281bb"
+            "designerId": "d6d5a71f-45b6-41f7-a640-8ce2e14281bb",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "var myWin = Ext.widget(\"assistantRequetage\");\r",
+                            "myWin.mainFieldId=button.up().mainFieldId;\r",
+                            "myWin.simpleMode=true;\r",
+                            "myWin.show();\r",
+                            "button.up().close();"
+                        ]
+                    },
+                    "designerId": "bf86c051-17cb-4b71-9da7-9a739872b012"
+                }
+            ]
         },
         {
             "type": "button",

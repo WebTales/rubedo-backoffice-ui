@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
         'Rubedo.view.assisstantRE6'
     ],
 
+    simpleMode: false,
     height: 400,
     id: 'assistantRequetage',
     width: 539,
@@ -129,6 +130,10 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 beforeclose: {
                     fn: me.onAssistantRequetageBeforeClose,
                     scope: me
+                },
+                afterrender: {
+                    fn: me.onAssistantRequetageAfterRender,
+                    scope: me
                 }
             }
         });
@@ -146,6 +151,13 @@ Ext.define('Rubedo.view.assistantRequetage', {
         Ext.getStore('TaxonomyForQA').removeAll();
         Ext.getStore("VersioningStore").clearFilter(true);
         Ext.getStore("VersioningStore").removeAll();
+    },
+
+    onAssistantRequetageAfterRender: function(abstractcomponent, options) {
+        if (abstractcomponent.simpleMode) {
+            Ext.getCmp("champTCRequeteur").multiSelect=false;
+            Ext.getCmp("boutonSelectAllTCAR").hide();
+        }
     }
 
 });
