@@ -27,11 +27,12 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onAddDAMBtnClick: function(button, e, options) {
         if (!Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
-            var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("type",Ext.getStore("DAMFacetteStore").activeFacettes.damType);
+            var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType);
             var myEditor = Ext.widget("DAMCreateUpdateWindow");
             Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
             myEditor.show();
             this.renderDAMTypeFields(DAMType, false);
             this.renderTaxoFields(DAMType);
@@ -139,6 +140,8 @@ Ext.define('Rubedo.controller.DAMController', {
             record.set("title",Ext.getCmp("DAMFieldBox").getComponent(0).getComponent(0).getValue());
             record.set("originalFileId",Ext.getCmp("DAMFieldBox").getComponent(1).getComponent(0).getValue());
             record.set("fields",Ext.getCmp("DAMFieldBox").getForm().getValues());
+            record.set("writeWorkspace",Ext.getCmp("DAMFieldBox").getForm().getValues().writeWorkspace);
+            record.set("target",Ext.getCmp("DAMFieldBox").getForm().getValues().target);
             record.set("taxonomy", me.getTaxoValues());
             record.endEdit();
             button.up().up().close();
@@ -193,6 +196,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
             myEditor.show();
             this.renderDAMTypeFields(DAMType, false);
             this.renderTaxoFields(DAMType);

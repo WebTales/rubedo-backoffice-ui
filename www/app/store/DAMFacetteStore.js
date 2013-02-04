@@ -43,6 +43,7 @@ Ext.define('Rubedo.store.DAMFacetteStore', {
             pageSize: 25,
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'dam/create',
                     read: 'elastic-search-dam',
