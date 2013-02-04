@@ -27,6 +27,7 @@ Ext.define('ContentContributor.store.QueriesStore', {
         me.callParent([Ext.apply({
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
             storeId: 'QueriesStore',
             model: 'ContentContributor.model.queryDataModel',
             proxy: {

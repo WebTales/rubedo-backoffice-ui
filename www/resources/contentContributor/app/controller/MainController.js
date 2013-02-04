@@ -65,6 +65,7 @@ Ext.define('ContentContributor.controller.MainController', {
     initializeContentForm: function(contentType) {
         Ext.getCmp("MainForm").setTitle("Nouveau contenu "+contentType.type);
         this.renderMainFields(contentType.fields);
+        this.renderTaxoFields(contentType.vocabularies);
     },
 
     renderMainFields: function(fields) {
@@ -141,6 +142,14 @@ Ext.define('ContentContributor.controller.MainController', {
     */
     },
 
+    renderTaxoFields: function(vocabularies) {
+        Ext.Array.remove(vocabularies, "navigation");
+        if (!Ext.isEmpty(vocabularies)){
+            var target = Ext.getCmp("MainForm");
+            console.log(vocabularies);
+        }
+    },
+
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
         Ext.define('AppGlobals', {singleton: true});
@@ -164,20 +173,46 @@ Ext.define('ContentContributor.controller.MainController', {
             a[b[0]] = b[1];
             return a;
         }, {});
-            if (!Ext.isEmpty(options.typeId)){
-                Ext.Ajax.request({
-                    url: '../../content-types/find-one',
-                    params: {
-                        id: options.typeId
-                    },
-                    success: function(response){
-                        var result = Ext.JSON.decode(response.responseText).data;
-                        AppGlobals.typeId=options.typeId;
-                        Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
-                        me.initializeContentForm(result);
+            if (!Ext.isEmpty(options.queryId)){
+                Ext.getStore("QueriesStore").filter("id",options.queryId);
+                Ext.getStore("QueriesStore").addListener("load", function(a, records){
+                    if (!Ext.isEmpty(records)){
+                        AppGlobals.contextQuery=records[0].get("query");
+                        AppGlobals.contextQueryType=records[0].get("type");
+                    } else {
+                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la requête de contexte');
                     }
-                });
-            }
+                    if (!Ext.isEmpty(options.typeId)){
+                        Ext.Ajax.request({
+                            url: '../../content-types/find-one',
+                            params: {
+                                id: options.typeId
+                            },
+                            success: function(response){
+                                var result = Ext.JSON.decode(response.responseText).data;
+                                AppGlobals.typeId=options.typeId;
+                                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                me.initializeContentForm(result);
+                            }
+                        });
+                    }
+                }, this, {single:true});
+                } else {
+                    if (!Ext.isEmpty(options.typeId)){
+                        Ext.Ajax.request({
+                            url: '../../content-types/find-one',
+                            params: {
+                                id: options.typeId
+                            },
+                            success: function(response){
+                                var result = Ext.JSON.decode(response.responseText).data;
+                                AppGlobals.typeId=options.typeId;
+                                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                me.initializeContentForm(result);
+                            }
+                        });
+                    }
+                }
 
     }
 
