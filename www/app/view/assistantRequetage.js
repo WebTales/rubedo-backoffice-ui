@@ -157,6 +157,11 @@ Ext.define('Rubedo.view.assistantRequetage', {
         if (abstractcomponent.simpleMode) {
             Ext.getCmp("champTCRequeteur").multiSelect=false;
             Ext.getCmp("boutonSelectAllTCAR").hide();
+            Ext.getCmp("assisstantRE4").up().remove(Ext.getCmp("assisstantRE4"));
+            Ext.getCmp("assisstantRE5").etape=3;
+            Ext.getCmp("assisstantRE6").etape=4;
+            Ext.getCmp("progressAR").updateProgress(0.25, "Etape 1 sur 4");
+            Ext.getCmp("queryNameField").hide();
         }
     }
 

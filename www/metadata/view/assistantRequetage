@@ -292,6 +292,11 @@
                     "if (abstractcomponent.simpleMode) {\r",
                     "    Ext.getCmp(\"champTCRequeteur\").multiSelect=false;\r",
                     "    Ext.getCmp(\"boutonSelectAllTCAR\").hide();\r",
+                    "    Ext.getCmp(\"assisstantRE4\").up().remove(Ext.getCmp(\"assisstantRE4\"));\r",
+                    "    Ext.getCmp(\"assisstantRE5\").etape=3;\r",
+                    "    Ext.getCmp(\"assisstantRE6\").etape=4;\r",
+                    "    Ext.getCmp(\"progressAR\").updateProgress(0.25, \"Etape 1 sur 4\");\r",
+                    "    Ext.getCmp(\"queryNameField\").hide();\r",
                     "}"
                 ],
                 "name": "afterrender",

@@ -37,289 +37,293 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             }
             else if (etape.id=='assisstantRE1') {
                 Ext.getCmp('assisstantRE2').removeAll();
-                var reglesAnciennes= Ext.clone(Ext.getCmp('assisstantRE4').items.items.length);
-                var m =2;
-                for (m=2; m<reglesAnciennes; m++){
-                    Ext.getCmp('assisstantRE4').getComponent(2).destroy();
-                }
+                if(!simpleMode){
+                    var reglesAnciennes= Ext.clone(Ext.getCmp('assisstantRE4').items.items.length);
+                    var m =2;
+                    for (m=2; m<reglesAnciennes; m++){
+                        Ext.getCmp('assisstantRE4').getComponent(2).destroy();
+                    }}
 
-                var storeL = Ext.create('Ext.data.Store', {
-                    fields: ['valeur', 'nom'],
-                    data : [
-                    {valeur: 'AND', nom :'ET'},
-                    {valeur: 'OR', nom :'OU'}
-                    ]
-                });
+                    var storeL = Ext.create('Ext.data.Store', {
+                        fields: ['valeur', 'nom'],
+                        data : [
+                        {valeur: 'AND', nom :'ET'},
+                        {valeur: 'OR', nom :'OU'}
+                        ]
+                    });
 
-                var lien = Ext.create('Ext.form.ComboBox', {
-                    anchor: '100%',
-                    fieldLabel: 'Relation entre les règles ',
-                    store: storeL,
-                    value: 'OU',
-                    name: "vocabulariesRule",
-                    queryMode: 'local',
-                    displayField: 'nom',
-                    valueField: 'valeur',
-                    labelWidth: 150,
-                    editable: false,
-                    forceSelect: true,
-                    allowBlank: false
+                    var lien = Ext.create('Ext.form.ComboBox', {
+                        anchor: '100%',
+                        fieldLabel: 'Relation entre les règles ',
+                        store: storeL,
+                        value: 'OU',
+                        name: "vocabulariesRule",
+                        queryMode: 'local',
+                        displayField: 'nom',
+                        valueField: 'valeur',
+                        labelWidth: 150,
+                        editable: false,
+                        forceSelect: true,
+                        allowBlank: false
 
-                });
-                if (simpleMode) {
-                    lien.setValue('ET');
-                    lien.setReadOnly(true);
-                }
-
-
-                var typesContenus = Ext.getCmp('champTCRequeteur').getValue();
-                if (simpleMode) {
-                    typesContenus=[typesContenus];
-                }
-                var champsRegles = [ ];
-                champsRegles.push({nom:'Création',
-                    valeur: {
-                        cType: 'datefield',
-                        name: 'creation',
-                        ruleId:'createTime',
-                        label: 'Création'
-                    }
-                });
-                champsRegles.push({nom:'Dernière modification',
-                    valeur: {
-                        cType: 'datefield',
-                        name: 'derniereModification',
-                        ruleId:'lastUpdateTime',
-                        label: 'Dernière modification'
-                    }});
-                    if (typesContenus.length<2) {
-                        var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
-                        var champsReq = Ext.clone(myThingType.data.champs);
-                        var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
-                        var champsReqF = Ext.Array.filter(champsReq, function(champ){
-                            if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
-                        });
-                        champsReqF = Ext.Array.map(champsReqF, function(champ){
-                            return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: myThingType.get("id")+'>>'+champ.config.name, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
-                        });
-
-                        champsRegles = Ext.Array.merge(champsRegles, champsReqF);
-
+                    });
+                    if (simpleMode) {
+                        lien.setValue('ET');
+                        lien.setReadOnly(true);
+                        lien.hide();
                     }
 
-                    var typesDEP = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes;
-                    var j = 1;
-                    for (j=1; j<typesContenus.length; j++) {
-                        var typesDEPSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes;
-                        typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
+
+                    var typesContenus = Ext.getCmp('champTCRequeteur').getValue();
+                    if (simpleMode) {
+                        typesContenus=[typesContenus];
                     }
-                    var k=0;
-                    for (k=0; k<typesDEP.length; k++) {
-
-                        var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
-                        champsRegles.push({nom:theTargetType.get("type")+' > '+'Création',
-                            valeur: {
-                                cType: 'datefield',
-                                name: 'creation',
-                                ruleId:'createTime',
-                                label: theTargetType.get("type")+' > '+'Création'
-                            }
-                        });
-                        champsRegles.push({nom:theTargetType.get("type")+' > '+'Dernière modification',
-                            valeur: {
-                                cType: 'datefield',
-                                name: 'derniereModification',
-                                ruleId:'lastUpdateTime',
-                                label: theTargetType.get("type")+' > '+'Dernière modification'
-                            }});  
-
-
-                            var champsReq = Ext.clone(theTargetType.get("champs"));
+                    var champsRegles = [ ];
+                    champsRegles.push({nom:'Création',
+                        valeur: {
+                            cType: 'datefield',
+                            name: 'creation',
+                            ruleId:'createTime',
+                            label: 'Création'
+                        }
+                    });
+                    champsRegles.push({nom:'Dernière modification',
+                        valeur: {
+                            cType: 'datefield',
+                            name: 'derniereModification',
+                            ruleId:'lastUpdateTime',
+                            label: 'Dernière modification'
+                        }});
+                        if (typesContenus.length<2) {
+                            var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
+                            var champsReq = Ext.clone(myThingType.data.champs);
                             var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
                             var champsReqF = Ext.Array.filter(champsReq, function(champ){
                                 if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                             });
                             champsReqF = Ext.Array.map(champsReqF, function(champ){
-                                return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: theTargetType.get("id")+'>>'+champ.config.name , name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
+                                return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: myThingType.get("id")+'>>'+champ.config.name, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
                             });
 
                             champsRegles = Ext.Array.merge(champsRegles, champsReqF);
 
-
-
-
                         }
 
-                        Ext.getStore('champsTCARStore').loadData(champsRegles);
-
-
-
-                        var vocabulaires = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies;
+                        var typesDEP = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes;
                         var j = 1;
                         for (j=1; j<typesContenus.length; j++) {
-                            var vocabSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies;
-                            vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
+                            var typesDEPSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes;
+                            typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
                         }
+                        var k=0;
+                        for (k=0; k<typesDEP.length; k++) {
 
-                        if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
-                        Ext.Array.remove(vocabulaires,"navigation");
-                        var k =0;
-                        for (k=0; k<vocabulaires.length; k++) {
+                            var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
+                            champsRegles.push({nom:theTargetType.get("type")+' > '+'Création',
+                                valeur: {
+                                    cType: 'datefield',
+                                    name: 'creation',
+                                    ruleId:'createTime',
+                                    label: theTargetType.get("type")+' > '+'Création'
+                                }
+                            });
+                            champsRegles.push({nom:theTargetType.get("type")+' > '+'Dernière modification',
+                                valeur: {
+                                    cType: 'datefield',
+                                    name: 'derniereModification',
+                                    ruleId:'lastUpdateTime',
+                                    label: theTargetType.get("type")+' > '+'Dernière modification'
+                                }});  
 
-                            var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
-                            var vocabAPlat= [ ];
-                            //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+
+                                var champsReq = Ext.clone(theTargetType.get("champs"));
+                                var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
+                                var champsReqF = Ext.Array.filter(champsReq, function(champ){
+                                    if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
+                                });
+                                champsReqF = Ext.Array.map(champsReqF, function(champ){
+                                    return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: theTargetType.get("id")+'>>'+champ.config.name , name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
+                                });
+
+                                champsRegles = Ext.Array.merge(champsRegles, champsReqF);
 
 
-                            var storeT = Ext.create('Ext.data.JsonStore', {
-                                model:"Rubedo.model.taxonomyTermModel",
-                                remoteFilter:"true",
-                                proxy: {
-                                    type: 'ajax',
-                                    api: {
-                                        read: 'taxonomy-terms'
-                                    },
-                                    reader: {
-                                        type: 'json',
-                                        messageProperty: 'message',
-                                        root: 'data'
-                                    },
-                                    encodeFilters: function(filters) {
-                                        var min = [],
-                                        length = filters.length,
-                                        i = 0;
 
-                                        for (; i < length; i++) {
-                                            min[i] = {
-                                                property: filters[i].property,
-                                                value   : filters[i].value
-                                            };
-                                            if (filters[i].type) {
-                                                min[i].type = filters[i].type;
+
+                            }
+
+                            Ext.getStore('champsTCARStore').loadData(champsRegles);
+
+
+
+                            var vocabulaires = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies;
+                            var j = 1;
+                            for (j=1; j<typesContenus.length; j++) {
+                                var vocabSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies;
+                                vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
+                            }
+
+                            if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
+                            Ext.Array.remove(vocabulaires,"navigation");
+                            var k =0;
+                            for (k=0; k<vocabulaires.length; k++) {
+
+                                var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
+                                var vocabAPlat= [ ];
+                                //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+
+
+                                var storeT = Ext.create('Ext.data.JsonStore', {
+                                    model:"Rubedo.model.taxonomyTermModel",
+                                    remoteFilter:"true",
+                                    proxy: {
+                                        type: 'ajax',
+                                        api: {
+                                            read: 'taxonomy-terms'
+                                        },
+                                        reader: {
+                                            type: 'json',
+                                            messageProperty: 'message',
+                                            root: 'data'
+                                        },
+                                        encodeFilters: function(filters) {
+                                            var min = [],
+                                            length = filters.length,
+                                            i = 0;
+
+                                            for (; i < length; i++) {
+                                                min[i] = {
+                                                    property: filters[i].property,
+                                                    value   : filters[i].value
+                                                };
+                                                if (filters[i].type) {
+                                                    min[i].type = filters[i].type;
+                                                }
+                                                if (filters[i].operator) {
+                                                    min[i].operator = filters[i].operator;
+                                                }
                                             }
-                                            if (filters[i].operator) {
-                                                min[i].operator = filters[i].operator;
-                                            }
+                                            return this.applyEncoding(min);
                                         }
-                                        return this.applyEncoding(min);
+                                    },
+                                    filters: {
+                                        property: 'vocabularyId',
+                                        value: leVocab.get("id")
                                     }
-                                },
-                                filters: {
-                                    property: 'vocabularyId',
-                                    value: leVocab.get("id")
-                                }
 
-                            });
-                            storeT.on("beforeload", function(s,o){
-                                o.filters=Ext.Array.slice(o.filters,0,1);
-                                if (!Ext.isEmpty(o.params.comboQuery)){
+                                });
+                                storeT.on("beforeload", function(s,o){
+                                    o.filters=Ext.Array.slice(o.filters,0,1);
+                                    if (!Ext.isEmpty(o.params.comboQuery)){
 
-                                    var newFilter=Ext.create('Ext.util.Filter', {
-                                        property:"text",
-                                        value:o.params.comboQuery,
-                                        operator:'like'
-                                    });
+                                        var newFilter=Ext.create('Ext.util.Filter', {
+                                            property:"text",
+                                            value:o.params.comboQuery,
+                                            operator:'like'
+                                        });
 
-                                    o.filters.push(newFilter);
+                                        o.filters.push(newFilter);
 
-                                }
+                                    }
 
 
-                            });
+                                });
 
 
-                            var selecteur = Ext.widget('comboboxselect', {
-                                name:leVocab.get("id"),
-                                vocabularyId:leVocab.get("id"),
-                                isVocabularyField:true,
-                                usedRole:"terms",
-                                anchor:"100%",
-                                fieldLabel: leVocab.get("name"),
-                                autoScroll: false,
-                                store: storeT,
-                                queryMode: 'remote',
-                                queryParam: 'comboQuery',
-                                minChars:3,
-                                displayField: 'text',
-                                valueField: 'id',
-                                filterPickList: true,
-                                typeAhead: true,
-                                forceSelection: !leVocab.data.expandable,
-                                createNewOnEnter: leVocab.data.expandable,
-                                multiSelect: Ext.clone(leVocab.data.multiSelect),
-                                allowBlank: !leVocab.data.mandatory
-                            });
+                                var selecteur = Ext.widget('comboboxselect', {
+                                    name:leVocab.get("id"),
+                                    vocabularyId:leVocab.get("id"),
+                                    isVocabularyField:true,
+                                    usedRole:"terms",
+                                    anchor:"100%",
+                                    fieldLabel: leVocab.get("name"),
+                                    autoScroll: false,
+                                    store: storeT,
+                                    queryMode: 'remote',
+                                    queryParam: 'comboQuery',
+                                    minChars:3,
+                                    displayField: 'text',
+                                    valueField: 'id',
+                                    filterPickList: true,
+                                    typeAhead: true,
+                                    forceSelection: !leVocab.data.expandable,
+                                    createNewOnEnter: leVocab.data.expandable,
+                                    multiSelect: Ext.clone(leVocab.data.multiSelect),
+                                    allowBlank: !leVocab.data.mandatory
+                                });
 
-                            var storeR = Ext.create('Ext.data.Store', {
-                                fields: ['valeur', 'nom'],
-                                data : [
-                                {valeur: 'all', nom :'Contient tous les termes'},
-                                {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
-                                {valeur: 'some', nom :'Contient au moins un des termes'},
-                                {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'}
-                                ]
-                            });
+                                var storeR = Ext.create('Ext.data.Store', {
+                                    fields: ['valeur', 'nom'],
+                                    data : [
+                                    {valeur: 'all', nom :'Contient tous les termes'},
+                                    {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
+                                    {valeur: 'some', nom :'Contient au moins un des termes'},
+                                    {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'}
+                                    ]
+                                });
 
-                            var regle = Ext.create('Ext.form.ComboBox', {
-                                name:leVocab.get("id")+"QueryRule",
-                                anchor: '100%',
-                                vocabularyId:leVocab.get("id"),
-                                isVocabularyField:true,
-                                usedRole:"rule",
-                                fieldLabel: 'Règle',
-                                store: storeR,
-                                queryMode: 'local',
-                                displayField: 'nom',
-                                valueField: 'valeur',
-                                editable: false,
-                                value: 'some',
-                                forceSelect: true,
-                                allowBlank: false
+                                var regle = Ext.create('Ext.form.ComboBox', {
+                                    name:leVocab.get("id")+"QueryRule",
+                                    anchor: '100%',
+                                    vocabularyId:leVocab.get("id"),
+                                    isVocabularyField:true,
+                                    usedRole:"rule",
+                                    fieldLabel: 'Règle',
+                                    store: storeR,
+                                    queryMode: 'local',
+                                    displayField: 'nom',
+                                    valueField: 'valeur',
+                                    editable: false,
+                                    value: 'some',
+                                    forceSelect: true,
+                                    allowBlank: false
 
-                            });
-                            if (simpleMode) {
-                                regle.setValue("all");
-                                regle.setReadOnly(true);
-                                selecteur.multiSelect=false;
+                                });
+                                if (simpleMode) {
+                                    regle.setValue("all");
+                                    regle.setReadOnly(true);
+                                    regle.hide();
+                                    selecteur.multiSelect=false;
+                                    var enrobage=Ext.widget("container", {anchor:"100%", layout:"anchor"});
+                                } else {
+
+
+                                    var enrobage = Ext.widget('fieldset', {
+                                        title : leVocab.get("name"),
+                                        collapsible: true
+
+
+                                    });}
+                                    enrobage.add(selecteur);
+                                    enrobage.add(regle);
+                                    Ext.getCmp('assisstantRE2').add(enrobage);
+
+
+
+                                }    
+
                             }
 
 
-                            var enrobage = Ext.widget('fieldset', {
-                                title : leVocab.get("name"),
-                                collapsible: true
 
 
-                            });
-                            enrobage.add(selecteur);
-                            enrobage.add(regle);
-                            Ext.getCmp('assisstantRE2').add(enrobage);
+                            var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
+                            var suivET= Ext.getCmp('assistantRequetage').getLayout().getNext().etape;
+                            if (suivET==tousET) { Ext.getCmp('boutonNextRequeteur').hide();}
+                            else if (suivET==2) { Ext.getCmp('boutonPrevRequeteur').show();}
+                            if (Ext.isDefined(suivET)) {
+                                button.up().up().getLayout().next();
 
-
-
-                        }    
-
-                    }
-
-
-
-
-                    var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
-                    var suivET= Ext.getCmp('assistantRequetage').getLayout().getNext().etape;
-                    if (suivET==5) { Ext.getCmp('boutonNextRequeteur').hide();}
-                    else if (suivET==2) { Ext.getCmp('boutonPrevRequeteur').show();}
-                    if (Ext.isDefined(suivET)) {
-                        button.up().up().getLayout().next();
-
-                        Ext.getCmp('progressAR').updateProgress(suivET/tousET, 'Etape '+suivET+' sur '+tousET);
-                    }
-                }
+                                Ext.getCmp('progressAR').updateProgress(suivET/tousET, 'Etape '+suivET+' sur '+tousET);
+                            }
+                        }
 
     },
 
     precedent: function(button, e, options) {
         var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
         var suivET= Ext.getCmp('assistantRequetage').getLayout().getPrev().etape;
-        if (suivET==4) { Ext.getCmp('boutonNextRequeteur').show();}
+        if (suivET==tousET-1) { Ext.getCmp('boutonNextRequeteur').show();}
         else if (suivET==1) { Ext.getCmp('boutonPrevRequeteur').hide();}
         if (Ext.isDefined(suivET)) {
             button.up().up().getLayout().prev();
@@ -394,7 +398,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     onQueryBuildSaveBtnClick: function(button, e, options) {
-        if (button.up().getForm().isValid()){
+        if ((Ext.getCmp("assistantRequetage").simpleMode)||(button.up().getForm().isValid())){
             var result=this.readQuery();
             var newQuery = Ext.create("Rubedo.model.queryDataModel", {
                 name:result.queryName,
@@ -404,6 +408,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 count:0,
                 usage:[]
             });
+            if (Ext.getCmp("assistantRequetage").simpleMode){
+                newQuery.set("type", "simple");
+                newQuery.set("name", "Requête simple");
+            }
             if (Ext.getCmp("assistantRequetage").adminMode){
                 Ext.getStore("MainQueriesStore").add(newQuery);
             } else {
@@ -496,7 +504,11 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
                         result.vocabularies[field.vocabularyId]={ };                
                     }
-                    result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+                    if (Ext.isArray(field.getValue())){
+                        result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+                    } else {
+                        result.vocabularies[field.vocabularyId][field.usedRole]=[field.getValue()];
+                    }
 
                 } else if (field.isAddedRuleField){
                     if (Ext.isEmpty(result.fieldRules[field.ruleId])){
@@ -508,6 +520,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 }
             }
         });
+        if (!Ext.isArray(result.contentTypes)){
+            result.contentTypes=[result.contentTypes];
+        }
         return(result);
     },
 
