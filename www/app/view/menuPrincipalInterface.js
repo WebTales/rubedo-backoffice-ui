@@ -100,6 +100,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             usesMenu: true,
+                            iconCls: 'applications',
                             text: 'Studio',
                             menu: {
                                 xtype: 'menu',
@@ -143,6 +144,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             usesMenu: true,
+                            iconCls: 'process-icon',
                             text: 'Administration',
                             menu: {
                                 xtype: 'menu',
