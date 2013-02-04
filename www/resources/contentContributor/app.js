@@ -24,11 +24,13 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'imageDataModel'
+        'imageDataModel',
+        'queryDataModel'
     ],
     stores: [
         'ImagePickerStore',
-        'Contents'
+        'Contents',
+        'QueriesStore'
     ],
     views: [
         'MyPanel',

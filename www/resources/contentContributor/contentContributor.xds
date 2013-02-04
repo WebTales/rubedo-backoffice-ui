@@ -10,7 +10,7 @@
         "cacheBust": false
     },
     "xdsVersion": "2.1.0",
-    "xdsBuild": 676,
+    "xdsBuild": 678,
     "schemaVersion": 1,
     "upgradeVersion": 210000000498,
     "framework": "ext41",
@@ -179,6 +179,22 @@
                 "metadata/resource/js6"
             ],
             "className": "js6"
+        },
+        "a7c74968-2e49-41d2-94c2-728098b2f9c9": {
+            "paths": [
+                "metadata/store/QueriesStore",
+                "app/store/override/QueriesStore.js",
+                "app/store/QueriesStore.js"
+            ],
+            "className": "QueriesStore"
+        },
+        "2a4695f1-3173-49db-9f7e-b1b5a41931d3": {
+            "paths": [
+                "metadata/model/queryDataModel",
+                "app/model/override/queryDataModel.js",
+                "app/model/queryDataModel.js"
+            ],
+            "className": "queryDataModel"
         }
     },
     "viewOrderMap": {
@@ -192,7 +208,8 @@
         ],
         "store": [
             "fdb6ac10-082f-4726-bbbb-44a0ba4a1936",
-            "878fb62d-cad8-432c-8ada-7c747d0df220"
+            "878fb62d-cad8-432c-8ada-7c747d0df220",
+            "a7c74968-2e49-41d2-94c2-728098b2f9c9"
         ],
         "controller": [
             "7b179740-bc32-424a-9f22-d87b248d4bef",
@@ -201,7 +218,8 @@
         ],
         "model": [
             "16a71200-d464-4495-844e-815ee3b481fb",
-            "92a46cff-c0b3-47bd-a001-91780b452b14"
+            "92a46cff-c0b3-47bd-a001-91780b452b14",
+            "2a4695f1-3173-49db-9f7e-b1b5a41931d3"
         ],
         "resource": [
             "7374cafb-8817-43a0-8fa4-7a363ba65a53",
