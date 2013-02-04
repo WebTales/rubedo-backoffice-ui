@@ -82,6 +82,22 @@
                     "designerId": "4235a613-5e53-425b-88a3-8a597fa8bedd"
                 }
             ]
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter6",
+                "property": "type",
+                "value": [
+                    "\"advanced\""
+                ]
+            },
+            "designerId": "306127da-546c-4b0e-8153-915363918e5e"
         }
     ]
 }

@@ -49,6 +49,10 @@ Ext.define('Rubedo.store.MainQueriesStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            filters: {
+                property: 'type',
+                value: 'advanced'
             }
         }, cfg)]);
     }

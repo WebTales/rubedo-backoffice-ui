@@ -147,6 +147,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             menu: {
                                 xtype: 'menu',
                                 frame: true,
+                                plain: false,
                                 items: [
                                     {
                                         xtype: 'button',
