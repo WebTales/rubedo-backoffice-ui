@@ -120,6 +120,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.masks',
                             disabled: true,
+                            id: 'masksEditionTopBarBox',
                             headerPosition: 'bottom',
                             title: 'Edition',
                             columns: 8,

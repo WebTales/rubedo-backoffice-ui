@@ -98,10 +98,14 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp('elementEditControl').removeAll();
     Ext.getCmp('elementEditControl').setIconCls();
     Ext.getCmp('elementIdField').setValue(null);
-
-    Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     Ext.getCmp("boutonSupprimerMasque").enable();
-
+    Ext.getCmp("AdminfMasquesEnregistrer").enable();
+    Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+    if (record.get("readOnly")){
+        Ext.getCmp("masksEditionTopBarBox").disable();
+        Ext.getCmp("boutonSupprimerMasque").disable();
+        Ext.getCmp("AdminfMasquesEnregistrer").disable();
+    }
     },
 
     reusablesGridSelect: function(selModel, record, index, options) {
@@ -432,7 +436,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                     }
                     propEdit.add(configSpec);
-                    if (!ACL.interfaceRights['write.ui.masks']){
+                    if ((!ACL.interfaceRights['write.ui.masks'])||(Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("readOnly"))){
                         Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
                         Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
                     }
@@ -893,7 +897,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             propEdit.add(configSpec);
 
 
-            if (!ACL.interfaceRights['write.ui.masks']){
+            if ((!ACL.interfaceRights['write.ui.masks'])||(Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("readOnly"))){
                 Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
                 Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
             }
