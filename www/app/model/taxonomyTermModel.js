@@ -38,6 +38,7 @@ Ext.define('Rubedo.model.taxonomyTermModel', {
         },
         {
             name: 'readOnly',
+            persist: false,
             type: 'boolean'
         },
         {

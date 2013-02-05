@@ -220,6 +220,21 @@
                 "name": "writeWorkspace"
             },
             "designerId": "65271155-33c5-40a7-9cc6-0530f99ac7e3"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "15fa366c-32d2-4132-ada5-9da2963c1088"
         }
     ]
 }

@@ -96,6 +96,7 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'readOnly',
+            persist: false,
             type: 'boolean'
         }
     ]

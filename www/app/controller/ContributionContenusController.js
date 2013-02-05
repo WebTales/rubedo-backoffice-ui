@@ -301,8 +301,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     doubleClickEdit: function(tablepanel, record, item, index, e, options) {
-
-        Ext.getCmp("boutonModifierContenu").fireEvent("click");
+        //Ext.getCmp("boutonModifierContenu").fireEvent("click");
+        this.unitaryContentEdit(record.get("id"));
     },
 
     putContentsOnline: function(button, e, options) {
@@ -534,9 +534,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getStore("CurrentContent").addListener("load",function(theStore,records,successful){
             if (successful){
                 var theContent = records[0];
-                if (ACL.interfaceRights["write.ui.contents."+theContent.get("status")]){
+                if ((!theContent.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(ACL.interfaceRights["write.ui.contents."+theContent.get("status")])){
                     me.prepareContext(theContent, true);
-                }else if (ACL.interfaceRights["read.ui.contents."+theContent.get("status")]){
+                }else if ((ACL.interfaceRights["read.ui.contents"])&&(ACL.interfaceRights["read.ui.contents."+theContent.get("status")])){
                     me.prepareContext(theContent, false);
                 } else {
                     Ext.Msg.alert('Erreur',"Vos droits sont insuffisants pour afficher ou modifier ce contenu");
@@ -763,7 +763,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
         if (!editMode){
-            if ((content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
+            if ((!content.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
                 Ext.getCmp("boutonSoumettreNouveauContenu").hide();
                 Ext.getCmp("boutonPublierNouveauContenu").hide();
                 var nct = Ext.getCmp("nestedContentsTab");
@@ -775,6 +775,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             else
             {
                 Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
+
                 Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
                 var nct = Ext.getCmp("nestedContentsTab");
                 if (!Ext.isEmpty(nct)){
