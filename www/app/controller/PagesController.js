@@ -139,7 +139,7 @@ Ext.define('Rubedo.controller.PagesController', {
             metaBox.update(values);
             metaBox.show();
             Ext.getCmp("addPageBtn").enable();
-            if(record.get("readOnly")){
+            if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
                 Ext.getCmp("removePageBtn").disable();
                 Ext.getCmp("addPageBtn").disable();
                 Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
