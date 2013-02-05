@@ -51,6 +51,11 @@ Ext.define('Rubedo.model.DAMSearchModel', {
         },
         {
             name: 'fileSize'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

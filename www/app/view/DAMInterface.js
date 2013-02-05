@@ -85,6 +85,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.dam',
                             disabled: false,
                             id: 'addDAMBtn',
                             iconAlign: 'top',
@@ -94,6 +95,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.dam',
                             disabled: true,
                             id: 'DAMDeleteBtn',
                             iconAlign: 'top',
@@ -109,10 +111,17 @@ Ext.define('Rubedo.view.DAMInterface', {
                             iconAlign: 'top',
                             iconCls: 'pencil_big',
                             scale: 'large',
-                            text: 'Afficher'
+                            text: 'Afficher',
+                            listeners: {
+                                render: {
+                                    fn: me.onDAMROBtnRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.dam',
                             disabled: true,
                             id: 'DAMUpdateBtn',
                             iconAlign: 'top',
@@ -133,6 +142,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.dam',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
@@ -178,6 +188,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.dam',
                                     iconAlign: 'top',
                                     iconCls: 'application_up_big',
                                     scale: 'large',
@@ -276,6 +287,12 @@ Ext.define('Rubedo.view.DAMInterface', {
 
     onImageRender11: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+    },
+
+    onDAMROBtnRender: function(abstractcomponent, options) {
+        if ((!ACL.interfaceRights["write.ui.dam"])&&(ACL.interfaceRights["read.ui.dam"])){
+            abstractcomponent.show();
+        }
     },
 
     onDAMMTGridRender: function(abstractcomponent, options) {

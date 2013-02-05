@@ -65,6 +65,11 @@ Ext.define('Rubedo.model.DAMModel', {
         },
         {
             name: 'target'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

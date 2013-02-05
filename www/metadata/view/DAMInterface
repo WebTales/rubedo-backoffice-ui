@@ -155,7 +155,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.dam",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton11",
                         "disabled": false,
@@ -184,7 +184,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.dam",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
@@ -233,6 +233,28 @@
                             "name": "ACL",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onDAMROBtnRender",
+                                "fn": "onDAMROBtnRender",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"write.ui.dam\"])&&(ACL.interfaceRights[\"read.ui.dam\"])){\r",
+                                    "    abstractcomponent.show();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "4a027ee4-1970-4b6f-9200-166174c6386e"
+                        }
                     ]
                 },
                 {
@@ -243,7 +265,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.dam",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
@@ -290,7 +312,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "ACL": null,
+                                "ACL": "write.ui.dam",
                                 "designer|userClassName": "MyButton17",
                                 "id": null,
                                 "width": null,
@@ -393,7 +415,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "ACL": null,
+                                "ACL": "write.ui.dam",
                                 "designer|userClassName": "MyButton63",
                                 "id": null,
                                 "icon": null,

@@ -203,6 +203,21 @@
                 "name": "target"
             },
             "designerId": "40f1ce15-e633-45ce-bc05-755d1745d29b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "34411cf9-fd58-463d-9f6d-7624578632b3"
         }
     ]
 }

@@ -65,7 +65,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
-
+            Ext.getCmp("DAMROBtn").disable();
         }
     },
 
@@ -153,6 +153,8 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMROBtnClick: function(button, e, options) {
         var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+        this.prepareContext(record.get("id"), record.get("typeId"), true);
+        /*
         var DAMType= Ext.getCmp("DAMMTGrid").getSelectionModel().getLastSelected();
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
         myEditor.setTitle(record.get("title"));
@@ -170,6 +172,7 @@ Ext.define('Rubedo.controller.DAMController', {
         myEditor.getComponent(0).getForm().setValues(valueBox);
         Ext.Array.forEach(Ext.getCmp("DAMFieldBox").query("field"), function(thing){thing.setReadOnly(true);});
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        */
     },
 
     onDAMSwitchEditBtnClick: function(button, e, options) {
@@ -184,7 +187,11 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onGridpanelItemDblClick: function(tablepanel, record, item, index, e, options) {
-        this.prepareContext(record.get("id"), record.get("typeId"));
+        if (ACL.interfaceRights["write.ui.dam"]){
+            this.prepareContext(record.get("id"), record.get("typeId"), record.get("readOnly"));
+        } else {
+            this.prepareContext(record.get("id"), record.get("typeId"), true);
+        }
     },
 
     onDAMSearchBtnClick: function(button, e, options) {
@@ -370,7 +377,7 @@ Ext.define('Rubedo.controller.DAMController', {
         return(values);
     },
 
-    prepareContext: function(damId, typeId) {
+    prepareContext: function(damId, typeId, ROMode) {
         var me = this;
         Ext.getStore("DAMEditStore").clearFilter(true);
         Ext.getStore("MTForDAMEdit").clearFilter(true);
@@ -380,19 +387,19 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getStore("MTForDAMEdit").addListener("load", function(){
             counter = counter - 1;
             if (counter === 0) {
-                me.fireUnitaryEdit();
+                me.fireUnitaryEdit(ROMode);
             }
         },this, {single:true});
             Ext.getStore("TaxonomyForDam2").addListener("load", function(){
                 counter = counter - 1;
                 if (counter === 0) {
-                    me.fireUnitaryEdit();
+                    me.fireUnitaryEdit(ROMode);
                 }
             },this, {single:true});
                 Ext.getStore("DAMEditStore").addListener("load", function(){
                     counter = counter - 1;
                     if (counter === 0) {
-                        me.fireUnitaryEdit();
+                        me.fireUnitaryEdit(ROMode);
                     }
                 },this, {single:true});
                     Ext.getStore("MTForDAMEdit").load();
@@ -401,7 +408,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
     },
 
-    fireUnitaryEdit: function() {
+    fireUnitaryEdit: function(ROMode) {
         var record = Ext.getStore("DAMEditStore").getRange()[0];
         var DAMType= Ext.getStore("MTForDAMEdit").getRange()[0];
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
@@ -425,6 +432,12 @@ Ext.define('Rubedo.controller.DAMController', {
         valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
         myEditor.getComponent(0).getForm().setValues(valueBox);
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        if (ROMode){
+            Ext.Array.forEach(myEditor.query("field"), function(thing){thing.setReadOnly(true);});
+            Ext.Array.forEach(myEditor.query("button"), function(thing){thing.disable();});
+            myEditor.setTitle("Affichage du média \" "+record.get("title")+" \"");
+            Ext.getCmp("DAMSubmitUpdateBtn").hide();
+        }
     },
 
     renderFacets: function(facets) {

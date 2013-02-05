@@ -314,13 +314,13 @@
                     "Ext.getCmp(\"DAMUpdateBtn\").enable();\r",
                     "Ext.getCmp(\"DAMROBtn\").enable();\r",
                     "if (Ext.isEmpty(selections)) {\r",
-                    "    \r",
-                    "        Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
-                    "        Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
-                    "        Ext.getCmp(\"DAMROBtn\").disable();\r",
-                    "        Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
-                    "        Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
-                    "    \r",
+                    "\r",
+                    "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMROBtn\").disable();\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
+                    "\r",
                     "} else if (selections.length==1) {\r",
                     "    var customMeta = \"<b> \"+selections[0].get(\"text\")+\"</b></br><b> Dernière modification : </b>\"+Ext.Date.format(selections[0].get(\"lastUpdateTime\"), 'd-m-Y')+\"<b> Auteur : </b>\"+selections[0].get(\"author\");\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
@@ -332,7 +332,7 @@
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
-                    "\r",
+                    "    Ext.getCmp(\"DAMROBtn\").disable();\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -520,6 +520,8 @@
                 "fn": "onDAMROBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "this.prepareContext(record.get(\"id\"), record.get(\"typeId\"), true);\r",
+                    "/*\r",
                     "var DAMType= Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected();\r",
                     "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
                     "myEditor.setTitle(record.get(\"title\"));\r",
@@ -536,7 +538,8 @@
                     "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
                     "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
                     "Ext.Array.forEach(Ext.getCmp(\"DAMFieldBox\").query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
-                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                    "*/"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -583,7 +586,11 @@
                 "designer|userClassName": "onGridpanelItemDblClick",
                 "fn": "onGridpanelItemDblClick",
                 "implHandler": [
-                    "this.prepareContext(record.get(\"id\"), record.get(\"typeId\"));"
+                    "if (ACL.interfaceRights[\"write.ui.dam\"]){\r",
+                    "    this.prepareContext(record.get(\"id\"), record.get(\"typeId\"), record.get(\"readOnly\"));\r",
+                    "} else {\r",
+                    "    this.prepareContext(record.get(\"id\"), record.get(\"typeId\"), true);\r",
+                    "}"
                 ],
                 "name": "itemdblclick",
                 "scope": "me",
@@ -604,7 +611,8 @@
                 "fn": "prepareContext",
                 "designer|params": [
                     "damId",
-                    "typeId"
+                    "typeId",
+                    "ROMode"
                 ],
                 "implHandler": [
                     "var me = this;\r",
@@ -616,19 +624,19 @@
                     "Ext.getStore(\"MTForDAMEdit\").addListener(\"load\", function(){\r",
                     "    counter = counter - 1;\r",
                     "    if (counter === 0) {\r",
-                    "        me.fireUnitaryEdit();\r",
+                    "        me.fireUnitaryEdit(ROMode);\r",
                     "    }\r",
                     "},this, {single:true});\r",
                     "    Ext.getStore(\"TaxonomyForDam2\").addListener(\"load\", function(){\r",
                     "        counter = counter - 1;\r",
                     "        if (counter === 0) {\r",
-                    "            me.fireUnitaryEdit();\r",
+                    "            me.fireUnitaryEdit(ROMode);\r",
                     "        }\r",
                     "    },this, {single:true});\r",
                     "        Ext.getStore(\"DAMEditStore\").addListener(\"load\", function(){\r",
                     "            counter = counter - 1;\r",
                     "            if (counter === 0) {\r",
-                    "                me.fireUnitaryEdit();\r",
+                    "                me.fireUnitaryEdit(ROMode);\r",
                     "            }\r",
                     "        },this, {single:true});\r",
                     "            Ext.getStore(\"MTForDAMEdit\").load();\r",
@@ -649,6 +657,9 @@
             "userConfig": {
                 "designer|userClassName": "fireUnitaryEdit",
                 "fn": "fireUnitaryEdit",
+                "designer|params": [
+                    "ROMode"
+                ],
                 "implHandler": [
                     "var record = Ext.getStore(\"DAMEditStore\").getRange()[0];\r",
                     "var DAMType= Ext.getStore(\"MTForDAMEdit\").getRange()[0];\r",
@@ -672,7 +683,13 @@
                     "valueBox.originalFileId=record.get(\"originalFileId\");\r",
                     "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
                     "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
-                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                    "if (ROMode){\r",
+                    "    Ext.Array.forEach(myEditor.query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
+                    "    Ext.Array.forEach(myEditor.query(\"button\"), function(thing){thing.disable();});\r",
+                    "    myEditor.setTitle(\"Affichage du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
+                    "    Ext.getCmp(\"DAMSubmitUpdateBtn\").hide();\r",
+                    "}"
                 ]
             },
             "designerId": "b46baeb9-0cac-4bfa-b961-22357ac8f3bf"

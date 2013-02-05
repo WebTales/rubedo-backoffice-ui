@@ -135,6 +135,21 @@
                 "name": "fileSize"
             },
             "designerId": "031068e6-486d-4318-a24c-06603509e402"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "3985dc61-5196-41e2-8e3d-15a4713e157b"
         }
     ]
 }
