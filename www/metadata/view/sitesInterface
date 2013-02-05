@@ -132,6 +132,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.sites",
                         "designer|userClassName": "MyButton165",
                         "disabled": true,
                         "id": "updateSiteBtn",
@@ -140,7 +141,43 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
-                    "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a"
+                    "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill28"
+                    },
+                    "designerId": "d517ce59-5eb0-4b20-ad39-5ffd097f4e65"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton250",
+                        "iconCls": "info_big",
+                        "scale": "large",
+                        "text": ""
+                    },
+                    "designerId": "83f839b1-4d03-47db-9d3e-b869bea158b8"
                 }
             ]
         },
@@ -211,6 +248,35 @@
                                 "allowBlank": false
                             },
                             "designerId": "504e26a0-588f-4898-9f56-ebb4889252e8"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"readOnly\")) {\r",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                                    "} else {\r",
+                                    "    return(value);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "e63e30c7-d5bb-4bbf-88ee-d3a1bad29d09"
                         }
                     ]
                 },

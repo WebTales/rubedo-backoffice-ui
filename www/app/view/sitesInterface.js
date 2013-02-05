@@ -82,12 +82,22 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.sites',
                             disabled: true,
                             id: 'updateSiteBtn',
                             iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
                             text: 'Enregistrer'
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            iconCls: 'info_big',
+                            scale: 'large',
+                            text: ''
                         }
                     ]
                 },
@@ -134,6 +144,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("readOnly")) {
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+                                } else {
+                                    return(value);
+                                }
+                            },
                             dataIndex: 'text',
                             text: 'Nom',
                             editor: {

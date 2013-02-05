@@ -104,6 +104,11 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'workspace'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

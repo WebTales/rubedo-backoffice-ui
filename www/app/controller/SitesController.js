@@ -39,7 +39,13 @@ Ext.define('Rubedo.controller.SitesController', {
             if (Ext.isEmpty(Ext.getCmp("sitesHomePicker").getValue())){
                 Ext.getCmp("sitesHomePicker").setValue([]);
             }
-
+            if ((!ACL.interfaceRights["write.ui.sites"])||(selections[0].get("readOnly"))){
+                Ext.getCmp("updateSiteBtn").disable();
+                Ext.getCmp("siteRemoveBtn").disable();
+                Ext.Array.forEach(Ext.getCmp("mainSiteProps").query("field"), function(field){field.setReadOnly(true);});
+            } else {
+                Ext.Array.forEach(Ext.getCmp("mainSiteProps").query("field"), function(field){field.setReadOnly(false);});
+            }
             var boiteMeta = Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
             var valeurs= Ext.clone(selections[0].data);
             valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
