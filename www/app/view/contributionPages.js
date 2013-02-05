@@ -75,6 +75,7 @@ Ext.define('Rubedo.view.contributionPages', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.pages',
                             disabled: true,
                             id: 'addPageBtn',
                             iconAlign: 'top',
@@ -84,6 +85,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.pages',
                             disabled: true,
                             id: 'removePageBtn',
                             iconAlign: 'top',
@@ -93,7 +95,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.masks',
+                            ACL: 'write.ui.pages',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -171,7 +173,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.masks',
+                            ACL: 'write.ui.pages',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -486,7 +488,7 @@ Ext.define('Rubedo.view.contributionPages', {
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
 
-        if (!ACL.interfaceRights["write.ui.masks"]){
+        if (!ACL.interfaceRights["write.ui.pages"]){
             return(false);
         }
         Ext.getStore("PagesDataStore").suspendAutoSync();
