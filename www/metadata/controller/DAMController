@@ -426,6 +426,8 @@
                 "fn": "onDAMUpdateBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
+                    "this.prepareContext(record.get(\"id\"), record.get(\"typeId\"));\r",
+                    "/*\r",
                     "var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\", record.get(\"typeId\"));\r",
                     "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
                     "myEditor.setTitle(\"Edition du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
@@ -441,7 +443,7 @@
                     "valueBox.originalFileId=record.get(\"originalFileId\");\r",
                     "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
                     "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
-                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();"
+                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();*/"
                 ],
                 "name": "click",
                 "scope": "me",

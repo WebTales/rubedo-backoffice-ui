@@ -111,6 +111,8 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMUpdateBtnClick: function(button, e, options) {
         var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+        this.prepareContext(record.get("id"), record.get("typeId"));
+        /*
         var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id", record.get("typeId"));
         var myEditor = Ext.widget("DAMCreateUpdateWindow");
         myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
@@ -126,7 +128,7 @@ Ext.define('Rubedo.controller.DAMController', {
         valueBox.originalFileId=record.get("originalFileId");
         valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
         myEditor.getComponent(0).getForm().setValues(valueBox);
-        Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        Ext.getCmp("DAMCreateUpdateWindow").doLayout();*/
     },
 
     onDAMSubmitUpdateBtnClick: function(button, e, options) {
