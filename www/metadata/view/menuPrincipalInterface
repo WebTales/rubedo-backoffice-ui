@@ -393,6 +393,26 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onButtonRender",
+                                "fn": "onButtonRender",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
+                                    "    abstractcomponent.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "5b3bf0f9-5931-4cfb-a6cc-6405180d66a8"
                         }
                     ]
                 },
@@ -649,6 +669,26 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onButtonRender1",
+                                "fn": "onButtonRender1",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])){\r",
+                                    "    abstractcomponent.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "83dc9a37-4093-445a-8d8a-8e539fc6d89a"
                         }
                     ]
                 },

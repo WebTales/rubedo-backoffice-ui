@@ -139,6 +139,12 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                         text: 'Types de médias'
                                     }
                                 ]
+                            },
+                            listeners: {
+                                render: {
+                                    fn: me.onButtonRender,
+                                    scope: me
+                                }
                             }
                         },
                         {
@@ -209,6 +215,12 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                         text: 'Workflows'
                                     }
                                 ]
+                            },
+                            listeners: {
+                                render: {
+                                    fn: me.onButtonRender1,
+                                    scope: me
+                                }
                             }
                         },
                         {
@@ -233,6 +245,18 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onButtonRender: function(abstractcomponent, options) {
+        if ((!ACL.interfaceRights["read.ui.sites"])&&(!ACL.interfaceRights["read.ui.masks"])&&(!ACL.interfaceRights["read.ui.contentTypes"])&&(!ACL.interfaceRights["read.ui.damTypes"])){
+            abstractcomponent.hide();
+        }
+    },
+
+    onButtonRender1: function(abstractcomponent, options) {
+        if ((!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])){
+            abstractcomponent.hide();
+        }
     }
 
 });
