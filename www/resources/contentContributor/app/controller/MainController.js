@@ -63,7 +63,9 @@ Ext.define('ContentContributor.controller.MainController', {
                         qArray.push(newContent.get("id"));
                         queryRecord.set("query", qArray);
                     }
-                    Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré');
+                    Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré', function(){
+                        window.parent.destroyModal("add-content-window");
+                    });
                 },this, {single:true});
 
 
