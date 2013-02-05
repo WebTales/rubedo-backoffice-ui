@@ -55,9 +55,18 @@ Ext.define('ContentContributor.controller.MainController', {
                 });
                 Ext.getCmp("MainForm").setLoading(true);
                 Ext.getStore("Contents").addListener("write", function(){
+
                     Ext.getCmp("MainForm").setLoading(false);
+                    if (AppGlobals.contextQueryType=="manual"){
+                        var queryRecord = Ext.getStore("QueriesStore").getRange()[0];
+                        var qArray =Ext.clone(queryRecord.get("query"));
+                        qArray.push(newContent.get("id"));
+                        queryRecord.set("query", qArray);
+                    }
                     Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré');
                 },this, {single:true});
+
+
                     Ext.getStore("Contents").add(newContent);
 
                 }
@@ -181,6 +190,12 @@ Ext.define('ContentContributor.controller.MainController', {
                     multiSelect: leVocab.data.multiSelect,
                     allowBlank: !leVocab.data.mandatory
                 });
+                if (AppGlobals.contentQueryType=="simple"){
+                    if (!Ext.isEmpty(AppGlobals.contentQuery.vocabularies[leVocab.get("id")])) {
+                        selecteur.setValue(AppGlobals.contentQuery.vocabularies[leVocab.get("id")].terms);
+                    }
+                }
+
                 var enrobage =Ext.widget('fieldWrapper');
                 enrobage.add(selecteur);
                 enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
