@@ -29,7 +29,7 @@
                     "contentType"
                 ],
                 "implHandler": [
-                    "Ext.getCmp(\"MainForm\").setTitle(\"Nouveau contenu \"+contentType.type);",
+                    "Ext.getCmp(\"MainForm\").setTitle(\"Nouveau contenu : \"+contentType.type);",
                     "this.renderMainFields(contentType.fields);",
                     "this.renderTaxoFields(contentType.vocabularies);"
                 ]

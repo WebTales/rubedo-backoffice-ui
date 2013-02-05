@@ -78,7 +78,7 @@ Ext.define('ContentContributor.controller.MainController', {
     },
 
     initializeContentForm: function(contentType) {
-        Ext.getCmp("MainForm").setTitle("Nouveau contenu "+contentType.type);
+        Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
         this.renderMainFields(contentType.fields);
         this.renderTaxoFields(contentType.vocabularies);
     },

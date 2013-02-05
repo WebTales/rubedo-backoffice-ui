@@ -21,7 +21,7 @@ Ext.define('ContentContributor.view.MainForm', {
     id: 'MainForm',
     overflowY: 'auto',
     bodyPadding: 20,
-    header: false,
+    header: true,
     title: 'Nouveau Contenu',
     titleAlign: 'center',
 
