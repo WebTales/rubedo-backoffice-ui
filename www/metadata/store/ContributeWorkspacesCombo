@@ -85,6 +85,24 @@
                 "scope": "me"
             },
             "designerId": "b3a6f978-5884-4b93-a73f-17e1dae13565"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "store.clearFilter(true);"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "b30ab1fb-6a00-40bd-aa1e-390bf383ccdb"
         }
     ]
 }

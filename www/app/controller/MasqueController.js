@@ -434,7 +434,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     propEdit.add(configSpec);
                     if (!ACL.interfaceRights['write.ui.masks']){
                         Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){truc.disable();});
+                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
                     }
                     e.stopEvent();
                 });}

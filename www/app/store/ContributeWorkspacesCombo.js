@@ -46,6 +46,10 @@ Ext.define('Rubedo.store.ContributeWorkspacesCombo', {
                 load: {
                     fn: me.onJsonstoreLoad,
                     scope: me
+                },
+                beforeload: {
+                    fn: me.onJsonstoreBeforeLoad,
+                    scope: me
                 }
             }
         }, cfg)]);
@@ -53,6 +57,10 @@ Ext.define('Rubedo.store.ContributeWorkspacesCombo', {
 
     onJsonstoreLoad: function(store, records, successful, options) {
         store.filter("canContribute", true);
+    },
+
+    onJsonstoreBeforeLoad: function(store, operation, options) {
+        store.clearFilter(true);
     }
 
 });
