@@ -39,7 +39,7 @@ Ext.define('Rubedo.controller.MainStoresController', {
                     theStore.isUsed=false;
                 });
                 store.on("write", function(theStore,roperation){
-                    me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId);
+                    me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId, theStore.forcedSync);
                 });
 
 
@@ -81,9 +81,9 @@ Ext.define('Rubedo.controller.MainStoresController', {
         });
     },
 
-    reloadActiveBrothers: function(collectionName, myId) {
+    reloadActiveBrothers: function(collectionName, myId, forcedMode) {
         Ext.data.StoreManager.each(function(someStore){
-            if ((someStore.isOptimised)&&(someStore.isUsed)&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {
+            if ((someStore.isOptimised)&&((someStore.isUsed)||(forcedMode))&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {
                 someStore.load();
             }
         });

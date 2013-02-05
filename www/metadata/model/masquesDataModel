@@ -136,6 +136,21 @@
                 "name": "createUser"
             },
             "designerId": "a5637cd3-3527-4d11-a3ad-8897a7a52a2c"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "654cf400-5a99-4937-8d3b-189489ca7036"
         }
     ]
 }

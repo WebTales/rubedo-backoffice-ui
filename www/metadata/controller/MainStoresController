@@ -39,7 +39,7 @@
                     "            theStore.isUsed=false;\r",
                     "        });\r",
                     "        store.on(\"write\", function(theStore,roperation){\r",
-                    "            me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId);\r",
+                    "            me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId, theStore.forcedSync);\r",
                     "        });\r",
                     "\r",
                     "\r",
@@ -89,11 +89,12 @@
                 "fn": "reloadActiveBrothers",
                 "designer|params": [
                     "collectionName",
-                    "myId"
+                    "myId",
+                    "forcedMode"
                 ],
                 "implHandler": [
                     "Ext.data.StoreManager.each(function(someStore){\r",
-                    "    if ((someStore.isOptimised)&&(someStore.isUsed)&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
+                    "    if ((someStore.isOptimised)&&((someStore.isUsed)||(forcedMode))&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
                     "        someStore.load();\r",
                     "    }\r",
                     "});"

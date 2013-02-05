@@ -284,6 +284,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.masks',
                                     id: 'AdminfMasquesImporter',
                                     iconAlign: 'top',
                                     iconCls: 'application_up_big',
@@ -337,7 +338,11 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> ' + value );
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> ' + returner );
                             },
                             dataIndex: 'text',
                             flex: 1.2,

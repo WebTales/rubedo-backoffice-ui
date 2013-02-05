@@ -615,6 +615,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.masks",
                                 "designer|userClassName": "MyButton63",
                                 "id": "AdminfMasquesImporter",
                                 "icon": null,
@@ -623,7 +624,14 @@
                                 "scale": "large",
                                 "text": "Importer"
                             },
-                            "designerId": "9636e50c-52fb-4ecd-95d8-c35994501c24"
+                            "designerId": "9636e50c-52fb-4ecd-95d8-c35994501c24",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -799,7 +807,11 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png\"> ' + value );"
+                                    "var returner = value;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "}\r",
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png\"> ' + returner );"
                                 ]
                             },
                             "designerId": "5135dffc-f8ad-4516-bcf0-1110947cabb1"

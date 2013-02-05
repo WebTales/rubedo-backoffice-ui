@@ -27,6 +27,7 @@ Ext.define('Rubedo.store.WorkspacesStore', {
         me.callParent([Ext.apply({
             isOptimised: true,
             usedCollection: 'Workspaces',
+            forcedSync: true,
             autoLoad: false,
             autoSync: true,
             storeId: 'WorkspacesStore',

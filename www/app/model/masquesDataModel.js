@@ -51,6 +51,11 @@ Ext.define('Rubedo.model.masquesDataModel', {
         },
         {
             name: 'createUser'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

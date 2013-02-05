@@ -8,6 +8,7 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Workspaces",
+        "forcedSync": true,
         "designer|userClassName": "WorkspacesStore",
         "designer|userAlias": "WorkspacesStore",
         "autoLoad": false,
@@ -17,7 +18,8 @@
         "data": null
     },
     "configAlternates": {
-        "isOptimised": "boolean"
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
     },
     "id": "ExtBox1-ext-gen12808",
     "designerId": "b94e7429-c79c-43f2-ba86-73666c6e59e3",
@@ -30,6 +32,11 @@
         {
             "group": "(Custom Properties)",
             "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "forcedSync",
             "type": "string"
         }
     ],
