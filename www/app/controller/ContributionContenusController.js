@@ -204,13 +204,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         } else if (selections.length==1) {
             Ext.getCmp("ajoutPanierContenus").enable();
             Ext.getCmp("boutonCopierContenus").enable();
-            if (ACL.interfaceRights["write.ui.contents."+selections[0].get("status")]){
+            if ((!selections[0].get("readOnly"))&&(ACL.interfaceRights["write.ui.contents."+selections[0].get("status")])){
                 Ext.getCmp("boutonModifierContenu").enable();
                 Ext.getCmp("boutonSupprimerContenu").enable();
             }else if (ACL.interfaceRights["read.ui.contents."+selections[0].get("status")]){
                 Ext.getCmp("boutonModifierContenu").enable();
                 Ext.getCmp("boutonModifierContenu").setText('Afficher');
-                Ext.getCmp("boutonModifierContenu").restricedRead=true;
+                Ext.getCmp("boutonModifierContenu").enable();
                 Ext.getCmp("boutonSupprimerContenu").disable();        
             } else {
                 Ext.getCmp("boutonModifierContenu").disable();
@@ -245,7 +245,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             } else {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
             }
-
+            if (selections[0].get("readOnly")){
+                Ext.getCmp("contribWorkflowBox").disable();
+            }
 
 
         } else {
@@ -256,9 +258,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("contribWorkflowBox").enable();
             var statuses = [];
             var onlines = [];
+            var RO = false;
             Ext.Array.forEach(selections, function(someContent){
                 Ext.Array.include(statuses, someContent.get("status"));
                 Ext.Array.include(onlines, someContent.get("online"));
+                if (someContent.get("readOnly")){
+                    RO=true;
+                }
             });
             if (statuses.length>1){
                 Ext.getCmp("contribWorkflowBox").disable();
@@ -295,6 +301,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     }
                 }
                 customMeta=selections.length+" Contenus";
+                if (RO==true){
+                    Ext.getCmp("contribWorkflowBox").disable();
+                    Ext.getCmp("boutonModifierContenu").disable();
+                    Ext.getCmp("boutonSupprimerContenu").disable();
+                }
             }
 
             boiteMeta.update(customMeta);

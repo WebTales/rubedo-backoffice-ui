@@ -51,12 +51,12 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     xtype: 'treecolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (record.isRoot()){
-                            return("<i style=\"color:#BBB;\">Racine</i>");
+                            return("<i style=\"color:#777;\">Racine</i>");
                         }
                         else if (record.get("readOnly")) {
                             record.data.allowDrop=false;
                             record.data.allowDrag=false;
-                            return("<i style=\"color:#BBB;\">"+value+"</i>");
+                            return("<i style=\"color:#777;\">"+value+"</i>");
 
                         } else {
                             return(value);

@@ -36,12 +36,16 @@ Ext.define('Rubedo.view.menuContenusContext', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        var returner = value;
+                        if (record.get("readOnly")){
+                            returner ="<i style=\"color:#777;\">"+value+"</i>";
+                        }
                         if (record.get("status")=="published") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
+                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+returner);
                         } else if (record.get("status")=="pending") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
+                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+returner);
                         } else if (record.get("status")=="draft") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
+                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+returner);
                         }
 
 
