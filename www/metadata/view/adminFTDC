@@ -661,8 +661,12 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + value );}\r",
-                                    "else {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> ' + value );}\r",
+                                    "var returner = value;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "}\r",
+                                    "if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + returner );}\r",
+                                    "else {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> ' + returner );}\r",
                                     ""
                                 ]
                             },
@@ -705,7 +709,29 @@
                     "userConfig": {
                         "designer|userClassName": "MyCellEditingPlugin1"
                     },
-                    "designerId": "b868827d-50c2-4a9e-b8c0-401bcedb701e"
+                    "designerId": "b868827d-50c2-4a9e-b8c0-401bcedb701e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
+                                "fn": "onGridcelleditingpluginBeforeEdit",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"write.ui.contentTypes\"])||(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "c79eb5f4-5050-4574-9d0a-fbdc38ba99f8"
+                        }
+                    ]
                 }
             ]
         },

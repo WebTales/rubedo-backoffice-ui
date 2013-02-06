@@ -287,8 +287,12 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                if (record.data.dependant===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> ' + value );}
-                                else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + value );}
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
+                                if (record.data.dependant===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> ' + returner );}
+                                else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + returner );}
 
                             },
                             width: 452,
@@ -306,7 +310,13 @@ Ext.define('Rubedo.view.adminFTDC', {
                     }),
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting'
+                            ptype: 'cellediting',
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onGridcelleditingpluginBeforeEdit,
+                                    scope: me
+                                }
+                            }
                         })
                     ]
                 },
@@ -557,6 +567,12 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+    },
+
+    onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
+        if ((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
+            return false;
+        }
     },
 
     onVocabulairesTypesContenusGridViewReady: function(tablepanel, options) {

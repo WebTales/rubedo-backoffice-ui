@@ -374,7 +374,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             Ext.getCmp(this.targetField).setValue(properMT);
                         },nouvChamp.getStore(),{single:true});
                         }
-                        nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
+                        nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly")));
                         nouvChamp.on('change', function (thing) {
                             if (thing.isValid()){
                                 TCfield.config[this.name]= this.getValue();
@@ -604,6 +604,19 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
     metaBox.update(values);
     metaBox.show();
+    if ((!ACL.interfaceRights["write.ui.contentTypes"])||(record.get("readOnly"))) {
+        Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(true);});
+        Ext.getCmp("boutonSupprimerTypeContenu").disable();
+        Ext.getCmp("boutonEnregistrerTypeContenu").disable();
+        Ext.getCmp("AdminfTCImporter").disable();
+        Ext.getCmp("TCfieldUp").up().disable();
+    } else {
+        Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(false);});
+        Ext.getCmp("boutonSupprimerTypeContenu").enable();
+        Ext.getCmp("boutonEnregistrerTypeContenu").enable();
+        Ext.getCmp("AdminfTCImporter").enable();
+        Ext.getCmp("TCfieldUp").up().enable();
+    }
 
     },
 

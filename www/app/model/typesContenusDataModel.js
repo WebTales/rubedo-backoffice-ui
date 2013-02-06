@@ -68,6 +68,11 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'workspaces'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });
