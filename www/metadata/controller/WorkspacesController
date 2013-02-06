@@ -102,7 +102,7 @@
                     "    Ext.getCmp(\"workspaceSave\").enable();\r",
                     "    Ext.getCmp(\"workspacesMainForm\").enable();\r",
                     "    Ext.getCmp(\"workspacesMainForm\").getForm().setValues(selections[0].getData());\r",
-                    "    if (selections[0].get(\"readOnly\")){\r",
+                    "    if ((selections[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.workspaces\"])){\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"workspacesMainForm\").query(\"field\"), function(field){\r",
                     "            field.setReadOnly(true);\r",
                     "        });\r",

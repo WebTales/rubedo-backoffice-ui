@@ -42,6 +42,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.workspaces",
                         "designer|userClassName": "MyButton240",
                         "id": "workspaceAdd",
                         "iconAlign": "top",
@@ -49,7 +50,14 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc"
+                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -60,6 +68,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.workspaces",
                         "designer|userClassName": "MyButton240",
                         "disabled": true,
                         "id": "workspaceRemove",
@@ -68,7 +77,14 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33"
+                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -79,6 +95,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.workspaces",
                         "designer|userClassName": "MyButton240",
                         "disabled": true,
                         "id": "workspaceSave",
@@ -87,7 +104,14 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
-                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a"
+                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",

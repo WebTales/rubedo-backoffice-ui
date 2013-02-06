@@ -49,7 +49,7 @@ Ext.define('Rubedo.controller.WorkspacesController', {
             Ext.getCmp("workspaceSave").enable();
             Ext.getCmp("workspacesMainForm").enable();
             Ext.getCmp("workspacesMainForm").getForm().setValues(selections[0].getData());
-            if (selections[0].get("readOnly")){
+            if ((selections[0].get("readOnly"))||(!ACL.interfaceRights["write.ui.workspaces"])){
                 Ext.Array.forEach(Ext.getCmp("workspacesMainForm").query("field"), function(field){
                     field.setReadOnly(true);
                 });

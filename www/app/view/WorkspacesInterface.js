@@ -44,6 +44,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.workspaces',
                             id: 'workspaceAdd',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -52,6 +53,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.workspaces',
                             disabled: true,
                             id: 'workspaceRemove',
                             iconAlign: 'top',
@@ -61,6 +63,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.workspaces',
                             disabled: true,
                             id: 'workspaceSave',
                             iconAlign: 'top',
