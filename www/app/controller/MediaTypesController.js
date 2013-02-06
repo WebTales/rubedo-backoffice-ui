@@ -111,7 +111,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                         nouvChamp.validator=me.nameValidator;
                     }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
-                    nouvChamp.setReadOnly(!ACL.interfaceRights["write.ui.contentTypes"]);
+                    nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.mediaTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly")));
                     nouvChamp.on('change', function (thing) {
                         if (thing.isValid()){
                             TCfield.config[this.name]= this.getValue();
@@ -254,6 +254,19 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         });
         Ext.resumeLayouts();
         Ext.getCmp("MTeditFields").doLayout();
+        if ((!ACL.interfaceRights["write.ui.damTypes"])||(record.get("readOnly"))) {
+            Ext.Array.forEach(Ext.getCmp("mediaTypesEditForm").query("field"), function(thing){thing.setReadOnly(true);});
+            Ext.getCmp("removeMTBtn").disable();
+            Ext.getCmp("saveMTBtn").disable();
+            Ext.getCmp("MTImportBtn").disable();
+            Ext.getCmp("MTfieldDeleter").up().disable();
+        } else {
+            Ext.Array.forEach(Ext.getCmp("mediaTypesEditForm").query("field"), function(thing){thing.setReadOnly(false);});
+            Ext.getCmp("removeMTBtn").enable();
+            Ext.getCmp("saveMTBtn").enable();
+            Ext.getCmp("MTImportBtn").enable();
+            Ext.getCmp("MTfieldDeleter").up().enable();
+        }
     },
 
     updateMT: function(record) {

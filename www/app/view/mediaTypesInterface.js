@@ -64,6 +64,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.damTypes',
                             id: 'newMTBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -72,6 +73,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.damTypes',
                             disabled: true,
                             id: 'removeMTBtn',
                             iconAlign: 'top',
@@ -81,6 +83,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.damTypes',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -140,6 +143,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.damTypes',
                                     id: 'copyMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -167,6 +171,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            ACL: 'write.ui.damTypes',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -178,6 +183,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.damTypes',
                                     id: 'saveMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -207,6 +213,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.damTypes',
                                     id: 'MTImportBtn',
                                     iconAlign: 'top',
                                     iconCls: 'application_up_big',
@@ -273,7 +280,11 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + value + " : <i>" + record.get("mainFileType")+"</i>" );
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + returner + " : <i>" + record.get("mainFileType")+"</i>" );
                             },
                             dataIndex: 'type',
                             text: 'Type',
@@ -285,7 +296,13 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                     ],
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting'
+                            ptype: 'cellediting',
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onGridcelleditingpluginBeforeEdit,
+                                    scope: me
+                                }
+                            }
                         })
                     ],
                     listeners: {
@@ -500,7 +517,13 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             falseText: 'non',
                                             trueText: 'oui'
                                         }
-                                    ]
+                                    ],
+                                    listeners: {
+                                        viewready: {
+                                            fn: me.onVocabulariesMTGridViewReady,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -546,6 +569,12 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         me.callParent(arguments);
     },
 
+    onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
+        if ((!ACL.interfaceRights["write.ui.mediaTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
+            return false;
+        }
+    },
+
     onMainMTGridSelect: function(selModel, record, index, options) {
         Ext.getCmp("MTcenterZone").setActiveTab(2);
         Ext.getCmp("MTcenterZone").setActiveTab(0);
@@ -553,6 +582,12 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
 
     onImageRender1: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+    },
+
+    onVocabulariesMTGridViewReady: function(tablepanel, options) {
+        if (!ACL.interfaceRights["write.ui.damTypes"]){
+            tablepanel.getSelectionModel().setLocked(true);
+        }
     },
 
     onMediaTypesInterfaceRender: function(abstractcomponent, options) {

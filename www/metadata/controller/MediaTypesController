@@ -131,7 +131,20 @@
                     "    me.renderMTField(field, targetZone);\r",
                     "});\r",
                     "Ext.resumeLayouts();\r",
-                    "Ext.getCmp(\"MTeditFields\").doLayout();"
+                    "Ext.getCmp(\"MTeditFields\").doLayout();\r",
+                    "if ((!ACL.interfaceRights[\"write.ui.damTypes\"])||(record.get(\"readOnly\"))) {\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"mediaTypesEditForm\").query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
+                    "    Ext.getCmp(\"removeMTBtn\").disable();\r",
+                    "    Ext.getCmp(\"saveMTBtn\").disable();\r",
+                    "    Ext.getCmp(\"MTImportBtn\").disable();\r",
+                    "    Ext.getCmp(\"MTfieldDeleter\").up().disable();\r",
+                    "} else {\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"mediaTypesEditForm\").query(\"field\"), function(thing){thing.setReadOnly(false);});\r",
+                    "    Ext.getCmp(\"removeMTBtn\").enable();\r",
+                    "    Ext.getCmp(\"saveMTBtn\").enable();\r",
+                    "    Ext.getCmp(\"MTImportBtn\").enable();\r",
+                    "    Ext.getCmp(\"MTfieldDeleter\").up().enable();\r",
+                    "}"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
@@ -466,7 +479,7 @@
                     "                nouvChamp.validator=me.nameValidator;\r",
                     "            }\r",
                     "            nouvChamp.setValue(TCfield.config[nouvChamp.name]);\r",
-                    "            nouvChamp.setReadOnly(!ACL.interfaceRights[\"write.ui.contentTypes\"]);\r",
+                    "            nouvChamp.setReadOnly((!ACL.interfaceRights[\"write.ui.mediaTypes\"])||(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().get(\"readOnly\")));\r",
                     "            nouvChamp.on('change', function (thing) {\r",
                     "                if (thing.isValid()){\r",
                     "                    TCfield.config[this.name]= this.getValue();\r",

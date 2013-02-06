@@ -1248,7 +1248,7 @@
                                         "fn": "onVocabulairesTypesContenusGridViewReady",
                                         "implHandler": [
                                             "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",
-                                            "tablepanel.getSelectionModel().setLocked(true);\r",
+                                            "    tablepanel.getSelectionModel().setLocked(true);\r",
                                             "}"
                                         ],
                                         "name": "viewready",

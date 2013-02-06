@@ -53,6 +53,11 @@ Ext.define('Rubedo.model.mediaTypeModel', {
         },
         {
             name: 'workspaces'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

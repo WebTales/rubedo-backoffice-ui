@@ -90,7 +90,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.damTypes",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton11",
                         "id": "newMTBtn",
@@ -118,7 +118,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.damTypes",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
@@ -147,7 +147,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.damTypes",
                         "layout|flex": null,
                         "container|columns": 2,
                         "designer|userClassName": "MyButtonGroup",
@@ -264,7 +264,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "ACL": null,
+                                "ACL": "write.ui.damTypes",
                                 "designer|userClassName": "MyButton17",
                                 "id": "copyMTBtn",
                                 "width": null,
@@ -330,7 +330,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": null,
+                        "ACL": "write.ui.damTypes",
                         "layout|flex": null,
                         "container|columns": 2,
                         "designer|userClassName": "MyButtonGroup",
@@ -356,6 +356,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.damTypes",
                                 "designer|userClassName": "MyButton13",
                                 "id": "saveMTBtn",
                                 "itemId": null,
@@ -365,7 +366,14 @@
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
-                            "designerId": "b08eb0a1-0624-4efb-935b-f3d6aea1476b"
+                            "designerId": "b08eb0a1-0624-4efb-935b-f3d6aea1476b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -413,7 +421,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "ACL": null,
+                                "ACL": "write.ui.damTypes",
                                 "designer|userClassName": "MyButton63",
                                 "id": "MTImportBtn",
                                 "icon": null,
@@ -544,7 +552,11 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + value + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
+                                    "var returner = value;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "}\r",
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png\"> ' + returner + \" : <i>\" + record.get(\"mainFileType\")+\"</i>\" );"
                                 ]
                             },
                             "designerId": "bd96e035-9fad-4068-9d12-3039cf95691f"
@@ -574,7 +586,29 @@
                     "userConfig": {
                         "designer|userClassName": "MyCellEditingPlugin3"
                     },
-                    "designerId": "5f7cf847-b847-4f49-8d7b-bd250b2b051e"
+                    "designerId": "5f7cf847-b847-4f49-8d7b-bd250b2b051e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
+                                "fn": "onGridcelleditingpluginBeforeEdit",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"write.ui.mediaTypes\"])||(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "61544c06-776b-45d3-a9a3-1fd6556604a3"
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",
@@ -1187,6 +1221,26 @@
                                         "trueText": "oui"
                                     },
                                     "designerId": "9e400444-c1c9-47bf-88f9-d1a36eb72a3e"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onVocabulariesMTGridViewReady",
+                                        "fn": "onVocabulariesMTGridViewReady",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.damTypes\"]){\r",
+                                            "    tablepanel.getSelectionModel().setLocked(true);\r",
+                                            "}"
+                                        ],
+                                        "name": "viewready",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "64b9048d-25c7-408f-b055-9a98d29cccfa"
                                 }
                             ]
                         }
