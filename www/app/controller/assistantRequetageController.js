@@ -470,9 +470,12 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if (Ext.isEmpty(selections)){
             Ext.getCmp("queryMainRemoveBtn").disable();
             Ext.getCmp("queryMainEditBtn").disable();
-        } else {
+        } else if (!selections[0].get("readOnly")){
             Ext.getCmp("queryMainRemoveBtn").enable();
             Ext.getCmp("queryMainEditBtn").enable();
+        } else  {
+            Ext.getCmp("queryMainRemoveBtn").disable();
+            Ext.getCmp("queryMainEditBtn").disable();
         }
     },
 

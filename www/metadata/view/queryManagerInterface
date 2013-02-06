@@ -42,6 +42,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.queries",
                         "designer|userClassName": "MyButton224",
                         "id": "queryMainAddBtn",
                         "iconAlign": "top",
@@ -49,7 +50,14 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "aaa77d83-edbc-43ca-80de-b5472fb03688"
+                    "designerId": "aaa77d83-edbc-43ca-80de-b5472fb03688",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -60,6 +68,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.queries",
                         "designer|userClassName": "MyButton225",
                         "disabled": true,
                         "id": "queryMainRemoveBtn",
@@ -68,7 +77,14 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "0c6b28ba-7ff8-4dee-affa-7c5c133c48e3"
+                    "designerId": "0c6b28ba-7ff8-4dee-affa-7c5c133c48e3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "button",
@@ -79,6 +95,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.queries",
                         "designer|userClassName": "MyButton226",
                         "disabled": true,
                         "id": "queryMainEditBtn",
@@ -87,7 +104,14 @@
                         "scale": "large",
                         "text": "Editer"
                     },
-                    "designerId": "6b191377-285e-499f-8c56-d19ce20a1745"
+                    "designerId": "6b191377-285e-499f-8c56-d19ce20a1745",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "tbfill",
@@ -163,7 +187,39 @@
                         "dataIndex": "name",
                         "text": "Nom"
                     },
-                    "designerId": "21541e1d-5851-48a4-b480-43a653971c82"
+                    "designerId": "21541e1d-5851-48a4-b480-43a653971c82",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"readOnly\")) {\r",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                                    "\r",
+                                    "} else {\r",
+                                    "    return(value);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "62641e08-45a8-4a0d-bd5b-bf75c1e0f278"
+                        }
+                    ]
                 },
                 {
                     "type": "gridcolumn",

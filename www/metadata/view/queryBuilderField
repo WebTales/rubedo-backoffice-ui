@@ -49,7 +49,7 @@
                 "fn": "onComboboxAdded",
                 "implHandler": [
                     "Ext.apply(abstractcomponent, {anchor:\"86%\"});\r",
-                    "var companion = Ext.widget(\"button\", {style: \"float: right;\", text:\"\", iconCls:\"add\"});\r",
+                    "var companion = Ext.widget(\"button\", {style: \"float: right;\", text:\"\", iconCls:\"add\", ACL:\"write.ui.queries\"});\r",
                     "companion.on(\"click\", function(){\r",
                     "    var myWin = Ext.widget(\"queryTypeChooseWindow\");\r",
                     "    myWin.mainFieldId=abstractcomponent.getId();\r",

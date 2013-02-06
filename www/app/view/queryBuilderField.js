@@ -44,7 +44,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
 
     onComboboxAdded: function(abstractcomponent, container, pos, options) {
         Ext.apply(abstractcomponent, {anchor:"86%"});
-        var companion = Ext.widget("button", {style: "float: right;", text:"", iconCls:"add"});
+        var companion = Ext.widget("button", {style: "float: right;", text:"", iconCls:"add", ACL:"write.ui.queries"});
         companion.on("click", function(){
             var myWin = Ext.widget("queryTypeChooseWindow");
             myWin.mainFieldId=abstractcomponent.getId();

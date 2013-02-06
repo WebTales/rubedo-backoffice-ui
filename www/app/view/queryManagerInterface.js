@@ -43,6 +43,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.queries',
                             id: 'queryMainAddBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -51,6 +52,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.queries',
                             disabled: true,
                             id: 'queryMainRemoveBtn',
                             iconAlign: 'top',
@@ -60,6 +62,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.queries',
                             disabled: true,
                             id: 'queryMainEditBtn',
                             iconAlign: 'top',
@@ -92,6 +95,14 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("readOnly")) {
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+
+                                } else {
+                                    return(value);
+                                }
+                            },
                             dataIndex: 'name',
                             text: 'Nom'
                         },

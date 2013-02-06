@@ -115,6 +115,21 @@
                 "name": "type"
             },
             "designerId": "ec87b346-1db8-4522-9f56-b05505ee3efa"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "e3ed03ea-af87-409f-814b-75b91aa1437b"
         }
     ]
 }

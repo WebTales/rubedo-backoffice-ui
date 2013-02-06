@@ -679,9 +679,12 @@
                     "if (Ext.isEmpty(selections)){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
-                    "} else {\r",
+                    "} else if (!selections[0].get(\"readOnly\")){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").enable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").enable();\r",
+                    "} else  {\r",
+                    "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
+                    "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
                     "}"
                 ],
                 "name": "selectionchange",
