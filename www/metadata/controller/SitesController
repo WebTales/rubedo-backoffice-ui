@@ -235,6 +235,9 @@
                     "if (form.isValid()){\r",
                     "    var newSite= Ext.create(\"Rubedo.model.sitesDataModel\", form.getValues());\r",
                     "    Ext.getStore(\"SitesJson\").add(newSite);\r",
+                    "    if (Ext.getStore(\"MasquesDataJson\").isUsed){\r",
+                    "        Ext.getStore(\"MasquesDataJson\").load();\r",
+                    "    }\r",
                     "    button.up().up().up().close();\r",
                     "}"
                 ],

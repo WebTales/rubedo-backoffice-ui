@@ -118,6 +118,9 @@ Ext.define('Rubedo.controller.SitesController', {
         if (form.isValid()){
             var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
             Ext.getStore("SitesJson").add(newSite);
+            if (Ext.getStore("MasquesDataJson").isUsed){
+                Ext.getStore("MasquesDataJson").load();
+            }
             button.up().up().up().close();
         }
     },
