@@ -45,7 +45,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     Ext.getCmp("ProprietesTaxonomie").getForm().setValues(record.getData());
     Ext.getCmp("taxoRightsBox").getForm().setValues(record.getData());
     Ext.Array.forEach(Ext.getCmp("ProprietesTaxonomie").items.items, function(thingy){
-        thingy.setReadOnly(!ACL.interfaceRights["write.ui.taxonomy"]);
+        thingy.setReadOnly((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly")));
     });
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}

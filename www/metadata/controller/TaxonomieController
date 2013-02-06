@@ -49,7 +49,7 @@
                     "Ext.getCmp(\"ProprietesTaxonomie\").getForm().setValues(record.getData());\r",
                     "Ext.getCmp(\"taxoRightsBox\").getForm().setValues(record.getData());\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ProprietesTaxonomie\").items.items, function(thingy){\r",
-                    "thingy.setReadOnly(!ACL.interfaceRights[\"write.ui.taxonomy\"]);\r",
+                    "thingy.setReadOnly((!ACL.interfaceRights[\"write.ui.taxonomy\"])||(record.get(\"readOnly\")));\r",
                     "});\r",
                     "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",

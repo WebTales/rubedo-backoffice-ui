@@ -130,14 +130,6 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             text: 'Enregistrer'
                         },
                         {
-                            xtype: 'button',
-                            hidden: true,
-                            itemId: 'boutonCreerRaccourci',
-                            iconCls: 'favorite_add_big',
-                            scale: 'large',
-                            text: 'Ajouter aux favoris'
-                        },
-                        {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.taxonomy',
                             disabled: true,
@@ -163,6 +155,15 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                     text: 'Supprimer'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'button',
+                            hidden: false,
+                            itemId: 'boutonCreerRaccourci',
+                            iconAlign: 'top',
+                            iconCls: 'favorite_add_big',
+                            scale: 'large',
+                            text: 'Ajouter aux favoris'
                         },
                         {
                             xtype: 'tbfill'
@@ -196,7 +197,11 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png"> '+value);
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png"> '+returner);
                             },
                             dataIndex: 'name',
                             flex: 1,

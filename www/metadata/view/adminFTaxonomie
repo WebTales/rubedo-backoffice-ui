@@ -283,25 +283,6 @@
                     ]
                 },
                 {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton14",
-                        "hidden": true,
-                        "itemId": "boutonCreerRaccourci",
-                        "icon": null,
-                        "iconCls": "favorite_add_big",
-                        "scale": "large",
-                        "text": "Ajouter aux favoris"
-                    },
-                    "designerId": "2c1a0b63-4300-403a-a331-0c20472a6f8e"
-                },
-                {
                     "type": "buttongroup",
                     "reference": {
                         "name": "items",
@@ -362,6 +343,26 @@
                             "designerId": "5839ef51-6810-447d-8daf-90243a8073f4"
                         }
                     ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton14",
+                        "hidden": false,
+                        "itemId": "boutonCreerRaccourci",
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "favorite_add_big",
+                        "scale": "large",
+                        "text": "Ajouter aux favoris"
+                    },
+                    "designerId": "2c1a0b63-4300-403a-a331-0c20472a6f8e"
                 },
                 {
                     "type": "tbfill",
@@ -478,7 +479,11 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png\"> '+value);"
+                                    "var returner = value;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "}\r",
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png\"> '+returner);"
                                 ]
                             },
                             "designerId": "87b5c1f5-0461-4963-b0b0-5d00918bcfbf"

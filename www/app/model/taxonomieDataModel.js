@@ -63,6 +63,11 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
         },
         {
             name: 'workspaces'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });

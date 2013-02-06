@@ -183,6 +183,21 @@
                 "name": "workspaces"
             },
             "designerId": "213e03f0-dc54-4970-a4b7-ddc3cbdd6fd9"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "85f7c26d-aa23-4cee-9af9-aa6d9c03ff5e"
         }
     ]
 }
