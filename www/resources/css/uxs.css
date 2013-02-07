@@ -51,4 +51,18 @@
     -ms-transition: opacity .35s linear, visibility .0s linear .35s;
     -khtml-transition: opacity .35s linear, visibility .0s linear .35s;
 }
+.ux-notification-light .x-window-header {
+	background-color: transparent;
+}
 
+body .ux-notification-light {
+	background-image: url('resources/images/fader.png');
+}
+
+.ux-notification-light .x-window-body {
+	text-align: center;
+	padding: 15px 5px 18px 5px;
+	width: 200px;
+	background-color: transparent;
+	border: 0px solid white;
+}

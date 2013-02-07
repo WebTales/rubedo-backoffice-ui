@@ -50,7 +50,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     componrtementWindow: function(abstractcomponent, options) {
-        if (!abstractcomponent.isXType("messagebox")){
+        if ((!abstractcomponent.isXType("messagebox"))&&(!abstractcomponent.isXType("uxNotification"))){
             var boutonCompagnon = Ext.widget('splitbutton', {text: abstractcomponent.title, iconCls: abstractcomponent.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
             abstractcomponent.on('close', function(){boutonCompagnon.destroy();});
             abstractcomponent.onEsc=Ext.emptyFn;

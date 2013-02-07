@@ -28,6 +28,18 @@ Ext.define('Rubedo.controller.MainStoresController', {
     init: function(application) {
         var me = this;
         Ext.data.StoreManager.each(function(store){
+            //notifs
+            store.on("write", function(theStore,roperation){
+                if (roperation.action=="update") {
+                    me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
+                }
+                else if (roperation.action=="create") {
+                    me.fireNotif("Notification", "<p>Création réussie.</p>");
+                }
+                else if (roperation.action=="destroy") {
+                    me.fireNotif("Notification", "<p>Suppression réussie.</p>");
+                }
+            });
             //events for optimised stores
             if (store.isOptimised){
                 store.on("load", function(theStore,records,successful){
@@ -87,6 +99,22 @@ Ext.define('Rubedo.controller.MainStoresController', {
                 someStore.load();
             }
         });
+    },
+
+    fireNotif: function(title, message) {
+        Ext.create('Ext.ux.window.Notification', {
+            title: title,
+            position: 'tr',
+            manager: 'instructions',
+            cls: 'ux-notification-light',
+            iconCls: 'ux-notification-icon-information',
+            html: message,
+            autoCloseDelay: 4000,
+            styleHtmlContent:true,
+            slideBackDuration: 500,
+            slideInAnimation: 'bounceOut',
+            slideBackAnimation: 'easeIn'
+        }).show()
     }
 
 });

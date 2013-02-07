@@ -28,6 +28,18 @@
                 "implHandler": [
                     "var me = this;\r",
                     "Ext.data.StoreManager.each(function(store){\r",
+                    "    //notifs\r",
+                    "    store.on(\"write\", function(theStore,roperation){\r",
+                    "           if (roperation.action==\"update\") {\r",
+                    "                me.fireNotif(\"Notification\", \"<p>Mise à jour réussie.</p>\");\r",
+                    "            }\r",
+                    "            else if (roperation.action==\"create\") {\r",
+                    "                me.fireNotif(\"Notification\", \"<p>Création réussie.</p>\");\r",
+                    "            }\r",
+                    "            else if (roperation.action==\"destroy\") {\r",
+                    "               me.fireNotif(\"Notification\", \"<p>Suppression réussie.</p>\");\r",
+                    "            }\r",
+                    "    });\r",
                     "    //events for optimised stores\r",
                     "    if (store.isOptimised){\r",
                     "        store.on(\"load\", function(theStore,records,successful){\r",
@@ -125,6 +137,38 @@
                 "designer|controlQuery": "component"
             },
             "designerId": "06e76d2a-cde1-4cb5-8774-9ff15fa1ee63"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "fireNotif",
+                "fn": "fireNotif",
+                "designer|params": [
+                    "title",
+                    "message"
+                ],
+                "implHandler": [
+                    "Ext.create('Ext.ux.window.Notification', {\r",
+                    "\ttitle: title,\r",
+                    "\tposition: 'tr',\r",
+                    "\tmanager: 'instructions',\r",
+                    "\tcls: 'ux-notification-light',\r",
+                    "\ticonCls: 'ux-notification-icon-information',\r",
+                    "\thtml: message,\r",
+                    "\tautoCloseDelay: 4000,\r",
+                    "    styleHtmlContent:true,\r",
+                    "\tslideBackDuration: 500,\r",
+                    "\tslideInAnimation: 'bounceOut',\r",
+                    "\tslideBackAnimation: 'easeIn'\r",
+                    "}).show()"
+                ]
+            },
+            "designerId": "006f72cb-a2d6-45bc-9d0b-e276d2ed1673"
         }
     ]
 }
