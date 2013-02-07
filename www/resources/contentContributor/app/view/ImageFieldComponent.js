@@ -59,7 +59,7 @@ Ext.define('ContentContributor.view.ImageFieldComponent', {
                         {
                             xtype: 'button',
                             x: 10,
-                            y: 5,
+                            y: 10,
                             itemId: 'fieldChangeImage',
                             iconCls: 'pencil_big',
                             scale: 'large',
@@ -69,7 +69,7 @@ Ext.define('ContentContributor.view.ImageFieldComponent', {
                         {
                             xtype: 'button',
                             x: 10,
-                            y: 65,
+                            y: 70,
                             itemId: 'fieldClearImage',
                             iconCls: 'remove_big',
                             scale: 'large',

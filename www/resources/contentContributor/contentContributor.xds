@@ -65,46 +65,6 @@
             ],
             "className": "js"
         },
-        "333eb061-a86e-4ff9-993f-6d65e9398883": {
-            "paths": [
-                "metadata/view/ImageFieldComponent",
-                "app/view/override/ImageFieldComponent.js",
-                "app/view/ImageFieldComponent.js"
-            ],
-            "className": "ImageFieldComponent"
-        },
-        "66bc9f63-6118-4f2d-bd87-201929e19fc2": {
-            "paths": [
-                "metadata/view/ImagePickerWindow",
-                "app/view/override/ImagePickerWindow.js",
-                "app/view/ImagePickerWindow.js"
-            ],
-            "className": "ImagePickerWindow"
-        },
-        "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d": {
-            "paths": [
-                "metadata/view/ImagePickerField",
-                "app/view/override/ImagePickerField.js",
-                "app/view/ImagePickerField.js"
-            ],
-            "className": "ImagePickerField"
-        },
-        "fdb6ac10-082f-4726-bbbb-44a0ba4a1936": {
-            "paths": [
-                "metadata/store/ImagePickerStore",
-                "app/store/override/ImagePickerStore.js",
-                "app/store/ImagePickerStore.js"
-            ],
-            "className": "ImagePickerStore"
-        },
-        "16a71200-d464-4495-844e-815ee3b481fb": {
-            "paths": [
-                "metadata/model/imageDataModel",
-                "app/model/override/imageDataModel.js",
-                "app/model/imageDataModel.js"
-            ],
-            "className": "imageDataModel"
-        },
         "ea3d2462-0153-4cf4-bcbe-de1b901ae830": {
             "paths": [
                 "metadata/resource/js1"
@@ -228,9 +188,117 @@
         },
         "3ab4c8d9-7ed7-4e6d-9edc-9492e38cd5c3": {
             "paths": [
+                "metadata/resource/css2"
+            ],
+            "className": "css2"
+        },
+        "63d1060f-0a80-45cc-873f-6c2840694aeb": {
+            "paths": [
+                "metadata/model/DAMModel",
+                "app/model/override/DAMModel.js",
+                "app/model/DAMModel.js"
+            ],
+            "className": "DAMModel"
+        },
+        "17d1f4dc-1829-4e04-9802-2b1f8b417b97": {
+            "paths": [
+                "metadata/model/mediaTypeModel",
+                "app/model/override/mediaTypeModel.js",
+                "app/model/mediaTypeModel.js"
+            ],
+            "className": "mediaTypeModel"
+        },
+        "67701fd5-18e4-48d1-a2c5-e34f546f7808": {
+            "paths": [
+                "metadata/view/DAMMainView",
+                "app/view/override/DAMMainView.js",
+                "app/view/DAMMainView.js"
+            ],
+            "className": "DAMMainView"
+        },
+        "a3e62dcc-3e49-4f7f-ad6a-d64dae3b2f21": {
+            "paths": [
+                "metadata/view/DAMPickerWindow",
+                "app/view/override/DAMPickerWindow.js",
+                "app/view/DAMPickerWindow.js"
+            ],
+            "className": "DAMPickerWindow"
+        },
+        "487b9d97-ed46-40f7-b752-c771b1b317ce": {
+            "paths": [
+                "metadata/view/MyTool17",
+                "app/view/override/MyTool17.js",
+                "app/view/MyTool17.js"
+            ],
+            "className": "MyTool17"
+        },
+        "1ffb40bf-f8f5-4769-8f8a-ce8ad5fda718": {
+            "paths": [
+                "metadata/view/ImageFieldComponent",
+                "app/view/override/ImageFieldComponent.js",
+                "app/view/ImageFieldComponent.js"
+            ],
+            "className": "ImageFieldComponent"
+        },
+        "87c18ad5-14ee-48f3-82d6-850631e34b63": {
+            "paths": [
+                "metadata/view/ImagePickerField",
+                "app/view/override/ImagePickerField.js",
+                "app/view/ImagePickerField.js"
+            ],
+            "className": "ImagePickerField"
+        },
+        "1da351ad-99a6-4150-9990-87deaaa49d9d": {
+            "paths": [
+                "metadata/store/DAMPickerStore",
+                "app/store/override/DAMPickerStore.js",
+                "app/store/DAMPickerStore.js"
+            ],
+            "className": "DAMPickerStore"
+        },
+        "0c925756-e271-47d3-ad7c-7384ac3752f2": {
+            "paths": [
+                "metadata/store/MediaTypesFORDAMPicker",
+                "app/store/override/MediaTypesFORDAMPicker.js",
+                "app/store/MediaTypesFORDAMPicker.js"
+            ],
+            "className": "MediaTypesFORDAMPicker"
+        },
+        "bb31fd8e-1897-4149-a70e-4f326b820581": {
+            "paths": [
+                "metadata/resource/js8"
+            ],
+            "className": "js8"
+        },
+        "bbff41a8-6b5d-461c-97ba-44bf942a00e4": {
+            "paths": [
+                "metadata/resource/js9"
+            ],
+            "className": "js9"
+        },
+        "0f17c9f1-08ed-4aee-aa86-06571ab3641f": {
+            "paths": [
                 "metadata/resource/css3"
             ],
             "className": "css3"
+        },
+        "7a70f5f0-483a-442b-8ff7-a3f5b2dbb322": {
+            "paths": [
+                "metadata/resource/css4"
+            ],
+            "className": "css4"
+        },
+        "8988d42b-a40c-4e8d-89ed-6fc18568ab3e": {
+            "paths": [
+                "metadata/resource/css5"
+            ],
+            "className": "css5"
+        },
+        "661f2f8d-08d7-46f9-a6fb-6e172f865f8f": {
+            "paths": [
+                "metadata/resource/css6"
+            ],
+            "className": "css6"
         }
     },
     "viewOrderMap": {
@@ -238,15 +306,18 @@
             "fdfc62ca-7705-4dbb-9b13-8d528a0451c8",
             "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
             "33902aa5-6d2c-42d9-9095-f7ffe3229abf",
-            "333eb061-a86e-4ff9-993f-6d65e9398883",
-            "66bc9f63-6118-4f2d-bd87-201929e19fc2",
-            "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d"
+            "67701fd5-18e4-48d1-a2c5-e34f546f7808",
+            "a3e62dcc-3e49-4f7f-ad6a-d64dae3b2f21",
+            "487b9d97-ed46-40f7-b752-c771b1b317ce",
+            "1ffb40bf-f8f5-4769-8f8a-ce8ad5fda718",
+            "87c18ad5-14ee-48f3-82d6-850631e34b63"
         ],
         "store": [
-            "fdb6ac10-082f-4726-bbbb-44a0ba4a1936",
             "878fb62d-cad8-432c-8ada-7c747d0df220",
             "a7c74968-2e49-41d2-94c2-728098b2f9c9",
-            "7da94d0b-37e6-45c0-a50d-391fb5611e6c"
+            "7da94d0b-37e6-45c0-a50d-391fb5611e6c",
+            "1da351ad-99a6-4150-9990-87deaaa49d9d",
+            "0c925756-e271-47d3-ad7c-7384ac3752f2"
         ],
         "controller": [
             "7b179740-bc32-424a-9f22-d87b248d4bef",
@@ -254,11 +325,12 @@
             "5affe889-8d2a-4e2c-b305-55cc48a45c07"
         ],
         "model": [
-            "16a71200-d464-4495-844e-815ee3b481fb",
             "92a46cff-c0b3-47bd-a001-91780b452b14",
             "2a4695f1-3173-49db-9f7e-b1b5a41931d3",
             "24cee725-ec02-4efd-b587-2ad70cff6795",
-            "8d2340f7-3ad5-4d77-89df-3da76f4cc35e"
+            "8d2340f7-3ad5-4d77-89df-3da76f4cc35e",
+            "63d1060f-0a80-45cc-873f-6c2840694aeb",
+            "17d1f4dc-1829-4e04-9802-2b1f8b417b97"
         ],
         "resource": [
             "7374cafb-8817-43a0-8fa4-7a363ba65a53",
@@ -272,7 +344,13 @@
             "92224966-634d-4ac8-b6ee-835828df8304",
             "7a6a8f52-4d97-4ad0-9566-34025f91cc07",
             "a5dc879a-ac80-4b73-b059-0d684a28a6aa",
-            "3ab4c8d9-7ed7-4e6d-9edc-9492e38cd5c3"
+            "3ab4c8d9-7ed7-4e6d-9edc-9492e38cd5c3",
+            "bb31fd8e-1897-4149-a70e-4f326b820581",
+            "bbff41a8-6b5d-461c-97ba-44bf942a00e4",
+            "0f17c9f1-08ed-4aee-aa86-06571ab3641f",
+            "7a70f5f0-483a-442b-8ff7-a3f5b2dbb322",
+            "8988d42b-a40c-4e8d-89ed-6fc18568ab3e",
+            "661f2f8d-08d7-46f9-a6fb-6e172f865f8f"
         ],
         "app": [
             "application"

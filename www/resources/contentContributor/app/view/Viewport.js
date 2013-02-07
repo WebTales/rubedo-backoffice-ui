@@ -20,8 +20,9 @@ Ext.define('ContentContributor.view.Viewport', {
         'ContentContributor.view.MainViewport',
         'ContentContributor.view.MainForm',
         'ContentContributor.view.fieldWrapper',
+        'ContentContributor.view.DAMMainView',
+        'ContentContributor.view.DAMPickerWindow',
         'ContentContributor.view.ImageFieldComponent',
-        'ContentContributor.view.ImagePickerWindow',
         'ContentContributor.view.ImagePickerField'
     ]
 });

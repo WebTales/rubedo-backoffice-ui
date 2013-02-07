@@ -1,0 +1,94 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DAMMainView",
+        "designer|userAlias": "DAMMainView",
+        "requires": [
+            "Ext.ux.container.SwitchButtonSegment"
+        ],
+        "id": null,
+        "title": "",
+        "forceFit": true,
+        "store": "DAMStore"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "id": "ExtBox1-ext-gen4358",
+    "designerId": "67701fd5-18e4-48d1-a2c5-e34f546f7808",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView28",
+                "id": "DAMImageDrop"
+            },
+            "designerId": "930e9b76-3709-4a29-a351-07e33e45ed42"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "designer|userClassName": "MyColumn47",
+                "align": null,
+                "dataIndex": "text",
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "fbfe193c-539c-425e-91b4-bd6d47c2630c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn49",
+                "dataIndex": "author",
+                "text": "Auteur"
+            },
+            "designerId": "0e2900f5-436a-45d6-8a72-056d8ffce4b3"
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn8",
+                "dataIndex": "lastUpdateTime",
+                "text": "Date de création",
+                "format": "d-m-Y"
+            },
+            "designerId": "ebadc1ea-61b7-4ebf-9c1d-3f9dc631a428"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "DAM",
+        "designer|userClassName": "DAMPickerStore",
+        "designer|userAlias": "DAMPickerStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "remoteFilter": true,
+        "remoteSort": true,
+        "storeId": "DAMPickerStore",
+        "model": "DAMModel",
+        "data": null,
+        "pageSize": 25
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen4011",
+    "designerId": "1da351ad-99a6-4150-9990-87deaaa49d9d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "batchActions": false,
+                "api": [
+                    "{",
+                    "",
+                    "                    read: '../../dam'",
+                    "",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "aceca316-7bd7-463c-b904-cd5bfc0b1f10",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "110a7f11-b65e-4828-b8c0-2ad1cb34b871"
+                }
+            ]
+        }
+    ]
+}

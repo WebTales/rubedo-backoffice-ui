@@ -40,9 +40,9 @@ Ext.define('ContentContributor.view.ImagePickerField', {
         myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+" ");
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
-                myComponent.getComponent("fieldImagePreview").setSrc("../icones/blue/128x128/image_remove.png");
+                myComponent.getComponent("fieldImagePreview").setSrc("../icones/"+"blue"+"/128x128/image_remove.png");
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("../../file/get/file-id/"+abstractcomponent.getValue());
+                myComponent.getComponent("fieldImagePreview").setSrc("../../dam/get-thumbnail?id="+abstractcomponent.getValue());
             }
             myComponent.getEl().on("click",function(){
 
@@ -58,9 +58,9 @@ Ext.define('ContentContributor.view.ImagePickerField', {
         });
         abstractcomponent.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){
-                myComponent.getComponent("fieldImagePreview").setSrc("../icones/blue/128x128/image_remove.png");
+                myComponent.getComponent("fieldImagePreview").setSrc("../icones/"+"blue"+"/128x128/image_remove.png");
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("../../file/get/file-id/"+newValue);
+                myComponent.getComponent("fieldImagePreview").setSrc("../../dam/get-thumbnail?id="+newValue);
             }
         });
     }

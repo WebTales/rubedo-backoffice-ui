@@ -12,8 +12,8 @@
         "id": null,
         "fieldLabel": "Label"
     },
-    "id": "ExtBox1-ext-gen23487",
-    "designerId": "f056ac7c-b658-4ff3-87f8-d5bcf85a7b9d",
+    "id": "ExtBox1-ext-gen6026",
+    "designerId": "87c18ad5-14ee-48f3-82d6-850631e34b63",
     "cn": [
         {
             "type": "basiceventbinding",
@@ -30,9 +30,9 @@
                     "myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+\" \");",
                     "myComponent.on(\"afterrender\",function(){",
                     "    if (Ext.isEmpty(abstractcomponent.getValue())){",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/blue/128x128/image_remove.png\");",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/\"+\"blue\"+\"/128x128/image_remove.png\");",
                     "    } else {",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../file/get/file-id/\"+abstractcomponent.getValue());",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../dam/get-thumbnail?id=\"+abstractcomponent.getValue());",
                     "    }",
                     "    myComponent.getEl().on(\"click\",function(){",
                     "",
@@ -48,16 +48,16 @@
                     "});",
                     "abstractcomponent.on(\"change\",function(theField,newValue){",
                     "    if ((newValue===\"\")||(Ext.isEmpty(newValue))){",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/blue/128x128/image_remove.png\");",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../icones/\"+\"blue\"+\"/128x128/image_remove.png\");",
                     "    } else {",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../file/get/file-id/\"+newValue);",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"../../dam/get-thumbnail?id=\"+newValue);",
                     "    }",
                     "});"
                 ],
                 "name": "render",
                 "scope": "me"
             },
-            "designerId": "bf6386f0-f154-4cc9-b4a0-272e629f3ff6"
+            "designerId": "72151347-a07e-4c73-83aa-d52918bc10e5"
         }
     ]
 }

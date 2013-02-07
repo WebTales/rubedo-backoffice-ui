@@ -6,17 +6,33 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ImagePickerStore",
+        "isOptimised": true,
+        "usedCollection": "MediaTypes",
+        "designer|userClassName": "MediaTypesFORDAMPicker",
+        "designer|userAlias": "MediaTypesFORDAMPicker",
         "autoLoad": false,
         "autoSync": false,
-        "storeId": "ImagePickerStore",
-        "model": "imageDataModel"
+        "storeId": "MediaTypesFORDAMPicker",
+        "model": "mediaTypeModel",
+        "data": null
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen23159",
-    "designerId": "fdb6ac10-082f-4726-bbbb-44a0ba4a1936",
+    "id": "ExtBox1-ext-gen4184",
+    "designerId": "0c925756-e271-47d3-ad7c-7384ac3752f2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",
@@ -26,18 +42,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy21",
+                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{",
-                    "                    create: '../../image/create',",
-                    "                    read: '../../image',",
-                    "                    update: '../../image/update',",
-                    "                    destroy: '../../image/delete'",
+                    "                    read: '../../dam-types'",
                     "                }"
                 ],
                 "url": null
             },
-            "designerId": "fdc154a2-9c93-4fec-8eaf-fa41667edff4",
+            "designerId": "bb617a6c-08dc-4606-ac18-e9830d78e108",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -47,11 +60,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
+                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "30d0b256-0851-463e-9bf6-501feb2bc6ff"
+                    "designerId": "db4de4ed-28d2-448c-9394-0670dbc57fb3"
                 }
             ]
         }

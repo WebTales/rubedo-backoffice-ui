@@ -24,16 +24,18 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'imageDataModel',
         'queryDataModel',
         'taxonomieDataModel',
-        'taxonomyTermModel'
+        'taxonomyTermModel',
+        'DAMModel',
+        'mediaTypeModel'
     ],
     stores: [
-        'ImagePickerStore',
         'Contents',
         'QueriesStore',
-        'TaxonomieDataJson'
+        'TaxonomieDataJson',
+        'DAMPickerStore',
+        'MediaTypesFORDAMPicker'
     ],
     views: [
         'MyPanel',
@@ -41,7 +43,9 @@ Ext.application({
         'ImageFieldComponent',
         'ImagePickerWindow',
         'ImagePickerField',
-        'MainViewport'
+        'MainViewport',
+        'DAMMainView',
+        'DAMPickerWindow'
     ],
     autoCreateViewport: true,
     name: 'ContentContributor',
