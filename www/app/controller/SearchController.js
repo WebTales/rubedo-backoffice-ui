@@ -64,6 +64,10 @@ Ext.define('Rubedo.controller.SearchController', {
                         arrowHandler:function(){
                             Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
                             Ext.getStore("ESFacetteStore").load();
+                        },
+                        handler:function(){
+                            Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
+                            Ext.getStore("ESFacetteStore").load();
                         }
                     });
                     target.add(activeOne);
@@ -72,6 +76,10 @@ Ext.define('Rubedo.controller.SearchController', {
                 var activeOne = Ext.widget('splitbutton',{
                     text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
+                        delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
+                        Ext.getStore("ESFacetteStore").load();
+                    },
+                    handler:function(){
                         delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
                         Ext.getStore("ESFacetteStore").load();
                     }

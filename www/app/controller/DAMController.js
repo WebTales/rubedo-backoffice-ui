@@ -520,33 +520,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     renderActiveFacets: function(facets) {
-        /*Ext.getCmp("DAMSearchField").setValue(facets.query);
-        var target=Ext.getCmp("DAMActiveFacetBox");
-        target.removeAll();
-        Ext.Object.each(facets, function(key, value){
-        if (Ext.isArray(value)){
-        Ext.Array.forEach(value,function(someValue){
-        var activeOne = Ext.widget('splitbutton',{
-        text:key+" : "+someValue,
-        arrowHandler:function(){
-        Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[key],someValue);
-        Ext.getStore("DAMFacetteStore").load();
-        }
-        });
-        target.add(activeOne);
-        });
 
-        } else {
-        var activeOne = Ext.widget('splitbutton',{
-        text:key+" : "+value,
-        arrowHandler:function(){
-        delete Ext.getStore("DAMFacetteStore").activeFacettes[key];
-        Ext.getStore("DAMFacetteStore").load();
-        }
-        });
-        target.add(activeOne);
-        }
-        });*/
         Ext.getCmp("DAMSearchField").setValue(Ext.getStore("DAMFacetteStore").activeFacettes.query);
         var target=Ext.getCmp("DAMActiveFacetBox");
         target.removeAll();
@@ -558,6 +532,10 @@ Ext.define('Rubedo.controller.DAMController', {
                         arrowHandler:function(){
                             Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[thing.id],term.term);
                             Ext.getStore("DAMFacetteStore").load();
+                        },
+                        handler:function(){
+                            Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[thing.id],term.term);
+                            Ext.getStore("DAMFacetteStore").load();
                         }
                     });
                     target.add(activeOne);
@@ -566,6 +544,10 @@ Ext.define('Rubedo.controller.DAMController', {
                 var activeOne = Ext.widget('splitbutton',{
                     text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
+                        delete Ext.getStore("DAMFacetteStore").activeFacettes[thing.id];
+                        Ext.getStore("DAMFacetteStore").load();
+                    },
+                    handler:function(){
                         delete Ext.getStore("DAMFacetteStore").activeFacettes[thing.id];
                         Ext.getStore("DAMFacetteStore").load();
                     }
