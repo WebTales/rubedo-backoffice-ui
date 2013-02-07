@@ -39,27 +39,37 @@ Ext.define('Rubedo.controller.MasqueController', {
     deleteMask: function(button, e, options) {
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            var fenetre = Ext.widget('delConfirmZ');
-            fenetre.show();
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                Ext.getCmp('masquesGrid').getStore().remove(cible);
-                Ext.getCmp('masqueEdition').removeAll();
-                Ext.getCmp("newRow").disable();
-                Ext.getCmp("newCol").disable();
-                Ext.getCmp("newBloc").disable();
-                Ext.getCmp("deleteElement").disable();
-                Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
-                Ext.getCmp('elementEditControl').removeAll();
-                Ext.getCmp('elementEditControl').setIconCls();
-                Ext.getCmp('elementIdField').setValue(null);
-                Ext.getCmp('delConfirmZ').close();
-                Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
-                Ext.getCmp("boutonSupprimerMasque").disable();
-                Ext.getCmp("adminFMDP").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
-            });  
-
-        }
-
+            Ext.Ajax.request({
+                url: 'masks/is-used',
+                params: {
+                    id: cible.get("id")
+                },
+                success: function(response){
+                    var maskIsUsed=Ext.JSON.decode(response.responseText).used;
+                    if (maskIsUsed){
+                        Ext.Msg.alert('Suppression impossible', 'Le masque est utilisé par des pages');
+                    } else {
+                        var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.show();
+                        Ext.getCmp('delConfirmZOui').on('click', function() { 
+                            Ext.getCmp('masquesGrid').getStore().remove(cible);
+                            Ext.getCmp('masqueEdition').removeAll();
+                            Ext.getCmp("newRow").disable();
+                            Ext.getCmp("newCol").disable();
+                            Ext.getCmp("newBloc").disable();
+                            Ext.getCmp("deleteElement").disable();
+                            Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+                            Ext.getCmp('elementEditControl').removeAll();
+                            Ext.getCmp('elementEditControl').setIconCls();
+                            Ext.getCmp('elementIdField').setValue(null);
+                            Ext.getCmp('delConfirmZ').close();
+                            Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                            Ext.getCmp("boutonSupprimerMasque").disable();
+                            Ext.getCmp("adminFMDP").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                        }); 
+                    }
+                }
+            })};
     },
 
     masquesDisplay: function(selModel, record, index, options) {
