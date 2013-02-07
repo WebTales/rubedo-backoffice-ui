@@ -623,22 +623,37 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     supprimeTypeContenu: function(button, e, options) {
         var cible = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            var fenetre = Ext.widget('delConfirmZ');
-            fenetre.showAt(screen.width/2-100, 100);
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);
-                Ext.getCmp('delConfirmZ').close();
-                Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
-                Ext.getCmp("boutonSupprimerTypeContenu").disable();
-                Ext.getCmp('champsEditionTC').removeAll();
-                Ext.getCmp('boiteConfigChampsTC').removeAll();
-                Ext.getCmp('tabPanTC').disable();
-                Ext.getCmp("TDCEditForm").getForm().reset();
-                Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+            Ext.Ajax.request({
+                url: 'content-types/is-used',
+                params: {
+                    id: cible.get("id")
+                },
+                success: function(response){
+                    var maskIsUsed=Ext.JSON.decode(response.responseText).used;
+                    if (maskIsUsed){
+                        Ext.Msg.alert('Suppression impossible', 'Ce type de contenu est utilsé par des contenus.');
+                    } else {
+                        var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.show();
+                        Ext.getCmp('delConfirmZOui').on('click', function() { 
+                            Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);
+                            Ext.getCmp('delConfirmZ').close();
+                            Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                            Ext.getCmp("boutonSupprimerTypeContenu").disable();
+                            Ext.getCmp('champsEditionTC').removeAll();
+                            Ext.getCmp('boiteConfigChampsTC').removeAll();
+                            Ext.getCmp('tabPanTC').disable();
+                            Ext.getCmp("TDCEditForm").getForm().reset();
+                            Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
 
-            });  
+                        }); 
+                    }
+                }
+            });
+
 
         }
+
     },
 
     enregistrerTypeContenus: function(button, e, options) {

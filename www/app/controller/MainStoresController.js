@@ -114,7 +114,7 @@ Ext.define('Rubedo.controller.MainStoresController', {
             slideBackDuration: 500,
             slideInAnimation: 'bounceOut',
             slideBackAnimation: 'easeIn'
-        }).show()
+        }).show();
     }
 
 });

@@ -69,7 +69,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                         }); 
                     }
                 }
-            })};
+            });
+        }
     },
 
     masquesDisplay: function(selModel, record, index, options) {
@@ -215,8 +216,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                         chooser.show();
                     } else {
                         cible.beginEdit();
-                        cible.set("rows",this.saveRows(this.getMasqueEdition()));
-                        cible.set("blocks",this.saveBlocks(this.getMasqueEdition()));
+                        cible.set("rows",me.saveRows(me.getMasqueEdition()));
+                        cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
                         cible.endEdit();   
                     }
                 }
