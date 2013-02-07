@@ -181,12 +181,47 @@ Ext.define('Rubedo.controller.MasqueController', {
     },
 
     maskSave: function(button, e, options) {
+        var me =this;
         var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
-            cible.beginEdit();
-            cible.set("rows",this.saveRows(this.getMasqueEdition()));
-            cible.set("blocks",this.saveBlocks(this.getMasqueEdition()));
-            cible.endEdit();
+            Ext.Ajax.request({
+                url: 'masks/is-used',
+                params: {
+                    id: cible.get("id")
+                },
+                success: function(response){
+                    var maskIsUsed=Ext.JSON.decode(response.responseText).used;
+                    if (maskIsUsed){
+                        var chooser = Ext.widget("maskSaveChoiceBox");
+                        chooser.getComponent(0).on("click", function(){
+                            cible.beginEdit();
+                            cible.set("rows",me.saveRows(me.getMasqueEdition()));
+                            cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            cible.endEdit();  
+                            chooser.close();
+                        });
+                        chooser.getComponent(1).on("click", function(){
+                            var nouvMasque = Ext.create('model.masquesDataModel', {
+                                text: "Nouveau masque",
+                                site: cible.get("site")
+
+                            });
+                            nouvMasque.set("rows",me.saveRows(me.getMasqueEdition()));
+                            nouvMasque.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            me.getMasquesDataJsonStore().add(nouvMasque);
+                            me.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});  
+                            chooser.close();
+                        });
+                        chooser.show();
+                    } else {
+                        cible.beginEdit();
+                        cible.set("rows",this.saveRows(this.getMasqueEdition()));
+                        cible.set("blocks",this.saveBlocks(this.getMasqueEdition()));
+                        cible.endEdit();   
+                    }
+                }
+            });
+
 
         }
     },
@@ -201,10 +236,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
-                etat: 'brouillon',
-                auteur: 'Alexandru Dobre',
-                creation: new Date(),
-                derniereModification: new Date(),
                 rows: nRows,
                 blocks:nBlocks
 

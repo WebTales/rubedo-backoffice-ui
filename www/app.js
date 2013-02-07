@@ -206,7 +206,8 @@ Ext.application({
         'WorkspacesInterface',
         'newWorkspaceWindow',
         'WorkspaceCombo',
-        'taxoTermInsertWindow'
+        'taxoTermInsertWindow',
+        'maskSaveChoiceBox'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

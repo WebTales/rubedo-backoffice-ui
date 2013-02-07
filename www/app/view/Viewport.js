@@ -97,6 +97,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.WorkspacesInterface',
         'Rubedo.view.newWorkspaceWindow',
         'Rubedo.view.adminFUtilisateurs',
-        'Rubedo.view.taxoTermInsertWindow'
+        'Rubedo.view.taxoTermInsertWindow',
+        'Rubedo.view.maskSaveChoiceBox'
     ]
 });

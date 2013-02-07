@@ -1,0 +1,54 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "maskSaveChoiceBox",
+        "designer|userAlias": "maskSaveChoiceBox",
+        "height": 144,
+        "width": 400,
+        "resizable": false,
+        "layout": "vbox",
+        "title": "Ce masque est utilisé par des pages",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen9937",
+    "designerId": "fc048e78-715a-4081-8d00-7a42e4767f26",
+    "cn": [
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyButton251",
+                "text": "Enregistrer et répercuter les modifications sur toutes les pages"
+            },
+            "designerId": "923a29c9-2c40-4c54-abce-85e7d89bd651"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyButton252",
+                "text": "Enregistrer sous un nouveau masque"
+            },
+            "designerId": "88b32124-cffd-46ff-b835-aa2becfafa8d"
+        }
+    ]
+}
