@@ -37,16 +37,30 @@ Ext.define('Rubedo.controller.MediaTypesController', {
 
     onRemoveMTBtnClick: function(button, e, options) {
         var me=this;
-        var target = Ext.getCmp('mainMTGrid').getSelectionModel().getSelection()[0];
-        if (Ext.isDefined(target)) {
-            var delCon = Ext.widget('delConfirmZ');
-            delCon.show();
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                Ext.getCmp('mainMTGrid').getStore().remove(target);
-                Ext.getCmp('delConfirmZ').close();
-                me.resetInterfaceNoSelect();
+        var cible = Ext.getCmp('mainMTGrid').getSelectionModel().getSelection()[0];
+        if (Ext.isDefined(cible)) {
+            Ext.Ajax.request({
+                url: 'dam-types/is-used',
+                params: {
+                    id: cible.get("id")
+                },
+                success: function(response){
+                    var maskIsUsed=Ext.JSON.decode(response.responseText).used;
+                    if (maskIsUsed){
+                        Ext.Msg.alert('Suppression impossible', 'Ce type de médias est utilsé par des médias.');
+                    } else {
+                        var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.show();
+                        Ext.getCmp('delConfirmZOui').on('click', function() { 
+                            Ext.getCmp('mainMTGrid').getStore().remove(CIBLE);
+                            Ext.getCmp('delConfirmZ').close();
+                            me.resetInterfaceNoSelect();
 
-            });  
+                        }); 
+                    }
+                }
+            });
+
 
         }
     },
