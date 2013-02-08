@@ -684,6 +684,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 }
                 champsR.push(nch);
             }
+            Ext.Ajax.request({
+                url: 'content-types/is-changeable',
+                params: {
+                    fields:Ext.JSON.encode(champsR),
+                    id: Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected().get("id")
+                },
+                success: function(response){
+                    var text = response.responseText;
+                    console.log(text);
+                }
+            });
+            /*
             var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
             target.beginEdit();
             target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
@@ -691,11 +703,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
             target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
             if (target.get("dependant") ===false) {
-                var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
-                target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
+            var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
+            target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
 
             }
-            target.endEdit();
+            target.endEdit();*/
         }
     },
 
