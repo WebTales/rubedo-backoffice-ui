@@ -476,12 +476,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                 type: 'fit'
                             },
                             title: 'Contenus affichés',
-                            listeners: {
-                                activate: {
-                                    fn: me.onPanelActivate,
-                                    scope: me
-                                }
-                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -586,14 +580,6 @@ Ext.define('Rubedo.view.contributionPages', {
             pinList:false
         });
         abstractcomponent.add(tagPicker);
-    },
-
-    onPanelActivate: function(abstractcomponent, options) {
-        var record = Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
-        if ((!Ext.isEmpty(record))&&(!record.isRoot())){
-            abstractcomponent.getComponent(0).getStore().getProxy().extraParams.id=record.get("id");
-            abstractcomponent.getComponent(0).getStore().load();
-        }
     },
 
     onImageRender1: function(abstractcomponent, options) {

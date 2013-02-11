@@ -166,8 +166,12 @@
                 "designer|userClassName": "pageSelect",
                 "fn": "pageSelect",
                 "implHandler": [
+                    "Ext.getStore(\"PageDisplayedContentsStore\").removeAll();\r",
                     "var me=this;\r",
                     "if (!record.isRoot()){\r",
+                    "    if (Ext.getCmp(\"pageContentDisplayer\").up().activeTab.id==\"pageContentDisplayer\"){\r",
+                    "        Ext.getCmp(\"pageContentDisplayer\").fireEvent(\"activate\", Ext.getCmp(\"pageContentDisplayer\"));\r",
+                    "    }\r",
                     "    Ext.getCmp(\"removePageBtn\").enable();\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
@@ -903,6 +907,7 @@
                     "    Ext.getStore(\"MasksComboStore\").removeAll();\r",
                     "    Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
                     "    Ext.getStore(\"PagesDataStore\").load();\r",
+                    "    Ext.getStore(\"PageDisplayedContentsStore\").removeAll();\r",
                     "}"
                 ],
                 "name": "beforedestroy",
@@ -1184,6 +1189,30 @@
                 "designer|controlQuery": "#advancedPreviewPageRefresh"
             },
             "designerId": "f4a5fbda-c3f3-452f-ae1a-7c849557ecdb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPanelActivate",
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                    "if ((!Ext.isEmpty(record))&&(!record.isRoot())){\r",
+                    "    abstractcomponent.getComponent(0).getStore().getProxy().extraParams.id=record.get(\"id\");\r",
+                    "    abstractcomponent.getComponent(0).getStore().load();\r",
+                    "}"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#pageContentDisplayer"
+            },
+            "designerId": "5091cbda-a9df-4eac-981f-ca61c7c60bc4"
         }
     ]
 }

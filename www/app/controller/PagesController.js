@@ -97,8 +97,12 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     pageSelect: function(selModel, record, index, options) {
+        Ext.getStore("PageDisplayedContentsStore").removeAll();
         var me=this;
         if (!record.isRoot()){
+            if (Ext.getCmp("pageContentDisplayer").up().activeTab.id=="pageContentDisplayer"){
+                Ext.getCmp("pageContentDisplayer").fireEvent("activate", Ext.getCmp("pageContentDisplayer"));
+            }
             Ext.getCmp("removePageBtn").enable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
@@ -564,6 +568,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getStore("MasksComboStore").removeAll();
             Ext.getStore("PagesDataStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\"emptyDecoy\"}]";
             Ext.getStore("PagesDataStore").load();
+            Ext.getStore("PageDisplayedContentsStore").removeAll();
         }
     },
 
@@ -672,6 +677,14 @@ Ext.define('Rubedo.controller.PagesController', {
                     }
                 });
             }}
+    },
+
+    onPanelActivate: function(abstractcomponent, options) {
+        var record = Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if ((!Ext.isEmpty(record))&&(!record.isRoot())){
+            abstractcomponent.getComponent(0).getStore().getProxy().extraParams.id=record.get("id");
+            abstractcomponent.getComponent(0).getStore().load();
+        }
     },
 
     renderPage: function(mRows, its, cible) {
@@ -884,6 +897,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#advancedPreviewPageRefresh": {
                 click: this.onAdvancedPreviewPageRefreshClick
+            },
+            "#pageContentDisplayer": {
+                activate: this.onPanelActivate
             }
         });
     }

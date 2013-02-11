@@ -1123,28 +1123,6 @@
                             "designerId": "5c0ca1d9-5e44-409d-b03b-f7da24367bc7"
                         },
                         {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onPanelActivate",
-                                "fn": "onPanelActivate",
-                                "implHandler": [
-                                    "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
-                                    "if ((!Ext.isEmpty(record))&&(!record.isRoot())){\r",
-                                    "    abstractcomponent.getComponent(0).getStore().getProxy().extraParams.id=record.get(\"id\");\r",
-                                    "    abstractcomponent.getComponent(0).getStore().load();\r",
-                                    "}"
-                                ],
-                                "name": "activate",
-                                "scope": "me"
-                            },
-                            "designerId": "54aa6998-6620-42a6-90e2-3a7a28cce47f"
-                        },
-                        {
                             "type": "gridpanel",
                             "reference": {
                                 "name": "items",
