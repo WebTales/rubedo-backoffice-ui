@@ -123,7 +123,8 @@ Ext.application({
         'DAMFacetteStore',
         'WorkspacesStore',
         'WorkspacesComboStore',
-        'ContributeWorkspacesCombo'
+        'ContributeWorkspacesCombo',
+        'PageDisplayedContentsStore'
     ],
     views: [
         'MyContainer',

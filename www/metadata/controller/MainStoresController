@@ -30,15 +30,15 @@
                     "Ext.data.StoreManager.each(function(store){\r",
                     "    //notifs\r",
                     "    store.on(\"write\", function(theStore,roperation){\r",
-                    "           if (roperation.action==\"update\") {\r",
-                    "                me.fireNotif(\"Notification\", \"<p>Mise à jour réussie.</p>\");\r",
-                    "            }\r",
-                    "            else if (roperation.action==\"create\") {\r",
-                    "                me.fireNotif(\"Notification\", \"<p>Création réussie.</p>\");\r",
-                    "            }\r",
-                    "            else if (roperation.action==\"destroy\") {\r",
-                    "               me.fireNotif(\"Notification\", \"<p>Suppression réussie.</p>\");\r",
-                    "            }\r",
+                    "        if (roperation.action==\"update\") {\r",
+                    "            me.fireNotif(\"Notification\", \"<p>Mise à jour réussie.</p>\");\r",
+                    "        }\r",
+                    "        else if (roperation.action==\"create\") {\r",
+                    "            me.fireNotif(\"Notification\", \"<p>Création réussie.</p>\");\r",
+                    "        }\r",
+                    "        else if (roperation.action==\"destroy\") {\r",
+                    "            me.fireNotif(\"Notification\", \"<p>Suppression réussie.</p>\");\r",
+                    "        }\r",
                     "    });\r",
                     "    //events for optimised stores\r",
                     "    if (store.isOptimised){\r",
@@ -90,31 +90,6 @@
             "designerId": "3f2282cf-a673-4541-9ce2-896c6e5906b4"
         },
         {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "reloadActiveBrothers",
-                "fn": "reloadActiveBrothers",
-                "designer|params": [
-                    "collectionName",
-                    "myId",
-                    "forcedMode"
-                ],
-                "implHandler": [
-                    "Ext.data.StoreManager.each(function(someStore){\r",
-                    "    if ((someStore.isOptimised)&&((someStore.isUsed)||(forcedMode))&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
-                    "        someStore.load();\r",
-                    "    }\r",
-                    "});"
-                ]
-            },
-            "designerId": "13ecd8e3-c429-4167-92cf-6364ddb00501"
-        },
-        {
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -146,6 +121,31 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "reloadActiveBrothers",
+                "fn": "reloadActiveBrothers",
+                "designer|params": [
+                    "collectionName",
+                    "myId",
+                    "forcedMode"
+                ],
+                "implHandler": [
+                    "Ext.data.StoreManager.each(function(someStore){\r",
+                    "    if ((someStore.isOptimised)&&((someStore.isUsed)||(forcedMode))&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
+                    "        someStore.load();\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "13ecd8e3-c429-4167-92cf-6364ddb00501"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "fireNotif",
                 "fn": "fireNotif",
                 "designer|params": [
@@ -154,17 +154,17 @@
                 ],
                 "implHandler": [
                     "Ext.create('Ext.ux.window.Notification', {\r",
-                    "\ttitle: title,\r",
-                    "\tposition: 'tr',\r",
-                    "\tmanager: 'instructions',\r",
-                    "\tcls: 'ux-notification-light',\r",
-                    "\ticonCls: 'ux-notification-icon-information',\r",
-                    "\thtml: message,\r",
-                    "\tautoCloseDelay: 4000,\r",
+                    "    title: title,\r",
+                    "    position: 'tr',\r",
+                    "    manager: 'instructions',\r",
+                    "    cls: 'ux-notification-light',\r",
+                    "    iconCls: 'ux-notification-icon-information',\r",
+                    "    html: message,\r",
+                    "    autoCloseDelay: 4000,\r",
                     "    styleHtmlContent:true,\r",
-                    "\tslideBackDuration: 500,\r",
-                    "\tslideInAnimation: 'bounceOut',\r",
-                    "\tslideBackAnimation: 'easeIn'\r",
+                    "    slideBackDuration: 500,\r",
+                    "    slideInAnimation: 'bounceOut',\r",
+                    "    slideBackAnimation: 'easeIn'\r",
                     "}).show();"
                 ]
             },

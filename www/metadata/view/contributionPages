@@ -1094,6 +1094,100 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel50",
+                        "id": "pageContentDisplayer",
+                        "layout": "fit",
+                        "title": "Contenus affichés"
+                    },
+                    "designerId": "912c1c9a-4b2c-469d-a3d2-4634d83ec839",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig34"
+                            },
+                            "designerId": "5c0ca1d9-5e44-409d-b03b-f7da24367bc7"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onPanelActivate",
+                                "fn": "onPanelActivate",
+                                "implHandler": [
+                                    "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                                    "if ((!Ext.isEmpty(record))&&(!record.isRoot())){\r",
+                                    "    abstractcomponent.getComponent(0).getStore().getProxy().extraParams.id=record.get(\"id\");\r",
+                                    "    abstractcomponent.getComponent(0).getStore().load();\r",
+                                    "}"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "54aa6998-6620-42a6-90e2-3a7a28cce47f"
+                        },
+                        {
+                            "type": "gridpanel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridPanel33",
+                                "title": "",
+                                "forceFit": true,
+                                "store": "PageDisplayedContentsStore"
+                            },
+                            "designerId": "2411bcdc-b72a-4b38-a30d-9e14cffe714e",
+                            "cn": [
+                                {
+                                    "type": "gridview",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridView32"
+                                    },
+                                    "designerId": "7fe51694-b500-42da-9fd6-2a06475dad41"
+                                },
+                                {
+                                    "type": "gridcolumn",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyColumn71",
+                                        "dataIndex": "text",
+                                        "text": "Titre"
+                                    },
+                                    "designerId": "589e10a4-14f1-4012-8829-1b994f7d4974"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
