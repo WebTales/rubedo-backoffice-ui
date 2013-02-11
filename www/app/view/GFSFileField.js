@@ -43,7 +43,7 @@ Ext.define('Rubedo.view.GFSFileField', {
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").on("click", function(){
             if (abstractcomponent.fileType=="Image"){
-                var showBox = Ext.widget("ImagePreviewWindow");
+                var showBox = Ext.widget("ImagePreviewWindow", {maxWidth:window.innerWidth, maxHeight:window.innerHeight});
                 showBox.getComponent(0).setSrc("image/get?file-id="+abstractcomponent.getValue());
                 showBox.show();
             }

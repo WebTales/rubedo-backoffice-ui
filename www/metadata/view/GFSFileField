@@ -33,7 +33,7 @@
                     "});\r",
                     "myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldPreviewFile\").on(\"click\", function(){\r",
                     "    if (abstractcomponent.fileType==\"Image\"){\r",
-                    "        var showBox = Ext.widget(\"ImagePreviewWindow\");\r",
+                    "        var showBox = Ext.widget(\"ImagePreviewWindow\", {maxWidth:window.innerWidth, maxHeight:window.innerHeight});\r",
                     "        showBox.getComponent(0).setSrc(\"image/get?file-id=\"+abstractcomponent.getValue());\r",
                     "        showBox.show();\r",
                     "    }\r",

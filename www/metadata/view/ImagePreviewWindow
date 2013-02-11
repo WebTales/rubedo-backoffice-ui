@@ -24,7 +24,7 @@
         "constrain": false,
         "constrainHeader": true,
         "maximizable": null,
-        "maximized": true,
+        "maximized": false,
         "minimizable": false,
         "modal": true
     },
@@ -60,7 +60,9 @@
                         "designer|userClassName": "onImageRender",
                         "fn": "onImageRender",
                         "implHandler": [
-                            "abstractcomponent.getEl().on(\"load\", function(){abstractcomponent.up().doLayout();});"
+                            "abstractcomponent.getEl().on(\"load\", function(){\r",
+                            "    abstractcomponent.up().doLayout();\r",
+                            "});"
                         ],
                         "name": "render",
                         "scope": "me"

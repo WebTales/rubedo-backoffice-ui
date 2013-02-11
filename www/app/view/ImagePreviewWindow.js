@@ -25,7 +25,7 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
     title: 'Titre',
     constrain: false,
     constrainHeader: true,
-    maximized: true,
+    maximized: false,
     minimizable: false,
     modal: true,
 
@@ -52,7 +52,9 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
     },
 
     onImageRender: function(abstractcomponent, options) {
-        abstractcomponent.getEl().on("load", function(){abstractcomponent.up().doLayout();});
+        abstractcomponent.getEl().on("load", function(){
+            abstractcomponent.up().doLayout();
+        });
     }
 
 });
