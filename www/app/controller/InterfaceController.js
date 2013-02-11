@@ -271,9 +271,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
     createIconBtn: function(button, e, options) {
         var myWindow = button.findParentByType("window");
         var myText = myWindow.title;
-        var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
         var actions = [ ];
         if ((myWindow.id=="contributionContenus")&&(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection().length==1)) {
+            var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
             actions.push({
                 type:"editContent",
                 target:Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("id")			
@@ -281,8 +281,19 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var preDefined="page_full.png";
             myText=Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("text");
 
-        } else {
+        } else if (myWindow.id=="searchResultsWindow"){
+            actions.push({
+                type:"openWindow",
+                target:myWindow.id			
+            });
+            actions.push({
+                type:"fireESWindow",
+                activeFacettes:Ext.getStore("ESFacetteStore").activeFacettes			
+            });
+            var preDefined="search.png";
 
+        } else {
+            var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
             actions.push({
                 type:"openWindow",
                 target:myWindow.id			
@@ -553,6 +564,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
                                 }
                             } else if (action.type=="editContent") { 
                                 Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(action.target);
+                            }  else if (action.type=="fireESWindow") { 
+                                Ext.getStore("ESFacetteStore").activeFacettes=action.activeFacettes;
+                                Ext.getStore("ESFacetteStore").load();
                             }
 
                         });

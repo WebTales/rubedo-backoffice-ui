@@ -114,7 +114,8 @@
                 "designer|userClassName": "onSearchResultsWindowBeforeClose",
                 "fn": "onSearchResultsWindowBeforeClose",
                 "implHandler": [
-                    "panel.getComponent(1).getStore().removeAll();"
+                    "Ext.getStore(\"ESFacetteStore\").removeAll();\r",
+                    "Ext.getStore(\"ESFacetteStore\").activeFacettes={ };"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
@@ -264,12 +265,59 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar58",
-                "height": 32,
-                "id": "SearchActiveFacetBar",
-                "enableOverflow": true
+                "designer|userClassName": "MyToolbar63"
             },
-            "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
+            "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
+            "cn": [
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyToolbar58",
+                        "border": 0,
+                        "height": 32,
+                        "id": "SearchActiveFacetBar",
+                        "enableOverflow": true
+                    },
+                    "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill29"
+                    },
+                    "designerId": "5ca14368-c13a-4a27-965c-1e0ed7bb9217"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton253",
+                        "id": null,
+                        "itemId": "boutonCreerRaccourci",
+                        "iconCls": "favorite_add_med",
+                        "scale": "medium",
+                        "text": ""
+                    },
+                    "designerId": "0a9d678c-0299-444b-b6a1-91103dd41bc3"
+                }
+            ]
         }
     ]
 }

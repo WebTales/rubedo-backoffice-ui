@@ -141,9 +141,25 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
-                    height: 32,
-                    id: 'SearchActiveFacetBar',
-                    enableOverflow: true
+                    items: [
+                        {
+                            xtype: 'toolbar',
+                            border: 0,
+                            height: 32,
+                            id: 'SearchActiveFacetBar',
+                            enableOverflow: true
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'boutonCreerRaccourci',
+                            iconCls: 'favorite_add_med',
+                            scale: 'medium',
+                            text: ''
+                        }
+                    ]
                 }
             ]
         });
@@ -152,7 +168,8 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     },
 
     onSearchResultsWindowBeforeClose: function(panel, options) {
-        panel.getComponent(1).getStore().removeAll();
+        Ext.getStore("ESFacetteStore").removeAll();
+        Ext.getStore("ESFacetteStore").activeFacettes={ };
     }
 
 });
