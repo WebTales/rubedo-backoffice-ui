@@ -111,26 +111,6 @@
                             "name": "ACL",
                             "type": "string"
                         }
-                    ],
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onQueryMainEditBtnClick",
-                                "fn": "onQueryMainEditBtnClick",
-                                "implHandler": [
-                                    "console.log(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\"));"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "f88b46c1-8c22-42a1-b40f-5e9c1cc44af9"
-                        }
                     ]
                 },
                 {

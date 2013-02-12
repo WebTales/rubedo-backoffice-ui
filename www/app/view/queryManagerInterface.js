@@ -68,13 +68,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                             iconAlign: 'top',
                             iconCls: 'pencil_big',
                             scale: 'large',
-                            text: 'Editer',
-                            listeners: {
-                                click: {
-                                    fn: me.onQueryMainEditBtnClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Editer'
                         },
                         {
                             xtype: 'tbfill'
@@ -148,10 +142,6 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         });
 
         me.callParent(arguments);
-    },
-
-    onQueryMainEditBtnClick: function(button, e, options) {
-        console.log(Ext.getCmp("mainQueriesGrid").getSelectionModel().getLastSelected().get("query"));
     },
 
     onQueryManagerInterfaceRender: function(abstractcomponent, options) {
