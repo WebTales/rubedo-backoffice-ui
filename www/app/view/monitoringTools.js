@@ -211,7 +211,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                 var result=Ext.JSON.decode(response.responseText).data;
                 abstractcomponent.add(Ext.widget("container",{autoEl: {
                     tag: 'iframe',
-                    src: 'http://'+result.host+':'+result.port+'/_plugin/head/'
+                    src: 'http://'+result.host+':'+result.port+'/_plugin/bigdesk/'
                 }}));
             },
             failure:function(){
