@@ -253,6 +253,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery}).show();
     },
 
+    onMainQueriesGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("queryMainEditBtn").fireEvent("click");
+    },
+
     readQuery: function() {
         var mainWin= Ext.getCmp("assistantRequetage");
         var result = {};
@@ -597,6 +601,121 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
     },
 
+    restoreFieldRules: function(fieldRules) {
+        Ext.Object.each(fieldRules, function(key, value){
+            if (!Ext.isEmpty(value.rule)) {
+                //
+                var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){
+                    if (record.data.valeur.ruleId==key) {
+                        return(true);
+                    }
+                })];
+                if (!Ext.isEmpty(tester)){
+                    var nRegle= tester.data.valeur;
+                    var enrobage = Ext.widget('regleChampAR');
+                    enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
+                    var mainThing = Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name});
+                    var insertus=Ext.clone(value.value);
+                    if(mainThing.isXType("datefield")){ insertus= new Date(value.value);}
+                    mainThing.setValue(insertus);
+                    mainThing.name=nRegle.name;
+                    mainThing.usedRole="value";
+                    mainThing.ruleId=nRegle.ruleId;
+                    mainThing.isAddedRuleField=true;
+                    enrobage.getComponent(0).insert(1,mainThing);
+                    if (nRegle.cType== 'checkboxfield') {
+                        var operateur= Ext.widget('tbtext', {text: ' = '});
+                    }
+                    else{
+                        var storeOper = Ext.create('Ext.data.Store', {
+                            fields: ['operateur'],
+                            data : [
+                            {"operateur":"="},
+                            {"operateur":"<="},
+                            {"operateur":"<"},
+                            {"operateur":">="},
+                            {"operateur":">"},
+                            {"operateur":"!="}
+                            ]
+                        });
+                        var operateur= Ext.create('Ext.form.ComboBox', {
+                            name:nRegle.name+"Operator",
+                            store: storeOper,
+                            usedRole:"rule",
+                            isAddedRuleField:true,
+                            ruleId:nRegle.ruleId,
+                            flex:1,
+                            queryMode: 'local',
+                            displayField: 'operateur',
+                            valueField: 'operateur',
+                            editable: false,
+                            multiSelect:false,
+                            allowBlank:false,
+                            forceSelect: true
+                        });
+                        operateur.setValue(value.rule);
+
+                    }
+                    enrobage.getComponent(0).insert(1,operateur);
+                    if (Ext.getCmp('assisstantRE4').items.items.length>2){
+                        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));
+                    }
+
+                    Ext.getCmp('assisstantRE4').add(enrobage);
+                }
+                //
+
+            }
+            if (!Ext.isEmpty(value.sort)) {
+                //
+                var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){
+                    if (record.data.valeur.ruleId==key) {
+                        return(true);
+                    }
+                })];
+                if (!Ext.isEmpty(tester)){
+                    var nRegle= tester.data.valeur;
+                    var enrobage = Ext.widget('regleChampAR');
+                    enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
+
+
+                    var storeOper = Ext.create('Ext.data.Store', {
+                        fields: ['operateur', 'label'],
+                        data : [
+                        {"operateur":"ASC", "label": "Croissant"},
+                        {"operateur":"DESC", "label": "Decroissant"}
+                        ]
+                    });
+                    var operateur= Ext.create('Ext.form.ComboBox', {
+                        name:nRegle.name+"Direction",
+                        store: storeOper,
+                        usedRole:"sort",
+                        isAddedRuleField:true,
+                        ruleId:nRegle.ruleId,
+                        flex:1,
+                        queryMode: 'local',
+                        displayField: 'label',
+                        valueField: 'operateur',
+                        editable: false,
+                        multiSelect:false,
+                        allowBlank:false,
+                        forceSelect: true
+                    });
+
+                    operateur.setValue(value.sort);
+
+                    enrobage.getComponent(0).insert(1,operateur);
+                    if (Ext.getCmp('assisstantRE5').items.items.length>2){
+                        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
+                    }
+
+                    Ext.getCmp('assisstantRE5').add(enrobage);
+                }
+                //
+            }
+        });
+    },
+
     init: function(application) {
         this.control({
             "#boutonNextRequeteur": {
@@ -621,7 +740,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 click: this.onBoutonCreateurTrisChampsARClick
             },
             "#mainQueriesGrid": {
-                selectionchange: this.onMainQueriesGridSelectionChange
+                selectionchange: this.onMainQueriesGridSelectionChange,
+                itemdblclick: this.onMainQueriesGridItemDblClick
             },
             "#queryMainRemoveBtn": {
                 click: this.onQueryMainRemoveBtnClick
