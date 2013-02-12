@@ -171,7 +171,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
             var task= new Ext.util.DelayedTask(function(){
                 Ext.getCmp("queryNameField").setValue(abstractcomponent.initialQuery.queryName);
                 Ext.getCmp("champTCRequeteur").setValue(abstractcomponent.initialQuery.contentTypes);
-                Rubedo.controller.assistantRequetageController.prototype.adaptToTCSelect();
+                Rubedo.controller.assistantRequetageController.prototype.adaptToTCSelect(true);
                 Ext.getCmp("assistantRequetage").setLoading(false);
                 var task2= new Ext.util.DelayedTask(function(){
                     Rubedo.controller.assistantRequetageController.prototype.displayQuery(Rubedo.controller.assistantRequetageController.prototype.readQuery());

@@ -306,7 +306,7 @@
                     "    var task= new Ext.util.DelayedTask(function(){\r",
                     "        Ext.getCmp(\"queryNameField\").setValue(abstractcomponent.initialQuery.queryName);\r",
                     "        Ext.getCmp(\"champTCRequeteur\").setValue(abstractcomponent.initialQuery.contentTypes);\r",
-                    "        Rubedo.controller.assistantRequetageController.prototype.adaptToTCSelect();\r",
+                    "        Rubedo.controller.assistantRequetageController.prototype.adaptToTCSelect(true);\r",
                     "        Ext.getCmp(\"assistantRequetage\").setLoading(false);\r",
                     "        var task2= new Ext.util.DelayedTask(function(){\r",
                     "        Rubedo.controller.assistantRequetageController.prototype.displayQuery(Rubedo.controller.assistantRequetageController.prototype.readQuery());\r",

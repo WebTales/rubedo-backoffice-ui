@@ -24,6 +24,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     suivant: function(button, e, options) {
         var me=this;
         var simpleMode = Ext.getCmp("assistantRequetage").simpleMode;
+        var initialQuery = Ext.getCmp("assistantRequetage").initialQuery;
+        var editorMode = Ext.getCmp("assistantRequetage").editorMode;
         var nextOK = 1;
         var etapeC = button.up().up().getLayout().getActiveItem().items.items;
         var i = 0;
@@ -37,7 +39,12 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 this.displayQuery(this.readQuery());
             }
             else if (etape.id=='assisstantRE1') {
-                me.adaptToTCSelect();
+                var keepInMind=false;
+                if((editorMode)&&(Ext.getCmp('champTCRequeteur').getValue().toString()==initialQuery.contentTypes.toString())){
+                    keepInMind=true;
+                }
+
+                me.adaptToTCSelect(keepInMind);
 
             }
 
@@ -137,27 +144,34 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     onQueryBuildSaveBtnClick: function(button, e, options) {
         if ((Ext.getCmp("assistantRequetage").simpleMode)||(button.up().getForm().isValid())){
             var result=this.readQuery();
-            var newQuery = Ext.create("Rubedo.model.queryDataModel", {
-                name:result.queryName,
-                type:"advanced",
-                query:result,
-                averageDuration:0,
-                count:0,
-                usage:[]
-            });
-            if (Ext.getCmp("assistantRequetage").simpleMode){
-                newQuery.set("type", "simple");
-                newQuery.set("name", "Requête simple");
-            }
-            if (Ext.getCmp("assistantRequetage").adminMode){
-                Ext.getStore("MainQueriesStore").add(newQuery);
-            } else {
-                Ext.getStore("QueriesStore").add(newQuery);
-                Ext.getStore("QueriesStore").addListener("update", function(){
-                    Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
-                },this,{single:true});
+            if (Ext.getCmp("assistantRequetage").editorMode){
+                var editedOne=Ext.getStore("MainQueriesStore").findRecord("id",Ext.getCmp("assistantRequetage").recId);
+                editedOne.beginEdit();
+                editedOne.set("query", result);
+                editedOne.set("name", result.queryName);
+                editedOne.endEdit();
+            }else {
+                var newQuery = Ext.create("Rubedo.model.queryDataModel", {
+                    name:result.queryName,
+                    type:"advanced",
+                    query:result,
+                    averageDuration:0,
+                    count:0,
+                    usage:[]
+                });
+                if (Ext.getCmp("assistantRequetage").simpleMode){
+                    newQuery.set("type", "simple");
+                    newQuery.set("name", "Requête simple");
                 }
-
+                if (Ext.getCmp("assistantRequetage").adminMode){
+                    Ext.getStore("MainQueriesStore").add(newQuery);
+                } else {
+                    Ext.getStore("QueriesStore").add(newQuery);
+                    Ext.getStore("QueriesStore").addListener("update", function(){
+                        Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+                    },this,{single:true});
+                    }
+                }
                 Ext.getCmp("assistantRequetage").close();
             }
     },
@@ -307,7 +321,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         target.update(htmlDisplay);
     },
 
-    adaptToTCSelect: function() {
+    adaptToTCSelect: function(keepInMind) {
         var simpleMode = Ext.getCmp("assistantRequetage").simpleMode;
         var editorMode = Ext.getCmp("assistantRequetage").editorMode;
         var initialQuery = Ext.getCmp("assistantRequetage").initialQuery;
@@ -554,7 +568,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             allowBlank: false
 
                         });
-                        if ((editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
+                        if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
                             regle.setValue(initialQuery.vocabularies[leVocab.get("id")].rule[0]);
                             selecteur.setValue(initialQuery.vocabularies[leVocab.get("id")].terms);
                         }
