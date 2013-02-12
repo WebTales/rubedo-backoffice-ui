@@ -493,8 +493,8 @@
                 "designer|userClassName": "onQueryMainEditBtnClick",
                 "fn": "onQueryMainEditBtnClick",
                 "implHandler": [
-                    "var initialQuery = Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\");\r",
-                    "var recId = Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"id\");\r",
+                    "var initialQuery = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\"));\r",
+                    "var recId = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"id\"));\r",
                     "Ext.widget(\"assistantRequetage\",{editorMode:true, recId:recId, initialQuery:initialQuery}).show();"
                 ],
                 "name": "click",
