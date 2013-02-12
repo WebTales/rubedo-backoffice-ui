@@ -309,7 +309,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             var tri = "";
             var a = value.rule||"";
             var b = value.value||"";
-            console.log(tri);
             if (!Ext.isEmpty(value.sort)){
                 if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
             }

@@ -404,7 +404,6 @@
                     "    var tri = \"\";\r",
                     "    var a = value.rule||\"\";\r",
                     "    var b = value.value||\"\";\r",
-                    "    console.log(tri);\r",
                     "    if (!Ext.isEmpty(value.sort)){\r",
                     "        if (value.sort==\"ASC\") {tri=\", tri croissant\";} else {tri=\", tri decroissant\";}\r",
                     "    }\r",
