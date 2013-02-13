@@ -199,6 +199,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             beforedrop: {
                                 fn: me.onTreedragdroppluginBeforeDrop,
                                 scope: me
+                            },
+                            drop: {
+                                fn: me.onTreedragdroppluginDrop,
+                                scope: me
                             }
                         }
                     },
@@ -391,6 +395,39 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
         if (!ACL.interfaceRights['write.ui.groups']){return(false);}
+        Ext.getCmp("groupsGrid").getStore().suspendAutoSync();
+        var movedOne=data.records[0];
+
+
+        if (dropPosition=="before"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+
+        } else if (dropPosition=="after"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+
+        } else if (dropPosition=="append"){
+            if (movedOne.parentNode.childNodes.length==1){
+                movedOne.parentNode.set("expandable", false);
+            }
+
+            if (overModel.hasChildNodes()){
+
+            } else {
+                overModel.set("expandable", true);
+            }
+        }
+    },
+
+    onTreedragdroppluginDrop: function(node, data, overModel, dropPosition, options) {
+        var task= new Ext.util.DelayedTask(function(){
+            Ext.getCmp("groupsGrid").getStore().resumeAutoSync();
+            Ext.getCmp("groupsGrid").getStore().sync();
+        });
+        task.delay(50);
     },
 
     onUsersInGroupGridDestroy: function(abstractcomponent, options) {

@@ -54,7 +54,7 @@ Ext.define('Rubedo.controller.UsersController', {
                 store.suspendAutoSync();
                 var myParent=target.parentNode;
                 if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
-                    myParent.set("leaf",true);
+                    myParent.set("expandable",false);
                 }
                 target.remove();
                 store.resumeAutoSync();
@@ -89,9 +89,9 @@ Ext.define('Rubedo.controller.UsersController', {
                 name:nameField.getValue(),
                 members: [ ],
                 rights: { },
-                leaf:true
+                expandable:false
             });
-            target.set("leaf",false);
+            target.set("expandable",true);
             target.expand();
             store.resumeAutoSync();
             store.sync();

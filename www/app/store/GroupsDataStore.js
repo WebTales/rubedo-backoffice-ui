@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.GroupsDataStore', {
             model: 'Rubedo.model.groupDataModel',
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'groups/create',
                     read: 'groups/read-child',

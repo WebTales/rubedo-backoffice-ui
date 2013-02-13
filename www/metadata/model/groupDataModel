@@ -173,6 +173,60 @@
                 "name": "canWriteUnownedElements"
             },
             "designerId": "b5cb9cc6-2a2c-4815-b1f0-eac5ab266c59"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field235",
+                "name": "leaf",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "3329bfb2-3ce1-4399-861a-6f67280bdbe7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "convert",
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return(false);"
+                        ]
+                    },
+                    "designerId": "aa34c6f7-d4c0-4fb9-8f71-52be68099131"
+                }
+            ]
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field236",
+                "name": "expandable",
+                "defaultValue": [
+                    "true"
+                ],
+                "type": "boolean"
+            },
+            "designerId": "76a222a2-5b21-4d4a-8432-daf64870e3a0"
         }
     ]
 }

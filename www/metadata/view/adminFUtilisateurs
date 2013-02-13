@@ -456,12 +456,59 @@
                                         "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                         "fn": "onTreedragdroppluginBeforeDrop",
                                         "implHandler": [
-                                            "if (!ACL.interfaceRights['write.ui.groups']){return(false);}"
+                                            "if (!ACL.interfaceRights['write.ui.groups']){return(false);}\r",
+                                            "Ext.getCmp(\"groupsGrid\").getStore().suspendAutoSync();\r",
+                                            "var movedOne=data.records[0];\r",
+                                            "\r",
+                                            "\r",
+                                            "if (dropPosition==\"before\"){\r",
+                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
+                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                            "    }\r",
+                                            "    \r",
+                                            "} else if (dropPosition==\"after\"){\r",
+                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
+                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                            "    }\r",
+                                            "    \r",
+                                            "} else if (dropPosition==\"append\"){\r",
+                                            "    if (movedOne.parentNode.childNodes.length==1){\r",
+                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                            "    }\r",
+                                            "\r",
+                                            "    if (overModel.hasChildNodes()){\r",
+                                            "       \r",
+                                            "    } else {\r",
+                                            "        overModel.set(\"expandable\", true);\r",
+                                            "    }\r",
+                                            "}"
                                         ],
                                         "name": "beforedrop",
                                         "scope": "me"
                                     },
                                     "designerId": "e322749e-b27b-4ec7-929b-0036ed2b8990"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTreedragdroppluginDrop",
+                                        "fn": "onTreedragdroppluginDrop",
+                                        "implHandler": [
+                                            "var task= new Ext.util.DelayedTask(function(){\r",
+                                            "    Ext.getCmp(\"groupsGrid\").getStore().resumeAutoSync();\r",
+                                            "    Ext.getCmp(\"groupsGrid\").getStore().sync();\r",
+                                            "});\r",
+                                            "task.delay(50);"
+                                        ],
+                                        "name": "drop",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "f8c5e992-810e-407f-b27f-717a70e116fb"
                                 }
                             ]
                         }

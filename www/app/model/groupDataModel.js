@@ -56,6 +56,19 @@ Ext.define('Rubedo.model.groupDataModel', {
         },
         {
             name: 'canWriteUnownedElements'
+        },
+        {
+            convert: function(v, rec) {
+                return(false);
+            },
+            name: 'leaf',
+            persist: false,
+            type: 'boolean'
+        },
+        {
+            name: 'expandable',
+            defaultValue: true,
+            type: 'boolean'
         }
     ]
 });
