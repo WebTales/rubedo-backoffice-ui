@@ -37,9 +37,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.8,
+                "layout|flex": 1,
+                "container|align": "stretch",
                 "designer|userClassName": "MyPanel62",
-                "width": 210,
+                "id": "salamanderBox",
+                "width": null,
+                "layout": "vbox",
                 "bodyPadding": 10,
                 "bodyStyle": null
             },
@@ -49,223 +52,45 @@
             "designerId": "3f0ed9de-c4f2-4009-b09e-6c9174f435fc",
             "cn": [
                 {
-                    "type": "image",
+                    "type": "container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyImg11",
-                        "height": 239,
-                        "width": 210,
-                        "src": "resources/images/logoBkg.png"
-                    },
-                    "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
-                }
-            ]
-        },
-        {
-            "type": "toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": 1,
-                "dock": "right",
-                "designer|userClassName": "MyToolbar25",
-                "id": "menuPrincipalDroite",
-                "width": null
-            },
-            "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
-            "cn": [
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.pages",
-                        "favoriteIcon": "application.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "contributionPages",
+                        "layout|flex": 1,
+                        "designer|snapToGrid": 10,
+                        "designer|userClassName": "MyContainer43",
+                        "height": 10,
+                        "hidden": false,
+                        "id": "salamanderContext",
                         "margin": null,
-                        "iconCls": "site-icon",
-                        "text": "Pages"
+                        "minHeight": null,
+                        "width": 220,
+                        "layout": "absolute"
                     },
-                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.pages",
-                        "favoriteIcon": "computer.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "contributionPrevisualisation",
-                        "margin": null,
-                        "iconCls": "personalize",
-                        "text": "Prévisualisation"
-                    },
-                    "designerId": "dd27c150-88ed-41bc-8761-c66132f2b8ab",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.contents",
-                        "favoriteIcon": "page_full.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "contributionContenus",
-                        "margin": null,
-                        "iconCls": "content-icon",
-                        "text": "Contenus"
-                    },
-                    "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.dam",
-                        "favoriteIcon": "images.png",
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
-                        "itemId": "DAMInterface",
-                        "margin": null,
-                        "iconCls": "mediaTypes",
-                        "text": "Médiathèque"
-                    },
-                    "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "favoriteIcon",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "tbseparator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "read.ui.contents",
-                        "layout|flex": null,
-                        "designer|userClassName": "MySeparator13"
-                    },
-                    "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "usesMenu": true,
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton248",
-                        "iconCls": "applications",
-                        "text": "Studio"
-                    },
-                    "configAlternates": {
-                        "usesMenu": "boolean"
-                    },
-                    "designerId": "2ce81b6f-40d9-40df-9a1a-f7afb491bc46",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "usesMenu",
-                            "type": "string"
-                        }
-                    ],
+                    "designerId": "16740bbe-36c7-4f53-a23e-27f05e8d1dea",
                     "cn": [
                         {
                             "type": "menu",
                             "reference": {
-                                "name": "menu",
-                                "type": "object"
+                                "name": "items",
+                                "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "layout|x": 0,
+                                "layout|y": 0,
                                 "designer|userClassName": "MyMenu8",
+                                "floating": false,
                                 "frame": true,
+                                "hidden": false,
+                                "id": "salamanderStudioMenu",
                                 "margin": null,
-                                "width": null
+                                "width": 218
                             },
-                            "designerId": "019a95e0-2341-436f-a044-9266bdcb84ba",
+                            "designerId": "be1246af-6b6a-4569-a656-e12db32401d6",
                             "cn": [
                                 {
                                     "type": "button",
@@ -287,7 +112,7 @@
                                         "pressedCls": null,
                                         "text": "Sites"
                                     },
-                                    "designerId": "ba68449a-8258-455b-a4c2-2d6db5090cc5",
+                                    "designerId": "ed9af9ba-7149-4947-a1ae-d8762da352b0",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -317,7 +142,7 @@
                                         "iconCls": "masque-icon",
                                         "text": "Masques de page"
                                     },
-                                    "designerId": "27c68ee2-b9ba-43fb-9853-2a15f23b0914",
+                                    "designerId": "0dc97466-5b62-4461-ac5e-afa382517117",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -347,7 +172,7 @@
                                         "iconCls": "content-icon",
                                         "text": "Types de contenus"
                                     },
-                                    "designerId": "b36d4253-cf8d-49ac-bbf0-8b27a7283750",
+                                    "designerId": "c82c6861-88a1-4fc9-8df7-8b335d2b1897",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -378,7 +203,7 @@
                                         "iconCls": "mediaTypes",
                                         "text": "Types de médias"
                                     },
-                                    "designerId": "9f94e87c-60ce-4a7e-abb1-839dc8b9c70b",
+                                    "designerId": "fc193db4-9dcc-4bc0-9afa-9132331501aa",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -395,65 +220,22 @@
                             ]
                         },
                         {
-                            "type": "basiceventbinding",
+                            "type": "menu",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onButtonRender",
-                                "fn": "onButtonRender",
-                                "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
-                                    "    abstractcomponent.hide();\r",
-                                    "}"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "5b3bf0f9-5931-4cfb-a6cc-6405180d66a8"
-                        }
-                    ]
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "usesMenu": true,
-                        "layout|flex": null,
-                        "designer|userClassName": "MyButton248",
-                        "iconCls": "process-icon",
-                        "text": "Administration"
-                    },
-                    "configAlternates": {
-                        "usesMenu": "boolean"
-                    },
-                    "designerId": "1fcd1273-35a7-4773-a98a-e36c6916ab40",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "usesMenu",
-                            "type": "string"
-                        }
-                    ],
-                    "cn": [
-                        {
-                            "type": "menu",
-                            "reference": {
-                                "name": "menu",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
+                                "layout|x": 0,
+                                "layout|y": 0,
                                 "designer|userClassName": "MyMenu8",
+                                "floating": false,
                                 "frame": true,
+                                "hidden": false,
+                                "id": "salamanderAdminMenu",
                                 "margin": null,
-                                "width": null,
+                                "width": 218,
                                 "plain": false
                             },
                             "designerId": "b0494c50-c3ce-495b-b9d6-6671ac75fbbf",
@@ -670,6 +452,292 @@
                                 }
                             ]
                         },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onSalamanderContextRender",
+                                "fn": "onSalamanderContextRender",
+                                "implHandler": [
+                                    "Ext.Array.forEach(abstractcomponent.query(\"menu\"), function(thing){thing.hide();});"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "efc38e5e-37c1-4381-921e-9c73be7f7ea0"
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyImg11",
+                        "height": 239,
+                        "id": "salamanderLogo",
+                        "margin": null,
+                        "width": 210,
+                        "src": "resources/images/logoBkg.png"
+                    },
+                    "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "left",
+                "designer|userClassName": "MyToolbar25",
+                "id": "menuPrincipalDroite",
+                "width": null
+            },
+            "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.pages",
+                        "favoriteIcon": "application.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "contributionPages",
+                        "margin": null,
+                        "iconCls": "site-icon",
+                        "text": "Pages"
+                    },
+                    "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.pages",
+                        "favoriteIcon": "computer.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "contributionPrevisualisation",
+                        "margin": null,
+                        "iconCls": "personalize",
+                        "text": "Prévisualisation"
+                    },
+                    "designerId": "dd27c150-88ed-41bc-8761-c66132f2b8ab",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.contents",
+                        "favoriteIcon": "page_full.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "contributionContenus",
+                        "margin": null,
+                        "iconCls": "content-icon",
+                        "text": "Contenus"
+                    },
+                    "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.dam",
+                        "favoriteIcon": "images.png",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton2",
+                        "itemId": "DAMInterface",
+                        "margin": null,
+                        "iconCls": "mediaTypes",
+                        "text": "Médiathèque"
+                    },
+                    "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbseparator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.contents",
+                        "layout|flex": null,
+                        "designer|userClassName": "MySeparator13"
+                    },
+                    "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "usesMenu": true,
+                        "usedMenu": "salamanderStudioMenu",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton248",
+                        "iconCls": "applications",
+                        "text": "Studio"
+                    },
+                    "configAlternates": {
+                        "usesMenu": "boolean"
+                    },
+                    "designerId": "2ce81b6f-40d9-40df-9a1a-f7afb491bc46",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usesMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usedMenu",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onButtonRender",
+                                "fn": "onButtonRender",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
+                                    "    abstractcomponent.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "5b3bf0f9-5931-4cfb-a6cc-6405180d66a8"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "usesMenu": true,
+                        "usedMenu": "salamanderAdminMenu",
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton248",
+                        "iconCls": "process-icon",
+                        "text": "Administration"
+                    },
+                    "configAlternates": {
+                        "usesMenu": "boolean"
+                    },
+                    "designerId": "1fcd1273-35a7-4773-a98a-e36c6916ab40",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usesMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usedMenu",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
                         {
                             "type": "basiceventbinding",
                             "reference": {

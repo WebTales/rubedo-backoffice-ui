@@ -41,13 +41,151 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             items: [
                 {
                     xtype: 'panel',
-                    flex: 0.8,
-                    width: 210,
+                    flex: 1,
+                    id: 'salamanderBox',
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
                     bodyPadding: 10,
                     items: [
                         {
+                            xtype: 'container',
+                            flex: 1,
+                            height: 10,
+                            hidden: false,
+                            id: 'salamanderContext',
+                            width: 220,
+                            layout: {
+                                type: 'absolute'
+                            },
+                            items: [
+                                {
+                                    xtype: 'menu',
+                                    x: 0,
+                                    y: 0,
+                                    floating: false,
+                                    frame: true,
+                                    hidden: false,
+                                    id: 'salamanderStudioMenu',
+                                    width: 218,
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.sites',
+                                            favoriteIcon: 'globe_computer.png',
+                                            itemId: 'sitesInterface',
+                                            iconCls: 'referencement_icon',
+                                            text: 'Sites'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.masks',
+                                            favoriteIcon: 'application.png',
+                                            itemId: 'adminFMDP',
+                                            iconCls: 'masque-icon',
+                                            text: 'Masques de page'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.contentTypes',
+                                            favoriteIcon: 'page_full.png',
+                                            itemId: 'adminFTDC',
+                                            iconCls: 'content-icon',
+                                            text: 'Types de contenus'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.damTypes',
+                                            favoriteIcon: 'images.png',
+                                            itemId: 'mediaTypesInterface',
+                                            iconCls: 'mediaTypes',
+                                            text: 'Types de médias'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'menu',
+                                    x: 0,
+                                    y: 0,
+                                    floating: false,
+                                    frame: true,
+                                    hidden: false,
+                                    id: 'salamanderAdminMenu',
+                                    width: 218,
+                                    plain: false,
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.queries',
+                                            favoriteIcon: 'database_search.png',
+                                            itemId: 'queryManagerInterface',
+                                            iconCls: 'database_search',
+                                            text: 'Requêtes'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.taxonomy',
+                                            favoriteIcon: 'tag.png',
+                                            itemId: 'adminFTaxonomie',
+                                            iconCls: 'page_taxonomy',
+                                            text: 'Taxonomie'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.groups',
+                                            favoriteIcon: 'users.png',
+                                            itemId: 'adminFUtilisateurs',
+                                            iconCls: 'user',
+                                            text: 'Groupes'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.workspaces',
+                                            favoriteIcon: 'users.png',
+                                            itemId: 'WorkspacesInterface',
+                                            iconCls: 'user',
+                                            text: 'Workspaces'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.users',
+                                            favoriteIcon: 'user_edit.png',
+                                            floating: false,
+                                            itemId: 'UserAdminWindow',
+                                            iconCls: 'user_edit',
+                                            text: 'Utilisateurs'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.technicalDashboard',
+                                            favoriteIcon: 'chart.png',
+                                            itemId: 'monitoringTools',
+                                            iconCls: 'monitoring',
+                                            text: 'Supervision'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'read.ui.workflows',
+                                            favoriteIcon: 'processes.png',
+                                            itemId: 'menuWorkflows',
+                                            iconCls: 'process-icon',
+                                            text: 'Workflows'
+                                        }
+                                    ]
+                                }
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onSalamanderContextRender,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
                             xtype: 'image',
                             height: 239,
+                            id: 'salamanderLogo',
                             width: 210,
                             src: 'resources/images/logoBkg.png'
                         }
@@ -58,7 +196,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                 {
                     xtype: 'toolbar',
                     flex: 1,
-                    dock: 'right',
+                    dock: 'left',
                     id: 'menuPrincipalDroite',
                     items: [
                         {
@@ -100,46 +238,9 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             usesMenu: true,
+                            usedMenu: 'salamanderStudioMenu',
                             iconCls: 'applications',
                             text: 'Studio',
-                            menu: {
-                                xtype: 'menu',
-                                frame: true,
-                                items: [
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.sites',
-                                        favoriteIcon: 'globe_computer.png',
-                                        itemId: 'sitesInterface',
-                                        iconCls: 'referencement_icon',
-                                        text: 'Sites'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.masks',
-                                        favoriteIcon: 'application.png',
-                                        itemId: 'adminFMDP',
-                                        iconCls: 'masque-icon',
-                                        text: 'Masques de page'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.contentTypes',
-                                        favoriteIcon: 'page_full.png',
-                                        itemId: 'adminFTDC',
-                                        iconCls: 'content-icon',
-                                        text: 'Types de contenus'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.damTypes',
-                                        favoriteIcon: 'images.png',
-                                        itemId: 'mediaTypesInterface',
-                                        iconCls: 'mediaTypes',
-                                        text: 'Types de médias'
-                                    }
-                                ]
-                            },
                             listeners: {
                                 render: {
                                     fn: me.onButtonRender,
@@ -150,72 +251,9 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             usesMenu: true,
+                            usedMenu: 'salamanderAdminMenu',
                             iconCls: 'process-icon',
                             text: 'Administration',
-                            menu: {
-                                xtype: 'menu',
-                                frame: true,
-                                plain: false,
-                                items: [
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.queries',
-                                        favoriteIcon: 'database_search.png',
-                                        itemId: 'queryManagerInterface',
-                                        iconCls: 'database_search',
-                                        text: 'Requêtes'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.taxonomy',
-                                        favoriteIcon: 'tag.png',
-                                        itemId: 'adminFTaxonomie',
-                                        iconCls: 'page_taxonomy',
-                                        text: 'Taxonomie'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.groups',
-                                        favoriteIcon: 'users.png',
-                                        itemId: 'adminFUtilisateurs',
-                                        iconCls: 'user',
-                                        text: 'Groupes'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.workspaces',
-                                        favoriteIcon: 'users.png',
-                                        itemId: 'WorkspacesInterface',
-                                        iconCls: 'user',
-                                        text: 'Workspaces'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.users',
-                                        favoriteIcon: 'user_edit.png',
-                                        floating: false,
-                                        itemId: 'UserAdminWindow',
-                                        iconCls: 'user_edit',
-                                        text: 'Utilisateurs'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.technicalDashboard',
-                                        favoriteIcon: 'chart.png',
-                                        itemId: 'monitoringTools',
-                                        iconCls: 'monitoring',
-                                        text: 'Supervision'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        ACL: 'read.ui.workflows',
-                                        favoriteIcon: 'processes.png',
-                                        itemId: 'menuWorkflows',
-                                        iconCls: 'process-icon',
-                                        text: 'Workflows'
-                                    }
-                                ]
-                            },
                             listeners: {
                                 render: {
                                     fn: me.onButtonRender1,
@@ -245,6 +283,10 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onSalamanderContextRender: function(abstractcomponent, options) {
+        Ext.Array.forEach(abstractcomponent.query("menu"), function(thing){thing.hide();});
     },
 
     onButtonRender: function(abstractcomponent, options) {

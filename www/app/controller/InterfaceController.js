@@ -23,7 +23,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     afficherMenuPrincipal: function(button, e, options) {
         if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
-            Ext.getCmp('menuPrincipalInterface').destroy();
+            if(Ext.getCmp('menuPrincipalInterface').isVisible()){
+                Ext.getCmp('menuPrincipalInterface').hide();
+            }
+            else {Ext.getCmp('menuPrincipalInterface').show();}
         }
         else {
             var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});
@@ -31,8 +34,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
             menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-300);   
             menuPrincipal.getEl().addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });
-            menuPrincipal.getEl().addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
-                Ext.getCmp('menuPrincipalInterface').destroy();
+            menuPrincipal.getEl().addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (!Ext.isEmpty(Ext.getCmp('menuPrincipalInterface'))) {
+                Ext.getCmp('menuPrincipalInterface').hide();
             }}); });
         }
     },
@@ -387,6 +390,13 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }
     },
 
+    onButtonMouseOver: function(button, e, options) {
+        Ext.Array.forEach(Ext.getCmp("salamanderContext").query("menu"), function(thing){thing.hide();});
+        if(button.usesMenu){
+            Ext.getCmp(button.usedMenu).show();
+        }
+    },
+
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
@@ -472,7 +482,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#menuPrincipalDroite button": {
                 click: this.ouvrirFenteresMenuDroite,
-                render: this.mainToolsContextShow
+                render: this.mainToolsContextShow,
+                mouseover: this.onButtonMouseOver
             },
             "#boiteAIconesBureau": {
                 render: this.majIcones
