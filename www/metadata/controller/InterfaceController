@@ -318,6 +318,39 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onMenuitemClick",
+                "fn": "onMenuitemClick",
+                "implHandler": [
+                    "var button=item; \r",
+                    "var fenetre = Ext.getCmp(button.itemId);\r",
+                    "    if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }\r",
+                    "    else {\r",
+                    "        fenetre = Ext.widget(button.itemId);\r",
+                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "        if (Ext.isDefined(window.innerHeight)) {\r",
+                    "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
+                    "            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
+                    "        }\r",
+                    "        fenetre.show();\r",
+                    "\r",
+                    "    }\r",
+                    "    Ext.getCmp('menuPrincipalInterface').hide();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#salamanderContext menuitem"
+            },
+            "designerId": "79c93167-a905-4b81-9cd7-8ca95f7d7321"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "ouvrirFenteresMenuDroite",
                 "fn": "ouvrirFenteresMenuDroite",
                 "implHandler": [
@@ -348,7 +381,7 @@
                     "        fenetre.show();\r",
                     "\r",
                     "    }\r",
-                    "    Ext.getCmp('menuPrincipalInterface').destroy();\r",
+                    "    Ext.getCmp('menuPrincipalInterface').hide();\r",
                     "}"
                 ],
                 "name": "click",
@@ -984,13 +1017,12 @@
                 "designer|userClassName": "onButtonMouseOver",
                 "fn": "onButtonMouseOver",
                 "implHandler": [
-                    "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){thing.getEl().setOpacity(0.1, false); thing.hide();});\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){ thing.hide();});\r",
                     "if(button.usesMenu){\r",
                     "    Ext.getCmp(button.usedMenu).show();\r",
-                    "    Ext.getCmp(button.usedMenu).getEl().setOpacity(1, true);\r",
-                    "    Ext.getCmp(\"salamanderLogo\").getEl().setOpacity(0, true);\r",
+                    "    Ext.getCmp(\"salamanderLogo\").hide();\r",
                     "} else {\r",
-                    "    Ext.getCmp(\"salamanderLogo\").getEl().setOpacity(1, true);\r",
+                    "    Ext.getCmp(\"salamanderLogo\").show();\r",
                     "}"
                 ],
                 "name": "mouseover",

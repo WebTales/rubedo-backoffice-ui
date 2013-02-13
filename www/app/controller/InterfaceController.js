@@ -137,6 +137,23 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 });
     },
 
+    onMenuitemClick: function(item, e, options) {
+        var button=item; 
+        var fenetre = Ext.getCmp(button.itemId);
+        if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
+        else {
+            fenetre = Ext.widget(button.itemId);
+            Ext.getCmp('desktopCont').add(fenetre);
+            if (Ext.isDefined(window.innerHeight)) {
+                if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+            }
+            fenetre.show();
+
+        }
+        Ext.getCmp('menuPrincipalInterface').hide();
+    },
+
     ouvrirFenteresMenuDroite: function(button, e, options) {
         if (button.itemId=='deconnexionMenuPrincipal') {
             Ext.Ajax.request({
@@ -165,7 +182,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 fenetre.show();
 
             }
-            Ext.getCmp('menuPrincipalInterface').destroy();
+            Ext.getCmp('menuPrincipalInterface').hide();
         }
     },
 
@@ -391,13 +408,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     onButtonMouseOver: function(button, e, options) {
-        Ext.Array.forEach(Ext.getCmp("salamanderContext").query("menu"), function(thing){thing.getEl().setOpacity(0.1, false); thing.hide();});
+        Ext.Array.forEach(Ext.getCmp("salamanderContext").query("menu"), function(thing){ thing.hide();});
         if(button.usesMenu){
             Ext.getCmp(button.usedMenu).show();
-            Ext.getCmp(button.usedMenu).getEl().setOpacity(1, true);
-            Ext.getCmp("salamanderLogo").getEl().setOpacity(0, true);
+            Ext.getCmp("salamanderLogo").hide();
         } else {
-            Ext.getCmp("salamanderLogo").getEl().setOpacity(1, true);
+            Ext.getCmp("salamanderLogo").show();
         }
     },
 
@@ -483,6 +499,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "iconeBureau": {
                 render: this.comportementIcones
+            },
+            "#salamanderContext menuitem": {
+                click: this.onMenuitemClick
             },
             "#menuPrincipalDroite button": {
                 click: this.ouvrirFenteresMenuDroite,
