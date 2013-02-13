@@ -391,9 +391,13 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     onButtonMouseOver: function(button, e, options) {
-        Ext.Array.forEach(Ext.getCmp("salamanderContext").query("menu"), function(thing){thing.hide();});
+        Ext.Array.forEach(Ext.getCmp("salamanderContext").query("menu"), function(thing){thing.getEl().setOpacity(0.1, false); thing.hide();});
         if(button.usesMenu){
             Ext.getCmp(button.usedMenu).show();
+            Ext.getCmp(button.usedMenu).getEl().setOpacity(1, true);
+            Ext.getCmp("salamanderLogo").getEl().setOpacity(0, true);
+        } else {
+            Ext.getCmp("salamanderLogo").getEl().setOpacity(1, true);
         }
     },
 

@@ -71,7 +71,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     width: 218,
                                     items: [
                                         {
-                                            xtype: 'button',
+                                            xtype: 'menuitem',
                                             ACL: 'read.ui.sites',
                                             favoriteIcon: 'globe_computer.png',
                                             itemId: 'sitesInterface',
@@ -79,7 +79,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                             text: 'Sites'
                                         },
                                         {
-                                            xtype: 'button',
+                                            xtype: 'menuitem',
                                             ACL: 'read.ui.masks',
                                             favoriteIcon: 'application.png',
                                             itemId: 'adminFMDP',
@@ -87,7 +87,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                             text: 'Masques de page'
                                         },
                                         {
-                                            xtype: 'button',
+                                            xtype: 'menuitem',
                                             ACL: 'read.ui.contentTypes',
                                             favoriteIcon: 'page_full.png',
                                             itemId: 'adminFTDC',
@@ -95,7 +95,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                             text: 'Types de contenus'
                                         },
                                         {
-                                            xtype: 'button',
+                                            xtype: 'menuitem',
                                             ACL: 'read.ui.damTypes',
                                             favoriteIcon: 'images.png',
                                             itemId: 'mediaTypesInterface',

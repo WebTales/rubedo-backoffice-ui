@@ -984,9 +984,13 @@
                 "designer|userClassName": "onButtonMouseOver",
                 "fn": "onButtonMouseOver",
                 "implHandler": [
-                    "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){thing.hide();});\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){thing.getEl().setOpacity(0.1, false); thing.hide();});\r",
                     "if(button.usesMenu){\r",
                     "    Ext.getCmp(button.usedMenu).show();\r",
+                    "    Ext.getCmp(button.usedMenu).getEl().setOpacity(1, true);\r",
+                    "    Ext.getCmp(\"salamanderLogo\").getEl().setOpacity(0, true);\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"salamanderLogo\").getEl().setOpacity(1, true);\r",
                     "}"
                 ],
                 "name": "mouseover",

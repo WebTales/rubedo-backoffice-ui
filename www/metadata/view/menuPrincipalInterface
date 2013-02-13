@@ -93,7 +93,7 @@
                             "designerId": "be1246af-6b6a-4569-a656-e12db32401d6",
                             "cn": [
                                 {
-                                    "type": "button",
+                                    "type": "menuitem",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -102,17 +102,12 @@
                                     "userConfig": {
                                         "ACL": "read.ui.sites",
                                         "favoriteIcon": "globe_computer.png",
-                                        "designer|userClassName": "MyButton2",
+                                        "designer|userClassName": "MyMenuItem8",
                                         "itemId": "sitesInterface",
-                                        "margin": null,
-                                        "overCls": null,
-                                        "focusCls": null,
                                         "iconCls": "referencement_icon",
-                                        "menuActiveCls": null,
-                                        "pressedCls": null,
                                         "text": "Sites"
                                     },
-                                    "designerId": "ed9af9ba-7149-4947-a1ae-d8762da352b0",
+                                    "designerId": "e59a1815-1ab4-4af1-a364-ca4de4f0997f",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -127,7 +122,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "menuitem",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -136,13 +131,12 @@
                                     "userConfig": {
                                         "ACL": "read.ui.masks",
                                         "favoriteIcon": "application.png",
-                                        "designer|userClassName": "MyButton2",
+                                        "designer|userClassName": "MyMenuItem9",
                                         "itemId": "adminFMDP",
-                                        "margin": null,
                                         "iconCls": "masque-icon",
                                         "text": "Masques de page"
                                     },
-                                    "designerId": "0dc97466-5b62-4461-ac5e-afa382517117",
+                                    "designerId": "e52ba780-5c93-4ea0-9cf7-f2d7ec45ff76",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -157,7 +151,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "menuitem",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -166,13 +160,12 @@
                                     "userConfig": {
                                         "ACL": "read.ui.contentTypes",
                                         "favoriteIcon": "page_full.png",
-                                        "designer|userClassName": "MyButton2",
+                                        "designer|userClassName": "MyMenuItem10",
                                         "itemId": "adminFTDC",
-                                        "margin": null,
                                         "iconCls": "content-icon",
                                         "text": "Types de contenus"
                                     },
-                                    "designerId": "c82c6861-88a1-4fc9-8df7-8b335d2b1897",
+                                    "designerId": "412107e2-f39c-4e58-a4f2-55f3a6fa9e78",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -187,7 +180,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "menuitem",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -196,14 +189,12 @@
                                     "userConfig": {
                                         "ACL": "read.ui.damTypes",
                                         "favoriteIcon": "images.png",
-                                        "designer|userClassName": "MyButton2",
-                                        "hidden": null,
+                                        "designer|userClassName": "MyMenuItem11",
                                         "itemId": "mediaTypesInterface",
-                                        "margin": null,
                                         "iconCls": "mediaTypes",
                                         "text": "Types de médias"
                                     },
-                                    "designerId": "fc193db4-9dcc-4bc0-9afa-9132331501aa",
+                                    "designerId": "b2e39f84-2b7b-40c1-acb6-809b6552458c",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
