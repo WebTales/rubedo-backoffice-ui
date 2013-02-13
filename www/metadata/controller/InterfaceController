@@ -323,18 +323,18 @@
                 "implHandler": [
                     "var button=item; \r",
                     "var fenetre = Ext.getCmp(button.itemId);\r",
-                    "    if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }\r",
-                    "    else {\r",
-                    "        fenetre = Ext.widget(button.itemId);\r",
-                    "        Ext.getCmp('desktopCont').add(fenetre);\r",
-                    "        if (Ext.isDefined(window.innerHeight)) {\r",
-                    "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
-                    "            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
-                    "        }\r",
-                    "        fenetre.show();\r",
-                    "\r",
+                    "if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }\r",
+                    "else {\r",
+                    "    fenetre = Ext.widget(button.itemId);\r",
+                    "    Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "    if (Ext.isDefined(window.innerHeight)) {\r",
+                    "        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
+                    "        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
                     "    }\r",
-                    "    Ext.getCmp('menuPrincipalInterface').hide();"
+                    "    fenetre.show();\r",
+                    "\r",
+                    "}\r",
+                    "Ext.getCmp('menuPrincipalInterface').hide();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -778,7 +778,7 @@
                     "    var preDefined=\"search.png\";\r",
                     "\r",
                     "} else {\r",
-                    "var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();\r",
+                    "    var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();\r",
                     "    actions.push({\r",
                     "        type:\"openWindow\",\r",
                     "        target:myWindow.id\t\t\t\r",
@@ -943,8 +943,9 @@
                 "fn": "mainToolsContextShow",
                 "implHandler": [
                     "var me=this;\r",
-                    "if ((abstractcomponent.itemId!='deconnexionMenuPrincipal')&&(!abstractcomponent.usesMenu)) {\r",
+                    "if (abstractcomponent.itemId!='deconnexionMenuPrincipal') {\r",
                     "    abstractcomponent.getEl().on(\"contextmenu\",function(e){\r",
+                    "        if (!abstractcomponent.usesMenu){\r",
                     "        var menu= Ext.getCmp('MainToolsContextMenu');\r",
                     "        if (!Ext.isEmpty(menu)){menu.destroy();}\r",
                     "        menu = Ext.widget('MainToolsContextMenu');\r",
@@ -972,15 +973,19 @@
                     "\r",
                     "        });\r",
                     "\r",
-                    "        menu.showAt(Ext.EventObject.getXY());\r",
+                    "        menu.showAt(Ext.EventObject.getXY());}\r",
                     "        e.stopEvent();\r",
                     "    });\r",
-                    "}"
+                    "}\r",
+                    "abstractcomponent.on(\"focus\", function(){\r",
+                    "    var menu= Ext.getCmp('MainToolsContextMenu');\r",
+                    "    if (!Ext.isEmpty(menu)){menu.destroy();}\r",
+                    "});"
                 ],
                 "name": "render",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button"
+                "designer|controlQuery": "#menuPrincipalDroite button, #salamanderContext menuitem"
             },
             "designerId": "f38c0e6a-bfb2-430d-a501-82dd290d4f5c"
         },
@@ -1023,7 +1028,9 @@
                     "    Ext.getCmp(\"salamanderLogo\").hide();\r",
                     "} else {\r",
                     "    Ext.getCmp(\"salamanderLogo\").show();\r",
-                    "}"
+                    "}\r",
+                    "    var menu= Ext.getCmp('MainToolsContextMenu');\r",
+                    "    if (!Ext.isEmpty(menu)){menu.destroy();}"
                 ],
                 "name": "mouseover",
                 "scope": "me",

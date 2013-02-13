@@ -366,39 +366,44 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     mainToolsContextShow: function(abstractcomponent, options) {
         var me=this;
-        if ((abstractcomponent.itemId!='deconnexionMenuPrincipal')&&(!abstractcomponent.usesMenu)) {
+        if (abstractcomponent.itemId!='deconnexionMenuPrincipal') {
             abstractcomponent.getEl().on("contextmenu",function(e){
-                var menu= Ext.getCmp('MainToolsContextMenu');
-                if (!Ext.isEmpty(menu)){menu.destroy();}
-                menu = Ext.widget('MainToolsContextMenu');
-                menu.on('blur', function(){this.destroy();});
-                menu.getComponent(0).on("click", function(){
-                    var actions = [ ];
-                    actions.push({
-                        type:"openWindow",
-                        target:abstractcomponent.itemId			
-                    });
-                    var myText = abstractcomponent.text;
-                    var newIcon = Ext.create("Rubedo.model.iconDataModel",{
-                        text:myText,
-                        posX:0,
-                        posY:0,
-                        image: abstractcomponent.favoriteIcon||"favorite.png",
-                        actions:actions
+                if (!abstractcomponent.usesMenu){
+                    var menu= Ext.getCmp('MainToolsContextMenu');
+                    if (!Ext.isEmpty(menu)){menu.destroy();}
+                    menu = Ext.widget('MainToolsContextMenu');
+                    menu.on('blur', function(){this.destroy();});
+                    menu.getComponent(0).on("click", function(){
+                        var actions = [ ];
+                        actions.push({
+                            type:"openWindow",
+                            target:abstractcomponent.itemId			
+                        });
+                        var myText = abstractcomponent.text;
+                        var newIcon = Ext.create("Rubedo.model.iconDataModel",{
+                            text:myText,
+                            posX:0,
+                            posY:0,
+                            image: abstractcomponent.favoriteIcon||"favorite.png",
+                            actions:actions
+
+                        });
+                        Ext.getStore("IconesDataJson").add(newIcon);
+                        Ext.getStore("IconesDataJson").on("datachanged", function(){
+                            me.refreshIcons();
+                            Ext.getStore("IconesDataJson").clearListeners();
+                        });
 
                     });
-                    Ext.getStore("IconesDataJson").add(newIcon);
-                    Ext.getStore("IconesDataJson").on("datachanged", function(){
-                        me.refreshIcons();
-                        Ext.getStore("IconesDataJson").clearListeners();
-                    });
 
-                });
-
-                menu.showAt(Ext.EventObject.getXY());
+                menu.showAt(Ext.EventObject.getXY());}
                 e.stopEvent();
             });
         }
+        abstractcomponent.on("focus", function(){
+            var menu= Ext.getCmp('MainToolsContextMenu');
+            if (!Ext.isEmpty(menu)){menu.destroy();}
+        });
     },
 
     onComponentBeforeRender: function(abstractcomponent, options) {
@@ -415,6 +420,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
         } else {
             Ext.getCmp("salamanderLogo").show();
         }
+        var menu= Ext.getCmp('MainToolsContextMenu');
+        if (!Ext.isEmpty(menu)){menu.destroy();}
     },
 
     onLaunch: function() {
@@ -505,7 +512,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#menuPrincipalDroite button": {
                 click: this.ouvrirFenteresMenuDroite,
-                render: this.mainToolsContextShow,
                 mouseover: this.onButtonMouseOver
             },
             "#boiteAIconesBureau": {
@@ -552,6 +558,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#desktopHomeBtn": {
                 click: this.onDesktopHomeBtnClick
+            },
+            "#menuPrincipalDroite button, #salamanderContext menuitem": {
+                render: this.mainToolsContextShow
             },
             "component": {
                 beforerender: this.onComponentBeforeRender
