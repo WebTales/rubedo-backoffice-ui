@@ -119,6 +119,19 @@
                 "name": "HCMode"
             },
             "designerId": "b94641d0-b0df-4e2d-9947-ca94d1ebd946"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field306",
+                "name": "lastEdited"
+            },
+            "designerId": "a42f80c1-466f-4fa3-b012-17890af78ae2"
         }
     ]
 }

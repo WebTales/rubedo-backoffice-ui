@@ -427,11 +427,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
     onLaunch: function() {
         var me=this;
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
-            Ext.getCmp('menuPrincipalInterface').destroy();
+            Ext.getCmp('menuPrincipalInterface').hide();
         }});
         Ext.getCmp('boutonPincipalInterface').addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });
         Ext.getCmp('boutonPincipalInterface').addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
-            Ext.getCmp('menuPrincipalInterface').destroy();
+            Ext.getCmp('menuPrincipalInterface').hide();
         }}); }); 
         Ext.getStore('PersonalPrefsStore').on("load",function(){
             var myPrefs=this.getRange()[0];
@@ -441,6 +441,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                     wallpaper:"resources/wallpapers/rubedo.jpg",
                     iconSet:"red",
                     themeColor:"#D7251D",
+                    lastEdited: [ ],
                     HCMode:false
                 });
 
@@ -455,6 +456,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             MyPrefData.iconsDir=myPrefs.get("iconSet");
             MyPrefData.themeColor=myPrefs.get("themeColor");
             MyPrefData.HCMode=myPrefs.get("HCMode");
+            MyPrefData.lastEdited=myPrefs.get("lastEdited")||[ ];
             if (myPrefs.get("HCMode")){
                 Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
             }
@@ -485,7 +487,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
             iconsDir: 'red',
             HCMode:false,
             myName:'Alexandru Dobre',
-            themeColor: '#D7251D'
+            themeColor: '#D7251D',
+            lastEdited:[ ]
         }); 
 
         this.control({

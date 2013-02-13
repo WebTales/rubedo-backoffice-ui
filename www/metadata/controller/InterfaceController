@@ -28,7 +28,7 @@
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
                     "    if(Ext.getCmp('menuPrincipalInterface').isVisible()){\r",
-                    "    Ext.getCmp('menuPrincipalInterface').hide();\r",
+                    "        Ext.getCmp('menuPrincipalInterface').hide();\r",
                     "    }\r",
                     "    else {Ext.getCmp('menuPrincipalInterface').show();}\r",
                     "}\r",
@@ -107,11 +107,11 @@
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
-                    "    Ext.getCmp('menuPrincipalInterface').destroy();\r",
+                    "    Ext.getCmp('menuPrincipalInterface').hide();\r",
                     "}});\r",
                     "Ext.getCmp('boutonPincipalInterface').addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });\r",
                     "Ext.getCmp('boutonPincipalInterface').addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
-                    "    Ext.getCmp('menuPrincipalInterface').destroy();\r",
+                    "    Ext.getCmp('menuPrincipalInterface').hide();\r",
                     "}}); }); \r",
                     "Ext.getStore('PersonalPrefsStore').on(\"load\",function(){\r",
                     "    var myPrefs=this.getRange()[0];\r",
@@ -121,6 +121,7 @@
                     "            wallpaper:\"resources/wallpapers/rubedo.jpg\",\r",
                     "            iconSet:\"red\",\r",
                     "            themeColor:\"#D7251D\",\r",
+                    "            lastEdited: [ ],\r",
                     "            HCMode:false\r",
                     "        });\r",
                     "\r",
@@ -135,6 +136,7 @@
                     "    MyPrefData.iconsDir=myPrefs.get(\"iconSet\");\r",
                     "    MyPrefData.themeColor=myPrefs.get(\"themeColor\");\r",
                     "    MyPrefData.HCMode=myPrefs.get(\"HCMode\");\r",
+                    "    MyPrefData.lastEdited=myPrefs.get(\"lastEdited\")||[ ];\r",
                     "    if (myPrefs.get(\"HCMode\")){\r",
                     "        Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');\r",
                     "    }\r",
@@ -569,7 +571,8 @@
                     "    iconsDir: 'red',\r",
                     "    HCMode:false,\r",
                     "    myName:'Alexandru Dobre',\r",
-                    "    themeColor: '#D7251D'\r",
+                    "    themeColor: '#D7251D',\r",
+                    "    lastEdited:[ ]\r",
                     "}); "
                 ]
             },

@@ -45,6 +45,9 @@ Ext.define('Rubedo.model.personalPrefsDataModel', {
         },
         {
             name: 'HCMode'
+        },
+        {
+            name: 'lastEdited'
         }
     ]
 });

@@ -28,10 +28,12 @@ Ext.define('Rubedo.controller.MainStoresController', {
     init: function(application) {
         var me = this;
         Ext.data.StoreManager.each(function(store){
-            //notifs
+            //notifs and last updated
             store.on("write", function(theStore,roperation){
                 if (roperation.action=="update") {
                     me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
+                    try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
+                    catch(err){console.log("Erreur d'enregistrement en dernier modifié");}
                 }
                 else if (roperation.action=="create") {
                     me.fireNotif("Notification", "<p>Création réussie.</p>");
@@ -115,6 +117,11 @@ Ext.define('Rubedo.controller.MainStoresController', {
             slideInAnimation: 'bounceOut',
             slideBackAnimation: 'easeIn'
         }).show();
+    },
+
+    handleLastUpdated: function(record, collection) {
+        console.log(record);
+        console.log(collection);
     }
 
 });
