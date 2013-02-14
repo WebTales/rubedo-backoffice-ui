@@ -196,7 +196,7 @@
                     "                var fenetre = Ext.widget('delConfirmZ');\r",
                     "                fenetre.show();\r",
                     "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                    "                    Ext.getCmp('mainMTGrid').getStore().remove(CIBLE);\r",
+                    "                    Ext.getCmp('mainMTGrid').getStore().remove(cible);\r",
                     "                    Ext.getCmp('delConfirmZ').close();\r",
                     "                    me.resetInterfaceNoSelect();\r",
                     "\r",

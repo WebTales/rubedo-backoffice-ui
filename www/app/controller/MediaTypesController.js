@@ -52,7 +52,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                         var fenetre = Ext.widget('delConfirmZ');
                         fenetre.show();
                         Ext.getCmp('delConfirmZOui').on('click', function() { 
-                            Ext.getCmp('mainMTGrid').getStore().remove(CIBLE);
+                            Ext.getCmp('mainMTGrid').getStore().remove(cible);
                             Ext.getCmp('delConfirmZ').close();
                             me.resetInterfaceNoSelect();
 
