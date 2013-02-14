@@ -1032,8 +1032,8 @@
                     "} else {\r",
                     "    Ext.getCmp(\"salamanderLogo\").show();\r",
                     "}\r",
-                    "    var menu= Ext.getCmp('MainToolsContextMenu');\r",
-                    "    if (!Ext.isEmpty(menu)){menu.destroy();}"
+                    "var menu= Ext.getCmp('MainToolsContextMenu');\r",
+                    "if (!Ext.isEmpty(menu)){menu.destroy();}"
                 ],
                 "name": "mouseover",
                 "scope": "me",

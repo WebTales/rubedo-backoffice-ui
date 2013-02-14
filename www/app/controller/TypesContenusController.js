@@ -338,15 +338,15 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             if (Ext.getCmp('champTCIdField').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('champTCIdField').getValue()))){    
                     Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getEl().applyStyles('color:#000000');
-                    var companion =Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).up().getComponent("imageFieldComponent");
+                    var companion =Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).up().getComponent(2);
                     if (Ext.isDefined(companion)) {
                         companion.getEl().applyStyles('color:#000000');
                     }
                 }
                 Ext.getCmp('champTCIdField').setValue(TCfield.id);
                 if (TCfield.isXType("ImagePickerField")) {
-                    TCfield.up().getComponent("imageFieldComponent").getEl().frame(MyPrefData.themeColor);
-                    TCfield.up().getComponent("imageFieldComponent").getEl().applyStyles('color:'+MyPrefData.themeColor);
+                    TCfield.up().getComponent(2).getEl().frame(MyPrefData.themeColor);
+                    TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
                     this.frame(MyPrefData.themeColor);
                     this.applyStyles('color:'+MyPrefData.themeColor);
