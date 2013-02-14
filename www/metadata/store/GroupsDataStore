@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Groups",
         "designer|userClassName": "GroupsDataStore",
         "designer|userAlias": "GroupsDataStore",
         "autoLoad": false,
@@ -14,8 +16,23 @@
         "model": "groupDataModel",
         "defaultRootId": null
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "id": "ExtBox1-ext-gen13038",
     "designerId": "07053528-2f61-4530-94a2-099a9f5d243c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

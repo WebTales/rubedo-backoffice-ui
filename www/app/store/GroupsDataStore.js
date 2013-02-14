@@ -25,6 +25,8 @@ Ext.define('Rubedo.store.GroupsDataStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'Groups',
             autoLoad: false,
             autoSync: true,
             storeId: 'GroupsDataStore',

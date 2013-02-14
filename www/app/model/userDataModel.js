@@ -72,6 +72,9 @@ Ext.define('Rubedo.model.userDataModel', {
             name: 'groups'
         },
         {
+            name: 'defaultGroup'
+        },
+        {
             name: 'createTime',
             type: 'date'
         },

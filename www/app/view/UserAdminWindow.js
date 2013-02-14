@@ -232,6 +232,32 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             vtype: 'alphanum'
                                         },
                                         {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            name: 'groups',
+                                            fieldLabel: 'Groupes',
+                                            labelWidth: 200,
+                                            editable: false,
+                                            displayField: 'name',
+                                            forceSelection: true,
+                                            multiSelect: true,
+                                            store: 'GroupsComboStore',
+                                            valueField: 'id'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            name: 'defaultGroup',
+                                            fieldLabel: 'Groupe par defaut',
+                                            labelWidth: 200,
+                                            editable: false,
+                                            displayField: 'name',
+                                            forceSelection: true,
+                                            multiSelect: false,
+                                            store: 'GroupsComboStore',
+                                            valueField: 'id'
+                                        },
+                                        {
                                             xtype: 'datefield',
                                             anchor: '100%',
                                             name: 'startValidity',
@@ -366,11 +392,6 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     }
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'panel',
-                            overflowY: 'auto',
-                            title: 'Droits'
                         }
                     ]
                 }

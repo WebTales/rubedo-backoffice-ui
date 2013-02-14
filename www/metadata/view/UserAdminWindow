@@ -559,6 +559,50 @@
                                     "designerId": "99cd73ae-9957-433c-b445-4d1c5a406bbe"
                                 },
                                 {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox29",
+                                        "name": "groups",
+                                        "fieldLabel": "Groupes",
+                                        "labelWidth": 200,
+                                        "editable": false,
+                                        "displayField": "name",
+                                        "forceSelection": true,
+                                        "multiSelect": true,
+                                        "store": "GroupsComboStore",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "9c8e2993-fadb-4117-a3b3-6d4279070411"
+                                },
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox29",
+                                        "name": "defaultGroup",
+                                        "fieldLabel": "Groupe par defaut",
+                                        "labelWidth": 200,
+                                        "editable": false,
+                                        "displayField": "name",
+                                        "forceSelection": true,
+                                        "multiSelect": false,
+                                        "store": "GroupsComboStore",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "54093434-1887-4577-810c-21846e785b62"
+                                },
+                                {
                                     "type": "datefield",
                                     "reference": {
                                         "name": "items",
@@ -955,34 +999,6 @@
                                     "designerId": "061d4b84-42ac-4238-99d7-0a5d0a0e6808"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel44",
-                        "overflowY": "auto",
-                        "title": "Droits"
-                    },
-                    "designerId": "31846d3c-f10c-4e37-96de-bbdb7e707a98",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig26"
-                            },
-                            "designerId": "4e5ef5ff-4703-4132-b3b8-72d782c284f0"
                         }
                     ]
                 }

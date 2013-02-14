@@ -282,11 +282,13 @@ Ext.define('Rubedo.controller.UsersController', {
 
     onUserAdminWindowBeforeClose: function(panel, options) {
         Ext.getStore("UsersAdminDataStore").removeAll();
+        Ext.getStore("GroupsComboStore").removeAll();
     },
 
     onUserAdminWindowRender: function(abstractcomponent, options) {
         if (abstractcomponent.isXType("window")){
             Ext.getStore("UsersAdminDataStore").load();
+            Ext.getStore("GroupsComboStore").load();
         }
     },
 

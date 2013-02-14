@@ -681,7 +681,8 @@
                 "designer|userClassName": "onUserAdminWindowBeforeClose",
                 "fn": "onUserAdminWindowBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"UsersAdminDataStore\").removeAll();"
+                    "Ext.getStore(\"UsersAdminDataStore\").removeAll();\r",
+                    "Ext.getStore(\"GroupsComboStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me",
@@ -703,6 +704,7 @@
                 "implHandler": [
                     "if (abstractcomponent.isXType(\"window\")){\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").load();\r",
+                    "    Ext.getStore(\"GroupsComboStore\").load();\r",
                     "}"
                 ],
                 "name": "render",

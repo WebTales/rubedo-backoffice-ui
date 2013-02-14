@@ -1,0 +1,70 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Groups",
+        "designer|userClassName": "GroupsComboStore",
+        "designer|userAlias": "GroupsComboStore",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "GroupsComboStore",
+        "model": "groupDataModel"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "id": "ExtBox1-ext-gen6278",
+    "designerId": "9855c2eb-d7cc-4de3-88a9-b5ac251c3cfd",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy68",
+                "api": [
+                    "{\r",
+                    "    \"read\":\"groups\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "1c2d7d99-8f8e-4acc-9089-71326b9990ee",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader67",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "5d8e858d-804e-4259-8d22-68bb1437a0aa"
+                }
+            ]
+        }
+    ]
+}

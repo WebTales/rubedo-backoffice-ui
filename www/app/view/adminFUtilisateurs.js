@@ -278,7 +278,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         {
                                             xtype: 'gridcolumn',
                                             hidden: true,
-                                            dataIndex: 'groups',
+                                            dataIndex: 'defaultGroup',
                                             flex: 1,
                                             text: 'Groupes'
                                         },
