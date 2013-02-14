@@ -1272,7 +1272,7 @@
                         "id": "TDCEditForm",
                         "bodyPadding": 10,
                         "iconCls": "user",
-                        "title": "Droits"
+                        "title": "Droits et Workflow"
                     },
                     "designerId": "6c4d6322-2e2c-4c87-9b52-5edfe0189b2a",
                     "cn": [
@@ -1305,6 +1305,29 @@
                             },
                             "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
                             "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox28",
+                                "name": "workflow",
+                                "fieldLabel": "Workflow",
+                                "labelWidth": 120,
+                                "allowBlank": false,
+                                "editable": false,
+                                "forceSelection": true,
+                                "store": "[\"Aucun\", \"Basique\"]"
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "bf32c21b-fba3-4518-9173-9040f31c77e3"
                         }
                     ]
                 },

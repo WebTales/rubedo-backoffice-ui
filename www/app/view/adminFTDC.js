@@ -538,7 +538,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             id: 'TDCEditForm',
                             bodyPadding: 10,
                             iconCls: 'user',
-                            title: 'Droits',
+                            title: 'Droits et Workflow',
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
@@ -548,6 +548,20 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     multiSelect: true,
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    name: 'workflow',
+                                    fieldLabel: 'Workflow',
+                                    labelWidth: 120,
+                                    allowBlank: false,
+                                    editable: false,
+                                    forceSelection: true,
+                                    store: [
+                                        'Aucun',
+                                        'Basique'
+                                    ]
                                 }
                             ]
                         },

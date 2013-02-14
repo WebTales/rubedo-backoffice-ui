@@ -73,6 +73,10 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'workflow',
+            defaultValue: 'Basique'
         }
     ]
 });

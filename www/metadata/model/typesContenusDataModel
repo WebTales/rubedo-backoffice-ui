@@ -212,6 +212,22 @@
                 "type": "boolean"
             },
             "designerId": "e40c3d25-895d-4a10-9bef-d765fa6f6864"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field307",
+                "name": "workflow",
+                "defaultValue": [
+                    "\"Basique\""
+                ]
+            },
+            "designerId": "87e55298-8560-4b83-962d-09eaa62ee10d"
         }
     ]
 }
