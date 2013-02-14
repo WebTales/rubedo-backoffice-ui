@@ -62,6 +62,77 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51000001c0e0512c10000001'
                 },
                 {
+                    type: 'Gallerie d\'images',
+                    description: '<h2>Bloc Gallerie d\'images<\/h2> ',
+                    configBasique: {
+                        title: 'Gallerie d\'images',
+                        bType: 'imageGallery',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Requête',
+                                                name: 'query',
+                                                
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Images par page',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Largeur miniatures(px)',
+                                                name: 'imageThumbnailWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur miniatures(px)',
+                                                name: 'imageThumbnailHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '511cf184c0e051321a000001'
+                },
+                {
                     type: 'Texte Riche',
                     description: '<h2>Bloc texte riche<\/h2> ',
                     configBasique: {
@@ -713,7 +784,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Rubedo.view.queryBuilderField',
                                             config: {
-                                                fieldLabel: 'Requete',
+                                                fieldLabel: 'Requête',
                                                 name: 'query',
                                                 
                                             }
