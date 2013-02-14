@@ -32,8 +32,8 @@ Ext.define('Rubedo.controller.MainStoresController', {
             store.on("write", function(theStore,roperation){
                 if (roperation.action=="update") {
                     me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
-                    try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
-                    catch(err){console.log("Erreur d'enregistrement en dernier modifié");}
+                    /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
+                    catch(err){console.log("Erreur d'enregistrement en dernier modifié");}*/
                 }
                 else if (roperation.action=="create") {
                     me.fireNotif("Notification", "<p>Création réussie.</p>");

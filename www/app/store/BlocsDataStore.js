@@ -123,7 +123,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             type: 'Rubedo.view.ImagePickerField',
                                             config: {
                                                 fieldLabel: 'Image',
-                                                name: 'imageFile'
+                                                name: 'imageFile',
+                                                allowedFileType: 'Image'
                                             }
                                         },
                                         {
@@ -167,6 +168,184 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '51000880c0e0518010000002'
+                },
+                {
+                    type: 'Video',
+                    description: '<h2>Bloc video<\/h2> ',
+                    configBasique: {
+                        title: 'Video',
+                        bType: 'Video',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Video',
+                                                name: 'videoFile',
+                                                allowedFileType: 'Video'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Lecture automatique',
+                                                name: 'videoAutoPlay',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Prechargement',
+                                                name: 'videoPreload',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Barre d\'outils',
+                                                name: 'videoControls',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Lecture en boucle',
+                                                name: 'videoLoop',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Aperçu par défaut',
+                                                name: 'videoPoster',
+                                                allowedFileType: 'Image'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Largeur (px)',
+                                                name: 'videoWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur (px)',
+                                                name: 'videoHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '511cda96c0e0517919000000'
+                },
+                {
+                    type: 'Audio',
+                    description: '<h2>Bloc Audio<\/h2> ',
+                    configBasique: {
+                        title: 'Audio',
+                        bType: 'Audio',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Audio',
+                                                name: 'audioFile',
+                                                allowedFileType: 'Audio'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Lecture automatique',
+                                                name: 'audioPlay',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Prechargement',
+                                                name: 'audioPreload',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Barre d\'outils',
+                                                name: 'audioControls',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Lecture en boucle',
+                                                name: 'audioLoop',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '511cde89c0e0511619000000'
                 },
                 {
                     type: 'Menu',
@@ -669,14 +848,16 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             type: 'Ext.form.field.Checkbox',
                                             config: {
                                                 fieldLabel: 'Moteur de recherche',
-                                                name: 'useSearchEngine'
+                                                name: 'useSearchEngine',
+                                                inputValue: true
                                             }
                                         },
                                         {
                                             type: 'Rubedo.view.ImagePickerField',
                                             config: {
                                                 fieldLabel: 'Logo',
-                                                name: 'logo'
+                                                name: 'logo',
+                                                allowedFileType: 'Image'
                                             }
                                         }
                                     ]
