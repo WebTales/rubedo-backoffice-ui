@@ -165,6 +165,10 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     fn: me.onButtonRender,
                                     scope: me
                                 }
+                            },
+                            menu: {
+                                xtype: 'menu',
+                                width: 120
                             }
                         },
                         {
@@ -178,6 +182,10 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     fn: me.onButtonRender1,
                                     scope: me
                                 }
+                            },
+                            menu: {
+                                xtype: 'menu',
+                                width: 120
                             }
                         },
                         {
