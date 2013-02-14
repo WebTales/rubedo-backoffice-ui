@@ -194,6 +194,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Lecture automatique',
                                                 name: 'videoAutoPlay',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -202,6 +203,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Prechargement',
                                                 name: 'videoPreload',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -210,6 +212,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Barre d\'outils',
                                                 name: 'videoControls',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -218,6 +221,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Lecture en boucle',
                                                 name: 'videoLoop',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -296,6 +300,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Lecture automatique',
                                                 name: 'audioPlay',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -304,6 +309,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Prechargement',
                                                 name: 'audioPreload',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -312,6 +318,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Barre d\'outils',
                                                 name: 'audioControls',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         },
@@ -320,6 +327,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Lecture en boucle',
                                                 name: 'audioLoop',
+                                                labelWidth: 160,
                                                 inputValue: true
                                             }
                                         }

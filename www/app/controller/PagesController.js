@@ -488,7 +488,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     }
                     nChampS.labelSeparator= ' ';
                     nChampS.anchor= '100%';   
-                    nChampS.labelWidth=60;
+                    nChampS.labelWidth=100;
                     nChampS.setValue(abstractcomponent.configBloc[nChampS.name]);
                     if ((nChampS.isXType("combobox"))&&(!nChampS.isXType("treepicker"))){
                         nChampS.getStore().fieldId=Ext.clone(nChampS.id);

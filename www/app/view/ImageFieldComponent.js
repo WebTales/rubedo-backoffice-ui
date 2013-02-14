@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
 
     anchor: '90%',
     height: 120,
-    itemId: 'imageFieldComponent',
+    margin: '0 0 10 0',
     width: 338,
     layout: {
         align: 'stretch',
