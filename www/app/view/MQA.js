@@ -61,26 +61,43 @@ Ext.define('Rubedo.view.MQA', {
                             store: 'MediaTypesFORDAMPicker',
                             valueField: 'id'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        deactivate: {
+                            fn: me.onFormDeactivate,
+                            scope: me
+                        }
+                    }
+                },
+                {
+                    xtype: 'form',
+                    id: 'MQATaxoBox',
+                    overflowY: 'auto',
+                    bodyPadding: 10,
+                    title: 'Choix des règles sur la taxonomie'
                 },
                 {
                     xtype: 'panel',
-                    title: 'Taxonomie'
-                },
-                {
-                    xtype: 'panel',
-                    title: 'Règles de tri'
+                    title: 'Choix des règles de tri'
                 }
             ],
             listeners: {
                 render: {
                     fn: me.onMQARender,
                     scope: me
+                },
+                beforeclose: {
+                    fn: me.onMQABeforeClose,
+                    scope: me
                 }
             }
         });
 
         me.callParent(arguments);
+    },
+
+    onFormDeactivate: function(abstractcomponent, options) {
+        abstractcomponent.up().reactToMTChange();
     },
 
     onMQARender: function(abstractcomponent, options) {
@@ -91,6 +108,209 @@ Ext.define('Rubedo.view.MQA', {
             }
         });
         Ext.getStore("MediaTypesFORDAMPicker").load();
+        Ext.getStore('TaxonomyForQA').load();
+    },
+
+    onMQABeforeClose: function(panel, options) {
+        Ext.getStore("MediaTypesFORDAMPicker").removeAll();
+        Ext.getStore('TaxonomyForQA').removeAll();
+    },
+
+    reactToMTChange: function() {
+        var keepInMind=false;
+        var editorMode = false;
+        var simpleMode = false;
+        Ext.getCmp('MQATaxoBox').removeAll();
+        var selectedTypes=Ext.getCmp("DAMTypeWizCombo").getValue();
+        var vocabularies= [];
+        Ext.Array.forEach(selectedTypes, function(type){
+            var myVocs = Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",type).get("vocabularies");
+            vocabularies=Ext.Array.merge(vocabularies,myVocs);
+        });
+        var storeL = Ext.create('Ext.data.Store', {
+            fields: ['valeur', 'nom'],
+            data : [
+            {valeur: 'AND', nom :'ET'},
+            {valeur: 'OR', nom :'OU'}
+            ]
+        });
+
+        var lien = Ext.create('Ext.form.ComboBox', {
+            anchor: '100%',
+            fieldLabel: 'Relation entre les règles ',
+            store: storeL,
+            value: 'OU',
+            name: "vocabulariesRule",
+            queryMode: 'local',
+            displayField: 'nom',
+            valueField: 'valeur',
+            labelWidth: 150,
+            editable: false,
+            forceSelect: true,
+            allowBlank: false
+
+        });
+        var champsRegles = [ ];
+        champsRegles.push({nom:'Création',
+            valeur: {
+                cType: 'datefield',
+                name: 'creation',
+                ruleId:'createTime',
+                label: 'Création'
+            }
+        });
+        champsRegles.push({nom:'Dernière modification',
+            valeur: {
+                cType: 'datefield',
+                name: 'derniereModification',
+                ruleId:'lastUpdateTime',
+                label: 'Dernière modification'
+            }});
+
+            var vocabulaires=vocabularies;
+            if (vocabulaires.length>1) {Ext.getCmp('MQATaxoBox').add(lien);}
+            Ext.Array.remove(vocabulaires,"navigation");
+            var k =0;
+            for (k=0; k<vocabulaires.length; k++) {
+
+                var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
+                var vocabAPlat= [ ];
+                //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+
+
+                var storeT = Ext.create('Ext.data.JsonStore', {
+                    model:"Rubedo.model.taxonomyTermModel",
+                    remoteFilter:"true",
+                    proxy: {
+                        type: 'ajax',
+                        api: {
+                            read: 'taxonomy-terms'
+                        },
+                        reader: {
+                            type: 'json',
+                            messageProperty: 'message',
+                            root: 'data'
+                        },
+                        encodeFilters: function(filters) {
+                            var min = [],
+                            length = filters.length,
+                            i = 0;
+
+                            for (; i < length; i++) {
+                                min[i] = {
+                                    property: filters[i].property,
+                                    value   : filters[i].value
+                                };
+                                if (filters[i].type) {
+                                    min[i].type = filters[i].type;
+                                }
+                                if (filters[i].operator) {
+                                    min[i].operator = filters[i].operator;
+                                }
+                            }
+                            return this.applyEncoding(min);
+                        }
+                    },
+                    filters: {
+                        property: 'vocabularyId',
+                        value: leVocab.get("id")
+                    }
+
+                });
+                storeT.on("beforeload", function(s,o){
+                    o.filters=Ext.Array.slice(o.filters,0,1);
+                    if (!Ext.isEmpty(o.params.comboQuery)){
+
+                        var newFilter=Ext.create('Ext.util.Filter', {
+                            property:"text",
+                            value:o.params.comboQuery,
+                            operator:'like'
+                        });
+
+                        o.filters.push(newFilter);
+
+                    }
+
+
+                });
+
+
+                var selecteur = Ext.widget('comboboxselect', {
+                    name:leVocab.get("id"),
+                    vocabularyId:leVocab.get("id"),
+                    isVocabularyField:true,
+                    usedRole:"terms",
+                    anchor:"100%",
+                    fieldLabel: leVocab.get("name"),
+                    autoScroll: false,
+                    store: storeT,
+                    queryMode: 'remote',
+                    queryParam: 'comboQuery',
+                    minChars:3,
+                    displayField: 'text',
+                    valueField: 'id',
+                    filterPickList: true,
+                    typeAhead: true,
+                    forceSelection: !leVocab.data.expandable,
+                    createNewOnEnter: leVocab.data.expandable,
+                    multiSelect: Ext.clone(leVocab.data.multiSelect),
+                    allowBlank: !leVocab.data.mandatory
+                });
+
+                var storeR = Ext.create('Ext.data.Store', {
+                    fields: ['valeur', 'nom'],
+                    data : [
+                    {valeur: 'all', nom :'Contient tous les termes'},
+                    {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
+                    {valeur: 'some', nom :'Contient au moins un des termes'},
+                    {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'}
+                    ]
+                });
+
+                var regle = Ext.create('Ext.form.ComboBox', {
+                    name:leVocab.get("id")+"QueryRule",
+                    anchor: '100%',
+                    vocabularyId:leVocab.get("id"),
+                    isVocabularyField:true,
+                    usedRole:"rule",
+                    fieldLabel: 'Règle',
+                    store: storeR,
+                    queryMode: 'local',
+                    displayField: 'nom',
+                    valueField: 'valeur',
+                    editable: false,
+                    value: 'some',
+                    forceSelect: true,
+                    allowBlank: false
+
+                });
+                if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
+                    regle.setValue(initialQuery.vocabularies[leVocab.get("id")].rule[0]);
+                    selecteur.setValue(initialQuery.vocabularies[leVocab.get("id")].terms);
+                }
+                if (simpleMode) {
+                    regle.setValue("all");
+                    regle.setReadOnly(true);
+                    regle.hide();
+                    selecteur.multiSelect=false;
+                    var enrobage=Ext.widget("container", {anchor:"100%", layout:"anchor"});
+                } else {
+
+
+                    var enrobage = Ext.widget('fieldset', {
+                        title : leVocab.get("name"),
+                        collapsible: true
+
+
+                    });}
+                    enrobage.add(selecteur);
+                    enrobage.add(regle);
+                    enrobage.collapse();
+                    Ext.getCmp('MQATaxoBox').add(enrobage);
+
+
+
+                }    
     }
 
 });
