@@ -131,7 +131,6 @@
                         "implHandler": [
                             "if ((abstractcomponent.up().editorMode)&&(abstractcomponent.up().initialQuery.DAMTypes.toString()==Ext.getCmp(\"DAMTypeWizCombo\").getValue().toString())){\r",
                             "    abstractcomponent.up().reactToMTChange(true);\r",
-                            "    console.log(\"ok\");\r",
                             "} else {\r",
                             "    abstractcomponent.up().reactToMTChange(false);\r",
                             "}"
@@ -183,6 +182,7 @@
                     "    var task= new Ext.util.DelayedTask(function(){\r",
                     "    Ext.getCmp(\"DAMTypeWizCombo\").setValue(abstractcomponent.initialQuery.DAMTypes);\r",
                     "    abstractcomponent.reactToMTChange(true);\r",
+                    "    Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(abstractcomponent.initialQuery.fieldRules);\r",
                     "    });\r",
                     "    task.delay(600);\r",
                     "}"
@@ -373,9 +373,6 @@
                     "            allowBlank: false\r",
                     "\r",
                     "        });\r",
-                    "        console.log(keepInMind);\r",
-                    "        console.log(editorMode);\r",
-                    "        console.log(initialQuery);\r",
                     "        if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get(\"id\")]))){\r",
                     "            regle.setValue(initialQuery.vocabularies[leVocab.get(\"id\")].rule[0]);\r",
                     "            selecteur.setValue(initialQuery.vocabularies[leVocab.get(\"id\")].terms);\r",

@@ -670,7 +670,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             }
             if (!Ext.isEmpty(value.sort)) {
                 //
-                var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){
+                var tester = Ext.getStore("champsTCARStore").getRange()[Ext.getStore("champsTCARStore").findBy(function(record){
                     if (record.data.valeur.ruleId==key) {
                         return(true);
                     }

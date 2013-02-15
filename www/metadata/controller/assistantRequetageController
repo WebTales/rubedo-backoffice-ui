@@ -911,7 +911,7 @@
                     "    }\r",
                     "    if (!Ext.isEmpty(value.sort)) {\r",
                     "        //\r",
-                    "        var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){\r",
+                    "        var tester = Ext.getStore(\"champsTCARStore\").getRange()[Ext.getStore(\"champsTCARStore\").findBy(function(record){\r",
                     "            if (record.data.valeur.ruleId==key) {\r",
                     "                return(true);\r",
                     "            }\r",
