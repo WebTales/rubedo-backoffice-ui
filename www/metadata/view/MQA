@@ -1,0 +1,129 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MQA",
+        "designer|userAlias": "MQA",
+        "height": 373,
+        "id": "MQA",
+        "width": 469,
+        "resizable": null,
+        "layout": "card",
+        "title": "Assistant de requêtage sur médias",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen6675",
+    "designerId": "e1d83abe-514e-4e8d-8512-df1fa7f2a8c7",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "8d468681-7140-489f-8a2a-dc793cf8eec2",
+            "masterInstanceId": "ExtBox1-ext-gen14811"
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm50",
+                "bodyPadding": 10,
+                "title": "Choix des types de médias"
+            },
+            "designerId": "796177a4-b025-4b70-924e-91f89c4448fd",
+            "cn": [
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyComboBox31",
+                        "id": "DAMTypeWizCombo",
+                        "name": "DAMTypes",
+                        "fieldLabel": "Types de media",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "type",
+                        "forceSelection": true,
+                        "multiSelect": true,
+                        "store": "MediaTypesFORDAMPicker",
+                        "valueField": "id"
+                    },
+                    "designerId": "93641b6b-525e-4ceb-a491-a6206c10c8fc"
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPanel51",
+                "title": "Taxonomie"
+            },
+            "designerId": "d67b5d86-b64d-462d-9141-3f6571a9e8c6"
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPanel52",
+                "title": "Règles de tri"
+            },
+            "designerId": "14d97c31-ae94-468b-ac76-a4a03aa407fa"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMQARender",
+                "fn": "onMQARender",
+                "implHandler": [
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"mainFileType\\\",\\\"value\\\":\\\"\"+abstractcomponent.allowedFileType+\"\\\"}]\";\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").on(\"load\",function(a,records){\r",
+                    "    if (records.length==1){\r",
+                    "        Ext.getCmp(\"DAMTypeWizCombo\").select(records[0]);\r",
+                    "    }\r",
+                    "});\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "73bbc96f-3d3c-42bf-b868-03270989cc38"
+        }
+    ]
+}

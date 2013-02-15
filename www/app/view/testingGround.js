@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.queryBuilderField'
+        'Rubedo.view.MQField'
     ],
 
     height: 450,
@@ -41,38 +41,13 @@ Ext.define('Rubedo.view.testingGround', {
                     title: 'My Form',
                     items: [
                         {
-                            xtype: 'fieldcontainer',
-                            fieldLabel: 'Label',
-                            items: [
-                                {
-                                    xtype: 'panel',
-                                    frame: true,
-                                    height: 200,
-                                    itemId: 'advanceTreeFieldMain',
-                                    padding: 0,
-                                    overflowY: 'auto',
-                                    layout: {
-                                        type: 'fit'
-                                    },
-                                    collapsed: true,
-                                    collapsible: true,
-                                    title: 'Open to  edit',
-                                    listeners: {
-                                        render: {
-                                            fn: me.onAdvanceTreeFieldMainRender,
-                                            scope: me
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        {
                             xtype: 'textareafield',
                             anchor: '100%',
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'queryBuilderField'
+                            xtype: 'MQField',
+                            id: 'gruik'
                         }
                     ]
                 }
@@ -80,55 +55,6 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
-    },
-
-    onAdvanceTreeFieldMainRender: function(abstractcomponent, options) {
-        var myStore = Ext.create("Ext.data.TreeStore",{
-            isOptimised: true,
-            usedCollection: 'Pages',
-            autoLoad: false,
-            autoSync: false,
-            model: 'Rubedo.model.taxonomyTermModel',
-            proxy: {
-                type: 'ajax',
-                api: {                    
-                    read: 'taxonomy-terms/navigation-tree'
-                },
-                reader: {
-                    type: 'json',
-                    getResponseData: function(response) {
-                        var data, error;
-
-                        try {
-                            data = Ext.decode(response.responseText);
-                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
-                            return this.readRecords(data);
-                        } catch (ex) {
-                            error = new Ext.data.ResultSet({
-                                total  : 0,
-                                count  : 0,
-                                records: [],
-                                success: false,
-                                message: ex.message
-                            });
-
-                            this.fireEvent('exception', this, response, error);
-                            console.log(ex);
-
-                            Ext.Logger.warn('Unable to parse the JSON returned by the server');
-
-                            return error;
-                        }
-                    },
-                    messageProperty: 'message'
-                }
-            },
-            sorters: {
-                property: 'orderValue'
-            }
-        });
-        abstractcomponent.add(Ext.widget("selectorTreeForField", {store:myStore, id:"zeTest"}));
-        myStore.load();
     }
 
 });

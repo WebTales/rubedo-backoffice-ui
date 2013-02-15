@@ -87,6 +87,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFTDC',
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround',
+        'Rubedo.view.queryBuilderField',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.siteBuilderWizzard',
         'Rubedo.view.queryManagerInterface',
@@ -98,6 +99,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.newWorkspaceWindow',
         'Rubedo.view.adminFUtilisateurs',
         'Rubedo.view.taxoTermInsertWindow',
-        'Rubedo.view.maskSaveChoiceBox'
+        'Rubedo.view.maskSaveChoiceBox',
+        'Rubedo.view.MQA',
+        'Rubedo.view.MQFieldComponent'
     ]
 });

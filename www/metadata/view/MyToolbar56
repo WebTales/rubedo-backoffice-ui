@@ -110,8 +110,8 @@
                         ],
                         "implHandler": [
                             "if (button.up().ignoreValidation){\r",
-                            "button.up().up().getLayout().next();\r",
-                            "button.up().makeCorrect();\r",
+                            "    button.up().up().getLayout().next();\r",
+                            "    button.up().makeCorrect();\r",
                             "} else {\r",
                             "    var goOK=true;\r",
                             "    Ext.Array.forEach(button.up().up().getLayout().getActiveItem().query(\"field\"),function(field){\r",

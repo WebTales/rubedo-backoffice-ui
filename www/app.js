@@ -209,7 +209,10 @@ Ext.application({
         'newWorkspaceWindow',
         'WorkspaceCombo',
         'taxoTermInsertWindow',
-        'maskSaveChoiceBox'
+        'maskSaveChoiceBox',
+        'MQA',
+        'MQFieldComponent',
+        'MQField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

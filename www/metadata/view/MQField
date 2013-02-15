@@ -1,0 +1,68 @@
+{
+    "type": "hiddenfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedFileType": "Image",
+        "designer|userClassName": "MQField",
+        "designer|userAlias": "MQField",
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen15649",
+    "designerId": "c5a98797-d429-41a6-a551-728b934eff67",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedFileType",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"MQFieldComponent\");\r",
+                    "myComponent.setFieldLabel(abstractcomponent.fieldLabel+\" \");\r",
+                    "abstractcomponent.on(\"change\", function(a,newValue){\r",
+                    "    if (Ext.isEmpty(newValue)){\r",
+                    "        myComponent.getComponent(\"addBtn\").show();\r",
+                    "        myComponent.getComponent(\"editBtn\").hide();\r",
+                    "        myComponent.getComponent(\"removeBtn\").hide();\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"addBtn\").hide();\r",
+                    "        myComponent.getComponent(\"editBtn\").show();\r",
+                    "        myComponent.getComponent(\"removeBtn\").show();\r",
+                    "    }\r",
+                    "});\r",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
+                    "    abstractcoponent.setValue(null);\r",
+                    "});\r",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
+                    "    var assistant =Ext.widget(\"MQA\", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType});\r",
+                    "    assistant.show();\r",
+                    "});\r",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
+                    "    var assistant =Ext.widget(\"MQA\", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType, editMode:true, initialValue:Ext.clone(abstractcomponent.getValue)});\r",
+                    "    assistant.show();\r",
+                    "});\r",
+                    "abstractcomponent.up().add(myComponent);\r",
+                    "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "9e93d8cf-57bb-4418-8beb-d3b2e226e493"
+        }
+    ]
+}
