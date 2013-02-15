@@ -106,11 +106,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Paramètres',
                                     champs: [
                                         {
-                                            type: 'Rubedo.view.queryBuilderField',
+                                            type: 'Rubedo.view.MQField',
                                             config: {
                                                 fieldLabel: 'Requête',
                                                 name: 'query',
-                                                
+                                                allowedFileType: 'Image'
                                             }
                                         },
                                         {
