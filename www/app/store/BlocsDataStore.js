@@ -62,6 +62,38 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51000001c0e0512c10000001'
                 },
                 {
+                    type: 'Authentification',
+                    description: '<h2>Bloc Authentification<\/h2> ',
+                    configBasique: {
+                        title: 'Authentification',
+                        bType: 'Authentification',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '511e6508c0e051bd12000001'
+                },
+                {
                     type: 'Gallerie d\'images',
                     description: '<h2>Bloc Gallerie d\'images<\/h2> ',
                     configBasique: {
