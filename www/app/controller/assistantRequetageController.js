@@ -586,13 +586,14 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                             var enrobage = Ext.widget('fieldset', {
                                 title : leVocab.get("name"),
-                                collapsible: true
+                                collapsible: true,
+                                collapsed:true
 
 
                             });}
                             enrobage.add(selecteur);
                             enrobage.add(regle);
-                            enrobage.collapse();
+
                             Ext.getCmp('assisstantRE2').add(enrobage);
 
 
