@@ -224,7 +224,6 @@ Ext.application({
         'TaxonomieController',
         'assistantRequetageController',
         'InterfaceController',
-        'MediathequeController',
         'UsersController',
         'MainStoresController',
         'ACLController',

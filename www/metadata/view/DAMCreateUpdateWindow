@@ -327,6 +327,34 @@
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar64"
+            },
+            "designerId": "05251599-1bff-4bbb-8363-53ce3f23941b",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill30"
+                    },
+                    "designerId": "92ab0fc0-d9b4-49ca-be75-7dcdcfa11b38"
                 },
                 {
                     "type": "button",
@@ -336,10 +364,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton208",
                         "id": "DAMSubmitBtn",
-                        "scale": "large",
+                        "iconCls": "save",
                         "text": "Créer ce nouveau média"
                     },
                     "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2"
@@ -352,11 +380,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton208",
                         "hidden": true,
                         "id": "DAMSubmitUpdateBtn",
-                        "scale": "large",
+                        "iconCls": "save",
                         "text": "Enregistrer les modifications"
                     },
                     "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4"
@@ -369,11 +397,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton208",
                         "hidden": true,
                         "id": "DAMSwitchEditBtn",
-                        "scale": "large",
                         "text": "Passer en mode édition"
                     },
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"

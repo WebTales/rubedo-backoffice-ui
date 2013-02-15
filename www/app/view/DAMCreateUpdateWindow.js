@@ -160,28 +160,35 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                     anchor: '90%'
                                 }
                             ]
+                        }
+                    ]
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbfill'
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             id: 'DAMSubmitBtn',
-                            scale: 'large',
+                            iconCls: 'save',
                             text: 'Créer ce nouveau média'
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             hidden: true,
                             id: 'DAMSubmitUpdateBtn',
-                            scale: 'large',
+                            iconCls: 'save',
                             text: 'Enregistrer les modifications'
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             hidden: true,
                             id: 'DAMSwitchEditBtn',
-                            scale: 'large',
                             text: 'Passer en mode édition'
                         }
                     ]

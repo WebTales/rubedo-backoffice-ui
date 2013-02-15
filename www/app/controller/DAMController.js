@@ -74,9 +74,9 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onDAMSubmitBtnClick: function(button, e, options) {
-        button.up().setLoading(true);
+        button.up().up().setLoading(true);
         var me=this;
-        var form=button.up().getForm();
+        var form=Ext.getCmp("DAMFieldBox").getForm();
         form.submit({
             clientValidation: true,
             url: 'dam/create',
@@ -87,12 +87,12 @@ Ext.define('Rubedo.controller.DAMController', {
                 targetArray: Ext.JSON.encode(form.getFieldValues().target)
             },
             success: function(form, action) {
-                button.up().setLoading(false);
+                button.up().up().setLoading(false);
                 button.up().up().close();
                 Ext.getStore("DAMFacetteStore").load();
             },
             failure: function(form, action) {
-                button.up().setLoading(false);
+                button.up().up().setLoading(false);
                 switch (action.failureType) {
                     case Ext.form.action.Action.CLIENT_INVALID:
                     Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
