@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.MQA', {
     alias: 'widget.MQA',
 
     requires: [
-        'Rubedo.view.MyToolbar56'
+        'Rubedo.view.MyToolbar56',
+        'Rubedo.view.assisstantRE5'
     ],
 
     height: 373,
@@ -71,14 +72,29 @@ Ext.define('Rubedo.view.MQA', {
                 },
                 {
                     xtype: 'form',
-                    id: 'MQATaxoBox',
+                    id: 'assisstantRE2',
                     overflowY: 'auto',
                     bodyPadding: 10,
                     title: 'Choix des règles sur la taxonomie'
                 },
                 {
+                    xtype: 'assisstantRE5'
+                },
+                {
                     xtype: 'panel',
-                    title: 'Choix des règles de tri'
+                    layout: {
+                        type: 'anchor'
+                    },
+                    bodyPadding: 10,
+                    title: 'Enregistrement',
+                    items: [
+                        {
+                            xtype: 'button',
+                            anchor: '100%',
+                            scale: 'large',
+                            text: 'Enregistrer'
+                        }
+                    ]
                 }
             ],
             listeners: {
@@ -116,11 +132,44 @@ Ext.define('Rubedo.view.MQA', {
         Ext.getStore('TaxonomyForQA').removeAll();
     },
 
+    readMyQuery: function() {
+        var mainWin= Ext.getCmp("MQA");
+        var result = {};
+        result.vocabularies={ };
+        result.fieldRules={ };
+        Ext.Array.forEach(mainWin.query("field"),function(field){
+            if (field.submitValue){
+                if (field.isVocabularyField) {
+                    if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
+                        result.vocabularies[field.vocabularyId]={ };                
+                    }
+                    if (Ext.isArray(field.getValue())){
+                        result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+                    } else {
+                        result.vocabularies[field.vocabularyId][field.usedRole]=[field.getValue()];
+                    }
+
+                } else if (field.isAddedRuleField){
+                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
+                        result.fieldRules[field.ruleId]={ };           
+                    }
+                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+                } else { 
+                    result[field.name]=field.getValue();
+                }
+            }
+        });
+        if (!Ext.isArray(result.DAMTypes)){
+            result.contentTypes=[result.DAMTypes];
+        }
+        return(result);
+    },
+
     reactToMTChange: function() {
         var keepInMind=false;
         var editorMode = false;
         var simpleMode = false;
-        Ext.getCmp('MQATaxoBox').removeAll();
+        Ext.getCmp('assisstantRE2').removeAll();
         var selectedTypes=Ext.getCmp("DAMTypeWizCombo").getValue();
         var vocabularies= [];
         Ext.Array.forEach(selectedTypes, function(type){
@@ -166,9 +215,9 @@ Ext.define('Rubedo.view.MQA', {
                 ruleId:'lastUpdateTime',
                 label: 'Dernière modification'
             }});
-
+            Ext.getStore('champsTCARStore').loadData(champsRegles);
             var vocabulaires=vocabularies;
-            if (vocabulaires.length>1) {Ext.getCmp('MQATaxoBox').add(lien);}
+            if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
             Ext.Array.remove(vocabulaires,"navigation");
             var k =0;
             for (k=0; k<vocabulaires.length; k++) {
@@ -306,7 +355,7 @@ Ext.define('Rubedo.view.MQA', {
                     enrobage.add(selecteur);
                     enrobage.add(regle);
                     enrobage.collapse();
-                    Ext.getCmp('MQATaxoBox').add(enrobage);
+                    Ext.getCmp('assisstantRE2').add(enrobage);
 
 
 

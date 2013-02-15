@@ -592,6 +592,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             });}
                             enrobage.add(selecteur);
                             enrobage.add(regle);
+                            enrobage.collapse();
                             Ext.getCmp('assisstantRE2').add(enrobage);
 
 

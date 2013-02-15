@@ -798,6 +798,7 @@
                     "                    });}\r",
                     "                    enrobage.add(selecteur);\r",
                     "                    enrobage.add(regle);\r",
+                    "                    enrobage.collapse();\r",
                     "                    Ext.getCmp('assisstantRE2').add(enrobage);\r",
                     "\r",
                     "\r",
