@@ -91,15 +91,22 @@ Ext.define('Rubedo.view.MQA', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            id: 'MQASaveBtn',
                             scale: 'large',
-                            text: 'Enregistrer'
+                            text: 'Enregistrer',
+                            listeners: {
+                                click: {
+                                    fn: me.onMQASaveBtnClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
             ],
             listeners: {
-                render: {
-                    fn: me.onMQARender,
+                afterrender: {
+                    fn: me.onMQAAfterRender,
                     scope: me
                 },
                 beforeclose: {
@@ -113,23 +120,42 @@ Ext.define('Rubedo.view.MQA', {
     },
 
     onFormDeactivate: function(abstractcomponent, options) {
-        abstractcomponent.up().reactToMTChange();
+        if ((abstractcomponent.up().editorMode)&&(abstractcomponent.up().initialQuery.DAMTypes.toString()==Ext.getCmp("DAMTypeWizCombo").getValue().toString())){
+            abstractcomponent.up().reactToMTChange(true);
+            console.log("ok");
+        } else {
+            abstractcomponent.up().reactToMTChange(false);
+        }
     },
 
-    onMQARender: function(abstractcomponent, options) {
+    onMQAAfterRender: function(abstractcomponent, options) {
         Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.filter="[{\"property\":\"mainFileType\",\"value\":\""+abstractcomponent.allowedFileType+"\"}]";
         Ext.getStore("MediaTypesFORDAMPicker").on("load",function(a,records){
-            if (records.length==1){
+            if ((records.length==1)&&(!abstractcomponent.editMode)){
                 Ext.getCmp("DAMTypeWizCombo").select(records[0]);
             }
         });
         Ext.getStore("MediaTypesFORDAMPicker").load();
         Ext.getStore('TaxonomyForQA').load();
+        if (abstractcomponent.editorMode){
+            abstractcomponent.initialQuery=Ext.JSON.decode(abstractcomponent.initialValue);
+            var task= new Ext.util.DelayedTask(function(){
+                Ext.getCmp("DAMTypeWizCombo").setValue(abstractcomponent.initialQuery.DAMTypes);
+                abstractcomponent.reactToMTChange(true);
+            });
+            task.delay(600);
+        }
     },
 
     onMQABeforeClose: function(panel, options) {
         Ext.getStore("MediaTypesFORDAMPicker").removeAll();
         Ext.getStore('TaxonomyForQA').removeAll();
+    },
+
+    onMQASaveBtnClick: function(button, e, options) {
+        var result= Ext.getCmp("MQA").readMyQuery();
+        Ext.getCmp(Ext.getCmp("MQA").targetId).setValue(Ext.JSON.encode(result));
+        Ext.getCmp("MQA").close();
     },
 
     readMyQuery: function() {
@@ -165,10 +191,10 @@ Ext.define('Rubedo.view.MQA', {
         return(result);
     },
 
-    reactToMTChange: function() {
-        var keepInMind=false;
-        var editorMode = false;
+    reactToMTChange: function(keepInMind) {
+        var editorMode = Ext.getCmp("MQA").editorMode;
         var simpleMode = false;
+        var initialQuery=Ext.getCmp("MQA").initialQuery;
         Ext.getCmp('assisstantRE2').removeAll();
         var selectedTypes=Ext.getCmp("DAMTypeWizCombo").getValue();
         var vocabularies= [];
@@ -333,6 +359,9 @@ Ext.define('Rubedo.view.MQA', {
                     allowBlank: false
 
                 });
+                console.log(keepInMind);
+                console.log(editorMode);
+                console.log(initialQuery);
                 if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
                     regle.setValue(initialQuery.vocabularies[leVocab.get("id")].rule[0]);
                     selecteur.setValue(initialQuery.vocabularies[leVocab.get("id")].terms);

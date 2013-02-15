@@ -50,14 +50,14 @@ Ext.define('Rubedo.view.MQField', {
             }
         });
         myComponent.getComponent("removeBtn").on("click", function(){
-            abstractcoponent.setValue(null);
+            abstractcomponent.setValue(null);
         });
         myComponent.getComponent("addBtn").on("click", function(){
             var assistant =Ext.widget("MQA", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType});
             assistant.show();
         });
         myComponent.getComponent("editBtn").on("click", function(){
-            var assistant =Ext.widget("MQA", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType, editMode:true, initialValue:Ext.clone(abstractcomponent.getValue)});
+            var assistant =Ext.widget("MQA", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType, editorMode:true, initialValue:Ext.clone(abstractcomponent.getValue())});
             assistant.show();
         });
         abstractcomponent.up().add(myComponent);
