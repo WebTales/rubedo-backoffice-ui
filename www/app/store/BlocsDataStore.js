@@ -30,38 +30,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
-                    type: 'Texte',
-                    description: '<h2>Bloc texte<\/h2> ',
-                    configBasique: {
-                        title: 'Texte',
-                        bType: 'Texte',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51000001c0e0512c10000001'
-                },
-                {
                     type: 'Texte Simple',
                     description: '<h2>Bloc texte simple<\/h2> ',
                     configBasique: {
@@ -253,38 +221,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '511cf184c0e051321a000001'
-                },
-                {
-                    type: 'Texte Riche',
-                    description: '<h2>Bloc texte riche<\/h2> ',
-                    configBasique: {
-                        title: 'Texte Riche',
-                        bType: 'Texte Riche',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51000064c0e0519b0c00000d'
                 },
                 {
                     type: 'Image',
