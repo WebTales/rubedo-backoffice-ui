@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
+    requires: [
+        'Rubedo.view.localiserField'
+    ],
+
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -40,6 +44,9 @@ Ext.define('Rubedo.view.testingGround', {
                             xtype: 'textareafield',
                             anchor: '100%',
                             fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'localiserField'
                         }
                     ]
                 }

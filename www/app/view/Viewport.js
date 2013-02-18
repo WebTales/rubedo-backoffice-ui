@@ -104,6 +104,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.MQField',
         'Rubedo.view.MQFieldComponent',
         'Rubedo.view.DCEField',
-        'Rubedo.view.DCEFieldComponent'
+        'Rubedo.view.DCEFieldComponent',
+        'Rubedo.view.localiserFieldCompoent'
     ]
 });

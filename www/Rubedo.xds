@@ -1996,6 +1996,22 @@
                 "app/store/ContentTypesForContent2.js"
             ],
             "className": "ContentTypesForContent2"
+        },
+        "15b19248-a73a-4ad3-87eb-1ea892921ea0": {
+            "paths": [
+                "metadata/view/localiserFieldCompoent",
+                "app/view/override/localiserFieldCompoent.js",
+                "app/view/localiserFieldCompoent.js"
+            ],
+            "className": "localiserFieldCompoent"
+        },
+        "b0ae3c81-7792-47a7-91c2-3e7e993f879c": {
+            "paths": [
+                "metadata/view/localiserField",
+                "app/view/override/localiserField.js",
+                "app/view/localiserField.js"
+            ],
+            "className": "localiserField"
         }
     },
     "viewOrderMap": {
@@ -2105,7 +2121,9 @@
             "c5a98797-d429-41a6-a551-728b934eff67",
             "ad91af67-6579-4a5a-9499-f0904b885611",
             "d8f7ec5e-c852-435a-bb17-6c19e843c898",
-            "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b"
+            "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
+            "15b19248-a73a-4ad3-87eb-1ea892921ea0",
+            "b0ae3c81-7792-47a7-91c2-3e7e993f879c"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
