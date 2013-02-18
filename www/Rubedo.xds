@@ -1980,6 +1980,14 @@
                 "app/view/DCEField.js"
             ],
             "className": "DCEField"
+        },
+        "ad91af67-6579-4a5a-9499-f0904b885611": {
+            "paths": [
+                "metadata/view/MQFieldComponent",
+                "app/view/override/MQFieldComponent.js",
+                "app/view/MQFieldComponent.js"
+            ],
+            "className": "MQFieldComponent"
         }
     },
     "viewOrderMap": {
@@ -2088,7 +2096,8 @@
             "e1d83abe-514e-4e8d-8512-df1fa7f2a8c7",
             "c5a98797-d429-41a6-a551-728b934eff67",
             "d8f7ec5e-c852-435a-bb17-6c19e843c898",
-            "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b"
+            "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
+            "ad91af67-6579-4a5a-9499-f0904b885611"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

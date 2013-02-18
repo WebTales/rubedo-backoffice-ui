@@ -213,7 +213,8 @@ Ext.application({
         'MQA',
         'DCEFieldComponent',
         'MQField',
-        'DCEField'
+        'DCEField',
+        'MQFieldComponent'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

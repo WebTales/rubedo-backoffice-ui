@@ -1188,10 +1188,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Contenu',
                                     champs: [
                                         {
-                                            type: 'Rubedo.view.FCCField',
+                                            type: 'Rubedo.view.DCEField',
                                             config: {
                                                 fieldLabel: 'Contenu à afficher',
-                                                name: 'contentId'
+                                                name: 'contentId',
+                                                chooseOnly: true,
+                                                
                                             }
                                         },
                                         {

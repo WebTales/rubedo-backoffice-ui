@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.DCEField'
+        'Rubedo.view.DCEField',
+        'Rubedo.view.MQField'
     ],
 
     height: 450,
@@ -47,6 +48,9 @@ Ext.define('Rubedo.view.testingGround', {
                         },
                         {
                             xtype: 'DCEField'
+                        },
+                        {
+                            xtype: 'MQField'
                         }
                     ]
                 }

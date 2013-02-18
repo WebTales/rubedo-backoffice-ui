@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.MQField', {
 
     allowedFileType: 'Image',
     fieldLabel: 'Label',
+    labelSeparator: ' ',
 
     initComponent: function() {
         var me = this;

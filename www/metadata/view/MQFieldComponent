@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DCEFieldComponent",
-        "designer|userAlias": "DCEFieldComponent",
+        "designer|userClassName": "MQFieldComponent",
+        "designer|userAlias": "MQFieldComponent",
         "height": 29,
         "padding": null,
         "width": 455,
         "fieldLabel": "Label",
         "labelSeparator": " "
     },
-    "id": "ExtBox1-ext-gen10405",
-    "designerId": "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
+    "id": "ExtBox1-ext-gen17781",
+    "designerId": "ad91af67-6579-4a5a-9499-f0904b885611",
     "cn": [
         {
             "type": "button",
@@ -31,23 +31,7 @@
                 "iconCls": "add",
                 "text": "Ajouter"
             },
-            "designerId": "ee60fef5-7c29-4cd1-9424-ff889b8782be"
-        },
-        {
-            "type": "button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyButton244",
-                "itemId": "chooseBtn",
-                "margin": "0 10 0 0",
-                "iconCls": "search",
-                "text": "Choisir"
-            },
-            "designerId": "212091b7-1a08-4c1f-8ca5-6fa22bcf1b5e"
+            "designerId": "81b9a8a4-da26-4966-9c0f-c1187f90f89f"
         },
         {
             "type": "button",
@@ -63,7 +47,7 @@
                 "iconCls": "edit",
                 "text": "Modifier"
             },
-            "designerId": "7f7e9d30-5b01-4482-ba6d-33f826d54ed7"
+            "designerId": "8601024a-a4f8-4275-ab17-2e352d895582"
         },
         {
             "type": "button",
@@ -78,7 +62,7 @@
                 "iconCls": "close",
                 "text": "Supprimer"
             },
-            "designerId": "e5794c53-8862-418c-b7aa-7fc06ef8b4d8"
+            "designerId": "910c5223-4560-477d-8fcd-28cfc21433ad"
         }
     ]
 }
