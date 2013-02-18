@@ -77,6 +77,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         {
             name: 'workflow',
             defaultValue: 'Basique'
+        },
+        {
+            name: 'CTType'
         }
     ]
 });

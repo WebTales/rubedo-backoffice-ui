@@ -211,8 +211,9 @@ Ext.application({
         'taxoTermInsertWindow',
         'maskSaveChoiceBox',
         'MQA',
-        'MQFieldComponent',
-        'MQField'
+        'DCEFieldComponent',
+        'MQField',
+        'DCEField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

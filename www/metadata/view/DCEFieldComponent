@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MQFieldComponent",
-        "designer|userAlias": "MQFieldComponent",
+        "designer|userClassName": "DCEFieldComponent",
+        "designer|userAlias": "DCEFieldComponent",
         "height": 29,
         "padding": null,
-        "width": 400,
+        "width": 455,
         "fieldLabel": "Label"
     },
     "id": "ExtBox1-ext-gen10405",
@@ -31,6 +31,22 @@
                 "text": "Ajouter"
             },
             "designerId": "ee60fef5-7c29-4cd1-9424-ff889b8782be"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton244",
+                "itemId": "chooseBtn",
+                "margin": "0 10 0 0",
+                "iconCls": "search",
+                "text": "Choisir"
+            },
+            "designerId": "212091b7-1a08-4c1f-8ca5-6fa22bcf1b5e"
         },
         {
             "type": "button",

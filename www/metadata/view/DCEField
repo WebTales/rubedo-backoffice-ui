@@ -1,0 +1,77 @@
+{
+    "type": "hiddenfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedCT": "simpleText",
+        "designer|userClassName": "DCEField",
+        "designer|userAlias": "DCEField",
+        "fieldLabel": "Label"
+    },
+    "id": "ExtBox1-ext-gen7652",
+    "designerId": "d8f7ec5e-c852-435a-bb17-6c19e843c898",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedCT",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"DCEFieldComponent\");\r",
+                    "myComponent.setFieldLabel(abstractcomponent.fieldLabel+\" \");\r",
+                    "abstractcomponent.on(\"change\", function(a,newValue){\r",
+                    "    if (Ext.isEmpty(newValue)){\r",
+                    "        myComponent.getComponent(\"addBtn\").show();\r",
+                    "        myComponent.getComponent(\"chooseBtn\").show();\r",
+                    "        myComponent.getComponent(\"editBtn\").hide();\r",
+                    "        myComponent.getComponent(\"removeBtn\").hide();\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"addBtn\").hide();\r",
+                    "        myComponent.getComponent(\"chooseBtn\").hide();\r",
+                    "        myComponent.getComponent(\"editBtn\").show();\r",
+                    "        myComponent.getComponent(\"removeBtn\").show();\r",
+                    "    }\r",
+                    "    if (abstractcomponent.chooseOnly){\r",
+                    "        myComponent.getComponent(\"addBtn\").hide();\r",
+                    "    }\r",
+                    "});\r",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
+                    "    abstractcomponent.setValue(null);\r",
+                    "});\r",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
+                    "   //\r",
+                    "});\r",
+                    "myComponent.getComponent(\"chooseBtn\").on(\"click\", function(){\r",
+                    "   var companion = Ext.widget(\"contentPickerWindow\");\r",
+                    "   companion.targetId=abstractcomponent.getId();\r",
+                    "   companion.show();\r",
+                    "});\r",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
+                    "   Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(abstractcomponent.getValue());\r",
+                    "});\r",
+                    "abstractcomponent.up().add(myComponent);\r",
+                    "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());\r",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "24204efa-0256-46c8-8667-2d3936141ed9"
+        }
+    ]
+}

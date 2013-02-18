@@ -101,6 +101,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.taxoTermInsertWindow',
         'Rubedo.view.maskSaveChoiceBox',
         'Rubedo.view.MQA',
-        'Rubedo.view.MQFieldComponent'
+        'Rubedo.view.MQField',
+        'Rubedo.view.DCEFieldComponent'
     ]
 });
