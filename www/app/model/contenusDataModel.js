@@ -79,6 +79,12 @@ Ext.define('Rubedo.model.contenusDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'pageId'
+        },
+        {
+            name: 'blockId'
         }
     ]
 });

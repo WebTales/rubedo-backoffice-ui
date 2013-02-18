@@ -56,7 +56,36 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     contentSaveAndPublish: function(button, e, options) {
-        this.nContenuRecorder('published',button.isUpdate);
+        if (button.specialMode){
+            Ext.getStore("CurrentContent").removeAll();
+            if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
+                var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+
+                var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
+                    text: champs.text,
+                    champs: champs,
+                    online:true,
+                    taxonomie:[ ],
+                    status: "published",
+                    pageId: Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("id"),
+                    blockId:Ext.getCmp('pageElementIdField').getValue(),
+                    typeId: Ext.getStore("ContentTypesForContent2").getRange()[0].get("id")
+
+                });
+
+                Ext.getStore("CurrentContent").add(nContenu);   
+                Ext.getStore("CurrentContent").addListener("datachanged",function(){
+                    Ext.getCmp(button.targetedId).setValue(nContenu.get("id"));
+                    Ext.getStore("ContentTypesForContent2").removeAll();
+                    Ext.getStore("CurrentContent").removeAll();
+                    Ext.getCmp('ajouterContenu').close();
+                },this,{single:true});
+
+
+                }
+            } else{
+                this.nContenuRecorder('published',button.isUpdate);
+            }
     },
 
     contentSave: function(button, e, options) {
@@ -813,6 +842,227 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
+    displaySpecialCreate: function(theCT, targetedId) {
+        if (Ext.isDefined(theCT)) {
+            var fenetre = Ext.widget('ajouterContenu');
+            Ext.getCmp('ViewportPrimaire').add(fenetre);
+            if (Ext.isDefined(window.innerHeight)) {
+                if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+            }
+            fenetre.show();
+            fenetre.setTitle("Nouveau contenu "+theCT.get("type"));
+            var formulaireTC = Ext.getCmp('boiteAChampsContenus');
+            Ext.getCmp("contentsVersionPanel").up().remove( Ext.getCmp("contentsVersionPanel"));
+            var champsD =theCT.data.champs;
+            for (g=0; g<champsD.length; g++) {
+                var donnees=champsD[g];
+                var configurateur = Ext.clone(donnees.config);
+                if (donnees.cType =='treepicker'){ 
+                    configurateur.store = Ext.create("Ext.data.TreeStore", {
+                        isOptimised: true,
+                        usedCollection: 'Pages',
+                        autoLoad: false,
+                        autoSync: false,
+                        remoteFilter: true,
+                        model: 'Rubedo.model.taxonomyTermModel',
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms/read-child'
+                            },
+                            reader: {
+                                type: 'json',
+                                getResponseData: function(response) {
+                                    var data, error;
+
+                                    try {
+                                        data = Ext.decode(response.responseText);
+                                        if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                        return this.readRecords(data);
+                                    } catch (ex) {
+                                        error = new Ext.data.ResultSet({
+                                            total  : 0,
+                                            count  : 0,
+                                            records: [],
+                                            success: false,
+                                            message: ex.message
+                                        });
+
+                                        this.fireEvent('exception', this, response, error);
+                                        console.log(ex);
+
+                                        Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                        return error;
+                                    }
+                                },
+                                messageProperty: 'message'
+                            }
+                        },
+                        sorters: {
+                            property: 'orderValue'
+                        }
+                    });
+                    configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
+                    configurateur.store.load();
+                }
+                else if (donnees.cType == 'combobox') {
+                    var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
+                    configurateur.store = monStore;
+                }
+                //begin temporary fix
+                configurateur.labelSeparator=" ";
+                //end temporary fix
+                var nouvChamp = Ext.widget(donnees.cType, configurateur);
+                nouvChamp.config=Ext.clone(donnees.config);
+                //begin temporary fix
+                if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+                //end temporary fix
+                if (donnees.cType =='triggerfield'){ 
+                    var Ouvrir = Ext.clone(donnees.openWindow);
+                    nouvChamp.onTriggerClick= function() {
+                        var fenetre = Ext.widget(Ouvrir);
+                        fenetre.showAt(screen.width/2-200, 100);
+                    } ; 
+                    nouvChamp.openWindow =Ext.clone(donnees.openWindow);
+                }  
+                nouvChamp.anchor = '90%';
+                nouvChamp.style = '{float:left;}';
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(nouvChamp);
+                enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+                if (Ext.isEmpty(nouvChamp.config.tooltip)){
+                    enrobage.getComponent('helpBouton').hidden=true;
+                } 
+                if (nouvChamp.multivalued) {
+                    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+
+                };
+                formulaireTC.add(enrobage);
+
+            }
+            /*var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
+            var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
+            var i=0;
+            for (i=0; i<lesTaxo.length; i++) {
+            var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
+            var storeT = Ext.create('Ext.data.JsonStore', {
+            model:"Rubedo.model.taxonomyTermModel",
+            remoteFilter:"true",
+            proxy: {
+            type: 'ajax',
+            api: {
+            read: 'taxonomy-terms'
+            },
+            reader: {
+            type: 'json',
+            messageProperty: 'message',
+            root: 'data'
+            },
+            encodeFilters: function(filters) {
+            var min = [],
+            length = filters.length,
+            i = 0;
+
+            for (; i < length; i++) {
+            min[i] = {
+            property: filters[i].property,
+            value   : filters[i].value
+            };
+            if (filters[i].type) {
+            min[i].type = filters[i].type;
+            }
+            if (filters[i].operator) {
+            min[i].operator = filters[i].operator;
+            }
+            }
+            return this.applyEncoding(min);
+            }
+            },
+            filters: {
+            property: 'vocabularyId',
+            value: leVocab.get("id")
+            }
+
+            });
+            storeT.on("beforeload", function(s,o){
+            o.filters=Ext.Array.slice(o.filters,0,1);
+            if (!Ext.isEmpty(o.params.comboQuery)){
+
+            var newFilter=Ext.create('Ext.util.Filter', {
+            property:"text",
+            value:o.params.comboQuery,
+            operator:'like'
+            });
+
+            o.filters.push(newFilter);
+
+            }
+
+
+            });
+
+
+            var selecteur = Ext.widget('comboboxselect', {
+            name:leVocab.get("id"),
+            width:690,
+            fieldLabel: leVocab.get("name"),
+            autoScroll: false,
+            store: storeT,
+            queryMode: 'remote',
+            queryParam: 'comboQuery',
+            minChars:3,
+            displayField: 'text',
+            valueField: 'id',
+            filterPickList: true,
+            typeAhead: true,
+            forceSelection: !leVocab.data.expandable,
+            createNewOnEnter: leVocab.data.expandable,
+            multiSelect: leVocab.data.multiSelect,
+            allowBlank: !leVocab.data.mandatory
+            });
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(selecteur);
+            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+            formTaxoTC.add(enrobage);
+
+            }*/
+
+
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy();
+
+            }
+            var nct2 = Ext.getCmp('boiteATaxoContenus');
+            if (!Ext.isEmpty(nct2)){
+                Ext.getCmp('taxoTabConfig').destroy();
+                nct.destroy();
+
+            }
+            var nct3 = Ext.getCmp("contentMetadataBox");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('metaTabConfig').destroy();
+                nct.destroy();
+
+            }
+            var nct4 = Ext.getCmp('boiteADroitsContenus');
+            if (!Ext.isEmpty(nct2)){
+                Ext.getCmp('rightsTabConfig').destroy();
+                nct.destroy();
+
+            }
+            Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
+            Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+            Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
+            Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
+
+
+        }
+    },
+
     prepareContext: function(content, editMode) {
         var me=this;
         Ext.getStore("ContentTypesForContent").addListener("load",function(theStore,records,successful){
@@ -831,6 +1081,20 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
         },this,{single:true});
             Ext.getStore("ContentTypesForContent").load();
+    },
+
+    specialContentCreate: function(CTType, targetedId) {
+        var me=this;
+        Ext.getStore("ContentTypesForContent2").getProxy().extraParams.filter="[{\"property\":\"CTType\",\"value\":\""+CTType+"\"}]";
+        Ext.getStore("ContentTypesForContent2").addListener("load",function(theStore,records,successful){
+            if (successful){
+                var theCT = records[0];
+                me.displaySpecialCreate(theCT,targetedId);
+
+
+            }
+        },this,{single:true});
+            Ext.getStore("ContentTypesForContent2").load();
     },
 
     init: function(application) {

@@ -158,6 +158,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             id: 'contentMetadataBox',
                             bodyPadding: 10,
                             title: 'Métadonnées',
+                            tabConfig: {
+                                xtype: 'tab',
+                                id: 'metaTabConfig'
+                            },
                             items: [
                                 {
                                     xtype: 'fieldset',
@@ -185,13 +189,21 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             xtype: 'form',
                             id: 'boiteATaxoContenus',
                             bodyPadding: 10,
-                            title: 'Taxonomie'
+                            title: 'Taxonomie',
+                            tabConfig: {
+                                xtype: 'tab',
+                                id: 'taxoTabConfig'
+                            }
                         },
                         {
                             xtype: 'form',
                             id: 'boiteADroitsContenus',
                             bodyPadding: 10,
                             title: 'Droits',
+                            tabConfig: {
+                                xtype: 'tab',
+                                id: 'rightsTabConfig'
+                            },
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',

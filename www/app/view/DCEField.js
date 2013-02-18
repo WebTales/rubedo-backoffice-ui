@@ -17,7 +17,6 @@ Ext.define('Rubedo.view.DCEField', {
     extend: 'Ext.form.field.Hidden',
     alias: 'widget.DCEField',
 
-    allowedCT: 'simpleText',
     fieldLabel: 'Label',
     labelSeparator: ' ',
 
@@ -54,12 +53,15 @@ Ext.define('Rubedo.view.DCEField', {
             if (abstractcomponent.chooseOnly){
                 myComponent.getComponent("addBtn").hide();
             }
+            if (abstractcomponent.addOnly){
+                myComponent.getComponent("chooseBtn").hide();
+            }
         });
         myComponent.getComponent("removeBtn").on("click", function(){
             abstractcomponent.setValue(null);
         });
         myComponent.getComponent("addBtn").on("click", function(){
-            //
+            Rubedo.controller.ContributionContenusController.prototype.specialContentCreate(abstractcomponent.allowedCT, abstractcomponent.getId());
         });
         myComponent.getComponent("chooseBtn").on("click", function(){
             var companion = Ext.widget("contentPickerWindow");

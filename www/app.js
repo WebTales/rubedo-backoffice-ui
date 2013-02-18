@@ -125,7 +125,8 @@ Ext.application({
         'WorkspacesComboStore',
         'ContributeWorkspacesCombo',
         'PageDisplayedContentsStore',
-        'GroupsComboStore'
+        'GroupsComboStore',
+        'ContentTypesForContent2'
     ],
     views: [
         'MyContainer',

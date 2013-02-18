@@ -235,6 +235,32 @@
                 "type": "boolean"
             },
             "designerId": "15fa366c-32d2-4132-ada5-9da2963c1088"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field310",
+                "name": "pageId"
+            },
+            "designerId": "43651db6-0645-4a65-a5a9-f0cb4a04118f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field311",
+                "name": "blockId"
+            },
+            "designerId": "70bec1fc-0ffb-43cc-8993-d2698d13566f"
         }
     ]
 }
