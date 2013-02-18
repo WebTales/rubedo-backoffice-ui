@@ -69,6 +69,9 @@ Ext.define('Rubedo.model.groupDataModel', {
             name: 'expandable',
             defaultValue: true,
             type: 'boolean'
+        },
+        {
+            name: 'defaultWorkspace'
         }
     ]
 });

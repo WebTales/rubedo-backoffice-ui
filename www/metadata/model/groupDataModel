@@ -227,6 +227,19 @@
                 "type": "boolean"
             },
             "designerId": "76a222a2-5b21-4d4a-8432-daf64870e3a0"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field312",
+                "name": "defaultWorkspace"
+            },
+            "designerId": "e0e06b71-dd13-4e80-b9f1-48fb353275f0"
         }
     ]
 }

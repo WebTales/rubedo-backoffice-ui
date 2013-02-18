@@ -340,6 +340,14 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     anchor: '100%'
                                 },
                                 {
+                                    xtype: 'WorkspaceCombo',
+                                    name: 'defaultWorkspace',
+                                    fieldLabel: 'Espaces de travail par défaut',
+                                    labelWidth: 220,
+                                    multiSelect: false,
+                                    anchor: '100%'
+                                },
+                                {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
                                     name: 'canDeleteElements',

@@ -879,6 +879,23 @@
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         },
                         {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "name": "defaultWorkspace",
+                                "fieldLabel": "Espaces de travail par défaut",
+                                "labelWidth": 220,
+                                "multiSelect": false,
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "2794af03-5b5a-4972-ad5d-4a9990da8814",
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
                             "type": "checkboxfield",
                             "reference": {
                                 "name": "items",
