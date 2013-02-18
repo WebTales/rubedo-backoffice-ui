@@ -107,6 +107,51 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51222c6ac0e0511a0d000003'
                 },
                 {
+                    type: 'Texte Riche',
+                    description: '<h2>Bloc texte riche<\/h2> ',
+                    configBasique: {
+                        title: 'Texte Riche',
+                        bType: 'richText',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Contenu',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.DCEField',
+                                            config: {
+                                                fieldLabel: 'Contenu',
+                                                name: 'contentId',
+                                                allowedCT: 'richText',
+                                                addOnly: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '512236abc0e051d210000006'
+                },
+                {
                     type: 'Authentification',
                     description: '<h2>Bloc Authentification<\/h2> ',
                     configBasique: {

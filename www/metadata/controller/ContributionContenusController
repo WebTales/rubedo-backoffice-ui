@@ -91,6 +91,7 @@
                     "        Ext.getStore(\"ContentTypesForContent\").removeAll();\r",
                     "        Ext.getStore(\"DepContentsCombo2\").removeAll();\r",
                     "        Ext.getStore('NestedContentsStore').removeAll();\r",
+                    "        Ext.getCmp('ajouterContenu').close();\r",
                     "\r",
                     "    } else{\r",
                     "        Ext.getStore(\"CurrentContent\").removeAll();\r",

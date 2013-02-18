@@ -71,6 +71,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     Ext.getStore("ContentTypesForContent").removeAll();
                     Ext.getStore("DepContentsCombo2").removeAll();
                     Ext.getStore('NestedContentsStore').removeAll();
+                    Ext.getCmp('ajouterContenu').close();
 
                 } else{
                     Ext.getStore("CurrentContent").removeAll();
