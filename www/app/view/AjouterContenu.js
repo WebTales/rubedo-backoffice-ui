@@ -134,7 +134,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     anchor: '90%',
                                                     style: '{float:left}',
                                                     name: 'summary',
-                                                    fieldLabel: 'Résumé *',
+                                                    fieldLabel: 'Résumé ',
                                                     labelSeparator: ' '
                                                 },
                                                 {

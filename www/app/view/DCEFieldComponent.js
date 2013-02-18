@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
     width: 455,
     fieldLabel: 'Label',
     labelSeparator: ' ',
+    labelWidth: 60,
 
     initComponent: function() {
         var me = this;

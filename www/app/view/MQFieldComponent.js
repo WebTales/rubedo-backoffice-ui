@@ -19,8 +19,9 @@ Ext.define('Rubedo.view.MQFieldComponent', {
 
     height: 29,
     width: 455,
-    fieldLabel: 'Label',
+    fieldLabel: 'Requete',
     labelSeparator: ' ',
+    labelWidth: 60,
 
     initComponent: function() {
         var me = this;
