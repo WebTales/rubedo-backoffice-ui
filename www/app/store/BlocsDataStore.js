@@ -212,7 +212,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Authentification<\/h2> ',
                     configBasique: {
                         title: 'Authentification',
-                        bType: 'Authentification',
+                        bType: 'authentication',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -315,7 +315,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc image<\/h2> ',
                     configBasique: {
                         title: 'Image',
-                        bType: 'Image',
+                        bType: 'image',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -391,7 +391,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc video<\/h2> ',
                     configBasique: {
                         title: 'Video',
-                        bType: 'Video',
+                        bType: 'video',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -497,7 +497,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Audio<\/h2> ',
                     configBasique: {
                         title: 'Audio',
-                        bType: 'Audio',
+                        bType: 'audio',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -577,7 +577,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc menu<\/h2> ',
                     configBasique: {
                         title: 'Menu',
-                        bType: 'Menu',
+                        bType: 'menu',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -620,7 +620,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc recherche<\/h2> ',
                     configBasique: {
                         title: 'Recherche',
-                        bType: 'Recherche',
+                        bType: 'search',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -687,7 +687,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Média externe<\/h2> ',
                     configBasique: {
                         title: 'Média externe',
-                        bType: 'Média externe',
+                        bType: 'externalMedia',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -750,7 +750,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Controleur Zend<\/h2> ',
                     configBasique: {
                         title: 'Controleur Zend',
-                        bType: 'Controleur Zend',
+                        bType: 'zendController',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -816,7 +816,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Gallerie Flickr<\/h2> <\/br><p>Ce bloc affiche des images hébergées sur Flickr.<\/p>',
                     configBasique: {
                         title: 'Gallerie Flickr',
-                        bType: 'Gallerie Flickr',
+                        bType: 'flickrGallery',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -908,7 +908,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Liste de contenus',
-                        bType: 'Liste de Contenus',
+                        bType: 'contentList',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -978,7 +978,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc carrousel<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Carrousel',
-                        bType: 'Carrousel',
+                        bType: 'carrousel',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1048,7 +1048,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc de navigation<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Bloc de navigation',
-                        bType: 'Bloc de navigation',
+                        bType: 'navigation',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1114,7 +1114,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Fil d\'Ariane<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Fil d\'Ariane',
-                        bType: 'Fil d\'Ariane',
+                        bType: 'breadcrumb',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1157,7 +1157,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Pied de page<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Pied de page',
-                        bType: 'Pied de page',
+                        bType: 'footer',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1189,7 +1189,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Résultat de recherche<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Résultat de recherche',
-                        bType: 'Résultat de recherche',
+                        bType: 'searchResults',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1239,7 +1239,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc Twig<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
                         title: 'Twig',
-                        bType: 'Twig',
+                        bType: 'twig',
                         flex: 1,
                         champsConfig: {
                             simple: [
@@ -1282,7 +1282,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: 'Description du bloc d\u00e9tail de contenu',
                     configBasique: {
                         title: 'D\u00e9tail de contenu',
-                        bType: 'D\u00e9tail de contenu',
+                        bType: 'contentDetail',
                         flex: 1,
                         champsConfig: {
                             simple: [
