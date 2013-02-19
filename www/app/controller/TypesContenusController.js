@@ -344,7 +344,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     }
                 }
                 Ext.getCmp('champTCIdField').setValue(TCfield.id);
-                if (TCfield.isXType("ImagePickerField")) {
+                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("localiserField"))) {
                     TCfield.up().getComponent(2).getEl().frame(MyPrefData.themeColor);
                     TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
@@ -381,6 +381,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 if (this.name=='fieldLabel') {
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
+                                    } else if (TCfield.isXType("localiserField")){
+                                        TCfield.up().getComponent(2).setFieldLabel(this.getValue());
                                     } else {
                                         TCfield.setFieldLabel(this.getValue());
                                     }
@@ -398,6 +400,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                     TCfield.config.fieldLabel=currentOne;
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
+                                    } else if (TCfield.isXType("localiserField")){
+                                        TCfield.up().getComponent(2).setFieldLabel(currentOne);
                                     } else {
                                         TCfield.setFieldLabel(currentOne);
                                     }

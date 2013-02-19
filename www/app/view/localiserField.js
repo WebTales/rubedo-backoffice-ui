@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.localiserField', {
 
     onHiddenfieldRender: function(abstractcomponent, options) {
         var companion = Ext.widget("localiserFieldCompoent");
+        companion.setFieldLabel(abstractcomponent.getFieldLabel());
         abstractcomponent.on("change", function(a, newValue){
             var decoded = { };
             if (!Ext.isEmpty(newValue)){
@@ -59,7 +60,12 @@ Ext.define('Rubedo.view.localiserField', {
                 abstractcomponent.resumeEvents();
             });
         });
+        companion.on("afterrender",function(){
+            companion.getEl().on("click",function(){
 
+                abstractcomponent.getEl().dom.click();
+            });
+        });
         abstractcomponent.up().add(companion);
     }
 

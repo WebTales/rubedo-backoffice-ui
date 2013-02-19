@@ -6,15 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
+        "anchor": "90%",
         "designer|userClassName": "localiserFieldCompoent",
         "designer|userAlias": "localiserFieldCompoent",
         "height": 54,
         "width": 426,
         "layout": "anchor",
-        "fieldLabel": "Label"
+        "fieldLabel": "Label",
+        "labelSeparator": " "
     },
     "id": "ExtBox1-ext-gen18025",
     "designerId": "15b19248-a73a-4ad3-87eb-1ea892921ea0",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "textfield",

@@ -31,6 +31,89 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             model: 'Rubedo.model.typesChampsDataModel',
             data: [
                 {
+                    type: 'Champ localisation',
+                    cType: 'Rubedo.view.localiserField',
+                    openWindow: '',
+                    description: '<h2>Champ localisation<\/h2>',
+                    config: {
+                        name: 'Nouveau_champ_localisation',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51234e09c0e0516a0b00000d'
+                },
+                {
                     type: 'Champ texte',
                     cType: 'Ext.form.field.Text',
                     openWindow: '',

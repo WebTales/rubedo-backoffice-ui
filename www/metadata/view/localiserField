@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userClassName": "localiserField",
         "designer|userAlias": "localiserField",
+        "height": null,
         "fieldLabel": "Label"
     },
     "id": "ExtBox1-ext-gen28731",
@@ -25,6 +26,7 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var companion = Ext.widget(\"localiserFieldCompoent\");\r",
+                    "companion.setFieldLabel(abstractcomponent.getFieldLabel());\r",
                     "abstractcomponent.on(\"change\", function(a, newValue){\r",
                     "    var decoded = { };\r",
                     "    if (!Ext.isEmpty(newValue)){\r",
@@ -48,7 +50,12 @@
                     "        abstractcomponent.resumeEvents();\r",
                     "    });\r",
                     "});\r",
+                    "companion.on(\"afterrender\",function(){\r",
+                    "    companion.getEl().on(\"click\",function(){\r",
                     "\r",
+                    "        abstractcomponent.getEl().dom.click();\r",
+                    "    });\r",
+                    "});\r",
                     "abstractcomponent.up().add(companion);"
                 ],
                 "name": "render",

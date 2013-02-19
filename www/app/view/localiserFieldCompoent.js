@@ -17,12 +17,14 @@ Ext.define('Rubedo.view.localiserFieldCompoent', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget.localiserFieldCompoent',
 
+    anchor: '90%',
     height: 54,
     width: 426,
     layout: {
         type: 'anchor'
     },
     fieldLabel: 'Label',
+    labelSeparator: ' ',
 
     initComponent: function() {
         var me = this;
