@@ -97,6 +97,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     items: [
                                         {
                                             xtype: 'container',
+                                            id: 'cedtr1',
                                             padding: 10,
                                             layout: {
                                                 type: 'anchor'
@@ -124,6 +125,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'container',
+                                            id: 'cedtr2',
                                             padding: 10,
                                             layout: {
                                                 type: 'anchor'

@@ -32,7 +32,7 @@
                     "    store.on(\"write\", function(theStore,roperation){\r",
                     "        if (roperation.action==\"update\") {\r",
                     "            me.fireNotif(\"Notification\", \"<p>Mise à jour réussie.</p>\");\r",
-                    "           /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}\r",
+                    "            /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}\r",
                     "            catch(err){console.log(\"Erreur d'enregistrement en dernier modifié\");}*/\r",
                     "        }\r",
                     "        else if (roperation.action==\"create\") {\r",

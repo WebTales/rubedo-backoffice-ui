@@ -60,6 +60,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
             if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
                 var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+                champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;
+                champs.summary="";
                 if (button.isUpdate) {
                     var myRec =Ext.getStore("CurrentContent").getRange()[0];
                     myRec.beginEdit();
@@ -889,6 +891,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
                 Ext.getCmp("boutonSoumettreNouveauContenu").hide();
                 Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
+                Ext.getCmp("cedtr1").destroy();
+                Ext.getCmp("cedtr2").destroy();
 
 
             }
@@ -1110,6 +1114,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     Ext.getCmp("boutonSoumettreNouveauContenu").hide();
                     Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
                     Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
+                    Ext.getCmp("cedtr1").destroy();
+                    Ext.getCmp("cedtr2").destroy();
 
 
                 }
