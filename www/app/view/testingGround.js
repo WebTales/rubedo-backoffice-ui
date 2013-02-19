@@ -46,7 +46,8 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'localiserField'
+                            xtype: 'localiserField',
+                            id: 'test1'
                         }
                     ]
                 }
