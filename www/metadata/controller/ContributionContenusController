@@ -1620,6 +1620,26 @@
                 ]
             },
             "designerId": "d60e78f1-db2e-4a49-acc3-f879e61fd8cf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPageContentGridItemDblClick",
+                "fn": "onPageContentGridItemDblClick",
+                "implHandler": [
+                    "this.unitaryContentEdit(record.get(\"id\"), false);"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#pageContentGrid"
+            },
+            "designerId": "6d5500da-cac3-42e7-a9ef-15e77f8be732"
         }
     ]
 }

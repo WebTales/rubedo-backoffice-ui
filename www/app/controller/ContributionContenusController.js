@@ -516,6 +516,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
+    onPageContentGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        this.unitaryContentEdit(record.get("id"), false);
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -1209,6 +1213,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#nestedContentsModifyBtn": {
                 click: this.nestedContentEdit
+            },
+            "#pageContentGrid": {
+                itemdblclick: this.onPageContentGridItemDblClick
             }
         });
     }

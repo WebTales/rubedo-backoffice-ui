@@ -479,6 +479,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'gridpanel',
+                                    id: 'pageContentGrid',
                                     title: '',
                                     forceFit: true,
                                     store: 'PageDisplayedContentsStore',
