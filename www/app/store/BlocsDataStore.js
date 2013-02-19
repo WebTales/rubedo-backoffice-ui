@@ -30,6 +30,94 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
+                    type: 'Google Maps',
+                    description: '<h2>Bloc Google Maps<\/h2> ',
+                    configBasique: {
+                        title: 'Google Maps',
+                        bType: 'googleMaps',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Contenus',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Requête',
+                                                name: 'query',
+                                                
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Centre de la carte',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Adresse',
+                                                name: 'centerAddress'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Latitude',
+                                                name: 'centerLatitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Longitude',
+                                                name: 'centerLongitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Zoom',
+                                                name: 'zoom',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51237699c0e051d40e000004'
+                },
+                {
                     type: 'Texte Simple',
                     description: '<h2>Bloc texte simple<\/h2> ',
                     configBasique: {
