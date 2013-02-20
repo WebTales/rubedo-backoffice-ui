@@ -59,9 +59,9 @@ Ext.define('Rubedo.view.queryBuilderField', {
             var initialQuery = Ext.clone(theRec.get("query"));
             var recId = Ext.clone(theRec.get("id"));
             if (theRec.get("type")=="advanced") {
-                Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true}).show();
+                Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
             } else if (theRec.get("type")=="simple"){
-                Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true}).show();
+                Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
 
             } else if (theRec.get("type")=="manual"){
 

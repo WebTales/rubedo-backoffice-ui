@@ -162,9 +162,14 @@ Ext.define('Rubedo.view.assistantRequetage', {
             Ext.getCmp("assisstantRE6").etape=4;
             Ext.getCmp("progressAR").updateProgress(0.25, "Etape 1 sur 4");
             Ext.getCmp("queryNameField").hide();
-        } else if (abstractcomponent.editorMode) {
-            Ext.getCmp("assistantRequetage").getLayout().setActiveItem(4);
-            Ext.getCmp("progressAR").updateProgress(1, "Etape 5 sur 5");
+        } if (abstractcomponent.editorMode) {
+            if (abstractcomponent.simpleMode) {
+                Ext.getCmp("assistantRequetage").getLayout().setActiveItem(3);
+                Ext.getCmp("progressAR").updateProgress(1, "Etape 4 sur 4");
+            }else{
+                Ext.getCmp("assistantRequetage").getLayout().setActiveItem(4);
+                Ext.getCmp("progressAR").updateProgress(1, "Etape 5 sur 5");
+            }
             Ext.getCmp("boutonPrevRequeteur").show();
             Ext.getCmp("boutonNextRequeteur").hide();
             Ext.getCmp("assistantRequetage").setLoading(true);

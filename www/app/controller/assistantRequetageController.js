@@ -154,32 +154,39 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 var editedOne=usedStore.findRecord("id",Ext.getCmp("assistantRequetage").recId);
                 editedOne.beginEdit();
                 editedOne.set("query", result);
-                editedOne.set("name", result.queryName);
-                editedOne.endEdit();
-            }else {
-                var newQuery = Ext.create("Rubedo.model.queryDataModel", {
-                    name:result.queryName,
-                    type:"advanced",
-                    query:result,
-                    averageDuration:0,
-                    count:0,
-                    usage:[]
-                });
                 if (Ext.getCmp("assistantRequetage").simpleMode){
-                    newQuery.set("type", "simple");
-                    newQuery.set("name", "Requête simple");
-                }
-                if (Ext.getCmp("assistantRequetage").adminMode){
-                    Ext.getStore("MainQueriesStore").add(newQuery);
+                    editedOne.set("name", "Requête simple");
                 } else {
-                    Ext.getStore("QueriesStore").add(newQuery);
-                    Ext.getStore("QueriesStore").addListener("update", function(){
-                        Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
-                    },this,{single:true});
-                    }
+                    editedOne.set("name", result.queryName);
                 }
-                Ext.getCmp("assistantRequetage").close();
-            }
+                editedOne.endEdit();
+                Ext.getStore("QueriesStore").addListener("update", function(){
+                    Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(editedOne);
+                },this,{single:true});
+                }else {
+                    var newQuery = Ext.create("Rubedo.model.queryDataModel", {
+                        name:result.queryName,
+                        type:"advanced",
+                        query:result,
+                        averageDuration:0,
+                        count:0,
+                        usage:[]
+                    });
+                    if (Ext.getCmp("assistantRequetage").simpleMode){
+                        newQuery.set("type", "simple");
+                        newQuery.set("name", "Requête simple");
+                    }
+                    if (Ext.getCmp("assistantRequetage").adminMode){
+                        Ext.getStore("MainQueriesStore").add(newQuery);
+                    } else {
+                        Ext.getStore("QueriesStore").add(newQuery);
+                        Ext.getStore("QueriesStore").addListener("update", function(){
+                            Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+                        },this,{single:true});
+                        }
+                    }
+                    Ext.getCmp("assistantRequetage").close();
+                }
     },
 
     onBoutonCreateurTrisChampsARClick: function(button, e, options) {
