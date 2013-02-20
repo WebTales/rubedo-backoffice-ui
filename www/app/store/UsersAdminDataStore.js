@@ -35,6 +35,7 @@ Ext.define('Rubedo.store.UsersAdminDataStore', {
             model: 'Rubedo.model.userDataModel',
             proxy: {
                 type: 'ajax',
+                batchActions: false,
                 api: {
                     create: 'users/create',
                     read: 'users',

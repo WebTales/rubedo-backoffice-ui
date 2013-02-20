@@ -69,13 +69,11 @@ Ext.define('Rubedo.view.queryBuilderField', {
             }
 
         });
-        abstractcomponent.on("change", function(a,newValue){
+        abstractcomponent.on("change", function(a,newValue,oldValue){
             if (Ext.isEmpty(newValue)){
-                companion.getComponent("addBtn").show();
                 companion.getComponent("editBtn").hide();
                 companion.getComponent("removeBtn").hide();
             } else {
-                companion.getComponent("addBtn").hide();
                 companion.getComponent("editBtn").show();
                 companion.getComponent("removeBtn").show();
             }
