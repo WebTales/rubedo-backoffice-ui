@@ -83,6 +83,13 @@
                     "        companion.getComponent(\"editBtn\").show();\r",
                     "        companion.getComponent(\"removeBtn\").show();\r",
                     "    }\r",
+                    "    if (!Ext.isEmpty(oldValue)){\r",
+                    "        var theRec=abstractcomponent.getStore().findRecord(\"id\", oldValue);\r",
+                    "        \r",
+                    "        if ((!Ext.isEmpty(theRec))&&(theRec.get(\"type\")!=\"advanced\")) {\r",
+                    "        abstractcomponent.getStore().remove(theRec);\r",
+                    "        }\r",
+                    "    }\r",
                     "});\r",
                     "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());\r",
                     "abstractcomponent.up().add(companion);"
