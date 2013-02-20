@@ -435,20 +435,20 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }}); }); 
         Ext.getStore('PersonalPrefsStore').on("load",function(){
             var myPrefs=this.getRange()[0];
-            if (Ext.isEmpty(myPrefs)) {
-                myPrefs=Ext.create("Rubedo.model.personalPrefsDataModel",{
-                    stylesheet:"resources/css/red_theme.css",
-                    wallpaper:"resources/wallpapers/rubedo.jpg",
-                    iconSet:"red",
-                    themeColor:"#D7251D",
-                    lastEdited: [ ],
-                    HCMode:false
-                });
+            /*if (Ext.isEmpty(myPrefs)) {
+            myPrefs=Ext.create("Rubedo.model.personalPrefsDataModel",{
+            stylesheet:"resources/css/red_theme.css",
+            wallpaper:"resources/wallpapers/rubedo.jpg",
+            iconSet:"red",
+            themeColor:"#D7251D",
+            lastEdited: [ ],
+            HCMode:false
+            });
 
-                this.add(myPrefs);
+            this.add(myPrefs);
 
 
-            }
+            }*/
 
 
             Ext.getCmp('desktopBackGround').setSrc(myPrefs.get("wallpaper"));
