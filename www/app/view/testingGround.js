@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.localiserField'
+        'Rubedo.view.queryBuilderField'
     ],
 
     height: 450,
@@ -46,8 +46,13 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'localiserField',
-                            id: 'test1'
+                            xtype: 'fieldset',
+                            title: 'My Fields',
+                            items: [
+                                {
+                                    xtype: 'queryBuilderField'
+                                }
+                            ]
                         }
                     ]
                 }

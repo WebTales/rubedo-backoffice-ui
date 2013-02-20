@@ -87,7 +87,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFTDC',
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround',
-        'Rubedo.view.queryBuilderField',
+        'Rubedo.view.queryFieldComponent',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.siteBuilderWizzard',
         'Rubedo.view.queryManagerInterface',
@@ -105,6 +105,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.MQFieldComponent',
         'Rubedo.view.DCEField',
         'Rubedo.view.DCEFieldComponent',
-        'Rubedo.view.localiserFieldCompoent'
+        'Rubedo.view.localiserFieldCompoent',
+        'Rubedo.view.localiserField'
     ]
 });

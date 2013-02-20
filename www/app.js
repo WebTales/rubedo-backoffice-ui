@@ -217,7 +217,8 @@ Ext.application({
         'DCEField',
         'MQFieldComponent',
         'localiserFieldCompoent',
-        'localiserField'
+        'localiserField',
+        'queryFieldComponent'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

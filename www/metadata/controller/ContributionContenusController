@@ -1031,7 +1031,7 @@
                     "specialMode"
                 ],
                 "implHandler": [
-                    "var fenetre = Ext.widget('ajouterContenu');\r",
+                    "var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});\r",
                     "Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
                     "if (Ext.isDefined(window.innerHeight)) {\r",
                     "    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
@@ -1312,8 +1312,8 @@
                     "        Ext.getCmp(\"boutonEnregistrerNouveauContenu\").hide();\r",
                     "        Ext.getCmp(\"boutonSoumettreNouveauContenu\").hide();\r",
                     "        Ext.getCmp(\"boutonPublierNouveauContenu\").specialMode=true;\r",
-                    "                Ext.getCmp(\"cedtr1\").destroy();\r",
-                    "            Ext.getCmp(\"cedtr2\").destroy();\r",
+                    "        Ext.getCmp(\"cedtr1\").destroy();\r",
+                    "        Ext.getCmp(\"cedtr2\").destroy();\r",
                     "\r",
                     "\r",
                     "    }"
@@ -1337,7 +1337,7 @@
                 ],
                 "implHandler": [
                     "if (Ext.isDefined(theCT)) {\r",
-                    "    var fenetre = Ext.widget('ajouterContenu');\r",
+                    "    var fenetre = Ext.widget('ajouterContenu', {specialMode:true});\r",
                     "    Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
                     "    if (Ext.isDefined(window.innerHeight)) {\r",
                     "        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",

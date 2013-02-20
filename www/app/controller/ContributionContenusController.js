@@ -610,7 +610,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     displayContentEditWindow: function(content, contentType, editMode, specialMode) {
-        var fenetre = Ext.widget('ajouterContenu');
+        var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});
         Ext.getCmp('ViewportPrimaire').add(fenetre);
         if (Ext.isDefined(window.innerHeight)) {
             if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
@@ -900,7 +900,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     displaySpecialCreate: function(theCT, targetedId) {
         if (Ext.isDefined(theCT)) {
-            var fenetre = Ext.widget('ajouterContenu');
+            var fenetre = Ext.widget('ajouterContenu', {specialMode:true});
             Ext.getCmp('ViewportPrimaire').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {
                 if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}

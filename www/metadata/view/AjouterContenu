@@ -880,6 +880,26 @@
             "codeClass": null,
             "designerId": "2a19d21c-4a48-4475-afcd-fd6041b2852c",
             "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAjouterContenuRender",
+                "fn": "onAjouterContenuRender",
+                "implHandler": [
+                    "if (abstractcomponent.specialMode){\r",
+                    "    //abstractcomponent.setHeight(300);\r",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "8207113b-1f50-430c-a4a4-42b51127461e"
         }
     ]
 }

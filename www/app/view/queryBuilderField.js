@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
     managesStore: true,
     style: 'float: left;',
     fieldLabel: 'Label',
+    editable: false,
     displayField: 'name',
     forceSelection: true,
     queryMode: 'local',
@@ -43,14 +44,29 @@ Ext.define('Rubedo.view.queryBuilderField', {
     },
 
     onComboboxAdded: function(abstractcomponent, container, pos, options) {
-        Ext.apply(abstractcomponent, {anchor:"86%"});
-        var companion = Ext.widget("button", {style: "float: right;", text:"", iconCls:"add", ACL:"write.ui.queries"});
-        companion.on("click", function(){
+        var companion = Ext.widget("queryFieldComponent");
+
+        companion.getComponent("addBtn").on("click", function(){
             var myWin = Ext.widget("queryTypeChooseWindow");
             myWin.mainFieldId=abstractcomponent.getId();
             myWin.show();
         });
-        container.add(companion);
+        companion.getComponent("removeBtn").on("click", function(){
+            abstractcomponent.setValue(null);
+        });
+        abstractcomponent.on("change", function(a,newValue){
+            if (Ext.isEmpty(newValue)){
+                companion.getComponent("addBtn").show();
+                companion.getComponent("editBtn").hide();
+                companion.getComponent("removeBtn").hide();
+            } else {
+                companion.getComponent("addBtn").hide();
+                companion.getComponent("editBtn").show();
+                companion.getComponent("removeBtn").show();
+            }
+        });
+        abstractcomponent.fireEvent("change",abstractcomponent, abstractcomponent.getValue());
+        abstractcomponent.up().add(companion);
     }
 
 });

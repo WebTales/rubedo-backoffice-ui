@@ -377,10 +377,22 @@ Ext.define('Rubedo.view.AjouterContenu', {
                 {
                     xtype: 'mytool17'
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onAjouterContenuRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onAjouterContenuRender: function(abstractcomponent, options) {
+        if (abstractcomponent.specialMode){
+            //abstractcomponent.setHeight(300);
+        }
     }
 
 });
