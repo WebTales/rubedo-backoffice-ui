@@ -620,7 +620,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     description: '<h2>Bloc recherche<\/h2> ',
                     configBasique: {
                         title: 'Recherche',
-                        bType: 'search',
+                        bType: 'searchForm',
                         flex: 1,
                         champsConfig: {
                             simple: [
