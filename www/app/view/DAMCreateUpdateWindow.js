@@ -52,7 +52,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                 {
                     xtype: 'form',
                     id: 'DAMFieldBox',
-                    overflowY: 'auto',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: '',
                     items: [

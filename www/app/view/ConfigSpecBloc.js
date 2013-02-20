@@ -28,11 +28,13 @@ Ext.define('Rubedo.view.ConfigSpecBloc', {
             items: [
                 {
                     xtype: 'form',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: 'Simple'
                 },
                 {
                     xtype: 'form',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: 'Avancé'
                 }

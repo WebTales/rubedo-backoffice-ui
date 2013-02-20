@@ -176,7 +176,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                     flex: 1,
                     disabled: true,
                     id: 'mainSiteProps',
-                    overflowY: 'auto',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: '',
                     items: [

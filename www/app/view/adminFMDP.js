@@ -413,7 +413,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                             resizable: true,
                             resizeHandles: 'w',
                             layout: {
-                                type: 'anchor'
+                                align: 'stretch',
+                                type: 'vbox'
                             },
                             collapseDirection: 'right',
                             collapsed: false,
@@ -429,8 +430,9 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'form',
+                                    flex: 1,
                                     id: 'elementEditControl',
-                                    autoScroll: false,
+                                    autoScroll: true,
                                     title: 'Sélectionnez un élément'
                                 }
                             ],

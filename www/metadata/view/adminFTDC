@@ -983,8 +983,8 @@
                                 "id": "PaneauConfigChamps",
                                 "style": null,
                                 "width": 300,
-                                "overflowY": null,
-                                "layout": "fit",
+                                "autoScroll": true,
+                                "layout": "auto",
                                 "bodyPadding": 8,
                                 "bodyStyle": null,
                                 "collapseDirection": "right",
@@ -1005,7 +1005,7 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyContainer10",
                                         "id": "boiteConfigChampsTC",
-                                        "overflowY": "auto",
+                                        "autoScroll": false,
                                         "layout": "anchor"
                                     },
                                     "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801"

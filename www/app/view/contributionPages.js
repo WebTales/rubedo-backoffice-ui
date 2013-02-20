@@ -336,11 +336,11 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'panel',
                                     frame: false,
                                     width: 300,
-                                    overflowY: 'auto',
                                     resizable: true,
                                     resizeHandles: 'w',
                                     layout: {
-                                        type: 'hbox'
+                                        align: 'stretch',
+                                        type: 'vbox'
                                     },
                                     bodyPadding: 5,
                                     collapseDirection: 'right',
@@ -351,6 +351,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'form',
                                             flex: 1,
                                             id: 'pageElementPropsPanel',
+                                            autoScroll: true,
                                             title: 'Sélectionnez un élément'
                                         },
                                         {
