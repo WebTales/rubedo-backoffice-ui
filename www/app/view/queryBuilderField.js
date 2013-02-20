@@ -54,6 +54,21 @@ Ext.define('Rubedo.view.queryBuilderField', {
         companion.getComponent("removeBtn").on("click", function(){
             abstractcomponent.setValue(null);
         });
+        companion.getComponent("editBtn").on("click", function(){
+            var theRec=abstractcomponent.getStore().findRecord("id", abstractcomponent.getValue());
+            var initialQuery = Ext.clone(theRec.get("query"));
+            var recId = Ext.clone(theRec.get("id"));
+            if (theRec.get("type")=="advanced") {
+                Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true}).show();
+            } else if (theRec.get("type")=="simple"){
+                Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true}).show();
+
+            } else if (theRec.get("type")=="manual"){
+
+                Ext.widget("manualQueryInterface", {editorMode:true, recId:recId, initialQuery:initialQuery}).show();
+            }
+
+        });
         abstractcomponent.on("change", function(a,newValue){
             if (Ext.isEmpty(newValue)){
                 companion.getComponent("addBtn").show();

@@ -145,7 +145,13 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if ((Ext.getCmp("assistantRequetage").simpleMode)||(button.up().getForm().isValid())){
             var result=this.readQuery();
             if (Ext.getCmp("assistantRequetage").editorMode){
-                var editedOne=Ext.getStore("MainQueriesStore").findRecord("id",Ext.getCmp("assistantRequetage").recId);
+                if (Ext.getCmp("assistantRequetage").directToCombo){
+                    var usedStore=Ext.getStore("QueriesStore");
+                } else {
+                    var usedStore=Ext.getStore("MainQueriesStore");
+                }
+
+                var editedOne=usedStore.findRecord("id",Ext.getCmp("assistantRequetage").recId);
                 editedOne.beginEdit();
                 editedOne.set("query", result);
                 editedOne.set("name", result.queryName);

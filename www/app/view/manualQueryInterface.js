@@ -270,20 +270,24 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         var raw = button.up().up().getStore().getRange();
         var refined = Ext.Array.pluck(Ext.Array.pluck(raw, "data"), "id");
         if (!Ext.isEmpty(refined)){
-            var newQuery = Ext.create("Rubedo.model.queryDataModel", {
-                name:"Requête manuelle",
-                type:"manual",
-                query:refined,
-                averageDuration:0,
-                count:0,
-                usage:[]
-            });
+            if (Ext.getCmp("manualQueryInterface").editorMode){
+                var modRec=Ext.getStore("QueriesStore").findRecord("id",Ext.getCmp("manualQueryInterface").recId);
+                modRec.set("query",refined);
+            } else {
+                var newQuery = Ext.create("Rubedo.model.queryDataModel", {
+                    name:"Requête manuelle",
+                    type:"manual",
+                    query:refined,
+                    averageDuration:0,
+                    count:0,
+                    usage:[]
+                });
 
-            Ext.getStore("QueriesStore").add(newQuery);
-            Ext.getStore("QueriesStore").addListener("update", function(){
-                Ext.getCmp(Ext.getCmp("manualQueryInterface").mainFieldId).select(newQuery);
-            },this,{single:true});
-
+                Ext.getStore("QueriesStore").add(newQuery);
+                Ext.getStore("QueriesStore").addListener("update", function(){
+                    Ext.getCmp(Ext.getCmp("manualQueryInterface").mainFieldId).select(newQuery);
+                },this,{single:true});
+                }
 
                 Ext.getCmp("manualQueryInterface").close();
             }
@@ -301,8 +305,17 @@ Ext.define('Rubedo.view.manualQueryInterface', {
 
     onManualQueryInterfaceRender: function(abstractcomponent, options) {
         Ext.getStore("TCNDepComboCS").load();
-        abstractcomponent.getComponent(0).getStore().clearFilter(true);
-        abstractcomponent.getComponent(0).getStore().load();
+        if (abstractcomponent.editorMode){
+            abstractcomponent.getComponent(2).getStore().getProxy().extraParams.filter="[{\"property\":\"id\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(abstractcomponent.initialQuery)+"}]";
+            abstractcomponent.getComponent(2).getStore().addListener("load", function(){
+                abstractcomponent.getComponent(0).getStore().clearFilter(true);
+                abstractcomponent.getComponent(0).getStore().load();
+            }, this, {single:true});
+                abstractcomponent.getComponent(2).getStore().load();
+            } else {
+                abstractcomponent.getComponent(0).getStore().clearFilter(true);
+                abstractcomponent.getComponent(0).getStore().load();
+            }
     },
 
     onManualQueryInterfaceBeforeClose: function(panel, options) {

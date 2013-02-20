@@ -15,5 +15,40 @@
         "pageSize": null
     },
     "id": "ExtBox1-ext-gen53307",
-    "designerId": "6b0800f5-70dc-40f0-974a-fd6b12440e4a"
+    "designerId": "6b0800f5-70dc-40f0-974a-fd6b12440e4a",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy70",
+                "api": [
+                    "{\r",
+                    "                    read: 'contents'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "bd764e59-b695-460a-a047-fe029cf84690",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader69",
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "825b33e2-fb71-4765-a23c-a1ecec90da9d"
+                }
+            ]
+        }
+    ]
 }

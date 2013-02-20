@@ -26,7 +26,18 @@ Ext.define('Rubedo.store.ContentMQueryStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'ContentMQueryStore',
-            model: 'Rubedo.model.contenusDataModel'
+            model: 'Rubedo.model.contenusDataModel',
+            proxy: {
+                type: 'ajax',
+                api: {
+                    read: 'contents'
+                },
+                reader: {
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                }
+            }
         }, cfg)]);
     }
 });
