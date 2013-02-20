@@ -271,11 +271,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
     HCmode: function(button, e, options) {
         var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];
         if (MyPrefData.HCMode===false) {
-            Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
+            Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');
             MyPrefData.HCMode=true;
             myPrefs.set("HCMode",true);
             button.setText('Désactiver');
-        } else {Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-gray.css');
+        } else {Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-gray.css');
             MyPrefData.HCMode=false;
             myPrefs.set("HCMode",false);
             button.setText('Activer');
@@ -458,7 +458,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             MyPrefData.HCMode=myPrefs.get("HCMode");
             MyPrefData.lastEdited=myPrefs.get("lastEdited")||[ ];
             if (myPrefs.get("HCMode")){
-                Ext.util.CSS.swapStyleSheet('ext_theme', 'extjs-4.1.0/resources/css/ext-all-access.css');
+                Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');
             }
             me.refreshIcons(); 
         });
