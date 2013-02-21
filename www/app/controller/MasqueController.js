@@ -442,7 +442,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
                     Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
 
-                        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+                        configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
                             itemId:"eMainColField",
                             fieldLabel:"Colonne principale ",
                             onChange:function(){

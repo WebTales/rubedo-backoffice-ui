@@ -970,7 +970,7 @@
                     "            if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType(\"unBloc\"))){\r",
                     "            Ext.getCmp(\"newBloc\").enable();} else {Ext.getCmp(\"newBloc\").disable();}\r",
                     "            \r",
-                    "            configSpec.getComponent(0).add(Ext.widget('checkbox',{\r",
+                    "            configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{\r",
                     "                itemId:\"eMainColField\",\r",
                     "                fieldLabel:\"Colonne principale \",\r",
                     "                onChange:function(){\r",
