@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "silentOps": true,
         "designer|userClassName": "IconesDataJson",
         "designer|userAlias": "IconesDataJson",
         "autoLoad": true,
@@ -14,8 +15,18 @@
         "storeId": "IconesDataJson",
         "model": "iconDataModel"
     },
+    "configAlternates": {
+        "silentOps": "boolean"
+    },
     "id": "ExtBox1-ext-gen53594",
     "designerId": "cf50ea5a-151e-4a1b-b158-0ed251f05685",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "silentOps",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "ajaxproxy",

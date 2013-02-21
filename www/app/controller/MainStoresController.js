@@ -30,69 +30,70 @@ Ext.define('Rubedo.controller.MainStoresController', {
         Ext.data.StoreManager.each(function(store){
             //notifs and last updated
             store.on("write", function(theStore,roperation){
-                if (roperation.action=="update") {
-                    me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
-                    /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
-                    catch(err){console.log("Erreur d'enregistrement en dernier modifié");}*/
+                if(!(theStore.silentOps)){
+                    if (roperation.action=="update") {
+                        me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
+                        /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
+                        catch(err){console.log("Erreur d'enregistrement en dernier modifié");}*/
+                    }
+                    else if (roperation.action=="create") {
+                        me.fireNotif("Notification", "<p>Création réussie.</p>");
+                    }
+                    else if (roperation.action=="destroy") {
+                        me.fireNotif("Notification", "<p>Suppression réussie.</p>");
+                    }}
+                });
+                //events for optimised stores
+                if (store.isOptimised){
+                    store.on("load", function(theStore,records,successful){
+                        if (successful) {
+                            theStore.isUsed=true;
+                        }
+                    });
+                    store.on("clear", function(theStore){
+                        theStore.isUsed=false;
+                    });
+                    store.on("write", function(theStore,roperation){
+                        me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId, theStore.forcedSync);
+                    });
+
+
+
+
+
+
                 }
-                else if (roperation.action=="create") {
-                    me.fireNotif("Notification", "<p>Création réussie.</p>");
-                }
-                else if (roperation.action=="destroy") {
-                    me.fireNotif("Notification", "<p>Suppression réussie.</p>");
+
+                //error handling (needs work) 
+                var proxy = store.getProxy();
+                if (!Ext.isEmpty(proxy)) {
+                    proxy.on("exception", function( proxy, response, operation, options ){
+                        var message = "";
+                        if (response.status === 0) {message= "Connexion au serveur interrompue";}
+                        else if (response.status === 500) {message= "Erreur interne du serveur";}
+                        Ext.Msg.alert("Erreur", message);
+                        if (operation.action=="update") {
+                            Ext.Array.forEach(operation.records, function (record){ record.reject();});
+                        }
+                        else if (operation.action=="create") {
+                            store.remove(operation.records);
+                        }
+                        else if (operation.action=="destroy") {
+                            Ext.Array.forEach(operation.records, function (record){ store.insert(record.index || 0, record);});
+                            store.removed= [];
+                        }
+                        console.log(store);
+                        console.log(response);
+
+                    });
                 }
             });
-            //events for optimised stores
-            if (store.isOptimised){
-                store.on("load", function(theStore,records,successful){
-                    if (successful) {
-                        theStore.isUsed=true;
-                    }
-                });
-                store.on("clear", function(theStore){
-                    theStore.isUsed=false;
-                });
-                store.on("write", function(theStore,roperation){
-                    me.reloadActiveBrothers(theStore.usedCollection, theStore.storeId, theStore.forcedSync);
-                });
 
-
-
-
-
-
-            }
-
-            //error handling (needs work) 
-            var proxy = store.getProxy();
-            if (!Ext.isEmpty(proxy)) {
-                proxy.on("exception", function( proxy, response, operation, options ){
-                    var message = "";
-                    if (response.status === 0) {message= "Connexion au serveur interrompue";}
-                    else if (response.status === 500) {message= "Erreur interne du serveur";}
-                    Ext.Msg.alert("Erreur", message);
-                    if (operation.action=="update") {
-                        Ext.Array.forEach(operation.records, function (record){ record.reject();});
-                    }
-                    else if (operation.action=="create") {
-                        store.remove(operation.records);
-                    }
-                    else if (operation.action=="destroy") {
-                        Ext.Array.forEach(operation.records, function (record){ store.insert(record.index || 0, record);});
-                        store.removed= [];
-                    }
-                    console.log(store);
-                    console.log(response);
-
-                });
-            }
-        });
-
-        this.control({
-            "component": {
-                render: this.onComponentRender
-            }
-        });
+            this.control({
+                "component": {
+                    render: this.onComponentRender
+                }
+            });
     },
 
     reloadActiveBrothers: function(collectionName, myId, forcedMode) {

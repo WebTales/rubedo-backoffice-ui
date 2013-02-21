@@ -25,6 +25,7 @@ Ext.define('Rubedo.store.IconesDataJson', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            silentOps: true,
             autoLoad: true,
             autoSync: true,
             storeId: 'IconesDataJson',
