@@ -353,7 +353,14 @@
                 "designer|userClassName": "onDAMDeleteBtnClick",
                 "fn": "onDAMDeleteBtnClick",
                 "implHandler": [
-                    "Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());"
+                    "    var fenetre = Ext.widget('delConfirmZ');\r",
+                    "    fenetre.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "\r",
+                    "    }, this);  \r",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",

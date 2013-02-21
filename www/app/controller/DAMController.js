@@ -70,7 +70,14 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onDAMDeleteBtnClick: function(button, e, options) {
-        Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
+            Ext.getCmp('delConfirmZ').close();
+
+        }, this);  
+
     },
 
     onDAMSubmitBtnClick: function(button, e, options) {
