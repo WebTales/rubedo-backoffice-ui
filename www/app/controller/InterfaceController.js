@@ -426,6 +426,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     onLaunch: function() {
         var me=this;
+        Ext.util.CSS.removeStyleSheet("loading-bar-style");
+        Ext.getElementById("loading-bar").remove();
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             Ext.getCmp('menuPrincipalInterface').hide();
         }});

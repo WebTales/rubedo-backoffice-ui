@@ -151,6 +151,19 @@
                 "type": "boolean"
             },
             "designerId": "654cf400-5a99-4937-8d3b-189489ca7036"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field313",
+                "name": "mainColumnId"
+            },
+            "designerId": "6249a6d4-7cfe-4ab0-b09c-f46ab7a7cb66"
         }
     ]
 }

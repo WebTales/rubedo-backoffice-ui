@@ -1004,6 +1004,20 @@
                             "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
                         },
                         {
+                            "type": "hiddenfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyHiddenField",
+                                "id": "mainColumnIdField",
+                                "fieldLabel": "Label"
+                            },
+                            "designerId": "214eb9cb-391d-42a6-8bd2-dfdf1f556074"
+                        },
+                        {
                             "type": "form",
                             "reference": {
                                 "name": "items",

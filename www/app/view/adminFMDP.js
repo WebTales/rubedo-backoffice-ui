@@ -429,6 +429,11 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     fieldLabel: 'Label'
                                 },
                                 {
+                                    xtype: 'hiddenfield',
+                                    id: 'mainColumnIdField',
+                                    fieldLabel: 'Label'
+                                },
+                                {
                                     xtype: 'form',
                                     flex: 1,
                                     id: 'elementEditControl',

@@ -56,6 +56,9 @@ Ext.define('Rubedo.model.masquesDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'mainColumnId'
         }
     ]
 });
