@@ -556,6 +556,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
                 });
                 nContenu.set(metaData);
+                nContenu.set(droits);
 
                 Ext.getCmp('ContenusGrid').getStore().add(nContenu);
             }

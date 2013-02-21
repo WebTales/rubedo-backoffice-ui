@@ -302,6 +302,7 @@
                     "\r",
                     "        });\r",
                     "        nContenu.set(metaData);\r",
+                    "        nContenu.set(droits);\r",
                     "\r",
                     "        Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
                     "    }\r",
