@@ -93,6 +93,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     if (!Ext.isEmpty(prevSelected)) {
         prevSelected.removeBodyCls('selectedelement');
     }
+    Ext.getCmp("mainColumnIdField").setValue(Ext.clone(record.get("mainColumnId")));
     this.getMasqueEdition().removeAll();
     this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition()); 
     this.restoreBlocks(Ext.clone(masque.blocks));
@@ -198,6 +199,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             cible.beginEdit();
                             cible.set("rows",me.saveRows(me.getMasqueEdition()));
                             cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            cible.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                             cible.endEdit();  
                             chooser.close();
                         });
@@ -209,6 +211,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             });
                             nouvMasque.set("rows",me.saveRows(me.getMasqueEdition()));
                             nouvMasque.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            nouvMasque.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                             me.getMasquesDataJsonStore().add(nouvMasque);
                             me.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});  
                             chooser.close();
@@ -218,6 +221,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         cible.beginEdit();
                         cible.set("rows",me.saveRows(me.getMasqueEdition()));
                         cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                        cible.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                         cible.endEdit();   
                     }
                 }
@@ -437,6 +441,25 @@ Ext.define('Rubedo.controller.MasqueController', {
                     Ext.getCmp('newCol').disable();
                     if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
                     Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
+
+                        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+                            itemId:"eMainColField",
+                            fieldLabel:"Colonne principale ",
+                            onChange:function(){
+                                if (this.getValue()){
+                                    Ext.getCmp("mainColumnIdField").setValue(abstractcomponent.getId());
+                                } else {
+                                    Ext.getCmp("mainColumnIdField").setValue(null);
+                                }
+
+
+                            },
+                            labelWidth:60,
+                            inputValue:true,
+                            anchor:"100%",
+                            margin:"10 0 10 0",
+                            checked:(abstractcomponent.getId()==Ext.getCmp("mainColumnIdField").getValue())
+                        }));
 
                         var offsetEdit=Ext.widget('numberfield',{
                             itemId:"offsetEditor",
