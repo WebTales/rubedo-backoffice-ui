@@ -426,8 +426,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     onLaunch: function() {
         var me=this;
-        Ext.util.CSS.removeStyleSheet("loading-bar-style");
-        Ext.getElementById("loading-bar").remove();
+        try {
+            Ext.util.CSS.removeStyleSheet("loading-bar-style");
+            Ext.getElementById("loading-bar").parentNode.removeChild(Ext.getElementById("loading-bar"));
+        } catch (err) {
+            console.log("dom element removal anomaly");
+        }
         Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             Ext.getCmp('menuPrincipalInterface').hide();
         }});
