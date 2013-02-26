@@ -109,6 +109,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'defaultSingle'
         }
     ]
 });

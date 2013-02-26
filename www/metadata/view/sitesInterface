@@ -539,6 +539,14 @@
                                     "    anchor: \"100%\",\r",
                                     "    name:\"homePage\"\r",
                                     "});\r",
+                                    "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                                    "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                                    "    displayField:\"text\",\r",
+                                    "    fieldLabel:\"Page de détail par défaut\",\r",
+                                    "    id:\"sitesSinglePicker\",\r",
+                                    "    anchor: \"100%\",\r",
+                                    "    name:\"defaultSingle\"\r",
+                                    "});\r",
                                     "\r",
                                     "\r",
                                     "\r",
@@ -556,7 +564,8 @@
                                     "    pinList:false\r",
                                     "});\r",
                                     "abstractcomponent.add(tagPicker);\r",
-                                    "abstractcomponent.add(homePageSelector);"
+                                    "abstractcomponent.add(homePageSelector);\r",
+                                    "abstractcomponent.add(singlePageSelector);"
                                 ],
                                 "name": "render",
                                 "scope": "me"

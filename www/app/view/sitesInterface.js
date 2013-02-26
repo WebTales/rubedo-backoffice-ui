@@ -393,6 +393,14 @@ Ext.define('Rubedo.view.sitesInterface', {
             anchor: "100%",
             name:"homePage"
         });
+        var singlePageSelector = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            fieldLabel:"Page de détail par défaut",
+            id:"sitesSinglePicker",
+            anchor: "100%",
+            name:"defaultSingle"
+        });
 
 
 
@@ -411,6 +419,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         });
         abstractcomponent.add(tagPicker);
         abstractcomponent.add(homePageSelector);
+        abstractcomponent.add(singlePageSelector);
     },
 
     onImageRender: function(abstractcomponent, options) {

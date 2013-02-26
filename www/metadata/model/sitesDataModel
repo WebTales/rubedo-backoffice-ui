@@ -383,6 +383,19 @@
                 "type": "boolean"
             },
             "designerId": "8d1a26fd-c27c-414c-999c-000bd41921c0"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field314",
+                "name": "defaultSingle"
+            },
+            "designerId": "cc30d8cf-2a11-4c77-9e82-2e70eb7ff8e2"
         }
     ]
 }

@@ -320,7 +320,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Pages',
+                                    categorie: 'Paramètres',
                                     champs: [
                                         {
                                             type: 'Ext.ux.TreePicker',
@@ -360,6 +360,21 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'imageHeight',
                                                 allowDecimals: false,
                                                 minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Mode',
+                                                name: 'mode',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                store: [
+                                                    'boxed',
+                                                    'crop',
+                                                    'morph'
+                                                ]
                                             }
                                         }
                                     ]
@@ -1008,6 +1023,21 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'imageHeight',
                                                 allowDecimals: false,
                                                 minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Mode',
+                                                name: 'mode',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                store: [
+                                                    'boxed',
+                                                    'crop',
+                                                    'morph'
+                                                ]
                                             }
                                         }
                                     ]
