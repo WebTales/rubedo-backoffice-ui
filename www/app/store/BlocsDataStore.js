@@ -991,6 +991,24 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Type d\'affichage',
                                                 name: 'displayType'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Largeur (px)',
+                                                name: 'imageWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur (px)',
+                                                name: 'imageHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
                                         }
                                     ]
                                 },

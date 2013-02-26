@@ -747,7 +747,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
                 dependant: Ext.getCmp('champTCIsDep').getValue(),
-                fields: [ ],
+                champs: [ ],
                 vocabularies:[ ],
                 dependantTypes:[ ]
 

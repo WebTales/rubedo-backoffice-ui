@@ -911,7 +911,7 @@
                     "    var nouvType = Ext.create('model.typesContenusDataModel', {\r",
                     "        type: nType,\r",
                     "        dependant: Ext.getCmp('champTCIsDep').getValue(),\r",
-                    "        fields: [ ],\r",
+                    "        champs: [ ],\r",
                     "        vocabularies:[ ],\r",
                     "        dependantTypes:[ ]\r",
                     "\r",
