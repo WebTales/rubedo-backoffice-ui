@@ -1060,6 +1060,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Type d\'affichage',
                                                 name: 'displayType'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page associée',
+                                                name: 'singlePage'
+                                            }
                                         }
                                     ]
                                 },
@@ -1129,6 +1136,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Type d\'affichage',
                                                 name: 'displayType'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page associée',
+                                                name: 'singlePage'
                                             }
                                         },
                                         {
