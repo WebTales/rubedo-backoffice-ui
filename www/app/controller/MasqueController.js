@@ -383,6 +383,20 @@ Ext.define('Rubedo.controller.MasqueController', {
                 } else {
                     Ext.getCmp('newCol').enable();
                 }
+                configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
+                    itemId:"eTabField",
+                    fieldLabel:"Afficher en tabs",
+                    onChange:function(){
+
+                        abstractcomponent.displayAsTab=this.getValue();
+
+                    },
+                    labelWidth:60,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:abstractcomponent.displayAsTab
+                }));
                 configSpec.getComponent(0).add(Ext.widget('button',{
                     itemId:"rowAutoHeight",
                     text:"Hauteur automatique",
@@ -1237,6 +1251,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 mType:"row",
                 eTitle:row.eTitle,
                 id:row.id,
+                displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
@@ -1360,6 +1375,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 eTitle:row.eTitle,
                 id:row.id,
                 mType:"row",
+                displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
                 classHTML:row.classHTML,
