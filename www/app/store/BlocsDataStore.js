@@ -119,7 +119,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'AddThis',
-                    description: '<h2>Bloc AddThis\/h2> ',
+                    description: '<h2>Bloc AddThis</h2> ',
                     configBasique: {
                         title: 'AddThis',
                         bType: 'addThis',
@@ -182,6 +182,64 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '512c9141c0e051030e000000'
+                },
+                {
+                    type: 'AddThis Follow',
+                    description: '<h2>Bloc AddThis</h2> ',
+                    configBasique: {
+                        title: 'AddThis',
+                        bType: 'addThisFollow',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Disposition',
+                                                name: 'disposition',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                store: [
+                                                    'Vertical',
+                                                    'Horizontal'
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Small',
+                                                name: 'small',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '512c97bfc0e051b80e000001'
                 },
                 {
                     type: 'Texte Simple',
