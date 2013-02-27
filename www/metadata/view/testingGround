@@ -70,6 +70,22 @@
                             "masterInstanceId": "ExtBox1-ext-gen13418"
                         }
                     ]
+                },
+                {
+                    "type": "datefield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateField7",
+                        "id": "gruik",
+                        "fieldLabel": "Label",
+                        "altFormats": null,
+                        "submitFormat": "U"
+                    },
+                    "designerId": "2ef8a264-4d58-4a1b-8738-23a1204b1b88"
                 }
             ]
         }

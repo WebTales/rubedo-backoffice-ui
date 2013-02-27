@@ -53,6 +53,12 @@ Ext.define('Rubedo.view.testingGround', {
                                     xtype: 'queryBuilderField'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'datefield',
+                            id: 'gruik',
+                            fieldLabel: 'Label',
+                            submitFormat: 'U'
                         }
                     ]
                 }
