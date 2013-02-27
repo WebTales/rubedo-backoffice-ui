@@ -220,7 +220,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Paramètres',
+                                    categorie: 'Affichage',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.ComboBox',
@@ -242,6 +242,102 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Small',
                                                 name: 'small',
                                                 inputValue: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Boutons',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Facebook',
+                                                name: 'facebook'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Twitter',
+                                                name: 'twitter'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'LinkedIn',
+                                                name: 'linkedin'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'LinkedIn Entreprise',
+                                                name: 'linkedinCompany'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Google+',
+                                                name: 'googleplus'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'YouTube',
+                                                name: 'youtube'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Flickr',
+                                                name: 'flickr'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Vimeo',
+                                                name: 'vimeo'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Pinterest',
+                                                name: 'pinterest'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Instagram',
+                                                name: 'instagram'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'FourSqaure',
+                                                name: 'foursquare'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Tumblr',
+                                                name: 'tumblr'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'RSS',
+                                                name: 'rss'
                                             }
                                         }
                                     ]
