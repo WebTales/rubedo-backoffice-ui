@@ -48,6 +48,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'query',
                                                 
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Champ position',
+                                                name: 'positionField',
+                                                allowBlank: false
+                                            }
                                         }
                                     ]
                                 },
@@ -118,7 +126,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            positionField: 'position'
                         }
                     },
                     version: 1,
