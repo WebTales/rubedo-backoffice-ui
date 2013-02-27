@@ -43,7 +43,7 @@
                     "        abstractcomponent.suspendEvents(false);\r",
                     "        var decoded = { };\r",
                     "        if (!Ext.isEmpty(abstractcomponent.getValue())) {\r",
-                    "             decoded = Ext.JSON.decode(abstractcomponent.getValue());\r",
+                    "            decoded = Ext.JSON.decode(abstractcomponent.getValue());\r",
                     "        }\r",
                     "        decoded[field.name]=newValue;\r",
                     "        abstractcomponent.setValue(Ext.JSON.encode(decoded));\r",

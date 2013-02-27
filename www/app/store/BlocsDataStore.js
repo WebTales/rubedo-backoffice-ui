@@ -55,6 +55,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Centre de la carte',
                                     champs: [
                                         {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Geolocalisation',
+                                                name: 'useLocation',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
                                             type: 'Ext.form.field.Text',
                                             config: {
                                                 fieldLabel: 'Adresse',
@@ -91,6 +99,15 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'zoom',
                                                 allowDecimals: false,
                                                 minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur',
+                                                name: 'height',
+                                                allowDecimals: false,
+                                                minValue: 100
                                             }
                                         }
                                     ]
