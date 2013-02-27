@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "read.ui.dependantTypes",
         "designer|userClassName": "ongletTCDep",
         "designer|userAlias": "ongletTCDep",
         "id": "ongletTCDep",
@@ -15,6 +16,13 @@
     },
     "id": "ExtBox1-ext-gen87627",
     "designerId": "c6f84d61-bbf5-4921-a9e9-82bfe825ab8e",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "gridpanel",

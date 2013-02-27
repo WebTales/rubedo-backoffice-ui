@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ongletTCDep', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.ongletTCDep',
 
+    ACL: 'read.ui.dependantTypes',
     id: 'ongletTCDep',
     layout: {
         type: 'fit'

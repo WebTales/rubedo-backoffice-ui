@@ -472,7 +472,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         filArianne.add(typeFil);
     }
 
-    if (record.data.dependant===false) {
+    if ((record.data.dependant===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
         if (!(Ext.isDefined(Ext.getCmp('ongletTCDep')))) {
             Ext.getCmp('tabPanTC').add(Ext.widget('ongletTCDep'));    
         }
@@ -590,7 +590,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     tableauTaxoTC.getSelectionModel().select(selectionR);
 
 
-    if (record.get("dependant")===false) {
+    if ((record.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
         var tableauTCI = Ext.getCmp('TCImbriquesGrid');
         tableauTCI.getSelectionModel().deselectAll();
         var depTypes = record.get("dependantTypes");

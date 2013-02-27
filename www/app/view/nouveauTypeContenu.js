@@ -17,13 +17,10 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
     extend: 'Ext.window.Window',
     alias: 'widget.nouveauTypeContenu',
 
-    height: 125,
     id: 'nouveauTypeContenuFenetre',
+    maxHeight: 120,
     width: 300,
     resizable: false,
-    layout: {
-        type: 'fit'
-    },
     iconCls: 'content-icon',
     title: 'Nouveau type de contenu',
     constrainHeader: true,
@@ -49,6 +46,7 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
+                            ACL: 'write.ui.dependantTypes',
                             id: 'champTCIsDep',
                             fieldLabel: 'Imbriqué ',
                             boxLabel: ''

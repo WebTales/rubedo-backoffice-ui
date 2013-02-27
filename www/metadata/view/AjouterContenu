@@ -656,12 +656,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.dependantTypes",
                         "designer|userClassName": "MyPanel44",
                         "id": "nestedContentsTab",
                         "layout": "fit",
                         "title": "Contenus Imbriqués"
                     },
                     "designerId": "da2c272b-9698-40ef-8757-9ca98a9e1355",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "tab",

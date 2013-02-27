@@ -270,6 +270,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'panel',
+                            ACL: 'read.ui.dependantTypes',
                             id: 'nestedContentsTab',
                             layout: {
                                 type: 'fit'
