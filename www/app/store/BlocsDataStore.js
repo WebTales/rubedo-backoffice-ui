@@ -1120,6 +1120,83 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514000000'
                 },
                 {
+                    type: 'Agenda',
+                    description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    configBasique: {
+                        title: 'Agenda',
+                        bType: 'calendar',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Type d\'affichage',
+                                                name: 'displayType'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page associée',
+                                                name: 'singlePage'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contenus',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Requête',
+                                                name: 'query',
+                                                
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Pagination',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Taille des pages',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '512dcb9ec0e051be0e000002'
+                },
+                {
                     type: 'Carrousel',
                     description: '<h2>Bloc carrousel<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
