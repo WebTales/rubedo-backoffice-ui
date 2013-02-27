@@ -35,7 +35,7 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+selections[0].get("id")+"\"}]";
             Ext.getStore("PagePickerStore").load();
 
-            Ext.getCmp("mainSiteProps").getForm().setValues(selections[0].getData());
+            Ext.getCmp("mainSiteProps").getForm().setValues(Ext.clone(selections[0].getData()));
             if (Ext.isEmpty(Ext.getCmp("sitesHomePicker").getValue())){
                 Ext.getCmp("sitesHomePicker").setValue([]);
             }
