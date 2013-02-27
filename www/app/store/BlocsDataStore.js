@@ -1174,6 +1174,41 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'query',
                                                 
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Champ debut',
+                                                name: 'date',
+                                                value: 'date'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Champ fin',
+                                                name: 'endDate',
+                                                value: null
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Display',
+                                                name: 'display',
+                                                store: [
+                                                    'showCal',
+                                                    'showList'
+                                                ],
+                                                multiSelect: true,
+                                                allowBlank: false,
+                                                forceSelection: true,
+                                                editable: false,
+                                                value: [
+                                                    'showCal',
+                                                    'showList'
+                                                ]
+                                            }
                                         }
                                     ]
                                 },
@@ -1197,7 +1232,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            date: 'date',
+                            endDate: null,
+                            display: [
+                                'showCal',
+                                'showList'
+                            ]
                         }
                     },
                     version: 1,

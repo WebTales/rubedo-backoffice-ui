@@ -36,7 +36,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<h2>Champ localisation<\/h2>',
                     config: {
-                        name: 'Nouveau_champ_localisation',
+                        name: 'position',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
@@ -559,7 +559,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<h2>Champ date<\/h2> <\/br> <p>Ce champ permet la saisie de dates.<\/p>',
                     config: {
-                        name: 'Nouveau_champ_date',
+                        name: 'date',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
