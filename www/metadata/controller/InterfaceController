@@ -1011,6 +1011,9 @@
                 "implHandler": [
                     "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
                     "    abstractcomponent.labelSeparator=\" \";\r",
+                    "    if (abstractcomponent.isXType(\"datefield\")){\r",
+                    "    abstractcomponent.submitFormat='U';\r",
+                    "    }    \r",
                     "}"
                 ],
                 "name": "beforerender",

@@ -247,7 +247,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                     managesStore: true,
                     id: 'TypesContenusGrid',
                     width: 150,
-                    overflowY: 'auto',
+                    autoScroll: true,
                     resizable: true,
                     resizeHandles: 'e',
                     title: '',

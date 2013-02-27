@@ -409,6 +409,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
     onComponentBeforeRender: function(abstractcomponent, options) {
         if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))){
             abstractcomponent.labelSeparator=" ";
+            if (abstractcomponent.isXType("datefield")){
+                abstractcomponent.submitFormat='U';
+            }    
         }
     },
 
