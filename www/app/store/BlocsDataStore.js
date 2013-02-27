@@ -126,7 +126,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            positionField: 'position'
+                            positionField: 'position',
+                            zoom: 12,
+                            height: 400
                         }
                     },
                     version: 1,
