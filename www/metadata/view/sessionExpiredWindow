@@ -11,8 +11,13 @@
         "height": 78,
         "id": "sessionExpiredWindow",
         "width": 236,
+        "resizable": false,
         "layout": "fit",
-        "title": "Votre session a expiré"
+        "title": "Votre session a expiré",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "id": "ExtBox1-ext-gen11662",
     "designerId": "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",

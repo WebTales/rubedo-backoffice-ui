@@ -20,10 +20,12 @@ Ext.define('Rubedo.view.sessionExpiredWindow', {
     height: 78,
     id: 'sessionExpiredWindow',
     width: 236,
+    resizable: false,
     layout: {
         type: 'fit'
     },
     title: 'Votre session a expiré',
+    modal: true,
 
     initComponent: function() {
         var me = this;
