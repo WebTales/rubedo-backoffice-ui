@@ -64,13 +64,22 @@ Ext.define('Rubedo.controller.MainStoresController', {
 
                 }
 
-                //error handling (needs work) 
+                //error handling 
                 var proxy = store.getProxy();
                 if (!Ext.isEmpty(proxy)) {
                     proxy.on("exception", function( proxy, response, operation, options ){
                         var message = "";
                         if (response.status === 0) {message= "Connexion au serveur interrompue";}
-                        else if (response.status === 500) {message= "Erreur interne du serveur";}
+                        else if ((response.status === 500)||(response.status === 200)){
+                            var respondedMessage = Ext.JSON.decode(response.responseText);
+                            if (Ext.isEmpty(respondedMessage.msg)){
+                                message = "Erreur interne du serveur";
+                            }
+                            else {
+                                message = respondedMessage.msg;
+                            }
+                            console.log(response);
+                        } 
                         Ext.Msg.alert("Erreur", message);
                         if (operation.action=="update") {
                             Ext.Array.forEach(operation.records, function (record){ record.reject();});
