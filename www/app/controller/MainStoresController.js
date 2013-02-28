@@ -72,14 +72,22 @@ Ext.define('Rubedo.controller.MainStoresController', {
                         if (response.status === 0) {message= "Connexion au serveur interrompue";}
                         else if ((response.status === 500)||(response.status === 200)){
                             var respondedMessage = Ext.JSON.decode(response.responseText);
-                            if (Ext.isEmpty(respondedMessage.msg)){
+                            if ((Ext.isEmpty(respondedMessage))||(Ext.isEmpty(respondedMessage.msg))){
                                 message = "Erreur interne du serveur";
                             }
                             else {
                                 message = respondedMessage.msg;
                             }
 
-                        } 
+                        } else {
+                            var respondedMessage = Ext.JSON.decode(response.responseText);
+                            if ((Ext.isEmpty(respondedMessage))||(Ext.isEmpty(respondedMessage.msg))){
+                                message = "Erreur inconnue";
+                            }
+                            else {
+                                message = respondedMessage.msg;
+                            }
+                        }
                         Ext.Msg.alert("Erreur", message);
                         if (operation.action=="update") {
                             Ext.Array.forEach(operation.records, function (record){ record.reject();});
