@@ -45,8 +45,8 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                         },
                         {
                             xtype: 'checkboxfield',
-                            anchor: '100%',
                             ACL: 'write.ui.dependantTypes',
+                            anchor: '100%',
                             id: 'champTCIsDep',
                             fieldLabel: 'Imbriqué ',
                             boxLabel: ''

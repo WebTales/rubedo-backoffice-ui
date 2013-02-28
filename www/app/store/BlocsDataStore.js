@@ -1210,6 +1210,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Pagination',
                                     champs: [
                                         {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Afficher le paginateur',
+                                                name: 'showPager',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
                                             type: 'Ext.form.field.Number',
                                             config: {
                                                 fieldLabel: 'Taille des pages',
@@ -1321,6 +1329,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 {
                                     categorie: 'Pagination',
                                     champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Afficher le paginateur',
+                                                name: 'showPager',
+                                                inputValue: true
+                                            }
+                                        },
                                         {
                                             type: 'Ext.form.field.Number',
                                             config: {
@@ -1436,6 +1452,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 {
                                     categorie: 'Pagination',
                                     champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Afficher le paginateur',
+                                                name: 'showPager',
+                                                inputValue: true
+                                            }
+                                        },
                                         {
                                             type: 'Ext.form.field.Number',
                                             config: {
