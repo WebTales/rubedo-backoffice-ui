@@ -273,15 +273,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Text',
                                             config: {
-                                                fieldLabel: 'LinkedIn Entreprise',
-                                                name: 'linkedinCompany'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
                                                 fieldLabel: 'Google+',
-                                                name: 'googleplus'
+                                                name: 'google'
                                             }
                                         },
                                         {
