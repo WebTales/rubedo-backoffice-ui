@@ -17,7 +17,7 @@ Ext.Loader.setConfig({
     enabled: true,
     paths: {
         Ext: '.',
-        'Ext.ux': '../ux'
+        'Ext.ux': 'resources/ux'
     }
 });
 
@@ -35,6 +35,7 @@ Ext.application({
         'DAMPickerWindow',
         'DAMMainView'
     ],
+    appFolder: 'resources/extFinder/app',
     autoCreateViewport: true,
     name: 'extFinder',
     controllers: [

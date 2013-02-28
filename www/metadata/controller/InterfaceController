@@ -107,10 +107,10 @@
                 "implHandler": [
                     "var me=this;\r",
                     "try {\r",
-                    "Ext.util.CSS.removeStyleSheet(\"loading-bar-style\");\r",
-                    "Ext.getElementById(\"loading-bar\").parentNode.removeChild(Ext.getElementById(\"loading-bar\"));\r",
+                    "    Ext.util.CSS.removeStyleSheet(\"loading-bar-style\");\r",
+                    "    Ext.getElementById(\"loading-bar\").parentNode.removeChild(Ext.getElementById(\"loading-bar\"));\r",
                     "} catch (err) {\r",
-                    "console.log(\"dom element removal anomaly\");\r",
+                    "    console.log(\"dom element removal anomaly\");\r",
                     "}\r",
                     "Ext.getBody().addListener('click', function(){ if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
                     "    Ext.getCmp('menuPrincipalInterface').hide();\r",

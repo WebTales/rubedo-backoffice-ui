@@ -19,6 +19,7 @@
             "DAMPickerWindow",
             "DAMMainView"
         ],
+        "appFolder": "resources/extFinder/app",
         "autoCreateViewport": true,
         "name": "extFinder",
         "controllers": [
@@ -39,7 +40,7 @@
                 "designer|userClassName": "Loader8",
                 "enabled": true,
                 "paths": [
-                    "{\"Ext\":\".\", \"Ext.ux\":\"../ux\"}"
+                    "{\"Ext\":\".\", \"Ext.ux\":\"resources/ux\"}"
                 ]
             },
             "designerId": "89e9148c-25f4-4c98-bcec-cd79d8f29691"

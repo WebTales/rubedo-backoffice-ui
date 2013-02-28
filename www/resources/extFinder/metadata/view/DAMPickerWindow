@@ -123,7 +123,7 @@
                     "",
                     "            generateThumbnail = function()",
                     "            {",
-                    "                return \"../../dam/get-thumbnail?id=\"+record.get(\"id\");",
+                    "                return \"dam/get-thumbnail?id=\"+record.get(\"id\");",
                     "            };",
                     "",
                     "            if(this.viewMode)",
@@ -268,7 +268,7 @@
                         "designer|userClassName": "MyButton206",
                         "disabled": true,
                         "id": "imagePickerAcceptBtn",
-                        "icon": "../icones/blue/16x16/accept.png",
+                        "icon": "resources/icones/blue/16x16/accept.png",
                         "iconCls": null,
                         "scale": null,
                         "text": "Choisir"
@@ -309,7 +309,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton207",
-                        "icon": "../icones/blue/16x16/remove.png",
+                        "icon": "resources/icones/blue/16x16/remove.png",
                         "iconCls": null,
                         "text": "Annuler"
                     },

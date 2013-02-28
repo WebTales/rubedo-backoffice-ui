@@ -64,7 +64,7 @@
                     "}\r",
                     "\r",
                     "var targetId = abstractcomponent.getInputId();\r",
-                    "abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:\"resources/extFinder/app.html?type=Image\", filebrowserImageUploadUrl:\"resources/extFinder/app.html?type=Image\"});\r",
+                    "abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:\"ext-finder?type=Image\", filebrowserImageUploadUrl:\"ext-finder?type=Image\"});\r",
                     "abstractcomponent.editor.on('instanceReady', function(){\r",
                     "    abstractcomponent.up().doLayout();\r",
                     "    abstractcomponent.editor.document.getDocumentElement().on('click', function(){\r",

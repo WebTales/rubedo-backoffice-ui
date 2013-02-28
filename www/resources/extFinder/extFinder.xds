@@ -24,17 +24,17 @@
         "e6679921-3efa-43ea-aeba-a4878fdadbce": {
             "paths": [
                 "metadata/view/MainViewport",
-                "app/view/override/MainViewport.js",
-                "app/view/MainViewport.js",
-                "app/view/Viewport.js"
+                "resources/extFinder/app/view/override/MainViewport.js",
+                "resources/extFinder/app/view/MainViewport.js",
+                "resources/extFinder/app/view/Viewport.js"
             ],
             "className": "MainViewport"
         },
         "72c4e490-bdaa-4cab-b47a-a2bb24f27c40": {
             "paths": [
                 "metadata/controller/ACLController",
-                "app/controller/override/ACLController.js",
-                "app/controller/ACLController.js"
+                "resources/extFinder/app/controller/override/ACLController.js",
+                "resources/extFinder/app/controller/ACLController.js"
             ],
             "className": "ACLController"
         },
@@ -89,40 +89,40 @@
         "a4680f21-f444-4aa5-9954-5523f4e23fd1": {
             "paths": [
                 "metadata/view/DAMPickerWindow",
-                "app/view/override/DAMPickerWindow.js",
-                "app/view/DAMPickerWindow.js"
+                "resources/extFinder/app/view/override/DAMPickerWindow.js",
+                "resources/extFinder/app/view/DAMPickerWindow.js"
             ],
             "className": "DAMPickerWindow"
         },
         "a3641d1d-5b3c-46b4-aa1e-cc532f68228f": {
             "paths": [
                 "metadata/store/DAMPickerStore",
-                "app/store/override/DAMPickerStore.js",
-                "app/store/DAMPickerStore.js"
+                "resources/extFinder/app/store/override/DAMPickerStore.js",
+                "resources/extFinder/app/store/DAMPickerStore.js"
             ],
             "className": "DAMPickerStore"
         },
         "1a8b1bd9-acd3-48a5-985b-65285c209b10": {
             "paths": [
                 "metadata/store/MediaTypesFORDAMPicker",
-                "app/store/override/MediaTypesFORDAMPicker.js",
-                "app/store/MediaTypesFORDAMPicker.js"
+                "resources/extFinder/app/store/override/MediaTypesFORDAMPicker.js",
+                "resources/extFinder/app/store/MediaTypesFORDAMPicker.js"
             ],
             "className": "MediaTypesFORDAMPicker"
         },
         "4512fb97-c2df-4b67-9da5-de264ae60e65": {
             "paths": [
                 "metadata/model/DAMModel",
-                "app/model/override/DAMModel.js",
-                "app/model/DAMModel.js"
+                "resources/extFinder/app/model/override/DAMModel.js",
+                "resources/extFinder/app/model/DAMModel.js"
             ],
             "className": "DAMModel"
         },
         "1b54ad21-ee09-4566-aeff-6c0bb63da0a2": {
             "paths": [
                 "metadata/model/mediaTypeModel",
-                "app/model/override/mediaTypeModel.js",
-                "app/model/mediaTypeModel.js"
+                "resources/extFinder/app/model/override/mediaTypeModel.js",
+                "resources/extFinder/app/model/mediaTypeModel.js"
             ],
             "className": "mediaTypeModel"
         },
@@ -141,8 +141,8 @@
         "0171d531-e44c-4872-9533-36a0c2cf26dd": {
             "paths": [
                 "metadata/view/DAMMainView",
-                "app/view/override/DAMMainView.js",
-                "app/view/DAMMainView.js"
+                "resources/extFinder/app/view/override/DAMMainView.js",
+                "resources/extFinder/app/view/DAMMainView.js"
             ],
             "className": "DAMMainView"
         },

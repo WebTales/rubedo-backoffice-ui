@@ -77,7 +77,7 @@ Ext.define('Rubedo.view.CKEField', {
         }
 
         var targetId = abstractcomponent.getInputId();
-        abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:"resources/extFinder/app.html?type=Image", filebrowserImageUploadUrl:"resources/extFinder/app.html?type=Image"});
+        abstractcomponent.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:"ext-finder?type=Image"});
         abstractcomponent.editor.on('instanceReady', function(){
             abstractcomponent.up().doLayout();
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){
