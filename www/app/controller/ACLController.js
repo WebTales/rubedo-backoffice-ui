@@ -91,6 +91,7 @@ Ext.define('Rubedo.controller.ACLController', {
     },
 
     onLaunch: function() {
+        var me=this;
         Ext.Ajax.request({
             url:'current-user/get-token',
             params:{
@@ -113,6 +114,40 @@ Ext.define('Rubedo.controller.ACLController', {
             },
             failure:function(){
                 Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
+            }
+        });
+        ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);
+    },
+
+    checkSessionStatus: function() {
+        Ext.Ajax.request({
+            url:'xhr-authentication/is-session-expiring',
+            params:{
+
+            },
+            success:function(response){
+                var currentStatus=Ext.JSON.decode(response.responseText);
+                if (currentStatus.status) {
+                    if ((currentStatus.time<=300)&&(Ext.isEmpty(Ext.getCmp("sessionWarningWindow")))){
+                        Ext.widget("sessionWarningWindow").show();
+                    } else if ((currentStatus.time<=300)&&(!Ext.isEmpty(Ext.getCmp("sessionWarningWindow")))){
+
+                    }else if (!Ext.isEmpty(Ext.getCmp("sessionWarningWindow"))){
+                        Ext.getCmp("sessionWarningWindow").close();
+                    }
+                } else {
+                    if (!Ext.isEmpty(Ext.getCmp("sessionWarningWindow"))){
+                        Ext.getCmp("sessionWarningWindow").close();
+                    }
+                    if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                        Ext.widget("sessionExpiredWindow").show();
+                    }
+
+                }
+            },
+            failure:function(){
+                console.log("sesson status recover error");
+                clearInterval(ACL.sessionCheckIterator);
             }
         });
     }

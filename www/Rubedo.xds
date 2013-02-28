@@ -2020,6 +2020,22 @@
                 "app/view/queryFieldComponent.js"
             ],
             "className": "queryFieldComponent"
+        },
+        "5d41405d-8ed6-4d4a-b220-d09d58101928": {
+            "paths": [
+                "metadata/view/sessionWarningWindow",
+                "app/view/override/sessionWarningWindow.js",
+                "app/view/sessionWarningWindow.js"
+            ],
+            "className": "sessionWarningWindow"
+        },
+        "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee": {
+            "paths": [
+                "metadata/view/sessionExpiredWindow",
+                "app/view/override/sessionExpiredWindow.js",
+                "app/view/sessionExpiredWindow.js"
+            ],
+            "className": "sessionExpiredWindow"
         }
     },
     "viewOrderMap": {
@@ -2132,7 +2148,9 @@
             "d8f7ec5e-c852-435a-bb17-6c19e843c898",
             "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
             "15b19248-a73a-4ad3-87eb-1ea892921ea0",
-            "b0ae3c81-7792-47a7-91c2-3e7e993f879c"
+            "b0ae3c81-7792-47a7-91c2-3e7e993f879c",
+            "5d41405d-8ed6-4d4a-b220-d09d58101928",
+            "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

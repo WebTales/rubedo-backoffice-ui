@@ -1,0 +1,77 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sessionWarningWindow",
+        "designer|userAlias": "sessionWarningWindow",
+        "height": 82,
+        "id": "sessionWarningWindow",
+        "width": 252,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Votre session va bientot expirer",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen11466",
+    "designerId": "5d41405d-8ed6-4d4a-b220-d09d58101928",
+    "cn": [
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton254",
+                "resizable": null,
+                "text": "Renouveler ma session"
+            },
+            "configAlternates": {
+                "resizable": "boolean"
+            },
+            "designerId": "136ed17c-7b4c-48fe-955a-4c4d4a6fa89a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "Ext.Ajax.request({\r",
+                            "    url:'acl',\r",
+                            "    params:{\r",
+                            "        data: Ext.JSON.encode(ACL.interfaceRights)\r",
+                            "    },\r",
+                            "    success:function(response){\r",
+                            "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);\r",
+                            "    },\r",
+                            "    failure:function(){\r",
+                            "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",
+                            "    }\r",
+                            "});\r",
+                            "button.up().close();"
+                        ]
+                    },
+                    "designerId": "fd684761-7530-4154-9f0e-6eae4e9120e7"
+                }
+            ]
+        }
+    ]
+}

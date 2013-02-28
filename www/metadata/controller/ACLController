@@ -121,6 +121,7 @@
                 "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
+                    "var me=this;\r",
                     "Ext.Ajax.request({\r",
                     "    url:'current-user/get-token',\r",
                     "    params:{\r",
@@ -144,10 +145,56 @@
                     "    failure:function(){\r",
                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",
                     "    }\r",
-                    "});"
+                    "});\r",
+                    "ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);"
                 ]
             },
             "designerId": "83ba7d31-8371-4044-a1c9-120f85c20615"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "checkSessionStatus",
+                "fn": "checkSessionStatus",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url:'xhr-authentication/is-session-expiring',\r",
+                    "    params:{\r",
+                    "\r",
+                    "    },\r",
+                    "    success:function(response){\r",
+                    "        var currentStatus=Ext.JSON.decode(response.responseText);\r",
+                    "        if (currentStatus.status) {\r",
+                    "            if ((currentStatus.time<=300)&&(Ext.isEmpty(Ext.getCmp(\"sessionWarningWindow\")))){\r",
+                    "                Ext.widget(\"sessionWarningWindow\").show();\r",
+                    "            } else if ((currentStatus.time<=300)&&(!Ext.isEmpty(Ext.getCmp(\"sessionWarningWindow\")))){\r",
+                    "              \r",
+                    "            }else if (!Ext.isEmpty(Ext.getCmp(\"sessionWarningWindow\"))){\r",
+                    "                Ext.getCmp(\"sessionWarningWindow\").close();\r",
+                    "            }\r",
+                    "        } else {\r",
+                    "            if (!Ext.isEmpty(Ext.getCmp(\"sessionWarningWindow\"))){\r",
+                    "                Ext.getCmp(\"sessionWarningWindow\").close();\r",
+                    "            }\r",
+                    "            if (Ext.isEmpty(Ext.getCmp(\"sessionExpiredWindow\"))){\r",
+                    "                Ext.widget(\"sessionExpiredWindow\").show();\r",
+                    "            }\r",
+                    "            \r",
+                    "        }\r",
+                    "    },\r",
+                    "    failure:function(){\r",
+                    "        console.log(\"sesson status recover error\");\r",
+                    "        clearInterval(ACL.sessionCheckIterator);\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "81a08c0f-cbaf-45b8-9c90-0a2728094fd7"
         }
     ]
 }

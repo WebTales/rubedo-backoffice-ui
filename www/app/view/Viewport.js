@@ -106,6 +106,8 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.DCEField',
         'Rubedo.view.DCEFieldComponent',
         'Rubedo.view.localiserFieldCompoent',
-        'Rubedo.view.localiserField'
+        'Rubedo.view.localiserField',
+        'Rubedo.view.sessionWarningWindow',
+        'Rubedo.view.sessionExpiredWindow'
     ]
 });

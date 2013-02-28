@@ -218,7 +218,9 @@ Ext.application({
         'MQFieldComponent',
         'localiserFieldCompoent',
         'localiserField',
-        'queryFieldComponent'
+        'queryFieldComponent',
+        'sessionWarningWindow',
+        'sessionExpiredWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

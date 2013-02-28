@@ -1,0 +1,56 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sessionExpiredWindow",
+        "designer|userAlias": "sessionExpiredWindow",
+        "height": 78,
+        "id": "sessionExpiredWindow",
+        "width": 236,
+        "layout": "fit",
+        "title": "Votre session a expiré"
+    },
+    "id": "ExtBox1-ext-gen11662",
+    "designerId": "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",
+    "cn": [
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton255",
+                "text": "Se connecter à nouveau"
+            },
+            "designerId": "d70d4085-012a-4c09-9664-8b3e0c4921fe",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "handler",
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "window.location.href=\"login\";"
+                        ]
+                    },
+                    "designerId": "7879558e-f4ed-4152-bf26-9ca83be6ba95"
+                }
+            ]
+        }
+    ]
+}
