@@ -48,7 +48,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp('boiteAIconesBureau').setHeight(abstractcomponent.getHeight());
         Ext.getCmp('boiteAIconesBureau').setWidth(abstractcomponent.getWidth());
         if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
+            var hideAfter=!Ext.getCmp('menuPrincipalInterface').isVisible();
             Ext.getCmp('menuPrincipalInterface').showAt(0, abstractcomponent.getHeight()-300);
+            if (hideAfter){
+                Ext.getCmp('menuPrincipalInterface').hide();
+            }
         }
     },
 

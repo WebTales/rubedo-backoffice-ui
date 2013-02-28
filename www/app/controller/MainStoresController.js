@@ -78,7 +78,7 @@ Ext.define('Rubedo.controller.MainStoresController', {
                             else {
                                 message = respondedMessage.msg;
                             }
-                            console.log(response);
+
                         } 
                         Ext.Msg.alert("Erreur", message);
                         if (operation.action=="update") {

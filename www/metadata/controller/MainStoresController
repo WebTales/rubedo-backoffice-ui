@@ -78,7 +78,7 @@
                     "                    else {\r",
                     "                        message = respondedMessage.msg;\r",
                     "                    }\r",
-                    "                    console.log(response);\r",
+                    "                    \r",
                     "                } \r",
                     "                Ext.Msg.alert(\"Erreur\", message);\r",
                     "                if (operation.action==\"update\") {\r",
