@@ -33,10 +33,10 @@
                 "batchActions": false,
                 "api": [
                     "{",
-                    "                    create: '../../contents/create',",
-                    "                    read: '../../contents',",
-                    "                    update: '../../contents/update',",
-                    "                    destroy: '../../contents/delete'",
+                    "                    create: 'contents/create',",
+                    "                    read: 'contents',",
+                    "                    update: 'contents/update',",
+                    "                    destroy: 'contents/delete'",
                     "                }"
                 ],
                 "url": null

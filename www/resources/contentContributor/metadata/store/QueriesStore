@@ -31,10 +31,10 @@
                 "designer|userClassName": "MyAjaxProxy48",
                 "api": [
                     "{",
-                    "                    create: '../../queries/create',",
-                    "                    read: '../../queries',",
-                    "                    update: '../../queries/update',",
-                    "                    destroy: '../../queries/delete'",
+                    "                    create: 'queries/create',",
+                    "                    read: 'queries',",
+                    "                    update: 'queries/update',",
+                    "                    destroy: 'queries/delete'",
                     "                }"
                 ]
             },

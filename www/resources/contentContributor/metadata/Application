@@ -30,6 +30,7 @@
             "DAMMainView",
             "DAMPickerWindow"
         ],
+        "appFolder": "resources/contentContributor/app",
         "autoCreateViewport": true,
         "name": "ContentContributor",
         "controllers": [
@@ -52,7 +53,10 @@
                 "designer|userClassName": "Loader56",
                 "enabled": true,
                 "paths": [
-                    "{\"Ext\":\".\", \"Ext.ux\":\"../ux\", \"Rubedo\":\"../../app\"}"
+                    "{\"Ext\":\".\",",
+                    " \"Ext.ux\":\"resources/ux\",",
+                    " \"Rubedo\":\"app\"",
+                    "}"
                 ]
             },
             "designerId": "f9d0677b-f403-41ef-a206-41dcaa1fb701"

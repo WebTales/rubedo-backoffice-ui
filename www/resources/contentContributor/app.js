@@ -17,8 +17,8 @@ Ext.Loader.setConfig({
     enabled: true,
     paths: {
         Ext: '.',
-        'Ext.ux': '../ux',
-        Rubedo: '../../app'
+        'Ext.ux': 'resources/ux',
+        Rubedo: 'app'
     }
 });
 
@@ -47,6 +47,7 @@ Ext.application({
         'DAMMainView',
         'DAMPickerWindow'
     ],
+    appFolder: 'resources/contentContributor/app',
     autoCreateViewport: true,
     name: 'ContentContributor',
     controllers: [

@@ -126,7 +126,7 @@
                     "",
                     "            generateThumbnail = function()",
                     "            {",
-                    "                return \"../../dam/get-thumbnail?id=\"+record.get(\"id\");",
+                    "                return \"dam/get-thumbnail?id=\"+record.get(\"id\");",
                     "            };",
                     "",
                     "            if(this.viewMode)",
@@ -294,8 +294,8 @@
                                 "designer|userClassName": "onImagePickerAcceptBtnClick",
                                 "fn": "onImagePickerAcceptBtnClick",
                                 "implHandler": [
-                                    "var target = button.up().up().getComponent(0).getSelectionModel().getLastSelected();\r",
-                                    "Ext.getCmp(button.up().up().targetField).setValue(target.get(\"id\"));\r",
+                                    "var target = button.up().up().getComponent(0).getSelectionModel().getLastSelected();",
+                                    "Ext.getCmp(button.up().up().targetField).setValue(target.get(\"id\"));",
                                     "button.up().up().close();"
                                 ],
                                 "name": "click",

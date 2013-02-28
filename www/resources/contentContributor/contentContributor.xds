@@ -24,8 +24,8 @@
         "7e993cf9-0647-41b1-9a43-5a8a0b09e568": {
             "paths": [
                 "metadata/view/MainForm",
-                "app/view/override/MainForm.js",
-                "app/view/MainForm.js"
+                "resources/contentContributor/app/view/override/MainForm.js",
+                "resources/contentContributor/app/view/MainForm.js"
             ],
             "className": "MainForm"
         },
@@ -38,24 +38,24 @@
         "7b179740-bc32-424a-9f22-d87b248d4bef": {
             "paths": [
                 "metadata/controller/MainController",
-                "app/controller/override/MainController.js",
-                "app/controller/MainController.js"
+                "resources/contentContributor/app/controller/override/MainController.js",
+                "resources/contentContributor/app/controller/MainController.js"
             ],
             "className": "MainController"
         },
         "6cfeb0f4-f1fe-474f-bb55-fa4d1dd695ac": {
             "paths": [
                 "metadata/controller/ACLController",
-                "app/controller/override/ACLController.js",
-                "app/controller/ACLController.js"
+                "resources/contentContributor/app/controller/override/ACLController.js",
+                "resources/contentContributor/app/controller/ACLController.js"
             ],
             "className": "ACLController"
         },
         "33902aa5-6d2c-42d9-9095-f7ffe3229abf": {
             "paths": [
                 "metadata/view/fieldWrapper",
-                "app/view/override/fieldWrapper.js",
-                "app/view/fieldWrapper.js"
+                "resources/contentContributor/app/view/override/fieldWrapper.js",
+                "resources/contentContributor/app/view/fieldWrapper.js"
             ],
             "className": "fieldWrapper"
         },
@@ -98,8 +98,8 @@
         "5affe889-8d2a-4e2c-b305-55cc48a45c07": {
             "paths": [
                 "metadata/controller/MainStoresController",
-                "app/controller/override/MainStoresController.js",
-                "app/controller/MainStoresController.js"
+                "resources/contentContributor/app/controller/override/MainStoresController.js",
+                "resources/contentContributor/app/controller/MainStoresController.js"
             ],
             "className": "MainStoresController"
         },
@@ -112,25 +112,25 @@
         "fdfc62ca-7705-4dbb-9b13-8d528a0451c8": {
             "paths": [
                 "metadata/view/MainViewport",
-                "app/view/override/MainViewport.js",
-                "app/view/MainViewport.js",
-                "app/view/Viewport.js"
+                "resources/contentContributor/app/view/override/MainViewport.js",
+                "resources/contentContributor/app/view/MainViewport.js",
+                "resources/contentContributor/app/view/Viewport.js"
             ],
             "className": "MainViewport"
         },
         "878fb62d-cad8-432c-8ada-7c747d0df220": {
             "paths": [
                 "metadata/store/Contents",
-                "app/store/override/Contents.js",
-                "app/store/Contents.js"
+                "resources/contentContributor/app/store/override/Contents.js",
+                "resources/contentContributor/app/store/Contents.js"
             ],
             "className": "Contents"
         },
         "92a46cff-c0b3-47bd-a001-91780b452b14": {
             "paths": [
                 "metadata/model/contentDataModel",
-                "app/model/override/contentDataModel.js",
-                "app/model/contentDataModel.js"
+                "resources/contentContributor/app/model/override/contentDataModel.js",
+                "resources/contentContributor/app/model/contentDataModel.js"
             ],
             "className": "contentDataModel"
         },
@@ -143,16 +143,16 @@
         "a7c74968-2e49-41d2-94c2-728098b2f9c9": {
             "paths": [
                 "metadata/store/QueriesStore",
-                "app/store/override/QueriesStore.js",
-                "app/store/QueriesStore.js"
+                "resources/contentContributor/app/store/override/QueriesStore.js",
+                "resources/contentContributor/app/store/QueriesStore.js"
             ],
             "className": "QueriesStore"
         },
         "2a4695f1-3173-49db-9f7e-b1b5a41931d3": {
             "paths": [
                 "metadata/model/queryDataModel",
-                "app/model/override/queryDataModel.js",
-                "app/model/queryDataModel.js"
+                "resources/contentContributor/app/model/override/queryDataModel.js",
+                "resources/contentContributor/app/model/queryDataModel.js"
             ],
             "className": "queryDataModel"
         },
@@ -165,24 +165,24 @@
         "7da94d0b-37e6-45c0-a50d-391fb5611e6c": {
             "paths": [
                 "metadata/store/TaxonomieDataJson",
-                "app/store/override/TaxonomieDataJson.js",
-                "app/store/TaxonomieDataJson.js"
+                "resources/contentContributor/app/store/override/TaxonomieDataJson.js",
+                "resources/contentContributor/app/store/TaxonomieDataJson.js"
             ],
             "className": "TaxonomieDataJson"
         },
         "24cee725-ec02-4efd-b587-2ad70cff6795": {
             "paths": [
                 "metadata/model/taxonomieDataModel",
-                "app/model/override/taxonomieDataModel.js",
-                "app/model/taxonomieDataModel.js"
+                "resources/contentContributor/app/model/override/taxonomieDataModel.js",
+                "resources/contentContributor/app/model/taxonomieDataModel.js"
             ],
             "className": "taxonomieDataModel"
         },
         "8d2340f7-3ad5-4d77-89df-3da76f4cc35e": {
             "paths": [
                 "metadata/model/taxonomyTermModel",
-                "app/model/override/taxonomyTermModel.js",
-                "app/model/taxonomyTermModel.js"
+                "resources/contentContributor/app/model/override/taxonomyTermModel.js",
+                "resources/contentContributor/app/model/taxonomyTermModel.js"
             ],
             "className": "taxonomyTermModel"
         },
@@ -195,72 +195,72 @@
         "63d1060f-0a80-45cc-873f-6c2840694aeb": {
             "paths": [
                 "metadata/model/DAMModel",
-                "app/model/override/DAMModel.js",
-                "app/model/DAMModel.js"
+                "resources/contentContributor/app/model/override/DAMModel.js",
+                "resources/contentContributor/app/model/DAMModel.js"
             ],
             "className": "DAMModel"
         },
         "17d1f4dc-1829-4e04-9802-2b1f8b417b97": {
             "paths": [
                 "metadata/model/mediaTypeModel",
-                "app/model/override/mediaTypeModel.js",
-                "app/model/mediaTypeModel.js"
+                "resources/contentContributor/app/model/override/mediaTypeModel.js",
+                "resources/contentContributor/app/model/mediaTypeModel.js"
             ],
             "className": "mediaTypeModel"
         },
         "67701fd5-18e4-48d1-a2c5-e34f546f7808": {
             "paths": [
                 "metadata/view/DAMMainView",
-                "app/view/override/DAMMainView.js",
-                "app/view/DAMMainView.js"
+                "resources/contentContributor/app/view/override/DAMMainView.js",
+                "resources/contentContributor/app/view/DAMMainView.js"
             ],
             "className": "DAMMainView"
         },
         "a3e62dcc-3e49-4f7f-ad6a-d64dae3b2f21": {
             "paths": [
                 "metadata/view/DAMPickerWindow",
-                "app/view/override/DAMPickerWindow.js",
-                "app/view/DAMPickerWindow.js"
+                "resources/contentContributor/app/view/override/DAMPickerWindow.js",
+                "resources/contentContributor/app/view/DAMPickerWindow.js"
             ],
             "className": "DAMPickerWindow"
         },
         "487b9d97-ed46-40f7-b752-c771b1b317ce": {
             "paths": [
                 "metadata/view/MyTool17",
-                "app/view/override/MyTool17.js",
-                "app/view/MyTool17.js"
+                "resources/contentContributor/app/view/override/MyTool17.js",
+                "resources/contentContributor/app/view/MyTool17.js"
             ],
             "className": "MyTool17"
         },
         "1ffb40bf-f8f5-4769-8f8a-ce8ad5fda718": {
             "paths": [
                 "metadata/view/ImageFieldComponent",
-                "app/view/override/ImageFieldComponent.js",
-                "app/view/ImageFieldComponent.js"
+                "resources/contentContributor/app/view/override/ImageFieldComponent.js",
+                "resources/contentContributor/app/view/ImageFieldComponent.js"
             ],
             "className": "ImageFieldComponent"
         },
         "87c18ad5-14ee-48f3-82d6-850631e34b63": {
             "paths": [
                 "metadata/view/ImagePickerField",
-                "app/view/override/ImagePickerField.js",
-                "app/view/ImagePickerField.js"
+                "resources/contentContributor/app/view/override/ImagePickerField.js",
+                "resources/contentContributor/app/view/ImagePickerField.js"
             ],
             "className": "ImagePickerField"
         },
         "1da351ad-99a6-4150-9990-87deaaa49d9d": {
             "paths": [
                 "metadata/store/DAMPickerStore",
-                "app/store/override/DAMPickerStore.js",
-                "app/store/DAMPickerStore.js"
+                "resources/contentContributor/app/store/override/DAMPickerStore.js",
+                "resources/contentContributor/app/store/DAMPickerStore.js"
             ],
             "className": "DAMPickerStore"
         },
         "0c925756-e271-47d3-ad7c-7384ac3752f2": {
             "paths": [
                 "metadata/store/MediaTypesFORDAMPicker",
-                "app/store/override/MediaTypesFORDAMPicker.js",
-                "app/store/MediaTypesFORDAMPicker.js"
+                "resources/contentContributor/app/store/override/MediaTypesFORDAMPicker.js",
+                "resources/contentContributor/app/store/MediaTypesFORDAMPicker.js"
             ],
             "className": "MediaTypesFORDAMPicker"
         },
