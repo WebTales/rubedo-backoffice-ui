@@ -80,6 +80,11 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'CTType'
+        },
+        {
+            name: 'system',
+            defaultValue: false,
+            type: 'boolean'
         }
     ]
 });

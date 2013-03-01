@@ -241,6 +241,23 @@
                 "name": "CTType"
             },
             "designerId": "5a8c86f8-d36a-4ef5-92ec-95ce3ebc6bba"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field315",
+                "name": "system",
+                "defaultValue": [
+                    "false"
+                ],
+                "type": "boolean"
+            },
+            "designerId": "a8cf29cf-aa8c-4c91-891a-a25465dd95de"
         }
     ]
 }

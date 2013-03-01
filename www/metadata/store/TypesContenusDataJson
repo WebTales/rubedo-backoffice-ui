@@ -11,6 +11,7 @@
         "designer|userClassName": "TypesContenusDataJson",
         "autoLoad": false,
         "autoSync": true,
+        "remoteFilter": true,
         "storeId": "TypesContenusDataJson",
         "model": "typesContenusDataModel",
         "data": null
@@ -50,6 +51,7 @@
                     "                    destroy: 'content-types/delete'\r",
                     "                }"
                 ],
+                "extraParams": null,
                 "url": null
             },
             "designerId": "5576d994-f5ae-4e01-b729-5aaa88d58df8",
@@ -84,6 +86,22 @@
                     "designerId": "eafa65d2-d800-4b40-aa1a-df15fb6b3ae1"
                 }
             ]
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter7",
+                "property": "system",
+                "value": [
+                    "{\"$ne\":true}"
+                ]
+            },
+            "designerId": "f5e8aa84-e6dc-4ade-b11e-aee6d5df9178"
         }
     ]
 }

@@ -28,6 +28,7 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
             usedCollection: 'ContentTypes',
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
             storeId: 'TypesContenusDataJson',
             model: 'Rubedo.model.typesContenusDataModel',
             proxy: {
@@ -48,6 +49,12 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
                     nameProperty: 'mapping',
                     encode: true,
                     root: 'data'
+                }
+            },
+            filters: {
+                property: 'system',
+                value: {
+                    $ne: true
                 }
             }
         }, cfg)]);

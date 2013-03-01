@@ -11,6 +11,7 @@
         "designer|userClassName": "TypesContenusNDepDataJson",
         "designer|userAlias": "TypesContenusNDepDataJson",
         "autoLoad": false,
+        "remoteFilter": true,
         "storeId": "TypesContenusNDepDataJson",
         "model": "typesContenusDataModel"
     },
@@ -84,6 +85,22 @@
                 ]
             },
             "designerId": "77c03993-0c28-43a1-8e49-2129fe7e82b5"
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter8",
+                "property": "system",
+                "value": [
+                    "{\"$ne\":true}"
+                ]
+            },
+            "designerId": "d9fbb700-f3c7-432c-9e93-fc56106f7307"
         }
     ]
 }
