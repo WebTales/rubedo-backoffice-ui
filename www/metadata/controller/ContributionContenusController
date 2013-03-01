@@ -245,6 +245,7 @@
                     "    Ext.getStore(\"NestedContentsStore\").removeAll();\r",
                     "    Ext.getStore(\"ContenusDataJson\").removeAll();\r",
                     "    Ext.getStore(\"DepTypesForContents\").removeAll();\r",
+                    "    Ext.getStore(\"TypesContenusNDepDataJson\").removeAll();\r",
                     "}"
                 ],
                 "name": "beforeclose",
@@ -969,6 +970,7 @@
                     "if (abstractcomponent.isXType(\"window\")){\r",
                     "    Ext.getStore(\"TaxonomyForC\").load();\r",
                     "    Ext.getStore(\"DepTypesForContents\").load();\r",
+                    "    Ext.getStore(\"TypesContenusNDepDataJson\").load();\r",
                     "}"
                 ],
                 "name": "render",

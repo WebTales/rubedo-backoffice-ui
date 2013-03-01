@@ -161,6 +161,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getStore("NestedContentsStore").removeAll();
             Ext.getStore("ContenusDataJson").removeAll();
             Ext.getStore("DepTypesForContents").removeAll();
+            Ext.getStore("TypesContenusNDepDataJson").removeAll();
         }
     },
 
@@ -515,6 +516,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         if (abstractcomponent.isXType("window")){
             Ext.getStore("TaxonomyForC").load();
             Ext.getStore("DepTypesForContents").load();
+            Ext.getStore("TypesContenusNDepDataJson").load();
         }
     },
 
