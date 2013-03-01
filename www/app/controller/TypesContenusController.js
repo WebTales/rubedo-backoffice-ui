@@ -703,7 +703,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         target.set("champs", champsR);
                         var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                         target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
-                        if (target.get("dependant") ===false) {
+                        if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
                             var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
                             target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
 
@@ -720,7 +720,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 target.set("champs", champsR);
                                 var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                                 target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
-                                if (target.get("dependant") ===false) {
+                                if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
                                     var newDepTypes = Ext.getCmp('TCImbriquesGrid').getSelectionModel().getSelection();        
                                     target.set("dependantTypes", Ext.Array.pluck(Ext.Array.pluck(newDepTypes, "data"), "id"));
 
