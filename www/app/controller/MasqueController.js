@@ -531,13 +531,13 @@ Ext.define('Rubedo.controller.MasqueController', {
             if (!Ext.isEmpty(myOffset)) {
                 if ((myOffset.isXType("container"))&&(!(myOffset.isXType("panel")))) {
                     myEol.flex=myEol.flex+myOffset.flex;
-                    myOffset.destroy();
+                    myOffset.up().remove(myOffset);
                 }
             }
             myEol.flex=myEol.flex+cible.flex;
 
         }
-        cible.destroy();
+        cible.up().remove(cible);
         Ext.getCmp("newRow").disable();
         Ext.getCmp("newCol").disable();
         Ext.getCmp("newBloc").disable();
