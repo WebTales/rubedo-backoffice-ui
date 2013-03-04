@@ -125,7 +125,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                         nouvChamp.validator=me.nameValidator;
                     }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
-                    nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.mediaTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly")));
+                    nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.damTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly")));
                     nouvChamp.on('change', function (thing) {
                         if (thing.isValid()){
                             TCfield.config[this.name]= this.getValue();

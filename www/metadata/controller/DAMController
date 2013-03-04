@@ -150,7 +150,7 @@
                     "if (Ext.isEmpty(newField.config.tooltip)){\r",
                     "    casing.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
-                    "renderTarget.insert(renderTarget.items.items.length-4,casing);"
+                    "renderTarget.insert(renderTarget.items.items.length-2,casing);"
                 ]
             },
             "designerId": "2092c93a-ac01-475b-ba80-2011248055db"
@@ -205,6 +205,9 @@
                 "implHandler": [
                     "var formTaxoTC =  Ext.getCmp('DAMTaxoBox');\r",
                     "var lesTaxo = DAMType.get(\"vocabularies\");\r",
+                    "if (Ext.isEmpty(lesTaxo)) {\r",
+                    "    formTaxoTC.hide();\r",
+                    "} else {\r",
                     "var i=0;\r",
                     "for (i=0; i<lesTaxo.length; i++) {\r",
                     "    if (useSep){\r",
@@ -294,7 +297,7 @@
                     "    if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}\r",
                     "    formTaxoTC.add(enrobage);\r",
                     "\r",
-                    "}"
+                    "}}"
                 ]
             },
             "designerId": "d1ba1045-af86-4901-9aa5-c79962ca4a7d"
