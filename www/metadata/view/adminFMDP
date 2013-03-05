@@ -568,7 +568,32 @@
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
-                            "designerId": "68c3d963-6bad-4417-8d6c-11dc80cc460f"
+                            "designerId": "68c3d963-6bad-4417-8d6c-11dc80cc460f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onAdminfMasquesEnregistrerAfterRender",
+                                        "fn": "onAdminfMasquesEnregistrerAfterRender",
+                                        "implHandler": [
+                                            "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                            "if (!abstractcomponent.disabled){\r",
+                                            "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                            "    t.stopEvent();\r",
+                                            "}\r",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "52261f07-ca55-4fba-a232-b245d021c9e7"
+                                }
+                            ]
                         }
                     ]
                 },

@@ -260,7 +260,13 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
-                                    text: 'Enregistrer'
+                                    text: 'Enregistrer',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onAdminfMasquesEnregistrerAfterRender,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -459,6 +465,15 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onAdminfMasquesEnregistrerAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     },
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
