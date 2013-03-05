@@ -58,7 +58,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             Ext.getCmp("newCol").disable();
                             Ext.getCmp("newBloc").disable();
                             Ext.getCmp("deleteElement").disable();
-                            Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+                            Ext.getCmp('elementEditControl').setTitle("Sélectionnez un élément");
                             Ext.getCmp('elementEditControl').removeAll();
                             Ext.getCmp('elementEditControl').setIconCls();
                             Ext.getCmp('elementIdField').setValue(null);
@@ -106,7 +106,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp("deleteElement").disable();
     Ext.getCmp("moveElementUp").disable();
     Ext.getCmp("moveElementDown").disable();
-    Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+    Ext.getCmp('elementEditControl').setTitle("Sélectionnez un élément");
     Ext.getCmp('elementEditControl').removeAll();
     Ext.getCmp('elementEditControl').setIconCls();
     Ext.getCmp('elementIdField').setValue(null);
@@ -546,7 +546,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("deleteElement").disable();
         Ext.getCmp("moveElementUp").disable();
         Ext.getCmp("moveElementDown").disable();
-        Ext.getCmp('elementEditControl').setTitle("Séléctionnez un élément");
+        Ext.getCmp('elementEditControl').setTitle("Sélectionnez un élément");
         Ext.getCmp('elementEditControl').removeAll();
         Ext.getCmp('elementEditControl').setIconCls();
         Ext.getCmp('elementIdField').setValue(null);

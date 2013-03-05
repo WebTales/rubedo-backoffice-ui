@@ -221,7 +221,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
-                                    text: 'Copier'
+                                    text: 'Dupliquer'
                                 },
                                 {
                                     xtype: 'button',
@@ -369,6 +369,10 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 beforeedit: {
                                     fn: me.onGridcelleditingpluginBeforeEdit,
                                     scope: me
+                                },
+                                edit: {
+                                    fn: me.onGridcelleditingpluginEdit,
+                                    scope: me
                                 }
                             }
                         })
@@ -478,6 +482,13 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
         if (!ACL.interfaceRights['write.ui.masks']){return(false);}
+    },
+
+    onGridcelleditingpluginEdit: function(editor, e, options) {
+        var bcRep = Ext.getCmp("adminFMDP").getDockedComponent('filArianne').getComponent('type');
+        if (!Ext.isEmpty(bcRep)){
+            bcRep.setText(e.value);
+        }
     },
 
     onMasquesGridBeforeRender: function(abstractcomponent, options) {

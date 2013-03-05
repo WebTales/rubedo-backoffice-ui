@@ -25,7 +25,7 @@ Ext.define('Rubedo.view.copierMasque', {
         type: 'fit'
     },
     iconCls: 'page_copy',
-    title: 'Copie de masque avec redimensionement',
+    title: 'Duplication de masque',
     modal: true,
 
     initComponent: function() {
@@ -49,7 +49,7 @@ Ext.define('Rubedo.view.copierMasque', {
                             xtype: 'combobox',
                             anchor: '100%',
                             id: 'copierMasqueSite',
-                            fieldLabel: 'Vers le site ',
+                            fieldLabel: 'Dans le site ',
                             allowBlank: false,
                             editable: false,
                             forceSelection: true,
@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.copierMasque', {
                             xtype: 'button',
                             anchor: '1',
                             id: 'copierMasque',
-                            text: 'Copier ce masque'
+                            text: 'Dupliquer ce masque'
                         }
                     ]
                 }

@@ -16,7 +16,7 @@
         ],
         "layout": "fit",
         "iconCls": "page_copy",
-        "title": "Copie de masque avec redimensionement",
+        "title": "Duplication de masque",
         "modal": true
     },
     "id": "ExtBox1-ext-gen45718",
@@ -64,7 +64,7 @@
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyComboBox",
                         "id": "copierMasqueSite",
-                        "fieldLabel": "Vers le site ",
+                        "fieldLabel": "Dans le site ",
                         "allowBlank": false,
                         "editable": false,
                         "forceSelection": true,
@@ -85,7 +85,7 @@
                         "designer|userClassName": "MyButton50",
                         "id": "copierMasque",
                         "width": null,
-                        "text": "Copier ce masque"
+                        "text": "Dupliquer ce masque"
                     },
                     "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523"
                 }

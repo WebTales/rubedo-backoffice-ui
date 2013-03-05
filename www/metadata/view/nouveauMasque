@@ -78,7 +78,30 @@
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
-                    "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b"
+                    "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onNouveauMasqueSiteAfterRender",
+                                "fn": "onNouveauMasqueSiteAfterRender",
+                                "implHandler": [
+                                    "var results = abstractcomponent.getStore().getRange();\r",
+                                    "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
+                                    "    abstractcomponent.select(results[0]);\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "32b5139c-25dd-4559-91b1-acb7d2f0a0f6"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

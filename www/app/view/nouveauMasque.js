@@ -56,7 +56,13 @@ Ext.define('Rubedo.view.nouveauMasque', {
                             forceSelection: true,
                             queryMode: 'local',
                             store: 'SitesComboMasks',
-                            valueField: 'id'
+                            valueField: 'id',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onNouveauMasqueSiteAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -70,6 +76,13 @@ Ext.define('Rubedo.view.nouveauMasque', {
         });
 
         me.callParent(arguments);
+    },
+
+    onNouveauMasqueSiteAfterRender: function(abstractcomponent, options) {
+        var results = abstractcomponent.getStore().getRange();
+        if ((!Ext.isEmpty(results))&&(results.length==1)){
+            abstractcomponent.select(results[0]);
+        }
     }
 
 });

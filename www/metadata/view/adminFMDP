@@ -475,7 +475,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Dupliquer"
                             },
                             "designerId": "5325f9fa-50bb-435c-b0a4-7e37167fde9e",
                             "customConfigs": [
@@ -887,6 +887,27 @@
                                 "scope": "me"
                             },
                             "designerId": "290bc7fd-545a-45fe-90b0-8bfc32943eeb"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridcelleditingpluginEdit",
+                                "fn": "onGridcelleditingpluginEdit",
+                                "implHandler": [
+                                    "var bcRep = Ext.getCmp(\"adminFMDP\").getDockedComponent('filArianne').getComponent('type');\r",
+                                    "if (!Ext.isEmpty(bcRep)){\r",
+                                    "bcRep.setText(e.value);\r",
+                                    "}"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "2be7ef15-f9e3-42a7-8795-89af4812a8ed"
                         }
                     ]
                 },
