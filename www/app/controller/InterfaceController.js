@@ -331,10 +331,21 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 });
             }
         }
+        var x=0;
+        var y=0;
+        while (this.placeLibre(x,y, "newOne")===false) {
+            if (y<(window.innerHeight-150)) {    
+                y=y+100;
+            }
+            else {
+                y=0;
+                x=x+100;
+            }
+        }
         var newIcon = Ext.create("Rubedo.model.iconDataModel",{
             text:myText,
-            posX:0,
-            posY:0,
+            posX:x,
+            posY:y,
             image: preDefined||myWindow.favoriteIcon||"favorite.png",
             actions:actions
 
