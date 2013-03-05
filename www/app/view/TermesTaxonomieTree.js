@@ -32,7 +32,8 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                 plugins: [
                     Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
                         ptype: 'treeviewdragdrop',
-                        pluginId: 'termsDrager'
+                        pluginId: 'termsDrager',
+                        dragText: '{0} terme{1} séléctionné{1}'
                     })
                 ],
                 listeners: {

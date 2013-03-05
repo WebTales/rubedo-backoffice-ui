@@ -441,7 +441,8 @@
                             },
                             "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                             "userConfig": {
-                                "designer|userClassName": "MyTreeDragDropPlugin2"
+                                "designer|userClassName": "MyTreeDragDropPlugin2",
+                                "dragText": "{0} groupe{1} séléctionné{1}"
                             },
                             "designerId": "42bcca70-3797-46a0-b074-6f8a822a9421",
                             "cn": [

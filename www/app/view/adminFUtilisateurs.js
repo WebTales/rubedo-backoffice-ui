@@ -192,7 +192,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                     viewConfig: {
                         plugins: [
                             Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
-                                ptype: 'treeviewdragdrop'
+                                ptype: 'treeviewdragdrop',
+                                dragText: '{0} groupe{1} séléctionné{1}'
                             })
                         ],
                         listeners: {

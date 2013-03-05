@@ -251,7 +251,8 @@ Ext.define('Rubedo.view.contributionPages', {
                     viewConfig: {
                         plugins: [
                             Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
-                                ptype: 'treeviewdragdrop'
+                                ptype: 'treeviewdragdrop',
+                                dragText: '{0} page{1} séléctionnée{1}'
                             })
                         ],
                         listeners: {
