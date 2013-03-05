@@ -47,6 +47,9 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     Ext.Array.forEach(Ext.getCmp("ProprietesTaxonomie").items.items, function(thingy){
         thingy.setReadOnly((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly")));
     });
+    Ext.Array.forEach(Ext.getCmp("taxoRightsBox").items.items, function(thingy){
+        thingy.setReadOnly((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly")));
+    });
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
     var store = Ext.create('Ext.data.TreeStore', {
@@ -190,7 +193,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('AdminfTaxonomieGrid').getStore().remove(cible);
                 Ext.getCmp("ProprietesTaxonomie").getForm().reset(true);
-                Ext.getCmp("TermesTaxonomieTree").getView().hide();
+                Ext.getCmp("TermesTaxonomieTree").hide();
                 Ext.getCmp("taxonomyCenterBox").disable();
                 Ext.getCmp("boutonEnregistrerTaxo").disable();
                 Ext.getCmp("boutonSupprimerTaxo").disable();        

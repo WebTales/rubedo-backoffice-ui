@@ -308,11 +308,6 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                     anchor: '100%'
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'panel',
-                            iconCls: 'versions',
-                            title: 'Historique'
                         }
                     ]
                 }

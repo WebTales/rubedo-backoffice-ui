@@ -730,34 +730,6 @@
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel5",
-                        "iconCls": "versions",
-                        "title": "Historique"
-                    },
-                    "designerId": "5f171bae-50d9-422d-89cf-6cd195275f16",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig2"
-                            },
-                            "designerId": "9e491141-6fa1-4f11-a1de-0c227f5a4459"
-                        }
-                    ]
                 }
             ]
         }
