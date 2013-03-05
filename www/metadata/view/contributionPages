@@ -93,6 +93,21 @@
                         "text": "Pages<b> ></b> "
                     },
                     "designerId": "d6876996-1753-4eb2-8296-68bab3225bed"
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyToolbar65",
+                        "border": 0,
+                        "id": "pageTreeBreadcrumb"
+                    },
+                    "designerId": "8f0e17f0-75c2-4099-b055-f4f4a20b01c9"
                 }
             ]
         },
@@ -454,10 +469,15 @@
                 "designer|userClassName": "MyTreePanel2",
                 "id": "mainPageTree",
                 "width": 225,
+                "resizable": true,
+                "resizeHandles": "e",
                 "title": "",
                 "forceFit": true,
                 "store": "PagesDataStore",
                 "useArrows": true
+            },
+            "configAlternates": {
+                "resizable": "boolean"
             },
             "designerId": "d85e6db6-4417-4616-ab61-8cba6f2817a7",
             "cn": [
@@ -1026,7 +1046,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyFieldSet16",
-                                "title": "Referencement"
+                                "title": "Référencement"
                             },
                             "designerId": "c7ec2131-9c4a-4f2a-8b7d-5a5834bf829e",
                             "cn": [

@@ -63,6 +63,11 @@ Ext.define('Rubedo.view.contributionPages', {
                             itemId: 'origine',
                             iconCls: 'masque-icon',
                             text: 'Pages<b> ></b> '
+                        },
+                        {
+                            xtype: 'toolbar',
+                            border: 0,
+                            id: 'pageTreeBreadcrumb'
                         }
                     ]
                 },
@@ -244,6 +249,8 @@ Ext.define('Rubedo.view.contributionPages', {
                     xtype: 'treepanel',
                     id: 'mainPageTree',
                     width: 225,
+                    resizable: true,
+                    resizeHandles: 'e',
                     title: '',
                     forceFit: true,
                     store: 'PagesDataStore',
@@ -445,7 +452,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'fieldset',
-                                    title: 'Referencement',
+                                    title: 'Référencement',
                                     items: [
                                         {
                                             xtype: 'textfield',

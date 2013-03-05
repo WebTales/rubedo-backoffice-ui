@@ -25,10 +25,11 @@ Ext.define('Rubedo.controller.PagesController', {
         var filArianne = combo.up().up().up().getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(records[0].get("text"));}
-        else { typeFil= Ext.widget('button',{iconCls: "masque-icon", text:records[0].get("text"), itemId:'type'});
+        else { typeFil= Ext.widget('button',{iconCls: "masque-icon", text:records[0].get("text")+"<b> ></b>", itemId:'type'});
         typeFil.on("click", function(){Ext.getCmp("mainPageTree").getSelectionModel().select(Ext.getCmp("mainPageTree").getRootNode());});
-        filArianne.add(typeFil);
+        filArianne.insert(1,typeFil);
     }
+    Ext.getCmp("pageTreeBreadcrumb").removeAll();
     Ext.getCmp("addPageBtn").enable();
     Ext.getCmp("removePageBtn").disable();
     Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
@@ -160,6 +161,10 @@ Ext.define('Rubedo.controller.PagesController', {
             me.resetInterface();
             Ext.getCmp("addPageBtn").enable();
         }
+        var arButtons = [ ];
+        me.breadcrumbBuilder(record,arButtons);
+        Ext.getCmp("pageTreeBreadcrumb").removeAll();
+        Ext.getCmp("pageTreeBreadcrumb").add(arButtons.reverse());
     },
 
     moveElementUp: function(button, e, options) {
@@ -844,6 +849,18 @@ Ext.define('Rubedo.controller.PagesController', {
 
         });
         return(newBlocks);
+    },
+
+    breadcrumbBuilder: function(node, array) {
+        var me=this;
+        if (node.isRoot()) {
+
+        } else {
+            var button = Ext.widget("button", {text:node.get("text")+"<b> ></b>", iconCls:"masque-icon"});
+            button.on("click",function(){ Ext.getCmp("contributionPages").getComponent(0).getSelectionModel().select(node);});
+            array.push(button);
+            me.breadcrumbBuilder(node.parentNode,array);
+        }
     },
 
     init: function(application) {
