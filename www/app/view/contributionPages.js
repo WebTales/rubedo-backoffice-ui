@@ -406,7 +406,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'text',
-                                    fieldLabel: 'Nom ',
+                                    fieldLabel: 'Nom *',
                                     allowBlank: false
                                 },
                                 {
@@ -450,7 +450,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'textfield',
                                             anchor: '100%',
                                             name: 'title',
-                                            fieldLabel: 'Titre ',
+                                            fieldLabel: 'Titre *',
                                             allowBlank: false
                                         },
                                         {
@@ -572,7 +572,7 @@ Ext.define('Rubedo.view.contributionPages', {
             store:[],
             anchor:"100%",
             name:"keywords",
-            fieldLabel:"Mots clés",
+            fieldLabel:"Mots-clés",
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,

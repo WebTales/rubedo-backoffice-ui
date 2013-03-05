@@ -882,7 +882,7 @@
                     "    });\r",
                     "} else {\r",
                     "    Ext.getCmp(\"mainPageAttributeForm\").up().setActiveTab(2);\r",
-                    "    Ext.Msg.alert(\"Erreur\", \"Les propriérés de la page sont invalides.\");\r",
+                    "    Ext.Msg.alert(\"Erreur\", \"Les propriétés de la page sont invalides.\");\r",
                     "}"
                 ],
                 "name": "click",
