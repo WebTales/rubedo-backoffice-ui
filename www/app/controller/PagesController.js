@@ -599,7 +599,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("contribPreviewMain").removeAll();
         var dateValue="";
         if (!Ext.isEmpty(Ext.getCmp("advancedPreviewDateField").getValue())){
-            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "timestamp");
+            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "U");
 
         }
         if (!Ext.isEmpty(record)){
@@ -656,7 +656,7 @@ Ext.define('Rubedo.controller.PagesController', {
         var record=Ext.getCmp("previewPageTree").getSelectionModel().getLastSelected();
         var dateValue="";
         if (!Ext.isEmpty(Ext.getCmp("advancedPreviewDateField").getValue())){
-            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "timestamp");
+            dateValue="&preview_date="+Ext.Date.format(Ext.getCmp("advancedPreviewDateField").getValue(), "U");
 
         }
         if (!Ext.isEmpty(record)){
