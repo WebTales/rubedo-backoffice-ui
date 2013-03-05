@@ -20,14 +20,14 @@ Ext.define('Rubedo.view.DelConfirmZ', {
     draggable: false,
     height: 100,
     id: 'delConfirmZ',
-    width: 201,
+    width: 205,
     resizable: false,
     layout: {
         type: 'fit'
     },
     closable: false,
     iconCls: 'warning',
-    title: 'Confirmation de supression',
+    title: 'Confirmation de suppression',
     modal: true,
     plain: false,
 
@@ -48,12 +48,15 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                             text: 'Oui'
                         },
                         {
+                            xtype: 'tbfill'
+                        },
+                        {
                             xtype: 'button',
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
-                            margins: '0, 0, 0, 30',
                             id: 'delConfirmZNon',
+                            margin: '0, 10, 0, 0',
                             iconCls: 'nonS',
                             scale: 'large',
                             text: 'Non'

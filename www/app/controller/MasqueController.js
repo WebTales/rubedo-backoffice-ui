@@ -47,7 +47,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 success: function(response){
                     var maskIsUsed=Ext.JSON.decode(response.responseText).used;
                     if (maskIsUsed){
-                        Ext.Msg.alert('Suppression impossible', 'Le masque est utilisé par des pages');
+                        Ext.Msg.alert('Suppression impossible', 'Le masque est utilisé par des pages.');
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
                         fenetre.show();
@@ -385,7 +385,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 }
                 configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
                     itemId:"eTabField",
-                    fieldLabel:"Afficher en tabs",
+                    fieldLabel:"Afficher en onglets",
                     onChange:function(){
 
                         abstractcomponent.displayAsTab=this.getValue();
@@ -397,130 +397,130 @@ Ext.define('Rubedo.controller.MasqueController', {
                     margin:"10 0 10 0",
                     checked:abstractcomponent.displayAsTab
                 }));
-                configSpec.getComponent(0).add(Ext.widget('button',{
-                    itemId:"rowAutoHeight",
-                    text:"Hauteur automatique",
-                    anchor:"100%",
-                    tooltip:"La hauteur s'adapte au contenu lors du rendu final",
-                    hidden:true,
-                    handler:function(){
-                        abstractcomponent.setHeight(null);
-                        abstractcomponent.flex=1;
-                        abstractcomponent.up().doLayout();
-                        configSpec.getComponent(0).getComponent("rowHeightFixed").setValue();
-                        this.hide();
-                    }
+                /*configSpec.getComponent(0).add(Ext.widget('button',{
+                itemId:"rowAutoHeight",
+                text:"Hauteur automatique",
+                anchor:"100%",
+                tooltip:"La hauteur s'adapte au contenu lors du rendu final",
+                hidden:true,
+                handler:function(){
+                abstractcomponent.setHeight(null);
+                abstractcomponent.flex=1;
+                abstractcomponent.up().doLayout();
+                configSpec.getComponent(0).getComponent("rowHeightFixed").setValue();
+                this.hide();
+                }
                 }));
                 if (!Ext.isEmpty(abstractcomponent.height)){configSpec.getComponent(0).getComponent("rowAutoHeight").show();}
                 configSpec.getComponent(0).add(Ext.widget('numberfield',{
-                    itemId:"rowHeightFixed",
-                    fieldLabel:"Hauteur fixe ",
-                    labelWidth:60,
-                    allowDecimals:false,
-                    allowBlank:false,
-                    minValue:20,
-                    anchor:"60%",
-                    margin:"10 0 0 0",
-                    style:"{float:left;}",
-                    value:abstractcomponent.height
+                itemId:"rowHeightFixed",
+                fieldLabel:"Hauteur fixe ",
+                labelWidth:60,
+                allowDecimals:false,
+                allowBlank:false,
+                minValue:20,
+                anchor:"60%",
+                margin:"10 0 0 0",
+                style:"{float:left;}",
+                value:abstractcomponent.height
                 }));
                 configSpec.getComponent(0).add(Ext.widget('button',{
-                    text:"Appliquer",
-                    anchor:"38%",
-                    margin:"10 0 0 0",
-                    style:"{float:right;}",
-                    handler:function(){
-                        if (configSpec.getComponent(0).getComponent("rowHeightFixed").isValid()){
-                            abstractcomponent.flex=null;
-                            abstractcomponent.setHeight(configSpec.getComponent(0).getComponent("rowHeightFixed").getValue());
-                            abstractcomponent.up().doLayout();
-                            configSpec.getComponent(0).getComponent("rowAutoHeight").show();
-                        }}
+                text:"Appliquer",
+                anchor:"38%",
+                margin:"10 0 0 0",
+                style:"{float:right;}",
+                handler:function(){
+                if (configSpec.getComponent(0).getComponent("rowHeightFixed").isValid()){
+                abstractcomponent.flex=null;
+                abstractcomponent.setHeight(configSpec.getComponent(0).getComponent("rowHeightFixed").getValue());
+                abstractcomponent.up().doLayout();
+                configSpec.getComponent(0).getComponent("rowAutoHeight").show();
+                }}
+                }));
+                */
+
+
+            }    
+
+            else if (abstractcomponent.mType=="col"){
+                Ext.getCmp("moveElementUp").disable();
+                Ext.getCmp("moveElementDown").disable();
+                if ((abstractcomponent.final)){
+                Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
+                    Ext.getCmp('newRow').disable();
+                }else {
+                    Ext.getCmp('newRow').enable();
+                }
+
+                Ext.getCmp('newCol').disable();
+                if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
+                Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
+
+                    configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
+                        itemId:"eMainColField",
+                        fieldLabel:"Colonne principale ",
+                        onChange:function(){
+                            if (this.getValue()){
+                                Ext.getCmp("mainColumnIdField").setValue(abstractcomponent.getId());
+                            } else {
+                                Ext.getCmp("mainColumnIdField").setValue(null);
+                            }
+
+
+                        },
+                        labelWidth:60,
+                        inputValue:true,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        checked:(abstractcomponent.getId()==Ext.getCmp("mainColumnIdField").getValue())
                     }));
 
+                    var offsetEdit=Ext.widget('numberfield',{
+                        itemId:"offsetEditor",
+                        fieldLabel:"Offset ",
+                        editable:false,
+                        labelWidth:60,
+                        allowDecimals:false,
+                        anchor:"50%",
+                        margin:"10 0 0 0",
+                        style:"{float:left;}",
+                        value:0,
+                        minValue:0
+                    });
 
-
-                }    
-
-                else if (abstractcomponent.mType=="col"){
-                    Ext.getCmp("moveElementUp").disable();
-                    Ext.getCmp("moveElementDown").disable();
-                    if ((abstractcomponent.final)){
-                    Ext.getCmp('newRow').disable();} else if ((Ext.isDefined(abstractcomponent.items.items[0]))&&(abstractcomponent.items.items[0].isXType("unBloc"))) {
-                        Ext.getCmp('newRow').disable();
-                    }else {
-                        Ext.getCmp('newRow').enable();
-                    }
-
-                    Ext.getCmp('newCol').disable();
-                    if ((Ext.isEmpty(abstractcomponent.items.items))||(abstractcomponent.items.items[0].isXType("unBloc"))){
-                    Ext.getCmp("newBloc").enable();} else {Ext.getCmp("newBloc").disable();}
-
-                        configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
-                            itemId:"eMainColField",
-                            fieldLabel:"Colonne principale ",
-                            onChange:function(){
-                                if (this.getValue()){
-                                    Ext.getCmp("mainColumnIdField").setValue(abstractcomponent.getId());
-                                } else {
-                                    Ext.getCmp("mainColumnIdField").setValue(null);
-                                }
-
-
-                            },
-                            labelWidth:60,
-                            inputValue:true,
-                            anchor:"100%",
-                            margin:"10 0 10 0",
-                            checked:(abstractcomponent.getId()==Ext.getCmp("mainColumnIdField").getValue())
-                        }));
-
-                        var offsetEdit=Ext.widget('numberfield',{
-                            itemId:"offsetEditor",
-                            fieldLabel:"Offset ",
-                            editable:false,
-                            labelWidth:60,
-                            allowDecimals:false,
-                            anchor:"50%",
-                            margin:"10 0 0 0",
-                            style:"{float:left;}",
-                            value:0,
-                            minValue:0
-                        });
-
-                        var spanEdit=Ext.widget('numberfield',{
-                            itemId:"spanEditor",
-                            fieldLabel:"Span ",
-                            labelWidth:60,
-                            editable:false,
-                            allowDecimals:false,
-                            anchor:"50%",
-                            margin:"10 0 0 10",
-                            style:"{float:right;}",
-                            value:abstractcomponent.flex,
-                            minValue:1
-                        });
+                    var spanEdit=Ext.widget('numberfield',{
+                        itemId:"spanEditor",
+                        fieldLabel:"Span ",
+                        labelWidth:60,
+                        editable:false,
+                        allowDecimals:false,
+                        anchor:"50%",
+                        margin:"10 0 0 10",
+                        style:"{float:right;}",
+                        value:abstractcomponent.flex,
+                        minValue:1
+                    });
 
 
 
-                        configSpec.getComponent(0).add(offsetEdit);
-                        configSpec.getComponent(0).add(spanEdit);
-                        me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
-                        offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
-                        spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                    configSpec.getComponent(0).add(offsetEdit);
+                    configSpec.getComponent(0).add(spanEdit);
+                    me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,false);
+                    offsetEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
+                    spanEdit.on("change",function(){me.applyConstrain(abstractcomponent,offsetEdit,spanEdit,true);});
 
 
 
 
 
-                    }
-                    propEdit.add(configSpec);
-                    if ((!ACL.interfaceRights['write.ui.masks'])||(Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("readOnly"))){
-                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
-                        Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
-                    }
-                    e.stopEvent();
-                });}
+                }
+                propEdit.add(configSpec);
+                if ((!ACL.interfaceRights['write.ui.masks'])||(Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("readOnly"))){
+                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
+                    Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
+                }
+                e.stopEvent();
+            });}
     },
 
     deleteMaskElement: function(button, e, options) {
