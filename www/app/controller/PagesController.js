@@ -687,6 +687,13 @@ Ext.define('Rubedo.controller.PagesController', {
         }
     },
 
+    onNewPageMaskSelectorAfterRender: function(abstractcomponent, options) {
+        var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        if (!target.isRoot()){
+            abstractcomponent.setValue(target.get("maskId"));
+        }
+    },
+
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -900,6 +907,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#pageContentDisplayer": {
                 activate: this.onPanelActivate
+            },
+            "#newPageMaskSelector": {
+                afterrender: this.onNewPageMaskSelectorAfterRender
             }
         });
     }

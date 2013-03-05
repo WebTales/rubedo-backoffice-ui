@@ -1213,6 +1213,29 @@
                 "designer|controlQuery": "#pageContentDisplayer"
             },
             "designerId": "5091cbda-a9df-4eac-981f-ca61c7c60bc4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewPageMaskSelectorAfterRender",
+                "fn": "onNewPageMaskSelectorAfterRender",
+                "implHandler": [
+                    "var target=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
+                    "if (!target.isRoot()){\r",
+                    "    abstractcomponent.setValue(target.get(\"maskId\"));\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#newPageMaskSelector"
+            },
+            "designerId": "bf10d1bf-4fdb-4d8e-a9bb-94b9048e7483"
         }
     ]
 }

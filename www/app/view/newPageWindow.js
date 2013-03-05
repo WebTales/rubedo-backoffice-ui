@@ -49,6 +49,7 @@ Ext.define('Rubedo.view.newPageWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            id: 'newPageMaskSelector',
                             name: 'maskId',
                             fieldLabel: 'Masque de page ',
                             labelWidth: 110,
