@@ -154,15 +154,18 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 if (cibleI !== null) {
                     Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
                     cibleI.set("expandable",true);
-                    var orderValue = 100;
-                    if (cibleI.hasChildNodes()){              
-                        orderValue=cibleI.lastChild.get("orderValue")+100;
-                    }
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
-                    cibleI.expand();
-                    Ext.getCmp('nouveauTermeTaxoField').setValue();
-                    Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
-                    Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                    cibleI.expand(false, function(){
+                        var orderValue = 100;
+                        if (cibleI.hasChildNodes()){              
+                            orderValue=cibleI.lastChild.get("orderValue")+100;
+                        }
+                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
+
+                        //Ext.getCmp('nouveauTermeTaxoField').setValue();
+                        Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
+                        Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                    });
+
                 } 
 
 
@@ -286,14 +289,15 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                 if (cibleI !== null) {
                     Ext.getCmp('TermesTaxonomieTree').getStore().suspendAutoSync();
                     cibleI.set("expandable",true);
-                    var orderValue = 100;
-                    if (cibleI.hasChildNodes()){              
-                        orderValue=cibleI.lastChild.get("orderValue")+100;
-                    }
-                    cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
-                    cibleI.expand();
-                    Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
-                    Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                    cibleI.expand(false, function(){
+                        var orderValue = 100;
+                        if (cibleI.hasChildNodes()){              
+                            orderValue=cibleI.lastChild.get("orderValue")+100;
+                        }
+                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
+                        Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
+                        Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                    });
                 } 
 
 
