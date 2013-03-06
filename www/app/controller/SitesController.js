@@ -67,6 +67,7 @@ Ext.define('Rubedo.controller.SitesController', {
                 Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
                 Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
                 Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                Ext.getCmp("mainSiteProps").getForm().reset();
                 Ext.getCmp('delConfirmZ').close();
 
             });  
@@ -83,8 +84,13 @@ Ext.define('Rubedo.controller.SitesController', {
         if (form.isValid()){
             var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
             Ext.getStore("SitesJson").add(newSite);
-            button.up().up().close();
-        }
+            Ext.getStore("SitesJson").addListener("datachanged",function(){
+                Ext.getCmp('mainSitesGrid').getSelectionModel().select(newSite);
+            },this,{single:true});
+
+
+                button.up().up().close();
+            }
     },
 
     updateSiteSubmit: function(button, e, options) {
@@ -118,11 +124,11 @@ Ext.define('Rubedo.controller.SitesController', {
         if (form.isValid()){
             var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
             Ext.getStore("SitesJson").add(newSite);
-            if (Ext.getStore("MasquesDataJson").isUsed){
-                Ext.getStore("MasquesDataJson").load();
+            Ext.getStore("SitesJson").addListener("datachanged",function(){
+                Ext.getCmp('mainSitesGrid').getSelectionModel().select(newSite);
+            },this,{single:true});
+                button.up().up().up().close();
             }
-            button.up().up().up().close();
-        }
     },
 
     init: function(application) {
