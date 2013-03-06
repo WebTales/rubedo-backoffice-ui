@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'text',
-                                    fieldLabel: 'Nom de domaine',
+                                    fieldLabel: 'Nom de domaine *',
                                     labelWidth: 110,
                                     allowBlank: false,
                                     regex: new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)
@@ -116,65 +116,13 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                         },
                         {
                             xtype: 'panel',
-                            layout: {
-                                type: 'anchor'
-                            },
-                            bodyPadding: 10,
-                            header: true,
-                            title: 'Etape 3 : Messagerie',
-                            items: [
-                                {
-                                    xtype: 'checkboxfield',
-                                    anchor: '100%',
-                                    name: 'activeMessagery',
-                                    fieldLabel: 'Activé ',
-                                    boxLabel: ''
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    name: 'SMTPServer',
-                                    fieldLabel: 'Serveur SMTP '
-                                },
-                                {
-                                    xtype: 'numberfield',
-                                    anchor: '100%',
-                                    name: 'SMTPPort',
-                                    fieldLabel: 'Port SMTP ',
-                                    allowDecimals: false,
-                                    minValue: 0
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    name: 'SMTPLogin',
-                                    fieldLabel: 'Login SMTP '
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    inputType: 'password',
-                                    name: 'SMTPPassword',
-                                    fieldLabel: 'Mot de passe SMTP '
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    name: 'defaultEmail',
-                                    fieldLabel: 'E-mail par défaut ',
-                                    vtype: 'email'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
                             overflowY: 'auto',
                             layout: {
                                 type: 'anchor'
                             },
                             bodyPadding: 10,
                             header: true,
-                            title: 'Etape 4 : Référencement',
+                            title: 'Etape 3 : Référencement',
                             items: [
                                 {
                                     xtype: 'textfield',

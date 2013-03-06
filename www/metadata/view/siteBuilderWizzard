@@ -65,7 +65,7 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField50",
                                 "name": "text",
-                                "fieldLabel": "Nom de domaine",
+                                "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
                                 "allowBlank": false,
                                 "regex": "new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)"
@@ -188,124 +188,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyPanel53",
-                        "layout": "anchor",
-                        "bodyPadding": 10,
-                        "header": true,
-                        "title": "Etape 3 : Messagerie"
-                    },
-                    "designerId": "a4f45d84-3c64-4831-bad8-5a68ee404868",
-                    "cn": [
-                        {
-                            "type": "checkboxfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox4",
-                                "name": "activeMessagery",
-                                "fieldLabel": "Activé ",
-                                "boxLabel": ""
-                            },
-                            "designerId": "0c7ec575-08b7-4e2b-adc1-4146c6e327f5"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField54",
-                                "name": "SMTPServer",
-                                "fieldLabel": "Serveur SMTP "
-                            },
-                            "designerId": "9f6cba5a-151e-488f-a189-bf204ae2cae1"
-                        },
-                        {
-                            "type": "numberfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField2",
-                                "name": "SMTPPort",
-                                "fieldLabel": "Port SMTP ",
-                                "allowDecimals": false,
-                                "minValue": 0
-                            },
-                            "designerId": "493b539f-ebb0-47ef-bb45-3150085ba686"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField56",
-                                "name": "SMTPLogin",
-                                "fieldLabel": "Login SMTP "
-                            },
-                            "designerId": "b0cee70b-ed45-4c72-ae25-dd7e707c0bdf"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField55",
-                                "inputType": "password",
-                                "name": "SMTPPassword",
-                                "fieldLabel": "Mot de passe SMTP "
-                            },
-                            "designerId": "c62df499-f368-47a8-9c4c-4278cc238055"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField57",
-                                "name": "defaultEmail",
-                                "fieldLabel": "E-mail par défaut ",
-                                "vtype": "email"
-                            },
-                            "designerId": "da94b941-1126-4e4b-ad3b-1b5cca2c2bc7"
-                        }
-                    ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel53",
                         "overflowY": "auto",
                         "layout": "anchor",
                         "bodyPadding": 10,
                         "header": true,
-                        "title": "Etape 4 : Référencement"
+                        "title": "Etape 3 : Référencement"
                     },
                     "designerId": "d73b14a5-0fc7-4be1-8dbb-f1b51d0f2797",
                     "cn": [

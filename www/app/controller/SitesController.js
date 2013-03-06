@@ -24,7 +24,7 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("siteRemoveBtn").disable();
             Ext.getCmp("mainSiteProps").disable();
             Ext.getCmp("updateSiteBtn").disable();
-            Ext.getCmp("mainSiteProps").getForm().setValues();
+            Ext.getCmp("mainSiteProps").getForm().reset();
         } else {
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites <b> > </b>", iconCls:"referencement_icon"}));

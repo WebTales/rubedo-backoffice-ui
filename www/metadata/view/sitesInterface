@@ -232,7 +232,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn46",
                         "dataIndex": "text",
-                        "text": "Nom"
+                        "text": "Nom de domaine"
                     },
                     "designerId": "4d47923d-d812-40f9-8714-9e31b009dc49",
                     "cn": [
@@ -357,7 +357,8 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField50",
                                 "name": "text",
-                                "fieldLabel": "Nom de domaine",
+                                "fieldLabel": "Nom de domaine *",
+                                "labelWidth": 110,
                                 "allowBlank": false,
                                 "regex": "new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)"
                             },
@@ -374,7 +375,8 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField45",
                                 "name": "alias",
-                                "fieldLabel": "Alias "
+                                "fieldLabel": "Alias ",
+                                "labelWidth": 110
                             },
                             "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
                         },
@@ -391,6 +393,7 @@
                                 "designer|userClassName": "MyComboBox19",
                                 "name": "theme",
                                 "fieldLabel": "Theme ",
+                                "labelWidth": 110,
                                 "displayField": "label",
                                 "store": "SiteThemesStore",
                                 "valueField": "text"
@@ -419,6 +422,7 @@
                                 "designer|userClassName": "MyComboBox18",
                                 "name": "protocol",
                                 "fieldLabel": "Protocole ",
+                                "labelWidth": 110,
                                 "store": "[\"HTTP\", \"HTTPS\", \"HTTP + HTTPS\"]"
                             },
                             "configAlternates": {
@@ -436,6 +440,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField52",
+                                "hidden": true,
                                 "name": "mainLanguage",
                                 "fieldLabel": "Langue principale "
                             },
@@ -451,6 +456,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField53",
+                                "hidden": true,
                                 "name": "languages",
                                 "fieldLabel": "Langues "
                             },
@@ -466,6 +472,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextArea8",
+                                "hidden": true,
                                 "name": "filter",
                                 "fieldLabel": "Filtre "
                             },
@@ -482,7 +489,8 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField70",
                                 "name": "title",
-                                "fieldLabel": "Titre par défaut"
+                                "fieldLabel": "Titre par défaut",
+                                "labelWidth": 110
                             },
                             "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173"
                         },
@@ -498,6 +506,7 @@
                                 "designer|userClassName": "MyTextArea5",
                                 "name": "description",
                                 "fieldLabel": "Description par défaut",
+                                "labelWidth": 110,
                                 "maxLength": 250
                             },
                             "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9"
@@ -516,7 +525,8 @@
                                 "value": [
                                     "\"Powered by Rubedo\""
                                 ],
-                                "fieldLabel": "Auteur par défaut"
+                                "fieldLabel": "Auteur par défaut",
+                                "labelWidth": 110
                             },
                             "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77"
                         },
@@ -534,6 +544,7 @@
                                     "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
                                     "    store:Ext.getStore(\"PagePickerStore\"),\r",
                                     "    displayField:\"text\",\r",
+                                    "    labelWidth:110,\r",
                                     "    fieldLabel:\"Page d'accueil\",\r",
                                     "    id:\"sitesHomePicker\",\r",
                                     "    anchor: \"100%\",\r",
@@ -542,6 +553,7 @@
                                     "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
                                     "    store:Ext.getStore(\"PagePickerStore\"),\r",
                                     "    displayField:\"text\",\r",
+                                    "    labelWidth:110,\r",
                                     "    fieldLabel:\"Page de détail par défaut\",\r",
                                     "    id:\"sitesSinglePicker\",\r",
                                     "    anchor: \"100%\",\r",
@@ -554,6 +566,7 @@
                                     "    store:[],\r",
                                     "    anchor:\"100%\",\r",
                                     "    name:\"keywords\",\r",
+                                    "    labelWidth:110,\r",
                                     "    fieldLabel:\"Mots clés par défaut\",\r",
                                     "    multiSelect:true,\r",
                                     "    forceSelection:false,\r",
@@ -580,6 +593,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "labelWidth": 110,
                                 "store": "ContributeWorkspacesCombo",
                                 "layout|anchor": "100%"
                             },
@@ -597,6 +611,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyFieldSet10",
+                        "hidden": true,
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Messagerie"
@@ -708,37 +723,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet12",
-                        "collapsed": true,
-                        "collapsible": true,
-                        "title": "Proxy"
-                    },
-                    "designerId": "d680842a-288f-436b-ad00-64dc85247158"
-                },
-                {
-                    "type": "fieldset",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyFieldSet13",
-                        "collapsed": true,
-                        "collapsible": true,
-                        "title": "Cache"
-                    },
-                    "designerId": "7927cfd5-9b41-4a7e-822e-d91c98bf44f9"
-                },
-                {
-                    "type": "fieldset",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
                         "designer|userClassName": "MyFieldSet14",
+                        "hidden": true,
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Accessibilité"

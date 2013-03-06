@@ -29,7 +29,7 @@
                     "    Ext.getCmp(\"siteRemoveBtn\").disable();\r",
                     "    Ext.getCmp(\"mainSiteProps\").disable();\r",
                     "    Ext.getCmp(\"updateSiteBtn\").disable();\r",
-                    "    Ext.getCmp(\"mainSiteProps\").getForm().setValues();\r",
+                    "    Ext.getCmp(\"mainSiteProps\").getForm().reset();\r",
                     "} else {\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Sites <b> > </b>\", iconCls:\"referencement_icon\"}));\r",

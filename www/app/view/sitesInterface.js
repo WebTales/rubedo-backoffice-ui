@@ -152,7 +152,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 }
                             },
                             dataIndex: 'text',
-                            text: 'Nom',
+                            text: 'Nom de domaine',
                             editor: {
                                 xtype: 'textfield',
                                 allowBlank: false
@@ -189,7 +189,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'text',
-                                    fieldLabel: 'Nom de domaine',
+                                    fieldLabel: 'Nom de domaine *',
+                                    labelWidth: 110,
                                     allowBlank: false,
                                     regex: new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)
                                 },
@@ -197,7 +198,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'alias',
-                                    fieldLabel: 'Alias '
+                                    fieldLabel: 'Alias ',
+                                    labelWidth: 110
                                 },
                                 {
                                     xtype: 'combobox',
@@ -205,6 +207,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     anchor: '100%',
                                     name: 'theme',
                                     fieldLabel: 'Theme ',
+                                    labelWidth: 110,
                                     displayField: 'label',
                                     store: 'SiteThemesStore',
                                     valueField: 'text'
@@ -214,6 +217,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     anchor: '100%',
                                     name: 'protocol',
                                     fieldLabel: 'Protocole ',
+                                    labelWidth: 110,
                                     store: [
                                         'HTTP',
                                         'HTTPS',
@@ -223,18 +227,21 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    hidden: true,
                                     name: 'mainLanguage',
                                     fieldLabel: 'Langue principale '
                                 },
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    hidden: true,
                                     name: 'languages',
                                     fieldLabel: 'Langues '
                                 },
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
+                                    hidden: true,
                                     name: 'filter',
                                     fieldLabel: 'Filtre '
                                 },
@@ -242,13 +249,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'title',
-                                    fieldLabel: 'Titre par défaut'
+                                    fieldLabel: 'Titre par défaut',
+                                    labelWidth: 110
                                 },
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
                                     name: 'description',
                                     fieldLabel: 'Description par défaut',
+                                    labelWidth: 110,
                                     maxLength: 250
                                 },
                                 {
@@ -256,10 +265,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     anchor: '100%',
                                     name: 'author',
                                     value: 'Powered by Rubedo',
-                                    fieldLabel: 'Auteur par défaut'
+                                    fieldLabel: 'Auteur par défaut',
+                                    labelWidth: 110
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    labelWidth: 110,
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
                                 }
@@ -273,6 +284,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            hidden: true,
                             collapsed: true,
                             collapsible: true,
                             title: 'Messagerie',
@@ -322,18 +334,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
-                            collapsed: true,
-                            collapsible: true,
-                            title: 'Proxy'
-                        },
-                        {
-                            xtype: 'fieldset',
-                            collapsed: true,
-                            collapsible: true,
-                            title: 'Cache'
-                        },
-                        {
-                            xtype: 'fieldset',
+                            hidden: true,
                             collapsed: true,
                             collapsible: true,
                             title: 'Accessibilité',
@@ -388,6 +389,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         var homePageSelector = Ext.create("Ext.ux.TreePicker", {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
+            labelWidth:110,
             fieldLabel:"Page d'accueil",
             id:"sitesHomePicker",
             anchor: "100%",
@@ -396,6 +398,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         var singlePageSelector = Ext.create("Ext.ux.TreePicker", {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
+            labelWidth:110,
             fieldLabel:"Page de détail par défaut",
             id:"sitesSinglePicker",
             anchor: "100%",
@@ -408,6 +411,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             store:[],
             anchor:"100%",
             name:"keywords",
+            labelWidth:110,
             fieldLabel:"Mots clés par défaut",
             multiSelect:true,
             forceSelection:false,
