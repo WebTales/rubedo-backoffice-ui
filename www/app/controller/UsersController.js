@@ -108,6 +108,8 @@ Ext.define('Rubedo.controller.UsersController', {
                 myForm.submit({
                     url:"users/change-password",
                     success: function(form, action) {
+                        var record=myForm.getRecord();
+                        record.data.version=record.data.version+1;
                         button.up().up().close();
 
                     },
@@ -260,7 +262,6 @@ Ext.define('Rubedo.controller.UsersController', {
                     url:"current-user/change-password",
                     success: function(form, action) {
                         Ext.Msg.alert('Succés', 'Mot de passe changé');
-
                     },
                     failure: function(form, action) {
                         switch (action.failureType) {
