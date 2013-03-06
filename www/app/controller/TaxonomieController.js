@@ -220,7 +220,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
             Ext.getCmp('AdminfTaxonomieGrid').getStore().addListener("datachanged",function(){Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);},this,{single:true});
-
             Ext.getCmp('nouveauTaxoFenetre').close();
         }    
     },

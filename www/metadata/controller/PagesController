@@ -938,12 +938,14 @@
                 "implHandler": [
                     "var me=this;\r",
                     "abstractcomponent.getStore().addListener(\"load\",function(store,records){\r",
+                    "    if (!Ext.isEmpty(records)){\r",
                     "    abstractcomponent.select(records[0]);\r",
                     "    if (abstractcomponent.id==\"previewSitesCombo\"){\r",
                     "        me.pagePreviewSelect(abstractcomponent, [records[0]]);\r",
                     "    } else {\r",
                     "        me.pageSiteSelect(abstractcomponent, [records[0]]);\r",
                     "    }\r",
+                    "}\r",
                     "},this,{single:true});"
                 ],
                 "name": "beforerender",

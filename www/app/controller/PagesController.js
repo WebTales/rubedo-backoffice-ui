@@ -583,11 +583,13 @@ Ext.define('Rubedo.controller.PagesController', {
     onPagesSitesComboBeforeRender: function(abstractcomponent, options) {
         var me=this;
         abstractcomponent.getStore().addListener("load",function(store,records){
-            abstractcomponent.select(records[0]);
-            if (abstractcomponent.id=="previewSitesCombo"){
-                me.pagePreviewSelect(abstractcomponent, [records[0]]);
-            } else {
-                me.pageSiteSelect(abstractcomponent, [records[0]]);
+            if (!Ext.isEmpty(records)){
+                abstractcomponent.select(records[0]);
+                if (abstractcomponent.id=="previewSitesCombo"){
+                    me.pagePreviewSelect(abstractcomponent, [records[0]]);
+                } else {
+                    me.pageSiteSelect(abstractcomponent, [records[0]]);
+                }
             }
         },this,{single:true});
     },
