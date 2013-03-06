@@ -48,15 +48,26 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                             xtype: 'gridcolumn',
                             dataIndex: 'name',
                             flex: 1,
-                            text: 'Name'
+                            text: 'Nom'
                         }
                     ],
                     features: [
                         {
                             ftype: 'grouping',
-                            groupHeaderTpl: [
-                                '{name}'
-                            ]
+                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                '{name:this.translator}',
+                                {
+                                    translator: function(name) {
+                                        if (name=="row") {
+                                            return("Lignes");
+                                        } else if (name=="col") {
+                                            return("Colonnes");
+                                        } else { 
+                                            return ("Blocs");
+                                        }
+                                    }
+                                }
+                            )
                         }
                     ]
                 },

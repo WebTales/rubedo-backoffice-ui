@@ -73,7 +73,7 @@
                         "designer|userClassName": "MyColumn38",
                         "dataIndex": "name",
                         "flex": 1,
-                        "text": "Name"
+                        "text": "Nom"
                     },
                     "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed"
                 },
@@ -99,11 +99,38 @@
                             "userConfig": {
                                 "designer|userClassName": "groupHeaderTpl",
                                 "implHandler": [
-                                    "{name}"
+                                    "{name:this.translator}"
                                 ],
                                 "designer|displayName": "groupHeaderTpl"
                             },
-                            "designerId": "4041d896-a934-4ed3-a37b-015e7595308f"
+                            "designerId": "4041d896-a934-4ed3-a37b-015e7595308f",
+                            "cn": [
+                                {
+                                    "type": "templatefunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "translator",
+                                        "fn": "translator",
+                                        "designer|params": [
+                                            "name"
+                                        ],
+                                        "implHandler": [
+                                            "if (name==\"row\") {\r",
+                                            "    return(\"Lignes\");\r",
+                                            "} else if (name==\"col\") {\r",
+                                            "    return(\"Colonnes\");\r",
+                                            "} else { \r",
+                                            "    return (\"Blocs\");\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "e0b52248-2a6c-4c9d-bf91-5b35bdca3390"
+                                }
+                            ]
                         }
                     ]
                 }

@@ -436,6 +436,9 @@
                 ],
                 "implHandler": [
                     "var me = this;\r",
+                    "if (Ext.isEmpty(element)){\r",
+                    "    return(0);\r",
+                    "}\r",
                     "if (element.mType==\"block\") {\r",
                     "    return(1);\r",
                     "}\r",

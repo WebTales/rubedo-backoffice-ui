@@ -1229,6 +1229,9 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     getElementDepth: function(element) {
         var me = this;
+        if (Ext.isEmpty(element)){
+            return(0);
+        }
         if (element.mType=="block") {
             return(1);
         }

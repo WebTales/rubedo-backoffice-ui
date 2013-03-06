@@ -41,14 +41,14 @@ Ext.define('Rubedo.view.ExportElementWindow', {
                             xtype: 'textfield',
                             anchor: '100%',
                             name: 'name',
-                            fieldLabel: 'Nom ',
+                            fieldLabel: 'Nom * ',
                             allowBlank: false
                         },
                         {
                             xtype: 'textareafield',
                             anchor: '100%',
                             name: 'description',
-                            fieldLabel: 'Déscription '
+                            fieldLabel: 'Description '
                         },
                         {
                             xtype: 'button',
