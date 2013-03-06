@@ -62,22 +62,44 @@ Ext.define('Rubedo.controller.SitesController', {
             var delCon = Ext.widget('delConfirmZ');
             delCon.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
-                Ext.getCmp('mainSitesGrid').getStore().remove(target);
-                Ext.getStore("SitesJson").addListener("datachanged",function(){
-                    if (Ext.getStore("MasquesDataJson").isUsed) {
-                        Ext.getStore("MasquesDataJson").load();
+
+                if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
+                    Ext.MessageBox.confirm("Attention !","La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?", function(anser){
+                        if (anser=="yes"){
+                            Ext.getCmp("contributionPages").close();
+                            Ext.getCmp('mainSitesGrid').getStore().remove(target);
+                            Ext.getStore("SitesJson").addListener("datachanged",function(){
+                                if (Ext.getStore("MasquesDataJson").isUsed) {
+                                    Ext.getStore("MasquesDataJson").load();
+                                }
+                            },this,{single:true});
+                                //button.disable();
+                                Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+                                Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
+                                Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                                Ext.getCmp("mainSiteProps").getForm().reset();
+                                Ext.getCmp('delConfirmZ').close();
+                            } 
+                        });
+                    } else {
+
+
+                        Ext.getCmp('mainSitesGrid').getStore().remove(target);
+                        Ext.getStore("SitesJson").addListener("datachanged",function(){
+                            if (Ext.getStore("MasquesDataJson").isUsed) {
+                                Ext.getStore("MasquesDataJson").load();
+                            }
+                        },this,{single:true});
+                            //button.disable();
+                            Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+                            Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
+                            Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                            Ext.getCmp("mainSiteProps").getForm().reset();
+                            Ext.getCmp('delConfirmZ').close();
+
+                        }});  
+
                     }
-                },this,{single:true});
-                    //button.disable();
-                    Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
-                    Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
-                    Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
-                    Ext.getCmp("mainSiteProps").getForm().reset();
-                    Ext.getCmp('delConfirmZ').close();
-
-                });  
-
-            }
     },
 
     openAddSiteWindow: function(button, e, options) {
