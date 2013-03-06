@@ -393,7 +393,13 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onUserAdminMainPanelAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ],
             dockedItems: [
@@ -437,6 +443,11 @@ Ext.define('Rubedo.view.UserAdminWindow', {
 
     onGridpanelDestroy: function(abstractcomponent, options) {
         abstractcomponent.getStore().removeAll();
+    },
+
+    onUserAdminMainPanelAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.getLayout().setActiveItem(1);
+        abstractcomponent.getLayout().setActiveItem(0);
     }
 
 });

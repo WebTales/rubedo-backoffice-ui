@@ -1001,6 +1001,25 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onUserAdminMainPanelAfterRender",
+                        "fn": "onUserAdminMainPanelAfterRender",
+                        "implHandler": [
+                            "abstractcomponent.getLayout().setActiveItem(1);\r",
+                            "abstractcomponent.getLayout().setActiveItem(0);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "c4f6016b-6e7d-48c4-823c-b2032f1651b2"
                 }
             ]
         },
