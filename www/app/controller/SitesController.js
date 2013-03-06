@@ -63,16 +63,21 @@ Ext.define('Rubedo.controller.SitesController', {
             delCon.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
                 Ext.getCmp('mainSitesGrid').getStore().remove(target);
-                //button.disable();
-                Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
-                Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
-                Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
-                Ext.getCmp("mainSiteProps").getForm().reset();
-                Ext.getCmp('delConfirmZ').close();
+                Ext.getStore("SitesJson").addListener("datachanged",function(){
+                    if (Ext.getStore("MasquesDataJson").isUsed) {
+                        Ext.getStore("MasquesDataJson").load();
+                    }
+                },this,{single:true});
+                    //button.disable();
+                    Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
+                    Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
+                    Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                    Ext.getCmp("mainSiteProps").getForm().reset();
+                    Ext.getCmp('delConfirmZ').close();
 
-            });  
+                });  
 
-        }
+            }
     },
 
     openAddSiteWindow: function(button, e, options) {
@@ -94,19 +99,34 @@ Ext.define('Rubedo.controller.SitesController', {
     },
 
     updateSiteSubmit: function(button, e, options) {
+        var me=this;
         var form = Ext.getCmp("mainSiteProps").getForm();
         if (form.isValid()){
             if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
                 Ext.MessageBox.confirm("Attention !","La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?", function(anser){
                     if (anser=="yes"){
                         Ext.getCmp("contributionPages").close();
-                        Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
+                        var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
+                        myRec.set(form.getValues(false, false, false, true));
+                        Ext.getStore("SitesJson").addListener("datachanged",function(){
+                            me.selectSite(Ext.getCmp("mainSitesGrid"),[myRec]);
+                            if (Ext.getStore("MasquesDataJson").isUsed) {
+                                Ext.getStore("MasquesDataJson").load();
+                            }
+                        },this,{single:true});
+                        }
+                    });
+                } else {
+                    var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
+                    myRec.set(form.getValues(false, false, false, true)); 
+                    Ext.getStore("SitesJson").addListener("datachanged",function(){
+                        me.selectSite(Ext.getCmp("mainSitesGrid"),[myRec]);
+                        if (Ext.getStore("MasquesDataJson").isUsed) {
+                            Ext.getStore("MasquesDataJson").load();
+                        }
+                    },this,{single:true});
                     }
-                });
-            } else {
-                Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().set(form.getValues(false, false, false, true));
-            }
-        }
+                }
     },
 
     onSitesInterfaceBeforeClose: function(panel, options) {
@@ -126,6 +146,9 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getStore("SitesJson").add(newSite);
             Ext.getStore("SitesJson").addListener("datachanged",function(){
                 Ext.getCmp('mainSitesGrid').getSelectionModel().select(newSite);
+                if (Ext.getStore("MasquesDataJson").isUsed) {
+                    Ext.getStore("MasquesDataJson").load();
+                }
             },this,{single:true});
                 button.up().up().up().close();
             }

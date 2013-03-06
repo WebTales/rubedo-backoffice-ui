@@ -237,19 +237,6 @@
                     "designerId": "4d47923d-d812-40f9-8714-9e31b009dc49",
                     "cn": [
                         {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyTextField42",
-                                "allowBlank": false
-                            },
-                            "designerId": "504e26a0-588f-4898-9f56-ebb4889252e8"
-                        },
-                        {
                             "type": "fixedfunction",
                             "reference": {
                                 "name": "items",
@@ -277,38 +264,6 @@
                                 ]
                             },
                             "designerId": "e63e30c7-d5bb-4bbf-88ee-d3a1bad29d09"
-                        }
-                    ]
-                },
-                {
-                    "type": "gridcelleditingplugin",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin2"
-                    },
-                    "designerId": "27487282-1275-4c72-b598-a38a45b09137",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
-                                "fn": "onGridcelleditingpluginBeforeEdit",
-                                "implHandler": [
-                                    "if (!ACL.interfaceRights['write.ui.sites']){return(false);}"
-                                ],
-                                "name": "beforeedit",
-                                "scope": "me"
-                            },
-                            "designerId": "fcb72988-826b-4eb3-a733-dd9882684e07"
                         }
                     ]
                 }

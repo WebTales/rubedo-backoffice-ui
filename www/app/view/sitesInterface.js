@@ -152,23 +152,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 }
                             },
                             dataIndex: 'text',
-                            text: 'Nom de domaine',
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false
-                            }
+                            text: 'Nom de domaine'
                         }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            ptype: 'cellediting',
-                            listeners: {
-                                beforeedit: {
-                                    fn: me.onGridcelleditingpluginBeforeEdit,
-                                    scope: me
-                                }
-                            }
-                        })
                     ]
                 },
                 {
@@ -379,10 +364,6 @@ Ext.define('Rubedo.view.sitesInterface', {
         });
 
         me.callParent(arguments);
-    },
-
-    onGridcelleditingpluginBeforeEdit: function(editor, e, options) {
-        if (!ACL.interfaceRights['write.ui.sites']){return(false);}
     },
 
     onFieldsetRender: function(abstractcomponent, options) {
