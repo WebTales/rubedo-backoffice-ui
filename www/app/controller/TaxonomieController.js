@@ -161,9 +161,10 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         }
                         cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
 
-                        //Ext.getCmp('nouveauTermeTaxoField').setValue();
+                        Ext.getCmp('nouveauTermeTaxoField').setValue();
                         Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
                         Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                        button.up().destroy();
                     });
 
                 } 
@@ -172,7 +173,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
             }
         }
-        button.up().destroy();
+
     },
 
     saveVocabulary: function(button, e, options) {
@@ -297,6 +298,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
                         Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
                         Ext.getCmp('TermesTaxonomieTree').getStore().sync();
+                        button.up().up().close();
                     });
                 } 
 
@@ -304,7 +306,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
             }
         }
-        button.up().up().close();
+
     },
 
     onTaxoOpenInsertBtnClick: function(button, e, options) {

@@ -51,22 +51,25 @@ Ext.define('Rubedo.controller.PagesController', {
             var newPage=form.getValues();
             newPage.blocks=[ ];
             newPage.expandable=false;
-            if (!target.hasChildNodes()){
-                newPage.orderValue=100;
-            } else {
-                newPage.orderValue=target.lastChild.get("orderValue")+100;
-            }
+
             newPage.iconCls="masque-icon";
             newPage.site=Ext.getCmp("pagesSitesCombo").getValue();
             newPage.inheritWorkspace=true;
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
-            target.appendChild(newPage);
             target.set("expandable",true);
-            target.expand();
-            store.resumeAutoSync();
-            store.sync();
-            button.up().up().close();
+            target.expand(false, function(){
+                if (!target.hasChildNodes()){
+                    newPage.orderValue=100;
+                } else {
+                    newPage.orderValue=target.lastChild.get("orderValue")+100;
+                }
+                target.appendChild(newPage);
+                store.resumeAutoSync();
+                store.sync();
+                button.up().up().close();
+            });
+
         }
     },
 

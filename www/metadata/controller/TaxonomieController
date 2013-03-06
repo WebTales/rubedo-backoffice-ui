@@ -197,9 +197,10 @@
                     "                }\r",
                     "                cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get(\"id\"),expandable:false, orderValue: orderValue});\r",
                     "                \r",
-                    "                //Ext.getCmp('nouveauTermeTaxoField').setValue();\r",
+                    "                Ext.getCmp('nouveauTermeTaxoField').setValue();\r",
                     "                Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();\r",
                     "                Ext.getCmp('TermesTaxonomieTree').getStore().sync();\r",
+                    "                button.up().destroy();\r",
                     "            });\r",
                     "            \r",
                     "        } \r",
@@ -208,7 +209,7 @@
                     "\r",
                     "    }\r",
                     "}\r",
-                    "button.up().destroy();"
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",
@@ -487,6 +488,7 @@
                     "                cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get(\"id\"),expandable:false, orderValue: orderValue});\r",
                     "                Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();\r",
                     "                Ext.getCmp('TermesTaxonomieTree').getStore().sync();\r",
+                    "                button.up().up().close();\r",
                     "            });\r",
                     "        } \r",
                     "\r",
@@ -494,7 +496,7 @@
                     "\r",
                     "    }\r",
                     "}\r",
-                    "button.up().up().close();"
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",
