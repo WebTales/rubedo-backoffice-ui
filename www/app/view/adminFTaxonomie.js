@@ -127,7 +127,13 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
-                            text: 'Enregistrer'
+                            text: 'Enregistrer',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onBoutonEnregistrerTaxoAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'buttongroup',
@@ -319,6 +325,15 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/tag.png');
+    },
+
+    onBoutonEnregistrerTaxoAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     }
 
 });

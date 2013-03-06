@@ -280,6 +280,31 @@
                             "name": "ACL",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onBoutonEnregistrerTaxoAfterRender",
+                                "fn": "onBoutonEnregistrerTaxoAfterRender",
+                                "implHandler": [
+                                    "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                    "if (!abstractcomponent.disabled){\r",
+                                    "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                    "    t.stopEvent();\r",
+                                    "}\r",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "13b9c07b-553e-498d-808d-1e4e23fcfb65"
+                        }
                     ]
                 },
                 {
