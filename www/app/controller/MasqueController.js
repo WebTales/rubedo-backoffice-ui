@@ -93,7 +93,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     if (!Ext.isEmpty(prevSelected)) {
         prevSelected.removeBodyCls('selectedelement');
     }
-    Ext.getCmp("mainColumnIdField").setValue(Ext.clone(record.get("mainColumnId")));
+
     this.getMasqueEdition().removeAll();
     this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition()); 
     this.restoreBlocks(Ext.clone(masque.blocks));
@@ -113,6 +113,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     Ext.getCmp("boutonSupprimerMasque").enable();
     Ext.getCmp("AdminfMasquesEnregistrer").enable();
     Ext.Array.forEach(Ext.getCmp("adminFMDP").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+    Ext.getCmp("mainColumnIdField").setValue(Ext.clone(record.get("mainColumnId")));
     if (record.get("readOnly")){
         Ext.getCmp("masksEditionTopBarBox").disable();
         Ext.getCmp("boutonSupprimerMasque").disable();
@@ -1070,6 +1071,15 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("PaneauBlocsDetail").update(record.getData());
     },
 
+    onMainColumnIdFieldChange: function(field, newValue, oldValue, options) {
+        if (!Ext.isEmpty(Ext.getCmp(newValue))){
+            Ext.getCmp(newValue).addBodyCls("mainColumn");
+        }
+        if (!Ext.isEmpty(Ext.getCmp(oldValue))){
+            Ext.getCmp(oldValue).removeBodyCls("mainColumn");
+        }
+    },
+
     removeIds: function(element, blocks) {
         var me=this;
         if (element.mType="col"){
@@ -1491,6 +1501,9 @@ Ext.define('Rubedo.controller.MasqueController', {
             },
             "#moveElementDown": {
                 click: this.moveElementDown
+            },
+            "#mainColumnIdField": {
+                change: this.onMainColumnIdFieldChange
             }
         });
     }
