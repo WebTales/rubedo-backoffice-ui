@@ -89,12 +89,10 @@ Ext.define('Rubedo.model.userDataModel', {
             name: 'version'
         },
         {
-            name: 'startValidity',
-            type: 'date'
+            name: 'startValidity'
         },
         {
-            name: 'endValidity',
-            type: 'date'
+            name: 'endValidity'
         }
     ]
 });
