@@ -1094,13 +1094,13 @@ Ext.define('Rubedo.controller.MasqueController', {
             element.id=undefined;
         }
         if (!Ext.isEmpty(element.columns)) {
-            Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing);});
+            Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing,blocks);});
         }
         if (!Ext.isEmpty(element.rows)) {
-            Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing);});
+            Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing,blocks);});
         }
         if (!Ext.isEmpty(element.blocks)) {
-            Ext.Array.forEach(element.blocks,function(thing){me.removeIds(thing);});
+            Ext.Array.forEach(element.blocks,function(thing){me.removeIds(thing,blocks);});
         }
     },
 

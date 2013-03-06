@@ -219,13 +219,13 @@
                     "    element.id=undefined;\r",
                     "}\r",
                     "if (!Ext.isEmpty(element.columns)) {\r",
-                    "    Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing);});\r",
+                    "    Ext.Array.forEach(element.columns,function(thing){me.removeIds(thing,blocks);});\r",
                     "}\r",
                     "if (!Ext.isEmpty(element.rows)) {\r",
-                    "    Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing);});\r",
+                    "    Ext.Array.forEach(element.rows,function(thing){me.removeIds(thing,blocks);});\r",
                     "}\r",
                     "if (!Ext.isEmpty(element.blocks)) {\r",
-                    "    Ext.Array.forEach(element.blocks,function(thing){me.removeIds(thing);});\r",
+                    "    Ext.Array.forEach(element.blocks,function(thing){me.removeIds(thing,blocks);});\r",
                     "}"
                 ]
             },
