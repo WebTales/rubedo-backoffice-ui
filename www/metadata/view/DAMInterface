@@ -298,6 +298,7 @@
                         "container|columns": 2,
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
+                        "id": "DAMPPBtnGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -314,6 +315,7 @@
                             "userConfig": {
                                 "ACL": "write.ui.dam",
                                 "designer|userClassName": "MyButton17",
+                                "hidden": true,
                                 "id": null,
                                 "width": null,
                                 "icon": null,
@@ -382,7 +384,7 @@
                         "container|columns": 2,
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
-                        "hidden": false,
+                        "hidden": true,
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4

@@ -51,17 +51,20 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMDeleteBtn").disable();
             Ext.getCmp("DAMUpdateBtn").disable();
             Ext.getCmp("DAMROBtn").disable();
+            Ext.getCmp("DAMPPBtnGroup").disable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
 
         } else if (selections.length==1) {
             var customMeta = "<b> "+selections[0].get("text")+"</b></br><b> Dernière modification : </b>"+Ext.Date.format(selections[0].get("lastUpdateTime"), 'd-m-Y')+"<b> Auteur : </b>"+selections[0].get("author");
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
+            Ext.getCmp("DAMPPBtnGroup").enable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc("dam/get-thumbnail?id="+selections[0].get("id"));
         } else {
             Ext.getCmp("DAMUpdateBtn").disable();
             var customMeta = "<b> "+selections.length+" médias"+ "</b>";
+            Ext.getCmp("DAMPPBtnGroup").disable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');

@@ -305,6 +305,16 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var preDefined="page_full.png";
             myText=Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("text");
 
+        } else if ((myWindow.id=="DAMInterface")&&(Ext.getCmp("DAMCenter").getSelectionModel().getSelection().length==1)) {
+            var myRecord = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+            actions.push({
+                type:"editDAM",
+                target:myRecord.get("id"),
+                targetType:myRecord.get("typeId")
+            });
+            var preDefined="images.png";
+            myText=myRecord.get("text");
+
         } else if (myWindow.id=="searchResultsWindow"){
             actions.push({
                 type:"openWindow",
@@ -636,6 +646,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                                 }
                             } else if (action.type=="editContent") { 
                                 Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(action.target);
+                            } else if (action.type=="editDAM") { 
+                                Rubedo.controller.DAMController.prototype.prepareContext(action.target,action.targetType);
                             }  else if (action.type=="fireESWindow") { 
                                 Ext.getStore("ESFacetteStore").activeFacettes=action.activeFacettes;
                                 Ext.getStore("ESFacetteStore").load();

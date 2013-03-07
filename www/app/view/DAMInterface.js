@@ -132,6 +132,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
+                            id: 'DAMPPBtnGroup',
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
                             columns: 4,
@@ -143,6 +144,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.dam',
+                                    hidden: true,
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
@@ -170,7 +172,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
-                            hidden: false,
+                            hidden: true,
                             headerPosition: 'bottom',
                             title: 'Fichier',
                             columns: 4,
