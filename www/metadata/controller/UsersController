@@ -46,7 +46,16 @@
                     "    userNb:userNb,\r",
                     "    calif:calif\r",
                     "});\r",
-                    "Ext.getCmp(\"groupPropsForm\").getForm().setValues(Ext.clone(record.getData()));"
+                    "Ext.getCmp(\"groupPropsForm\").getForm().setValues(Ext.clone(record.getData()));\r",
+                    "if ((!ACL.interfaceRights[\"write.ui.groups\"])||(record.get(\"readOnly\"))){\r",
+                    "        Ext.getCmp(\"groupDeleteButton\").disable();\r",
+                    "        Ext.getCmp(\"groupSaveButton\").disable();\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"adminFUtilisateurs\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
+                    "\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"groupPropsForm\").query(\"field\"), function(field){field.setReadOnly(true);});\r",
+                    "    } else {\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"groupPropsForm\").query(\"field\"), function(field){field.setReadOnly(false);});\r",
+                    "    }"
                 ],
                 "name": "select",
                 "scope": "me",

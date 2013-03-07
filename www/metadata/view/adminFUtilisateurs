@@ -466,19 +466,19 @@
                                             "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
                                             "        movedOne.parentNode.set(\"expandable\", false);\r",
                                             "    }\r",
-                                            "    \r",
+                                            "\r",
                                             "} else if (dropPosition==\"after\"){\r",
                                             "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
                                             "        movedOne.parentNode.set(\"expandable\", false);\r",
                                             "    }\r",
-                                            "    \r",
+                                            "\r",
                                             "} else if (dropPosition==\"append\"){\r",
                                             "    if (movedOne.parentNode.childNodes.length==1){\r",
                                             "        movedOne.parentNode.set(\"expandable\", false);\r",
                                             "    }\r",
                                             "\r",
                                             "    if (overModel.hasChildNodes()){\r",
-                                            "       \r",
+                                            "\r",
                                             "    } else {\r",
                                             "        overModel.set(\"expandable\", true);\r",
                                             "    }\r",
@@ -550,6 +550,12 @@
                                     "view"
                                 ],
                                 "implHandler": [
+                                    "var returner = value;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    record.data.allowDrop=false;\r",
+                                    "    record.data.allowDrag=false;\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "}\r",
                                     "return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png\"> '+value);"
                                 ]
                             },
@@ -853,12 +859,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "notAutomatic": true,
                                 "name": "readWorkspaces",
                                 "fieldLabel": "Espaces de travail en lecture seule",
                                 "labelWidth": 220,
                                 "multiSelect": true,
-                                "layout|anchor": "100%",
-                                "notAutomatic": true
+                                "layout|anchor": "100%"
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -881,12 +887,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "notAutomatic": true,
                                 "name": "writeWorkspaces",
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
                                 "multiSelect": true,
-                                "layout|anchor": "100%",
-                                "notAutomatic": true
+                                "layout|anchor": "100%"
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -909,12 +915,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "notAutomatic": true,
                                 "name": "defaultWorkspace",
                                 "fieldLabel": "Espaces de travail par défaut",
                                 "labelWidth": 220,
                                 "multiSelect": false,
-                                "layout|anchor": "100%",
-                                "notAutomatic": true
+                                "layout|anchor": "100%"
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"

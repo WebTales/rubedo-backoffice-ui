@@ -172,7 +172,6 @@ Ext.define('Rubedo.view.contributionMedias', {
                     resizable: true,
                     resizeHandles: 'e',
                     title: '',
-                    store: 'MediasDataStore',
                     viewConfig: {
 
                     },

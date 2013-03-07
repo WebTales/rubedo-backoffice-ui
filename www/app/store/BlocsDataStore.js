@@ -1749,8 +1749,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Contenu à afficher',
                                                 name: 'contentId',
-                                                chooseOnly: true,
-                                                
+                                                chooseOnly: true
                                             }
                                         },
                                         {

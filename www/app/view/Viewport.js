@@ -87,6 +87,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.adminFTDC',
         'Rubedo.view.newMTWindow',
         'Rubedo.view.testingGround',
+        'Rubedo.view.queryBuilderField',
         'Rubedo.view.queryFieldComponent',
         'Rubedo.view.sitesInterface',
         'Rubedo.view.siteBuilderWizzard',

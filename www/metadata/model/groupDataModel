@@ -240,6 +240,21 @@
                 "name": "defaultWorkspace"
             },
             "designerId": "e0e06b71-dd13-4e80-b9f1-48fb353275f0"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "2e91dd29-0e79-4433-98ea-13246af72dd3"
         }
     ]
 }

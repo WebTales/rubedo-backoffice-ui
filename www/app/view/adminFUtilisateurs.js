@@ -211,6 +211,12 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    record.data.allowDrop=false;
+                                    record.data.allowDrag=false;
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
                                 return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
                             },
                             dataIndex: 'name',
@@ -326,30 +332,30 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    notAutomatic: true,
                                     name: 'readWorkspaces',
                                     fieldLabel: 'Espaces de travail en lecture seule',
                                     labelWidth: 220,
                                     multiSelect: true,
-                                    anchor: '100%',
-                                    notAutomatic: true
+                                    anchor: '100%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    notAutomatic: true,
                                     name: 'writeWorkspaces',
                                     fieldLabel: 'Espaces de travail en contribution',
                                     labelWidth: 220,
                                     multiSelect: true,
-                                    anchor: '100%',
-                                    notAutomatic: true
+                                    anchor: '100%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    notAutomatic: true,
                                     name: 'defaultWorkspace',
                                     fieldLabel: 'Espaces de travail par défaut',
                                     labelWidth: 220,
                                     multiSelect: false,
-                                    anchor: '100%',
-                                    notAutomatic: true
+                                    anchor: '100%'
                                 },
                                 {
                                     xtype: 'checkboxfield',

@@ -72,6 +72,11 @@ Ext.define('Rubedo.model.groupDataModel', {
         },
         {
             name: 'defaultWorkspace'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });
