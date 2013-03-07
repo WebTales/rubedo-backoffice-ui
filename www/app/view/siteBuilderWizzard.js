@@ -79,12 +79,17 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     xtype: 'combobox',
                                     anchor: '100%',
                                     name: 'protocol',
+                                    value: [
+                                        'HTTP'
+                                    ],
                                     fieldLabel: 'Protocole ',
                                     labelWidth: 110,
+                                    editable: false,
+                                    forceSelection: true,
+                                    multiSelect: true,
                                     store: [
                                         'HTTP',
-                                        'HTTPS',
-                                        'HTTP + HTTPS'
+                                        'HTTPS'
                                     ]
                                 },
                                 {

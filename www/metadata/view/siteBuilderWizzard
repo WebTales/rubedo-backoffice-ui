@@ -116,9 +116,15 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox18",
                                 "name": "protocol",
+                                "value": [
+                                    "[\"HTTP\"]"
+                                ],
                                 "fieldLabel": "Protocole ",
                                 "labelWidth": 110,
-                                "store": "[\"HTTP\", \"HTTPS\", \"HTTP + HTTPS\"]"
+                                "editable": false,
+                                "forceSelection": true,
+                                "multiSelect": true,
+                                "store": "[\"HTTP\", \"HTTPS\"]"
                             },
                             "configAlternates": {
                                 "store": "array"

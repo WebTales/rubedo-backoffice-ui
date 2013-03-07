@@ -378,7 +378,10 @@
                                 "name": "protocol",
                                 "fieldLabel": "Protocole ",
                                 "labelWidth": 110,
-                                "store": "[\"HTTP\", \"HTTPS\", \"HTTP + HTTPS\"]"
+                                "editable": false,
+                                "forceSelection": true,
+                                "multiSelect": true,
+                                "store": "[\"HTTP\", \"HTTPS\"]"
                             },
                             "configAlternates": {
                                 "store": "array"

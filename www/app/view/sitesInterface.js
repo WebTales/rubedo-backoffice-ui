@@ -203,10 +203,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     name: 'protocol',
                                     fieldLabel: 'Protocole ',
                                     labelWidth: 110,
+                                    editable: false,
+                                    forceSelection: true,
+                                    multiSelect: true,
                                     store: [
                                         'HTTP',
-                                        'HTTPS',
-                                        'HTTP + HTTPS'
+                                        'HTTPS'
                                     ]
                                 },
                                 {
