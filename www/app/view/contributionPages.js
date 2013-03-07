@@ -169,6 +169,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
                                     scale: 'large',

@@ -41,7 +41,13 @@ Ext.define('Rubedo.view.testingGround', {
                             anchor: '100%',
                             fieldLabel: 'Label'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onFormAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ],
             dockedItems: [
@@ -63,6 +69,19 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
+    },
+
+    onFormAfterRender: function(abstractcomponent, options) {
+        var homePageSelector = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            labelWidth:110,
+            fieldLabel:"Page d'accueil",
+            id:"sitesHomePicker",
+            anchor: "100%",
+            name:"homePage"
+        });
+        abstractcomponent.add(homePageSelector);
     }
 
 });

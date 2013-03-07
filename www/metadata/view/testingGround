@@ -45,6 +45,33 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFormAfterRender",
+                        "fn": "onFormAfterRender",
+                        "implHandler": [
+                            "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                            "    displayField:\"text\",\r",
+                            "    labelWidth:110,\r",
+                            "    fieldLabel:\"Page d'accueil\",\r",
+                            "    id:\"sitesHomePicker\",\r",
+                            "    anchor: \"100%\",\r",
+                            "    name:\"homePage\"\r",
+                            "});\r",
+                            "abstractcomponent.add(homePageSelector);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "6899b863-404c-483f-bdcb-d7a407f72ddf"
                 }
             ]
         },
