@@ -857,9 +857,20 @@
                                 "fieldLabel": "Espaces de travail en lecture seule",
                                 "labelWidth": 220,
                                 "multiSelect": true,
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "notAutomatic": true
+                            },
+                            "configAlternates": {
+                                "notAutomatic": "boolean"
                             },
                             "designerId": "d010bcf1-789c-4c4b-82a3-f1831b805cbd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "notAutomatic",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         },
                         {
@@ -874,9 +885,20 @@
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
                                 "multiSelect": true,
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "notAutomatic": true
+                            },
+                            "configAlternates": {
+                                "notAutomatic": "boolean"
                             },
                             "designerId": "1d6b29de-19ea-4d17-aea2-95e87dabc7b8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "notAutomatic",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         },
                         {
@@ -891,9 +913,20 @@
                                 "fieldLabel": "Espaces de travail par défaut",
                                 "labelWidth": 220,
                                 "multiSelect": false,
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "notAutomatic": true
+                            },
+                            "configAlternates": {
+                                "notAutomatic": "boolean"
                             },
                             "designerId": "2794af03-5b5a-4972-ad5d-4a9990da8814",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "notAutomatic",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         },
                         {

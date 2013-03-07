@@ -17,5 +17,31 @@
         "valueField": "id"
     },
     "id": "ExtBox1-ext-gen46360",
-    "designerId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+    "designerId": "552c244b-b66b-4875-9d66-15bedb41fd64",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboboxBeforeRender",
+                "fn": "onComboboxBeforeRender",
+                "implHandler": [
+                    "if ((!abstractcomponent.notAutomatic)&&(Ext.isEmpty(abstractcomponent.getValue()))){\r",
+                    "    if (abstractcomponent.multiSelect){\r",
+                    "        abstractcomponent.setValue([ACL.defaultWorkspace]);\r",
+                    "    } else {\r",
+                    "        abstractcomponent.setValue(ACL.defaultWorkspace);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "ee097c89-7d6b-469f-878a-06db90c82878"
+        }
+    ]
 }

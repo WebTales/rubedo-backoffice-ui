@@ -28,7 +28,26 @@ Ext.define('Rubedo.view.WorkspaceCombo', {
     initComponent: function() {
         var me = this;
 
+        Ext.applyIf(me, {
+            listeners: {
+                beforerender: {
+                    fn: me.onComboboxBeforeRender,
+                    scope: me
+                }
+            }
+        });
+
         me.callParent(arguments);
+    },
+
+    onComboboxBeforeRender: function(abstractcomponent, options) {
+        if ((!abstractcomponent.notAutomatic)&&(Ext.isEmpty(abstractcomponent.getValue()))){
+            if (abstractcomponent.multiSelect){
+                abstractcomponent.setValue([ACL.defaultWorkspace]);
+            } else {
+                abstractcomponent.setValue(ACL.defaultWorkspace);
+            }
+        }
     }
 
 });

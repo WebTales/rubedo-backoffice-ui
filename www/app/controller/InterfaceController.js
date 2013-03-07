@@ -491,6 +491,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getStore("CurrentUserDataStore").on("load", function(){
             var currentUser = this.getRange()[0];
             MyPrefData.myName=currentUser.get("name");
+            ACL.defaultWorkspace=currentUser.get("defaultWorkspace");
 
         }); 
         Ext.getStore("CurrentUserDataStore").load();

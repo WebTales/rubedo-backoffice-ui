@@ -156,6 +156,7 @@
                     "Ext.getStore(\"CurrentUserDataStore\").on(\"load\", function(){\r",
                     "    var currentUser = this.getRange()[0];\r",
                     "    MyPrefData.myName=currentUser.get(\"name\");\r",
+                    "    ACL.defaultWorkspace=currentUser.get(\"defaultWorkspace\");\r",
                     "\r",
                     "}); \r",
                     "Ext.getStore(\"CurrentUserDataStore\").load();"

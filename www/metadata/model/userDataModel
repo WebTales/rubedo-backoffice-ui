@@ -303,6 +303,20 @@
                 "type": null
             },
             "designerId": "468949db-8ce0-4565-8c27-6c0664e6c79b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field316",
+                "name": "defaultWorkspace",
+                "persist": false
+            },
+            "designerId": "cbcfdaf4-cea8-42b1-9b73-57d69d93ea07"
         }
     ]
 }

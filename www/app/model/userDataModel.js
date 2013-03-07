@@ -93,6 +93,10 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'endValidity'
+        },
+        {
+            name: 'defaultWorkspace',
+            persist: false
         }
     ]
 });

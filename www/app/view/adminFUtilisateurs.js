@@ -330,7 +330,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Espaces de travail en lecture seule',
                                     labelWidth: 220,
                                     multiSelect: true,
-                                    anchor: '100%'
+                                    anchor: '100%',
+                                    notAutomatic: true
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
@@ -338,7 +339,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Espaces de travail en contribution',
                                     labelWidth: 220,
                                     multiSelect: true,
-                                    anchor: '100%'
+                                    anchor: '100%',
+                                    notAutomatic: true
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
@@ -346,7 +348,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Espaces de travail par défaut',
                                     labelWidth: 220,
                                     multiSelect: false,
-                                    anchor: '100%'
+                                    anchor: '100%',
+                                    notAutomatic: true
                                 },
                                 {
                                     xtype: 'checkboxfield',
