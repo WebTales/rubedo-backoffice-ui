@@ -513,7 +513,29 @@
                                 "id": "DAMSearchField",
                                 "fieldLabel": ""
                             },
-                            "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af"
+                            "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onDAMSearchFieldSpecialkey",
+                                        "fn": "onDAMSearchFieldSpecialkey",
+                                        "implHandler": [
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    Ext.getCmp(\"DAMSearchBtn\").fireEvent(\"click\",Ext.getCmp(\"DAMSearchBtn\"));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "df1d032e-ab74-4c49-a4b4-95ac11055707"
+                                }
+                            ]
                         },
                         {
                             "type": "button",

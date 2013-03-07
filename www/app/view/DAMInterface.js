@@ -233,7 +233,13 @@ Ext.define('Rubedo.view.DAMInterface', {
                                     xtype: 'textfield',
                                     flex: 1,
                                     id: 'DAMSearchField',
-                                    fieldLabel: ''
+                                    fieldLabel: '',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onDAMSearchFieldSpecialkey,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -292,6 +298,12 @@ Ext.define('Rubedo.view.DAMInterface', {
     onDAMROBtnRender: function(abstractcomponent, options) {
         if ((!ACL.interfaceRights["write.ui.dam"])&&(ACL.interfaceRights["read.ui.dam"])){
             abstractcomponent.show();
+        }
+    },
+
+    onDAMSearchFieldSpecialkey: function(field, e, options) {
+        if (e.getKey() == e.ENTER) {
+            Ext.getCmp("DAMSearchBtn").fireEvent("click",Ext.getCmp("DAMSearchBtn"));
         }
     },
 

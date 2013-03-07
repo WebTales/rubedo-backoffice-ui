@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.queryBuilderField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -44,21 +40,22 @@ Ext.define('Rubedo.view.testingGround', {
                             xtype: 'textareafield',
                             anchor: '100%',
                             fieldLabel: 'Label'
-                        },
+                        }
+                    ]
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    items: [
                         {
-                            xtype: 'fieldset',
-                            title: 'My Fields',
-                            items: [
-                                {
-                                    xtype: 'queryBuilderField'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'datefield',
-                            id: 'gruik',
-                            fieldLabel: 'Label',
-                            submitFormat: 'U'
+                            xtype: 'splitbutton',
+                            cls: 'show-cross',
+                            allowDepress: false,
+                            enableToggle: true,
+                            pressed: true,
+                            text: 'MyButton'
                         }
                     ]
                 }

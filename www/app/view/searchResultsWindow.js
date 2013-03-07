@@ -58,7 +58,13 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                                     id: 'ESFacetQueryField',
                                     name: 'query',
                                     fieldLabel: '',
-                                    labelWidth: 40
+                                    labelWidth: 40,
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onESFacetQueryFieldSpecialkey,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'tbfill',
@@ -165,6 +171,12 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onESFacetQueryFieldSpecialkey: function(field, e, options) {
+        if (e.getKey() == e.ENTER) {
+            Ext.getCmp("ESFacetQueryBtn").fireEvent("click",Ext.getCmp("ESFacetQueryBtn"));
+        }
     },
 
     onSearchResultsWindowBeforeClose: function(panel, options) {

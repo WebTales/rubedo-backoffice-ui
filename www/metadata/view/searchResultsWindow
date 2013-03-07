@@ -66,9 +66,32 @@
                                 "id": "ESFacetQueryField",
                                 "name": "query",
                                 "fieldLabel": "",
-                                "labelWidth": 40
+                                "labelWidth": 40,
+                                "enableKeyEvents": null
                             },
-                            "designerId": "c9204439-6bcb-47e9-a8bf-19d76e699b6d"
+                            "designerId": "c9204439-6bcb-47e9-a8bf-19d76e699b6d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onESFacetQueryFieldSpecialkey",
+                                        "fn": "onESFacetQueryFieldSpecialkey",
+                                        "implHandler": [
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    Ext.getCmp(\"ESFacetQueryBtn\").fireEvent(\"click\",Ext.getCmp(\"ESFacetQueryBtn\"));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "274b65e7-04f6-42dd-94e9-109b39b6a6a8"
+                                }
+                            ]
                         },
                         {
                             "type": "tbfill",
@@ -280,6 +303,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyToolbar58",
                         "border": 0,
+                        "cls": null,
                         "height": 32,
                         "id": "SearchActiveFacetBar",
                         "enableOverflow": true

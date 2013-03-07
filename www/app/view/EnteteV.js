@@ -81,7 +81,6 @@ Ext.define('Rubedo.view.EnteteV', {
     },
 
     onESSearchFieldSpecialkey: function(field, e, options) {
-
         if (e.getKey() == e.ENTER) {
             Ext.getCmp("ESSearchButton").fireEvent("click",Ext.getCmp("ESSearchButton"));
         }

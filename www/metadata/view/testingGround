@@ -45,47 +45,40 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
-                },
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar66"
+            },
+            "designerId": "4b3eb72a-05f8-47a3-a2a6-e4378a4aeb39",
+            "cn": [
                 {
-                    "type": "fieldset",
+                    "type": "splitbutton",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet19",
-                        "title": "My Fields"
+                        "layout|flex": null,
+                        "designer|userClassName": "MySplitButton",
+                        "baseCls": null,
+                        "cls": "show-cross",
+                        "allowDepress": false,
+                        "enableToggle": true,
+                        "pressed": true,
+                        "text": "MyButton"
                     },
-                    "designerId": "f91dd407-0e7c-4e30-b264-f94a82ecceb5",
-                    "cn": [
-                        {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "designerId": "8e64c483-7768-47eb-884a-7dd89fb5de13",
-                            "masterInstanceId": "ExtBox1-ext-gen13418"
-                        }
-                    ]
-                },
-                {
-                    "type": "datefield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyDateField7",
-                        "id": "gruik",
-                        "fieldLabel": "Label",
-                        "altFormats": null,
-                        "submitFormat": "U"
-                    },
-                    "designerId": "2ef8a264-4d58-4a1b-8738-23a1204b1b88"
+                    "designerId": "d5ad6389-b2f8-4903-82f7-e83edd502a68"
                 }
             ]
         }

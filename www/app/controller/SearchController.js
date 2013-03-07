@@ -60,6 +60,8 @@ Ext.define('Rubedo.controller.SearchController', {
             if (thing.terms.length>1){
                 Ext.Array.forEach(thing.terms,function(term){
                     var activeOne = Ext.widget('splitbutton',{
+                        pressed:true,
+                        cls:"show-cross",
                         text:thing.label+" : "+term.label,
                         arrowHandler:function(){
                             Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
@@ -74,6 +76,8 @@ Ext.define('Rubedo.controller.SearchController', {
                 });
             } else {
                 var activeOne = Ext.widget('splitbutton',{
+                    pressed:true,
+                    cls:"show-cross",
                     text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
                         delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
