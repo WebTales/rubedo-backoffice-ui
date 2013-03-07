@@ -82,8 +82,9 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     value: [
                                         'HTTP'
                                     ],
-                                    fieldLabel: 'Protocole ',
+                                    fieldLabel: 'Protocole *',
                                     labelWidth: 110,
+                                    allowBlank: false,
                                     editable: false,
                                     forceSelection: true,
                                     multiSelect: true,
