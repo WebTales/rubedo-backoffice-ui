@@ -285,6 +285,7 @@
             "userConfig": {
                 "dock": "bottom",
                 "designer|userClassName": "MyPagingToolbar",
+                "id": "contentSelectorPagingToolbar",
                 "width": 360,
                 "displayInfo": true,
                 "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
@@ -294,9 +295,29 @@
                 "nextText": "Page suivante",
                 "prevText": "Page prècèdente",
                 "refreshText": "Rafraichir",
-                "store": "ContentSelectorStore"
+                "store": null
             },
-            "designerId": "7fe3b482-113b-4091-a182-24d58b6be45a"
+            "designerId": "7fe3b482-113b-4091-a182-24d58b6be45a",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onPagingToolbarConentSelectBeforeRender",
+                        "fn": "onPagingToolbarConentSelectBeforeRender",
+                        "implHandler": [
+                            "abstractcomponent.bindStore(abstractcomponent.up().getStore());"
+                        ],
+                        "name": "beforerender",
+                        "scope": "me"
+                    },
+                    "designerId": "a13135cb-f787-43d5-8d18-18a5acfac1b9"
+                }
+            ]
         }
     ]
 }

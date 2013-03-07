@@ -69,6 +69,44 @@
                 "scope": "me"
             },
             "designerId": "fd531cba-e0ce-4138-be21-594db73eaf50"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreAdd",
+                "fn": "onJsonstoreAdd",
+                "implHandler": [
+                    "store.totalCount=store.totalCount+1;\r",
+                    "store.fireEvent(\"load\");"
+                ],
+                "name": "add",
+                "scope": "me"
+            },
+            "designerId": "1bb49ca4-4c49-420d-a309-330ccda313c7"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreRemove",
+                "fn": "onJsonstoreRemove",
+                "implHandler": [
+                    "store.totalCount=store.totalCount-1;\r",
+                    "store.fireEvent(\"load\");"
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "designerId": "6b14dea7-f009-4177-a8c2-2425aa13ea63"
         }
     ]
 }

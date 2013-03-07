@@ -133,6 +133,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                 {
                     xtype: 'pagingtoolbar',
                     dock: 'bottom',
+                    id: 'contentSelectorPagingToolbar',
                     width: 360,
                     displayInfo: true,
                     displayMsg: 'Affichage des contenus {0} - {1} sur {2}',
@@ -142,12 +143,21 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                     nextText: 'Page suivante',
                     prevText: 'Page prècèdente',
                     refreshText: 'Rafraichir',
-                    store: 'ContentSelectorStore'
+                    listeners: {
+                        beforerender: {
+                            fn: me.onPagingToolbarConentSelectBeforeRender,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onPagingToolbarConentSelectBeforeRender: function(abstractcomponent, options) {
+        abstractcomponent.bindStore(abstractcomponent.up().getStore());
     }
 
 });
