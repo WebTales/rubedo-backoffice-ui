@@ -185,7 +185,38 @@
                         "dataIndex": "text",
                         "text": "Nom"
                     },
-                    "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383"
+                    "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"readOnly\")) {\r",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                                    "} else {\r",
+                                    "    return(value);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "ed5ea241-ef34-43a9-84b1-dfc9f8d86e4f"
+                        }
+                    ]
                 }
             ]
         },

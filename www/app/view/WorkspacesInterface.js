@@ -97,6 +97,13 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("readOnly")) {
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+                                } else {
+                                    return(value);
+                                }
+                            },
                             dataIndex: 'text',
                             text: 'Nom'
                         }
