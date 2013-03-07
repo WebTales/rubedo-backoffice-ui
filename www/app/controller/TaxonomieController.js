@@ -247,7 +247,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     },
 
     termsContextMenuDisplay: function(tablepanel, record, item, index, e, options) {
-        if ((ACL.interfaceRights["write.ui.taxonomy"])&&(Ext.getCmp("AdminfTaxonomieGrid").getSelectionModel().getLastSelected().get("id")!="navigation")){
+        if ((ACL.interfaceRights["write.ui.taxonomyTerms"])&&(Ext.getCmp("AdminfTaxonomieGrid").getSelectionModel().getLastSelected().get("id")!="navigation")){
             var menu= Ext.getCmp('termContextMenu');
             if (Ext.isEmpty(menu)){
                 menu = Ext.widget('termContextMenu');

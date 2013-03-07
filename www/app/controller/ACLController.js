@@ -34,6 +34,7 @@ Ext.define('Rubedo.controller.ACLController', {
             interfaceRights:{
                 "read.ui.taxonomy":false,
                 "write.ui.taxonomy":false,
+                "write.ui.taxonomyTerms":false,
                 "read.ui.contentTypes":false,
                 "write.ui.contentTypes":false,
                 "read.ui.contents":false,

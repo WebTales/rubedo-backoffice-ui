@@ -405,7 +405,7 @@
                 "designer|userClassName": "termsContextMenuDisplay",
                 "fn": "termsContextMenuDisplay",
                 "implHandler": [
-                    "if ((ACL.interfaceRights[\"write.ui.taxonomy\"])&&(Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected().get(\"id\")!=\"navigation\")){\r",
+                    "if ((ACL.interfaceRights[\"write.ui.taxonomyTerms\"])&&(Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected().get(\"id\")!=\"navigation\")){\r",
                     "    var menu= Ext.getCmp('termContextMenu');\r",
                     "    if (Ext.isEmpty(menu)){\r",
                     "        menu = Ext.widget('termContextMenu');\r",

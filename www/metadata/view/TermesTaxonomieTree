@@ -57,7 +57,7 @@
                                 "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                 "fn": "onTreedragdroppluginBeforeDrop",
                                 "implHandler": [
-                                    "if (!ACL.interfaceRights[\"write.ui.taxonomy\"]){\r",
+                                    "if (!ACL.interfaceRights[\"write.ui.taxonomyTerms\"]){\r",
                                     "    return(false);\r",
                                     "}\r",
                                     "Ext.getCmp(\"TermesTaxonomieTree\").getStore().suspendAutoSync();\r",
@@ -172,7 +172,7 @@
                             "if (record.isRoot()){\r",
                             "    return(\"<i style=\\\"color:#777;\\\">Racine</i>\");\r",
                             "}\r",
-                            "else if (record.get(\"readOnly\")) {\r",
+                            "else if ((record.get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.taxonomyTerms\"])) {\r",
                             "    record.data.allowDrop=false;\r",
                             "    record.data.allowDrag=false;\r",
                             "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",

@@ -137,7 +137,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.taxonomy',
+                            ACL: 'write.ui.taxonomyTerms',
                             disabled: true,
                             id: 'taxoTermEditBrnGroup',
                             headerPosition: 'bottom',

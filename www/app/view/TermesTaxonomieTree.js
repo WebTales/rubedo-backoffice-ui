@@ -54,7 +54,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                         if (record.isRoot()){
                             return("<i style=\"color:#777;\">Racine</i>");
                         }
-                        else if (record.get("readOnly")) {
+                        else if ((record.get("readOnly"))||(!ACL.interfaceRights["write.ui.taxonomyTerms"])) {
                             record.data.allowDrop=false;
                             record.data.allowDrag=false;
                             return("<i style=\"color:#777;\">"+value+"</i>");
@@ -77,7 +77,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
     },
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {
-        if (!ACL.interfaceRights["write.ui.taxonomy"]){
+        if (!ACL.interfaceRights["write.ui.taxonomyTerms"]){
             return(false);
         }
         Ext.getCmp("TermesTaxonomieTree").getStore().suspendAutoSync();
