@@ -195,6 +195,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
+                            hidden: true,
                             headerPosition: 'bottom',
                             title: 'Fichier',
                             columns: 4,
