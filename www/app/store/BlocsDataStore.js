@@ -581,7 +581,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Image',
                                                 name: 'imageFile',
-                                                allowedFileType: 'Image'
+                                                allowedFileType: 'Image',
+                                                smallMode: true
                                             }
                                         },
                                         {
@@ -658,7 +659,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Video',
                                                 name: 'videoFile',
-                                                allowedFileType: 'Video'
+                                                allowedFileType: 'Video',
+                                                smallMode: true
                                             }
                                         },
                                         {
@@ -702,6 +704,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Aperçu par défaut',
                                                 name: 'videoPoster',
+                                                smallMode: true,
                                                 allowedFileType: 'Image'
                                             }
                                         },
@@ -764,7 +767,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Audio',
                                                 name: 'audioFile',
-                                                allowedFileType: 'Audio'
+                                                allowedFileType: 'Audio',
+                                                smallMode: true
                                             }
                                         },
                                         {
@@ -1525,7 +1529,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Logo',
                                                 name: 'logo',
-                                                allowedFileType: 'Image'
+                                                allowedFileType: 'Image',
+                                                smallMode: true
                                             }
                                         }
                                     ]

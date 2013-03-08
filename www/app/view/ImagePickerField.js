@@ -36,13 +36,19 @@ Ext.define('Rubedo.view.ImagePickerField', {
     },
 
     onHiddenfieldRender: function(abstractcomponent, options) {
-        var myComponent = Ext.widget("ImageFieldComponent");
+        if (abstractcomponent.smallMode) {
+            var myComponent = Ext.widget("ImageFieldComponentSmall");
+        } else {
+            var myComponent = Ext.widget("ImageFieldComponent");
+        }
         myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+" ");
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").hide();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+abstractcomponent.getValue());
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").show();
             }
             myComponent.getEl().on("click",function(){
 
@@ -54,18 +60,15 @@ Ext.define('Rubedo.view.ImagePickerField', {
             Ext.widget("ImagePickerWindow",{targetField:abstractcomponent.id}).show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").on("click",function(){
-            var delCon = Ext.widget('delConfirmZ');
-            delCon.show();
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                abstractcomponent.setValue(null);
-                delCon.close();
-            }); 
+            abstractcomponent.setValue(null);
         });
         abstractcomponent.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").hide();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+newValue);
+                myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").show();
             }
         });
     }

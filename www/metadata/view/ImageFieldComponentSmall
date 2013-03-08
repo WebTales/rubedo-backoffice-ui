@@ -8,16 +8,16 @@
     "userConfig": {
         "anchor": "90%",
         "container|align": "stretch",
-        "designer|userClassName": "ImageFieldComponent",
-        "designer|userAlias": "ImageFieldComponent",
-        "height": 120,
+        "designer|userClassName": "ImageFieldComponentSmall",
+        "designer|userAlias": "ImageFieldComponentSmall",
+        "height": 52,
         "itemId": null,
         "margin": "0 0 10 0",
-        "width": 338,
+        "width": 177,
         "layout": "hbox"
     },
-    "id": "ExtBox1-ext-gen7140",
-    "designerId": "c731a69e-dd8d-4064-b123-ea9f9fbdc128",
+    "id": "ExtBox1-ext-gen34021",
+    "designerId": "5805b692-a733-4f52-a6c7-89b56fb6edbe",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -36,10 +36,71 @@
             "userConfig": {
                 "layout|flex": null,
                 "designer|userClassName": "MyLabel",
-                "width": 105,
+                "width": 100,
                 "text": "My Label :"
             },
-            "designerId": "a6f0dc97-303b-4735-8fe0-d740129ac151"
+            "designerId": "ca478cff-c265-4afb-8870-dbb2e62e5878"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyContainer25",
+                "itemId": "buttonHolder",
+                "margin": "0 0 0 5",
+                "width": 29,
+                "layout": "absolute"
+            },
+            "designerId": "5cebfb62-0946-4cd7-9fce-931791a9eba1",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 0,
+                        "layout|y": 0,
+                        "designer|userClassName": "MyButton170",
+                        "itemId": "fieldChangeImage",
+                        "iconCls": "edit",
+                        "text": "",
+                        "tooltip": "Choisir un média"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "5c36ab68-2fb3-4e8b-8dfd-4b18d3328471"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 0,
+                        "layout|y": 30,
+                        "designer|userClassName": "MyButton171",
+                        "itemId": "fieldClearImage",
+                        "iconCls": "close",
+                        "text": "",
+                        "tooltip": "Désélectionner"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "f192c816-0436-44df-a5dd-5838cb8fa523"
+                }
+            ]
         },
         {
             "type": "image",
@@ -50,7 +111,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyImg14",
-                "height": 120,
+                "height": 52,
                 "itemId": "fieldImagePreview",
                 "minWidth": null,
                 "style": null,
@@ -60,7 +121,7 @@
             "configAlternates": {
                 "style": "string"
             },
-            "designerId": "46cc473c-e3da-4784-b347-adcb851f700e",
+            "designerId": "145e02f2-a4b1-4355-b534-d452b147bf17",
             "cn": [
                 {
                     "type": "basiceventbinding",
@@ -78,70 +139,7 @@
                         "name": "render",
                         "scope": "me"
                     },
-                    "designerId": "811abcd3-7696-46b7-b6cf-e99bb059d094"
-                }
-            ]
-        },
-        {
-            "type": "container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|snapToGrid": 10,
-                "designer|userClassName": "MyContainer25",
-                "itemId": "buttonHolder",
-                "margin": "0 0 0 10",
-                "width": 60,
-                "layout": "absolute"
-            },
-            "designerId": "15d54f0f-2b5f-483c-9126-4b65e9786bf7",
-            "cn": [
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|x": 10,
-                        "layout|y": 10,
-                        "designer|userClassName": "MyButton170",
-                        "itemId": "fieldChangeImage",
-                        "iconCls": "pencil_big",
-                        "scale": "large",
-                        "text": "",
-                        "tooltip": "Choisir un média"
-                    },
-                    "configAlternates": {
-                        "tooltip": "string"
-                    },
-                    "designerId": "0430f85e-58dd-4071-8e68-e0cefbfa284b"
-                },
-                {
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|x": 10,
-                        "layout|y": 70,
-                        "designer|userClassName": "MyButton171",
-                        "itemId": "fieldClearImage",
-                        "iconCls": "remove_big",
-                        "scale": "large",
-                        "text": "",
-                        "tooltip": "Désélectionner"
-                    },
-                    "configAlternates": {
-                        "tooltip": "string"
-                    },
-                    "designerId": "288f4812-92a1-4a23-8f7f-c18691533c6e"
+                    "designerId": "c6d887ea-a4a4-42cc-8656-8a9b46156f1d"
                 }
             ]
         }

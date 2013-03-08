@@ -220,7 +220,8 @@ Ext.application({
         'sessionWarningWindow',
         'sessionExpiredWindow',
         'menuPrincipalInterface',
-        'GFSFileFieldComponentBig'
+        'GFSFileFieldComponentBig',
+        'ImageFieldComponentSmall'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

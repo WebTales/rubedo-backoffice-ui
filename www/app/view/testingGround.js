@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.GFSFileField'
+        'Rubedo.view.ImagePickerField'
     ],
 
     height: 450,
@@ -46,8 +46,8 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'GFSFileField',
-                            bigMode: true
+                            xtype: 'ImagePickerField',
+                            smallMode: true
                         }
                     ]
                 }
