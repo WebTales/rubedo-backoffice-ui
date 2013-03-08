@@ -54,13 +54,13 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
             }
 
@@ -74,36 +74,41 @@ Ext.define('Rubedo.view.GFSFileField', {
             Ext.widget("GFSFieldUploadWindow",{targetField:abstractcomponent.id}).show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){
-            abstractcomponent.setValue();
+            var delCon = Ext.widget('delConfirmZ');
+            delCon.show();
+            Ext.getCmp('delConfirmZOui').on('click', function() { 
+                abstractcomponent.setValue(null);
+                delCon.close();
+            }); 
         });
         abstractcomponent.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
 
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
             }
 
         });
         if (abstractcomponent.readOnly){
             myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
-            myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
             myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
         } else {
             myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
-            myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
             myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
         }
         if (abstractcomponent.fileType!="Image"){
-            myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
         } else {
             //handle image online editing
         }
@@ -114,15 +119,15 @@ Ext.define('Rubedo.view.GFSFileField', {
         abstractcomponent.on("writeablechange", function(){
             if (abstractcomponent.readOnly){
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
                 myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
             } else {
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
                 myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
             }
             if (abstractcomponent.fileType!="Image"){
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
             } else {
                 //handle image online editing
             }

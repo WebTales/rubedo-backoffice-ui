@@ -54,7 +54,12 @@ Ext.define('Rubedo.view.ImagePickerField', {
             Ext.widget("ImagePickerWindow",{targetField:abstractcomponent.id}).show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").on("click",function(){
-            abstractcomponent.setValue();
+            var delCon = Ext.widget('delConfirmZ');
+            delCon.show();
+            Ext.getCmp('delConfirmZOui').on('click', function() { 
+                abstractcomponent.setValue(null);
+                delCon.close();
+            }); 
         });
         abstractcomponent.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){

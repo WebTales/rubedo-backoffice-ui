@@ -144,18 +144,19 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                         },
                         {
                             xtype: 'fieldset',
-                            title: 'Droits',
+                            title: 'Espaces de travail',
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'writeWorkspace',
+                                    fieldLabel: 'Contribution',
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '90%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'target',
-                                    fieldLabel: 'Cible',
+                                    fieldLabel: 'Diffusion',
                                     multiSelect: true,
                                     anchor: '90%'
                                 }

@@ -72,6 +72,9 @@ Ext.define('Rubedo.controller.SearchController', {
                             Ext.getStore("ESFacetteStore").load();
                         }
                     });
+                    if(thing.label=="Query"){
+                        activeOne.setText("Recherche : "+thing.terms[0].label);
+                    }
                     target.add(activeOne);
                 });
             } else {
@@ -88,6 +91,9 @@ Ext.define('Rubedo.controller.SearchController', {
                         Ext.getStore("ESFacetteStore").load();
                     }
                 });
+                if(thing.label=="Query"){
+                    activeOne.setText("Recherche : "+thing.terms[0].label);
+                }
                 target.add(activeOne);
             }
         });

@@ -290,7 +290,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyFieldSet18",
-                        "title": "Droits"
+                        "title": "Espaces de travail"
                     },
                     "designerId": "162cf652-9ad8-4da0-8b19-916b2b6ddc3a",
                     "cn": [
@@ -303,6 +303,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "name": "writeWorkspace",
+                                "fieldLabel": "Contribution",
                                 "store": "ContributeWorkspacesCombo",
                                 "layout|anchor": "90%"
                             },
@@ -319,7 +320,7 @@
                             "userConfig": {
                                 "name": "target",
                                 "submitValue": null,
-                                "fieldLabel": "Cible",
+                                "fieldLabel": "Diffusion",
                                 "multiSelect": true,
                                 "layout|anchor": "90%"
                             },

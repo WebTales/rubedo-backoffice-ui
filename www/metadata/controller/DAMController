@@ -514,6 +514,7 @@
                     "    record.set(\"taxonomy\", me.getTaxoValues());\r",
                     "    record.endEdit();\r",
                     "    button.up().up().close();\r",
+                    "    Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "}"
                 ],
                 "name": "click",
@@ -837,6 +838,9 @@
                     "                    Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "                }\r",
                     "            });\r",
+                    "            if(thing.label==\"Query\"){\r",
+                    "                activeOne.setText(\"Recherche : \"+thing.terms[0].label);\r",
+                    "            }\r",
                     "            target.add(activeOne);\r",
                     "        });\r",
                     "    } else {\r",
@@ -853,6 +857,9 @@
                     "                Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "            }\r",
                     "        });\r",
+                    "        if(thing.label==\"Query\"){\r",
+                    "            activeOne.setText(\"Recherche : \"+thing.terms[0].label);\r",
+                    "        }\r",
                     "        target.add(activeOne);\r",
                     "    }\r",
                     "});"

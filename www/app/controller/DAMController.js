@@ -160,6 +160,7 @@ Ext.define('Rubedo.controller.DAMController', {
             record.set("taxonomy", me.getTaxoValues());
             record.endEdit();
             button.up().up().close();
+            Ext.getStore("DAMFacetteStore").load();
         }
     },
 
@@ -555,6 +556,9 @@ Ext.define('Rubedo.controller.DAMController', {
                             Ext.getStore("DAMFacetteStore").load();
                         }
                     });
+                    if(thing.label=="Query"){
+                        activeOne.setText("Recherche : "+thing.terms[0].label);
+                    }
                     target.add(activeOne);
                 });
             } else {
@@ -571,6 +575,9 @@ Ext.define('Rubedo.controller.DAMController', {
                         Ext.getStore("DAMFacetteStore").load();
                     }
                 });
+                if(thing.label=="Query"){
+                    activeOne.setText("Recherche : "+thing.terms[0].label);
+                }
                 target.add(activeOne);
             }
         });
