@@ -1,0 +1,251 @@
+{
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "90%",
+        "designer|userClassName": "GFSFileFieldComponentBig",
+        "designer|userAlias": "GFSFileFieldComponentBig",
+        "height": null,
+        "itemId": "imageFieldComponent",
+        "margin": null,
+        "minHeight": 100,
+        "width": 300
+    },
+    "id": "ExtBox1-ext-gen38879",
+    "designerId": "fe41bd45-6e0d-4e0a-8048-aafdf068bbfc",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLabel",
+                "margin": null,
+                "width": 300,
+                "text": "My Label :"
+            },
+            "designerId": "63e20f7f-7304-41e9-a037-1812676bf5a3"
+        },
+        {
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyImg14",
+                "height": null,
+                "itemId": "fieldImagePreview",
+                "margin": "10 0 0 0",
+                "minWidth": null,
+                "style": null,
+                "width": 300,
+                "src": null
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "211f972f-193f-43f6-aa79-27a97315156e",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFieldImagePreviewRender",
+                        "fn": "onFieldImagePreviewRender",
+                        "implHandler": [
+                            "abstractcomponent.getEl().on(\"load\", function(){abstractcomponent.up().doLayout();});"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "8927c013-576d-4a80-8774-f6b012f655a3"
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyContainer25",
+                "height": 70,
+                "itemId": "buttonHolder",
+                "margin": null,
+                "width": 300,
+                "layout": "absolute"
+            },
+            "designerId": "a8d3046d-aa5c-48c5-9737-e5e3671462c3",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 70,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton170",
+                        "itemId": "fieldChangeFile",
+                        "iconCls": "database_up_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Uploader un fichier"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "a9990c6b-2768-405b-adce-e42d491e656a"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 190,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton171",
+                        "itemId": "fieldClearFile",
+                        "width": 40,
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Supprimer le fichier"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "10ef4574-25d3-4e78-99b1-5489c933b65f"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 10,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton171",
+                        "itemId": "fieldDownloadFile",
+                        "width": 40,
+                        "iconCls": "database_down_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Télécharger le fichier"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "a5f80e8d-f417-4f72-9cd6-68b055efe581"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 130,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton171",
+                        "itemId": "fieldPreviewFile",
+                        "width": 40,
+                        "iconCls": "play_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Affichage en détail"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "3b9fcc69-9743-4c23-920d-e4adef0417e5"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 250,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton17",
+                        "itemId": "helpBouton",
+                        "margin": null,
+                        "style": [
+                            "{float:right;}"
+                        ],
+                        "allowDepress": null,
+                        "enableToggle": null,
+                        "handleMouseEvents": false,
+                        "iconCls": "info_big",
+                        "pressed": null,
+                        "pressedCls": "x-btn",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": [
+                            "'Fichier principal du média. Obligatoire.'"
+                        ]
+                    },
+                    "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 130,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyButton171",
+                        "hidden": true,
+                        "itemId": "fieldEditFile",
+                        "width": 40,
+                        "iconCls": "pencil_big",
+                        "scale": "large",
+                        "text": "",
+                        "tooltip": "Editer le fichier"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "df807824-f3c9-4950-b97b-0954fe78b320"
+                }
+            ]
+        }
+    ]
+}

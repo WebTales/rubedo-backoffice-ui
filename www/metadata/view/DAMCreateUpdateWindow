@@ -67,203 +67,221 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "ChampTC",
-                        "designer|userAlias": "ChampTC",
-                        "designer|displayName": null,
-                        "padding": 10,
-                        "layout": "anchor"
+                        "container|align": "stretch",
+                        "designer|userClassName": "MyContainer47",
+                        "id": null,
+                        "layout": "hbox"
                     },
-                    "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
+                    "designerId": "53ad484f-2ba0-41b0-902d-d697fbb20190",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "90%",
-                                "designer|userClassName": "MyTextField1",
-                                "id": null,
-                                "style": [
-                                    "{float:left}"
-                                ],
-                                "name": "title",
-                                "fieldLabel": "Titre *",
-                                "labelSeparator": " ",
-                                "allowBlank": false
+                                "designer|userClassName": "ChampTC",
+                                "designer|userAlias": "ChampTC",
+                                "designer|displayName": null,
+                                "height": null,
+                                "id": "DAMMainFileFieldBox",
+                                "padding": 10,
+                                "style": null,
+                                "width": 300,
+                                "layout": "anchor"
                             },
-                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "4dc98bb5-5967-4b22-8126-09a3df6665e1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onContainerRender",
+                                        "fn": "onContainerRender",
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(Ext.getStore(\"MTForDAMEdit\").getRange())){\r",
+                                            "    var leType=Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\");\r",
+                                            "} else {\r",
+                                            "    var leType=Ext.getStore(\"MTForDAMEdit\").getRange()[0].get(\"mainFileType\");\r",
+                                            "}\r",
+                                            "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
+                                            "    name:\"originalFileId\",\r",
+                                            "    allowBlank:false,\r",
+                                            "    fieldLabel:\"Fichier original *\",\r",
+                                            "    style:{\"float\":\"left\"},\r",
+                                            "    bigMode:true,\r",
+                                            "    fileType:leType,\r",
+                                            "});\r",
+                                            "abstractcomponent.insert(0, mainField);"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b2684d09-c1e6-485b-8bfe-7e706bd87607"
+                                }
+                            ]
                         },
                         {
-                            "type": "button",
+                            "type": "container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton17",
-                                "itemId": "helpBouton",
-                                "margin": null,
-                                "style": [
-                                    "{float:right;}"
-                                ],
-                                "allowDepress": null,
-                                "enableToggle": null,
-                                "handleMouseEvents": false,
-                                "iconCls": "help",
-                                "pressed": null,
-                                "pressedCls": "x-btn",
-                                "text": "",
-                                "tooltip": [
-                                    "'Titre du média. Obligatoire.'"
-                                ]
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyContainer48",
+                                "id": "DAMSEcondaryFieldsBox",
+                                "margin": "10 0 0 20",
+                                "padding": null,
+                                "layout": "anchor"
                             },
-                            "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
-                        }
-                    ]
-                },
-                {
-                    "type": "container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "ChampTC",
-                        "designer|userAlias": "ChampTC",
-                        "designer|displayName": null,
-                        "padding": 10,
-                        "layout": "anchor"
-                    },
-                    "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
-                    "cn": [
-                        {
-                            "type": "filefield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "90%",
-                                "designer|userClassName": "MyFileUpload3",
-                                "id": null,
-                                "style": [
-                                    "{float:left}"
-                                ],
-                                "name": "originalFileId",
-                                "fieldLabel": "Fichier original *",
-                                "labelSeparator": " ",
-                                "allowBlank": false
-                            },
-                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton17",
-                                "itemId": "helpBouton",
-                                "margin": null,
-                                "style": [
-                                    "{float:right;}"
-                                ],
-                                "allowDepress": null,
-                                "enableToggle": null,
-                                "handleMouseEvents": false,
-                                "iconCls": "help",
-                                "pressed": null,
-                                "pressedCls": "x-btn",
-                                "text": "",
-                                "tooltip": [
-                                    "'Fichier principal du média. Obligatoire.'"
-                                ]
-                            },
-                            "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
-                        }
-                    ]
-                },
-                {
-                    "type": "container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "ChampTC",
-                        "designer|userAlias": "ChampTC",
-                        "designer|displayName": null,
-                        "padding": 10,
-                        "layout": "anchor"
-                    },
-                    "designerId": "4dc98bb5-5967-4b22-8126-09a3df6665e1",
-                    "cn": [
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton17",
-                                "itemId": "helpBouton",
-                                "margin": null,
-                                "style": [
-                                    "{float:right;}"
-                                ],
-                                "allowDepress": null,
-                                "enableToggle": null,
-                                "handleMouseEvents": false,
-                                "iconCls": "help",
-                                "pressed": null,
-                                "pressedCls": "x-btn",
-                                "text": "",
-                                "tooltip": [
-                                    "'Fichier principal du média. Obligatoire.'"
-                                ]
-                            },
-                            "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onContainerRender",
-                                "fn": "onContainerRender",
-                                "implHandler": [
-                                    "if (Ext.isEmpty(Ext.getStore(\"MTForDAMEdit\").getRange())){\r",
-                                    "    var leType=Ext.getCmp(\"DAMMTGrid\").getSelectionModel().getLastSelected().get(\"mainFileType\");\r",
-                                    "} else {\r",
-                                    "    var leType=Ext.getStore(\"MTForDAMEdit\").getRange()[0].get(\"mainFileType\");\r",
-                                    "}\r",
-                                    "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
-                                    "    name:\"originalFileId\",\r",
-                                    "    allowBlank:false,\r",
-                                    "    fieldLabel:\"Fichier original *\",\r",
-                                    "    style:{\"float\":\"left\"},\r",
-                                    "    fileType:leType,\r",
-                                    "    anchor:\"90%\"\r",
-                                    "});\r",
-                                    "abstractcomponent.insert(0, mainField);"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "b2684d09-c1e6-485b-8bfe-7e706bd87607"
+                            "designerId": "00372f86-6219-41a4-82fb-2853c61cd555",
+                            "cn": [
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "ChampTC",
+                                        "designer|userAlias": "ChampTC",
+                                        "designer|displayName": null,
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
+                                    "cn": [
+                                        {
+                                            "type": "textfield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextField1",
+                                                "id": null,
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "title",
+                                                "fieldLabel": "Titre *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton17",
+                                                "itemId": "helpBouton",
+                                                "margin": null,
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
+                                                "allowDepress": null,
+                                                "enableToggle": null,
+                                                "handleMouseEvents": false,
+                                                "iconCls": "help",
+                                                "pressed": null,
+                                                "pressedCls": "x-btn",
+                                                "text": "",
+                                                "tooltip": [
+                                                    "'Titre du média. Obligatoire.'"
+                                                ]
+                                            },
+                                            "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "ChampTC",
+                                        "designer|userAlias": "ChampTC",
+                                        "designer|displayName": null,
+                                        "margin": null,
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
+                                    "cn": [
+                                        {
+                                            "type": "filefield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyFileUpload3",
+                                                "id": null,
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "originalFileId",
+                                                "fieldLabel": "Fichier original *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton17",
+                                                "itemId": "helpBouton",
+                                                "margin": null,
+                                                "style": [
+                                                    "{float:right;}"
+                                                ],
+                                                "allowDepress": null,
+                                                "enableToggle": null,
+                                                "handleMouseEvents": false,
+                                                "iconCls": "help",
+                                                "pressed": null,
+                                                "pressedCls": "x-btn",
+                                                "text": "",
+                                                "tooltip": [
+                                                    "'Fichier principal du média. Obligatoire.'"
+                                                ]
+                                            },
+                                            "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },

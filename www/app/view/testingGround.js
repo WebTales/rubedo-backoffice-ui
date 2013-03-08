@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
+    requires: [
+        'Rubedo.view.GFSFileField'
+    ],
+
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -40,14 +44,12 @@ Ext.define('Rubedo.view.testingGround', {
                             xtype: 'textareafield',
                             anchor: '100%',
                             fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'GFSFileField',
+                            bigMode: true
                         }
-                    ],
-                    listeners: {
-                        afterrender: {
-                            fn: me.onFormAfterRender,
-                            scope: me
-                        }
-                    }
+                    ]
                 }
             ],
             dockedItems: [
@@ -69,19 +71,6 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
-    },
-
-    onFormAfterRender: function(abstractcomponent, options) {
-        var homePageSelector = Ext.create("Ext.ux.TreePicker", {
-            store:Ext.getStore("PagePickerStore"),
-            displayField:"text",
-            labelWidth:110,
-            fieldLabel:"Page d'accueil",
-            id:"sitesHomePicker",
-            anchor: "100%",
-            name:"homePage"
-        });
-        abstractcomponent.add(homePageSelector);
     }
 
 });

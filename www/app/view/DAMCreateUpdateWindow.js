@@ -58,84 +58,95 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                     items: [
                         {
                             xtype: 'container',
-                            padding: 10,
                             layout: {
-                                type: 'anchor'
+                                align: 'stretch',
+                                type: 'hbox'
                             },
                             items: [
                                 {
-                                    xtype: 'textfield',
-                                    anchor: '90%',
-                                    style: '{float:left}',
-                                    name: 'title',
-                                    fieldLabel: 'Titre *',
-                                    labelSeparator: ' ',
-                                    allowBlank: false
+                                    xtype: 'container',
+                                    id: 'DAMMainFileFieldBox',
+                                    padding: 10,
+                                    width: 300,
+                                    layout: {
+                                        type: 'anchor'
+                                    },
+                                    listeners: {
+                                        render: {
+                                            fn: me.onContainerRender,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
-                                    xtype: 'button',
-                                    itemId: 'helpBouton',
-                                    style: '{float:right;}',
-                                    handleMouseEvents: false,
-                                    iconCls: 'help',
-                                    pressedCls: 'x-btn',
-                                    text: '',
-                                    tooltip: 'Titre du média. Obligatoire.'
+                                    xtype: 'container',
+                                    flex: 1,
+                                    id: 'DAMSEcondaryFieldsBox',
+                                    margin: '10 0 0 20',
+                                    layout: {
+                                        type: 'anchor'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'container',
+                                            anchor: '100%',
+                                            padding: 10,
+                                            layout: {
+                                                type: 'anchor'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'title',
+                                                    fieldLabel: 'Titre *',
+                                                    labelSeparator: ' ',
+                                                    allowBlank: false
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'helpBouton',
+                                                    style: '{float:right;}',
+                                                    handleMouseEvents: false,
+                                                    iconCls: 'help',
+                                                    pressedCls: 'x-btn',
+                                                    text: '',
+                                                    tooltip: 'Titre du média. Obligatoire.'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
+                                            padding: 10,
+                                            layout: {
+                                                type: 'anchor'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'filefield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'originalFileId',
+                                                    fieldLabel: 'Fichier original *',
+                                                    labelSeparator: ' ',
+                                                    allowBlank: false
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'helpBouton',
+                                                    style: '{float:right;}',
+                                                    handleMouseEvents: false,
+                                                    iconCls: 'help',
+                                                    pressedCls: 'x-btn',
+                                                    text: '',
+                                                    tooltip: 'Fichier principal du média. Obligatoire.'
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'container',
-                            padding: 10,
-                            layout: {
-                                type: 'anchor'
-                            },
-                            items: [
-                                {
-                                    xtype: 'filefield',
-                                    anchor: '90%',
-                                    style: '{float:left}',
-                                    name: 'originalFileId',
-                                    fieldLabel: 'Fichier original *',
-                                    labelSeparator: ' ',
-                                    allowBlank: false
-                                },
-                                {
-                                    xtype: 'button',
-                                    itemId: 'helpBouton',
-                                    style: '{float:right;}',
-                                    handleMouseEvents: false,
-                                    iconCls: 'help',
-                                    pressedCls: 'x-btn',
-                                    text: '',
-                                    tooltip: 'Fichier principal du média. Obligatoire.'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'container',
-                            padding: 10,
-                            layout: {
-                                type: 'anchor'
-                            },
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    itemId: 'helpBouton',
-                                    style: '{float:right;}',
-                                    handleMouseEvents: false,
-                                    iconCls: 'help',
-                                    pressedCls: 'x-btn',
-                                    text: '',
-                                    tooltip: 'Fichier principal du média. Obligatoire.'
-                                }
-                            ],
-                            listeners: {
-                                render: {
-                                    fn: me.onContainerRender,
-                                    scope: me
-                                }
-                            }
                         },
                         {
                             xtype: 'fieldset',
@@ -211,8 +222,8 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
             allowBlank:false,
             fieldLabel:"Fichier original *",
             style:{"float":"left"},
+            bigMode:true,
             fileType:leType,
-            anchor:"90%"
         });
         abstractcomponent.insert(0, mainField);
     }

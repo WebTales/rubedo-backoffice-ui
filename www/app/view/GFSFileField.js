@@ -36,7 +36,13 @@ Ext.define('Rubedo.view.GFSFileField', {
     },
 
     onHiddenfieldRender: function(abstractcomponent, options) {
-        var myComponent = Ext.widget("GFSFileFieldComponent");
+        var sizer="";
+        if (abstractcomponent.bigMode) {
+            var myComponent = Ext.widget("GFSFileFieldComponentBig");
+        } else {
+            var myComponent = Ext.widget("GFSFileFieldComponent");
+            sizer="&size=thumbnail";
+        }
         myComponent.getComponent(0).setText(abstractcomponent.fieldLabel+" ");
         myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").on("click", function(){
             window.location.href="file/get?file-id="+abstractcomponent.getValue()+"&attachment=download";
@@ -57,7 +63,7 @@ Ext.define('Rubedo.view.GFSFileField', {
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
+                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
@@ -90,7 +96,7 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
 
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+"&size=thumbnail");
+                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();

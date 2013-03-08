@@ -29,7 +29,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (!Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
             var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType);
             var myEditor = Ext.widget("DAMCreateUpdateWindow");
-            Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
+            Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
             myEditor.setTitle("Nouveau média "+DAMType.get("type"));
@@ -151,8 +151,8 @@ Ext.define('Rubedo.controller.DAMController', {
                 var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
             }
             record.beginEdit();
-            record.set("title",Ext.getCmp("DAMFieldBox").getComponent(0).getComponent(0).getValue());
-            record.set("originalFileId",Ext.getCmp("DAMFieldBox").getComponent(1).getComponent(0).getValue());
+            record.set("title",Ext.getCmp("DAMSEcondaryFieldsBox").getComponent(0).getComponent(0).getValue());
+            record.set("originalFileId",Ext.getCmp("DAMMainFileFieldBox").getComponent(0).getValue());
             record.set("fields",Ext.getCmp("DAMFieldBox").getForm().getValues());
             record.set("writeWorkspace",Ext.getCmp("DAMFieldBox").getForm().getValues().writeWorkspace);
             record.set("target",Ext.getCmp("DAMFieldBox").getForm().getValues().target);
@@ -215,7 +215,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (button.up().getForm().isValid()){
             var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id",button.up().getForm().getValues().typeId);
             var myEditor = Ext.widget("DAMCreateUpdateWindow");
-            Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(2));
+            Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
             myEditor.setTitle("Nouveau média "+DAMType.get("type"));
@@ -255,7 +255,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
     renderDAMTypeFields: function(DAMType, updateMode) {
         var me=this;
-        var fieldBox=Ext.getCmp("DAMFieldBox");
+        var fieldBox=Ext.getCmp("DAMSEcondaryFieldsBox");
         Ext.Array.forEach(DAMType.get("fields"),function(field){
             me.renderMTField(Ext.clone(field), fieldBox, updateMode);
         });
@@ -283,7 +283,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(newField.config.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
-        renderTarget.insert(renderTarget.items.items.length-2,casing);
+        renderTarget.add(casing);
     },
 
     renderTaxoFields: function(DAMType, useSep) {
@@ -436,7 +436,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMSubmitBtn").hide();
         Ext.getCmp("DAMSubmitUpdateBtn").show();
         Ext.getCmp("DAMSubmitUpdateBtn").indepMode=true;
-        Ext.getCmp("DAMFieldBox").remove(Ext.getCmp("DAMFieldBox").getComponent(1));
+        Ext.getCmp("DAMSEcondaryFieldsBox").remove(Ext.getCmp("DAMSEcondaryFieldsBox").getComponent(1));
         myEditor.show();
         this.renderDAMTypeFields(DAMType, true);
         this.renderTaxoFields(DAMType, true);

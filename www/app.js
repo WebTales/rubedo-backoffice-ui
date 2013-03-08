@@ -219,7 +219,8 @@ Ext.application({
         'queryFieldComponent',
         'sessionWarningWindow',
         'sessionExpiredWindow',
-        'menuPrincipalInterface'
+        'menuPrincipalInterface',
+        'GFSFileFieldComponentBig'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
