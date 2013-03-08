@@ -1596,38 +1596,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514044000'
                 },
                 {
-                    type: 'Pied de page',
-                    description: '<h2>Bloc Pied de page<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
-                    configBasique: {
-                        title: 'Pied de page',
-                        bType: 'footer',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514055000'
-                },
-                {
                     type: 'Résultat de recherche',
                     description: '<h2>Bloc Résultat de recherche<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
                     configBasique: {
