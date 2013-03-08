@@ -61,7 +61,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     fieldLabel: 'Nom de domaine *',
                                     labelWidth: 110,
                                     allowBlank: false,
-                                    regex: new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)
+                                    regex: new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)
                                 },
                                 {
                                     xtype: 'combobox',
