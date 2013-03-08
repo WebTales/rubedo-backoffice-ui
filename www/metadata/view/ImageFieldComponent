@@ -94,7 +94,7 @@
                 "designer|userClassName": "MyContainer25",
                 "itemId": "buttonHolder",
                 "margin": "0 0 0 10",
-                "width": 60,
+                "width": 49,
                 "layout": "absolute"
             },
             "designerId": "15d54f0f-2b5f-483c-9126-4b65e9786bf7",
@@ -111,8 +111,8 @@
                         "layout|y": 10,
                         "designer|userClassName": "MyButton170",
                         "itemId": "fieldChangeImage",
-                        "iconCls": "pencil_big",
-                        "scale": "large",
+                        "iconCls": "pencil_med",
+                        "scale": "medium",
                         "text": "",
                         "tooltip": "Choisir un média"
                     },
@@ -130,11 +130,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|x": 10,
-                        "layout|y": 70,
+                        "layout|y": 80,
                         "designer|userClassName": "MyButton171",
                         "itemId": "fieldClearImage",
-                        "iconCls": "remove_big",
-                        "scale": "large",
+                        "iconCls": "remove_med",
+                        "scale": "medium",
                         "text": "",
                         "tooltip": "Désélectionner"
                     },

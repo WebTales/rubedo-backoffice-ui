@@ -51,7 +51,7 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
                     xtype: 'container',
                     itemId: 'buttonHolder',
                     margin: '0 0 0 10',
-                    width: 60,
+                    width: 49,
                     layout: {
                         type: 'absolute'
                     },
@@ -61,18 +61,18 @@ Ext.define('Rubedo.view.ImageFieldComponent', {
                             x: 10,
                             y: 10,
                             itemId: 'fieldChangeImage',
-                            iconCls: 'pencil_big',
-                            scale: 'large',
+                            iconCls: 'pencil_med',
+                            scale: 'medium',
                             text: '',
                             tooltip: 'Choisir un média'
                         },
                         {
                             xtype: 'button',
                             x: 10,
-                            y: 70,
+                            y: 80,
                             itemId: 'fieldClearImage',
-                            iconCls: 'remove_big',
-                            scale: 'large',
+                            iconCls: 'remove_med',
+                            scale: 'medium',
                             text: '',
                             tooltip: 'Désélectionner'
                         }

@@ -51,51 +51,44 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                     xtype: 'container',
                     itemId: 'buttonHolder',
                     margin: '0 0 0 10',
-                    width: 170,
+                    width: 41,
                     layout: {
                         type: 'absolute'
                     },
                     items: [
                         {
                             xtype: 'button',
-                            x: 70,
-                            y: 10,
+                            x: 10,
+                            y: 30,
                             itemId: 'fieldChangeFile',
-                            iconCls: 'database_up_big',
-                            scale: 'large',
+                            iconCls: 'database_up_small',
                             text: '',
                             tooltip: 'Uploader un fichier'
                         },
                         {
                             xtype: 'button',
-                            x: 70,
-                            y: 70,
+                            x: 10,
+                            y: 90,
                             itemId: 'fieldClearFile',
-                            width: 40,
-                            iconCls: 'remove_big',
-                            scale: 'large',
+                            iconCls: 'close',
                             text: '',
                             tooltip: 'Supprimer le fichier'
                         },
                         {
                             xtype: 'button',
                             x: 10,
-                            y: 10,
+                            y: 0,
                             itemId: 'fieldDownloadFile',
-                            width: 40,
-                            iconCls: 'database_down_big',
-                            scale: 'large',
+                            iconCls: 'database_down_small',
                             text: '',
                             tooltip: 'Télécharger le fichier'
                         },
                         {
                             xtype: 'button',
                             x: 10,
-                            y: 70,
+                            y: 60,
                             itemId: 'fieldPreviewFile',
-                            width: 40,
-                            iconCls: 'play_big',
-                            scale: 'large',
+                            iconCls: 'play_small',
                             text: '',
                             tooltip: 'Affichage en détail'
                         },
