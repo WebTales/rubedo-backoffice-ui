@@ -186,8 +186,9 @@ Ext.define('Rubedo.controller.UsersController', {
         } else {
             Ext.getCmp("userAdminProfilePicture").setSrc(record.get("photo"));
         }
-        Ext.getStore("DelegationsDataStore").clearFilter(true);
+        /*Ext.getStore("DelegationsDataStore").clearFilter(true);
         Ext.getStore("DelegationsDataStore").filter("giverId", record.get("id"));
+        */
     },
 
     adminInfoUpdate: function(button, e, options) {

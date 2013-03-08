@@ -575,6 +575,7 @@
                                         "displayField": "name",
                                         "forceSelection": true,
                                         "multiSelect": true,
+                                        "queryMode": "local",
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
                                     },
@@ -597,6 +598,7 @@
                                         "displayField": "name",
                                         "forceSelection": true,
                                         "multiSelect": false,
+                                        "queryMode": "local",
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
                                     },
@@ -710,6 +712,7 @@
                             "userConfig": {
                                 "designer|userClassName": "MyGridPanel18",
                                 "height": 150,
+                                "hidden": true,
                                 "autoScroll": true,
                                 "title": "Délégations",
                                 "store": "DelegationsDataStore"

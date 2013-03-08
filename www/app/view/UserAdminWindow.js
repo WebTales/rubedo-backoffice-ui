@@ -241,6 +241,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             displayField: 'name',
                                             forceSelection: true,
                                             multiSelect: true,
+                                            queryMode: 'local',
                                             store: 'GroupsComboStore',
                                             valueField: 'id'
                                         },
@@ -254,6 +255,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             displayField: 'name',
                                             forceSelection: true,
                                             multiSelect: false,
+                                            queryMode: 'local',
                                             store: 'GroupsComboStore',
                                             valueField: 'id'
                                         },
@@ -296,6 +298,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 {
                                     xtype: 'gridpanel',
                                     height: 150,
+                                    hidden: true,
                                     autoScroll: true,
                                     title: 'Délégations',
                                     store: 'DelegationsDataStore',
