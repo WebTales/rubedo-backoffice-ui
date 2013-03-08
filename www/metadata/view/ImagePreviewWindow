@@ -15,7 +15,7 @@
         "minHeight": 100,
         "minWidth": 100,
         "width": null,
-        "autoScroll": true,
+        "autoScroll": false,
         "resizable": [
             "false"
         ],
@@ -62,6 +62,13 @@
                         "implHandler": [
                             "abstractcomponent.getEl().on(\"load\", function(){\r",
                             "    abstractcomponent.up().doLayout();\r",
+                            "    var task2= new Ext.util.DelayedTask(function(){\r",
+                            "        var abstractcontainer=abstractcomponent.up();\r",
+                            "        var x=(window.innerWidth-abstractcontainer.getWidth())/2;\r",
+                            "        var y=(window.innerHeight-abstractcontainer.getHeight())/2;\r",
+                            "        abstractcontainer.showAt(x,y);\r",
+                            "    });\r",
+                            "    task2.delay(400);\r",
                             "});"
                         ],
                         "name": "render",

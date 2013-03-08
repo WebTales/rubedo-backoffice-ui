@@ -218,7 +218,8 @@ Ext.application({
         'localiserField',
         'queryFieldComponent',
         'sessionWarningWindow',
-        'sessionExpiredWindow'
+        'sessionExpiredWindow',
+        'menuPrincipalInterface'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
