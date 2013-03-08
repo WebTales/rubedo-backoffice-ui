@@ -41,9 +41,13 @@ Ext.define('Rubedo.store.RoleStore', {
                     name: 'id'
                 },
                 {
-                    name: 'label'
+                    name: 'label',
+                    sortType: 'asText'
                 }
-            ]
+            ],
+            sorters: {
+                property: 'label'
+            }
         }, cfg)]);
     }
 });

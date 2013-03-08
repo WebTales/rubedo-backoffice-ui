@@ -75,9 +75,23 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "field255",
-                "name": "label"
+                "name": "label",
+                "sortType": "asText"
             },
             "designerId": "5b3ecac7-0bb2-4fca-9dee-88ae1e30a04b"
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter8",
+                "property": "label"
+            },
+            "designerId": "7fb49e0a-4fbf-41e4-860a-1c84fab4b4ea"
         }
     ]
 }

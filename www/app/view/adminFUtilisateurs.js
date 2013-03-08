@@ -319,6 +319,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'form',
                             id: 'groupPropsForm',
+                            autoScroll: true,
                             bodyPadding: 10,
                             title: 'Droits',
                             items: [
