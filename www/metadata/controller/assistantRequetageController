@@ -521,7 +521,7 @@
                 "implHandler": [
                     "var initialQuery = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\"));\r",
                     "var recId = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"id\"));\r",
-                    "Ext.widget(\"assistantRequetage\",{editorMode:true, recId:recId, initialQuery:initialQuery}).show();"
+                    "Ext.widget(\"assistantRequetage\",{editorMode:true, recId:recId, initialQuery:initialQuery,ROMode:button.ROMode}).show();"
                 ],
                 "name": "click",
                 "scope": "me",

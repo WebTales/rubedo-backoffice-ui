@@ -263,7 +263,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     onQueryMainEditBtnClick: function(button, e, options) {
         var initialQuery = Ext.clone(Ext.getCmp("mainQueriesGrid").getSelectionModel().getLastSelected().get("query"));
         var recId = Ext.clone(Ext.getCmp("mainQueriesGrid").getSelectionModel().getLastSelected().get("id"));
-        Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery}).show();
+        Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery,ROMode:button.ROMode}).show();
     },
 
     onMainQueriesGridItemDblClick: function(tablepanel, record, item, index, e, options) {

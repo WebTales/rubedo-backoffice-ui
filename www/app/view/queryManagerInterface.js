@@ -62,13 +62,18 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.queries',
                             disabled: true,
                             id: 'queryMainEditBtn',
                             iconAlign: 'top',
                             iconCls: 'pencil_big',
                             scale: 'large',
-                            text: 'Editer'
+                            text: 'Editer',
+                            listeners: {
+                                beforerender: {
+                                    fn: me.onQueryMainEditBtnBeforeRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'tbfill'
@@ -142,6 +147,15 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onQueryMainEditBtnBeforeRender: function(abstractcomponent, options) {
+        if (!ACL.interfaceRights["read.ui.queries"]){
+            abstractcomponent.hide();
+        } else if (!ACL.interfaceRights["write.ui.queries"]){
+            abstractcomponent.setText("Afficher");
+            abstractcomponent.ROMode=true;
+        }
     },
 
     onQueryManagerInterfaceRender: function(abstractcomponent, options) {

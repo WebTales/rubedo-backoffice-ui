@@ -173,6 +173,12 @@ Ext.define('Rubedo.view.assistantRequetage', {
             Ext.getCmp("boutonPrevRequeteur").show();
             Ext.getCmp("boutonNextRequeteur").hide();
             Ext.getCmp("assistantRequetage").setLoading(true);
+            if(abstractcomponent.ROMode){
+                Ext.getCmp("progressAR").up().hide();
+                Ext.getCmp("queryBuildSaveBtn").hide();
+                Ext.getCmp("queryNameField").setReadOnly(true);
+                Ext.getCmp("assistantRequetage").getLayout().getActiveItem().setTitle(abstractcomponent.initialQuery.queryName);
+            }
             var task= new Ext.util.DelayedTask(function(){
                 Ext.getCmp("queryNameField").setValue(abstractcomponent.initialQuery.queryName);
                 Ext.getCmp("champTCRequeteur").setValue(abstractcomponent.initialQuery.contentTypes);

@@ -94,7 +94,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.queries",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton226",
                         "disabled": true,
@@ -105,11 +104,29 @@
                         "text": "Editer"
                     },
                     "designerId": "6b191377-285e-499f-8c56-d19ce20a1745",
-                    "customConfigs": [
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onQueryMainEditBtnBeforeRender",
+                                "fn": "onQueryMainEditBtnBeforeRender",
+                                "implHandler": [
+                                    "if (!ACL.interfaceRights[\"read.ui.queries\"]){\r",
+                                    "    abstractcomponent.hide();\r",
+                                    "} else if (!ACL.interfaceRights[\"write.ui.queries\"]){\r",
+                                    "    abstractcomponent.setText(\"Afficher\");\r",
+                                    "    abstractcomponent.ROMode=true;\r",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "designerId": "54524301-2735-40f4-aef1-662985ef0be4"
                         }
                     ]
                 },
