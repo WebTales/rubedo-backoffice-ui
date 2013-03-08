@@ -62,12 +62,10 @@ Ext.define('Rubedo.model.contenusDataModel', {
             persist: false
         },
         {
-            name: 'startPublicationDate',
-            type: 'date'
+            name: 'startPublicationDate'
         },
         {
-            name: 'endPublicationDate',
-            type: 'date'
+            name: 'endPublicationDate'
         },
         {
             name: 'target'

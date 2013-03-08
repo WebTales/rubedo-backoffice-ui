@@ -818,10 +818,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 }
             }
         });
-
+        Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
+        Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
         Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
         Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
-        Ext.getCmp("contentMetadataBox").getForm().loadRecord(cible);
+        Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
