@@ -66,10 +66,17 @@ Ext.define('Rubedo.view.testingGround', {
                         {
                             xtype: 'splitbutton',
                             cls: 'show-cross',
+                            id: 'calloutTargetOne',
                             allowDepress: false,
                             enableToggle: true,
                             pressed: true,
-                            text: 'MyButton'
+                            text: 'MyButton',
+                            listeners: {
+                                click: {
+                                    fn: me.onCalloutTargetOneClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -92,7 +99,22 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         abstractcomponent.add(singlePageSelector);
+        Ext.require("Ext.ux.callout.Callout");
+    },
 
+    onCalloutTargetOneClick: function(button, e, options) {
+        Ext.widget('callout', {
+            cls: 'gray',
+            width: 500,
+            html: 'Click anywhere to dismiss this callout window.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            calloutArrowLocation: 'top',
+            target: '#calloutTargetOne',
+            relativePosition: 't-b',
+            relativeOffsets: [0,0],
+            fadeInDuration: 200,
+            fadeOutDuration: 200,
+            dismissDelay: 60000
+        }).show();
     }
 
 });
