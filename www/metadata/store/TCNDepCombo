@@ -11,6 +11,7 @@
         "designer|userClassName": "TCNDepCombo",
         "designer|userAlias": "TCNDepCombo",
         "autoLoad": false,
+        "remoteFilter": true,
         "storeId": "TCNDepCombo",
         "model": "typesContenusDataModel"
     },
@@ -84,6 +85,24 @@
                 ]
             },
             "designerId": "86dc5d9e-92ad-4c77-8582-24145c982aa0"
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter9",
+                "property": "system",
+                "value": [
+                    "{\r",
+                    "                    $ne: true\r",
+                    "                }"
+                ]
+            },
+            "designerId": "10150e08-32e6-4d63-9c19-e72e32691fb5"
         }
     ]
 }

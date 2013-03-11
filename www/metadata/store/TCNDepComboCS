@@ -11,6 +11,7 @@
         "designer|userClassName": "TCNDepComboCS",
         "designer|userAlias": "TCNDepComboCS",
         "autoLoad": false,
+        "remoteFilter": true,
         "storeId": "TCNDepComboCS",
         "model": "typesContenusDataModel"
     },
@@ -84,6 +85,24 @@
                 ]
             },
             "designerId": "9c750fb1-6da6-486c-881f-ef46b32e7fb0"
+        },
+        {
+            "type": "filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFilter10",
+                "property": "system",
+                "value": [
+                    "{\r",
+                    "                    $ne: true\r",
+                    "                }"
+                ]
+            },
+            "designerId": "03705618-516f-4e0c-8a1b-ae3ac7a3c815"
         }
     ]
 }

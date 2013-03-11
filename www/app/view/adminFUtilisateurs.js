@@ -211,13 +211,17 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                var returner = value;
-                                if (record.get("readOnly")){
-                                    record.data.allowDrop=false;
-                                    record.data.allowDrag=false;
-                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                if (record.isRoot()){
+                                    return("<i style=\"color:#777;\">Racine</i>");
+                                } else {
+                                    var returner = value;
+                                    if (record.get("readOnly")){
+                                        record.data.allowDrop=false;
+                                        record.data.allowDrag=false;
+                                        returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                    }
+                                    return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
                                 }
-                                return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
                             },
                             dataIndex: 'name',
                             flex: 1,

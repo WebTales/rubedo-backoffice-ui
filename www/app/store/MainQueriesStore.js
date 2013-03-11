@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.MainQueriesStore', {
             usedCollection: 'Queries',
             autoLoad: false,
             autoSync: true,
+            remoteFilter: true,
             storeId: 'MainQueriesStore',
             model: 'Rubedo.model.queryDataModel',
             proxy: {

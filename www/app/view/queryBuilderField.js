@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
     editable: false,
     displayField: 'name',
     forceSelection: true,
-    queryMode: 'local',
+    queryParam: 'specificItem',
     store: 'QueriesStore',
     valueField: 'id',
 

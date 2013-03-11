@@ -28,6 +28,7 @@ Ext.define('Rubedo.store.TCNDepComboCS', {
             isOptimised: true,
             usedCollection: 'ContentTypes',
             autoLoad: false,
+            remoteFilter: true,
             storeId: 'TCNDepComboCS',
             model: 'Rubedo.model.typesContenusDataModel',
             proxy: {
@@ -44,10 +45,18 @@ Ext.define('Rubedo.store.TCNDepComboCS', {
                     root: 'data'
                 }
             },
-            filters: {
-                property: 'dependant',
-                value: false
-            }
+            filters: [
+                {
+                    property: 'dependant',
+                    value: false
+                },
+                {
+                    property: 'system',
+                    value: {
+                        $ne: true
+                    }
+                }
+            ]
         }, cfg)]);
     }
 });
