@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
 
     etape: '3',
     id: 'assisstantRE4',
-    overflowY: 'auto',
+    autoScroll: true,
     bodyPadding: 10,
     title: 'Choix des critères sur les champs',
 

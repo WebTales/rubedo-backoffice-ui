@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
 
     etape: '4',
     id: 'assisstantRE5',
-    overflowY: 'auto',
+    autoScroll: true,
     bodyPadding: 10,
     title: 'Choix des tris sur les champs',
 

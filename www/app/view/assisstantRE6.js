@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
 
     etape: '5',
     id: 'assisstantRE6',
-    overflowY: 'auto',
+    autoScroll: true,
     bodyPadding: 10,
     title: 'Finalisation et enregistrement',
 

@@ -108,7 +108,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
                     xtype: 'form',
                     etape: '2',
                     id: 'assisstantRE2',
-                    overflowY: 'auto',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: 'Choix des termes de la taxonomie'
                 },

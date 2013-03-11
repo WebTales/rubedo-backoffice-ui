@@ -326,11 +326,13 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             var tri = "";
             var a = value.rule||"";
             var b = value.value||"";
+            var c=Ext.clone(b);
+            if(Ext.isDate(c)){c=Ext.Date.format(c, 'j F, Y, G:i');}
             if (!Ext.isEmpty(value.sort)){
                 if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
             }
 
-            htmlDisplay+="<li>"+key+" "+a+" "+b+" "+tri+"</li>";
+            htmlDisplay+="<li>"+key+" "+a+" "+c+" "+tri+"</li>";
         });
         htmlDisplay+="</ul>";
         var target= Ext.getCmp("querySummaryBox");
