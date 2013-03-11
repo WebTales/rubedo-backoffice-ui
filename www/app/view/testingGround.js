@@ -49,7 +49,13 @@ Ext.define('Rubedo.view.testingGround', {
                             xtype: 'queryBuilderField',
                             id: 'test123'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        render: {
+                            fn: me.onFormRender,
+                            scope: me
+                        }
+                    }
                 }
             ],
             dockedItems: [
@@ -71,6 +77,22 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
+    },
+
+    onFormRender: function(abstractcomponent, options) {
+        var singlePageSelector = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            labelWidth:110,
+            value:null,
+            fieldLabel:"Page de détail par défaut",
+            id:"sitesSinglePickerTesting",
+            anchor: "100%",
+            name:"defaultSingle"
+        });
+
+        abstractcomponent.add(singlePageSelector);
+
     }
 
 });

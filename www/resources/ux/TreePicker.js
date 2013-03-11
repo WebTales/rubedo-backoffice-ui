@@ -78,6 +78,8 @@ Ext.define('Ext.ux.TreePicker', {
                 store: me.store,
                 floating: true,
                 hidden: true,
+		rootVisible:false,
+		useArrows:true,
                 displayField: me.displayField,
                 columns: me.columns,
                 maxHeight: me.maxTreeHeight,
@@ -231,7 +233,7 @@ Ext.define('Ext.ux.TreePicker', {
         }
             
         // try to find a record in the store that matches the value
-        record = value ? me.store.getNodeById(value) : me.store.getRootNode();
+        record = value ? me.store.getNodeById(value) : null;
 
         // set the raw value to the record's display field if a record was found
         me.setRawValue(record ? record.get(this.displayField) : '');

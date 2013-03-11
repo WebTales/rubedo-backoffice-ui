@@ -58,6 +58,36 @@
                     },
                     "designerId": "19d60cfe-3e37-4c28-9322-4cf4e8c22039",
                     "masterInstanceId": "ExtBox1-ext-gen13418"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFormRender",
+                        "fn": "onFormRender",
+                        "implHandler": [
+                            "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                            "    displayField:\"text\",\r",
+                            "    labelWidth:110,\r",
+                            "    value:null,\r",
+                            "    fieldLabel:\"Page de détail par défaut\",\r",
+                            "    id:\"sitesSinglePickerTesting\",\r",
+                            "    anchor: \"100%\",\r",
+                            "    name:\"defaultSingle\"\r",
+                            "});\r",
+                            "\r",
+                            "abstractcomponent.add(singlePageSelector);\r",
+                            ""
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "b31ba696-abaa-4dcd-bc5e-f25dea842497"
                 }
             ]
         },
