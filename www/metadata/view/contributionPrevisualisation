@@ -185,8 +185,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|userClassName": "MyMenu5",
+                                        "styleHtmlContent": true,
                                         "width": null,
-                                        "plain": false
+                                        "plain": false,
+                                        "showSeparator": false
                                     },
                                     "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
                                     "cn": [
@@ -203,6 +205,7 @@
                                                 "height": null,
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
+                                                "plain": true,
                                                 "text": "Ordinateur"
                                             },
                                             "designerId": "66dbf624-ad21-4c50-826b-2a3572bc30b1",
@@ -225,6 +228,7 @@
                                                 "deviceValue": "iphone",
                                                 "designer|userClassName": "MyCheckItem1",
                                                 "iconCls": "prevIphone",
+                                                "plain": true,
                                                 "text": "Téléphone - portrait"
                                             },
                                             "designerId": "6ef9ffd2-0096-4928-b706-989103450e1e",
@@ -247,6 +251,7 @@
                                                 "deviceValue": "iphone-l",
                                                 "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIphoneL",
+                                                "plain": true,
                                                 "text": "Téléphone - paysage"
                                             },
                                             "designerId": "a733b3bd-6123-4c34-a178-c9704a358697",
@@ -269,6 +274,7 @@
                                                 "deviceValue": "ipad",
                                                 "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIpad",
+                                                "plain": true,
                                                 "text": "Tablette - portrait"
                                             },
                                             "designerId": "ff5b1895-b0fc-4cc4-9a97-d591d4e4a0ba",
@@ -291,6 +297,7 @@
                                                 "deviceValue": "ipad-l",
                                                 "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIpadL",
+                                                "plain": true,
                                                 "text": "Tablette - paysage"
                                             },
                                             "designerId": "0ee5da39-460e-4f73-ad54-afc1bf538b29",

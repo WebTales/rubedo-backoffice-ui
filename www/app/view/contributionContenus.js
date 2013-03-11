@@ -149,7 +149,13 @@ Ext.define('Rubedo.view.contributionContenus', {
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
-                                    text: 'Copier'
+                                    text: 'Copier',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onBoutonCopierContenusClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -282,6 +288,15 @@ Ext.define('Rubedo.view.contributionContenus', {
 
     onImageRender: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
+    },
+
+    onBoutonCopierContenusClick: function(button, e, options) {
+        var copiedOne = Ext.getCmp("ContenusGrid").getSelectionModel().getLastSelected().copy();
+        Ext.data.Model.id(copiedOne);
+        copiedOne.data.champs.text=copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        copiedOne.set("status", "draft");
+        copiedOne.set("text",copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
+        Ext.getCmp("ContenusGrid").getStore().add(copiedOne);
     }
 
 });

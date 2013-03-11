@@ -103,36 +103,43 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                     showText: true,
                                     menu: {
                                         xtype: 'menu',
+                                        styleHtmlContent: true,
                                         plain: false,
+                                        showSeparator: false,
                                         items: [
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'desktop',
                                                 iconCls: 'prevDesktop',
+                                                plain: true,
                                                 text: 'Ordinateur'
                                             },
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'iphone',
                                                 iconCls: 'prevIphone',
+                                                plain: true,
                                                 text: 'Téléphone - portrait'
                                             },
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'iphone-l',
                                                 iconCls: 'prevIphoneL',
+                                                plain: true,
                                                 text: 'Téléphone - paysage'
                                             },
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'ipad',
                                                 iconCls: 'prevIpad',
+                                                plain: true,
                                                 text: 'Tablette - portrait'
                                             },
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'ipad-l',
                                                 iconCls: 'prevIpadL',
+                                                plain: true,
                                                 text: 'Tablette - paysage'
                                             }
                                         ]
