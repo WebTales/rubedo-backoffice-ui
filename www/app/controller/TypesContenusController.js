@@ -811,9 +811,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     copyTC: function(button, e, options) {
         var rec = Ext.clone(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().data);
         delete(rec.id);
-        rec.type=rec.type+"-Copie";
+        rec.type=rec.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
         Ext.getCmp("AdminfTypesGrid").getStore().add(rec);
-        Ext.getStore("TypesContenusNDepDataJson").load();
     },
 
     onGridpanelEdit: function(editor, e, options) {

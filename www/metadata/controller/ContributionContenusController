@@ -1650,6 +1650,31 @@
                 "designer|controlQuery": "#pageContentGrid"
             },
             "designerId": "6d5500da-cac3-42e7-a9ef-15e77f8be732"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBoutonCopierContenusClick",
+                "fn": "onBoutonCopierContenusClick",
+                "implHandler": [
+                    "var copiedOne = Ext.getCmp(\"ContenusGrid\").getSelectionModel().getLastSelected().copy();\r",
+                    "Ext.data.Model.id(copiedOne);\r",
+                    "copiedOne.data.champs.text=copiedOne.get(\"text\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "copiedOne.set(\"status\", \"draft\");\r",
+                    "copiedOne.set(\"text\",copiedOne.get(\"text\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
+                    "Ext.getCmp(\"ContenusGrid\").getStore().add(copiedOne);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#boutonCopierContenus"
+            },
+            "designerId": "1babab45-9945-4020-b722-3be3ee752bfb"
         }
     ]
 }

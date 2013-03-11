@@ -669,6 +669,29 @@
                 "designer|controlQuery": "#MTfieldDeleter"
             },
             "designerId": "624b2097-493d-4bc5-b0b4-53ebef83458a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCopyMTBtnClick",
+                "fn": "onCopyMTBtnClick",
+                "implHandler": [
+                    "var rec = Ext.clone(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().data);\r",
+                    "delete(rec.id);\r",
+                    "rec.type=rec.type+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "Ext.getCmp(\"mainMTGrid\").getStore().add(rec);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#copyMTBtn"
+            },
+            "designerId": "dcdf96e3-e7bd-4224-9722-7768435a64fc"
         }
     ]
 }

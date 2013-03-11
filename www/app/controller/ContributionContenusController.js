@@ -524,6 +524,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         this.unitaryContentEdit(record.get("id"), false);
     },
 
+    onBoutonCopierContenusClick: function(button, e, options) {
+        var copiedOne = Ext.getCmp("ContenusGrid").getSelectionModel().getLastSelected().copy();
+        Ext.data.Model.id(copiedOne);
+        copiedOne.data.champs.text=copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        copiedOne.set("status", "draft");
+        copiedOne.set("text",copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
+        Ext.getCmp("ContenusGrid").getStore().add(copiedOne);
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -1226,6 +1235,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#pageContentGrid": {
                 itemdblclick: this.onPageContentGridItemDblClick
+            },
+            "#boutonCopierContenus": {
+                click: this.onBoutonCopierContenusClick
             }
         });
     }

@@ -219,6 +219,13 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         }
     },
 
+    onCopyMTBtnClick: function(button, e, options) {
+        var rec = Ext.clone(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().data);
+        delete(rec.id);
+        rec.type=rec.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        Ext.getCmp("mainMTGrid").getStore().add(rec);
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
@@ -417,6 +424,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#MTfieldDeleter": {
                 click: this.onMTfieldDeleterClick
+            },
+            "#copyMTBtn": {
+                click: this.onCopyMTBtnClick
             }
         });
     }

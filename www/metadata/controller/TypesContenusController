@@ -1095,9 +1095,8 @@
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().data);\r",
                     "delete(rec.id);\r",
-                    "rec.type=rec.type+\"-Copie\";\r",
-                    "Ext.getCmp(\"AdminfTypesGrid\").getStore().add(rec);\r",
-                    "Ext.getStore(\"TypesContenusNDepDataJson\").load();"
+                    "rec.type=rec.type+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").getStore().add(rec);"
                 ],
                 "name": "click",
                 "scope": "me",

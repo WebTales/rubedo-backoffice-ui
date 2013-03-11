@@ -327,31 +327,6 @@
                                     "name": "ACL",
                                     "type": "string"
                                 }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "onBoutonCopierContenusClick",
-                                        "fn": "onBoutonCopierContenusClick",
-                                        "implHandler": [
-                                            "var copiedOne = Ext.getCmp(\"ContenusGrid\").getSelectionModel().getLastSelected().copy();\r",
-                                            "Ext.data.Model.id(copiedOne);\r",
-                                            "copiedOne.data.champs.text=copiedOne.get(\"text\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
-                                            "copiedOne.set(\"status\", \"draft\");\r",
-                                            "copiedOne.set(\"text\",copiedOne.get(\"text\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
-                                            "Ext.getCmp(\"ContenusGrid\").getStore().add(copiedOne);"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "0b468fe0-d867-45c8-b2ec-a881573d1dbe"
-                                }
                             ]
                         },
                         {

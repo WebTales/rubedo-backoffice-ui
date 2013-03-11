@@ -279,6 +279,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                     managesStore: true,
                     id: 'AdminfTypesGrid',
                     width: 150,
+                    resizable: true,
+                    resizeHandles: 'e',
                     title: '',
                     store: 'TypesContenusDataJson',
                     viewConfig: {
