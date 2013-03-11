@@ -177,16 +177,20 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         newQuery.set("name", "Requête simple");
                     }
                     if (Ext.getCmp("assistantRequetage").adminMode){
+
                         Ext.getStore("MainQueriesStore").add(newQuery);
-                    } else {
-                        Ext.getStore("QueriesStore").add(newQuery);
-                        Ext.getStore("QueriesStore").addListener("update", function(){
-                            Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
-                        },this,{single:true});
+                        Ext.getStore("MainQueriesStore").addListener("datachanged", function(){
+                            Ext.getCmp("mainQueriesGrid").getSelectionModel().select(newQuery);
+                        },this, {single:true});
+                        } else {
+                            Ext.getStore("QueriesStore").add(newQuery);
+                            Ext.getStore("QueriesStore").addListener("update", function(){
+                                Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+                            },this,{single:true});
+                            }
                         }
+                        Ext.getCmp("assistantRequetage").close();
                     }
-                    Ext.getCmp("assistantRequetage").close();
-                }
     },
 
     onBoutonCreateurTrisChampsARClick: function(button, e, options) {
