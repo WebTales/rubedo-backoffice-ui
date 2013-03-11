@@ -8,9 +8,9 @@
     "userConfig": {
         "designer|userClassName": "queryManagerInterface",
         "designer|userAlias": "queryManagerInterface",
-        "height": 434,
+        "height": 380,
         "id": "queryManagerInterface",
-        "width": 604,
+        "width": 341,
         "layout": "fit",
         "iconCls": "database_search",
         "title": "Requêtes",
@@ -247,6 +247,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyColumn63",
+                        "hidden": true,
                         "dataIndex": "averageDuration",
                         "text": "Durée moyenne (s)"
                     },
@@ -261,6 +262,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyColumn66",
+                        "hidden": true,
                         "dataIndex": "count",
                         "text": "Compteur"
                     },
@@ -275,6 +277,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyColumn67",
+                        "hidden": true,
                         "dataIndex": "usage",
                         "text": "Usage"
                     },

@@ -471,9 +471,11 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         var vocabSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.vocabularies;
                         vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
                     }
-
+                    if(Ext.isEmpty(vocabulaires)){
+                        Ext.getCmp('assisstantRE2').add(Ext.widget("container", {styleHtmlContent:true, html:"<p>Aucun vocabulaire disponible pour cet ensemble de types de contenus.</p>"}));
+                    }
                     if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
-                    Ext.Array.remove(vocabulaires,"navigation");
+                    //Ext.Array.remove(vocabulaires,"navigation");
                     var k =0;
                     for (k=0; k<vocabulaires.length; k++) {
 

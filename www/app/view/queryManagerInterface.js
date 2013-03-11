@@ -21,9 +21,9 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         'Rubedo.view.MyTool17'
     ],
 
-    height: 434,
+    height: 380,
     id: 'queryManagerInterface',
-    width: 604,
+    width: 341,
     layout: {
         type: 'fit'
     },
@@ -113,16 +113,19 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'averageDuration',
                             text: 'Durée moyenne (s)'
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'count',
                             text: 'Compteur'
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'usage',
                             text: 'Usage'
                         }
