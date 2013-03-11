@@ -582,6 +582,8 @@
                     "        lien.setValue('ET');\r",
                     "        lien.setReadOnly(true);\r",
                     "        lien.hide();\r",
+                    "    } else if (editorMode&&keepInMind) {\r",
+                    "        lien.setValue(initialQuery.vocabulariesRule);\r",
                     "    }\r",
                     "\r",
                     "\r",

@@ -376,6 +376,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 lien.setValue('ET');
                 lien.setReadOnly(true);
                 lien.hide();
+            } else if (editorMode&&keepInMind) {
+                lien.setValue(initialQuery.vocabulariesRule);
             }
 
 
