@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.ImagePickerField'
+        'Rubedo.view.queryBuilderField'
     ],
 
     height: 450,
@@ -46,8 +46,8 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'ImagePickerField',
-                            smallMode: true
+                            xtype: 'queryBuilderField',
+                            id: 'test123'
                         }
                     ]
                 }

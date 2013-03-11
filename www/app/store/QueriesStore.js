@@ -29,9 +29,9 @@ Ext.define('Rubedo.store.QueriesStore', {
             usedCollection: 'Queries',
             autoLoad: false,
             autoSync: true,
-            remoteFilter: true,
             storeId: 'QueriesStore',
             model: 'Rubedo.model.queryDataModel',
+            pageSize: 200,
             proxy: {
                 type: 'ajax',
                 api: {

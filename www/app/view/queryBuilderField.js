@@ -18,12 +18,12 @@ Ext.define('Rubedo.view.queryBuilderField', {
     alias: 'widget.queryBuilderField',
 
     anchor: '90%',
-    managesStore: true,
     style: 'float: left;',
     fieldLabel: 'Label',
     editable: false,
     displayField: 'name',
     forceSelection: true,
+    queryMode: 'local',
     queryParam: 'specificItem',
     store: 'QueriesStore',
     valueField: 'id',
@@ -36,6 +36,10 @@ Ext.define('Rubedo.view.queryBuilderField', {
                 added: {
                     fn: me.onComboboxAdded,
                     scope: me
+                },
+                beforedestroy: {
+                    fn: me.onComboboxBeforeDestroy,
+                    scope: me
                 }
             }
         });
@@ -44,49 +48,86 @@ Ext.define('Rubedo.view.queryBuilderField', {
     },
 
     onComboboxAdded: function(abstractcomponent, container, pos, options) {
-        var companion = Ext.widget("queryFieldComponent");
-
-        companion.getComponent("addBtn").on("click", function(){
-            var myWin = Ext.widget("queryTypeChooseWindow");
-            myWin.mainFieldId=abstractcomponent.getId();
-            myWin.show();
-        });
-        companion.getComponent("removeBtn").on("click", function(){
-            abstractcomponent.setValue(null);
-        });
-        companion.getComponent("editBtn").on("click", function(){
-            var theRec=abstractcomponent.getStore().findRecord("id", abstractcomponent.getValue());
-            var initialQuery = Ext.clone(theRec.get("query"));
-            var recId = Ext.clone(theRec.get("id"));
-            if (theRec.get("type")=="advanced") {
-                Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
-            } else if (theRec.get("type")=="simple"){
-                Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
-
-            } else if (theRec.get("type")=="manual"){
-
-                Ext.widget("manualQueryInterface", {editorMode:true, recId:recId, initialQuery:initialQuery}).show();
+        abstractcomponent.getStore().addListener("load",function(){
+            if (Ext.isEmpty(abstractcomponent.getValue())){
+                abstractcomponent.getStore().filterBy(function(rec){
+                    if ((rec.get("type")=="advanced")) {
+                        return(true);
+                    }
+                    else {
+                        return(false);
+                    }
+                });
             }
 
-        });
-        abstractcomponent.on("change", function(a,newValue,oldValue){
-            if (Ext.isEmpty(newValue)){
-                companion.getComponent("editBtn").hide();
-                companion.getComponent("removeBtn").hide();
-            } else {
-                companion.getComponent("editBtn").show();
-                companion.getComponent("removeBtn").show();
-            }
-            if (!Ext.isEmpty(oldValue)){
-                var theRec=abstractcomponent.getStore().findRecord("id", oldValue);
+        }, this, {single:true});
+            abstractcomponent.getStore().load();
+            var companion = Ext.widget("queryFieldComponent");
 
-                if ((!Ext.isEmpty(theRec))&&(theRec.get("type")!="advanced")) {
-                    abstractcomponent.getStore().remove(theRec);
+            companion.getComponent("addBtn").on("click", function(){
+                var myWin = Ext.widget("queryTypeChooseWindow");
+                myWin.mainFieldId=abstractcomponent.getId();
+                myWin.show();
+            });
+            companion.getComponent("removeBtn").on("click", function(){
+                abstractcomponent.setValue(null);
+            });
+            companion.getComponent("editBtn").on("click", function(){
+                var theRec=abstractcomponent.getStore().findRecord("id", abstractcomponent.getValue());
+                var initialQuery = Ext.clone(theRec.get("query"));
+                var recId = Ext.clone(theRec.get("id"));
+                if (theRec.get("type")=="advanced") {
+                    Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
+                } else if (theRec.get("type")=="simple"){
+                    Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:abstractcomponent.getId()}).show();
+
+                } else if (theRec.get("type")=="manual"){
+
+                    Ext.widget("manualQueryInterface", {editorMode:true, recId:recId, initialQuery:initialQuery}).show();
                 }
-            }
-        });
-        abstractcomponent.fireEvent("change",abstractcomponent, abstractcomponent.getValue());
-        abstractcomponent.up().add(companion);
+
+            });
+            abstractcomponent.on("change", function(a,newValue,oldValue){
+
+
+                if (!Ext.isEmpty(oldValue)){
+                    var theRec=abstractcomponent.getStore().findRecord("id", oldValue);
+
+                    if ((!Ext.isEmpty(theRec))&&(theRec.get("type")!="advanced")) {
+                        abstractcomponent.getStore().remove(theRec);
+                    }
+                }
+                if (Ext.isEmpty(newValue)){
+                    companion.getComponent("editBtn").hide();
+                    companion.getComponent("removeBtn").hide();
+                    abstractcomponent.getStore().filterBy(function(rec){
+                        if ((rec.get("type")=="advanced")) {
+                            return(true);
+                        }
+                        else {
+                            return(false);
+                        }
+                    });
+                } else {
+                    companion.getComponent("editBtn").show();
+                    companion.getComponent("removeBtn").show();
+                    abstractcomponent.getStore().filterBy(function(rec){
+                        if ((rec.get("type")=="advanced")||(rec.get("id")==newValue)) {
+                            return(true);
+                        }
+                        else {
+                            return(false);
+                        }
+                    });
+                }
+
+            });
+            abstractcomponent.fireEvent("change",abstractcomponent, abstractcomponent.getValue());
+            abstractcomponent.up().add(companion);
+    },
+
+    onComboboxBeforeDestroy: function(abstractcomponent, options) {
+        abstractcomponent.getStore().removeAll();
     }
 
 });

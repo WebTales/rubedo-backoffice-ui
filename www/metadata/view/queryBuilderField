@@ -7,7 +7,6 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "90%",
-        "managesStore": true,
         "designer|userClassName": "queryBuilderField",
         "designer|userAlias": "queryBuilderField",
         "style": "float: left;",
@@ -16,7 +15,7 @@
         "editable": false,
         "displayField": "name",
         "forceSelection": true,
-        "queryMode": null,
+        "queryMode": "local",
         "queryParam": "specificItem",
         "store": "QueriesStore",
         "valueField": "id"
@@ -32,11 +31,6 @@
             "group": "(Custom Properties)",
             "name": "anchor",
             "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "managesStore",
-            "type": "string"
         }
     ],
     "cn": [
@@ -51,6 +45,20 @@
                 "designer|userClassName": "onComboboxAdded",
                 "fn": "onComboboxAdded",
                 "implHandler": [
+                    "abstractcomponent.getStore().addListener(\"load\",function(){\r",
+                    "    if (Ext.isEmpty(abstractcomponent.getValue())){\r",
+                    "        abstractcomponent.getStore().filterBy(function(rec){\r",
+                    "        if ((rec.get(\"type\")==\"advanced\")) {\r",
+                    "            return(true);\r",
+                    "        }\r",
+                    "        else {\r",
+                    "            return(false);\r",
+                    "        }\r",
+                    "    });\r",
+                    "    }\r",
+                    "\r",
+                    "}, this, {single:true});\r",
+                    "abstractcomponent.getStore().load();\r",
                     "var companion = Ext.widget(\"queryFieldComponent\");\r",
                     "\r",
                     "companion.getComponent(\"addBtn\").on(\"click\", function(){\r",
@@ -77,13 +85,8 @@
                     "\r",
                     "});\r",
                     "abstractcomponent.on(\"change\", function(a,newValue,oldValue){\r",
-                    "    if (Ext.isEmpty(newValue)){\r",
-                    "        companion.getComponent(\"editBtn\").hide();\r",
-                    "        companion.getComponent(\"removeBtn\").hide();\r",
-                    "    } else {\r",
-                    "        companion.getComponent(\"editBtn\").show();\r",
-                    "        companion.getComponent(\"removeBtn\").show();\r",
-                    "    }\r",
+                    "    \r",
+                    "    \r",
                     "    if (!Ext.isEmpty(oldValue)){\r",
                     "        var theRec=abstractcomponent.getStore().findRecord(\"id\", oldValue);\r",
                     "\r",
@@ -91,6 +94,30 @@
                     "            abstractcomponent.getStore().remove(theRec);\r",
                     "        }\r",
                     "    }\r",
+                    "    if (Ext.isEmpty(newValue)){\r",
+                    "        companion.getComponent(\"editBtn\").hide();\r",
+                    "        companion.getComponent(\"removeBtn\").hide();\r",
+                    "        abstractcomponent.getStore().filterBy(function(rec){\r",
+                    "        if ((rec.get(\"type\")==\"advanced\")) {\r",
+                    "            return(true);\r",
+                    "        }\r",
+                    "        else {\r",
+                    "            return(false);\r",
+                    "        }\r",
+                    "    });\r",
+                    "    } else {\r",
+                    "        companion.getComponent(\"editBtn\").show();\r",
+                    "        companion.getComponent(\"removeBtn\").show();\r",
+                    "        abstractcomponent.getStore().filterBy(function(rec){\r",
+                    "        if ((rec.get(\"type\")==\"advanced\")||(rec.get(\"id\")==newValue)) {\r",
+                    "            return(true);\r",
+                    "        }\r",
+                    "        else {\r",
+                    "            return(false);\r",
+                    "        }\r",
+                    "    });\r",
+                    "    }\r",
+                    "    \r",
                     "});\r",
                     "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());\r",
                     "abstractcomponent.up().add(companion);"
@@ -99,6 +126,24 @@
                 "scope": "me"
             },
             "designerId": "58bf18b0-ebaa-4351-85e9-68b0175abd4a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboboxBeforeDestroy",
+                "fn": "onComboboxBeforeDestroy",
+                "implHandler": [
+                    "abstractcomponent.getStore().removeAll();"
+                ],
+                "name": "beforedestroy",
+                "scope": "me"
+            },
+            "designerId": "44f93821-3ec2-4951-a3ad-f57bc3a2f1fc"
         }
     ]
 }
