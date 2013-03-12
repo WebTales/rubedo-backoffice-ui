@@ -66,7 +66,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 }
                 target.appendChild(newPage);
                 store.resumeAutoSync();
-                store.sync();
+                store.sync();        
                 button.up().up().close();
             });
 
@@ -532,6 +532,7 @@ Ext.define('Rubedo.controller.PagesController', {
     },
 
     savePage: function(button, e, options) {
+        var me=this;
         if (Ext.getCmp("mainPageAttributeForm").getForm().isValid()) {
             var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
             var newBlocks=this.saveBlocks(Ext.getCmp("mainPageEdition"));
@@ -543,32 +544,45 @@ Ext.define('Rubedo.controller.PagesController', {
             editedPage.endEdit();
             store.resumeAutoSync();
             store.sync();
-            store.addListener("update", function(a, record){Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);},this,{single:true});
-            Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().collapseChildren(true);
-            Ext.getCmp("mainPageTree").getStore().load({"node":Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected()});
-            Ext.getCmp("pagesInternalPreview").removeAll();
-            Ext.Ajax.request({
-                url: 'xhr-get-page-url',
-                params: {
-                    "page-id": editedPage.get("id")
-                },
-                success: function(response){
-                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
-                        autoEl: {
-                            tag: 'iframe',
-                            src: targetedUrl+"?preview=1"
-                        }
-                    }));
-                },
-                failure:function(){
-                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
-                }
-            });
-        } else {
-            Ext.getCmp("mainPageAttributeForm").up().setActiveTab(2);
-            Ext.Msg.alert("Erreur", "Les propriétés de la page sont invalides.");
-        }
+            store.addListener("update", function(a, record){
+                Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
+                var arButtons = [ ];
+                me.breadcrumbBuilder(record,arButtons);
+                Ext.getCmp("pageTreeBreadcrumb").removeAll();
+                Ext.getCmp("pageTreeBreadcrumb").add(arButtons.reverse());
+                var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+                var values= record.getData();
+                values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
+                values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+                metaBox.update(values);
+                metaBox.show();
+
+            },this,{single:true});
+                Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().collapseChildren(true);
+                Ext.getCmp("mainPageTree").getStore().load({"node":Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected()});
+                Ext.getCmp("pagesInternalPreview").removeAll();
+                Ext.Ajax.request({
+                    url: 'xhr-get-page-url',
+                    params: {
+                        "page-id": editedPage.get("id")
+                    },
+                    success: function(response){
+                        var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                        Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                            autoEl: {
+                                tag: 'iframe',
+                                src: targetedUrl+"?preview=1"
+                            }
+                        }));
+                    },
+                    failure:function(){
+                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                    }
+                });
+            } else {
+                Ext.getCmp("mainPageAttributeForm").up().setActiveTab(2);
+                Ext.Msg.alert("Erreur", "Les propriétés de la page sont invalides.");
+            }
     },
 
     onWindowBeforeDestroy: function(abstractcomponent, options) {

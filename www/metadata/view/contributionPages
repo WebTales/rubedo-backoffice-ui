@@ -909,9 +909,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyForm32",
-                        "disabled": true,
+                        "autoShow": null,
+                        "disabled": false,
                         "id": "mainPageAttributeForm",
-                        "overflowY": "auto",
+                        "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Propriétés"
                     },
