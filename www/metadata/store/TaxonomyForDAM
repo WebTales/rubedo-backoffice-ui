@@ -13,7 +13,8 @@
         "autoLoad": false,
         "autoSync": false,
         "storeId": "TaxonomyForDAM",
-        "model": "taxonomieDataModel"
+        "model": "taxonomieDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

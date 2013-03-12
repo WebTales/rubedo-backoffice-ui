@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.WallpapersDataJson', {
             autoSync: true,
             storeId: 'WallpapersDataJson',
             model: 'Rubedo.model.wallpaperDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

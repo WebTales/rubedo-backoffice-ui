@@ -33,7 +33,7 @@ Ext.define('Rubedo.store.DAMStore', {
             remoteSort: true,
             storeId: 'DAMStore',
             model: 'Rubedo.model.DAMModel',
-            pageSize: 25,
+            pageSize: 50,
             proxy: {
                 type: 'ajax',
                 batchActions: false,

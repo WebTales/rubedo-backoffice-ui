@@ -32,6 +32,7 @@ Ext.define('Rubedo.store.WorkspacesStore', {
             autoSync: true,
             storeId: 'WorkspacesStore',
             model: 'Rubedo.model.workspaceModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

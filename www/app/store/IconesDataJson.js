@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.IconesDataJson', {
             autoSync: true,
             storeId: 'IconesDataJson',
             model: 'Rubedo.model.iconDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 batchActions: false,

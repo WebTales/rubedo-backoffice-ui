@@ -33,6 +33,7 @@ Ext.define('Rubedo.store.UsersAdminDataStore', {
             remoteSort: true,
             storeId: 'UsersAdminDataStore',
             model: 'Rubedo.model.userDataModel',
+            pageSize: 50,
             proxy: {
                 type: 'ajax',
                 batchActions: false,

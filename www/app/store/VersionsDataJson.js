@@ -26,6 +26,7 @@ Ext.define('Rubedo.store.VersionsDataJson', {
         me.callParent([Ext.apply({
             storeId: 'VersionsDataJson',
             model: 'Rubedo.model.versionsDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax'
             }

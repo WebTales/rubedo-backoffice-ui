@@ -12,7 +12,8 @@
         "autoSync": false,
         "remoteFilter": true,
         "storeId": "VersioningStore",
-        "model": "versionsDataModel"
+        "model": "versionsDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

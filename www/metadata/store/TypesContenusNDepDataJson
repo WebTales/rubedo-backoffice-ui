@@ -13,7 +13,8 @@
         "autoLoad": false,
         "remoteFilter": true,
         "storeId": "TypesContenusNDepDataJson",
-        "model": "typesContenusDataModel"
+        "model": "typesContenusDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

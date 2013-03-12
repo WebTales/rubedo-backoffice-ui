@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.SitesComboPages', {
             autoSync: false,
             storeId: 'SitesComboPages',
             model: 'Rubedo.model.sitesDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

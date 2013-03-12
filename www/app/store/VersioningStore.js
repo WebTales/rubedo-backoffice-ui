@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.VersioningStore', {
             remoteFilter: true,
             storeId: 'VersioningStore',
             model: 'Rubedo.model.versionsDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

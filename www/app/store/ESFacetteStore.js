@@ -40,7 +40,7 @@ Ext.define('Rubedo.store.ESFacetteStore', {
             remoteSort: true,
             storeId: 'ESFacetteStore',
             model: 'Rubedo.model.contentsSearchModel',
-            pageSize: 25,
+            pageSize: 50,
             proxy: {
                 type: 'ajax',
                 api: {

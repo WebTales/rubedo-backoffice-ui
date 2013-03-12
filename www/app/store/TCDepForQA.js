@@ -28,6 +28,7 @@ Ext.define('Rubedo.store.TCDepForQA', {
             autoLoad: false,
             storeId: 'TCDepForQA',
             model: 'Rubedo.model.typesContenusDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

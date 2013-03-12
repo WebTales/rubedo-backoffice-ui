@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.SitesJson', {
             autoSync: true,
             storeId: 'SitesJson',
             model: 'Rubedo.model.sitesDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

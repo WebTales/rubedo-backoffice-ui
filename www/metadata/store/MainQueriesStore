@@ -14,7 +14,8 @@
         "autoSync": true,
         "remoteFilter": true,
         "storeId": "MainQueriesStore",
-        "model": "queryDataModel"
+        "model": "queryDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

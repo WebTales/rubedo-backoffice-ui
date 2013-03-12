@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.ImagePickerStore', {
             autoSync: false,
             storeId: 'ImagePickerStore',
             model: 'Rubedo.model.imageDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

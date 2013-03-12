@@ -25,6 +25,7 @@ Ext.define('Rubedo.store.DepTypesForContents', {
             usedCollection: 'ContentTypes',
             autoLoad: false,
             storeId: 'DepTypesForContents',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

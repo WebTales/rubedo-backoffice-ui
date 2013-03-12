@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.languageStore', {
                     language: 'English'
                 }
             ],
+            pageSize: 1000,
             fields: [
                 {
                     name: 'language'

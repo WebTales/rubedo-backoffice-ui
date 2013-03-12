@@ -26,7 +26,8 @@ Ext.define('Rubedo.store.UsersGroupStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'UsersGroupStore',
-            model: 'Rubedo.model.userDataModel'
+            model: 'Rubedo.model.userDataModel',
+            pageSize: 1000
         }, cfg)]);
     }
 });

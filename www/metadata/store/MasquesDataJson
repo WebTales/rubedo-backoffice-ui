@@ -12,7 +12,8 @@
         "autoLoad": false,
         "autoSync": true,
         "storeId": "MasquesDataJson",
-        "model": "masquesDataModel"
+        "model": "masquesDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

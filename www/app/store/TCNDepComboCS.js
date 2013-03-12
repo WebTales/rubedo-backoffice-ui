@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.TCNDepComboCS', {
             remoteFilter: true,
             storeId: 'TCNDepComboCS',
             model: 'Rubedo.model.typesContenusDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

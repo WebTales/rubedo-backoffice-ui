@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.TaxonomyForC', {
             autoSync: false,
             storeId: 'TaxonomyForC',
             model: 'Rubedo.model.taxonomieDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

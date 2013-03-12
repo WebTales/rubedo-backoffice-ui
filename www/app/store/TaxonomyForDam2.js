@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.TaxonomyForDam2', {
             autoSync: false,
             storeId: 'TaxonomyForDam2',
             model: 'Rubedo.model.taxonomieDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

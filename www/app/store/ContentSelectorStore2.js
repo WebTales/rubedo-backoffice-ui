@@ -29,7 +29,7 @@ Ext.define('Rubedo.store.ContentSelectorStore2', {
             remoteSort: true,
             storeId: 'ContentSelectorStore2',
             model: 'Rubedo.model.contenusDataModel',
-            pageSize: 25,
+            pageSize: 50,
             proxy: {
                 type: 'ajax',
                 api: {

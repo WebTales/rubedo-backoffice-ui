@@ -26,6 +26,7 @@ Ext.define('Rubedo.store.taxoTermsCombo', {
         me.callParent([Ext.apply({
             storeId: 'MyJsonStore28',
             model: 'Rubedo.model.taxonomyTermModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

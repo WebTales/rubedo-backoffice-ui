@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.TaxonomyForC2', {
             autoSync: false,
             storeId: 'TaxonomyForC2',
             model: 'Rubedo.model.taxonomieDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

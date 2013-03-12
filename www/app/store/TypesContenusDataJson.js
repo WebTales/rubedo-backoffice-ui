@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
             remoteFilter: true,
             storeId: 'TypesContenusDataJson',
             model: 'Rubedo.model.typesContenusDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

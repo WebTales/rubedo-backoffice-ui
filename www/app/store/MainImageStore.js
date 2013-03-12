@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.MainImageStore', {
             autoSync: true,
             storeId: 'MainImageStore',
             model: 'Rubedo.model.imageDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.MediaTypes', {
             autoSync: true,
             storeId: 'MediaTypes',
             model: 'Rubedo.model.mediaTypeModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

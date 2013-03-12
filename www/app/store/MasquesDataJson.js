@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.MasquesDataJson', {
             autoSync: true,
             storeId: 'MasquesDataJson',
             model: 'Rubedo.model.masquesDataModel',
+            pageSize: 1000,
             groupers: {
                 property: 'site'
             },

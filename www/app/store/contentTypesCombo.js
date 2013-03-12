@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.contentTypesCombo', {
             autoSync: false,
             storeId: 'contentTypesCombo',
             model: 'Rubedo.model.typesContenusDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

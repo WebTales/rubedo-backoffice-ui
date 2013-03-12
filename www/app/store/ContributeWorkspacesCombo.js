@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.ContributeWorkspacesCombo', {
             autoSync: false,
             storeId: 'ContributeWorkspacesCombo',
             model: 'Rubedo.model.workspaceModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

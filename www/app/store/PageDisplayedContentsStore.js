@@ -32,7 +32,7 @@ Ext.define('Rubedo.store.PageDisplayedContentsStore', {
             remoteSort: true,
             storeId: 'PageDisplayedContentsStore',
             model: 'Rubedo.model.contenusDataModel',
-            pageSize: 25,
+            pageSize: 50,
             sortOnFilter: false,
             proxy: {
                 type: 'ajax',

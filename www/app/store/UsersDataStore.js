@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.UsersDataStore', {
             autoSync: true,
             storeId: 'UsersDataStore',
             model: 'Rubedo.model.userDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

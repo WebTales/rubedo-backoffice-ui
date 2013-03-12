@@ -24,6 +24,7 @@ Ext.define('Rubedo.store.SiteThemesStore', {
             autoLoad: false,
             autoSync: true,
             storeId: 'SiteThemesStore',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

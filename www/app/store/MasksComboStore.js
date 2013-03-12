@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.MasksComboStore', {
             autoSync: false,
             storeId: 'MasksComboStore',
             model: 'Rubedo.model.masquesDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

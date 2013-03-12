@@ -13,7 +13,8 @@
         "autoLoad": false,
         "autoSync": true,
         "storeId": "UsersDataStore",
-        "model": "userDataModel"
+        "model": "userDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

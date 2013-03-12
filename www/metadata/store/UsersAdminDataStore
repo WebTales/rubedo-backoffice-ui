@@ -15,7 +15,8 @@
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "UsersAdminDataStore",
-        "model": "userDataModel"
+        "model": "userDataModel",
+        "pageSize": 50
     },
     "configAlternates": {
         "isOptimised": "boolean"

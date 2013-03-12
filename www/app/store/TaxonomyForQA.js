@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.TaxonomyForQA', {
             autoSync: false,
             storeId: 'TaxonomyForQA',
             model: 'Rubedo.model.taxonomieDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

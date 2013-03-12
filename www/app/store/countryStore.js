@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.countryStore', {
                     country: 'Roumanie'
                 }
             ],
+            pageSize: 1000,
             fields: [
                 {
                     name: 'country'

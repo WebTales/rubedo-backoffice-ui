@@ -33,6 +33,7 @@ Ext.define('Rubedo.store.UsersComboStore', {
             remoteSort: true,
             storeId: 'UsersComboStore',
             model: 'Rubedo.model.userDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

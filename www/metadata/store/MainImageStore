@@ -11,7 +11,8 @@
         "autoLoad": false,
         "autoSync": true,
         "storeId": "MainImageStore",
-        "model": "imageDataModel"
+        "model": "imageDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -11,7 +11,8 @@
         "autoLoad": false,
         "autoSync": false,
         "storeId": "TaxonomyForQA",
-        "model": "taxonomieDataModel"
+        "model": "taxonomieDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

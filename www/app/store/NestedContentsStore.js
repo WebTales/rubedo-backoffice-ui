@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.NestedContentsStore', {
             autoSync: true,
             storeId: 'NestedContentsStore',
             model: 'Rubedo.model.nestedContentModel',
+            pageSize: 50,
             listeners: {
                 update: {
                     fn: me.onStoreUpdate,

@@ -28,6 +28,7 @@ Ext.define('Rubedo.store.ThemesDataJson', {
             autoLoad: false,
             storeId: 'ThemesDataJson',
             model: 'Rubedo.model.themeDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

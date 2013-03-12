@@ -13,7 +13,8 @@
         "autoLoad": false,
         "autoSync": false,
         "storeId": "MasksComboStore",
-        "model": "masquesDataModel"
+        "model": "masquesDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

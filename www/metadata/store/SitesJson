@@ -13,7 +13,8 @@
         "autoLoad": false,
         "autoSync": true,
         "storeId": "SitesJson",
-        "model": "sitesDataModel"
+        "model": "sitesDataModel",
+        "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"

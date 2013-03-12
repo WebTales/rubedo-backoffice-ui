@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.MTForDAMEdit', {
             autoSync: false,
             storeId: 'MTForDAMEdit',
             model: 'Rubedo.model.mediaTypeModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.GroupsComboStore', {
             autoSync: false,
             storeId: 'GroupsComboStore',
             model: 'Rubedo.model.groupDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

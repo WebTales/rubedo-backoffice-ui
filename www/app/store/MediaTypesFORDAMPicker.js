@@ -31,6 +31,7 @@ Ext.define('Rubedo.store.MediaTypesFORDAMPicker', {
             autoSync: false,
             storeId: 'MediaTypesFORDAMPicker',
             model: 'Rubedo.model.mediaTypeModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

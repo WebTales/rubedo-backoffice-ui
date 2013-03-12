@@ -32,6 +32,7 @@ Ext.define('Rubedo.store.MainQueriesStore', {
             remoteFilter: true,
             storeId: 'MainQueriesStore',
             model: 'Rubedo.model.queryDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {

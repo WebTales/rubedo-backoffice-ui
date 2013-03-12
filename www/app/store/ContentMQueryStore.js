@@ -27,6 +27,7 @@ Ext.define('Rubedo.store.ContentMQueryStore', {
         me.callParent([Ext.apply({
             storeId: 'ContentMQueryStore',
             model: 'Rubedo.model.contenusDataModel',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {
