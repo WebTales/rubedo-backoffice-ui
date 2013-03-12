@@ -222,7 +222,8 @@ Ext.application({
         'menuPrincipalInterface',
         'GFSFileFieldComponentBig',
         'ImageFieldComponentSmall',
-        'newUserWindow'
+        'newUserWindow',
+        'RHelpBtn'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -445,8 +445,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "RApplication": "pages",
+                        "layout|flex": null,
                         "designer|userClassName": "MyButton94",
                         "itemId": "RHelpBtn",
                         "icon": null,
@@ -1000,9 +1000,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "RTip": null
                             },
                             "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "RTip",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         },
                         {

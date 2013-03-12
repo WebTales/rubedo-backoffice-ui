@@ -47,111 +47,38 @@
                     "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
                 },
                 {
-                    "type": "linkedinstance",
+                    "type": "textfield",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "test123"
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField77",
+                        "fieldLabel": "Label"
                     },
-                    "designerId": "19d60cfe-3e37-4c28-9322-4cf4e8c22039",
-                    "masterInstanceId": "ExtBox1-ext-gen13418"
+                    "designerId": "4d688673-0002-487f-8b18-2b6a1508a3de"
                 },
                 {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "onFormRender",
-                        "fn": "onFormRender",
-                        "implHandler": [
-                            "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
-                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
-                            "    displayField:\"text\",\r",
-                            "    labelWidth:110,\r",
-                            "    value:null,\r",
-                            "    fieldLabel:\"Page de détail par défaut\",\r",
-                            "    id:\"sitesSinglePickerTesting\",\r",
-                            "    anchor: \"100%\",\r",
-                            "    name:\"defaultSingle\"\r",
-                            "});\r",
-                            "\r",
-                            "abstractcomponent.add(singlePageSelector);\r",
-                            ""
-                        ],
-                        "name": "render",
-                        "scope": "me"
-                    },
-                    "designerId": "b31ba696-abaa-4dcd-bc5e-f25dea842497"
-                }
-            ]
-        },
-        {
-            "type": "toolbar",
-            "reference": {
-                "name": "dockedItems",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar66"
-            },
-            "designerId": "4b3eb72a-05f8-47a3-a2a6-e4378a4aeb39",
-            "cn": [
-                {
-                    "type": "splitbutton",
+                    "type": "textfield",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MySplitButton",
-                        "baseCls": null,
-                        "cls": "show-cross",
-                        "id": "calloutTargetOne",
-                        "allowDepress": false,
-                        "enableToggle": true,
-                        "pressed": true,
-                        "text": "MyButton"
+                        "layout|anchor": "100%",
+                        "RTip": "test ",
+                        "designer|userClassName": "MyTextField78",
+                        "fieldLabel": "Label"
                     },
-                    "designerId": "d5ad6389-b2f8-4903-82f7-e83edd502a68",
-                    "cn": [
+                    "designerId": "79f2024b-b517-4933-b6ff-b7aa865b9c32",
+                    "customConfigs": [
                         {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onCalloutTargetOneClick",
-                                "fn": "onCalloutTargetOneClick",
-                                "implHandler": [
-                                    "Ext.widget('callout', {\r",
-                                    "    cls: 'gray',\r",
-                                    "    width: 500,\r",
-                                    "    html: 'Click anywhere to dismiss this callout window.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',\r",
-                                    "    calloutArrowLocation: 'top',\r",
-                                    "    target: '#calloutTargetOne',\r",
-                                    "    relativePosition: 't-b',\r",
-                                    "    relativeOffsets: [0,0],\r",
-                                    "    fadeInDuration: 200,\r",
-                                    "    fadeOutDuration: 200,\r",
-                                    "    dismissDelay: 60000\r",
-                                    "}).show();"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "76eaa5c8-c1e6-4445-b728-373a29f69dbb"
+                            "group": "(Custom Properties)",
+                            "name": "RTip",
+                            "type": "string"
                         }
                     ]
                 }

@@ -35,6 +35,23 @@ Ext.define('Rubedo.controller.LocalisationController', {
         });
     },
 
+    onComponentBeforeRender: function(abstractcomponent, options) {
+        if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))){
+            abstractcomponent.labelSeparator=" ";
+            if (abstractcomponent.isXType("datefield")){
+                abstractcomponent.submitFormat='U';
+                abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';
+            }    
+        }
+    },
+
+    onBasefieldAdded: function(abstractcomponent, container, pos, options) {
+        if (abstractcomponent.RTip){
+            abstractcomponent.anchor="90%";
+            container.insert(pos,Ext.widget("RHelpBtn", {tooltip:abstractcomponent.RTip}));
+        }
+    },
+
     init: function(application) {
         Ext.require("Ext.ux.callout.Callout");
 
@@ -58,6 +75,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
         this.control({
             "#RHelpBtn": {
                 afterrender: this.onButtonAfterRender1
+            },
+            "field": {
+                beforerender: this.onComponentBeforeRender,
+                added: this.onBasefieldAdded
             }
         });
     }

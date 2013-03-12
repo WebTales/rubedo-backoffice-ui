@@ -1034,32 +1034,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentBeforeRender",
-                "fn": "onComponentBeforeRender",
-                "implHandler": [
-                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
-                    "    abstractcomponent.labelSeparator=\" \";\r",
-                    "    if (abstractcomponent.isXType(\"datefield\")){\r",
-                    "        abstractcomponent.submitFormat='U';\r",
-                    "        abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';\r",
-                    "    }    \r",
-                    "}"
-                ],
-                "name": "beforerender",
-                "scope": "me",
-                "designer|targetType": "Ext.Component",
-                "designer|controlQuery": "component"
-            },
-            "designerId": "20545d3d-55c2-4f5f-b471-7cfc1046dd2b"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|userClassName": "onButtonMouseOver",
                 "fn": "onButtonMouseOver",
                 "implHandler": [

@@ -81,6 +81,55 @@
                 "designer|controlQuery": "#RHelpBtn"
             },
             "designerId": "c94d5e08-9c29-411e-ab6a-d4b0134271e9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComponentBeforeRender",
+                "fn": "onComponentBeforeRender",
+                "implHandler": [
+                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
+                    "    abstractcomponent.labelSeparator=\" \";\r",
+                    "    if (abstractcomponent.isXType(\"datefield\")){\r",
+                    "        abstractcomponent.submitFormat='U';\r",
+                    "        abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';\r",
+                    "    }    \r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Base",
+                "designer|controlQuery": "field"
+            },
+            "designerId": "20545d3d-55c2-4f5f-b471-7cfc1046dd2b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBasefieldAdded",
+                "fn": "onBasefieldAdded",
+                "implHandler": [
+                    "if (abstractcomponent.RTip){\r",
+                    "    abstractcomponent.anchor=\"90%\";\r",
+                    "    container.insert(pos,Ext.widget(\"RHelpBtn\", {tooltip:abstractcomponent.RTip}));\r",
+                    "}"
+                ],
+                "name": "added",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Base",
+                "designer|controlQuery": "field"
+            },
+            "designerId": "4989e511-4ecd-48f4-bcbb-2cfcdfbf915d"
         }
     ]
 }

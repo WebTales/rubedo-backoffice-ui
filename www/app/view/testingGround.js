@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.queryBuilderField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -46,37 +42,15 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
-                            xtype: 'queryBuilderField',
-                            id: 'test123'
-                        }
-                    ],
-                    listeners: {
-                        render: {
-                            fn: me.onFormRender,
-                            scope: me
-                        }
-                    }
-                }
-            ],
-            dockedItems: [
-                {
-                    xtype: 'toolbar',
-                    dock: 'top',
-                    items: [
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'Label'
+                        },
                         {
-                            xtype: 'splitbutton',
-                            cls: 'show-cross',
-                            id: 'calloutTargetOne',
-                            allowDepress: false,
-                            enableToggle: true,
-                            pressed: true,
-                            text: 'MyButton',
-                            listeners: {
-                                click: {
-                                    fn: me.onCalloutTargetOneClick,
-                                    scope: me
-                                }
-                            }
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            RTip: 'test ',
+                            fieldLabel: 'Label'
                         }
                     ]
                 }
@@ -84,37 +58,6 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         me.callParent(arguments);
-    },
-
-    onFormRender: function(abstractcomponent, options) {
-        var singlePageSelector = Ext.create("Ext.ux.TreePicker", {
-            store:Ext.getStore("PagePickerStore"),
-            displayField:"text",
-            labelWidth:110,
-            value:null,
-            fieldLabel:"Page de détail par défaut",
-            id:"sitesSinglePickerTesting",
-            anchor: "100%",
-            name:"defaultSingle"
-        });
-
-        abstractcomponent.add(singlePageSelector);
-
-    },
-
-    onCalloutTargetOneClick: function(button, e, options) {
-        Ext.widget('callout', {
-            cls: 'gray',
-            width: 500,
-            html: 'Click anywhere to dismiss this callout window.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            calloutArrowLocation: 'top',
-            target: '#calloutTargetOne',
-            relativePosition: 't-b',
-            relativeOffsets: [0,0],
-            fadeInDuration: 200,
-            fadeOutDuration: 200,
-            dismissDelay: 60000
-        }).show();
     }
 
 });
