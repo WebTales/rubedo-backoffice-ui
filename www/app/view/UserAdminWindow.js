@@ -229,6 +229,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             name: 'login',
                                             fieldLabel: 'Compte utilisateur ',
                                             labelWidth: 200,
+                                            allowBlank: false,
                                             vtype: 'alphanum'
                                         },
                                         {

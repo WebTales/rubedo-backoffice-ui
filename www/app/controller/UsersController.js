@@ -173,7 +173,7 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp("groupsGrid").getSelectionModel().select(record);
     },
 
-    userAdminSelect: function(tablepanel, record, item, index, e, options) {
+    onGridpanelSelect: function(selModel, record, index, options) {
         Ext.getCmp("userAdminMainPanel").enable();
         if ((!ACL.interfaceRights["write.ui.users"])&&(Ext.isEmpty(Ext.getCmp("userAdminMainPanel").alreadyRO))){
             Ext.Array.forEach(Ext.getCmp("userAdminMainPanel").query("field"), function(truc){truc.setReadOnly(true);});
@@ -198,11 +198,7 @@ Ext.define('Rubedo.controller.UsersController', {
     },
 
     newUser: function(button, e, options) {
-        var newUser = Ext.create("Rubedo.model.userDataModel",{
-            name:"Nouvel Utilisateur",
-            creationDate:Ext.Date.now()
-        });
-        button.up().up().getComponent(0).getStore().add(newUser);
+        Ext.widget("newUserWindow").show();
     },
 
     userAdminRemove: function(button, e, options) {
@@ -303,6 +299,18 @@ Ext.define('Rubedo.controller.UsersController', {
         }
     },
 
+    onUserCreateSubmitBtnClick: function(button, e, options) {
+        var form = button.up().getForm();
+        if (form.isValid()){
+            var newUser = Ext.create("Rubedo.model.userDataModel", form.getValues());
+            Ext.getCmp("userAdminGrid").getStore().add(newUser);
+            Ext.getCmp("userAdminGrid").getStore().addListener("datachanged",function(){
+                Ext.getCmp("userAdminGrid").getSelectionModel().select(newUser);
+            }, this, {single:true});
+                button.up().up().close();
+            }
+    },
+
     getGroupUsers: function(group, array) {
         if (!group.isRoot()){
             var me=this;
@@ -360,7 +368,7 @@ Ext.define('Rubedo.controller.UsersController', {
                 click: this.removeUserFromGroup
             },
             "#userAdminGrid": {
-                itemclick: this.userAdminSelect
+                select: this.onGridpanelSelect
             },
             "#userAdminInfoEdit": {
                 click: this.adminInfoUpdate
@@ -398,6 +406,9 @@ Ext.define('Rubedo.controller.UsersController', {
             "#UserAdminWindow": {
                 beforeclose: this.onUserAdminWindowBeforeClose,
                 render: this.onUserAdminWindowRender
+            },
+            "#userCreateSubmitBtn": {
+                click: this.onUserCreateSubmitBtnClick
             }
         });
     }

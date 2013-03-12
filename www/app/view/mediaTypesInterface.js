@@ -432,7 +432,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                         {
                                             xtype: 'container',
                                             id: 'MTFieldConfigsBox',
-                                            overflowY: 'auto',
+                                            autoScroll: true,
                                             layout: {
                                                 type: 'anchor'
                                             }
