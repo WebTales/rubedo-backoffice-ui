@@ -188,7 +188,13 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
-                                    text: 'Enregistrer'
+                                    text: 'Enregistrer',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onSaveMTBtnAfterRender,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -569,6 +575,15 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onSaveMTBtnAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     },
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, options) {

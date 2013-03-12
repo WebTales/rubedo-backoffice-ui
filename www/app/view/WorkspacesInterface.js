@@ -69,7 +69,13 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                             iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
-                            text: 'Enregistrer'
+                            text: 'Enregistrer',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onWorkspaceSaveAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'tbfill'
@@ -150,6 +156,15 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onWorkspaceSaveAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     },
 
     onWorkspacesInterfaceRender: function(abstractcomponent, options) {

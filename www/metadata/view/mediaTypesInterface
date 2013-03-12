@@ -373,6 +373,31 @@
                                     "name": "ACL",
                                     "type": "string"
                                 }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onSaveMTBtnAfterRender",
+                                        "fn": "onSaveMTBtnAfterRender",
+                                        "implHandler": [
+                                            "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                            "if (!abstractcomponent.disabled){\r",
+                                            "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                            "    t.stopEvent();\r",
+                                            "}\r",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b0ec0f3b-2072-45f0-bfa7-995ddc1422de"
+                                }
                             ]
                         }
                     ]

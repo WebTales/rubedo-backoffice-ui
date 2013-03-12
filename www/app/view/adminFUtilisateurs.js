@@ -132,6 +132,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 click: {
                                     fn: me.onGroupSaveButtonClick,
                                     scope: me
+                                },
+                                afterrender: {
+                                    fn: me.onGroupSaveButtonAfterRender,
+                                    scope: me
                                 }
                             }
                         },
@@ -415,6 +419,15 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             var record =Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
             record.set(form.getValues());
         }
+    },
+
+    onGroupSaveButtonAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
+        if (!abstractcomponent.disabled){
+            abstractcomponent.fireEvent("click", abstractcomponent);
+            t.stopEvent();
+        }
+    });
     },
 
     onTreedragdroppluginBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, options) {

@@ -296,6 +296,29 @@
                                 "scope": "me"
                             },
                             "designerId": "166fe406-eae6-4655-8c76-65c9ad0bb9cb"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGroupSaveButtonAfterRender",
+                                "fn": "onGroupSaveButtonAfterRender",
+                                "implHandler": [
+                                    "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                    "if (!abstractcomponent.disabled){\r",
+                                    "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                    "    t.stopEvent();\r",
+                                    "}\r",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "2b48f88f-2452-4190-94a1-0e0469909def"
                         }
                     ]
                 },
