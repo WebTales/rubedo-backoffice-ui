@@ -115,7 +115,6 @@ Ext.define('Rubedo.controller.PagesController', {
             me.renderBlocks(Ext.clone(myMask.get("blocks")), false);
             me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
-            Ext.getCmp("mainPageAttributeForm").enable();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
             Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
                 field.setReadOnly(false);
@@ -810,7 +809,6 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("pagesInternalPreview").removeAll();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
         Ext.getCmp("mainPageAttributeForm").getForm().reset();
-        Ext.getCmp("mainPageAttributeForm").disable();
         Ext.getCmp("pagePreviewTextItem").setText();
         Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
     },

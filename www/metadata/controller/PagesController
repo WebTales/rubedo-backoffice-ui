@@ -184,7 +184,6 @@
                     "    me.renderBlocks(Ext.clone(myMask.get(\"blocks\")), false);\r",
                     "    me.renderBlocks(Ext.clone(record.get(\"blocks\")), true);\r",
                     "    me.resetInterface();\r",
-                    "    Ext.getCmp(\"mainPageAttributeForm\").enable();\r",
                     "    Ext.getCmp(\"mainPageAttributeForm\").getForm().loadRecord(record);\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"mainPageAttributeForm\").query(\"field\"), function(field){\r",
                     "        field.setReadOnly(false);\r",
@@ -499,7 +498,6 @@
                     "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().reset();\r",
-                    "Ext.getCmp(\"mainPageAttributeForm\").disable();\r",
                     "Ext.getCmp(\"pagePreviewTextItem\").setText();\r",
                     "Ext.getCmp(\"contributionPages\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
