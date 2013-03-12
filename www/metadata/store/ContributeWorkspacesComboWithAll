@@ -8,11 +8,11 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Workspaces",
-        "designer|userClassName": "ContributeWorkspacesCombo",
-        "designer|userAlias": "ContributeWorkspacesCombo",
+        "designer|userClassName": "ContributeWorkspacesComboWithAll",
+        "designer|userAlias": "ContributeWorkspacesComboWithAll",
         "autoLoad": true,
         "autoSync": false,
-        "storeId": "ContributeWorkspacesCombo",
+        "storeId": "ContributeWorkspacesComboWithAll",
         "model": "workspaceModel",
         "data": null,
         "pageSize": 1000
@@ -20,8 +20,8 @@
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen9202",
-    "designerId": "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
+    "id": "ExtBox1-ext-gen7098",
+    "designerId": "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -49,14 +49,9 @@
                     "    read: 'workspaces'\r",
                     "}"
                 ],
-                "extraParams": [
-                    "{\r",
-                    "    notAll:true\r",
-                    "}"
-                ],
                 "url": null
             },
-            "designerId": "7aaae0cb-5c9e-4a91-ad57-67f0a4fc535e",
+            "designerId": "e2fd0ad5-6bd8-4b5f-ab83-cfa6737b4596",
             "cn": [
                 {
                     "type": "jsonreader",
@@ -70,7 +65,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "55d83ee0-acf2-4ee9-b123-29c49a020488"
+                    "designerId": "7f365c87-e0f5-47d5-b89d-ba619c9f4a76"
                 }
             ]
         },
@@ -90,7 +85,7 @@
                 "name": "load",
                 "scope": "me"
             },
-            "designerId": "b3a6f978-5884-4b93-a73f-17e1dae13565"
+            "designerId": "4da76e27-2a6e-42b0-a6fe-4dcfe190158d"
         },
         {
             "type": "basiceventbinding",
@@ -108,7 +103,7 @@
                 "name": "beforeload",
                 "scope": "me"
             },
-            "designerId": "b30ab1fb-6a00-40bd-aa1e-390bf383ccdb"
+            "designerId": "5364ca13-f937-4e5e-9f34-f8b92142c230"
         }
     ]
 }

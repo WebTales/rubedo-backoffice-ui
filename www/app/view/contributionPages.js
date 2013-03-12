@@ -572,6 +572,7 @@ Ext.define('Rubedo.view.contributionPages', {
     onCheckboxfieldChange: function(field, newValue, oldValue, options) {
         if (newValue) {
             field.previousSibling().setReadOnly(true);
+            field.previousSibling().setValue(null);
         }else {
             field.previousSibling().setReadOnly(false);
         }

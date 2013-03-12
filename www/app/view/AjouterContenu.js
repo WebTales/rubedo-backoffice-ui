@@ -201,7 +201,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             xtype: 'form',
                             id: 'boiteADroitsContenus',
                             bodyPadding: 10,
-                            title: 'Droits',
+                            title: 'Espaces de travail',
                             tabConfig: {
                                 xtype: 'tab',
                                 id: 'rightsTabConfig'
@@ -210,14 +210,16 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'writeWorkspace',
+                                    fieldLabel: 'Contribution',
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '90%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
                                     name: 'target',
-                                    fieldLabel: 'Cible',
+                                    fieldLabel: 'Diffusion',
                                     multiSelect: true,
+                                    store: 'WorkspacesComboWithAll',
                                     anchor: '90%'
                                 }
                             ]

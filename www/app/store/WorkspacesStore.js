@@ -41,6 +41,9 @@ Ext.define('Rubedo.store.WorkspacesStore', {
                     update: 'workspaces/update',
                     destroy: 'workspaces/delete'
                 },
+                extraParams: {
+                    notAll: true
+                },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',

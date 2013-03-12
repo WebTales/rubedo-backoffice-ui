@@ -48,8 +48,8 @@ Ext.define('Rubedo.view.testingGround', {
                         },
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             RTip: 'test ',
+                            anchor: '100%',
                             fieldLabel: 'Label'
                         }
                     ]

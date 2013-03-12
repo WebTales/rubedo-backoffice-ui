@@ -455,7 +455,7 @@
                         "designer|userClassName": "MyForm47",
                         "id": "boiteADroitsContenus",
                         "bodyPadding": 10,
-                        "title": "Droits"
+                        "title": "Espaces de travail"
                     },
                     "designerId": "7e3a7635-40e6-413a-a4bd-2f63dc9af76f",
                     "cn": [
@@ -481,6 +481,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "name": "writeWorkspace",
+                                "fieldLabel": "Contribution",
                                 "store": "ContributeWorkspacesCombo",
                                 "layout|anchor": "90%"
                             },
@@ -496,8 +497,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "name": "target",
-                                "fieldLabel": "Cible",
+                                "fieldLabel": "Diffusion",
                                 "multiSelect": true,
+                                "store": "WorkspacesComboWithAll",
                                 "layout|anchor": "90%"
                             },
                             "designerId": "a1e27865-898c-4d89-ab44-6f5e1f38bfac",

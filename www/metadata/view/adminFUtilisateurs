@@ -900,6 +900,7 @@
                                 "fieldLabel": "Espaces de travail en lecture seule",
                                 "labelWidth": 220,
                                 "multiSelect": true,
+                                "store": "WorkspacesComboWithAll",
                                 "layout|anchor": "100%"
                             },
                             "configAlternates": {
@@ -928,6 +929,7 @@
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
                                 "multiSelect": true,
+                                "store": "WorkspacesComboWithAll",
                                 "layout|anchor": "100%"
                             },
                             "configAlternates": {
@@ -953,7 +955,7 @@
                             "userConfig": {
                                 "notAutomatic": true,
                                 "name": "defaultWorkspace",
-                                "fieldLabel": "Espaces de travail par défaut",
+                                "fieldLabel": "Espace de travail par défaut",
                                 "labelWidth": 220,
                                 "multiSelect": false,
                                 "layout|anchor": "100%"
@@ -1006,6 +1008,75 @@
                                 "inputValue": "true"
                             },
                             "designerId": "d071cbf4-8fb1-4f20-b598-8bdcb6c4ac50"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "notAutomatic": true,
+                                "labelWidth": 220,
+                                "multiSelect": false,
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "notAutomatic": "boolean"
+                            },
+                            "designerId": "97a64028-eae7-4c65-a7fa-e29ce46c5418",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "notAutomatic",
+                                    "type": "string"
+                                }
+                            ],
+                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox8",
+                                "name": "inheritWorkspace",
+                                "fieldLabel": "Hérite de l'espace de travail",
+                                "labelWidth": 220,
+                                "boxLabel": "",
+                                "inputValue": "true"
+                            },
+                            "designerId": "8e91354c-9d6a-4431-b56c-58e22b25880b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onCheckboxfieldChange1",
+                                        "fn": "onCheckboxfieldChange1",
+                                        "implHandler": [
+                                            "if (newValue) {\r",
+                                            "    field.previousSibling().setReadOnly(true);\r",
+                                            "    field.previousSibling().setValue(null);\r",
+                                            "}else {\r",
+                                            "    field.previousSibling().setReadOnly(false);\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "3af3bf3c-428d-4a52-9e6d-774905618377"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1078,7 +1149,7 @@
                     "    allowBlank:true\r",
                     "\r",
                     "});\r",
-                    "Ext.getCmp(\"groupPropsForm\").add(rolePicker);"
+                    "Ext.getCmp(\"groupPropsForm\").insert(6,rolePicker);"
                 ],
                 "name": "afterrender",
                 "scope": "me"

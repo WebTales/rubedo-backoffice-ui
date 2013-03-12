@@ -347,6 +347,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Espaces de travail en lecture seule',
                                     labelWidth: 220,
                                     multiSelect: true,
+                                    store: 'WorkspacesComboWithAll',
                                     anchor: '100%'
                                 },
                                 {
@@ -356,13 +357,14 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     fieldLabel: 'Espaces de travail en contribution',
                                     labelWidth: 220,
                                     multiSelect: true,
+                                    store: 'WorkspacesComboWithAll',
                                     anchor: '100%'
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
                                     name: 'defaultWorkspace',
-                                    fieldLabel: 'Espaces de travail par défaut',
+                                    fieldLabel: 'Espace de travail par défaut',
                                     labelWidth: 220,
                                     multiSelect: false,
                                     anchor: '100%'
@@ -384,6 +386,28 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     labelWidth: 220,
                                     boxLabel: '',
                                     inputValue: 'true'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    notAutomatic: true,
+                                    labelWidth: 220,
+                                    multiSelect: false,
+                                    anchor: '100%'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    name: 'inheritWorkspace',
+                                    fieldLabel: 'Hérite de l\'espace de travail',
+                                    labelWidth: 220,
+                                    boxLabel: '',
+                                    inputValue: 'true',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onCheckboxfieldChange1,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -471,6 +495,15 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         abstractcomponent.getStore().removeAll();
     },
 
+    onCheckboxfieldChange1: function(field, newValue, oldValue, options) {
+        if (newValue) {
+            field.previousSibling().setReadOnly(true);
+            field.previousSibling().setValue(null);
+        }else {
+            field.previousSibling().setReadOnly(false);
+        }
+    },
+
     onAdminFUtilisateursRender: function(abstractcomponent, options) {
         Ext.getStore("RoleStore").load();
         Ext.getStore("UsersDataStore").load();
@@ -500,7 +533,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             allowBlank:true
 
         });
-        Ext.getCmp("groupPropsForm").add(rolePicker);
+        Ext.getCmp("groupPropsForm").insert(6,rolePicker);
     }
 
 });

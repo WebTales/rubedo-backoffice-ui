@@ -77,6 +77,12 @@ Ext.define('Rubedo.model.groupDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'workspace'
+        },
+        {
+            name: 'inheritWorkspace'
         }
     ]
 });

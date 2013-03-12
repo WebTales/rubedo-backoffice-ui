@@ -169,6 +169,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                     name: 'target',
                                     fieldLabel: 'Diffusion',
                                     multiSelect: true,
+                                    store: 'WorkspacesComboWithAll',
                                     anchor: '90%'
                                 }
                             ]

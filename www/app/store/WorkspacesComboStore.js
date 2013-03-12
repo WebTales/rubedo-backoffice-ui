@@ -37,6 +37,9 @@ Ext.define('Rubedo.store.WorkspacesComboStore', {
                 api: {
                     read: 'workspaces'
                 },
+                extraParams: {
+                    notAll: true
+                },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',

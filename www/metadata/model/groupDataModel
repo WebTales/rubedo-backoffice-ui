@@ -255,6 +255,32 @@
                 "type": "boolean"
             },
             "designerId": "2e91dd29-0e79-4433-98ea-13246af72dd3"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field312",
+                "name": "workspace"
+            },
+            "designerId": "38850682-3c9b-4dd0-aa54-58e8ebe3b18a"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field313",
+                "name": "inheritWorkspace"
+            },
+            "designerId": "dcbd7b8e-2606-4da3-9485-c5f7152d608f"
         }
     ]
 }

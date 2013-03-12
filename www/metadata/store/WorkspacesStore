@@ -59,6 +59,11 @@
                     "                    destroy: 'workspaces/delete'\r",
                     "                }"
                 ],
+                "extraParams": [
+                    "{\r",
+                    "    notAll:true\r",
+                    "}"
+                ],
                 "url": null
             },
             "designerId": "2e84ec57-1180-4937-93d0-47d6761c6626",

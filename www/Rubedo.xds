@@ -2060,6 +2060,22 @@
                 "app/view/RHelpBtn.js"
             ],
             "className": "RHelpBtn"
+        },
+        "562558a9-b585-4d9a-91da-854c3548d79b": {
+            "paths": [
+                "metadata/store/WorkspacesComboWithAll",
+                "app/store/override/WorkspacesComboWithAll.js",
+                "app/store/WorkspacesComboWithAll.js"
+            ],
+            "className": "WorkspacesComboWithAll"
+        },
+        "fc686eab-6027-4b3d-a63c-a230e0bf79ff": {
+            "paths": [
+                "metadata/store/ContributeWorkspacesComboWithAll",
+                "app/store/override/ContributeWorkspacesComboWithAll.js",
+                "app/store/ContributeWorkspacesComboWithAll.js"
+            ],
+            "className": "ContributeWorkspacesComboWithAll"
         }
     },
     "viewOrderMap": {
@@ -2258,7 +2274,9 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
-            "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e"
+            "562558a9-b585-4d9a-91da-854c3548d79b",
+            "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
+            "fc686eab-6027-4b3d-a63c-a230e0bf79ff"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
