@@ -30,10 +30,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
-                    type: 'Google Maps',
-                    description: '<h2>Bloc Google Maps<\/h2> ',
+                    type: 'Google Map',
+                    description: '<p>Le bloc "Google Map"  permet d’afficher une carte présentant un ou plusieurs points géolocalisés.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p>',
+                    category: 'Cartographie',
                     configBasique: {
-                        title: 'Google Maps',
+                        title: 'Google Map',
                         bType: 'googleMaps',
                         flex: 1,
                         champsConfig: {
@@ -145,10 +146,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51237699c0e051d40e000004'
                 },
                 {
-                    type: 'AddThis',
-                    description: '<h2>Bloc AddThis</h2> ',
+                    type: 'AddThis Share',
+                    category: 'Syndication',
+                    description: '<p>Le Bloc "AddThis Share" permet d’ajouter des fonctionnalités de partage de la page courante sur différents réseaux sociaux.</p>',
                     configBasique: {
-                        title: 'AddThis',
+                        title: 'AddThis Share',
                         bType: 'addThis',
                         flex: 1,
                         champsConfig: {
@@ -212,9 +214,10 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'AddThis Follow',
-                    description: '<h2>Bloc AddThis</h2> ',
+                    category: 'Syndication',
+                    description: '<p>Le Bloc "AddThis Follow" permet d’ajouter des icônes de redirection vers différents réseaux sociaux. </p>',
                     configBasique: {
-                        title: 'AddThis',
+                        title: 'AddThis Follow',
                         bType: 'addThisFollow',
                         flex: 1,
                         champsConfig: {
@@ -315,7 +318,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Text',
                                             config: {
-                                                fieldLabel: 'FourSqaure',
+                                                fieldLabel: 'FourSquare',
                                                 name: 'foursquare'
                                             }
                                         },
@@ -359,7 +362,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Texte Simple',
-                    description: '<h2>Bloc texte simple<\/h2> ',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Texte Simple" permet d\'intégrer simplement un bloc de texte dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
                     configBasique: {
                         title: 'Texte Simple',
                         bType: 'simpleText',
@@ -404,7 +408,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Texte Riche',
-                    description: '<h2>Bloc texte riche<\/h2> ',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Texte Riche" permet d\'intégrer simplement un bloc de texte riche dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
                     configBasique: {
                         title: 'Texte Riche',
                         bType: 'richText',
@@ -449,7 +454,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Authentification',
-                    description: '<h2>Bloc Authentification<\/h2> ',
+                    category: 'Utilisateur',
+                    description: '<p>Le bloc "Authentification" permet à un utilisateur de s\’authentifier depuis le Front-Office.</p>',
                     configBasique: {
                         title: 'Authentification',
                         bType: 'authentication',
@@ -480,10 +486,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '511e6508c0e051bd12000001'
                 },
                 {
-                    type: 'Gallerie d\'images',
-                    description: '<h2>Bloc Gallerie d\'images<\/h2> ',
+                    type: 'Galerie d\'images',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Galerie d’images" permet d\’afficher une galerie d\’images stockées dans la médiathèque Rubedo.</p>',
                     configBasique: {
-                        title: 'Gallerie d\'images',
+                        title: 'Galerie d\'images',
                         bType: 'imageGallery',
                         flex: 1,
                         champsConfig: {
@@ -552,7 +559,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Image',
-                    description: '<h2>Bloc image<\/h2> ',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Image" permet d\'afficher une image stockée dans la médiathèque Rubedo.</p>',
                     configBasique: {
                         title: 'Image',
                         bType: 'image',
@@ -1759,6 +1767,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             ],
             sorters: {
                 property: 'type'
+            },
+            groupers: {
+                property: 'category'
             }
         }, cfg)]);
     }

@@ -53,6 +53,22 @@
                 "type": null
             },
             "designerId": "edf08f2c-328e-4f66-9395-9597d55189ef"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field314",
+                "name": "category",
+                "defaultValue": [
+                    "\"Autre\""
+                ]
+            },
+            "designerId": "78a5aeae-552b-44fa-9d88-c3085d4559d5"
         }
     ]
 }

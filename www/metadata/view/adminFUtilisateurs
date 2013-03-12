@@ -983,6 +983,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox9",
+                                "hidden": true,
                                 "name": "canDeleteElements",
                                 "fieldLabel": "Peut supprimer des éléments",
                                 "labelWidth": 220,
@@ -1001,6 +1002,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox10",
+                                "hidden": true,
                                 "name": "canWriteUnownedElements",
                                 "fieldLabel": "Peut modifier les éléments des autres utilisateurs",
                                 "labelWidth": 220,

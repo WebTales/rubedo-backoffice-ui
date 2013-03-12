@@ -51,6 +51,14 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                             flex: 1,
                             text: 'Type'
                         }
+                    ],
+                    features: [
+                        {
+                            ftype: 'grouping',
+                            groupHeaderTpl: [
+                                '{name}'
+                            ]
+                        }
                     ]
                 },
                 {

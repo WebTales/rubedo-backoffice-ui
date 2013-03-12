@@ -372,6 +372,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    hidden: true,
                                     name: 'canDeleteElements',
                                     fieldLabel: 'Peut supprimer des éléments',
                                     labelWidth: 220,
@@ -381,6 +382,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    hidden: true,
                                     name: 'canWriteUnownedElements',
                                     fieldLabel: 'Peut modifier les éléments des autres utilisateurs',
                                     labelWidth: 220,
