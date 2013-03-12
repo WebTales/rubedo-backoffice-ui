@@ -651,10 +651,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51000880c0e0518010000002'
                 },
                 {
-                    type: 'Video',
-                    description: '<h2>Bloc video<\/h2> ',
+                    type: 'Vidéo',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Vidéo" permet d\'afficher une vidéo stockée dans la médiathèque Rubedo. Le lecteur utilisé par défaut est JW Player.</p>',
                     configBasique: {
-                        title: 'Video',
+                        title: 'Vidéo',
                         bType: 'video',
                         flex: 1,
                         champsConfig: {
@@ -760,7 +761,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Audio',
-                    description: '<h2>Bloc Audio<\/h2> ',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Audio" permet d\’afficher un lecteur de médias audio (mp3, …)</p>',
                     configBasique: {
                         title: 'Audio',
                         bType: 'audio',
@@ -841,7 +843,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Menu',
-                    description: '<h2>Bloc menu<\/h2> ',
+                    category: 'Navigation',
+                    description: '<p>Le bloc "Menu" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d\’un site ou pour créer des menus secondaires au sein des rubriques.</p>',
                     configBasique: {
                         title: 'Menu',
                         bType: 'menu',
