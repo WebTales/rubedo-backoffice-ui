@@ -241,6 +241,7 @@ Ext.application({
         'PagesController',
         'MediaTypesController',
         'DAMController',
-        'WorkspacesController'
+        'WorkspacesController',
+        'LocalisationController'
     ]
 });

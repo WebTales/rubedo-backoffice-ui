@@ -210,7 +210,8 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonAide',
+                            RApplication: 'pages',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

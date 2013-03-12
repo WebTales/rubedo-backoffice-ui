@@ -176,7 +176,8 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonAide',
+                            RApplication: 'taxonomy',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

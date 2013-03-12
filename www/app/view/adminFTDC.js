@@ -265,7 +265,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonAide',
+                            RApplication: 'contentTypes',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

@@ -414,15 +414,30 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                             xtype: 'button',
                             ACL: 'write.ui.users',
                             id: 'userAdminAdd',
-                            iconCls: 'add',
+                            iconAlign: 'top',
+                            iconCls: 'add_big',
+                            scale: 'large',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
                             ACL: 'write.ui.users',
                             id: 'userAdminRemove',
-                            iconCls: 'close',
+                            iconAlign: 'top',
+                            iconCls: 'remove_big',
+                            scale: 'large',
                             text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            RApplication: 'users',
+                            itemId: 'RHelpBtn',
+                            iconCls: 'info_big',
+                            scale: 'large',
+                            text: ''
                         }
                     ]
                 }

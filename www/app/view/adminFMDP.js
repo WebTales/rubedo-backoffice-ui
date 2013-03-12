@@ -306,7 +306,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonAide',
+                            RApplication: 'masks',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large'
                         }

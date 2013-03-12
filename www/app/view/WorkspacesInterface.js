@@ -76,6 +76,8 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         },
                         {
                             xtype: 'button',
+                            RApplication: 'workspaces',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

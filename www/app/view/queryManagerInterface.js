@@ -80,6 +80,8 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'button',
+                            RApplication: 'queries',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

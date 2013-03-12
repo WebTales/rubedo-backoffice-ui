@@ -79,7 +79,9 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton118",
                         "id": "userAdminAdd",
-                        "iconCls": "add",
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
                         "text": "Ajouter"
                     },
                     "designerId": "aebe2732-1f70-4e9f-bbf3-c58b6aa716d8",
@@ -103,7 +105,9 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton117",
                         "id": "userAdminRemove",
-                        "iconCls": "close",
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
                         "text": "Supprimer"
                     },
                     "designerId": "113f1038-7f65-4c47-baea-4250085aa700",
@@ -111,6 +115,44 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill32"
+                    },
+                    "designerId": "d2048406-8115-48f9-81e1-56328b015cea"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "RApplication": "users",
+                        "designer|userClassName": "MyButton263",
+                        "itemId": "RHelpBtn",
+                        "iconCls": "info_big",
+                        "scale": "large",
+                        "text": ""
+                    },
+                    "designerId": "c2f4c943-85d9-46af-bf90-f91a1b6f7d61",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RApplication",
                             "type": "string"
                         }
                     ]

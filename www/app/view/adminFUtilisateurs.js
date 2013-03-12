@@ -168,7 +168,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'boutonAide',
+                            RApplication: 'groups',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

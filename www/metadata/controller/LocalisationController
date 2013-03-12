@@ -1,0 +1,86 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LocalisationController",
+        "designer|userAlias": "LocalisationController"
+    },
+    "id": "ExtBox1-ext-gen10528",
+    "designerId": "765f93a9-83e7-4405-aaaa-740265c87f51",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Ext.require(\"Ext.ux.callout.Callout\");\r",
+                    "\r",
+                    "//help definitions for application info buttons, temporary\r",
+                    "Ext.define(\"RubedoAppHelp\",{\r",
+                    "    singleton:true,\r",
+                    "    pages:\"test\",\r",
+                    "    sites:\"test\",\r",
+                    "    masks:\"test\",\r",
+                    "    contentTypes:\"test\",\r",
+                    "    damTypes:\"test\",\r",
+                    "    queries:\"test\",\r",
+                    "    taxonomy:\"test\",\r",
+                    "    groups:\"test\",\r",
+                    "    workspaces:\"test\",\r",
+                    "    users:\"test\",\r",
+                    "    contents:\"test\",\r",
+                    "    dam:\"test\"\r",
+                    "});"
+                ]
+            },
+            "designerId": "02134674-1f73-49b0-ab08-b1257bec9f4e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onButtonAfterRender1",
+                "fn": "onButtonAfterRender1",
+                "implHandler": [
+                    "abstractcomponent.on(\"click\", function(){\r",
+                    "        Ext.widget('callout', {\r",
+                    "            cls: 'gray',\r",
+                    "            width: 400,\r",
+                    "            html:RubedoAppHelp[abstractcomponent.RApplication],\r",
+                    "            calloutArrowLocation: 'top-right',\r",
+                    "            target: abstractcomponent,\r",
+                    "            relativePosition: 't-b',\r",
+                    "            relativeOffsets: [-184,0],\r",
+                    "            fadeInDuration: 200,\r",
+                    "            fadeOutDuration: 200,\r",
+                    "            dismissDelay: 60000\r",
+                    "        }).show();\r",
+                    "            \r",
+                    "    });"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#RHelpBtn"
+            },
+            "designerId": "c94d5e08-9c29-411e-ab6a-d4b0134271e9"
+        }
+    ]
+}

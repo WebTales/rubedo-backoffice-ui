@@ -172,12 +172,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "RApplication": "sites",
                         "designer|userClassName": "MyButton250",
+                        "itemId": "RHelpBtn",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
                     },
-                    "designerId": "83f839b1-4d03-47db-9d3e-b869bea158b8"
+                    "designerId": "83f839b1-4d03-47db-9d3e-b869bea158b8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RApplication",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

@@ -95,6 +95,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'button',
+                            RApplication: 'sites',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''

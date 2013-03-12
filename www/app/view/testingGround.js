@@ -99,7 +99,7 @@ Ext.define('Rubedo.view.testingGround', {
         });
 
         abstractcomponent.add(singlePageSelector);
-        Ext.require("Ext.ux.callout.Callout");
+
     },
 
     onCalloutTargetOneClick: function(button, e, options) {

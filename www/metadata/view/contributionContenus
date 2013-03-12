@@ -546,14 +546,22 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "RApplication": "contents",
                         "designer|userClassName": "MyButton94",
-                        "itemId": "boutonAide",
+                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
                     },
-                    "designerId": "67d7c9c4-6d55-405f-b388-e4f9ba548472"
+                    "designerId": "67d7c9c4-6d55-405f-b388-e4f9ba548472",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RApplication",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },
