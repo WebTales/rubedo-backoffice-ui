@@ -377,7 +377,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly")));
                         nouvChamp.on('change', function (thing) {
                             if (thing.isValid()){
-                                TCfield.config[this.name]= this.getValue();
+                                if(this.isXType("timefield")){
+                                    TCfield.config[this.name]=Ext.Date.format(this.getValue(),"H:i");
+                                } else if(this.isXType("datefield")){
+                                    TCfield.config[this.name]=Ext.Date.format(this.getValue(),"U");
+                                } else { 
+                                    TCfield.config[this.name]= this.getValue();
+                                }
+
                                 if (this.name=='fieldLabel') {
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
@@ -388,7 +395,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                     }
                                 }
                                 else if (this.name=='value') {
+
                                     TCfield.setValue(this.getValue());
+
                                 }
                                 else if (this.name=='allowBlank') {
                                     var currentOne=TCfield.config.fieldLabel;

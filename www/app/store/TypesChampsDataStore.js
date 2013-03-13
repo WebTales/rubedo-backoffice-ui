@@ -527,6 +527,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
+                        minValue: '0:00',
+                        maxValue: '24:00',
                         tooltip: '',
                         labelSeparator: ' '
                     },

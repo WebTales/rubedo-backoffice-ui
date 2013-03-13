@@ -51,6 +51,17 @@ Ext.define('Rubedo.view.testingGround', {
                             RTip: 'test ',
                             anchor: '100%',
                             fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'timefield',
+                            id: 'chimp1',
+                            fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'datefield',
+                            anchor: '100%',
+                            id: 'chimp2',
+                            fieldLabel: 'Label'
                         }
                     ]
                 }

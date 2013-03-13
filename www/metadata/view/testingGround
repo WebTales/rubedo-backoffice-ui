@@ -81,6 +81,35 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "timefield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTimeField",
+                        "id": "chimp1",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "6576eea5-6645-4295-980b-6dee878801c4"
+                },
+                {
+                    "type": "datefield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyDateField7",
+                        "id": "chimp2",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "c23e7fd6-c0bc-4b02-9991-41ef594c7971"
                 }
             ]
         }
