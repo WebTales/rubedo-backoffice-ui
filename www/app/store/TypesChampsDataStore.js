@@ -1280,6 +1280,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         localizable: false,
                         searchable: false,
                         multivalued: false,
+                        allowBlank: true,
                         tooltip: '',
                         labelSeparator: ' '
                     },
@@ -1313,6 +1314,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Localisable',
                                 name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {
