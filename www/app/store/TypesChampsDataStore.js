@@ -1008,13 +1008,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             }
                         },
                         {
-                            type: 'Ext.form.field.Text',
-                            config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
-                                name: 'value'
-                            }
-                        },
-                        {
                             type: 'Ext.form.field.ComboBox',
                             store: {
                                 fields: [
