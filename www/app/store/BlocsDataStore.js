@@ -585,6 +585,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Lien externe',
+                                                name: 'externalURL'
+                                            }
+                                        },
+                                        {
                                             type: 'Rubedo.view.ImagePickerField',
                                             config: {
                                                 fieldLabel: 'Image',
