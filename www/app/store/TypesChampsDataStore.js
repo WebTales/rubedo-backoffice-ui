@@ -1082,6 +1082,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         displayField: 'nom',
                         valueField: 'valeur',
                         fieldLabel: 'Label du champ',
+                        allowBlank: true,
                         localizable: false,
                         searchable: false,
                         multivalued: false,
@@ -1120,6 +1121,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Multis\u00e9lection',
                                 name: 'multiSelect'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {
