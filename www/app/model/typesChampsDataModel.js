@@ -19,6 +19,7 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
     fields: [
         {
             name: 'type',
+            sortType: 'asText',
             type: 'string'
         },
         {
@@ -45,6 +46,10 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
         },
         {
             name: 'id'
+        },
+        {
+            name: 'category',
+            defaultValue: 'Autre'
         }
     ]
 });

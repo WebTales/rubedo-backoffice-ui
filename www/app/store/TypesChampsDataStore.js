@@ -31,10 +31,10 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             model: 'Rubedo.model.typesChampsDataModel',
             data: [
                 {
-                    type: 'Champ localisation',
+                    type: 'Localisation',
                     cType: 'Rubedo.view.localiserField',
                     openWindow: '',
-                    description: '<h2>Champ localisation<\/h2>',
+                    description: '<p>Le champ "Localisation" permet de saisir une adresse ou des coordonnées géographique (latitude et longitude)Ces données peuvent être exploitées dans les blocs cartographiques comme Google Map.</p>',
                     config: {
                         name: 'position',
                         fieldLabel: 'Label du champ',
@@ -114,12 +114,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '51234e09c0e0516a0b00000d'
                 },
                 {
-                    type: 'Champ texte',
+                    type: 'Texte',
+                    category: 'Texte',
                     cType: 'Ext.form.field.Text',
                     openWindow: '',
-                    description: '<h2>Champ texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte court.<\/p> <p>Il peut \u00eatre utilis\u00e9 en tant que champ texte basique ou bien en tant que champ url ou e-mail selon les options de validation.<\/p>',
+                    description: '<p>Le champ "Texte" permet de saisir un texte court, sans formatage avancé.Il intègre plusieurs règles de validation : url, alphabétique, alphanumérique, couriel ou expression régulière.</p>',
                     config: {
-                        name: 'Nouveau_champ_texte',
+                        name: 'texte',
                         fieldLabel: 'Label du champ',
                         maxLength: 255,
                         minLength: 0,
@@ -268,12 +269,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000017'
                 },
                 {
-                    type: 'Champ mot de passe',
+                    type: 'Mot de passe',
+                    category: 'Texte',
                     cType: 'Ext.form.field.Text',
                     openWindow: '',
-                    description: '<h2>Champ mot de passe<\/h2> <\/br> <p>Ce champ permet la saisie de mots de passe.<\/p> <p>Il int\u00e9gre plusieures m\u00e9thodes de validation.<\/p>',
+                    description: '<p>Le champ "Mot de passe" permet de saisir un mot de passe.</p>',
                     config: {
-                        name: 'Nouveau_champ_mot_de_passe',
+                        name: 'mot_de_passe',
                         fieldLabel: 'Label du champ',
                         maxLength: 255,
                         minLength: 0,
@@ -415,12 +417,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000018'
                 },
                 {
-                    type: 'Champ zone de texte',
+                    type: 'Zone de texte',
+                    category: 'Texte',
                     cType: 'Ext.form.field.TextArea',
                     openWindow: '',
-                    description: '<h2>Champ zone de texte<\/h2> <\/br> <p>Ce champ permet la saisie de texte long basique.<\/p>',
+                    description: '<p>Le champ "Zone de texte" permet de saisir un texte long, sans formatage avancé.Il intègre plusieurs règles de validation : alphabétique ou alphanumérique.</p>',
                     config: {
-                        name: 'Nouveau_champ_zone_de_texte',
+                        name: 'zone_de_texte',
                         fieldLabel: 'Label du champ',
                         maxLength: 6000,
                         minLength: 0,
@@ -554,10 +557,11 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000019'
                 },
                 {
-                    type: 'Champ date',
+                    type: 'Date',
+                    category: 'Date',
                     cType: 'Ext.form.field.Date',
                     openWindow: '',
-                    description: '<h2>Champ date<\/h2> <\/br> <p>Ce champ permet la saisie de dates.<\/p>',
+                    description: '<p>Le champ "Date" permet de saisir une date.</p>',
                     config: {
                         name: 'date',
                         fieldLabel: 'Label du champ',
@@ -659,12 +663,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c64804391200001b'
                 },
                 {
-                    type: 'Champ temps',
+                    type: 'Temps',
+                    category: 'Date',
                     cType: 'Ext.form.field.Time',
                     openWindow: '',
-                    description: '<h2>Champ temps<\/h2> <\/br> <p>Ce champ permet la saisie de temps.<\/p>',
+                    description: '<p>Le champ "Temps" permet de saisir une plage horaire, affichée sous la forme hh:mm.</p>',
                     config: {
-                        name: 'Nouveau_champ_temps',
+                        name: 'temps',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
@@ -763,12 +768,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c64804391200001c'
                 },
                 {
-                    type: 'Champ nombre',
+                    type: 'Nombre',
+                    category: 'Nombre',
                     cType: 'Ext.form.field.Number',
                     openWindow: '',
-                    description: '<h2>Champ nombre<\/h2> <\/br> <p>Ce champ permet la saisie de nombres.<\/p>',
+                    description: '<p>Le champ "Nombre"  permet de saisir un nombre, entier ou décimal, éventuellement limité par des bornes inférieures et supérieures.</p>',
                     config: {
-                        name: 'Nouveau_champ_nombre',
+                        name: 'nombre',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
@@ -883,12 +889,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c64804391200001d'
                 },
                 {
-                    type: 'Champ slider',
+                    type: 'Slider',
+                    category: 'Nombre',
                     cType: 'Ext.slider.Single',
                     openWindow: '',
-                    description: '<h2>Champ slider<\/h2> <\/br> <p>Ce champ permet la saisie de nombres par le biais d\'un slider.<\/p>',
+                    description: '<p>Le champ "Slider" permet de saisir un nombre entier entre deux bornes, au moyen d\'un slider.</p>',
                     config: {
-                        name: 'Nouveau_champ_slider',
+                        name: 'slider',
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,
@@ -989,12 +996,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c64804391200001e'
                 },
                 {
-                    type: 'Champ \u00e9valuation',
+                    type: '\u00e9valuation',
+                    category: 'Nombre',
                     cType: 'Ext.ux.widget.Rating',
                     openWindow: '',
-                    description: '<h2>Champ \u00e9valuation<\/h2> <\/br> <p>Ce champ permet la saisie d\'\u00e9valuations<\/p>',
+                    description: '<p>Le champ "Evaluation" permet de saisir une note, affichée sous forme d\'étoiles.</p>',
                     config: {
-                        name: 'Nouveau_champ_evaluation',
+                        name: 'evaluation',
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,
@@ -1103,12 +1111,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c64804391200001f'
                 },
                 {
-                    type: 'Champ zone de texte CKEditor',
+                    type: 'Texte riche',
+                    categorty: 'Texte',
                     cType: 'Rubedo.view.CKEField',
                     openWindow: '',
-                    description: '<h2>Champ zone de texte CKEditor<\/h2> <\/br> <p>Ce champ permet la saisie de texte riche avec CKEditor.<\/p>',
+                    description: '<p>Le champ "Texte riche" permet de saisir un texte riche, à l\'aide d\'un éditeur wysiwyg. Le composant utilisé par défaut est CKEditor, avec trois configurations par défaut : basic, standard ou complet.</p>',
                     config: {
-                        name: 'Nouveau_champ_CKE',
+                        name: 'texte_riche',
                         fieldLabel: 'Label du champ',
                         maxLength: 6000,
                         minLength: 0,
@@ -1275,12 +1284,12 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000020'
                 },
                 {
-                    type: 'Champ liste de choix',
+                    type: 'Liste de choix',
                     cType: 'Ext.form.field.ComboBox',
                     openWindow: '',
-                    description: '<h2>Champ liste de choix<\/h2> <\/br> <p>Ce champ permet la saisie de valeur \u00e0 partir d\'une liste de choix ouverte ou ferm\u00e9e.<\/p>',
+                    description: '<p>Le champ "Liste de choix" permet de choisir un ou plusieurs éléments dans une liste fermée ou ouverte.</p>',
                     config: {
-                        name: 'Nouveau_champ_liste_de_choix',
+                        name: 'liste_de_choix',
                         queryMode: 'local',
                         displayField: 'nom',
                         valueField: 'valeur',
@@ -1388,12 +1397,12 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000021'
                 },
                 {
-                    type: 'Champ requ\u00eate',
+                    type: 'Requête',
                     cType: 'Ext.form.field.Trigger',
                     openWindow: 'assistantRequetage',
-                    description: '<h2>Champ requ\u00eate<\/h2> <\/br> <p>Ce champ permet la saisie de requ\u00eates sur les contenus<\/p>',
+                    description: '<p>Le champ "Requête" permet de saisir une requête via l\'assistant de requêtage.</p>',
                     config: {
-                        name: 'Nouveau_champ_requ\u00eate',
+                        name: 'requ\u00eate',
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,
@@ -1464,12 +1473,12 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000022'
                 },
                 {
-                    type: 'Champ lien sur page',
+                    type: 'Lien sur page',
                     cType: 'Ext.ux.TreePicker',
                     openWindow: '',
-                    description: '<h2>Champ lien sur page<\/h2> <\/br> <p>Ce champ permet la saisie de liens internes sur pages<\/p>',
+                    description: '<p>Le champ "Lien sur page" permet de saisir un lien sur une page du site.</p>',
                     config: {
-                        name: 'Nouveau_champ_lien_sur_page',
+                        name: 'lien_sur_page',
                         fieldLabel: 'Label du champ',
                         displayField: 'text',
                         localizable: false,
@@ -1540,12 +1549,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912000023'
                 },
                 {
-                    type: 'Champ DAM',
+                    type: 'Média',
+                    category: 'Média',
                     cType: 'Rubedo.view.ImagePickerField',
                     openWindow: '',
-                    description: '<h2>Champ DAM<\/h2> <\/br> <p><\/p>',
+                    description: '<p>Le champ "Média" permet de choisir un média (audio, vidéo, image, animation ou document) présent dans la médiathèque.</p>',
                     config: {
-                        name: 'Nouveau_champ_Champ DAM',
+                        name: 'media',
                         fieldLabel: 'Label du champ',
                         localizable: false,
                         searchable: false,
@@ -1663,12 +1673,12 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '506441f8c648043912991123'
                 },
                 {
-                    type: 'Champ couleur',
+                    type: 'Couleur',
                     cType: 'Ext.ux.ColorField',
                     openWindow: '',
-                    description: '<h2>Champ couleur<\/h2> <\/br> <p>Ce champ permet la saisie de couleurs sous format hexadecimal<\/p>',
+                    description: '<p>Le champ "Couleur" permet de choisir une couleur à partir d\'une palette basique.</p>',
                     config: {
-                        name: 'Nouveau_champ_couleur',
+                        name: 'couleur',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
@@ -1754,7 +1764,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     },
                     id: '506441f8c648043912000024'
                 }
-            ]
+            ],
+            groupers: {
+                property: 'category'
+            },
+            sorters: {
+                property: 'type'
+            }
         }, cfg)]);
     }
 });

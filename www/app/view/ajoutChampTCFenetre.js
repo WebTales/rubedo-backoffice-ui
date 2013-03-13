@@ -50,6 +50,14 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                             flex: 1,
                             text: 'Type'
                         }
+                    ],
+                    features: [
+                        {
+                            ftype: 'grouping',
+                            groupHeaderTpl: [
+                                '{name}'
+                            ]
+                        }
                     ]
                 },
                 {

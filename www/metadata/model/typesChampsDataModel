@@ -21,6 +21,7 @@
             "userConfig": {
                 "designer|userClassName": "MyField34",
                 "name": "type",
+                "sortType": "asText",
                 "type": "string"
             },
             "designerId": "058ce60c-2a9c-42df-a298-c71f5ecac598"
@@ -121,6 +122,22 @@
                 "name": "id"
             },
             "designerId": "5e2be18b-d513-4cb0-af55-173b553be69f"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field315",
+                "name": "category",
+                "defaultValue": [
+                    "\"Autre\""
+                ]
+            },
+            "designerId": "7193336c-96a0-4ff7-8cfe-44870e12ac07"
         }
     ]
 }

@@ -65,6 +65,36 @@
                         "text": "Type"
                     },
                     "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de"
+                },
+                {
+                    "type": "groupinggridfeature",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGroupingFeature5"
+                    },
+                    "designerId": "b79bfd9b-49c7-4b78-97dd-c51b9410d893",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "groupHeaderTpl",
+                                "implHandler": [
+                                    "{name}"
+                                ],
+                                "designer|displayName": "groupHeaderTpl"
+                            },
+                            "designerId": "fd8e413e-3dfd-4e0d-b253-bd043d3256aa"
+                        }
+                    ]
                 }
             ]
         },
