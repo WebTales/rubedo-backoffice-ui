@@ -449,7 +449,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
         if (ROMode){
             Ext.Array.forEach(myEditor.query("field"), function(thing){thing.setReadOnly(true);});
-            Ext.Array.forEach(myEditor.query("button"), function(thing){thing.disable();});
+            //Ext.Array.forEach(myEditor.query("button"), function(thing){thing.disable();});
             myEditor.setTitle("Affichage du média \" "+record.get("title")+" \"");
             Ext.getCmp("DAMSubmitUpdateBtn").hide();
         }

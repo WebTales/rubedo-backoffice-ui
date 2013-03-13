@@ -701,7 +701,7 @@
                     "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
                     "if (ROMode){\r",
                     "    Ext.Array.forEach(myEditor.query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
-                    "    Ext.Array.forEach(myEditor.query(\"button\"), function(thing){thing.disable();});\r",
+                    "    //Ext.Array.forEach(myEditor.query(\"button\"), function(thing){thing.disable();});\r",
                     "    myEditor.setTitle(\"Affichage du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
                     "    Ext.getCmp(\"DAMSubmitUpdateBtn\").hide();\r",
                     "}"
