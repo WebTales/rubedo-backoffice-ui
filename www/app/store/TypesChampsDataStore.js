@@ -629,7 +629,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         name: 'nombre',
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
-                        localizable: false,
                         searchable: false,
                         multivalued: false,
                         tooltip: '',
@@ -707,13 +706,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Localisable',
-                                name: 'localizable'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
                                 fieldLabel: 'Recherchable',
                                 name: 'searchable'
                             }
@@ -749,7 +741,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     config: {
                         name: 'slider',
                         fieldLabel: 'Label du champ',
-                        localizable: false,
                         searchable: false,
                         multivalued: false,
                         minValue: 0,
@@ -814,13 +805,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Localisable',
-                                name: 'localizable'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
                                 fieldLabel: 'Recherchable',
                                 name: 'searchable'
                             }
@@ -856,7 +840,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     config: {
                         name: 'evaluation',
                         fieldLabel: 'Label du champ',
-                        localizable: false,
                         searchable: false,
                         multivalued: false,
                         minValue: 0.5,
@@ -924,13 +907,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Divisions par \u00e9toile',
                                 name: 'split'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Localisable',
-                                name: 'localizable'
                             }
                         },
                         {
