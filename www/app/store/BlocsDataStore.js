@@ -842,50 +842,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '511cde89c0e0511619000000'
                 },
                 {
-                    type: 'Menu',
-                    category: 'Navigation',
-                    description: '<p>Le bloc "Menu" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d\’un site ou pour créer des menus secondaires au sein des rubriques.</p>',
-                    configBasique: {
-                        title: 'Menu',
-                        bType: 'menu',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Pages',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Racine',
-                                                name: 'rootPage'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51000140c0e0510d11000001'
-                },
-                {
                     type: 'Formulaire de recherche',
                     category: 'Recherche',
                     description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
@@ -1509,10 +1465,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514022000'
                 },
                 {
-                    type: 'Bloc de navigation',
-                    description: '<h2>Bloc de navigation<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    type: 'Menu',
+                    category: 'Navigation',
+                    description: '<p>Le bloc "Menu" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d\’un site ou pour créer des menus secondaires au sein des rubriques.</p>',
                     configBasique: {
-                        title: 'Bloc de navigation',
+                        title: 'Menu',
                         bType: 'navigation',
                         flex: 1,
                         champsConfig: {
