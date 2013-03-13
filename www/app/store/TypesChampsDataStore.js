@@ -955,7 +955,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         multivalued: false,
                         CKETBConfig: 'Standard',
                         tooltip: '',
-                        vtype: null,
                         labelSeparator: ' '
                     },
                     configFields: [
@@ -1013,38 +1012,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                                 forceSelect: true,
                                 editable: false,
                                 name: 'CKETBConfig'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.ComboBox',
-                            store: {
-                                fields: [
-                                    'valeur',
-                                    'nom'
-                                ],
-                                data: [
-                                    {
-                                        valeur: 'alpha',
-                                        nom: 'alpha'
-                                    },
-                                    {
-                                        valeur: 'alphanum',
-                                        nom: 'alphanum'
-                                    },
-                                    {
-                                        valeur: null,
-                                        nom: 'aucune'
-                                    }
-                                ]
-                            },
-                            config: {
-                                fieldLabel: 'Validation',
-                                queryMode: 'local',
-                                displayField: 'nom',
-                                valueField: 'valeur',
-                                forceSelect: true,
-                                editable: false,
-                                name: 'vtype'
                             }
                         },
                         {
