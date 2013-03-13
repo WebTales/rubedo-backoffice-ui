@@ -1595,13 +1595,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Restreindre au site',
                                                 name: 'constrainToSite'
                                             }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.TextArea',
-                                            config: {
-                                                fieldLabel: 'Filtres',
-                                                name: 'filters'
-                                            }
                                         }
                                     ]
                                 }
