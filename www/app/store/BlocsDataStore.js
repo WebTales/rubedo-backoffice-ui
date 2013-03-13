@@ -272,11 +272,25 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.Checkbox',
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 0,
+                                                    label: 'Petit'
+                                                },
+                                                {
+                                                    value: 1,
+                                                    label: 'Grand'
+                                                }
+                                            ],
                                             config: {
-                                                fieldLabel: 'Small',
+                                                fieldLabel: 'Taille',
                                                 name: 'small',
-                                                inputValue: true
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 0
                                             }
                                         }
                                     ]
@@ -350,7 +364,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Text',
                                             config: {
-                                                fieldLabel: 'FourSquare',
+                                                fieldLabel: 'Foursquare',
                                                 name: 'foursquare'
                                             }
                                         },
@@ -376,6 +390,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
+                            disposition: 'Vertical',
+                            small: 0,
                             
                         }
                     },
