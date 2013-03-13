@@ -891,6 +891,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Tags',
                                                 name: 'tags'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Placeholder',
+                                                name: 'placeholder'
+                                            }
                                         }
                                     ]
                                 }
@@ -1285,7 +1292,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.ComboBox',
                                             config: {
-                                                fieldLabel: 'Display',
+                                                fieldLabel: 'Affichage',
                                                 name: 'display',
                                                 store: [
                                                     'showCal',
