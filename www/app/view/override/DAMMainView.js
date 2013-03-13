@@ -21,12 +21,14 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 	            };
    
 				if(this.viewMode)
-				{
+				{   
+                    var properName=record.get("text");
+                    if (record.get("readOnly")){properName="<i style=\"color:#777;\">"+properName+"</i>";}
 					return {
 						thumbnails: generateThumbnail(),
 						author:record.get("author"),
                         date: Ext.Date.format(record.get("lastUpdateTime"), 'd-m-Y'),
-                        filename:record.get("text"),
+                        filename:properName,
                         fileSize:Ext.util.Format.fileSize(record.get("fileSize"))
 					};
 				}

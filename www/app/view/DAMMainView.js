@@ -36,6 +36,13 @@ Ext.define('Rubedo.view.DAMMainView', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        if (record.get("readOnly")){
+                            return("<i style=\"color:#777;\">"+value+"</i>");
+                        } else {
+                            return(value);
+                        }
+                    },
                     filter: true,
                     dataIndex: 'text',
                     text: 'Titre'

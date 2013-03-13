@@ -59,6 +59,37 @@
                     "name": "filter",
                     "type": "string"
                 }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (record.get(\"readOnly\")){\r",
+                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                            "} else {\r",
+                            "    return(value);\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "1024ceea-d981-4850-8ef9-ed99cfd9c74d"
+                }
             ]
         },
         {
