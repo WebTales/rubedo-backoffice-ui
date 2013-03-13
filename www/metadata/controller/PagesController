@@ -320,7 +320,15 @@
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
                     "target.destroy();\r",
-                    "this.resetInterface();"
+                    "Ext.getCmp(\"newPageBloc\").disable();\r",
+                    "Ext.getCmp(\"deletePageElement\").disable();\r",
+                    "Ext.getCmp(\"addPageBtn\").disable();\r",
+                    "Ext.getCmp(\"pageElementUp\").disable();\r",
+                    "Ext.getCmp(\"pageElementDown\").disable();\r",
+                    "Ext.getCmp('pageElementPropsPanel').removeAll();\r",
+                    "Ext.getCmp('pageElementPropsPanel').setTitle(\"Sélectionnez un élément\");\r",
+                    "Ext.getCmp('pageElementPropsPanel').setIconCls();\r",
+                    "Ext.getCmp('pageElementIdField').setValue();"
                 ],
                 "name": "click",
                 "scope": "me",

@@ -203,7 +203,15 @@ Ext.define('Rubedo.controller.PagesController', {
     deleteElement: function(button, e, options) {
         var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
         target.destroy();
-        this.resetInterface();
+        Ext.getCmp("newPageBloc").disable();
+        Ext.getCmp("deletePageElement").disable();
+        Ext.getCmp("addPageBtn").disable();
+        Ext.getCmp("pageElementUp").disable();
+        Ext.getCmp("pageElementDown").disable();
+        Ext.getCmp('pageElementPropsPanel').removeAll();
+        Ext.getCmp('pageElementPropsPanel').setTitle("Sélectionnez un élément");
+        Ext.getCmp('pageElementPropsPanel').setIconCls();
+        Ext.getCmp('pageElementIdField').setValue();
     },
 
     columnSelector: function(abstractcomponent, options) {
