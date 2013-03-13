@@ -37,96 +37,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTabPanel9",
-                "activeTab": 0
+                "designer|userClassName": "MyTabPanel9"
             },
             "designerId": "4b2dd3db-caaa-4313-b381-141837378cea",
             "cn": [
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel43",
-                        "layout": "fit",
-                        "title": "Qualité & Accessibilité"
-                    },
-                    "designerId": "acb15880-ee4b-4190-a531-d1b0a2838b68",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig29"
-                            },
-                            "designerId": "a40ec7c1-dece-436f-a174-9d9c470d80e8"
-                        },
-                        {
-                            "type": "container",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyContainer27",
-                                "autoEl": [
-                                    "{\r",
-                                    "    tag:'iframe',\r",
-                                    "    src:\"https://reporting.opquast.com/fr/projects/20223/inspector/indicators/\"\r",
-                                    "}"
-                                ]
-                            },
-                            "designerId": "659d5c15-b5a9-4853-9675-ad23677fcd8f"
-                        }
-                    ]
-                },
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyPanel44",
-                        "html": null,
-                        "layout": "fit",
-                        "title": "Performances"
-                    },
-                    "designerId": "1963be95-8c68-4e0b-a4a3-f2e935852ef1",
-                    "cn": [
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig30"
-                            },
-                            "designerId": "b9f233c4-8d24-4770-9fd3-a233ab7bdc92"
-                        },
-                        {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "designerId": "af3d40dc-c0f2-477f-b9a5-191c969c0d70",
-                            "masterInstanceId": "ExtBox1-ext-gen24072"
-                        }
-                    ]
-                },
                 {
                     "type": "panel",
                     "reference": {

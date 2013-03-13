@@ -31,6 +31,7 @@ Ext.define('Ext.ux.callout.Callout', {
   extend: 'Ext.Container',
   alias: 'widget.callout',
   cls: 'default',
+  styleHtmlContent:true,
   componentCls: 'x-ux-callout',
   floating: true,
   shadow: false,

@@ -18,7 +18,6 @@ Ext.define('Rubedo.view.monitoringTools', {
     alias: 'widget.monitoringTools',
 
     requires: [
-        'Rubedo.view.SystemStatusPanel',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -43,36 +42,7 @@ Ext.define('Rubedo.view.monitoringTools', {
             items: [
                 {
                     xtype: 'tabpanel',
-                    activeTab: 0,
                     items: [
-                        {
-                            xtype: 'panel',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Qualité & Accessibilité',
-                            items: [
-                                {
-                                    xtype: 'container',
-                                    autoEl: {
-                                        tag: 'iframe',
-                                        src: 'https://reporting.opquast.com/fr/projects/20223/inspector/indicators/'
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Performances',
-                            items: [
-                                {
-                                    xtype: 'SystemStatusPanel'
-                                }
-                            ]
-                        },
                         {
                             xtype: 'panel',
                             height: 500,
