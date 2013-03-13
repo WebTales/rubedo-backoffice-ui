@@ -1161,13 +1161,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Affichage',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Type d\'affichage',
-                                                name: 'displayType'
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.ux.TreePicker',
                                             config: {
                                                 fieldLabel: 'Page associée',
@@ -1213,7 +1206,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 }
                             ],
                             avance: [
-                                
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         },
                         configBloc: {
@@ -1246,13 +1250,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 {
                                     categorie: 'Affichage',
                                     champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Type d\'affichage',
-                                                name: 'displayType'
-                                            }
-                                        },
                                         {
                                             type: 'Ext.ux.TreePicker',
                                             config: {
@@ -1334,7 +1331,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 }
                             ],
                             avance: [
-                                
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         },
                         configBloc: {
@@ -1372,13 +1380,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 {
                                     categorie: 'Affichage',
                                     champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Type d\'affichage',
-                                                name: 'displayType'
-                                            }
-                                        },
                                         {
                                             type: 'Ext.ux.TreePicker',
                                             config: {
@@ -1458,7 +1459,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 }
                             ],
                             avance: [
-                                
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         },
                         configBloc: {
@@ -1689,18 +1701,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Type d\'affichage',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
                                     categorie: 'Contenu',
                                     champs: [
                                         {
@@ -1722,7 +1722,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 }
                             ],
                             avance: [
-                                
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         },
                         configBloc: {

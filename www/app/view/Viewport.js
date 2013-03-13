@@ -84,6 +84,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.GFSFileField',
         'Rubedo.view.GFSFileFieldComponent',
         'Rubedo.view.GFSFileFieldComponentBig',
+        'Rubedo.view.SystemStatusPanel',
         'Rubedo.view.monitoringTools',
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.MainToolsContextMenu',

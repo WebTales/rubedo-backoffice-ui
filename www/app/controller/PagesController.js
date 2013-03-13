@@ -421,8 +421,13 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
 
             var categories = Ext.clone(abstractcomponent.champsConfig.simple);
+            var categoriesADV = Ext.clone(abstractcomponent.champsConfig.avance);
+
+            Ext.Array.forEach(categoriesADV,function(someCat){someCat.isAdv=true;});
+            categories=Ext.Array.merge(categories,categoriesADV);
             for (j=0; j<categories.length; j++){
                 var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+                nCateg.isAdv=categories[j].isAdv;
 
                 var champsS = Ext.clone(categories[j].champs);
                 for (i=0; i<champsS.length; i++) {
@@ -515,7 +520,12 @@ Ext.define('Rubedo.controller.PagesController', {
                         nChampS.on('change', function(){abstractcomponent.configBloc[this.name]=this.getValue();});
                         nCateg.add(nChampS);
                     }
-                    configSpec.items.items[0].add(nCateg);
+                    if(nCateg.isAdv){
+                        configSpec.getComponent(1).add(nCateg);
+                    }else{
+                        configSpec.getComponent(0).add(nCateg);
+                    }
+
 
                 }
                 propEdit.add(configSpec);
