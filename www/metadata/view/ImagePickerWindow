@@ -33,6 +33,9 @@
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").clearFilter(true);\r",
                     "var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;\r",
+                    "if ((!Ext.isEmpty(allowedTypes))&&(!Ext.isArray(allowedTypes))){\r",
+                    "    allowedTypes=[allowedTypes];\r",
+                    "}\r",
                     "var allowedFileType=Ext.getCmp(abstractcomponent.targetField).allowedFileType;\r",
                     "var columnsOver= [\r",
                     "{\r",

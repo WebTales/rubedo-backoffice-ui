@@ -399,7 +399,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                     } 
                                     TCfield.config.fieldLabel=currentOne;
                                     if (TCfield.isXType("ImagePickerField")) {
-                                        TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
+                                        TCfield.up().getComponent(2).getComponent(0).setText(currentOne+" ");
                                     } else if (TCfield.isXType("localiserField")){
                                         TCfield.up().getComponent(2).setFieldLabel(currentOne);
                                     } else {

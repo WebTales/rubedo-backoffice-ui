@@ -90,6 +90,9 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     onImagePickerWindowRender: function(abstractcomponent, options) {
         Ext.getStore("DAMPickerStore").clearFilter(true);
         var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;
+        if ((!Ext.isEmpty(allowedTypes))&&(!Ext.isArray(allowedTypes))){
+            allowedTypes=[allowedTypes];
+        }
         var allowedFileType=Ext.getCmp(abstractcomponent.targetField).allowedFileType;
         var columnsOver= [
         {

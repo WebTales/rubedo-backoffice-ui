@@ -1406,7 +1406,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         searchable: false,
                         multivalued: false,
                         tooltip: '',
-                        labelSeparator: ' '
+                        labelSeparator: ' ',
+                        allowBlank: true
                     },
                     configFields: [
                         {
@@ -1436,8 +1437,9 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Rubedo.view.CTMTField',
                             config: {
-                                fieldLabel: 'Types DAM',
+                                fieldLabel: 'Type DAM',
                                 name: 'allowedDAMTypes',
+                                multiSelect: false,
                                 allowBlank: true
                             }
                         },
@@ -1477,6 +1479,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                                 displayField: 'nom',
                                 valueField: 'valeur',
                                 allowBlank: false,
+                                hidden: true,
                                 forceSelect: true,
                                 editable: false,
                                 name: 'allowedFileType'
@@ -1494,6 +1497,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Recherchable',
                                 name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {
