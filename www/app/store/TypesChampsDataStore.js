@@ -1192,7 +1192,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     },
                     id: '506441f8c648043912000021'
                 },
-                {
+                /*{
                     type: 'Requête',
                     cType: 'Ext.form.field.Trigger',
                     openWindow: 'assistantRequetage',
@@ -1268,7 +1268,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     },
                     id: '506441f8c648043912000022'
                 },
-                {
+                */{
                     type: 'Lien sur page',
                     cType: 'Ext.ux.TreePicker',
                     openWindow: '',
