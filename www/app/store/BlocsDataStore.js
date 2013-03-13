@@ -1141,20 +1141,23 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         },
                                         {
                                             type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 'ALL',
+                                                    label: 'ET'
+                                                },
+                                                {
+                                                    value: 'ANY',
+                                                    label: 'OU'
+                                                }
+                                            ],
                                             config: {
                                                 fieldLabel: 'Règle sur tags',
                                                 name: 'tagmode',
-                                                store: [
-                                                    'ANY',
-                                                    'ALL'
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Extra',
-                                                name: 'extra'
+                                                queryMode: 'local',
+                                                editable: false,
+                                                forceSelection: true
                                             }
                                         }
                                     ]
@@ -1179,7 +1182,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            itemsPerPage: 25,
+                            tagmode: 'ANY'
                         }
                     },
                     version: 1,
