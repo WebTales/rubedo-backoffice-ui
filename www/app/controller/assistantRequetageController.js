@@ -528,23 +528,24 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                         });
                         storeT.on("beforeload", function(s,o){
-                            o.filters=Ext.Array.slice(o.filters,0,1);
-                            if (!Ext.isEmpty(o.params.comboQuery)){
+                            if (!Ext.isEmpty(o.params)){
+                                o.filters=Ext.Array.slice(o.filters,0,1);
+                                if (!Ext.isEmpty(o.params.comboQuery)){
 
-                                var newFilter=Ext.create('Ext.util.Filter', {
-                                    property:"text",
-                                    value:o.params.comboQuery,
-                                    operator:'like'
-                                });
+                                    var newFilter=Ext.create('Ext.util.Filter', {
+                                        property:"text",
+                                        value:o.params.comboQuery,
+                                        operator:'like'
+                                    });
 
-                                o.filters.push(newFilter);
+                                    o.filters.push(newFilter);
 
+                                }
                             }
-
 
                         });
 
-
+                        storeT.load();
                         var selecteur = Ext.widget('comboboxselect', {
                             name:leVocab.get("id"),
                             vocabularyId:leVocab.get("id"),
