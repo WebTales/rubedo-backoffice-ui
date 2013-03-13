@@ -32,10 +32,12 @@
                 "fn": "onImagePickerWindowRender",
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").clearFilter(true);\r",
+                    "Ext.getStore('TaxonomyForDam2').load();\r",
                     "var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;\r",
                     "if ((!Ext.isEmpty(allowedTypes))&&(!Ext.isArray(allowedTypes))){\r",
                     "    allowedTypes=[allowedTypes];\r",
                     "}\r",
+                    "this.allowedTypes=allowedTypes;\r",
                     "var allowedFileType=Ext.getCmp(abstractcomponent.targetField).allowedFileType;\r",
                     "var columnsOver= [\r",
                     "{\r",
@@ -91,6 +93,8 @@
                     "}else if (allowedTypes.length==1){\r",
                     "    Ext.getStore(\"DAMPickerStore\").getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"value\\\":\\\"\"+allowedTypes[0]+\"\\\"}]\";\r",
                     "    Ext.getStore(\"DAMPickerStore\").load();\r",
+                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(allowedTypes)+\"}]\";\r",
+                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
                     "} else {\r",
                     "    Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(allowedTypes)+\"}]\";\r",
                     "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
@@ -305,6 +309,58 @@
                                 "scope": "me"
                             },
                             "designerId": "2acb7d2d-c1a9-4fdd-a6b2-5dd3f618f6b4"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton266",
+                        "id": "DAMPickerAddBtn",
+                        "iconCls": "add",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "38b4192f-6d63-460e-9114-816838ddef57",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onDAMPickerAddBtnClick",
+                                "fn": "onDAMPickerAddBtnClick",
+                                "implHandler": [
+                                    "if (!Ext.isEmpty(Ext.getStore(\"MediaTypesFORDAMPicker\").getRange())){\r",
+                                    "    var DAMType=Ext.getStore(\"MediaTypesFORDAMPicker\").getRange()[0];\r",
+                                    "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                                    "    Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
+                                    "    myEditor.typeId=DAMType.get(\"id\");\r",
+                                    "    myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                                    "    myEditor.setTitle(\"Nouveau média \"+DAMType.get(\"type\"));\r",
+                                    "    myEditor.directContribute=true;\r",
+                                    "    myEditor.show();\r",
+                                    "    Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);\r",
+                                    "    Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);\r",
+                                    "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                                    "    \r",
+                                    "} else {\r",
+                                    "    Ext.Msg.alert(\"Erreur\", \"Aucun type de média défini\");\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "04d12175-05f0-49d6-b852-600597648f1c"
                         }
                     ]
                 },

@@ -1437,10 +1437,10 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         {
                             type: 'Rubedo.view.CTMTField',
                             config: {
-                                fieldLabel: 'Type DAM',
+                                fieldLabel: 'Type de média',
                                 name: 'allowedDAMTypes',
                                 multiSelect: false,
-                                allowBlank: true
+                                allowBlank: false
                             }
                         },
                         {

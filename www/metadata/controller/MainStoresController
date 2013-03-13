@@ -78,7 +78,7 @@
                     "                    else {\r",
                     "                        message = respondedMessage.msg;\r",
                     "                    }\r",
-                    "                    \r",
+                    "\r",
                     "                } else {\r",
                     "                    var respondedMessage = Ext.JSON.decode(response.responseText);\r",
                     "                    if ((Ext.isEmpty(respondedMessage))||(Ext.isEmpty(respondedMessage.msg))){\r",

@@ -100,7 +100,12 @@ Ext.define('Rubedo.controller.DAMController', {
             success: function(form, action) {
                 button.up().up().setLoading(false);
                 button.up().up().close();
-                Ext.getStore("DAMFacetteStore").load();
+                if (Ext.getCmp("DAMCreateUpdateWindow").directContribute){
+                    Ext.getStore("DAMPickerStore").load();
+                } else {
+                    Ext.getStore("DAMFacetteStore").load();
+                }
+
             },
             failure: function(form, action) {
                 button.up().up().setLoading(false);
