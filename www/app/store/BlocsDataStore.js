@@ -166,6 +166,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 editable: false,
                                                 forceSelection: true,
                                                 queryMode: 'local',
+                                                value: 'Vertical',
                                                 store: [
                                                     'Vertical',
                                                     'Horizontal'
@@ -173,21 +174,50 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.Checkbox',
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 0,
+                                                    label: 'Petit'
+                                                },
+                                                {
+                                                    value: 1,
+                                                    label: 'Grand'
+                                                }
+                                            ],
                                             config: {
-                                                fieldLabel: 'Small',
+                                                fieldLabel: 'Taille',
                                                 name: 'small',
-                                                inputValue: true
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 0
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.Checkbox',
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 0,
+                                                    label: 'AddThis'
+                                                },
+                                                {
+                                                    value: 1,
+                                                    label: 'Facebook Like'
+                                                }
+                                            ],
                                             config: {
-                                                fieldLabel: 'Like',
+                                                fieldLabel: 'Style',
                                                 name: 'like',
-                                                inputValue: true
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 0
                                             }
-                                        }
+                                        },
+                                        
                                     ]
                                 }
                             ],
@@ -196,7 +226,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            disposition: 'Vertical',
+                            small: 0,
+                            like: 0
                         }
                     },
                     version: 1,
