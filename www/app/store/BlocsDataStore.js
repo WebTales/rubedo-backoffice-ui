@@ -886,10 +886,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '51000140c0e0510d11000001'
                 },
                 {
-                    type: 'Recherche',
-                    description: '<h2>Bloc recherche<\/h2> ',
+                    type: 'Formulaire de recherche',
+                    category: 'Recherche',
+                    description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
                     configBasique: {
-                        title: 'Recherche',
+                        title: 'Formulaire de recherche',
                         bType: 'searchForm',
                         flex: 1,
                         champsConfig: {
@@ -953,10 +954,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '510001e9c0e0510a11000001'
                 },
                 {
-                    type: 'Média externe',
-                    description: '<h2>Bloc Média externe<\/h2> ',
+                    type: 'Média Externe',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Média Externe" s\’appuie sur l\’API oEmbed (http://oembed.com/) et permet d\’afficher un média externe provenant des sources suivantes :</p><ul><li>YouTube  (vidéos)</li><li>Flickr (partage photos)</li><li>Vimeo (vidéos)</li><li>Poll Everywhere (enquêtes & sondages)</li><li>My Opera (blogs et photos)</li><li>SmugMug (partage de photos)</li><li>SlideShare (partage de presentations)</li><li>WordPress.com  (blogs)</li><li>chirbit.com (partage de fichiers audio)</li><li>CircuitLab (outil de dessin de schéma électrique)</li><li>Quizz.biz (outil de sondage)</li></ul>',
                     configBasique: {
-                        title: 'Média externe',
+                        title: 'Média Externe',
                         bType: 'externalMedia',
                         flex: 1,
                         champsConfig: {
@@ -1016,10 +1018,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '50f81083c0e0514e10000005'
                 },
                 {
-                    type: 'Controleur Zend',
-                    description: '<h2>Bloc Controleur Zend<\/h2> ',
+                    type: 'Contrôleur Zend',
+                    category: 'Développement',
+                    description: '<p>Le bloc "Contrôleur Zend" permet aux développeurs d\’instancier un contrôleur Zend framework directement dans un bloc.</p>',
                     configBasique: {
-                        title: 'Controleur Zend',
+                        title: 'Contrôleur Zend',
                         bType: 'zendController',
                         flex: 1,
                         champsConfig: {
@@ -1082,10 +1085,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '50f694edc0e051280d000001'
                 },
                 {
-                    type: 'Gallerie Flickr',
-                    description: '<h2>Bloc Gallerie Flickr<\/h2> <\/br><p>Ce bloc affiche des images hébergées sur Flickr.<\/p>',
+                    type: 'Galerie Flickr',
+                    category: 'Médias',
+                    description: '<p>Le bloc "Galerie Flicker" permet d\’afficher une galerie d\’images en provenance de Flicker, filtrée sur un compte utilisateur ou une liste de tags.<\/p>',
                     configBasique: {
-                        title: 'Gallerie Flickr',
+                        title: 'Galerie Flickr',
                         bType: 'flickrGallery',
                         flex: 1,
                         champsConfig: {
@@ -1175,7 +1179,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Liste de Contenus',
-                    description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Liste de contenus" permet d\’afficher une liste de contenus à l\’aide d\’un assistant requêteur. Trois types de requêtes sont disponibles : </p><ul><li>manuelle (sélection manuelle ordonnée des contenus à afficher)</li><li>simple (choix d\'un type de contenu, taxonomie, règles de tri)</li><li>avancée (types de contenus multiples, taxonomie avancée, critères sur les champs systèmes, règles de tri)</li></ul>',
                     configBasique: {
                         title: 'Liste de contenus',
                         bType: 'contentList',
@@ -1260,7 +1265,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Agenda',
-                    description: '<h2>Bloc liste de contenus<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Agenda" permet d\’afficher la vue calendaire d\’une liste de contenus datés (évènements, rendez-vous, …etc.)</p>',
                     configBasique: {
                         title: 'Agenda',
                         bType: 'calendar',
@@ -1385,7 +1391,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Carrousel',
-                    description: '<h2>Bloc carrousel<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Carrousel" permet d\’afficher un carrousel dynamique.</p>',
                     configBasique: {
                         title: 'Carrousel',
                         bType: 'carrousel',
@@ -1570,7 +1577,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'Fil d\'Ariane',
-                    description: '<h2>Bloc Fil d\'Ariane<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    category: 'Navigation',
+                    description: '<p>Le bloc "Fil d’Ariane" permet d\’afficher automatiquement une vue de la position de la page courante dans l\'arborescence du site.</p>',
                     configBasique: {
                         title: 'Fil d\'Ariane',
                         bType: 'breadcrumb',
@@ -1612,10 +1620,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514044000'
                 },
                 {
-                    type: 'Résultat de recherche',
-                    description: '<h2>Bloc Résultat de recherche<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    type: 'Page de recherche',
+                    category: 'Recherche',
+                    description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
                     configBasique: {
-                        title: 'Résultat de recherche',
+                        title: 'Page de recherche',
                         bType: 'searchResults',
                         flex: 1,
                         champsConfig: {
@@ -1662,10 +1671,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514066000'
                 },
                 {
-                    type: 'Twig',
-                    description: '<h2>Bloc Twig<\/h2> <\/br><p>Ce bloc affiche une liste de contenus filtr\u00e9e soit selon le par\u00e9trage initial soit selon un param\u00e9tre re\u00e7u de la part d\'un autre bloc si l\'option "re\u00e7oitparam\u00e9tre" est coch\u00e9e. Lorsque c\'est bien le cas mais le bloc ne re\u00e7oit rien, il affiche une liste de contenus filtr\u00e9e selon la configuration initiale.<\/p>',
+                    type: 'Template Twig',
+                    category: 'Développement',
+                    description: '<p>Le bloc "Template Twig" permet à un développeur d\'instancier un gabarit Twig directement dans un bloc, pour un besoin spécifique.</p>',
                     configBasique: {
-                        title: 'Twig',
+                        title: 'Template Twig',
                         bType: 'twig',
                         flex: 1,
                         champsConfig: {
@@ -1706,7 +1716,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 },
                 {
                     type: 'D\u00e9tail de contenu',
-                    description: 'Description du bloc d\u00e9tail de contenu',
+                    category: 'Contenus',
+                    description: '<p>Le bloc "Détail de Contenu" permet d\’afficher les champs d’un contenu particulier.</p>',
                     configBasique: {
                         title: 'D\u00e9tail de contenu',
                         bType: 'contentDetail',
