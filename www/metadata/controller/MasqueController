@@ -590,7 +590,7 @@
                     "if (Ext.isDefined(cible)) {\r",
                     "    var fenetre = Ext.widget('copierMasque');\r",
                     "    fenetre.showAt(screen.width/2-150, 100);\r",
-                    "    Ext.getCmp('copierMasqueTitre').setValue(cible.data.text);\r",
+                    "    Ext.getCmp('copierMasqueTitre').setValue(cible.data.text+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
                     "}"
                 ],
                 "name": "click",

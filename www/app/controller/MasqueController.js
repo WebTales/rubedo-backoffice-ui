@@ -154,7 +154,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (Ext.isDefined(cible)) {
             var fenetre = Ext.widget('copierMasque');
             fenetre.showAt(screen.width/2-150, 100);
-            Ext.getCmp('copierMasqueTitre').setValue(cible.data.text);
+            Ext.getCmp('copierMasqueTitre').setValue(cible.data.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
         }
     },
 
