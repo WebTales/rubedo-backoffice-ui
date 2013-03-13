@@ -1623,18 +1623,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                {
-                                    categorie: 'Pages',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Racine',
-                                                name: 'rootPage'
-                                            }
-                                        }
-                                    ]
-                                }
+                                
                             ],
                             avance: [
                                 
