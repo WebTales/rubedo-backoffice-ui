@@ -1288,13 +1288,20 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         },
                                         {
                                             type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    label: 'Calendrier',
+                                                    value: 'showCal'
+                                                },
+                                                {
+                                                    label: 'Liste',
+                                                    value: 'showList'
+                                                }
+                                            ],
                                             config: {
                                                 fieldLabel: 'Affichage',
                                                 name: 'display',
-                                                store: [
-                                                    'showCal',
-                                                    'showList'
-                                                ],
                                                 multiSelect: true,
                                                 allowBlank: false,
                                                 forceSelection: true,

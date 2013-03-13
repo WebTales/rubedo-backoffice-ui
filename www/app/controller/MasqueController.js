@@ -940,6 +940,15 @@ Ext.define('Rubedo.controller.MasqueController', {
 
 
 
+                }else if (champsS[i].isAutoStored){
+                    var miniStore=Ext.create('Ext.data.Store', {
+                        fields:[{name:"value"},{name:"label"}],
+                        data:champsS[i].autoStoreData,
+                        autoload:true
+                    });
+                    champsS[i].config.store= miniStore;
+                    champsS[i].config.displayField="label";
+                    champsS[i].config.valueField="value";
                 } 
                 var nChampS = Ext.create(champsS[i].type, champsS[i].config);
                 if (champsS[i].type =='Ext.form.field.Trigger'){
