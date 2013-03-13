@@ -1710,13 +1710,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'contentId',
                                                 chooseOnly: true
                                             }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Paramètre externe',
-                                                name: 'recievesParam'
-                                            }
                                         }
                                     ]
                                 }
