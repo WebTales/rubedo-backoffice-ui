@@ -367,6 +367,32 @@
                 "designer|controlQuery": "#mainDraftBtn, #mainSubmitBtn, #mainPublishBtn"
             },
             "designerId": "289b0552-ea1b-433c-b490-5505ee4dcecc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBasefieldBeforeRender",
+                "fn": "onBasefieldBeforeRender",
+                "implHandler": [
+                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){",
+                    "    abstractcomponent.labelSeparator=\" \";",
+                    "    if (abstractcomponent.isXType(\"datefield\")){",
+                    "        abstractcomponent.submitFormat='U';",
+                    "        abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';",
+                    "    }    ",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Base",
+                "designer|controlQuery": "field"
+            },
+            "designerId": "e49a3d10-6118-407b-aafc-b31289b44469"
         }
     ]
 }

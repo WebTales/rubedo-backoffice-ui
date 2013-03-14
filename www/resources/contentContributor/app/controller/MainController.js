@@ -77,6 +77,16 @@ Ext.define('ContentContributor.controller.MainController', {
             }
     },
 
+    onBasefieldBeforeRender: function(abstractcomponent, options) {
+        if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))){
+            abstractcomponent.labelSeparator=" ";
+            if (abstractcomponent.isXType("datefield")){
+                abstractcomponent.submitFormat='U';
+                abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';
+            }    
+        }
+    },
+
     initializeContentForm: function(contentType) {
         Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
         this.renderMainFields(contentType.fields);
@@ -223,6 +233,9 @@ Ext.define('ContentContributor.controller.MainController', {
             },
             "#mainDraftBtn, #mainSubmitBtn, #mainPublishBtn": {
                 click: this.saveContent
+            },
+            "field": {
+                beforerender: this.onBasefieldBeforeRender
             }
         });
     },
