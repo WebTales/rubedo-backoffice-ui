@@ -41,30 +41,6 @@ Ext.define('ContentContributor.view.MainForm', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.contents.draft',
-                            cStatus: 'draft',
-                            id: 'mainDraftBtn',
-                            scale: 'large',
-                            text: 'Brouillon'
-                        },
-                        {
-                            xtype: 'tbspacer',
-                            flex: 0.1
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'write.ui.contents.pending',
-                            cStatus: 'pending',
-                            id: 'mainSubmitBtn',
-                            scale: 'large',
-                            text: 'Soumettre'
-                        },
-                        {
-                            xtype: 'tbspacer',
-                            flex: 0.1
-                        },
-                        {
-                            xtype: 'button',
                             ACL: 'write.ui.contents.published',
                             cStatus: 'published',
                             id: 'mainPublishBtn',

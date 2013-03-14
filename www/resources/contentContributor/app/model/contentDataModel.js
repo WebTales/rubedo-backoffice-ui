@@ -66,6 +66,12 @@ Ext.define('ContentContributor.model.contentDataModel', {
         {
             name: 'endPublicationDate',
             type: 'date'
+        },
+        {
+            name: 'writeWorkspace'
+        },
+        {
+            name: 'target'
         }
     ]
 });

@@ -53,6 +53,15 @@ Ext.define('ContentContributor.controller.MainController', {
                     typeId:AppGlobals.typeId
 
                 });
+                newContent.set("writeWorkspace",AppGlobals.currentWorkspace);
+                newContent.set("target",[AppGlobals.currentWorkspace]);
+                var taxoRes = {};
+                Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
+                    taxoRes[leField.name]=leField.getValue();            
+                });
+                taxoRes.navigation=[AppGlobals.currentPage];
+                newContent.set("taxonomy",taxoRes);
+
                 Ext.getCmp("MainForm").setLoading(true);
                 Ext.getStore("Contents").addListener("write", function(){
 
@@ -225,6 +234,7 @@ Ext.define('ContentContributor.controller.MainController', {
 
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
+        Ext.require("Rubedo.view.localiserField");
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
@@ -249,6 +259,8 @@ Ext.define('ContentContributor.controller.MainController', {
             a[b[0]] = b[1];
             return a;
         }, {});
+            AppGlobals.currentPage=options["current-page"];
+            AppGlobals.currentWorkspace=options["current-workspace"];
             if (!Ext.isEmpty(options.queryId)){
                 Ext.getStore("QueriesStore").filter("id",options.queryId);
                 Ext.getStore("QueriesStore").addListener("load", function(a, records){
