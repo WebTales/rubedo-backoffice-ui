@@ -31,6 +31,10 @@ Ext.define('Rubedo.view.CKEField', {
                 beforedestroy: {
                     fn: me.onTextareafieldBeforeDestroy,
                     scope: me
+                },
+                errorchange: {
+                    fn: me.onTextareafieldErrorChange,
+                    scope: me
                 }
             }
         });
@@ -83,7 +87,15 @@ Ext.define('Rubedo.view.CKEField', {
             abstractcomponent.editor.document.getDocumentElement().on('click', function(){
                 abstractcomponent.getEl().dom.click();
             });
+            abstractcomponent.editor.on('blur', function(){
+                abstractcomponent.validate();    
+            });
+            abstractcomponent.editor.on('afterSetData', function(){
+                abstractcomponent.validate();    
+            });
         });
+
+
 
 
 
@@ -110,6 +122,20 @@ Ext.define('Rubedo.view.CKEField', {
         abstractcomponent.editor.destroy();
     },
 
+    onTextareafieldErrorChange: function(labelable, error, options) {
+        var me = this;
+        if (!Ext.isEmpty(error)){
+            if (!me.editor.container.hasClass("ckefail")){
+                me.editor.container.addClass("ckefail");
+            }
+        } else {
+            if (me.editor.container.hasClass("ckefail")){
+                me.editor.container.removeClass("ckefail");
+            }
+
+        }
+    },
+
     getValue: function() {
         return(this.getRawValue());
     },
@@ -123,7 +149,7 @@ Ext.define('Rubedo.view.CKEField', {
 
     getRawValue: function() {
         var me=this;
-        if (Ext.isDefined(me.editor)) {
+        if (Ext.isDefined(me.editor)) {    
             return(me.editor.getData());
         }
     }

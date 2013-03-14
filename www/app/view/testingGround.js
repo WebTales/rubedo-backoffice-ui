@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
+    requires: [
+        'Rubedo.view.CKEField'
+    ],
+
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -50,12 +54,20 @@ Ext.define('Rubedo.view.testingGround', {
                             xtype: 'textfield',
                             RTip: 'test ',
                             anchor: '100%',
-                            fieldLabel: 'Label'
+                            fieldLabel: 'Label',
+                            msgTarget: 'under',
+                            allowBlank: false
                         },
                         {
                             xtype: 'timefield',
                             id: 'chimp1',
                             fieldLabel: 'Label'
+                        },
+                        {
+                            xtype: 'CKEField',
+                            id: 'chimp3',
+                            msgTarget: 'side',
+                            allowBlank: false
                         },
                         {
                             xtype: 'datefield',

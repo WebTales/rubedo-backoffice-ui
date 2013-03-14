@@ -61,7 +61,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.UserAddWindow',
         'Rubedo.view.UserAdminWindow',
         'Rubedo.view.newUserWindow',
-        'Rubedo.view.CKEField',
         'Rubedo.view.ReusableElementPicker',
         'Rubedo.view.ExportElementWindow',
         'Rubedo.view.AdminPasswordChange',

@@ -70,7 +70,15 @@
                     "    abstractcomponent.editor.document.getDocumentElement().on('click', function(){\r",
                     "        abstractcomponent.getEl().dom.click();\r",
                     "    });\r",
+                    "    abstractcomponent.editor.on('blur', function(){\r",
+                    "    abstractcomponent.validate();    \r",
+                    "    });\r",
+                    "    abstractcomponent.editor.on('afterSetData', function(){\r",
+                    "    abstractcomponent.validate();    \r",
+                    "    });\r",
                     "});\r",
+                    "\r",
+                    "\r",
                     "\r",
                     "\r",
                     "\r",
@@ -165,12 +173,40 @@
                 "fn": "getRawValue",
                 "implHandler": [
                     "var me=this;\r",
-                    "if (Ext.isDefined(me.editor)) {\r",
+                    "if (Ext.isDefined(me.editor)) {    \r",
                     "    return(me.editor.getData());\r",
                     "}"
                 ]
             },
             "designerId": "611d8653-5926-4310-8fb5-0d14257c441a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTextareafieldErrorChange",
+                "fn": "onTextareafieldErrorChange",
+                "implHandler": [
+                    "var me = this;\r",
+                    "if (!Ext.isEmpty(error)){\r",
+                    "    if (!me.editor.container.hasClass(\"ckefail\")){\r",
+                    "        me.editor.container.addClass(\"ckefail\");\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    if (me.editor.container.hasClass(\"ckefail\")){\r",
+                    "        me.editor.container.removeClass(\"ckefail\");\r",
+                    "    }\r",
+                    "    \r",
+                    "}"
+                ],
+                "name": "errorchange",
+                "scope": "me"
+            },
+            "designerId": "469df81b-6f4f-4b44-aea4-29db38e871a0"
         }
     ]
 }

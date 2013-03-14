@@ -71,7 +71,9 @@
                         "RTip": "test ",
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField78",
-                        "fieldLabel": "Label"
+                        "fieldLabel": "Label",
+                        "msgTarget": "under",
+                        "allowBlank": false
                     },
                     "designerId": "79f2024b-b517-4933-b6ff-b7aa865b9c32",
                     "customConfigs": [
@@ -95,6 +97,21 @@
                         "fieldLabel": "Label"
                     },
                     "designerId": "6576eea5-6645-4295-980b-6dee878801c4"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "chimp3",
+                        "msgTarget": "side",
+                        "allowBlank": false
+                    },
+                    "designerId": "18be60e7-7b60-4e8b-a3fb-2bdbe8ed85f8",
+                    "masterInstanceId": "ExtBox1-ext-gen18078"
                 },
                 {
                     "type": "datefield",
