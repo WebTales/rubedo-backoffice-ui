@@ -1585,6 +1585,34 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Afficher la racine',
+                                                name: 'displayRootPage',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Options',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Style',
+                                                name: 'style',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 'Vertical',
+                                                store: [
+                                                    'Vertical',
+                                                    'Horizontal'
+                                                ]
+                                            }
+                                        },
+                                        {
                                             type: 'Rubedo.view.ImagePickerField',
                                             config: {
                                                 fieldLabel: 'Logo',
@@ -1601,7 +1629,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            style: 'Horizontal',
+                            displayRootPage: true
                         }
                     },
                     version: 1,
