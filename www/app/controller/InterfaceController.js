@@ -326,6 +326,24 @@ Ext.define('Rubedo.controller.InterfaceController', {
             });
             var preDefined="search.png";
 
+        } else if (myWindow.id=="contributionPages"){
+            actions.push({
+                type:"openWindow",
+                target:myWindow.id			
+            });
+            myText=Ext.getCmp("pagesSitesCombo").getStore().findRecord("id",Ext.getCmp("pagesSitesCombo").getValue()).get("text");
+            var targetNode =Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+            var targetPath="/root";
+            if(!Ext.isEmpty(targetNode)){
+                targetPath=targetNode.getPath();
+                myText=targetNode.get("text");
+            }
+            actions.push({
+                type:"pageSelect",
+                site:Ext.getCmp("pagesSitesCombo").getValue(),
+                pagePath:targetPath
+            });
+
         } else {
             var myRecord = myWindow.getComponent(0).getSelectionModel().getLastSelected();
             actions.push({
@@ -638,6 +656,18 @@ Ext.define('Rubedo.controller.InterfaceController', {
                             }  else if (action.type=="fireESWindow") { 
                                 Ext.getStore("ESFacetteStore").activeFacettes=action.activeFacettes;
                                 Ext.getStore("ESFacetteStore").load();
+                            }else if (action.type=="pageSelect") { 
+                                var task = new Ext.util.DelayedTask(function(){
+                                    Ext.getCmp("pagesSitesCombo").select(Ext.getCmp("pagesSitesCombo").getStore().findRecord("id",action.site));
+                                    Ext.getCmp("pagesSitesCombo").fireEvent("select",Ext.getCmp("pagesSitesCombo"),[Ext.getCmp("pagesSitesCombo").getStore().findRecord("id",action.site)]);
+                                    var task2 = new Ext.util.DelayedTask(function(){
+                                        Ext.getCmp("mainPageTree").selectPath(action.pagePath);
+                                    });
+                                    task2.delay(200);
+
+                                });
+                                task.delay(200);
+
                             }
 
                         });

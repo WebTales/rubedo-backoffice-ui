@@ -36,7 +36,7 @@ Ext.define('Rubedo.store.PagesDataStore', {
                 batchActions: false,
                 api: {
                     create: 'pages/create',
-                    read: 'pages/tree',
+                    read: 'pages/read-child',
                     update: 'pages/update',
                     destroy: 'pages/delete'
                 },

@@ -46,7 +46,7 @@
                 "api": [
                     "{\r",
                     "                    create: 'pages/create',\r",
-                    "                    read: 'pages/tree',\r",
+                    "                    read: 'pages/read-child',\r",
                     "                    update: 'pages/update',\r",
                     "                    destroy: 'pages/delete'\r",
                     "                }"
