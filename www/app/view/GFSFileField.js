@@ -57,17 +57,24 @@ Ext.define('Rubedo.view.GFSFileField', {
         });
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(abstractcomponent.getValue())){
+
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
+                if (abstractcomponent.fileType=="Image"){
+                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
+                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
+                } else {
+                    myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
+                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
             }
 
             myComponent.getEl().on("click",function(){
@@ -96,11 +103,17 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
 
             } else {
-                myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
+                if (abstractcomponent.fileType=="Image"){
+                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
+                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+abstractcomponent.getValue()+sizer);
+                } else {
+                    myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
+                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
                 //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
+
             }
 
         });
