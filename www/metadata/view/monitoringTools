@@ -7,12 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "exe.ui.elasticSearch",
+        "container|align": "stretch",
         "designer|userClassName": "monitoringTools",
         "designer|userAlias": "monitoringTools",
-        "height": 658,
+        "height": 280,
         "id": "monitoringTools",
-        "width": 1016,
-        "layout": "fit",
+        "width": 577,
+        "layout": "vbox",
         "iconCls": "monitoring",
         "title": "Supervision",
         "constrainHeader": true,
@@ -29,286 +30,6 @@
         }
     ],
     "cn": [
-        {
-            "type": "tabpanel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyTabPanel9"
-            },
-            "designerId": "4b2dd3db-caaa-4313-b381-141837378cea",
-            "cn": [
-                {
-                    "type": "panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "ESWindow",
-                        "designer|userAlias": "ESWindow",
-                        "height": 500,
-                        "id": "ESWindow",
-                        "width": 1100,
-                        "layout": "fit",
-                        "icon": null,
-                        "title": "ElasticSearch"
-                    },
-                    "designerId": "ffb27d65-fe4d-4b8b-b40a-b1fde5fb3155",
-                    "cn": [
-                        {
-                            "type": "toolbar",
-                            "reference": {
-                                "name": "dockedItems",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "dock": "bottom",
-                                "designer|userClassName": "MyToolbar39",
-                                "height": 30
-                            },
-                            "designerId": "943c7847-7412-45d3-8161-becf886f007c",
-                            "cn": [
-                                {
-                                    "type": "tbfill",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyFill14"
-                                    },
-                                    "designerId": "e8ec603a-389d-4aa7-8ed0-6a2f75164065"
-                                },
-                                {
-                                    "type": "button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyButton151",
-                                        "text": "<b>Indexation des contenus</b>"
-                                    },
-                                    "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "handler",
-                                                "fn": "handler",
-                                                "designer|params": [
-                                                    "button",
-                                                    "event"
-                                                ],
-                                                "implHandler": [
-                                                    "button.setLoading(true);\r",
-                                                    "Ext.Ajax.request({\r",
-                                                    "    url: 'elastic-indexer?option=content',\r",
-                                                    "    params:{\r",
-                                                    "    },\r",
-                                                    "    success: function(response){\r",
-                                                    "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
-                                                    "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
-                                                    "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
-                                                    "        answerMe.show();\r",
-                                                    "        button.setLoading(false);\r",
-                                                    "    },\r",
-                                                    "    failure: function(form, action) {\r",
-                                                    "        switch (action.failureType) {\r",
-                                                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
-                                                    "            break;\r",
-                                                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
-                                                    "        }\r",
-                                                    "    }\r",
-                                                    "});"
-                                                ]
-                                            },
-                                            "designerId": "4ecadbaa-f381-441c-a6e5-5ec184066ab8"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyButton151",
-                                        "text": "<b>Indexation des médias</b>"
-                                    },
-                                    "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "handler",
-                                                "fn": "handler",
-                                                "designer|params": [
-                                                    "button",
-                                                    "event"
-                                                ],
-                                                "implHandler": [
-                                                    "button.setLoading(true);\r",
-                                                    "Ext.Ajax.request({\r",
-                                                    "    url: 'elastic-indexer?option=dam',\r",
-                                                    "    params:{\r",
-                                                    "    },\r",
-                                                    "    success: function(response){\r",
-                                                    "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
-                                                    "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
-                                                    "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
-                                                    "        answerMe.show();\r",
-                                                    "        button.setLoading(false);\r",
-                                                    "    },\r",
-                                                    "    failure: function(form, action) {\r",
-                                                    "        switch (action.failureType) {\r",
-                                                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
-                                                    "            break;\r",
-                                                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
-                                                    "        }\r",
-                                                    "    }\r",
-                                                    "});"
-                                                ]
-                                            },
-                                            "designerId": "5e2ffb0e-4f24-4f8f-a786-bf8303d048e9"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyButton151",
-                                        "text": "<b>Indexation complète</b>"
-                                    },
-                                    "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "handler",
-                                                "fn": "handler",
-                                                "designer|params": [
-                                                    "button",
-                                                    "event"
-                                                ],
-                                                "implHandler": [
-                                                    "button.setLoading(true);\r",
-                                                    "Ext.Ajax.request({\r",
-                                                    "    url: 'elastic-indexer?option=all',\r",
-                                                    "    params:{\r",
-                                                    "    },\r",
-                                                    "    success: function(response){\r",
-                                                    "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
-                                                    "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
-                                                    "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
-                                                    "        answerMe.show();\r",
-                                                    "        button.setLoading(false);\r",
-                                                    "    },\r",
-                                                    "    failure: function(form, action) {\r",
-                                                    "        switch (action.failureType) {\r",
-                                                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
-                                                    "            break;\r",
-                                                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
-                                                    "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
-                                                    "        }\r",
-                                                    "    }\r",
-                                                    "});"
-                                                ]
-                                            },
-                                            "designerId": "087f4e51-a734-41af-a6de-6809b67b710a"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig30"
-                            },
-                            "designerId": "5d7d8ace-b12e-4978-bfa8-8423343b0cc8"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onESWindowRender",
-                                "fn": "onESWindowRender",
-                                "implHandler": [
-                                    "Ext.Ajax.request({\r",
-                                    "    url:'elastic-search/get-options',\r",
-                                    "    params:{\r",
-                                    "\r",
-                                    "    },\r",
-                                    "    success:function(response){\r",
-                                    "        var result=Ext.JSON.decode(response.responseText).data;\r",
-                                    "        abstractcomponent.add(Ext.widget(\"container\",{autoEl: {\r",
-                                    "            tag: 'iframe',\r",
-                                    "            src: 'http://'+result.host+':'+result.port+'/_plugin/bigdesk/'\r",
-                                    "        }}));\r",
-                                    "    },\r",
-                                    "    failure:function(){\r",
-                                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');\r",
-                                    "    }\r",
-                                    "});"
-                                ],
-                                "name": "render",
-                                "scope": "me"
-                            },
-                            "designerId": "1eec922d-326a-45aa-bede-f7df7a18c122"
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "type": "linkedinstance",
             "reference": {
@@ -328,6 +49,455 @@
             "codeClass": null,
             "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
             "masterInstanceId": "ExtBox1-ext-gen2736"
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyForm53",
+                "id": "SupervisionCachePanel",
+                "bodyPadding": 10,
+                "title": "Cache"
+            },
+            "designerId": "88156036-6c5a-4848-9b93-531600345241",
+            "cn": [
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet17",
+                        "title": "Elements en cache"
+                    },
+                    "designerId": "b2d8e831-9f2a-4e58-9e72-1d4a4558c39a",
+                    "cn": [
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField6",
+                                "name": "cachedItems",
+                                "readOnly": true,
+                                "fieldLabel": "Objets"
+                            },
+                            "designerId": "435c176e-69c8-4e17-9ab0-b1ef9ad50ff6"
+                        },
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField7",
+                                "name": "cachedUrl",
+                                "readOnly": true,
+                                "fieldLabel": "URL"
+                            },
+                            "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8"
+                        }
+                    ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyToolbar66"
+                    },
+                    "designerId": "271d4e37-978d-48f2-9679-b87590020b55",
+                    "cn": [
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill33"
+                            },
+                            "designerId": "7bc92e92-1848-449b-98b2-655d14b9bf46"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton267",
+                                "id": "supervisionRefreshCacheBtn",
+                                "text": "<b>Rafraichir</b>"
+                            },
+                            "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "button.up().up().refreshCacheInfo();"
+                                        ]
+                                    },
+                                    "designerId": "a3ea09fc-0593-45ed-97c7-8adf6b833dee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton268",
+                                "id": "SupervisionClearCachetn",
+                                "text": "<b>Vider le cache</b>"
+                            },
+                            "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "Ext.Ajax.request({\r",
+                                            "    url: 'cache/clear',\r",
+                                            "    params: {\r",
+                                            "    },\r",
+                                            "    success: function(response){\r",
+                                            "        button.up().up().refreshCacheInfo();\r",
+                                            "    }\r",
+                                            "});"
+                                        ]
+                                    },
+                                    "designerId": "439aadb7-d58e-44ba-ba14-77fcb46fbadd"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "refreshCacheInfo",
+                        "fn": "refreshCacheInfo",
+                        "implHandler": [
+                            "Ext.Ajax.request({\r",
+                            "    url: 'cache',\r",
+                            "    params: {\r",
+                            "    },\r",
+                            "    success: function(response){\r",
+                            "        var text = Ext.JSON.decode(response.responseText);\r",
+                            "        Ext.getCmp(\"SupervisionCachePanel\").getForm().setValues(text);\r",
+                            "    }\r",
+                            "});"
+                        ]
+                    },
+                    "designerId": "16c29d1a-273b-46b6-9146-08776eea7dad"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onSupervisionCachePanelAfterRender",
+                        "fn": "onSupervisionCachePanelAfterRender",
+                        "implHandler": [
+                            "abstractcomponent.refreshCacheInfo();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "e9b4b039-5405-4f1b-9198-717504de8e2c"
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5,
+                "designer|userClassName": "MyForm54",
+                "layout": "fit",
+                "bodyPadding": 10,
+                "icon": "resources/images/esLogo.png",
+                "iconCls": null,
+                "title": "Elastic Search"
+            },
+            "designerId": "b480c438-99d0-4d2e-b979-a715b2ef9c5e",
+            "cn": [
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "designer|userClassName": "MyToolbar39",
+                        "height": 30
+                    },
+                    "designerId": "943c7847-7412-45d3-8161-becf886f007c",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton151",
+                                "text": "<b>Indexation des contenus</b>"
+                            },
+                            "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "button.setLoading(true);\r",
+                                            "Ext.Ajax.request({\r",
+                                            "    url: 'elastic-indexer?option=content',\r",
+                                            "    params:{\r",
+                                            "    },\r",
+                                            "    success: function(response){\r",
+                                            "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
+                                            "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
+                                            "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
+                                            "        answerMe.show();\r",
+                                            "        button.setLoading(false);\r",
+                                            "    },\r",
+                                            "    failure: function(form, action) {\r",
+                                            "        switch (action.failureType) {\r",
+                                            "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
+                                            "            break;\r",
+                                            "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
+                                            "        }\r",
+                                            "    }\r",
+                                            "});"
+                                        ]
+                                    },
+                                    "designerId": "4ecadbaa-f381-441c-a6e5-5ec184066ab8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "tbspacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MySpacer2"
+                            },
+                            "designerId": "7da675d9-cef1-4913-baf4-3d05e8957365"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton151",
+                                "text": "<b>Indexation des médias</b>"
+                            },
+                            "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "button.setLoading(true);\r",
+                                            "Ext.Ajax.request({\r",
+                                            "    url: 'elastic-indexer?option=dam',\r",
+                                            "    params:{\r",
+                                            "    },\r",
+                                            "    success: function(response){\r",
+                                            "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
+                                            "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
+                                            "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
+                                            "        answerMe.show();\r",
+                                            "        button.setLoading(false);\r",
+                                            "    },\r",
+                                            "    failure: function(form, action) {\r",
+                                            "        switch (action.failureType) {\r",
+                                            "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
+                                            "            break;\r",
+                                            "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
+                                            "        }\r",
+                                            "    }\r",
+                                            "});"
+                                        ]
+                                    },
+                                    "designerId": "5e2ffb0e-4f24-4f8f-a786-bf8303d048e9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "tbspacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MySpacer3"
+                            },
+                            "designerId": "46634022-720f-4ff1-a790-ecfb4e6ecae0"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton151",
+                                "text": "<b>Indexation complète</b>"
+                            },
+                            "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "button.setLoading(true);\r",
+                                            "Ext.Ajax.request({\r",
+                                            "    url: 'elastic-indexer?option=all',\r",
+                                            "    params:{\r",
+                                            "    },\r",
+                                            "    success: function(response){\r",
+                                            "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
+                                            "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
+                                            "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
+                                            "        answerMe.show();\r",
+                                            "        button.setLoading(false);\r",
+                                            "    },\r",
+                                            "    failure: function(form, action) {\r",
+                                            "        switch (action.failureType) {\r",
+                                            "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Ajax');\r",
+                                            "            break;\r",
+                                            "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                                            "            Ext.Msg.alert('Erreur', 'Erreur Serveur');\r",
+                                            "        }\r",
+                                            "    }\r",
+                                            "});"
+                                        ]
+                                    },
+                                    "designerId": "087f4e51-a734-41af-a6de-6809b67b710a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

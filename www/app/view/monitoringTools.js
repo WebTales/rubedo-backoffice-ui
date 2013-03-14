@@ -23,11 +23,12 @@ Ext.define('Rubedo.view.monitoringTools', {
     ],
 
     ACL: 'exe.ui.elasticSearch',
-    height: 658,
+    height: 280,
     id: 'monitoringTools',
-    width: 1016,
+    width: 577,
     layout: {
-        type: 'fit'
+        align: 'stretch',
+        type: 'vbox'
     },
     iconCls: 'monitoring',
     title: 'Supervision',
@@ -39,125 +40,6 @@ Ext.define('Rubedo.view.monitoringTools', {
         var me = this;
 
         Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'tabpanel',
-                    items: [
-                        {
-                            xtype: 'panel',
-                            height: 500,
-                            id: 'ESWindow',
-                            width: 1100,
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'ElasticSearch',
-                            dockedItems: [
-                                {
-                                    xtype: 'toolbar',
-                                    dock: 'bottom',
-                                    height: 30,
-                                    items: [
-                                        {
-                                            xtype: 'tbfill'
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            handler: function(button, event) {
-                                                button.setLoading(true);
-                                                Ext.Ajax.request({
-                                                    url: 'elastic-indexer?option=content',
-                                                    params:{
-                                                    },
-                                                    success: function(response){
-                                                        var answerMe = Ext.widget("esResponseWindow");
-                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
-                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
-                                                        answerMe.show();
-                                                        button.setLoading(false);
-                                                    },
-                                                    failure: function(form, action) {
-                                                        switch (action.failureType) {
-                                                            case Ext.form.action.Action.CONNECT_FAILURE:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                            break;
-                                                            case Ext.form.action.Action.SERVER_INVALID:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                        }
-                                                    }
-                                                });
-                                            },
-                                            text: '<b>Indexation des contenus</b>'
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            handler: function(button, event) {
-                                                button.setLoading(true);
-                                                Ext.Ajax.request({
-                                                    url: 'elastic-indexer?option=dam',
-                                                    params:{
-                                                    },
-                                                    success: function(response){
-                                                        var answerMe = Ext.widget("esResponseWindow");
-                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
-                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
-                                                        answerMe.show();
-                                                        button.setLoading(false);
-                                                    },
-                                                    failure: function(form, action) {
-                                                        switch (action.failureType) {
-                                                            case Ext.form.action.Action.CONNECT_FAILURE:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                            break;
-                                                            case Ext.form.action.Action.SERVER_INVALID:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                        }
-                                                    }
-                                                });
-                                            },
-                                            text: '<b>Indexation des médias</b>'
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            handler: function(button, event) {
-                                                button.setLoading(true);
-                                                Ext.Ajax.request({
-                                                    url: 'elastic-indexer?option=all',
-                                                    params:{
-                                                    },
-                                                    success: function(response){
-                                                        var answerMe = Ext.widget("esResponseWindow");
-                                                        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
-                                                        Ext.getCmp("ViewportPrimaire").add(answerMe);
-                                                        answerMe.show();
-                                                        button.setLoading(false);
-                                                    },
-                                                    failure: function(form, action) {
-                                                        switch (action.failureType) {
-                                                            case Ext.form.action.Action.CONNECT_FAILURE:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                            break;
-                                                            case Ext.form.action.Action.SERVER_INVALID:
-                                                            Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                        }
-                                                    }
-                                                });
-                                            },
-                                            text: '<b>Indexation complète</b>'
-                                        }
-                                    ]
-                                }
-                            ],
-                            listeners: {
-                                render: {
-                                    fn: me.onESWindowRender,
-                                    scope: me
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
             tools: [
                 {
                     xtype: 'mytool16'
@@ -165,29 +47,206 @@ Ext.define('Rubedo.view.monitoringTools', {
                 {
                     xtype: 'mytool17'
                 }
+            ],
+            items: [
+                {
+                    xtype: 'form',
+                    refreshCacheInfo: function() {
+                        Ext.Ajax.request({
+                            url: 'cache',
+                            params: {
+                            },
+                            success: function(response){
+                                var text = Ext.JSON.decode(response.responseText);
+                                Ext.getCmp("SupervisionCachePanel").getForm().setValues(text);
+                            }
+                        });
+                    },
+                    flex: 1,
+                    id: 'SupervisionCachePanel',
+                    bodyPadding: 10,
+                    title: 'Cache',
+                    items: [
+                        {
+                            xtype: 'fieldset',
+                            title: 'Elements en cache',
+                            items: [
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    name: 'cachedItems',
+                                    readOnly: true,
+                                    fieldLabel: 'Objets'
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    name: 'cachedUrl',
+                                    readOnly: true,
+                                    fieldLabel: 'URL'
+                                }
+                            ]
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.up().up().refreshCacheInfo();
+                                    },
+                                    id: 'supervisionRefreshCacheBtn',
+                                    text: '<b>Rafraichir</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.up().up().refreshCacheInfo();
+                                            }
+                                        });
+                                    },
+                                    id: 'SupervisionClearCachetn',
+                                    text: '<b>Vider le cache</b>'
+                                }
+                            ]
+                        }
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onSupervisionCachePanelAfterRender,
+                            scope: me
+                        }
+                    }
+                },
+                {
+                    xtype: 'form',
+                    flex: 0.5,
+                    layout: {
+                        type: 'fit'
+                    },
+                    bodyPadding: 10,
+                    icon: 'resources/images/esLogo.png',
+                    title: 'Elastic Search',
+                    items: [
+                        {
+                            xtype: 'toolbar',
+                            height: 30,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'elastic-indexer?option=content',
+                                            params:{
+                                            },
+                                            success: function(response){
+                                                var answerMe = Ext.widget("esResponseWindow");
+                                                answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                answerMe.show();
+                                                button.setLoading(false);
+                                            },
+                                            failure: function(form, action) {
+                                                switch (action.failureType) {
+                                                    case Ext.form.action.Action.CONNECT_FAILURE:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                    break;
+                                                    case Ext.form.action.Action.SERVER_INVALID:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                }
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Indexation des contenus</b>'
+                                },
+                                {
+                                    xtype: 'tbspacer',
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'elastic-indexer?option=dam',
+                                            params:{
+                                            },
+                                            success: function(response){
+                                                var answerMe = Ext.widget("esResponseWindow");
+                                                answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                answerMe.show();
+                                                button.setLoading(false);
+                                            },
+                                            failure: function(form, action) {
+                                                switch (action.failureType) {
+                                                    case Ext.form.action.Action.CONNECT_FAILURE:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                    break;
+                                                    case Ext.form.action.Action.SERVER_INVALID:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                }
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Indexation des médias</b>'
+                                },
+                                {
+                                    xtype: 'tbspacer',
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'elastic-indexer?option=all',
+                                            params:{
+                                            },
+                                            success: function(response){
+                                                var answerMe = Ext.widget("esResponseWindow");
+                                                answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));
+                                                Ext.getCmp("ViewportPrimaire").add(answerMe);
+                                                answerMe.show();
+                                                button.setLoading(false);
+                                            },
+                                            failure: function(form, action) {
+                                                switch (action.failureType) {
+                                                    case Ext.form.action.Action.CONNECT_FAILURE:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                                    break;
+                                                    case Ext.form.action.Action.SERVER_INVALID:
+                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
+                                                }
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Indexation complète</b>'
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         });
 
         me.callParent(arguments);
     },
 
-    onESWindowRender: function(abstractcomponent, options) {
-        Ext.Ajax.request({
-            url:'elastic-search/get-options',
-            params:{
-
-            },
-            success:function(response){
-                var result=Ext.JSON.decode(response.responseText).data;
-                abstractcomponent.add(Ext.widget("container",{autoEl: {
-                    tag: 'iframe',
-                    src: 'http://'+result.host+':'+result.port+'/_plugin/bigdesk/'
-                }}));
-            },
-            failure:function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la config ElasticSearch');
-            }
-        });
+    onSupervisionCachePanelAfterRender: function(abstractcomponent, options) {
+        abstractcomponent.refreshCacheInfo();
     }
 
 });
