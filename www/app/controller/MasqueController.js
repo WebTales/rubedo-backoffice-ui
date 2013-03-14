@@ -937,6 +937,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     filteredStore.load();
                     champsS[i].config.store= filteredStore;
                     champsS[i].config.displayField="text";
+                    champsS[i].config.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
 
 
 

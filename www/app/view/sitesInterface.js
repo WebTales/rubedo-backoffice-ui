@@ -379,6 +379,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             fieldLabel:"Page d'accueil",
             id:"sitesHomePicker",
             anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
             name:"homePage"
         });
         var singlePageSelector = Ext.create("Ext.ux.TreePicker", {
@@ -388,6 +389,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             fieldLabel:"Page de détail par défaut",
             id:"sitesSinglePicker",
             anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
             name:"defaultSingle"
         });
 
