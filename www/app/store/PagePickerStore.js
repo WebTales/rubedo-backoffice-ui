@@ -35,7 +35,7 @@ Ext.define('Rubedo.store.PagePickerStore', {
                 type: 'ajax',
                 api: {
                     create: 'pages/create',
-                    read: 'pages/read-child',
+                    read: 'pages/tree',
                     update: 'pages/update',
                     destroy: 'pages/delete'
                 },
