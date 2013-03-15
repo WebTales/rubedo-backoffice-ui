@@ -651,7 +651,7 @@
                     "        myForm.submit({\r",
                     "            url:\"current-user/change-password\",\r",
                     "            success: function(form, action) {\r",
-                    "                Ext.Msg.alert('Succés', 'Mot de passe changé');\r",
+                    "                Rubedo.controller.MainStoresController.prototype.fireNotif('Succés', 'Mot de passe changé');\r",
                     "            },\r",
                     "            failure: function(form, action) {\r",
                     "                switch (action.failureType) {\r",

@@ -267,7 +267,7 @@ Ext.define('Rubedo.controller.UsersController', {
                 myForm.submit({
                     url:"current-user/change-password",
                     success: function(form, action) {
-                        Ext.Msg.alert('Succés', 'Mot de passe changé');
+                        Rubedo.controller.MainStoresController.prototype.fireNotif('Succés', 'Mot de passe changé');
                     },
                     failure: function(form, action) {
                         switch (action.failureType) {
