@@ -651,7 +651,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     proxy: {
                         type: 'ajax',
                         api: {
-                            read: 'taxonomy-terms/read-child'
+                            read: 'taxonomy-terms/navigation-tree'
                         },
                         reader: {
                             type: 'json',
@@ -686,7 +686,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         property: 'orderValue'
                     }
                 });
-                configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
                 configurateur.store.load();
                 configurateur.valueField="id";
                 configurateur.displayField="text";
@@ -941,7 +940,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         proxy: {
                             type: 'ajax',
                             api: {
-                                read: 'taxonomy-terms/read-child'
+                                read: 'taxonomy-terms/navigation-tree'
                             },
                             reader: {
                                 type: 'json',
@@ -976,7 +975,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                             property: 'orderValue'
                         }
                     });
-                    configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
                     configurateur.store.load();
                     configurateur.valueField="id";
                     configurateur.displayField="text";

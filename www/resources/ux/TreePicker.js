@@ -249,6 +249,9 @@ Ext.define('Ext.ux.TreePicker', {
     getValue: function() {
         return this.value;
     },
+getSubmitValue: function() {
+        return this.value;
+    },
 
     /**
      * Handles the store's load event.
