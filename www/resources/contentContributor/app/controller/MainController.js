@@ -233,6 +233,9 @@ Ext.define('ContentContributor.controller.MainController', {
     },
 
     init: function(application) {
+        if (Ext.isIE){
+            Ext.util.CSS.swapStyleSheet("usedTheme","resources/css/ext-all-gray.css");
+        }
         Ext.require("Rubedo.view.CKEField");
         Ext.require("Rubedo.view.localiserField");
         Ext.define('AppGlobals', {singleton: true});

@@ -210,6 +210,9 @@
                     "application"
                 ],
                 "implHandler": [
+                    "if (Ext.isIE){",
+                    "    Ext.util.CSS.swapStyleSheet(\"usedTheme\",\"resources/css/ext-all-gray.css\");",
+                    "}",
                     "Ext.require(\"Rubedo.view.CKEField\");",
                     "Ext.require(\"Rubedo.view.localiserField\");",
                     "Ext.define('AppGlobals', {singleton: true});"
@@ -349,7 +352,7 @@
                     "        });",
                     "        taxoRes.navigation=[AppGlobals.currentPage];",
                     "        newContent.set(\"taxonomy\",taxoRes);",
-                    "        ",
+                    "",
                     "        Ext.getCmp(\"MainForm\").setLoading(true);",
                     "        Ext.getStore(\"Contents\").addListener(\"write\", function(){",
                     "",
