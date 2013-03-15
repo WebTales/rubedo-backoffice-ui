@@ -25,7 +25,7 @@
                 "designer|userClassName": "onHiddenfieldRender",
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
-                    "var companion = Ext.widget(\"localiserFieldCompoent\");\r",
+                    "var companion = Ext.widget(\"localiserFieldComponent\");\r",
                     "companion.setFieldLabel(abstractcomponent.getFieldLabel());\r",
                     "abstractcomponent.on(\"change\", function(a, newValue){\r",
                     "    var decoded = { };\r",

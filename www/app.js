@@ -216,7 +216,7 @@ Ext.application({
         'MQField',
         'DCEField',
         'MQFieldComponent',
-        'localiserFieldCompoent',
+        'localiserFieldComponent',
         'localiserField',
         'queryFieldComponent',
         'sessionWarningWindow',
