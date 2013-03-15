@@ -162,7 +162,6 @@ Ext.define('Rubedo.view.userSettings', {
                                 },
                                 {
                                     xtype: 'fieldset',
-                                    height: 292,
                                     margin: '0 0 0 10',
                                     width: 200,
                                     title: 'Photo',
@@ -176,18 +175,13 @@ Ext.define('Rubedo.view.userSettings', {
                                             src: 'resources/images/userBig.png'
                                         },
                                         {
-                                            xtype: 'filefield',
-                                            anchor: '60%',
-                                            formBind: false,
-                                            style: 'float: left;',
-                                            submitValue: false,
-                                            fieldLabel: '',
-                                            buttonText: 'Choisir'
-                                        },
-                                        {
                                             xtype: 'button',
-                                            anchor: '40%',
-                                            text: 'Appliquer'
+                                            handler: function(button, event) {
+                                                Ext.widget("PersoPicUploadWindow", {userMode:true}).show();
+                                            },
+                                            anchor: '100%',
+                                            margin: '0 0 10 0',
+                                            text: 'Changer'
                                         },
                                         {
                                             xtype: 'button',

@@ -184,7 +184,7 @@ Ext.define('Rubedo.controller.UsersController', {
         if (Ext.isEmpty(record.get("photo"))) {
             Ext.getCmp("userAdminProfilePicture").setSrc("resources/images/userBig.png");
         } else {
-            Ext.getCmp("userAdminProfilePicture").setSrc(record.get("photo"));
+            Ext.getCmp("userAdminProfilePicture").setSrc("image/get?file-id="+record.get("photo"));
         }
         /*Ext.getStore("DelegationsDataStore").clearFilter(true);
         Ext.getStore("DelegationsDataStore").filter("giverId", record.get("id"));
@@ -238,7 +238,7 @@ Ext.define('Rubedo.controller.UsersController', {
             if (Ext.isEmpty(myRecord.get("photo"))) {
                 Ext.getCmp("userProfilePicture").setSrc("resources/images/userBig.png");
             } else {
-                Ext.getCmp("userProfilePicture").setSrc(myRecord.get("photo"));
+                Ext.getCmp("userProfilePicture").setSrc("image/get?file-id="+myRecord.get("photo"));
             }
         }
     },

@@ -441,7 +441,7 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "designer|userClassName": "MyFieldSet4",
-                                "height": 292,
+                                "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
                                 "title": "Photo"
@@ -466,27 +466,6 @@
                                     "designerId": "87cf3f1f-d102-426b-86ca-008863f143e5"
                                 },
                                 {
-                                    "type": "filefield",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|anchor": "60%",
-                                        "formBind": false,
-                                        "designer|userClassName": "MyFileUpload1",
-                                        "style": "float: left;",
-                                        "submitValue": false,
-                                        "fieldLabel": "",
-                                        "buttonText": "Choisir"
-                                    },
-                                    "configAlternates": {
-                                        "style": "string"
-                                    },
-                                    "designerId": "53592507-4eeb-483a-998b-b3e35490036a"
-                                },
-                                {
                                     "type": "button",
                                     "reference": {
                                         "name": "items",
@@ -494,17 +473,32 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "ACL": "write.ui.users",
-                                        "layout|anchor": "40%",
-                                        "designer|userClassName": "MyButton128",
-                                        "text": "Appliquer"
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyButton85",
+                                        "margin": "0 0 10 0",
+                                        "text": "Changer"
                                     },
-                                    "designerId": "1e6569f7-1cea-43fd-948e-0cc701ed9e28",
-                                    "customConfigs": [
+                                    "designerId": "8c0ba0f1-fe60-4156-b16d-662458ac41a9",
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "ACL",
-                                            "type": "string"
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "handler",
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "Ext.widget(\"PersoPicUploadWindow\").show();"
+                                                ]
+                                            },
+                                            "designerId": "fcbee57d-40f2-4e53-b6f3-8d4d65bf566a"
                                         }
                                     ]
                                 },

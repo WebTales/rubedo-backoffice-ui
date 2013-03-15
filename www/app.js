@@ -225,7 +225,8 @@ Ext.application({
         'GFSFileFieldComponentBig',
         'ImageFieldComponentSmall',
         'newUserWindow',
-        'RHelpBtn'
+        'RHelpBtn',
+        'PersoPicUploadWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

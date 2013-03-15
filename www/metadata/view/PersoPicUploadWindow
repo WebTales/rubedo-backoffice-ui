@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "GFSFieldUploadWindow",
-        "designer|userAlias": "GFSFieldUploadWindow",
+        "designer|userClassName": "PersoPicUploadWindow",
+        "designer|userAlias": "PersoPicUploadWindow",
         "height": 102,
         "width": 400,
         "resizable": false,
         "layout": "fit",
-        "title": "Upload",
+        "title": "Uploader une image",
         "constrain": false,
         "constrainHeader": true,
         "modal": true
@@ -20,8 +20,8 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen15864",
-    "designerId": "1dd7d2f3-5f63-4221-a070-989924064068",
+    "id": "ExtBox1-ext-gen6520",
+    "designerId": "7bf03ae2-f252-43f4-b5b8-315532a4fda5",
     "cn": [
         {
             "type": "form",
@@ -35,7 +35,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "239fdab0-8556-46f4-a37b-eed8ca17ec99",
+            "designerId": "0abd1119-18a7-4d08-b026-f5c7f283f6b0",
             "cn": [
                 {
                     "type": "filefield",
@@ -52,7 +52,7 @@
                         "allowBlank": false,
                         "buttonText": "Choisir"
                     },
-                    "designerId": "d4ff35cb-e4d7-485a-8008-e327e47c03a8"
+                    "designerId": "0f959430-92e3-44e3-8daa-a6d7482cd6bc"
                 },
                 {
                     "type": "button",
@@ -68,7 +68,7 @@
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
-                    "designerId": "dad3da89-4e47-4696-aa44-8711be3d940e",
+                    "designerId": "e4815338-5bf9-4689-920f-3f77b7398342",
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -96,7 +96,13 @@
                                     "    },\r",
                                     "    success: function(form, action) {\r",
                                     "        button.up().setLoading(false);\r",
-                                    "        Ext.getCmp(button.up().up().targetField).setValue(action.result.data.id);\r",
+                                    "        if (button.up().up().userMode){\r",
+                                    "            Ext.getStore(\"CurrentUserDataStore\").getRange()[0].set(\"photo\", action.result.data.id);\r",
+                                    "            Ext.getCmp(\"userProfilePicture\").setSrc(\"image/get?file-id=\"+action.result.data.id);\r",
+                                    "        } else {\r",
+                                    "            Ext.getCmp(\"userAdminGrid\").getSelectionModel().getLastSelected().set(\"photo\", action.result.data.id);\r",
+                                    "            Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"image/get?file-id=\"+action.result.data.id);\r",
+                                    "        }\r",
                                     "        button.up().up().close();\r",
                                     "    },\r",
                                     "    failure: function(form, action) {\r",
@@ -116,7 +122,7 @@
                                     ""
                                 ]
                             },
-                            "designerId": "bf7dc9e4-c15f-4604-b68c-d5d621fbfe44"
+                            "designerId": "a2a32d0b-1f5f-4f35-8b1e-a5dcb1828b70"
                         }
                     ]
                 },
@@ -134,7 +140,7 @@
                         "iconCls": "close",
                         "text": "Annuler"
                     },
-                    "designerId": "88d8f535-0073-45d6-9c3e-e4c8288b70e4",
+                    "designerId": "ed8e315a-aecc-4836-962b-28905dd043d5",
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -154,7 +160,7 @@
                                     "button.up().up().close();"
                                 ]
                             },
-                            "designerId": "e1994626-a74c-40b5-9e4b-442ed80e13d5"
+                            "designerId": "834a1e3c-d582-413f-a523-f50488f88450"
                         }
                     ]
                 }

@@ -392,7 +392,7 @@
                     "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
                     "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
                     "} else {\r",
-                    "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(record.get(\"photo\"));\r",
+                    "    Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"image/get?file-id=\"+record.get(\"photo\"));\r",
                     "}\r",
                     "/*Ext.getStore(\"DelegationsDataStore\").clearFilter(true);\r",
                     "Ext.getStore(\"DelegationsDataStore\").filter(\"giverId\", record.get(\"id\"));\r",
@@ -558,7 +558,7 @@
                     "    if (Ext.isEmpty(myRecord.get(\"photo\"))) {\r",
                     "        Ext.getCmp(\"userProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
                     "    } else {\r",
-                    "        Ext.getCmp(\"userProfilePicture\").setSrc(myRecord.get(\"photo\"));\r",
+                    "        Ext.getCmp(\"userProfilePicture\").setSrc(\"image/get?file-id=\"+myRecord.get(\"photo\"));\r",
                     "    }\r",
                     "}"
                 ],

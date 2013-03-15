@@ -309,7 +309,7 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "designer|userClassName": "MyFieldSet4",
-                                "height": 292,
+                                "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
                                 "title": "Photo"
@@ -334,27 +334,6 @@
                                     "designerId": "668838f7-ef25-4f75-83c6-f31331501a7c"
                                 },
                                 {
-                                    "type": "filefield",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|anchor": "60%",
-                                        "formBind": false,
-                                        "designer|userClassName": "MyFileUpload1",
-                                        "style": "float: left;",
-                                        "submitValue": false,
-                                        "fieldLabel": "",
-                                        "buttonText": "Choisir"
-                                    },
-                                    "configAlternates": {
-                                        "style": "string"
-                                    },
-                                    "designerId": "9bf48127-c68d-4930-953c-dff02897536f"
-                                },
-                                {
                                     "type": "button",
                                     "reference": {
                                         "name": "items",
@@ -362,11 +341,34 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "40%",
-                                        "designer|userClassName": "MyButton128",
-                                        "text": "Appliquer"
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyButton85",
+                                        "margin": "0 0 10 0",
+                                        "text": "Changer"
                                     },
-                                    "designerId": "76cee99d-6502-44fb-b189-0ab50695c771"
+                                    "designerId": "ea146464-9179-4603-b751-e313e155217a",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "handler",
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "Ext.widget(\"PersoPicUploadWindow\", {userMode:true}).show();"
+                                                ]
+                                            },
+                                            "designerId": "88a88d55-424a-4c9f-bcf1-3553540ce668"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "button",
