@@ -190,17 +190,16 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }
     },
 
-    majIcones: function(abstractcomponent, options) {
+    desktopMenu: function(abstractcomponent, options) {
         abstractcomponent.getEl().on('contextmenu', function(e){
             var menu= Ext.getCmp('settingsContextMenu');
             if (Ext.isEmpty(menu)){
                 menu = Ext.widget('settingsContextMenu');
-                menu.on('blur', function(){this.destroy();});}
-                menu.showAt(Ext.EventObject.getXY());
-                e.stopEvent();
-
-
-            }); 
+                menu.on('blur', function(){this.destroy();});
+            }
+            menu.showAt(Ext.EventObject.getXY());
+            Ext.EventManager.preventDefault(e);
+        }); 
     },
 
     hideAllIcons: function(item, e, options) {
@@ -562,7 +561,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 mouseover: this.onButtonMouseOver
             },
             "#boiteAIconesBureau": {
-                render: this.majIcones
+                afterrender: this.desktopMenu
             },
             "#itemHideAllIcons": {
                 click: this.hideAllIcons
