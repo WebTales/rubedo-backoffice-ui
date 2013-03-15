@@ -36,12 +36,66 @@
                     "    } else {\r",
                     "        abstractcomponent.setValue(ACL.defaultWorkspace);\r",
                     "    }\r",
-                    "}"
+                    "}\r",
+                    ""
                 ],
                 "name": "beforerender",
                 "scope": "me"
             },
             "designerId": "ee097c89-7d6b-469f-878a-06db90c82878"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "setReadOnly",
+                "fn": "setReadOnly",
+                "designer|params": [
+                    "readOnly"
+                ],
+                "implHandler": [
+                    " var me = this,\r",
+                    " old = me.readOnly;\r",
+                    "if (me.canSwitchStore){\r",
+                    "    if (readOnly){\r",
+                    "        me.bindStore(Ext.getStore(\"WorkspacesComboStore\"));\r",
+                    "    } else {\r",
+                    "        me.bindStore(Ext.getStore(\"ContributeWorkspacesCombo\"));\r",
+                    "    }\r",
+                    "}\r",
+                    "            \r",
+                    "  me.callParent(arguments);\r",
+                    "  if (readOnly != old) {\r",
+                    "      me.updateLayout();\r",
+                    "  }"
+                ]
+            },
+            "designerId": "85a81b30-30a2-4c68-8781-9888e8ec4628"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboboxAdded",
+                "fn": "onComboboxAdded",
+                "implHandler": [
+                    "if ((abstractcomponent.getStore().storeId==\"ContributeWorkspacesCombo\")||(abstractcomponent.getStore().storeId==\"ContributeWorkspacesComboWithAll\")){\r",
+                    "    abstractcomponent.canSwitchStore=true;\r",
+                    "}\r",
+                    "console.log(abstractcomponent.getStore().storeId);"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "d0455b77-72bf-4c0a-8ef5-7cd9a0c59db7"
         }
     ]
 }

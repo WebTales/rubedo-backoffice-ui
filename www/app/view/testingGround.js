@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.CKEField'
+        'Rubedo.view.WorkspaceCombo'
     ],
 
     height: 450,
@@ -59,15 +59,14 @@ Ext.define('Rubedo.view.testingGround', {
                             allowBlank: false
                         },
                         {
+                            xtype: 'WorkspaceCombo',
+                            id: 'chimp3',
+                            canSwitchStore: true
+                        },
+                        {
                             xtype: 'timefield',
                             id: 'chimp1',
                             fieldLabel: 'Label'
-                        },
-                        {
-                            xtype: 'CKEField',
-                            id: 'chimp3',
-                            msgTarget: 'side',
-                            allowBlank: false
                         },
                         {
                             xtype: 'datefield',

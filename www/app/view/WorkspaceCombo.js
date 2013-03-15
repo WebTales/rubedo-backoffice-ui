@@ -33,6 +33,10 @@ Ext.define('Rubedo.view.WorkspaceCombo', {
                 beforerender: {
                     fn: me.onComboboxBeforeRender,
                     scope: me
+                },
+                added: {
+                    fn: me.onComboboxAdded,
+                    scope: me
                 }
             }
         });
@@ -47,6 +51,31 @@ Ext.define('Rubedo.view.WorkspaceCombo', {
             } else {
                 abstractcomponent.setValue(ACL.defaultWorkspace);
             }
+        }
+
+    },
+
+    onComboboxAdded: function(abstractcomponent, container, pos, options) {
+        if ((abstractcomponent.getStore().storeId=="ContributeWorkspacesCombo")||(abstractcomponent.getStore().storeId=="ContributeWorkspacesComboWithAll")){
+            abstractcomponent.canSwitchStore=true;
+        }
+        console.log(abstractcomponent.getStore().storeId);
+    },
+
+    setReadOnly: function(readOnly) {
+        var me = this,
+        old = me.readOnly;
+        if (me.canSwitchStore){
+            if (readOnly){
+                me.bindStore(Ext.getStore("WorkspacesComboStore"));
+            } else {
+                me.bindStore(Ext.getStore("ContributeWorkspacesCombo"));
+            }
+        }
+
+        me.callParent(arguments);
+        if (readOnly != old) {
+            me.updateLayout();
         }
     }
 
