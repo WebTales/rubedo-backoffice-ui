@@ -688,6 +688,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 });
                 configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
                 configurateur.store.load();
+                configurateur.valueField="id";
+                configurateur.displayField="text";
                 configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
             }
             else if (donnees.cType == 'combobox') {
@@ -976,6 +978,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     });
                     configurateur.store.getProxy().extraParams.filter="[{\"property\":\"vocabularyId\",\"value\":\""+"navigation"+"\"}]";
                     configurateur.store.load();
+                    configurateur.valueField="id";
+                    configurateur.displayField="text";
+                    configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
                 }
                 else if (donnees.cType == 'combobox') {
                     var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
