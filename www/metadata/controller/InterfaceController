@@ -420,9 +420,9 @@
                     "    if (Ext.isEmpty(menu)){\r",
                     "        menu = Ext.widget('settingsContextMenu');\r",
                     "        menu.on('blur', function(){this.destroy();});\r",
-                    "        }\r",
-                    "        menu.showAt(Ext.EventObject.getXY());\r",
-                    "        Ext.EventManager.preventDefault(e);\r",
+                    "    }\r",
+                    "    menu.showAt(e.browserEvent.clientX,e.browserEvent.clientY);\r",
+                    "    Ext.EventManager.preventDefault(e);\r",
                     "}); "
                 ],
                 "name": "afterrender",

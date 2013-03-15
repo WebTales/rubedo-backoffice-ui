@@ -197,7 +197,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 menu = Ext.widget('settingsContextMenu');
                 menu.on('blur', function(){this.destroy();});
             }
-            menu.showAt(Ext.EventObject.getXY());
+            menu.showAt(e.browserEvent.clientX,e.browserEvent.clientY);
             Ext.EventManager.preventDefault(e);
         }); 
     },
