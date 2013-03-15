@@ -53,6 +53,11 @@ Ext.define('Rubedo.model.taxonomyTermModel', {
             name: 'expandable',
             defaultValue: true,
             type: 'boolean'
+        },
+        {
+            name: 'isNotPage',
+            defaultValue: false,
+            persist: false
         }
     ]
 });

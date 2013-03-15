@@ -148,6 +148,23 @@
                 "type": "boolean"
             },
             "designerId": "79af3439-7e3b-4f00-b95b-cde333c5c918"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field316",
+                "name": "isNotPage",
+                "defaultValue": [
+                    "false"
+                ],
+                "persist": false
+            },
+            "designerId": "c337b307-e758-406b-bdba-f4a624742234"
         }
     ]
 }

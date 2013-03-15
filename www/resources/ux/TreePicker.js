@@ -187,10 +187,12 @@ Ext.define('Ext.ux.TreePicker', {
      */
     selectItem: function(record) {
         var me = this;
+	if (!record.get("isNotPage")){
         me.setValue(record.get('id'));
         me.picker.hide();
         me.inputEl.focus();
         me.fireEvent('select', me, record)
+	}
 
     },
 
