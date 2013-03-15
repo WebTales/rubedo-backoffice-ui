@@ -46,6 +46,7 @@ Ext.define('Rubedo.view.userSettings', {
                         {
                             xtype: 'form',
                             id: 'userInfoDisplay',
+                            autoScroll: true,
                             layout: {
                                 type: 'hbox'
                             },
@@ -146,15 +147,10 @@ Ext.define('Rubedo.view.userSettings', {
                                             valueField: 'language'
                                         },
                                         {
-                                            xtype: 'combobox',
+                                            xtype: 'textfield',
                                             anchor: '100%',
                                             name: 'country',
-                                            fieldLabel: 'Pays ',
-                                            editable: false,
-                                            displayField: 'country',
-                                            forceSelection: true,
-                                            store: 'countryStore',
-                                            valueField: 'country'
+                                            fieldLabel: 'Pays '
                                         },
                                         {
                                             xtype: 'button',

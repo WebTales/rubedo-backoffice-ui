@@ -45,6 +45,7 @@
                         "designer|userClassName": "MyForm22",
                         "designer|displayName": "",
                         "id": "userInfoDisplay",
+                        "autoScroll": true,
                         "layout": "hbox",
                         "bodyPadding": 10,
                         "title": "Informations"
@@ -267,7 +268,7 @@
                                     "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "textfield",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -275,14 +276,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox6",
+                                        "designer|userClassName": "MyTextField79",
                                         "name": "country",
-                                        "fieldLabel": "Pays ",
-                                        "editable": false,
-                                        "displayField": "country",
-                                        "forceSelection": true,
-                                        "store": "countryStore",
-                                        "valueField": "country"
+                                        "fieldLabel": "Pays "
                                     },
                                     "designerId": "330e487a-5f04-4588-805a-b52c927f9a8d"
                                 },

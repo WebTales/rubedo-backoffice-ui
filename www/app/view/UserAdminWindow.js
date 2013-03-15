@@ -152,15 +152,10 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             valueField: 'language'
                                         },
                                         {
-                                            xtype: 'combobox',
+                                            xtype: 'textfield',
                                             anchor: '100%',
                                             name: 'country',
-                                            fieldLabel: 'Pays ',
-                                            editable: false,
-                                            displayField: 'country',
-                                            forceSelection: true,
-                                            store: 'countryStore',
-                                            valueField: 'country'
+                                            fieldLabel: 'Pays '
                                         },
                                         {
                                             xtype: 'button',
@@ -206,7 +201,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             ACL: 'write.ui.users',
                                             anchor: '100%',
                                             id: 'userAdminProfilePictureDelete',
-                                            text: 'Suprimer'
+                                            text: 'Supprimer'
                                         }
                                     ]
                                 }

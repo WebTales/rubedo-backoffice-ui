@@ -281,7 +281,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'users.png',
             itemId: 'WorkspacesInterface',
             iconCls: 'user',
-            text: 'Workspaces'
+            text: 'Espaces de travail'
         },
         {
             xtype: 'menuitem',

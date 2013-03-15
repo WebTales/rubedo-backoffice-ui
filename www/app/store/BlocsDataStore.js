@@ -30,11 +30,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             model: 'Rubedo.model.blocDataModel',
             data: [
                 {
-                    type: 'Google Map',
-                    description: '<p>Le bloc "Google Map"  permet d’afficher une carte présentant un ou plusieurs points géolocalisés.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p>',
+                    type: 'Google Maps',
+                    description: '<p>Le bloc "Google Maps"  permet d’afficher une carte présentant un ou plusieurs points géolocalisés.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p>',
                     category: 'Cartographie',
                     configBasique: {
-                        title: 'Google Map',
+                        title: 'Google Maps',
                         bType: 'googleMaps',
                         flex: 1,
                         champsConfig: {

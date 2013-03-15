@@ -815,7 +815,7 @@
                     "    actions.push({\r",
                     "        type:\"pageSelect\",\r",
                     "        site:Ext.getCmp(\"pagesSitesCombo\").getValue(),\r",
-                    "\t\tpagePath:targetPath\r",
+                    "        pagePath:targetPath\r",
                     "    });\r",
                     "\r",
                     "} else {\r",

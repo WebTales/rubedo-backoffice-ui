@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
     layout: {
         type: 'fit'
     },
-    title: 'Nouveau workspace',
+    title: 'Nouvel espace de travail',
     constrain: true,
     modal: true,
 
@@ -49,7 +49,7 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
                             anchor: '100%',
                             id: 'newWorkspaceSublitBtn',
                             scale: 'medium',
-                            text: 'Créer un nouveau workspace'
+                            text: 'Créer un nouvel espace de travail'
                         }
                     ]
                 }

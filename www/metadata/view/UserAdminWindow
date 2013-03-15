@@ -392,7 +392,7 @@
                                     "designerId": "87c72347-a1a9-4d54-864f-68378e62361d"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "textfield",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -400,14 +400,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox6",
+                                        "designer|userClassName": "MyTextField80",
                                         "name": "country",
-                                        "fieldLabel": "Pays ",
-                                        "editable": false,
-                                        "displayField": "country",
-                                        "forceSelection": true,
-                                        "store": "countryStore",
-                                        "valueField": "country"
+                                        "fieldLabel": "Pays "
                                     },
                                     "designerId": "487a8b72-5b09-40fb-bdac-db423609b78b"
                                 },
@@ -526,7 +521,7 @@
                                         "designer|userClassName": "MyButton128",
                                         "id": "userAdminProfilePictureDelete",
                                         "margin": null,
-                                        "text": "Suprimer"
+                                        "text": "Supprimer"
                                     },
                                     "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1",
                                     "customConfigs": [

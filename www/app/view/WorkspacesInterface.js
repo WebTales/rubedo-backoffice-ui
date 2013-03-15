@@ -30,7 +30,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
         type: 'hbox'
     },
     iconCls: 'user',
-    title: 'Workspaces',
+    title: 'Espaces de travail',
     constrainHeader: true,
 
     initComponent: function() {
