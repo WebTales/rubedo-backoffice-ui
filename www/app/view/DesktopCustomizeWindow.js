@@ -30,7 +30,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
         type: 'hbox'
     },
     iconCls: 'personalize',
-    title: 'Personanlisation du bureau',
+    title: 'Personnalisation du bureau',
     constrainHeader: true,
     maximizable: false,
     minimizable: true,

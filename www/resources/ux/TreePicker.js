@@ -249,7 +249,7 @@ Ext.define('Ext.ux.TreePicker', {
     getValue: function() {
         return this.value;
     },
-getSubmitValue: function() {
+    getSubmitValue: function() {
         return this.value;
     },
 
