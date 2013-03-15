@@ -31,7 +31,7 @@ Ext.define('Rubedo.view.DAMInterface', {
         type: 'hbox'
     },
     iconCls: 'mediaTypes',
-    title: 'Mèdiathéque',
+    title: 'Médiathèque',
     constrainHeader: true,
 
     initComponent: function() {

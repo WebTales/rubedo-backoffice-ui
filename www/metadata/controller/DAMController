@@ -390,6 +390,7 @@
                     "button.up().up().setLoading(true);\r",
                     "var me=this;\r",
                     "var form=Ext.getCmp(\"DAMFieldBox\").getForm();\r",
+                    "\r",
                     "form.submit({\r",
                     "    clientValidation: true,\r",
                     "    url: 'dam/create',\r",
@@ -407,7 +408,7 @@
                     "        } else {\r",
                     "            Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "        }\r",
-                    "        \r",
+                    "\r",
                     "    },\r",
                     "    failure: function(form, action) {\r",
                     "        button.up().up().setLoading(false);\r",
@@ -423,7 +424,6 @@
                     "        }\r",
                     "    }\r",
                     "});\r",
-                    "\r",
                     ""
                 ],
                 "name": "click",
@@ -503,7 +503,7 @@
                 "fn": "onDAMSubmitUpdateBtnClick",
                 "implHandler": [
                     "var me = this;\r",
-                    "if(Ext.getCmp(\"DAMFieldBox\").getForm().isValid()){\r",
+                    "if((Ext.getCmp(\"DAMFieldBox\").getForm().isValid())&&(!Ext.isEmpty(Ext.getCmp(\"DAMOriginalUpd\").getValue()))){\r",
                     "    if (button.indepMode){\r",
                     "        var record = Ext.getStore(\"DAMEditStore\").getRange()[0];\r",
                     "    } else {\r",
@@ -519,7 +519,7 @@
                     "    record.endEdit();\r",
                     "    button.up().up().close();\r",
                     "    Ext.getStore(\"DAMFacetteStore\").load();\r",
-                    "}"
+                    "} else {Ext.Msg.alert(\"Erreur\",\"Certains champs sont invalides\");}"
                 ],
                 "name": "click",
                 "scope": "me",

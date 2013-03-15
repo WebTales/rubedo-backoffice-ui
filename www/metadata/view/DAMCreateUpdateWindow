@@ -116,6 +116,7 @@
                                             "var mainField= Ext.create(\"Rubedo.view.GFSFileField\", {\r",
                                             "    name:\"originalFileId\",\r",
                                             "    allowBlank:false,\r",
+                                            "    id:\"DAMOriginalUpd\",\r",
                                             "    fieldLabel:\"Fichier original *\",\r",
                                             "    style:{\"float\":\"left\"},\r",
                                             "    bigMode:true,\r",

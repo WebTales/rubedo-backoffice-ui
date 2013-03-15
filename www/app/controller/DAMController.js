@@ -88,6 +88,7 @@ Ext.define('Rubedo.controller.DAMController', {
         button.up().up().setLoading(true);
         var me=this;
         var form=Ext.getCmp("DAMFieldBox").getForm();
+
         form.submit({
             clientValidation: true,
             url: 'dam/create',
@@ -122,7 +123,6 @@ Ext.define('Rubedo.controller.DAMController', {
             }
         });
 
-
     },
 
     onDAMUpdateBtnClick: function(button, e, options) {
@@ -149,7 +149,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMSubmitUpdateBtnClick: function(button, e, options) {
         var me = this;
-        if(Ext.getCmp("DAMFieldBox").getForm().isValid()){
+        if((Ext.getCmp("DAMFieldBox").getForm().isValid())&&(!Ext.isEmpty(Ext.getCmp("DAMOriginalUpd").getValue()))){
             if (button.indepMode){
                 var record = Ext.getStore("DAMEditStore").getRange()[0];
             } else {
@@ -165,7 +165,7 @@ Ext.define('Rubedo.controller.DAMController', {
             record.endEdit();
             button.up().up().close();
             Ext.getStore("DAMFacetteStore").load();
-        }
+        } else {Ext.Msg.alert("Erreur","Certains champs sont invalides");}
     },
 
     onDAMROBtnClick: function(button, e, options) {

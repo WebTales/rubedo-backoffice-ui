@@ -221,6 +221,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         var mainField= Ext.create("Rubedo.view.GFSFileField", {
             name:"originalFileId",
             allowBlank:false,
+            id:"DAMOriginalUpd",
             fieldLabel:"Fichier original *",
             style:{"float":"left"},
             bigMode:true,
