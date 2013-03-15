@@ -22,9 +22,9 @@ Ext.define('Rubedo.view.userSettings', {
         'Rubedo.view.MyTool17'
     ],
 
-    height: 468,
+    height: 506,
     id: 'userSettings',
-    width: 600,
+    width: 604,
     layout: {
         type: 'fit'
     },
@@ -246,6 +246,32 @@ Ext.define('Rubedo.view.userSettings', {
                 },
                 {
                     xtype: 'mytool17'
+                }
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                var e=event;
+                                var menu= Ext.getCmp('settingsContextMenu');
+                                if (Ext.isEmpty(menu)){
+                                    menu = Ext.widget('settingsContextMenu');
+                                    menu.on('blur', function(){this.destroy();});
+                                }
+                                menu.showAt(e.browserEvent.clientX,e.browserEvent.clientY);
+
+                            },
+                            iconCls: 'personalize',
+                            text: 'Bureau'
+                        }
+                    ]
                 }
             ]
         });
