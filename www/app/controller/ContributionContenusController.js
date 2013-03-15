@@ -634,6 +634,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getStore("VersioningStore").clearFilter(true);
 
         Ext.getStore("VersioningStore").filter("contentId",content.get("id"));
+        Ext.getStore("VersioningStore").filter([
+        Ext.create('Ext.util.Filter', {property: "contentId", value: content.get("id")}),
+        Ext.create('Ext.util.Filter', {property:"publishVersion", value:{$gt:0}})
+        ]);
 
         var formulaireTC = Ext.getCmp('boiteAChampsContenus');
         var champsD =contentType.get("champs");
