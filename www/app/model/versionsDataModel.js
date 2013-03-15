@@ -36,7 +36,8 @@ Ext.define('Rubedo.model.versionsDataModel', {
         },
         {
             name: 'publishTime',
-            dateFormat: 'timestamp'
+            dateFormat: 'U',
+            type: 'date'
         },
         {
             name: 'publishUser',

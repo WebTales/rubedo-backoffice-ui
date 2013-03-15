@@ -283,7 +283,7 @@ Ext.define('Rubedo.view.adminFTDC', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    managesStore: true,
+                    managesStore: false,
                     id: 'AdminfTypesGrid',
                     width: 150,
                     resizable: true,
@@ -584,7 +584,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onAdminFTDCRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onAdminFTDCBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -613,6 +623,14 @@ Ext.define('Rubedo.view.adminFTDC', {
         if (!ACL.interfaceRights["write.ui.contentTypes"]){
             tablepanel.getSelectionModel().setLocked(true);
         }
+    },
+
+    onAdminFTDCRender: function(abstractcomponent, options) {
+        Ext.getStore("TypesContenusDataJson").load();
+    },
+
+    onAdminFTDCBeforeClose: function(panel, options) {
+        Ext.getStore("TypesContenusDataJson").removeAll();
     }
 
 });

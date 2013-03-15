@@ -254,10 +254,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             format: '0'
                                         },
                                         {
-                                            xtype: 'gridcolumn',
-                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                return(Ext.Date.format(new Date(value),"F j, Y, G:i"));
-                                            },
+                                            xtype: 'datecolumn',
                                             dataIndex: 'publishTime',
                                             text: 'Date de publication'
                                         },

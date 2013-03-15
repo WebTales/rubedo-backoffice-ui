@@ -592,45 +592,18 @@
                                     "designerId": "66d0247d-54ee-4a56-91ca-63419a13c2d9"
                                 },
                                 {
-                                    "type": "gridcolumn",
+                                    "type": "datecolumn",
                                     "reference": {
                                         "name": "columns",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyColumn52",
+                                        "designer|userClassName": "MyDateColumn9",
                                         "dataIndex": "publishTime",
                                         "text": "Date de publication"
                                     },
-                                    "designerId": "dc810999-8bb5-457c-a815-ac91addb696b",
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "renderer",
-                                                "fn": "renderer",
-                                                "designer|params": [
-                                                    "value",
-                                                    "metaData",
-                                                    "record",
-                                                    "rowIndex",
-                                                    "colIndex",
-                                                    "store",
-                                                    "view"
-                                                ],
-                                                "implHandler": [
-                                                    "return(Ext.Date.format(new Date(value),\"F j, Y, G:i\"));"
-                                                ]
-                                            },
-                                            "designerId": "b6a3e2fc-f9d9-4705-a117-38a044cc5ed8"
-                                        }
-                                    ]
+                                    "designerId": "dc810999-8bb5-457c-a815-ac91addb696b"
                                 },
                                 {
                                     "type": "gridcolumn",

@@ -624,7 +624,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
+                "managesStore": false,
                 "layout|flex": null,
                 "designer|userClassName": "MyGridPanel7",
                 "id": "AdminfTypesGrid",
@@ -1409,6 +1409,42 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminFTDCRender",
+                "fn": "onAdminFTDCRender",
+                "implHandler": [
+                    "Ext.getStore(\"TypesContenusDataJson\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "7e803a5f-d67f-4881-8438-aec9cb3ca924"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAdminFTDCBeforeClose",
+                "fn": "onAdminFTDCBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"TypesContenusDataJson\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "de263276-27fd-4939-9be5-8f882fee1d2c"
         }
     ]
 }
