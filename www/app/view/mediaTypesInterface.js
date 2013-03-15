@@ -359,14 +359,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     },
                                                     items: [
                                                         {
-                                                            xtype: 'textfield',
-                                                            anchor: '90%',
-                                                            style: '{float:left}',
-                                                            name: 'title',
-                                                            fieldLabel: 'Titre *',
-                                                            allowBlank: false
-                                                        },
-                                                        {
                                                             xtype: 'button',
                                                             itemId: 'helpBouton',
                                                             style: '{float:right;}',
@@ -375,6 +367,14 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             pressedCls: 'x-btn',
                                                             text: '',
                                                             tooltip: 'Titre du média. Obligatoire.'
+                                                        },
+                                                        {
+                                                            xtype: 'textfield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'title',
+                                                            fieldLabel: 'Titre *',
+                                                            allowBlank: false
                                                         }
                                                     ]
                                                 },
@@ -386,15 +386,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     },
                                                     items: [
                                                         {
-                                                            xtype: 'filefield',
-                                                            anchor: '90%',
-                                                            style: '{float:left}',
-                                                            name: 'originalFileId',
-                                                            fieldLabel: 'Fichier original *',
-                                                            labelSeparator: ' ',
-                                                            allowBlank: false
-                                                        },
-                                                        {
                                                             xtype: 'button',
                                                             itemId: 'helpBouton',
                                                             style: '{float:right;}',
@@ -403,6 +394,15 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             pressedCls: 'x-btn',
                                                             text: '',
                                                             tooltip: 'Fichier principal du média. Obligatoire.'
+                                                        },
+                                                        {
+                                                            xtype: 'filefield',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            name: 'originalFileId',
+                                                            fieldLabel: 'Fichier original *',
+                                                            labelSeparator: ' ',
+                                                            allowBlank: false
                                                         }
                                                     ]
                                                 }

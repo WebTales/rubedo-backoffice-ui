@@ -221,26 +221,6 @@
                                     "designerId": "2620fef2-078c-4983-8fec-8f914a248962",
                                     "cn": [
                                         {
-                                            "type": "textfield",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|anchor": "90%",
-                                                "designer|userClassName": "MyTextField1",
-                                                "style": [
-                                                    "{float:left}"
-                                                ],
-                                                "name": "text",
-                                                "fieldLabel": "Titre *",
-                                                "labelSeparator": null,
-                                                "allowBlank": false
-                                            },
-                                            "designerId": "a1c40ec8-11e9-4786-995b-514d97b359ba"
-                                        },
-                                        {
                                             "type": "button",
                                             "reference": {
                                                 "name": "items",
@@ -266,6 +246,26 @@
                                                 ]
                                             },
                                             "designerId": "aca71617-cf95-468c-8248-0f1d34b64832"
+                                        },
+                                        {
+                                            "type": "textfield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextField1",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "text",
+                                                "fieldLabel": "Titre *",
+                                                "labelSeparator": null,
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "a1c40ec8-11e9-4786-995b-514d97b359ba"
                                         }
                                     ]
                                 },
@@ -285,25 +285,6 @@
                                     },
                                     "designerId": "28c92b29-92d3-47c3-853a-0fbbd944db2d",
                                     "cn": [
-                                        {
-                                            "type": "textareafield",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|anchor": "90%",
-                                                "designer|userClassName": "MyTextArea7",
-                                                "style": [
-                                                    "{float:left}"
-                                                ],
-                                                "name": "summary",
-                                                "fieldLabel": "Résumé ",
-                                                "labelSeparator": " "
-                                            },
-                                            "designerId": "6848a18f-c463-4d34-a3d0-1f3dfdf31a01"
-                                        },
                                         {
                                             "type": "button",
                                             "reference": {
@@ -330,6 +311,25 @@
                                                 ]
                                             },
                                             "designerId": "1a3bffbf-c894-40bc-85a3-461c3c0359ce"
+                                        },
+                                        {
+                                            "type": "textareafield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextArea7",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "summary",
+                                                "fieldLabel": "Résumé ",
+                                                "labelSeparator": " "
+                                            },
+                                            "designerId": "6848a18f-c463-4d34-a3d0-1f3dfdf31a01"
                                         }
                                     ]
                                 }

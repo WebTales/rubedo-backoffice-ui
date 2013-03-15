@@ -104,14 +104,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'textfield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'text',
-                                                    fieldLabel: 'Titre *',
-                                                    allowBlank: false
-                                                },
-                                                {
                                                     xtype: 'button',
                                                     itemId: 'helpBouton',
                                                     style: '{float:right;}',
@@ -120,6 +112,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     pressedCls: 'x-btn',
                                                     text: '',
                                                     tooltip: 'Titre du contenu. Obligatoire.'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'text',
+                                                    fieldLabel: 'Titre *',
+                                                    allowBlank: false
                                                 }
                                             ]
                                         },
@@ -132,14 +132,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'textareafield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'summary',
-                                                    fieldLabel: 'Résumé ',
-                                                    labelSeparator: ' '
-                                                },
-                                                {
                                                     xtype: 'button',
                                                     itemId: 'helpBouton',
                                                     style: '{float:right;}',
@@ -148,6 +140,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     pressedCls: 'x-btn',
                                                     text: '',
                                                     tooltip: 'Résumé facultatif du contenu.'
+                                                },
+                                                {
+                                                    xtype: 'textareafield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'summary',
+                                                    fieldLabel: 'Résumé ',
+                                                    labelSeparator: ' '
                                                 }
                                             ]
                                         }

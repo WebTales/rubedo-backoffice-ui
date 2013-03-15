@@ -166,27 +166,6 @@
                                     "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
                                     "cn": [
                                         {
-                                            "type": "textfield",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|anchor": "90%",
-                                                "designer|userClassName": "MyTextField1",
-                                                "id": null,
-                                                "style": [
-                                                    "{float:left}"
-                                                ],
-                                                "name": "title",
-                                                "fieldLabel": "Titre *",
-                                                "labelSeparator": " ",
-                                                "allowBlank": false
-                                            },
-                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
-                                        },
-                                        {
                                             "type": "button",
                                             "reference": {
                                                 "name": "items",
@@ -212,6 +191,27 @@
                                                 ]
                                             },
                                             "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
+                                        },
+                                        {
+                                            "type": "textfield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyTextField1",
+                                                "id": null,
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "title",
+                                                "fieldLabel": "Titre *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
                                         }
                                     ]
                                 },
@@ -232,27 +232,6 @@
                                     },
                                     "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
                                     "cn": [
-                                        {
-                                            "type": "filefield",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|anchor": "90%",
-                                                "designer|userClassName": "MyFileUpload3",
-                                                "id": null,
-                                                "style": [
-                                                    "{float:left}"
-                                                ],
-                                                "name": "originalFileId",
-                                                "fieldLabel": "Fichier original *",
-                                                "labelSeparator": " ",
-                                                "allowBlank": false
-                                            },
-                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
-                                        },
                                         {
                                             "type": "button",
                                             "reference": {
@@ -279,6 +258,27 @@
                                                 ]
                                             },
                                             "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
+                                        },
+                                        {
+                                            "type": "filefield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "90%",
+                                                "designer|userClassName": "MyFileUpload3",
+                                                "id": null,
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "name": "originalFileId",
+                                                "fieldLabel": "Fichier original *",
+                                                "labelSeparator": " ",
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
                                         }
                                     ]
                                 }

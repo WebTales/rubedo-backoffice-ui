@@ -96,15 +96,6 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'textfield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'title',
-                                                    fieldLabel: 'Titre *',
-                                                    labelSeparator: ' ',
-                                                    allowBlank: false
-                                                },
-                                                {
                                                     xtype: 'button',
                                                     itemId: 'helpBouton',
                                                     style: '{float:right;}',
@@ -113,6 +104,15 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                                     pressedCls: 'x-btn',
                                                     text: '',
                                                     tooltip: 'Titre du média. Obligatoire.'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'title',
+                                                    fieldLabel: 'Titre *',
+                                                    labelSeparator: ' ',
+                                                    allowBlank: false
                                                 }
                                             ]
                                         },
@@ -124,15 +124,6 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'filefield',
-                                                    anchor: '90%',
-                                                    style: '{float:left}',
-                                                    name: 'originalFileId',
-                                                    fieldLabel: 'Fichier original *',
-                                                    labelSeparator: ' ',
-                                                    allowBlank: false
-                                                },
-                                                {
                                                     xtype: 'button',
                                                     itemId: 'helpBouton',
                                                     style: '{float:right;}',
@@ -141,6 +132,15 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                                     pressedCls: 'x-btn',
                                                     text: '',
                                                     tooltip: 'Fichier principal du média. Obligatoire.'
+                                                },
+                                                {
+                                                    xtype: 'filefield',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    name: 'originalFileId',
+                                                    fieldLabel: 'Fichier original *',
+                                                    labelSeparator: ' ',
+                                                    allowBlank: false
                                                 }
                                             ]
                                         }
