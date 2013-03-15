@@ -240,6 +240,7 @@ Ext.define('ContentContributor.controller.MainController', {
         }
         Ext.require("Rubedo.view.CKEField");
         Ext.require("Rubedo.view.localiserField");
+        Ext.require("Rubedo.view.localiserFieldComponent");
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
