@@ -56,9 +56,11 @@ Ext.define('ContentContributor.controller.MainController', {
                 newContent.set("writeWorkspace",AppGlobals.currentWorkspace);
                 newContent.set("target",[AppGlobals.currentWorkspace]);
                 var taxoRes = {};
-                Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
-                    taxoRes[leField.name]=leField.getValue();            
-                });
+                if (!Ext.isEmpty(Ext.getCmp("taxonomyFieldset"))){
+                    Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
+                        taxoRes[leField.name]=leField.getValue();            
+                    });
+                }
                 taxoRes.navigation=[AppGlobals.currentPage];
                 newContent.set("taxonomy",taxoRes);
 

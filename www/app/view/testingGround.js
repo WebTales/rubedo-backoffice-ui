@@ -60,8 +60,8 @@ Ext.define('Rubedo.view.testingGround', {
                         },
                         {
                             xtype: 'WorkspaceCombo',
-                            id: 'chimp3',
-                            canSwitchStore: true
+                            canSwitchStore: true,
+                            id: 'chimp3'
                         },
                         {
                             xtype: 'timefield',
