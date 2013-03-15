@@ -367,7 +367,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     if (nouvChamp.name=="name"){
                         nouvChamp.validator=me.nameValidator;
                     }
+
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
+
                     if (mesChamps[t].type =='Rubedo.view.CTMTField'){
 
                         var properMT =Ext.clone(TCfield.config[nouvChamp.name]);

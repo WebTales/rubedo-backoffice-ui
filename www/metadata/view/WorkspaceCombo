@@ -89,8 +89,7 @@
                 "implHandler": [
                     "if ((abstractcomponent.getStore().storeId==\"ContributeWorkspacesCombo\")||(abstractcomponent.getStore().storeId==\"ContributeWorkspacesComboWithAll\")){\r",
                     "    abstractcomponent.canSwitchStore=true;\r",
-                    "}\r",
-                    "console.log(abstractcomponent.getStore().storeId);"
+                    "}"
                 ],
                 "name": "added",
                 "scope": "me"

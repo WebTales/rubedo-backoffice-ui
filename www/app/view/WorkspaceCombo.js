@@ -59,7 +59,6 @@ Ext.define('Rubedo.view.WorkspaceCombo', {
         if ((abstractcomponent.getStore().storeId=="ContributeWorkspacesCombo")||(abstractcomponent.getStore().storeId=="ContributeWorkspacesComboWithAll")){
             abstractcomponent.canSwitchStore=true;
         }
-        console.log(abstractcomponent.getStore().storeId);
     },
 
     setReadOnly: function(readOnly) {
