@@ -66,7 +66,7 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
             { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },'/',
             { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] }, 
-            { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+            { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', 'Unlink'] },
             { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo'  ] }
             ];
         } else if (abstractcomponent.CKETBConfig=="Basic"){
