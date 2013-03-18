@@ -218,7 +218,7 @@
                     "Ext.Object.each(source, function(key, value, object){\r",
                     "    if (Ext.isArray(value)) {\r",
                     "        adaptedParams[key+\"[]\"]=value;\r",
-                    "        \r",
+                    "\r",
                     "    } else {\r",
                     "        adaptedParams[key]=value;\r",
                     "    }\r",

@@ -316,34 +316,39 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if (query.vocabulariesRule!="AND"){
             qVocRule="chaque contenu doit verifier au moins une des règles suivantes";
         }
-        htmlDisplay+="</ul><h3>Taxonomie : "+qVocRule+"</h3>";
-        try {Ext.Object.each(query.vocabularies, function(key, value, myself){
-            if(!Ext.isEmpty(value.terms)){
-                var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
-                htmlDisplay+="<h4>"+Ext.getStore('TaxonomyForQA').findRecord("id",key).get("name")+" : "+myFields[1].getStore().findRecord("valeur",value.rule).get("nom")+"</h4><ul>";
-                Ext.Array.forEach(value.terms, function(term){
-                    htmlDisplay+="<li>"+myFields[0].getStore().findRecord("id",term).get("text")+"</li>";
-                });
-                htmlDisplay+="</ul>";
+        if (!Ext.isEmpty(query.vocabularies)){
+            htmlDisplay+="</ul><h3>Taxonomie : "+qVocRule+"</h3>";
+            try {Ext.Object.each(query.vocabularies, function(key, value, myself){
+                if(!Ext.isEmpty(value.terms)){
+                    var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
+                    htmlDisplay+="<h4>"+Ext.getStore('TaxonomyForQA').findRecord("id",key).get("name")+" : "+myFields[1].getStore().findRecord("valeur",value.rule).get("nom")+"</h4><ul>";
+                    Ext.Array.forEach(value.terms, function(term){
+                        htmlDisplay+="<li>"+myFields[0].getStore().findRecord("id",term).get("text")+"</li>";
+                    });
+                    htmlDisplay+="</ul>";
+                }
+            });} catch(err){
+                console.log("erreur de recuperation des libellés des termes");
             }
-        });} catch(err){
-            console.log("erreur de recuperation des libellés des termes");
         }
-        htmlDisplay+="<h3>Règles et tris sur les champs des contenus</h3><ul>";
-        Ext.Object.each(query.fieldRules, function(key, value, myself){
-            var tri = "";
-            var a = value.rule||"";
-            var b = value.value||"";
-            var c=Ext.clone(b);
-            if(Ext.isDate(c)){c=Ext.Date.format(c, 'j F, Y, G:i');}
-            if (!Ext.isEmpty(value.sort)){
-                if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
-            }
+        if (!Ext.isEmpty(query.fieldRules)){
+            htmlDisplay+="<h3>Règles et tris sur les champs des contenus</h3><ul>";
+            Ext.Object.each(query.fieldRules, function(key, value, myself){
+                var tri = "";
+                var a = value.rule||"";
+                var b = value.value||"";
+                var c=Ext.clone(b);
+                if(Ext.isDate(c)){c=Ext.Date.format(c, 'j F, Y, G:i');}
+                if (!Ext.isEmpty(value.sort)){
+                    if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
+                }
 
-            htmlDisplay+="<li>"+key+" "+a+" "+c+" "+tri+"</li>";
-        });
-        htmlDisplay+="</ul>";
+                htmlDisplay+="<li>"+key+" "+a+" "+c+" "+tri+"</li>";
+            });
+            htmlDisplay+="</ul>";
+        }
         var target= Ext.getCmp("querySummaryBox");
+        console.log(query);
         target.update(htmlDisplay);
     },
 
@@ -371,7 +376,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 anchor: '100%',
                 fieldLabel: 'Relation entre les règles ',
                 store: storeL,
-                value: 'OU',
+                value: 'OR',
                 name: "vocabulariesRule",
                 queryMode: 'local',
                 displayField: 'nom',
@@ -383,7 +388,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             });
             if (simpleMode) {
-                lien.setValue('ET');
+                lien.setValue('AND');
                 lien.setReadOnly(true);
                 lien.hide();
             } else if (editorMode&&keepInMind) {
