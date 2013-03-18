@@ -308,11 +308,15 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     displayQuery: function(query) {
-        var htmlDisplay="<h3>Types de contenus</h3><ul>";
+        var htmlDisplay="<h3>Types de contenus eligibles</h3><ul>";
         Ext.Array.forEach(query.contentTypes, function(ctid){
             htmlDisplay+="<li>"+Ext.getStore('TCNDepCombo').findRecord("id",ctid).get("type")+"</li>";
         });
-        htmlDisplay+="</ul><h3>Taxonomie : règle "+query.vocabulariesRule+"</h3>";
+        var qVocRule="chaque contenu doit verifier toutes les règles suivantes";
+        if (query.vocabulariesRule!="AND"){
+            qVocRule="chaque contenu doit verifier au moins une des règles suivantes";
+        }
+        htmlDisplay+="</ul><h3>Taxonomie : "+qVocRule+"</h3>";
         try {Ext.Object.each(query.vocabularies, function(key, value, myself){
             if(!Ext.isEmpty(value.terms)){
                 var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
@@ -325,7 +329,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         });} catch(err){
             console.log("erreur de recuperation des libellés des termes");
         }
-        htmlDisplay+="<h3>Règles sur les champs</h3><ul>";
+        htmlDisplay+="<h3>Règles et tris sur les champs des contenus</h3><ul>";
         Ext.Object.each(query.fieldRules, function(key, value, myself){
             var tri = "";
             var a = value.rule||"";
