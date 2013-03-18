@@ -82,6 +82,9 @@ Ext.define('Rubedo.model.contenusDataModel', {
             name: 'pageId'
         },
         {
+            name: 'maskId'
+        },
+        {
             name: 'blockId'
         }
     ]

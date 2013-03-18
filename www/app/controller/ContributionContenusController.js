@@ -57,10 +57,17 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     contentSaveAndPublish: function(button, e, options) {
         if (button.specialMode){
-
             if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
+                var maskMode = false;
+                if (Ext.getCmp(button.targetedId).findParentByType("window").id=="adminFMDP"){
+                    maskMode=true;
+                }        
                 var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
-                champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;
+                if (maskMode){
+                    champs.text=Ext.getCmp(Ext.getCmp('elementIdField').getValue()).title;
+                } else{
+                    champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;
+                }
                 champs.summary="";
                 if (button.isUpdate) {
                     var myRec =Ext.getStore("CurrentContent").getRange()[0];
@@ -83,11 +90,16 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         online:true,
                         taxonomie:[ ],
                         status: "published",
-                        pageId: Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("id"),
-                        blockId:Ext.getCmp('pageElementIdField').getValue(),
                         typeId: Ext.getStore("ContentTypesForContent2").getRange()[0].get("id")
 
                     });
+                    if (maskMode){
+                        nContenu.set("maskId", Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("id"));
+                        nContenu.set("blockId", Ext.getCmp('elementIdField').getValue());
+                    } else{
+                        nContenu.set("pageId", Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("id"));
+                        nContenu.set("blockId", Ext.getCmp('pageElementIdField').getValue());
+                    }
 
                     Ext.getStore("CurrentContent").add(nContenu);   
                     Ext.getStore("CurrentContent").addListener("datachanged",function(){
@@ -600,7 +612,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
     },
 
-    unitaryContentEdit: function(id, specialMode) {
+    unitaryContentEdit: function(id, specialMode, targetedId) {
         var me=this;
         Ext.getStore('TaxonomyForC2').load();
         Ext.getStore("CurrentContent").getProxy().extraParams.id = id;
@@ -608,9 +620,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             if (successful){
                 var theContent = records[0];
                 if ((!theContent.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(ACL.interfaceRights["write.ui.contents."+theContent.get("status")])){
-                    me.prepareContext(theContent, true, specialMode);
+                    me.prepareContext(theContent, true, specialMode, targetedId);
                 }else if ((ACL.interfaceRights["read.ui.contents"])&&(ACL.interfaceRights["read.ui.contents."+theContent.get("status")])){
-                    me.prepareContext(theContent, false, specialMode);
+                    me.prepareContext(theContent, false, specialMode, targetedId);
                 } else {
                     Ext.Msg.alert('Erreur',"Vos droits sont insuffisants pour afficher ou modifier ce contenu");
                     theStore.removeAll();
@@ -621,7 +633,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getStore("CurrentContent").load();
     },
 
-    displayContentEditWindow: function(content, contentType, editMode, specialMode) {
+    displayContentEditWindow: function(content, contentType, editMode, specialMode, targetedId) {
         var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});
         Ext.getCmp('ViewportPrimaire').add(fenetre);
         if (Ext.isDefined(window.innerHeight)) {
@@ -909,6 +921,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
                 Ext.getCmp("boutonSoumettreNouveauContenu").hide();
                 Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
+                Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
                 Ext.getCmp("cedtr1").destroy();
                 Ext.getCmp("cedtr2").destroy();
 
@@ -1141,7 +1154,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 }
     },
 
-    prepareContext: function(content, editMode, specialMode) {
+    prepareContext: function(content, editMode, specialMode, targetedId) {
         var me=this;
         Ext.getStore("ContentTypesForContent").addListener("load",function(theStore,records,successful){
             if (successful){
@@ -1154,7 +1167,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     Ext.getStore("DepContentsCombo2").removeAll();
                     Ext.getStore("DepContentsCombo2").loadData(myDependantTypes);
                 }
-                me.displayContentEditWindow(content, myContentType,editMode, specialMode);
+                me.displayContentEditWindow(content, myContentType,editMode, specialMode, targetedId);
 
             }
         },this,{single:true});

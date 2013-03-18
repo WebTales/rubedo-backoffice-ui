@@ -77,10 +77,17 @@
                 "fn": "contentSaveAndPublish",
                 "implHandler": [
                     "if (button.specialMode){\r",
-                    "\r",
                     "    if (Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid()){\r",
+                    "        var maskMode = false;\r",
+                    "        if (Ext.getCmp(button.targetedId).findParentByType(\"window\").id==\"adminFMDP\"){\r",
+                    "            maskMode=true;\r",
+                    "        }        \r",
                     "        var champs=Ext.getCmp(\"boiteAChampsContenus\").getForm().getValues();\r",
-                    "        champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;\r",
+                    "        if (maskMode){\r",
+                    "            champs.text=Ext.getCmp(Ext.getCmp('elementIdField').getValue()).title;\r",
+                    "        } else{\r",
+                    "            champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;\r",
+                    "        }\r",
                     "        champs.summary=\"\";\r",
                     "        if (button.isUpdate) {\r",
                     "            var myRec =Ext.getStore(\"CurrentContent\").getRange()[0];\r",
@@ -103,11 +110,16 @@
                     "                online:true,\r",
                     "                taxonomie:[ ],\r",
                     "                status: \"published\",\r",
-                    "                pageId: Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().get(\"id\"),\r",
-                    "                blockId:Ext.getCmp('pageElementIdField').getValue(),\r",
                     "                typeId: Ext.getStore(\"ContentTypesForContent2\").getRange()[0].get(\"id\")\r",
                     "\r",
                     "            });\r",
+                    "            if (maskMode){\r",
+                    "                nContenu.set(\"maskId\", Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"id\"));\r",
+                    "                nContenu.set(\"blockId\", Ext.getCmp('elementIdField').getValue());\r",
+                    "            } else{\r",
+                    "                nContenu.set(\"pageId\", Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().get(\"id\"));\r",
+                    "                nContenu.set(\"blockId\", Ext.getCmp('pageElementIdField').getValue());\r",
+                    "            }\r",
                     "\r",
                     "            Ext.getStore(\"CurrentContent\").add(nContenu);   \r",
                     "            Ext.getStore(\"CurrentContent\").addListener(\"datachanged\",function(){\r",
@@ -992,7 +1004,8 @@
                 "fn": "unitaryContentEdit",
                 "designer|params": [
                     "id",
-                    "specialMode"
+                    "specialMode",
+                    "targetedId"
                 ],
                 "implHandler": [
                     "var me=this;\r",
@@ -1002,9 +1015,9 @@
                     "    if (successful){\r",
                     "        var theContent = records[0];\r",
                     "        if ((!theContent.get(\"readOnly\"))&&(ACL.interfaceRights[\"write.ui.contents\"])&&(ACL.interfaceRights[\"write.ui.contents.\"+theContent.get(\"status\")])){\r",
-                    "            me.prepareContext(theContent, true, specialMode);\r",
+                    "            me.prepareContext(theContent, true, specialMode, targetedId);\r",
                     "        }else if ((ACL.interfaceRights[\"read.ui.contents\"])&&(ACL.interfaceRights[\"read.ui.contents.\"+theContent.get(\"status\")])){\r",
-                    "            me.prepareContext(theContent, false, specialMode);\r",
+                    "            me.prepareContext(theContent, false, specialMode, targetedId);\r",
                     "        } else {\r",
                     "            Ext.Msg.alert('Erreur',\"Vos droits sont insuffisants pour afficher ou modifier ce contenu\");\r",
                     "            theStore.removeAll();\r",
@@ -1031,7 +1044,8 @@
                     "content",
                     "contentType",
                     "editMode",
-                    "specialMode"
+                    "specialMode",
+                    "targetedId"
                 ],
                 "implHandler": [
                     "var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});\r",
@@ -1321,6 +1335,7 @@
                     "        Ext.getCmp(\"boutonEnregistrerNouveauContenu\").hide();\r",
                     "        Ext.getCmp(\"boutonSoumettreNouveauContenu\").hide();\r",
                     "        Ext.getCmp(\"boutonPublierNouveauContenu\").specialMode=true;\r",
+                    "        Ext.getCmp(\"boutonPublierNouveauContenu\").targetedId=targetedId;\r",
                     "        Ext.getCmp(\"cedtr1\").destroy();\r",
                     "        Ext.getCmp(\"cedtr2\").destroy();\r",
                     "\r",
@@ -1584,7 +1599,8 @@
                 "designer|params": [
                     "content",
                     "editMode",
-                    "specialMode"
+                    "specialMode",
+                    "targetedId"
                 ],
                 "implHandler": [
                     "var me=this;\r",
@@ -1599,7 +1615,7 @@
                     "            Ext.getStore(\"DepContentsCombo2\").removeAll();\r",
                     "            Ext.getStore(\"DepContentsCombo2\").loadData(myDependantTypes);\r",
                     "        }\r",
-                    "        me.displayContentEditWindow(content, myContentType,editMode, specialMode);\r",
+                    "        me.displayContentEditWindow(content, myContentType,editMode, specialMode, targetedId);\r",
                     "\r",
                     "    }\r",
                     "},this,{single:true});\r",
