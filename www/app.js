@@ -46,7 +46,8 @@ Ext.application({
         'DAMModel',
         'contentsSearchModel',
         'DAMSearchModel',
-        'workspaceModel'
+        'workspaceModel',
+        'formModel'
     ],
     stores: [
         'SitesJson',
@@ -126,7 +127,8 @@ Ext.application({
         'GroupsComboStore',
         'ContentTypesForContent2',
         'WorkspacesComboWithAll',
-        'ContributeWorkspacesComboWithAll'
+        'ContributeWorkspacesComboWithAll',
+        'FormsStore'
     ],
     views: [
         'MyContainer',
@@ -227,7 +229,8 @@ Ext.application({
         'newUserWindow',
         'RHelpBtn',
         'PersoPicUploadWindow',
-        'FormsInterface'
+        'FormsInterface',
+        'newFormWindow'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

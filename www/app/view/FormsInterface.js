@@ -65,6 +65,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.damTypes',
+                            id: 'addFormBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
@@ -74,6 +75,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             xtype: 'button',
                             ACL: 'write.ui.damTypes',
                             disabled: true,
+                            id: 'removeFormBtn',
                             iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
@@ -251,11 +253,70 @@ Ext.define('Rubedo.view.FormsInterface', {
             ],
             items: [
                 {
+                    xtype: 'gridpanel',
+                    id: 'mainFormsGrid',
+                    width: 200,
+                    title: '',
+                    forceFit: true,
+                    store: 'FormsStore',
+                    viewConfig: {
+
+                    },
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("readOnly")){
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/note_lock.png"> ' + "<i style=\"color:#777;\">"+value+"</i>");
+                                }
+                                return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/note.png"> ' + value);
+                            },
+                            dataIndex: 'title',
+                            text: 'Titre'
+                        }
+                    ]
+                },
+                {
                     xtype: 'tabpanel',
                     flex: 1,
                     disabled: true,
-                    activeTab: 0,
+                    id: 'FormsCenterZone',
+                    activeTab: 1,
                     items: [
+                        {
+                            xtype: 'form',
+                            bodyPadding: 10,
+                            iconCls: 'parametres',
+                            title: 'Propriétés',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Titre du formulaire'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Descriptif'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Unicité de la réponse',
+                                    boxLabel: 'Box Label'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Date d\'ouverture'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Date de fin'
+                                }
+                            ]
+                        },
                         {
                             xtype: 'panel',
                             floating: false,
@@ -272,33 +333,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     flex: 1,
                                     id: 'MTEditContainer',
                                     autoScroll: true
-                                },
-                                {
-                                    xtype: 'form',
-                                    frame: true,
-                                    width: 300,
-                                    layout: {
-                                        type: 'fit'
-                                    },
-                                    bodyPadding: 8,
-                                    collapseDirection: 'right',
-                                    collapsed: false,
-                                    collapsible: true,
-                                    iconCls: 'parametres',
-                                    title: 'Propriétés',
-                                    items: [
-                                        {
-                                            xtype: 'container',
-                                            autoScroll: true,
-                                            layout: {
-                                                type: 'anchor'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'hiddenfield',
-                                            fieldLabel: 'Label'
-                                        }
-                                    ]
                                 }
                             ]
                         },
@@ -318,10 +352,25 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     anchor: '100%'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'panel',
+                            iconCls: 'monitoring',
+                            title: 'Exploitation'
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onFormsInterfaceRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onFormsInterfaceBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -338,6 +387,14 @@ Ext.define('Rubedo.view.FormsInterface', {
 
     onImageRender1: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/note_edit.png');
+    },
+
+    onFormsInterfaceRender: function(abstractcomponent, options) {
+        Ext.getStore("FormsStore").load();
+    },
+
+    onFormsInterfaceBeforeClose: function(panel, options) {
+        Ext.getStore("FormsStore").removeAll();
     }
 
 });

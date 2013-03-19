@@ -10,5 +10,123 @@
         "designer|userAlias": "FormsController"
     },
     "id": "ExtBox1-ext-gen6522",
-    "designerId": "82778ea5-36d1-422d-993a-6b91ab641629"
+    "designerId": "82778ea5-36d1-422d-993a-6b91ab641629",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddFormBtnClick",
+                "fn": "onAddFormBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newFormWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addFormBtn"
+            },
+            "designerId": "f52e88d9-2add-4a07-acc1-929ddb435d17"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSubmitNewFormBtnClick",
+                "fn": "onSubmitNewFormBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var newOne=Ext.create(\"Rubedo.model.formModel\",form.getValues());\r",
+                    "    Ext.getStore(\"FormsStore\").add(newOne);\r",
+                    "    Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
+                    "        me.resetInterfaceSelect(newOne);\r",
+                    "    },this,{single:true});\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#submitNewFormBtn"
+            },
+            "designerId": "ad68df93-1a56-466f-a58b-b0ec27d774a3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "resetInterfaceSelect",
+                "fn": "resetInterfaceSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "b24e3b9b-de2d-416d-b923-d047ea4b8202"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "resetInterfaceNoSelect",
+                "fn": "resetInterfaceNoSelect",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "67493c81-5c85-4775-a117-e1caf6222371"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRemoveFormBtnClick",
+                "fn": "onRemoveFormBtnClick",
+                "implHandler": [
+                    "var target = Ext.getCmp('mainFormsGrid').getSelectionModel().getLastSelected();\r",
+                    "var me=this;\r",
+                    "if (!Ext.isEmpty(target)) {\r",
+                    "    var window = Ext.widget('delConfirmZ');\r",
+                    "    Ext.getCmp('ViewportPrimaire').add(window);\r",
+                    "    window.show();\r",
+                    "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "        Ext.getStore(\"FormsStore\").remove(target);            \r",
+                    "        Ext.getCmp('delConfirmZ').close();  \r",
+                    "        me.resetInterfaceNoSelect();\r",
+                    "    });  \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeFormBtn"
+            },
+            "designerId": "cc253274-c5e7-43ef-b47a-b6a7d04ea6f4"
+        }
+    ]
 }

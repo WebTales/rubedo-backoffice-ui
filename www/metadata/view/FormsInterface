@@ -93,7 +93,7 @@
                         "ACL": "write.ui.damTypes",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton11",
-                        "id": null,
+                        "id": "addFormBtn",
                         "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
@@ -122,7 +122,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton13",
                         "disabled": true,
-                        "id": null,
+                        "id": "removeFormBtn",
                         "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
@@ -577,6 +577,82 @@
             ]
         },
         {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "designer|userClassName": "MyGridPanel34",
+                "id": "mainFormsGrid",
+                "width": 200,
+                "title": "",
+                "forceFit": true,
+                "store": "FormsStore"
+            },
+            "designerId": "905dce0c-dea0-408c-9c70-a89420a8302b",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView33"
+                    },
+                    "designerId": "0b2bed5e-c7ff-4e1b-889d-68a1bdd628b3"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn70",
+                        "dataIndex": "title",
+                        "text": "Titre"
+                    },
+                    "designerId": "18a6bdf5-7d01-41e1-9679-a5afc5c40f08",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/note_lock.png\"> ' + \"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                                    "}\r",
+                                    "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/note.png\"> ' + value);"
+                                ]
+                            },
+                            "designerId": "e2ed41bc-082c-4bc7-9442-1903ba27d4be"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "type": "tabpanel",
             "reference": {
                 "name": "items",
@@ -587,12 +663,112 @@
                 "layout|flex": 1,
                 "designer|userClassName": "MyTabPanel",
                 "disabled": true,
-                "id": null,
+                "id": "FormsCenterZone",
                 "iconCls": null,
-                "activeTab": 0
+                "activeTab": 1
             },
             "designerId": "61c8ea8c-580a-4cae-8dce-9d8708945d6a",
             "cn": [
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm57",
+                        "bodyPadding": 10,
+                        "iconCls": "parametres",
+                        "title": "Propriétés"
+                    },
+                    "designerId": "8ba32528-07eb-45ca-8f83-ad74c22d5da5",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig31"
+                            },
+                            "designerId": "f59a1940-02a2-4605-8408-f9776ff919e4"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField82",
+                                "fieldLabel": "Titre du formulaire"
+                            },
+                            "designerId": "68534561-f06c-4bb9-9e64-9be886f00667"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea11",
+                                "fieldLabel": "Descriptif"
+                            },
+                            "designerId": "ecc6c0cc-9609-4e56-95e7-c223d719e2ee"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox11",
+                                "fieldLabel": "Unicité de la réponse",
+                                "boxLabel": "Box Label"
+                            },
+                            "designerId": "5168102f-4e12-4b26-b079-af1e1565622a"
+                        },
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField8",
+                                "fieldLabel": "Date d'ouverture"
+                            },
+                            "designerId": "a1f8ddc7-bcb8-400a-bf93-17b81dcf0652"
+                        },
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField9",
+                                "fieldLabel": "Date de fin"
+                            },
+                            "designerId": "b4e88ee9-206c-4e96-8daf-0a402a50e78e"
+                        }
+                    ]
+                },
                 {
                     "type": "panel",
                     "reference": {
@@ -640,63 +816,6 @@
                                 "autoScroll": true
                             },
                             "designerId": "6ecda564-e312-4a52-b602-3d6ddac71e4b"
-                        },
-                        {
-                            "type": "form",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyForm7",
-                                "frame": true,
-                                "id": null,
-                                "style": null,
-                                "width": 300,
-                                "overflowY": null,
-                                "layout": "fit",
-                                "bodyPadding": 8,
-                                "bodyStyle": null,
-                                "collapseDirection": "right",
-                                "collapsed": false,
-                                "collapsible": true,
-                                "iconCls": "parametres",
-                                "title": "Propriétés"
-                            },
-                            "designerId": "f8b78058-8e4d-4672-bcc8-4be7cb90b33f",
-                            "cn": [
-                                {
-                                    "type": "container",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyContainer10",
-                                        "id": null,
-                                        "autoScroll": true,
-                                        "layout": "anchor"
-                                    },
-                                    "designerId": "4292de52-9042-4541-b7e6-07eaf8eb24e4"
-                                },
-                                {
-                                    "type": "hiddenfield",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyHiddenField3",
-                                        "id": null,
-                                        "fieldLabel": "Label"
-                                    },
-                                    "designerId": "6c1f4c6c-8c85-4b92-83bc-750e63e06d25"
-                                }
-                            ]
                         }
                     ]
                 },
@@ -747,8 +866,72 @@
                             "masterInstanceId": "ExtBox1-ext-gen46360"
                         }
                     ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel46",
+                        "iconCls": "monitoring",
+                        "title": "Exploitation"
+                    },
+                    "designerId": "3f7be86e-3007-4f83-9a38-ccfac07da4f7",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig32"
+                            },
+                            "designerId": "ea0dc294-beab-4c6a-bd1b-609f95386d6c"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormsInterfaceRender",
+                "fn": "onFormsInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"FormsStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "f282a07c-399f-40cc-ad73-32eda718a31d"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormsInterfaceBeforeClose",
+                "fn": "onFormsInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"FormsStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "bb0857a1-c2a9-402d-879c-fc5b3f2d1ace"
         }
     ]
 }

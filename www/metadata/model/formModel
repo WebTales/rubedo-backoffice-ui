@@ -1,0 +1,84 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "formModel",
+        "designer|userAlias": "formModel"
+    },
+    "id": "ExtBox1-ext-gen19949",
+    "designerId": "cac18e62-0bfb-4a11-be4a-49601eb16da4",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField2",
+                "name": "title",
+                "mapping": null
+            },
+            "designerId": "0cfe42e8-3ab2-4631-bc38-f9bb6abd3b2e"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField85",
+                "name": "version"
+            },
+            "designerId": "e2756e4b-b0af-4a51-b99d-2af57a600ffe"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field103",
+                "name": "id"
+            },
+            "designerId": "57bb4080-c295-42ae-9861-f6e9ceeee097"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field280",
+                "name": "workspace"
+            },
+            "designerId": "a345c870-78f5-4f73-b422-9d5e8579cfaa"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field292",
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "8af2efb6-7215-4159-8c99-90c729a03148"
+        }
+    ]
+}

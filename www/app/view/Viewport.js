@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.Viewport', {
     extend: 'Rubedo.view.ViewportPrimaire',
     renderTo: Ext.getBody(),
     requires: [
+        'Rubedo.view.newFormWindow',
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.FormsInterface',
         'Rubedo.view.DAMCreateUpdateWindow',

@@ -1,0 +1,75 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "newFormWindow",
+        "designer|userAlias": "newFormWindow",
+        "height": 103,
+        "width": 274,
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": "new_form_small",
+        "title": "Nouveau formulaire",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen31256",
+    "designerId": "02bcaee3-2fc4-4f83-8521-12359112b8ab",
+    "cn": [
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm56",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "bf09f00b-a66c-49d6-93f6-d912eac8492e",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField81",
+                        "name": "title",
+                        "fieldLabel": "Titre",
+                        "labelWidth": 40,
+                        "allowBlank": false
+                    },
+                    "designerId": "4a09526f-b5a2-4c97-be47-d4fb33b625c3"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyButton279",
+                        "id": "submitNewFormBtn",
+                        "text": "Créer ce formulaire"
+                    },
+                    "designerId": "eb8800af-bdfd-46ee-94c4-005949bfc9dc"
+                }
+            ]
+        }
+    ]
+}

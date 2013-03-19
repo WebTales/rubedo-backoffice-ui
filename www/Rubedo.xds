@@ -2100,10 +2100,35 @@
                 "app/controller/FormsController.js"
             ],
             "className": "FormsController"
+        },
+        "5ea8c03e-9398-462c-a736-687a92d65bf6": {
+            "paths": [
+                "metadata/store/FormsStore",
+                "app/store/override/FormsStore.js",
+                "app/store/FormsStore.js"
+            ],
+            "className": "FormsStore"
+        },
+        "cac18e62-0bfb-4a11-be4a-49601eb16da4": {
+            "paths": [
+                "metadata/model/formModel",
+                "app/model/override/formModel.js",
+                "app/model/formModel.js"
+            ],
+            "className": "formModel"
+        },
+        "02bcaee3-2fc4-4f83-8521-12359112b8ab": {
+            "paths": [
+                "metadata/view/newFormWindow",
+                "app/view/override/newFormWindow.js",
+                "app/view/newFormWindow.js"
+            ],
+            "className": "newFormWindow"
         }
     },
     "viewOrderMap": {
         "view": [
+            "02bcaee3-2fc4-4f83-8521-12359112b8ab",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
             "479f5d1f-27bf-4ffb-ba71-0aab8621a58c",
@@ -2273,6 +2298,7 @@
             "59694082-24d4-4519-ae8c-5fd6849d6503",
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
+            "5ea8c03e-9398-462c-a736-687a92d65bf6",
             "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
             "cc2e5f6d-9258-47d2-8829-9ef556b6d1e1",
             "c01cc863-569c-4c0c-8792-3b898fcb1ab6",
@@ -2331,6 +2357,7 @@
             "67923df0-d312-4a3c-90d6-447c7e04828e",
             "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
             "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
+            "cac18e62-0bfb-4a11-be4a-49601eb16da4",
             "3895db21-6cb0-4c47-bbdb-6733b5e4684f",
             "2a71f472-b98f-4bb3-b8eb-5ddda2b175aa",
             "8130c927-1032-4d5f-b157-d56672d37d52",

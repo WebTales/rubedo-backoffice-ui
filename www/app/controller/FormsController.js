@@ -15,5 +15,61 @@
 
 Ext.define('Rubedo.controller.FormsController', {
     extend: 'Ext.app.Controller',
-    alias: 'controller.FormsController'
+    alias: 'controller.FormsController',
+
+    onAddFormBtnClick: function(button, e, options) {
+        Ext.widget("newFormWindow").show();
+    },
+
+    onSubmitNewFormBtnClick: function(button, e, options) {
+        var me=this;
+        var form=button.up().getForm();
+        if (form.isValid()){
+            var newOne=Ext.create("Rubedo.model.formModel",form.getValues());
+            Ext.getStore("FormsStore").add(newOne);
+            Ext.getStore("FormsStore").addListener("datachanged", function(){
+                me.resetInterfaceSelect(newOne);
+            },this,{single:true});
+                button.up().up().close();
+            }
+    },
+
+    onRemoveFormBtnClick: function(button, e, options) {
+        var target = Ext.getCmp('mainFormsGrid').getSelectionModel().getLastSelected();
+        var me=this;
+        if (!Ext.isEmpty(target)) {
+            var window = Ext.widget('delConfirmZ');
+            Ext.getCmp('ViewportPrimaire').add(window);
+            window.show();
+            Ext.getCmp('delConfirmZOui').on('click', function() { 
+                Ext.getStore("FormsStore").remove(target);            
+                Ext.getCmp('delConfirmZ').close();  
+                me.resetInterfaceNoSelect();
+            });  
+
+        }
+    },
+
+    resetInterfaceSelect: function(record) {
+
+    },
+
+    resetInterfaceNoSelect: function() {
+
+    },
+
+    init: function(application) {
+        this.control({
+            "#addFormBtn": {
+                click: this.onAddFormBtnClick
+            },
+            "#submitNewFormBtn": {
+                click: this.onSubmitNewFormBtnClick
+            },
+            "#removeFormBtn": {
+                click: this.onRemoveFormBtnClick
+            }
+        });
+    }
+
 });

@@ -30,7 +30,8 @@
             "DAMModel",
             "contentsSearchModel",
             "DAMSearchModel",
-            "workspaceModel"
+            "workspaceModel",
+            "formModel"
         ],
         "stores": [
             "SitesJson",
@@ -110,7 +111,8 @@
             "GroupsComboStore",
             "ContentTypesForContent2",
             "WorkspacesComboWithAll",
-            "ContributeWorkspacesComboWithAll"
+            "ContributeWorkspacesComboWithAll",
+            "FormsStore"
         ],
         "views": [
             "MyContainer",
@@ -211,7 +213,8 @@
             "newUserWindow",
             "RHelpBtn",
             "PersoPicUploadWindow",
-            "FormsInterface"
+            "FormsInterface",
+            "newFormWindow"
         ],
         "autoCreateViewport": true,
         "name": "Rubedo",
