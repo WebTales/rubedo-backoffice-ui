@@ -26,9 +26,10 @@ Ext.define('Rubedo.controller.FormsController', {
         var form=button.up().getForm();
         if (form.isValid()){
             var newOne=Ext.create("Rubedo.model.formModel",form.getValues());
+            newOne.set("workspaces",[ACL.defaultWorkspace]);
             Ext.getStore("FormsStore").add(newOne);
             Ext.getStore("FormsStore").addListener("datachanged", function(){
-                me.resetInterfaceSelect(newOne);
+                Ext.getCmp("mainFormsGrid").getSelectionModel().select([newOne]);
             },this,{single:true});
                 button.up().up().close();
             }
@@ -50,12 +51,64 @@ Ext.define('Rubedo.controller.FormsController', {
         }
     },
 
-    resetInterfaceSelect: function(record) {
+    onMainFormsGridSelectionChange: function(tablepanel, selections, options) {
+        var me=this;
+        if (Ext.isEmpty(selections)){
+            me.resetInterfaceNoSelect();
+        } else {
+            me.resetInterfaceSelect(selections[0]);
+        }
+    },
 
+    onFormSaveBtnClick: function(button, e, options) {
+        var me=this;
+        if (Ext.getCmp("formRightsForm").getForm().isValid()){
+            if (Ext.getCmp("formPropsForm").getForm().isValid()){
+                var target = Ext.getCmp('mainFormsGrid').getSelectionModel().getLastSelected();
+                target.beginEdit();
+                target.set(Ext.getCmp("formRightsForm").getForm().getValues());
+                target.set(Ext.getCmp("formPropsForm").getForm().getValues());
+                target.endEdit();
+                Ext.getStore("FormsStore").addListener("datachanged", function(){
+                    me.resetInterfaceSelect(target);
+                },this,{single:true});
+                } else {
+                    Ext.Msg.alert("Erreur", "Propriétés du formulaire invalides");
+                    Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(0);
+                }
+            } else {
+                Ext.Msg.alert("Erreur", "Paramétrage des droits invalide");
+                Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(2);
+            }
+    },
+
+    resetInterfaceSelect: function(record) {
+        Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
+        Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
+        Ext.getCmp("FormsCenterZone").enable();
+        Ext.Array.forEach(Ext.getCmp("FormsInterface").getDockedComponent("contextBar").query("buttongroup"), function(thing){thing.enable();});
+        Ext.getCmp("removeFormBtn").enable();
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").removeAll();
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Formulaires <b> > </b>", iconCls:"form_small"}));
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("title"), iconCls:"form_small"}));
+        var metaBox = Ext.getCmp("FormsInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+        var values= record.getData();
+        values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
+        values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+        metaBox.update(values);
+        metaBox.show();
     },
 
     resetInterfaceNoSelect: function() {
-
+        Ext.getCmp("formPropsForm").getForm().reset();
+        Ext.getCmp("formRightsForm").getForm().reset();
+        Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(0);
+        Ext.getCmp("FormsCenterZone").disable();
+        Ext.Array.forEach(Ext.getCmp("FormsInterface").getDockedComponent("contextBar").query("buttongroup"), function(thing){thing.disable();});
+        Ext.getCmp("removeFormBtn").disable();
+        Ext.getCmp("FormsInterface").getDockedComponent("barreMeta").getComponent("boiteBarreMeta").hide();
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").removeAll();
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Formulaires", iconCls:"form_small"}));
     },
 
     init: function(application) {
@@ -68,6 +121,12 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#removeFormBtn": {
                 click: this.onRemoveFormBtnClick
+            },
+            "#mainFormsGrid": {
+                selectionchange: this.onMainFormsGridSelectionChange
+            },
+            "#formSaveBtn": {
+                click: this.onFormSaveBtnClick
             }
         });
     }

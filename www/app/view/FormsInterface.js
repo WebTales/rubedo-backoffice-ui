@@ -53,7 +53,14 @@ Ext.define('Rubedo.view.FormsInterface', {
                     flex: 1,
                     dock: 'top',
                     height: 30,
-                    itemId: 'breadcrumb'
+                    itemId: 'breadcrumb',
+                    items: [
+                        {
+                            xtype: 'button',
+                            iconCls: 'form_small',
+                            text: 'Formulaires'
+                        }
+                    ]
                 },
                 {
                     xtype: 'toolbar',
@@ -169,6 +176,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.damTypes',
+                                    id: 'formSaveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
                                     scale: 'large',
@@ -179,35 +187,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                                             scope: me
                                         }
                                     }
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'buttongroup',
-                            disabled: true,
-                            hidden: false,
-                            headerPosition: 'bottom',
-                            title: 'Fichier',
-                            columns: 4,
-                            layout: {
-                                columns: 2,
-                                type: 'table'
-                            },
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    iconAlign: 'top',
-                                    iconCls: 'application_down_big',
-                                    scale: 'large',
-                                    text: 'Exporter'
-                                },
-                                {
-                                    xtype: 'button',
-                                    ACL: 'write.ui.damTypes',
-                                    iconAlign: 'top',
-                                    iconCls: 'application_up_big',
-                                    scale: 'large',
-                                    text: 'Importer'
                                 }
                             ]
                         },
@@ -244,8 +223,9 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'container',
                             itemId: 'boiteBarreMeta',
+                            margin: '0 0 0 20',
                             tpl: [
-                                '<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
+                                '<b>{title}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
                             ]
                         }
                     ]
@@ -281,10 +261,10 @@ Ext.define('Rubedo.view.FormsInterface', {
                     flex: 1,
                     disabled: true,
                     id: 'FormsCenterZone',
-                    activeTab: 1,
                     items: [
                         {
                             xtype: 'form',
+                            id: 'formPropsForm',
                             bodyPadding: 10,
                             iconCls: 'parametres',
                             title: 'Propriétés',
@@ -292,28 +272,42 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
-                                    fieldLabel: 'Titre du formulaire'
+                                    name: 'title',
+                                    fieldLabel: 'Titre du formulaire',
+                                    labelWidth: 160,
+                                    allowBlank: false
                                 },
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
-                                    fieldLabel: 'Descriptif'
+                                    name: 'description',
+                                    fieldLabel: 'Descriptif',
+                                    labelWidth: 160
                                 },
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    name: 'uniqueAnswer',
                                     fieldLabel: 'Unicité de la réponse',
-                                    boxLabel: 'Box Label'
+                                    labelWidth: 160,
+                                    boxLabel: '',
+                                    inputValue: 'true'
                                 },
                                 {
                                     xtype: 'datefield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Date d\'ouverture'
+                                    anchor: '50%',
+                                    margin: '0 10 0 0',
+                                    style: '{float:left;}',
+                                    name: 'openingDate',
+                                    fieldLabel: 'Date d\'ouverture',
+                                    labelWidth: 160
                                 },
                                 {
                                     xtype: 'datefield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Date de fin'
+                                    anchor: '50%',
+                                    name: 'closingDate',
+                                    fieldLabel: 'Date de fermeture',
+                                    labelWidth: 160
                                 }
                             ]
                         },
@@ -338,6 +332,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'form',
+                            id: 'formRightsForm',
                             bodyPadding: 10,
                             iconCls: 'user',
                             title: 'Droits',

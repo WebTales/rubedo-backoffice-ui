@@ -28,12 +28,34 @@ Ext.define('Rubedo.model.formModel', {
             name: 'id'
         },
         {
-            name: 'workspace'
+            name: 'workspaces'
         },
         {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'description'
+        },
+        {
+            name: 'uniqueAnswer'
+        },
+        {
+            name: 'openingDate'
+        },
+        {
+            name: 'closingDate'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
+        },
+        {
+            name: 'createUser',
+            mapping: 'createUser.fullName',
+            persist: false
         }
     ]
 });

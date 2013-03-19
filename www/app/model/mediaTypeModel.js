@@ -58,6 +58,11 @@ Ext.define('Rubedo.model.mediaTypeModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'lastUpdateTime',
+            dateFormat: 'timestamp',
+            type: 'date'
         }
     ]
 });

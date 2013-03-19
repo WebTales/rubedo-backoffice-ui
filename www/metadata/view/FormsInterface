@@ -62,7 +62,24 @@
                 "height": 30,
                 "itemId": "breadcrumb"
             },
-            "designerId": "76b21c64-6b72-42f6-9627-14f62d09fd3f"
+            "designerId": "76b21c64-6b72-42f6-9627-14f62d09fd3f",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton282",
+                        "iconCls": "form_small",
+                        "text": "Formulaires"
+                    },
+                    "designerId": "473b68ec-b6bf-4c1b-8a24-4a64ed56a9f4"
+                }
+            ]
         },
         {
             "type": "toolbar",
@@ -339,7 +356,7 @@
                             "userConfig": {
                                 "ACL": "write.ui.damTypes",
                                 "designer|userClassName": "MyButton13",
-                                "id": null,
+                                "id": "formSaveBtn",
                                 "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
@@ -378,71 +395,6 @@
                                         "scope": "me"
                                     },
                                     "designerId": "60393c41-1416-4d25-8709-1f4af6a1911d"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "buttongroup",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
-                        "disabled": true,
-                        "hidden": false,
-                        "headerPosition": "bottom",
-                        "title": "Fichier",
-                        "columns": 4
-                    },
-                    "designerId": "ae14827a-7f94-4fd5-b0c0-b4cd2a6220cd",
-                    "cn": [
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton62",
-                                "id": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "application_down_big",
-                                "scale": "large",
-                                "text": "Exporter"
-                            },
-                            "designerId": "70559ce6-e9b8-4cb3-b5a4-31b68adb7d59"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "ACL": "write.ui.damTypes",
-                                "designer|userClassName": "MyButton63",
-                                "id": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "application_up_big",
-                                "scale": "large",
-                                "text": "Importer"
-                            },
-                            "designerId": "33497a66-75b4-4c28-8ddc-28d123ffa022",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "ACL",
-                                    "type": "string"
                                 }
                             ]
                         }
@@ -552,7 +504,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "margin": "0 0 0 20"
                     },
                     "designerId": "0ae30472-9498-4230-ba69-697e7ad66410",
                     "cn": [
@@ -566,7 +519,7 @@
                             "userConfig": {
                                 "designer|userClassName": "tpl",
                                 "implHandler": [
-                                    "<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
+                                    "<b>{title}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],
                                 "designer|displayName": "tpl"
                             },
@@ -665,7 +618,7 @@
                 "disabled": true,
                 "id": "FormsCenterZone",
                 "iconCls": null,
-                "activeTab": 1
+                "activeTab": null
             },
             "designerId": "61c8ea8c-580a-4cae-8dce-9d8708945d6a",
             "cn": [
@@ -678,6 +631,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyForm57",
+                        "id": "formPropsForm",
                         "bodyPadding": 10,
                         "iconCls": "parametres",
                         "title": "Propriétés"
@@ -706,7 +660,10 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField82",
-                                "fieldLabel": "Titre du formulaire"
+                                "name": "title",
+                                "fieldLabel": "Titre du formulaire",
+                                "labelWidth": 160,
+                                "allowBlank": false
                             },
                             "designerId": "68534561-f06c-4bb9-9e64-9be886f00667"
                         },
@@ -720,7 +677,9 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextArea11",
-                                "fieldLabel": "Descriptif"
+                                "name": "description",
+                                "fieldLabel": "Descriptif",
+                                "labelWidth": 160
                             },
                             "designerId": "ecc6c0cc-9609-4e56-95e7-c223d719e2ee"
                         },
@@ -734,8 +693,11 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox11",
+                                "name": "uniqueAnswer",
                                 "fieldLabel": "Unicité de la réponse",
-                                "boxLabel": "Box Label"
+                                "labelWidth": 160,
+                                "boxLabel": "",
+                                "inputValue": "true"
                             },
                             "designerId": "5168102f-4e12-4b26-b079-af1e1565622a"
                         },
@@ -747,9 +709,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "layout|anchor": "50%",
                                 "designer|userClassName": "MyDateField8",
-                                "fieldLabel": "Date d'ouverture"
+                                "margin": "0 10 0 0",
+                                "style": "{float:left;}",
+                                "name": "openingDate",
+                                "fieldLabel": "Date d'ouverture",
+                                "labelWidth": 160
+                            },
+                            "configAlternates": {
+                                "style": "string"
                             },
                             "designerId": "a1f8ddc7-bcb8-400a-bf93-17b81dcf0652"
                         },
@@ -761,9 +730,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "layout|anchor": "50%",
                                 "designer|userClassName": "MyDateField9",
-                                "fieldLabel": "Date de fin"
+                                "margin": null,
+                                "name": "closingDate",
+                                "fieldLabel": "Date de fermeture",
+                                "labelWidth": 160
                             },
                             "designerId": "b4e88ee9-206c-4e96-8daf-0a402a50e78e"
                         }
@@ -828,7 +800,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyForm45",
-                        "id": null,
+                        "id": "formRightsForm",
                         "bodyPadding": 10,
                         "iconCls": "user",
                         "title": "Droits"

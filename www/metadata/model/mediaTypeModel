@@ -162,6 +162,21 @@
                 "type": "boolean"
             },
             "designerId": "975e573d-1ec0-4302-8cc8-9c0414301399"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field92",
+                "name": "lastUpdateTime",
+                "dateFormat": "timestamp",
+                "type": "date"
+            },
+            "designerId": "52471988-698f-4b6f-812a-3b0393eee99b"
         }
     ]
 }

@@ -47,9 +47,10 @@
                     "var form=button.up().getForm();\r",
                     "if (form.isValid()){\r",
                     "    var newOne=Ext.create(\"Rubedo.model.formModel\",form.getValues());\r",
+                    "    newOne.set(\"workspaces\",[ACL.defaultWorkspace]);\r",
                     "    Ext.getStore(\"FormsStore\").add(newOne);\r",
                     "    Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
-                    "        me.resetInterfaceSelect(newOne);\r",
+                    "        Ext.getCmp(\"mainFormsGrid\").getSelectionModel().select([newOne]);\r",
                     "    },this,{single:true});\r",
                     "    button.up().up().close();\r",
                     "}"
@@ -75,7 +76,20 @@
                     "record"
                 ],
                 "implHandler": [
-                    ""
+                    "Ext.getCmp(\"formPropsForm\").getForm().setValues(record.getData());\r",
+                    "Ext.getCmp(\"formRightsForm\").getForm().setValues(record.getData());\r",
+                    "Ext.getCmp(\"FormsCenterZone\").enable();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"FormsInterface\").getDockedComponent(\"contextBar\").query(\"buttongroup\"), function(thing){thing.enable();});\r",
+                    "Ext.getCmp(\"removeFormBtn\").enable();\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires <b> > </b>\", iconCls:\"form_small\"}));\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"title\"), iconCls:\"form_small\"}));\r",
+                    "var metaBox = Ext.getCmp(\"FormsInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var values= record.getData();\r",
+                    "values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
+                    "values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
+                    "metaBox.update(values);\r",
+                    "metaBox.show();"
                 ]
             },
             "designerId": "b24e3b9b-de2d-416d-b923-d047ea4b8202"
@@ -91,7 +105,15 @@
                 "designer|userClassName": "resetInterfaceNoSelect",
                 "fn": "resetInterfaceNoSelect",
                 "implHandler": [
-                    ""
+                    "Ext.getCmp(\"formPropsForm\").getForm().reset();\r",
+                    "Ext.getCmp(\"formRightsForm\").getForm().reset();\r",
+                    "Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(0);\r",
+                    "Ext.getCmp(\"FormsCenterZone\").disable();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"FormsInterface\").getDockedComponent(\"contextBar\").query(\"buttongroup\"), function(thing){thing.disable();});\r",
+                    "Ext.getCmp(\"removeFormBtn\").disable();\r",
+                    "Ext.getCmp(\"FormsInterface\").getDockedComponent(\"barreMeta\").getComponent(\"boiteBarreMeta\").hide();\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires\", iconCls:\"form_small\"}));"
                 ]
             },
             "designerId": "67493c81-5c85-4775-a117-e1caf6222371"
@@ -127,6 +149,69 @@
                 "designer|controlQuery": "#removeFormBtn"
             },
             "designerId": "cc253274-c5e7-43ef-b47a-b6a7d04ea6f4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainFormsGridSelectionChange",
+                "fn": "onMainFormsGridSelectionChange",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.isEmpty(selections)){\r",
+                    "    me.resetInterfaceNoSelect();\r",
+                    "} else {\r",
+                    "    me.resetInterfaceSelect(selections[0]);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainFormsGrid"
+            },
+            "designerId": "7cb522f6-be96-4f4f-8a67-cd5d5f9a4c94"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormSaveBtnClick",
+                "fn": "onFormSaveBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.getCmp(\"formRightsForm\").getForm().isValid()){\r",
+                    "    if (Ext.getCmp(\"formPropsForm\").getForm().isValid()){\r",
+                    "        var target = Ext.getCmp('mainFormsGrid').getSelectionModel().getLastSelected();\r",
+                    "        target.beginEdit();\r",
+                    "        target.set(Ext.getCmp(\"formRightsForm\").getForm().getValues());\r",
+                    "        target.set(Ext.getCmp(\"formPropsForm\").getForm().getValues());\r",
+                    "        target.endEdit();\r",
+                    "        Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
+                    "                me.resetInterfaceSelect(target);\r",
+                    "            },this,{single:true});\r",
+                    "    } else {\r",
+                    "        Ext.Msg.alert(\"Erreur\", \"Propriétés du formulaire invalides\");\r",
+                    "        Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(0);\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    Ext.Msg.alert(\"Erreur\", \"Paramétrage des droits invalide\");\r",
+                    "    Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(2);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formSaveBtn"
+            },
+            "designerId": "d793d0db-2a9d-4691-814f-39f86b9c5bbc"
         }
     ]
 }
