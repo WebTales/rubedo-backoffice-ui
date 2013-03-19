@@ -1,0 +1,18 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "FormFieldTypesStore",
+        "designer|userAlias": "FormFieldTypesStore",
+        "autoLoad": true,
+        "storeId": "FormFieldTypesStore",
+        "model": "formFieldTypeModel",
+        "data": "[\r\n    {\r\n        \"id\":\"51489f8ac0e051b81a000001\",\r\n        \"name\":\"Page\",\r\n        \"fType\":\"page\",\r\n        \"description\":\"<p>à écrire</p>\",\r\n        \"fConfig\":{\r\n            \"label\":\"page\"\r\n        }\r\n    },\r\n    {\r\n        \"id\":\"51489f8ac0e051b81a000002\",\r\n        \"name\":\"Section\",\r\n        \"fType\":\"section\",\r\n        \"description\":\"<p>à écrire</p>\",\r\n        \"fConfig\":{\r\n            \"label\":\"section\"\r\n        }\r\n        \r\n    }\r\n]"
+    },
+    "id": "ExtBox1-ext-gen75352",
+    "designerId": "fc88ff8b-4055-49a7-9239-9574a3aef04e"
+}

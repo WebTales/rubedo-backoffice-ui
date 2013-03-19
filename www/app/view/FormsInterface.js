@@ -92,6 +92,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.damTypes',
                             disabled: true,
+                            id: 'formElementsEditBtnGroup',
                             headerPosition: 'bottom',
                             title: 'Edition',
                             columns: 4,
@@ -102,14 +103,17 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'formElementAddBtn',
                                     iconAlign: 'top',
                                     iconCls: 'add_big',
                                     scale: 'large',
-                                    text: 'Nouveau champ'
+                                    text: 'Nouvel élément'
                                 },
                                 {
                                     xtype: 'button',
                                     disabled: true,
+                                    id: 'formElementMoveUpBtn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
                                     scale: 'large',
@@ -118,6 +122,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     disabled: true,
+                                    id: 'formElementMoveDownBtn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
@@ -126,10 +131,11 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     disabled: true,
+                                    id: 'formElementRemoveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',
                                     scale: 'large',
-                                    text: 'Supprimer champ'
+                                    text: 'Supprimer l\'élément'
                                 }
                             ]
                         },

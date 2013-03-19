@@ -47,7 +47,8 @@ Ext.application({
         'contentsSearchModel',
         'DAMSearchModel',
         'workspaceModel',
-        'formModel'
+        'formModel',
+        'formFieldTypeModel'
     ],
     stores: [
         'SitesJson',
@@ -128,7 +129,8 @@ Ext.application({
         'ContentTypesForContent2',
         'WorkspacesComboWithAll',
         'ContributeWorkspacesComboWithAll',
-        'FormsStore'
+        'FormsStore',
+        'FormFieldTypesStore'
     ],
     views: [
         'MyContainer',

@@ -2124,6 +2124,22 @@
                 "app/view/newFormWindow.js"
             ],
             "className": "newFormWindow"
+        },
+        "fc88ff8b-4055-49a7-9239-9574a3aef04e": {
+            "paths": [
+                "metadata/store/FormFieldTypesStore",
+                "app/store/override/FormFieldTypesStore.js",
+                "app/store/FormFieldTypesStore.js"
+            ],
+            "className": "FormFieldTypesStore"
+        },
+        "b980e128-6e56-43e6-99d6-b9312789f61e": {
+            "paths": [
+                "metadata/model/formFieldTypeModel",
+                "app/model/override/formFieldTypeModel.js",
+                "app/model/formFieldTypeModel.js"
+            ],
+            "className": "formFieldTypeModel"
         }
     },
     "viewOrderMap": {
@@ -2328,7 +2344,8 @@
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
-            "fc686eab-6027-4b3d-a63c-a230e0bf79ff"
+            "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
+            "fc88ff8b-4055-49a7-9239-9574a3aef04e"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -2352,6 +2369,7 @@
             "82778ea5-36d1-422d-993a-6b91ab641629"
         ],
         "model": [
+            "b980e128-6e56-43e6-99d6-b9312789f61e",
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
             "3ca8966a-5026-48a3-8b37-fd962082f613",
             "67923df0-d312-4a3c-90d6-447c7e04828e",

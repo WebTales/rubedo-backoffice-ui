@@ -169,6 +169,7 @@
                         "container|columns": 2,
                         "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
+                        "id": "formElementsEditBtnGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 4
@@ -191,11 +192,12 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyButton112",
-                                "id": null,
+                                "disabled": true,
+                                "id": "formElementAddBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
                                 "scale": "large",
-                                "text": "Nouveau champ"
+                                "text": "Nouvel élément"
                             },
                             "designerId": "10790716-813d-4f24-90fe-3490ff6d2489"
                         },
@@ -209,7 +211,7 @@
                             "userConfig": {
                                 "designer|userClassName": "MyButton113",
                                 "disabled": true,
-                                "id": null,
+                                "id": "formElementMoveUpBtn",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
                                 "scale": "large",
@@ -227,7 +229,7 @@
                             "userConfig": {
                                 "designer|userClassName": "MyButton114",
                                 "disabled": true,
-                                "id": null,
+                                "id": "formElementMoveDownBtn",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
                                 "scale": "large",
@@ -245,11 +247,11 @@
                             "userConfig": {
                                 "designer|userClassName": "MyButton115",
                                 "disabled": true,
-                                "id": null,
+                                "id": "formElementRemoveBtn",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "scale": "large",
-                                "text": "Supprimer champ"
+                                "text": "Supprimer l'élément"
                             },
                             "designerId": "9fd424d8-3d9e-4417-b704-1ef208c905dc"
                         }

@@ -31,7 +31,8 @@
             "contentsSearchModel",
             "DAMSearchModel",
             "workspaceModel",
-            "formModel"
+            "formModel",
+            "formFieldTypeModel"
         ],
         "stores": [
             "SitesJson",
@@ -112,7 +113,8 @@
             "ContentTypesForContent2",
             "WorkspacesComboWithAll",
             "ContributeWorkspacesComboWithAll",
-            "FormsStore"
+            "FormsStore",
+            "FormFieldTypesStore"
         ],
         "views": [
             "MyContainer",
