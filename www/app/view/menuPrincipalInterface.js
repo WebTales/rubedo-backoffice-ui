@@ -245,6 +245,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             itemId: 'mediaTypesInterface',
             iconCls: 'mediaTypes',
             text: 'Types de médias'
+        },
+        {
+            xtype: 'menuitem',
+            ACL: 'read.ui.forms',
+            favoriteIcon: 'note.edit.png',
+            itemId: 'FormsInterface',
+            iconCls: 'form_small',
+            text: 'Formulaires'
         }
         ]);
     },

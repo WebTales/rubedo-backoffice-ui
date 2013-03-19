@@ -226,7 +226,8 @@ Ext.application({
         'ImageFieldComponentSmall',
         'newUserWindow',
         'RHelpBtn',
-        'PersoPicUploadWindow'
+        'PersoPicUploadWindow',
+        'FormsInterface'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
@@ -247,6 +248,7 @@ Ext.application({
         'MediaTypesController',
         'DAMController',
         'WorkspacesController',
-        'LocalisationController'
+        'LocalisationController',
+        'FormsController'
     ]
 });

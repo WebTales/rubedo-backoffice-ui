@@ -74,7 +74,9 @@ Ext.define('Rubedo.controller.ACLController', {
                 "write.ui.workflows":false,
                 "exe.ui.elasticSearch":false,
                 "read.ui.dependantTypes":false,
-                "write.ui.dependantTypes":false
+                "write.ui.dependantTypes":false,
+                "read.ui.forms":false,
+                "write.ui.forms":false
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){

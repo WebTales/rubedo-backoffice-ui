@@ -2084,12 +2084,29 @@
                 "app/view/PersoPicUploadWindow.js"
             ],
             "className": "PersoPicUploadWindow"
+        },
+        "479f5d1f-27bf-4ffb-ba71-0aab8621a58c": {
+            "paths": [
+                "metadata/view/FormsInterface",
+                "app/view/override/FormsInterface.js",
+                "app/view/FormsInterface.js"
+            ],
+            "className": "FormsInterface"
+        },
+        "82778ea5-36d1-422d-993a-6b91ab641629": {
+            "paths": [
+                "metadata/controller/FormsController",
+                "app/controller/override/FormsController.js",
+                "app/controller/FormsController.js"
+            ],
+            "className": "FormsController"
         }
     },
     "viewOrderMap": {
         "view": [
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "479f5d1f-27bf-4ffb-ba71-0aab8621a58c",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
@@ -2305,7 +2322,8 @@
             "2a85a03b-de9d-4abc-80a4-82114d4267cf",
             "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
             "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
-            "765f93a9-83e7-4405-aaaa-740265c87f51"
+            "765f93a9-83e7-4405-aaaa-740265c87f51",
+            "82778ea5-36d1-422d-993a-6b91ab641629"
         ],
         "model": [
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
