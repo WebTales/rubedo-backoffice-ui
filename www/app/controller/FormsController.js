@@ -84,13 +84,13 @@ Ext.define('Rubedo.controller.FormsController', {
     },
 
     selectionEvents: function(abstractcomponent, options) {
-        if (abstractcomponent.id=="FormsEditContainer"){
+        if (!abstractcomponent.isXType("RFormPage")){
             abstractcomponent.getEl().on("mouseover", function(e){
-                abstractcomponent.setBorder(4);
+                abstractcomponent.addBodyCls("contrastFBorder");
                 e.stopEvent();
             });
             abstractcomponent.getEl().on("mouseout", function(e){
-                abstractcomponent.setBorder(2);
+                abstractcomponent.removeBodyCls("contrastFBorder");
                 e.stopEvent();
             });
         } else {
@@ -121,8 +121,8 @@ Ext.define('Rubedo.controller.FormsController', {
     onFormSelectedElementFieldChange: function(field, newValue, oldValue, options) {
         var previousOne = Ext.getCmp(oldValue);
         if (!Ext.isEmpty(previousOne)){
-            if (oldValue=="FormsEditContainer"){
-                previousOne.removeBodyCls("selectedelement");
+            if (!previousOne.isXType("RFormPage")){
+                previousOne.removeBodyCls("selectedFElement");
             } else {
                 previousOne.setIconCls();
             }
@@ -132,19 +132,21 @@ Ext.define('Rubedo.controller.FormsController', {
         if (!Ext.isEmpty(newOne)){
             newOne.getEl().frame(MyPrefData.themeColor);
             if (newValue=="FormsEditContainer"){
-                newOne.addBodyCls("selectedelement");
+                newOne.addBodyCls("selectedFElement");
                 Ext.getCmp("formAddPageBtn").enable();
             } else {
-                newOne.setIconCls('editBloc');
+
                 if (newOne.isXType("RFormPage")){
                     Ext.getCmp("formElementAddBtn").enable();
                     Ext.getCmp("formElementMoveUpBtn").enable();
                     Ext.getCmp("formElementMoveDownBtn").enable();
                     Ext.getCmp("formElementRemoveBtn").enable();
+                    newOne.setIconCls('editBloc');
                 } else if (newOne.isXType("RFormField")){
                     Ext.getCmp("formElementMoveUpBtn").enable();
                     Ext.getCmp("formElementMoveDownBtn").enable();
                     Ext.getCmp("formElementRemoveBtn").enable();
+                    newOne.addBodyCls("selectedFElement");
                 }
             }
         }

@@ -335,8 +335,10 @@ Ext.define('Rubedo.view.FormsInterface', {
                             xtype: 'panel',
                             floating: false,
                             id: 'FormsEditor',
-                            autoScroll: true,
-                            bodyPadding: 10,
+                            autoScroll: false,
+                            layout: {
+                                type: 'fit'
+                            },
                             iconCls: 'edit',
                             title: 'Edition',
                             items: [
@@ -344,7 +346,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     xtype: 'panel',
                                     id: 'FormsEditContainer',
                                     minHeight: 100,
-                                    bodyCls: 'contrastCBorder',
+                                    autoScroll: true,
                                     bodyPadding: 10
                                 }
                             ]

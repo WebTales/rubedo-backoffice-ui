@@ -17,28 +17,19 @@ Ext.define('Rubedo.view.RFormField', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.RFormField',
 
-    frame: true,
+    frame: false,
     margin: '0 0 10 0',
     minHeight: 50,
     layout: {
         type: 'anchor'
     },
-    bodyBorder: false,
+    bodyCls: 'noBordered',
     bodyPadding: 10,
-    title: 'My Panel',
 
     initComponent: function() {
         var me = this;
 
         Ext.applyIf(me, {
-            tools: [
-                {
-                    xtype: 'tool',
-                    itemId: 'formPropsTool',
-                    tooltip: 'Propriétés',
-                    type: 'gear'
-                }
-            ],
             listeners: {
                 afterrender: {
                     fn: me.onPanelAfterRender,
@@ -56,11 +47,12 @@ Ext.define('Rubedo.view.RFormField', {
 
     sync: function() {
         var me=this;
-        me.setTitle(me.itemConfig.label);
         me.removeAll();
         if (me.itemConfig.fType=="openQuestion"){
             var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
             previewField.anchor = "100%";
+            previewField.labelWidth=120;
+            previewField.fieldLabel=me.itemConfig.label;
             if (!Ext.isEmpty(me.itemConfig.tooltip)){
                 previewField.RTip=me.itemConfig.tooltip;
             }

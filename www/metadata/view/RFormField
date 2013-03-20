@@ -8,34 +8,22 @@
     "userConfig": {
         "designer|userClassName": "RFormField",
         "designer|userAlias": "RFormField",
-        "frame": true,
+        "border": null,
+        "frame": false,
         "height": null,
         "margin": "0 0 10 0",
         "minHeight": 50,
         "width": null,
         "layout": "anchor",
-        "bodyBorder": false,
+        "bodyBorder": null,
+        "bodyCls": "noBordered",
         "bodyPadding": 10,
-        "title": "My Panel"
+        "header": null,
+        "title": null
     },
     "id": "ExtBox1-ext-gen15640",
     "designerId": "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7",
     "cn": [
-        {
-            "type": "tool",
-            "reference": {
-                "name": "tools",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyTool16",
-                "itemId": "formPropsTool",
-                "tooltip": "Propriétés",
-                "type": "gear"
-            },
-            "designerId": "a8a10320-13c4-47b9-b413-9bcfb255a3af"
-        },
         {
             "type": "basicfunction",
             "reference": {
@@ -48,11 +36,12 @@
                 "fn": "sync",
                 "implHandler": [
                     "var me=this;\r",
-                    "me.setTitle(me.itemConfig.label);\r",
                     "me.removeAll();\r",
                     "if (me.itemConfig.fType==\"openQuestion\"){\r",
                     "    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
                     "    previewField.anchor = \"100%\";\r",
+                    "    previewField.labelWidth=120;\r",
+                    "    previewField.fieldLabel=me.itemConfig.label;\r",
                     "    if (!Ext.isEmpty(me.itemConfig.tooltip)){\r",
                     "        previewField.RTip=me.itemConfig.tooltip;\r",
                     "    }\r",

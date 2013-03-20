@@ -9,6 +9,19 @@ img.x-tree-icon{
 border-color:#0086C9 !important;
 border-width:4px !important; 
 }
+.selectedFElement{
+border-color:#0086C9 !important;
+border-width:4px !important; 
+border-style:dotted !important;
+}
+.noBordered{
+border-width:0px; 
+}
+.contrastFBorder{
+border-color:#666666;
+border-width:4px; 
+border-style:dotted !important;
+}
 .mainColumn{
 background:#E5F6FF !important;
 }
