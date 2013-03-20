@@ -1,0 +1,69 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RFormPage",
+        "designer|userAlias": "RFormPage",
+        "frame": true,
+        "height": 250,
+        "width": 400,
+        "title": "My Panel"
+    },
+    "id": "ExtBox1-ext-gen15444",
+    "designerId": "ea32a3c5-626e-450a-9bd5-3f3e40ac5d5d",
+    "cn": [
+        {
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTool16",
+                "itemId": "formPropsTool",
+                "tooltip": "Propriétés",
+                "type": "gear"
+            },
+            "designerId": "feb3cfd2-fa59-4ee1-baee-f043e44b762f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sync",
+                "fn": "sync",
+                "implHandler": [
+                    "this.setTitle(this.itemConfig.label);"
+                ]
+            },
+            "designerId": "e014bd9b-4889-4e50-82cb-475207de1913"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPanelAfterRender",
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "this.sync();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "474dc602-7edb-42a8-b1bb-5c8c36fcc180"
+        }
+    ]
+}

@@ -172,7 +172,7 @@
                         "id": "formElementsEditBtnGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
-                        "columns": 4
+                        "columns": 5
                     },
                     "designerId": "7a5597a6-3eae-439a-abc4-6d93c3a760a4",
                     "customConfigs": [
@@ -183,6 +183,23 @@
                         }
                     ],
                     "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton285",
+                                "id": "formAddPageBtn",
+                                "iconAlign": "top",
+                                "iconCls": "page_add_big",
+                                "scale": "large",
+                                "text": "Nouvelle page"
+                            },
+                            "designerId": "6f04717d-3978-4a9d-a873-3dec1fd3796f"
+                        },
                         {
                             "type": "button",
                             "reference": {
@@ -440,6 +457,21 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "hiddenfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyHiddenField13",
+                        "id": "formSelectedElementField",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "a9cc29fa-b505-42fb-b21b-4e73e1844566"
                 }
             ]
         },
@@ -752,11 +784,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
-                        "container|align": "stretch",
                         "designer|userClassName": "MyPanel4",
                         "floating": false,
-                        "autoScroll": false,
-                        "layout": "hbox",
+                        "id": "FormsEditor",
+                        "padding": null,
+                        "autoScroll": true,
+                        "bodyPadding": 10,
                         "iconCls": "edit",
                         "title": "Edition"
                     },
@@ -776,18 +809,36 @@
                             "designerId": "2a845286-0e64-4f04-8382-d1f00261d534"
                         },
                         {
-                            "type": "container",
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "designer|userClassName": "MyToolbar72",
+                                "height": 40
+                            },
+                            "designerId": "062b97b0-bb5d-4c98-bef5-408f578e7ad7"
+                        },
+                        {
+                            "type": "panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "designer|userClassName": "MyContainer4",
-                                "id": "MTEditContainer",
+                                "container|align": "stretch",
+                                "designer|userClassName": "MyPanel50",
+                                "id": "FormsEditContainer",
+                                "minHeight": 100,
                                 "width": null,
-                                "autoScroll": true
+                                "autoScroll": null,
+                                "layout": "vbox",
+                                "bodyCls": "contrastCBorder",
+                                "bodyPadding": 10
                             },
                             "designerId": "6ecda564-e312-4a52-b602-3d6ddac71e4b"
                         }

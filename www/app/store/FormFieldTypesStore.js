@@ -30,21 +30,16 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
             model: 'Rubedo.model.formFieldTypeModel',
             data: [
                 {
-                    id: '51489f8ac0e051b81a000001',
-                    name: 'Page',
-                    fType: 'page',
-                    description: '<p>à écrire</p>',
-                    fConfig: {
-                        label: 'page'
-                    }
-                },
-                {
                     id: '51489f8ac0e051b81a000002',
-                    name: 'Section',
-                    fType: 'section',
+                    type: 'Question ouverte',
+                    fType: 'openQuestion',
                     description: '<p>à écrire</p>',
                     fConfig: {
-                        label: 'section'
+                        label: 'Question ouverte',
+                        fieldType: 'textfield',
+                        fieldConfig: {
+                            allowBlank: true
+                        }
                     }
                 }
             ]

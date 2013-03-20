@@ -95,12 +95,20 @@ Ext.define('Rubedo.view.FormsInterface', {
                             id: 'formElementsEditBtnGroup',
                             headerPosition: 'bottom',
                             title: 'Edition',
-                            columns: 4,
+                            columns: 5,
                             layout: {
                                 columns: 2,
                                 type: 'table'
                             },
                             items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'formAddPageBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'page_add_big',
+                                    scale: 'large',
+                                    text: 'Nouvelle page'
+                                },
                                 {
                                     xtype: 'button',
                                     disabled: true,
@@ -205,6 +213,11 @@ Ext.define('Rubedo.view.FormsInterface', {
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''
+                        },
+                        {
+                            xtype: 'hiddenfield',
+                            id: 'formSelectedElementField',
+                            fieldLabel: 'Label'
                         }
                     ]
                 },
@@ -320,19 +333,29 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'panel',
                             floating: false,
-                            autoScroll: false,
-                            layout: {
-                                align: 'stretch',
-                                type: 'hbox'
-                            },
+                            id: 'FormsEditor',
+                            autoScroll: true,
+                            bodyPadding: 10,
                             iconCls: 'edit',
                             title: 'Edition',
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    height: 40
+                                }
+                            ],
                             items: [
                                 {
-                                    xtype: 'container',
-                                    flex: 1,
-                                    id: 'MTEditContainer',
-                                    autoScroll: true
+                                    xtype: 'panel',
+                                    id: 'FormsEditContainer',
+                                    minHeight: 100,
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
+                                    bodyCls: 'contrastCBorder',
+                                    bodyPadding: 10
                                 }
                             ]
                         },

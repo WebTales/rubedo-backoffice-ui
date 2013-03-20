@@ -1,0 +1,183 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "addFormFieldWindow",
+        "designer|userAlias": "addFormFieldWindow",
+        "draggable": false,
+        "height": 300,
+        "id": "addFormFieldWindow",
+        "width": 500,
+        "resizable": false,
+        "layout": "hbox",
+        "title": "Ajouter un bloc",
+        "constrainHeader": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen8526",
+    "designerId": "304ad092-9c78-4ed0-8170-c2c2b07738e2",
+    "cn": [
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5,
+                "designer|userClassName": "MyGridPanel8",
+                "id": "formFieldSelectGrid",
+                "title": "",
+                "store": "FormFieldTypesStore"
+            },
+            "designerId": "6ee0fead-abc6-4969-96f9-e54f3dfccc4f",
+            "cn": [
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView6"
+                    },
+                    "designerId": "337c7caf-d055-42f1-818f-a8d6a57e3815"
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn15",
+                        "dataIndex": "type",
+                        "flex": 1,
+                        "text": "Type"
+                    },
+                    "designerId": "5ae5df94-153d-409f-bc9b-4602e6c4d50c"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFormFieldSelectGridSelectionChange",
+                        "fn": "onFormFieldSelectGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selections)){\r",
+                            "    Ext.getCmp(\"insertFormElementBtn\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"insertFormElementBtn\").enable();\r",
+                            "    Ext.getCmp(\"formFieldsDetail\").update(selections[0].getData());\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "c8d71a35-6d96-49d5-9407-4eed361c27ed"
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyPanel61",
+                "id": "formFieldsDetail",
+                "styleHtmlContent": true,
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "{text-align: justify;}"
+                ],
+                "title": ""
+            },
+            "designerId": "03867f21-884a-4404-afff-0416f9cf3046",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "tpl",
+                        "implHandler": [
+                            "{description}"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "ca59eed6-67c5-467e-8d8f-66134cc73c5e"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar16"
+            },
+            "designerId": "18512286-c067-4782-9611-c0cae1246743",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill16"
+                    },
+                    "designerId": "86e854e9-912a-4bca-b186-6745fcd8ddc6"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton72",
+                        "disabled": true,
+                        "id": "insertFormElementBtn",
+                        "margin": null,
+                        "iconCls": "add",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "57dbdfab-e1dd-4a84-9239-56a374f31ef3"
+                }
+            ]
+        }
+    ]
+}

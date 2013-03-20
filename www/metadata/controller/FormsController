@@ -52,8 +52,8 @@
                     "    Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
                     "        Ext.getCmp(\"mainFormsGrid\").getSelectionModel().select([newOne]);\r",
                     "    },this,{single:true});\r",
-                    "    button.up().up().close();\r",
-                    "}"
+                    "        button.up().up().close();\r",
+                    "    }"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -89,7 +89,8 @@
                     "values.creation= Ext.Date.format(values.createTime, 'd-m-Y');\r",
                     "values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
                     "metaBox.update(values);\r",
-                    "metaBox.show();"
+                    "metaBox.show();\r",
+                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);"
                 ]
             },
             "designerId": "b24e3b9b-de2d-416d-b923-d047ea4b8202"
@@ -113,7 +114,8 @@
                     "Ext.getCmp(\"removeFormBtn\").disable();\r",
                     "Ext.getCmp(\"FormsInterface\").getDockedComponent(\"barreMeta\").getComponent(\"boiteBarreMeta\").hide();\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
-                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires\", iconCls:\"form_small\"}));"
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires\", iconCls:\"form_small\"}));\r",
+                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);"
                 ]
             },
             "designerId": "67493c81-5c85-4775-a117-e1caf6222371"
@@ -195,16 +197,16 @@
                     "        target.set(Ext.getCmp(\"formPropsForm\").getForm().getValues());\r",
                     "        target.endEdit();\r",
                     "        Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
-                    "                me.resetInterfaceSelect(target);\r",
-                    "            },this,{single:true});\r",
+                    "            me.resetInterfaceSelect(target);\r",
+                    "        },this,{single:true});\r",
+                    "        } else {\r",
+                    "            Ext.Msg.alert(\"Erreur\", \"Propriétés du formulaire invalides\");\r",
+                    "            Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(0);\r",
+                    "        }\r",
                     "    } else {\r",
-                    "        Ext.Msg.alert(\"Erreur\", \"Propriétés du formulaire invalides\");\r",
-                    "        Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(0);\r",
-                    "    }\r",
-                    "} else {\r",
-                    "    Ext.Msg.alert(\"Erreur\", \"Paramétrage des droits invalide\");\r",
-                    "    Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(2);\r",
-                    "}"
+                    "        Ext.Msg.alert(\"Erreur\", \"Paramétrage des droits invalide\");\r",
+                    "        Ext.getCmp(\"FormsCenterZone\").getLayout().setActiveItem(2);\r",
+                    "    }"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -212,6 +214,124 @@
                 "designer|controlQuery": "#formSaveBtn"
             },
             "designerId": "d793d0db-2a9d-4691-814f-39f86b9c5bbc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "selectionEvents",
+                "fn": "selectionEvents",
+                "implHandler": [
+                    "abstractcomponent.getEl().on(\"click\", function(e){\r",
+                    "    Ext.getCmp(\"formSelectedElementField\").setValue(abstractcomponent.getId());\r",
+                    "    e.stopEvent();\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#FormsEditor panel"
+            },
+            "designerId": "b1146b2c-be11-4d06-90e4-1ac36ff789d2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormSelectedElementFieldChange",
+                "fn": "onFormSelectedElementFieldChange",
+                "implHandler": [
+                    "var previousOne = Ext.getCmp(oldValue);\r",
+                    "if (!Ext.isEmpty(previousOne)){\r",
+                    "    previousOne.removeBodyCls(\"selectedelement\");\r",
+                    "}\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"formElementsEditBtnGroup\").query(\"button\"),function(thing){thing.disable();});\r",
+                    "var newOne=Ext.getCmp(newValue);\r",
+                    "if (!Ext.isEmpty(newOne)){\r",
+                    "    newOne.addBodyCls(\"selectedelement\");\r",
+                    "    newOne.getEl().frame(MyPrefData.themeColor);\r",
+                    "    if (newValue==\"FormsEditContainer\"){\r",
+                    "        Ext.getCmp(\"formAddPageBtn\").enable();\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Hidden",
+                "designer|controlQuery": "#formSelectedElementField"
+            },
+            "designerId": "42029d5f-bf11-4f67-b9e4-30a48e0a4127"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormElementAddBtnClick",
+                "fn": "onFormElementAddBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"addFormFieldWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formElementAddBtn"
+            },
+            "designerId": "4e0344d3-01b9-4147-abf4-3ce2af7ef113"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormAddPageBtnClick",
+                "fn": "onFormAddPageBtnClick",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: 'xhr-get-mongo-id',\r",
+                    "    params: { },\r",
+                    "    success: function(response){\r",
+                    "        var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
+                    "        var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "        var newPage = Ext.widget(\"RFormPage\", {id:servedId});\r",
+                    "        newPage.itemConfig={\r",
+                    "            id:servedId,\r",
+                    "            label:\"Page\",\r",
+                    "            type:\"page\"\r",
+                    "        };\r",
+                    "        target.add(newPage);    \r",
+                    "        newPage.getEl().dom.click();\r",
+                    "    },\r",
+                    "    failure: function(){\r",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\\'un identifiant.');\r",
+                    "\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formAddPageBtn"
+            },
+            "designerId": "b38b8241-db47-4795-af43-54cdd78dbdfd"
         }
     ]
 }

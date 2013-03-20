@@ -232,7 +232,10 @@ Ext.application({
         'RHelpBtn',
         'PersoPicUploadWindow',
         'FormsInterface',
-        'newFormWindow'
+        'newFormWindow',
+        'addFormFieldWindow',
+        'RFormPage',
+        'RFormField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

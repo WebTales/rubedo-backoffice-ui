@@ -1,0 +1,35 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RFormField",
+        "designer|userAlias": "RFormField",
+        "frame": true,
+        "height": 250,
+        "width": 400,
+        "title": "My Panel"
+    },
+    "id": "ExtBox1-ext-gen15640",
+    "designerId": "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7",
+    "cn": [
+        {
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTool16",
+                "itemId": "formPropsTool",
+                "tooltip": "Propriétés",
+                "type": "gear"
+            },
+            "designerId": "a8a10320-13c4-47b9-b413-9bcfb255a3af"
+        }
+    ]
+}

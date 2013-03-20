@@ -22,7 +22,7 @@ Ext.define('Rubedo.model.formFieldTypeModel', {
             name: 'id'
         },
         {
-            name: 'name'
+            name: 'type'
         },
         {
             name: 'fType'
