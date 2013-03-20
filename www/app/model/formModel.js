@@ -28,6 +28,12 @@ Ext.define('Rubedo.model.formModel', {
             name: 'id'
         },
         {
+            name: 'formPages',
+            defaultValue: [
+                
+            ]
+        },
+        {
             name: 'workspaces'
         },
         {

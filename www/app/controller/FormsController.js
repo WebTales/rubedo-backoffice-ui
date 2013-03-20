@@ -56,7 +56,7 @@ Ext.define('Rubedo.controller.FormsController', {
         if (Ext.isEmpty(selections)){
             me.resetInterfaceNoSelect();
         } else {
-            me.resetInterfaceSelect(selections[0]);
+            me.resetInterfaceSelect(selections[0], true);
         }
     },
 
@@ -68,6 +68,7 @@ Ext.define('Rubedo.controller.FormsController', {
                 target.beginEdit();
                 target.set(Ext.getCmp("formRightsForm").getForm().getValues());
                 target.set(Ext.getCmp("formPropsForm").getForm().getValues());
+                target.set("formPages",me.saveFormPages());
                 target.endEdit();
                 Ext.getStore("FormsStore").addListener("datachanged", function(){
                     me.resetInterfaceSelect(target);
@@ -162,9 +163,7 @@ Ext.define('Rubedo.controller.FormsController', {
                 var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
                 var newPage = Ext.widget("RFormPage", {id:servedId});
                 newPage.itemConfig={
-                    id:servedId,
-                    label:"Page "+(target.items.items.length+1),
-                    fType:"page"
+                    label:"Page "+(target.items.items.length+1)
                 };
                 target.add(newPage); 
                 Ext.getCmp("FormsEditor").doLayout();
@@ -209,12 +208,12 @@ Ext.define('Rubedo.controller.FormsController', {
             success: function(response){
                 var servedId = Ext.JSON.decode(response.responseText).mongoID;
                 var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
-                var newPage = Ext.widget("RFormField", {id:servedId});
-                newPage.itemConfig=insertor.itemConfig;
-                target.add(newPage); 
+                var newElement= Ext.widget("RFormField", {id:servedId});
+                newElement.itemConfig=insertor.itemConfig;
+                target.add(newElement); 
                 button.up().up().close();
                 Ext.getCmp("FormsEditor").doLayout();
-                newPage.getEl().dom.click();
+                newElement.getEl().dom.click();
 
             },
             failure: function(){
@@ -224,7 +223,7 @@ Ext.define('Rubedo.controller.FormsController', {
         });
     },
 
-    resetInterfaceSelect: function(record) {
+    resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
         Ext.getCmp("FormsCenterZone").enable();
@@ -239,7 +238,11 @@ Ext.define('Rubedo.controller.FormsController', {
         values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
         metaBox.update(values);
         metaBox.show();
-        Ext.getCmp("formSelectedElementField").setValue(null);
+        if (pageRefresh){
+            Ext.getCmp("formSelectedElementField").setValue(null);
+            Ext.getCmp("FormsEditContainer").removeAll();
+            this.readFormPages(record.get("formPages"));
+        }
     },
 
     resetInterfaceNoSelect: function() {
@@ -253,6 +256,40 @@ Ext.define('Rubedo.controller.FormsController', {
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").removeAll();
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Formulaires", iconCls:"form_small"}));
         Ext.getCmp("formSelectedElementField").setValue(null);
+        Ext.getCmp("FormsEditContainer").removeAll();
+    },
+
+    saveFormPages: function() {
+        var pages =[ ];
+        Ext.Array.forEach(Ext.getCmp("FormsEditContainer").items.items, function(page){
+            var newPage = {
+                id:page.id,
+                itemConfig:page.itemConfig,
+                elements:[ ]
+            };
+            Ext.Array.forEach(page.items.items, function(element){
+                var newElement = {
+                    id:element.id,
+                    itemConfig:element.itemConfig
+                };
+                newPage.elements.push(newElement);
+            });
+            pages.push(newPage);
+        });
+        return(pages);
+    },
+
+    readFormPages: function(pages) {
+        var target=Ext.getCmp("FormsEditContainer");
+        Ext.Array.forEach(pages, function(page){
+            var newPage = Ext.widget("RFormPage", {id:page.id});
+            newPage.itemConfig=page.itemConfig;
+            Ext.Array.forEach(page.elements, function(element){
+                var newElement = Ext.widget("RFormField", element);
+                newPage.add(newElement);
+            });
+            target.add(newPage);
+        });
     },
 
     init: function(application) {

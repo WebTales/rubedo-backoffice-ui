@@ -56,6 +56,10 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
                         selectionchange: {
                             fn: me.onFormFieldSelectGridSelectionChange,
                             scope: me
+                        },
+                        itemdblclick: {
+                            fn: me.onFormFieldSelectGridItemDblClick,
+                            scope: me
                         }
                     }
                 },
@@ -104,6 +108,10 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
             Ext.getCmp("insertFormElementBtn").enable();
             Ext.getCmp("formFieldsDetail").update(selections[0].getData());
         }
+    },
+
+    onFormFieldSelectGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        Ext.getCmp("insertFormElementBtn").fireEvent("click",Ext.getCmp("insertFormElementBtn"));
     }
 
 });

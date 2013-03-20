@@ -73,7 +73,8 @@
                 "designer|userClassName": "resetInterfaceSelect",
                 "fn": "resetInterfaceSelect",
                 "designer|params": [
-                    "record"
+                    "record",
+                    "pageRefresh"
                 ],
                 "implHandler": [
                     "Ext.getCmp(\"formPropsForm\").getForm().setValues(record.getData());\r",
@@ -90,7 +91,11 @@
                     "values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');\r",
                     "metaBox.update(values);\r",
                     "metaBox.show();\r",
-                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);"
+                    "if (pageRefresh){\r",
+                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);\r",
+                    "Ext.getCmp(\"FormsEditContainer\").removeAll();\r",
+                    "this.readFormPages(record.get(\"formPages\"));\r",
+                    "}"
                 ]
             },
             "designerId": "b24e3b9b-de2d-416d-b923-d047ea4b8202"
@@ -115,7 +120,8 @@
                     "Ext.getCmp(\"FormsInterface\").getDockedComponent(\"barreMeta\").getComponent(\"boiteBarreMeta\").hide();\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires\", iconCls:\"form_small\"}));\r",
-                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);"
+                    "Ext.getCmp(\"formSelectedElementField\").setValue(null);\r",
+                    "Ext.getCmp(\"FormsEditContainer\").removeAll();"
                 ]
             },
             "designerId": "67493c81-5c85-4775-a117-e1caf6222371"
@@ -167,7 +173,7 @@
                     "if (Ext.isEmpty(selections)){\r",
                     "    me.resetInterfaceNoSelect();\r",
                     "} else {\r",
-                    "    me.resetInterfaceSelect(selections[0]);\r",
+                    "    me.resetInterfaceSelect(selections[0], true);\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -195,6 +201,7 @@
                     "        target.beginEdit();\r",
                     "        target.set(Ext.getCmp(\"formRightsForm\").getForm().getValues());\r",
                     "        target.set(Ext.getCmp(\"formPropsForm\").getForm().getValues());\r",
+                    "        target.set(\"formPages\",me.saveFormPages());\r",
                     "        target.endEdit();\r",
                     "        Ext.getStore(\"FormsStore\").addListener(\"datachanged\", function(){\r",
                     "            me.resetInterfaceSelect(target);\r",
@@ -353,9 +360,7 @@
                     "        var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
                     "        var newPage = Ext.widget(\"RFormPage\", {id:servedId});\r",
                     "        newPage.itemConfig={\r",
-                    "            id:servedId,\r",
-                    "            label:\"Page \"+(target.items.items.length+1),\r",
-                    "            fType:\"page\"\r",
+                    "            label:\"Page \"+(target.items.items.length+1)\r",
                     "        };\r",
                     "        target.add(newPage); \r",
                     "        Ext.getCmp(\"FormsEditor\").doLayout();\r",
@@ -464,13 +469,13 @@
                     "    success: function(response){\r",
                     "        var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
                     "        var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
-                    "        var newPage = Ext.widget(\"RFormField\", {id:servedId});\r",
-                    "        newPage.itemConfig=insertor.itemConfig;\r",
-                    "        target.add(newPage); \r",
+                    "        var newElement= Ext.widget(\"RFormField\", {id:servedId});\r",
+                    "        newElement.itemConfig=insertor.itemConfig;\r",
+                    "        target.add(newElement); \r",
                     "        button.up().up().close();\r",
                     "        Ext.getCmp(\"FormsEditor\").doLayout();\r",
-                    "        newPage.getEl().dom.click();\r",
-                    "        \r",
+                    "        newElement.getEl().dom.click();\r",
+                    "\r",
                     "    },\r",
                     "    failure: function(){\r",
                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\\'un identifiant.');\r",
@@ -484,6 +489,66 @@
                 "designer|controlQuery": "#insertFormElementBtn"
             },
             "designerId": "be2354a6-8d7b-479e-8ed4-73cba074443c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveFormPages",
+                "fn": "saveFormPages",
+                "implHandler": [
+                    "var pages =[ ];\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"FormsEditContainer\").items.items, function(page){\r",
+                    "    var newPage = {\r",
+                    "        id:page.id,\r",
+                    "        itemConfig:page.itemConfig,\r",
+                    "        elements:[ ]\r",
+                    "    };\r",
+                    "    Ext.Array.forEach(page.items.items, function(element){\r",
+                    "        var newElement = {\r",
+                    "            id:element.id,\r",
+                    "            itemConfig:element.itemConfig\r",
+                    "        };\r",
+                    "        newPage.elements.push(newElement);\r",
+                    "    });\r",
+                    "    pages.push(newPage);\r",
+                    "});\r",
+                    "return(pages);"
+                ]
+            },
+            "designerId": "90ad054b-8b22-4027-ad85-4ec2bb0b33d2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "readFormPages",
+                "fn": "readFormPages",
+                "designer|params": [
+                    "pages"
+                ],
+                "implHandler": [
+                    "var target=Ext.getCmp(\"FormsEditContainer\");\r",
+                    "Ext.Array.forEach(pages, function(page){\r",
+                    "    var newPage = Ext.widget(\"RFormPage\", {id:page.id});\r",
+                    "    newPage.itemConfig=page.itemConfig;\r",
+                    "    Ext.Array.forEach(page.elements, function(element){\r",
+                    "        var newElement = Ext.widget(\"RFormField\", element);\r",
+                    "        newPage.add(newElement);\r",
+                    "    });\r",
+                    "    target.add(newPage);\r",
+                    "});"
+                ]
+            },
+            "designerId": "8b84a42b-940a-4895-b2e2-d1842df498b7"
         }
     ]
 }

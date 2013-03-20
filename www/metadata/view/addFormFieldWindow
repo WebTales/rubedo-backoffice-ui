@@ -90,6 +90,24 @@
                         "scope": "me"
                     },
                     "designerId": "c8d71a35-6d96-49d5-9407-4eed361c27ed"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFormFieldSelectGridItemDblClick",
+                        "fn": "onFormFieldSelectGridItemDblClick",
+                        "implHandler": [
+                            "Ext.getCmp(\"insertFormElementBtn\").fireEvent(\"click\",Ext.getCmp(\"insertFormElementBtn\"));"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "designerId": "5bb52f80-cf1f-452c-a690-6da40becdfb0"
                 }
             ]
         },

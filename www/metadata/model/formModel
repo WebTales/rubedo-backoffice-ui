@@ -60,6 +60,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "field2",
+                "name": "formPages",
+                "defaultValue": [
+                    "[ ]"
+                ]
+            },
+            "designerId": "e4b3032f-03ee-49f5-a39e-99546cc34cab"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "field280",
                 "name": "workspaces"
             },

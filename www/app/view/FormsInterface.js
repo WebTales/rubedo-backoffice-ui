@@ -339,13 +339,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                             bodyPadding: 10,
                             iconCls: 'edit',
                             title: 'Edition',
-                            dockedItems: [
-                                {
-                                    xtype: 'toolbar',
-                                    dock: 'top',
-                                    height: 40
-                                }
-                            ],
                             items: [
                                 {
                                     xtype: 'panel',
