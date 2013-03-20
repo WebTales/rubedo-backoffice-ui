@@ -32,14 +32,20 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                 {
                     id: '51489f8ac0e051b81a000002',
                     type: 'Question ouverte',
-                    fType: 'openQuestion',
                     description: '<p>à écrire</p>',
-                    fConfig: {
+                    itemConfig: {
+                        fType: 'openQuestion',
                         label: 'Question ouverte',
                         fieldType: 'textfield',
                         fieldConfig: {
                             allowBlank: true
-                        }
+                        },
+                        conditionals: [
+                            
+                        ],
+                        validations: [
+                            
+                        ]
                     }
                 }
             ]

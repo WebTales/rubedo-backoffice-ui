@@ -83,6 +83,32 @@ Ext.define('Rubedo.controller.FormsController', {
     },
 
     selectionEvents: function(abstractcomponent, options) {
+        if (abstractcomponent.id=="FormsEditContainer"){
+            abstractcomponent.getEl().on("mouseover", function(e){
+                abstractcomponent.setBorder(4);
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                abstractcomponent.setBorder(2);
+                e.stopEvent();
+            });
+        } else {
+            abstractcomponent.getEl().on("mouseover", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+                    abstractcomponent.setIconCls('selectBloc');
+                }
+                e.stopEvent();
+            });
+            abstractcomponent.getEl().on("mouseout", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
+                abstractcomponent.setIconCls();}
+                e.stopEvent();
+            });
+
+        }
+
         abstractcomponent.getEl().on("click", function(e){
             Ext.getCmp("formSelectedElementField").setValue(abstractcomponent.getId());
             e.stopEvent();
@@ -94,15 +120,31 @@ Ext.define('Rubedo.controller.FormsController', {
     onFormSelectedElementFieldChange: function(field, newValue, oldValue, options) {
         var previousOne = Ext.getCmp(oldValue);
         if (!Ext.isEmpty(previousOne)){
-            previousOne.removeBodyCls("selectedelement");
+            if (oldValue=="FormsEditContainer"){
+                previousOne.removeBodyCls("selectedelement");
+            } else {
+                previousOne.setIconCls();
+            }
         }
         Ext.Array.forEach(Ext.getCmp("formElementsEditBtnGroup").query("button"),function(thing){thing.disable();});
         var newOne=Ext.getCmp(newValue);
         if (!Ext.isEmpty(newOne)){
-            newOne.addBodyCls("selectedelement");
             newOne.getEl().frame(MyPrefData.themeColor);
             if (newValue=="FormsEditContainer"){
+                newOne.addBodyCls("selectedelement");
                 Ext.getCmp("formAddPageBtn").enable();
+            } else {
+                newOne.setIconCls('editBloc');
+                if (newOne.isXType("RFormPage")){
+                    Ext.getCmp("formElementAddBtn").enable();
+                    Ext.getCmp("formElementMoveUpBtn").enable();
+                    Ext.getCmp("formElementMoveDownBtn").enable();
+                    Ext.getCmp("formElementRemoveBtn").enable();
+                } else if (newOne.isXType("RFormField")){
+                    Ext.getCmp("formElementMoveUpBtn").enable();
+                    Ext.getCmp("formElementMoveDownBtn").enable();
+                    Ext.getCmp("formElementRemoveBtn").enable();
+                }
             }
         }
     },
@@ -121,10 +163,11 @@ Ext.define('Rubedo.controller.FormsController', {
                 var newPage = Ext.widget("RFormPage", {id:servedId});
                 newPage.itemConfig={
                     id:servedId,
-                    label:"Page",
-                    type:"page"
+                    label:"Page "+(target.items.items.length+1),
+                    fType:"page"
                 };
-                target.add(newPage);    
+                target.add(newPage); 
+                Ext.getCmp("FormsEditor").doLayout();
                 newPage.getEl().dom.click();
             },
             failure: function(){
@@ -132,8 +175,53 @@ Ext.define('Rubedo.controller.FormsController', {
 
             }
         });
+    },
 
+    onFormElementMoveUpBtnClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            if (pos > 0) {
+                field.up().move(pos,pos-1);
+            }
+        }
+    },
 
+    onFormElementMoveDownBtnClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            field.up().move(pos,pos+1);
+        }
+    },
+
+    onFormElementRemoveBtnClick: function(button, e, options) {
+        var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+        field.up().remove(field);
+        Ext.getCmp('formSelectedElementField').setValue(null);
+    },
+
+    onInsertFormElementBtnClick: function(button, e, options) {
+        var insertor=Ext.clone(Ext.getCmp("formFieldSelectGrid").getSelectionModel().getLastSelected().getData());
+        Ext.Ajax.request({
+            url: 'xhr-get-mongo-id',
+            params: { },
+            success: function(response){
+                var servedId = Ext.JSON.decode(response.responseText).mongoID;
+                var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
+                var newPage = Ext.widget("RFormField", {id:servedId});
+                newPage.itemConfig=insertor.itemConfig;
+                target.add(newPage); 
+                button.up().up().close();
+                Ext.getCmp("FormsEditor").doLayout();
+                newPage.getEl().dom.click();
+
+            },
+            failure: function(){
+                Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+
+            }
+        });
     },
 
     resetInterfaceSelect: function(record) {
@@ -195,6 +283,18 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#formAddPageBtn": {
                 click: this.onFormAddPageBtnClick
+            },
+            "#formElementMoveUpBtn": {
+                click: this.onFormElementMoveUpBtnClick
+            },
+            "#formElementMoveDownBtn": {
+                click: this.onFormElementMoveDownBtnClick
+            },
+            "#formElementRemoveBtn": {
+                click: this.onFormElementRemoveBtnClick
+            },
+            "#insertFormElementBtn": {
+                click: this.onInsertFormElementBtnClick
             }
         });
     }

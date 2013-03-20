@@ -25,16 +25,7 @@ Ext.define('Rubedo.model.formFieldTypeModel', {
             name: 'type'
         },
         {
-            name: 'fType'
-        },
-        {
-            name: 'fConfig'
-        },
-        {
-            name: 'conditionals'
-        },
-        {
-            name: 'validations'
+            name: 'itemConfig'
         },
         {
             name: 'description'

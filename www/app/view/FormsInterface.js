@@ -103,6 +103,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    disabled: true,
                                     id: 'formAddPageBtn',
                                     iconAlign: 'top',
                                     iconCls: 'page_add_big',
@@ -350,10 +351,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     xtype: 'panel',
                                     id: 'FormsEditContainer',
                                     minHeight: 100,
-                                    layout: {
-                                        align: 'stretch',
-                                        type: 'vbox'
-                                    },
                                     bodyCls: 'contrastCBorder',
                                     bodyPadding: 10
                                 }

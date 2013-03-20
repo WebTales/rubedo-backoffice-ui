@@ -192,6 +192,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyButton285",
+                                "disabled": true,
                                 "id": "formAddPageBtn",
                                 "iconAlign": "top",
                                 "iconCls": "page_add_big",
@@ -830,13 +831,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "container|align": "stretch",
                                 "designer|userClassName": "MyPanel50",
                                 "id": "FormsEditContainer",
                                 "minHeight": 100,
                                 "width": null,
                                 "autoScroll": null,
-                                "layout": "vbox",
                                 "bodyCls": "contrastCBorder",
                                 "bodyPadding": 10
                             },

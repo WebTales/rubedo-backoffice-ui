@@ -9,8 +9,13 @@
         "designer|userClassName": "RFormField",
         "designer|userAlias": "RFormField",
         "frame": true,
-        "height": 250,
-        "width": 400,
+        "height": null,
+        "margin": "0 0 10 0",
+        "minHeight": 50,
+        "width": null,
+        "layout": "anchor",
+        "bodyBorder": false,
+        "bodyPadding": 10,
         "title": "My Panel"
     },
     "id": "ExtBox1-ext-gen15640",
@@ -30,6 +35,50 @@
                 "type": "gear"
             },
             "designerId": "a8a10320-13c4-47b9-b413-9bcfb255a3af"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sync",
+                "fn": "sync",
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.setTitle(me.itemConfig.label);\r",
+                    "me.removeAll();\r",
+                    "if (me.itemConfig.fType==\"openQuestion\"){\r",
+                    "    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
+                    "    previewField.anchor = \"100%\";\r",
+                    "    if (!Ext.isEmpty(me.itemConfig.tooltip)){\r",
+                    "        previewField.RTip=me.itemConfig.tooltip;\r",
+                    "    }\r",
+                    "    me.add(previewField);\r",
+                    "}"
+                ]
+            },
+            "designerId": "a2fdcc01-8723-4ded-8a07-ac4fe1fb9685"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPanelAfterRender",
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "this.sync();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "11a53a13-8017-41e7-b9d4-fee2368a6fe9"
         }
     ]
 }

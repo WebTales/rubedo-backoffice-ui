@@ -226,6 +226,32 @@
                 "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
+                    "if (abstractcomponent.id==\"FormsEditContainer\"){\r",
+                    "    abstractcomponent.getEl().on(\"mouseover\", function(e){\r",
+                    "        abstractcomponent.setBorder(4);\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    abstractcomponent.getEl().on(\"mouseout\", function(e){\r",
+                    "        abstractcomponent.setBorder(2);\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "} else {\r",
+                    "    abstractcomponent.getEl().on(\"mouseover\", function(e){\r",
+                    "        var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {\r",
+                    "            abstractcomponent.setIconCls('selectBloc');\r",
+                    "        }\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    abstractcomponent.getEl().on(\"mouseout\", function(e){\r",
+                    "        var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {\r",
+                    "        abstractcomponent.setIconCls();}\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    \r",
+                    "}\r",
+                    "\r",
                     "abstractcomponent.getEl().on(\"click\", function(e){\r",
                     "    Ext.getCmp(\"formSelectedElementField\").setValue(abstractcomponent.getId());\r",
                     "    e.stopEvent();\r",
@@ -253,15 +279,31 @@
                 "implHandler": [
                     "var previousOne = Ext.getCmp(oldValue);\r",
                     "if (!Ext.isEmpty(previousOne)){\r",
-                    "    previousOne.removeBodyCls(\"selectedelement\");\r",
+                    "    if (oldValue==\"FormsEditContainer\"){\r",
+                    "        previousOne.removeBodyCls(\"selectedelement\");\r",
+                    "    } else {\r",
+                    "        previousOne.setIconCls();\r",
+                    "    }\r",
                     "}\r",
                     "Ext.Array.forEach(Ext.getCmp(\"formElementsEditBtnGroup\").query(\"button\"),function(thing){thing.disable();});\r",
                     "var newOne=Ext.getCmp(newValue);\r",
                     "if (!Ext.isEmpty(newOne)){\r",
-                    "    newOne.addBodyCls(\"selectedelement\");\r",
                     "    newOne.getEl().frame(MyPrefData.themeColor);\r",
                     "    if (newValue==\"FormsEditContainer\"){\r",
+                    "        newOne.addBodyCls(\"selectedelement\");\r",
                     "        Ext.getCmp(\"formAddPageBtn\").enable();\r",
+                    "    } else {\r",
+                    "        newOne.setIconCls('editBloc');\r",
+                    "        if (newOne.isXType(\"RFormPage\")){\r",
+                    "            Ext.getCmp(\"formElementAddBtn\").enable();\r",
+                    "            Ext.getCmp(\"formElementMoveUpBtn\").enable();\r",
+                    "            Ext.getCmp(\"formElementMoveDownBtn\").enable();\r",
+                    "            Ext.getCmp(\"formElementRemoveBtn\").enable();\r",
+                    "        } else if (newOne.isXType(\"RFormField\")){\r",
+                    "            Ext.getCmp(\"formElementMoveUpBtn\").enable();\r",
+                    "            Ext.getCmp(\"formElementMoveDownBtn\").enable();\r",
+                    "            Ext.getCmp(\"formElementRemoveBtn\").enable();\r",
+                    "        }\r",
                     "    }\r",
                     "}"
                 ],
@@ -312,19 +354,18 @@
                     "        var newPage = Ext.widget(\"RFormPage\", {id:servedId});\r",
                     "        newPage.itemConfig={\r",
                     "            id:servedId,\r",
-                    "            label:\"Page\",\r",
-                    "            type:\"page\"\r",
+                    "            label:\"Page \"+(target.items.items.length+1),\r",
+                    "            fType:\"page\"\r",
                     "        };\r",
-                    "        target.add(newPage);    \r",
+                    "        target.add(newPage); \r",
+                    "        Ext.getCmp(\"FormsEditor\").doLayout();\r",
                     "        newPage.getEl().dom.click();\r",
                     "    },\r",
                     "    failure: function(){\r",
                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\\'un identifiant.');\r",
                     "\r",
                     "    }\r",
-                    "});\r",
-                    "\r",
-                    ""
+                    "});"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -332,6 +373,117 @@
                 "designer|controlQuery": "#formAddPageBtn"
             },
             "designerId": "b38b8241-db47-4795-af43-54cdd78dbdfd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormElementMoveUpBtnClick",
+                "fn": "onFormElementMoveUpBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formElementMoveUpBtn"
+            },
+            "designerId": "a711c0b6-31ba-44f7-bd8e-6a306c262c0f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormElementMoveDownBtnClick",
+                "fn": "onFormElementMoveDownBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    field.up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formElementMoveDownBtn"
+            },
+            "designerId": "9a0427de-570f-4f71-a8a4-f55c6d07b164"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormElementRemoveBtnClick",
+                "fn": "onFormElementRemoveBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "field.up().remove(field);\r",
+                    "Ext.getCmp('formSelectedElementField').setValue(null);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formElementRemoveBtn"
+            },
+            "designerId": "5b7ca01c-87db-4d15-8c8e-7067107f8406"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onInsertFormElementBtnClick",
+                "fn": "onInsertFormElementBtnClick",
+                "implHandler": [
+                    "var insertor=Ext.clone(Ext.getCmp(\"formFieldSelectGrid\").getSelectionModel().getLastSelected().getData());\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'xhr-get-mongo-id',\r",
+                    "    params: { },\r",
+                    "    success: function(response){\r",
+                    "        var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
+                    "        var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
+                    "        var newPage = Ext.widget(\"RFormField\", {id:servedId});\r",
+                    "        newPage.itemConfig=insertor.itemConfig;\r",
+                    "        target.add(newPage); \r",
+                    "        button.up().up().close();\r",
+                    "        Ext.getCmp(\"FormsEditor\").doLayout();\r",
+                    "        newPage.getEl().dom.click();\r",
+                    "        \r",
+                    "    },\r",
+                    "    failure: function(){\r",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\\'un identifiant.');\r",
+                    "\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#insertFormElementBtn"
+            },
+            "designerId": "be2354a6-8d7b-479e-8ed4-73cba074443c"
         }
     ]
 }

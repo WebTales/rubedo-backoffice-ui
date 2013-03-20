@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
         align: 'stretch',
         type: 'hbox'
     },
-    title: 'Ajouter un bloc',
+    title: 'Ajouter un élément',
     constrainHeader: true,
     modal: true,
 

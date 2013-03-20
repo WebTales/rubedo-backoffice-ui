@@ -19,6 +19,9 @@ Ext.define('Rubedo.view.Viewport', {
     requires: [
         'Rubedo.view.newFormWindow',
         'Rubedo.view.mediaTypesInterface',
+        'Rubedo.view.RFormField',
+        'Rubedo.view.RFormPage',
+        'Rubedo.view.addFormFieldWindow',
         'Rubedo.view.FormsInterface',
         'Rubedo.view.DAMCreateUpdateWindow',
         'Rubedo.view.DAMInterface',
@@ -42,7 +45,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.accessibilityPicker',
         'Rubedo.view.adminFTaxonomie',
         'Rubedo.view.ajoutBlocFenetre',
-        'Rubedo.view.addFormFieldWindow',
         'Rubedo.view.ajoutChampTCFenetre',
         'Rubedo.view.MTFieldAddWindow',
         'Rubedo.view.contributionContenus',
@@ -118,8 +120,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sessionWarningWindow',
         'Rubedo.view.sessionExpiredWindow',
         'Rubedo.view.testingGround',
-        'Rubedo.view.RHelpBtn',
-        'Rubedo.view.RFormPage',
-        'Rubedo.view.RFormField'
+        'Rubedo.view.RHelpBtn'
     ]
 });
