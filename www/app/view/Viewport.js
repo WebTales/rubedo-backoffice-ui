@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.Viewport', {
     renderTo: Ext.getBody(),
     requires: [
         'Rubedo.view.newFormWindow',
+        'Rubedo.view.RichTextConfigurator',
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.RFormField',
         'Rubedo.view.RFormPage',
@@ -68,7 +69,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.PersoPicUploadWindow',
         'Rubedo.view.userSettings',
         'Rubedo.view.newUserWindow',
-        'Rubedo.view.CKEField',
         'Rubedo.view.ReusableElementPicker',
         'Rubedo.view.ExportElementWindow',
         'Rubedo.view.AdminPasswordChange',

@@ -228,6 +228,12 @@ Ext.define('Rubedo.controller.FormsController', {
         });
     },
 
+    onFormFieldCofiguratorBtnClick: function(button, e, options) {
+        var myItemConfig = Ext.clone(button.up().up().itemConfig);
+        var myId=button.up().up().id;
+        this.fireElementConfigurator(myItemConfig,myId);
+    },
+
     resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
@@ -297,6 +303,14 @@ Ext.define('Rubedo.controller.FormsController', {
         });
     },
 
+    fireElementConfigurator: function(itemConfig, id) {
+        if (itemConfig.fType=="richText") {
+            var RTEditor = Ext.widget("RichTextConfigurator").show();
+            RTEditor.getComponent(0).setValue(itemConfig.html);
+            Ext.getCmp("richTextConfiguratorSubmit").targetedId=id;  
+        }
+    },
+
     init: function(application) {
         this.control({
             "#addFormBtn": {
@@ -337,6 +351,9 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#insertFormElementBtn": {
                 click: this.onInsertFormElementBtnClick
+            },
+            "#formFieldCofiguratorBtn": {
+                click: this.onFormFieldCofiguratorBtnClick
             }
         });
     }

@@ -554,6 +554,52 @@
                 ]
             },
             "designerId": "8b84a42b-940a-4895-b2e2-d1842df498b7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormFieldCofiguratorBtnClick",
+                "fn": "onFormFieldCofiguratorBtnClick",
+                "implHandler": [
+                    "var myItemConfig = Ext.clone(button.up().up().itemConfig);\r",
+                    "var myId=button.up().up().id;\r",
+                    "this.fireElementConfigurator(myItemConfig,myId);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formFieldCofiguratorBtn"
+            },
+            "designerId": "207b95a2-8933-460d-bac7-0ce93ff46c44"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "fireElementConfigurator",
+                "fn": "fireElementConfigurator",
+                "designer|params": [
+                    "itemConfig",
+                    "id"
+                ],
+                "implHandler": [
+                    "if (itemConfig.fType==\"richText\") {\r",
+                    "    var RTEditor = Ext.widget(\"RichTextConfigurator\").show();\r",
+                    "    RTEditor.getComponent(0).setValue(itemConfig.html);\r",
+                    "    Ext.getCmp(\"richTextConfiguratorSubmit\").targetedId=id;  \r",
+                    "}"
+                ]
+            },
+            "designerId": "ffd48a6c-22e8-4523-9dfe-30b3ff0931a6"
         }
     ]
 }

@@ -2220,11 +2220,20 @@
                 "app/view/MTeditFields.js"
             ],
             "className": "MTeditFields"
+        },
+        "e0d081a5-ccca-483c-8f7a-43232eebbc43": {
+            "paths": [
+                "metadata/view/RichTextConfigurator",
+                "app/view/override/RichTextConfigurator.js",
+                "app/view/RichTextConfigurator.js"
+            ],
+            "className": "RichTextConfigurator"
         }
     },
     "viewOrderMap": {
         "view": [
             "02bcaee3-2fc4-4f83-8521-12359112b8ab",
+            "e0d081a5-ccca-483c-8f7a-43232eebbc43",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
             "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7",
