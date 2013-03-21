@@ -33,7 +33,13 @@ Ext.define('Rubedo.view.RFormPage', {
                     fn: me.onPanelAfterRender,
                     scope: me
                 }
-            }
+            },
+            tools: [
+                {
+                    xtype: 'tool',
+                    type: 'gear'
+                }
+            ]
         });
 
         me.callParent(arguments);

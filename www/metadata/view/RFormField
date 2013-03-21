@@ -17,14 +17,15 @@
         ],
         "frame": false,
         "height": null,
-        "margin": "0 0 10 0",
+        "margin": null,
         "minHeight": 50,
-        "styleHtmlContent": true,
+        "styleHtmlContent": null,
         "width": null,
         "layout": "anchor",
         "bodyBorder": null,
         "bodyCls": "noBordered",
-        "bodyPadding": 10,
+        "bodyPadding": 6,
+        "frameHeader": false,
         "header": null,
         "title": null
     },
@@ -88,6 +89,45 @@
                 "scope": "me"
             },
             "designerId": "11a53a13-8017-41e7-b9d4-fee2368a6fe9"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|userClassName": "MyContainer51",
+                "hidden": true,
+                "itemId": "editBar",
+                "style": null,
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "562029d7-4971-405a-bfed-8b8a14e2a8a0",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton286",
+                        "iconCls": "pencil_med",
+                        "scale": "medium",
+                        "text": ""
+                    },
+                    "designerId": "fafe42e9-8bf4-44f9-a072-4b5a6e563fc1"
+                }
+            ]
         }
     ]
 }

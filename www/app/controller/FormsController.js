@@ -122,6 +122,7 @@ Ext.define('Rubedo.controller.FormsController', {
         var previousOne = Ext.getCmp(oldValue);
         if (!Ext.isEmpty(previousOne)){
             if (!previousOne.isXType("RFormPage")){
+                if (previousOne.isXType("RFormField")){previousOne.getDockedComponent("editBar").hide();}
                 previousOne.removeBodyCls("selectedFElement");
             } else {
                 previousOne.setIconCls();
@@ -146,7 +147,9 @@ Ext.define('Rubedo.controller.FormsController', {
                     Ext.getCmp("formElementMoveUpBtn").enable();
                     Ext.getCmp("formElementMoveDownBtn").enable();
                     Ext.getCmp("formElementRemoveBtn").enable();
+                    newOne.getDockedComponent("editBar").show();
                     newOne.addBodyCls("selectedFElement");
+
                 }
             }
         }

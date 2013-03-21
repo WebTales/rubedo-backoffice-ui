@@ -22,14 +22,13 @@ Ext.define('Rubedo.view.RFormField', {
         moveOnDrag: false
     },
     frame: false,
-    margin: '0 0 10 0',
     minHeight: 50,
-    styleHtmlContent: true,
     layout: {
         type: 'anchor'
     },
     bodyCls: 'noBordered',
-    bodyPadding: 10,
+    bodyPadding: 6,
+    frameHeader: false,
 
     initComponent: function() {
         var me = this;
@@ -40,7 +39,28 @@ Ext.define('Rubedo.view.RFormField', {
                     fn: me.onPanelAfterRender,
                     scope: me
                 }
-            }
+            },
+            dockedItems: [
+                {
+                    xtype: 'container',
+                    dock: 'top',
+                    hidden: true,
+                    itemId: 'editBar',
+                    layout: {
+                        align: 'stretch',
+                        pack: 'end',
+                        type: 'hbox'
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            iconCls: 'pencil_med',
+                            scale: 'medium',
+                            text: ''
+                        }
+                    ]
+                }
+            ]
         });
 
         me.callParent(arguments);
