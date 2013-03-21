@@ -1768,6 +1768,50 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514066000'
                 },
                 {
+                    type: 'Formulaire',
+                    category: 'Formulaire',
+                    description: '',
+                    configBasique: {
+                        title: 'Formulaire',
+                        bType: 'form',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.FormPickerField',
+                                            config: {
+                                                fieldLabel: 'Formulaire',
+                                                name: 'formId'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '514ae0c5c0e051ac0d000002'
+                },
+                {
                     type: 'D\u00e9tail de contenu',
                     category: 'Contenus',
                     description: '<p>Le bloc "Détail de Contenu" permet d\’afficher les champs d’un contenu particulier.</p>',
