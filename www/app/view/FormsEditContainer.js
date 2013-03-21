@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.FormsEditContainer', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.FormsEditContainer',
 
+    cls: 'x-portal',
     id: 'FormsEditContainer',
     minHeight: 100,
     autoScroll: true,
