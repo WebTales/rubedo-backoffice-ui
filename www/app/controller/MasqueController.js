@@ -345,6 +345,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
 
 
+
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"eClassHTMLField",
                 fieldLabel:"Classe HTML ",
@@ -374,6 +375,36 @@ Ext.define('Rubedo.controller.MasqueController', {
                 margin:"10 0 0 0",
                 value:abstractcomponent.idHTML
             }));
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eStyleField",
+                fieldLabel:"Style ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.elementStyle=this.getValue();
+                    }
+                },
+                labelWidth:60,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.elementStyle
+            }));
+            configSpec.getComponent(1).add(Ext.widget('combobox',{
+                itemId:"eTagField",
+                fieldLabel:"Tag ",
+                queryMode:"local",
+                store:["div","span","header","section","footer"],
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.elementTag=this.getValue();
+                    }
+                },
+                labelWidth:60,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.elementTag
+            }));
             if (abstractcomponent.mType=="row"){
                 Ext.getCmp("moveElementUp").enable();
                 Ext.getCmp("moveElementDown").enable();
@@ -397,6 +428,62 @@ Ext.define('Rubedo.controller.MasqueController', {
                     anchor:"100%",
                     margin:"10 0 10 0",
                     checked:abstractcomponent.displayAsTab
+                }));
+                configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                    itemId:"eDisplayRowField",
+                    fieldLabel:"Afficher la balise row",
+                    onChange:function(){
+
+                        abstractcomponent.displayRow=this.getValue();
+
+                    },
+                    labelWidth:60,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:abstractcomponent.displayRow
+                }));
+                configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                    itemId:"eDisplayRowFluidField",
+                    fieldLabel:"Afficher la balise row-fluid",
+                    onChange:function(){
+
+                        abstractcomponent.displayRowFluid=this.getValue();
+
+                    },
+                    labelWidth:60,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:abstractcomponent.displayRowFluid
+                }));
+                configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                    itemId:"eIncludeContainerField",
+                    fieldLabel:"Inclure dans un container",
+                    onChange:function(){
+
+                        abstractcomponent.includeContainer=this.getValue();
+
+                    },
+                    labelWidth:60,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:abstractcomponent.includeContainer
+                }));
+                configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                    itemId:"eIncludeContainerFluidField",
+                    fieldLabel:"Inclure dans un container-fluid",
+                    onChange:function(){
+
+                        abstractcomponent.includeContainerFluid=this.getValue();
+
+                    },
+                    labelWidth:60,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:abstractcomponent.includeContainerFluid
                 }));
                 /*configSpec.getComponent(0).add(Ext.widget('button',{
                 itemId:"rowAutoHeight",
@@ -474,6 +561,20 @@ Ext.define('Rubedo.controller.MasqueController', {
                         anchor:"100%",
                         margin:"10 0 10 0",
                         checked:(abstractcomponent.getId()==Ext.getCmp("mainColumnIdField").getValue())
+                    }));
+                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                        itemId:"eRenderSpanField",
+                        fieldLabel:"Afficher span et offset",
+                        onChange:function(){
+
+                            abstractcomponent.renderSpan=this.getValue();
+
+                        },
+                        labelWidth:60,
+                        inputValue:true,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        checked:abstractcomponent.renderSpan
                     }));
 
                     var offsetEdit=Ext.widget('numberfield',{
@@ -572,6 +673,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                     var newCol=Ext.widget('panel', {
                         header:false,
                         flex:1,
+                        renderSpan:true,
+                        elementTag:"div",
+                        elementStyle:"",
                         final:isFinalCol,
                         id:servedId,
                         eTitle:"titre",
@@ -614,6 +718,12 @@ Ext.define('Rubedo.controller.MasqueController', {
             header:false,
             mType:"row",
             flex:1,
+            elementTag:"div",
+            elementStyle:"",
+            displayRow:true,
+            displayRowFluid:false,
+            includeContainer:false,
+            includeContainerFluid:false,
             eTitle:"titre",
             responsive:{
                 phone:true,
@@ -667,6 +777,10 @@ Ext.define('Rubedo.controller.MasqueController', {
             "tablet":true,
             "desktop":true
         };
+        nouvBloc.elementStyle="";
+        nouvBloc.elementTag="div";
+        nouvBloc.renderDiv=true;
+
         var target = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
         var orderValue = 100;
         if (!Ext.isEmpty(target.items.items)) {
@@ -873,6 +987,50 @@ Ext.define('Rubedo.controller.MasqueController', {
             anchor:"100%",
             margin:"10 0 0 0",
             value:abstractcomponent.urlPrefix
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:"Style ",
+            onChange:function(){
+                if (this.isValid()){
+                    abstractcomponent.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.elementStyle
+        }));
+        configSpec.getComponent(1).add(Ext.widget('combobox',{
+            itemId:"eTagField",
+            fieldLabel:"Tag ",
+            queryMode:"local",
+            store:["div","span","header","section","footer"],
+            onChange:function(){
+                if (this.isValid()){
+                    abstractcomponent.elementTag=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.elementTag
+        }));
+        configSpec.getComponent(1).add(Ext.widget('checkbox',{
+            itemId:"eRenderDivField",
+            fieldLabel:"Afficher dans une div ",
+            onChange:function(){
+
+                abstractcomponent.renderDiv=this.getValue();
+
+            },
+            labelWidth:60,
+            inputValue:true,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            checked:abstractcomponent.renderDiv
         }));
 
         var categories = Ext.clone(abstractcomponent.champsConfig.simple);
@@ -1282,6 +1440,12 @@ Ext.define('Rubedo.controller.MasqueController', {
                 mType:"row",
                 eTitle:row.eTitle,
                 id:row.id,
+                elementSyle:row.elementStyle,
+                elementTag:row.elementTag,
+                displayRow:row.displayRow,
+                displayRowFluid:row.displayRowFluid,
+                includeContainer:row.includeContainer,
+                includeContainerFluid:row.includeContainerFluid,
                 displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
                 classHTML:row.classHTML,
@@ -1311,6 +1475,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                     final:isFinalCol,
                     mType:'col',
                     id:column.id,
+                    elementSyle:column.elementStyle,
+                    elementTag:column.elementTag,
+                    renderSpan:column.renderSpan,
                     eTitle:column.eTitle,
                     responsive:column.responsive,
                     classHTML:column.classHTML,
@@ -1388,6 +1555,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                     responsive:col.responsive,
                     classHTML:col.classHTML,
                     idHTML:col.idHTML,
+                    elementSyle:col.elementStyle,
+                    elementTag:col.elementTag,
+                    renderSpan:col.renderSpan,
                     displayTitle:col.displayTitle,
                     span:col.flex,
                     id:col.id,
@@ -1405,6 +1575,12 @@ Ext.define('Rubedo.controller.MasqueController', {
                 height:row.height,
                 eTitle:row.eTitle,
                 id:row.id,
+                elementSyle:row.elementStyle,
+                elementTag:row.elementTag,
+                displayRow:row.displayRow,
+                displayRowFluid:row.displayRowFluid,
+                includeContainer:row.includeContainer,
+                includeContainerFluid:row.includeContainerFluid,
                 mType:"row",
                 displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
@@ -1430,6 +1606,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                 champsConfig:nBloc.champsConfig,
                 orderValue:nBloc.orderValue,
                 configBloc:nBloc.configBloc,
+                elementStyle:nBloc.elementStyle,
+                elementTag:nBloc.elementTag,
+                renderDiv:nBloc.renderDiv,
                 title:nBloc.title,
                 responsive:nBloc.responsive,
                 classHTML:nBloc.classHTML,

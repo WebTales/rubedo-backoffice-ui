@@ -264,6 +264,10 @@ Ext.define('Rubedo.controller.PagesController', {
             "desktop":true
         };
         nouvBloc.canEdit=true;
+        nouvBloc.elementStyle="";
+        nouvBloc.elementTag="div";
+        nouvBloc.renderDiv=true;
+
         var target = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
         var orderValue = 1;
         if (!Ext.isEmpty(target.items.items)) {
@@ -426,6 +430,50 @@ Ext.define('Rubedo.controller.PagesController', {
                 anchor:"100%",
                 margin:"10 0 0 0",
                 value:abstractcomponent.urlPrefix
+            }));
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+                itemId:"eStyleField",
+                fieldLabel:"Style ",
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.elementStyle=this.getValue();
+                    }
+                },
+                labelWidth:60,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.elementStyle
+            }));
+            configSpec.getComponent(1).add(Ext.widget('combobox',{
+                itemId:"eTagField",
+                fieldLabel:"Tag ",
+                queryMode:"local",
+                store:["div","span","header","section","footer"],
+                onChange:function(){
+                    if (this.isValid()){
+                        abstractcomponent.elementTag=this.getValue();
+                    }
+                },
+                labelWidth:60,
+                allowBlank:true,
+                anchor:"100%",
+                margin:"10 0 0 0",
+                value:abstractcomponent.elementTag
+            }));
+            configSpec.getComponent(1).add(Ext.widget('checkbox',{
+                itemId:"eRenderDivField",
+                fieldLabel:"Afficher dans une div ",
+                onChange:function(){
+
+                    abstractcomponent.renderDiv=this.getValue();
+
+                },
+                labelWidth:60,
+                inputValue:true,
+                anchor:"100%",
+                margin:"10 0 10 0",
+                checked:abstractcomponent.renderDiv
             }));
 
             var categories = Ext.clone(abstractcomponent.champsConfig.simple);
@@ -881,6 +929,9 @@ Ext.define('Rubedo.controller.PagesController', {
                     configBloc:nBloc.configBloc,
                     orderValue:nBloc.orderValue,
                     title:nBloc.title,
+                    elementStyle:nBloc.elementStyle,
+                    elementTag:nBloc.elementTag,
+                    renderDiv:nBloc.renderDiv,
                     responsive:nBloc.responsive,
                     classHTML:nBloc.classHTML,
                     displayTitle:nBloc.displayTitle,
