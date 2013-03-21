@@ -47,6 +47,16 @@
                     "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
                 },
                 {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "606bf026-e4ba-4cd8-9d72-63ddfed7917f",
+                    "masterInstanceId": "ExtBox1-ext-gen14763"
+                },
+                {
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -83,30 +93,6 @@
                             "type": "string"
                         }
                     ]
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "canSwitchStore": true,
-                        "id": "chimp3"
-                    },
-                    "configAlternates": {
-                        "canSwitchStore": "boolean"
-                    },
-                    "designerId": "ec6ac13c-19a6-4bd2-afe9-f3c189701c61",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "canSwitchStore",
-                            "type": "string"
-                        }
-                    ],
-                    "masterInstanceId": "ExtBox1-ext-gen46360"
                 },
                 {
                     "type": "timefield",

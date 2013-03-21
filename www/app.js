@@ -130,7 +130,8 @@ Ext.application({
         'WorkspacesComboWithAll',
         'ContributeWorkspacesComboWithAll',
         'FormsStore',
-        'FormFieldTypesStore'
+        'FormFieldTypesStore',
+        'FormPickerStore'
     ],
     views: [
         'MyContainer',
@@ -236,7 +237,8 @@ Ext.application({
         'addFormFieldWindow',
         'RFormPage',
         'RFormField',
-        'FormsEditContainer'
+        'FormsEditContainer',
+        'FormPickerField'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

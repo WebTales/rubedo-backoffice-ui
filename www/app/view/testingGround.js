@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.WorkspaceCombo'
+        'Rubedo.view.FormPickerField'
     ],
 
     height: 450,
@@ -46,6 +46,9 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label'
                         },
                         {
+                            xtype: 'FormPickerField'
+                        },
+                        {
                             xtype: 'textfield',
                             anchor: '100%',
                             fieldLabel: 'Label'
@@ -57,11 +60,6 @@ Ext.define('Rubedo.view.testingGround', {
                             fieldLabel: 'Label',
                             msgTarget: 'under',
                             allowBlank: false
-                        },
-                        {
-                            xtype: 'WorkspaceCombo',
-                            canSwitchStore: true,
-                            id: 'chimp3'
                         },
                         {
                             xtype: 'timefield',

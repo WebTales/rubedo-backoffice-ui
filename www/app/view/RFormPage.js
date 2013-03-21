@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.RFormPage', {
 
     frame: false,
     margin: '0 0 10 0',
-    minHeight: 100,
+    minHeight: 80,
     bodyBorder: false,
     bodyPadding: 10,
     title: 'My Panel',

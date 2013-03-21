@@ -2180,6 +2180,22 @@
                 "app/view/PortalDropZone.js"
             ],
             "className": "PortalDropZone"
+        },
+        "36007f86-6607-47b7-a5b8-b35b3310bc18": {
+            "paths": [
+                "metadata/view/FormPickerField",
+                "app/view/override/FormPickerField.js",
+                "app/view/FormPickerField.js"
+            ],
+            "className": "FormPickerField"
+        },
+        "089ed193-b427-4893-b7ba-ede0a8ff7a2b": {
+            "paths": [
+                "metadata/store/FormPickerStore",
+                "app/store/override/FormPickerStore.js",
+                "app/store/FormPickerStore.js"
+            ],
+            "className": "FormPickerStore"
         }
     },
     "viewOrderMap": {
@@ -2260,6 +2276,7 @@
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
+            "36007f86-6607-47b7-a5b8-b35b3310bc18",
             "71505c40-5587-40f5-be0e-bea55fa8806d",
             "6d174482-b97c-435a-b6aa-7fd530bd5680",
             "5ea758ff-277e-480f-8910-8611d58b581e",
@@ -2360,6 +2377,7 @@
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
             "5ea8c03e-9398-462c-a736-687a92d65bf6",
+            "089ed193-b427-4893-b7ba-ede0a8ff7a2b",
             "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
             "cc2e5f6d-9258-47d2-8829-9ef556b6d1e1",
             "c01cc863-569c-4c0c-8792-3b898fcb1ab6",

@@ -7,25 +7,33 @@
     "codeClass": null,
     "userConfig": {
         "managesStore": true,
-        "designer|userClassName": "TTField",
-        "designer|userAlias": "TTField",
+        "plugins": null,
+        "designer|userClassName": "FormPickerField",
+        "designer|userAlias": "FormPickerField",
         "fieldLabel": "Label",
+        "editable": false,
+        "displayField": "title",
         "forceSelection": true,
-        "multiSelect": true,
+        "multiSelect": false,
         "queryMode": "local",
-        "store": "taxoTermsCombo",
+        "store": "FormPickerStore",
         "valueField": "id"
     },
     "configAlternates": {
         "managesStore": "boolean",
         "plugins": "array"
     },
-    "id": "ExtBox1-ext-gen12673",
-    "designerId": "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
+    "id": "ExtBox1-ext-gen14763",
+    "designerId": "36007f86-6607-47b7-a5b8-b35b3310bc18",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
             "name": "managesStore",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "plugins",
             "type": "string"
         }
     ]
