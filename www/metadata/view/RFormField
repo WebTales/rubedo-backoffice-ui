@@ -19,6 +19,7 @@
         "height": null,
         "margin": "0 0 10 0",
         "minHeight": 50,
+        "styleHtmlContent": true,
         "width": null,
         "layout": "anchor",
         "bodyBorder": null,
@@ -53,7 +54,7 @@
                 "implHandler": [
                     "var me=this;\r",
                     "me.removeAll();\r",
-                    "if (me.itemConfig.fType==\"openQuestion\"){\r",
+                    "if ((me.itemConfig.fType==\"openQuestion\")||(me.itemConfig.fType==\"multiChoiceQuestion\")){\r",
                     "    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
                     "    previewField.anchor = \"100%\";\r",
                     "    previewField.labelAlign=\"top\";\r",
@@ -62,7 +63,10 @@
                     "        previewField.RTip=me.itemConfig.tooltip;\r",
                     "    }\r",
                     "    me.add(previewField);\r",
-                    "}"
+                    "} else if (me.itemConfig.fType==\"richText\") {\r",
+                    "    me.update(me.itemConfig.html);\r",
+                    "}\r",
+                    "me.doLayout();    "
                 ]
             },
             "designerId": "a2fdcc01-8723-4ded-8a07-ac4fe1fb9685"

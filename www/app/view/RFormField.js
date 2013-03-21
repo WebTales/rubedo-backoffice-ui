@@ -24,6 +24,7 @@ Ext.define('Rubedo.view.RFormField', {
     frame: false,
     margin: '0 0 10 0',
     minHeight: 50,
+    styleHtmlContent: true,
     layout: {
         type: 'anchor'
     },
@@ -52,7 +53,7 @@ Ext.define('Rubedo.view.RFormField', {
     sync: function() {
         var me=this;
         me.removeAll();
-        if (me.itemConfig.fType=="openQuestion"){
+        if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
             var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
             previewField.anchor = "100%";
             previewField.labelAlign="top";
@@ -61,7 +62,10 @@ Ext.define('Rubedo.view.RFormField', {
                 previewField.RTip=me.itemConfig.tooltip;
             }
             me.add(previewField);
+        } else if (me.itemConfig.fType=="richText") {
+            me.update(me.itemConfig.html);
         }
+        me.doLayout();    
     }
 
 });

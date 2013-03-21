@@ -47,6 +47,48 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                             
                         ]
                     }
+                },
+                {
+                    id: '51489f8ac0e051b81a000004',
+                    type: 'Question choix multiple',
+                    description: '<p>à écrire</p>',
+                    itemConfig: {
+                        fType: 'multiChoiceQuestion',
+                        label: 'Question choix multiple',
+                        fieldType: 'checkboxgroup',
+                        fieldConfig: {
+                            allowBlank: true,
+                            columns: 1,
+                            vertical: true,
+                            items: [
+                                {
+                                    boxLabel: 'Choix 1',
+                                    name: 'rb',
+                                    inputValue: '1'
+                                },
+                                {
+                                    boxLabel: 'Choix 2',
+                                    name: 'rb',
+                                    inputValue: '2'
+                                }
+                            ]
+                        },
+                        conditionals: [
+                            
+                        ],
+                        validations: [
+                            
+                        ]
+                    }
+                },
+                {
+                    id: '51489f8ac0e051b81a000006',
+                    type: 'Texte Riche',
+                    description: '<p>à écrire</p>',
+                    itemConfig: {
+                        fType: 'richText',
+                        html: '<h3>Texte Riche</h3>'
+                    }
                 }
             ]
         }, cfg)]);
