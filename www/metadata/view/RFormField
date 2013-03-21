@@ -6,9 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isPortlet": "true",
         "designer|userClassName": "RFormField",
         "designer|userAlias": "RFormField",
         "border": null,
+        "draggable": [
+            "{\r",
+            "    moveOnDrag:false\r",
+            "}"
+        ],
         "frame": false,
         "height": null,
         "margin": "0 0 10 0",
@@ -21,8 +27,18 @@
         "header": null,
         "title": null
     },
+    "configAlternates": {
+        "draggable": "object"
+    },
     "id": "ExtBox1-ext-gen15640",
     "designerId": "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isPortlet",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basicfunction",
@@ -40,7 +56,7 @@
                     "if (me.itemConfig.fType==\"openQuestion\"){\r",
                     "    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
                     "    previewField.anchor = \"100%\";\r",
-                    "    previewField.labelWidth=120;\r",
+                    "    previewField.labelAlign=\"top\";\r",
                     "    previewField.fieldLabel=me.itemConfig.label;\r",
                     "    if (!Ext.isEmpty(me.itemConfig.tooltip)){\r",
                     "        previewField.RTip=me.itemConfig.tooltip;\r",

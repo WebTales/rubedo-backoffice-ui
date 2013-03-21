@@ -2164,6 +2164,22 @@
                 "app/view/RFormField.js"
             ],
             "className": "RFormField"
+        },
+        "6ecda564-e312-4a52-b602-3d6ddac71e4b": {
+            "paths": [
+                "metadata/view/FormsEditContainer",
+                "app/view/override/FormsEditContainer.js",
+                "app/view/FormsEditContainer.js"
+            ],
+            "className": "FormsEditContainer"
+        },
+        "5ae078a2-d295-4000-952e-e1cf6213b1b9": {
+            "paths": [
+                "metadata/view/PortalDropZone",
+                "app/view/override/PortalDropZone.js",
+                "app/view/PortalDropZone.js"
+            ],
+            "className": "PortalDropZone"
         }
     },
     "viewOrderMap": {
@@ -2175,6 +2191,7 @@
             "ea32a3c5-626e-450a-9bd5-3f3e40ac5d5d",
             "304ad092-9c78-4ed0-8170-c2c2b07738e2",
             "479f5d1f-27bf-4ffb-ba71-0aab8621a58c",
+            "6ecda564-e312-4a52-b602-3d6ddac71e4b",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
@@ -2288,7 +2305,8 @@
             "5d41405d-8ed6-4d4a-b220-d09d58101928",
             "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",
             "66174f28-03d3-4c02-855f-65706d91852a",
-            "d7860367-3cf8-4eb2-bcdd-74fea57755fb"
+            "d7860367-3cf8-4eb2-bcdd-74fea57755fb",
+            "5ae078a2-d295-4000-952e-e1cf6213b1b9"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.RFormField', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.RFormField',
 
+    isPortlet: 'true',
+    draggable: {
+        moveOnDrag: false
+    },
     frame: false,
     margin: '0 0 10 0',
     minHeight: 50,
@@ -51,7 +55,7 @@ Ext.define('Rubedo.view.RFormField', {
         if (me.itemConfig.fType=="openQuestion"){
             var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
             previewField.anchor = "100%";
-            previewField.labelWidth=120;
+            previewField.labelAlign="top";
             previewField.fieldLabel=me.itemConfig.label;
             if (!Ext.isEmpty(me.itemConfig.tooltip)){
                 previewField.RTip=me.itemConfig.tooltip;

@@ -1,0 +1,310 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "ddScrollConfig": [
+            "{",
+            "    vthresh: 50,",
+            "    hthresh: 50,",
+            "    animate: true,",
+            "    increment: 200,",
+            "    frequency:200",
+            "}"
+        ],
+        "containerScroll": true,
+        "designer|userClassName": "PortalDropZone",
+        "extend": "Ext.dd.DropTarget"
+    },
+    "id": "ExtBox1-ext-gen6526",
+    "designerId": "5ae078a2-d295-4000-952e-e1cf6213b1b9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "ddScrollConfig",
+            "type": "object"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "containerScroll",
+            "type": "boolean"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "constructor",
+                "fn": "constructor",
+                "designer|params": [
+                    "portal",
+                    "cfg"
+                ],
+                "implHandler": [
+                    "this.portal = portal;\r",
+                    "this.callParent([portal.body, cfg]);\r",
+                    "portal.body.ddScrollConfig = this.ddScrollConfig;\r",
+                    ""
+                ]
+            },
+            "designerId": "a658d8b2-5e0e-4167-8e67-50921b0e03ef"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "createEvent",
+                "fn": "createEvent",
+                "designer|params": [
+                    "dd",
+                    "e",
+                    "data",
+                    "col",
+                    "c",
+                    "pos"
+                ],
+                "implHandler": [
+                    "return {",
+                    "    portal: this.portal,",
+                    "    panel: data.panel,",
+                    "    columnIndex: col,",
+                    "    column: c,",
+                    "    position: pos,",
+                    "    data: data,",
+                    "    source: dd,",
+                    "    rawEvent: e,",
+                    "    status: this.dropAllowed",
+                    "};"
+                ]
+            },
+            "designerId": "5c98284d-76b8-4b49-aeb8-a8dffd75661a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "notifyOver",
+                "fn": "notifyOver",
+                "designer|params": [
+                    "dd",
+                    "e",
+                    "data"
+                ],
+                "implHandler": [
+                    "var xy = e.getXY(),",
+                    "    portal = this.portal,",
+                    "    proxy = dd.proxy;",
+                    "",
+                    "// case column widths",
+                    "if (!this.grid) {",
+                    "    this.grid = this.getGrid();",
+                    "}",
+                    "",
+                    "// handle case scroll where scrollbars appear during drag",
+                    "var cw = portal.body.dom.clientWidth;",
+                    "if (!this.lastCW) {",
+                    "    // set initial client width",
+                    "    this.lastCW = cw;",
+                    "} else if (this.lastCW != cw) {",
+                    "    // client width has changed, so refresh layout & grid calcs",
+                    "    this.lastCW = cw;",
+                    "    //portal.doLayout();",
+                    "    this.grid = this.getGrid();",
+                    "}",
+                    "",
+                    "// determine column",
+                    "var colIndex = 0,",
+                    "    colRight = 0,",
+                    "    cols = this.grid.columnX,",
+                    "    len = cols.length,",
+                    "    cmatch = false;",
+                    "",
+                    "for (len; colIndex < len; colIndex++) {",
+                    "    colRight = cols[colIndex].y + cols[colIndex].h;",
+                    "    if (xy[1] < colRight) {",
+                    "        cmatch = true;",
+                    "        break;",
+                    "    }",
+                    "}",
+                    "// no match, fix last index",
+                    "if (!cmatch) {",
+                    "    colIndex--;",
+                    "}",
+                    "",
+                    "// find insert position",
+                    "var overPortlet, pos = 0,",
+                    "    h = 0,",
+                    "    match = false,",
+                    "    overColumn = portal.items.getAt(colIndex),",
+                    "    portlets = overColumn.items.items,",
+                    "    overSelf = false;",
+                    "",
+                    "len = portlets.length;",
+                    "",
+                    "for (len; pos < len; pos++) {",
+                    "    overPortlet = portlets[pos];",
+                    "    h = overPortlet.el.getHeight();",
+                    "    if (h === 0) {",
+                    "        overSelf = true;",
+                    "    } else if ((overPortlet.el.getY() + (h / 2)) > xy[1]) {",
+                    "        match = true;",
+                    "        break;",
+                    "    }",
+                    "}",
+                    "",
+                    "pos = (match && overPortlet ? pos : overColumn.items.getCount()) + (overSelf ? -1 : 0);",
+                    "var overEvent = this.createEvent(dd, e, data, colIndex, overColumn, pos);",
+                    "",
+                    "if (portal.fireEvent('validatedrop', overEvent) !== false && portal.fireEvent('beforedragover', overEvent) !== false) {",
+                    "",
+                    "    // make sure proxy width is fluid in different width columns",
+                    "    proxy.getProxy().setWidth('auto');",
+                    "    if (overPortlet) {",
+                    "        dd.panelProxy.moveProxy(overPortlet.el.dom.parentNode, match ? overPortlet.el.dom : null);",
+                    "    } else {",
+                    "        dd.panelProxy.moveProxy(overColumn.el.dom, null);",
+                    "    }",
+                    "",
+                    "    this.lastPos = {",
+                    "        c: overColumn,",
+                    "        col: colIndex,",
+                    "        p: overSelf || (match && overPortlet) ? pos : false",
+                    "    };",
+                    "    this.scrollPos = portal.body.getScroll();",
+                    "",
+                    "    portal.fireEvent('dragover', overEvent);",
+                    "    return overEvent.status;",
+                    "} else {",
+                    "    return overEvent.status;",
+                    "}",
+                    ""
+                ]
+            },
+            "designerId": "32cdea03-55db-4229-bf2d-3f8b8e4fc80f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "notifyOut",
+                "fn": "notifyOut",
+                "implHandler": [
+                    "delete this.grid;"
+                ]
+            },
+            "designerId": "295d47bd-8a00-4347-9dd1-bc9d983e99ff"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "notifyDrop",
+                "fn": "notifyDrop",
+                "designer|params": [
+                    "dd",
+                    "e",
+                    "data"
+                ],
+                "implHandler": [
+                    "delete this.grid;",
+                    "if (!this.lastPos) {",
+                    "    return;",
+                    "}",
+                    "var c = this.lastPos.c,",
+                    "    col = this.lastPos.col,",
+                    "    pos = this.lastPos.p,",
+                    "    panel = dd.panel,",
+                    "    dropEvent = this.createEvent(dd, e, data, col, c, pos !== false ? pos : c.items.getCount());",
+                    "",
+                    "if (this.portal.fireEvent('validatedrop', dropEvent) !== false && ",
+                    "this.portal.fireEvent('beforedrop', dropEvent) !== false) {",
+                    "",
+                    "    Ext.suspendLayouts();",
+                    "",
+                    "    // make sure panel is visible prior to inserting so that the layout doesn't ignore it",
+                    "    panel.el.dom.style.display = '';",
+                    "    dd.panelProxy.hide();",
+                    "    dd.proxy.hide();",
+                    "",
+                    "    if (pos !== false) {",
+                    "        c.insert(pos, panel);",
+                    "    } else {",
+                    "        c.add(panel);",
+                    "    }",
+                    "",
+                    "    Ext.resumeLayouts(true);",
+                    "",
+                    "    this.portal.fireEvent('drop', dropEvent);",
+                    "",
+                    "    // scroll position is lost on drop, fix it",
+                    "    var st = this.scrollPos.top;",
+                    "    if (st) {",
+                    "        var d = this.portal.body.dom;",
+                    "        setTimeout(function() {",
+                    "            d.scrollTop = st;",
+                    "        },",
+                    "        10);",
+                    "    }",
+                    "}",
+                    "",
+                    "delete this.lastPos;",
+                    "return true;",
+                    ""
+                ]
+            },
+            "designerId": "0870efae-832c-4b60-a6bd-c9df0fbd542f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getGrid",
+                "fn": "getGrid",
+                "implHandler": [
+                    "// internal cache of body and column coords",
+                    "var box = this.portal.body.getBox();",
+                    "box.columnX = [];",
+                    "this.portal.items.each(function(c) {",
+                    "    box.columnX.push({",
+                    "        x: c.el.getX(),",
+                    "        w: c.el.getWidth(),",
+                    "        y: c.el.getY(),",
+                    "        h: c.el.getHeight()",
+                    "    });",
+                    "});",
+                    "return box;",
+                    ""
+                ]
+            },
+            "designerId": "b7414ad0-a527-463d-9a30-70eccd52ccb3"
+        }
+    ]
+}

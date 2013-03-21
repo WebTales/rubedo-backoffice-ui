@@ -1,0 +1,122 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "FormsEditContainer",
+        "designer|userAlias": "FormsEditContainer",
+        "border": null,
+        "cls": null,
+        "id": "FormsEditContainer",
+        "minHeight": 100,
+        "width": null,
+        "autoScroll": true,
+        "bodyCls": null,
+        "bodyPadding": 10
+    },
+    "id": "ExtBox1-ext-gen3077",
+    "designerId": "6ecda564-e312-4a52-b602-3d6ddac71e4b",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormsEditContainerAfterRender",
+                "fn": "onFormsEditContainerAfterRender",
+                "implHandler": [
+                    "this.dd = Ext.create('Rubedo.view.PortalDropZone', this, this.dropConfig);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "a79a9896-5663-40fe-af59-112c76ddbfcc"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent",
+                "name": "validatedrop",
+                "params": [
+                    "e"
+                ]
+            },
+            "designerId": "49be8861-752d-48cf-94f6-80c81350b58c"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent1",
+                "name": "beforedragover",
+                "params": [
+                    "e"
+                ]
+            },
+            "designerId": "475c8830-e9e2-486a-91ae-000cfa3bad16"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent2",
+                "name": "dragover",
+                "params": [
+                    "e"
+                ]
+            },
+            "designerId": "6dcb3f87-b6fa-4b61-a41c-cea160312df1"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent3",
+                "name": "beforedrop",
+                "params": [
+                    "e"
+                ]
+            },
+            "designerId": "0288604e-119f-4fe4-a034-b8d832cb9b61"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent4",
+                "name": "drop",
+                "params": [
+                    "e"
+                ]
+            },
+            "designerId": "f5d675f5-5d6d-4efc-8cd2-ce959f19c238"
+        }
+    ]
+}

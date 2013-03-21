@@ -235,7 +235,8 @@ Ext.application({
         'newFormWindow',
         'addFormFieldWindow',
         'RFormPage',
-        'RFormField'
+        'RFormField',
+        'FormsEditContainer'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -20,6 +20,7 @@ Ext.define('Rubedo.view.FormsInterface', {
     requires: [
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
+        'Rubedo.view.FormsEditContainer',
         'Rubedo.view.WorkspaceCombo'
     ],
 
@@ -343,11 +344,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             title: 'Edition',
                             items: [
                                 {
-                                    xtype: 'panel',
-                                    id: 'FormsEditContainer',
-                                    minHeight: 100,
-                                    autoScroll: true,
-                                    bodyPadding: 10
+                                    xtype: 'FormsEditContainer'
                                 }
                             ]
                         },
