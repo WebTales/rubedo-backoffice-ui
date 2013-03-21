@@ -966,26 +966,14 @@
                                     ]
                                 },
                                 {
-                                    "type": "form",
+                                    "type": "linkedinstance",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyForm15",
-                                        "frame": true,
-                                        "id": "MTeditFields",
-                                        "margin": 20,
-                                        "autoScroll": false,
-                                        "resizable": [
-                                            "false"
-                                        ],
-                                        "suspendLayout": null,
-                                        "bodyPadding": 0,
-                                        "title": "Champs"
-                                    },
-                                    "designerId": "7120e487-8033-4805-b435-a863418861d9"
+                                    "designerId": "7204425a-64e9-4a26-bfce-de096b8b35ee",
+                                    "masterInstanceId": "ExtBox1-ext-gen4035"
                                 }
                             ]
                         },

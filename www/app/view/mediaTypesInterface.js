@@ -20,6 +20,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     requires: [
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
+        'Rubedo.view.MTeditFields',
         'Rubedo.view.WorkspaceCombo'
     ],
 
@@ -409,14 +410,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             ]
                                         },
                                         {
-                                            xtype: 'form',
-                                            frame: true,
-                                            id: 'MTeditFields',
-                                            margin: 20,
-                                            autoScroll: false,
-                                            resizable: false,
-                                            bodyPadding: 0,
-                                            title: 'Champs'
+                                            xtype: 'MTeditFields'
                                         }
                                     ]
                                 },

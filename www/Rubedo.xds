@@ -2212,6 +2212,14 @@
                 "app/view/champsEditionTC.js"
             ],
             "className": "champsEditionTC"
+        },
+        "7120e487-8033-4805-b435-a863418861d9": {
+            "paths": [
+                "metadata/view/MTeditFields",
+                "app/view/override/MTeditFields.js",
+                "app/view/MTeditFields.js"
+            ],
+            "className": "MTeditFields"
         }
     },
     "viewOrderMap": {
@@ -2341,7 +2349,8 @@
             "66174f28-03d3-4c02-855f-65706d91852a",
             "d7860367-3cf8-4eb2-bcdd-74fea57755fb",
             "73ed8109-ae62-44c8-9526-cd885b3b0396",
-            "9f720849-6c20-4727-8b99-ce99c0298e28"
+            "9f720849-6c20-4727-8b99-ce99c0298e28",
+            "7120e487-8033-4805-b435-a863418861d9"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

@@ -240,7 +240,8 @@ Ext.application({
         'FormsEditContainer',
         'FormPickerField',
         'MyPanel51',
-        'champsEditionTC'
+        'champsEditionTC',
+        'MTeditFields'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',
