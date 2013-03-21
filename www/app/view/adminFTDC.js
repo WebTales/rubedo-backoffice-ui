@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     alias: 'widget.adminFTDC',
 
     requires: [
+        'Rubedo.view.champsEditionTC',
         'Rubedo.view.WorkspaceCombo',
         'Ext.ux.TreePicker'
     ],
@@ -417,14 +418,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             ]
                                         },
                                         {
-                                            xtype: 'form',
-                                            frame: true,
-                                            id: 'champsEditionTC',
-                                            margin: 20,
-                                            autoScroll: false,
-                                            resizable: false,
-                                            bodyPadding: 0,
-                                            title: 'Champs éditables'
+                                            xtype: 'champsEditionTC'
                                         }
                                     ]
                                 },

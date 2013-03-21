@@ -113,6 +113,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.MQA',
         'Rubedo.view.MQField',
         'Rubedo.view.MQFieldComponent',
+        'Rubedo.view.PortalDropZone',
         'Rubedo.view.DCEField',
         'Rubedo.view.DCEFieldComponent',
         'Rubedo.view.localiserFieldComponent',
@@ -120,7 +121,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sessionWarningWindow',
         'Rubedo.view.sessionExpiredWindow',
         'Rubedo.view.testingGround',
-        'Rubedo.view.RHelpBtn',
-        'Rubedo.view.PortalDropZone'
+        'Rubedo.view.RHelpBtn'
     ]
 });

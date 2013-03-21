@@ -132,7 +132,9 @@
                 "designer|userClassName": "onTextareafieldBeforeDestroy",
                 "fn": "onTextareafieldBeforeDestroy",
                 "implHandler": [
-                    "abstractcomponent.editor.destroy();"
+                    "try {abstractcomponent.editor.destroy();} catch(err) {\r",
+                    "    console.log(\"cke destroy anomaly\");\r",
+                    "}"
                 ],
                 "name": "beforedestroy",
                 "scope": "me"

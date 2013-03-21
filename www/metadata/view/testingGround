@@ -18,113 +18,14 @@
     "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
     "cn": [
         {
-            "type": "form",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyForm42",
-                "overflowY": "scroll",
-                "bodyPadding": 20,
-                "title": "My Form"
-            },
-            "designerId": "ef778a75-2347-4da6-b0af-513eeb94b93e",
-            "cn": [
-                {
-                    "type": "textareafield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextArea10",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "536252d4-a582-40ea-afd3-62c2561aec4a"
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "designerId": "606bf026-e4ba-4cd8-9d72-63ddfed7917f",
-                    "masterInstanceId": "ExtBox1-ext-gen14763"
-                },
-                {
-                    "type": "textfield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField77",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "4d688673-0002-487f-8b18-2b6a1508a3de"
-                },
-                {
-                    "type": "textfield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "RTip": "test ",
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField78",
-                        "fieldLabel": "Label",
-                        "msgTarget": "under",
-                        "allowBlank": false
-                    },
-                    "designerId": "79f2024b-b517-4933-b6ff-b7aa865b9c32",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "RTip",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "timefield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyTimeField",
-                        "id": "chimp1",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "6576eea5-6645-4295-980b-6dee878801c4"
-                },
-                {
-                    "type": "datefield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "designer|userClassName": "MyDateField7",
-                        "id": "chimp2",
-                        "fieldLabel": "Label",
-                        "format": null
-                    },
-                    "designerId": "c23e7fd6-c0bc-4b02-9991-41ef594c7971"
-                }
-            ]
+            "designerId": "fb9912e7-eacc-47b9-8744-7f1ec2bae8b0",
+            "masterInstanceId": "ExtBox1-ext-gen21558"
         }
     ]
 }

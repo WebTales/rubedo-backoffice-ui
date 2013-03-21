@@ -119,7 +119,9 @@ Ext.define('Rubedo.view.CKEField', {
     },
 
     onTextareafieldBeforeDestroy: function(abstractcomponent, options) {
-        abstractcomponent.editor.destroy();
+        try {abstractcomponent.editor.destroy();} catch(err) {
+        console.log("cke destroy anomaly");
+    }
     },
 
     onTextareafieldErrorChange: function(labelable, error, options) {

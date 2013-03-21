@@ -238,7 +238,9 @@ Ext.application({
         'RFormPage',
         'RFormField',
         'FormsEditContainer',
-        'FormPickerField'
+        'FormPickerField',
+        'MyPanel51',
+        'champsEditionTC'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

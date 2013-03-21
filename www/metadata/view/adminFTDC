@@ -992,25 +992,14 @@
                                     ]
                                 },
                                 {
-                                    "type": "form",
+                                    "type": "linkedinstance",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyForm15",
-                                        "frame": true,
-                                        "id": "champsEditionTC",
-                                        "margin": 20,
-                                        "autoScroll": false,
-                                        "resizable": [
-                                            "false"
-                                        ],
-                                        "bodyPadding": 0,
-                                        "title": "Champs éditables"
-                                    },
-                                    "designerId": "9f720849-6c20-4727-8b99-ce99c0298e28"
+                                    "designerId": "1358c276-96a9-43fb-8250-0848335e4fa0",
+                                    "masterInstanceId": "ExtBox1-ext-gen3571"
                                 }
                             ]
                         },
