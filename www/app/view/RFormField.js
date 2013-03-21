@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.RFormField', {
         type: 'anchor'
     },
     bodyCls: 'noBordered',
-    bodyPadding: 6,
+    bodyPadding: 10,
     frameHeader: false,
 
     initComponent: function() {

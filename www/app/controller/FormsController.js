@@ -215,6 +215,9 @@ Ext.define('Rubedo.controller.FormsController', {
                 var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
                 var newElement= Ext.widget("RFormField", {id:servedId});
                 newElement.itemConfig=insertor.itemConfig;
+                if (insertor.itemConfig.fType=="richText"){
+                    newElement.styleHtmlContent=true;
+                }
                 target.add(newElement); 
                 button.up().up().close();
                 Ext.getCmp("FormsEditor").doLayout();
@@ -297,6 +300,9 @@ Ext.define('Rubedo.controller.FormsController', {
             newPage.itemConfig=page.itemConfig;
             Ext.Array.forEach(page.elements, function(element){
                 var newElement = Ext.widget("RFormField", element);
+                if (element.itemConfig.fType=="richText"){
+                    newElement.styleHtmlContent=true;
+                }
                 newPage.add(newElement);
             });
             target.add(newPage);
