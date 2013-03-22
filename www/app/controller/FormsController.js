@@ -27,12 +27,33 @@ Ext.define('Rubedo.controller.FormsController', {
         if (form.isValid()){
             var newOne=Ext.create("Rubedo.model.formModel",form.getValues());
             newOne.set("workspaces",[ACL.defaultWorkspace]);
-            Ext.getStore("FormsStore").add(newOne);
-            Ext.getStore("FormsStore").addListener("datachanged", function(){
-                Ext.getCmp("mainFormsGrid").getSelectionModel().select([newOne]);
-            },this,{single:true});
-                button.up().up().close();
+            Ext.Ajax.request({
+                url: 'xhr-get-mongo-id',
+                params: { },
+                success: function(response){
+                    var servedId = Ext.JSON.decode(response.responseText).mongoID;
+                    newOne.set("formPages",[{
+                        elements: [ ],
+                        id:servedId,
+                        itemConfig: {label:"Page 1"}
+                    }]);
+                    Ext.getStore("FormsStore").add(newOne);
+                    Ext.getStore("FormsStore").addListener("datachanged", function(){
+                        Ext.getCmp("mainFormsGrid").getSelectionModel().select([newOne]);
+                    },this,{single:true});
+                        button.up().up().close();
+                    },
+                    failure: function(){
+                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+
+                    }
+                });
+
+
+
             }
+
+
     },
 
     onRemoveFormBtnClick: function(button, e, options) {
@@ -253,6 +274,7 @@ Ext.define('Rubedo.controller.FormsController', {
         metaBox.update(values);
         metaBox.show();
         if (pageRefresh){
+            Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(0);
             Ext.getCmp("formSelectedElementField").setValue(null);
             Ext.getCmp("FormsEditContainer").removeAll();
             this.readFormPages(record.get("formPages"));
