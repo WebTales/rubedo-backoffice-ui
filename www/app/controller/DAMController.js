@@ -156,7 +156,7 @@ Ext.define('Rubedo.controller.DAMController', {
                 var record = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
             }
             record.beginEdit();
-            record.set("title",Ext.getCmp("DAMSEcondaryFieldsBox").getComponent(0).getComponent(0).getValue());
+            record.set("title",Ext.getCmp("DAMSEcondaryFieldsBox").getComponent(0).getComponent(1).getValue());
             record.set("originalFileId",Ext.getCmp("DAMMainFileFieldBox").getComponent(0).getValue());
             record.set("fields",Ext.getCmp("DAMFieldBox").getForm().getValues());
             record.set("writeWorkspace",Ext.getCmp("DAMFieldBox").getForm().getValues().writeWorkspace);

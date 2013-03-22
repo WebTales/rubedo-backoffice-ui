@@ -314,7 +314,13 @@ Ext.define('Rubedo.controller.FormsController', {
             var RTEditor = Ext.widget("RichTextConfigurator").show();
             RTEditor.getComponent(0).setValue(itemConfig.html);
             Ext.getCmp("richTextConfiguratorSubmit").targetedId=id;  
+        } else if (itemConfig.fType=="multiChoiceQuestion") {
+            var MCQEditor = Ext.widget("MultiChoiceConfigurator");
+            MCQEditor.targetedId=id;
+            MCQEditor.initialItemConfig=itemConfig;
+            MCQEditor.show();
         }
+
     },
 
     init: function(application) {

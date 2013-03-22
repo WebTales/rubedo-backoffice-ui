@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.Viewport', {
     requires: [
         'Rubedo.view.newFormWindow',
         'Rubedo.view.RichTextConfigurator',
-        'Rubedo.view.MulitiChoiceConfigurator',
+        'Rubedo.view.MultiChoiceConfigurator',
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.RFormField',
         'Rubedo.view.RFormPage',

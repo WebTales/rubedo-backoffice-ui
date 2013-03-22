@@ -54,7 +54,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     onBasefieldAdded: function(abstractcomponent, container, pos, options) {
-        if (abstractcomponent.RTip){
+        if (!Ext.isEmpty(abstractcomponent.RTip)){
             abstractcomponent.anchor="90%";
             container.insert(pos,Ext.widget("RHelpBtn", {tooltip:abstractcomponent.RTip}));
         }

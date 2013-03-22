@@ -107,8 +107,8 @@
                     "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
                     "    abstractcomponent.labelSeparator=\" \";\r",
                     "    /*if (abstractcomponent.isXType(\"datefield\")){\r",
-                    "        abstractcomponent.submitFormat='U';\r",
-                    "        abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';\r",
+                    "    abstractcomponent.submitFormat='U';\r",
+                    "    abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';\r",
                     "    }*/\r",
                     "    if (abstractcomponent.fieldLabel==\"Localisable\"){\r",
                     "        //temporary localiser hide\r",
@@ -134,7 +134,7 @@
                 "designer|userClassName": "onBasefieldAdded",
                 "fn": "onBasefieldAdded",
                 "implHandler": [
-                    "if (abstractcomponent.RTip){\r",
+                    "if (!Ext.isEmpty(abstractcomponent.RTip)){\r",
                     "    abstractcomponent.anchor=\"90%\";\r",
                     "    container.insert(pos,Ext.widget(\"RHelpBtn\", {tooltip:abstractcomponent.RTip}));\r",
                     "}"

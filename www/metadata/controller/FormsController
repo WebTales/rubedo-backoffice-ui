@@ -602,7 +602,13 @@
                     "    var RTEditor = Ext.widget(\"RichTextConfigurator\").show();\r",
                     "    RTEditor.getComponent(0).setValue(itemConfig.html);\r",
                     "    Ext.getCmp(\"richTextConfiguratorSubmit\").targetedId=id;  \r",
-                    "}"
+                    "} else if (itemConfig.fType==\"multiChoiceQuestion\") {\r",
+                    "    var MCQEditor = Ext.widget(\"MultiChoiceConfigurator\");\r",
+                    "    MCQEditor.targetedId=id;\r",
+                    "    MCQEditor.initialItemConfig=itemConfig;\r",
+                    "    MCQEditor.show();\r",
+                    "}\r",
+                    ""
                 ]
             },
             "designerId": "ffd48a6c-22e8-4523-9dfe-30b3ff0931a6"

@@ -243,7 +243,7 @@ Ext.application({
         'champsEditionTC',
         'MTeditFields',
         'RichTextConfigurator',
-        'MulitiChoiceConfigurator'
+        'MultiChoiceConfigurator'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

@@ -510,7 +510,7 @@
                     "        var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
                     "    }\r",
                     "    record.beginEdit();\r",
-                    "    record.set(\"title\",Ext.getCmp(\"DAMSEcondaryFieldsBox\").getComponent(0).getComponent(0).getValue());\r",
+                    "    record.set(\"title\",Ext.getCmp(\"DAMSEcondaryFieldsBox\").getComponent(0).getComponent(1).getValue());\r",
                     "    record.set(\"originalFileId\",Ext.getCmp(\"DAMMainFileFieldBox\").getComponent(0).getValue());\r",
                     "    record.set(\"fields\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues());\r",
                     "    record.set(\"writeWorkspace\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues().writeWorkspace);\r",

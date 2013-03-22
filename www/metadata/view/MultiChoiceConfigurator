@@ -6,9 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MulitiChoiceConfigurator",
-        "designer|userAlias": "MulitiChoiceConfigurator",
+        "designer|userClassName": "MultiChoiceConfigurator",
+        "designer|userAlias": "MultiChoiceConfigurator",
         "height": 360,
+        "id": "MultiChoiceConfigurator",
         "width": 632,
         "resizable": false,
         "layout": "fit",
@@ -90,6 +91,7 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField81",
+                        "name": "fieldLabel",
                         "fieldLabel": "Label de la question",
                         "labelWidth": 140
                     },
@@ -105,6 +107,7 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
+                        "name": "RTip",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140
                     },
@@ -120,9 +123,11 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyCheckbox12",
+                        "name": "allowblank",
                         "fieldLabel": "Facultatif",
                         "labelWidth": 140,
-                        "boxLabel": ""
+                        "boxLabel": "",
+                        "inputValue": "true"
                     },
                     "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
                 },
@@ -149,8 +154,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio",
+                                "name": "fieldType",
                                 "fieldLabel": null,
-                                "boxLabel": "Une seule réponse"
+                                "boxLabel": "Une seule réponse",
+                                "inputValue": "radiogroup"
                             },
                             "designerId": "750a8314-f215-494e-ae73-74dc6c4beae8"
                         },
@@ -163,8 +170,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio1",
+                                "name": "fieldType",
                                 "fieldLabel": null,
-                                "boxLabel": "Plusieurs réponses"
+                                "boxLabel": "Plusieurs réponses",
+                                "inputValue": "checkboxgroup"
                             },
                             "designerId": "ef10f7fa-912c-41ee-a667-588658c2b6c9"
                         }
@@ -180,8 +189,11 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyNumberField8",
+                        "name": "columns",
                         "fieldLabel": "Nombre de colonnes",
-                        "labelWidth": 140
+                        "labelWidth": 140,
+                        "allowDecimals": false,
+                        "minValue": 1
                     },
                     "designerId": "16f2e960-a6e1-4ad2-8af7-5aba6c75bde1"
                 }
@@ -221,6 +233,25 @@
                 "scope": "me"
             },
             "designerId": "5c1355e1-842f-46a9-aefa-7c6248833caf"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowAfterRender",
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "var initialValues = { };\r",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "41e5ac8d-d725-4ff5-aa21-859820333d6d"
         }
     ]
 }
