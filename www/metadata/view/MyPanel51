@@ -43,10 +43,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "RTip": "oink",
                         "designer|userClassName": "MyTextArea11",
                         "fieldLabel": "Label"
                     },
-                    "designerId": "e6a1673b-a8e6-4750-a1db-dbbb058a5c61"
+                    "designerId": "e6a1673b-a8e6-4750-a1db-dbbb058a5c61",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RTip",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "textareafield",

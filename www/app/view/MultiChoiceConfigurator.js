@@ -44,7 +44,13 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             xtype: 'button',
                             id: 'MultiChoiceConfiguratorSubmit',
                             iconCls: 'ouiSpetit',
-                            text: 'Valider'
+                            text: 'Valider',
+                            listeners: {
+                                click: {
+                                    fn: me.onMultiChoiceConfiguratorSubmitClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -65,14 +71,14 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
-                            name: 'RTip',
+                            name: 'tooltip',
                             fieldLabel: 'Bulle d\'aide',
                             labelWidth: 140
                         },
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
-                            name: 'allowblank',
+                            name: 'allowBlank',
                             fieldLabel: 'Facultatif',
                             labelWidth: 140,
                             boxLabel: '',
@@ -124,6 +130,35 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
         me.callParent(arguments);
     },
 
+    onMultiChoiceConfiguratorSubmitClick: function(button, e, options) {
+        var initialValues = Ext.clone(button.up().up().initialItemConfig);
+        var myId = Ext.clone(button.up().up().targetedId);
+        var form = button.up().up().getComponent(0).getForm();
+        if (form.isValid()) {
+            var newData = Ext.clone(form.getFieldValues());
+            initialValues.fieldType=newData.fieldType;
+            initialValues.label=newData.fieldLabel;
+            initialValues.tooltip=newData.tooltip;
+            delete newData.fieldType;
+            delete newData.fieldLabel;
+            delete newData.tooltip;
+            newData.vertical=true;
+            newData.items=[];
+            Ext.Array.forEach(newData.answers, function(answer,index){
+                newData.items.push({
+                    boxLabel:answer,
+                    inputValue:index,
+                    name:myId
+                });
+            });
+            delete newData.answers;
+            initialValues.fieldConfig=newData;
+            Ext.getCmp(myId).itemConfig=initialValues;
+            button.up().up().close();
+            Ext.getCmp(myId).sync();
+        }
+    },
+
     onWindowRender: function(abstractcomponent, options) {
         var optionPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:[],
@@ -132,7 +167,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
             fieldLabel:"Réponses possibles",
             labelWidth:140,
             queryMode:"local",
-            submitValue:false,
+            submitValue:true,
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,
@@ -146,8 +181,14 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
     },
 
     onWindowAfterRender: function(abstractcomponent, options) {
-        var initialValues = { };
-
+        var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);
+        initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);
+        initialValues.answers=Ext.Array.pluck(initialValues.items, "boxLabel");
+        initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);
+        initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);
+        delete initialValues.items;
+        delete initialValues.vertical;
+        abstractcomponent.getComponent(0).getForm().setValues(initialValues);
     }
 
 });

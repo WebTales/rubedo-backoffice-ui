@@ -63,7 +63,52 @@
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
-                    "designerId": "627dd1bd-c39d-40a5-8d82-c65fcfcc827f"
+                    "designerId": "627dd1bd-c39d-40a5-8d82-c65fcfcc827f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMultiChoiceConfiguratorSubmitClick",
+                                "fn": "onMultiChoiceConfiguratorSubmitClick",
+                                "implHandler": [
+                                    "var initialValues = Ext.clone(button.up().up().initialItemConfig);\r",
+                                    "var myId = Ext.clone(button.up().up().targetedId);\r",
+                                    "var form = button.up().up().getComponent(0).getForm();\r",
+                                    "if (form.isValid()) {\r",
+                                    "    var newData = Ext.clone(form.getFieldValues());\r",
+                                    "    initialValues.fieldType=newData.fieldType;\r",
+                                    "    initialValues.label=newData.fieldLabel;\r",
+                                    "    initialValues.tooltip=newData.tooltip;\r",
+                                    "    delete newData.fieldType;\r",
+                                    "    delete newData.fieldLabel;\r",
+                                    "    delete newData.tooltip;\r",
+                                    "    newData.vertical=true;\r",
+                                    "    newData.items=[];\r",
+                                    "    Ext.Array.forEach(newData.answers, function(answer,index){\r",
+                                    "        newData.items.push({\r",
+                                    "            boxLabel:answer,\r",
+                                    "            inputValue:index,\r",
+                                    "            name:myId\r",
+                                    "        });\r",
+                                    "    });\r",
+                                    "    delete newData.answers;\r",
+                                    "    initialValues.fieldConfig=newData;\r",
+                                    "    Ext.getCmp(myId).itemConfig=initialValues;\r",
+                                    "    button.up().up().close();\r",
+                                    "    Ext.getCmp(myId).sync();\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "bca9b6fc-4363-4402-bc08-ac0ffac22176"
+                        }
+                    ]
                 }
             ]
         },
@@ -107,7 +152,7 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
-                        "name": "RTip",
+                        "name": "tooltip",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140
                     },
@@ -123,7 +168,7 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyCheckbox12",
-                        "name": "allowblank",
+                        "name": "allowBlank",
                         "fieldLabel": "Facultatif",
                         "labelWidth": 140,
                         "boxLabel": "",
@@ -217,7 +262,7 @@
                     "    fieldLabel:\"Réponses possibles\",\r",
                     "    labelWidth:140,\r",
                     "    queryMode:\"local\",\r",
-                    "    submitValue:false,\r",
+                    "    submitValue:true,\r",
                     "    multiSelect:true,\r",
                     "    forceSelection:false,\r",
                     "    createNewOnEnter:true,\r",
@@ -245,8 +290,14 @@
                 "designer|userClassName": "onWindowAfterRender",
                 "fn": "onWindowAfterRender",
                 "implHandler": [
-                    "var initialValues = { };\r",
-                    ""
+                    "var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);\r",
+                    "initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);\r",
+                    "initialValues.answers=Ext.Array.pluck(initialValues.items, \"boxLabel\");\r",
+                    "initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);\r",
+                    "initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);\r",
+                    "delete initialValues.items;\r",
+                    "delete initialValues.vertical;\r",
+                    "abstractcomponent.getComponent(0).getForm().setValues(initialValues);"
                 ],
                 "name": "afterrender",
                 "scope": "me"

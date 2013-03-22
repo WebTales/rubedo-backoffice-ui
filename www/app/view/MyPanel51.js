@@ -44,6 +44,7 @@ Ext.define('Rubedo.view.MyPanel51', {
                     items: [
                         {
                             xtype: 'textareafield',
+                            RTip: 'oink',
                             fieldLabel: 'Label'
                         },
                         {

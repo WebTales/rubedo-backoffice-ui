@@ -51,6 +51,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -138,6 +139,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -275,7 +277,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<p>Le champ "Zone de texte" permet de saisir un texte long, sans formatage avancé.Il intègre plusieurs règles de validation : alphabétique ou alphanumérique.</p>',
                     config: {
-                        name: 'zone_de_texte',
+                        name: 'zoneDeTexte',
                         fieldLabel: 'Label du champ',
                         maxLength: 6000,
                         minLength: 0,
@@ -293,6 +295,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -430,6 +433,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -538,6 +542,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -644,6 +649,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -757,6 +763,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -857,6 +864,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -947,7 +955,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<p>Le champ "Texte riche" permet de saisir un texte riche, à l\'aide d\'un éditeur wysiwyg. Le composant utilisé par défaut est CKEditor, avec trois configurations par défaut : basic, standard ou complet.</p>',
                     config: {
-                        name: 'texte_riche',
+                        name: 'texteRiche',
                         fieldLabel: 'Label du champ',
                         maxLength: 6000,
                         minLength: 0,
@@ -965,6 +973,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -1079,7 +1088,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<p>Le champ "Liste de choix" permet de choisir un ou plusieurs éléments dans une liste fermée ou ouverte.</p>',
                     config: {
-                        name: 'liste_de_choix',
+                        name: 'listeDeChoix',
                         queryMode: 'local',
                         displayField: 'nom',
                         valueField: 'valeur',
@@ -1099,6 +1108,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -1276,7 +1286,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     openWindow: '',
                     description: '<p>Le champ "Lien sur page" permet de saisir un lien sur une page du site.</p>',
                     config: {
-                        name: 'lien_sur_page',
+                        name: 'lienSurPage',
                         fieldLabel: 'Label du champ',
                         displayField: 'text',
                         localizable: false,
@@ -1292,6 +1302,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -1376,6 +1387,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
@@ -1510,6 +1522,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
+                                vtype: 'alphanum',
                                 allowBlank: false
                             }
                         },
