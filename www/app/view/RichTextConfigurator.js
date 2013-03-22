@@ -38,10 +38,9 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
             items: [
                 {
                     xtype: 'CKEField',
+                    CKETBConfig: 'Standard',
                     name: 'html',
-                    hideLabel: true,
-                    allowBlank: true,
-                    CKETBConfig: 'Standard'
+                    hideLabel: true
                 }
             ],
             dockedItems: [

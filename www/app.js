@@ -242,7 +242,8 @@ Ext.application({
         'MyPanel51',
         'champsEditionTC',
         'MTeditFields',
-        'RichTextConfigurator'
+        'RichTextConfigurator',
+        'MulitiChoiceConfigurator'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

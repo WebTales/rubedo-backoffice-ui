@@ -1,0 +1,226 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MulitiChoiceConfigurator",
+        "designer|userAlias": "MulitiChoiceConfigurator",
+        "height": 360,
+        "width": 632,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Editeur de question choix multiple",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen6619",
+    "designerId": "547619b3-9e1c-4adf-a83a-d4aa14243ebe",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar72"
+            },
+            "designerId": "67e26dce-0cf6-4377-9232-f4074c7609f9",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill36"
+                    },
+                    "designerId": "e696e82d-cbfd-4f08-990a-524843455e53"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton287",
+                        "id": "MultiChoiceConfiguratorSubmit",
+                        "iconCls": "ouiSpetit",
+                        "text": "Valider"
+                    },
+                    "designerId": "627dd1bd-c39d-40a5-8d82-c65fcfcc827f"
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm58",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "ca1412e1-83f1-4a92-8133-be5794c8d6d1",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField81",
+                        "fieldLabel": "Label de la question",
+                        "labelWidth": 140
+                    },
+                    "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField82",
+                        "fieldLabel": "Bulle d'aide",
+                        "labelWidth": 140
+                    },
+                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                },
+                {
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyCheckbox12",
+                        "fieldLabel": "Facultatif",
+                        "labelWidth": 140,
+                        "boxLabel": ""
+                    },
+                    "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
+                },
+                {
+                    "type": "radiogroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioGroup",
+                        "fieldLabel": "Mode",
+                        "labelWidth": 140
+                    },
+                    "designerId": "2455ded5-d787-42a9-ada5-8af1c77e1318",
+                    "cn": [
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio",
+                                "fieldLabel": null,
+                                "boxLabel": "Une seule réponse"
+                            },
+                            "designerId": "750a8314-f215-494e-ae73-74dc6c4beae8"
+                        },
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio1",
+                                "fieldLabel": null,
+                                "boxLabel": "Plusieurs réponses"
+                            },
+                            "designerId": "ef10f7fa-912c-41ee-a667-588658c2b6c9"
+                        }
+                    ]
+                },
+                {
+                    "type": "numberfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyNumberField8",
+                        "fieldLabel": "Nombre de colonnes",
+                        "labelWidth": 140
+                    },
+                    "designerId": "16f2e960-a6e1-4ad2-8af7-5aba6c75bde1"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowRender",
+                "fn": "onWindowRender",
+                "implHandler": [
+                    "var optionPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                    "    store:[],\r",
+                    "    anchor:\"100%\",\r",
+                    "    name:\"answers\",\r",
+                    "    fieldLabel:\"Réponses possibles\",\r",
+                    "    labelWidth:140,\r",
+                    "    queryMode:\"local\",\r",
+                    "    submitValue:false,\r",
+                    "    multiSelect:true,\r",
+                    "    forceSelection:false,\r",
+                    "    createNewOnEnter:true,\r",
+                    "    hideTrigger:true,\r",
+                    "    triggerOnClick:false,\r",
+                    "    createNewOnBlur:true,\r",
+                    "    stacked:true,\r",
+                    "    allowBlank:true\r",
+                    "});\r",
+                    "abstractcomponent.getComponent(0).add(optionPicker);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "5c1355e1-842f-46a9-aefa-7c6248833caf"
+        }
+    ]
+}

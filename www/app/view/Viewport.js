@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.Viewport', {
     requires: [
         'Rubedo.view.newFormWindow',
         'Rubedo.view.RichTextConfigurator',
+        'Rubedo.view.MulitiChoiceConfigurator',
         'Rubedo.view.mediaTypesInterface',
         'Rubedo.view.RFormField',
         'Rubedo.view.RFormPage',
@@ -81,6 +82,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.CTCField',
         'Rubedo.view.CTMTField',
         'Rubedo.view.TTField',
+        'Rubedo.view.FormPickerField',
         'Rubedo.view.FCCField',
         'Rubedo.view.contentPickerWindow',
         'Rubedo.view.ImagePickerWindow',
