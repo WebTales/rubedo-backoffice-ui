@@ -265,7 +265,7 @@ Ext.define('Rubedo.controller.FormsController', {
         Ext.Array.forEach(Ext.getCmp("FormsInterface").getDockedComponent("contextBar").query("buttongroup"), function(thing){thing.enable();});
         Ext.getCmp("removeFormBtn").enable();
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").removeAll();
-        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Formulaires <b> > </b>", iconCls:"form_small"}));
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Questionnaires <b> > </b>", iconCls:"form_small"}));
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("title"), iconCls:"form_small"}));
         var metaBox = Ext.getCmp("FormsInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var values= record.getData();
@@ -290,7 +290,7 @@ Ext.define('Rubedo.controller.FormsController', {
         Ext.getCmp("removeFormBtn").disable();
         Ext.getCmp("FormsInterface").getDockedComponent("barreMeta").getComponent("boiteBarreMeta").hide();
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").removeAll();
-        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Formulaires", iconCls:"form_small"}));
+        Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Questionnaires", iconCls:"form_small"}));
         Ext.getCmp("formSelectedElementField").setValue(null);
         Ext.getCmp("FormsEditContainer").removeAll();
     },
@@ -341,6 +341,11 @@ Ext.define('Rubedo.controller.FormsController', {
             MCQEditor.targetedId=id;
             MCQEditor.initialItemConfig=itemConfig;
             MCQEditor.show();
+        } else if (itemConfig.fType=="openQuestion") {
+            var OQEditor = Ext.widget("OpenFieldConfigurator");
+            OQEditor.targetedId=id;
+            OQEditor.initialItemConfig=itemConfig;
+            OQEditor.show();
         }
 
     },

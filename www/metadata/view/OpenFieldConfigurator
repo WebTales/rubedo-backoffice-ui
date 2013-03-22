@@ -1,0 +1,500 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "OpenFieldConfigurator",
+        "designer|userAlias": "OpenFieldConfigurator",
+        "height": 268,
+        "id": "OpenFieldConfigurator",
+        "width": 632,
+        "resizable": false,
+        "layout": "vbox",
+        "title": "Editeur de question ouverte",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen8463",
+    "designerId": "66fcb2bd-aade-460e-b8f6-0839b3a1d005",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar72"
+            },
+            "designerId": "d2e10625-6858-4324-943a-4fdce8b1021c",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill36"
+                    },
+                    "designerId": "90b88144-a652-4849-99b9-88ea5246e11a"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton287",
+                        "id": "OpenFieldConfiguratorSubmit",
+                        "iconCls": "ouiSpetit",
+                        "text": "Valider"
+                    },
+                    "designerId": "fd1bcb3c-c06f-4340-a2ee-24bcaebdfeac"
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm58",
+                "border": 0,
+                "height": 112,
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "ca1412e1-83f1-4a92-8133-be5794c8d6d1",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField81",
+                        "name": "fieldLabel",
+                        "fieldLabel": "Label de la question",
+                        "labelWidth": 140
+                    },
+                    "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField82",
+                        "name": "tooltip",
+                        "fieldLabel": "Bulle d'aide",
+                        "labelWidth": 140
+                    },
+                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                },
+                {
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyCheckbox12",
+                        "name": "allowBlank",
+                        "fieldLabel": "Facultatif",
+                        "labelWidth": 140,
+                        "boxLabel": "",
+                        "inputValue": "true"
+                    },
+                    "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
+                },
+                {
+                    "type": "radiogroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioGroup",
+                        "fieldLabel": "Type de champ",
+                        "labelPad": null,
+                        "labelWidth": 140
+                    },
+                    "designerId": "8cba619b-6566-41d9-b8fd-7d48d373cb9f",
+                    "cn": [
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Texte",
+                                "inputValue": "textfield"
+                            },
+                            "designerId": "5e745674-511a-4942-8a90-72ccec8f90f9"
+                        },
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio1",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Nombre",
+                                "inputValue": "numberfield"
+                            },
+                            "designerId": "2ecb16a1-924c-46d0-9d6e-6db6442ad5c2"
+                        },
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio1",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Date",
+                                "inputValue": "datefield"
+                            },
+                            "designerId": "5b46a9ee-6c0a-47b0-b075-aaa86895f2c1"
+                        },
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio1",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Temps",
+                                "inputValue": "timefield"
+                            },
+                            "designerId": "75a944b1-e4e1-4f12-9cf9-82c4e892ce94"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onRadiogroupChange",
+                                "fn": "onRadiogroupChange",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CameleonicFormContainer\").getLayout().setActiveItem(Ext.getCmp(\"CameleonicFormContainer\").getComponent(newValue.fieldType));"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "377d18bb-d3a0-4912-93a6-7c95650b4641"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "activeItem": 1,
+                "designer|userClassName": "MyContainer52",
+                "id": "CameleonicFormContainer",
+                "layout": "card"
+            },
+            "designerId": "278b9869-cfb1-405d-9100-4fe38ce8470b",
+            "cn": [
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm63",
+                        "border": 0,
+                        "itemId": "textfield",
+                        "bodyPadding": 10,
+                        "title": ""
+                    },
+                    "designerId": "f842a3c4-0e90-4799-8813-22ef1cb729ae",
+                    "cn": [
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField",
+                                "name": "minLength",
+                                "fieldLabel": "Longueur min",
+                                "labelWidth": 140,
+                                "allowDecimals": false,
+                                "minValue": 0
+                            },
+                            "designerId": "9fe7a6a8-0b5a-43f5-9a18-3da1f25f8931"
+                        },
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField10",
+                                "name": "maxLength",
+                                "fieldLabel": "Longueur max",
+                                "labelWidth": 140,
+                                "allowDecimals": false,
+                                "minValue": 0
+                            },
+                            "designerId": "0fad7f80-3929-4dc9-8a0a-5f814dc2d17e"
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox31",
+                                "name": "vtype",
+                                "fieldLabel": "Validation",
+                                "labelWidth": 140,
+                                "forceSelection": true,
+                                "multiSelect": false,
+                                "store": "[\"alpha\",\"alphanum\",\"email\",\"url\"]"
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "0889a5b0-11b6-49b0-a995-9aec9d2a0801"
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm60",
+                        "border": 0,
+                        "itemId": "numberfield",
+                        "bodyPadding": 10,
+                        "title": ""
+                    },
+                    "designerId": "f0d3269f-60a7-447c-a801-d9b9ee6a84a3",
+                    "cn": [
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField11",
+                                "name": "minValue",
+                                "fieldLabel": "Valeur min",
+                                "labelWidth": 140
+                            },
+                            "designerId": "cb49f2b1-f4ae-433f-b867-5d9967085413"
+                        },
+                        {
+                            "type": "numberfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyNumberField12",
+                                "name": "maxValue",
+                                "fieldLabel": "Valeur max",
+                                "labelWidth": 140
+                            },
+                            "designerId": "76aa5aea-d43f-4a86-af9a-66cc61390fe1"
+                        },
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyCheckbox14",
+                                "name": "allowDecimals",
+                                "fieldLabel": "Decimales",
+                                "labelWidth": 140,
+                                "boxLabel": ""
+                            },
+                            "designerId": "c2fccede-e31d-49df-85fd-d2659ab043a6"
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm61",
+                        "border": 0,
+                        "itemId": "datefield",
+                        "bodyPadding": 10,
+                        "title": ""
+                    },
+                    "designerId": "f4490ff7-123b-41cb-8867-c7f41179c959",
+                    "cn": [
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField9",
+                                "name": "minValue",
+                                "fieldLabel": "Valeur min",
+                                "labelWidth": 140
+                            },
+                            "designerId": "2b8b0a91-70fe-45ab-8068-4c8b349d4aaf"
+                        },
+                        {
+                            "type": "datefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField10",
+                                "name": "maxValue",
+                                "fieldLabel": "Valeur max",
+                                "labelWidth": 140
+                            },
+                            "designerId": "8ecf1cc7-3c37-4e89-a9c9-730152569920"
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm62",
+                        "border": 0,
+                        "itemId": "timefield",
+                        "bodyPadding": 10,
+                        "title": ""
+                    },
+                    "designerId": "03d58755-0f34-4a5f-b04b-9aca84e72a19",
+                    "cn": [
+                        {
+                            "type": "timefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTimeField",
+                                "name": "minValue",
+                                "fieldLabel": "Valeur min",
+                                "labelWidth": 140
+                            },
+                            "designerId": "f52a7e01-e696-4023-9715-05c54eea6dac"
+                        },
+                        {
+                            "type": "timefield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTimeField1",
+                                "name": "maxValue",
+                                "fieldLabel": "Valeur max",
+                                "labelWidth": 140
+                            },
+                            "designerId": "066173b6-75cc-4764-a576-6dc45dab73d7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

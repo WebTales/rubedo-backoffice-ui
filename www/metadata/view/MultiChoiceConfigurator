@@ -124,7 +124,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "ca1412e1-83f1-4a92-8133-be5794c8d6d1",
+            "designerId": "af134271-ea20-420c-a392-f87759c39b7d",
             "cn": [
                 {
                     "type": "textfield",
@@ -140,7 +140,7 @@
                         "fieldLabel": "Label de la question",
                         "labelWidth": 140
                     },
-                    "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11"
+                    "designerId": "4281a76e-27f2-4e96-a32f-181781ff4715"
                 },
                 {
                     "type": "textfield",
@@ -156,7 +156,7 @@
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140
                     },
-                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                    "designerId": "8543ec2e-77e3-4bb3-8a70-f64f3b9d3dcc"
                 },
                 {
                     "type": "checkboxfield",
@@ -174,55 +174,7 @@
                         "boxLabel": "",
                         "inputValue": "true"
                     },
-                    "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
-                },
-                {
-                    "type": "radiogroup",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyRadioGroup",
-                        "fieldLabel": "Mode",
-                        "labelWidth": 140
-                    },
-                    "designerId": "2455ded5-d787-42a9-ada5-8af1c77e1318",
-                    "cn": [
-                        {
-                            "type": "radiofield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyRadio",
-                                "name": "fieldType",
-                                "fieldLabel": null,
-                                "boxLabel": "Une seule réponse",
-                                "inputValue": "radiogroup"
-                            },
-                            "designerId": "750a8314-f215-494e-ae73-74dc6c4beae8"
-                        },
-                        {
-                            "type": "radiofield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyRadio1",
-                                "name": "fieldType",
-                                "fieldLabel": null,
-                                "boxLabel": "Plusieurs réponses",
-                                "inputValue": "checkboxgroup"
-                            },
-                            "designerId": "ef10f7fa-912c-41ee-a667-588658c2b6c9"
-                        }
-                    ]
+                    "designerId": "6a7e3f07-0d2a-4760-a441-b3bec3669a84"
                 },
                 {
                     "type": "numberfield",
@@ -240,7 +192,55 @@
                         "allowDecimals": false,
                         "minValue": 1
                     },
-                    "designerId": "16f2e960-a6e1-4ad2-8af7-5aba6c75bde1"
+                    "designerId": "6fc18692-6812-4cca-9a7e-bf5e61babac3"
+                },
+                {
+                    "type": "radiogroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioGroup",
+                        "fieldLabel": "Mode",
+                        "labelWidth": 140
+                    },
+                    "designerId": "20e9a0ed-1271-4d5f-a01e-6c3ac89fdc54",
+                    "cn": [
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Une seule réponse",
+                                "inputValue": "radiogroup"
+                            },
+                            "designerId": "cdf0777a-9f5c-4d6a-b232-05448194ab0d"
+                        },
+                        {
+                            "type": "radiofield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyRadio1",
+                                "name": "fieldType",
+                                "fieldLabel": null,
+                                "boxLabel": "Plusieurs réponses",
+                                "inputValue": "checkboxgroup"
+                            },
+                            "designerId": "6d9bde21-ec6c-411d-b575-05085fe8b8dd"
+                        }
+                    ]
                 }
             ]
         },

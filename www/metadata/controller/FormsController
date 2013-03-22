@@ -104,7 +104,7 @@
                     "Ext.Array.forEach(Ext.getCmp(\"FormsInterface\").getDockedComponent(\"contextBar\").query(\"buttongroup\"), function(thing){thing.enable();});\r",
                     "Ext.getCmp(\"removeFormBtn\").enable();\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
-                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires <b> > </b>\", iconCls:\"form_small\"}));\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Questionnaires <b> > </b>\", iconCls:\"form_small\"}));\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"title\"), iconCls:\"form_small\"}));\r",
                     "var metaBox = Ext.getCmp(\"FormsInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
                     "var values= record.getData();\r",
@@ -141,7 +141,7 @@
                     "Ext.getCmp(\"removeFormBtn\").disable();\r",
                     "Ext.getCmp(\"FormsInterface\").getDockedComponent(\"barreMeta\").getComponent(\"boiteBarreMeta\").hide();\r",
                     "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").removeAll();\r",
-                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Formulaires\", iconCls:\"form_small\"}));\r",
+                    "Ext.getCmp(\"FormsInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Questionnaires\", iconCls:\"form_small\"}));\r",
                     "Ext.getCmp(\"formSelectedElementField\").setValue(null);\r",
                     "Ext.getCmp(\"FormsEditContainer\").removeAll();"
                 ]
@@ -629,6 +629,11 @@
                     "    MCQEditor.targetedId=id;\r",
                     "    MCQEditor.initialItemConfig=itemConfig;\r",
                     "    MCQEditor.show();\r",
+                    "} else if (itemConfig.fType==\"openQuestion\") {\r",
+                    "    var OQEditor = Ext.widget(\"OpenFieldConfigurator\");\r",
+                    "    OQEditor.targetedId=id;\r",
+                    "    OQEditor.initialItemConfig=itemConfig;\r",
+                    "    OQEditor.show();\r",
                     "}\r",
                     ""
                 ]

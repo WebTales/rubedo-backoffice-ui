@@ -92,7 +92,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     afterrender: this.onButtonAfterRender1
                 },
                 "field": {
-                    beforerender: this.onComponentBeforeRender,
+                    beforerender: this.onComponentBeforeRender
+                },
+                "field, checkboxgroup, radiogroup": {
                     added: this.onBasefieldAdded
                 }
             });

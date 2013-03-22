@@ -15,7 +15,7 @@
         "width": 1080,
         "layout": "hbox",
         "iconCls": "form_small",
-        "title": "Formulaires",
+        "title": "Questionnaires",
         "constrainHeader": true
     },
     "id": "ExtBox1-ext-gen6775",
@@ -75,7 +75,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyButton282",
                         "iconCls": "form_small",
-                        "text": "Formulaires"
+                        "text": "Questionnaires"
                     },
                     "designerId": "473b68ec-b6bf-4c1b-8a24-4a64ed56a9f4"
                 }
@@ -269,7 +269,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "scale": "large",
-                                "text": "Supprimer l'élément"
+                                "text": "Supprimer"
                             },
                             "designerId": "9fd424d8-3d9e-4417-b704-1ef208c905dc"
                         }
@@ -696,7 +696,7 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField82",
                                 "name": "title",
-                                "fieldLabel": "Titre du formulaire",
+                                "fieldLabel": "Titre du questionnaire",
                                 "labelWidth": 160,
                                 "allowBlank": false
                             },

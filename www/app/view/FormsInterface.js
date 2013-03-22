@@ -33,7 +33,7 @@ Ext.define('Rubedo.view.FormsInterface', {
         type: 'hbox'
     },
     iconCls: 'form_small',
-    title: 'Formulaires',
+    title: 'Questionnaires',
     constrainHeader: true,
 
     initComponent: function() {
@@ -59,7 +59,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'button',
                             iconCls: 'form_small',
-                            text: 'Formulaires'
+                            text: 'Questionnaires'
                         }
                     ]
                 },
@@ -145,7 +145,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',
                                     scale: 'large',
-                                    text: 'Supprimer l\'élément'
+                                    text: 'Supprimer'
                                 }
                             ]
                         },
@@ -294,7 +294,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     name: 'title',
-                                    fieldLabel: 'Titre du formulaire',
+                                    fieldLabel: 'Titre du questionnaire',
                                     labelWidth: 160,
                                     allowBlank: false
                                 },

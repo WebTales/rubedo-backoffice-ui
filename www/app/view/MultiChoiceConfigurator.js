@@ -85,6 +85,15 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             inputValue: 'true'
                         },
                         {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            name: 'columns',
+                            fieldLabel: 'Nombre de colonnes',
+                            labelWidth: 140,
+                            allowDecimals: false,
+                            minValue: 1
+                        },
+                        {
                             xtype: 'radiogroup',
                             fieldLabel: 'Mode',
                             labelWidth: 140,
@@ -102,15 +111,6 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                                     inputValue: 'checkboxgroup'
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'numberfield',
-                            anchor: '100%',
-                            name: 'columns',
-                            fieldLabel: 'Nombre de colonnes',
-                            labelWidth: 140,
-                            allowDecimals: false,
-                            minValue: 1
                         }
                     ]
                 }

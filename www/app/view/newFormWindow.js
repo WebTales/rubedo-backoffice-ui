@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.newFormWindow', {
         type: 'fit'
     },
     iconCls: 'new_form_small',
-    title: 'Nouveau formulaire',
+    title: 'Nouveau questionnaire',
     constrain: true,
     modal: true,
 
@@ -50,7 +50,7 @@ Ext.define('Rubedo.view.newFormWindow', {
                             xtype: 'button',
                             anchor: '100%',
                             id: 'submitNewFormBtn',
-                            text: 'Créer ce formulaire'
+                            text: 'Créer ce questionnaire'
                         }
                     ]
                 }
