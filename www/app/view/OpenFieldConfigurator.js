@@ -45,7 +45,13 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                             xtype: 'button',
                             id: 'OpenFieldConfiguratorSubmit',
                             iconCls: 'ouiSpetit',
-                            text: 'Valider'
+                            text: 'Valider',
+                            listeners: {
+                                click: {
+                                    fn: me.onOpenFieldConfiguratorSubmitClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -250,14 +256,53 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onOpenFieldConfiguratorAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
     },
 
+    onOpenFieldConfiguratorSubmitClick: function(button, e, options) {
+        var initialValues = Ext.clone(button.up().up().initialItemConfig);
+        var myId = Ext.clone(button.up().up().targetedId);
+        var form = button.up().up().getComponent(0).getForm();
+        var form2=Ext.getCmp("CameleonicFormContainer").getLayout().getActiveItem().getForm();
+        if ((form.isValid())&&(form2.isValid())) {
+            var newData = Ext.clone(form.getFieldValues());
+            Ext.apply(newData,form2.getValues());
+            initialValues.fieldType=newData.fieldType;
+            initialValues.label=newData.fieldLabel;
+            initialValues.tooltip=newData.tooltip;
+            delete newData.fieldType;
+            delete newData.fieldLabel;
+            delete newData.tooltip;
+            initialValues.fieldConfig=newData;
+            Ext.getCmp(myId).itemConfig=initialValues;
+            button.up().up().close();
+            Ext.getCmp(myId).sync();
+        }
+    },
+
     onRadiogroupChange: function(field, newValue, oldValue, options) {
         Ext.getCmp("CameleonicFormContainer").getLayout().setActiveItem(Ext.getCmp("CameleonicFormContainer").getComponent(newValue.fieldType));
+    },
+
+    onOpenFieldConfiguratorAfterRender: function(abstractcomponent, options) {
+        var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);
+        initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);
+        initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);
+        initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);
+        abstractcomponent.getComponent(0).getForm().setValues(initialValues);
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp("CameleonicFormContainer").getLayout().getActiveItem().getForm().setValues(initialValues);
+        });
+        task.delay(200);
     }
 
 });

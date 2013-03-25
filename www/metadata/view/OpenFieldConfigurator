@@ -64,7 +64,44 @@
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
-                    "designerId": "fd1bcb3c-c06f-4340-a2ee-24bcaebdfeac"
+                    "designerId": "fd1bcb3c-c06f-4340-a2ee-24bcaebdfeac",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onOpenFieldConfiguratorSubmitClick",
+                                "fn": "onOpenFieldConfiguratorSubmitClick",
+                                "implHandler": [
+                                    "var initialValues = Ext.clone(button.up().up().initialItemConfig);\r",
+                                    "var myId = Ext.clone(button.up().up().targetedId);\r",
+                                    "var form = button.up().up().getComponent(0).getForm();\r",
+                                    "var form2=Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm();\r",
+                                    "if ((form.isValid())&&(form2.isValid())) {\r",
+                                    "    var newData = Ext.clone(form.getFieldValues());\r",
+                                    "    Ext.apply(newData,form2.getValues());\r",
+                                    "    initialValues.fieldType=newData.fieldType;\r",
+                                    "    initialValues.label=newData.fieldLabel;\r",
+                                    "    initialValues.tooltip=newData.tooltip;\r",
+                                    "    delete newData.fieldType;\r",
+                                    "    delete newData.fieldLabel;\r",
+                                    "    delete newData.tooltip;\r",
+                                    "    initialValues.fieldConfig=newData;\r",
+                                    "    Ext.getCmp(myId).itemConfig=initialValues;\r",
+                                    "    button.up().up().close();\r",
+                                    "    Ext.getCmp(myId).sync();\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "69643ae9-7eea-4966-9d9a-bad8065acd37"
+                        }
+                    ]
                 }
             ]
         },
@@ -495,6 +532,32 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onOpenFieldConfiguratorAfterRender",
+                "fn": "onOpenFieldConfiguratorAfterRender",
+                "implHandler": [
+                    "var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);\r",
+                    "initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);\r",
+                    "initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);\r",
+                    "initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);\r",
+                    "abstractcomponent.getComponent(0).getForm().setValues(initialValues);\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm().setValues(initialValues);\r",
+                    "});\r",
+                    "task.delay(200);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "92a6ccb6-71fe-4f6d-b80e-bab6eab75248"
         }
     ]
 }
