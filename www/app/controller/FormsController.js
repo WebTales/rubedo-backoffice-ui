@@ -268,6 +268,16 @@ Ext.define('Rubedo.controller.FormsController', {
         this.fireElementConfigurator(myItemConfig,myId);
     },
 
+    onFormFieldConditionsBtnClick: function(button, e, options) {
+        var myItemConfig = Ext.clone(button.up().up().itemConfig);
+        var myId=button.up().up().id;
+        this.refreshFCEStore(myId);
+        var FCEditor = Ext.widget("FCEditor");
+        FCEditor.targetedId=myId;
+        FCEditor.initialItemConfig=myItemConfig;
+        FCEditor.show();
+    },
+
     resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
@@ -360,6 +370,21 @@ Ext.define('Rubedo.controller.FormsController', {
 
     },
 
+    refreshFCEStore: function(notThisOne) {
+        Ext.getStore("FCEStore").removeAll();
+        Ext.Array.forEach(Ext.getCmp("FormsEditContainer").query("RFormField"), function(other){
+            if ((other.itemConfig.fType!="richText")&&(other.id!=notThisOne)){
+                Ext.getStore("FCEStore").add({
+                    id:other.id,
+                    qNb:other.itemConfig.qNb,
+                    itemConfig:other.itemConfig
+                });
+            }
+
+        });
+
+    },
+
     init: function(application) {
         this.control({
             "#addFormBtn": {
@@ -403,6 +428,9 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#formFieldCofiguratorBtn": {
                 click: this.onFormFieldCofiguratorBtnClick
+            },
+            "#formFieldConditionsBtn": {
+                click: this.onFormFieldConditionsBtnClick
             }
         });
     }

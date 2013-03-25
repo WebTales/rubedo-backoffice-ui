@@ -506,10 +506,10 @@
                     "                if (other.itemConfig.fType!=\"richText\"){\r",
                     "                    incrementor=incrementor+1;\r",
                     "                }\r",
-                    "                \r",
+                    "\r",
                     "            });\r",
                     "            newElement.itemConfig.qNb=incrementor;\r",
-                    "            \r",
+                    "\r",
                     "        }\r",
                     "        target.add(newElement); \r",
                     "        button.up().up().close();\r",
@@ -649,6 +649,62 @@
                 ]
             },
             "designerId": "ffd48a6c-22e8-4523-9dfe-30b3ff0931a6"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "refreshFCEStore",
+                "fn": "refreshFCEStore",
+                "designer|params": [
+                    "notThisOne"
+                ],
+                "implHandler": [
+                    "Ext.getStore(\"FCEStore\").removeAll();\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"FormsEditContainer\").query(\"RFormField\"), function(other){\r",
+                    "                if ((other.itemConfig.fType!=\"richText\")&&(other.id!=notThisOne)){\r",
+                    "                    Ext.getStore(\"FCEStore\").add({\r",
+                    "                        id:other.id,\r",
+                    "                        qNb:other.itemConfig.qNb,\r",
+                    "                        itemConfig:other.itemConfig\r",
+                    "                    });\r",
+                    "                }\r",
+                    "\r",
+                    "            });\r",
+                    ""
+                ]
+            },
+            "designerId": "d9929370-ed0e-4c00-9140-a05087a0c44d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormFieldConditionsBtnClick",
+                "fn": "onFormFieldConditionsBtnClick",
+                "implHandler": [
+                    "var myItemConfig = Ext.clone(button.up().up().itemConfig);\r",
+                    "var myId=button.up().up().id;\r",
+                    "this.refreshFCEStore(myId);\r",
+                    "var FCEditor = Ext.widget(\"FCEditor\");\r",
+                    "FCEditor.targetedId=myId;\r",
+                    "FCEditor.initialItemConfig=myItemConfig;\r",
+                    "FCEditor.show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formFieldConditionsBtn"
+            },
+            "designerId": "bc4ec84f-c3f6-42dc-978f-341e1bd18be8"
         }
     ]
 }

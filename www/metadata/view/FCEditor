@@ -1,0 +1,176 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "FCEditor",
+        "designer|userAlias": "FCEditor",
+        "height": 216,
+        "id": "FCEditor",
+        "width": 632,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Condition d'affichage",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "id": "ExtBox1-ext-gen24737",
+    "designerId": "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar72"
+            },
+            "designerId": "9c0fd240-a302-4d18-aca9-fa11d5b57c98",
+            "cn": [
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill36"
+                    },
+                    "designerId": "3c0e42d6-2b57-48a7-a4ce-15243e99d554"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton287",
+                        "id": "FCEditorSubmitBtn",
+                        "iconCls": "ouiSpetit",
+                        "text": "Valider"
+                    },
+                    "designerId": "0fa01f29-24da-4cd5-bf23-566c6e451c8d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onFCEditorSubmitBtnClick",
+                                "fn": "onFCEditorSubmitBtnClick",
+                                "implHandler": [
+                                    "var initialValues = Ext.clone(button.up().up().initialItemConfig);\r",
+                                    "var myId = Ext.clone(button.up().up().targetedId);\r",
+                                    "var form = button.up().up().getComponent(0).getForm();\r",
+                                    "if (form.isValid()) {\r",
+                                    "    var newCond=[form.getValues()];\r",
+                                    "    Ext.getCmp(myId).itemConfig.conditionals=newCond;\r",
+                                    "    button.up().up().close();\r",
+                                    "    Ext.getCmp(myId).sync();\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "db894c93-c11c-477f-a337-072b7b639bfc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "middle",
+                "designer|userClassName": "MyForm64",
+                "itemId": "conditionWraper",
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "a9c0260b-f0e5-45b0-94d6-20c0e14131c9",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "conditionFieldCombo",
+                        "layout|flex": 1
+                    },
+                    "designerId": "75c47fb2-ed24-4e3c-be97-2edf87479e61",
+                    "masterInstanceId": "ExtBox1-ext-gen27779"
+                },
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 0.3,
+                        "designer|userClassName": "MyComboBox33",
+                        "margin": "0 0 0 10",
+                        "name": "operator",
+                        "value": [
+                            "\"=\""
+                        ],
+                        "fieldLabel": "",
+                        "labelWidth": null,
+                        "editable": false,
+                        "forceSelection": true,
+                        "store": "[\"=\",\"!=\"]"
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "64b3aeea-c31e-4c69-ad6d-b7690d95e6eb"
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "container|align": "middle",
+                        "designer|userClassName": "MyContainer53",
+                        "height": 140,
+                        "id": "answerFieldComponent",
+                        "layout": "hbox"
+                    },
+                    "designerId": "5b679d1f-7cce-4332-9bf9-aa854a93e768"
+                }
+            ]
+        }
+    ]
+}

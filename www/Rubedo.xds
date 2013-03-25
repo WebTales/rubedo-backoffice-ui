@@ -2244,12 +2244,37 @@
                 "app/view/OpenFieldConfigurator.js"
             ],
             "className": "OpenFieldConfigurator"
+        },
+        "0c962f45-9c0e-470c-bf7f-7da0075f0ed9": {
+            "paths": [
+                "metadata/store/FCEStore",
+                "app/store/override/FCEStore.js",
+                "app/store/FCEStore.js"
+            ],
+            "className": "FCEStore"
+        },
+        "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02": {
+            "paths": [
+                "metadata/view/FCEditor",
+                "app/view/override/FCEditor.js",
+                "app/view/FCEditor.js"
+            ],
+            "className": "FCEditor"
+        },
+        "1f387c06-5c71-4cab-ac38-38a30ac34a23": {
+            "paths": [
+                "metadata/view/MyComboBox32",
+                "app/view/override/MyComboBox32.js",
+                "app/view/MyComboBox32.js"
+            ],
+            "className": "MyComboBox32"
         }
     },
     "viewOrderMap": {
         "view": [
             "02bcaee3-2fc4-4f83-8521-12359112b8ab",
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
+            "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02",
             "547619b3-9e1c-4adf-a83a-d4aa14243ebe",
             "66fcb2bd-aade-460e-b8f6-0839b3a1d005",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
@@ -2377,7 +2402,8 @@
             "d7860367-3cf8-4eb2-bcdd-74fea57755fb",
             "73ed8109-ae62-44c8-9526-cd885b3b0396",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
-            "7120e487-8033-4805-b435-a863418861d9"
+            "7120e487-8033-4805-b435-a863418861d9",
+            "1f387c06-5c71-4cab-ac38-38a30ac34a23"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2462,7 +2488,8 @@
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
             "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
-            "fc88ff8b-4055-49a7-9239-9574a3aef04e"
+            "fc88ff8b-4055-49a7-9239-9574a3aef04e",
+            "0c962f45-9c0e-470c-bf7f-7da0075f0ed9"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

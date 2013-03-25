@@ -131,7 +131,8 @@ Ext.application({
         'ContributeWorkspacesComboWithAll',
         'FormsStore',
         'FormFieldTypesStore',
-        'FormPickerStore'
+        'FormPickerStore',
+        'FCEStore'
     ],
     views: [
         'MyContainer',
@@ -244,7 +245,9 @@ Ext.application({
         'MTeditFields',
         'RichTextConfigurator',
         'MulitiChoiceConfigurator',
-        'OpenFieldConfigurator'
+        'OpenFieldConfigurator',
+        'FCEditor',
+        'MyComboBox32'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

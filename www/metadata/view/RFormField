@@ -125,9 +125,34 @@
                         "itemId": "formFieldCofiguratorBtn",
                         "iconCls": "pencil_med",
                         "scale": "medium",
-                        "text": ""
+                        "text": "",
+                        "tooltip": "Paramètres"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
                     },
                     "designerId": "fafe42e9-8bf4-44f9-a072-4b5a6e563fc1"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton286",
+                        "itemId": "formFieldConditionsBtn",
+                        "margin": "0 0 0 10",
+                        "iconCls": "cond_med",
+                        "scale": "medium",
+                        "text": "",
+                        "tooltip": "Condition d'affichage"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "694ca393-4a09-4514-87ee-e9ac13beeb04"
                 }
             ]
         }
