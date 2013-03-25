@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "FCEditor",
         "designer|userAlias": "FCEditor",
-        "height": 216,
+        "height": 211,
         "id": "FCEditor",
         "width": 632,
         "resizable": false,
@@ -154,7 +154,7 @@
                     "designerId": "64b3aeea-c31e-4c69-ad6d-b7690d95e6eb"
                 },
                 {
-                    "type": "container",
+                    "type": "panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -163,14 +163,45 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "container|align": "middle",
-                        "designer|userClassName": "MyContainer53",
+                        "designer|userClassName": "MyPanel55",
+                        "border": 0,
                         "height": 140,
                         "id": "answerFieldComponent",
-                        "layout": "hbox"
+                        "layout": "hbox",
+                        "bodyPadding": 10
                     },
                     "designerId": "5b679d1f-7cce-4332-9bf9-aa854a93e768"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFCEditorAfterRender",
+                "fn": "onFCEditorAfterRender",
+                "implHandler": [
+                    "var initialValues = Ext.clone(abstractcomponent.initialItemConfig);\r",
+                    "var myId = Ext.clone(abstractcomponent.targetedId);\r",
+                    "var form = abstractcomponent.getComponent(0);\r",
+                    "if (!Ext.isEmpty(initialValues.conditionals)){\r",
+                    "    console.log(\"ok\");\r",
+                    "    form.getComponent(0).setValue(initialValues.conditionals[0].field);\r",
+                    "    form.getComponent(1).setValue(initialValues.conditionals[0].operator);\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "        try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value)} catch (err){console.log(\"problem with scondary field\");}\r",
+                    "    });\r",
+                    "    task.delay(300);\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "b22aa658-291f-4a18-a7ae-5a84905890ab"
         }
     ]
 }

@@ -21,7 +21,7 @@ Ext.define('Rubedo.view.FCEditor', {
         'Rubedo.view.MyComboBox32'
     ],
 
-    height: 216,
+    height: 211,
     id: 'FCEditor',
     width: 632,
     resizable: false,
@@ -90,18 +90,26 @@ Ext.define('Rubedo.view.FCEditor', {
                             ]
                         },
                         {
-                            xtype: 'container',
+                            xtype: 'panel',
                             flex: 1,
+                            border: 0,
                             height: 140,
                             id: 'answerFieldComponent',
                             layout: {
                                 align: 'middle',
                                 type: 'hbox'
-                            }
+                            },
+                            bodyPadding: 10
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onFCEditorAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -118,6 +126,21 @@ Ext.define('Rubedo.view.FCEditor', {
             Ext.getCmp(myId).sync();
         }
 
+    },
+
+    onFCEditorAfterRender: function(abstractcomponent, options) {
+        var initialValues = Ext.clone(abstractcomponent.initialItemConfig);
+        var myId = Ext.clone(abstractcomponent.targetedId);
+        var form = abstractcomponent.getComponent(0);
+        if (!Ext.isEmpty(initialValues.conditionals)){
+            console.log("ok");
+            form.getComponent(0).setValue(initialValues.conditionals[0].field);
+            form.getComponent(1).setValue(initialValues.conditionals[0].operator);
+            var task = new Ext.util.DelayedTask(function(){
+                try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value)} catch (err){console.log("problem with scondary field");}
+            });
+            task.delay(300);
+        }
     }
 
 });

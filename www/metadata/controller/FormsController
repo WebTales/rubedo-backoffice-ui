@@ -666,15 +666,15 @@
                 "implHandler": [
                     "Ext.getStore(\"FCEStore\").removeAll();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"FormsEditContainer\").query(\"RFormField\"), function(other){\r",
-                    "                if ((other.itemConfig.fType!=\"richText\")&&(other.id!=notThisOne)){\r",
-                    "                    Ext.getStore(\"FCEStore\").add({\r",
-                    "                        id:other.id,\r",
-                    "                        qNb:other.itemConfig.qNb,\r",
-                    "                        itemConfig:other.itemConfig\r",
-                    "                    });\r",
-                    "                }\r",
+                    "    if ((other.itemConfig.fType!=\"richText\")&&(other.id!=notThisOne)){\r",
+                    "        Ext.getStore(\"FCEStore\").add({\r",
+                    "            id:other.id,\r",
+                    "            qNb:other.itemConfig.qNb,\r",
+                    "            itemConfig:other.itemConfig\r",
+                    "        });\r",
+                    "    }\r",
                     "\r",
-                    "            });\r",
+                    "});\r",
                     ""
                 ]
             },

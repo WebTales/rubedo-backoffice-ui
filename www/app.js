@@ -131,8 +131,7 @@ Ext.application({
         'ContributeWorkspacesComboWithAll',
         'FormsStore',
         'FormFieldTypesStore',
-        'FormPickerStore',
-        'FCEStore'
+        'FormPickerStore'
     ],
     views: [
         'MyContainer',

@@ -197,7 +197,11 @@
                                 "iconAlign": "top",
                                 "iconCls": "page_add_big",
                                 "scale": "large",
-                                "text": "Nouvelle page"
+                                "text": "Nouvelle page",
+                                "tooltip": "Permet d'ajouter une page dans un formulaire (gestion d'étapes)"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
                             },
                             "designerId": "6f04717d-3978-4a9d-a873-3dec1fd3796f"
                         },
@@ -441,10 +445,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "RApplication": "damTypes",
+                        "RApplication": "forms",
                         "layout|flex": null,
                         "designer|userClassName": "MyButton94",
-                        "itemId": null,
+                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -726,15 +730,40 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "layout|anchor": "10%",
                                 "designer|userClassName": "MyCheckbox11",
+                                "style": "{float:left;}",
                                 "name": "uniqueAnswer",
                                 "fieldLabel": "Unicité de la réponse",
                                 "labelWidth": 160,
                                 "boxLabel": "",
                                 "inputValue": "true"
                             },
+                            "configAlternates": {
+                                "style": "string"
+                            },
                             "designerId": "5168102f-4e12-4b26-b079-af1e1565622a"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton292",
+                                "margin": "0 0 0 20",
+                                "style": "{float:left;}",
+                                "iconCls": "help",
+                                "text": "",
+                                "tooltip": "L'unicité a pour objectif de restreindre la soumission d'un questionnaire selon une durée paramétrable"
+                            },
+                            "configAlternates": {
+                                "style": "string",
+                                "tooltip": "string"
+                            },
+                            "designerId": "be82c7ed-7e72-4dcc-8ef8-887bf2b60936"
                         },
                         {
                             "type": "datefield",
@@ -747,7 +776,7 @@
                                 "layout|anchor": "50%",
                                 "designer|userClassName": "MyDateField8",
                                 "margin": "0 10 0 0",
-                                "style": "{float:left;}",
+                                "style": "{float:left; clear:both;}",
                                 "name": "openingDate",
                                 "fieldLabel": "Date d'ouverture",
                                 "labelWidth": 160
@@ -768,9 +797,13 @@
                                 "layout|anchor": "50%",
                                 "designer|userClassName": "MyDateField9",
                                 "margin": null,
+                                "style": "{float:right; }",
                                 "name": "closingDate",
                                 "fieldLabel": "Date de fermeture",
                                 "labelWidth": 160
+                            },
+                            "configAlternates": {
+                                "style": "string"
                             },
                             "designerId": "b4e88ee9-206c-4e96-8daf-0a402a50e78e"
                         }
@@ -892,7 +925,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "TabConfig32"
+                                "designer|userClassName": "TabConfig32",
+                                "tooltip": "L'exploitation des questionnaires permet d'exporter les résultats dans le format csv"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
                             },
                             "designerId": "ea0dc294-beab-4c6a-bd1b-609f95386d6c"
                         }

@@ -109,7 +109,8 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'page_add_big',
                                     scale: 'large',
-                                    text: 'Nouvelle page'
+                                    text: 'Nouvelle page',
+                                    tooltip: 'Permet d\'ajouter une page dans un formulaire (gestion d\'étapes)'
                                 },
                                 {
                                     xtype: 'button',
@@ -211,7 +212,8 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'button',
-                            RApplication: 'damTypes',
+                            RApplication: 'forms',
+                            itemId: 'RHelpBtn',
                             iconCls: 'info_big',
                             scale: 'large',
                             text: ''
@@ -307,7 +309,8 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
-                                    anchor: '100%',
+                                    anchor: '10%',
+                                    style: '{float:left;}',
                                     name: 'uniqueAnswer',
                                     fieldLabel: 'Unicité de la réponse',
                                     labelWidth: 160,
@@ -315,10 +318,18 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     inputValue: 'true'
                                 },
                                 {
+                                    xtype: 'button',
+                                    margin: '0 0 0 20',
+                                    style: '{float:left;}',
+                                    iconCls: 'help',
+                                    text: '',
+                                    tooltip: 'L\'unicité a pour objectif de restreindre la soumission d\'un questionnaire selon une durée paramétrable'
+                                },
+                                {
                                     xtype: 'datefield',
                                     anchor: '50%',
                                     margin: '0 10 0 0',
-                                    style: '{float:left;}',
+                                    style: '{float:left; clear:both;}',
                                     name: 'openingDate',
                                     fieldLabel: 'Date d\'ouverture',
                                     labelWidth: 160
@@ -326,6 +337,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'datefield',
                                     anchor: '50%',
+                                    style: '{float:right; }',
                                     name: 'closingDate',
                                     fieldLabel: 'Date de fermeture',
                                     labelWidth: 160
@@ -369,7 +381,11 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'panel',
                             iconCls: 'monitoring',
-                            title: 'Exploitation'
+                            title: 'Exploitation',
+                            tabConfig: {
+                                xtype: 'tab',
+                                tooltip: 'L\'exploitation des questionnaires permet d\'exporter les résultats dans le format csv'
+                            }
                         }
                     ]
                 }
