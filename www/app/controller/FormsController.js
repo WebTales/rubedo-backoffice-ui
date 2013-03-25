@@ -238,6 +238,16 @@ Ext.define('Rubedo.controller.FormsController', {
                 newElement.itemConfig=insertor.itemConfig;
                 if (insertor.itemConfig.fType=="richText"){
                     newElement.styleHtmlContent=true;
+                } else {
+                    var incrementor=1;
+                    Ext.Array.forEach(Ext.getCmp("FormsEditContainer").query("RFormField"), function(other){
+                        if (other.itemConfig.fType!="richText"){
+                            incrementor=incrementor+1;
+                        }
+
+                    });
+                    newElement.itemConfig.qNb=incrementor;
+
                 }
                 target.add(newElement); 
                 button.up().up().close();

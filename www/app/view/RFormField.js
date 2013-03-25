@@ -78,7 +78,7 @@ Ext.define('Rubedo.view.RFormField', {
             var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
             previewField.anchor = "100%";
             previewField.labelAlign="top";
-            previewField.fieldLabel=me.itemConfig.label;
+            previewField.fieldLabel="<b>Q"+me.itemConfig.qNb+" </b> "+me.itemConfig.label;
             if (!Ext.isEmpty(me.itemConfig.tooltip)){
                 previewField.RTip=me.itemConfig.tooltip;
             }
