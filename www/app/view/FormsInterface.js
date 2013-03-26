@@ -72,7 +72,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.damTypes',
+                            ACL: 'write.ui.forms',
                             id: 'addFormBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -81,7 +81,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.damTypes',
+                            ACL: 'write.ui.forms',
                             disabled: true,
                             id: 'removeFormBtn',
                             iconAlign: 'top',
@@ -91,7 +91,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.damTypes',
+                            ACL: 'write.ui.forms',
                             disabled: true,
                             id: 'formElementsEditBtnGroup',
                             headerPosition: 'bottom',
@@ -163,7 +163,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    ACL: 'write.ui.damTypes',
+                                    ACL: 'write.ui.forms',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
@@ -181,7 +181,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.damTypes',
+                            ACL: 'write.ui.forms',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -193,7 +193,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    ACL: 'write.ui.damTypes',
+                                    ACL: 'write.ui.forms',
                                     id: 'formSaveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',

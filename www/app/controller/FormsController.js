@@ -284,6 +284,13 @@ Ext.define('Rubedo.controller.FormsController', {
     resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
+        if ((!ACL.interfaceRights["write.ui.forms"])||(record.get("readOnly"))){
+            Ext.Array.forEach(Ext.getCmp("formPropsForm").up().query("field"),function(field){field.setReadOnly(true);});
+            Ext.getCmp("FormsEditContainer").disable();
+        } else {
+            Ext.Array.forEach(Ext.getCmp("formPropsForm").up().query("field"),function(field){field.setReadOnly(false);});
+            Ext.getCmp("FormsEditContainer").enable();
+        }
         Ext.getCmp("FormsCenterZone").enable();
         Ext.Array.forEach(Ext.getCmp("FormsInterface").getDockedComponent("contextBar").query("buttongroup"), function(thing){thing.enable();});
         Ext.getCmp("removeFormBtn").enable();

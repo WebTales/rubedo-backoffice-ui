@@ -100,6 +100,13 @@
                 "implHandler": [
                     "Ext.getCmp(\"formPropsForm\").getForm().setValues(record.getData());\r",
                     "Ext.getCmp(\"formRightsForm\").getForm().setValues(record.getData());\r",
+                    "if ((!ACL.interfaceRights[\"write.ui.forms\"])||(record.get(\"readOnly\"))){\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"formPropsForm\").up().query(\"field\"),function(field){field.setReadOnly(true);});\r",
+                    "    Ext.getCmp(\"FormsEditContainer\").disable();\r",
+                    "} else {\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"formPropsForm\").up().query(\"field\"),function(field){field.setReadOnly(false);});\r",
+                    "    Ext.getCmp(\"FormsEditContainer\").enable();\r",
+                    "}\r",
                     "Ext.getCmp(\"FormsCenterZone\").enable();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"FormsInterface\").getDockedComponent(\"contextBar\").query(\"buttongroup\"), function(thing){thing.enable();});\r",
                     "Ext.getCmp(\"removeFormBtn\").enable();\r",
