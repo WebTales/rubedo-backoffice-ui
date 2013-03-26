@@ -1851,7 +1851,7 @@
                     "                    type: 'ajax',\r",
                     "                    api: {\r",
                     "                        create: 'pages/create',\r",
-                    "                        read: 'pages/read-child',\r",
+                    "                        read: 'pages/tree',\r",
                     "                        update: 'pages/update',\r",
                     "                        destroy: 'pages/delete'\r",
                     "                    },\r",

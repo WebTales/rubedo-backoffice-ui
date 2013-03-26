@@ -326,7 +326,7 @@
                     "    });\r",
                     "    configurateur.store.load();\r",
                     "    configurateur.valueField=\"id\";\r",
-                    "            configurateur.displayField=\"text\";\r",
+                    "    configurateur.displayField=\"text\";\r",
                     "    configurateur.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
                     "}\r",
                     "else if (donnees.cType == 'Ext.form.field.ComboBox') {\r",
