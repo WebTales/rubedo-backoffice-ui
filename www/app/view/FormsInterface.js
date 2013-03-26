@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.FormsInterface', {
         'Rubedo.view.WorkspaceCombo'
     ],
 
-    favoriteIcon: 'images.png',
+    favoriteIcon: 'note_edit.png',
     height: 627,
     id: 'FormsInterface',
     width: 1080,
@@ -171,6 +171,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
                                     scale: 'large',
