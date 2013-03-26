@@ -136,7 +136,13 @@ Ext.define('Rubedo.controller.FormsController', {
             e.stopEvent();
         });
 
+        abstractcomponent.getEl().on("dblclick", function(e){
+            e.stopEvent();
+            if (abstractcomponent.id!="FormsEditContainer"){
+                Rubedo.controller.FormsController.prototype.fireElementConfigurator(abstractcomponent.itemConfig,abstractcomponent.id);
+            }
 
+        });
     },
 
     onFormSelectedElementFieldChange: function(field, newValue, oldValue, options) {

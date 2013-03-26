@@ -51,6 +51,9 @@ Ext.define('Rubedo.view.MyComboBox32', {
         var targeted=field.getStore().findRecord("id",newValue);
         if (!Ext.isEmpty(targeted)){
             var conf=Ext.clone(targeted.get("itemConfig"));
+            if (conf.fieldType=="radiogroup"){
+                conf.fieldType="checkboxgroup";
+            }
             if (!Ext.isEmpty(conf.fieldConfig.items)){
                 Ext.Array.forEach(conf.fieldConfig.items, function(item){item.name="value";});
             }

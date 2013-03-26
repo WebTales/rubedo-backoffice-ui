@@ -293,7 +293,13 @@
                     "    e.stopEvent();\r",
                     "});\r",
                     "\r",
-                    ""
+                    "abstractcomponent.getEl().on(\"dblclick\", function(e){\r",
+                    "    e.stopEvent();\r",
+                    "    if (abstractcomponent.id!=\"FormsEditContainer\"){\r",
+                    "        Rubedo.controller.FormsController.prototype.fireElementConfigurator(abstractcomponent.itemConfig,abstractcomponent.id);\r",
+                    "    }\r",
+                    "    \r",
+                    "});"
                 ],
                 "name": "render",
                 "scope": "me",
