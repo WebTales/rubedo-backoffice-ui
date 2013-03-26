@@ -81,6 +81,7 @@
                                     "var form = button.up().up().getComponent(0).getForm();\r",
                                     "if (form.isValid()) {\r",
                                     "    var newCond=[form.getValues()];\r",
+                                    "    newCond[0].value=Ext.getCmp(\"FCEditor\").getComponent(0).getComponent(2).getComponent(0).getValue();\r",
                                     "    Ext.getCmp(myId).itemConfig.conditionals=newCond;\r",
                                     "    button.up().up().close();\r",
                                     "    Ext.getCmp(myId).sync();\r",
@@ -193,7 +194,7 @@
                     "    form.getComponent(0).setValue(initialValues.conditionals[0].field);\r",
                     "    form.getComponent(1).setValue(initialValues.conditionals[0].operator);\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",
-                    "        try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value)} catch (err){console.log(\"problem with scondary field\");}\r",
+                    "        try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value); console.log(initialValues.conditionals[0].value);} catch (err){console.log(\"problem with scondary field\");}\r",
                     "    });\r",
                     "    task.delay(300);\r",
                     "}"
