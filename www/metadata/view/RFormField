@@ -60,7 +60,7 @@
                     "    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
                     "    previewField.anchor = \"100%\";\r",
                     "    previewField.labelAlign=\"top\";\r",
-                    "    previewField.fieldLabel=\"<b>Q\"+me.itemConfig.qNb+\" </b> \"+me.itemConfig.label;\r",
+                    "    previewField.fieldLabel=\"<b>\"+me.itemConfig.qNb+\" </b> \"+me.itemConfig.label;\r",
                     "    if (!Ext.isEmpty(me.itemConfig.tooltip)){\r",
                     "        previewField.RTip=me.itemConfig.tooltip;\r",
                     "    }\r",

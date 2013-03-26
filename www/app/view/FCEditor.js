@@ -138,7 +138,7 @@ Ext.define('Rubedo.view.FCEditor', {
             form.getComponent(0).setValue(initialValues.conditionals[0].field);
             form.getComponent(1).setValue(initialValues.conditionals[0].operator);
             var task = new Ext.util.DelayedTask(function(){
-                try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value); console.log(initialValues.conditionals[0].value);} catch (err){console.log("problem with scondary field");}
+                try {form.getComponent(2).getComponent(0).setValue(initialValues.conditionals[0].value);} catch (err){console.log("problem with scondary field");}
             });
             task.delay(300);
         }

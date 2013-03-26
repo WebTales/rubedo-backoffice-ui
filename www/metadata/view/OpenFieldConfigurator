@@ -9,7 +9,7 @@
         "container|align": "stretch",
         "designer|userClassName": "OpenFieldConfigurator",
         "designer|userAlias": "OpenFieldConfigurator",
-        "height": 268,
+        "height": 286,
         "id": "OpenFieldConfigurator",
         "width": 632,
         "resizable": false,
@@ -83,10 +83,17 @@
                                     "var form2=Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm();\r",
                                     "if ((form.isValid())&&(form2.isValid())) {\r",
                                     "    var newData = Ext.clone(form.getFieldValues());\r",
-                                    "    Ext.apply(newData,form2.getValues());\r",
+                                    "    var partData = form2.getFieldValues();\r",
+                                    "    Ext.Object.each(partData, function(key,value,it){\r",
+                                    "        if (Ext.isEmpty(value)){\r",
+                                    "            it[key]=undefined;\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "    Ext.apply(newData,partData);\r",
                                     "    initialValues.fieldType=newData.fieldType;\r",
                                     "    initialValues.label=newData.fieldLabel;\r",
                                     "    initialValues.tooltip=newData.tooltip;\r",
+                                    "    initialValues.qNb=newData.qNb;\r",
                                     "    delete newData.fieldType;\r",
                                     "    delete newData.fieldLabel;\r",
                                     "    delete newData.tooltip;\r",
@@ -115,7 +122,7 @@
             "userConfig": {
                 "designer|userClassName": "MyForm58",
                 "border": 0,
-                "height": 112,
+                "height": 134,
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -147,11 +154,27 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
+                        "name": "qNb",
+                        "fieldLabel": "Code de la question",
+                        "labelWidth": 140
+                    },
+                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField82",
                         "name": "tooltip",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140
                     },
-                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                    "designerId": "fda18543-0001-43bf-95f0-e2cd70e39210"
                 },
                 {
                     "type": "checkboxfield",
@@ -423,7 +446,7 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox14",
                                 "name": "allowDecimals",
-                                "fieldLabel": "Decimales",
+                                "fieldLabel": "Décimales",
                                 "labelWidth": 140,
                                 "boxLabel": ""
                             },

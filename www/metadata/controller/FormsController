@@ -508,7 +508,7 @@
                     "                }\r",
                     "\r",
                     "            });\r",
-                    "            newElement.itemConfig.qNb=incrementor;\r",
+                    "            newElement.itemConfig.qNb=\"Q\"+incrementor;\r",
                     "\r",
                     "        }\r",
                     "        target.add(newElement); \r",

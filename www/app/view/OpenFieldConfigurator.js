@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.OpenFieldConfigurator',
 
-    height: 268,
+    height: 286,
     id: 'OpenFieldConfigurator',
     width: 632,
     resizable: false,
@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                 {
                     xtype: 'form',
                     border: 0,
-                    height: 112,
+                    height: 134,
                     bodyPadding: 10,
                     title: '',
                     items: [
@@ -69,6 +69,13 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                             anchor: '100%',
                             name: 'fieldLabel',
                             fieldLabel: 'Label de la question',
+                            labelWidth: 140
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            name: 'qNb',
+                            fieldLabel: 'Code de la question',
                             labelWidth: 140
                         },
                         {
@@ -202,7 +209,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
                                     name: 'allowDecimals',
-                                    fieldLabel: 'Decimales',
+                                    fieldLabel: 'Décimales',
                                     labelWidth: 140,
                                     boxLabel: ''
                                 }
@@ -275,10 +282,17 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
         var form2=Ext.getCmp("CameleonicFormContainer").getLayout().getActiveItem().getForm();
         if ((form.isValid())&&(form2.isValid())) {
             var newData = Ext.clone(form.getFieldValues());
-            Ext.apply(newData,form2.getValues());
+            var partData = form2.getFieldValues();
+            Ext.Object.each(partData, function(key,value,it){
+                if (Ext.isEmpty(value)){
+                    it[key]=undefined;
+                }
+            });
+            Ext.apply(newData,partData);
             initialValues.fieldType=newData.fieldType;
             initialValues.label=newData.fieldLabel;
             initialValues.tooltip=newData.tooltip;
+            initialValues.qNb=newData.qNb;
             delete newData.fieldType;
             delete newData.fieldLabel;
             delete newData.tooltip;

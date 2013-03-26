@@ -71,6 +71,13 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            name: 'qNb',
+                            fieldLabel: 'Code de la question',
+                            labelWidth: 140
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
                             name: 'tooltip',
                             fieldLabel: 'Bulle d\'aide',
                             labelWidth: 140
@@ -79,7 +86,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             xtype: 'checkboxfield',
                             anchor: '100%',
                             name: 'allowBlank',
-                            fieldLabel: 'Facultatif',
+                            fieldLabel: 'Faculatif',
                             labelWidth: 140,
                             boxLabel: '',
                             inputValue: 'true'
@@ -139,9 +146,11 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
             initialValues.fieldType=newData.fieldType;
             initialValues.label=newData.fieldLabel;
             initialValues.tooltip=newData.tooltip;
+            initialValues.qNb=newData.qNb;
             delete newData.fieldType;
             delete newData.fieldLabel;
             delete newData.tooltip;
+            delete newData.qNb;
             newData.vertical=true;
             newData.items=[];
             Ext.Array.forEach(newData.answers, function(answer,index){
@@ -186,6 +195,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
         initialValues.answers=Ext.Array.pluck(initialValues.items, "boxLabel");
         initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);
         initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);
+        initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);
         delete initialValues.items;
         delete initialValues.vertical;
         abstractcomponent.getComponent(0).getForm().setValues(initialValues);

@@ -252,7 +252,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'note.edit.png',
             itemId: 'FormsInterface',
             iconCls: 'form_small',
-            text: 'Formulaires'
+            text: 'Questionnaires'
         }
         ]);
     },

@@ -84,9 +84,11 @@
                                     "    initialValues.fieldType=newData.fieldType;\r",
                                     "    initialValues.label=newData.fieldLabel;\r",
                                     "    initialValues.tooltip=newData.tooltip;\r",
+                                    "    initialValues.qNb=newData.qNb;\r",
                                     "    delete newData.fieldType;\r",
                                     "    delete newData.fieldLabel;\r",
                                     "    delete newData.tooltip;\r",
+                                    "    delete newData.qNb;\r",
                                     "    newData.vertical=true;\r",
                                     "    newData.items=[];\r",
                                     "    Ext.Array.forEach(newData.answers, function(answer,index){\r",
@@ -152,6 +154,22 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
+                        "name": "qNb",
+                        "fieldLabel": "Code de la question",
+                        "labelWidth": 140
+                    },
+                    "designerId": "4dae3c30-2ddb-4d3d-a9f7-7106d4aaea3c"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField82",
                         "name": "tooltip",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140
@@ -169,10 +187,11 @@
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyCheckbox12",
                         "name": "allowBlank",
-                        "fieldLabel": "Facultatif",
+                        "fieldLabel": "Faculatif",
                         "labelWidth": 140,
                         "boxLabel": "",
-                        "inputValue": "true"
+                        "inputValue": "true",
+                        "uncheckedValue": null
                     },
                     "designerId": "6a7e3f07-0d2a-4760-a441-b3bec3669a84"
                 },
@@ -295,6 +314,7 @@
                     "initialValues.answers=Ext.Array.pluck(initialValues.items, \"boxLabel\");\r",
                     "initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);\r",
                     "initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);\r",
+                    "initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);\r",
                     "delete initialValues.items;\r",
                     "delete initialValues.vertical;\r",
                     "abstractcomponent.getComponent(0).getForm().setValues(initialValues);"

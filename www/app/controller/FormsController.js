@@ -246,7 +246,7 @@ Ext.define('Rubedo.controller.FormsController', {
                         }
 
                     });
-                    newElement.itemConfig.qNb=incrementor;
+                    newElement.itemConfig.qNb="Q"+incrementor;
 
                 }
                 target.add(newElement); 
