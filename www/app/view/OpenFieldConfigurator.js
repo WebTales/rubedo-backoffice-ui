@@ -88,8 +88,8 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
-                            name: 'allowBlank',
-                            fieldLabel: 'Facultatif',
+                            name: 'mandatory',
+                            fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             boxLabel: '',
                             inputValue: 'true'
@@ -97,6 +97,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'radiogroup',
                             fieldLabel: 'Type de champ',
+                            labelSeparator: ' ',
                             labelWidth: 140,
                             items: [
                                 {

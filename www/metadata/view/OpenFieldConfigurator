@@ -186,8 +186,8 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyCheckbox12",
-                        "name": "allowBlank",
-                        "fieldLabel": "Facultatif",
+                        "name": "mandatory",
+                        "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "boxLabel": "",
                         "inputValue": "true"
@@ -205,6 +205,7 @@
                         "designer|userClassName": "MyRadioGroup",
                         "fieldLabel": "Type de champ",
                         "labelPad": null,
+                        "labelSeparator": " ",
                         "labelWidth": 140
                     },
                     "designerId": "8cba619b-6566-41d9-b8fd-7d48d373cb9f",

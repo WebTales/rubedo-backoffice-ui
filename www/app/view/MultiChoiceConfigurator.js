@@ -85,8 +85,8 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
-                            name: 'allowBlank',
-                            fieldLabel: 'Faculatif',
+                            name: 'mandatory',
+                            fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             boxLabel: '',
                             inputValue: 'true'
@@ -103,6 +103,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'radiogroup',
                             fieldLabel: 'Mode',
+                            labelSeparator: ' ',
                             labelWidth: 140,
                             items: [
                                 {

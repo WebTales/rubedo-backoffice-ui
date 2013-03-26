@@ -83,19 +83,31 @@ Ext.define('Rubedo.view.RFormField', {
     sync: function() {
         var me=this;
         me.removeAll();
-        if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
-            var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
-            previewField.anchor = "100%";
-            previewField.labelAlign="top";
-            previewField.fieldLabel="<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label;
-            if (!Ext.isEmpty(me.itemConfig.tooltip)){
-                previewField.RTip=me.itemConfig.tooltip;
+        var plusText = "";
+        if (!Ext.isEmpty(me.itemConfig.conditionals)){
+            var filler="";
+            try{
+                filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+" "+me.itemConfig.conditionals[0].operator+" "+me.itemConfig.conditionals[0].value;
+            }catch(err){}
+                plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si"+filler+" )</i>";
             }
-            me.add(previewField);
-        } else if (me.itemConfig.fType=="richText") {
-            me.update(me.itemConfig.html);
-        }
-        me.doLayout();    
+            if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
+                var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
+                previewField.anchor = "100%";
+                previewField.labelAlign="top";
+                previewField.labelSeparator=" ";
+                previewField.fieldLabel="<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label+plusText;
+                if (!Ext.isEmpty(me.itemConfig.tooltip)){
+                    previewField.RTip=me.itemConfig.tooltip;
+                }
+                if (me.itemConfig.fieldConfig.mandatory){
+                    previewField.allowBlank=false;
+                }
+                me.add(previewField);
+            } else if (me.itemConfig.fType=="richText") {
+                me.update(plusText+me.itemConfig.html);
+            }
+            me.doLayout();    
     }
 
 });

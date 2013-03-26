@@ -38,7 +38,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                         label: 'Question ouverte',
                         fieldType: 'textfield',
                         fieldConfig: {
-                            allowBlank: true
+                            mandatory: false
                         },
                         conditionals: [
                             
@@ -57,7 +57,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                         label: 'Question choix multiple',
                         fieldType: 'checkboxgroup',
                         fieldConfig: {
-                            allowBlank: true,
+                            mandatory: false,
                             columns: 1,
                             vertical: true,
                             items: [
