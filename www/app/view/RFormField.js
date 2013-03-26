@@ -87,9 +87,14 @@ Ext.define('Rubedo.view.RFormField', {
         if (!Ext.isEmpty(me.itemConfig.conditionals)){
             var filler="";
             try{
-                filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+" "+me.itemConfig.conditionals[0].operator+" "+me.itemConfig.conditionals[0].value;
-            }catch(err){}
-                plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si"+filler+" )</i>";
+                filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+" "+me.itemConfig.conditionals[0].operator+" ";
+                if (Ext.isObject(me.itemConfig.conditionals[0].value)) {
+                    filler=filler+me.itemConfig.conditionals[0].value.value.toString();
+                } else {
+                    filler=filler+me.itemConfig.conditionals[0].value;
+                }
+            }catch(err){console.log("error geting condition to display");}
+                plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si "+filler+" )</i>";
             }
             if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
                 var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);

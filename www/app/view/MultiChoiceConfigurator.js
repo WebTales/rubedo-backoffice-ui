@@ -157,7 +157,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
             Ext.Array.forEach(newData.answers, function(answer,index){
                 newData.items.push({
                     boxLabel:answer,
-                    inputValue:index,
+                    inputValue:answer,
                     name:myId
                 });
             });

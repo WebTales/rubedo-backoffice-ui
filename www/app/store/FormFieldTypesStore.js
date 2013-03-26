@@ -64,12 +64,12 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                                 {
                                     boxLabel: 'Choix 1',
                                     name: 'rb',
-                                    inputValue: '1'
+                                    inputValue: 'Choix 1'
                                 },
                                 {
                                     boxLabel: 'Choix 2',
                                     name: 'rb',
-                                    inputValue: '2'
+                                    inputValue: 'Choix 2'
                                 }
                             ]
                         },

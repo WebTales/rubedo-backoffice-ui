@@ -94,7 +94,7 @@
                                     "    Ext.Array.forEach(newData.answers, function(answer,index){\r",
                                     "        newData.items.push({\r",
                                     "            boxLabel:answer,\r",
-                                    "            inputValue:index,\r",
+                                    "            inputValue:answer,\r",
                                     "            name:myId\r",
                                     "        });\r",
                                     "    });\r",
