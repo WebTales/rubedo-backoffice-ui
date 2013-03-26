@@ -52,7 +52,29 @@
                         "labelWidth": 40,
                         "allowBlank": false
                     },
-                    "designerId": "4a09526f-b5a2-4c97-be47-d4fb33b625c3"
+                    "designerId": "4a09526f-b5a2-4c97-be47-d4fb33b625c3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onTextfieldSpecialkey",
+                                "fn": "onTextfieldSpecialkey",
+                                "implHandler": [
+                                    "if (e.getKey() == e.ENTER) {\r",
+                                    "    Ext.getCmp(\"submitNewFormBtn\").fireEvent(\"click\",Ext.getCmp(\"submitNewFormBtn\"));\r",
+                                    "}"
+                                ],
+                                "name": "specialkey",
+                                "scope": "me"
+                            },
+                            "designerId": "ef918a71-311c-4efc-a422-b8c1bc700ec7"
+                        }
+                    ]
                 },
                 {
                     "type": "button",

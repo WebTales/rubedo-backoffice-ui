@@ -56,17 +56,68 @@
             "designerId": "474dc602-7edb-42a8-b1bb-5c8c36fcc180"
         },
         {
-            "type": "tool",
+            "type": "container",
             "reference": {
-                "name": "tools",
+                "name": "dockedItems",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool16",
-                "type": "gear"
+                "dock": "right",
+                "container|align": "stretch",
+                "designer|userClassName": "MyContainer51",
+                "hidden": true,
+                "hideMode": "visibility",
+                "itemId": "editBar",
+                "style": null,
+                "width": 20,
+                "layout": "vbox"
             },
-            "designerId": "c388dd48-7801-4afc-8ab0-6c8f00807bea"
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "9caac821-82f9-4ae9-be41-bfd1842a3019",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton286",
+                        "itemId": "formFieldCofiguratorBtn",
+                        "iconCls": "edit",
+                        "text": "",
+                        "tooltip": "Paramètres"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "3041c50c-02f2-4539-ab43-f3d14536c982"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton286",
+                        "itemId": "formFieldConditionsBtn",
+                        "margin": "10 0 0 0",
+                        "iconCls": "cond_small",
+                        "text": "",
+                        "tooltip": "Condition d'affichage"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "bc35ebc7-11fe-49b3-a3e3-158fdc265c85"
+                }
+            ]
         }
     ]
 }

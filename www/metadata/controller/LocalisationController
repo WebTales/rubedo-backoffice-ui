@@ -105,7 +105,7 @@
                 "designer|userClassName": "onComponentBeforeRender",
                 "fn": "onComponentBeforeRender",
                 "implHandler": [
-                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))){\r",
+                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))||(abstractcomponent.isXType(\"radiogroup\"))){\r",
                     "    abstractcomponent.labelSeparator=\" \";\r",
                     "    /*if (abstractcomponent.isXType(\"datefield\")){\r",
                     "    abstractcomponent.submitFormat='U';\r",

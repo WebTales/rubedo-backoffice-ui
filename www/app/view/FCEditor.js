@@ -134,7 +134,6 @@ Ext.define('Rubedo.view.FCEditor', {
         var myId = Ext.clone(abstractcomponent.targetedId);
         var form = abstractcomponent.getComponent(0);
         if (!Ext.isEmpty(initialValues.conditionals)){
-            console.log("ok");
             form.getComponent(0).setValue(initialValues.conditionals[0].field);
             form.getComponent(1).setValue(initialValues.conditionals[0].operator);
             var task = new Ext.util.DelayedTask(function(){

@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.RFormField', {
         moveOnDrag: false
     },
     frame: false,
-    minHeight: 50,
+    minHeight: 80,
     layout: {
         type: 'anchor'
     },
@@ -43,29 +43,28 @@ Ext.define('Rubedo.view.RFormField', {
             dockedItems: [
                 {
                     xtype: 'container',
-                    dock: 'top',
+                    dock: 'right',
                     hidden: true,
+                    hideMode: 'visibility',
                     itemId: 'editBar',
+                    width: 20,
                     layout: {
                         align: 'stretch',
-                        pack: 'end',
-                        type: 'hbox'
+                        type: 'vbox'
                     },
                     items: [
                         {
                             xtype: 'button',
                             itemId: 'formFieldCofiguratorBtn',
-                            iconCls: 'pencil_med',
-                            scale: 'medium',
+                            iconCls: 'edit',
                             text: '',
                             tooltip: 'Paramètres'
                         },
                         {
                             xtype: 'button',
                             itemId: 'formFieldConditionsBtn',
-                            margin: '0 0 0 10',
-                            iconCls: 'cond_med',
-                            scale: 'medium',
+                            margin: '10 0 0 0',
+                            iconCls: 'cond_small',
                             text: '',
                             tooltip: 'Condition d\'affichage'
                         }

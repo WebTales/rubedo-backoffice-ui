@@ -571,6 +571,7 @@
                     "initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);\r",
                     "initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);\r",
                     "initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);\r",
+                    "initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);\r",
                     "abstractcomponent.getComponent(0).getForm().setValues(initialValues);\r",
                     "var task = new Ext.util.DelayedTask(function(){\r",
                     "    Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm().setValues(initialValues);\r",

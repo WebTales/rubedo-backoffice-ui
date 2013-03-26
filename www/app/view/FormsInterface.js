@@ -322,9 +322,14 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     xtype: 'button',
                                     margin: '0 0 0 20',
                                     style: '{float:left;}',
+                                    allowDepress: false,
+                                    enableToggle: true,
+                                    handleMouseEvents: false,
                                     iconCls: 'help',
+                                    pressed: true,
+                                    pressedCls: 'x-btn',
                                     text: '',
-                                    tooltip: 'L\'unicité a pour objectif de restreindre la soumission d\'un questionnaire selon une durée paramétrable'
+                                    tooltip: 'L\'unicité a pour objectif de restreindre la soumission d\'un questionnaire'
                                 },
                                 {
                                     xtype: 'datefield',

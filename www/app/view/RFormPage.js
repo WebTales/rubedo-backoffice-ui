@@ -34,10 +34,35 @@ Ext.define('Rubedo.view.RFormPage', {
                     scope: me
                 }
             },
-            tools: [
+            dockedItems: [
                 {
-                    xtype: 'tool',
-                    type: 'gear'
+                    xtype: 'container',
+                    dock: 'right',
+                    hidden: true,
+                    hideMode: 'visibility',
+                    itemId: 'editBar',
+                    width: 20,
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            itemId: 'formFieldCofiguratorBtn',
+                            iconCls: 'edit',
+                            text: '',
+                            tooltip: 'Paramètres'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'formFieldConditionsBtn',
+                            margin: '10 0 0 0',
+                            iconCls: 'cond_small',
+                            text: '',
+                            tooltip: 'Condition d\'affichage'
+                        }
+                    ]
                 }
             ]
         });

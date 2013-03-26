@@ -190,7 +190,6 @@
                     "var myId = Ext.clone(abstractcomponent.targetedId);\r",
                     "var form = abstractcomponent.getComponent(0);\r",
                     "if (!Ext.isEmpty(initialValues.conditionals)){\r",
-                    "    console.log(\"ok\");\r",
                     "    form.getComponent(0).setValue(initialValues.conditionals[0].field);\r",
                     "    form.getComponent(1).setValue(initialValues.conditionals[0].operator);\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",

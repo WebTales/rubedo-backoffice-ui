@@ -249,7 +249,8 @@ Ext.application({
         'MulitiChoiceConfigurator',
         'OpenFieldConfigurator',
         'FCEditor',
-        'MyComboBox32'
+        'MyComboBox32',
+        'FormsPageConfigurator'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

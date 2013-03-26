@@ -44,7 +44,13 @@ Ext.define('Rubedo.view.newFormWindow', {
                             name: 'title',
                             fieldLabel: 'Titre',
                             labelWidth: 40,
-                            allowBlank: false
+                            allowBlank: false,
+                            listeners: {
+                                specialkey: {
+                                    fn: me.onTextfieldSpecialkey,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -58,6 +64,12 @@ Ext.define('Rubedo.view.newFormWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onTextfieldSpecialkey: function(field, e, options) {
+        if (e.getKey() == e.ENTER) {
+            Ext.getCmp("submitNewFormBtn").fireEvent("click",Ext.getCmp("submitNewFormBtn"));
+        }
     }
 
 });

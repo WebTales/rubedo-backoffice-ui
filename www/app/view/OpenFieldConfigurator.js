@@ -312,6 +312,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
         initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);
         initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);
         initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);
+        initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);
         abstractcomponent.getComponent(0).getForm().setValues(initialValues);
         var task = new Ext.util.DelayedTask(function(){
             Ext.getCmp("CameleonicFormContainer").getLayout().getActiveItem().getForm().setValues(initialValues);

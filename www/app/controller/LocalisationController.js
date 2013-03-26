@@ -40,7 +40,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     onComponentBeforeRender: function(abstractcomponent, options) {
-        if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))){
+        if ((abstractcomponent.isXType("field"))||(abstractcomponent.isXType("checkboxgroup"))||(abstractcomponent.isXType("radiogroup"))){
             abstractcomponent.labelSeparator=" ";
             /*if (abstractcomponent.isXType("datefield")){
             abstractcomponent.submitFormat='U';

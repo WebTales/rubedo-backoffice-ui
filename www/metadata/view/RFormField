@@ -18,7 +18,7 @@
         "frame": false,
         "height": null,
         "margin": null,
-        "minHeight": 50,
+        "minHeight": 80,
         "padding": null,
         "styleHtmlContent": null,
         "width": null,
@@ -99,14 +99,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
+                "dock": "right",
                 "container|align": "stretch",
-                "container|pack": "end",
                 "designer|userClassName": "MyContainer51",
                 "hidden": true,
+                "hideMode": "visibility",
                 "itemId": "editBar",
                 "style": null,
-                "layout": "hbox"
+                "width": 20,
+                "layout": "vbox"
             },
             "configAlternates": {
                 "style": "string"
@@ -123,8 +124,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyButton286",
                         "itemId": "formFieldCofiguratorBtn",
-                        "iconCls": "pencil_med",
-                        "scale": "medium",
+                        "iconCls": "edit",
                         "text": "",
                         "tooltip": "Paramètres"
                     },
@@ -143,9 +143,8 @@
                     "userConfig": {
                         "designer|userClassName": "MyButton286",
                         "itemId": "formFieldConditionsBtn",
-                        "margin": "0 0 0 10",
-                        "iconCls": "cond_med",
-                        "scale": "medium",
+                        "margin": "10 0 0 0",
+                        "iconCls": "cond_small",
                         "text": "",
                         "tooltip": "Condition d'affichage"
                     },

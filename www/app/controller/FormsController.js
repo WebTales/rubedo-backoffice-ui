@@ -147,6 +147,7 @@ Ext.define('Rubedo.controller.FormsController', {
                 previousOne.removeBodyCls("selectedFElement");
             } else {
                 previousOne.setIconCls();
+                previousOne.getDockedComponent("editBar").hide();
             }
         }
         Ext.Array.forEach(Ext.getCmp("formElementsEditBtnGroup").query("button"),function(thing){thing.disable();});
@@ -163,6 +164,7 @@ Ext.define('Rubedo.controller.FormsController', {
                     Ext.getCmp("formElementMoveUpBtn").enable();
                     Ext.getCmp("formElementMoveDownBtn").enable();
                     Ext.getCmp("formElementRemoveBtn").enable();
+                    newOne.getDockedComponent("editBar").show();
                     newOne.setIconCls('editBloc');
                 } else if (newOne.isXType("RFormField")){
                     Ext.getCmp("formElementMoveUpBtn").enable();
@@ -189,7 +191,8 @@ Ext.define('Rubedo.controller.FormsController', {
                 var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
                 var newPage = Ext.widget("RFormPage", {id:servedId});
                 newPage.itemConfig={
-                    label:"Page "+(target.items.items.length+1)
+                    label:"Page "+(target.items.items.length+1),
+                    conditionals:[ ]
                 };
                 target.add(newPage); 
                 Ext.getCmp("FormsEditor").doLayout();
@@ -366,6 +369,13 @@ Ext.define('Rubedo.controller.FormsController', {
             OQEditor.targetedId=id;
             OQEditor.initialItemConfig=itemConfig;
             OQEditor.show();
+        } else {
+            //definetly a page
+            var PEditor = Ext.widget("FormsPageConfigurator");
+            PEditor.targetedId=id;
+            PEditor.initialItemConfig=itemConfig;
+            PEditor.show();
+
         }
 
     },
