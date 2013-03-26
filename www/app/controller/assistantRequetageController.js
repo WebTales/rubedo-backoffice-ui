@@ -583,7 +583,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             {valeur: 'all', nom :'Contient tous les termes'},
                             {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
                             {valeur: 'some', nom :'Contient au moins un des termes'},
-                            {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'}
+                            {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'},
+                            {valeur: 'not', nom :'Ne contient aucun des termes suivants'}
                             ]
                         });
 
