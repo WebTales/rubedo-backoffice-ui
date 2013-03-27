@@ -26,6 +26,20 @@
             "codeClass": null,
             "designerId": "fb9912e7-eacc-47b9-8744-7f1ec2bae8b0",
             "masterInstanceId": "ExtBox1-ext-gen21558"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField15",
+                "id": "monkey1",
+                "fieldLabel": "Label"
+            },
+            "designerId": "7f706725-58aa-4d93-9651-ef349114184a"
         }
     ]
 }

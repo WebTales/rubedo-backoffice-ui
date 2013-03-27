@@ -29,6 +29,7 @@
                 "designer|userClassName": "MyPanel52",
                 "frame": true,
                 "height": null,
+                "id": null,
                 "minHeight": 100,
                 "width": 100,
                 "title": "My Panel"
@@ -36,38 +37,17 @@
             "designerId": "66343d60-7a86-4305-81f7-f98d96c7747a",
             "cn": [
                 {
-                    "type": "textareafield",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "RTip": "oink",
-                        "designer|userClassName": "MyTextArea11",
-                        "fieldLabel": "Label"
+                        "id": "monkey2"
                     },
-                    "designerId": "e6a1673b-a8e6-4750-a1db-dbbb058a5c61",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "RTip",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "textareafield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyTextArea12",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "fafd1c07-35c0-4638-af1a-2476d818df43"
+                    "designerId": "659d513a-4bfc-41d6-b0d6-d61d12ad3f37",
+                    "masterInstanceId": "ExtBox1-ext-gen28731"
                 }
             ]
         },

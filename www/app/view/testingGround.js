@@ -36,6 +36,11 @@ Ext.define('Rubedo.view.testingGround', {
             items: [
                 {
                     xtype: 'mypanel51'
+                },
+                {
+                    xtype: 'hiddenfield',
+                    id: 'monkey1',
+                    fieldLabel: 'Label'
                 }
             ]
         });

@@ -123,7 +123,6 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.DCEFieldComponent',
         'Rubedo.view.localiserFieldComponent',
         'Rubedo.view.externalMediaFieldComponent',
-        'Rubedo.view.localiserField',
         'Rubedo.view.externalMediaField',
         'Rubedo.view.sessionWarningWindow',
         'Rubedo.view.sessionExpiredWindow',

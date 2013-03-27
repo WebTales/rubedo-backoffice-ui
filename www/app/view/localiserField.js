@@ -38,13 +38,9 @@ Ext.define('Rubedo.view.localiserField', {
         var companion = Ext.widget("localiserFieldComponent");
         companion.setFieldLabel(abstractcomponent.getFieldLabel());
         abstractcomponent.on("change", function(a, newValue){
-            var decoded = { };
-            if (!Ext.isEmpty(newValue)){
-                decoded = Ext.JSON.decode(newValue);
-            }
             Ext.Array.forEach(companion.query("field"), function(field){
                 field.suspendEvents(false);
-                field.setValue(decoded[field.name]);
+                field.setValue(newValue[field.name]);
                 field.resumeEvents();
             });
         });
@@ -53,10 +49,10 @@ Ext.define('Rubedo.view.localiserField', {
                 abstractcomponent.suspendEvents(false);
                 var decoded = { };
                 if (!Ext.isEmpty(abstractcomponent.getValue())) {
-                    decoded = Ext.JSON.decode(abstractcomponent.getValue());
+                    decoded = abstractcomponent.getValue();
                 }
                 decoded[field.name]=newValue;
-                abstractcomponent.setValue(Ext.JSON.encode(decoded));
+                abstractcomponent.setValue(decoded);
                 abstractcomponent.resumeEvents();
             });
         });
@@ -67,6 +63,20 @@ Ext.define('Rubedo.view.localiserField', {
             });
         });
         abstractcomponent.up().add(companion);
+    },
+
+    setValue: function(value) {
+        var me=this;
+        me.value=value;
+        me.fireEvent("change",me,value);
+    },
+
+    getValue: function() {
+        return(this.value);
+    },
+
+    getSubmitValue: function() {
+        return (this.value);
     }
 
 });

@@ -28,13 +28,9 @@
                     "var companion = Ext.widget(\"localiserFieldComponent\");\r",
                     "companion.setFieldLabel(abstractcomponent.getFieldLabel());\r",
                     "abstractcomponent.on(\"change\", function(a, newValue){\r",
-                    "    var decoded = { };\r",
-                    "    if (!Ext.isEmpty(newValue)){\r",
-                    "        decoded = Ext.JSON.decode(newValue);\r",
-                    "    }\r",
                     "    Ext.Array.forEach(companion.query(\"field\"), function(field){\r",
                     "        field.suspendEvents(false);\r",
-                    "        field.setValue(decoded[field.name]);\r",
+                    "        field.setValue(newValue[field.name]);\r",
                     "        field.resumeEvents();\r",
                     "    });\r",
                     "});\r",
@@ -43,10 +39,10 @@
                     "        abstractcomponent.suspendEvents(false);\r",
                     "        var decoded = { };\r",
                     "        if (!Ext.isEmpty(abstractcomponent.getValue())) {\r",
-                    "            decoded = Ext.JSON.decode(abstractcomponent.getValue());\r",
+                    "            decoded = abstractcomponent.getValue();\r",
                     "        }\r",
                     "        decoded[field.name]=newValue;\r",
-                    "        abstractcomponent.setValue(Ext.JSON.encode(decoded));\r",
+                    "        abstractcomponent.setValue(decoded);\r",
                     "        abstractcomponent.resumeEvents();\r",
                     "    });\r",
                     "});\r",
@@ -62,6 +58,59 @@
                 "scope": "me"
             },
             "designerId": "c87af72e-326b-4845-811b-cda3fdb7f007"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "setValue",
+                "fn": "setValue",
+                "designer|params": [
+                    "value"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.value=value;\r",
+                    "me.fireEvent(\"change\",me,value);"
+                ]
+            },
+            "designerId": "0140f35c-9954-47e2-8639-03d3fde38933"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getValue",
+                "fn": "getValue",
+                "implHandler": [
+                    "return(this.value);"
+                ]
+            },
+            "designerId": "3e0f555a-13b7-45e6-99de-58115698cc5e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getSubmitValue",
+                "fn": "getSubmitValue",
+                "implHandler": [
+                    "return (this.value);"
+                ]
+            },
+            "designerId": "e4af3ecf-e07d-4b8b-a422-61017b7cb3cb"
         }
     ]
 }

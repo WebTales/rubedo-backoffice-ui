@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.MyPanel51', {
     alias: 'widget.mypanel51',
 
     requires: [
+        'Rubedo.view.localiserField',
         'Rubedo.view.override.MyPanel51'
     ],
 
@@ -43,13 +44,8 @@ Ext.define('Rubedo.view.MyPanel51', {
                     title: 'My Panel',
                     items: [
                         {
-                            xtype: 'textareafield',
-                            RTip: 'oink',
-                            fieldLabel: 'Label'
-                        },
-                        {
-                            xtype: 'textareafield',
-                            fieldLabel: 'Label'
+                            xtype: 'localiserField',
+                            id: 'monkey2'
                         }
                     ]
                 },
