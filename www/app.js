@@ -250,7 +250,9 @@ Ext.application({
         'OpenFieldConfigurator',
         'FCEditor',
         'MyComboBox32',
-        'FormsPageConfigurator'
+        'MyWindow67',
+        'externalMediaField',
+        'externalMediaFieldComponent'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

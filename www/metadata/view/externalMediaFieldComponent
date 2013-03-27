@@ -1,0 +1,97 @@
+{
+    "type": "fieldcontainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "90%",
+        "designer|userClassName": "externalMediaFieldComponent",
+        "designer|userAlias": "externalMediaFieldComponent",
+        "height": 54,
+        "width": 426,
+        "layout": "anchor",
+        "fieldLabel": "Label",
+        "labelSeparator": " "
+    },
+    "id": "ExtBox1-ext-gen7205",
+    "designerId": "c4a3059a-1950-40ff-8528-0964d4544e97",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "designer|userClassName": "MyTextField78",
+                "margin": "0 0 10 0",
+                "style": "{float:left;}",
+                "name": "url",
+                "submitValue": false,
+                "fieldLabel": "URL",
+                "labelSeparator": " ",
+                "vtype": "url"
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "7315eb9b-9a20-4067-a8a1-fde5fd948e35"
+        },
+        {
+            "type": "numberfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "50%",
+                "designer|userClassName": "MyNumberField5",
+                "margin": "0 10 0 0",
+                "style": "{float:left;}",
+                "name": "maxWidth",
+                "submitValue": false,
+                "fieldLabel": "Largeux max",
+                "labelSeparator": " ",
+                "allowDecimals": false,
+                "decimalPrecision": 6,
+                "minValue": 0
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "87bf316d-6486-4d6b-967a-de446213a10a"
+        },
+        {
+            "type": "numberfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "50%",
+                "designer|userClassName": "MyNumberField6",
+                "name": "maxHeight",
+                "submitValue": false,
+                "fieldLabel": "Hauteur max",
+                "labelSeparator": " ",
+                "allowDecimals": false,
+                "decimalPrecision": 6,
+                "minValue": 0
+            },
+            "designerId": "022ed57e-5376-4011-b73a-83153e560476"
+        }
+    ]
+}

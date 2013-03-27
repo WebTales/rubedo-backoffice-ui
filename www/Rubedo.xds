@@ -2276,6 +2276,22 @@
                 "app/view/FormsPageConfigurator.js"
             ],
             "className": "FormsPageConfigurator"
+        },
+        "c4a3059a-1950-40ff-8528-0964d4544e97": {
+            "paths": [
+                "metadata/view/externalMediaFieldComponent",
+                "app/view/override/externalMediaFieldComponent.js",
+                "app/view/externalMediaFieldComponent.js"
+            ],
+            "className": "externalMediaFieldComponent"
+        },
+        "d21b3beb-e3a1-4b72-88f6-c68b443690ab": {
+            "paths": [
+                "metadata/view/externalMediaField",
+                "app/view/override/externalMediaField.js",
+                "app/view/externalMediaField.js"
+            ],
+            "className": "externalMediaField"
         }
     },
     "viewOrderMap": {
@@ -2404,7 +2420,9 @@
             "d8f7ec5e-c852-435a-bb17-6c19e843c898",
             "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
             "15b19248-a73a-4ad3-87eb-1ea892921ea0",
+            "c4a3059a-1950-40ff-8528-0964d4544e97",
             "b0ae3c81-7792-47a7-91c2-3e7e993f879c",
+            "d21b3beb-e3a1-4b72-88f6-c68b443690ab",
             "5d41405d-8ed6-4d4a-b220-d09d58101928",
             "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",
             "66174f28-03d3-4c02-855f-65706d91852a",

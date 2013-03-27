@@ -31,6 +31,91 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             model: 'Rubedo.model.typesChampsDataModel',
             data: [
                 {
+                    type: 'Média externe',
+                    cType: 'Rubedo.view.externalMediaField',
+                    category: 'Média',
+                    openWindow: '',
+                    description: '<p>Le champ "Média Externe" s\’appuie sur l\’API oEmbed (http://oembed.com/) et permet d\’afficher un média externe provenant des sources suivantes :</p><ul><li>YouTube  (vidéos)</li><li>Flickr (partage photos)</li><li>Vimeo (vidéos)</li><li>Poll Everywhere (enquêtes & sondages)</li><li>My Opera (blogs et photos)</li><li>SmugMug (partage de photos)</li><li>SlideShare (partage de presentations)</li><li>WordPress.com  (blogs)</li><li>chirbit.com (partage de fichiers audio)</li><li>CircuitLab (outil de dessin de schéma électrique)</li><li>Quizz.biz (outil de sondage)</li></ul>',
+                    config: {
+                        name: 'mediaExterne',
+                        fieldLabel: 'Label du champ',
+                        allowBlank: true,
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localisable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '51234e09c0e0516a0b00002f'
+                },
+                {
                     type: 'Localisation',
                     cType: 'Rubedo.view.localiserField',
                     openWindow: '',
@@ -950,7 +1035,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                 },
                 {
                     type: 'Texte riche',
-                    categorty: 'Texte',
+                    category: 'Texte',
                     cType: 'Rubedo.view.CKEField',
                     openWindow: '',
                     description: '<p>Le champ "Texte riche" permet de saisir un texte riche, à l\'aide d\'un éditeur wysiwyg. Le composant utilisé par défaut est CKEditor, avec trois configurations par défaut : basic, standard ou complet.</p>',
