@@ -61,16 +61,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                             columns: 1,
                             vertical: true,
                             items: [
-                                {
-                                    boxLabel: 'Choix 1',
-                                    name: 'rb',
-                                    inputValue: 'Choix 1'
-                                },
-                                {
-                                    boxLabel: 'Choix 2',
-                                    name: 'rb',
-                                    inputValue: 'Choix 2'
-                                }
+                                
                             ]
                         },
                         conditionals: [

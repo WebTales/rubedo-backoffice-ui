@@ -2292,6 +2292,14 @@
                 "app/view/externalMediaField.js"
             ],
             "className": "externalMediaField"
+        },
+        "cc39f83e-ee61-4265-9b4f-b3fb44efdb81": {
+            "paths": [
+                "metadata/store/MultiChoiceOptionsStore",
+                "app/store/override/MultiChoiceOptionsStore.js",
+                "app/store/MultiChoiceOptionsStore.js"
+            ],
+            "className": "MultiChoiceOptionsStore"
         }
     },
     "viewOrderMap": {
@@ -2516,7 +2524,8 @@
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
             "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
             "fc88ff8b-4055-49a7-9239-9574a3aef04e",
-            "0c962f45-9c0e-470c-bf7f-7da0075f0ed9"
+            "0c962f45-9c0e-470c-bf7f-7da0075f0ed9",
+            "cc39f83e-ee61-4265-9b4f-b3fb44efdb81"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.MultiChoiceConfigurator',
 
-    height: 360,
+    height: 404,
     id: 'MultiChoiceConfigurator',
     width: 632,
     resizable: false,
@@ -119,15 +119,93 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                                     inputValue: 'checkboxgroup'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            height: 160,
+                            id: 'formsMCCGrid',
+                            title: '',
+                            forceFit: true,
+                            store: 'MultiChoiceOptionsStore',
+                            viewConfig: {
+                                plugins: [
+                                    Ext.create('Ext.grid.plugin.DragDrop', {
+                                        ptype: 'gridviewdragdrop'
+                                    })
+                                ]
+                            },
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'boxLabel',
+                                    text: 'Options',
+                                    editor: {
+                                        xtype: 'textfield',
+                                        allowBlank: false
+                                    }
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'right',
+                                    width: 28,
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            handler: function(button, event) {
+                                                Ext.Ajax.request({
+                                                    url: 'xhr-get-mongo-id',
+                                                    params: { },
+                                                    success: function(response){
+                                                        var servedId = Ext.JSON.decode(response.responseText).mongoID;
+                                                        Ext.getStore("MultiChoiceOptionsStore").add({
+                                                            inputValue:servedId,
+                                                            name:Ext.getCmp("MultiChoiceConfigurator").targetedId,
+                                                            boxLabel:"Option "+ (Ext.getStore("MultiChoiceOptionsStore").count()+1)
+                                                        });
+                                                    },
+                                                    failure: function(){
+                                                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+
+                                                    }
+                                                });
+                                            },
+                                            id: 'formsMCCGridAdd',
+                                            iconCls: 'add',
+                                            text: '',
+                                            tooltip: 'Ajouter une option'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            handler: function(button, event) {
+                                                Ext.getCmp("formsMCCGrid").getStore().remove(Ext.getCmp("formsMCCGrid").getSelectionModel().getLastSelected());
+                                            },
+                                            disabled: true,
+                                            id: 'formsMCCGridRemove',
+                                            iconCls: 'close',
+                                            text: '',
+                                            tooltip: 'Supprimer cette option'
+                                        }
+                                    ]
+                                }
+                            ],
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.CellEditing', {
+                                    ptype: 'cellediting'
+                                })
+                            ],
+                            listeners: {
+                                selectionchange: {
+                                    fn: me.onFormsMCCGridSelectionChange,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
             ],
             listeners: {
-                render: {
-                    fn: me.onWindowRender,
-                    scope: me
-                },
                 afterrender: {
                     fn: me.onWindowAfterRender,
                     scope: me
@@ -153,14 +231,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
             delete newData.tooltip;
             delete newData.qNb;
             newData.vertical=true;
-            newData.items=[];
-            Ext.Array.forEach(newData.answers, function(answer,index){
-                newData.items.push({
-                    boxLabel:answer,
-                    inputValue:answer,
-                    name:myId
-                });
-            });
+            newData.items=Ext.Array.pluck(Ext.getStore("MultiChoiceOptionsStore").getRange(), "data");
             delete newData.answers;
             initialValues.fieldConfig=newData;
             Ext.getCmp(myId).itemConfig=initialValues;
@@ -169,31 +240,19 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
         }
     },
 
-    onWindowRender: function(abstractcomponent, options) {
-        var optionPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
-            store:[],
-            anchor:"100%",
-            name:"answers",
-            fieldLabel:"Réponses possibles",
-            labelWidth:140,
-            queryMode:"local",
-            submitValue:true,
-            multiSelect:true,
-            forceSelection:false,
-            createNewOnEnter:true,
-            hideTrigger:true,
-            triggerOnClick:false,
-            createNewOnBlur:true,
-            stacked:true,
-            allowBlank:true
-        });
-        abstractcomponent.getComponent(0).add(optionPicker);
+    onFormsMCCGridSelectionChange: function(tablepanel, selections, options) {
+        if (Ext.isEmpty(selections)){
+            Ext.getCmp("formsMCCGridRemove").disable();
+        } else {
+            Ext.getCmp("formsMCCGridRemove").enable();
+        }
     },
 
     onWindowAfterRender: function(abstractcomponent, options) {
         var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);
         initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);
-        initialValues.answers=Ext.Array.pluck(initialValues.items, "boxLabel");
+        Ext.getStore("MultiChoiceOptionsStore").removeAll();
+        Ext.getStore("MultiChoiceOptionsStore").loadData(Ext.clone(initialValues.items));
         initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);
         initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);
         initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);

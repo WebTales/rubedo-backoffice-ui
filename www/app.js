@@ -134,7 +134,8 @@ Ext.application({
         'FormPickerStore',
         'FCEStore',
         'TypesContenusDataJson',
-        'PanierDataJson'
+        'PanierDataJson',
+        'MultiChoiceOptionsStore'
     ],
     views: [
         'MyContainer',

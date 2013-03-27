@@ -1,0 +1,56 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MultiChoiceOptionsStore",
+        "designer|userAlias": "MultiChoiceOptionsStore",
+        "storeId": "MultiChoiceOptionsStore"
+    },
+    "id": "ExtBox1-ext-gen11948",
+    "designerId": "cc39f83e-ee61-4265-9b4f-b3fb44efdb81",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field336",
+                "name": "inputValue"
+            },
+            "designerId": "361fdcbd-9f4c-4fe9-b2f0-5a85e3fb5652"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field335",
+                "name": "boxLabel"
+            },
+            "designerId": "080d40b1-58cf-4abe-af3b-733f3cea9797"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field335",
+                "name": "name"
+            },
+            "designerId": "8776ed6b-d20b-43e9-89e8-59f062277535"
+        }
+    ]
+}
