@@ -764,8 +764,11 @@
                                         "implHandler": [
                                             "if (newValue===true) {\r",
                                             "    Ext.getCmp(\"formUniqueAnswerTextField\").show();\r",
+                                            "    Ext.getCmp(\"formUniqueAnswerNoCookie\").show();\r",
+                                            "    \r",
                                             "} else {\r",
                                             "    Ext.getCmp(\"formUniqueAnswerTextField\").hide();\r",
+                                            "    Ext.getCmp(\"formUniqueAnswerNoCookie\").hide();\r",
                                             "}"
                                         ],
                                         "name": "change",
@@ -809,15 +812,34 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "60%",
+                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField90",
                                 "hidden": true,
                                 "id": "formUniqueAnswerTextField",
                                 "margin": null,
                                 "name": "uniqueAnswerText",
-                                "fieldLabel": ""
+                                "fieldLabel": "Déjà répondu",
+                                "labelWidth": 160
                             },
                             "designerId": "3f0aaa4a-1771-405a-af06-5f0f67cd7762"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField91",
+                                "hidden": true,
+                                "id": "formUniqueAnswerNoCookie",
+                                "name": "noCookieMessage",
+                                "fieldLabel": "Pas de cookie",
+                                "labelWidth": 160
+                            },
+                            "designerId": "da6eeaac-c0e9-4882-9737-e25af591d3e6"
                         },
                         {
                             "type": "datefield",
@@ -832,7 +854,7 @@
                                 "margin": "0 10 0 0",
                                 "style": "{float:left; clear:both;}",
                                 "name": "openingDate",
-                                "fieldLabel": "Date d'ouverture",
+                                "fieldLabel": "Date de début ",
                                 "labelWidth": 160
                             },
                             "configAlternates": {
@@ -853,7 +875,7 @@
                                 "margin": null,
                                 "style": "{float:right; }",
                                 "name": "closingDate",
-                                "fieldLabel": "Date de fermeture",
+                                "fieldLabel": "Date de fin",
                                 "labelWidth": 160
                             },
                             "configAlternates": {

@@ -344,11 +344,21 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '60%',
+                                    anchor: '100%',
                                     hidden: true,
                                     id: 'formUniqueAnswerTextField',
                                     name: 'uniqueAnswerText',
-                                    fieldLabel: ''
+                                    fieldLabel: 'Déjà répondu',
+                                    labelWidth: 160
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    hidden: true,
+                                    id: 'formUniqueAnswerNoCookie',
+                                    name: 'noCookieMessage',
+                                    fieldLabel: 'Pas de cookie',
+                                    labelWidth: 160
                                 },
                                 {
                                     xtype: 'datefield',
@@ -356,7 +366,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     margin: '0 10 0 0',
                                     style: '{float:left; clear:both;}',
                                     name: 'openingDate',
-                                    fieldLabel: 'Date d\'ouverture',
+                                    fieldLabel: 'Date de début ',
                                     labelWidth: 160
                                 },
                                 {
@@ -364,7 +374,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     anchor: '50%',
                                     style: '{float:right; }',
                                     name: 'closingDate',
-                                    fieldLabel: 'Date de fermeture',
+                                    fieldLabel: 'Date de fin',
                                     labelWidth: 160
                                 },
                                 {
@@ -453,8 +463,11 @@ Ext.define('Rubedo.view.FormsInterface', {
     onFormUniqueAnswerCheckChange: function(field, newValue, oldValue, options) {
         if (newValue===true) {
             Ext.getCmp("formUniqueAnswerTextField").show();
+            Ext.getCmp("formUniqueAnswerNoCookie").show();
+
         } else {
             Ext.getCmp("formUniqueAnswerTextField").hide();
+            Ext.getCmp("formUniqueAnswerNoCookie").hide();
         }
     },
 

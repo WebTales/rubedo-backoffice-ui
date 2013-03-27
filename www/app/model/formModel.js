@@ -56,6 +56,9 @@ Ext.define('Rubedo.model.formModel', {
             defaultValue: 'Nous vous remercions d’avoir répondu à cette enquête.'
         },
         {
+            name: 'noCookieMessage'
+        },
+        {
             name: 'openingDate'
         },
         {
