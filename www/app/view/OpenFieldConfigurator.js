@@ -332,7 +332,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
         var form2=Ext.getCmp("CameleonicFormContainer").getLayout().getActiveItem().getForm();
         if ((form.isValid())&&(form2.isValid())) {
             var newData = Ext.clone(form.getFieldValues());
-            var partData = form2.getFieldValues();
+            var partData = form2.getValues();
             Ext.Object.each(partData, function(key,value,it){
                 if (Ext.isEmpty(value)){
                     it[key]=undefined;

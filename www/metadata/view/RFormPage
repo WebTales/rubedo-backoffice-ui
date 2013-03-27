@@ -69,15 +69,17 @@
                     "                    filler = filler+theGoodOption;\r",
                     "\r",
                     "                }}\r",
-                    "            } else if (Ext.isDate(me.itemConfig.conditionals[0].value)){\r",
-                    "                filler=filler+Ext.Date.format(me.itemConfig.conditionals[0].value, \"d/m/y\");\r",
+                    "            } else if (Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType==\"datefield\"){\r",
+                    "                var failDate=Ext.Date.parse(me.itemConfig.conditionals[0].value,\"U\");\r",
+                    "                \r",
+                    "                filler=filler+Ext.Date.format(failDate, \"d/m/y\");\r",
                     "            }else {\r",
                     "                filler=filler+me.itemConfig.conditionals[0].value;\r",
                     "            }\r",
                     "        }catch(err){console.log(\"error geting condition to display\");}\r",
                     "            plusText=\"<i style=\\\"color:\"+MyPrefData.themeColor+\";\\\"> (Affiché si et seulement si \"+filler+\" )</i>\";\r",
                     "        }\r",
-                    "this.setTitle(this.itemConfig.label+\" \"+plusText);"
+                    "        this.setTitle(this.itemConfig.label+\" \"+plusText);"
                 ]
             },
             "designerId": "e014bd9b-4889-4e50-82cb-475207de1913"

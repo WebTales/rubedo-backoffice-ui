@@ -84,7 +84,7 @@
                                     "    if (Ext.isEmpty(newCond[0].field)){\r",
                                     "        newCond=[ ];\r",
                                     "    } else {\r",
-                                    "    newCond[0].value=Ext.getCmp(\"FCEditor\").getComponent(0).getComponent(2).getComponent(0).getValue();\r",
+                                    "        newCond[0].value=Ext.getCmp(\"FCEditor\").getComponent(0).getComponent(2).getComponent(0).getSubmitValue();\r",
                                     "    }\r",
                                     "    Ext.getCmp(myId).itemConfig.conditionals=newCond;\r",
                                     "    button.up().up().close();\r",

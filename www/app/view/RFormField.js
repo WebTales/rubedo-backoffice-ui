@@ -119,8 +119,10 @@ Ext.define('Rubedo.view.RFormField', {
                             filler = filler+theGoodOption;
 
                         }}
-                    } else if (Ext.isDate(me.itemConfig.conditionals[0].value)){
-                        filler=filler+Ext.Date.format(me.itemConfig.conditionals[0].value, "d/m/y");
+                    } else if (Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType=="datefield"){
+                        var failDate=Ext.Date.parse(me.itemConfig.conditionals[0].value,"U");
+
+                        filler=filler+Ext.Date.format(failDate, "d/m/y");
                     }else {
                         filler=filler+me.itemConfig.conditionals[0].value;
                     }

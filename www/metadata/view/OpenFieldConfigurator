@@ -83,7 +83,7 @@
                                     "var form2=Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm();\r",
                                     "if ((form.isValid())&&(form2.isValid())) {\r",
                                     "    var newData = Ext.clone(form.getFieldValues());\r",
-                                    "    var partData = form2.getFieldValues();\r",
+                                    "    var partData = form2.getValues();\r",
                                     "    Ext.Object.each(partData, function(key,value,it){\r",
                                     "        if (Ext.isEmpty(value)){\r",
                                     "            it[key]=undefined;\r",
