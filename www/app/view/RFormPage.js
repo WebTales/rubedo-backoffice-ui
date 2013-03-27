@@ -75,7 +75,52 @@ Ext.define('Rubedo.view.RFormPage', {
     },
 
     sync: function() {
-        this.setTitle(this.itemConfig.label);
+        var me=this;
+        var plusText = "";
+        if (!Ext.isEmpty(me.itemConfig.conditionals)){
+            var filler="";
+            try{
+                filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+" "+me.itemConfig.conditionals[0].operator+" ";
+                if (Ext.isEmpty(me.itemConfig.conditionals[0].value)) {
+                    filler=filler+" non renseigné";
+                } else if ((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType=="radiogroup")||(Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType=="checkboxgroup")) {
+                    if (Ext.isObject(me.itemConfig.conditionals[0].value)){
+                        if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){
+                            var theGoodOption = "";
+                            Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){
+                                var interMedOption=" non renseigné";
+
+                                Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
+                                    if (possible.inputValue==value){
+                                        interMedOption=possible.boxLabel;
+                                    }
+                                });
+                                if (index > 0){
+                                    interMedOption=" OU "+interMedOption;
+                                }
+                                theGoodOption=theGoodOption+interMedOption;
+                            });
+                            filler=filler+theGoodOption;
+
+                        } else {
+                            var theGoodOption = " non renseigné";
+                            Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
+                                if (possible.inputValue==me.itemConfig.conditionals[0].value.value){
+                                    theGoodOption=possible.boxLabel;
+                                }
+                            });
+                            filler = filler+theGoodOption;
+
+                        }}
+                    } else if (Ext.isDate(me.itemConfig.conditionals[0].value)){
+                        filler=filler+Ext.Date.format(me.itemConfig.conditionals[0].value, "d/m/y");
+                    }else {
+                        filler=filler+me.itemConfig.conditionals[0].value;
+                    }
+                }catch(err){console.log("error geting condition to display");}
+                    plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si "+filler+" )</i>";
+                }
+                this.setTitle(this.itemConfig.label+" "+plusText);
     }
 
 });

@@ -68,7 +68,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                             xtype: 'textfield',
                             anchor: '100%',
                             name: 'fieldLabel',
-                            fieldLabel: 'Label de la question',
+                            fieldLabel: 'Intitulé de la question',
                             labelWidth: 140
                         },
                         {
@@ -121,7 +121,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'radiofield',
                                     name: 'fieldType',
-                                    boxLabel: 'Temps',
+                                    boxLabel: 'Horaire',
                                     inputValue: 'timefield'
                                 }
                             ],

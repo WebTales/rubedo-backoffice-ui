@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.MyComboBox32', {
     ],
 
     name: 'field',
-    fieldLabel: 'Affiché si et seulement si Q',
+    fieldLabel: 'Affiché si et seulement si ',
     labelWidth: 170,
     editable: false,
     displayField: 'qNb',

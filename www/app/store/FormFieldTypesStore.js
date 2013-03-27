@@ -51,7 +51,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                 {
                     id: '51489f8ac0e051b81a000004',
                     type: 'Question fermée',
-                    description: '<p>Une question fermée est une question pour laquelle la personne interrogée se voit proposée un choix parmi des réponses préétablies. La question fermée peut être à choix unique ou choix multiple.</p>',
+                    description: '<p>Une question fermée est une question pour laquelle la personne interrogée se voit proposer un choix parmi des réponses préétablies. La question fermée peut être à choix unique ou choix multiple.</p>',
                     itemConfig: {
                         fType: 'multiChoiceQuestion',
                         label: 'Question fermée',

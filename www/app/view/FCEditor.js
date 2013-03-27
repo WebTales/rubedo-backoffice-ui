@@ -95,6 +95,7 @@ Ext.define('Rubedo.view.FCEditor', {
                             border: 0,
                             height: 140,
                             id: 'answerFieldComponent',
+                            autoScroll: true,
                             layout: {
                                 align: 'middle',
                                 type: 'hbox'

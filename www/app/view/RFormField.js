@@ -95,7 +95,7 @@ Ext.define('Rubedo.view.RFormField', {
                         if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){
                             var theGoodOption = "";
                             Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){
-                                var interMedOption=" non rensiegné";
+                                var interMedOption=" non renseigné";
 
                                 Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
                                     if (possible.inputValue==value){
@@ -110,7 +110,7 @@ Ext.define('Rubedo.view.RFormField', {
                             filler=filler+theGoodOption;
 
                         } else {
-                            var theGoodOption = " non rensiegné";
+                            var theGoodOption = " non renseigné";
                             Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
                                 if (possible.inputValue==me.itemConfig.conditionals[0].value.value){
                                     theGoodOption=possible.boxLabel;

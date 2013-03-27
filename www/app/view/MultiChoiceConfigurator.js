@@ -65,7 +65,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             xtype: 'textfield',
                             anchor: '100%',
                             name: 'fieldLabel',
-                            fieldLabel: 'Label de la question',
+                            fieldLabel: 'Intitulé de la question',
                             labelWidth: 140
                         },
                         {
