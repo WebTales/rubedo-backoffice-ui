@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
     layout: {
         type: 'fit'
     },
-    title: 'Editeur de question choix multiple',
+    title: 'Editeur de question fermée',
     constrain: true,
     modal: true,
 

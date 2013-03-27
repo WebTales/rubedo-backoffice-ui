@@ -32,7 +32,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                 {
                     id: '51489f8ac0e051b81a000002',
                     type: 'Question ouverte',
-                    description: '<p>à écrire</p>',
+                    description: '<p>Les questions ouvertes offrent la possibilité de paramétrer un champ réponse libre de type numérique ou texte  (numérique, commentaire, date, …).</p>',
                     itemConfig: {
                         fType: 'openQuestion',
                         label: 'Question ouverte',
@@ -50,11 +50,11 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                 },
                 {
                     id: '51489f8ac0e051b81a000004',
-                    type: 'Question choix multiple',
-                    description: '<p>à écrire</p>',
+                    type: 'Question fermée',
+                    description: '<p>Une question fermée est une question pour laquelle la personne interrogée se voit proposée un choix parmi des réponses préétablies. La question fermée peut être à choix unique ou choix multiple.</p>',
                     itemConfig: {
                         fType: 'multiChoiceQuestion',
-                        label: 'Question choix multiple',
+                        label: 'Question fermée',
                         fieldType: 'checkboxgroup',
                         fieldConfig: {
                             mandatory: false,
@@ -75,7 +75,7 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                 {
                     id: '51489f8ac0e051b81a000006',
                     type: 'Texte Riche',
-                    description: '<p>à écrire</p>',
+                    description: '<p>Le texte riche permet de rédiger un texte de présentation et de gérer sa mise en forme. Il donne également la possibilité d\'ajouter des liens et des médias (images, vidéos, sons, documents).</p>',
                     itemConfig: {
                         fType: 'richText',
                         html: '<h3>Texte Riche</h3>'
