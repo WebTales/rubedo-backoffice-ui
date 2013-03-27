@@ -38,9 +38,13 @@ Ext.define('Rubedo.view.localiserField', {
         var companion = Ext.widget("localiserFieldComponent");
         companion.setFieldLabel(abstractcomponent.getFieldLabel());
         abstractcomponent.on("change", function(a, newValue){
+            var decoded = { };
+            if (!Ext.isEmpty(newValue)){
+                decoded = newValue;
+            }
             Ext.Array.forEach(companion.query("field"), function(field){
                 field.suspendEvents(false);
-                field.setValue(newValue[field.name]);
+                field.setValue(decoded[field.name]);
                 field.resumeEvents();
             });
         });
