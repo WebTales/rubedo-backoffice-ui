@@ -344,21 +344,41 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
+                                    anchor: '90%',
                                     hidden: true,
                                     id: 'formUniqueAnswerTextField',
+                                    style: '{float:left;}',
                                     name: 'uniqueAnswerText',
                                     fieldLabel: 'Déjà répondu',
                                     labelWidth: 160
                                 },
                                 {
+                                    xtype: 'button',
+                                    hidden: true,
+                                    id: 'justAHelper11',
+                                    style: '{float:right;}',
+                                    iconCls: 'help',
+                                    text: '',
+                                    tooltip: 'Message affiché si l\'utilisateur a déjà répondu au questionnaire'
+                                },
+                                {
                                     xtype: 'textfield',
-                                    anchor: '100%',
+                                    anchor: '90%',
                                     hidden: true,
                                     id: 'formUniqueAnswerNoCookie',
+                                    style: '{float:left;}',
                                     name: 'noCookieMessage',
                                     fieldLabel: 'Pas de cookie',
                                     labelWidth: 160
+                                },
+                                {
+                                    xtype: 'button',
+                                    hidden: true,
+                                    id: 'justAHelper12',
+                                    style: '{float:right;}',
+                                    iconCls: 'help',
+                                    text: '',
+                                    tooltip: 'Message affiché si l\'utilisateur n\'a pas activé les cookies sur son navigateur'
                                 },
                                 {
                                     xtype: 'datefield',
@@ -464,10 +484,14 @@ Ext.define('Rubedo.view.FormsInterface', {
         if (newValue===true) {
             Ext.getCmp("formUniqueAnswerTextField").show();
             Ext.getCmp("formUniqueAnswerNoCookie").show();
+            Ext.getCmp("justAHelper11").show();
+            Ext.getCmp("justAHelper12").show();
 
         } else {
             Ext.getCmp("formUniqueAnswerTextField").hide();
             Ext.getCmp("formUniqueAnswerNoCookie").hide();
+            Ext.getCmp("justAHelper11").hide();
+            Ext.getCmp("justAHelper12").hide();
         }
     },
 

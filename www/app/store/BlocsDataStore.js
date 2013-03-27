@@ -1768,11 +1768,11 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514066000'
                 },
                 {
-                    type: 'Formulaire',
+                    type: 'Questionnaire',
                     category: 'Formulaire',
                     description: '',
                     configBasique: {
-                        title: 'Formulaire',
+                        title: 'Questionnaire',
                         bType: 'form',
                         flex: 1,
                         champsConfig: {
@@ -1783,8 +1783,30 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Rubedo.view.FormPickerField',
                                             config: {
-                                                fieldLabel: 'Formulaire',
+                                                fieldLabel: 'Questionnaire',
                                                 name: 'formId'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 0,
+                                                    label: 'Barre'
+                                                },
+                                                {
+                                                    value: 1,
+                                                    label: 'Etapes'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Progression',
+                                                name: 'progression',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 0
                                             }
                                         }
                                     ]
@@ -1795,7 +1817,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            progression: 0
                         }
                     },
                     version: 1,
