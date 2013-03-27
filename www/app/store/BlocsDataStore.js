@@ -1854,7 +1854,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                 }
                             ],
                             avance: [
-                                
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         },
                         configBloc: {
