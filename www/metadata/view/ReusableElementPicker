@@ -133,6 +133,79 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "designer|userClassName": "MyToolbar78"
+                    },
+                    "designerId": "50d8f915-f1d9-4775-8ac5-6801ad08ff0f",
+                    "cn": [
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill41"
+                            },
+                            "designerId": "9c6e853c-5e23-4d57-8cff-fc28e75aa44b"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton298",
+                                "disabled": true,
+                                "id": "resusableElementsDeleteBtn",
+                                "iconCls": "close",
+                                "text": "Supprimer"
+                            },
+                            "designerId": "a994ca8d-2b21-4997-833b-e3c6e03716bd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onResusableElementsDeleteBtnClick",
+                                        "fn": "onResusableElementsDeleteBtnClick",
+                                        "implHandler": [
+                                            "var fenetre = Ext.widget('delConfirmZ');\r",
+                                            "                fenetre.show();\r",
+                                            "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                                            "                    Ext.getCmp(\"ReusableElementsGrid\").getStore().remove(Ext.getCmp(\"ReusableElementsGrid\").getSelectionModel().getLastSelected());\r",
+                                            "                    Ext.getCmp(\"resusableElementsDeleteBtn\").disable();\r",
+                                            "                    Ext.getCmp(\"reusableelementDescription\").update(null);\r",
+                                            "                    Ext.getCmp('delConfirmZ').close();\r",
+                                            "                    \r",
+                                            "                }); "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "bf760f89-d417-4e20-901b-e29e444a4f17"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

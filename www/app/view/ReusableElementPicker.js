@@ -69,6 +69,30 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                                 }
                             )
                         }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'resusableElementsDeleteBtn',
+                                    iconCls: 'close',
+                                    text: 'Supprimer',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onResusableElementsDeleteBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
@@ -124,6 +148,18 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
         });
 
         me.callParent(arguments);
+    },
+
+    onResusableElementsDeleteBtnClick: function(button, e, options) {
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            Ext.getCmp("ReusableElementsGrid").getStore().remove(Ext.getCmp("ReusableElementsGrid").getSelectionModel().getLastSelected());
+            Ext.getCmp("resusableElementsDeleteBtn").disable();
+            Ext.getCmp("reusableelementDescription").update(null);
+            Ext.getCmp('delConfirmZ').close();
+
+        }); 
     }
 
 });

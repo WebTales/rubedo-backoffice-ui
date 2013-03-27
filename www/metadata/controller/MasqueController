@@ -152,6 +152,7 @@
                 "fn": "reusablesGridSelect",
                 "implHandler": [
                     "Ext.getCmp(\"reusableelementDescription\").update(record.data);\r",
+                    "Ext.getCmp(\"resusableElementsDeleteBtn\").enable();\r",
                     "var go =true;\r",
                     "\r",
                     "var target=Ext.getCmp(\"ReusableElementPicker\").insTar;\r",

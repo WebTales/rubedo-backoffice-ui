@@ -123,6 +123,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     reusablesGridSelect: function(selModel, record, index, options) {
         Ext.getCmp("reusableelementDescription").update(record.data);
+        Ext.getCmp("resusableElementsDeleteBtn").enable();
         var go =true;
 
         var target=Ext.getCmp("ReusableElementPicker").insTar;
