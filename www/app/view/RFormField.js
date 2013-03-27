@@ -88,31 +88,62 @@ Ext.define('Rubedo.view.RFormField', {
             var filler="";
             try{
                 filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+" "+me.itemConfig.conditionals[0].operator+" ";
-                if (Ext.isObject(me.itemConfig.conditionals[0].value)) {
-                    filler=filler+me.itemConfig.conditionals[0].value.value.toString();
-                } else {
-                    filler=filler+me.itemConfig.conditionals[0].value;
+                if (Ext.isEmpty(me.itemConfig.conditionals[0].value)) {
+                    filler=filler+" non renseigné";
+                } else if ((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType=="radiogroup")||(Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType=="checkboxgroup")) {
+                    if (Ext.isObject(me.itemConfig.conditionals[0].value)){
+                        if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){
+                            var theGoodOption = "";
+                            Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){
+                                var interMedOption=" non rensiegné";
+
+                                Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
+                                    if (possible.inputValue==value){
+                                        interMedOption=possible.boxLabel;
+                                    }
+                                });
+                                if (index > 0){
+                                    interMedOption=" OU "+interMedOption;
+                                }
+                                theGoodOption=theGoodOption+interMedOption;
+                            });
+                            filler=filler+theGoodOption;
+
+                        } else {
+                            var theGoodOption = " non rensiegné";
+                            Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
+                                if (possible.inputValue==me.itemConfig.conditionals[0].value.value){
+                                    theGoodOption=possible.boxLabel;
+                                }
+                            });
+                            filler = filler+theGoodOption;
+
+                        }}
+                    } else if (Ext.isDate(me.itemConfig.conditionals[0].value)){
+                        filler=filler+Ext.Date.format(me.itemConfig.conditionals[0].value, "d/m/y");
+                    }else {
+                        filler=filler+me.itemConfig.conditionals[0].value;
+                    }
+                }catch(err){console.log("error geting condition to display");}
+                    plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si "+filler+" )</i>";
                 }
-            }catch(err){console.log("error geting condition to display");}
-                plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si "+filler+" )</i>";
-            }
-            if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
-                var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
-                previewField.anchor = "100%";
-                previewField.labelAlign="top";
-                previewField.labelSeparator=" ";
-                previewField.fieldLabel="<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label+plusText;
-                if (!Ext.isEmpty(me.itemConfig.tooltip)){
-                    previewField.RTip=me.itemConfig.tooltip;
+                if ((me.itemConfig.fType=="openQuestion")||(me.itemConfig.fType=="multiChoiceQuestion")){
+                    var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);
+                    previewField.anchor = "100%";
+                    previewField.labelAlign="top";
+                    previewField.labelSeparator=" ";
+                    previewField.fieldLabel="<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label+plusText;
+                    if (!Ext.isEmpty(me.itemConfig.tooltip)){
+                        previewField.RTip=me.itemConfig.tooltip;
+                    }
+                    if (me.itemConfig.fieldConfig.mandatory){
+                        previewField.allowBlank=false;
+                    }
+                    me.add(previewField);
+                } else if (me.itemConfig.fType=="richText") {
+                    me.update(plusText+me.itemConfig.html);
                 }
-                if (me.itemConfig.fieldConfig.mandatory){
-                    previewField.allowBlank=false;
-                }
-                me.add(previewField);
-            } else if (me.itemConfig.fType=="richText") {
-                me.update(plusText+me.itemConfig.html);
-            }
-            me.doLayout();    
+                me.doLayout();    
     }
 
 });

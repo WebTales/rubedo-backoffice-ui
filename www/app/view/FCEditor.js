@@ -121,7 +121,11 @@ Ext.define('Rubedo.view.FCEditor', {
         var form = button.up().up().getComponent(0).getForm();
         if (form.isValid()) {
             var newCond=[form.getValues()];
-            newCond[0].value=Ext.getCmp("FCEditor").getComponent(0).getComponent(2).getComponent(0).getValue();
+            if (Ext.isEmpty(newCond[0].field)){
+                newCond=[ ];
+            } else {
+                newCond[0].value=Ext.getCmp("FCEditor").getComponent(0).getComponent(2).getComponent(0).getValue();
+            }
             Ext.getCmp(myId).itemConfig.conditionals=newCond;
             button.up().up().close();
             Ext.getCmp(myId).sync();
