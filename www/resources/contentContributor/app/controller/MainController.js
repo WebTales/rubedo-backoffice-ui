@@ -241,6 +241,8 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.require("Rubedo.view.CKEField");
         Ext.require("Rubedo.view.localiserField");
         Ext.require("Rubedo.view.localiserFieldComponent");
+        Ext.require("Rubedo.view.externalMediaField");
+        Ext.require("Rubedo.view.externalMediaFieldComponent");
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
