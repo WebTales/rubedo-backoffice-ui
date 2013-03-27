@@ -17,9 +17,9 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.OpenFieldConfigurator',
 
-    height: 286,
+    height: 288,
     id: 'OpenFieldConfigurator',
-    width: 632,
+    width: 715,
     resizable: false,
     layout: {
         align: 'stretch',
@@ -108,6 +108,13 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    width: 100,
+                                    name: 'fieldType',
+                                    boxLabel: 'Commentaire',
+                                    inputValue: 'textareafield'
+                                },
+                                {
+                                    xtype: 'radiofield',
                                     name: 'fieldType',
                                     boxLabel: 'Nombre',
                                     inputValue: 'numberfield'
@@ -147,6 +154,48 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                             xtype: 'form',
                             border: 0,
                             itemId: 'textfield',
+                            bodyPadding: 10,
+                            title: '',
+                            items: [
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    name: 'minLength',
+                                    fieldLabel: 'Longueur min',
+                                    labelWidth: 140,
+                                    allowDecimals: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    name: 'maxLength',
+                                    fieldLabel: 'Longueur max',
+                                    labelWidth: 140,
+                                    allowDecimals: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    name: 'vtype',
+                                    fieldLabel: 'Validation',
+                                    labelWidth: 140,
+                                    forceSelection: true,
+                                    multiSelect: false,
+                                    store: [
+                                        'alpha',
+                                        'alphanum',
+                                        'email',
+                                        'url'
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'form',
+                            border: 0,
+                            itemId: 'textareafield',
                             bodyPadding: 10,
                             title: '',
                             items: [

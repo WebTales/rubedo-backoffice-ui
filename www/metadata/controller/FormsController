@@ -728,6 +728,29 @@
                 "designer|controlQuery": "#formFieldConditionsBtn"
             },
             "designerId": "bc4ec84f-c3f6-42dc-978f-341e1bd18be8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormsDuplicateBtnClick",
+                "fn": "onFormsDuplicateBtnClick",
+                "implHandler": [
+                    "var rec = Ext.clone(Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().data);\r",
+                    "delete(rec.id);\r",
+                    "rec.title=rec.title+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "Ext.getCmp(\"mainFormsGrid\").getStore().add(rec);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formsDuplicateBtn"
+            },
+            "designerId": "bdffd629-e2b1-4f61-a7fa-49470c311666"
         }
     ]
 }

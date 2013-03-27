@@ -154,6 +154,21 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isDefined(me.editor)) {    
             return(me.editor.getData());
         }
+    },
+
+    setReadOnly: function(readOnly) {
+        var me = this,
+        inputEl = me.inputEl;
+        readOnly = !!readOnly;
+        me[readOnly ? 'addCls' : 'removeCls'](me.readOnlyCls);
+        me.readOnly = readOnly;
+        if (inputEl) {
+            inputEl.dom.readOnly = readOnly;
+        } else if (me.rendering) {
+            me.setReadOnlyOnBoxReady = true;
+        }
+        me.fireEvent('writeablechange', me, readOnly);
+        me.editor.setReadOnly(readOnly);
     }
 
 });

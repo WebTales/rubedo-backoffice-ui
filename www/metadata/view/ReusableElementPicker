@@ -189,14 +189,14 @@
                                         "fn": "onResusableElementsDeleteBtnClick",
                                         "implHandler": [
                                             "var fenetre = Ext.widget('delConfirmZ');\r",
-                                            "                fenetre.show();\r",
-                                            "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                                            "                    Ext.getCmp(\"ReusableElementsGrid\").getStore().remove(Ext.getCmp(\"ReusableElementsGrid\").getSelectionModel().getLastSelected());\r",
-                                            "                    Ext.getCmp(\"resusableElementsDeleteBtn\").disable();\r",
-                                            "                    Ext.getCmp(\"reusableelementDescription\").update(null);\r",
-                                            "                    Ext.getCmp('delConfirmZ').close();\r",
-                                            "                    \r",
-                                            "                }); "
+                                            "fenetre.show();\r",
+                                            "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                                            "    Ext.getCmp(\"ReusableElementsGrid\").getStore().remove(Ext.getCmp(\"ReusableElementsGrid\").getSelectionModel().getLastSelected());\r",
+                                            "    Ext.getCmp(\"resusableElementsDeleteBtn\").disable();\r",
+                                            "    Ext.getCmp(\"reusableelementDescription\").update(null);\r",
+                                            "    Ext.getCmp('delConfirmZ').close();\r",
+                                            "\r",
+                                            "}); "
                                         ],
                                         "name": "click",
                                         "scope": "me"

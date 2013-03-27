@@ -215,7 +215,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyRadioGroup",
-                        "fieldLabel": "Mode",
+                        "fieldLabel": "Réponse",
                         "labelSeparator": " ",
                         "labelWidth": 140
                     },
@@ -232,7 +232,7 @@
                                 "designer|userClassName": "MyRadio",
                                 "name": "fieldType",
                                 "fieldLabel": null,
-                                "boxLabel": "Une seule réponse",
+                                "boxLabel": "choix simple",
                                 "inputValue": "radiogroup"
                             },
                             "designerId": "cdf0777a-9f5c-4d6a-b232-05448194ab0d"
@@ -248,7 +248,7 @@
                                 "designer|userClassName": "MyRadio1",
                                 "name": "fieldType",
                                 "fieldLabel": null,
-                                "boxLabel": "Plusieurs réponses",
+                                "boxLabel": "choix multiple",
                                 "inputValue": "checkboxgroup"
                             },
                             "designerId": "6d9bde21-ec6c-411d-b575-05085fe8b8dd"

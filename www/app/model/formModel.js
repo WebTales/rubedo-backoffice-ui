@@ -48,6 +48,14 @@ Ext.define('Rubedo.model.formModel', {
             name: 'uniqueAnswer'
         },
         {
+            name: 'uniqueAnswerText',
+            defaultValue: 'Vous avez déjà complété cette enquête. Merci.'
+        },
+        {
+            name: 'endMessage',
+            defaultValue: 'Nous vous remercions d’avoir répondu à cette enquête.'
+        },
+        {
             name: 'openingDate'
         },
         {

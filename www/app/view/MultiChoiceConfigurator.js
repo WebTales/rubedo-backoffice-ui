@@ -102,20 +102,20 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         },
                         {
                             xtype: 'radiogroup',
-                            fieldLabel: 'Mode',
+                            fieldLabel: 'Réponse',
                             labelSeparator: ' ',
                             labelWidth: 140,
                             items: [
                                 {
                                     xtype: 'radiofield',
                                     name: 'fieldType',
-                                    boxLabel: 'Une seule réponse',
+                                    boxLabel: 'choix simple',
                                     inputValue: 'radiogroup'
                                 },
                                 {
                                     xtype: 'radiofield',
                                     name: 'fieldType',
-                                    boxLabel: 'Plusieurs réponses',
+                                    boxLabel: 'choix multiple',
                                     inputValue: 'checkboxgroup'
                                 }
                             ]

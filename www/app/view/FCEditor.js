@@ -86,7 +86,7 @@ Ext.define('Rubedo.view.FCEditor', {
                             forceSelection: true,
                             store: [
                                 '=',
-                                '!='
+                                '≠'
                             ]
                         },
                         {

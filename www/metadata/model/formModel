@@ -130,6 +130,38 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "field320",
+                "name": "uniqueAnswerText",
+                "defaultValue": [
+                    "\"Vous avez déjà complété cette enquête. Merci.\""
+                ]
+            },
+            "designerId": "cbdfbe7b-3c7e-4b1e-bbdd-1be015d14912"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field320",
+                "name": "endMessage",
+                "defaultValue": [
+                    "\"Nous vous remercions d’avoir répondu à cette enquête.\""
+                ]
+            },
+            "designerId": "fff58254-25bc-4777-865f-3d01f657ed42"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "field321",
                 "name": "openingDate"
             },

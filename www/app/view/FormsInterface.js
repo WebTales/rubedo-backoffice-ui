@@ -164,10 +164,11 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.forms',
+                                    id: 'formsDuplicateBtn',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
                                     scale: 'large',
-                                    text: 'Copier'
+                                    text: 'Dupliquer'
                                 },
                                 {
                                     xtype: 'button',
@@ -259,7 +260,9 @@ Ext.define('Rubedo.view.FormsInterface', {
                 {
                     xtype: 'gridpanel',
                     id: 'mainFormsGrid',
-                    width: 200,
+                    width: 220,
+                    resizable: true,
+                    resizeHandles: 'e',
                     title: '',
                     forceFit: true,
                     store: 'FormsStore',
@@ -289,6 +292,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'form',
                             id: 'formPropsForm',
+                            autoScroll: true,
                             bodyPadding: 10,
                             iconCls: 'parametres',
                             title: 'Propriétés',
@@ -311,16 +315,23 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '10%',
+                                    id: 'formUniqueAnswerCheck',
                                     style: '{float:left;}',
                                     name: 'uniqueAnswer',
                                     fieldLabel: 'Unicité de la réponse',
                                     labelWidth: 160,
                                     boxLabel: '',
-                                    inputValue: 'true'
+                                    inputValue: 'true',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onFormUniqueAnswerCheckChange,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
-                                    margin: '0 0 0 20',
+                                    margin: '0 20 0 20',
                                     style: '{float:left;}',
                                     allowDepress: false,
                                     enableToggle: true,
@@ -330,6 +341,14 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     pressedCls: 'x-btn',
                                     text: '',
                                     tooltip: 'L\'unicité a pour objectif de restreindre la soumission d\'un questionnaire'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '60%',
+                                    hidden: true,
+                                    id: 'formUniqueAnswerTextField',
+                                    name: 'uniqueAnswerText',
+                                    fieldLabel: ''
                                 },
                                 {
                                     xtype: 'datefield',
@@ -346,6 +365,13 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     style: '{float:right; }',
                                     name: 'closingDate',
                                     fieldLabel: 'Date de fermeture',
+                                    labelWidth: 160
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    name: 'endMessage',
+                                    fieldLabel: 'Message de fin',
                                     labelWidth: 160
                                 }
                             ]
@@ -422,6 +448,14 @@ Ext.define('Rubedo.view.FormsInterface', {
 
     onImageRender1: function(abstractcomponent, options) {
         abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/note_edit.png');
+    },
+
+    onFormUniqueAnswerCheckChange: function(field, newValue, oldValue, options) {
+        if (newValue===true) {
+            Ext.getCmp("formUniqueAnswerTextField").show();
+        } else {
+            Ext.getCmp("formUniqueAnswerTextField").hide();
+        }
     },
 
     onFormsInterfaceRender: function(abstractcomponent, options) {

@@ -307,13 +307,13 @@
                             "userConfig": {
                                 "ACL": "write.ui.forms",
                                 "designer|userClassName": "MyButton17",
-                                "id": null,
+                                "id": "formsDuplicateBtn",
                                 "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Dupliquer"
                             },
                             "designerId": "e0944177-7be1-4a3c-a727-babc67ce986a",
                             "customConfigs": [
@@ -579,10 +579,15 @@
                 "layout|flex": null,
                 "designer|userClassName": "MyGridPanel34",
                 "id": "mainFormsGrid",
-                "width": 200,
+                "width": 220,
+                "resizable": true,
+                "resizeHandles": "e",
                 "title": "",
                 "forceFit": true,
                 "store": "FormsStore"
+            },
+            "configAlternates": {
+                "resizable": "boolean"
             },
             "designerId": "905dce0c-dea0-408c-9c70-a89420a8302b",
             "cn": [
@@ -671,6 +676,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyForm57",
                         "id": "formPropsForm",
+                        "autoScroll": true,
                         "bodyPadding": 10,
                         "iconCls": "parametres",
                         "title": "Propriétés"
@@ -732,6 +738,7 @@
                             "userConfig": {
                                 "layout|anchor": "10%",
                                 "designer|userClassName": "MyCheckbox11",
+                                "id": "formUniqueAnswerCheck",
                                 "style": "{float:left;}",
                                 "name": "uniqueAnswer",
                                 "fieldLabel": "Unicité de la réponse",
@@ -742,7 +749,31 @@
                             "configAlternates": {
                                 "style": "string"
                             },
-                            "designerId": "5168102f-4e12-4b26-b079-af1e1565622a"
+                            "designerId": "5168102f-4e12-4b26-b079-af1e1565622a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onFormUniqueAnswerCheckChange",
+                                        "fn": "onFormUniqueAnswerCheckChange",
+                                        "implHandler": [
+                                            "if (newValue===true) {\r",
+                                            "    Ext.getCmp(\"formUniqueAnswerTextField\").show();\r",
+                                            "} else {\r",
+                                            "    Ext.getCmp(\"formUniqueAnswerTextField\").hide();\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "82cd4322-08d1-4c9a-92db-6065956debd4"
+                                }
+                            ]
                         },
                         {
                             "type": "button",
@@ -753,7 +784,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyButton292",
-                                "margin": "0 0 0 20",
+                                "margin": "0 20 0 20",
                                 "style": "{float:left;}",
                                 "allowDepress": false,
                                 "enableToggle": true,
@@ -769,6 +800,24 @@
                                 "tooltip": "string"
                             },
                             "designerId": "be82c7ed-7e72-4dcc-8ef8-887bf2b60936"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "60%",
+                                "designer|userClassName": "MyTextField90",
+                                "hidden": true,
+                                "id": "formUniqueAnswerTextField",
+                                "margin": null,
+                                "name": "uniqueAnswerText",
+                                "fieldLabel": ""
+                            },
+                            "designerId": "3f0aaa4a-1771-405a-af06-5f0f67cd7762"
                         },
                         {
                             "type": "datefield",
@@ -811,6 +860,22 @@
                                 "style": "string"
                             },
                             "designerId": "b4e88ee9-206c-4e96-8daf-0a402a50e78e"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextArea13",
+                                "name": "endMessage",
+                                "fieldLabel": "Message de fin",
+                                "labelWidth": 160
+                            },
+                            "designerId": "9274e061-e8b8-4dd7-8b0c-f36af6b82d9f"
                         }
                     ]
                 },

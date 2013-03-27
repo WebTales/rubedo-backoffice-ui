@@ -287,6 +287,13 @@ Ext.define('Rubedo.controller.FormsController', {
         FCEditor.show();
     },
 
+    onFormsDuplicateBtnClick: function(button, e, options) {
+        var rec = Ext.clone(Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().data);
+        delete(rec.id);
+        rec.title=rec.title+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        Ext.getCmp("mainFormsGrid").getStore().add(rec);
+    },
+
     resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
@@ -454,6 +461,9 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#formFieldConditionsBtn": {
                 click: this.onFormFieldConditionsBtnClick
+            },
+            "#formsDuplicateBtn": {
+                click: this.onFormsDuplicateBtnClick
             }
         });
     }
