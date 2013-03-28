@@ -94,7 +94,7 @@
                     "                }}\r",
                     "            } else if (Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType==\"datefield\"){\r",
                     "                var failDate=Ext.Date.parse(me.itemConfig.conditionals[0].value,\"U\");\r",
-                    "                \r",
+                    "\r",
                     "                filler=filler+Ext.Date.format(failDate, \"d/m/y\");\r",
                     "            }else {\r",
                     "                filler=filler+me.itemConfig.conditionals[0].value;\r",
