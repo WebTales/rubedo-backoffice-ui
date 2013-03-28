@@ -662,7 +662,7 @@
                 "disabled": true,
                 "id": "FormsCenterZone",
                 "iconCls": null,
-                "activeTab": null
+                "activeTab": 0
             },
             "designerId": "61c8ea8c-580a-4cae-8dce-9d8708945d6a",
             "cn": [
@@ -1052,14 +1052,14 @@
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "form",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel46",
+                        "designer|userClassName": "MyForm67",
                         "iconCls": "monitoring",
                         "title": "Exploitation"
                     },
@@ -1080,6 +1080,57 @@
                                 "tooltip": "string"
                             },
                             "designerId": "ea0dc294-beab-4c6a-bd1b-609f95386d6c"
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "designer|userClassName": "MyToolbar79"
+                            },
+                            "designerId": "7e0f530c-0caf-44bc-9f04-562eb6aeb12b",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton301",
+                                        "id": "formsExportCSVBtn",
+                                        "iconCls": "arrow_down",
+                                        "text": "Exporter en CSV"
+                                    },
+                                    "designerId": "e565744f-c01b-44a9-83f9-a0f210a57909",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onFormsExportCSVBtnClick",
+                                                "fn": "onFormsExportCSVBtnClick",
+                                                "implHandler": [
+                                                    "window.location=\"forms/get-csv?display-qnb=1&form-id=\"+Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\");"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "9b350201-fbaa-423d-8700-fedcbab35d83"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

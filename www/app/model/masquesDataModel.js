@@ -59,6 +59,12 @@ Ext.define('Rubedo.model.masquesDataModel', {
         },
         {
             name: 'mainColumnId'
+        },
+        {
+            name: 'pageProperties',
+            defaultValue: {
+                
+            }
         }
     ]
 });

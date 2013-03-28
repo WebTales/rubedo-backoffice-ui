@@ -288,6 +288,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                     flex: 1,
                     disabled: true,
                     id: 'FormsCenterZone',
+                    activeTab: 0,
                     items: [
                         {
                             xtype: 'form',
@@ -441,13 +442,33 @@ Ext.define('Rubedo.view.FormsInterface', {
                             ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'form',
                             iconCls: 'monitoring',
                             title: 'Exploitation',
                             tabConfig: {
                                 xtype: 'tab',
                                 tooltip: 'L\'exploitation des questionnaires permet d\'exporter les résultats dans le format csv'
-                            }
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            id: 'formsExportCSVBtn',
+                                            iconCls: 'arrow_down',
+                                            text: 'Exporter en CSV',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onFormsExportCSVBtnClick,
+                                                    scope: me
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -493,6 +514,10 @@ Ext.define('Rubedo.view.FormsInterface', {
             Ext.getCmp("justAHelper11").hide();
             Ext.getCmp("justAHelper12").hide();
         }
+    },
+
+    onFormsExportCSVBtnClick: function(button, e, options) {
+        window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
     },
 
     onFormsInterfaceRender: function(abstractcomponent, options) {

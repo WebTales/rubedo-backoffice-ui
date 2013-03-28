@@ -164,6 +164,22 @@
                 "name": "mainColumnId"
             },
             "designerId": "6249a6d4-7cfe-4ab0-b09c-f46ab7a7cb66"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field344",
+                "name": "pageProperties",
+                "defaultValue": [
+                    "{ }"
+                ]
+            },
+            "designerId": "f0945536-d0e3-4f9c-a05b-6ccb70e517c0"
         }
     ]
 }
