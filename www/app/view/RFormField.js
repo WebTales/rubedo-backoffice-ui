@@ -58,7 +58,8 @@ Ext.define('Rubedo.view.RFormField', {
                             itemId: 'formFieldCofiguratorBtn',
                             iconCls: 'edit',
                             text: '',
-                            tooltip: 'Paramètres'
+                            tooltip: 'Paramètres',
+                            tooltipType: 'title'
                         },
                         {
                             xtype: 'button',
@@ -66,7 +67,8 @@ Ext.define('Rubedo.view.RFormField', {
                             margin: '10 0 0 0',
                             iconCls: 'cond_small',
                             text: '',
-                            tooltip: 'Condition d\'affichage'
+                            tooltip: 'Condition d\'affichage',
+                            tooltipType: 'title'
                         }
                     ]
                 }

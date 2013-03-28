@@ -263,7 +263,7 @@
                 "fn": "selectionEvents",
                 "implHandler": [
                     "if (!abstractcomponent.isXType(\"RFormPage\")){\r",
-                    "    abstractcomponent.getEl().on(\"mousemove\", function(e){\r",
+                    "    abstractcomponent.getEl().on(\"mouseover\", function(e){\r",
                     "        abstractcomponent.addBodyCls(\"contrastFBorder\");\r",
                     "        e.stopEvent();\r",
                     "    });\r",
@@ -272,7 +272,7 @@
                     "        e.stopEvent();\r",
                     "    });\r",
                     "} else {\r",
-                    "    abstractcomponent.getEl().on(\"mousemove\", function(e){\r",
+                    "    abstractcomponent.getEl().on(\"mouseover\", function(e){\r",
                     "        var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
                     "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {\r",
                     "            abstractcomponent.setIconCls('selectBloc');\r",

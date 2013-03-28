@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.RHelpBtn', {
     iconCls: 'help',
     pressedCls: 'x-btn',
     text: '',
+    tooltipType: 'title',
 
     initComponent: function() {
         var me = this;

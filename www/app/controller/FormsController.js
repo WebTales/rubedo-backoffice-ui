@@ -106,7 +106,7 @@ Ext.define('Rubedo.controller.FormsController', {
 
     selectionEvents: function(abstractcomponent, options) {
         if (!abstractcomponent.isXType("RFormPage")){
-            abstractcomponent.getEl().on("mousemove", function(e){
+            abstractcomponent.getEl().on("mouseover", function(e){
                 abstractcomponent.addBodyCls("contrastFBorder");
                 e.stopEvent();
             });
@@ -115,7 +115,7 @@ Ext.define('Rubedo.controller.FormsController', {
                 e.stopEvent();
             });
         } else {
-            abstractcomponent.getEl().on("mousemove", function(e){
+            abstractcomponent.getEl().on("mouseover", function(e){
                 var prevSelected = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
                 if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==abstractcomponent.id)) {
                     abstractcomponent.setIconCls('selectBloc');
