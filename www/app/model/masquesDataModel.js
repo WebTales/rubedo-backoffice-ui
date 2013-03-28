@@ -63,7 +63,7 @@ Ext.define('Rubedo.model.masquesDataModel', {
         {
             name: 'pageProperties',
             defaultValue: {
-                
+                showInDiv: false
             }
         }
     ]

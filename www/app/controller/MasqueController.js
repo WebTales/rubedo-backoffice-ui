@@ -54,6 +54,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         Ext.getCmp('delConfirmZOui').on('click', function() { 
                             Ext.getCmp('masquesGrid').getStore().remove(cible);
                             Ext.getCmp('masqueEdition').removeAll();
+                            Ext.getCmp('masqueEdition').pageProperties={ };
                             Ext.getCmp("newRow").disable();
                             Ext.getCmp("newCol").disable();
                             Ext.getCmp("newBloc").disable();
@@ -93,7 +94,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     if (!Ext.isEmpty(prevSelected)) {
         prevSelected.removeBodyCls('selectedelement');
     }
-
+    this.getMasqueEdition().pageProperties=Ext.clone(record.get("pageProperties"));
     this.getMasqueEdition().removeAll();
     this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition()); 
     this.restoreBlocks(Ext.clone(masque.blocks));
@@ -201,6 +202,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             cible.beginEdit();
                             cible.set("rows",me.saveRows(me.getMasqueEdition()));
                             cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            cible.set("pageProperties",Ext.clone(Ext.getCmp('masqueEdition').pageProperties));
                             cible.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                             cible.endEdit();  
                             chooser.close();
@@ -213,6 +215,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             });
                             nouvMasque.set("rows",me.saveRows(me.getMasqueEdition()));
                             nouvMasque.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            nouvMasque.set("pageProperties",Ext.clone(Ext.getCmp('masqueEdition').pageProperties));
                             nouvMasque.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                             me.getMasquesDataJsonStore().add(nouvMasque);
                             me.getMasquesDataJsonStore().addListener("datachanged",function(){Ext.getCmp('masquesGridView').getSelectionModel().select(nouvMasque);},this,{single:true});  
@@ -223,6 +226,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         cible.beginEdit();
                         cible.set("rows",me.saveRows(me.getMasqueEdition()));
                         cible.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                        cible.set("pageProperties",Ext.clone(Ext.getCmp('masqueEdition').pageProperties));
                         cible.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                         cible.endEdit();   
                     }
@@ -231,6 +235,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
 
         }
+
     },
 
     copyMask: function(button, e, options) {
@@ -240,11 +245,13 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nSite = Ext.getCmp('copierMasqueSite').getValue();
             var nRows = Ext.clone(cible.data.rows);
             var nBlocks=Ext.clone(cible.data.blocks);
+            var nProperties=Ext.clone(cible.data.pageProperties);
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 rows: nRows,
-                blocks:nBlocks
+                blocks:nBlocks,
+                pageProperties:nProperties
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
@@ -853,9 +860,51 @@ Ext.define('Rubedo.controller.MasqueController', {
         var propEdit=Ext.getCmp('elementEditControl');
         propEdit.setTitle("Racine");
         propEdit.setIconCls('editZone');
-
-
         propEdit.removeAll();
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(1).add(Ext.widget('checkbox',{
+            fieldLabel:"Afficher dans une div ",
+            onChange:function(){
+
+                abstractcomponent.pageProperties.showInDiv=this.getValue();
+
+            },
+            labelWidth:60,
+            inputValue:true,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            checked:abstractcomponent.pageProperties.showInDiv
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Id de la div ",
+            onChange:function(){
+                if (this.isValid()){
+                    abstractcomponent.pageProperties.divId=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.pageProperties.divId
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Classe de la div ",
+            onChange:function(){
+                if (this.isValid()){
+                    abstractcomponent.pageProperties.divClass=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:abstractcomponent.pageProperties.divClass
+        }));
+        propEdit.add(configSpec);
+
+
+
 
     });
     },
