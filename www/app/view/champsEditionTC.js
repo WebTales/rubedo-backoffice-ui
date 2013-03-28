@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.champsEditionTC', {
     extend: 'Ext.form.Panel',
     alias: 'widget.champsEditionTC',
 
-    requires: [
-        'Rubedo.view.override.champsEditionTC'
-    ],
-
     frame: true,
     id: 'champsEditionTC',
     margin: 20,

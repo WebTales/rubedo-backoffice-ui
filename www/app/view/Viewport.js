@@ -127,6 +127,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sessionWarningWindow',
         'Rubedo.view.sessionExpiredWindow',
         'Rubedo.view.testingGround',
-        'Rubedo.view.RHelpBtn'
+        'Rubedo.view.RHelpBtn',
+        'Rubedo.view.champsEditionTC'
     ]
 });

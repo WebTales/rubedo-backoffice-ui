@@ -18,8 +18,7 @@ Ext.define('Rubedo.view.MyPanel51', {
     alias: 'widget.mypanel51',
 
     requires: [
-        'Rubedo.view.localiserField',
-        'Rubedo.view.override.MyPanel51'
+        'Rubedo.view.localiserField'
     ],
 
     height: 200,
