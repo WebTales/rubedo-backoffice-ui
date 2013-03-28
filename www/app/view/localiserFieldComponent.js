@@ -57,7 +57,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                     anchor: '50%',
                     margin: '0 10 0 0',
                     style: '{float:left;}',
-                    name: 'latitude',
+                    name: 'lat',
                     submitValue: false,
                     fieldLabel: 'Latitude',
                     labelSeparator: ' ',
@@ -67,7 +67,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                 {
                     xtype: 'numberfield',
                     anchor: '50%',
-                    name: 'longitude',
+                    name: 'lon',
                     submitValue: false,
                     fieldLabel: 'Longitude',
                     labelSeparator: ' ',
