@@ -443,6 +443,8 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'form',
+                            id: 'formStatsTab',
+                            bodyPadding: 10,
                             iconCls: 'monitoring',
                             title: 'Exploitation',
                             tabConfig: {
@@ -468,7 +470,29 @@ Ext.define('Rubedo.view.FormsInterface', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            items: [
+                                {
+                                    xtype: 'displayfield',
+                                    anchor: '100%',
+                                    name: 'totalResults',
+                                    fieldLabel: 'Nombre de personnes ayant commencé le questionnaire',
+                                    labelWidth: 360
+                                },
+                                {
+                                    xtype: 'displayfield',
+                                    anchor: '100%',
+                                    name: 'validResults',
+                                    fieldLabel: 'Nombre de personnes ayant terminé le questionnaire',
+                                    labelWidth: 360
+                                }
+                            ],
+                            listeners: {
+                                activate: {
+                                    fn: me.onFormStatsTabActivate,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -518,6 +542,19 @@ Ext.define('Rubedo.view.FormsInterface', {
 
     onFormsExportCSVBtnClick: function(button, e, options) {
         window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
+    },
+
+    onFormStatsTabActivate: function(abstractcomponent, options) {
+        Ext.Ajax.request({
+            url: 'forms/get-stats',
+            params: {
+                "form-id": Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id")
+            },
+            success: function(response){
+                var stats = Ext.JSON.decode(response.responseText);
+                abstractcomponent.getForm().setValues(stats.data);
+            }
+        });
     },
 
     onFormsInterfaceRender: function(abstractcomponent, options) {

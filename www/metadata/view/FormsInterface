@@ -1060,6 +1060,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyForm67",
+                        "id": "formStatsTab",
+                        "bodyPadding": 10,
                         "iconCls": "monitoring",
                         "title": "Exploitation"
                     },
@@ -1131,6 +1133,65 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "displayfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDisplayField1",
+                                "name": "totalResults",
+                                "fieldLabel": "Nombre de personnes ayant commencé le questionnaire",
+                                "labelWidth": 360
+                            },
+                            "designerId": "4a040c8e-719f-4814-a0f5-3f960b72c66f"
+                        },
+                        {
+                            "type": "displayfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDisplayField2",
+                                "name": "validResults",
+                                "fieldLabel": "Nombre de personnes ayant terminé le questionnaire",
+                                "labelWidth": 360
+                            },
+                            "designerId": "cc195fea-1b31-4445-a55c-6df3b1f4b2f4"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onFormStatsTabActivate",
+                                "fn": "onFormStatsTabActivate",
+                                "implHandler": [
+                                    "Ext.Ajax.request({\r",
+                                    "    url: 'forms/get-stats',\r",
+                                    "    params: {\r",
+                                    "        \"form-id\": Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                                    "    },\r",
+                                    "    success: function(response){\r",
+                                    "        var stats = Ext.JSON.decode(response.responseText);\r",
+                                    "        abstractcomponent.getForm().setValues(stats.data);\r",
+                                    "    }\r",
+                                    "});"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "6c0f8f7c-5279-4e0a-bd6f-577bda412887"
                         }
                     ]
                 }
