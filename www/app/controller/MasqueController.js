@@ -486,6 +486,34 @@ Ext.define('Rubedo.controller.MasqueController', {
                     margin:"10 0 10 0",
                     checked:abstractcomponent.includeContainerFluid
                 }));
+                configSpec.getComponent(1).add(Ext.widget('textfield',{
+                    itemId:"eContainerIdHTMLField",
+                    fieldLabel:"Id du container ",
+                    onChange:function(){
+                        if (this.isValid()){
+                            abstractcomponent.containerId=this.getValue();
+                        }
+                    },
+                    labelWidth:60,
+                    allowBlank:true,
+                    anchor:"100%",
+                    margin:"10 0 0 0",
+                    value:abstractcomponent.containerId
+                }));
+                configSpec.getComponent(1).add(Ext.widget('textfield',{
+                    itemId:"eConainerStyleField",
+                    fieldLabel:"Classe du container",
+                    onChange:function(){
+                        if (this.isValid()){
+                            abstractcomponent.containerClass=this.getValue();
+                        }
+                    },
+                    labelWidth:60,
+                    allowBlank:true,
+                    anchor:"100%",
+                    margin:"10 0 0 0",
+                    value:abstractcomponent.containerClass
+                }));
                 /*configSpec.getComponent(0).add(Ext.widget('button',{
                 itemId:"rowAutoHeight",
                 text:"Hauteur automatique",
@@ -1444,6 +1472,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 elementStyle:row.elementStyle,
                 elementTag:row.elementTag,
                 displayRow:row.displayRow,
+                containerId:row.containerId,
+                containerClass:row.containerClass,
                 displayRowFluid:row.displayRowFluid,
                 includeContainer:row.includeContainer,
                 includeContainerFluid:row.includeContainerFluid,
@@ -1586,6 +1616,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
+                containerId:row.containerId,
+                containerClass:row.containerClass,
                 classHTML:row.classHTML,
                 idHTML:row.idHTML,
                 columns: newCols
