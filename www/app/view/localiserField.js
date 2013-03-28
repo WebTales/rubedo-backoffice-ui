@@ -55,18 +55,44 @@ Ext.define('Rubedo.view.localiserField', {
                 if (!Ext.isEmpty(abstractcomponent.getValue())) {
                     decoded = abstractcomponent.getValue();
                 }
-                decoded[field.name]=newValue;
+                decoded[field.name]=newValue;        
                 abstractcomponent.setValue(decoded);
                 abstractcomponent.resumeEvents();
-            });
-        });
-        companion.on("afterrender",function(){
-            companion.getEl().on("click",function(){
+                if ((field.name=="address")&&(!Ext.isEmpty(newValue))){
+                    if (Ext.isEmpty(field.geocoder)){
+                        field.geocoder=new google.maps.Geocoder();
+                    }
+                    if (Ext.isEmpty(field.geoTask)){
+                        field.geoTask=new Ext.util.DelayedTask(function(){
+                            field.geocoder.geocode( { 'address': field.getValue()}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                decoded.lat=results[0].geometry.location.jb;
+                                decoded.lon=results[0].geometry.location.kb;
+                                abstractcomponent.suspendEvents(false);
+                                abstractcomponent.setValue(decoded);
+                                abstractcomponent.resumeEvents();
+                                Ext.Array.forEach(companion.query("field"), function(field){
+                                    field.suspendEvents(false);
+                                    field.setValue(decoded[field.name]);
+                                    field.resumeEvents();
+                                });
+                            }
+                        });
+                    });
+                }
+                field.geoTask.delay(500);
 
-                abstractcomponent.getEl().dom.click();
-            });
+            }
+
         });
-        abstractcomponent.up().add(companion);
+    });
+    companion.on("afterrender",function(){
+        companion.getEl().on("click",function(){
+
+            abstractcomponent.getEl().dom.click();
+        });
+    });
+    abstractcomponent.up().add(companion);
     },
 
     setValue: function(value) {
