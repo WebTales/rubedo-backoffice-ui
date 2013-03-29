@@ -136,13 +136,15 @@ Ext.define('Rubedo.view.RFormField', {
                     previewField.anchor = "100%";
                     previewField.labelAlign="top";
                     previewField.labelSeparator=" ";
+                    if (me.itemConfig.fieldConfig.mandatory){
+                        previewField.allowBlank=false;
+                        plusText= " * "+plusText;
+                    }
                     previewField.fieldLabel="<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label+plusText;
                     if (!Ext.isEmpty(me.itemConfig.tooltip)){
                         previewField.RTip=me.itemConfig.tooltip;
                     }
-                    if (me.itemConfig.fieldConfig.mandatory){
-                        previewField.allowBlank=false;
-                    }
+
                     me.add(previewField);
                 } else if (me.itemConfig.fType=="richText") {
                     me.update(plusText+me.itemConfig.html);

@@ -460,7 +460,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'fieldset',
-                                    title: 'Statistques',
+                                    title: 'Statistiques',
                                     items: [
                                         {
                                             xtype: 'displayfield',
