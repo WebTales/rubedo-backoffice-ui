@@ -364,25 +364,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     tooltip: 'Message affiché si l\'utilisateur a déjà répondu au questionnaire'
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    anchor: '90%',
-                                    hidden: true,
-                                    id: 'formUniqueAnswerNoCookie',
-                                    style: '{float:left;}',
-                                    name: 'noCookieMessage',
-                                    fieldLabel: 'Pas de cookie',
-                                    labelWidth: 160
-                                },
-                                {
-                                    xtype: 'button',
-                                    hidden: true,
-                                    id: 'justAHelper12',
-                                    style: '{float:right;}',
-                                    iconCls: 'help',
-                                    text: '',
-                                    tooltip: 'Message affiché si l\'utilisateur n\'a pas activé les cookies sur son navigateur'
-                                },
-                                {
                                     xtype: 'datefield',
                                     anchor: '50%',
                                     margin: '0 10 0 0',
@@ -543,15 +524,11 @@ Ext.define('Rubedo.view.FormsInterface', {
     onFormUniqueAnswerCheckChange: function(field, newValue, oldValue, options) {
         if (newValue===true) {
             Ext.getCmp("formUniqueAnswerTextField").show();
-            Ext.getCmp("formUniqueAnswerNoCookie").show();
             Ext.getCmp("justAHelper11").show();
-            Ext.getCmp("justAHelper12").show();
 
         } else {
             Ext.getCmp("formUniqueAnswerTextField").hide();
-            Ext.getCmp("formUniqueAnswerNoCookie").hide();
             Ext.getCmp("justAHelper11").hide();
-            Ext.getCmp("justAHelper12").hide();
         }
     },
 

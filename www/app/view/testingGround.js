@@ -41,9 +41,9 @@ Ext.define('Rubedo.view.testingGround', {
                     items: [
                         {
                             xtype: 'ESQfield',
-                            anchor: '100%',
                             queryMode: false,
-                            geoQueryMode: true
+                            geoQueryMode: true,
+                            anchor: '100%'
                         }
                     ]
                 }

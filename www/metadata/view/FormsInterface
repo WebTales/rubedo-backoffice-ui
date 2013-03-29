@@ -765,15 +765,11 @@
                                         "implHandler": [
                                             "if (newValue===true) {\r",
                                             "    Ext.getCmp(\"formUniqueAnswerTextField\").show();\r",
-                                            "    Ext.getCmp(\"formUniqueAnswerNoCookie\").show();\r",
                                             "    Ext.getCmp(\"justAHelper11\").show();\r",
-                                            "    Ext.getCmp(\"justAHelper12\").show();\r",
                                             "\r",
                                             "} else {\r",
                                             "    Ext.getCmp(\"formUniqueAnswerTextField\").hide();\r",
-                                            "    Ext.getCmp(\"formUniqueAnswerNoCookie\").hide();\r",
                                             "    Ext.getCmp(\"justAHelper11\").hide();\r",
-                                            "    Ext.getCmp(\"justAHelper12\").hide();\r",
                                             "}"
                                         ],
                                         "name": "change",
@@ -853,50 +849,6 @@
                                 "style": "string"
                             },
                             "designerId": "fe043c0c-86a1-4144-a469-e496023b1de8"
-                        },
-                        {
-                            "type": "textfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "90%",
-                                "designer|userClassName": "MyTextField91",
-                                "hidden": true,
-                                "id": "formUniqueAnswerNoCookie",
-                                "style": "{float:left;}",
-                                "name": "noCookieMessage",
-                                "fieldLabel": "Pas de cookie",
-                                "labelWidth": 160
-                            },
-                            "configAlternates": {
-                                "style": "string"
-                            },
-                            "designerId": "da6eeaac-c0e9-4882-9737-e25af591d3e6"
-                        },
-                        {
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyButton300",
-                                "hidden": true,
-                                "id": "justAHelper12",
-                                "style": "{float:right;}",
-                                "iconCls": "help",
-                                "text": "",
-                                "tooltip": "Message affiché si l'utilisateur n'a pas activé les cookies sur son navigateur"
-                            },
-                            "configAlternates": {
-                                "tooltip": "string",
-                                "style": "string"
-                            },
-                            "designerId": "e1896b23-65f2-459d-9f7c-d0691a8abaab"
                         },
                         {
                             "type": "datefield",
