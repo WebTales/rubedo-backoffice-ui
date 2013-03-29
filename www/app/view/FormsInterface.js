@@ -451,10 +451,46 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 xtype: 'tab',
                                 tooltip: 'L\'exploitation des questionnaires permet d\'exporter les résultats dans le format csv'
                             },
-                            dockedItems: [
+                            listeners: {
+                                activate: {
+                                    fn: me.onFormStatsTabActivate,
+                                    scope: me
+                                }
+                            },
+                            items: [
                                 {
-                                    xtype: 'toolbar',
-                                    dock: 'top',
+                                    xtype: 'fieldset',
+                                    title: 'Statistques',
+                                    items: [
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            itemId: 'totalResults',
+                                            name: 'totalResults',
+                                            fieldLabel: 'Nombre de personnes ayant commencé le questionnaire',
+                                            labelWidth: 360
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '50%',
+                                            itemId: 'percentageField',
+                                            style: '{float:right;}',
+                                            name: 'percentageComplete',
+                                            fieldLabel: ''
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '50%',
+                                            itemId: 'validResults',
+                                            name: 'validResults',
+                                            fieldLabel: 'Nombre de personnes ayant terminé le questionnaire',
+                                            labelWidth: 360
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Exportation',
                                     items: [
                                         {
                                             xtype: 'button',
@@ -470,29 +506,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                         }
                                     ]
                                 }
-                            ],
-                            items: [
-                                {
-                                    xtype: 'displayfield',
-                                    anchor: '100%',
-                                    name: 'totalResults',
-                                    fieldLabel: 'Nombre de personnes ayant commencé le questionnaire',
-                                    labelWidth: 360
-                                },
-                                {
-                                    xtype: 'displayfield',
-                                    anchor: '100%',
-                                    name: 'validResults',
-                                    fieldLabel: 'Nombre de personnes ayant terminé le questionnaire',
-                                    labelWidth: 360
-                                }
-                            ],
-                            listeners: {
-                                activate: {
-                                    fn: me.onFormStatsTabActivate,
-                                    scope: me
-                                }
-                            }
+                            ]
                         }
                     ]
                 }
@@ -540,10 +554,6 @@ Ext.define('Rubedo.view.FormsInterface', {
         }
     },
 
-    onFormsExportCSVBtnClick: function(button, e, options) {
-        window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
-    },
-
     onFormStatsTabActivate: function(abstractcomponent, options) {
         Ext.Ajax.request({
             url: 'forms/get-stats',
@@ -552,9 +562,17 @@ Ext.define('Rubedo.view.FormsInterface', {
             },
             success: function(response){
                 var stats = Ext.JSON.decode(response.responseText);
+                stats.data.percentageComplete="";
+                if (stats.data.totalResults>0){
+                    stats.data.percentageComplete=" ( "+(stats.data.validResults/stats.data.totalResults)*100+"% )";
+                } 
                 abstractcomponent.getForm().setValues(stats.data);
             }
         });
+    },
+
+    onFormsExportCSVBtnClick: function(button, e, options) {
+        window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
     },
 
     onFormsInterfaceRender: function(abstractcomponent, options) {

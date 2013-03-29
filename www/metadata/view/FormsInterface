@@ -1084,17 +1084,117 @@
                             "designerId": "ea0dc294-beab-4c6a-bd1b-609f95386d6c"
                         },
                         {
-                            "type": "toolbar",
+                            "type": "basiceventbinding",
                             "reference": {
-                                "name": "dockedItems",
+                                "name": "listeners",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dock": "top",
-                                "designer|userClassName": "MyToolbar79"
+                                "designer|userClassName": "onFormStatsTabActivate",
+                                "fn": "onFormStatsTabActivate",
+                                "implHandler": [
+                                    "Ext.Ajax.request({\r",
+                                    "    url: 'forms/get-stats',\r",
+                                    "    params: {\r",
+                                    "        \"form-id\": Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                                    "    },\r",
+                                    "    success: function(response){\r",
+                                    "        var stats = Ext.JSON.decode(response.responseText);\r",
+                                    "        stats.data.percentageComplete=\"\";\r",
+                                    "        if (stats.data.totalResults>0){\r",
+                                    "            stats.data.percentageComplete=\" ( \"+(stats.data.validResults/stats.data.totalResults)*100+\"% )\";\r",
+                                    "        } \r",
+                                    "        abstractcomponent.getForm().setValues(stats.data);\r",
+                                    "    }\r",
+                                    "});"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
                             },
-                            "designerId": "7e0f530c-0caf-44bc-9f04-562eb6aeb12b",
+                            "designerId": "6c0f8f7c-5279-4e0a-bd6f-577bda412887"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet18",
+                                "title": "Statistques"
+                            },
+                            "designerId": "afb9fb77-e12f-43b7-9b70-7a6bf94153e7",
+                            "cn": [
+                                {
+                                    "type": "displayfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyDisplayField1",
+                                        "itemId": "totalResults",
+                                        "name": "totalResults",
+                                        "fieldLabel": "Nombre de personnes ayant commencé le questionnaire",
+                                        "labelWidth": 360
+                                    },
+                                    "designerId": "4a040c8e-719f-4814-a0f5-3f960b72c66f"
+                                },
+                                {
+                                    "type": "displayfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "50%",
+                                        "designer|userClassName": "MyDisplayField3",
+                                        "itemId": "percentageField",
+                                        "style": "{float:right;}",
+                                        "name": "percentageComplete",
+                                        "fieldLabel": ""
+                                    },
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "3673f98a-dd1e-4434-9428-e08d76f92461"
+                                },
+                                {
+                                    "type": "displayfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "50%",
+                                        "designer|userClassName": "MyDisplayField2",
+                                        "itemId": "validResults",
+                                        "name": "validResults",
+                                        "fieldLabel": "Nombre de personnes ayant terminé le questionnaire",
+                                        "labelWidth": 360
+                                    },
+                                    "designerId": "cc195fea-1b31-4445-a55c-6df3b1f4b2f4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet19",
+                                "title": "Exportation"
+                            },
+                            "designerId": "00080423-cad1-4620-a9fb-09d457421f97",
                             "cn": [
                                 {
                                     "type": "button",
@@ -1104,7 +1204,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "designer|userClassName": "MyButton301",
                                         "id": "formsExportCSVBtn",
                                         "iconCls": "arrow_down",
@@ -1133,65 +1232,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "type": "displayfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyDisplayField1",
-                                "name": "totalResults",
-                                "fieldLabel": "Nombre de personnes ayant commencé le questionnaire",
-                                "labelWidth": 360
-                            },
-                            "designerId": "4a040c8e-719f-4814-a0f5-3f960b72c66f"
-                        },
-                        {
-                            "type": "displayfield",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyDisplayField2",
-                                "name": "validResults",
-                                "fieldLabel": "Nombre de personnes ayant terminé le questionnaire",
-                                "labelWidth": 360
-                            },
-                            "designerId": "cc195fea-1b31-4445-a55c-6df3b1f4b2f4"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onFormStatsTabActivate",
-                                "fn": "onFormStatsTabActivate",
-                                "implHandler": [
-                                    "Ext.Ajax.request({\r",
-                                    "    url: 'forms/get-stats',\r",
-                                    "    params: {\r",
-                                    "        \"form-id\": Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
-                                    "    },\r",
-                                    "    success: function(response){\r",
-                                    "        var stats = Ext.JSON.decode(response.responseText);\r",
-                                    "        abstractcomponent.getForm().setValues(stats.data);\r",
-                                    "    }\r",
-                                    "});"
-                                ],
-                                "name": "activate",
-                                "scope": "me"
-                            },
-                            "designerId": "6c0f8f7c-5279-4e0a-bd6f-577bda412887"
                         }
                     ]
                 }
