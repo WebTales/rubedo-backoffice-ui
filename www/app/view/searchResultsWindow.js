@@ -132,6 +132,10 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                 beforeclose: {
                     fn: me.onSearchResultsWindowBeforeClose,
                     scope: me
+                },
+                beforerender: {
+                    fn: me.onSearchResultsWindowBeforeRender,
+                    scope: me
                 }
             },
             tools: [
@@ -147,6 +151,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     xtype: 'toolbar',
                     flex: 1,
                     dock: 'top',
+                    id: 'ESSearchTopBar',
                     items: [
                         {
                             xtype: 'toolbar',
@@ -160,10 +165,24 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                         },
                         {
                             xtype: 'button',
+                            id: 'ESFavBtn',
                             itemId: 'boutonCreerRaccourci',
                             iconCls: 'favorite_add_med',
                             scale: 'medium',
                             text: ''
+                        },
+                        {
+                            xtype: 'button',
+                            hidden: true,
+                            id: 'saveGeoQueryBtn',
+                            iconCls: 'ouiSpetit',
+                            text: 'Enregistrer la requête',
+                            listeners: {
+                                click: {
+                                    fn: me.onSaveGeoQueryBtnClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -182,6 +201,40 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     onSearchResultsWindowBeforeClose: function(panel, options) {
         Ext.getStore("ESFacetteStore").removeAll();
         Ext.getStore("ESFacetteStore").activeFacettes={ };
+        Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search';
+    },
+
+    onSaveGeoQueryBtnClick: function(button, e, options) {
+        var rez = Ext.JSON.encode(Ext.getStore("ESFacetteStore").activeFacettes);
+        Ext.getCmp(button.up().up().targetedId).setValue(rez);
+        button().up().up().close();
+    },
+
+    onSearchResultsWindowBeforeRender: function(abstractcomponent, options) {
+        if (abstractcomponent.geoQueryMode){
+            abstractcomponent.modal=true;
+            abstractcomponent.setTitle("Assistant de requête Elastic Search geolocalisé");
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("saveGeoQueryBtn").show();
+            if (!Ext.isEmpty(abstractcomponent.predefFacettes)){
+                Ext.getStore("ESFacetteStore").activeFacettes=abstractcomponent.predefFacettes;
+            }
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-geo';
+            Ext.getStore("ESFacetteStore").load();
+        } else if (abstractcomponent.queryMode){
+            abstractcomponent.modal=true;
+            abstractcomponent.setTitle("Assistant de requête Elastic Search");
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("saveGeoQueryBtn").show();
+            if (!Ext.isEmpty(abstractcomponent.predefFacettes)){
+                Ext.getStore("ESFacetteStore").activeFacettes=abstractcomponent.predefFacettes;
+            }
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search';
+            Ext.getStore("ESFacetteStore").load();
+
+        }
     }
 
 });

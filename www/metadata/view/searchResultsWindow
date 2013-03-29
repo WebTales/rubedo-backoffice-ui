@@ -138,7 +138,8 @@
                 "fn": "onSearchResultsWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"ESFacetteStore\").removeAll();\r",
-                    "Ext.getStore(\"ESFacetteStore\").activeFacettes={ };"
+                    "Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
+                    "Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search';"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
@@ -288,7 +289,8 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar63"
+                "designer|userClassName": "MyToolbar63",
+                "id": "ESSearchTopBar"
             },
             "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
             "cn": [
@@ -333,15 +335,95 @@
                     "userConfig": {
                         "layout|flex": null,
                         "designer|userClassName": "MyButton253",
-                        "id": null,
+                        "id": "ESFavBtn",
                         "itemId": "boutonCreerRaccourci",
                         "iconCls": "favorite_add_med",
                         "scale": "medium",
                         "text": ""
                     },
                     "designerId": "0a9d678c-0299-444b-b6a1-91103dd41bc3"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton302",
+                        "hidden": true,
+                        "id": "saveGeoQueryBtn",
+                        "iconCls": "ouiSpetit",
+                        "text": "Enregistrer la requête"
+                    },
+                    "designerId": "9cf03ae4-4207-4cb9-8b92-84f157812be5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onSaveGeoQueryBtnClick",
+                                "fn": "onSaveGeoQueryBtnClick",
+                                "implHandler": [
+                                    "var rez = Ext.JSON.encode(Ext.getStore(\"ESFacetteStore\").activeFacettes);\r",
+                                    "Ext.getCmp(button.up().up().targetedId).setValue(rez);\r",
+                                    "button().up().up().close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "c87dea85-371e-49e1-a34b-f68cce4beeb2"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSearchResultsWindowBeforeRender",
+                "fn": "onSearchResultsWindowBeforeRender",
+                "implHandler": [
+                    "if (abstractcomponent.geoQueryMode){\r",
+                    "    abstractcomponent.modal=true;\r",
+                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search geolocalisé\");\r",
+                    "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
+                    "    Ext.getCmp(\"ESFavBtn\").hide();\r",
+                    "    Ext.getCmp(\"saveGeoQueryBtn\").show();\r",
+                    "    if (!Ext.isEmpty(abstractcomponent.predefFacettes)){\r",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=abstractcomponent.predefFacettes;\r",
+                    "    }\r",
+                    "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-geo';\r",
+                    "    Ext.getStore(\"ESFacetteStore\").load();\r",
+                    "} else if (abstractcomponent.queryMode){\r",
+                    "    abstractcomponent.modal=true;\r",
+                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search\");\r",
+                    "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
+                    "    Ext.getCmp(\"ESFavBtn\").hide();\r",
+                    "    Ext.getCmp(\"saveGeoQueryBtn\").show();\r",
+                    "    if (!Ext.isEmpty(abstractcomponent.predefFacettes)){\r",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=abstractcomponent.predefFacettes;\r",
+                    "    }\r",
+                    "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search';\r",
+                    "    Ext.getStore(\"ESFacetteStore\").load();\r",
+                    "    \r",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "5afffbfb-8aa3-4117-a030-1a82d4cfb93a"
         }
     ]
 }
