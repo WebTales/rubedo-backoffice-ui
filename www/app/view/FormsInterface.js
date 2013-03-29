@@ -491,7 +491,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'fieldset',
-                                    title: 'Exportation',
+                                    title: 'Résultats',
                                     items: [
                                         {
                                             xtype: 'button',
@@ -565,7 +565,8 @@ Ext.define('Rubedo.view.FormsInterface', {
                 var stats = Ext.JSON.decode(response.responseText);
                 stats.data.percentageComplete="";
                 if (stats.data.totalResults>0){
-                    stats.data.percentageComplete=" ( "+(stats.data.validResults/stats.data.totalResults)*100+"% )";
+                    var myNum=(stats.data.validResults/stats.data.totalResults)*100;
+                    stats.data.percentageComplete=" ( "+myNum.toPrecision(2)+"% )";
                 } 
                 abstractcomponent.getForm().setValues(stats.data);
             }

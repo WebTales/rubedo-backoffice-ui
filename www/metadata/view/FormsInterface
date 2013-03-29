@@ -1104,7 +1104,8 @@
                                     "        var stats = Ext.JSON.decode(response.responseText);\r",
                                     "        stats.data.percentageComplete=\"\";\r",
                                     "        if (stats.data.totalResults>0){\r",
-                                    "            stats.data.percentageComplete=\" ( \"+(stats.data.validResults/stats.data.totalResults)*100+\"% )\";\r",
+                                    "            var myNum=(stats.data.validResults/stats.data.totalResults)*100;\r",
+                                    "            stats.data.percentageComplete=\" ( \"+myNum.toPrecision(2)+\"% )\";\r",
                                     "        } \r",
                                     "        abstractcomponent.getForm().setValues(stats.data);\r",
                                     "    }\r",
@@ -1193,7 +1194,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyFieldSet19",
-                                "title": "Exportation"
+                                "title": "Résultats"
                             },
                             "designerId": "00080423-cad1-4620-a9fb-09d457421f97",
                             "cn": [
