@@ -1,0 +1,115 @@
+{
+    "type": "hiddenfield",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedCT": null,
+        "queryMode": true,
+        "geoQueryMode": false,
+        "designer|userClassName": "ESQfield",
+        "designer|userAlias": "ESQfield",
+        "fieldLabel": "Label",
+        "labelSeparator": " "
+    },
+    "configAlternates": {
+        "geoQueryMode": "boolean",
+        "queryMode": "boolean"
+    },
+    "id": "ExtBox1-ext-gen28258",
+    "designerId": "40dcc4f4-8a58-473c-b8f1-982fef6fab5f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedCT",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "queryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "geoQueryMode",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onHiddenfieldRender",
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"ESQfieldComponent\");\r",
+                    "myComponent.setFieldLabel(abstractcomponent.fieldLabel+\" \");\r",
+                    "abstractcomponent.on(\"change\", function(a,newValue){\r",
+                    "    if (Ext.isEmpty(newValue)){\r",
+                    "        myComponent.getComponent(\"addBtn\").show();\r",
+                    "        myComponent.getComponent(\"editBtn\").hide();\r",
+                    "        myComponent.getComponent(\"removeBtn\").hide();\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"addBtn\").hide();\r",
+                    "        myComponent.getComponent(\"editBtn\").show();\r",
+                    "        myComponent.getComponent(\"removeBtn\").show();\r",
+                    "    }\r",
+                    "});\r",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
+                    "    abstractcomponent.setValue(null);\r",
+                    "});\r",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
+                    "    var delay = 10;\r",
+                    "    var prev = Ext.getCmp(\"searchResultsWindow\");\r",
+                    "    if (!Ext.isEmpty(prev)){\r",
+                    "        prev.close();\r",
+                    "        delay=400;\r",
+                    "    }\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "        Ext.widget(\"searchResultsWindow\", {\r",
+                    "            queryMode:abstractcomponent.queryMode,\r",
+                    "            geoQueryMode:abstractcomponent.geoQueryMode,\r",
+                    "            targetedId:abstractcomponent.getId(),\r",
+                    "            predefFacettes:null\r",
+                    "        }).show();\r",
+                    "    });\r",
+                    "    task.delay(delay);\r",
+                    "    \r",
+                    "});\r",
+                    "\r",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
+                    "    var delay = 10;\r",
+                    "    var prev = Ext.getCmp(\"searchResultsWindow\");\r",
+                    "    if (!Ext.isEmpty(prev)){\r",
+                    "        prev.close();\r",
+                    "        delay=400;\r",
+                    "    }\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "        Ext.widget(\"searchResultsWindow\", {\r",
+                    "            queryMode:abstractcomponent.queryMode,\r",
+                    "            geoQueryMode:abstractcomponent.geoQueryMode,\r",
+                    "            targetedId:abstractcomponent.getId(),\r",
+                    "            predefFacettes:Ext.JSON.decode(abstractcomponent.getValue())\r",
+                    "        }).show();\r",
+                    "    });\r",
+                    "    task.delay(delay);\r",
+                    "    \r",
+                    "});\r",
+                    "abstractcomponent.up().add(myComponent);\r",
+                    "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());\r",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "2a7c74a8-33c7-46cc-9da5-e07723204199"
+        }
+    ]
+}

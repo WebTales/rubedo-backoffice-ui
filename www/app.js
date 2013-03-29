@@ -253,7 +253,9 @@ Ext.application({
         'MyComboBox32',
         'MyWindow67',
         'externalMediaField',
-        'externalMediaFieldComponent'
+        'externalMediaFieldComponent',
+        'ESQfield',
+        'ESQfieldComponent'
     ],
     autoCreateViewport: true,
     name: 'Rubedo',

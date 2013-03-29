@@ -2300,6 +2300,22 @@
                 "app/store/MultiChoiceOptionsStore.js"
             ],
             "className": "MultiChoiceOptionsStore"
+        },
+        "40dcc4f4-8a58-473c-b8f1-982fef6fab5f": {
+            "paths": [
+                "metadata/view/ESQfield",
+                "app/view/override/ESQfield.js",
+                "app/view/ESQfield.js"
+            ],
+            "className": "ESQfield"
+        },
+        "a20f4337-21fe-4a06-8950-f89eb521d0a1": {
+            "paths": [
+                "metadata/view/ESQfieldComponent",
+                "app/view/override/ESQfieldComponent.js",
+                "app/view/ESQfieldComponent.js"
+            ],
+            "className": "ESQfieldComponent"
         }
     },
     "viewOrderMap": {
@@ -2425,8 +2441,10 @@
             "c5a98797-d429-41a6-a551-728b934eff67",
             "ad91af67-6579-4a5a-9499-f0904b885611",
             "5ae078a2-d295-4000-952e-e1cf6213b1b9",
-            "d8f7ec5e-c852-435a-bb17-6c19e843c898",
             "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
+            "d8f7ec5e-c852-435a-bb17-6c19e843c898",
+            "40dcc4f4-8a58-473c-b8f1-982fef6fab5f",
+            "a20f4337-21fe-4a06-8950-f89eb521d0a1",
             "15b19248-a73a-4ad3-87eb-1ea892921ea0",
             "c4a3059a-1950-40ff-8528-0964d4544e97",
             "b0ae3c81-7792-47a7-91c2-3e7e993f879c",

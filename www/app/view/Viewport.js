@@ -119,8 +119,9 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.MQField',
         'Rubedo.view.MQFieldComponent',
         'Rubedo.view.PortalDropZone',
-        'Rubedo.view.DCEField',
         'Rubedo.view.DCEFieldComponent',
+        'Rubedo.view.DCEField',
+        'Rubedo.view.ESQfieldComponent',
         'Rubedo.view.localiserFieldComponent',
         'Rubedo.view.externalMediaFieldComponent',
         'Rubedo.view.externalMediaField',
@@ -128,6 +129,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.sessionExpiredWindow',
         'Rubedo.view.testingGround',
         'Rubedo.view.RHelpBtn',
+        'Rubedo.view.MyPanel51',
         'Rubedo.view.champsEditionTC'
     ]
 });

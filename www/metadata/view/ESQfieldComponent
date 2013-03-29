@@ -1,0 +1,69 @@
+{
+    "type": "fieldcontainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ESQfieldComponent",
+        "designer|userAlias": "ESQfieldComponent",
+        "height": 29,
+        "padding": null,
+        "width": 455,
+        "fieldLabel": "Label",
+        "labelSeparator": " ",
+        "labelWidth": 60
+    },
+    "id": "ExtBox1-ext-gen28528",
+    "designerId": "a20f4337-21fe-4a06-8950-f89eb521d0a1",
+    "cn": [
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton243",
+                "itemId": "addBtn",
+                "margin": "0 10 0 0",
+                "iconCls": "add",
+                "text": "Ajouter"
+            },
+            "designerId": "f74f269d-e45a-4f7f-abde-b41fbfcde738"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton244",
+                "itemId": "editBtn",
+                "margin": "0 10 0 0",
+                "iconCls": "edit",
+                "text": "Modifier"
+            },
+            "designerId": "201942b7-b36d-493d-b6a6-4ed90a22fc12"
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton245",
+                "itemId": "removeBtn",
+                "iconCls": "close",
+                "text": "Supprimer"
+            },
+            "designerId": "d6ec84d5-e0b4-4bab-ada9-632ddbaa2fdc"
+        }
+    ]
+}

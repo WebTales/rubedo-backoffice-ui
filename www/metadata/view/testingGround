@@ -18,28 +18,35 @@
     "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
     "cn": [
         {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "designerId": "fb9912e7-eacc-47b9-8744-7f1ec2bae8b0",
-            "masterInstanceId": "ExtBox1-ext-gen21558"
-        },
-        {
-            "type": "hiddenfield",
+            "type": "form",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyHiddenField15",
-                "id": "monkey1",
-                "fieldLabel": "Label"
+                "designer|userClassName": "MyForm68",
+                "bodyPadding": 10,
+                "title": "My Form"
             },
-            "designerId": "7f706725-58aa-4d93-9651-ef349114184a"
+            "designerId": "f1e3cb1e-a59f-42ec-a7af-0639c50409db",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "queryMode": false,
+                        "geoQueryMode": true
+                    },
+                    "designerId": "12c33df1-1f7d-433f-a9a7-81437c94515c",
+                    "masterInstanceId": "ExtBox1-ext-gen28258"
+                }
+            ]
         }
     ]
 }

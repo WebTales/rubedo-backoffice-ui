@@ -207,13 +207,13 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     onSaveGeoQueryBtnClick: function(button, e, options) {
         var rez = Ext.JSON.encode(Ext.getStore("ESFacetteStore").activeFacettes);
         Ext.getCmp(button.up().up().targetedId).setValue(rez);
-        button().up().up().close();
+        button.up().up().close();
     },
 
     onSearchResultsWindowBeforeRender: function(abstractcomponent, options) {
         if (abstractcomponent.geoQueryMode){
             abstractcomponent.modal=true;
-            abstractcomponent.setTitle("Assistant de requête Elastic Search geolocalisé");
+            abstractcomponent.setTitle("Assistant de requête Elastic Search geolocalisée");
             Ext.getStore("ESFacetteStore").activeFacettes={ };
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("saveGeoQueryBtn").show();

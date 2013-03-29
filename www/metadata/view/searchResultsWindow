@@ -373,7 +373,7 @@
                                 "implHandler": [
                                     "var rez = Ext.JSON.encode(Ext.getStore(\"ESFacetteStore\").activeFacettes);\r",
                                     "Ext.getCmp(button.up().up().targetedId).setValue(rez);\r",
-                                    "button().up().up().close();"
+                                    "button.up().up().close();"
                                 ],
                                 "name": "click",
                                 "scope": "me"
@@ -397,7 +397,7 @@
                 "implHandler": [
                     "if (abstractcomponent.geoQueryMode){\r",
                     "    abstractcomponent.modal=true;\r",
-                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search geolocalisé\");\r",
+                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search geolocalisée\");\r",
                     "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
                     "    Ext.getCmp(\"ESFavBtn\").hide();\r",
                     "    Ext.getCmp(\"saveGeoQueryBtn\").show();\r",

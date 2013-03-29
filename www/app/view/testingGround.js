@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.MyPanel51'
+        'Rubedo.view.ESQfield'
     ],
 
     height: 450,
@@ -35,12 +35,17 @@ Ext.define('Rubedo.view.testingGround', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'mypanel51'
-                },
-                {
-                    xtype: 'hiddenfield',
-                    id: 'monkey1',
-                    fieldLabel: 'Label'
+                    xtype: 'form',
+                    bodyPadding: 10,
+                    title: 'My Form',
+                    items: [
+                        {
+                            xtype: 'ESQfield',
+                            anchor: '100%',
+                            queryMode: false,
+                            geoQueryMode: true
+                        }
+                    ]
                 }
             ]
         });
