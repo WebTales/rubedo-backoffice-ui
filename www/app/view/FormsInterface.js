@@ -323,6 +323,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     labelWidth: 160,
                                     boxLabel: '',
                                     inputValue: 'true',
+                                    uncheckedValue: 'false',
                                     listeners: {
                                         change: {
                                             fn: me.onFormUniqueAnswerCheckChange,
