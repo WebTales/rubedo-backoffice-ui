@@ -89,7 +89,8 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             boxLabel: '',
-                            inputValue: 'true'
+                            inputValue: 'true',
+                            uncheckedValue: 'false'
                         },
                         {
                             xtype: 'numberfield',

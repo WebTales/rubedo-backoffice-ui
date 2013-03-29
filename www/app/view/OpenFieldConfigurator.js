@@ -92,7 +92,8 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                             fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             boxLabel: '',
-                            inputValue: 'true'
+                            inputValue: 'true',
+                            uncheckedValue: 'false'
                         },
                         {
                             xtype: 'radiogroup',
