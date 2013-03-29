@@ -128,7 +128,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         },
                         configBloc: {
                             positionField: 'position',
-                            zoom: 12,
+                            zoom: 14,
                             height: 400
                         }
                     },
@@ -1720,6 +1720,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Restreindre au site',
                                                 name: 'constrainToSite'
                                             }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Facettes prédéfinies',
+                                                name: 'predefinedFacets'
+                                            }
                                         }
                                     ]
                                 }
@@ -1744,6 +1751,122 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '506441f8c64804d514066000'
+                },
+                {
+                    type: 'Page de recherche géolocalisée',
+                    category: 'Recherche',
+                    description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
+                    configBasique: {
+                        title: 'Page de recherche géolocalisée',
+                        bType: 'geoSearchResults',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Filtrage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Restreindre au site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Facettes prédéfinies',
+                                                name: 'predefinedFacets',
+                                                queryMode: false,
+                                                geoQueryMode: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Centre de la carte',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Geolocalisation',
+                                                name: 'useLocation',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Adresse',
+                                                name: 'centerAddress'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Latitude',
+                                                name: 'centerLatitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Longitude',
+                                                name: 'centerLongitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Zoom',
+                                                name: 'zoom',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Hauteur',
+                                                name: 'height',
+                                                allowDecimals: false,
+                                                minValue: 100
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            constrainToSite: true,
+                            zoom: 14,
+                            height: 400
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514066125'
                 },
                 {
                     type: 'Template Twig',
