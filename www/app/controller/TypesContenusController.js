@@ -241,96 +241,99 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     creerChampTC: function(button, e, options) {
         var me=this;
         var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;
-        var configurateur = Ext.clone(donnees.config);
-        if (donnees.cType =='Ext.ux.TreePicker'){ 
-            configurateur.store = Ext.create("Ext.data.TreeStore", {
-                isOptimised: true,
-                usedCollection: 'Pages',
-                autoLoad: false,
-                autoSync: false,
-                remoteFilter: true,
-                model: 'Rubedo.model.taxonomyTermModel',
-                proxy: {
-                    type: 'ajax',
-                    api: {
-                        read: 'taxonomy-terms/navigation-tree'
-                    },
-                    reader: {
-                        type: 'json',
-                        getResponseData: function(response) {
-                            var data, error;
-
-                            try {
-                                data = Ext.decode(response.responseText);
-                                if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
-                                return this.readRecords(data);
-                            } catch (ex) {
-                                error = new Ext.data.ResultSet({
-                                    total  : 0,
-                                    count  : 0,
-                                    records: [],
-                                    success: false,
-                                    message: ex.message
-                                });
-
-                                this.fireEvent('exception', this, response, error);
-                                console.log(ex);
-
-                                Ext.Logger.warn('Unable to parse the JSON returned by the server');
-
-                                return error;
-                            }
+        if ((donnees.cType=="Rubedo.view.localiserField")&&(!Ext.isEmpty(Ext.getCmp("champsEditionTC").query("localiserField")))){
+            Ext.Msg.alert("Erreur", "Un type de contenus ne peut pas avoir plusieurs champs de type \"Localisation\".");
+        }else {
+            var configurateur = Ext.clone(donnees.config);
+            if (donnees.cType =='Ext.ux.TreePicker'){ 
+                configurateur.store = Ext.create("Ext.data.TreeStore", {
+                    isOptimised: true,
+                    usedCollection: 'Pages',
+                    autoLoad: false,
+                    autoSync: false,
+                    remoteFilter: true,
+                    model: 'Rubedo.model.taxonomyTermModel',
+                    proxy: {
+                        type: 'ajax',
+                        api: {
+                            read: 'taxonomy-terms/navigation-tree'
                         },
-                        messageProperty: 'message'
+                        reader: {
+                            type: 'json',
+                            getResponseData: function(response) {
+                                var data, error;
+
+                                try {
+                                    data = Ext.decode(response.responseText);
+                                    if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                    return this.readRecords(data);
+                                } catch (ex) {
+                                    error = new Ext.data.ResultSet({
+                                        total  : 0,
+                                        count  : 0,
+                                        records: [],
+                                        success: false,
+                                        message: ex.message
+                                    });
+
+                                    this.fireEvent('exception', this, response, error);
+                                    console.log(ex);
+
+                                    Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                    return error;
+                                }
+                            },
+                            messageProperty: 'message'
+                        }
+                    },
+                    sorters: {
+                        property: 'orderValue'
                     }
-                },
-                sorters: {
-                    property: 'orderValue'
-                }
-            });
-            configurateur.store.load();
-            configurateur.valueField="id";
-            configurateur.displayField="text";
-            configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
-        }
-        else if (donnees.cType == 'Ext.form.field.ComboBox') {
-            var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
-            configurateur.store = monStore;
-        }
-        var nouvChamp = Ext.create(donnees.cType, configurateur);
-        nouvChamp.protoId=donnees.id;
-        nouvChamp.config=Ext.clone(donnees.config);
-        nouvChamp.configFields=Ext.clone(donnees.configFields);
-        if (donnees.cType =='Ext.form.field.Trigger'){
-            var Ouvrir = Ext.clone(donnees.openWindow);
-            nouvChamp.onTriggerClick= function() {
-                var fenetre = Ext.widget(Ouvrir);
-                fenetre.showAt(screen.width/2-200, 100);
-            } ;  
-            nouvChamp.openWindow =Ext.clone(donnees.openWindow);
-        }
-        nouvChamp.anchor = '90%';
-        nouvChamp.style = '{float:left;}';
-        var enrobage =Ext.widget('ChampTC');
-        enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-        if (Ext.isEmpty(nouvChamp.config.tooltip)){
-            enrobage.getComponent('helpBouton').hidden=true;
-        } 
-        if (!me.nameAvailable(nouvChamp.name)) {
-            var duplic = 1;
-            while (!me.nameAvailable(nouvChamp.name+duplic)){
-                duplic++;
+                });
+                configurateur.store.load();
+                configurateur.valueField="id";
+                configurateur.displayField="text";
+                configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
             }
-            nouvChamp.name=nouvChamp.name+duplic;
-            nouvChamp.config.name=nouvChamp.config.name+duplic;
+            else if (donnees.cType == 'Ext.form.field.ComboBox') {
+                var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
+                configurateur.store = monStore;
+            }
+            var nouvChamp = Ext.create(donnees.cType, configurateur);
+            nouvChamp.protoId=donnees.id;
+            nouvChamp.config=Ext.clone(donnees.config);
+            nouvChamp.configFields=Ext.clone(donnees.configFields);
+            if (donnees.cType =='Ext.form.field.Trigger'){
+                var Ouvrir = Ext.clone(donnees.openWindow);
+                nouvChamp.onTriggerClick= function() {
+                    var fenetre = Ext.widget(Ouvrir);
+                    fenetre.showAt(screen.width/2-200, 100);
+                } ;  
+                nouvChamp.openWindow =Ext.clone(donnees.openWindow);
+            }
+            nouvChamp.anchor = '90%';
+            nouvChamp.style = '{float:left;}';
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(nouvChamp);
+            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+            if (Ext.isEmpty(nouvChamp.config.tooltip)){
+                enrobage.getComponent('helpBouton').hidden=true;
+            } 
+            if (!me.nameAvailable(nouvChamp.name)) {
+                var duplic = 1;
+                while (!me.nameAvailable(nouvChamp.name+duplic)){
+                    duplic++;
+                }
+                nouvChamp.name=nouvChamp.name+duplic;
+                nouvChamp.config.name=nouvChamp.config.name+duplic;
 
+            }
+
+            Ext.getCmp('champsEditionTC').add(enrobage);
+            nouvChamp.getEl().dom.click();
+            button.up().up().close();
         }
-
-        Ext.getCmp('champsEditionTC').add(enrobage);
-        nouvChamp.getEl().dom.click();
-        button.up().up().close();
-
     },
 
     selectChampTC: function(abstractcomponent, options) {

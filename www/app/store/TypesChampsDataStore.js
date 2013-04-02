@@ -125,18 +125,19 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fieldLabel: 'Label du champ',
                         allowBlank: true,
                         localizable: false,
-                        searchable: false,
+                        searchable: true,
                         multivalued: false,
                         tooltip: '',
                         labelSeparator: ' '
                     },
                     configFields: [
                         {
-                            type: 'Ext.form.field.Text',
+                            type: 'Ext.form.field.Display',
                             config: {
                                 fieldLabel: 'Nom',
                                 name: 'name',
                                 vtype: 'alphanum',
+                                readOnly: true,
                                 allowBlank: false
                             }
                         },

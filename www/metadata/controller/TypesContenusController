@@ -277,6 +277,9 @@
                 "implHandler": [
                     "var me=this;\r",
                     "var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;\r",
+                    "if ((donnees.cType==\"Rubedo.view.localiserField\")&&(!Ext.isEmpty(Ext.getCmp(\"champsEditionTC\").query(\"localiserField\")))){\r",
+                    "    Ext.Msg.alert(\"Erreur\", \"Un type de contenus ne peut pas avoir plusieurs champs de type \\\"Localisation\\\".\");\r",
+                    "}else {\r",
                     "var configurateur = Ext.clone(donnees.config);\r",
                     "if (donnees.cType =='Ext.ux.TreePicker'){ \r",
                     "    configurateur.store = Ext.create(\"Ext.data.TreeStore\", {\r",
@@ -366,7 +369,7 @@
                     "Ext.getCmp('champsEditionTC').add(enrobage);\r",
                     "nouvChamp.getEl().dom.click();\r",
                     "button.up().up().close();\r",
-                    ""
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
