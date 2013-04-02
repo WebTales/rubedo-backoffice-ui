@@ -62,7 +62,9 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                     fieldLabel: 'Latitude',
                     labelSeparator: ' ',
                     labelWidth: 60,
-                    decimalPrecision: 6
+                    decimalPrecision: 6,
+                    maxValue: 90,
+                    minValue: -90
                 },
                 {
                     xtype: 'numberfield',
@@ -72,7 +74,9 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                     fieldLabel: 'Longitude',
                     labelSeparator: ' ',
                     labelWidth: 60,
-                    decimalPrecision: 6
+                    decimalPrecision: 6,
+                    maxValue: 180,
+                    minValue: -180
                 }
             ]
         });

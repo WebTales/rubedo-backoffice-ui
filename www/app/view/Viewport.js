@@ -121,6 +121,7 @@ Ext.define('Rubedo.view.Viewport', {
         'Rubedo.view.PortalDropZone',
         'Rubedo.view.DCEFieldComponent',
         'Rubedo.view.DCEField',
+        'Rubedo.view.ESQfield',
         'Rubedo.view.ESQfieldComponent',
         'Rubedo.view.localiserFieldComponent',
         'Rubedo.view.externalMediaFieldComponent',

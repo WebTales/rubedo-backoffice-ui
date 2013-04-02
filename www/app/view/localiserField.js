@@ -50,49 +50,58 @@ Ext.define('Rubedo.view.localiserField', {
         });
         Ext.Array.forEach(companion.query("field"), function(field){
             field.on("change", function(a, newValue){
-                abstractcomponent.suspendEvents(false);
-                var decoded = { };
-                if (!Ext.isEmpty(abstractcomponent.getValue())) {
-                    decoded = abstractcomponent.getValue();
-                }
-                decoded[field.name]=newValue;        
-                abstractcomponent.setValue(decoded);
-                abstractcomponent.resumeEvents();
-                if ((field.name=="address")&&(!Ext.isEmpty(newValue))){
-                    if (Ext.isEmpty(field.geocoder)){
-                        field.geocoder=new google.maps.Geocoder();
+                if (field.isValid()){
+                    abstractcomponent.suspendEvents(false);
+                    var decoded = { };
+                    if (!Ext.isEmpty(abstractcomponent.getValue())) {
+                        decoded = abstractcomponent.getValue();
                     }
-                    if (Ext.isEmpty(field.geoTask)){
-                        field.geoTask=new Ext.util.DelayedTask(function(){
-                            field.geocoder.geocode( { 'address': field.getValue()}, function(results, status) {
-                            if (status == google.maps.GeocoderStatus.OK) {
-                                decoded.lat=results[0].geometry.location.jb;
-                                decoded.lon=results[0].geometry.location.kb;
-                                abstractcomponent.suspendEvents(false);
-                                abstractcomponent.setValue(decoded);
-                                abstractcomponent.resumeEvents();
-                                Ext.Array.forEach(companion.query("field"), function(field){
-                                    field.suspendEvents(false);
-                                    field.setValue(decoded[field.name]);
-                                    field.resumeEvents();
-                                });
-                            }
+                    decoded[field.name]=newValue;   
+                    decoded.location={
+                        "type":"Point",
+                        "coordinates":[decoded.lon,decoded.lat]
+                    };
+                    abstractcomponent.setValue(decoded);
+                    abstractcomponent.resumeEvents();
+                    if ((field.name=="address")&&(!Ext.isEmpty(newValue))){
+                        if (Ext.isEmpty(field.geocoder)){
+                            field.geocoder=new google.maps.Geocoder();
+                        }
+                        if (Ext.isEmpty(field.geoTask)){
+                            field.geoTask=new Ext.util.DelayedTask(function(){
+                                field.geocoder.geocode( { 'address': field.getValue()}, function(results, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    decoded.lat=results[0].geometry.location.jb;
+                                    decoded.lon=results[0].geometry.location.kb;
+                                    decoded.location={
+                                        "type":"Point",
+                                        "coordinates":[decoded.lon,decoded.lat]
+                                    };
+                                    abstractcomponent.suspendEvents(false);
+                                    abstractcomponent.setValue(decoded);
+                                    abstractcomponent.resumeEvents();
+                                    Ext.Array.forEach(companion.query("field"), function(field){
+                                        field.suspendEvents(false);
+                                        field.setValue(decoded[field.name]);
+                                        field.resumeEvents();
+                                    });
+                                }
+                            });
                         });
-                    });
+                    }
+                    field.geoTask.delay(500);
+
                 }
-                field.geoTask.delay(500);
 
-            }
-
+            }});
         });
-    });
-    companion.on("afterrender",function(){
-        companion.getEl().on("click",function(){
+        companion.on("afterrender",function(){
+            companion.getEl().on("click",function(){
 
-            abstractcomponent.getEl().dom.click();
+                abstractcomponent.getEl().dom.click();
+            });
         });
-    });
-    abstractcomponent.up().add(companion);
+        abstractcomponent.up().add(companion);
     },
 
     setValue: function(value) {

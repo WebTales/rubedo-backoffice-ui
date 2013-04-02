@@ -85,7 +85,9 @@
                 "fieldLabel": "Latitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
-                "decimalPrecision": 6
+                "decimalPrecision": 6,
+                "maxValue": 90,
+                "minValue": -90
             },
             "configAlternates": {
                 "style": "string"
@@ -107,7 +109,9 @@
                 "fieldLabel": "Longitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
-                "decimalPrecision": 6
+                "decimalPrecision": 6,
+                "maxValue": 180,
+                "minValue": -180
             },
             "designerId": "d2978bf2-b354-48b1-8cfc-327c92d90cac"
         }

@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.ESQfield'
+        'Rubedo.view.localiserField'
     ],
 
     height: 450,
@@ -40,10 +40,8 @@ Ext.define('Rubedo.view.testingGround', {
                     title: 'My Form',
                     items: [
                         {
-                            xtype: 'ESQfield',
-                            queryMode: false,
-                            geoQueryMode: true,
-                            anchor: '100%'
+                            xtype: 'localiserField',
+                            id: 'geoMonkey'
                         }
                     ]
                 }
