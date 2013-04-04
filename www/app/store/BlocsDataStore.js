@@ -1841,6 +1841,15 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 allowDecimals: false,
                                                 minValue: 100
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Nombre de points max',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
                                         }
                                     ]
                                 }
@@ -1852,7 +1861,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         configBloc: {
                             constrainToSite: true,
                             zoom: 14,
-                            height: 400
+                            height: 400,
+                            pageSize: 5000
                         }
                     },
                     version: 1,
