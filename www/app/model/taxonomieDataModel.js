@@ -35,6 +35,10 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             type: 'boolean'
         },
         {
+            name: 'inputAsTree',
+            type: 'boolean'
+        },
+        {
             name: 'multiSelect',
             type: 'boolean'
         },

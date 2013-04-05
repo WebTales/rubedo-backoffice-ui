@@ -270,6 +270,15 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            fieldLabel: 'Saisie arborescente',
+                                            name: 'inputAsTree',
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            anchor: '100%',
                                             fieldLabel: 'Choix multiple ',
                                             name: 'multiSelect',
                                             boxLabel: '',

@@ -80,6 +80,21 @@
             "codeClass": null,
             "userConfig": {
                 "defaultValue": null,
+                "name": "inputAsTree",
+                "type": "boolean",
+                "designer|userClassName": "MyField40"
+            },
+            "designerId": "afa07d89-7d1f-437a-b495-1fb77fc9d9d3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
                 "name": "multiSelect",
                 "type": "boolean",
                 "designer|userClassName": "MyField40"

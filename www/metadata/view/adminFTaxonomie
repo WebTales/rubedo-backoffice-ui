@@ -668,6 +668,25 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "id": null,
+                                        "designer|userClassName": "MyCheckbox3",
+                                        "fieldLabel": "Saisie arborescente",
+                                        "name": "inputAsTree",
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "id": null,
                                         "designer|userClassName": "MyCheckbox4",
                                         "fieldLabel": "Choix multiple ",
                                         "name": "multiSelect",
