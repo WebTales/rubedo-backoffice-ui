@@ -1218,6 +1218,18 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Page associée',
                                                 name: 'singlePage'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Colonnes',
+                                                name: 'columns',
+                                                allowBlank: false,
+                                                editable: false,
+                                                allowDecimals: false,
+                                                minValue: 1,
+                                                maxValue: 4
+                                            }
                                         }
                                     ]
                                 },
@@ -1273,7 +1285,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            
+                            columns: 1
                         }
                     },
                     version: 1,

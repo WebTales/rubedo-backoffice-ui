@@ -139,6 +139,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var i=0;
             for (i=0; i<lesTaxo.length; i++) {
                 var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
+
                 var storeT = Ext.create('Ext.data.JsonStore', {
                     model:"Rubedo.model.taxonomyTermModel",
                     remoteFilter:"true",
@@ -214,6 +215,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     multiSelect: leVocab.data.multiSelect,
                     allowBlank: !leVocab.data.mandatory
                 });
+
                 var enrobage =Ext.widget('ChampTC');
                 enrobage.add(selecteur);
                 enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
