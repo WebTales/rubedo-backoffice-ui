@@ -14,7 +14,8 @@
         "instantiateStore": true,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "cssPath": "resources\\css\\main.css"
+        "cssPath": "resources\\css\\main.css",
+        "buildShouldOverwriteIndex": true
     },
     "xdsVersion": "2.2.0",
     "xdsBuild": 908,

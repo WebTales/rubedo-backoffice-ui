@@ -140,7 +140,9 @@ Ext.application({
         'Rubedo.view.DelConfirmZ',
         'Rubedo.view.ajoutBlocFenetre',
         'Rubedo.view.adminFTaxonomie',
-        'Rubedo.view.contributionPrevisualisation'
+        'Rubedo.view.contributionPrevisualisation',
+        'Rubedo.view.newPageWindow',
+        'Rubedo.view.newSiteWindow'
     ],
     models: [
         'sitesDataModel',
@@ -379,7 +381,9 @@ Ext.application({
         'DelConfirmZ',
         'ajoutBlocFenetre',
         'adminFTaxonomie',
-        'contributionPrevisualisation'
+        'contributionPrevisualisation',
+        'newPageWindow',
+        'newSiteWindow'
     ],
     autoCreateViewport: true,
     controllers: [

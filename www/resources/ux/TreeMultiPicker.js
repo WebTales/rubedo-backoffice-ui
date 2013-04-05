@@ -1,12 +1,12 @@
 /**
- * @class Ext.ux.TreePicker
+ * @class Ext.ux.TreeMultiPicker
  * @extends Ext.form.field.Picker
  * 
  * A Picker field that contains a tree panel on its popup, enabling selection of tree nodes.
  */
-Ext.define('Ext.ux.TreePicker', {
+Ext.define('Ext.ux.TreeMultiPicker', {
     extend: 'Ext.form.field.Picker',
-    xtype: 'treepicker',
+    xtype: 'treemultipicker',
 
     triggerCls: Ext.baseCSSPrefix + 'form-arrow-trigger',
 
@@ -78,16 +78,20 @@ Ext.define('Ext.ux.TreePicker', {
                 store: me.store,
                 floating: true,
                 hidden: true,
-		rootVisible:false,
-		useArrows:true,
+                rootVisible:false,
+                useArrows:true,
                 displayField: me.displayField,
                 columns: me.columns,
                 maxHeight: me.maxTreeHeight,
                 shadow: false,
                 manageHeight: false,
-                listeners: {
-                    itemclick: Ext.bind(me.onItemClick, me)
+                selModel:{
+                	mode:'MULTI'
                 },
+                
+               /* listeners: {
+                    itemclick: Ext.bind(me.onItemClick, me)
+                },*/
                 viewConfig: {
                     listeners: {
                         render: function(view) {

@@ -31,17 +31,34 @@
             "designerId": "f1e3cb1e-a59f-42ec-a7af-0639c50409db",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "geoMonkey"
+                        "designer|userClassName": "onFormAfterRender",
+                        "fn": "onFormAfterRender",
+                        "implHandler": [
+                            "var homePageSelector = Ext.create(\"Ext.ux.TreeMultiPicker\", {\r",
+                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                            "    displayField:\"text\",\r",
+                            "    labelWidth:110,\r",
+                            "    fieldLabel:\"Page d'accueil\",\r",
+                            "    id:\"sitesHomePicker\",\r",
+                            "    anchor: \"100%\",\r",
+                            "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
+                            "    name:\"homePage\"\r",
+                            "});\r",
+                            "\r",
+                            "component.add(homePageSelector);\r",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
                     },
-                    "designerId": "d2cae3ac-b55c-418b-800f-96f699c821ac",
-                    "masterInstanceId": "b0ae3c81-7792-47a7-91c2-3e7e993f879c"
+                    "designerId": "dd50f39a-06d3-4fc1-8776-c123ec9ab172"
                 }
             ]
         }
