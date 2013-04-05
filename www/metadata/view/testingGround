@@ -46,14 +46,13 @@
                             "    displayField:\"text\",\r",
                             "    labelWidth:110,\r",
                             "    fieldLabel:\"Page d'accueil\",\r",
-                            "    id:\"sitesHomePicker\",\r",
+                            "    id:\"pickerMonkey\",\r",
                             "    anchor: \"100%\",\r",
                             "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
                             "    name:\"homePage\"\r",
                             "});\r",
                             "\r",
-                            "component.add(homePageSelector);\r",
-                            ""
+                            "component.add(homePageSelector);"
                         ],
                         "name": "afterrender",
                         "scope": "me"

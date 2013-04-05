@@ -86,18 +86,11 @@ Ext.define('Ext.ux.TreeMultiPicker', {
                 shadow: false,
                 manageHeight: false,
                 selModel:{
-                	mode:'MULTI'
+                	mode:'SIMPLE'
                 },
                 
-               /* listeners: {
+                listeners: {
                     itemclick: Ext.bind(me.onItemClick, me)
-                },*/
-                viewConfig: {
-                    listeners: {
-                        render: function(view) {
-                            view.getEl().on('keypress', me.onPickerKeypress, me);
-                        }
-                    }
                 }
             }),
             view = picker.getView();
@@ -167,7 +160,14 @@ Ext.define('Ext.ux.TreeMultiPicker', {
      * @param {Ext.EventObject} e
      */
     onItemClick: function(view, record, node, rowIndex, e) {
-        this.selectItem(record);
+    	var betaSelected =view.getSelectionModel().getSelection();
+    	var realSelected = [ ];
+    	Ext.Array.forEach(betaSelected, function(item){
+    		if ((!item.isRoot())&&(!item.get("isNotPage"))){
+    			realSelected.push(item);
+    		}
+    	});
+        this.selectItem(realSelected);
     },
 
     /**
@@ -191,12 +191,9 @@ Ext.define('Ext.ux.TreeMultiPicker', {
      */
     selectItem: function(record) {
         var me = this;
-	if (!record.get("isNotPage")){
-        me.setValue(record.get('id'));
-        me.picker.hide();
-        me.inputEl.focus();
+        me.setValue(Ext.Array.pluck(Ext.Array.pluck(record,'data'),'id'));
         me.fireEvent('select', me, record)
-	}
+	
 
     },
 
@@ -212,7 +209,11 @@ Ext.define('Ext.ux.TreeMultiPicker', {
             value = me.value;
 
         if(value) {
-            picker.selectPath(store.getNodeById(value).getPath());
+        	var toSelect=[ ];
+        	Ext.Array.forEach(value,function(item){
+        		toSelect.push(store.getNodeById(item));
+        	});
+            picker.getSelectionModel().select(toSelect);
         } else {
             picker.getSelectionModel().select(store.getRootNode());
         }
@@ -237,13 +238,18 @@ Ext.define('Ext.ux.TreeMultiPicker', {
             // Called while the Store is loading. Ensure it is processed by the onLoad method.
             return me;
         }
-            
-        // try to find a record in the store that matches the value
-        record = value ? me.store.getNodeById(value) : null;
-
-        // set the raw value to the record's display field if a record was found
-        me.setRawValue(record ? record.get(this.displayField) : '');
-
+        
+        var toSelect=[ ]; 
+        if (value){
+	    	Ext.Array.forEach(value,function(item){
+	    		toSelect.push(me.picker.store.getNodeById(item));
+	    	});
+	    	toDisplay=Ext.Array.pluck(Ext.Array.pluck(toSelect,'data'),me.displayField);
+	
+	        me.setRawValue(toDisplay);
+        } else {
+        	me.setRawValue('');
+        }
         return me;
     },
 

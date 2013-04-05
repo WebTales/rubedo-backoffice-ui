@@ -53,14 +53,13 @@ Ext.define('Rubedo.view.testingGround', {
             displayField:"text",
             labelWidth:110,
             fieldLabel:"Page d'accueil",
-            id:"sitesHomePicker",
+            id:"pickerMonkey",
             anchor: "100%",
             plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
             name:"homePage"
         });
 
         component.add(homePageSelector);
-
     }
 
 });
