@@ -599,11 +599,11 @@
                     "        abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
                     "        abstractcomponent.getComponent(0).getStore().load();\r",
                     "    }, this, {single:true});\r",
-                    "    abstractcomponent.getComponent(2).getStore().load();\r",
-                    "} else {\r",
-                    "    abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
-                    "    abstractcomponent.getComponent(0).getStore().load();\r",
-                    "}"
+                    "        abstractcomponent.getComponent(2).getStore().load();\r",
+                    "    } else {\r",
+                    "        abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
+                    "        abstractcomponent.getComponent(0).getStore().load();\r",
+                    "    }"
                 ],
                 "name": "render",
                 "scope": "me"

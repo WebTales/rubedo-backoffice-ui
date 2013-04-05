@@ -72,6 +72,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 if (button.isUpdate) {
                     var myRec =Ext.getStore("CurrentContent").getRange()[0];
                     myRec.beginEdit();
+                    if ((myRec.get("text")!="Texte Simple")&&(myRec.get("text")!="Texte Riche")){
+                        champs.text=myRec.get("text");
+                    }
                     myRec.set("text",champs.text);
                     myRec.set("champs",champs);
                     myRec.endEdit();
