@@ -1,17 +1,17 @@
 {
-    "type": "button",
+    "type": "Ext.button.Button",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "RHelpBtn",
-        "designer|userAlias": "RHelpBtn",
         "height": null,
         "margin": 0,
         "style": "{float:right;}",
         "width": null,
+        "designer|userClassName": "RHelpBtn",
+        "designer|userAlias": "RHelpBtn",
         "handleMouseEvents": false,
         "iconCls": "help",
         "pressedCls": "x-btn",
@@ -21,6 +21,5 @@
     "configAlternates": {
         "style": "string"
     },
-    "id": "ExtBox1-ext-gen7912",
     "designerId": "d7860367-3cf8-4eb2-bcdd-74fea57755fb"
 }

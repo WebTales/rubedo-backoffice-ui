@@ -1,5 +1,5 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,31 +7,30 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "height": 200,
         "designer|userClassName": "MyPanel51",
         "designer|userAlias": "mypanel51",
-        "height": 200,
         "autoScroll": true,
         "layout": "vbox",
         "bodyPadding": 10,
         "title": "My Panel"
     },
-    "id": "ExtBox1-ext-gen21558",
     "designerId": "73ed8109-ae62-44c8-9526-cd885b3b0396",
     "cn": [
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPanel52",
                 "frame": true,
                 "height": null,
                 "id": null,
                 "minHeight": 100,
                 "width": 100,
+                "designer|userClassName": "MyPanel52",
                 "title": "My Panel"
             },
             "designerId": "66343d60-7a86-4305-81f7-f98d96c7747a",
@@ -47,38 +46,38 @@
                         "id": "monkey2"
                     },
                     "designerId": "659d513a-4bfc-41d6-b0d6-d61d12ad3f37",
-                    "masterInstanceId": "ExtBox1-ext-gen28731"
+                    "masterInstanceId": "b0ae3c81-7792-47a7-91c2-3e7e993f879c"
                 }
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPanel52",
                 "frame": true,
                 "height": 60,
                 "width": 100,
+                "designer|userClassName": "MyPanel52",
                 "title": "My Panel2"
             },
             "designerId": "45869934-efb6-475e-bce3-741d1d72a04c"
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPanel52",
                 "frame": true,
                 "height": 60,
                 "width": 100,
+                "designer|userClassName": "MyPanel52",
                 "title": "My Panel3"
             },
             "designerId": "eeaacd4b-1635-4e93-bfae-29e6e1c5ca67"

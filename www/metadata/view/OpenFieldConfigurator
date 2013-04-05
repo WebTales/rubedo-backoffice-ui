@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,11 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "OpenFieldConfigurator",
-        "designer|userAlias": "OpenFieldConfigurator",
         "height": 288,
         "id": "OpenFieldConfigurator",
         "width": 715,
+        "designer|userClassName": "OpenFieldConfigurator",
+        "designer|userAlias": "OpenFieldConfigurator",
         "resizable": false,
         "layout": "vbox",
         "title": "Editeur de question ouverte",
@@ -21,11 +21,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen8463",
     "designerId": "66fcb2bd-aade-460e-b8f6-0839b3a1d005",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -38,7 +37,7 @@
             "designerId": "d2e10625-6858-4324-943a-4fdce8b1021c",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -51,7 +50,7 @@
                     "designerId": "90b88144-a652-4849-99b9-88ea5246e11a"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -59,8 +58,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton287",
                         "id": "OpenFieldConfiguratorSubmit",
+                        "designer|userClassName": "MyButton287",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -113,23 +112,23 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm58",
                 "border": 0,
                 "height": 134,
+                "designer|userClassName": "MyForm58",
                 "bodyPadding": 10,
                 "title": ""
             },
             "designerId": "ca1412e1-83f1-4a92-8133-be5794c8d6d1",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -138,14 +137,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField81",
-                        "name": "fieldLabel",
                         "fieldLabel": "Intitulé de la question",
-                        "labelWidth": 140
+                        "labelWidth": 140,
+                        "name": "fieldLabel"
                     },
                     "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -154,14 +153,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
-                        "name": "qNb",
                         "fieldLabel": "Code de la question",
-                        "labelWidth": 140
+                        "labelWidth": 140,
+                        "name": "qNb"
                     },
                     "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -170,14 +169,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField82",
-                        "name": "tooltip",
                         "fieldLabel": "Bulle d'aide",
-                        "labelWidth": 140
+                        "labelWidth": 140,
+                        "name": "tooltip"
                     },
                     "designerId": "fda18543-0001-43bf-95f0-e2cd70e39210"
                 },
                 {
-                    "type": "checkboxfield",
+                    "type": "Ext.form.field.Checkbox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -186,9 +185,9 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyCheckbox12",
-                        "name": "mandatory",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
+                        "name": "mandatory",
                         "boxLabel": "",
                         "inputValue": "true",
                         "uncheckedValue": "false"
@@ -196,7 +195,7 @@
                     "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
                 },
                 {
-                    "type": "radiogroup",
+                    "type": "Ext.form.RadioGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -212,7 +211,7 @@
                     "designerId": "8cba619b-6566-41d9-b8fd-7d48d373cb9f",
                     "cn": [
                         {
-                            "type": "radiofield",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -220,33 +219,33 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio",
-                                "name": "fieldType",
                                 "fieldLabel": null,
+                                "name": "fieldType",
                                 "boxLabel": "Texte",
                                 "inputValue": "textfield"
                             },
                             "designerId": "5e745674-511a-4942-8a90-72ccec8f90f9"
                         },
                         {
-                            "type": "radiofield",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio",
                                 "width": 100,
-                                "name": "fieldType",
+                                "designer|userClassName": "MyRadio",
                                 "fieldLabel": null,
                                 "labelWidth": null,
+                                "name": "fieldType",
                                 "boxLabel": "Commentaire",
                                 "inputValue": "textareafield"
                             },
                             "designerId": "1b425295-942f-4586-ac64-86be42be4047"
                         },
                         {
-                            "type": "radiofield",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -254,15 +253,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio1",
-                                "name": "fieldType",
                                 "fieldLabel": null,
+                                "name": "fieldType",
                                 "boxLabel": "Nombre",
                                 "inputValue": "numberfield"
                             },
                             "designerId": "2ecb16a1-924c-46d0-9d6e-6db6442ad5c2"
                         },
                         {
-                            "type": "radiofield",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -270,15 +269,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio1",
-                                "name": "fieldType",
                                 "fieldLabel": null,
+                                "name": "fieldType",
                                 "boxLabel": "Date",
                                 "inputValue": "datefield"
                             },
                             "designerId": "5b46a9ee-6c0a-47b0-b075-aaa86895f2c1"
                         },
                         {
-                            "type": "radiofield",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -286,8 +285,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|userClassName": "MyRadio1",
-                                "name": "fieldType",
                                 "fieldLabel": null,
+                                "name": "fieldType",
                                 "boxLabel": "Horaire",
                                 "inputValue": "timefield"
                             },
@@ -316,7 +315,7 @@
             ]
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -325,30 +324,30 @@
             "userConfig": {
                 "layout|flex": 1,
                 "activeItem": 1,
-                "designer|userClassName": "MyContainer52",
                 "id": "CameleonicFormContainer",
+                "designer|userClassName": "MyContainer52",
                 "layout": "card"
             },
             "designerId": "278b9869-cfb1-405d-9100-4fe38ce8470b",
             "cn": [
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm63",
                         "border": 0,
                         "itemId": "textfield",
+                        "designer|userClassName": "MyForm63",
                         "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "f842a3c4-0e90-4799-8813-22ef1cb729ae",
                     "cn": [
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -357,16 +356,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField",
-                                "name": "minLength",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
+                                "name": "minLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
                             "designerId": "9fe7a6a8-0b5a-43f5-9a18-3da1f25f8931"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -375,16 +374,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField10",
-                                "name": "maxLength",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
+                                "name": "maxLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
                             "designerId": "0fad7f80-3929-4dc9-8a0a-5f814dc2d17e"
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -393,12 +392,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox31",
-                                "name": "vtype",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
+                                "name": "vtype",
                                 "forceSelection": true,
-                                "multiSelect": false,
-                                "store": "[\"alpha\",\"alphanum\",\"email\",\"url\"]"
+                                "store": [
+                                    "[\"alpha\",\"alphanum\",\"email\",\"url\"]"
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -408,23 +408,23 @@
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm63",
                         "border": 0,
                         "itemId": "textareafield",
+                        "designer|userClassName": "MyForm63",
                         "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "5458c15e-51c2-4687-bc8b-9c5d36b0674f",
                     "cn": [
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -433,16 +433,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField",
-                                "name": "minLength",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
+                                "name": "minLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
                             "designerId": "560326de-6bbd-424b-b4a9-7ea9132469cc"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -451,16 +451,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField10",
-                                "name": "maxLength",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
+                                "name": "maxLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
                             "designerId": "0fe6fdba-dd1e-4921-8216-d4d3aad68b46"
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -469,12 +469,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox31",
-                                "name": "vtype",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
+                                "name": "vtype",
                                 "forceSelection": true,
-                                "multiSelect": false,
-                                "store": "[\"alpha\",\"alphanum\",\"email\",\"url\"]"
+                                "store": [
+                                    "[\"alpha\",\"alphanum\",\"email\",\"url\"]"
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -484,23 +485,23 @@
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm60",
                         "border": 0,
                         "itemId": "numberfield",
+                        "designer|userClassName": "MyForm60",
                         "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "f0d3269f-60a7-447c-a801-d9b9ee6a84a3",
                     "cn": [
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -509,14 +510,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField11",
-                                "name": "minValue",
                                 "fieldLabel": "Valeur min",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "minValue"
                             },
                             "designerId": "cb49f2b1-f4ae-433f-b867-5d9967085413"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -525,14 +526,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField12",
-                                "name": "maxValue",
                                 "fieldLabel": "Valeur max",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "maxValue"
                             },
                             "designerId": "76aa5aea-d43f-4a86-af9a-66cc61390fe1"
                         },
                         {
-                            "type": "checkboxfield",
+                            "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -541,9 +542,9 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox14",
-                                "name": "allowDecimals",
                                 "fieldLabel": "Décimales",
                                 "labelWidth": 140,
+                                "name": "allowDecimals",
                                 "boxLabel": ""
                             },
                             "designerId": "c2fccede-e31d-49df-85fd-d2659ab043a6"
@@ -551,23 +552,23 @@
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm61",
                         "border": 0,
                         "itemId": "datefield",
+                        "designer|userClassName": "MyForm61",
                         "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "f4490ff7-123b-41cb-8867-c7f41179c959",
                     "cn": [
                         {
-                            "type": "datefield",
+                            "type": "Ext.form.field.Date",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -576,14 +577,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyDateField9",
-                                "name": "minValue",
                                 "fieldLabel": "Valeur min",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "minValue"
                             },
                             "designerId": "2b8b0a91-70fe-45ab-8068-4c8b349d4aaf"
                         },
                         {
-                            "type": "datefield",
+                            "type": "Ext.form.field.Date",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -592,32 +593,32 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyDateField10",
-                                "name": "maxValue",
                                 "fieldLabel": "Valeur max",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "maxValue"
                             },
                             "designerId": "8ecf1cc7-3c37-4e89-a9c9-730152569920"
                         }
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm62",
                         "border": 0,
                         "itemId": "timefield",
+                        "designer|userClassName": "MyForm62",
                         "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "03d58755-0f34-4a5f-b04b-9aca84e72a19",
                     "cn": [
                         {
-                            "type": "timefield",
+                            "type": "Ext.form.field.Time",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -626,14 +627,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTimeField",
-                                "name": "minValue",
                                 "fieldLabel": "Valeur min",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "minValue"
                             },
                             "designerId": "f52a7e01-e696-4023-9715-05c54eea6dac"
                         },
                         {
-                            "type": "timefield",
+                            "type": "Ext.form.field.Time",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -642,9 +643,9 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTimeField1",
-                                "name": "maxValue",
                                 "fieldLabel": "Valeur max",
-                                "labelWidth": 140
+                                "labelWidth": 140,
+                                "name": "maxValue"
                             },
                             "designerId": "066173b6-75cc-4764-a576-6dc45dab73d7"
                         }
@@ -663,12 +664,12 @@
                 "designer|userClassName": "onOpenFieldConfiguratorAfterRender",
                 "fn": "onOpenFieldConfiguratorAfterRender",
                 "implHandler": [
-                    "var initialValues = Ext.clone(abstractcomponent.initialItemConfig.fieldConfig);\r",
-                    "initialValues.fieldType= Ext.clone(abstractcomponent.initialItemConfig.fieldType);\r",
-                    "initialValues.fieldLabel=Ext.clone(abstractcomponent.initialItemConfig.label);\r",
-                    "initialValues.tooltip=Ext.clone(abstractcomponent.initialItemConfig.tooltip);\r",
-                    "initialValues.qNb=Ext.clone(abstractcomponent.initialItemConfig.qNb);\r",
-                    "abstractcomponent.getComponent(0).getForm().setValues(initialValues);\r",
+                    "var initialValues = Ext.clone(component.initialItemConfig.fieldConfig);\r",
+                    "initialValues.fieldType= Ext.clone(component.initialItemConfig.fieldType);\r",
+                    "initialValues.fieldLabel=Ext.clone(component.initialItemConfig.label);\r",
+                    "initialValues.tooltip=Ext.clone(component.initialItemConfig.tooltip);\r",
+                    "initialValues.qNb=Ext.clone(component.initialItemConfig.qNb);\r",
+                    "component.getComponent(0).getForm().setValues(initialValues);\r",
                     "var task = new Ext.util.DelayedTask(function(){\r",
                     "    Ext.getCmp(\"CameleonicFormContainer\").getLayout().getActiveItem().getForm().setValues(initialValues);\r",
                     "});\r",

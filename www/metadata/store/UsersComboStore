@@ -8,20 +8,19 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Users",
-        "designer|userClassName": "UsersComboStore",
-        "designer|userAlias": "UsersComboStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "userDataModel",
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "UsersComboStore",
-        "model": "userDataModel",
+        "designer|userClassName": "UsersComboStore",
+        "designer|userAlias": "UsersComboStore",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen26508",
     "designerId": "10cb87b2-f9b6-429c-9f0e-2d16b7f55c5b",
     "customConfigs": [
         {
@@ -37,7 +36,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -58,21 +57,21 @@
             "designerId": "a7e704e5-20e8-49d8-a021-e06ca93bba70",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader19"
                     },
                     "designerId": "2660616b-fd71-437a-9b79-6c31971f3491"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

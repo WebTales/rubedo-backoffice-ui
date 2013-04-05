@@ -1,38 +1,35 @@
 {
-    "type": "tabpanel",
+    "type": "Ext.tab.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "ConfigSpecBloc",
         "designer|userClassName": "ConfigSpecBloc",
         "designer|userAlias": "ConfigSpecBloc",
-        "id": "ConfigSpecBloc",
-        "activeTab": 0,
-        "plain": false
+        "activeTab": 0
     },
-    "id": "ExtBox1-ext-gen5978",
     "designerId": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm10",
                 "padding": null,
-                "autoScroll": false,
+                "designer|userClassName": "MyForm10",
                 "bodyPadding": 10,
                 "title": "Simple"
             },
             "designerId": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
             "cn": [
                 {
-                    "type": "tab",
+                    "type": "Ext.tab.Tab",
                     "reference": {
                         "name": "tabConfig",
                         "type": "object"
@@ -46,7 +43,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -54,14 +51,13 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyForm11",
-                "autoScroll": false,
                 "bodyPadding": 10,
                 "title": "Avancé"
             },
             "designerId": "30b2853e-c6ad-4627-b904-006cc1fca756",
             "cn": [
                 {
-                    "type": "tab",
+                    "type": "Ext.tab.Tab",
                     "reference": {
                         "name": "tabConfig",
                         "type": "object"

@@ -6,22 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MainImageStore",
-        "designer|userAlias": "MainImageStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "MainImageStore",
         "model": "imageDataModel",
+        "storeId": "MainImageStore",
+        "designer|userClassName": "MainImageStore",
+        "designer|userAlias": "MainImageStore",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen21694",
     "designerId": "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -42,21 +41,21 @@
             "designerId": "c8a26311-e6ea-4df1-b5b2-48a98927a876",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader19"
                     },
                     "designerId": "b484b00e-31c6-46ce-aaff-6920ed91ee38"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

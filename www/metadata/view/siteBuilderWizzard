@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "siteBuilderWizzard",
-        "designer|userAlias": "siteBuilderWizzard",
         "height": 330,
         "id": "siteBuilderWizzard",
         "width": 464,
+        "designer|userClassName": "siteBuilderWizzard",
+        "designer|userAlias": "siteBuilderWizzard",
         "resizable": false,
         "layout": "fit",
         "title": "Assistant de création de site",
@@ -20,11 +20,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen12330",
     "designerId": "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -39,7 +38,7 @@
             "designerId": "1b063235-cd84-496e-a9ef-5294431763be",
             "cn": [
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -49,13 +48,12 @@
                         "designer|userClassName": "MyPanel53",
                         "layout": "anchor",
                         "bodyPadding": 10,
-                        "header": true,
                         "title": "Etape 1 : Identification"
                     },
                     "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -64,16 +62,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField50",
-                                "name": "text",
                                 "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
+                                "name": "text",
                                 "allowBlank": false,
                                 "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                             },
                             "designerId": "1456f507-0159-4113-afb8-e803bb616670"
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -83,12 +81,12 @@
                                 "managesStore": true,
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox19",
+                                "fieldLabel": "Theme ",
+                                "labelWidth": 110,
                                 "name": "theme",
                                 "value": [
                                     "\"Default\""
                                 ],
-                                "fieldLabel": "Theme ",
-                                "labelWidth": 110,
                                 "displayField": "label",
                                 "store": "SiteThemesStore",
                                 "valueField": "text"
@@ -106,7 +104,7 @@
                             ]
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -115,17 +113,19 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox18",
+                                "fieldLabel": "Protocole *",
+                                "labelWidth": 110,
                                 "name": "protocol",
                                 "value": [
                                     "[\"HTTP\"]"
                                 ],
-                                "fieldLabel": "Protocole *",
-                                "labelWidth": 110,
                                 "allowBlank": false,
                                 "editable": false,
                                 "forceSelection": true,
                                 "multiSelect": true,
-                                "store": "[\"HTTP\", \"HTTPS\"]"
+                                "store": [
+                                    "[\"HTTP\", \"HTTPS\"]"
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -145,12 +145,12 @@
                                 "layout|anchor": "100%"
                             },
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
-                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -160,13 +160,12 @@
                         "designer|userClassName": "MyPanel53",
                         "layout": "anchor",
                         "bodyPadding": 10,
-                        "header": true,
                         "title": "Etape 2 : Modèle"
                     },
                     "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
                     "cn": [
                         {
-                            "type": "displayfield",
+                            "type": "Ext.form.field.Display",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -175,19 +174,18 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyDisplayField",
+                                "fieldLabel": "Modèle ",
                                 "name": "siteModelId",
-                                "submitValue": false,
                                 "value": [
                                     "Site Vide"
-                                ],
-                                "fieldLabel": "Modèle "
+                                ]
                             },
                             "designerId": "e9550238-2ce6-4791-96b8-6dec0ee8a3b6"
                         }
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -198,13 +196,12 @@
                         "overflowY": "auto",
                         "layout": "anchor",
                         "bodyPadding": 10,
-                        "header": true,
                         "title": "Etape 3 : Référencement"
                     },
                     "designerId": "d73b14a5-0fc7-4be1-8dbb-f1b51d0f2797",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -213,13 +210,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField70",
-                                "name": "title",
-                                "fieldLabel": "Titre par défaut"
+                                "fieldLabel": "Titre par défaut",
+                                "name": "title"
                             },
                             "designerId": "d7305811-82cb-4ef6-b95a-3aef28abff0f"
                         },
                         {
-                            "type": "textareafield",
+                            "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -228,8 +225,8 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextArea5",
-                                "name": "description",
                                 "fieldLabel": "Description par défaut",
+                                "name": "description",
                                 "maxLength": 250
                             },
                             "designerId": "4b1a2339-43f2-4ba2-a853-2a0394f18041"
@@ -258,7 +255,7 @@
                                     "    createNewOnBlur:true,\r",
                                     "    pinList:false\r",
                                     "});\r",
-                                    "abstractcomponent.insert(3,tagPicker);"
+                                    "component.insert(3,tagPicker);"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -266,7 +263,7 @@
                             "designerId": "1f4c819b-8f4e-45f8-928a-ff4c7eebd693"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -275,16 +272,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField71",
+                                "fieldLabel": "Auteur par défaut",
                                 "name": "author",
                                 "value": [
                                     "\"Powered by Rubedo\""
-                                ],
-                                "fieldLabel": "Auteur par défaut"
+                                ]
                             },
                             "designerId": "478e64af-be52-4519-9966-de958f1ec3df"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -292,9 +289,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyButton223",
                                 "id": "siteWizzardCreateBtn",
                                 "margin": "10 0 0 0",
+                                "designer|userClassName": "MyButton223",
                                 "scale": "large",
                                 "text": "Créer ce site"
                             },
@@ -314,7 +311,7 @@
                         "dock": "bottom"
                     },
                     "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",
-                    "masterInstanceId": "ExtBox1-ext-gen14811"
+                    "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
                 }
             ]
         }

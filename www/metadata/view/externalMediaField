@@ -1,17 +1,16 @@
 {
-    "type": "hiddenfield",
+    "type": "Ext.form.field.Hidden",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "height": null,
         "designer|userClassName": "externalMediaField",
         "designer|userAlias": "externalMediaField",
-        "height": null,
         "fieldLabel": "Label"
     },
-    "id": "ExtBox1-ext-gen6941",
     "designerId": "d21b3beb-e3a1-4b72-88f6-c68b443690ab",
     "cn": [
         {
@@ -26,8 +25,8 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var companion = Ext.widget(\"externalMediaFieldComponent\");\r",
-                    "companion.setFieldLabel(abstractcomponent.getFieldLabel());\r",
-                    "abstractcomponent.on(\"change\", function(a, newValue){\r",
+                    "companion.setFieldLabel(component.getFieldLabel());\r",
+                    "component.on(\"change\", function(a, newValue){\r",
                     "    var decoded = { };\r",
                     "    if (!Ext.isEmpty(newValue)){\r",
                     "        decoded = newValue;\r",
@@ -40,23 +39,23 @@
                     "});\r",
                     "Ext.Array.forEach(companion.query(\"field\"), function(field){\r",
                     "    field.on(\"change\", function(a, newValue){\r",
-                    "        abstractcomponent.suspendEvents(false);\r",
+                    "        component.suspendEvents(false);\r",
                     "        var decoded = { };\r",
-                    "        if (!Ext.isEmpty(abstractcomponent.getValue())) {\r",
-                    "            decoded = abstractcomponent.getValue();\r",
+                    "        if (!Ext.isEmpty(component.getValue())) {\r",
+                    "            decoded = component.getValue();\r",
                     "        }\r",
                     "        decoded[field.name]=newValue;\r",
-                    "        abstractcomponent.setValue(decoded);\r",
-                    "        abstractcomponent.resumeEvents();\r",
+                    "        component.setValue(decoded);\r",
+                    "        component.resumeEvents();\r",
                     "    });\r",
                     "});\r",
                     "companion.on(\"afterrender\",function(){\r",
                     "    companion.getEl().on(\"click\",function(){\r",
                     "\r",
-                    "        abstractcomponent.getEl().dom.click();\r",
+                    "        component.getEl().dom.click();\r",
                     "    });\r",
                     "});\r",
-                    "abstractcomponent.up().add(companion);"
+                    "component.up().add(companion);"
                 ],
                 "name": "render",
                 "scope": "me"

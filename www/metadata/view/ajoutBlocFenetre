@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "ajoutBlocFenetre",
-        "designer|userAlias": "ajoutBlocFenetre",
         "draggable": false,
         "height": 300,
         "id": "ajoutBlocFenetre",
         "width": 500,
+        "designer|userClassName": "ajoutBlocFenetre",
+        "designer|userAlias": "ajoutBlocFenetre",
         "resizable": false,
         "layout": "hbox",
         "title": "Ajouter un bloc",
@@ -22,11 +22,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen15691",
     "designerId": "98fcade8-7344-415c-99cd-f6e6e08ad540",
     "cn": [
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -34,15 +33,15 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 0.5,
-                "designer|userClassName": "MyGridPanel8",
                 "id": "BlocsSelectGrid",
+                "designer|userClassName": "MyGridPanel8",
                 "title": "",
                 "store": "BlocsDataStore"
             },
             "designerId": "7a17fd96-2057-4eb8-8159-b571d7bd1e7b",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -54,7 +53,7 @@
                     "designerId": "e5aac3f2-12f9-41d0-bfeb-41e9caff91a1"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -63,13 +62,13 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn15",
                         "dataIndex": "type",
-                        "flex": 1,
-                        "text": "Type"
+                        "text": "Type",
+                        "flex": 1
                     },
                     "designerId": "b98ff778-cfd7-429e-9b16-b6a430b94f98"
                 },
                 {
-                    "type": "groupinggridfeature",
+                    "type": "Ext.grid.feature.Grouping",
                     "reference": {
                         "name": "features",
                         "type": "array"
@@ -81,7 +80,7 @@
                     "designerId": "b0cf21c8-d32e-4826-8310-6baab3100177",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "groupHeaderTpl",
                                 "type": "object"
@@ -101,7 +100,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -109,9 +108,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyPanel61",
                 "id": "PaneauBlocsDetail",
                 "styleHtmlContent": true,
+                "designer|userClassName": "MyPanel61",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
@@ -122,7 +121,7 @@
             "designerId": "9a5d9cf3-ff88-4af4-bc3d-94e6f086fa38",
             "cn": [
                 {
-                    "type": "template",
+                    "type": "Ext.XTemplate",
                     "reference": {
                         "name": "tpl",
                         "type": "object"
@@ -140,7 +139,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -154,7 +153,7 @@
             "designerId": "34af955f-e5f0-4ad4-a966-a4b024424451",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -167,7 +166,7 @@
                     "designerId": "8804b6d2-1710-4da3-8c89-5497ca27c176"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -175,16 +174,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton72",
                         "id": "boutonAjouterBloc",
                         "margin": null,
+                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
                     "designerId": "0971d8e8-2a32-4b8d-982a-a0171003b368"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -192,10 +191,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton72",
                         "hidden": true,
                         "id": "addPageBlocBtn",
                         "margin": null,
+                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },

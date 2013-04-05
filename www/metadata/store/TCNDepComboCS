@@ -8,18 +8,17 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "ContentTypes",
-        "designer|userClassName": "TCNDepComboCS",
-        "designer|userAlias": "TCNDepComboCS",
         "autoLoad": false,
+        "model": "typesContenusDataModel",
         "remoteFilter": true,
         "storeId": "TCNDepComboCS",
-        "model": "typesContenusDataModel",
+        "designer|userClassName": "TCNDepComboCS",
+        "designer|userAlias": "TCNDepComboCS",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen49077",
     "designerId": "f111f40a-db0f-4126-b5c8-43a26057522d",
     "customConfigs": [
         {
@@ -35,7 +34,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -56,31 +55,31 @@
             "designerId": "f483a415-5858-46c2-afcf-e29ffd0ad330",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "f99966a1-2816-46fc-981c-ab35da9fcc3f"
                 }
             ]
         },
         {
-            "type": "filter",
+            "type": "Ext.util.Filter",
             "reference": {
                 "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFilter",
                 "property": "dependant",
+                "designer|userClassName": "MyFilter",
                 "value": [
                     "false"
                 ]
@@ -88,15 +87,15 @@
             "designerId": "9c750fb1-6da6-486c-881f-ef46b32e7fb0"
         },
         {
-            "type": "filter",
+            "type": "Ext.util.Filter",
             "reference": {
                 "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFilter10",
                 "property": "system",
+                "designer|userClassName": "MyFilter10",
                 "value": [
                     "{\r",
                     "                    $ne: true\r",

@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "SitesController",
         "designer|userAlias": "SitesController"
     },
-    "id": "ExtBox1-ext-gen18503",
     "designerId": "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c",
     "cn": [
         {
@@ -23,7 +22,7 @@
                 "designer|userClassName": "selectSite",
                 "fn": "selectSite",
                 "implHandler": [
-                    "if (Ext.isEmpty(selections)) {\r",
+                    "if (Ext.isEmpty(selected)) {\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Sites\", iconCls:\"referencement_icon\"}));\r",
                     "    Ext.getCmp(\"siteRemoveBtn\").disable();\r",
@@ -33,18 +32,18 @@
                     "} else {\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
                     "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"Sites <b> > </b>\", iconCls:\"referencement_icon\"}));\r",
-                    "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: selections[0].get(\"text\"), iconCls:\"referencement_icon\"}));\r",
+                    "    Ext.getCmp(\"sitesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: selected[0].get(\"text\"), iconCls:\"referencement_icon\"}));\r",
                     "    Ext.getCmp(\"siteRemoveBtn\").enable();\r",
                     "    Ext.getCmp(\"mainSiteProps\").enable();\r",
                     "    Ext.getCmp(\"updateSiteBtn\").enable();\r",
-                    "    Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+selections[0].get(\"id\")+\"\\\"}]\";\r",
+                    "    Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+selected[0].get(\"id\")+\"\\\"}]\";\r",
                     "    Ext.getStore(\"PagePickerStore\").load();\r",
                     "\r",
-                    "    Ext.getCmp(\"mainSiteProps\").getForm().setValues(Ext.clone(selections[0].getData()));\r",
+                    "    Ext.getCmp(\"mainSiteProps\").getForm().setValues(Ext.clone(selected[0].getData()));\r",
                     "    if (Ext.isEmpty(Ext.getCmp(\"sitesHomePicker\").getValue())){\r",
                     "        Ext.getCmp(\"sitesHomePicker\").setValue([]);\r",
                     "    }\r",
-                    "    if ((!ACL.interfaceRights[\"write.ui.sites\"])||(selections[0].get(\"readOnly\"))){\r",
+                    "    if ((!ACL.interfaceRights[\"write.ui.sites\"])||(selected[0].get(\"readOnly\"))){\r",
                     "        Ext.getCmp(\"updateSiteBtn\").disable();\r",
                     "        Ext.getCmp(\"siteRemoveBtn\").disable();\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"mainSiteProps\").query(\"field\"), function(field){field.setReadOnly(true);});\r",
@@ -52,7 +51,7 @@
                     "        Ext.Array.forEach(Ext.getCmp(\"mainSiteProps\").query(\"field\"), function(field){field.setReadOnly(false);});\r",
                     "    }\r",
                     "    var boiteMeta = Ext.getCmp(\"sitesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
-                    "    var valeurs= Ext.clone(selections[0].data);\r",
+                    "    var valeurs= Ext.clone(selected[0].data);\r",
                     "    valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');\r",
                     "    valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');\r",
                     "    boiteMeta.update(valeurs);\r",

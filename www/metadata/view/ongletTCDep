@@ -1,5 +1,5 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,14 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "read.ui.dependantTypes",
+        "id": "ongletTCDep",
         "designer|userClassName": "ongletTCDep",
         "designer|userAlias": "ongletTCDep",
-        "id": "ongletTCDep",
         "layout": "fit",
         "iconCls": "documentDep",
         "title": "Types de contenus imbriqués"
     },
-    "id": "ExtBox1-ext-gen87627",
     "designerId": "c6f84d61-bbf5-4921-a9e9-82bfe825ab8e",
     "customConfigs": [
         {
@@ -25,7 +24,7 @@
     ],
     "cn": [
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -33,8 +32,8 @@
             "codeClass": null,
             "userConfig": {
                 "managesStore": false,
-                "designer|userClassName": "MyGridPanel13",
                 "id": "TCImbriquesGrid",
+                "designer|userClassName": "MyGridPanel13",
                 "title": "",
                 "store": "TypesContenusDepDataJson"
             },
@@ -51,7 +50,7 @@
             ],
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -63,7 +62,7 @@
                     "designerId": "7c9f11a1-5d96-49aa-9cdf-c22abca73d64"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -72,13 +71,13 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn23",
                         "dataIndex": "type",
-                        "flex": 1,
-                        "text": "Type"
+                        "text": "Type",
+                        "flex": 1
                     },
                     "designerId": "7f5c7cb6-2dcb-42b9-a9e1-358d00de5e8a"
                 },
                 {
-                    "type": "checkboxselectionmodel",
+                    "type": "Ext.selection.CheckboxModel",
                     "reference": {
                         "name": "selModel",
                         "type": "object"

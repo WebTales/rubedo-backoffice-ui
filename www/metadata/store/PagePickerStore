@@ -1,5 +1,5 @@
 {
-    "type": "treestore",
+    "type": "Ext.data.TreeStore",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,17 +8,15 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Pages",
-        "designer|userClassName": "PagePickerStore",
-        "designer|userAlias": "PagePickerStore",
         "autoLoad": false,
-        "autoSync": false,
+        "model": "pageDataModel",
         "storeId": "PagePickerStore",
-        "model": "pageDataModel"
+        "designer|userClassName": "PagePickerStore",
+        "designer|userAlias": "PagePickerStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen14140",
     "designerId": "4cebc2cb-f5cf-4cd0-aac6-d1e007b3dd02",
     "customConfigs": [
         {
@@ -34,7 +32,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -54,15 +52,15 @@
             "designerId": "90cc435e-55c3-4574-a470-6ada3fae0fa9",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader",
-                        "messageProperty": "message"
+                        "messageProperty": "message",
+                        "designer|userClassName": "MyJsonReader"
                     },
                     "designerId": "6ac0d589-dd48-479f-9ac7-0bb223ed3e26",
                     "cn": [
@@ -111,16 +109,16 @@
             ]
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter1",
                 "property": "orderValue",
-                "root": null
+                "root": null,
+                "designer|userClassName": "MySorter1"
             },
             "designerId": "a377d3d8-eacc-463d-9ab2-e3cabb2a85b8"
         }

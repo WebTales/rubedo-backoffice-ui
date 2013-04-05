@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "LocalisationController",
         "designer|userAlias": "LocalisationController"
     },
-    "id": "ExtBox1-ext-gen10528",
     "designerId": "765f93a9-83e7-4405-aaaa-740265c87f51",
     "cn": [
         {
@@ -68,13 +67,13 @@
                 "fn": "onButtonAfterRender1",
                 "implHandler": [
                     "try {\r",
-                    "    abstractcomponent.on(\"click\", function(){\r",
+                    "    component.on(\"click\", function(){\r",
                     "        Ext.widget('callout', {\r",
                     "            cls: 'gray',\r",
                     "            width: 400,\r",
-                    "            html:RubedoAppHelp[abstractcomponent.RApplication],\r",
+                    "            html:RubedoAppHelp[component.RApplication],\r",
                     "            calloutArrowLocation: 'top-right',\r",
-                    "            target: abstractcomponent,\r",
+                    "            target: component,\r",
                     "            relativePosition: 't-b',\r",
                     "            relativeOffsets: [-184,0],\r",
                     "            fadeInDuration: 200,\r",
@@ -105,15 +104,15 @@
                 "designer|userClassName": "onComponentBeforeRender",
                 "fn": "onComponentBeforeRender",
                 "implHandler": [
-                    "if ((abstractcomponent.isXType(\"field\"))||(abstractcomponent.isXType(\"checkboxgroup\"))||(abstractcomponent.isXType(\"radiogroup\"))){\r",
-                    "    abstractcomponent.labelSeparator=\" \";\r",
+                    "if ((component.isXType(\"field\"))||(component.isXType(\"checkboxgroup\"))||(component.isXType(\"radiogroup\"))){\r",
+                    "    component.labelSeparator=\" \";\r",
                     "    /*if (abstractcomponent.isXType(\"datefield\")){\r",
                     "    abstractcomponent.submitFormat='U';\r",
                     "    abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';\r",
                     "    }*/\r",
-                    "    if (abstractcomponent.fieldLabel==\"Localisable\"){\r",
+                    "    if (component.fieldLabel==\"Localisable\"){\r",
                     "        //temporary localiser hide\r",
-                    "        abstractcomponent.hide();\r",
+                    "        component.hide();\r",
                     "    }\r",
                     "}"
                 ],
@@ -135,9 +134,9 @@
                 "designer|userClassName": "onBasefieldAdded",
                 "fn": "onBasefieldAdded",
                 "implHandler": [
-                    "if (!Ext.isEmpty(abstractcomponent.RTip)){\r",
-                    "    abstractcomponent.anchor=\"90%\";\r",
-                    "    container.insert(pos,Ext.widget(\"RHelpBtn\", {tooltip:abstractcomponent.RTip}));\r",
+                    "if (!Ext.isEmpty(component.RTip)){\r",
+                    "    component.anchor=\"90%\";\r",
+                    "    container.insert(pos,Ext.widget(\"RHelpBtn\", {tooltip:component.RTip}));\r",
                     "}"
                 ],
                 "name": "added",

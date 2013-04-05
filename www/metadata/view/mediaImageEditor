@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,24 +8,21 @@
     "userConfig": {
         "rapport": "1",
         "container|align": "stretch",
-        "designer|userClassName": "mediaImageEditor",
-        "designer|userAlias": "mediaImageEditor",
         "height": 600,
         "id": "mediaImageEditor",
         "maxHeight": null,
         "maxWidth": null,
         "width": 1000,
+        "designer|userClassName": "mediaImageEditor",
+        "designer|userAlias": "mediaImageEditor",
         "resizable": null,
         "layout": "hbox",
         "iconCls": "image_edit",
         "title": "Titre",
-        "constrain": false,
         "constrainHeader": true,
         "maximizable": true,
-        "minimizable": false,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen6472",
     "designerId": "c88195fc-2977-4718-9287-536a4aead568",
     "customConfigs": [
         {
@@ -36,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -45,16 +42,16 @@
             "userConfig": {
                 "layout|flex": 1,
                 "designer|snapToGrid": 10,
-                "designer|userClassName": "MyContainer20",
                 "itemId": "workspace",
                 "width": 794,
+                "designer|userClassName": "MyContainer20",
                 "autoScroll": true,
                 "layout": "absolute"
             },
             "designerId": "188b2f77-8d40-4f2f-92d5-b30810d9cb14"
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -62,9 +59,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyForm20",
                 "itemId": "proprietes",
                 "width": 200,
+                "designer|userClassName": "MyForm20",
                 "bodyPadding": 10,
                 "collapseDirection": "right",
                 "collapsible": true,
@@ -74,7 +71,7 @@
             "designerId": "5e29504d-bf61-4d14-a7e2-2e9661f2d2c0",
             "cn": [
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -87,7 +84,7 @@
                     "designerId": "37f09996-58b3-4f35-9ff7-d1eea4126367",
                     "cn": [
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -95,16 +92,16 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField3",
                                 "id": "imageEditorHeightField",
                                 "itemId": null,
+                                "designer|userClassName": "MyNumberField3",
                                 "fieldLabel": "Hauteur ",
                                 "labelWidth": 60
                             },
                             "designerId": "9390803d-ed33-47c6-a7ac-91edfd88fe3a"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -112,8 +109,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField4",
                                 "id": "imageEditorWidthField",
+                                "designer|userClassName": "MyNumberField4",
                                 "fieldLabel": "Largeur ",
                                 "labelWidth": 60
                             },
@@ -124,7 +121,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -138,7 +135,7 @@
             "designerId": "a1c048fb-48c9-4203-b3c9-952de24d2840",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -154,7 +151,7 @@
                     "designerId": "65730c38-1142-4971-a098-34f229bb9af5"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -170,7 +167,7 @@
                     "designerId": "e5df9187-b889-43b8-b3a7-761aeebfdd80"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -186,7 +183,7 @@
                     "designerId": "b61b8188-b60c-4ecd-bae8-0797fe5308d3"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -194,8 +191,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton100",
                         "id": "imageEditorUndo",
+                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/skip_backward.png",
                         "scale": "large",
                         "text": "Undo"
@@ -203,7 +200,7 @@
                     "designerId": "2c34218d-e04e-4cc3-8aea-9647b7f8138a"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -211,8 +208,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton100",
                         "id": "imageEditorReset",
+                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/repeat.png",
                         "scale": "large",
                         "text": "Reset"
@@ -220,7 +217,7 @@
                     "designerId": "b3cbde72-337f-41d8-a899-f60bdabca716"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"

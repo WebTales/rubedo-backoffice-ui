@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "MediaTypesController",
         "designer|userAlias": "MediaTypesController"
     },
-    "id": "ExtBox1-ext-gen33499",
     "designerId": "2a85a03b-de9d-4abc-80a4-82114d4267cf",
     "cn": [
         {
@@ -457,7 +456,7 @@
                     "//MTFieldId\r",
                     "//MTFieldConfigsBox\r",
                     "var me=this;\r",
-                    "var TCfield=abstractcomponent.getComponent(1);\r",
+                    "var TCfield=component.getComponent(1);\r",
                     "TCfield.getEl().on('click', function() {\r",
                     "    Ext.getCmp(\"MTfieldUp\").enable();\r",
                     "    Ext.getCmp(\"MTfieldDown\").enable();\r",
@@ -530,11 +529,11 @@
                     "                        TCfield.reset();\r",
                     "                    }\r",
                     "                    else if (this.name=='tooltip') {\r",
-                    "                        abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());\r",
+                    "                        component.getComponent('helpBouton').setTooltip(this.getValue());\r",
                     "                        if (Ext.isEmpty(this.getValue())){\r",
-                    "                            abstractcomponent.getComponent('helpBouton').hide();\r",
+                    "                            component.getComponent('helpBouton').hide();\r",
                     "                        } else {\r",
-                    "                            abstractcomponent.getComponent('helpBouton').show();\r",
+                    "                            component.getComponent('helpBouton').show();\r",
                     "                        }\r",
                     "                    }\r",
                     "                    else if (this.name=='regex') {\r",

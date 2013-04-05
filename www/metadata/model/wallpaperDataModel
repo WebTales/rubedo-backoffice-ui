@@ -1,5 +1,5 @@
 {
-    "type": "datamodel",
+    "type": "Ext.data.Model",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,60 +9,59 @@
         "designer|userClassName": "wallpaperDataModel",
         "designer|userAlias": "wallpaperDataModel"
     },
-    "id": "ExtBox1-ext-gen24254",
     "designerId": "337a044d-f1fa-46dd-9870-5c57b86e2ab6",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField71",
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "designer|userClassName": "MyField71"
             },
             "designerId": "b5ccdce6-24d9-48fd-97b2-b6f54773c0d1"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField72",
                 "name": "file",
-                "type": "string"
+                "type": "string",
+                "designer|userClassName": "MyField72"
             },
             "designerId": "2acdca71-9a4f-4462-ac35-c844174eea6e"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field203",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field203"
             },
             "designerId": "c8036740-bb08-4443-b017-9ef42bba5b12"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field204",
-                "name": "version"
+                "name": "version",
+                "designer|userClassName": "field204"
             },
             "designerId": "a54be58c-d5c4-4f9c-8531-b8fe808d5e4a"
         }

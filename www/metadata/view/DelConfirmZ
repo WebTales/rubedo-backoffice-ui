@@ -1,33 +1,31 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DelConfirmZ",
-        "designer|userAlias": "delConfirmZ",
         "draggable": false,
         "height": 100,
         "id": "delConfirmZ",
         "width": 205,
+        "designer|userClassName": "DelConfirmZ",
+        "designer|userAlias": "delConfirmZ",
         "resizable": false,
         "layout": "fit",
         "closable": false,
         "iconCls": "warning",
         "title": "Confirmation de suppression",
-        "modal": true,
-        "plain": false
+        "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen58292",
     "designerId": "72d10373-385a-4cd4-98b5-fd8e6b3c7eec",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -35,13 +33,13 @@
             "codeClass": null,
             "userConfig": {
                 "dock": null,
-                "designer|userClassName": "MyToolbar16",
-                "height": null
+                "height": null,
+                "designer|userClassName": "MyToolbar16"
             },
             "designerId": "c481d41d-742e-4d94-a57c-9ab6d35741f9",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -50,11 +48,11 @@
                     "userConfig": {
                         "layout|flex": null,
                         "layout|margins": null,
-                        "designer|userClassName": "MyButton44",
                         "height": null,
                         "id": "delConfirmZOui",
                         "margin": "0, 0, 0, 10",
                         "style": null,
+                        "designer|userClassName": "MyButton44",
                         "iconCls": "ouiS",
                         "scale": "large",
                         "text": "Oui"
@@ -62,7 +60,7 @@
                     "designerId": "86b5e869-ea00-4b39-b4d2-ed39f8416669"
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -75,7 +73,7 @@
                     "designerId": "66b093b2-ad05-43b7-a0fc-e626558d7aea"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -84,10 +82,10 @@
                     "userConfig": {
                         "layout|flex": null,
                         "layout|margins": null,
-                        "designer|userClassName": "MyButton43",
                         "id": "delConfirmZNon",
                         "margin": "0, 10, 0, 0",
                         "style": null,
+                        "designer|userClassName": "MyButton43",
                         "iconCls": "nonS",
                         "scale": "large",
                         "text": "Non"
@@ -117,7 +115,7 @@
                     ]
                 },
                 {
-                    "type": "hiddenfield",
+                    "type": "Ext.form.field.Hidden",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -125,8 +123,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyHiddenField1",
                         "id": "delConfirmZField",
+                        "designer|userClassName": "MyHiddenField1",
                         "fieldLabel": "Label"
                     },
                     "designerId": "0e0f13d8-3b0f-4ba5-adf5-d64ace5ab253"

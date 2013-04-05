@@ -1,5 +1,5 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -15,7 +15,6 @@
     "configAlternates": {
         "managesStore": "boolean"
     },
-    "id": "ExtBox1-ext-gen2236",
     "designerId": "73e60547-6188-4b20-9a1a-e3f085be455a",
     "customConfigs": [
         {
@@ -26,7 +25,7 @@
     ],
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -38,7 +37,7 @@
             "designerId": "4c510eed-cbd9-419d-b3eb-b323b1deb924"
         },
         {
-            "type": "checkboxselectionmodel",
+            "type": "Ext.selection.CheckboxModel",
             "reference": {
                 "name": "selModel",
                 "type": "object"
@@ -50,7 +49,7 @@
             "designerId": "b93c27fe-d628-4ddd-b7eb-cad93152971c"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -60,8 +59,8 @@
                 "filter": true,
                 "designer|userClassName": "MyColumn38",
                 "dataIndex": "name",
-                "flex": 1,
-                "text": "Nom"
+                "text": "Nom",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -76,7 +75,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -84,11 +83,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn39",
                 "hidden": true,
+                "designer|userClassName": "MyColumn39",
                 "dataIndex": "title",
-                "flex": 1,
-                "text": "Civilité"
+                "text": "Civilité",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -103,7 +102,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -111,11 +110,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn40",
                 "hidden": true,
+                "designer|userClassName": "MyColumn40",
                 "dataIndex": "organisation",
-                "flex": 1,
-                "text": "Organisation"
+                "text": "Organisation",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -130,7 +129,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -138,11 +137,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn41",
                 "hidden": true,
+                "designer|userClassName": "MyColumn41",
                 "dataIndex": "service",
-                "flex": 1,
-                "text": "Service"
+                "text": "Service",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -157,7 +156,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -165,11 +164,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn42",
                 "hidden": true,
+                "designer|userClassName": "MyColumn42",
                 "dataIndex": "post",
-                "flex": 1,
-                "text": "Fonction"
+                "text": "Fonction",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -184,7 +183,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -192,11 +191,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn43",
                 "hidden": true,
+                "designer|userClassName": "MyColumn43",
                 "dataIndex": "email",
-                "flex": 1,
-                "text": "E-mail"
+                "text": "E-mail",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -211,7 +210,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -219,11 +218,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn44",
                 "hidden": true,
+                "designer|userClassName": "MyColumn44",
                 "dataIndex": "telephone",
-                "flex": 1,
-                "text": "Téléphone"
+                "text": "Téléphone",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -238,7 +237,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -246,11 +245,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn45",
                 "hidden": true,
+                "designer|userClassName": "MyColumn45",
                 "dataIndex": "mobile",
-                "flex": 1,
-                "text": "Mobile"
+                "text": "Mobile",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -265,7 +264,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -273,11 +272,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn46",
                 "hidden": true,
+                "designer|userClassName": "MyColumn46",
                 "dataIndex": "coordinates",
-                "flex": 1,
-                "text": "Coordonnées"
+                "text": "Coordonnées",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -292,7 +291,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -300,11 +299,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn48",
                 "hidden": true,
+                "designer|userClassName": "MyColumn48",
                 "dataIndex": "language",
-                "flex": 1,
-                "text": "Langue"
+                "text": "Langue",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -319,7 +318,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -327,11 +326,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn49",
                 "hidden": true,
+                "designer|userClassName": "MyColumn49",
                 "dataIndex": "country",
-                "flex": 1,
-                "text": "Pays"
+                "text": "Pays",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -346,7 +345,7 @@
             ]
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -354,11 +353,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyDateColumn5",
                 "hidden": true,
+                "designer|userClassName": "MyDateColumn5",
                 "dataIndex": "createTime",
-                "flex": 1,
-                "text": "Création"
+                "text": "Création",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -373,7 +372,7 @@
             ]
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -381,11 +380,11 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyDateColumn6",
                 "hidden": true,
+                "designer|userClassName": "MyDateColumn6",
                 "dataIndex": "updateTime",
-                "flex": 1,
-                "text": "Mise à jour"
+                "text": "Mise à jour",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"

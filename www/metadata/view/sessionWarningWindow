@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "sessionWarningWindow",
-        "designer|userAlias": "sessionWarningWindow",
         "height": 82,
         "id": "sessionWarningWindow",
         "width": 252,
+        "designer|userClassName": "sessionWarningWindow",
+        "designer|userAlias": "sessionWarningWindow",
         "resizable": false,
         "layout": "fit",
         "title": "Votre session va bientot expirer",
@@ -19,11 +19,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen11466",
     "designerId": "5d41405d-8ed6-4d4a-b220-d09d58101928",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"

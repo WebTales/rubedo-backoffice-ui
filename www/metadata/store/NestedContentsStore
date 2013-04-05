@@ -1,20 +1,19 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "NestedContentsStore",
-        "designer|userAlias": "NestedContentsStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "NestedContentsStore",
         "model": "nestedContentModel",
+        "storeId": "NestedContentsStore",
+        "designer|userClassName": "NestedContentsStore",
+        "designer|userAlias": "NestedContentsStore",
         "pageSize": 50
     },
-    "id": "ExtBox1-ext-gen5851",
     "designerId": "817bd763-92f6-4eb5-9b4c-817418ccc96f",
     "cn": [
         {
@@ -37,21 +36,21 @@
             "designerId": "425fcc41-c269-48df-babe-0bcb2b9c29e7"
         },
         {
-            "type": "grouper",
+            "type": "Ext.util.Grouper",
             "reference": {
                 "name": "groupers",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGrouper3",
                 "property": "typeId",
-                "root": null
+                "root": null,
+                "designer|userClassName": "MyGrouper3"
             },
             "designerId": "3d04bb23-cec3-48a8-b92f-989a5b0e80ce"
         },
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -76,21 +75,21 @@
             "designerId": "2089d7ca-298b-4096-b853-7e22ec40ac46",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader24",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader24"
                     },
                     "designerId": "7eecfb39-7244-48ec-b663-8ef5431666b3"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

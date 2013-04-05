@@ -1,15 +1,15 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "GroupAddWindow",
-        "designer|userAlias": "GroupAddWindow",
         "height": 100,
         "width": 300,
+        "designer|userClassName": "GroupAddWindow",
+        "designer|userAlias": "GroupAddWindow",
         "resizable": false,
         "layout": "fit",
         "iconCls": "user",
@@ -20,11 +20,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen10707",
     "designerId": "0cc03184-ad23-4674-8d3a-2f88ad0d1aa5",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -38,7 +37,7 @@
             "designerId": "93e08859-d777-46d8-b17c-cdf985a1157c",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -54,7 +53,7 @@
                     "designerId": "16474902-981d-47c0-a8d7-1dd28bd38a31"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -62,8 +61,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton115",
                         "id": "groupCreateButton",
+                        "designer|userClassName": "MyButton115",
                         "text": "Créer en tant que fils du groupe séléctionné"
                     },
                     "designerId": "013996d8-68c5-452d-b7dd-97453c108600"

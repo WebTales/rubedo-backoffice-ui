@@ -1,13 +1,11 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ImagePreviewWindow",
-        "designer|userAlias": "ImagePreviewWindow",
         "height": null,
         "id": null,
         "maxHeight": null,
@@ -15,33 +13,31 @@
         "minHeight": 100,
         "minWidth": 100,
         "width": null,
+        "designer|userClassName": "ImagePreviewWindow",
+        "designer|userAlias": "ImagePreviewWindow",
         "autoScroll": true,
         "resizable": [
             "false"
         ],
         "iconCls": "imageIco",
         "title": "Prévisualisation pleine taille",
-        "constrain": false,
         "constrainHeader": true,
         "maximizable": null,
-        "maximized": false,
-        "minimizable": false,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen8111",
     "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
     "cn": [
         {
-            "type": "image",
+            "type": "Ext.Img",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyImg8",
                 "maxHeight": null,
                 "maxWidth": null,
+                "designer|userClassName": "MyImg8",
                 "resizable": [
                     "false"
                 ],
@@ -60,10 +56,10 @@
                         "designer|userClassName": "onImageRender",
                         "fn": "onImageRender",
                         "implHandler": [
-                            "abstractcomponent.getEl().on(\"load\", function(){\r",
-                            "    abstractcomponent.up().doLayout();\r",
+                            "component.getEl().on(\"load\", function(){\r",
+                            "    component.up().doLayout();\r",
                             "    var task2= new Ext.util.DelayedTask(function(){\r",
-                            "        var abstractcontainer=abstractcomponent.up();\r",
+                            "        var abstractcontainer=component.up();\r",
                             "        var x=(window.innerWidth-abstractcontainer.getWidth())/2;\r",
                             "        var y=(window.innerHeight-abstractcontainer.getHeight())/2;\r",
                             "        abstractcontainer.showAt(x,y);\r",

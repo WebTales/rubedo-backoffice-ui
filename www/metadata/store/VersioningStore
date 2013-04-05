@@ -6,23 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "VersioningStore",
-        "designer|userAlias": "VersioningStore",
         "autoLoad": false,
-        "autoSync": false,
+        "model": "versionsDataModel",
         "remoteFilter": true,
         "storeId": "VersioningStore",
-        "model": "versionsDataModel",
+        "designer|userClassName": "VersioningStore",
+        "designer|userAlias": "VersioningStore",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen8951",
     "designerId": "92e390a8-ea67-46ec-b1f0-678267ecc7ce",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -40,32 +38,32 @@
             "designerId": "3f23be2a-11eb-42be-8116-d122b26ecc43",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader8",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader8"
                     },
                     "designerId": "482a708d-1e4f-45db-a3f4-2014c1b5b68e"
                 }
             ]
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter3",
                 "direction": "DESC",
-                "property": "publishVersion"
+                "property": "publishVersion",
+                "designer|userClassName": "MySorter3"
             },
             "designerId": "18ed8649-3e47-47be-aef3-e0e03dc19403"
         }

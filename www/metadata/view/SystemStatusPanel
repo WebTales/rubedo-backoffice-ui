@@ -1,5 +1,5 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -12,7 +12,6 @@
         "layout": "hbox",
         "title": ""
     },
-    "id": "ExtBox1-ext-gen24072",
     "designerId": "8358557d-a673-413c-9932-235a249e7220",
     "cn": [
         {
@@ -36,7 +35,7 @@
             "designerId": "af7722e2-d40c-4671-880e-53f599dce235"
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -51,7 +50,7 @@
             "designerId": "28a15491-520e-49ef-934c-b49ddf332736"
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"

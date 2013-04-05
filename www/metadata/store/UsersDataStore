@@ -8,18 +8,17 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Users",
-        "designer|userClassName": "UsersDataStore",
-        "designer|userAlias": "UsersDataStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "UsersDataStore",
         "model": "userDataModel",
+        "storeId": "UsersDataStore",
+        "designer|userClassName": "UsersDataStore",
+        "designer|userAlias": "UsersDataStore",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen11601",
     "designerId": "6024e937-1032-4d87-9bf7-74a57a473a31",
     "customConfigs": [
         {
@@ -35,7 +34,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -56,21 +55,21 @@
             "designerId": "8080282a-2e1f-4fac-b34b-cc7cf4196d32",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader19"
                     },
                     "designerId": "932ccc67-f5e2-4412-a1a9-185fd697fd3a"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

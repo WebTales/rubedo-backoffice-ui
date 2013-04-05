@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "MainStoresController",
         "designer|userAlias": "MainStoresController"
     },
-    "id": "ExtBox1-ext-gen10969",
     "designerId": "bf25a36d-563e-484d-b6b8-b387924e3a62",
     "cn": [
         {
@@ -120,10 +119,10 @@
                 "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
-                    "if ((abstractcomponent.managesStore)&&(abstractcomponent.store)) {\r",
-                    "    abstractcomponent.getStore().load();\r",
+                    "if ((component.managesStore)&&(component.store)) {\r",
+                    "    component.getStore().load();\r",
                     "\r",
-                    "    abstractcomponent.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
+                    "    component.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
                     "} "
                 ],
                 "name": "render",

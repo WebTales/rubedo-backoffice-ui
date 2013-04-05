@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,19 +8,16 @@
     "userConfig": {
         "ACL": "exe.ui.elasticSearch",
         "container|align": "stretch",
-        "designer|userClassName": "monitoringTools",
-        "designer|userAlias": "monitoringTools",
         "height": 280,
         "id": "monitoringTools",
         "width": 577,
+        "designer|userClassName": "monitoringTools",
+        "designer|userAlias": "monitoringTools",
         "layout": "vbox",
         "iconCls": "monitoring",
         "title": "Supervision",
-        "constrainHeader": true,
-        "maximizable": false,
-        "minimizable": false
+        "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen6055",
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
     "customConfigs": [
         {
@@ -38,7 +35,7 @@
             },
             "codeClass": null,
             "designerId": "5d0f7b8f-4e50-4973-aa72-46073dcab348",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -48,10 +45,10 @@
             },
             "codeClass": null,
             "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -59,15 +56,15 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyForm53",
                 "id": "SupervisionCachePanel",
+                "designer|userClassName": "MyForm53",
                 "bodyPadding": 10,
                 "title": "Cache"
             },
             "designerId": "88156036-6c5a-4848-9b93-531600345241",
             "cn": [
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -80,7 +77,7 @@
                     "designerId": "b2d8e831-9f2a-4e58-9e72-1d4a4558c39a",
                     "cn": [
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -89,14 +86,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField6",
+                                "fieldLabel": "Objets",
                                 "name": "cachedItems",
-                                "readOnly": true,
-                                "fieldLabel": "Objets"
+                                "readOnly": true
                             },
                             "designerId": "435c176e-69c8-4e17-9ab0-b1ef9ad50ff6"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -105,16 +102,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField7",
+                                "fieldLabel": "URL",
                                 "name": "cachedUrl",
-                                "readOnly": true,
-                                "fieldLabel": "URL"
+                                "readOnly": true
                             },
                             "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8"
                         }
                     ]
                 },
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -127,7 +124,7 @@
                     "designerId": "271d4e37-978d-48f2-9679-b87590020b55",
                     "cn": [
                         {
-                            "type": "tbfill",
+                            "type": "Ext.toolbar.Fill",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -140,7 +137,7 @@
                             "designerId": "7bc92e92-1848-449b-98b2-655d14b9bf46"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -148,8 +145,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton267",
                                 "id": "supervisionRefreshCacheBtn",
+                                "designer|userClassName": "MyButton267",
                                 "text": "<b>Rafraichir</b>"
                             },
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
@@ -177,7 +174,7 @@
                             ]
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -185,8 +182,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton268",
                                 "id": "SupervisionClearCachetn",
+                                "designer|userClassName": "MyButton268",
                                 "text": "<b>Vider le cache</b>"
                             },
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
@@ -257,7 +254,7 @@
                         "designer|userClassName": "onSupervisionCachePanelAfterRender",
                         "fn": "onSupervisionCachePanelAfterRender",
                         "implHandler": [
-                            "abstractcomponent.refreshCacheInfo();"
+                            "component.refreshCacheInfo();"
                         ],
                         "name": "afterrender",
                         "scope": "me"
@@ -267,7 +264,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -285,7 +282,7 @@
             "designerId": "b480c438-99d0-4d2e-b979-a715b2ef9c5e",
             "cn": [
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -293,13 +290,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
-                        "designer|userClassName": "MyToolbar39",
-                        "height": 30
+                        "height": 30,
+                        "designer|userClassName": "MyToolbar39"
                     },
                     "designerId": "943c7847-7412-45d3-8161-becf886f007c",
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -356,7 +353,7 @@
                             ]
                         },
                         {
-                            "type": "tbspacer",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -369,7 +366,7 @@
                             "designerId": "7da675d9-cef1-4913-baf4-3d05e8957365"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -426,7 +423,7 @@
                             ]
                         },
                         {
-                            "type": "tbspacer",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -439,7 +436,7 @@
                             "designerId": "46634022-720f-4ff1-a790-ecfb4e6ecae0"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"

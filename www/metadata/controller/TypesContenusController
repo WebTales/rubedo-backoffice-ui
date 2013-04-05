@@ -1,13 +1,11 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "TypesContenusController",
-        "designer|userAlias": "TypesContenusController",
         "models": [
             "typesContenusDataModel"
         ],
@@ -20,9 +18,10 @@
             "ChampTC",
             "optionsLCGrid",
             "ongletTCDep"
-        ]
+        ],
+        "designer|userClassName": "TypesContenusController",
+        "designer|userAlias": "TypesContenusController"
     },
-    "id": "ExtBox1-ext-gen24282",
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
     "cn": [
         {
@@ -390,7 +389,7 @@
                 "fn": "selectChampTC",
                 "implHandler": [
                     "var me=this;\r",
-                    "var TCfield=abstractcomponent.getComponent(1);\r",
+                    "var TCfield=component.getComponent(1);\r",
                     "TCfield.getEl().on('click', function() {\r",
                     "    Ext.getCmp(\"TCfieldUp\").enable();\r",
                     "    Ext.getCmp(\"TCfieldDown\").enable();\r",
@@ -486,11 +485,11 @@
                     "                            TCfield.reset();\r",
                     "                        }\r",
                     "                        else if (this.name=='tooltip') {\r",
-                    "                            abstractcomponent.getComponent('helpBouton').setTooltip(this.getValue());\r",
+                    "                            component.getComponent('helpBouton').setTooltip(this.getValue());\r",
                     "                            if (Ext.isEmpty(this.getValue())){\r",
-                    "                                abstractcomponent.getComponent('helpBouton').hide();\r",
+                    "                                component.getComponent('helpBouton').hide();\r",
                     "                            } else {\r",
-                    "                                abstractcomponent.getComponent('helpBouton').show();\r",
+                    "                                component.getComponent('helpBouton').show();\r",
                     "                            }\r",
                     "                        }\r",
                     "                        else if (this.name=='regex') {\r",
@@ -530,7 +529,7 @@
                 "designer|userClassName": "enleveChampTC",
                 "fn": "enleveChampTC",
                 "implHandler": [
-                    "if (Ext.getCmp('champTCIdField').getValue() == abstractcomponent.getComponent(1).id) {\r",
+                    "if (Ext.getCmp('champTCIdField').getValue() == component.getComponent(1).id) {\r",
                     "    Ext.getCmp('boiteConfigChampsTC').removeAll();\r",
                     "    Ext.getCmp(\"TCfieldUp\").disable();\r",
                     "    Ext.getCmp(\"TCfieldDown\").disable();\r",

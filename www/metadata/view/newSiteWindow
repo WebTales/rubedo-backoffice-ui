@@ -1,31 +1,29 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "newSiteWindow",
-        "designer|userAlias": "newSiteWindow",
         "height": 101,
         "id": "newSiteWindow",
         "width": 390,
+        "designer|userClassName": "newSiteWindow",
+        "designer|userAlias": "newSiteWindow",
         "resizable": false,
         "layout": "fit",
         "title": "Nouveau Site",
         "constrain": true,
-        "constrainHeader": false,
         "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen22873",
     "designerId": "42bbb6be-6e22-4c1f-b9cc-1e94a81b3005",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -39,7 +37,7 @@
             "designerId": "a9dd5b01-22f1-4551-a2d9-009b4c526295",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -48,16 +46,16 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField43",
-                        "name": "text",
                         "fieldLabel": "Nom ",
                         "labelWidth": 50,
+                        "name": "text",
                         "allowBlank": false,
                         "regex": "new RegExp(/^([a-z]|[1-9]|[-]|[.]){0,}$/)"
                     },
                     "designerId": "6b87329e-c62a-42c8-bc4c-fbba06c93fb5"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -65,8 +63,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton157",
                         "id": "newSiteSubmitBtn",
+                        "designer|userClassName": "MyButton157",
                         "text": "Créer ce site"
                     },
                     "designerId": "5ebaf9e7-ca17-4ff1-8d1d-ab1fcce8a018"

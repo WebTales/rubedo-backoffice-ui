@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,17 +8,16 @@
     "userConfig": {
         "favoriteIcon": "folder.png",
         "container|align": "stretch",
-        "designer|userClassName": "contributionMedias",
-        "designer|userAlias": "contributionMedias",
         "height": 578,
         "id": "contributionMedias",
         "width": 1000,
+        "designer|userClassName": "contributionMedias",
+        "designer|userAlias": "contributionMedias",
         "layout": "hbox",
         "iconCls": "media-icon",
         "title": "Médiathèque",
         "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen7427",
     "designerId": "80282cbf-46ae-4067-b98e-260703d28293",
     "customConfigs": [
         {
@@ -29,35 +28,35 @@
     ],
     "cn": [
         {
-            "type": "tool",
+            "type": "Ext.panel.Tool",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool16",
                 "itemId": "windowMinimize",
+                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "5500ac1d-2c18-47ca-9818-b934174ff091"
         },
         {
-            "type": "tool",
+            "type": "Ext.panel.Tool",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool17",
                 "itemId": "windowMaximize",
+                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "90ba1d83-8251-47f8-8086-6a09917fed35"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -66,14 +65,14 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar26",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "designer|userClassName": "MyToolbar26"
             },
             "designerId": "07542b37-fdcf-4b66-b9f0-b4f9a3a57dfc",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -81,8 +80,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton88",
                         "itemId": "origine",
+                        "designer|userClassName": "MyButton88",
                         "iconCls": "media-icon",
                         "text": "Médiathèque<b> ></b> "
                     },
@@ -91,7 +90,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -100,15 +99,15 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar27",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null
+                "width": null,
+                "designer|userClassName": "MyToolbar27"
             },
             "designerId": "c4ca647d-d32f-4c3e-9ca8-e6790b2ea72d",
             "cn": [
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -116,10 +115,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyImg2",
                         "height": 45,
                         "itemId": "imageBarreMeta",
                         "width": 48,
+                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "9fa65e42-4f24-4d44-b50e-793099aa2e8b",
@@ -135,7 +134,7 @@
                                 "designer|userClassName": "onImageBarreMetaRender",
                                 "fn": "onImageBarreMetaRender",
                                 "implHandler": [
-                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/database.png');"
+                                    "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/database.png');"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -145,7 +144,7 @@
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -153,13 +152,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "designer|userClassName": "MyContainer9"
                     },
                     "designerId": "2a235df1-21b6-44bd-9a4f-bf38167e9024",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "tpl",
                                 "type": "object"
@@ -179,7 +178,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -188,17 +187,17 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools",
                 "height": 54,
                 "itemId": "contextBar",
                 "width": null,
+                "designer|userClassName": "menuContenusTools",
+                "designer|userAlias": "menuContenusTools",
                 "enableOverflow": true
             },
             "designerId": "2595ffe2-df20-49f1-8820-418876b47117",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -206,9 +205,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonAjouterDossierMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "folder_add_big",
                         "scale": "large",
@@ -217,7 +216,7 @@
                     "designerId": "ef53b803-6854-4691-be1b-b768c2b46950"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -225,9 +224,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonSupprimerDossierMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "folder_remove_big",
                         "scale": "large",
@@ -236,7 +235,7 @@
                     "designerId": "7a6c0ba3-8b6d-4468-82d6-b3c427a2d256"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -244,9 +243,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonUploadMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "database_up_big",
                         "scale": "large",
@@ -255,7 +254,7 @@
                     "designerId": "4386e928-4eee-434b-9d37-fb5b565246b2"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -263,9 +262,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonDownloadMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "database_down_big",
                         "scale": "large",
@@ -274,7 +273,7 @@
                     "designerId": "f6168faf-68b6-4ce2-a398-87ecef7e1c73"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -282,9 +281,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonSupprimerMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -293,7 +292,7 @@
                     "designerId": "08e3295a-8f66-40e2-9f63-2f583b68b333"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -301,9 +300,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "id": "boutonEditionMedias",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "pencil_big",
                         "scale": "large",
@@ -312,7 +311,7 @@
                     "designerId": "6d120639-191f-4878-a9ca-bdcf721fc143"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -320,8 +319,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton14",
                         "itemId": "boutonCreerRaccourci",
+                        "designer|userClassName": "MyButton14",
                         "icon": null,
                         "iconCls": "favorite_add_big",
                         "scale": "large",
@@ -330,7 +329,7 @@
                     "designerId": "a91ac64e-ae12-4479-b6c0-b8ab822d1ad0"
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -343,7 +342,7 @@
                     "designerId": "56550b6e-f0bb-4da5-9d64-da0b206e5097"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -351,8 +350,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton94",
                         "itemId": "boutonAide",
+                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -363,7 +362,7 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -372,9 +371,9 @@
             "userConfig": {
                 "managesStore": true,
                 "layout|flex": null,
-                "designer|userClassName": "MyGridPanel14",
                 "id": "contributionMediasGrid",
                 "width": 150,
+                "designer|userClassName": "MyGridPanel14",
                 "resizable": [
                     "true"
                 ],
@@ -395,7 +394,7 @@
             ],
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -407,7 +406,7 @@
                     "designerId": "fd700e02-dd56-4cf1-8bc9-dc35f2412cb6"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -416,10 +415,10 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn21",
                         "dataIndex": "titre",
-                        "flex": 1,
                         "groupable": true,
                         "menuDisabled": true,
-                        "text": "Type"
+                        "text": "Type",
+                        "flex": 1
                     },
                     "designerId": "18b82f2e-433b-4f69-9a9d-3ee5d8fbb603",
                     "cn": [
@@ -451,7 +450,7 @@
                     ]
                 },
                 {
-                    "type": "groupinggridfeature",
+                    "type": "Ext.grid.feature.Grouping",
                     "reference": {
                         "name": "features",
                         "type": "array"
@@ -465,7 +464,7 @@
             ]
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -473,8 +472,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyContainer16",
                 "id": "images-view",
+                "designer|userClassName": "MyContainer16",
                 "layout": "fit"
             },
             "designerId": "41b954a8-f5f5-4ef7-9c7c-ca04b972c284",
@@ -487,7 +486,7 @@
                     },
                     "codeClass": null,
                     "designerId": "d8c31ac3-5a1f-463f-a70f-35caa77ae5a7",
-                    "masterInstanceId": "ExtBox1-ext-gen8472"
+                    "masterInstanceId": "65bb8cb3-a5cd-4190-a57a-aee4326f88e2"
                 }
             ]
         }

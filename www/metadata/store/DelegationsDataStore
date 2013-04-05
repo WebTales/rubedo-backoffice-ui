@@ -6,18 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DelegationsDataStore",
-        "designer|userAlias": "DelegationsDataStore",
         "autoSync": true,
+        "model": "delegationDataModel",
         "remoteFilter": true,
         "storeId": "DelegationsDataStore",
-        "model": "delegationDataModel"
+        "designer|userClassName": "DelegationsDataStore",
+        "designer|userAlias": "DelegationsDataStore"
     },
-    "id": "ExtBox1-ext-gen10674",
     "designerId": "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -37,21 +36,21 @@
             "designerId": "eb7956b7-75b9-4d6b-b922-bb909d17b13c",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader21",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader21"
                     },
                     "designerId": "f14bb516-6bf2-4b22-96ff-1f6a8357d929"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,10 +7,10 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "maskSaveChoiceBox",
-        "designer|userAlias": "maskSaveChoiceBox",
         "height": 144,
         "width": 400,
+        "designer|userClassName": "maskSaveChoiceBox",
+        "designer|userAlias": "maskSaveChoiceBox",
         "resizable": false,
         "layout": "vbox",
         "title": "Ce masque est utilisé par des pages",
@@ -19,11 +19,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen9937",
     "designerId": "fc048e78-715a-4081-8d00-7a42e4767f26",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -37,7 +36,7 @@
             "designerId": "923a29c9-2c40-4c54-abce-85e7d89bd651"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"

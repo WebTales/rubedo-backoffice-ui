@@ -1,23 +1,22 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ImagePickerWindow",
-        "designer|userAlias": "ImagePickerWindow",
         "height": 406,
         "id": "ImagePickerWindow",
         "width": 600,
+        "designer|userClassName": "ImagePickerWindow",
+        "designer|userAlias": "ImagePickerWindow",
         "layout": "fit",
         "title": "Choix DAM",
         "constrainHeader": true,
         "maximizable": null,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen30568",
     "designerId": "529b2508-9046-4453-930b-c1aa11abce73",
     "cn": [
         {
@@ -33,12 +32,12 @@
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").clearFilter(true);\r",
                     "Ext.getStore('TaxonomyForDam2').load();\r",
-                    "var allowedTypes=Ext.getCmp(abstractcomponent.targetField).allowedDAMTypes;\r",
+                    "var allowedTypes=Ext.getCmp(component.targetField).allowedDAMTypes;\r",
                     "if ((!Ext.isEmpty(allowedTypes))&&(!Ext.isArray(allowedTypes))){\r",
                     "    allowedTypes=[allowedTypes];\r",
                     "}\r",
                     "this.allowedTypes=allowedTypes;\r",
-                    "var allowedFileType=Ext.getCmp(abstractcomponent.targetField).allowedFileType;\r",
+                    "var allowedFileType=Ext.getCmp(component.targetField).allowedFileType;\r",
                     "var columnsOver= [\r",
                     "{\r",
                     "    xtype: 'gridcolumn',\r",
@@ -230,7 +229,7 @@
                     "});\r",
                     "\r",
                     "\r",
-                    "abstractcomponent.add(DAMPicker);"
+                    "component.add(DAMPicker);"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -258,7 +257,7 @@
             "designerId": "32a02590-abaf-438e-a255-dbd261bf0cf6"
         },
         {
-            "type": "pagingtoolbar",
+            "type": "Ext.toolbar.Paging",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -266,15 +265,15 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom",
-                "designer|userClassName": "MyPagingToolbar3",
                 "width": 360,
+                "designer|userClassName": "MyPagingToolbar3",
                 "displayInfo": true,
                 "store": "DAMPickerStore"
             },
             "designerId": "82616952-af27-4097-a217-c945fd01b259",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -282,9 +281,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton206",
                         "disabled": true,
                         "id": "imagePickerAcceptBtn",
+                        "designer|userClassName": "MyButton206",
                         "iconCls": "ouiSpetit",
                         "text": "Choisir"
                     },
@@ -313,7 +312,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -321,8 +320,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton266",
                         "id": "DAMPickerAddBtn",
+                        "designer|userClassName": "MyButton266",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
@@ -365,7 +364,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -411,7 +410,7 @@
             },
             "codeClass": null,
             "designerId": "05561d8c-f690-4953-8383-9b280c060bda",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
     ]
 }

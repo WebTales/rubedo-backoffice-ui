@@ -1,5 +1,5 @@
 {
-    "type": "hiddenfield",
+    "type": "Ext.form.field.Hidden",
     "reference": {
         "name": "items",
         "type": "array"
@@ -12,7 +12,6 @@
         "fieldLabel": "Label",
         "labelSeparator": " "
     },
-    "id": "ExtBox1-ext-gen15649",
     "designerId": "c5a98797-d429-41a6-a551-728b934eff67",
     "customConfigs": [
         {
@@ -34,8 +33,8 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var myComponent = Ext.widget(\"MQFieldComponent\");\r",
-                    "myComponent.setFieldLabel(abstractcomponent.fieldLabel+\" \");\r",
-                    "abstractcomponent.on(\"change\", function(a,newValue){\r",
+                    "myComponent.setFieldLabel(component.fieldLabel+\" \");\r",
+                    "component.on(\"change\", function(a,newValue){\r",
                     "    if (Ext.isEmpty(newValue)){\r",
                     "        myComponent.getComponent(\"addBtn\").show();\r",
                     "        myComponent.getComponent(\"editBtn\").hide();\r",
@@ -47,18 +46,18 @@
                     "    }\r",
                     "});\r",
                     "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
-                    "    abstractcomponent.setValue(null);\r",
+                    "    component.setValue(null);\r",
                     "});\r",
                     "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
-                    "    var assistant =Ext.widget(\"MQA\", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType});\r",
+                    "    var assistant =Ext.widget(\"MQA\", {targetId:component.getId(), allowedFileType:component.allowedFileType});\r",
                     "    assistant.show();\r",
                     "});\r",
                     "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
-                    "    var assistant =Ext.widget(\"MQA\", {targetId:abstractcomponent.getId(), allowedFileType:abstractcomponent.allowedFileType, editorMode:true, initialValue:Ext.clone(abstractcomponent.getValue())});\r",
+                    "    var assistant =Ext.widget(\"MQA\", {targetId:component.getId(), allowedFileType:component.allowedFileType, editorMode:true, initialValue:Ext.clone(component.getValue())});\r",
                     "    assistant.show();\r",
                     "});\r",
-                    "abstractcomponent.up().add(myComponent);\r",
-                    "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());"
+                    "component.up().add(myComponent);\r",
+                    "component.fireEvent(\"change\",component, component.getValue());"
                 ],
                 "name": "render",
                 "scope": "me"

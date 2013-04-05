@@ -1,30 +1,38 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "storeId": "languageStore",
         "designer|userClassName": "languageStore",
         "designer|userAlias": "languageStore",
-        "storeId": "languageStore",
-        "data": "[\r\n    {\r\n        \"language\":\"Français\"\r\n    },\r\n    {\r\n        \"language\":\"English\"\r\n    }\r\n]",
+        "data": [
+            "[\r",
+            "    {\r",
+            "        \"language\":\"Français\"\r",
+            "    },\r",
+            "    {\r",
+            "        \"language\":\"English\"\r",
+            "    }\r",
+            "]"
+        ],
         "pageSize": 1000
     },
-    "id": "ExtBox1-ext-gen101993",
     "designerId": "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field123",
-                "name": "language"
+                "name": "language",
+                "designer|userClassName": "field123"
             },
             "designerId": "d7f80146-99f7-471d-9244-a6637f73f3f8"
         }

@@ -1,5 +1,5 @@
 {
-    "type": "treepanel",
+    "type": "Ext.tree.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -10,11 +10,10 @@
         "designer|userAlias": "selectorTreeForField",
         "title": ""
     },
-    "id": "ExtBox1-ext-gen7290",
     "designerId": "94888e53-9ec4-4b43-8669-5443a9700c76",
     "cn": [
         {
-            "type": "treeview",
+            "type": "Ext.tree.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -26,7 +25,7 @@
             "designerId": "902ab8d2-af80-426a-a0d8-b905f6f197df"
         },
         {
-            "type": "checkboxselectionmodel",
+            "type": "Ext.selection.CheckboxModel",
             "reference": {
                 "name": "selModel",
                 "type": "object"

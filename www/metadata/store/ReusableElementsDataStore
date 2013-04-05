@@ -6,18 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ReusableElementsDataStore",
-        "designer|userAlias": "ReusableElementsDataStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "reusableElementModel",
         "storeId": "ReusableElementsDataStore",
-        "model": "reusableElementModel"
+        "designer|userClassName": "ReusableElementsDataStore",
+        "designer|userAlias": "ReusableElementsDataStore"
     },
-    "id": "ExtBox1-ext-gen27595",
     "designerId": "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -38,21 +37,21 @@
             "designerId": "22c9fca0-61d1-43e9-9248-2cc06b581b17",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader19"
                     },
                     "designerId": "2cf93d8a-a7eb-4e0e-835b-db521f83497d"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
@@ -68,15 +67,15 @@
             ]
         },
         {
-            "type": "grouper",
+            "type": "Ext.util.Grouper",
             "reference": {
                 "name": "groupers",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGrouper2",
-                "property": "mType"
+                "property": "mType",
+                "designer|userClassName": "MyGrouper2"
             },
             "designerId": "f18abfdb-3e63-41d1-8354-625575748b05"
         }

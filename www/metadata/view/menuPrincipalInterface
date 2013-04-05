@@ -1,5 +1,5 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,15 +8,14 @@
     "userConfig": {
         "container|align": "stretch",
         "container|padding": null,
-        "designer|userClassName": "menuPrincipalInterface",
-        "designer|userAlias": "menuPrincipalInterface",
         "border": 0,
         "floating": true,
-        "frame": false,
         "height": 300,
         "id": "menuPrincipalInterface",
         "padding": null,
         "width": 350,
+        "designer|userClassName": "menuPrincipalInterface",
+        "designer|userAlias": "menuPrincipalInterface",
         "shadow": null,
         "layout": "hbox",
         "bodyBorder": false,
@@ -26,11 +25,10 @@
         "overlapHeader": false,
         "title": "Alexandru Dobre"
     },
-    "id": "ExtBox1-ext-gen12752",
     "designerId": "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
     "cn": [
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -39,9 +37,9 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyPanel62",
                 "id": "salamanderBox",
                 "width": null,
+                "designer|userClassName": "MyPanel62",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "bodyStyle": null
@@ -52,7 +50,7 @@
             "designerId": "3f0ed9de-c4f2-4009-b09e-6c9174f435fc",
             "cn": [
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -61,19 +59,18 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "designer|snapToGrid": 10,
-                        "designer|userClassName": "MyContainer43",
                         "height": 10,
-                        "hidden": false,
                         "id": "salamanderContext",
                         "margin": null,
                         "minHeight": null,
                         "width": 220,
+                        "designer|userClassName": "MyContainer43",
                         "layout": "absolute"
                     },
                     "designerId": "16740bbe-36c7-4f53-a23e-27f05e8d1dea",
                     "cn": [
                         {
-                            "type": "menu",
+                            "type": "Ext.menu.Menu",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -82,13 +79,13 @@
                             "userConfig": {
                                 "layout|x": 0,
                                 "layout|y": 0,
-                                "designer|userClassName": "MyMenu8",
                                 "floating": false,
                                 "frame": true,
                                 "hidden": false,
                                 "id": "salamanderStudioMenu",
                                 "margin": null,
-                                "width": 218
+                                "width": 218,
+                                "designer|userClassName": "MyMenu8"
                             },
                             "designerId": "be1246af-6b6a-4569-a656-e12db32401d6",
                             "cn": [
@@ -103,7 +100,7 @@
                                         "designer|userClassName": "onSalamanderStudioMenuRender",
                                         "fn": "onSalamanderStudioMenuRender",
                                         "implHandler": [
-                                            "abstractcomponent.add([\r",
+                                            "component.add([\r",
                                             "{\r",
                                             "    xtype: 'menuitem',\r",
                                             "    ACL: 'read.ui.sites',\r",
@@ -154,7 +151,7 @@
                             ]
                         },
                         {
-                            "type": "menu",
+                            "type": "Ext.menu.Menu",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -163,14 +160,13 @@
                             "userConfig": {
                                 "layout|x": 0,
                                 "layout|y": 0,
-                                "designer|userClassName": "MyMenu8",
                                 "floating": false,
                                 "frame": true,
                                 "hidden": false,
                                 "id": "salamanderAdminMenu",
                                 "margin": null,
                                 "width": 218,
-                                "plain": false
+                                "designer|userClassName": "MyMenu8"
                             },
                             "designerId": "b0494c50-c3ce-495b-b9d6-6671ac75fbbf",
                             "cn": [
@@ -185,7 +181,7 @@
                                         "designer|userClassName": "onSalamanderAdminMenuRender",
                                         "fn": "onSalamanderAdminMenuRender",
                                         "implHandler": [
-                                            "abstractcomponent.add([\r",
+                                            "component.add([\r",
                                             "{\r",
                                             "    xtype: 'menuitem',\r",
                                             "    ACL: 'read.ui.queries',\r",
@@ -263,7 +259,7 @@
                                 "designer|userClassName": "onSalamanderContextRender",
                                 "fn": "onSalamanderContextRender",
                                 "implHandler": [
-                                    "Ext.Array.forEach(abstractcomponent.query(\"menu\"), function(thing){thing.hide();});"
+                                    "Ext.Array.forEach(component.query(\"menu\"), function(thing){thing.hide();});"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -273,18 +269,18 @@
                     ]
                 },
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyImg11",
                         "height": 239,
                         "id": "salamanderLogo",
                         "margin": null,
                         "width": 210,
+                        "designer|userClassName": "MyImg11",
                         "src": "resources/images/logoBkg.png"
                     },
                     "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
@@ -292,7 +288,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -301,14 +297,14 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "left",
-                "designer|userClassName": "MyToolbar25",
                 "id": "menuPrincipalDroite",
-                "width": null
+                "width": null,
+                "designer|userClassName": "MyToolbar25"
             },
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -318,9 +314,9 @@
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "application.png",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "itemId": "contributionPages",
                         "margin": null,
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "site-icon",
                         "text": "Pages"
                     },
@@ -339,7 +335,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -349,9 +345,9 @@
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "computer.png",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "itemId": "contributionPrevisualisation",
                         "margin": null,
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "personalize",
                         "text": "Prévisualisation"
                     },
@@ -370,7 +366,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -380,9 +376,9 @@
                         "ACL": "read.ui.contents",
                         "favoriteIcon": "page_full.png",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "itemId": "contributionContenus",
                         "margin": null,
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "content-icon",
                         "text": "Contenus"
                     },
@@ -401,7 +397,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -411,9 +407,9 @@
                         "ACL": "read.ui.dam",
                         "favoriteIcon": "images.png",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "itemId": "DAMInterface",
                         "margin": null,
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "mediaTypes",
                         "text": "Médiathèque"
                     },
@@ -432,7 +428,7 @@
                     ]
                 },
                 {
-                    "type": "tbseparator",
+                    "type": "Ext.toolbar.Separator",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -453,7 +449,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -497,7 +493,7 @@
                                 "fn": "onButtonRender",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
-                                    "    abstractcomponent.hide();\r",
+                                    "    component.hide();\r",
                                     "}"
                                 ],
                                 "name": "render",
@@ -506,22 +502,22 @@
                             "designerId": "5b3bf0f9-5931-4cfb-a6cc-6405180d66a8"
                         },
                         {
-                            "type": "menu",
+                            "type": "Ext.menu.Menu",
                             "reference": {
                                 "name": "menu",
                                 "type": "object"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyMenu8",
-                                "width": 120
+                                "width": 120,
+                                "designer|userClassName": "MyMenu8"
                             },
                             "designerId": "2920c27e-8d48-41fe-8a95-5bb91da72db5"
                         }
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -564,7 +560,7 @@
                                 "fn": "onButtonRender1",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])){\r",
-                                    "    abstractcomponent.hide();\r",
+                                    "    component.hide();\r",
                                     "}"
                                 ],
                                 "name": "render",
@@ -573,22 +569,22 @@
                             "designerId": "83dc9a37-4093-445a-8d8a-8e539fc6d89a"
                         },
                         {
-                            "type": "menu",
+                            "type": "Ext.menu.Menu",
                             "reference": {
                                 "name": "menu",
                                 "type": "object"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyMenu8",
-                                "width": 120
+                                "width": 120,
+                                "designer|userClassName": "MyMenu8"
                             },
                             "designerId": "8bdf58fa-1e0d-489e-8a1c-427a2e12bf92"
                         }
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -597,9 +593,9 @@
                     "userConfig": {
                         "favoriteIcon": "tools.png",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "itemId": "userSettings",
                         "margin": null,
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "parametres",
                         "text": "Paramètres"
                     },
@@ -613,7 +609,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -626,7 +622,7 @@
                     "designerId": "b6eb0758-2e62-4dcb-acb0-adf28999e387"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -634,9 +630,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton2",
                         "id": null,
                         "itemId": "deconnexionMenuPrincipal",
+                        "designer|userClassName": "MyButton2",
                         "iconCls": "deconecter",
                         "text": "Déconnexion"
                     },

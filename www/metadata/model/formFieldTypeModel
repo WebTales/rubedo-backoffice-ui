@@ -1,5 +1,5 @@
 {
-    "type": "datamodel",
+    "type": "Ext.data.Model",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,58 +9,57 @@
         "designer|userClassName": "formFieldTypeModel",
         "designer|userAlias": "formFieldTypeModel"
     },
-    "id": "ExtBox1-ext-gen75512",
     "designerId": "b980e128-6e56-43e6-99d6-b9312789f61e",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field328",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field328"
             },
             "designerId": "3ddbeb7b-e332-46f7-9817-0ff5a99a73ae"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field329",
-                "name": "type"
+                "name": "type",
+                "designer|userClassName": "field329"
             },
             "designerId": "02d071d4-dcda-45b4-ab6d-897e82c55008"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field332",
-                "name": "itemConfig"
+                "name": "itemConfig",
+                "designer|userClassName": "field332"
             },
             "designerId": "f8a7e7ed-9770-472b-bc9e-955fe4e0ae95"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field336",
-                "name": "description"
+                "name": "description",
+                "designer|userClassName": "field336"
             },
             "designerId": "b1cab84c-1f27-46fd-83fe-8b5014437de5"
         }

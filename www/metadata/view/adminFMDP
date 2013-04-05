@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,17 +8,16 @@
     "userConfig": {
         "favoriteIcon": "application.png",
         "container|align": "stretch",
-        "designer|userClassName": "adminFMDP",
-        "designer|userAlias": "adminFMDP",
         "height": 578,
         "id": "adminFMDP",
         "width": 1350,
+        "designer|userClassName": "adminFMDP",
+        "designer|userAlias": "adminFMDP",
         "layout": "hbox",
         "iconCls": "masque-icon",
         "title": "Masques de page",
         "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen75550",
     "designerId": "5b65ea9f-b5de-4028-be66-16c03842ef21",
     "customConfigs": [
         {
@@ -39,7 +38,7 @@
                 "layout|flex": null
             },
             "designerId": "47d66548-f2d8-44fc-abd8-36d286a67a1e",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -52,10 +51,10 @@
                 "layout|flex": null
             },
             "designerId": "345b89ba-b332-46f7-969d-3867c835551f",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -64,14 +63,14 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar26",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "designer|userClassName": "MyToolbar26"
             },
             "designerId": "7009d86e-1608-44d8-bddf-86cdc670993d",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -79,8 +78,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton88",
                         "itemId": "origine",
+                        "designer|userClassName": "MyButton88",
                         "iconCls": "masque-icon",
                         "text": "Masques de page <b>></b> "
                     },
@@ -89,7 +88,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -98,15 +97,15 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar27",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null
+                "width": null,
+                "designer|userClassName": "MyToolbar27"
             },
             "designerId": "d4183738-b3dd-43cb-9be8-c374df4c3c17",
             "cn": [
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -114,9 +113,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyImg2",
                         "height": 45,
                         "width": 48,
+                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "44968f46-716b-4f02-b6a1-e78f6f451af2",
@@ -132,7 +131,7 @@
                                 "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
-                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
+                                    "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -142,7 +141,7 @@
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -150,13 +149,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "designer|userClassName": "MyContainer9"
                     },
                     "designerId": "e5e9e678-e511-4689-b64f-824880b32a7c",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "tpl",
                                 "type": "object"
@@ -176,7 +175,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -185,17 +184,17 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools",
                 "height": 86,
                 "itemId": "contextBar",
                 "width": null,
+                "designer|userClassName": "menuContenusTools",
+                "designer|userAlias": "menuContenusTools",
                 "enableOverflow": true
             },
             "designerId": "9ade6d4b-ac00-44c3-aa6f-5202512b7859",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -204,9 +203,9 @@
                     "userConfig": {
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton11",
                         "id": "boutonNouveauMasque",
                         "itemId": null,
+                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -223,7 +222,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -232,10 +231,10 @@
                     "userConfig": {
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "boutonSupprimerMasque",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "arrowAlign": null,
                         "icon": null,
                         "iconAlign": "top",
@@ -253,7 +252,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -263,9 +262,9 @@
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "id": "masksEditionTopBarBox",
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 8
@@ -280,17 +279,17 @@
                     ],
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "newRow",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -300,17 +299,17 @@
                             "designerId": "e9a1fe34-8ea2-4699-872b-7e0345119318"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "newCol",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -320,17 +319,17 @@
                             "designerId": "094abf9a-b988-4159-9f4c-e9591a60cbf4"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "newBloc",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -340,17 +339,17 @@
                             "designerId": "69a2e8b9-1b19-4d31-b108-9c7ca2aa12a9"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "deleteElement",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_remove_big",
@@ -360,17 +359,17 @@
                             "designerId": "31fea061-d506-4bea-97dd-db58877f255e"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "exportElement",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_down_big",
@@ -380,17 +379,17 @@
                             "designerId": "32b25a07-c68c-457c-9486-43b245e54995"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "importElement",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_up_big",
@@ -400,17 +399,17 @@
                             "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "moveElementUp",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
@@ -420,17 +419,17 @@
                             "designerId": "800ddbd4-ee28-4961-9ecc-681bf122db20"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton51",
                                 "disabled": true,
                                 "id": "moveElementDown",
                                 "width": null,
+                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
@@ -442,7 +441,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -451,8 +450,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -460,7 +459,7 @@
                     "designerId": "16ca8d6b-68f3-43bc-8a71-49f70684f672",
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -468,9 +467,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.masks",
-                                "designer|userClassName": "MyButton17",
                                 "id": "boutonCopierMasque",
                                 "width": null,
+                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -487,16 +486,16 @@
                             ]
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton15",
                                 "hidden": true,
                                 "id": "ajouterPanierMasques",
+                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -506,15 +505,15 @@
                             "designerId": "be65fe8d-b4e1-4d82-8642-5d4fc94cf665"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton14",
                                 "itemId": "boutonCreerRaccourci",
+                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -526,7 +525,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -536,8 +535,8 @@
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4
@@ -552,16 +551,16 @@
                     ],
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton13",
                                 "id": "AdminfMasquesEnregistrer",
                                 "itemId": null,
+                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
@@ -581,9 +580,9 @@
                                         "designer|userClassName": "onAdminfMasquesEnregistrerAfterRender",
                                         "fn": "onAdminfMasquesEnregistrerAfterRender",
                                         "implHandler": [
-                                            "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
-                                            "if (!abstractcomponent.disabled){\r",
-                                            "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                            "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                            "if (!component.disabled){\r",
+                                            "    component.fireEvent(\"click\", component);\r",
                                             "    t.stopEvent();\r",
                                             "}\r",
                                             "});"
@@ -598,7 +597,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -607,9 +606,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "hidden": true,
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4
@@ -617,15 +616,15 @@
                     "designerId": "5df387e4-116a-4320-8241-f584b402a689",
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton62",
                                 "id": "AdminfMasquesExporter",
+                                "designer|userClassName": "MyButton62",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -635,7 +634,7 @@
                             "designerId": "91c55ebe-d20f-41b9-8f3c-6deeaf0ca390"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -643,8 +642,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.masks",
-                                "designer|userClassName": "MyButton63",
                                 "id": "AdminfMasquesImporter",
+                                "designer|userClassName": "MyButton63",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
@@ -663,7 +662,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -676,7 +675,7 @@
                     "designerId": "1f41b011-9eda-4c5a-aaaf-5cc0c301b8fd"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -685,8 +684,8 @@
                     "userConfig": {
                         "RApplication": "masks",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton94",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconAlign": null,
                         "iconCls": "info_big",
@@ -705,7 +704,7 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -714,11 +713,10 @@
             "userConfig": {
                 "managesStore": true,
                 "layout|flex": null,
-                "designer|userClassName": "MyGridPanel4",
-                "frame": false,
                 "id": "masquesGrid",
                 "itemId": null,
                 "width": 150,
+                "designer|userClassName": "MyGridPanel4",
                 "resizable": [
                     "true"
                 ],
@@ -740,21 +738,21 @@
             ],
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGridView4",
                         "id": "masquesGridView",
-                        "itemId": null
+                        "itemId": null,
+                        "designer|userClassName": "MyGridView4"
                     },
                     "designerId": "67643c61-ccf4-47a9-85a3-6d8fe7d1df08"
                 },
                 {
-                    "type": "groupinggridfeature",
+                    "type": "Ext.grid.feature.Grouping",
                     "reference": {
                         "name": "features",
                         "type": "array"
@@ -762,13 +760,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyGroupingFeature",
-                        "groupByText": null,
-                        "startCollapsed": false
+                        "groupByText": null
                     },
                     "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "groupHeaderTpl",
                                 "type": "object"
@@ -807,7 +804,7 @@
                     ]
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -816,9 +813,9 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn10",
                         "dataIndex": "text",
-                        "flex": 1.2,
                         "groupable": false,
-                        "text": "Titre"
+                        "text": "Titre",
+                        "flex": 1.2
                     },
                     "designerId": "ef6cd484-dd98-4816-8403-e294fede4c28",
                     "cn": [
@@ -852,7 +849,7 @@
                             "designerId": "5135dffc-f8ad-4516-bcf0-1110947cabb1"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "editor",
                                 "type": "object"
@@ -867,7 +864,7 @@
                     ]
                 },
                 {
-                    "type": "gridcelleditingplugin",
+                    "type": "Ext.grid.plugin.CellEditing",
                     "reference": {
                         "name": "plugins",
                         "type": "array"
@@ -920,7 +917,7 @@
                     ]
                 },
                 {
-                    "type": "rowselectionmodel",
+                    "type": "Ext.selection.RowModel",
                     "reference": {
                         "name": "selModel",
                         "type": "object"
@@ -970,7 +967,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -979,8 +976,8 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyPanel4",
                 "height": null,
+                "designer|userClassName": "MyPanel4",
                 "layout": "hbox",
                 "header": false,
                 "iconCls": "edit",
@@ -989,7 +986,7 @@
             "designerId": "56047962-a175-46cd-b135-10443957f491",
             "cn": [
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -999,21 +996,19 @@
                         "layout|flex": 1,
                         "container|align": "stretch",
                         "container|pack": null,
-                        "designer|userClassName": "MyPanel61",
                         "border": 0,
-                        "frame": false,
                         "id": "masqueEdition",
                         "margin": null,
                         "style": null,
                         "width": null,
-                        "autoScroll": false,
+                        "designer|userClassName": "MyPanel61",
                         "layout": "vbox",
                         "bodyStyle": null
                     },
                     "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb"
                 },
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -1024,11 +1019,11 @@
                         "layout|margins": "0, 0, 0, 2",
                         "dock": null,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel59",
                         "frame": true,
                         "id": "paneauPropMasque",
                         "margin": null,
                         "width": 300,
+                        "designer|userClassName": "MyPanel59",
                         "autoScroll": true,
                         "resizable": [
                             "true"
@@ -1039,41 +1034,40 @@
                         "collapsed": false,
                         "collapsible": true,
                         "iconCls": "parametres",
-                        "title": "Propriétés",
-                        "titleCollapse": false
+                        "title": "Propriétés"
                     },
                     "designerId": "b17d65c2-1c11-4ad6-ba71-3635259504e2",
                     "cn": [
                         {
-                            "type": "hiddenfield",
+                            "type": "Ext.form.field.Hidden",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyHiddenField",
                                 "id": "elementIdField",
+                                "designer|userClassName": "MyHiddenField",
                                 "fieldLabel": "Label"
                             },
                             "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
                         },
                         {
-                            "type": "hiddenfield",
+                            "type": "Ext.form.field.Hidden",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyHiddenField",
                                 "id": "mainColumnIdField",
+                                "designer|userClassName": "MyHiddenField",
                                 "fieldLabel": "Label"
                             },
                             "designerId": "214eb9cb-391d-42a6-8bd2-dfdf1f556074"
                         },
                         {
-                            "type": "form",
+                            "type": "Ext.form.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -1081,10 +1075,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyForm4",
                                 "height": null,
                                 "id": "elementEditControl",
                                 "margin": null,
+                                "designer|userClassName": "MyForm4",
                                 "autoScroll": true,
                                 "bodyPadding": null,
                                 "iconCls": null,

@@ -1,23 +1,22 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "themePicker",
         "designer|userClassName": "themePicker",
         "designer|userAlias": "themePicker",
-        "id": "themePicker",
         "layout": "anchor",
         "bodyPadding": 20,
         "title": ""
     },
-    "id": "ExtBox1-ext-gen9567",
     "designerId": "34b8ae49-5eb1-4af4-9543-71bc700c8a7a",
     "cn": [
         {
-            "type": "image",
+            "type": "Ext.Img",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -25,16 +24,16 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
-                "designer|userClassName": "MyImg9",
                 "height": null,
                 "maxHeight": null,
                 "width": null,
+                "designer|userClassName": "MyImg9",
                 "src": null
             },
             "designerId": "d060ac99-d127-41a7-b3f5-32332b3c0fa7"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -42,9 +41,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
-                "designer|userClassName": "MyButton103",
                 "id": "themePickerButton",
                 "margin": "10 0 0 0",
+                "designer|userClassName": "MyButton103",
                 "text": "Appliquer ce thème"
             },
             "designerId": "f0e0706a-ea02-404c-b01c-e14c16212383"

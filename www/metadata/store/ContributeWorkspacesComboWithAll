@@ -8,19 +8,17 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Workspaces",
+        "autoLoad": true,
+        "model": "workspaceModel",
+        "storeId": "ContributeWorkspacesComboWithAll",
         "designer|userClassName": "ContributeWorkspacesComboWithAll",
         "designer|userAlias": "ContributeWorkspacesComboWithAll",
-        "autoLoad": true,
-        "autoSync": false,
-        "storeId": "ContributeWorkspacesComboWithAll",
-        "model": "workspaceModel",
         "data": null,
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen7098",
     "designerId": "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
     "customConfigs": [
         {
@@ -36,7 +34,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -54,16 +52,16 @@
             "designerId": "e2fd0ad5-6bd8-4b5f-ab83-cfa6737b4596",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "7f365c87-e0f5-47d5-b89d-ba619c9f4a76"
                 }

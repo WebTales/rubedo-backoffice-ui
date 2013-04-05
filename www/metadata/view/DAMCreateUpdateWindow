@@ -1,35 +1,32 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DAMCreateUpdateWindow",
-        "designer|userAlias": "DAMCreateUpdateWindow",
-        "requires": [
-            "Ext.ux.TreePicker"
-        ],
-        "floating": true,
         "height": 400,
         "id": "DAMCreateUpdateWindow",
         "maxHeight": null,
         "minHeight": 220,
         "width": 900,
+        "designer|userClassName": "DAMCreateUpdateWindow",
+        "designer|userAlias": "DAMCreateUpdateWindow",
+        "requires": [
+            "Ext.ux.TreePicker"
+        ],
         "overflowY": "auto",
         "layout": "fit",
         "iconCls": "mediaTypes",
         "title": "Nouveau média",
         "constrain": true,
         "constrainHeader": true,
-        "maximizable": false,
         "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen11144",
     "designerId": "939ef002-62e9-4ca0-a15f-a368fcab7385",
     "cn": [
         {
@@ -40,19 +37,19 @@
             },
             "codeClass": null,
             "designerId": "535d186b-c92e-4a59-86ab-42cd2799b34a",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm3",
                 "height": null,
                 "id": "DAMFieldBox",
+                "designer|userClassName": "MyForm3",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -60,7 +57,7 @@
             "designerId": "76120e34-b5c1-40a3-9536-1168e395f143",
             "cn": [
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -68,28 +65,28 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "designer|userClassName": "MyContainer47",
                         "id": null,
+                        "designer|userClassName": "MyContainer47",
                         "layout": "hbox"
                     },
                     "designerId": "53ad484f-2ba0-41b0-902d-d697fbb20190",
                     "cn": [
                         {
-                            "type": "container",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "ChampTC",
-                                "designer|userAlias": "ChampTC",
-                                "designer|displayName": null,
                                 "height": null,
                                 "id": "DAMMainFileFieldBox",
                                 "padding": 10,
                                 "style": null,
                                 "width": 300,
+                                "designer|userClassName": "ChampTC",
+                                "designer|userAlias": "ChampTC",
+                                "designer|displayName": null,
                                 "layout": "anchor"
                             },
                             "configAlternates": {
@@ -122,7 +119,7 @@
                                             "    bigMode:true,\r",
                                             "    fileType:leType,\r",
                                             "});\r",
-                                            "abstractcomponent.insert(0, mainField);"
+                                            "component.insert(0, mainField);"
                                         ],
                                         "name": "render",
                                         "scope": "me"
@@ -132,7 +129,7 @@
                             ]
                         },
                         {
-                            "type": "container",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -140,16 +137,16 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyContainer48",
                                 "id": "DAMSEcondaryFieldsBox",
                                 "margin": "10 0 0 20",
                                 "padding": null,
+                                "designer|userClassName": "MyContainer48",
                                 "layout": "anchor"
                             },
                             "designerId": "00372f86-6219-41a4-82fb-2853c61cd555",
                             "cn": [
                                 {
-                                    "type": "container",
+                                    "type": "Ext.container.Container",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -157,28 +154,28 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "padding": 10,
                                         "designer|userClassName": "ChampTC",
                                         "designer|userAlias": "ChampTC",
                                         "designer|displayName": null,
-                                        "padding": 10,
                                         "layout": "anchor"
                                     },
                                     "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
                                     "cn": [
                                         {
-                                            "type": "button",
+                                            "type": "Ext.button.Button",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyButton17",
                                                 "itemId": "helpBouton",
                                                 "margin": null,
                                                 "style": [
                                                     "{float:right;}"
                                                 ],
+                                                "designer|userClassName": "MyButton17",
                                                 "allowDepress": null,
                                                 "enableToggle": null,
                                                 "handleMouseEvents": false,
@@ -193,7 +190,7 @@
                                             "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
                                         },
                                         {
-                                            "type": "textfield",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -201,14 +198,14 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|anchor": "90%",
-                                                "designer|userClassName": "MyTextField1",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "name": "title",
+                                                "designer|userClassName": "MyTextField1",
                                                 "fieldLabel": "Titre *",
                                                 "labelSeparator": " ",
+                                                "name": "title",
                                                 "allowBlank": false
                                             },
                                             "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
@@ -216,36 +213,36 @@
                                     ]
                                 },
                                 {
-                                    "type": "container",
+                                    "type": "Ext.container.Container",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "margin": null,
+                                        "padding": 10,
                                         "designer|userClassName": "ChampTC",
                                         "designer|userAlias": "ChampTC",
                                         "designer|displayName": null,
-                                        "margin": null,
-                                        "padding": 10,
                                         "layout": "anchor"
                                     },
                                     "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
                                     "cn": [
                                         {
-                                            "type": "button",
+                                            "type": "Ext.button.Button",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyButton17",
                                                 "itemId": "helpBouton",
                                                 "margin": null,
                                                 "style": [
                                                     "{float:right;}"
                                                 ],
+                                                "designer|userClassName": "MyButton17",
                                                 "allowDepress": null,
                                                 "enableToggle": null,
                                                 "handleMouseEvents": false,
@@ -260,7 +257,7 @@
                                             "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
                                         },
                                         {
-                                            "type": "filefield",
+                                            "type": "Ext.form.field.File",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -268,14 +265,14 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|anchor": "90%",
-                                                "designer|userClassName": "MyFileUpload3",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "name": "originalFileId",
+                                                "designer|userClassName": "MyFileUpload3",
                                                 "fieldLabel": "Fichier original *",
                                                 "labelSeparator": " ",
+                                                "name": "originalFileId",
                                                 "allowBlank": false
                                             },
                                             "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
@@ -287,21 +284,21 @@
                     ]
                 },
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet18",
                         "id": "DAMTaxoBox",
+                        "designer|userClassName": "MyFieldSet18",
                         "title": "Taxonomie"
                     },
                     "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b"
                 },
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -321,13 +318,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "name": "writeWorkspace",
                                 "fieldLabel": "Contribution",
+                                "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo",
                                 "layout|anchor": "90%"
                             },
                             "designerId": "5a81b33c-b742-488a-a36d-7dc5c789a486",
-                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
                         {
                             "type": "linkedinstance",
@@ -337,22 +334,22 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "fieldLabel": "Diffusion",
                                 "name": "target",
                                 "submitValue": null,
-                                "fieldLabel": "Diffusion",
                                 "multiSelect": true,
                                 "store": "WorkspacesComboWithAll",
                                 "layout|anchor": "90%"
                             },
                             "designerId": "16031190-6710-47f9-b9c2-634bf6641099",
-                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
                     ]
                 }
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -365,7 +362,7 @@
             "designerId": "05251599-1bff-4bbb-8363-53ce3f23941b",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -378,7 +375,7 @@
                     "designerId": "92ab0fc0-d9b4-49ca-be75-7dcdcfa11b38"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -386,15 +383,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton208",
                         "id": "DAMSubmitBtn",
+                        "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Créer ce nouveau média"
                     },
                     "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -402,16 +399,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton208",
                         "hidden": true,
                         "id": "DAMSubmitUpdateBtn",
+                        "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Enregistrer les modifications"
                     },
                     "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -419,9 +416,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton208",
                         "hidden": true,
                         "id": "DAMSwitchEditBtn",
+                        "designer|userClassName": "MyButton208",
                         "text": "Passer en mode édition"
                     },
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"

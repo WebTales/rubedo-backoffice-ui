@@ -1,5 +1,5 @@
 {
-    "type": "combobox",
+    "type": "Ext.form.field.ComboBox",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,9 +8,9 @@
     "userConfig": {
         "designer|userClassName": "MyComboBox32",
         "designer|userAlias": "mycombobox32",
-        "name": "field",
         "fieldLabel": "Affiché si et seulement si ",
         "labelWidth": 170,
+        "name": "field",
         "editable": false,
         "displayField": "qNb",
         "forceSelection": true,
@@ -21,7 +21,6 @@
     "configAlternates": {
         "plugins": "array"
     },
-    "id": "ExtBox1-ext-gen27779",
     "designerId": "1f387c06-5c71-4cab-ac38-38a30ac34a23",
     "cn": [
         {

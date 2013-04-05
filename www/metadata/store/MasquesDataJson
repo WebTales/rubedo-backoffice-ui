@@ -8,17 +8,16 @@
     "userConfig": {
         "usedCollection": "Masks",
         "isOptimised": true,
-        "designer|userClassName": "MasquesDataJson",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "MasquesDataJson",
         "model": "masquesDataModel",
+        "storeId": "MasquesDataJson",
+        "designer|userClassName": "MasquesDataJson",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen24546",
     "designerId": "f9902d72-af14-482b-bdd9-9ceda04a75cd",
     "customConfigs": [
         {
@@ -34,20 +33,20 @@
     ],
     "cn": [
         {
-            "type": "grouper",
+            "type": "Ext.util.Grouper",
             "reference": {
                 "name": "groupers",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGrouper",
-                "property": "site"
+                "property": "site",
+                "designer|userClassName": "MyGrouper"
             },
             "designerId": "bde309da-e690-46af-ac46-812a93f86786"
         },
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -68,21 +67,21 @@
             "designerId": "6debaa08-6929-44a8-867a-9f355f670b59",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader3",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader3"
                     },
                     "designerId": "f187256a-f83f-42d3-ba2e-d0b22e7ec462"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

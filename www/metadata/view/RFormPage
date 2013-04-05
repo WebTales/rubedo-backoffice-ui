@@ -1,24 +1,22 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "RFormPage",
-        "designer|userAlias": "RFormPage",
         "border": null,
-        "frame": false,
         "height": null,
         "margin": "0 0 10 0",
         "minHeight": 80,
         "width": null,
+        "designer|userClassName": "RFormPage",
+        "designer|userAlias": "RFormPage",
         "bodyBorder": false,
         "bodyPadding": 10,
         "title": "My Panel"
     },
-    "id": "ExtBox1-ext-gen15444",
     "designerId": "ea32a3c5-626e-450a-9bd5-3f3e40ac5d5d",
     "cn": [
         {
@@ -103,7 +101,7 @@
             "designerId": "474dc602-7edb-42a8-b1bb-5c8c36fcc180"
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -112,12 +110,12 @@
             "userConfig": {
                 "dock": "right",
                 "container|align": "stretch",
-                "designer|userClassName": "MyContainer51",
                 "hidden": true,
                 "hideMode": "visibility",
                 "itemId": "editBar",
                 "style": null,
                 "width": 20,
+                "designer|userClassName": "MyContainer51",
                 "layout": "vbox"
             },
             "configAlternates": {
@@ -126,15 +124,15 @@
             "designerId": "9caac821-82f9-4ae9-be41-bfd1842a3019",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton286",
                         "itemId": "formFieldCofiguratorBtn",
+                        "designer|userClassName": "MyButton286",
                         "iconCls": "edit",
                         "text": "",
                         "tooltip": "Paramètres",
@@ -146,16 +144,16 @@
                     "designerId": "3041c50c-02f2-4539-ab43-f3d14536c982"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton286",
                         "itemId": "formFieldConditionsBtn",
                         "margin": "10 0 0 0",
+                        "designer|userClassName": "MyButton286",
                         "iconCls": "cond_small",
                         "text": "",
                         "tooltip": "Condition d'affichage",

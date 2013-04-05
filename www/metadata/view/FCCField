@@ -1,5 +1,5 @@
 {
-    "type": "triggerfield",
+    "type": "Ext.form.field.Trigger",
     "reference": {
         "name": "items",
         "type": "array"
@@ -13,7 +13,6 @@
     "configAlternates": {
         "managesStore": "boolean"
     },
-    "id": "ExtBox1-ext-gen3062",
     "designerId": "71505c40-5587-40f5-be0e-bea55fa8806d",
     "cn": [
         {

@@ -8,18 +8,16 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Groups",
+        "autoLoad": false,
+        "model": "groupDataModel",
+        "storeId": "GroupsComboStore",
         "designer|userClassName": "GroupsComboStore",
         "designer|userAlias": "GroupsComboStore",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "GroupsComboStore",
-        "model": "groupDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen6278",
     "designerId": "9855c2eb-d7cc-4de3-88a9-b5ac251c3cfd",
     "customConfigs": [
         {
@@ -35,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -52,16 +50,16 @@
             "designerId": "1c2d7d99-8f8e-4acc-9089-71326b9990ee",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader67",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader67"
                     },
                     "designerId": "5d8e858d-804e-4259-8d22-68bb1437a0aa"
                 }

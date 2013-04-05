@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "simpleMode": false,
-        "designer|userClassName": "assistantRequetage",
-        "designer|userAlias": "assistantRequetage",
         "height": 400,
         "id": "assistantRequetage",
         "maxHeight": null,
         "minHeight": null,
         "width": 539,
+        "designer|userClassName": "assistantRequetage",
+        "designer|userAlias": "assistantRequetage",
         "layout": "card",
         "iconCls": "search",
         "title": "Assistant de requêtage ",
@@ -23,7 +23,6 @@
     "configAlternates": {
         "simpleMode": "boolean"
     },
-    "id": "ExtBox1-ext-gen4339",
     "designerId": "80577966-9127-4f1a-ba7a-faceef3f254a",
     "customConfigs": [
         {
@@ -34,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -47,7 +46,7 @@
             "designerId": "db5b5502-4e7c-4386-bc6c-b79435a73abd",
             "cn": [
                 {
-                    "type": "progressbar",
+                    "type": "Ext.ProgressBar",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -55,9 +54,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyProgressBar",
                         "id": "progressAR",
                         "width": null,
+                        "designer|userClassName": "MyProgressBar",
                         "animate": true,
                         "text": "Etape 1 sur 5",
                         "value": 0.2
@@ -65,7 +64,7 @@
                     "designerId": "1232c257-4234-493b-8154-4cf2735d6afe"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -73,16 +72,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton62",
                         "hidden": true,
                         "id": "boutonPrevRequeteur",
+                        "designer|userClassName": "MyButton62",
                         "iconCls": "arrow_left",
                         "text": "Précédent"
                     },
                     "designerId": "e8afb4a7-f686-43ff-a068-d122b4bd5bea"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -90,8 +89,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton68",
                         "id": "boutonNextRequeteur",
+                        "designer|userClassName": "MyButton68",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "text": "Suivant"
@@ -101,7 +100,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -109,8 +108,8 @@
             "codeClass": null,
             "userConfig": {
                 "etape": "1",
-                "designer|userClassName": "MyForm9",
                 "id": "assisstantRE1",
+                "designer|userClassName": "MyForm9",
                 "bodyPadding": 10,
                 "title": "Choix des types de contenus"
             },
@@ -124,7 +123,7 @@
             ],
             "cn": [
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -133,13 +132,13 @@
                     "userConfig": {
                         "managesStore": true,
                         "layout|anchor": "90%",
-                        "designer|userClassName": "MyComboBox",
                         "id": "champTCRequeteur",
                         "style": [
                             "{float:left}"
                         ],
-                        "name": "contentTypes",
+                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "",
+                        "name": "contentTypes",
                         "allowBlank": false,
                         "editable": false,
                         "displayField": "type",
@@ -162,18 +161,18 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton72",
                         "id": "boutonSelectAllTCAR",
                         "style": [
                             "{float:right;}"
                         ],
+                        "designer|userClassName": "MyButton72",
                         "iconCls": "ouiSpetit",
                         "text": "",
                         "tooltip": [
@@ -185,7 +184,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -193,8 +192,8 @@
             "codeClass": null,
             "userConfig": {
                 "etape": "2",
-                "designer|userClassName": "MyForm11",
                 "id": "assisstantRE2",
+                "designer|userClassName": "MyForm11",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Choix des termes de la taxonomie"
@@ -216,7 +215,7 @@
             },
             "codeClass": null,
             "designerId": "2c1daa0c-44c9-4c06-a40e-8762056bda2b",
-            "masterInstanceId": "ExtBox1-ext-gen5907"
+            "masterInstanceId": "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7"
         },
         {
             "type": "linkedinstance",
@@ -226,7 +225,7 @@
             },
             "codeClass": null,
             "designerId": "6728f853-c881-488d-aa8a-5f02078c982c",
-            "masterInstanceId": "ExtBox1-ext-gen5650"
+            "masterInstanceId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
         },
         {
             "type": "linkedinstance",
@@ -236,7 +235,7 @@
             },
             "codeClass": null,
             "designerId": "f136b46b-b4ee-439d-8940-27af18abedda",
-            "masterInstanceId": "ExtBox1-ext-gen6237"
+            "masterInstanceId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee"
         },
         {
             "type": "basiceventbinding",
@@ -289,7 +288,7 @@
                 "designer|userClassName": "onAssistantRequetageAfterRender",
                 "fn": "onAssistantRequetageAfterRender",
                 "implHandler": [
-                    "if (abstractcomponent.simpleMode) {\r",
+                    "if (component.simpleMode) {\r",
                     "    Ext.getCmp(\"champTCRequeteur\").multiSelect=false;\r",
                     "    Ext.getCmp(\"boutonSelectAllTCAR\").hide();\r",
                     "    Ext.getCmp(\"assisstantRE4\").up().remove(Ext.getCmp(\"assisstantRE4\"));\r",
@@ -297,8 +296,8 @@
                     "    Ext.getCmp(\"assisstantRE6\").etape=4;\r",
                     "    Ext.getCmp(\"progressAR\").updateProgress(0.25, \"Etape 1 sur 4\");\r",
                     "    Ext.getCmp(\"queryNameField\").hide();\r",
-                    "} if (abstractcomponent.editorMode) {\r",
-                    "    if (abstractcomponent.simpleMode) {\r",
+                    "} if (component.editorMode) {\r",
+                    "    if (component.simpleMode) {\r",
                     "        Ext.getCmp(\"assistantRequetage\").getLayout().setActiveItem(3);\r",
                     "        Ext.getCmp(\"progressAR\").updateProgress(1, \"Etape 4 sur 4\");\r",
                     "    }else{\r",
@@ -308,17 +307,17 @@
                     "    Ext.getCmp(\"boutonPrevRequeteur\").show();\r",
                     "    Ext.getCmp(\"boutonNextRequeteur\").hide();\r",
                     "    Ext.getCmp(\"assistantRequetage\").setLoading(true);\r",
-                    "    if(abstractcomponent.ROMode){\r",
+                    "    if(component.ROMode){\r",
                     "        Ext.getCmp(\"progressAR\").up().hide();\r",
                     "        Ext.getCmp(\"queryBuildSaveBtn\").hide();\r",
                     "        Ext.getCmp(\"queryNameField\").setReadOnly(true);\r",
-                    "        Ext.getCmp(\"assistantRequetage\").getLayout().getActiveItem().setTitle(abstractcomponent.initialQuery.queryName);\r",
+                    "        Ext.getCmp(\"assistantRequetage\").getLayout().getActiveItem().setTitle(component.initialQuery.queryName);\r",
                     "    }\r",
                     "    var task= new Ext.util.DelayedTask(function(){\r",
-                    "        Ext.getCmp(\"queryNameField\").setValue(abstractcomponent.initialQuery.queryName);\r",
-                    "        Ext.getCmp(\"champTCRequeteur\").setValue(abstractcomponent.initialQuery.contentTypes);\r",
+                    "        Ext.getCmp(\"queryNameField\").setValue(component.initialQuery.queryName);\r",
+                    "        Ext.getCmp(\"champTCRequeteur\").setValue(component.initialQuery.contentTypes);\r",
                     "        Rubedo.controller.assistantRequetageController.prototype.adaptToTCSelect(true);\r",
-                    "        Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(abstractcomponent.initialQuery.fieldRules);\r",
+                    "        Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(component.initialQuery.fieldRules);\r",
                     "        Ext.getCmp(\"assistantRequetage\").setLoading(false);\r",
                     "        var task2= new Ext.util.DelayedTask(function(){\r",
                     "            Rubedo.controller.assistantRequetageController.prototype.displayQuery(Rubedo.controller.assistantRequetageController.prototype.readQuery());\r",

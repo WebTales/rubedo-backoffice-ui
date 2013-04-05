@@ -1,5 +1,5 @@
 {
-    "type": "hiddenfield",
+    "type": "Ext.form.field.Hidden",
     "reference": {
         "name": "items",
         "type": "array"
@@ -18,7 +18,6 @@
         "geoQueryMode": "boolean",
         "queryMode": "boolean"
     },
-    "id": "ExtBox1-ext-gen28258",
     "designerId": "40dcc4f4-8a58-473c-b8f1-982fef6fab5f",
     "customConfigs": [
         {
@@ -50,8 +49,8 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var myComponent = Ext.widget(\"ESQfieldComponent\");\r",
-                    "myComponent.setFieldLabel(abstractcomponent.fieldLabel+\" \");\r",
-                    "abstractcomponent.on(\"change\", function(a,newValue){\r",
+                    "myComponent.setFieldLabel(component.fieldLabel+\" \");\r",
+                    "component.on(\"change\", function(a,newValue){\r",
                     "    if (Ext.isEmpty(newValue)){\r",
                     "        myComponent.getComponent(\"addBtn\").show();\r",
                     "        myComponent.getComponent(\"editBtn\").hide();\r",
@@ -63,7 +62,7 @@
                     "    }\r",
                     "});\r",
                     "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
-                    "    abstractcomponent.setValue(null);\r",
+                    "    component.setValue(null);\r",
                     "});\r",
                     "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
                     "    var delay = 10;\r",
@@ -74,9 +73,9 @@
                     "    }\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",
                     "        Ext.widget(\"searchResultsWindow\", {\r",
-                    "            queryMode:abstractcomponent.queryMode,\r",
-                    "            geoQueryMode:abstractcomponent.geoQueryMode,\r",
-                    "            targetedId:abstractcomponent.getId(),\r",
+                    "            queryMode:component.queryMode,\r",
+                    "            geoQueryMode:component.geoQueryMode,\r",
+                    "            targetedId:component.getId(),\r",
                     "            predefFacettes:null\r",
                     "        }).show();\r",
                     "    });\r",
@@ -93,17 +92,17 @@
                     "    }\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",
                     "        Ext.widget(\"searchResultsWindow\", {\r",
-                    "            queryMode:abstractcomponent.queryMode,\r",
-                    "            geoQueryMode:abstractcomponent.geoQueryMode,\r",
-                    "            targetedId:abstractcomponent.getId(),\r",
-                    "            predefFacettes:Ext.JSON.decode(abstractcomponent.getValue())\r",
+                    "            queryMode:component.queryMode,\r",
+                    "            geoQueryMode:component.geoQueryMode,\r",
+                    "            targetedId:component.getId(),\r",
+                    "            predefFacettes:Ext.JSON.decode(component.getValue())\r",
                     "        }).show();\r",
                     "    });\r",
                     "    task.delay(delay);\r",
                     "    \r",
                     "});\r",
-                    "abstractcomponent.up().add(myComponent);\r",
-                    "abstractcomponent.fireEvent(\"change\",abstractcomponent, abstractcomponent.getValue());\r",
+                    "component.up().add(myComponent);\r",
+                    "component.fireEvent(\"change\",component, component.getValue());\r",
                     ""
                 ],
                 "name": "render",

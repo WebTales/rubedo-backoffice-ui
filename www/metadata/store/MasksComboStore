@@ -8,18 +8,16 @@
     "userConfig": {
         "usedCollection": "Masks",
         "isOptimised": true,
+        "autoLoad": false,
+        "model": "masquesDataModel",
+        "storeId": "MasksComboStore",
         "designer|userClassName": "MasksComboStore",
         "designer|userAlias": "MasksComboStore",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "MasksComboStore",
-        "model": "masquesDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen58574",
     "designerId": "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
     "customConfigs": [
         {
@@ -35,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -53,16 +51,16 @@
             "designerId": "403759a8-51ca-47a9-89ce-18ffe6fb4517",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader3",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader3"
                     },
                     "designerId": "38a29384-a150-49b6-a79b-7fcc59725867"
                 }

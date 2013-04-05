@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,21 +7,20 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "WorkspacesInterface",
-        "designer|userAlias": "WorkspacesInterface",
         "height": 456,
         "id": "WorkspacesInterface",
         "width": 723,
+        "designer|userClassName": "WorkspacesInterface",
+        "designer|userAlias": "WorkspacesInterface",
         "layout": "hbox",
         "iconCls": "user",
         "title": "Espaces de travail",
         "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen15010",
     "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -34,7 +33,7 @@
             "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -43,8 +42,8 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton240",
                         "id": "workspaceAdd",
+                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -60,7 +59,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -69,9 +68,9 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton240",
                         "disabled": true,
                         "id": "workspaceRemove",
+                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -87,7 +86,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -96,9 +95,9 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton240",
                         "disabled": true,
                         "id": "workspaceSave",
+                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -124,9 +123,9 @@
                                 "designer|userClassName": "onWorkspaceSaveAfterRender",
                                 "fn": "onWorkspaceSaveAfterRender",
                                 "implHandler": [
-                                    "abstractcomponent.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
-                                    "if (!abstractcomponent.disabled){\r",
-                                    "    abstractcomponent.fireEvent(\"click\", abstractcomponent);\r",
+                                    "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                    "if (!component.disabled){\r",
+                                    "    component.fireEvent(\"click\", component);\r",
                                     "    t.stopEvent();\r",
                                     "}\r",
                                     "});"
@@ -139,7 +138,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -152,7 +151,7 @@
                     "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -161,8 +160,8 @@
                     "userConfig": {
                         "RApplication": "workspaces",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton243",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton243",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -179,16 +178,16 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridPanel32",
                 "id": "workspacesGrid",
                 "width": 200,
+                "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "forceFit": true,
                 "store": "WorkspacesStore"
@@ -196,7 +195,7 @@
             "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -208,7 +207,7 @@
                     "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -255,7 +254,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -263,16 +262,16 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyForm43",
                 "disabled": true,
                 "id": "workspacesMainForm",
+                "designer|userClassName": "MyForm43",
                 "bodyPadding": 10,
                 "title": "Propriétés"
             },
             "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -281,8 +280,8 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField74",
-                        "name": "text",
                         "fieldLabel": "Nom",
+                        "name": "text",
                         "allowBlank": false
                     },
                     "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767"
@@ -336,7 +335,7 @@
                 "layout|flex": null
             },
             "designerId": "df2ae591-c05d-4f92-b303-08ddd9f66eb9",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -349,7 +348,7 @@
                 "layout|flex": null
             },
             "designerId": "565358fc-8689-4644-95d4-fc800b4d4cd2",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
     ]
 }

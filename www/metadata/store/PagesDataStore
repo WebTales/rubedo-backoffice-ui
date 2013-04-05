@@ -1,5 +1,5 @@
 {
-    "type": "treestore",
+    "type": "Ext.data.TreeStore",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,17 +8,16 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Pages",
-        "designer|userClassName": "PagesDataStore",
-        "designer|userAlias": "PagesDataStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "pageDataModel",
         "storeId": "PagesDataStore",
-        "model": "pageDataModel"
+        "designer|userClassName": "PagesDataStore",
+        "designer|userAlias": "PagesDataStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen37573",
     "designerId": "1c2adda2-e782-40ff-b3f4-9e592104046f",
     "customConfigs": [
         {
@@ -34,15 +33,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy",
                 "api": [
                     "{\r",
                     "                    create: 'pages/create',\r",
@@ -55,15 +54,15 @@
             "designerId": "37a9c970-4cbf-4899-908c-cf71e5d92987",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader",
-                        "messageProperty": "message"
+                        "messageProperty": "message",
+                        "designer|userClassName": "MyJsonReader"
                     },
                     "designerId": "7fe66814-48c6-4515-ab77-c9aa1d7ac239",
                     "cn": [
@@ -110,7 +109,7 @@
                     ]
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
@@ -126,16 +125,16 @@
             ]
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter1",
                 "property": "orderValue",
-                "root": null
+                "root": null,
+                "designer|userClassName": "MySorter1"
             },
             "designerId": "851f85e8-3f04-444c-b4eb-754ea9fa12fe"
         }

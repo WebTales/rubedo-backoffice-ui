@@ -6,24 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
-        "facettes": "[ ]",
+        "facettes": [
+            "[ ]"
+        ],
         "activeFacettes": [
             "{ }"
         ],
-        "designer|userClassName": "ESFacetteStore",
-        "designer|userAlias": "ESFacetteStore",
         "autoLoad": false,
-        "autoSync": false,
+        "model": "contentsSearchModel",
         "remoteSort": true,
         "storeId": "ESFacetteStore",
-        "model": "contentsSearchModel",
+        "designer|userClassName": "ESFacetteStore",
+        "designer|userAlias": "ESFacetteStore",
         "pageSize": 50
     },
     "configAlternates": {
         "facettes": "array",
         "activeFacettes": "object"
     },
-    "id": "ExtBox1-ext-gen30052",
     "designerId": "b1e3cc2f-a43b-450e-8914-242d618f8402",
     "customConfigs": [
         {
@@ -56,7 +56,7 @@
             "designerId": "e2366063-d1c6-4f04-ab2f-4b2f47410971"
         },
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -73,16 +73,16 @@
             "designerId": "929a17ea-4cd0-4578-ba38-239fb1b1ee51",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader56",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader56"
                     },
                     "designerId": "7baab310-0fec-4681-af15-dfbcd8b8dac0",
                     "cn": [
@@ -211,16 +211,16 @@
             "designerId": "90ae1621-4e81-45b5-bcd6-d7446c6b92ff"
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter6",
                 "direction": "DESC",
-                "property": "score"
+                "property": "score",
+                "designer|userClassName": "MySorter6"
             },
             "designerId": "ae10a6c7-5d2e-4ceb-bbdd-1e6945fd0f15"
         }

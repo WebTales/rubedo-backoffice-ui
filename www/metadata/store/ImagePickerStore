@@ -6,22 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": false,
+        "model": "imageDataModel",
+        "storeId": "ImagePickerStore",
         "designer|userClassName": "ImagePickerStore",
         "designer|userAlias": "ImagePickerStore",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "ImagePickerStore",
-        "model": "imageDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen26682",
     "designerId": "d8f6752f-2ba3-491c-832a-e8456b095138",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -42,16 +40,16 @@
             "designerId": "9990b2ed-3895-4afc-aec8-5f94e72c9245",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader19",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader19"
                     },
                     "designerId": "e3928a1b-b489-4e0f-a80b-1b48cbc0f0fd"
                 }

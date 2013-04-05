@@ -1,26 +1,25 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "optionsLCGrid",
-        "designer|userAlias": "optionsLCGrid",
         "height": 250,
         "id": "optionsLCGrid",
         "margin": "20 0 0 0",
         "width": null,
+        "designer|userClassName": "optionsLCGrid",
+        "designer|userAlias": "optionsLCGrid",
         "autoScroll": true,
         "title": "Options",
         "store": null
     },
-    "id": "ExtBox1-ext-gen14846",
     "designerId": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -32,7 +31,7 @@
             "designerId": "75dc6c5f-c2ab-4503-a3ba-e4eb603a89aa"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -41,13 +40,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn16",
                 "dataIndex": "valeur",
-                "flex": 1,
-                "text": "Valeur"
+                "text": "Valeur",
+                "flex": 1
             },
             "designerId": "ee5447c9-3ff1-4cdc-8f11-2f8f5780c6ed",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "editor",
                         "type": "object"
@@ -62,7 +61,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -71,13 +70,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn16",
                 "dataIndex": "nom",
-                "flex": 1,
-                "text": "Nom"
+                "text": "Nom",
+                "flex": 1
             },
             "designerId": "8ff67939-dca1-4c6b-927e-08c5eae18848",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "editor",
                         "type": "object"
@@ -92,7 +91,7 @@
             ]
         },
         {
-            "type": "gridroweditingplugin",
+            "type": "Ext.grid.plugin.RowEditing",
             "reference": {
                 "name": "plugins",
                 "type": "array"
@@ -104,7 +103,7 @@
             "designerId": "7501fd76-69a6-4dae-bb1c-9b88bf2c7f17"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -117,7 +116,7 @@
             "designerId": "1a87ee7c-d1a8-4c6d-8a3a-d8898ba05b46",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -152,7 +151,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"

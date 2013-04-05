@@ -6,18 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "PanierDataJson",
-        "designer|userAlias": "panierDataJson",
         "autoLoad": false,
         "autoSync": true,
+        "model": "panierDataModel",
         "storeId": "PanierDataJson",
-        "model": "panierDataModel"
+        "designer|userClassName": "PanierDataJson",
+        "designer|userAlias": "panierDataJson"
     },
-    "id": "ExtBox1-ext-gen16233",
     "designerId": "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -38,29 +37,29 @@
             "designerId": "7f76c064-8ad8-4e13-864a-28cccc00111e",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader1",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader1"
                     },
                     "designerId": "44a1369b-822f-4a6c-b4e3-26cd6cfbb9c8"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter",
                         "nameProperty": null,
+                        "designer|userClassName": "MyJsonWriter",
                         "encode": true,
                         "root": "data"
                     },

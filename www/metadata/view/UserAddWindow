@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "UserAddWindow",
-        "designer|userAlias": "UserAddWindow",
         "height": 300,
         "id": "UserAddWindow",
         "width": 600,
+        "designer|userClassName": "UserAddWindow",
+        "designer|userAlias": "UserAddWindow",
         "layout": "fit",
         "title": "Ajouter des utilisateurs",
         "maximizable": true,
@@ -19,7 +19,6 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen29637",
     "designerId": "d21c61a7-09e5-467f-a13e-93a9854a919a",
     "cn": [
         {
@@ -43,10 +42,10 @@
                     "type": "string"
                 }
             ],
-            "masterInstanceId": "ExtBox1-ext-gen2236"
+            "masterInstanceId": "73e60547-6188-4b20-9a1a-e3f085be455a"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -59,7 +58,7 @@
             "designerId": "8f6a2d0c-8818-4262-9471-fde2393a18e8",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -72,7 +71,7 @@
                     "designerId": "bf8eb351-c547-433a-b956-77020f986d9a"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -80,8 +79,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton116",
                         "id": "userSelectionAddButton",
+                        "designer|userClassName": "MyButton116",
                         "text": "Ajouter ces utilisateurs au groupe séléctionné"
                     },
                     "designerId": "443ec294-ec6b-40e7-8e7f-7002e2951501"

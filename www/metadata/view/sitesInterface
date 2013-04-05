@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,23 +7,20 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "sitesInterface",
-        "designer|userAlias": "sitesInterface",
         "height": 449,
         "id": "sitesInterface",
         "width": 753,
+        "designer|userClassName": "sitesInterface",
+        "designer|userAlias": "sitesInterface",
         "layout": "hbox",
         "iconCls": "referencement_icon",
         "title": "Sites",
-        "constrainHeader": true,
-        "maximizable": false,
-        "minimizable": false
+        "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen10446",
     "designerId": "08c3601d-6da2-4434-bbf8-03968b08ffe4",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -32,14 +29,14 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar26",
                 "height": 30,
-                "itemId": "breadcrumb"
+                "itemId": "breadcrumb",
+                "designer|userClassName": "MyToolbar26"
             },
             "designerId": "324828ce-5810-4308-8b33-371d5f59c908",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -47,8 +44,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton88",
                         "itemId": "origine",
+                        "designer|userClassName": "MyButton88",
                         "iconCls": "referencement_icon",
                         "text": "Sites"
                     },
@@ -57,7 +54,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -65,13 +62,13 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
-                "designer|userClassName": "MyToolbar41",
-                "height": 64
+                "height": 64,
+                "designer|userClassName": "MyToolbar41"
             },
             "designerId": "41095a8f-523a-40a9-a8ed-85fa9e8bfb0b",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -80,8 +77,8 @@
                     "userConfig": {
                         "ACL": "write.ui.sites",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton155",
                         "id": "siteAddBtn",
+                        "designer|userClassName": "MyButton155",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -97,7 +94,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -106,9 +103,9 @@
                     "userConfig": {
                         "ACL": "write.ui.sites",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton156",
                         "disabled": true,
                         "id": "siteRemoveBtn",
+                        "designer|userClassName": "MyButton156",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -124,7 +121,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -133,9 +130,9 @@
                     "userConfig": {
                         "ACL": "write.ui.sites",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton165",
                         "disabled": true,
                         "id": "updateSiteBtn",
+                        "designer|userClassName": "MyButton165",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -151,7 +148,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -164,7 +161,7 @@
                     "designerId": "d517ce59-5eb0-4b20-ad39-5ffd097f4e65"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -173,8 +170,8 @@
                     "userConfig": {
                         "RApplication": "sites",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton250",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton250",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -191,7 +188,7 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -200,9 +197,9 @@
             "userConfig": {
                 "managesStore": false,
                 "layout|flex": null,
-                "designer|userClassName": "MyGridPanel21",
                 "id": "mainSitesGrid",
                 "width": 200,
+                "designer|userClassName": "MyGridPanel21",
                 "title": "",
                 "forceFit": true,
                 "store": "SitesJson"
@@ -220,7 +217,7 @@
             ],
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -232,7 +229,7 @@
                     "designerId": "de7f7da1-3e7f-4d67-ba0c-9a4ef387bb4e"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -279,7 +276,7 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -287,9 +284,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyForm30",
                 "disabled": true,
                 "id": "mainSiteProps",
+                "designer|userClassName": "MyForm30",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -297,7 +294,7 @@
             "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
             "cn": [
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -311,7 +308,7 @@
                     "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -320,16 +317,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField50",
-                                "name": "text",
                                 "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
+                                "name": "text",
                                 "allowBlank": false,
                                 "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                             },
                             "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -338,14 +335,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField45",
-                                "name": "alias",
                                 "fieldLabel": "Alias ",
-                                "labelWidth": 110
+                                "labelWidth": 110,
+                                "name": "alias"
                             },
                             "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424"
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -355,9 +352,9 @@
                                 "managesStore": true,
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox19",
-                                "name": "theme",
                                 "fieldLabel": "Theme ",
                                 "labelWidth": 110,
+                                "name": "theme",
                                 "displayField": "label",
                                 "store": "SiteThemesStore",
                                 "valueField": "text"
@@ -375,7 +372,7 @@
                             ]
                         },
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -384,14 +381,16 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox18",
-                                "name": "protocol",
                                 "fieldLabel": "Protocole *",
                                 "labelWidth": 110,
+                                "name": "protocol",
                                 "allowBlank": false,
                                 "editable": false,
                                 "forceSelection": true,
                                 "multiSelect": true,
-                                "store": "[\"HTTP\", \"HTTPS\"]"
+                                "store": [
+                                    "[\"HTTP\", \"HTTPS\"]"
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -399,7 +398,7 @@
                             "designerId": "401f0fd8-8f20-424a-a3d0-caf5f893f9b5"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -407,15 +406,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField52",
                                 "hidden": true,
-                                "name": "mainLanguage",
-                                "fieldLabel": "Langue principale "
+                                "designer|userClassName": "MyTextField52",
+                                "fieldLabel": "Langue principale ",
+                                "name": "mainLanguage"
                             },
                             "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -423,15 +422,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField53",
                                 "hidden": true,
-                                "name": "languages",
-                                "fieldLabel": "Langues "
+                                "designer|userClassName": "MyTextField53",
+                                "fieldLabel": "Langues ",
+                                "name": "languages"
                             },
                             "designerId": "ada022ae-82c9-415b-9926-ea61dd1649fe"
                         },
                         {
-                            "type": "textareafield",
+                            "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -439,15 +438,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea8",
                                 "hidden": true,
-                                "name": "filter",
-                                "fieldLabel": "Filtre "
+                                "designer|userClassName": "MyTextArea8",
+                                "fieldLabel": "Filtre ",
+                                "name": "filter"
                             },
                             "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -456,14 +455,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField70",
-                                "name": "title",
                                 "fieldLabel": "Titre par défaut",
-                                "labelWidth": 110
+                                "labelWidth": 110,
+                                "name": "title"
                             },
                             "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173"
                         },
                         {
-                            "type": "textareafield",
+                            "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -472,15 +471,15 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextArea5",
-                                "name": "description",
                                 "fieldLabel": "Description par défaut",
                                 "labelWidth": 110,
+                                "name": "description",
                                 "maxLength": 250
                             },
                             "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -489,12 +488,12 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField71",
+                                "fieldLabel": "Auteur par défaut",
+                                "labelWidth": 110,
                                 "name": "author",
                                 "value": [
                                     "\"Powered by Rubedo\""
-                                ],
-                                "fieldLabel": "Auteur par défaut",
-                                "labelWidth": 110
+                                ]
                             },
                             "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77"
                         },
@@ -546,9 +545,9 @@
                                     "    createNewOnBlur:true,\r",
                                     "    pinList:false\r",
                                     "});\r",
-                                    "abstractcomponent.add(tagPicker);\r",
-                                    "abstractcomponent.add(homePageSelector);\r",
-                                    "abstractcomponent.add(singlePageSelector);"
+                                    "component.add(tagPicker);\r",
+                                    "component.add(homePageSelector);\r",
+                                    "component.add(singlePageSelector);"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -568,20 +567,20 @@
                                 "layout|anchor": "100%"
                             },
                             "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
-                            "masterInstanceId": "ExtBox1-ext-gen46360"
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
                     ]
                 },
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet10",
                         "hidden": true,
+                        "designer|userClassName": "MyFieldSet10",
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Messagerie"
@@ -589,7 +588,7 @@
                     "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
                     "cn": [
                         {
-                            "type": "checkboxfield",
+                            "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -598,14 +597,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox4",
-                                "name": "activeMessagery",
                                 "fieldLabel": "Activé ",
+                                "name": "activeMessagery",
                                 "boxLabel": ""
                             },
                             "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -614,13 +613,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField54",
-                                "name": "SMTPServer",
-                                "fieldLabel": "Serveur SMTP "
+                                "fieldLabel": "Serveur SMTP ",
+                                "name": "SMTPServer"
                             },
                             "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e"
                         },
                         {
-                            "type": "numberfield",
+                            "type": "Ext.form.field.Number",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -629,15 +628,15 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField2",
-                                "name": "SMTPPort",
                                 "fieldLabel": "Port SMTP ",
+                                "name": "SMTPPort",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
                             "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -646,13 +645,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField56",
-                                "name": "SMTPLogin",
-                                "fieldLabel": "Login SMTP "
+                                "fieldLabel": "Login SMTP ",
+                                "name": "SMTPLogin"
                             },
                             "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -661,14 +660,14 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField55",
-                                "inputType": "password",
+                                "fieldLabel": "Mot de passe SMTP ",
                                 "name": "SMTPPassword",
-                                "fieldLabel": "Mot de passe SMTP "
+                                "inputType": "password"
                             },
                             "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -677,8 +676,8 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField57",
-                                "name": "defaultEmail",
                                 "fieldLabel": "E-mail par défaut ",
+                                "name": "defaultEmail",
                                 "vtype": "email"
                             },
                             "designerId": "89e663aa-7d5a-4581-952e-6d9e80784a03"
@@ -686,15 +685,15 @@
                     ]
                 },
                 {
-                    "type": "fieldset",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet14",
                         "hidden": true,
+                        "designer|userClassName": "MyFieldSet14",
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Accessibilité"
@@ -702,7 +701,7 @@
                     "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
                     "cn": [
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -711,9 +710,11 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox17",
-                                "name": "accessibilityLevel",
                                 "fieldLabel": "Niveau d'accessibilité ",
-                                "store": "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
+                                "name": "accessibilityLevel",
+                                "store": [
+                                    "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -721,7 +722,7 @@
                             "designerId": "50ee0abb-5872-495d-acb7-7f37ec72c674"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -730,13 +731,13 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField58",
-                                "name": "opquastLogin",
-                                "fieldLabel": "Login Opquast "
+                                "fieldLabel": "Login Opquast ",
+                                "name": "opquastLogin"
                             },
                             "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -745,9 +746,9 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField59",
-                                "inputType": "password",
+                                "fieldLabel": "Mot de passe Optquast ",
                                 "name": "opquastPassword",
-                                "fieldLabel": "Mot de passe Optquast "
+                                "inputType": "password"
                             },
                             "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4"
                         }
@@ -766,7 +767,7 @@
                 "layout|flex": null
             },
             "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -779,10 +780,10 @@
                 "layout|flex": null
             },
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -791,15 +792,15 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar27",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null
+                "width": null,
+                "designer|userClassName": "MyToolbar27"
             },
             "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
             "cn": [
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -807,9 +808,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyImg2",
                         "height": 45,
                         "width": 48,
+                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
@@ -825,7 +826,7 @@
                                 "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
-                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/globe_computer.png');"
+                                    "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/globe_computer.png');"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -835,7 +836,7 @@
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -843,13 +844,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyContainer9",
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "designer|userClassName": "MyContainer9"
                     },
                     "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "tpl",
                                 "type": "object"

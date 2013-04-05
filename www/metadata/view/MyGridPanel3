@@ -1,22 +1,21 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "VersionsGrid",
         "designer|userClassName": "MyGridPanel3",
         "designer|userAlias": "mygridpanel3",
-        "id": "VersionsGrid",
         "title": null,
         "store": "VersionsDataJson"
     },
-    "id": "ExtBox1-ext-gen15897",
     "designerId": "3c30f443-ab91-4ef6-912a-0d56b07c5fc6",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -28,7 +27,7 @@
             "designerId": "75273763-d757-4a34-b5ae-88575c8acfad"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -42,7 +41,7 @@
             "designerId": "541b6899-09a8-4e4f-9cfa-021638da40ab"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -56,7 +55,7 @@
             "designerId": "24b88560-e1e7-4e71-a71c-814635132305"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -70,7 +69,7 @@
             "designerId": "d7c8bf6e-5a20-4874-a7e2-8558ea4a82ee"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"

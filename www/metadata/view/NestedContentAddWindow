@@ -1,17 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "NestedContentAddWindow",
-        "designer|userAlias": "NestedContentAddWindow",
-        "floating": true,
         "height": 500,
         "id": "NestedContentAddWindow",
         "width": 900,
+        "designer|userClassName": "NestedContentAddWindow",
+        "designer|userAlias": "NestedContentAddWindow",
         "resizable": [
             "false"
         ],
@@ -22,11 +21,10 @@
         "maximizable": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen18656",
     "designerId": "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -39,7 +37,7 @@
             "designerId": "a241ddd5-fdd2-44f9-a3ee-4edd5307ce46",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -52,7 +50,7 @@
                     "designerId": "ade30501-96ce-4ec5-af84-97fcb1bdb130"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -62,8 +60,8 @@
                         "isUpdate": false,
                         "layout|flex": null,
                         "layout|margins": null,
-                        "designer|userClassName": "MyButton49",
                         "id": "nestedContentRecordBtn",
+                        "designer|userClassName": "MyButton49",
                         "iconCls": "save",
                         "text": "Enregistrer"
                     },
@@ -82,16 +80,16 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm3",
                 "height": 101,
                 "id": "nestedContentsFieldBox",
+                "designer|userClassName": "MyForm3",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -99,22 +97,22 @@
             "designerId": "b1dbf2f3-cbdd-4601-ac89-4f82627a7120",
             "cn": [
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "padding": 10,
                         "designer|userClassName": "ChampTC",
                         "designer|userAlias": "ChampTC",
-                        "padding": 10,
                         "layout": "anchor"
                     },
                     "designerId": "f849470d-bac7-40d0-99c6-1003a109c5e8",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -122,30 +120,30 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "90%",
-                                "designer|userClassName": "MyTextField1",
                                 "style": [
                                     "{float:left}"
                                 ],
-                                "name": "text",
+                                "designer|userClassName": "MyTextField1",
                                 "fieldLabel": "Titre ",
+                                "name": "text",
                                 "allowBlank": false
                             },
                             "designerId": "aa34c731-a68c-4407-9fb5-4ace47e8fe8f"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton17",
                                 "itemId": "helpBouton",
                                 "margin": null,
                                 "style": [
                                     "{float:right;}"
                                 ],
+                                "designer|userClassName": "MyButton17",
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,
@@ -162,22 +160,22 @@
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "padding": 10,
                         "designer|userClassName": "ChampTC",
                         "designer|userAlias": "ChampTC",
-                        "padding": 10,
                         "layout": "anchor"
                     },
                     "designerId": "9167fdd6-7b9a-4b97-964a-55286fd269a2",
                     "cn": [
                         {
-                            "type": "textareafield",
+                            "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -185,30 +183,30 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "90%",
-                                "designer|userClassName": "MyTextArea7",
                                 "style": [
                                     "{float:left}"
                                 ],
-                                "name": "summary",
+                                "designer|userClassName": "MyTextArea7",
                                 "fieldLabel": "Résumé",
-                                "labelSeparator": " "
+                                "labelSeparator": " ",
+                                "name": "summary"
                             },
                             "designerId": "cff6bbba-dcd1-40f8-8a63-6baeb671c44c"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton17",
                                 "itemId": "helpBouton",
                                 "margin": null,
                                 "style": [
                                     "{float:right;}"
                                 ],
+                                "designer|userClassName": "MyButton17",
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,

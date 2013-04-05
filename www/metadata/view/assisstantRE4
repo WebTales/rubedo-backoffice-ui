@@ -1,5 +1,5 @@
 {
-    "type": "form",
+    "type": "Ext.form.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,14 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "etape": "3",
+        "id": "assisstantRE4",
         "designer|userClassName": "assisstantRE4",
         "designer|userAlias": "assisstantRE4",
-        "id": "assisstantRE4",
         "autoScroll": true,
         "bodyPadding": 10,
         "title": "Choix des critères sur les champs"
     },
-    "id": "ExtBox1-ext-gen5907",
     "designerId": "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
     "customConfigs": [
         {
@@ -25,7 +24,7 @@
     ],
     "cn": [
         {
-            "type": "combobox",
+            "type": "Ext.form.field.ComboBox",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -33,14 +32,14 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "90%",
-                "designer|userClassName": "MyComboBox3",
                 "id": "createurReglesChampsAR",
                 "style": [
                     "{float: left}"
                 ],
-                "submitValue": false,
+                "designer|userClassName": "MyComboBox3",
                 "fieldLabel": "Ajouter une régle sur ",
                 "labelWidth": 140,
+                "submitValue": false,
                 "editable": false,
                 "displayField": "nom",
                 "forceSelection": true,
@@ -51,18 +50,18 @@
             "designerId": "ba90af8e-da88-412f-90da-dc228f2d83ac"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton73",
                 "id": "boutonCreateurReglesChampsAR",
                 "style": [
                     "{float:right}"
                 ],
+                "designer|userClassName": "MyButton73",
                 "iconCls": "add",
                 "text": ""
             },

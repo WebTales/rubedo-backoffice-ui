@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "newMTWindow",
-        "designer|userAlias": "newMTWindow",
         "height": 137,
         "id": "newMTWindow",
         "width": 334,
+        "designer|userClassName": "newMTWindow",
+        "designer|userAlias": "newMTWindow",
         "resizable": false,
         "layout": "fit",
         "iconCls": "mediaTypes",
@@ -21,11 +21,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen33845",
     "designerId": "eaea8fd3-deb9-427e-8709-b7a7a3a32c08",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -39,7 +38,7 @@
             "designerId": "c237af45-1ca4-4909-a5f9-23342d5e08b0",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -48,14 +47,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField61",
-                        "name": "type",
                         "fieldLabel": "Nom ",
+                        "name": "type",
                         "allowBlank": false
                     },
                     "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320"
                 },
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -64,12 +63,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyComboBox22",
-                        "name": "mainFileType",
                         "fieldLabel": "Type de fichier principal",
+                        "name": "mainFileType",
                         "allowBlank": false,
                         "editable": false,
                         "forceSelection": true,
-                        "store": "[\"Image\", \"Document\", \"Video\", \"Animation\", \"Audio\"]"
+                        "store": [
+                            "[\"Image\", \"Document\", \"Video\", \"Animation\", \"Audio\"]"
+                        ]
                     },
                     "configAlternates": {
                         "store": "array"
@@ -77,7 +78,7 @@
                     "designerId": "caa9f4cf-fa7e-4fd1-be29-bd1e9481d131"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -85,8 +86,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton186",
                         "id": "createNewMTBtn",
+                        "designer|userClassName": "MyButton186",
                         "text": "Créer un nouveau type de média"
                     },
                     "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23"

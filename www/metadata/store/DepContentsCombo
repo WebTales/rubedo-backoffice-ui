@@ -1,16 +1,15 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DepContentsCombo",
-        "designer|userAlias": "DepContentsCombo",
+        "model": "typesContenusDataModel",
         "storeId": "DepContentsCombo",
-        "model": "typesContenusDataModel"
+        "designer|userClassName": "DepContentsCombo",
+        "designer|userAlias": "DepContentsCombo"
     },
-    "id": "ExtBox1-ext-gen27387",
     "designerId": "b4bbd262-e72b-4675-8908-02414ab69420"
 }

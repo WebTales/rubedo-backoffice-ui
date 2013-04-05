@@ -1,15 +1,15 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "RichTextConfigurator",
-        "designer|userAlias": "RichTextConfigurator",
         "height": 360,
         "width": 632,
+        "designer|userClassName": "RichTextConfigurator",
+        "designer|userAlias": "RichTextConfigurator",
         "resizable": false,
         "layout": "fit",
         "title": "Editeur de texte riche",
@@ -19,7 +19,6 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen58534",
     "designerId": "e0d081a5-ccca-483c-8f7a-43232eebbc43",
     "cn": [
         {
@@ -31,8 +30,8 @@
             "codeClass": null,
             "userConfig": {
                 "CKETBConfig": "Standard",
-                "name": "html",
-                "hideLabel": true
+                "hideLabel": true,
+                "name": "html"
             },
             "designerId": "f821e9a2-52eb-4439-825f-38e50bf11ca2",
             "customConfigs": [
@@ -42,10 +41,10 @@
                     "type": "string"
                 }
             ],
-            "masterInstanceId": "ExtBox1-ext-gen18078"
+            "masterInstanceId": "d307504b-480a-4d03-adf2-dc2c18432b4f"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -58,7 +57,7 @@
             "designerId": "0fb16d8f-0f6a-4873-83b5-cc06ca7e82b3",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -71,7 +70,7 @@
                     "designerId": "168f8a95-dc73-4c77-a03d-b09a7bc8e411"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -79,8 +78,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton287",
                         "id": "richTextConfiguratorSubmit",
+                        "designer|userClassName": "MyButton287",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },

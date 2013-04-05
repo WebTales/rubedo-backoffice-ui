@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,18 +8,17 @@
     "userConfig": {
         "ACL": "read.ui.pages",
         "container|align": "stretch",
-        "designer|userClassName": "contributionPrevisualisation",
-        "designer|userAlias": "contributionPrevisualisation",
         "height": 548,
         "id": "contributionPrevisualisation",
         "width": 1200,
+        "designer|userClassName": "contributionPrevisualisation",
+        "designer|userAlias": "contributionPrevisualisation",
         "layout": "hbox",
         "iconCls": "personalize",
         "title": "Prévisualisation",
         "constrainHeader": true,
         "maximized": true
     },
-    "id": "ExtBox1-ext-gen5855",
     "designerId": "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
     "customConfigs": [
         {
@@ -37,7 +36,7 @@
             },
             "codeClass": null,
             "designerId": "f0175ec0-5a4b-4e87-b65a-a6be595ad487",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -47,10 +46,10 @@
             },
             "codeClass": null,
             "designerId": "79461449-0ebc-4168-8d4e-b6c8c3487fa8",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "treepanel",
+            "type": "Ext.tree.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -58,9 +57,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyTreePanel2",
                 "id": "previewPageTree",
                 "width": 225,
+                "designer|userClassName": "MyTreePanel2",
                 "collapseDirection": "left",
                 "collapsible": true,
                 "title": "Sélecteur de pages",
@@ -70,7 +69,7 @@
             "designerId": "e8970f61-6672-4bea-83c1-2eb06de4184b",
             "cn": [
                 {
-                    "type": "treeview",
+                    "type": "Ext.tree.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -82,7 +81,7 @@
                     "designerId": "0bb850f9-ae8a-4f9a-b976-b10ddb990c6c"
                 },
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -95,7 +94,7 @@
                     "designerId": "8ac0ebfb-9f90-40b6-86ed-3f73f2aa3a5b",
                     "cn": [
                         {
-                            "type": "combobox",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -104,8 +103,8 @@
                             "userConfig": {
                                 "managesStore": true,
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyComboBox12",
                                 "id": "previewSitesCombo",
+                                "designer|userClassName": "MyComboBox12",
                                 "fieldLabel": "Site ",
                                 "labelWidth": 40,
                                 "editable": false,
@@ -131,7 +130,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -139,14 +138,14 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyPanel52",
                 "id": "contribPreviewMain",
+                "designer|userClassName": "MyPanel52",
                 "layout": "fit"
             },
             "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7",
             "cn": [
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -159,7 +158,7 @@
                     "designerId": "26fe1274-5cf3-4d80-bb54-b0d19790ecfd",
                     "cn": [
                         {
-                            "type": "cyclebutton",
+                            "type": "Ext.button.Cycle",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -167,9 +166,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyCycleButton",
                                 "id": "previewDeviceCombo",
                                 "margin": "0 20 0 0",
+                                "designer|userClassName": "MyCycleButton",
                                 "arrowAlign": "bottom",
                                 "scale": "large",
                                 "showText": true
@@ -177,23 +176,22 @@
                             "designerId": "bf4ac652-8888-4e80-93f2-78769c111b91",
                             "cn": [
                                 {
-                                    "type": "menu",
+                                    "type": "Ext.menu.Menu",
                                     "reference": {
                                         "name": "menu",
                                         "type": "object"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyMenu5",
                                         "styleHtmlContent": true,
                                         "width": null,
-                                        "plain": false,
+                                        "designer|userClassName": "MyMenu5",
                                         "showSeparator": false
                                     },
                                     "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
                                     "cn": [
                                         {
-                                            "type": "menucheckitem",
+                                            "type": "Ext.menu.CheckItem",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -201,8 +199,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "desktop",
-                                                "designer|userClassName": "MyCheckItem",
                                                 "height": null,
+                                                "designer|userClassName": "MyCheckItem",
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
                                                 "plain": true,
@@ -218,7 +216,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "menucheckitem",
+                                            "type": "Ext.menu.CheckItem",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -241,7 +239,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "menucheckitem",
+                                            "type": "Ext.menu.CheckItem",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -264,7 +262,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "menucheckitem",
+                                            "type": "Ext.menu.CheckItem",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -287,7 +285,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "menucheckitem",
+                                            "type": "Ext.menu.CheckItem",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -334,7 +332,7 @@
                             ]
                         },
                         {
-                            "type": "tbseparator",
+                            "type": "Ext.toolbar.Separator",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -347,7 +345,7 @@
                             "designerId": "5792268c-d60e-48f5-a285-e97b20db6b26"
                         },
                         {
-                            "type": "checkboxfield",
+                            "type": "Ext.form.field.Checkbox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -355,9 +353,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyCheckbox6",
                                 "id": "advancedPreviewDraftField",
                                 "margin": "0 20 0 0",
+                                "designer|userClassName": "MyCheckbox6",
                                 "fieldLabel": "Mode brouillon",
                                 "labelWidth": 90,
                                 "boxLabel": "",
@@ -366,7 +364,7 @@
                             "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9"
                         },
                         {
-                            "type": "datefield",
+                            "type": "Ext.form.field.Date",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -374,15 +372,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyDateField6",
                                 "id": "advancedPreviewDateField",
+                                "designer|userClassName": "MyDateField6",
                                 "fieldLabel": "Date",
                                 "labelWidth": 40
                             },
                             "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079"
                         },
                         {
-                            "type": "tbfill",
+                            "type": "Ext.toolbar.Fill",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -395,7 +393,7 @@
                             "designerId": "4ba7bf43-f812-44c1-a0d2-8ff0d45e1078"
                         },
                         {
-                            "type": "tbseparator",
+                            "type": "Ext.toolbar.Separator",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -408,7 +406,7 @@
                             "designerId": "2baa604d-0e06-4a33-9d2a-cb5738a2d11c"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -416,8 +414,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton220",
                                 "id": "advancedPreviewPageRefresh",
+                                "designer|userClassName": "MyButton220",
                                 "iconCls": "refresh_big",
                                 "scale": "large",
                                 "text": "Actualiser"

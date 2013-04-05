@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "DAMController",
         "designer|userAlias": "DAMController"
     },
-    "id": "ExtBox1-ext-gen19013",
     "designerId": "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
     "cn": [
         {
@@ -76,10 +75,10 @@
                 "designer|userClassName": "selectDAMType",
                 "fn": "selectDAMType",
                 "implHandler": [
-                    "if (Ext.isEmpty(selections)){\r",
+                    "if (Ext.isEmpty(selected)){\r",
                     "    this.resetInterfaceNoSelect();\r",
                     "} else {\r",
-                    "    this.resetInterfaceSelect(selections[0]);\r",
+                    "    this.resetInterfaceSelect(selected[0]);\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -316,7 +315,7 @@
                     "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
                     "Ext.getCmp(\"DAMUpdateBtn\").enable();\r",
                     "Ext.getCmp(\"DAMROBtn\").enable();\r",
-                    "if (Ext.isEmpty(selections)) {\r",
+                    "if (Ext.isEmpty(selected)) {\r",
                     "\r",
                     "    Ext.getCmp(\"DAMDeleteBtn\").disable();\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
@@ -325,15 +324,15 @@
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
                     "\r",
-                    "} else if (selections.length==1) {\r",
-                    "    var customMeta = \"<b> \"+selections[0].get(\"text\")+\"</b></br><b> Dernière modification : </b>\"+Ext.Date.format(selections[0].get(\"lastUpdateTime\"), 'd-m-Y')+\"<b> Auteur : </b>\"+selections[0].get(\"author\");\r",
+                    "} else if (selected.length==1) {\r",
+                    "    var customMeta = \"<b> \"+selected[0].get(\"text\")+\"</b></br><b> Dernière modification : </b>\"+Ext.Date.format(selected[0].get(\"lastUpdateTime\"), 'd-m-Y')+\"<b> Auteur : </b>\"+selected[0].get(\"author\");\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
                     "    Ext.getCmp(\"DAMPPBtnGroup\").enable();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
-                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc(\"dam/get-thumbnail?id=\"+selections[0].get(\"id\"));\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc(\"dam/get-thumbnail?id=\"+selected[0].get(\"id\"));\r",
                     "} else {\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
-                    "    var customMeta = \"<b> \"+selections.length+\" médias\"+ \"</b>\";\r",
+                    "    var customMeta = \"<b> \"+selected.length+\" médias\"+ \"</b>\";\r",
                     "    Ext.getCmp(\"DAMPPBtnGroup\").disable();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",

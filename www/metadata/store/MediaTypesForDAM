@@ -8,19 +8,17 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "MediaTypes",
+        "autoLoad": false,
+        "model": "mediaTypeModel",
+        "storeId": "MediaTypesForDAM",
         "designer|userClassName": "MediaTypesForDAM",
         "designer|userAlias": "MediaTypesForDAM",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "MediaTypesForDAM",
-        "model": "mediaTypeModel",
         "data": null,
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen11529",
     "designerId": "43314b2e-fa01-4f52-948b-95a4ff336891",
     "customConfigs": [
         {
@@ -36,7 +34,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -54,16 +52,16 @@
             "designerId": "02e3cd70-bd83-4434-a859-973be9590300",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "9331dde6-1142-4835-a8e9-a90af65f0da0"
                 }

@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,11 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "DesktopCustomizeWindow",
-        "designer|userAlias": "DesktopCustomizeWindow",
         "height": 450,
         "id": "DesktopCustomizeWindow",
         "width": 600,
+        "designer|userClassName": "DesktopCustomizeWindow",
+        "designer|userAlias": "DesktopCustomizeWindow",
         "resizable": [
             "false"
         ],
@@ -19,28 +19,26 @@
         "iconCls": "personalize",
         "title": "Personnalisation du bureau",
         "constrainHeader": true,
-        "maximizable": false,
         "minimizable": true
     },
-    "id": "ExtBox1-ext-gen16204",
     "designerId": "021dc961-e2fd-4e63-afd9-8829737e3813",
     "cn": [
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyContainer18",
                 "width": 150,
+                "designer|userClassName": "MyContainer18",
                 "layout": "accordion"
             },
             "designerId": "ed7cfa8f-e792-4d4d-a78e-e6a596c08fff",
             "cn": [
                 {
-                    "type": "gridpanel",
+                    "type": "Ext.grid.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -48,8 +46,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "managesStore": true,
-                        "designer|userClassName": "MyGridPanel15",
                         "id": "wallpaperGrid",
+                        "designer|userClassName": "MyGridPanel15",
                         "collapsed": false,
                         "title": "Fond d'écran",
                         "store": "WallpapersDataJson"
@@ -67,7 +65,7 @@
                     ],
                     "cn": [
                         {
-                            "type": "gridview",
+                            "type": "Ext.grid.View",
                             "reference": {
                                 "name": "viewConfig",
                                 "type": "object"
@@ -79,7 +77,7 @@
                             "designerId": "b4a054a2-490f-4ccc-92d0-b22fbc3f742b"
                         },
                         {
-                            "type": "gridcolumn",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
@@ -88,15 +86,15 @@
                             "userConfig": {
                                 "designer|userClassName": "MyColumn24",
                                 "dataIndex": "name",
-                                "flex": 1,
-                                "text": "Nom"
+                                "text": "Nom",
+                                "flex": 1
                             },
                             "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd"
                         }
                     ]
                 },
                 {
-                    "type": "gridpanel",
+                    "type": "Ext.grid.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -104,8 +102,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "managesStore": true,
-                        "designer|userClassName": "MyGridPanel16",
                         "id": "themeGrid",
+                        "designer|userClassName": "MyGridPanel16",
                         "collapsed": true,
                         "title": "Thèmes",
                         "store": "ThemesDataJson"
@@ -123,7 +121,7 @@
                     ],
                     "cn": [
                         {
-                            "type": "gridview",
+                            "type": "Ext.grid.View",
                             "reference": {
                                 "name": "viewConfig",
                                 "type": "object"
@@ -135,7 +133,7 @@
                             "designerId": "a2e630a6-e060-4b2b-aeaf-e56aa3f9da0e"
                         },
                         {
-                            "type": "gridcolumn",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
@@ -144,23 +142,23 @@
                             "userConfig": {
                                 "designer|userClassName": "MyColumn2",
                                 "dataIndex": "name",
-                                "flex": 1,
-                                "text": "Nom"
+                                "text": "Nom",
+                                "flex": 1
                             },
                             "designerId": "29e86ca0-e02b-4343-9670-5da548459531"
                         }
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel36",
                         "id": "accessibilityOptionsPanel",
+                        "designer|userClassName": "MyPanel36",
                         "title": "Accessibilité"
                     },
                     "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f"
@@ -168,7 +166,7 @@
             ]
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -176,8 +174,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyContainer19",
                 "id": "DesktopCustomizeMainArea",
+                "designer|userClassName": "MyContainer19",
                 "layout": "fit"
             },
             "designerId": "4a737d26-c7f2-4aa4-8bc1-aa26bec7529c",
@@ -190,7 +188,7 @@
                     },
                     "codeClass": null,
                     "designerId": "24b761b6-c50f-4c67-9ee2-4b9c3e22abba",
-                    "masterInstanceId": "ExtBox1-ext-gen27152"
+                    "masterInstanceId": "b1d4214e-b893-4a6c-89f4-d297c8733b26"
                 }
             ]
         }

@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "UsersController",
         "designer|userAlias": "UsersController"
     },
-    "id": "ExtBox1-ext-gen18283",
     "designerId": "d52b97aa-6ec0-4868-8574-1e35f4b86c88",
     "cn": [
         {
@@ -552,7 +551,7 @@
                 "designer|userClassName": "openUserSettings",
                 "fn": "openUserSettings",
                 "implHandler": [
-                    "if (abstractcomponent.isWindow) {\r",
+                    "if (component.isWindow) {\r",
                     "    var myRecord= Ext.getStore(\"CurrentUserDataStore\").getRange()[0];\r",
                     "    Ext.getCmp(\"userInfoDisplay\").getForm().loadRecord(myRecord);\r",
                     "    if (Ext.isEmpty(myRecord.get(\"photo\"))) {\r",
@@ -709,7 +708,7 @@
                 "designer|userClassName": "onUserAdminWindowRender",
                 "fn": "onUserAdminWindowRender",
                 "implHandler": [
-                    "if (abstractcomponent.isXType(\"window\")){\r",
+                    "if (component.isXType(\"window\")){\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").load();\r",
                     "    Ext.getStore(\"GroupsComboStore\").load();\r",
                     "}"

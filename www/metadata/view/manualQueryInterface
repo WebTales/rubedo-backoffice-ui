@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,16 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "manualQueryInterface",
-        "designer|userAlias": "manualQueryInterface",
         "height": 401,
         "id": "manualQueryInterface",
         "width": 1064,
+        "designer|userClassName": "manualQueryInterface",
+        "designer|userAlias": "manualQueryInterface",
         "layout": "hbox",
         "title": "Requête manuelle",
         "constrain": true
     },
-    "id": "ExtBox1-ext-gen39120",
     "designerId": "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
     "cn": [
         {
@@ -30,7 +29,7 @@
                 "layout|flex": 1
             },
             "designerId": "8d65fe65-7d83-4141-b24b-48375303cb09",
-            "masterInstanceId": "ExtBox1-ext-gen35730",
+            "masterInstanceId": "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
             "cn": [
                 {
                     "type": "basiceventbinding",
@@ -43,7 +42,7 @@
                         "designer|userClassName": "onManualQueryLeftGridSelectionChange",
                         "fn": "onManualQueryLeftGridSelectionChange",
                         "implHandler": [
-                            "if (Ext.isEmpty(selections)){\r",
+                            "if (Ext.isEmpty(selected)){\r",
                             "    Ext.getCmp(\"manualQueryAddRecordBtn\").disable();\r",
                             "} else {\r",
                             "    Ext.getCmp(\"manualQueryAddRecordBtn\").enable();\r",
@@ -57,7 +56,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -66,14 +65,14 @@
             "userConfig": {
                 "layout|flex": null,
                 "dock": null,
-                "designer|userClassName": "MyToolbar59",
                 "height": 50,
+                "designer|userClassName": "MyToolbar59",
                 "vertical": true
             },
             "designerId": "aa5a151b-f0df-44be-9850-e5f20df886ec",
             "cn": [
                 {
-                    "type": "tbspacer",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -86,7 +85,7 @@
                     "designerId": "9a3cd3e0-f4ed-4265-9acd-a424c2ff7374"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -94,9 +93,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton235",
                         "disabled": true,
                         "id": "manualQueryAddRecordBtn",
+                        "designer|userClassName": "MyButton235",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "text": "Ajouter"
@@ -126,7 +125,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -134,9 +133,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton236",
                         "disabled": true,
                         "id": "manualQueryRemoveRecordBtn",
+                        "designer|userClassName": "MyButton236",
                         "iconCls": "arrow_left",
                         "text": "Enlever"
                     },
@@ -165,7 +164,7 @@
                     ]
                 },
                 {
-                    "type": "tbspacer",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -180,7 +179,7 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -188,9 +187,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyGridPanel32",
                 "id": "manualQueryRightGridGrid",
                 "itemId": null,
+                "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "store": "ContentMQueryStore"
             },
@@ -200,7 +199,7 @@
             "designerId": "533f4f25-12a6-4886-b1ae-d729d8b1fde4",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -212,7 +211,7 @@
                     "designerId": "1aed84d6-e076-4e81-9f24-fb98cf17776d",
                     "cn": [
                         {
-                            "type": "griddragdropplugin",
+                            "type": "Ext.grid.plugin.DragDrop",
                             "reference": {
                                 "name": "plugins",
                                 "type": "array"
@@ -226,7 +225,7 @@
                     ]
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -236,8 +235,8 @@
                         "filter": true,
                         "designer|userClassName": "MyColumn5",
                         "dataIndex": "text",
-                        "flex": 1,
-                        "text": "Titre"
+                        "text": "Titre",
+                        "flex": 1
                     },
                     "configAlternates": {
                         "filter": "boolean"
@@ -288,7 +287,7 @@
                     ]
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -305,8 +304,8 @@
                         ],
                         "designer|userClassName": "MyColumn53",
                         "dataIndex": "typeId",
-                        "flex": 1,
-                        "text": "Type"
+                        "text": "Type",
+                        "flex": 1
                     },
                     "configAlternates": {
                         "filter": "object"
@@ -352,7 +351,7 @@
                     ]
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -371,8 +370,8 @@
                         ],
                         "designer|userClassName": "MyColumn6",
                         "dataIndex": "status",
-                        "flex": 1,
-                        "text": "Etat"
+                        "text": "Etat",
+                        "flex": 1
                     },
                     "configAlternates": {
                         "filter": "object"
@@ -420,7 +419,7 @@
                     ]
                 },
                 {
-                    "type": "booleancolumn",
+                    "type": "Ext.grid.column.Boolean",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -436,8 +435,8 @@
                             "            ]\r",
                             "}"
                         ],
-                        "designer|userClassName": "MyBooleanColumn3",
                         "width": 60,
+                        "designer|userClassName": "MyBooleanColumn3",
                         "dataIndex": "online",
                         "text": "En ligne",
                         "falseText": "Non",
@@ -456,7 +455,7 @@
                     ]
                 },
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -469,7 +468,7 @@
                     "designerId": "196df3b1-cb19-48ed-849e-60bb20f182c9",
                     "cn": [
                         {
-                            "type": "tbfill",
+                            "type": "Ext.toolbar.Fill",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -482,7 +481,7 @@
                             "designerId": "a9769fc6-da1e-4f9b-89a2-bad14bb62b68"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -490,8 +489,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton239",
                                 "id": "manualQuerySaveBtn",
+                                "designer|userClassName": "MyButton239",
                                 "iconCls": "ouiSpetit",
                                 "text": "Enregistrer la requête"
                             },
@@ -553,7 +552,7 @@
                         "designer|userClassName": "onManualQueryRightGridGridSelectionChange",
                         "fn": "onManualQueryRightGridGridSelectionChange",
                         "implHandler": [
-                            "if (Ext.isEmpty(selections)){\r",
+                            "if (Ext.isEmpty(selected)){\r",
                             "    Ext.getCmp(\"manualQueryRemoveRecordBtn\").disable();\r",
                             "\r",
                             "} else {\r",
@@ -579,7 +578,7 @@
                 "layout|flex": null
             },
             "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
             "type": "basiceventbinding",
@@ -593,16 +592,16 @@
                 "fn": "onManualQueryInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"TCNDepComboCS\").load();\r",
-                    "if (abstractcomponent.editorMode){\r",
-                    "    abstractcomponent.getComponent(2).getStore().getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(abstractcomponent.initialQuery)+\"}]\";\r",
-                    "    abstractcomponent.getComponent(2).getStore().addListener(\"load\", function(){\r",
-                    "        abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
-                    "        abstractcomponent.getComponent(0).getStore().load();\r",
+                    "if (component.editorMode){\r",
+                    "    component.getComponent(2).getStore().getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(component.initialQuery)+\"}]\";\r",
+                    "    component.getComponent(2).getStore().addListener(\"load\", function(){\r",
+                    "        component.getComponent(0).getStore().clearFilter(true);\r",
+                    "        component.getComponent(0).getStore().load();\r",
                     "    }, this, {single:true});\r",
-                    "        abstractcomponent.getComponent(2).getStore().load();\r",
+                    "        component.getComponent(2).getStore().load();\r",
                     "    } else {\r",
-                    "        abstractcomponent.getComponent(0).getStore().clearFilter(true);\r",
-                    "        abstractcomponent.getComponent(0).getStore().load();\r",
+                    "        component.getComponent(0).getStore().clearFilter(true);\r",
+                    "        component.getComponent(0).getStore().load();\r",
                     "    }"
                 ],
                 "name": "render",

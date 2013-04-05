@@ -8,21 +8,20 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "contents",
-        "designer|userClassName": "PageDisplayedContentsStore",
-        "designer|userAlias": "PageDisplayedContentsStore",
         "autoLoad": false,
         "autoSync": null,
+        "model": "contenusDataModel",
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "PageDisplayedContentsStore",
-        "model": "contenusDataModel",
+        "designer|userClassName": "PageDisplayedContentsStore",
+        "designer|userAlias": "PageDisplayedContentsStore",
         "pageSize": 50,
         "sortOnFilter": false
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen8408",
     "designerId": "41044384-32f5-4598-b784-64d1c46575ae",
     "customConfigs": [
         {
@@ -38,15 +37,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy6",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
                     "    read: 'pages/get-content-list'\r",
@@ -57,16 +56,16 @@
             "designerId": "7817fdaa-de87-422c-b6f0-5924dd6d5baa",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader20",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader20"
                     },
                     "designerId": "854cf4ff-6e63-4322-b3ca-bb17ea3a5cf6"
                 }

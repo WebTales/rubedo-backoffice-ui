@@ -6,18 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": false,
+        "model": "themeDataModel",
+        "storeId": "ThemesDataJson",
         "designer|userClassName": "ThemesDataJson",
         "designer|userAlias": "ThemesDataJson",
-        "autoLoad": false,
-        "storeId": "ThemesDataJson",
-        "model": "themeDataModel",
         "pageSize": 1000
     },
-    "id": "ExtBox1-ext-gen27871",
     "designerId": "ab38a55b-ca17-43f5-b3b9-44b0a53ad234",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -38,21 +37,21 @@
             "designerId": "613243ea-dd48-47a7-b9a6-c5e5c7e02318",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader16",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader16"
                     },
                     "designerId": "a004aa16-d902-4300-96ff-220791803a8c"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

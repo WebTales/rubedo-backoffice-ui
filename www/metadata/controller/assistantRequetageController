@@ -1,18 +1,17 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "assistantRequetageController",
         "views": [
             "assisstantRE4",
             "regleChampAR"
-        ]
+        ],
+        "designer|userClassName": "assistantRequetageController"
     },
-    "id": "ExtBox1-ext-gen43952",
     "designerId": "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
     "cn": [
         {
@@ -456,10 +455,10 @@
                 "designer|userClassName": "onMainQueriesGridSelectionChange",
                 "fn": "onMainQueriesGridSelectionChange",
                 "implHandler": [
-                    "if (Ext.isEmpty(selections)){\r",
+                    "if (Ext.isEmpty(selected)){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
-                    "} else if (!selections[0].get(\"readOnly\")){\r",
+                    "} else if (!selected[0].get(\"readOnly\")){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").enable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").enable();\r",
                     "} else  {\r",

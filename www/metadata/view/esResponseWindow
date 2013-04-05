@@ -1,26 +1,25 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "esResponseWindow",
-        "designer|userAlias": "esResponseWindow",
         "height": 250,
         "id": "esResponseWindow",
         "width": 400,
+        "designer|userClassName": "esResponseWindow",
+        "designer|userAlias": "esResponseWindow",
         "layout": "fit",
         "title": "Elements indexés",
         "constrainHeader": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen9135",
     "designerId": "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
     "cn": [
         {
-            "type": "propertygrid",
+            "type": "Ext.grid.property.Grid",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -63,7 +62,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -76,7 +75,7 @@
             "designerId": "5eb46282-3897-43ea-a286-93094bd21c65",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -89,7 +88,7 @@
                     "designerId": "a6677035-0c91-41b2-837f-4781583ca7a8"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"

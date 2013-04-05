@@ -1,5 +1,5 @@
 {
-    "type": "datamodel",
+    "type": "Ext.data.Model",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,47 +8,46 @@
     "userConfig": {
         "designer|userClassName": "panierDataModel"
     },
-    "id": "ExtBox1-ext-gen64452",
     "designerId": "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField",
                 "name": "text",
-                "type": "string"
+                "type": "string",
+                "designer|userClassName": "MyField"
             },
             "designerId": "ca854959-6a91-4af5-ba02-816989e8ad4c"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField",
                 "name": "etat",
-                "type": "string"
+                "type": "string",
+                "designer|userClassName": "MyField"
             },
             "designerId": "15cd6d38-263f-496f-8fc2-c2acb545cd86"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField84",
-                "name": "version"
+                "name": "version",
+                "designer|userClassName": "MyField84"
             },
             "designerId": "43ac1d3f-767c-4592-a642-b538aeb8bb69"
         }

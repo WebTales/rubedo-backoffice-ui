@@ -1,5 +1,5 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,17 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "Colonne",
-        "designer|userAlias": "colonne",
-        "draggable": false,
         "height": null,
         "itemId": null,
         "width": null,
+        "designer|userClassName": "Colonne",
+        "designer|userAlias": "colonne",
         "resizable": null,
         "resizeHandles": null,
         "layout": "vbox",
         "title": ""
     },
-    "id": "ExtBox1-ext-gen84934",
     "designerId": "2de13705-89e4-4cfe-abe7-36d5129e9aca"
 }

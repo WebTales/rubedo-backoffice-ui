@@ -6,15 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "storeId": "champsTCARStore",
         "designer|userClassName": "champsTCARStore",
-        "designer|userAlias": "champsTCARStore",
-        "storeId": "champsTCARStore"
+        "designer|userAlias": "champsTCARStore"
     },
-    "id": "ExtBox1-ext-gen44298",
     "designerId": "6b2f4b2f-226c-4bce-9c71-210e5c512789",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -26,7 +25,7 @@
             "designerId": "5129d89a-88c4-43f6-ac39-cca4667f491e",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
@@ -40,28 +39,28 @@
             ]
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField46",
-                "name": "nom"
+                "name": "nom",
+                "designer|userClassName": "MyField46"
             },
             "designerId": "37239c24-a627-4615-aa75-902c2f085ba6"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField50",
-                "name": "valeur"
+                "name": "valeur",
+                "designer|userClassName": "MyField50"
             },
             "designerId": "62a026dc-06cc-4f6e-88cf-b0ed406ac766"
         }

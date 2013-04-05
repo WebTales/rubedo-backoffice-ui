@@ -1,17 +1,17 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "nouveauTaxoFenetre",
-        "designer|userAlias": "nouveauTaxoFenetre",
         "frame": null,
         "height": 106,
         "id": "nouveauTaxoFenetre",
         "width": 300,
+        "designer|userClassName": "nouveauTaxoFenetre",
+        "designer|userAlias": "nouveauTaxoFenetre",
         "resizable": false,
         "layout": "fit",
         "iconCls": "page_taxonomy",
@@ -22,11 +22,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen64210",
     "designerId": "b2ceb939-34ac-4cce-a01f-154ca2572cfb",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -40,7 +39,7 @@
             "designerId": "93faf258-a9da-4951-894e-59cce25b85cc",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -48,15 +47,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField10",
                         "id": "champCreerTaxo",
+                        "designer|userClassName": "MyTextField10",
                         "fieldLabel": "Nom ",
                         "allowBlank": false
                     },
                     "designerId": "9b364f8f-ac9a-410e-b484-dc99bb3e37a8"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -64,8 +63,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton70",
                         "id": "boutonCreerTaxo",
+                        "designer|userClassName": "MyButton70",
                         "text": "Créer un nouveau vocabulaire"
                     },
                     "designerId": "76ed696d-71b6-4cb4-a2fd-13bf3d93aae6"

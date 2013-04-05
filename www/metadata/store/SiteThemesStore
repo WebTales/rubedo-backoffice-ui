@@ -6,22 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "SiteThemesStore",
-        "designer|userAlias": "SiteThemesStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "SiteThemesStore",
         "model": null,
+        "storeId": "SiteThemesStore",
+        "designer|userClassName": "SiteThemesStore",
+        "designer|userAlias": "SiteThemesStore",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen9074",
     "designerId": "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -41,44 +40,44 @@
             "designerId": "2b4cf942-8c8c-4613-91f2-b9e7ef0e6eaf",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader4",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader4"
                     },
                     "designerId": "9e86a502-7d91-46ff-9d67-1f584e182e48"
                 }
             ]
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field219",
-                "name": "text"
+                "name": "text",
+                "designer|userClassName": "field219"
             },
             "designerId": "96090cd7-d092-4741-a428-db76c9b06dcd"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field220",
-                "name": "label"
+                "name": "label",
+                "designer|userClassName": "field220"
             },
             "designerId": "9b5affc0-dadd-44ac-8dad-654270b1b065"
         }

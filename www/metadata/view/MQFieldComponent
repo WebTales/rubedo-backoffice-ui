@@ -1,65 +1,64 @@
 {
-    "type": "fieldcontainer",
+    "type": "Ext.form.FieldContainer",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MQFieldComponent",
-        "designer|userAlias": "MQFieldComponent",
         "height": 29,
         "padding": null,
         "width": 455,
+        "designer|userClassName": "MQFieldComponent",
+        "designer|userAlias": "MQFieldComponent",
         "fieldLabel": "Requete",
         "labelSeparator": " ",
         "labelWidth": 60
     },
-    "id": "ExtBox1-ext-gen17781",
     "designerId": "ad91af67-6579-4a5a-9499-f0904b885611",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton243",
                 "itemId": "addBtn",
                 "margin": "0 10 0 0",
+                "designer|userClassName": "MyButton243",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
             "designerId": "81b9a8a4-da26-4966-9c0f-c1187f90f89f"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton244",
                 "itemId": "editBtn",
                 "margin": "0 10 0 0",
+                "designer|userClassName": "MyButton244",
                 "iconCls": "edit",
                 "text": "Modifier"
             },
             "designerId": "8601024a-a4f8-4275-ab17-2e352d895582"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton245",
                 "itemId": "removeBtn",
+                "designer|userClassName": "MyButton245",
                 "iconCls": "close",
                 "text": "Supprimer"
             },

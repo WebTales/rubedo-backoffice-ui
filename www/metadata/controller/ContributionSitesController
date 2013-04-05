@@ -1,17 +1,16 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ContributionSitesController",
         "stores": [
             "VersionsDataJson"
-        ]
+        ],
+        "designer|userClassName": "ContributionSitesController"
     },
-    "id": "ExtBox1-ext-gen13642",
     "designerId": "12a39889-52e2-4c1b-9b5b-6b9ed45da90b",
     "cn": [
         {

@@ -6,22 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": false,
+        "model": "taxonomieDataModel",
+        "storeId": "TaxonomyForQA",
         "designer|userClassName": "TaxonomyForQA",
         "designer|userAlias": "TaxonomyForQA",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "TaxonomyForQA",
-        "model": "taxonomieDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen17204",
     "designerId": "1b50c020-4b46-495e-ae47-295cf55314b2",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -42,16 +40,16 @@
             "designerId": "e23be290-cf36-4b2f-a3b7-c73583ccc57f",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader8",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader8"
                     },
                     "designerId": "76d2c6ee-c266-4d97-871f-7276565eea83"
                 }

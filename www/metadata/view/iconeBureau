@@ -1,24 +1,23 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "iconeBureau",
-        "designer|userAlias": "iconeBureau",
         "border": 0,
         "draggable": true,
         "height": 100,
         "style": null,
         "styleHtmlContent": true,
         "width": 100,
+        "designer|userClassName": "iconeBureau",
+        "designer|userAlias": "iconeBureau",
         "bodyStyle": null,
         "header": false,
         "headerPosition": "bottom",
         "title": "Test"
     },
-    "id": "ExtBox1-ext-gen75497",
     "designerId": "a87eba5d-b490-46b3-9dec-8a8f63610693"
 }

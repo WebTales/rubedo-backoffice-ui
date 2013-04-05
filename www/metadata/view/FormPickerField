@@ -1,5 +1,5 @@
 {
-    "type": "combobox",
+    "type": "Ext.form.field.ComboBox",
     "reference": {
         "name": "items",
         "type": "array"
@@ -14,7 +14,6 @@
         "editable": false,
         "displayField": "title",
         "forceSelection": true,
-        "multiSelect": false,
         "queryMode": "local",
         "store": "FormPickerStore",
         "valueField": "id"
@@ -23,7 +22,6 @@
         "managesStore": "boolean",
         "plugins": "array"
     },
-    "id": "ExtBox1-ext-gen14763",
     "designerId": "36007f86-6607-47b7-a5b8-b35b3310bc18",
     "customConfigs": [
         {

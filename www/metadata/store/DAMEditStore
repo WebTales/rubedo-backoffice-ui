@@ -8,21 +8,20 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "DAM",
-        "designer|userClassName": "DAMEditStore",
-        "designer|userAlias": "DAMEditStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "DAMModel",
         "remoteFilter": null,
         "remoteSort": true,
         "storeId": "DAMEditStore",
-        "model": "DAMModel",
+        "designer|userClassName": "DAMEditStore",
+        "designer|userAlias": "DAMEditStore",
         "data": null,
         "pageSize": 50
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen9557",
     "designerId": "c9f23424-6a1d-44f7-8050-7127c7ca15b5",
     "customConfigs": [
         {
@@ -38,15 +37,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'dam/create',\r",
@@ -60,29 +59,29 @@
             "designerId": "57c456e0-b672-42a3-8799-9e133fe78d97",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "ebe272d1-1ac2-4201-bc58-dd2f78dfcf51"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter13",
                         "nameProperty": null,
+                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },

@@ -1,5 +1,5 @@
 {
-    "type": "datamodel",
+    "type": "Ext.data.Model",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,204 +9,203 @@
         "designer|userClassName": "formModel",
         "designer|userAlias": "formModel"
     },
-    "id": "ExtBox1-ext-gen19949",
     "designerId": "cac18e62-0bfb-4a11-be4a-49601eb16da4",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField2",
+                "mapping": null,
                 "name": "title",
-                "mapping": null
+                "designer|userClassName": "MyField2"
             },
             "designerId": "0cfe42e8-3ab2-4631-bc38-f9bb6abd3b2e"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField85",
-                "name": "version"
+                "name": "version",
+                "designer|userClassName": "MyField85"
             },
             "designerId": "e2756e4b-b0af-4a51-b99d-2af57a600ffe"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field103",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field103"
             },
             "designerId": "57bb4080-c295-42ae-9861-f6e9ceeee097"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field2",
-                "name": "formPages",
                 "defaultValue": [
                     "[ ]"
-                ]
+                ],
+                "name": "formPages",
+                "designer|userClassName": "field2"
             },
             "designerId": "e4b3032f-03ee-49f5-a39e-99546cc34cab"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field280",
-                "name": "workspaces"
+                "name": "workspaces",
+                "designer|userClassName": "field280"
             },
             "designerId": "a345c870-78f5-4f73-b422-9d5e8579cfaa"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field292",
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean"
+                "type": "boolean",
+                "designer|userClassName": "field292"
             },
             "designerId": "8af2efb6-7215-4159-8c99-90c729a03148"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field319",
-                "name": "description"
+                "name": "description",
+                "designer|userClassName": "field319"
             },
             "designerId": "814b5a95-c75e-459c-9451-5ab3cd3e12c3"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field320",
-                "name": "uniqueAnswer"
+                "name": "uniqueAnswer",
+                "designer|userClassName": "field320"
             },
             "designerId": "69486035-2417-4503-8c10-f6948605f1ec"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field320",
-                "name": "uniqueAnswerText",
                 "defaultValue": [
                     "\"Vous avez déjà complété cette enquête. Merci.\""
-                ]
+                ],
+                "name": "uniqueAnswerText",
+                "designer|userClassName": "field320"
             },
             "designerId": "cbdfbe7b-3c7e-4b1e-bbdd-1be015d14912"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field320",
-                "name": "endMessage",
                 "defaultValue": [
                     "\"Nous vous remercions d’avoir répondu à cette enquête.\""
-                ]
+                ],
+                "name": "endMessage",
+                "designer|userClassName": "field320"
             },
             "designerId": "fff58254-25bc-4777-865f-3d01f657ed42"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field321",
-                "name": "openingDate"
+                "name": "openingDate",
+                "designer|userClassName": "field321"
             },
             "designerId": "b9eba5ec-715b-4455-9ea0-e25242b0091a"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field322",
-                "name": "closingDate"
+                "name": "closingDate",
+                "designer|userClassName": "field322"
             },
             "designerId": "184ed8f8-f033-4161-81b7-9ab2b86c8842"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field92",
-                "name": "lastUpdateTime",
                 "dateFormat": "timestamp",
-                "type": "date"
+                "name": "lastUpdateTime",
+                "type": "date",
+                "designer|userClassName": "field92"
             },
             "designerId": "42f3cad2-88f8-496b-9f8c-a3ce822ce4d7"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field60",
-                "name": "createUser",
                 "mapping": "createUser.fullName",
-                "persist": false
+                "name": "createUser",
+                "persist": false,
+                "designer|userClassName": "field60"
             },
             "designerId": "9f6b52b7-af99-47e9-8000-527e22c37d29"
         }

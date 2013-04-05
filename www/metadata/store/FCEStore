@@ -1,54 +1,53 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "storeId": "FCEStore",
         "designer|userClassName": "FCEStore",
-        "designer|userAlias": "FCEStore",
-        "storeId": "FCEStore"
+        "designer|userAlias": "FCEStore"
     },
-    "id": "ExtBox1-ext-gen16951",
     "designerId": "0c962f45-9c0e-470c-bf7f-7da0075f0ed9",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field336",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field336"
             },
             "designerId": "fc312914-dd6c-4fa8-bfa4-5284afbd2770"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field335",
-                "name": "qNb"
+                "name": "qNb",
+                "designer|userClassName": "field335"
             },
             "designerId": "8e1b3700-2d16-4dcf-b2ec-294c51e88ec0"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field337",
-                "name": "itemConfig"
+                "name": "itemConfig",
+                "designer|userClassName": "field337"
             },
             "designerId": "f96622df-10ca-44b7-a023-43d6ddb159f6"
         }

@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,17 +7,16 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "DAMInterface",
-        "designer|userAlias": "DAMInterface",
         "height": 651,
         "id": "DAMInterface",
         "width": 1038,
+        "designer|userClassName": "DAMInterface",
+        "designer|userAlias": "DAMInterface",
         "layout": "hbox",
         "iconCls": "mediaTypes",
         "title": "Médiathèque",
         "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen19544",
     "designerId": "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
     "cn": [
         {
@@ -28,7 +27,7 @@
             },
             "codeClass": null,
             "designerId": "43f13d85-63a5-47b7-a321-9f13588256ea",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -38,10 +37,10 @@
             },
             "codeClass": null,
             "designerId": "69291d3a-610c-45f2-bdf9-c498a213ec2a",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -50,15 +49,15 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar27",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null
+                "width": null,
+                "designer|userClassName": "MyToolbar27"
             },
             "designerId": "2ec98bdc-7ba5-485e-9571-0594da1e0c3a",
             "cn": [
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -66,10 +65,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyImg2",
                         "height": 45,
                         "margin": "0 10 0 0",
                         "width": 48,
+                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "35bf1649-d74b-4d34-a212-8bfd964817e8",
@@ -85,7 +84,7 @@
                                 "designer|userClassName": "onImageRender11",
                                 "fn": "onImageRender11",
                                 "implHandler": [
-                                    "abstractcomponent.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
+                                    "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
                                 ],
                                 "name": "render",
                                 "scope": "me"
@@ -95,7 +94,7 @@
                     ]
                 },
                 {
-                    "type": "container",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -103,14 +102,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyContainer9",
                         "itemId": "boiteBarreMeta",
-                        "styleHtmlContent": true
+                        "styleHtmlContent": true,
+                        "designer|userClassName": "MyContainer9"
                     },
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [
                         {
-                            "type": "template",
+                            "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "tpl",
                                 "type": "object"
@@ -130,7 +129,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -139,16 +138,16 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null
+                "width": null,
+                "designer|userClassName": "menuContenusTools",
+                "designer|userAlias": "menuContenusTools"
             },
             "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -157,10 +156,9 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton11",
-                        "disabled": false,
                         "id": "addDAMBtn",
                         "itemId": null,
+                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -177,7 +175,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -186,10 +184,10 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "DAMDeleteBtn",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -206,7 +204,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -215,11 +213,11 @@
                     "userConfig": {
                         "ACL": null,
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "hidden": true,
                         "id": "DAMROBtn",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
@@ -247,7 +245,7 @@
                                 "fn": "onDAMROBtnRender",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"write.ui.dam\"])&&(ACL.interfaceRights[\"read.ui.dam\"])){\r",
-                                    "    abstractcomponent.show();\r",
+                                    "    component.show();\r",
                                     "}"
                                 ],
                                 "name": "render",
@@ -258,7 +256,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -267,10 +265,10 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "disabled": true,
                         "id": "DAMUpdateBtn",
                         "itemId": null,
+                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
@@ -287,7 +285,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -296,9 +294,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "id": "DAMPPBtnGroup",
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -306,7 +304,7 @@
                     "designerId": "d542e06d-f92d-4938-a24b-0a4bbf60c3b9",
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -314,10 +312,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.dam",
-                                "designer|userClassName": "MyButton17",
                                 "hidden": true,
                                 "id": null,
                                 "width": null,
+                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -334,16 +332,16 @@
                             ]
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton15",
                                 "hidden": true,
                                 "id": "addToSCMTBtn",
+                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -353,15 +351,15 @@
                             "designerId": "02d2ab8a-4ddc-44e1-ad4e-f5fe11f7ce6d"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton14",
                                 "itemId": "boutonCreerRaccourci",
+                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -373,7 +371,7 @@
                     ]
                 },
                 {
-                    "type": "buttongroup",
+                    "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -382,9 +380,9 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
-                        "designer|userClassName": "MyButtonGroup",
                         "disabled": true,
                         "hidden": true,
+                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4
@@ -392,15 +390,15 @@
                     "designerId": "916f1b11-bfcd-4c11-ad24-8c1393c8d71c",
                     "cn": [
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton62",
                                 "id": null,
+                                "designer|userClassName": "MyButton62",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -410,7 +408,7 @@
                             "designerId": "c2cc59b1-6702-40e5-8538-9af3426bbfa1"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -418,8 +416,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.dam",
-                                "designer|userClassName": "MyButton63",
                                 "id": null,
+                                "designer|userClassName": "MyButton63",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
@@ -438,7 +436,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -451,7 +449,7 @@
                     "designerId": "1a661f33-69b8-437e-8bae-79ea26ea5094"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -460,8 +458,8 @@
                     "userConfig": {
                         "RApplication": "dam",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton94",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -479,7 +477,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -487,10 +485,10 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyPanel57",
                 "id": "DAMFacetBox",
                 "padding": null,
                 "width": 240,
+                "designer|userClassName": "MyPanel57",
                 "overflowY": "auto",
                 "bodyPadding": "10 16 10 10",
                 "title": ""
@@ -498,7 +496,7 @@
             "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
             "cn": [
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -511,7 +509,7 @@
                     "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -519,8 +517,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyTextField4",
                                 "id": "DAMSearchField",
+                                "designer|userClassName": "MyTextField4",
                                 "fieldLabel": ""
                             },
                             "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
@@ -548,7 +546,7 @@
                             ]
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -556,8 +554,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton167",
                                 "id": "DAMSearchBtn",
+                                "designer|userClassName": "MyButton167",
                                 "iconCls": "search",
                                 "text": ""
                             },
@@ -568,7 +566,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -594,10 +592,10 @@
                         "store": "DAMFacetteStore"
                     },
                     "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
-                    "masterInstanceId": "ExtBox1-ext-gen52190"
+                    "masterInstanceId": "bde1968a-cbce-4b3a-872c-548461f2e683"
                 },
                 {
-                    "type": "pagingtoolbar",
+                    "type": "Ext.toolbar.Paging",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -605,8 +603,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "bottom",
-                        "designer|userClassName": "MyPagingToolbar2",
                         "width": 360,
+                        "designer|userClassName": "MyPagingToolbar2",
                         "displayInfo": true,
                         "store": "DAMFacetteStore"
                     },
@@ -657,7 +655,7 @@
             "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -666,9 +664,9 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar3",
                 "height": 34,
-                "id": "DAMActiveFacetBox"
+                "id": "DAMActiveFacetBox",
+                "designer|userClassName": "MyToolbar3"
             },
             "designerId": "a933a0ea-82ad-49bf-aef8-b28d0a54fc02"
         }

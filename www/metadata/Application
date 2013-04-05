@@ -1,5 +1,5 @@
 {
-    "type": "application",
+    "type": "Ext.app.Application",
     "reference": {
         "name": "items",
         "type": "array"
@@ -239,10 +239,13 @@
             "externalMediaField",
             "externalMediaFieldComponent",
             "ESQfield",
-            "ESQfieldComponent"
+            "ESQfieldComponent",
+            "DelConfirmZ",
+            "ajoutBlocFenetre",
+            "adminFTaxonomie",
+            "contributionPrevisualisation"
         ],
         "autoCreateViewport": true,
-        "name": "Rubedo",
         "controllers": [
             "ContributionSitesController",
             "ContributionContenusController",
@@ -262,24 +265,24 @@
             "WorkspacesController",
             "LocalisationController",
             "FormsController"
-        ]
+        ],
+        "name": "Rubedo"
     },
-    "id": "ExtBox1-ext-gen12690",
     "designerId": "application",
     "cn": [
         {
-            "type": "loader",
+            "type": "Ext.Loader",
             "reference": {
                 "name": "loader",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "Loader",
                 "enabled": true,
                 "paths": [
                     "{\"Ext\":\".\", \"Ext.ux\":\"resources/ux\"}"
-                ]
+                ],
+                "designer|userClassName": "Loader"
             },
             "designerId": "6de556ca-fa0f-48b7-8b2f-6030a2ecc030"
         }

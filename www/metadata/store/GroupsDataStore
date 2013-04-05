@@ -1,5 +1,5 @@
 {
-    "type": "treestore",
+    "type": "Ext.data.TreeStore",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,18 +8,17 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Groups",
-        "designer|userClassName": "GroupsDataStore",
-        "designer|userAlias": "GroupsDataStore",
         "autoLoad": false,
         "autoSync": true,
-        "storeId": "GroupsDataStore",
         "model": "groupDataModel",
+        "storeId": "GroupsDataStore",
+        "designer|userClassName": "GroupsDataStore",
+        "designer|userAlias": "GroupsDataStore",
         "defaultRootId": null
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen13038",
     "designerId": "07053528-2f61-4530-94a2-099a9f5d243c",
     "customConfigs": [
         {
@@ -35,15 +34,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy20",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy20",
                 "api": [
                     "{\r",
                     "     create: 'groups/create',\r",
@@ -57,17 +56,17 @@
             "designerId": "e1785f69-601f-4fed-b839-5d6dcaf4b9aa",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader18",
                         "idProperty": null,
                         "messageProperty": "message",
                         "root": null,
+                        "designer|userClassName": "MyJsonReader18",
                         "record": null
                     },
                     "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818",
@@ -114,7 +113,7 @@
                     ]
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

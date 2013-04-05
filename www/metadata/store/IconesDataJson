@@ -7,19 +7,18 @@
     "codeClass": null,
     "userConfig": {
         "silentOps": true,
-        "designer|userClassName": "IconesDataJson",
-        "designer|userAlias": "IconesDataJson",
         "autoLoad": true,
         "autoSync": true,
         "batchUpdateMode": null,
-        "storeId": "IconesDataJson",
         "model": "iconDataModel",
+        "storeId": "IconesDataJson",
+        "designer|userClassName": "IconesDataJson",
+        "designer|userAlias": "IconesDataJson",
         "pageSize": 1000
     },
     "configAlternates": {
         "silentOps": "boolean"
     },
-    "id": "ExtBox1-ext-gen53594",
     "designerId": "cf50ea5a-151e-4a1b-b158-0ed251f05685",
     "customConfigs": [
         {
@@ -30,15 +29,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy13",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy13",
                 "api": [
                     " {\r",
                     "                    create: 'icons/create',\r",
@@ -52,21 +51,21 @@
             "designerId": "e96f51ff-f18d-49d6-91a1-104c59194be6",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader11",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader11"
                     },
                     "designerId": "9dbd1511-92c6-4b13-a8b2-0b54ace60ab3"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

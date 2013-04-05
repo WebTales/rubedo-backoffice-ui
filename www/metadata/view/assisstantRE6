@@ -1,5 +1,5 @@
 {
-    "type": "form",
+    "type": "Ext.form.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,14 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "etape": "5",
+        "id": "assisstantRE6",
         "designer|userClassName": "assisstantRE6",
         "designer|userAlias": "assisstantRE6",
-        "id": "assisstantRE6",
         "autoScroll": true,
         "bodyPadding": 10,
         "title": "Finalisation et enregistrement"
     },
-    "id": "ExtBox1-ext-gen6237",
     "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
     "customConfigs": [
         {
@@ -25,23 +24,23 @@
     ],
     "cn": [
         {
-            "type": "fieldset",
+            "type": "Ext.form.FieldSet",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFieldSet15",
                 "id": "querySummaryBox",
                 "padding": 10,
                 "styleHtmlContent": true,
+                "designer|userClassName": "MyFieldSet15",
                 "title": "<b>Récapitulatif</b>"
             },
             "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b"
         },
         {
-            "type": "textfield",
+            "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -49,17 +48,17 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
-                "designer|userClassName": "MyTextField61",
                 "id": "queryNameField",
-                "name": "queryName",
+                "designer|userClassName": "MyTextField61",
                 "fieldLabel": "Nom de la requête",
                 "labelWidth": 130,
+                "name": "queryName",
                 "allowBlank": false
             },
             "designerId": "a89a5a01-5925-41ab-9032-04ee64189047"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -67,10 +66,10 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
-                "designer|userClassName": "MyButton76",
                 "id": "queryBuildSaveBtn",
                 "margin": null,
                 "style": null,
+                "designer|userClassName": "MyButton76",
                 "iconCls": null,
                 "scale": "large",
                 "text": "<b>Enregistrer la requête </b>"

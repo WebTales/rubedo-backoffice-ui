@@ -1,15 +1,15 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "newUserWindow",
-        "designer|userAlias": "newUserWindow",
         "height": 173,
         "width": 400,
+        "designer|userClassName": "newUserWindow",
+        "designer|userAlias": "newUserWindow",
         "resizable": false,
         "layout": "fit",
         "title": "Nouvel utilisateur",
@@ -18,11 +18,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen29944",
     "designerId": "a3ee1d58-780e-4000-bbfd-ee2f8a5443eb",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -36,7 +35,7 @@
             "designerId": "f8092713-f67d-43c3-ab71-755913bafc9d",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -45,17 +44,16 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField5",
-                        "disabled": false,
-                        "name": "name",
-                        "readOnly": null,
                         "fieldLabel": "Nom ",
                         "labelWidth": 120,
+                        "name": "name",
+                        "readOnly": null,
                         "allowBlank": false
                     },
                     "designerId": "1d142858-20d9-4d03-9a8f-a5f588a73d61"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -64,16 +62,16 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField22",
-                        "name": "email",
                         "fieldLabel": "E-mail ",
                         "labelWidth": 120,
+                        "name": "email",
                         "allowBlank": false,
                         "vtype": "email"
                     },
                     "designerId": "b968575e-d7d2-4313-9cad-29e5a8369377"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -82,17 +80,17 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField28",
-                        "name": "login",
-                        "value": null,
                         "fieldLabel": "Compte utilisateur ",
                         "labelWidth": 120,
+                        "name": "login",
+                        "value": null,
                         "allowBlank": false,
                         "vtype": "alphanum"
                     },
                     "designerId": "94a2c827-3a2b-46cc-b7a2-229d5f9a52f2"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -100,8 +98,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton264",
                         "id": "userCreateSubmitBtn",
+                        "designer|userClassName": "MyButton264",
                         "scale": "large",
                         "text": "Valider"
                     },

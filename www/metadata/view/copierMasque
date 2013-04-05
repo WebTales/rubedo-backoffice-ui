@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "copierMasque",
-        "designer|userAlias": "copierMasque",
         "height": 133,
         "id": "copieMasqueFenetre",
         "width": 400,
+        "designer|userClassName": "copierMasque",
+        "designer|userAlias": "copierMasque",
         "resizable": [
             "false"
         ],
@@ -19,11 +19,10 @@
         "title": "Duplication de masque",
         "modal": true
     },
-    "id": "ExtBox1-ext-gen45718",
     "designerId": "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -37,7 +36,7 @@
             "designerId": "7f8d4838-c91a-4df2-b725-94f2ced615f1",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -45,16 +44,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField15",
                         "id": "copierMasqueTitre",
-                        "value": null,
+                        "designer|userClassName": "MyTextField15",
                         "fieldLabel": "Nouveau titre ",
+                        "value": null,
                         "allowBlank": false
                     },
                     "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6"
                 },
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -62,8 +61,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyComboBox",
                         "id": "copierMasqueSite",
+                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "Dans le site ",
                         "allowBlank": false,
                         "editable": false,
@@ -74,7 +73,7 @@
                     "designerId": "36fde64e-b099-4699-a162-b92b00cde888"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -82,9 +81,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "1",
-                        "designer|userClassName": "MyButton50",
                         "id": "copierMasque",
                         "width": null,
+                        "designer|userClassName": "MyButton50",
                         "text": "Dupliquer ce masque"
                     },
                     "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523"

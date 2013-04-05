@@ -8,18 +8,16 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "ContentTypes",
+        "autoLoad": false,
+        "model": "typesContenusDataModel",
+        "storeId": "contentTypesCombo",
         "designer|userClassName": "contentTypesCombo",
         "designer|userAlias": "contentTypesCombo",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "contentTypesCombo",
-        "model": "typesContenusDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen4524",
     "designerId": "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
     "customConfigs": [
         {
@@ -35,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -56,29 +54,29 @@
             "designerId": "47de9444-39aa-49ca-ac7e-7f02f8dd044f",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "9346f48c-e997-4e93-bda5-a3f2fa7f3cd7"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter13",
                         "nameProperty": "mapping",
+                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },

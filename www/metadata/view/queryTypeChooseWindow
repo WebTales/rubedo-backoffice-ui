@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,11 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "queryTypeChooseWindow",
-        "designer|userAlias": "queryTypeChooseWindow",
         "height": 141,
         "id": "queryTypeChooseWindow",
         "width": 235,
+        "designer|userClassName": "queryTypeChooseWindow",
+        "designer|userAlias": "queryTypeChooseWindow",
         "resizable": false,
         "layout": "vbox",
         "title": "Choisissez un type de requête",
@@ -21,11 +21,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen28299",
     "designerId": "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -65,7 +64,7 @@
             ]
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -106,7 +105,7 @@
             ]
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"

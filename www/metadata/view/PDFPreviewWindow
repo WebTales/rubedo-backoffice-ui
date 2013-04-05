@@ -1,27 +1,25 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "PDFPreviewWindow",
-        "designer|userAlias": "PDFPreviewWindow",
         "height": 600,
         "id": null,
         "maxHeight": null,
         "maxWidth": null,
         "width": 500,
+        "designer|userClassName": "PDFPreviewWindow",
+        "designer|userAlias": "PDFPreviewWindow",
         "resizable": null,
         "layout": "fit",
         "iconCls": "pdfIco",
         "title": "Titre",
-        "constrain": false,
         "constrainHeader": true,
         "maximizable": true,
         "minimizable": true
     },
-    "id": "ExtBox1-ext-gen12568",
     "designerId": "ee7664a4-03e1-42ee-a412-6754a68ecb2f"
 }

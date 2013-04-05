@@ -1,17 +1,16 @@
 {
-    "type": "hiddenfield",
+    "type": "Ext.form.field.Hidden",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "height": null,
         "designer|userClassName": "localiserField",
         "designer|userAlias": "localiserField",
-        "height": null,
         "fieldLabel": "Label"
     },
-    "id": "ExtBox1-ext-gen28731",
     "designerId": "b0ae3c81-7792-47a7-91c2-3e7e993f879c",
     "cn": [
         {
@@ -26,8 +25,8 @@
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var companion = Ext.widget(\"localiserFieldComponent\");\r",
-                    "companion.setFieldLabel(abstractcomponent.getFieldLabel());\r",
-                    "abstractcomponent.on(\"change\", function(a, newValue){\r",
+                    "companion.setFieldLabel(component.getFieldLabel());\r",
+                    "component.on(\"change\", function(a, newValue){\r",
                     "    var decoded = { };\r",
                     "    if (!Ext.isEmpty(newValue)){\r",
                     "        decoded = newValue;\r",
@@ -41,18 +40,18 @@
                     "Ext.Array.forEach(companion.query(\"field\"), function(field){\r",
                     "    field.on(\"change\", function(a, newValue){\r",
                     "        if (field.isValid()){\r",
-                    "        abstractcomponent.suspendEvents(false);\r",
+                    "        component.suspendEvents(false);\r",
                     "        var decoded = { };\r",
-                    "        if (!Ext.isEmpty(abstractcomponent.getValue())) {\r",
-                    "            decoded = abstractcomponent.getValue();\r",
+                    "        if (!Ext.isEmpty(component.getValue())) {\r",
+                    "            decoded = component.getValue();\r",
                     "        }\r",
                     "        decoded[field.name]=newValue;   \r",
                     "        decoded.location={\r",
                     "            \"type\":\"Point\",\r",
                     "            \"coordinates\":[decoded.lon,decoded.lat]\r",
                     "        };\r",
-                    "        abstractcomponent.setValue(decoded);\r",
-                    "        abstractcomponent.resumeEvents();\r",
+                    "        component.setValue(decoded);\r",
+                    "        component.resumeEvents();\r",
                     "        if ((field.name==\"address\")&&(!Ext.isEmpty(newValue))){\r",
                     "            if (Ext.isEmpty(field.geocoder)){\r",
                     "                field.geocoder=new google.maps.Geocoder();\r",
@@ -67,9 +66,9 @@
                     "                            \"type\":\"Point\",\r",
                     "                            \"coordinates\":[decoded.lon,decoded.lat]\r",
                     "                        };\r",
-                    "                        abstractcomponent.suspendEvents(false);\r",
-                    "                        abstractcomponent.setValue(decoded);\r",
-                    "                        abstractcomponent.resumeEvents();\r",
+                    "                        component.suspendEvents(false);\r",
+                    "                        component.setValue(decoded);\r",
+                    "                        component.resumeEvents();\r",
                     "                        Ext.Array.forEach(companion.query(\"field\"), function(field){\r",
                     "                            field.suspendEvents(false);\r",
                     "                            field.setValue(decoded[field.name]);\r",
@@ -88,10 +87,10 @@
                     "companion.on(\"afterrender\",function(){\r",
                     "companion.getEl().on(\"click\",function(){\r",
                     "\r",
-                    "    abstractcomponent.getEl().dom.click();\r",
+                    "    component.getEl().dom.click();\r",
                     "});\r",
                     "});\r",
-                    "abstractcomponent.up().add(companion);"
+                    "component.up().add(companion);"
                 ],
                 "name": "render",
                 "scope": "me"

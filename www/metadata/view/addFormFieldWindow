@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "addFormFieldWindow",
-        "designer|userAlias": "addFormFieldWindow",
         "draggable": false,
         "height": 300,
         "id": "addFormFieldWindow",
         "width": 500,
+        "designer|userClassName": "addFormFieldWindow",
+        "designer|userAlias": "addFormFieldWindow",
         "resizable": false,
         "layout": "hbox",
         "title": "Ajouter un élément",
@@ -22,11 +22,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen8526",
     "designerId": "304ad092-9c78-4ed0-8170-c2c2b07738e2",
     "cn": [
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -34,15 +33,15 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 0.5,
-                "designer|userClassName": "MyGridPanel8",
                 "id": "formFieldSelectGrid",
+                "designer|userClassName": "MyGridPanel8",
                 "title": "",
                 "store": "FormFieldTypesStore"
             },
             "designerId": "6ee0fead-abc6-4969-96f9-e54f3dfccc4f",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -54,7 +53,7 @@
                     "designerId": "337c7caf-d055-42f1-818f-a8d6a57e3815"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -63,8 +62,8 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn15",
                         "dataIndex": "type",
-                        "flex": 1,
-                        "text": "Type"
+                        "text": "Type",
+                        "flex": 1
                     },
                     "designerId": "5ae5df94-153d-409f-bc9b-4602e6c4d50c"
                 },
@@ -79,11 +78,11 @@
                         "designer|userClassName": "onFormFieldSelectGridSelectionChange",
                         "fn": "onFormFieldSelectGridSelectionChange",
                         "implHandler": [
-                            "if (Ext.isEmpty(selections)){\r",
+                            "if (Ext.isEmpty(selected)){\r",
                             "    Ext.getCmp(\"insertFormElementBtn\").disable();\r",
                             "} else {\r",
                             "    Ext.getCmp(\"insertFormElementBtn\").enable();\r",
-                            "    Ext.getCmp(\"formFieldsDetail\").update(selections[0].getData());\r",
+                            "    Ext.getCmp(\"formFieldsDetail\").update(selected[0].getData());\r",
                             "}"
                         ],
                         "name": "selectionchange",
@@ -112,7 +111,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -120,9 +119,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyPanel61",
                 "id": "formFieldsDetail",
                 "styleHtmlContent": true,
+                "designer|userClassName": "MyPanel61",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
@@ -133,7 +132,7 @@
             "designerId": "03867f21-884a-4404-afff-0416f9cf3046",
             "cn": [
                 {
-                    "type": "template",
+                    "type": "Ext.XTemplate",
                     "reference": {
                         "name": "tpl",
                         "type": "object"
@@ -151,7 +150,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -165,7 +164,7 @@
             "designerId": "18512286-c067-4782-9611-c0cae1246743",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -178,7 +177,7 @@
                     "designerId": "86e854e9-912a-4bca-b186-6745fcd8ddc6"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -186,10 +185,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton72",
                         "disabled": true,
                         "id": "insertFormElementBtn",
                         "margin": null,
+                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },

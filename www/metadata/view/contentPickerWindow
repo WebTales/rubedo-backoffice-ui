@@ -1,23 +1,22 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "contentPickerWindow",
-        "designer|userAlias": "contentPickerWindow",
         "height": 434,
         "id": "contentPickerWindow",
         "width": 751,
+        "designer|userClassName": "contentPickerWindow",
+        "designer|userAlias": "contentPickerWindow",
         "layout": "fit",
         "iconCls": null,
         "title": "Sélecteur de contenu",
         "constrainHeader": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen17928",
     "designerId": "6d174482-b97c-435a-b6aa-7fd530bd5680",
     "cn": [
         {
@@ -28,7 +27,7 @@
             },
             "codeClass": null,
             "designerId": "6c25c6df-53b6-45e7-ad98-a9dfcf9d5bbe",
-            "masterInstanceId": "ExtBox1-ext-gen18689"
+            "masterInstanceId": "5ea758ff-277e-480f-8910-8611d58b581e"
         },
         {
             "type": "linkedinstance",
@@ -38,7 +37,7 @@
             },
             "codeClass": null,
             "designerId": "7b3c9396-fcf0-4a3c-8002-a399c42c0b5f",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
             "type": "basiceventbinding",

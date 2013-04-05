@@ -1,50 +1,44 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Panier",
-        "designer|userAlias": "panier",
-        "floating": true,
         "height": 300,
         "id": "Panier",
         "style": null,
         "styleHtmlCls": null,
-        "styleHtmlContent": false,
         "width": 600,
+        "designer|userClassName": "Panier",
+        "designer|userAlias": "panier",
         "resizable": null,
         "layout": "fit",
-        "bodyCls": "",
         "bodyStyle": null,
         "iconCls": "cart",
         "title": "Panier",
-        "constrain": false,
-        "constrainHeader": true,
-        "modal": false
+        "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen28882",
     "designerId": "e59b3e1d-ac70-40ed-8cca-3251584e2e94",
     "cn": [
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridPanel",
                 "id": "PanierGrid",
+                "designer|userClassName": "MyGridPanel",
                 "title": "",
                 "store": "PanierDataJson"
             },
             "designerId": "7da13257-d54f-438e-af91-5ecf1b772e9e",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -56,7 +50,7 @@
                     "designerId": "54c9d404-5a10-4eef-bf97-75a3766b21f0"
                 },
                 {
-                    "type": "checkboxselectionmodel",
+                    "type": "Ext.selection.CheckboxModel",
                     "reference": {
                         "name": "selModel",
                         "type": "object"
@@ -68,23 +62,23 @@
                     "designerId": "15253fa9-e650-4116-8ee3-5c9a76b4be97"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn3",
                         "width": 183,
+                        "designer|userClassName": "MyColumn3",
                         "dataIndex": "text",
-                        "flex": 1,
-                        "text": "Titre"
+                        "text": "Titre",
+                        "flex": 1
                     },
                     "designerId": "2ea352c4-cea7-4ee8-a1c1-f1fc00513e4e"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -93,15 +87,15 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn4",
                         "dataIndex": "etat",
-                        "flex": 1,
-                        "text": "Etat"
+                        "text": "Etat",
+                        "flex": 1
                     },
                     "designerId": "369a083d-dd65-43d6-adf7-6109834ee8e3"
                 }
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -114,7 +108,7 @@
             "designerId": "ecd8ded7-67ac-496d-af92-98b2f9ca295f",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -122,8 +116,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton45",
                         "id": "enleverPanier",
+                        "designer|userClassName": "MyButton45",
                         "icon": null,
                         "iconCls": "shopping_cart_remove_med",
                         "scale": "medium",
@@ -132,7 +126,7 @@
                     "designerId": "c197b5c3-828d-4d07-8904-cabd9f4bc5c6"
                 },
                 {
-                    "type": "tbseparator",
+                    "type": "Ext.toolbar.Separator",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -145,7 +139,7 @@
                     "designerId": "4ace4ac5-fee6-4fc3-a4ed-419722d06f70"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -162,7 +156,7 @@
                     "designerId": "3cf37183-7279-4087-afe5-73c915b2f377"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -179,7 +173,7 @@
                     "designerId": "ea51d0b6-31a5-48f3-a956-a628601ed78f"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -198,29 +192,29 @@
             ]
         },
         {
-            "type": "tool",
+            "type": "Ext.panel.Tool",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool14",
                 "itemId": "windowMinimize",
+                "designer|userClassName": "MyTool14",
                 "type": "minimize"
             },
             "designerId": "25a5e98d-82db-4ae0-bd01-5e64707542ad"
         },
         {
-            "type": "tool",
+            "type": "Ext.panel.Tool",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTool14",
                 "itemId": "windowMaximize",
+                "designer|userClassName": "MyTool14",
                 "type": "maximize"
             },
             "designerId": "6e6d916c-7eda-4ad0-a6ab-0171fa036c6b"

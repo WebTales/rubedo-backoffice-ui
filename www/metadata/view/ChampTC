@@ -1,33 +1,32 @@
 {
-    "type": "container",
+    "type": "Ext.container.Container",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "padding": 10,
         "designer|userClassName": "ChampTC",
         "designer|userAlias": "ChampTC",
-        "padding": 10,
         "layout": "anchor"
     },
-    "id": "ExtBox1-ext-gen15671",
     "designerId": "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton17",
                 "itemId": "helpBouton",
                 "margin": null,
                 "style": [
                     "{float:right;}"
                 ],
+                "designer|userClassName": "MyButton17",
                 "allowDepress": null,
                 "enableToggle": null,
                 "handleMouseEvents": false,

@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MQA",
-        "designer|userAlias": "MQA",
         "height": 373,
         "id": "MQA",
         "width": 469,
+        "designer|userClassName": "MQA",
+        "designer|userAlias": "MQA",
         "resizable": null,
         "layout": "card",
         "title": "Assistant de requêtage sur médias",
@@ -20,7 +20,6 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen6675",
     "designerId": "e1d83abe-514e-4e8d-8512-df1fa7f2a8c7",
     "cn": [
         {
@@ -79,10 +78,10 @@
                 "dock": "bottom"
             },
             "designerId": "8d468681-7140-489f-8a2a-dc793cf8eec2",
-            "masterInstanceId": "ExtBox1-ext-gen14811"
+            "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -96,7 +95,7 @@
             "designerId": "796177a4-b025-4b70-924e-91f89c4448fd",
             "cn": [
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -104,10 +103,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyComboBox31",
                         "id": "DAMTypeWizCombo",
-                        "name": "DAMTypes",
+                        "designer|userClassName": "MyComboBox31",
                         "fieldLabel": "Types de media",
+                        "name": "DAMTypes",
                         "allowBlank": false,
                         "editable": false,
                         "displayField": "type",
@@ -129,10 +128,10 @@
                         "designer|userClassName": "onFormDeactivate",
                         "fn": "onFormDeactivate",
                         "implHandler": [
-                            "if ((abstractcomponent.up().editorMode)&&(abstractcomponent.up().initialQuery.DAMTypes.toString()==Ext.getCmp(\"DAMTypeWizCombo\").getValue().toString())){\r",
-                            "    abstractcomponent.up().reactToMTChange(true);\r",
+                            "if ((component.up().editorMode)&&(component.up().initialQuery.DAMTypes.toString()==Ext.getCmp(\"DAMTypeWizCombo\").getValue().toString())){\r",
+                            "    component.up().reactToMTChange(true);\r",
                             "} else {\r",
-                            "    abstractcomponent.up().reactToMTChange(false);\r",
+                            "    component.up().reactToMTChange(false);\r",
                             "}"
                         ],
                         "name": "deactivate",
@@ -143,15 +142,15 @@
             ]
         },
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm51",
                 "id": "assisstantRE2",
+                "designer|userClassName": "MyForm51",
                 "overflowY": "auto",
                 "bodyPadding": 10,
                 "title": "Choix des règles sur la taxonomie"
@@ -169,20 +168,20 @@
                 "designer|userClassName": "onMQAAfterRender",
                 "fn": "onMQAAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"mainFileType\\\",\\\"value\\\":\\\"\"+abstractcomponent.allowedFileType+\"\\\"}]\";\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"mainFileType\\\",\\\"value\\\":\\\"\"+component.allowedFileType+\"\\\"}]\";\r",
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").on(\"load\",function(a,records){\r",
-                    "    if ((records.length==1)&&(!abstractcomponent.editMode)){\r",
+                    "    if ((records.length==1)&&(!component.editMode)){\r",
                     "        Ext.getCmp(\"DAMTypeWizCombo\").select(records[0]);\r",
                     "    }\r",
                     "});\r",
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
                     "Ext.getStore('TaxonomyForQA').load();\r",
-                    "if (abstractcomponent.editorMode){\r",
-                    "    abstractcomponent.initialQuery=Ext.JSON.decode(abstractcomponent.initialValue);\r",
+                    "if (component.editorMode){\r",
+                    "    component.initialQuery=Ext.JSON.decode(component.initialValue);\r",
                     "    var task= new Ext.util.DelayedTask(function(){\r",
-                    "    Ext.getCmp(\"DAMTypeWizCombo\").setValue(abstractcomponent.initialQuery.DAMTypes);\r",
-                    "    abstractcomponent.reactToMTChange(true);\r",
-                    "    Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(abstractcomponent.initialQuery.fieldRules);\r",
+                    "    Ext.getCmp(\"DAMTypeWizCombo\").setValue(component.initialQuery.DAMTypes);\r",
+                    "    component.reactToMTChange(true);\r",
+                    "    Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(component.initialQuery.fieldRules);\r",
                     "    });\r",
                     "    task.delay(600);\r",
                     "}"
@@ -431,10 +430,10 @@
             },
             "codeClass": null,
             "designerId": "52c8bba9-a1fd-4e26-9b02-2c49334bb657",
-            "masterInstanceId": "ExtBox1-ext-gen5650"
+            "masterInstanceId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -449,7 +448,7 @@
             "designerId": "fe6c1f8e-0610-4292-8792-7bbea27140b3",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -457,8 +456,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton246",
                         "id": "MQASaveBtn",
+                        "designer|userClassName": "MyButton246",
                         "scale": "large",
                         "text": "Enregistrer"
                     },

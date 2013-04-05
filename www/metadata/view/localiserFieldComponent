@@ -1,5 +1,5 @@
 {
-    "type": "fieldcontainer",
+    "type": "Ext.form.FieldContainer",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,15 +7,14 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "90%",
-        "designer|userClassName": "localiserFieldComponent",
-        "designer|userAlias": "localiserFieldComponent",
         "height": 54,
         "width": 426,
+        "designer|userClassName": "localiserFieldComponent",
+        "designer|userAlias": "localiserFieldComponent",
         "layout": "anchor",
         "fieldLabel": "Label",
         "labelSeparator": " "
     },
-    "id": "ExtBox1-ext-gen18025",
     "designerId": "15b19248-a73a-4ad3-87eb-1ea892921ea0",
     "customConfigs": [
         {
@@ -26,7 +25,7 @@
     ],
     "cn": [
         {
-            "type": "textfield",
+            "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -34,14 +33,14 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "50%",
-                "designer|userClassName": "MyTextField78",
                 "margin": "0 10 0 0",
                 "style": "{float:left;}",
-                "name": "address",
-                "submitValue": false,
+                "designer|userClassName": "MyTextField78",
                 "fieldLabel": "Adresse",
                 "labelSeparator": " ",
-                "labelWidth": 60
+                "labelWidth": 60,
+                "name": "address",
+                "submitValue": false
             },
             "configAlternates": {
                 "style": "string"
@@ -49,7 +48,7 @@
             "designerId": "4b84a43f-530e-4725-97fb-2ebbef6a6c0c"
         },
         {
-            "type": "numberfield",
+            "type": "Ext.form.field.Number",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -57,19 +56,19 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "50%",
-                "designer|userClassName": "MyNumberField4",
                 "margin": null,
-                "name": "altitude",
-                "submitValue": false,
+                "designer|userClassName": "MyNumberField4",
                 "fieldLabel": "Altitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
+                "name": "altitude",
+                "submitValue": false,
                 "decimalPrecision": 6
             },
             "designerId": "a2030a19-a55b-4b67-9d5a-c4c68ae0b8e9"
         },
         {
-            "type": "numberfield",
+            "type": "Ext.form.field.Number",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -77,14 +76,14 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "50%",
-                "designer|userClassName": "MyNumberField5",
                 "margin": "0 10 0 0",
                 "style": "{float:left;}",
-                "name": "lat",
-                "submitValue": false,
+                "designer|userClassName": "MyNumberField5",
                 "fieldLabel": "Latitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
+                "name": "lat",
+                "submitValue": false,
                 "decimalPrecision": 6,
                 "maxValue": 90,
                 "minValue": -90
@@ -95,7 +94,7 @@
             "designerId": "3fed0995-74b5-413b-9ce6-a445b9d8f3d3"
         },
         {
-            "type": "numberfield",
+            "type": "Ext.form.field.Number",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -104,11 +103,11 @@
             "userConfig": {
                 "layout|anchor": "50%",
                 "designer|userClassName": "MyNumberField6",
-                "name": "lon",
-                "submitValue": false,
                 "fieldLabel": "Longitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
+                "name": "lon",
+                "submitValue": false,
                 "decimalPrecision": 6,
                 "maxValue": 180,
                 "minValue": -180

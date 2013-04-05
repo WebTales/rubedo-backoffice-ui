@@ -1,40 +1,38 @@
 {
-    "type": "container",
+    "type": "Ext.container.Container",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "regleChampAR",
-        "designer|userAlias": "regleChampAR",
         "frame": false,
         "margin": "10 0 0 0",
         "style": [
             "{clear:both}"
-        ]
+        ],
+        "designer|userClassName": "regleChampAR",
+        "designer|userAlias": "regleChampAR"
     },
-    "id": "ExtBox1-ext-gen48281",
     "designerId": "360ae16f-62cb-4c81-b236-91d5583211e5",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar22",
-                "designer|userAlias": "mytoolbar22",
                 "frame": true,
-                "hidden": false,
-                "itemId": "boite"
+                "itemId": "boite",
+                "designer|userClassName": "MyToolbar22",
+                "designer|userAlias": "mytoolbar22"
             },
             "designerId": "3c75a79e-90f7-4a56-a629-d75f94e71a32",
             "cn": [
                 {
-                    "type": "tbtext",
+                    "type": "Ext.toolbar.TextItem",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -42,14 +40,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyTextItem4",
                         "itemId": "nomChamp",
+                        "designer|userClassName": "MyTextItem4",
                         "text": "Champ"
                     },
                     "designerId": "cdec8b9e-1356-42ec-bd70-8fbf38156ea8"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -57,12 +55,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton74",
                         "frame": false,
                         "itemId": "boutonEnleveRegleAR",
                         "style": [
                             "{float:right}"
                         ],
+                        "designer|userClassName": "MyButton74",
                         "iconCls": "close",
                         "text": ""
                     },

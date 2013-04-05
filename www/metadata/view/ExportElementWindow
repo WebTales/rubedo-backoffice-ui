@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ExportElementWindow",
-        "designer|userAlias": "ExportElementWindow",
         "height": 168,
         "id": "ExportElementWindow",
         "width": 381,
+        "designer|userClassName": "ExportElementWindow",
+        "designer|userAlias": "ExportElementWindow",
         "resizable": false,
         "layout": "fit",
         "title": "Exporter un élément",
@@ -19,11 +19,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen49112",
     "designerId": "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -37,7 +36,7 @@
             "designerId": "c11ae844-3f12-4afa-9255-c75ba3c11c64",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -46,14 +45,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField19",
-                        "name": "name",
                         "fieldLabel": "Nom * ",
+                        "name": "name",
                         "allowBlank": false
                     },
                     "designerId": "7f37adb6-709c-4b57-b63d-1a0deb80f5f1"
                 },
                 {
-                    "type": "textareafield",
+                    "type": "Ext.form.field.TextArea",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -62,13 +61,13 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextArea4",
-                        "name": "description",
-                        "fieldLabel": "Description "
+                        "fieldLabel": "Description ",
+                        "name": "description"
                     },
                     "designerId": "a9698243-3ee8-4f40-b2df-10a43c76f672"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -76,8 +75,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton126",
                         "id": "ExportElementButton",
+                        "designer|userClassName": "MyButton126",
                         "text": "Exporter cet élément "
                     },
                     "designerId": "2b8ebde6-ea09-4fa7-acd3-6059cba61641"

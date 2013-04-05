@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "WorkspacesController",
         "designer|userAlias": "WorkspacesController"
     },
-    "id": "ExtBox1-ext-gen22833",
     "designerId": "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
     "cn": [
         {
@@ -92,7 +91,7 @@
                 "designer|userClassName": "onWorkspacesGridSelectionChange",
                 "fn": "onWorkspacesGridSelectionChange",
                 "implHandler": [
-                    "if (Ext.isEmpty(selections)){\r",
+                    "if (Ext.isEmpty(selected)){\r",
                     "    Ext.getCmp(\"workspaceRemove\").disable();\r",
                     "    Ext.getCmp(\"workspaceSave\").disable();\r",
                     "    Ext.getCmp(\"workspacesMainForm\").getForm().reset();\r",
@@ -101,8 +100,8 @@
                     "    Ext.getCmp(\"workspaceRemove\").enable();\r",
                     "    Ext.getCmp(\"workspaceSave\").enable();\r",
                     "    Ext.getCmp(\"workspacesMainForm\").enable();\r",
-                    "    Ext.getCmp(\"workspacesMainForm\").getForm().setValues(selections[0].getData());\r",
-                    "    if ((selections[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.workspaces\"])){\r",
+                    "    Ext.getCmp(\"workspacesMainForm\").getForm().setValues(selected[0].getData());\r",
+                    "    if ((selected[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.workspaces\"])){\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"workspacesMainForm\").query(\"field\"), function(field){\r",
                     "            field.setReadOnly(true);\r",
                     "        });\r",

@@ -1,22 +1,21 @@
 {
-    "type": "menu",
+    "type": "Ext.menu.Menu",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "settingsContextMenu",
-        "designer|userAlias": "settingsContextMenu",
         "frame": true,
         "id": "settingsContextMenu",
-        "width": null
+        "width": null,
+        "designer|userClassName": "settingsContextMenu",
+        "designer|userAlias": "settingsContextMenu"
     },
-    "id": "ExtBox1-ext-gen6813",
     "designerId": "89155b60-bd6b-4ba6-98c9-19a5443ffa2c",
     "cn": [
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -30,60 +29,58 @@
             "designerId": "3037325b-d9db-4d02-a1d7-6b9d7f3e8fbb",
             "cn": [
                 {
-                    "type": "menu",
+                    "type": "Ext.menu.Menu",
                     "reference": {
                         "name": "menu",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyMenu2",
                         "frame": true,
                         "width": null,
-                        "ignoreParentClicks": false,
-                        "plain": false,
+                        "designer|userClassName": "MyMenu2",
                         "showSeparator": false
                     },
                     "designerId": "6f008f16-0b19-4a66-89bf-4424300c5192",
                     "cn": [
                         {
-                            "type": "menuitem",
+                            "type": "Ext.menu.Item",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyMenuItem3",
                                 "id": "itemShowAllIcons",
+                                "designer|userClassName": "MyMenuItem3",
                                 "text": "Afficher"
                             },
                             "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408"
                         },
                         {
-                            "type": "menuitem",
+                            "type": "Ext.menu.Item",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyMenuItem4",
                                 "id": "itemHideAllIcons",
+                                "designer|userClassName": "MyMenuItem4",
                                 "text": "Cacher"
                             },
                             "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643"
                         },
                         {
-                            "type": "menuitem",
+                            "type": "Ext.menu.Item",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyMenuItem5",
                                 "id": "itemRearangeAllIcons",
+                                "designer|userClassName": "MyMenuItem5",
                                 "text": "Réorganiser automatiquement"
                             },
                             "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8"
@@ -93,7 +90,7 @@
             ]
         },
         {
-            "type": "menuseparator",
+            "type": "Ext.menu.Separator",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -105,15 +102,15 @@
             "designerId": "b9451322-077c-4b12-80a0-e4de53e30dba"
         },
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem2",
                 "id": "itemCustomizeDesktop",
+                "designer|userClassName": "MyMenuItem2",
                 "iconCls": "personalize",
                 "text": "Personnaliser"
             },

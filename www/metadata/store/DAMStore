@@ -8,21 +8,20 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "DAM",
-        "designer|userClassName": "DAMStore",
-        "designer|userAlias": "DAMStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "DAMModel",
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "DAMStore",
-        "model": "DAMModel",
+        "designer|userClassName": "DAMStore",
+        "designer|userAlias": "DAMStore",
         "data": null,
         "pageSize": 50
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen37718",
     "designerId": "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
     "customConfigs": [
         {
@@ -38,15 +37,15 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'dam/create',\r",
@@ -60,16 +59,16 @@
             "designerId": "f1e3f9b8-b4c7-4723-863f-8fab4c54eadb",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "0e0ed780-59f8-43db-b55e-95e6eefad958"
                 }

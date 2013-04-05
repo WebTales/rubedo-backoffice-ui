@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,23 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "UserAdminWindow",
-        "designer|userAlias": "UserAdminWindow",
         "height": 490,
         "id": "UserAdminWindow",
         "width": 800,
+        "designer|userClassName": "UserAdminWindow",
+        "designer|userAlias": "UserAdminWindow",
         "layout": "hbox",
         "iconCls": "user_edit",
         "title": "Utilisateurs",
-        "constrainHeader": true,
-        "maximizable": false,
-        "minimizable": false,
-        "modal": false
+        "constrainHeader": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen64047",
     "designerId": "437ee3cb-dd4a-4ddc-a96a-c098f1303647",
     "cn": [
         {
@@ -52,10 +48,10 @@
                     "type": "string"
                 }
             ],
-            "masterInstanceId": "ExtBox1-ext-gen2236"
+            "masterInstanceId": "73e60547-6188-4b20-9a1a-e3f085be455a"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -68,7 +64,7 @@
             "designerId": "8399ab7f-bc71-422a-a7e2-d7ec589ccfb1",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -77,8 +73,8 @@
                     "userConfig": {
                         "ACL": "write.ui.users",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton118",
                         "id": "userAdminAdd",
+                        "designer|userClassName": "MyButton118",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -94,7 +90,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -103,8 +99,8 @@
                     "userConfig": {
                         "ACL": "write.ui.users",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton117",
                         "id": "userAdminRemove",
+                        "designer|userClassName": "MyButton117",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -120,7 +116,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -133,7 +129,7 @@
                     "designerId": "d2048406-8115-48f9-81e1-56328b015cea"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -142,8 +138,8 @@
                     "userConfig": {
                         "RApplication": "users",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton263",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton263",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -160,7 +156,7 @@
             ]
         },
         {
-            "type": "tabpanel",
+            "type": "Ext.tab.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -168,24 +164,24 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyTabPanel7",
                 "disabled": true,
                 "id": "userAdminMainPanel",
+                "designer|userClassName": "MyTabPanel7",
                 "activeTab": 0
             },
             "designerId": "8c3d9510-d629-4e19-9483-9f30337da40f",
             "cn": [
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "id": "userAdminInfoDisplay",
                         "designer|userClassName": "MyForm22",
                         "designer|displayName": "",
-                        "id": "userAdminInfoDisplay",
                         "overflowY": "auto",
                         "layout": "hbox",
                         "bodyPadding": 10,
@@ -194,7 +190,7 @@
                     "designerId": "47d67632-9fff-4aa9-916c-e84569cc0bf7",
                     "cn": [
                         {
-                            "type": "tab",
+                            "type": "Ext.tab.Tab",
                             "reference": {
                                 "name": "tabConfig",
                                 "type": "object"
@@ -206,7 +202,7 @@
                             "designerId": "b2ab377d-4030-49f4-81a8-dbf760cc2938"
                         },
                         {
-                            "type": "fieldset",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -214,17 +210,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyFieldSet5",
                                 "height": 360,
                                 "margin": 0,
                                 "width": 356,
+                                "designer|userClassName": "MyFieldSet5",
                                 "autoScroll": true,
                                 "title": "Informations"
                             },
                             "designerId": "e0fa6c9b-e333-4aba-affb-81325bc4a2c9",
                             "cn": [
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -233,16 +229,15 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField5",
-                                        "disabled": false,
+                                        "fieldLabel": "Nom ",
                                         "name": "name",
                                         "readOnly": null,
-                                        "fieldLabel": "Nom ",
                                         "allowBlank": false
                                     },
                                     "designerId": "8c33f936-f9e6-4905-b7bc-8e3d699dcd0e"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -251,15 +246,15 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField22",
-                                        "name": "email",
                                         "fieldLabel": "E-mail ",
+                                        "name": "email",
                                         "allowBlank": false,
                                         "vtype": "email"
                                     },
                                     "designerId": "846e4c00-b8ff-48b7-9019-97fcdbceb783"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "Ext.form.field.ComboBox",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -268,12 +263,14 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox4",
-                                        "name": "title",
                                         "fieldLabel": "Civilité ",
+                                        "name": "title",
                                         "editable": false,
                                         "displayField": null,
                                         "forceSelection": true,
-                                        "store": "[\"Mr\",\"Mme\",\"Mlle\"]",
+                                        "store": [
+                                            "[\"Mr\",\"Mme\",\"Mlle\"]"
+                                        ],
                                         "valueField": null
                                     },
                                     "configAlternates": {
@@ -282,7 +279,7 @@
                                     "designerId": "09d06a04-4d18-457e-b8f6-74df51293dcb"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -291,13 +288,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField9",
-                                        "name": "organisation",
-                                        "fieldLabel": "Organisation "
+                                        "fieldLabel": "Organisation ",
+                                        "name": "organisation"
                                     },
                                     "designerId": "ff56953e-0343-4bdf-aefd-dd23940680b2"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -306,13 +303,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField20",
-                                        "name": "service",
-                                        "fieldLabel": "Service "
+                                        "fieldLabel": "Service ",
+                                        "name": "service"
                                     },
                                     "designerId": "01d43664-3bf9-43da-b4f7-81c4faefc240"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -321,13 +318,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField21",
-                                        "name": "post",
-                                        "fieldLabel": "Fonction "
+                                        "fieldLabel": "Fonction ",
+                                        "name": "post"
                                     },
                                     "designerId": "a2d7d6d1-dd54-448f-88ae-89aaf3576acf"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -336,13 +333,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField23",
-                                        "name": "telephone",
-                                        "fieldLabel": "Téléphone "
+                                        "fieldLabel": "Téléphone ",
+                                        "name": "telephone"
                                     },
                                     "designerId": "1003ac08-2dcc-43f4-b58f-340b97968436"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -351,13 +348,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField24",
-                                        "name": "mobile",
-                                        "fieldLabel": "Mobile "
+                                        "fieldLabel": "Mobile ",
+                                        "name": "mobile"
                                     },
                                     "designerId": "088dbd29-e57c-4e99-951a-6a2b57a5d71c"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -366,13 +363,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField25",
-                                        "name": "coordinates",
-                                        "fieldLabel": "Coordonnées "
+                                        "fieldLabel": "Coordonnées ",
+                                        "name": "coordinates"
                                     },
                                     "designerId": "c0576994-8a1a-4afc-b2c8-d57e4d26d93e"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "Ext.form.field.ComboBox",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -381,8 +378,8 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox5",
-                                        "name": "language",
                                         "fieldLabel": "Langue ",
+                                        "name": "language",
                                         "editable": false,
                                         "displayField": "language",
                                         "forceSelection": true,
@@ -392,7 +389,7 @@
                                     "designerId": "87c72347-a1a9-4d54-864f-68378e62361d"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -401,13 +398,13 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField80",
-                                        "name": "country",
-                                        "fieldLabel": "Pays "
+                                        "fieldLabel": "Pays ",
+                                        "name": "country"
                                     },
                                     "designerId": "487a8b72-5b09-40fb-bdac-db423609b78b"
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -416,8 +413,8 @@
                                     "userConfig": {
                                         "ACL": "write.ui.users",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyButton130",
                                         "id": "userAdminInfoEdit",
+                                        "designer|userClassName": "MyButton130",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4",
@@ -432,7 +429,7 @@
                             ]
                         },
                         {
-                            "type": "fieldset",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -440,33 +437,33 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyFieldSet4",
                                 "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
+                                "designer|userClassName": "MyFieldSet4",
                                 "title": "Photo"
                             },
                             "designerId": "50a05e4c-d597-4647-8831-9190d17f160b",
                             "cn": [
                                 {
-                                    "type": "image",
+                                    "type": "Ext.Img",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyImg12",
                                         "height": 180,
                                         "id": "userAdminProfilePicture",
                                         "margin": "0 0 18 18",
                                         "width": 140,
+                                        "designer|userClassName": "MyImg12",
                                         "src": "resources/images/userBig.png"
                                     },
                                     "designerId": "87cf3f1f-d102-426b-86ca-008863f143e5"
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -474,8 +471,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyButton85",
                                         "margin": "0 0 10 0",
+                                        "designer|userClassName": "MyButton85",
                                         "text": "Changer"
                                     },
                                     "designerId": "8c0ba0f1-fe60-4156-b16d-662458ac41a9",
@@ -503,7 +500,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -512,9 +509,9 @@
                                     "userConfig": {
                                         "ACL": "write.ui.users",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyButton128",
                                         "id": "userAdminProfilePictureDelete",
                                         "margin": null,
+                                        "designer|userClassName": "MyButton128",
                                         "text": "Supprimer"
                                     },
                                     "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1",
@@ -531,15 +528,15 @@
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm21",
                         "id": "userAdminAccessDisplay",
+                        "designer|userClassName": "MyForm21",
                         "overflowY": "auto",
                         "bodyPadding": 20,
                         "title": "Accès"
@@ -547,7 +544,7 @@
                     "designerId": "a179851e-2381-4922-8e5e-c74ffb7be46c",
                     "cn": [
                         {
-                            "type": "tab",
+                            "type": "Ext.tab.Tab",
                             "reference": {
                                 "name": "tabConfig",
                                 "type": "object"
@@ -559,7 +556,7 @@
                             "designerId": "4c8995ee-d38b-4823-9df4-8518de02a10b"
                         },
                         {
-                            "type": "fieldset",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -572,7 +569,7 @@
                             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
                             "cn": [
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -581,17 +578,17 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField28",
-                                        "name": "login",
-                                        "value": null,
                                         "fieldLabel": "Compte utilisateur ",
                                         "labelWidth": 200,
+                                        "name": "login",
+                                        "value": null,
                                         "allowBlank": false,
                                         "vtype": "alphanum"
                                     },
                                     "designerId": "99cd73ae-9957-433c-b445-4d1c5a406bbe"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "Ext.form.field.ComboBox",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -600,9 +597,9 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox29",
-                                        "name": "groups",
                                         "fieldLabel": "Groupes",
                                         "labelWidth": 200,
+                                        "name": "groups",
                                         "editable": false,
                                         "displayField": "name",
                                         "forceSelection": true,
@@ -614,7 +611,7 @@
                                     "designerId": "9c8e2993-fadb-4117-a3b3-6d4279070411"
                                 },
                                 {
-                                    "type": "combobox",
+                                    "type": "Ext.form.field.ComboBox",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -623,13 +620,12 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox29",
-                                        "name": "defaultGroup",
                                         "fieldLabel": "Groupe par defaut",
                                         "labelWidth": 200,
+                                        "name": "defaultGroup",
                                         "editable": false,
                                         "displayField": "name",
                                         "forceSelection": true,
-                                        "multiSelect": false,
                                         "queryMode": "local",
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
@@ -640,7 +636,7 @@
                                     "designerId": "54093434-1887-4577-810c-21846e785b62"
                                 },
                                 {
-                                    "type": "datefield",
+                                    "type": "Ext.form.field.Date",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -649,14 +645,14 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyDateField",
-                                        "name": "startValidity",
                                         "fieldLabel": "Début de validité ",
-                                        "labelWidth": 200
+                                        "labelWidth": 200,
+                                        "name": "startValidity"
                                     },
                                     "designerId": "7d3728d2-1b25-48a6-bd55-82bc31eaf284"
                                 },
                                 {
-                                    "type": "datefield",
+                                    "type": "Ext.form.field.Date",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -665,14 +661,14 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "designer|userClassName": "MyDateField1",
-                                        "name": "endValidity",
                                         "fieldLabel": "Fin de validité ",
-                                        "labelWidth": 200
+                                        "labelWidth": 200,
+                                        "name": "endValidity"
                                     },
                                     "designerId": "2f544c05-24f0-4f13-b209-860742f40890"
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -681,8 +677,8 @@
                                     "userConfig": {
                                         "ACL": "write.ui.users",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyButton127",
                                         "id": "userAdminAccessEdit",
+                                        "designer|userClassName": "MyButton127",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "848b18e8-9811-4ad3-b616-69932515952b",
@@ -697,7 +693,7 @@
                             ]
                         },
                         {
-                            "type": "fieldset",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -718,7 +714,7 @@
                             ],
                             "cn": [
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -726,8 +722,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyButton131",
                                         "id": "AdminChangeUserPwd",
+                                        "designer|userClassName": "MyButton131",
                                         "text": "Changer le mot de passe de cet utilisateur"
                                     },
                                     "designerId": "a7c9c3f6-0197-4c9c-86d4-154356adf8f5"
@@ -735,16 +731,16 @@
                             ]
                         },
                         {
-                            "type": "gridpanel",
+                            "type": "Ext.grid.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyGridPanel18",
                                 "height": 150,
                                 "hidden": true,
+                                "designer|userClassName": "MyGridPanel18",
                                 "autoScroll": true,
                                 "title": "Délégations",
                                 "store": "DelegationsDataStore"
@@ -752,20 +748,20 @@
                             "designerId": "506eb4a3-1cd2-4c83-a8d9-daaa1c3e7930",
                             "cn": [
                                 {
-                                    "type": "gridview",
+                                    "type": "Ext.grid.View",
                                     "reference": {
                                         "name": "viewConfig",
                                         "type": "object"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyGridView18",
-                                        "height": null
+                                        "height": null,
+                                        "designer|userClassName": "MyGridView18"
                                     },
                                     "designerId": "2f7b933a-287a-438a-be4b-57bad565633b"
                                 },
                                 {
-                                    "type": "gridcolumn",
+                                    "type": "Ext.grid.column.Column",
                                     "reference": {
                                         "name": "columns",
                                         "type": "array"
@@ -774,13 +770,13 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyColumn45",
                                         "dataIndex": "receiverId",
-                                        "flex": 1,
-                                        "text": "Délégué"
+                                        "text": "Délégué",
+                                        "flex": 1
                                     },
                                     "designerId": "5f7bfb0a-269a-430d-9e0b-26b07bfec26a",
                                     "cn": [
                                         {
-                                            "type": "combobox",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "editor",
                                                 "type": "object"
@@ -840,7 +836,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "datecolumn",
+                                    "type": "Ext.grid.column.Date",
                                     "reference": {
                                         "name": "columns",
                                         "type": "array"
@@ -849,13 +845,13 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyDateColumn6",
                                         "dataIndex": "startValidity",
-                                        "flex": 1,
-                                        "text": "Début de validité"
+                                        "text": "Début de validité",
+                                        "flex": 1
                                     },
                                     "designerId": "a07db61c-cff3-4b23-b6b9-98d1783792fc",
                                     "cn": [
                                         {
-                                            "type": "datefield",
+                                            "type": "Ext.form.field.Date",
                                             "reference": {
                                                 "name": "editor",
                                                 "type": "object"
@@ -869,7 +865,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "datecolumn",
+                                    "type": "Ext.grid.column.Date",
                                     "reference": {
                                         "name": "columns",
                                         "type": "array"
@@ -878,13 +874,13 @@
                                     "userConfig": {
                                         "designer|userClassName": "MyDateColumn7",
                                         "dataIndex": "endValidity",
-                                        "flex": 1,
-                                        "text": "Fin de validité"
+                                        "text": "Fin de validité",
+                                        "flex": 1
                                     },
                                     "designerId": "91efc62d-e39c-4d0a-a9f8-be46b2ef9f0e",
                                     "cn": [
                                         {
-                                            "type": "datefield",
+                                            "type": "Ext.form.field.Date",
                                             "reference": {
                                                 "name": "editor",
                                                 "type": "object"
@@ -898,7 +894,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "toolbar",
+                                    "type": "Ext.toolbar.Toolbar",
                                     "reference": {
                                         "name": "dockedItems",
                                         "type": "array"
@@ -911,7 +907,7 @@
                                     "designerId": "188dc337-9de5-481e-b840-c13009721805",
                                     "cn": [
                                         {
-                                            "type": "tbfill",
+                                            "type": "Ext.toolbar.Fill",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -924,7 +920,7 @@
                                             "designerId": "4b65bcef-4575-46f7-a986-9ce8984cf53d"
                                         },
                                         {
-                                            "type": "button",
+                                            "type": "Ext.button.Button",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -933,8 +929,8 @@
                                             "userConfig": {
                                                 "ACL": "write.ui.users",
                                                 "layout|flex": null,
-                                                "designer|userClassName": "MyButton133",
                                                 "id": "AdminAddDelegationBtn",
+                                                "designer|userClassName": "MyButton133",
                                                 "iconCls": "add",
                                                 "text": "Ajouter"
                                             },
@@ -948,7 +944,7 @@
                                             ]
                                         },
                                         {
-                                            "type": "button",
+                                            "type": "Ext.button.Button",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -957,8 +953,8 @@
                                             "userConfig": {
                                                 "ACL": "write.ui.users",
                                                 "layout|flex": null,
-                                                "designer|userClassName": "MyButton134",
                                                 "id": "AdminDeleteDelegationBtn",
+                                                "designer|userClassName": "MyButton134",
                                                 "iconCls": "close",
                                                 "text": "Supprimer"
                                             },
@@ -974,20 +970,19 @@
                                     ]
                                 },
                                 {
-                                    "type": "checkboxselectionmodel",
+                                    "type": "Ext.selection.CheckboxModel",
                                     "reference": {
                                         "name": "selModel",
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
                                     "userConfig": {
-                                        "designer|userClassName": "MyCheckboxSelectionModel6",
-                                        "checkOnly": false
+                                        "designer|userClassName": "MyCheckboxSelectionModel6"
                                     },
                                     "designerId": "e8c4c4fb-1769-442e-b12b-7995efe474e0"
                                 },
                                 {
-                                    "type": "gridroweditingplugin",
+                                    "type": "Ext.grid.plugin.RowEditing",
                                     "reference": {
                                         "name": "plugins",
                                         "type": "array"
@@ -1029,7 +1024,7 @@
                                         "designer|userClassName": "onGridpanelDestroy",
                                         "fn": "onGridpanelDestroy",
                                         "implHandler": [
-                                            "abstractcomponent.getStore().removeAll();"
+                                            "component.getStore().removeAll();"
                                         ],
                                         "name": "destroy",
                                         "scope": "me"
@@ -1051,8 +1046,8 @@
                         "designer|userClassName": "onUserAdminMainPanelAfterRender",
                         "fn": "onUserAdminMainPanelAfterRender",
                         "implHandler": [
-                            "abstractcomponent.getLayout().setActiveItem(1);\r",
-                            "abstractcomponent.getLayout().setActiveItem(0);"
+                            "component.getLayout().setActiveItem(1);\r",
+                            "component.getLayout().setActiveItem(0);"
                         ],
                         "name": "afterrender",
                         "scope": "me"
@@ -1072,7 +1067,7 @@
                 "layout|flex": null
             },
             "designerId": "95a541af-1468-47fa-9f82-752b3d3bc714",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -1085,7 +1080,7 @@
                 "layout|flex": null
             },
             "designerId": "7d41580f-2343-4bd2-a0ee-ccbc5583cd2b",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
     ]
 }

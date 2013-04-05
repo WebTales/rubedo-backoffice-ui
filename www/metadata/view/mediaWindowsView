@@ -1,28 +1,25 @@
 {
-    "type": "dataview",
+    "type": "Ext.view.View",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mediaWindowsView",
-        "designer|userAlias": "mediaWindowsView",
         "id": "MediaMainView",
         "padding": 10,
-        "autoScroll": false,
+        "designer|userClassName": "mediaWindowsView",
+        "designer|userAlias": "mediaWindowsView",
         "emptyText": "Dossier Vide",
         "itemSelector": "div.thumb-wrap",
-        "multiSelect": true,
         "overItemCls": "x-item-over",
         "store": null,
         "trackOver": true
     },
-    "id": "ExtBox1-ext-gen8472",
     "designerId": "65bb8cb3-a5cd-4190-a57a-aee4326f88e2",
     "cn": [
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "tpl",
                 "type": "object"

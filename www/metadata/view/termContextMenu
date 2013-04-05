@@ -1,30 +1,29 @@
 {
-    "type": "menu",
+    "type": "Ext.menu.Menu",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "termContextMenu",
-        "designer|userAlias": "termContextMenu",
         "id": "termContextMenu",
         "width": null,
+        "designer|userClassName": "termContextMenu",
+        "designer|userAlias": "termContextMenu",
         "showSeparator": false
     },
-    "id": "ExtBox1-ext-gen12765",
     "designerId": "b7f01d02-1b3a-4b25-a151-46fe64190510",
     "cn": [
         {
-            "type": "textfield",
+            "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField8",
                 "id": "nouveauTermeTaxoField",
+                "designer|userClassName": "MyTextField8",
                 "fieldLabel": "Terme ",
                 "labelSeparator": null,
                 "labelWidth": 50,
@@ -34,15 +33,15 @@
             "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton66",
                 "id": "boutonAjouterTermesTaxo",
+                "designer|userClassName": "MyButton66",
                 "icon": "",
                 "iconCls": "add",
                 "text": "Ajouter"
@@ -50,15 +49,15 @@
             "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton67",
                 "id": "boutonSupprimerTermesTaxo",
+                "designer|userClassName": "MyButton67",
                 "icon": null,
                 "iconCls": "close",
                 "text": "Supprimer"

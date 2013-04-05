@@ -8,19 +8,18 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "ContentTypes",
-        "designer|userClassName": "TypesContenusDataJson",
         "autoLoad": false,
         "autoSync": true,
+        "model": "typesContenusDataModel",
         "remoteFilter": true,
         "storeId": "TypesContenusDataJson",
-        "model": "typesContenusDataModel",
+        "designer|userClassName": "TypesContenusDataJson",
         "data": null,
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen19494",
     "designerId": "73f05935-ebc7-40e3-8cfa-a797d0649d76",
     "customConfigs": [
         {
@@ -36,7 +35,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -58,29 +57,29 @@
             "designerId": "5576d994-f5ae-4e01-b729-5aaa88d58df8",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "1b84526b-ec3a-4346-b5cb-b850d005eb61"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter13",
                         "nameProperty": "mapping",
+                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },
@@ -89,15 +88,15 @@
             ]
         },
         {
-            "type": "filter",
+            "type": "Ext.util.Filter",
             "reference": {
                 "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFilter7",
                 "property": "system",
+                "designer|userClassName": "MyFilter7",
                 "value": [
                     "{\"$ne\":true}"
                 ]

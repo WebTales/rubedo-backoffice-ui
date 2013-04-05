@@ -1,18 +1,18 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "nouveauTypeContenu",
-        "designer|userAlias": "nouveauTypeContenu",
         "frame": null,
         "height": null,
         "id": "nouveauTypeContenuFenetre",
         "maxHeight": 120,
         "width": 300,
+        "designer|userClassName": "nouveauTypeContenu",
+        "designer|userAlias": "nouveauTypeContenu",
         "resizable": false,
         "iconCls": "content-icon",
         "title": "Nouveau type de contenu",
@@ -22,11 +22,10 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen27280",
     "designerId": "e6178e4c-162c-40e0-816c-026c97fd3f5e",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -40,7 +39,7 @@
             "designerId": "38a03ff8-6fce-4b91-b472-bd57d4fa1c7e",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -48,15 +47,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField10",
                         "id": "champCreerTC",
+                        "designer|userClassName": "MyTextField10",
                         "fieldLabel": "Nom ",
                         "allowBlank": false
                     },
                     "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a"
                 },
                 {
-                    "type": "checkboxfield",
+                    "type": "Ext.form.field.Checkbox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -65,8 +64,8 @@
                     "userConfig": {
                         "ACL": "write.ui.dependantTypes",
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyCheckbox3",
                         "id": "champTCIsDep",
+                        "designer|userClassName": "MyCheckbox3",
                         "fieldLabel": "Imbriqué ",
                         "boxLabel": ""
                     },
@@ -80,7 +79,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -88,8 +87,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton70",
                         "id": "boutonCreerTC",
+                        "designer|userClassName": "MyButton70",
                         "text": "Créer un nouveau type de contenu"
                     },
                     "designerId": "5e9ce190-3a65-410a-8f33-122344d58a33"

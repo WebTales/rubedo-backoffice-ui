@@ -8,17 +8,16 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "ContentTypes",
+        "autoLoad": false,
+        "model": null,
+        "storeId": "DepTypesForContents",
         "designer|userClassName": "DepTypesForContents",
         "designer|userAlias": "DepTypesForContents",
-        "autoLoad": false,
-        "storeId": "DepTypesForContents",
-        "model": null,
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen44731",
     "designerId": "4116a2e3-9249-4bd3-9cb8-0dfe02c9a66b",
     "customConfigs": [
         {
@@ -34,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -55,31 +54,31 @@
             "designerId": "8062a6ba-3e62-4cd1-9490-16d12eeb55c2",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "f377fb72-db71-4505-b2c8-2d7970f61530"
                 }
             ]
         },
         {
-            "type": "filter",
+            "type": "Ext.util.Filter",
             "reference": {
                 "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFilter",
                 "property": "dependant",
+                "designer|userClassName": "MyFilter",
                 "value": [
                     "true"
                 ]
@@ -87,42 +86,42 @@
             "designerId": "d5055c6f-699e-4f8f-94b6-2224562ef1cf"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField2",
-                "name": "type"
+                "name": "type",
+                "designer|userClassName": "MyField2"
             },
             "designerId": "4b122b50-d3a3-46e8-8497-4cd2a398759d"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField53",
                 "name": "dependant",
-                "type": "boolean"
+                "type": "boolean",
+                "designer|userClassName": "MyField53"
             },
             "designerId": "fde37044-a53a-4136-8a71-47337338973d"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field153",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field153"
             },
             "designerId": "05ca686e-9689-466a-912d-ee5be996adf9"
         }

@@ -8,18 +8,16 @@
     "userConfig": {
         "usedCollection": "Sites",
         "isOptimised": true,
+        "autoLoad": false,
+        "model": "sitesDataModel",
+        "storeId": "SitesComboPreview",
         "designer|userClassName": "SitesComboPreview",
         "designer|userAlias": "SitesComboPreview",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "SitesComboPreview",
-        "model": "sitesDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen9967",
     "designerId": "1429abea-2977-46c7-993e-339569e76d1a",
     "customConfigs": [
         {
@@ -35,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -56,21 +54,21 @@
             "designerId": "1dfcb7ff-b7b3-45da-8e7c-4ec59c540654",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader4",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader4"
                     },
                     "designerId": "79cabc7d-f3eb-4d7d-b552-c50ac74a97ed"
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"

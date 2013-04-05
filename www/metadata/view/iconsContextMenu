@@ -1,47 +1,46 @@
 {
-    "type": "menu",
+    "type": "Ext.menu.Menu",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "iconsContextMenu",
-        "designer|userAlias": "iconsContextMenu",
         "frame": true,
         "id": "iconsContextMenu",
         "width": null,
+        "designer|userClassName": "iconsContextMenu",
+        "designer|userAlias": "iconsContextMenu",
         "showSeparator": false
     },
-    "id": "ExtBox1-ext-gen9284",
     "designerId": "7c4031db-6eea-4991-8483-b8160573bba4",
     "cn": [
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem2",
                 "id": null,
                 "itemId": "iconDeleteMenuItem",
+                "designer|userClassName": "MyMenuItem2",
                 "iconCls": "close",
                 "text": "Supprimer"
             },
             "designerId": "25329bfb-492e-44b5-821f-d7930b01ed8e"
         },
         {
-            "type": "textfield",
+            "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField26",
                 "itemId": "iconNameField",
+                "designer|userClassName": "MyTextField26",
                 "fieldLabel": "Nom ",
                 "labelWidth": 40,
                 "allowBlank": false
@@ -49,16 +48,16 @@
             "designerId": "3affe49c-7c9f-40c9-bb62-e1b1049a2d25"
         },
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem2",
                 "id": null,
                 "itemId": "iconRenameMenuItem",
+                "designer|userClassName": "MyMenuItem2",
                 "iconCls": "edit",
                 "text": "Renommer"
             },

@@ -1,30 +1,28 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "PersoPicUploadWindow",
-        "designer|userAlias": "PersoPicUploadWindow",
         "height": 102,
         "width": 400,
+        "designer|userClassName": "PersoPicUploadWindow",
+        "designer|userAlias": "PersoPicUploadWindow",
         "resizable": false,
         "layout": "fit",
         "title": "Uploader une image",
-        "constrain": false,
         "constrainHeader": true,
         "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "id": "ExtBox1-ext-gen6520",
     "designerId": "7bf03ae2-f252-43f4-b5b8-315532a4fda5",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -38,7 +36,7 @@
             "designerId": "0abd1119-18a7-4d08-b026-f5c7f283f6b0",
             "cn": [
                 {
-                    "type": "filefield",
+                    "type": "Ext.form.field.File",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -47,15 +45,15 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyFileUpload5",
-                        "name": "file",
                         "fieldLabel": "Fichier",
+                        "name": "file",
                         "allowBlank": false,
                         "buttonText": "Choisir"
                     },
                     "designerId": "0f959430-92e3-44e3-8daa-a6d7482cd6bc"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -63,8 +61,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "50%",
-                        "designer|userClassName": "MyButton218",
                         "margin": "0 10 0 0",
+                        "designer|userClassName": "MyButton218",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -127,7 +125,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -135,8 +133,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "50%",
-                        "designer|userClassName": "MyButton219",
                         "margin": "0 0 0 10",
+                        "designer|userClassName": "MyButton219",
                         "iconCls": "close",
                         "text": "Annuler"
                     },

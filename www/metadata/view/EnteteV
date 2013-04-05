@@ -1,5 +1,5 @@
 {
-    "type": "toolbar",
+    "type": "Ext.toolbar.Toolbar",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,17 +7,16 @@
     "codeClass": null,
     "userConfig": {
         "container|padding": null,
-        "designer|userClassName": "EnteteV",
-        "designer|userAlias": "entete",
         "height": 46,
         "id": "entete",
-        "padding": null
+        "padding": null,
+        "designer|userClassName": "EnteteV",
+        "designer|userAlias": "entete"
     },
-    "id": "ExtBox1-ext-gen14010",
     "designerId": "399ef6a6-ce2b-45ce-b060-182cbb6d47e5",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -25,9 +24,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyButton79",
                 "disabled": true,
                 "id": "boutonPincipalInterface",
+                "designer|userClassName": "MyButton79",
                 "icon": "resources/images/logoRubedo.png",
                 "scale": "large",
                 "text": null
@@ -35,7 +34,7 @@
             "designerId": "992292a5-8070-43d3-8eca-9b714b20724d"
         },
         {
-            "type": "tbseparator",
+            "type": "Ext.toolbar.Separator",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -49,7 +48,7 @@
             "designerId": "82c79abf-2f13-4993-929f-eb97bef30738"
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -57,8 +56,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyButton17",
                 "id": "desktopHomeBtn",
+                "designer|userClassName": "MyButton17",
                 "iconCls": "desktopHome_med",
                 "scale": "medium",
                 "text": "",
@@ -70,7 +69,7 @@
             "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4"
         },
         {
-            "type": "tbseparator",
+            "type": "Ext.toolbar.Separator",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -84,7 +83,7 @@
             "designerId": "c9b9dbe4-c3c2-4d7c-9e5d-f78c7d19ea94"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -92,16 +91,16 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyToolbar24",
                 "border": 0,
                 "height": 30,
                 "id": "taskbarPrincipal",
+                "designer|userClassName": "MyToolbar24",
                 "enableOverflow": true
             },
             "designerId": "1cf8c639-afdd-492d-a6f2-9805dc2e51c1"
         },
         {
-            "type": "textfield",
+            "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -109,13 +108,13 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyTextField",
                 "id": "ESSearchField",
                 "itemId": "filterField",
-                "value": null,
+                "designer|userClassName": "MyTextField",
                 "fieldLabel": "",
                 "labelSeparator": " ",
                 "labelWidth": 68,
+                "value": null,
                 "emptyText": "Recherche",
                 "enableKeyEvents": null
             },
@@ -144,7 +143,7 @@
             ]
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -152,9 +151,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyButton",
                 "id": "ESSearchButton",
                 "itemId": null,
+                "designer|userClassName": "MyButton",
                 "iconCls": "search",
                 "text": null
             },

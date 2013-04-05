@@ -1,23 +1,22 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "NestedContentsGrid",
-        "designer|userAlias": "NestedContentsGrid",
         "id": "NestedContentsGrid",
         "itemId": null,
+        "designer|userClassName": "NestedContentsGrid",
+        "designer|userAlias": "NestedContentsGrid",
         "title": null,
         "store": "NestedContentsStore"
     },
-    "id": "ExtBox1-ext-gen7209",
     "designerId": "1a109b37-693d-4f8c-8b02-455dffd48a58",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -29,7 +28,7 @@
             "designerId": "d0d193f1-a7c7-44a9-84be-4548ec9e26de"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -39,8 +38,8 @@
                 "filter": true,
                 "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
-                "flex": 1,
-                "text": "Titre"
+                "text": "Titre",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -82,7 +81,7 @@
             ]
         },
         {
-            "type": "booleancolumn",
+            "type": "Ext.grid.column.Boolean",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -98,8 +97,8 @@
                     "            ]\r",
                     "}"
                 ],
-                "designer|userClassName": "MyBooleanColumn3",
                 "width": 60,
+                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -118,7 +117,7 @@
             ]
         },
         {
-            "type": "checkboxselectionmodel",
+            "type": "Ext.selection.CheckboxModel",
             "reference": {
                 "name": "selModel",
                 "type": "object"
@@ -130,7 +129,7 @@
             "designerId": "ffa17544-3abd-4e72-a4a9-f37c4f1ce274"
         },
         {
-            "type": "groupinggridfeature",
+            "type": "Ext.grid.feature.Grouping",
             "reference": {
                 "name": "features",
                 "type": "array"
@@ -143,7 +142,7 @@
             "designerId": "4857f368-7d2a-41cc-b239-95daf8b38792",
             "cn": [
                 {
-                    "type": "template",
+                    "type": "Ext.XTemplate",
                     "reference": {
                         "name": "groupHeaderTpl",
                         "type": "object"

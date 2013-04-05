@@ -6,21 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": false,
+        "model": "typesContenusDataModel",
+        "storeId": "TCDepForQA",
         "designer|userClassName": "TCDepForQA",
         "designer|userAlias": "TCDepForQA",
-        "autoLoad": false,
-        "storeId": "TCDepForQA",
-        "model": "typesContenusDataModel",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen11982",
     "designerId": "c169dcca-ae11-4cb6-ac6d-7734f240e1fc",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -41,31 +40,31 @@
             "designerId": "4241738d-a410-4c4b-ad07-8758ad9e01d0",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "845802ac-c948-4dba-aff6-d258a9b4487f"
                 }
             ]
         },
         {
-            "type": "filter",
+            "type": "Ext.util.Filter",
             "reference": {
                 "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyFilter",
                 "property": "dependant",
+                "designer|userClassName": "MyFilter",
                 "value": [
                     "true"
                 ]

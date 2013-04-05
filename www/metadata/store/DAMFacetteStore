@@ -6,24 +6,25 @@
     },
     "codeClass": null,
     "userConfig": {
-        "facettes": "[ ]",
+        "facettes": [
+            "[ ]"
+        ],
         "activeFacettes": [
             "{ }"
         ],
-        "designer|userClassName": "DAMFacetteStore",
-        "designer|userAlias": "DAMFacetteStore",
         "autoLoad": false,
         "autoSync": true,
+        "model": "DAMSearchModel",
         "remoteSort": true,
         "storeId": "DAMFacetteStore",
-        "model": "DAMSearchModel",
+        "designer|userClassName": "DAMFacetteStore",
+        "designer|userAlias": "DAMFacetteStore",
         "pageSize": 50
     },
     "configAlternates": {
         "facettes": "array",
         "activeFacettes": "object"
     },
-    "id": "ExtBox1-ext-gen25324",
     "designerId": "0cb74fd7-8088-4c85-a691-7bc264873bce",
     "customConfigs": [
         {
@@ -56,15 +57,15 @@
             "designerId": "105ea355-af9a-48cc-8cb2-6ab5445382d1"
         },
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy57",
                 "batchActions": false,
+                "designer|userClassName": "MyAjaxProxy57",
                 "api": [
                     "{\r",
                     "         create: 'dam/create',\r",
@@ -77,16 +78,16 @@
             "designerId": "5e785b38-6664-49fc-854b-e31abe5bbfc7",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader56",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader56"
                     },
                     "designerId": "19df1797-687f-4d0f-a9d3-6f0860e5ff48",
                     "cn": [
@@ -137,15 +138,15 @@
                     ]
                 },
                 {
-                    "type": "jsonwriter",
+                    "type": "Ext.data.writer.Json",
                     "reference": {
                         "name": "writer",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter13",
                         "nameProperty": null,
+                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },
@@ -231,16 +232,16 @@
             "designerId": "0a5516d7-99a0-4842-9dd2-3bc9dd725c43"
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter6",
                 "direction": "DESC",
-                "property": "score"
+                "property": "score",
+                "designer|userClassName": "MySorter6"
             },
             "designerId": "ca4a4559-facf-42c7-9914-0c926c14a775"
         }

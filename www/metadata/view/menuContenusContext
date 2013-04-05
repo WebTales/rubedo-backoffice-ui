@@ -1,23 +1,22 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "menuContenusContext",
-        "designer|userAlias": "menuContenusContext",
         "id": "ContenusGrid",
         "itemId": null,
+        "designer|userClassName": "menuContenusContext",
+        "designer|userAlias": "menuContenusContext",
         "title": "",
         "store": "ContenusDataJson"
     },
-    "id": "ExtBox1-ext-gen2729",
     "designerId": "648ee02b-21bf-4d06-8c07-2e215977ab97",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -29,7 +28,7 @@
             "designerId": "1768ec9b-890e-4c0e-8028-98798e539c51"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -39,8 +38,8 @@
                 "filter": true,
                 "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
-                "flex": 1,
-                "text": "Titre"
+                "text": "Titre",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -95,7 +94,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -114,8 +113,8 @@
                 ],
                 "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
-                "flex": 1,
-                "text": "Etat"
+                "text": "Etat",
+                "flex": 1
             },
             "configAlternates": {
                 "filter": "object"
@@ -163,7 +162,7 @@
             ]
         },
         {
-            "type": "booleancolumn",
+            "type": "Ext.grid.column.Boolean",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -179,8 +178,8 @@
                     "            ]\r",
                     "}"
                 ],
-                "designer|userClassName": "MyBooleanColumn3",
                 "width": 60,
+                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -199,7 +198,7 @@
             ]
         },
         {
-            "type": "checkboxselectionmodel",
+            "type": "Ext.selection.CheckboxModel",
             "reference": {
                 "name": "selModel",
                 "type": "object"
@@ -211,7 +210,7 @@
             "designerId": "c81741b8-eace-4a05-a234-d574f7bfabcc"
         },
         {
-            "type": "pagingtoolbar",
+            "type": "Ext.toolbar.Paging",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -219,8 +218,8 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom",
-                "designer|userClassName": "MyPagingToolbar",
                 "width": 360,
+                "designer|userClassName": "MyPagingToolbar",
                 "displayInfo": true,
                 "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
                 "emptyMsg": "Rien à afficher",

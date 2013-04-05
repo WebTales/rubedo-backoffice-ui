@@ -6,16 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "taxoTermsCombo",
-        "storeId": "MyJsonStore28",
         "model": "taxonomyTermModel",
+        "storeId": "MyJsonStore28",
+        "designer|userClassName": "taxoTermsCombo",
         "pageSize": 1000
     },
-    "id": "ExtBox1-ext-gen11860",
     "designerId": "05756dfd-35f5-4ef8-9b19-273ca508f817",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -32,16 +31,16 @@
             "designerId": "809bb699-8685-4884-b804-cc1bf3867b59",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader26",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader26"
                     },
                     "designerId": "85e297a3-b404-420f-8646-a4abfc73fee1"
                 }

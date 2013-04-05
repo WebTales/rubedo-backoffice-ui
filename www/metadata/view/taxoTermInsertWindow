@@ -1,24 +1,23 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "taxoTermInsertWindow",
-        "designer|userAlias": "taxoTermInsertWindow",
         "height": 118,
         "id": "taxoTermInsertWindow",
         "width": 400,
+        "designer|userClassName": "taxoTermInsertWindow",
+        "designer|userAlias": "taxoTermInsertWindow",
         "layout": "fit",
         "title": "Nouveau terme"
     },
-    "id": "ExtBox1-ext-gen19898",
     "designerId": "49bec756-7701-4c60-a70f-4a067633eff3",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -32,7 +31,7 @@
             "designerId": "13fd13d6-c501-43ed-8f49-b959edc54343",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -41,14 +40,14 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField77",
-                        "name": "text",
                         "fieldLabel": "Terme ",
+                        "name": "text",
                         "allowBlank": false
                     },
                     "designerId": "b0ba22a7-c737-4e4a-861c-7d6d0c9d0539"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -56,8 +55,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyButton247",
                         "id": "taxoTermInsertorBtn",
+                        "designer|userClassName": "MyButton247",
                         "scale": "large",
                         "text": "Ajouter"
                     },

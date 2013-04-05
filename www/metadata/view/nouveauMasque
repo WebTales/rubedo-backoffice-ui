@@ -1,16 +1,16 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "nouveauMasque",
-        "designer|userAlias": "nouveauMasque",
         "height": 133,
         "id": "nouveauMasqueFenetre",
         "width": 400,
+        "designer|userClassName": "nouveauMasque",
+        "designer|userAlias": "nouveauMasque",
         "resizable": [
             "false"
         ],
@@ -19,11 +19,10 @@
         "title": "Nouveau Masque",
         "modal": true
     },
-    "id": "ExtBox1-ext-gen30900",
     "designerId": "a5749eef-eecb-4978-b0d5-e075d6b5418b",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -37,7 +36,7 @@
             "designerId": "e7735688-e799-49e6-b885-2f1be0fe74fe",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -45,19 +44,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField15",
                         "id": "nouveauMasqueTitre",
+                        "designer|userClassName": "MyTextField15",
+                        "fieldLabel": "Titre ",
                         "value": [
                             "Nouveau Masque",
                             ""
                         ],
-                        "fieldLabel": "Titre ",
                         "allowBlank": false
                     },
                     "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298"
                 },
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -65,8 +64,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyComboBox",
                         "id": "nouveauMasqueSite",
+                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "Site ",
                         "allowBlank": false,
                         "editable": false,
@@ -91,9 +90,9 @@
                                 "designer|userClassName": "onNouveauMasqueSiteAfterRender",
                                 "fn": "onNouveauMasqueSiteAfterRender",
                                 "implHandler": [
-                                    "var results = abstractcomponent.getStore().getRange();\r",
+                                    "var results = component.getStore().getRange();\r",
                                     "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
-                                    "    abstractcomponent.select(results[0]);\r",
+                                    "    component.select(results[0]);\r",
                                     "}"
                                 ],
                                 "name": "afterrender",
@@ -104,7 +103,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -112,9 +111,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "1",
-                        "designer|userClassName": "MyButton50",
                         "id": "creerNouveauMasque",
                         "width": null,
+                        "designer|userClassName": "MyButton50",
                         "text": "Créer un nouveau masque"
                     },
                     "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a"

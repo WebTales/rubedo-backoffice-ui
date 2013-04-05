@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,23 +7,20 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "searchResultsWindow",
-        "designer|userAlias": "searchResultsWindow",
         "height": 492,
         "id": "searchResultsWindow",
         "width": 936,
+        "designer|userClassName": "searchResultsWindow",
+        "designer|userAlias": "searchResultsWindow",
         "layout": "hbox",
         "iconCls": "search",
         "title": "Résultats de recherche",
-        "constrainHeader": true,
-        "maximizable": false,
-        "minimizable": false
+        "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen9089",
     "designerId": "f720ad71-dfb5-436d-95de-957b47102cb6",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -31,9 +28,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "designer|userClassName": "MyForm35",
                 "id": "searchFacetBox",
                 "width": 240,
+                "designer|userClassName": "MyForm35",
                 "overflowY": "auto",
                 "bodyPadding": "0 20 0 10",
                 "title": "Filtres"
@@ -41,7 +38,7 @@
             "designerId": "35d80392-506f-4f26-89c9-d833f433870d",
             "cn": [
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -54,7 +51,7 @@
                     "designerId": "2f9dc766-5c89-4824-9f2c-c5aec6163e59",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -62,11 +59,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "designer|userClassName": "MyTextField62",
                                 "id": "ESFacetQueryField",
-                                "name": "query",
+                                "designer|userClassName": "MyTextField62",
                                 "fieldLabel": "",
                                 "labelWidth": 40,
+                                "name": "query",
                                 "enableKeyEvents": null
                             },
                             "designerId": "c9204439-6bcb-47e9-a8bf-19d76e699b6d",
@@ -94,7 +91,7 @@
                             ]
                         },
                         {
-                            "type": "tbfill",
+                            "type": "Ext.toolbar.Fill",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -107,7 +104,7 @@
                             "designerId": "512f81f9-c89e-4638-b647-ca6a0bf63761"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -115,8 +112,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton190",
                                 "id": "ESFacetQueryBtn",
+                                "designer|userClassName": "MyButton190",
                                 "iconCls": "search",
                                 "text": ""
                             },
@@ -154,7 +151,7 @@
             },
             "codeClass": null,
             "designerId": "e2a3863b-0d18-42a3-ace3-b1c83d8bdde2",
-            "masterInstanceId": "ExtBox1-ext-gen2735"
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
             "type": "linkedinstance",
@@ -164,10 +161,10 @@
             },
             "codeClass": null,
             "designerId": "3817e883-13c7-41a2-86d5-0ea327a084eb",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -175,17 +172,17 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyGridPanel20",
-                "designer|userAlias": "mygridpanel20",
                 "id": "ResultContentsGrid",
                 "itemId": null,
+                "designer|userClassName": "MyGridPanel20",
+                "designer|userAlias": "mygridpanel20",
                 "title": "",
                 "store": "ESFacetteStore"
             },
             "designerId": "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -197,7 +194,7 @@
                     "designerId": "5dc083f4-5a24-48aa-9b80-e39f6ddee069"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -206,8 +203,8 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn5",
                         "dataIndex": "text",
-                        "flex": 2,
-                        "text": "Titre"
+                        "text": "Titre",
+                        "flex": 2
                     },
                     "configAlternates": {
                         "filter": "boolean"
@@ -215,7 +212,7 @@
                     "designerId": "e3587e55-0229-4cf6-b84f-d922e423dbf2"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -224,13 +221,13 @@
                     "userConfig": {
                         "designer|userClassName": "MyColumn58",
                         "dataIndex": "author",
-                        "flex": 1,
-                        "text": "Auteur"
+                        "text": "Auteur",
+                        "flex": 1
                     },
                     "designerId": "302e7c0e-40b0-4342-ace9-aa72863c4baa"
                 },
                 {
-                    "type": "datecolumn",
+                    "type": "Ext.grid.column.Date",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -239,22 +236,22 @@
                     "userConfig": {
                         "designer|userClassName": "MyDateColumn7",
                         "dataIndex": "lastUpdateTime",
-                        "flex": 1.2,
                         "text": "Date de dernière modification",
+                        "flex": 1.2,
                         "format": "F j, Y, G:i "
                     },
                     "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c"
                 },
                 {
-                    "type": "numbercolumn",
+                    "type": "Ext.grid.column.Number",
                     "reference": {
                         "name": "columns",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyNumberColumn1",
                         "width": 80,
+                        "designer|userClassName": "MyNumberColumn1",
                         "dataIndex": "score",
                         "text": "Pertinence",
                         "format": "0"
@@ -262,7 +259,7 @@
                     "designerId": "29ffe6fa-f510-43ee-a552-7e882fb3117a"
                 },
                 {
-                    "type": "pagingtoolbar",
+                    "type": "Ext.toolbar.Paging",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -270,8 +267,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "bottom",
-                        "designer|userClassName": "MyPagingToolbar4",
                         "width": 360,
+                        "designer|userClassName": "MyPagingToolbar4",
                         "displayInfo": true,
                         "store": "ESFacetteStore"
                     },
@@ -280,7 +277,7 @@
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -289,13 +286,13 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "designer|userClassName": "MyToolbar63",
-                "id": "ESSearchTopBar"
+                "id": "ESSearchTopBar",
+                "designer|userClassName": "MyToolbar63"
             },
             "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
             "cn": [
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -303,17 +300,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyToolbar58",
                         "border": 0,
                         "cls": null,
                         "height": 32,
                         "id": "SearchActiveFacetBar",
+                        "designer|userClassName": "MyToolbar58",
                         "enableOverflow": true
                     },
                     "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -326,7 +323,7 @@
                     "designerId": "5ca14368-c13a-4a27-965c-1e0ed7bb9217"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -334,9 +331,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton253",
                         "id": "ESFavBtn",
                         "itemId": "boutonCreerRaccourci",
+                        "designer|userClassName": "MyButton253",
                         "iconCls": "favorite_add_med",
                         "scale": "medium",
                         "text": ""
@@ -344,7 +341,7 @@
                     "designerId": "0a9d678c-0299-444b-b6a1-91103dd41bc3"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -352,9 +349,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton302",
                         "hidden": true,
                         "id": "saveGeoQueryBtn",
+                        "designer|userClassName": "MyButton302",
                         "iconCls": "ouiSpetit",
                         "text": "Enregistrer la requête"
                     },
@@ -395,25 +392,25 @@
                 "designer|userClassName": "onSearchResultsWindowBeforeRender",
                 "fn": "onSearchResultsWindowBeforeRender",
                 "implHandler": [
-                    "if (abstractcomponent.geoQueryMode){\r",
-                    "    abstractcomponent.modal=true;\r",
-                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search geolocalisée\");\r",
+                    "if (component.geoQueryMode){\r",
+                    "    component.modal=true;\r",
+                    "    component.setTitle(\"Assistant de requête Elastic Search geolocalisée\");\r",
                     "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
                     "    Ext.getCmp(\"ESFavBtn\").hide();\r",
                     "    Ext.getCmp(\"saveGeoQueryBtn\").show();\r",
-                    "    if (!Ext.isEmpty(abstractcomponent.predefFacettes)){\r",
-                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=abstractcomponent.predefFacettes;\r",
+                    "    if (!Ext.isEmpty(component.predefFacettes)){\r",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=component.predefFacettes;\r",
                     "    }\r",
                     "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-geo';\r",
                     "    Ext.getStore(\"ESFacetteStore\").load();\r",
-                    "} else if (abstractcomponent.queryMode){\r",
-                    "    abstractcomponent.modal=true;\r",
-                    "    abstractcomponent.setTitle(\"Assistant de requête Elastic Search\");\r",
+                    "} else if (component.queryMode){\r",
+                    "    component.modal=true;\r",
+                    "    component.setTitle(\"Assistant de requête Elastic Search\");\r",
                     "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
                     "    Ext.getCmp(\"ESFavBtn\").hide();\r",
                     "    Ext.getCmp(\"saveGeoQueryBtn\").show();\r",
-                    "    if (!Ext.isEmpty(abstractcomponent.predefFacettes)){\r",
-                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=abstractcomponent.predefFacettes;\r",
+                    "    if (!Ext.isEmpty(component.predefFacettes)){\r",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=component.predefFacettes;\r",
                     "    }\r",
                     "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search';\r",
                     "    Ext.getStore(\"ESFacetteStore\").load();\r",

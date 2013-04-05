@@ -1,26 +1,25 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "queryManagerInterface",
-        "designer|userAlias": "queryManagerInterface",
         "height": 380,
         "id": "queryManagerInterface",
         "width": 341,
+        "designer|userClassName": "queryManagerInterface",
+        "designer|userAlias": "queryManagerInterface",
         "layout": "fit",
         "iconCls": "database_search",
         "title": "Requêtes",
         "constrainHeader": true
     },
-    "id": "ExtBox1-ext-gen5767",
     "designerId": "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -28,13 +27,13 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
-                "designer|userClassName": "MyToolbar57",
-                "height": 64
+                "height": 64,
+                "designer|userClassName": "MyToolbar57"
             },
             "designerId": "0dc2a5d4-9222-4749-bd50-3f78d0e44772",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -43,8 +42,8 @@
                     "userConfig": {
                         "ACL": "write.ui.queries",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton224",
                         "id": "queryMainAddBtn",
+                        "designer|userClassName": "MyButton224",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -60,7 +59,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -69,9 +68,9 @@
                     "userConfig": {
                         "ACL": "write.ui.queries",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton225",
                         "disabled": true,
                         "id": "queryMainRemoveBtn",
+                        "designer|userClassName": "MyButton225",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -87,7 +86,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -95,9 +94,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton226",
                         "disabled": true,
                         "id": "queryMainEditBtn",
+                        "designer|userClassName": "MyButton226",
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
                         "scale": "large",
@@ -117,10 +116,10 @@
                                 "fn": "onQueryMainEditBtnBeforeRender",
                                 "implHandler": [
                                     "if (!ACL.interfaceRights[\"read.ui.queries\"]){\r",
-                                    "    abstractcomponent.hide();\r",
+                                    "    component.hide();\r",
                                     "} else if (!ACL.interfaceRights[\"write.ui.queries\"]){\r",
-                                    "    abstractcomponent.setText(\"Afficher\");\r",
-                                    "    abstractcomponent.ROMode=true;\r",
+                                    "    component.setText(\"Afficher\");\r",
+                                    "    component.ROMode=true;\r",
                                     "}"
                                 ],
                                 "name": "beforerender",
@@ -131,7 +130,7 @@
                     ]
                 },
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -144,7 +143,7 @@
                     "designerId": "a6663552-432a-4d5a-973f-d8a66a4b4fed"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -153,8 +152,8 @@
                     "userConfig": {
                         "RApplication": "queries",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton227",
                         "itemId": "RHelpBtn",
+                        "designer|userClassName": "MyButton227",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -171,15 +170,15 @@
             ]
         },
         {
-            "type": "gridpanel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridPanel30",
                 "id": "mainQueriesGrid",
+                "designer|userClassName": "MyGridPanel30",
                 "title": "",
                 "forceFit": true,
                 "store": "MainQueriesStore"
@@ -190,7 +189,7 @@
             "designerId": "9d33135d-1343-4944-b2d8-8f22c606aafd",
             "cn": [
                 {
-                    "type": "gridview",
+                    "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",
                         "type": "object"
@@ -202,7 +201,7 @@
                     "designerId": "892bc1e9-0a5d-422c-8900-ccac56d29a7d"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -248,45 +247,45 @@
                     ]
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn63",
                         "hidden": true,
+                        "designer|userClassName": "MyColumn63",
                         "dataIndex": "averageDuration",
                         "text": "Durée moyenne (s)"
                     },
                     "designerId": "d50fe20a-3edc-4e9f-a58e-5fae0fa83fc4"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn66",
                         "hidden": true,
+                        "designer|userClassName": "MyColumn66",
                         "dataIndex": "count",
                         "text": "Compteur"
                     },
                     "designerId": "7d0e5986-4652-42c8-b07f-05f9e2b35464"
                 },
                 {
-                    "type": "gridcolumn",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn67",
                         "hidden": true,
+                        "designer|userClassName": "MyColumn67",
                         "dataIndex": "usage",
                         "text": "Usage"
                     },
@@ -302,7 +301,7 @@
             },
             "codeClass": null,
             "designerId": "f52555ba-3949-45b0-9183-f55c59470c56",
-            "masterInstanceId": "ExtBox1-ext-gen2736"
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
         {
             "type": "basiceventbinding",

@@ -1,5 +1,5 @@
 {
-    "type": "combobox",
+    "type": "Ext.form.field.ComboBox",
     "reference": {
         "name": "items",
         "type": "array"
@@ -20,7 +20,6 @@
     "configAlternates": {
         "managesStore": "boolean"
     },
-    "id": "ExtBox1-ext-gen5388",
     "designerId": "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
     "customConfigs": [
         {

@@ -1,5 +1,5 @@
 {
-    "type": "container",
+    "type": "Ext.container.Container",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,13 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "100%",
-        "designer|userClassName": "queryFieldComponent",
-        "designer|userAlias": "queryFieldComponent",
         "height": 24,
         "margin": "30 0 0 0",
-        "width": 307
+        "width": 307,
+        "designer|userClassName": "queryFieldComponent",
+        "designer|userAlias": "queryFieldComponent"
     },
-    "id": "ExtBox1-ext-gen7147",
     "designerId": "2f7e5de4-2ce2-4a35-87a7-927a97315007",
     "customConfigs": [
         {
@@ -24,7 +23,7 @@
     ],
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -32,9 +31,9 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "designer|userClassName": "MyButton243",
                 "itemId": "addBtn",
                 "margin": "0 4 0 0",
+                "designer|userClassName": "MyButton243",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
@@ -48,7 +47,7 @@
             ]
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -56,9 +55,9 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "designer|userClassName": "MyButton244",
                 "itemId": "editBtn",
                 "margin": "0 4 0 0",
+                "designer|userClassName": "MyButton244",
                 "iconCls": "edit",
                 "text": "Modifier"
             },
@@ -72,7 +71,7 @@
             ]
         },
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -80,8 +79,8 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "designer|userClassName": "MyButton245",
                 "itemId": "removeBtn",
+                "designer|userClassName": "MyButton245",
                 "iconCls": "close",
                 "text": "Supprimer"
             },
