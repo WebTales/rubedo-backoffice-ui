@@ -35,6 +35,11 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             type: 'boolean'
         },
         {
+            defaultValue: false,
+            name: 'activateDisqus',
+            type: 'boolean'
+        },
+        {
             name: 'dependantTypes'
         },
         {

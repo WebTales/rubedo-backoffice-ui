@@ -78,6 +78,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "mapping": null,
+                "name": "activateDisqus",
+                "type": "boolean",
+                "designer|userClassName": "MyField53"
+            },
+            "designerId": "e7cb6cd1-995f-4ece-b978-dbef7d5be405"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "mapping": null,
                 "name": "dependantTypes",
                 "designer|userClassName": "MyField54"

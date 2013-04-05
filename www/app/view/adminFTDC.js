@@ -539,30 +539,51 @@ Ext.define('Rubedo.view.adminFTDC', {
                             xtype: 'form',
                             id: 'TDCEditForm',
                             bodyPadding: 10,
-                            iconCls: 'user',
-                            title: 'Droits et Workflow',
+                            iconCls: 'parametres',
+                            title: 'Propriétés',
                             items: [
                                 {
-                                    xtype: 'WorkspaceCombo',
-                                    fieldLabel: 'Espaces de travail',
-                                    labelWidth: 120,
-                                    name: 'workspaces',
-                                    multiSelect: true,
-                                    store: 'ContributeWorkspacesCombo',
-                                    anchor: '100%'
+                                    xtype: 'fieldset',
+                                    title: 'Droits et workflow',
+                                    items: [
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            fieldLabel: 'Espaces de travail',
+                                            labelWidth: 120,
+                                            name: 'workspaces',
+                                            multiSelect: true,
+                                            store: 'ContributeWorkspacesCombo',
+                                            anchor: '100%'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            fieldLabel: 'Workflow',
+                                            labelWidth: 120,
+                                            name: 'workflow',
+                                            allowBlank: false,
+                                            editable: false,
+                                            forceSelection: true,
+                                            store: [
+                                                'Aucun',
+                                                'Basique'
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: 'Workflow',
-                                    labelWidth: 120,
-                                    name: 'workflow',
-                                    allowBlank: false,
-                                    editable: false,
-                                    forceSelection: true,
-                                    store: [
-                                        'Aucun',
-                                        'Basique'
+                                    xtype: 'fieldset',
+                                    title: 'Commentaires',
+                                    items: [
+                                        {
+                                            xtype: 'checkboxfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Disqus',
+                                            name: 'activateDisqus',
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
+                                        }
                                     ]
                                 }
                             ]

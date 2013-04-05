@@ -1304,8 +1304,8 @@
                         "id": "TDCEditForm",
                         "designer|userClassName": "MyForm46",
                         "bodyPadding": 10,
-                        "iconCls": "user",
-                        "title": "Droits et Workflow"
+                        "iconCls": "parametres",
+                        "title": "Propriétés"
                     },
                     "designerId": "6c4d6322-2e2c-4c87-9b52-5edfe0189b2a",
                     "cn": [
@@ -1322,50 +1322,98 @@
                             "designerId": "5d5cba21-5420-46a7-8f88-88d68b334bdd"
                         },
                         {
-                            "type": "linkedinstance",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Espaces de travail",
-                                "labelWidth": 120,
-                                "name": "workspaces",
-                                "multiSelect": true,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "designer|userClassName": "MyFieldSet1",
+                                "title": "Droits et workflow"
                             },
-                            "configAlternates": {
-                                "canSwitchStore": "boolean"
-                            },
-                            "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
-                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                            "designerId": "81bdef1a-b73b-4940-974b-c6d5ed7df559",
+                            "cn": [
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Espaces de travail",
+                                        "labelWidth": 120,
+                                        "name": "workspaces",
+                                        "multiSelect": true,
+                                        "store": "ContributeWorkspacesCombo",
+                                        "layout|anchor": "100%"
+                                    },
+                                    "configAlternates": {
+                                        "canSwitchStore": "boolean"
+                                    },
+                                    "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
+                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox28",
+                                        "fieldLabel": "Workflow",
+                                        "labelWidth": 120,
+                                        "name": "workflow",
+                                        "allowBlank": false,
+                                        "editable": false,
+                                        "forceSelection": true,
+                                        "store": [
+                                            "[\"Aucun\", \"Basique\"]"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "store": "array"
+                                    },
+                                    "designerId": "bf32c21b-fba3-4518-9173-9040f31c77e3"
+                                }
+                            ]
                         },
                         {
-                            "type": "Ext.form.field.ComboBox",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox28",
-                                "fieldLabel": "Workflow",
-                                "labelWidth": 120,
-                                "name": "workflow",
-                                "allowBlank": false,
-                                "editable": false,
-                                "forceSelection": true,
-                                "store": [
-                                    "[\"Aucun\", \"Basique\"]"
-                                ]
+                                "designer|userClassName": "MyFieldSet2",
+                                "title": "Commentaires"
                             },
-                            "configAlternates": {
-                                "store": "array"
-                            },
-                            "designerId": "bf32c21b-fba3-4518-9173-9040f31c77e3"
+                            "designerId": "c250c238-fb68-4487-97c4-7f7d3b7b58e2",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyCheckbox8",
+                                        "fieldLabel": "Disqus",
+                                        "name": "activateDisqus",
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "417d745b-259c-4fa4-ac7e-5fce05c320b7"
+                                }
+                            ]
                         }
                     ]
                 },
