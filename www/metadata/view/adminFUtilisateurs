@@ -1019,12 +1019,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "admin.ui.groups",
                         "id": "groupAdminPropsForm",
                         "designer|userClassName": "MyForm19",
                         "bodyPadding": 10,
                         "title": "Administration"
                     },
                     "designerId": "fe35f935-b34c-4b39-943d-eb47eaf008d3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1034,9 +1042,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "admin.ui.groups",
                                 "designer|userClassName": "TabConfig12"
                             },
-                            "designerId": "d6f45213-a423-4a94-8d9b-54dd9c6bbf09"
+                            "designerId": "d6f45213-a423-4a94-8d9b-54dd9c6bbf09",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "linkedinstance",

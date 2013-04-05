@@ -386,9 +386,14 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         },
                         {
                             xtype: 'form',
+                            ACL: 'admin.ui.groups',
                             id: 'groupAdminPropsForm',
                             bodyPadding: 10,
                             title: 'Administration',
+                            tabConfig: {
+                                xtype: 'tab',
+                                ACL: 'admin.ui.groups'
+                            },
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
