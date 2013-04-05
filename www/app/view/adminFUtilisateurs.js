@@ -337,7 +337,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
-                                    fieldLabel: 'Espaces de travail en lecture seule',
+                                    fieldLabel: 'Espaces de travail en lecture ',
                                     labelWidth: 220,
                                     name: 'readWorkspaces',
                                     multiSelect: true,
@@ -381,7 +381,15 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     name: 'canWriteUnownedElements',
                                     boxLabel: '',
                                     inputValue: 'true'
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'form',
+                            id: 'groupAdminPropsForm',
+                            bodyPadding: 10,
+                            title: 'Administration',
+                            items: [
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
@@ -433,9 +441,11 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
 
     onGroupSaveButtonClick: function(button, e, eOpts) {
         var form =Ext.getCmp("groupPropsForm").getForm();
-        if (form.isValid()){
+        var form2 =Ext.getCmp("groupAdminPropsForm").getForm();
+        if ((form.isValid())&&(form2.isValid())){
             var record =Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
             record.set(form.getValues());
+            record.set(form2.getValues());
         }
     },
 
@@ -513,7 +523,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             store:Ext.getStore("RoleStore"),
             anchor:"100%",
             name:"roles",
-            fieldLabel:"Roles",
+            fieldLabel:"Rôles",
             labelWidth:220,
             queryMode:"local",
             multiSelect:true,
@@ -527,7 +537,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             allowBlank:true
 
         });
-        Ext.getCmp("groupPropsForm").insert(6,rolePicker);
+        Ext.getCmp("groupPropsForm").add(rolePicker);
     }
 
 });
