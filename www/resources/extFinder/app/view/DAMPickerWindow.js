@@ -276,7 +276,7 @@ Ext.define('extFinder.view.DAMPickerWindow', {
 
     onImagePickerAcceptBtnClick: function(button, e, options) {
         if (CKEOptions.type=="Image"){
-            var fileURL="http://"+window.opener.location.host+"/image?file-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId");
+            var fileURL="/image?file-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId");
             window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
         }
         window.close();
