@@ -632,7 +632,7 @@
                                 "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
                                 "fn": "onGridcelleditingpluginBeforeEdit",
                                 "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"write.ui.mediaTypes\"])||(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
+                                    "if ((!ACL.interfaceRights[\"write.ui.damTypes\"])||(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
                                     "    return false;\r",
                                     "}"
                                 ],

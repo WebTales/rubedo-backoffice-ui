@@ -683,6 +683,7 @@
                     "var rec = Ext.clone(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().data);\r",
                     "delete(rec.id);\r",
                     "rec.type=rec.type+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "rec.readOnly=false;\r",
                     "Ext.getCmp(\"mainMTGrid\").getStore().add(rec);"
                 ],
                 "name": "click",

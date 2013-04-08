@@ -223,6 +223,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         var rec = Ext.clone(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().data);
         delete(rec.id);
         rec.type=rec.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        rec.readOnly=false;
         Ext.getCmp("mainMTGrid").getStore().add(rec);
     },
 

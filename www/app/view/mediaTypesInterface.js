@@ -574,7 +574,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     },
 
     onGridcelleditingpluginBeforeEdit: function(editor, e, eOpts) {
-        if ((!ACL.interfaceRights["write.ui.mediaTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
+        if ((!ACL.interfaceRights["write.ui.damTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
             return false;
         }
     },
