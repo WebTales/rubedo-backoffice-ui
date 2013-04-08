@@ -142,7 +142,8 @@ Ext.application({
         'Rubedo.view.adminFTaxonomie',
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.newPageWindow',
-        'Rubedo.view.newSiteWindow'
+        'Rubedo.view.newSiteWindow',
+        'Rubedo.view.MailingListPickerField'
     ],
     models: [
         'sitesDataModel',
@@ -170,7 +171,8 @@ Ext.application({
         'DAMSearchModel',
         'workspaceModel',
         'formModel',
-        'formFieldTypeModel'
+        'formFieldTypeModel',
+        'mailingListsModel'
     ],
     stores: [
         'SitesJson',
@@ -257,7 +259,8 @@ Ext.application({
         'FCEStore',
         'TypesContenusDataJson',
         'PanierDataJson',
-        'MultiChoiceOptionsStore'
+        'MultiChoiceOptionsStore',
+        'MailingListsCombo'
     ],
     views: [
         'MyContainer',
@@ -383,7 +386,8 @@ Ext.application({
         'adminFTaxonomie',
         'contributionPrevisualisation',
         'newPageWindow',
-        'newSiteWindow'
+        'newSiteWindow',
+        'MailingListPickerField'
     ],
     autoCreateViewport: true,
     controllers: [

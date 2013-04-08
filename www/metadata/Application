@@ -32,7 +32,8 @@
             "DAMSearchModel",
             "workspaceModel",
             "formModel",
-            "formFieldTypeModel"
+            "formFieldTypeModel",
+            "mailingListsModel"
         ],
         "stores": [
             "SitesJson",
@@ -119,7 +120,8 @@
             "FCEStore",
             "TypesContenusDataJson",
             "PanierDataJson",
-            "MultiChoiceOptionsStore"
+            "MultiChoiceOptionsStore",
+            "MailingListsCombo"
         ],
         "views": [
             "MyContainer",
@@ -245,7 +247,8 @@
             "adminFTaxonomie",
             "contributionPrevisualisation",
             "newPageWindow",
-            "newSiteWindow"
+            "newSiteWindow",
+            "MailingListPickerField"
         ],
         "autoCreateViewport": true,
         "controllers": [

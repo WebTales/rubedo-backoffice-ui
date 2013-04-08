@@ -2317,6 +2317,30 @@
                 "app/view/ESQfieldComponent.js"
             ],
             "className": "ESQfieldComponent"
+        },
+        "1d386e18-9693-405d-a9df-1862eb93baed": {
+            "paths": [
+                "metadata/store/MailingListsCombo",
+                "app/store/override/MailingListsCombo.js",
+                "app/store/MailingListsCombo.js"
+            ],
+            "className": "MailingListsCombo"
+        },
+        "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3": {
+            "paths": [
+                "metadata/model/mailingListsModel",
+                "app/model/override/mailingListsModel.js",
+                "app/model/mailingListsModel.js"
+            ],
+            "className": "mailingListsModel"
+        },
+        "3dd5f03c-4619-4dc7-bb17-d53b3d011623": {
+            "paths": [
+                "metadata/view/MailingListPickerField",
+                "app/view/override/MailingListPickerField.js",
+                "app/view/MailingListPickerField.js"
+            ],
+            "className": "MailingListPickerField"
         }
     },
     "viewOrderMap": {
@@ -2403,6 +2427,7 @@
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
             "36007f86-6607-47b7-a5b8-b35b3310bc18",
+            "3dd5f03c-4619-4dc7-bb17-d53b3d011623",
             "71505c40-5587-40f5-be0e-bea55fa8806d",
             "6d174482-b97c-435a-b6aa-7fd530bd5680",
             "5ea758ff-277e-480f-8910-8611d58b581e",
@@ -2535,6 +2560,7 @@
             "31be942a-1630-4c10-9fb4-790b2d825c55",
             "fc781c3d-4e75-46a3-9c56-812a8ec2ea5a",
             "0c43a14d-fe2c-4ee6-bacc-77b5abe63611",
+            "1d386e18-9693-405d-a9df-1862eb93baed",
             "b1e3cc2f-a43b-450e-8914-242d618f8402",
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
@@ -2597,7 +2623,8 @@
             "5c997a93-3afc-42e9-9098-74110e9872bf",
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
             "98410e9a-0d71-4266-9879-fb34f77e26e0",
-            "1076511d-1d83-4ae9-8589-8911720c4b83"
+            "1076511d-1d83-4ae9-8589-8911720c4b83",
+            "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

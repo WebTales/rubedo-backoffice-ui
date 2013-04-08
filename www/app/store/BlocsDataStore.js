@@ -2060,6 +2060,51 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '514ae0c5c0e051ac0d000002'
                 },
                 {
+                    type: 'Abonnement newsletter',
+                    category: 'Formulaire',
+                    bType: 'mailingList',
+                    description: '',
+                    configBasique: {
+                        title: 'Abonnement newsletter',
+                        bType: 'mailingList',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.MailingListPickerField',
+                                            config: {
+                                                fieldLabel: 'Newsletter',
+                                                name: 'mailingListId'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            progression: 0
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '514ae0c5c0e051ac0d001672'
+                },
+                {
                     type: 'Contact',
                     category: 'Formulaire',
                     description: '',

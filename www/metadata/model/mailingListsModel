@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mailingListsModel",
+        "designer|userAlias": "mailingListsModel"
+    },
+    "designerId": "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "designer|userClassName": "MyField209"
+            },
+            "designerId": "8006cb6b-7a36-4570-8200-601cea88f2a6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "designer|userClassName": "MyField210"
+            },
+            "designerId": "c789ec8e-0509-4bea-9ca8-e7116fc25f56"
+        }
+    ]
+}

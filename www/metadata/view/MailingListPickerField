@@ -1,0 +1,59 @@
+{
+    "type": "Ext.form.field.ComboBox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "managesStore": true,
+        "plugins": null,
+        "designer|userClassName": "MailingListPickerField",
+        "designer|userAlias": "MailingListPickerField",
+        "fieldLabel": "Label",
+        "editable": false,
+        "displayField": "name",
+        "forceSelection": true,
+        "queryMode": "local",
+        "store": "MailingListsCombo",
+        "valueField": "id"
+    },
+    "configAlternates": {
+        "managesStore": "boolean",
+        "plugins": "array"
+    },
+    "designerId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "plugins",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "processMailingListPickerField",
+                "fn": "processMailingListPickerField",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];"
+                ]
+            },
+            "designerId": "f1487b3c-89ef-4dc1-807e-b2147e599731"
+        }
+    ]
+}
