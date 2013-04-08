@@ -348,7 +348,6 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             htmlDisplay+="</ul>";
         }
         var target= Ext.getCmp("querySummaryBox");
-        console.log(query);
         target.update(htmlDisplay);
     },
 
@@ -491,265 +490,267 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     //Ext.Array.remove(vocabulaires,"navigation");
                     var k =0;
                     for (k=0; k<vocabulaires.length; k++) {
+                        try{
 
-                        var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
-                        var vocabAPlat= [ ];
-                        //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
+                            var leVocab = Ext.getStore('TaxonomyForQA').findRecord('id', vocabulaires[k]);
+                            var vocabAPlat= [ ];
+                            //this.miseAPlatTaxo(leVocab.data.termes.children, vocabAPlat);
 
 
-                        var storeT = Ext.create('Ext.data.JsonStore', {
-                            model:"Rubedo.model.taxonomyTermModel",
-                            remoteFilter:"true",
-                            proxy: {
-                                type: 'ajax',
-                                api: {
-                                    read: 'taxonomy-terms'
-                                },
-                                reader: {
-                                    type: 'json',
-                                    messageProperty: 'message',
-                                    root: 'data'
-                                },
-                                encodeFilters: function(filters) {
-                                    var min = [],
-                                        length = filters.length,
-                                        i = 0;
+                            var storeT = Ext.create('Ext.data.JsonStore', {
+                                model:"Rubedo.model.taxonomyTermModel",
+                                remoteFilter:"true",
+                                proxy: {
+                                    type: 'ajax',
+                                    api: {
+                                        read: 'taxonomy-terms'
+                                    },
+                                    reader: {
+                                        type: 'json',
+                                        messageProperty: 'message',
+                                        root: 'data'
+                                    },
+                                    encodeFilters: function(filters) {
+                                        var min = [],
+                                            length = filters.length,
+                                            i = 0;
 
-                                    for (; i < length; i++) {
-                                        min[i] = {
-                                            property: filters[i].property,
-                                            value   : filters[i].value
-                                        };
-                                        if (filters[i].type) {
-                                            min[i].type = filters[i].type;
+                                        for (; i < length; i++) {
+                                            min[i] = {
+                                                property: filters[i].property,
+                                                value   : filters[i].value
+                                            };
+                                            if (filters[i].type) {
+                                                min[i].type = filters[i].type;
+                                            }
+                                            if (filters[i].operator) {
+                                                min[i].operator = filters[i].operator;
+                                            }
                                         }
-                                        if (filters[i].operator) {
-                                            min[i].operator = filters[i].operator;
-                                        }
+                                        return this.applyEncoding(min);
                                     }
-                                    return this.applyEncoding(min);
+                                },
+                                filters: {
+                                    property: 'vocabularyId',
+                                    value: leVocab.get("id")
                                 }
-                            },
-                            filters: {
-                                property: 'vocabularyId',
-                                value: leVocab.get("id")
-                            }
 
-                        });
-                        storeT.on("beforeload", function(s,o){
-                            if (!Ext.isEmpty(o.params)){
-                                o.filters=Ext.Array.slice(o.filters,0,1);
-                                if (!Ext.isEmpty(o.params.comboQuery)){
+                            });
+                            storeT.on("beforeload", function(s,o){
+                                if (!Ext.isEmpty(o.params)){
+                                    o.filters=Ext.Array.slice(o.filters,0,1);
+                                    if (!Ext.isEmpty(o.params.comboQuery)){
 
-                                    var newFilter=Ext.create('Ext.util.Filter', {
-                                        property:"text",
-                                        value:o.params.comboQuery,
-                                        operator:'like'
-                                    });
+                                        var newFilter=Ext.create('Ext.util.Filter', {
+                                            property:"text",
+                                            value:o.params.comboQuery,
+                                            operator:'like'
+                                        });
 
-                                    o.filters.push(newFilter);
+                                        o.filters.push(newFilter);
 
+                                    }
                                 }
+
+                            });
+
+                            storeT.load();
+                            var selecteur = Ext.widget('comboboxselect', {
+                                name:leVocab.get("id"),
+                                vocabularyId:leVocab.get("id"),
+                                isVocabularyField:true,
+                                usedRole:"terms",
+                                anchor:"100%",
+                                fieldLabel: leVocab.get("name"),
+                                autoScroll: false,
+                                store: storeT,
+                                queryMode: 'remote',
+                                queryParam: 'comboQuery',
+                                minChars:3,
+                                displayField: 'text',
+                                valueField: 'id',
+                                filterPickList: true,
+                                typeAhead: true,
+                                forceSelection: !leVocab.data.expandable,
+                                createNewOnEnter: leVocab.data.expandable,
+                                multiSelect: Ext.clone(leVocab.data.multiSelect),
+                                allowBlank: !leVocab.data.mandatory
+                            });
+
+                            var storeR = Ext.create('Ext.data.Store', {
+                                fields: ['valeur', 'nom'],
+                                data : [
+                                {valeur: 'all', nom :'Contient tous les termes'},
+                                {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
+                                {valeur: 'some', nom :'Contient au moins un des termes'},
+                                {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'},
+                                {valeur: 'not', nom :'Ne contient aucun des termes suivants'}
+                                ]
+                            });
+
+                            var regle = Ext.create('Ext.form.ComboBox', {
+                                name:leVocab.get("id")+"QueryRule",
+                                anchor: '100%',
+                                vocabularyId:leVocab.get("id"),
+                                isVocabularyField:true,
+                                usedRole:"rule",
+                                fieldLabel: 'Règle',
+                                store: storeR,
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                editable: false,
+                                value: 'some',
+                                forceSelect: true,
+                                allowBlank: false
+
+                            });
+                            if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
+                                regle.setValue(initialQuery.vocabularies[leVocab.get("id")].rule[0]);
+                                selecteur.setValue(initialQuery.vocabularies[leVocab.get("id")].terms);
                             }
-
-                        });
-
-                        storeT.load();
-                        var selecteur = Ext.widget('comboboxselect', {
-                            name:leVocab.get("id"),
-                            vocabularyId:leVocab.get("id"),
-                            isVocabularyField:true,
-                            usedRole:"terms",
-                            anchor:"100%",
-                            fieldLabel: leVocab.get("name"),
-                            autoScroll: false,
-                            store: storeT,
-                            queryMode: 'remote',
-                            queryParam: 'comboQuery',
-                            minChars:3,
-                            displayField: 'text',
-                            valueField: 'id',
-                            filterPickList: true,
-                            typeAhead: true,
-                            forceSelection: !leVocab.data.expandable,
-                            createNewOnEnter: leVocab.data.expandable,
-                            multiSelect: Ext.clone(leVocab.data.multiSelect),
-                            allowBlank: !leVocab.data.mandatory
-                        });
-
-                        var storeR = Ext.create('Ext.data.Store', {
-                            fields: ['valeur', 'nom'],
-                            data : [
-                            {valeur: 'all', nom :'Contient tous les termes'},
-                            {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
-                            {valeur: 'some', nom :'Contient au moins un des termes'},
-                            {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'},
-                            {valeur: 'not', nom :'Ne contient aucun des termes suivants'}
-                            ]
-                        });
-
-                        var regle = Ext.create('Ext.form.ComboBox', {
-                            name:leVocab.get("id")+"QueryRule",
-                            anchor: '100%',
-                            vocabularyId:leVocab.get("id"),
-                            isVocabularyField:true,
-                            usedRole:"rule",
-                            fieldLabel: 'Règle',
-                            store: storeR,
-                            queryMode: 'local',
-                            displayField: 'nom',
-                            valueField: 'valeur',
-                            editable: false,
-                            value: 'some',
-                            forceSelect: true,
-                            allowBlank: false
-
-                        });
-                        if ((keepInMind)&&(editorMode)&&(!Ext.isEmpty(initialQuery.vocabularies[leVocab.get("id")]))){
-                            regle.setValue(initialQuery.vocabularies[leVocab.get("id")].rule[0]);
-                            selecteur.setValue(initialQuery.vocabularies[leVocab.get("id")].terms);
-                        }
-                        if (simpleMode) {
-                            regle.setValue("all");
-                            regle.setReadOnly(true);
-                            regle.hide();
-                            selecteur.multiSelect=false;
-                            var enrobage=Ext.widget("container", {anchor:"100%", layout:"anchor"});
-                        } else {
+                            if (simpleMode) {
+                                regle.setValue("all");
+                                regle.setReadOnly(true);
+                                regle.hide();
+                                selecteur.multiSelect=false;
+                                var enrobage=Ext.widget("container", {anchor:"100%", layout:"anchor"});
+                            } else {
 
 
-                            var enrobage = Ext.widget('fieldset', {
-                                title : leVocab.get("name"),
-                                collapsible: true,
-                                collapsed:true
+                                var enrobage = Ext.widget('fieldset', {
+                                    title : leVocab.get("name"),
+                                    collapsible: true,
+                                    collapsed:true
 
 
-                            });}
-                            enrobage.add(selecteur);
-                            enrobage.add(regle);
+                                });}
+                                enrobage.add(selecteur);
+                                enrobage.add(regle);
 
-                            Ext.getCmp('assisstantRE2').add(enrobage);
+                                Ext.getCmp('assisstantRE2').add(enrobage);
 
+                            }catch(err) {console.log("vocabulary error");}
 
-
-                        }    
+                            }    
 
 
     },
 
     restoreFieldRules: function(fieldRules) {
         Ext.Object.each(fieldRules, function(key, value){
-            if (!Ext.isEmpty(value.rule)) {
-                //
-                var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){
-                    if (record.data.valeur.ruleId==key) {
-                        return(true);
+            try{
+                if (!Ext.isEmpty(value.rule)) {
+
+                    var tester = Ext.getCmp('createurReglesChampsAR').getStore().getRange()[Ext.getCmp('createurReglesChampsAR').getStore().findBy(function(record){
+                        if (record.data.valeur.ruleId==key) {
+                            return(true);
+                        }
+                    })];
+                    if (!Ext.isEmpty(tester)){
+                        var nRegle= tester.data.valeur;
+                        var enrobage = Ext.widget('regleChampAR');
+                        enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
+                        var mainThing = Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name});
+                        var insertus=Ext.clone(value.value);
+                        if(mainThing.isXType("datefield")){ insertus= new Date(value.value);}
+                        mainThing.setValue(insertus);
+                        mainThing.name=nRegle.name;
+                        mainThing.usedRole="value";
+                        mainThing.ruleId=nRegle.ruleId;
+                        mainThing.isAddedRuleField=true;
+                        enrobage.getComponent(0).insert(1,mainThing);
+                        if (nRegle.cType== 'checkboxfield') {
+                            var operateur= Ext.widget('tbtext', {text: ' = '});
+                        }
+                        else{
+                            var storeOper = Ext.create('Ext.data.Store', {
+                                fields: ['operateur'],
+                                data : [
+                                {"operateur":"="},
+                                {"operateur":"<="},
+                                {"operateur":"<"},
+                                {"operateur":">="},
+                                {"operateur":">"},
+                                {"operateur":"!="}
+                                ]
+                            });
+                            var operateur= Ext.create('Ext.form.ComboBox', {
+                                name:nRegle.name+"Operator",
+                                store: storeOper,
+                                usedRole:"rule",
+                                isAddedRuleField:true,
+                                ruleId:nRegle.ruleId,
+                                flex:1,
+                                queryMode: 'local',
+                                displayField: 'operateur',
+                                valueField: 'operateur',
+                                editable: false,
+                                multiSelect:false,
+                                allowBlank:false,
+                                forceSelect: true
+                            });
+                            operateur.setValue(value.rule);
+
+                        }
+                        enrobage.getComponent(0).insert(1,operateur);
+                        if (Ext.getCmp('assisstantRE4').items.items.length>2){
+                            enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));
+                        }
+
+                        Ext.getCmp('assisstantRE4').add(enrobage);
                     }
-                })];
-                if (!Ext.isEmpty(tester)){
-                    var nRegle= tester.data.valeur;
-                    var enrobage = Ext.widget('regleChampAR');
-                    enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
-                    var mainThing = Ext.widget(nRegle.cType, {flex:1, mame:nRegle.name});
-                    var insertus=Ext.clone(value.value);
-                    if(mainThing.isXType("datefield")){ insertus= new Date(value.value);}
-                    mainThing.setValue(insertus);
-                    mainThing.name=nRegle.name;
-                    mainThing.usedRole="value";
-                    mainThing.ruleId=nRegle.ruleId;
-                    mainThing.isAddedRuleField=true;
-                    enrobage.getComponent(0).insert(1,mainThing);
-                    if (nRegle.cType== 'checkboxfield') {
-                        var operateur= Ext.widget('tbtext', {text: ' = '});
-                    }
-                    else{
+
+
+                }
+                if (!Ext.isEmpty(value.sort)) {
+
+                    var tester = Ext.getStore("champsTCARStore").getRange()[Ext.getStore("champsTCARStore").findBy(function(record){
+                        if (record.data.valeur.ruleId==key) {
+                            return(true);
+                        }
+                    })];
+                    if (!Ext.isEmpty(tester)){
+                        var nRegle= tester.data.valeur;
+                        var enrobage = Ext.widget('regleChampAR');
+                        enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
+
+
                         var storeOper = Ext.create('Ext.data.Store', {
-                            fields: ['operateur'],
+                            fields: ['operateur', 'label'],
                             data : [
-                            {"operateur":"="},
-                            {"operateur":"<="},
-                            {"operateur":"<"},
-                            {"operateur":">="},
-                            {"operateur":">"},
-                            {"operateur":"!="}
+                            {"operateur":"ASC", "label": "Croissant"},
+                            {"operateur":"DESC", "label": "Decroissant"}
                             ]
                         });
                         var operateur= Ext.create('Ext.form.ComboBox', {
-                            name:nRegle.name+"Operator",
+                            name:nRegle.name+"Direction",
                             store: storeOper,
-                            usedRole:"rule",
+                            usedRole:"sort",
                             isAddedRuleField:true,
                             ruleId:nRegle.ruleId,
                             flex:1,
                             queryMode: 'local',
-                            displayField: 'operateur',
+                            displayField: 'label',
                             valueField: 'operateur',
                             editable: false,
                             multiSelect:false,
                             allowBlank:false,
                             forceSelect: true
                         });
-                        operateur.setValue(value.rule);
 
-                    }
-                    enrobage.getComponent(0).insert(1,operateur);
-                    if (Ext.getCmp('assisstantRE4').items.items.length>2){
-                        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));
+                        operateur.setValue(value.sort);
+
+                        enrobage.getComponent(0).insert(1,operateur);
+                        if (Ext.getCmp('assisstantRE5').items.items.length>2){
+                            enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
+                        }
+
+                        Ext.getCmp('assisstantRE5').add(enrobage);
                     }
 
-                    Ext.getCmp('assisstantRE4').add(enrobage);
                 }
-                //
-
-            }
-            if (!Ext.isEmpty(value.sort)) {
-                //
-                var tester = Ext.getStore("champsTCARStore").getRange()[Ext.getStore("champsTCARStore").findBy(function(record){
-                    if (record.data.valeur.ruleId==key) {
-                        return(true);
-                    }
-                })];
-                if (!Ext.isEmpty(tester)){
-                    var nRegle= tester.data.valeur;
-                    var enrobage = Ext.widget('regleChampAR');
-                    enrobage.getComponent(0).getComponent('nomChamp').setText(nRegle.label);
-
-
-                    var storeOper = Ext.create('Ext.data.Store', {
-                        fields: ['operateur', 'label'],
-                        data : [
-                        {"operateur":"ASC", "label": "Croissant"},
-                        {"operateur":"DESC", "label": "Decroissant"}
-                        ]
-                    });
-                    var operateur= Ext.create('Ext.form.ComboBox', {
-                        name:nRegle.name+"Direction",
-                        store: storeOper,
-                        usedRole:"sort",
-                        isAddedRuleField:true,
-                        ruleId:nRegle.ruleId,
-                        flex:1,
-                        queryMode: 'local',
-                        displayField: 'label',
-                        valueField: 'operateur',
-                        editable: false,
-                        multiSelect:false,
-                        allowBlank:false,
-                        forceSelect: true
-                    });
-
-                    operateur.setValue(value.sort);
-
-                    enrobage.getComponent(0).insert(1,operateur);
-                    if (Ext.getCmp('assisstantRE5').items.items.length>2){
-                        enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
-                    }
-
-                    Ext.getCmp('assisstantRE5').add(enrobage);
-                }
-                //
-            }
-        });
+            } catch(err){console.log("field error");}});
     },
 
     init: function(application) {
