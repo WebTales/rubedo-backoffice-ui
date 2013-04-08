@@ -405,7 +405,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 itemId:"eTagField",
                 fieldLabel:"Tag ",
                 queryMode:"local",
-                store:["div","span","header","section","footer"],
+                store:["div","span","header","section","footer","aside"],
                 onChange:function(){
                     if (this.isValid()){
                         component.elementTag=this.getValue();
@@ -1088,7 +1088,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             itemId:"eTagField",
             fieldLabel:"Tag ",
             queryMode:"local",
-            store:["div","span","header","section","footer"],
+            store:["div","span","header","section","footer","aside"],
             onChange:function(){
                 if (this.isValid()){
                     component.elementTag=this.getValue();
