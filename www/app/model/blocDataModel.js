@@ -32,6 +32,9 @@ Ext.define('Rubedo.model.blocDataModel', {
         {
             defaultValue: 'Autre',
             name: 'category'
+        },
+        {
+            name: 'bType'
         }
     ]
 });

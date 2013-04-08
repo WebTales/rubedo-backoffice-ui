@@ -241,7 +241,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pageElementDown").disable();
             var propEdit=Ext.getCmp('pageElementPropsPanel');
             propEdit.removeAll();
-            propEdit.setTitle(component.id.replace("panel", component.mType));
+            propEdit.setTitle("Colonne");
             propEdit.setIconCls('editZone');
             e.stopEvent();
         });
@@ -308,7 +308,11 @@ Ext.define('Rubedo.controller.PagesController', {
             this.frame(MyPrefData.themeColor);
             Ext.getCmp('pageElementIdField').setValue(component.id);
             var propEdit=Ext.getCmp('pageElementPropsPanel');
-            propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
+            try{
+                propEdit.setTitle("Bloc "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("type"));
+            }catch(err){
+                propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
+            }
             propEdit.setIconCls('editBloc');
             propEdit.removeAll();
             var configSpec = Ext.widget('ConfigSpecBloc');

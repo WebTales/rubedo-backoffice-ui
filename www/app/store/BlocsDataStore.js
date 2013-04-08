@@ -33,6 +33,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Google Maps',
                     description: '<p>Le bloc "Google Maps"  permet d’afficher une carte présentant un ou plusieurs points géolocalisés.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p>',
                     category: 'Cartographie',
+                    bType: 'googleMaps',
                     configBasique: {
                         title: 'Google Maps',
                         bType: 'googleMaps',
@@ -148,6 +149,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'AddThis Share',
                     category: 'Syndication',
+                    bType: 'addThis',
                     description: '<p>Le Bloc "AddThis Share" permet d’ajouter des fonctionnalités de partage de la page courante sur différents réseaux sociaux.</p>',
                     configBasique: {
                         title: 'AddThis Share',
@@ -247,6 +249,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'AddThis Follow',
                     category: 'Syndication',
+                    bType: 'addThisFollow',
                     description: '<p>Le Bloc "AddThis Follow" permet d’ajouter des icônes de redirection vers différents réseaux sociaux. </p>',
                     configBasique: {
                         title: 'AddThis Follow',
@@ -411,6 +414,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Texte Simple',
                     category: 'Contenus',
+                    bType: 'simpleText',
                     description: '<p>Le bloc "Texte Simple" permet d\'intégrer simplement un bloc de texte dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
                     configBasique: {
                         title: 'Texte Simple',
@@ -457,6 +461,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Texte Riche',
                     category: 'Contenus',
+                    bType: 'richText',
                     description: '<p>Le bloc "Texte Riche" permet d\'intégrer simplement un bloc de texte riche dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
                     configBasique: {
                         title: 'Texte Riche',
@@ -503,6 +508,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Authentification',
                     category: 'Utilisateur',
+                    bType: 'authentication',
                     description: '<p>Le bloc "Authentification" permet à un utilisateur de s\’authentifier depuis le Front-Office.</p>',
                     configBasique: {
                         title: 'Authentification',
@@ -536,6 +542,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Galerie d\'images',
                     category: 'Médias',
+                    bType: 'imageGallery',
                     description: '<p>Le bloc "Galerie d’images" permet d\’afficher une galerie d\’images stockées dans la médiathèque Rubedo.</p>',
                     configBasique: {
                         title: 'Galerie d\'images',
@@ -608,6 +615,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Image',
                     category: 'Médias',
+                    bType: 'image',
                     description: '<p>Le bloc "Image" permet d\'afficher une image stockée dans la médiathèque Rubedo.</p>',
                     configBasique: {
                         title: 'Image',
@@ -708,6 +716,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Vidéo',
                     category: 'Médias',
+                    bType: 'video',
                     description: '<p>Le bloc "Vidéo" permet d\'afficher une vidéo stockée dans la médiathèque Rubedo. Le lecteur utilisé par défaut est JW Player.</p>',
                     configBasique: {
                         title: 'Vidéo',
@@ -817,6 +826,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Audio',
                     category: 'Médias',
+                    bType: 'audio',
                     description: '<p>Le bloc "Audio" permet d\’afficher un lecteur de médias audio (mp3, …)</p>',
                     configBasique: {
                         title: 'Audio',
@@ -899,6 +909,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Formulaire de recherche',
                     category: 'Recherche',
+                    bType: 'searchForm',
                     description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
                     configBasique: {
                         title: 'Formulaire de recherche',
@@ -974,6 +985,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Média Externe',
                     category: 'Médias',
+                    bType: 'externalMedia',
                     description: '<p>Le bloc "Média Externe" s\’appuie sur l\’API oEmbed (http://oembed.com/) et permet d\’afficher un média externe provenant des sources suivantes :</p><ul><li>YouTube  (vidéos)</li><li>Flickr (partage photos)</li><li>Vimeo (vidéos)</li><li>Poll Everywhere (enquêtes & sondages)</li><li>My Opera (blogs et photos)</li><li>SmugMug (partage de photos)</li><li>SlideShare (partage de presentations)</li><li>WordPress.com  (blogs)</li><li>chirbit.com (partage de fichiers audio)</li><li>CircuitLab (outil de dessin de schéma électrique)</li><li>Quizz.biz (outil de sondage)</li></ul>',
                     configBasique: {
                         title: 'Média Externe',
@@ -1038,6 +1050,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Contrôleur Zend',
                     category: 'Développement',
+                    bType: 'zendController',
                     description: '<p>Le bloc "Contrôleur Zend" permet aux développeurs d\’instancier un contrôleur Zend framework directement dans un bloc.</p>',
                     configBasique: {
                         title: 'Contrôleur Zend',
@@ -1105,6 +1118,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Galerie Flickr',
                     category: 'Médias',
+                    bType: 'flickrGallery',
                     description: '<p>Le bloc "Galerie Flicker" permet d\’afficher une galerie d\’images en provenance de Flicker, filtrée sur un compte utilisateur ou une liste de tags.<\/p>',
                     configBasique: {
                         title: 'Galerie Flickr',
@@ -1202,6 +1216,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Liste de Contenus',
                     category: 'Contenus',
+                    bType: 'contentList',
                     description: '<p>Le bloc "Liste de contenus" permet d\’afficher une liste de contenus à l\’aide d\’un assistant requêteur. Trois types de requêtes sont disponibles : </p><ul><li>manuelle (sélection manuelle ordonnée des contenus à afficher)</li><li>simple (choix d\'un type de contenu, taxonomie, règles de tri)</li><li>avancée (types de contenus multiples, taxonomie avancée, critères sur les champs systèmes, règles de tri)</li></ul>',
                     configBasique: {
                         title: 'Liste de contenus',
@@ -1322,6 +1337,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Agenda',
                     category: 'Contenus',
+                    bType: 'calendar',
                     description: '<p>Le bloc "Agenda" permet d\’afficher la vue calendaire d\’une liste de contenus datés (évènements, rendez-vous, …etc.)</p>',
                     configBasique: {
                         title: 'Agenda',
@@ -1459,6 +1475,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Carrousel',
                     category: 'Contenus',
+                    bType: 'carrousel',
                     description: '<p>Le bloc "Carrousel" permet d\’afficher un carrousel dynamique.</p>',
                     configBasique: {
                         title: 'Carrousel',
@@ -1600,6 +1617,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Menu',
                     category: 'Navigation',
+                    bType: 'navigation',
                     description: '<p>Le bloc "Menu" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d\’un site ou pour créer des menus secondaires au sein des rubriques.</p>',
                     configBasique: {
                         title: 'Menu',
@@ -1708,6 +1726,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Fil d\'Ariane',
                     category: 'Navigation',
+                    bType: 'breadcrumb',
                     description: '<p>Le bloc "Fil d’Ariane" permet d\’afficher automatiquement une vue de la position de la page courante dans l\'arborescence du site.</p>',
                     configBasique: {
                         title: 'Fil d\'Ariane',
@@ -1752,6 +1771,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Page de recherche',
                     category: 'Recherche',
+                    bType: 'searchResults',
                     description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
                     configBasique: {
                         title: 'Page de recherche',
@@ -1803,6 +1823,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Page de recherche géolocalisée',
                     category: 'Recherche',
+                    bType: 'geoSearchResults',
                     description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
                     configBasique: {
                         title: 'Page de recherche géolocalisée',
@@ -1929,6 +1950,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Template Twig',
                     category: 'Développement',
+                    bType: 'twig',
                     description: '<p>Le bloc "Template Twig" permet à un développeur d\'instancier un gabarit Twig directement dans un bloc, pour un besoin spécifique.</p>',
                     configBasique: {
                         title: 'Template Twig',
@@ -1973,6 +1995,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Questionnaire',
                     category: 'Formulaire',
+                    bType: 'form',
                     description: '',
                     configBasique: {
                         title: 'Questionnaire',
@@ -2040,6 +2063,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Contact',
                     category: 'Formulaire',
                     description: '',
+                    bType: 'contact',
                     configBasique: {
                         title: 'Contact',
                         bType: 'contact',
@@ -2113,6 +2137,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'D\u00e9tail de contenu',
                     category: 'Contenus',
+                    bType: 'contentDetail',
                     description: '<p>Le bloc "Détail de Contenu" permet d\’afficher les champs d’un contenu particulier.</p>',
                     configBasique: {
                         title: 'D\u00e9tail de contenu',

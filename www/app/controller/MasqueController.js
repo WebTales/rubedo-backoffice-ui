@@ -300,7 +300,11 @@ Ext.define('Rubedo.controller.MasqueController', {
             Ext.getCmp("importElement").enable();
             Ext.getCmp("exportElement").enable();
             var propEdit=Ext.getCmp('elementEditControl');
-            propEdit.setTitle(component.id.replace("panel", component.mType));
+            if (component.mType=="col"){
+                propEdit.setTitle("Colonne");
+            } else {
+                propEdit.setTitle("Ligne");
+            }
             propEdit.setIconCls('editZone');
 
 
@@ -947,7 +951,11 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("moveElementUp").enable();
         Ext.getCmp("moveElementDown").enable();
         var propEdit=Ext.getCmp('elementEditControl');
-        propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
+        try{
+            propEdit.setTitle("Bloc "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("type"));
+        }catch(err){
+            propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
+        }
         propEdit.setIconCls('editBloc');
         propEdit.removeAll();
 
