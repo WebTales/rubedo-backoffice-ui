@@ -1265,6 +1265,24 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 allowDecimals: false,
                                                 minValue: 0
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Limite de résultats',
+                                                name: 'resultsLimit',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Sauter les n premiers résulats',
+                                                allowDecimals: false,
+                                                name: 'resultsSkip',
+                                                minValue: 1
+                                            }
                                         }
                                     ]
                                 }
@@ -1524,6 +1542,24 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'pageSize',
                                                 allowDecimals: false,
                                                 minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Limite de résultats',
+                                                name: 'resultsLimit',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Sauter les n premiers résulats',
+                                                allowDecimals: false,
+                                                name: 'resultsSkip',
+                                                minValue: 1
                                             }
                                         }
                                     ]
