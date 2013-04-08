@@ -115,6 +115,12 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'defaultSingle'
+        },
+        {
+            name: 'googleMapsKey'
+        },
+        {
+            name: 'disqusKey'
         }
     ]
 });

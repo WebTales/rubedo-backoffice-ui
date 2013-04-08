@@ -398,6 +398,32 @@
                 "designer|userClassName": "field314"
             },
             "designerId": "cc30d8cf-2a11-4c77-9e82-2e70eb7ff8e2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "googleMapsKey",
+                "designer|userClassName": "MyField207"
+            },
+            "designerId": "2a321f48-4a81-4ef6-a5b6-242b4c17102f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "disqusKey",
+                "designer|userClassName": "MyField208"
+            },
+            "designerId": "1d0b5f45-9dc4-4e6a-ab74-30f20e0a05fa"
         }
     ]
 }

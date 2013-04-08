@@ -349,6 +349,26 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     inputType: 'password'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Clés d\'API externes',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Google Maps',
+                                    labelWidth: 110,
+                                    name: 'googleMapsKey'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Disqus',
+                                    labelWidth: 110,
+                                    name: 'disqusKey'
+                                }
+                            ]
                         }
                     ]
                 }

@@ -753,6 +753,53 @@
                             "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet6",
+                        "title": "Clés d'API externes"
+                    },
+                    "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField22",
+                                "fieldLabel": "Google Maps",
+                                "labelWidth": 110,
+                                "name": "googleMapsKey"
+                            },
+                            "designerId": "ba1103b7-9d59-4664-9428-7474772acc87"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField23",
+                                "fieldLabel": "Disqus",
+                                "labelWidth": 110,
+                                "name": "disqusKey"
+                            },
+                            "designerId": "3946a373-0c3f-455b-8c65-6f0921d08940"
+                        }
+                    ]
                 }
             ]
         },
