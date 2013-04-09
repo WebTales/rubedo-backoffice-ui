@@ -37,6 +37,11 @@ Ext.define('Rubedo.model.mediaTypeModel', {
             name: 'mainFileType'
         },
         {
+            defaultValue: false,
+            name: 'activateDisqus',
+            type: 'boolean'
+        },
+        {
             mapping: 'createUser.fullName',
             name: 'createUser',
             persist: false

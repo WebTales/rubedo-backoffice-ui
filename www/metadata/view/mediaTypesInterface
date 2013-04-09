@@ -761,7 +761,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "disabled": true,
                 "id": "MTcenterZone",
                 "designer|userClassName": "MyTabPanel",
                 "iconCls": null,
@@ -1275,8 +1274,8 @@
                         "id": "mediaTypesEditForm",
                         "designer|userClassName": "MyForm45",
                         "bodyPadding": 10,
-                        "iconCls": "user",
-                        "title": "Droits"
+                        "iconCls": "parametres",
+                        "title": "Propriétés"
                     },
                     "designerId": "19d9c471-f1cc-4aee-bf63-f7c247740bac",
                     "cn": [
@@ -1288,27 +1287,76 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "TabConfig2"
+                                "designer|userClassName": "TabConfig2",
+                                "iconCls": null
                             },
                             "designerId": "c36ee29f-bdea-4d70-b845-15be0524073b"
                         },
                         {
-                            "type": "linkedinstance",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Espaces de travail",
-                                "labelWidth": 120,
-                                "name": "workspaces",
-                                "multiSelect": true,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "designer|userClassName": "MyFieldSet3",
+                                "title": "Droits"
                             },
-                            "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
-                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                            "designerId": "f82537e0-dfaf-4194-8865-70ba1538ca6d",
+                            "cn": [
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Espaces de travail",
+                                        "labelWidth": 120,
+                                        "name": "workspaces",
+                                        "multiSelect": true,
+                                        "store": "ContributeWorkspacesCombo",
+                                        "layout|anchor": "100%"
+                                    },
+                                    "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
+                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet2",
+                                "title": "Commentaires"
+                            },
+                            "designerId": "861cf760-076f-41b1-a2bc-aaef27e94257",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyCheckbox8",
+                                        "fieldLabel": "Disqus",
+                                        "name": "activateDisqus",
+                                        "boxLabel": "",
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "02be28ba-b63e-4db3-93f1-10d536e54691"
+                                }
+                            ]
                         }
                     ]
                 },

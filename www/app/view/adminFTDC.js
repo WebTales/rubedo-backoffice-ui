@@ -333,7 +333,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
-                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [

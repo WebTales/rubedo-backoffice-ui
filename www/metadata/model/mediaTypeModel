@@ -97,6 +97,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "mapping": null,
+                "name": "activateDisqus",
+                "type": "boolean",
+                "designer|userClassName": "MyField53"
+            },
+            "designerId": "096f1bd7-447f-4a7e-8fcc-57c38a0bb300"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "mapping": "createUser.fullName",
                 "name": "createUser",
                 "persist": false,

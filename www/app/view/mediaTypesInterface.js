@@ -321,7 +321,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
-                    disabled: true,
                     id: 'MTcenterZone',
                     activeTab: 0,
                     items: [
@@ -526,17 +525,38 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             xtype: 'form',
                             id: 'mediaTypesEditForm',
                             bodyPadding: 10,
-                            iconCls: 'user',
-                            title: 'Droits',
+                            iconCls: 'parametres',
+                            title: 'Propriétés',
                             items: [
                                 {
-                                    xtype: 'WorkspaceCombo',
-                                    fieldLabel: 'Espaces de travail',
-                                    labelWidth: 120,
-                                    name: 'workspaces',
-                                    multiSelect: true,
-                                    store: 'ContributeWorkspacesCombo',
-                                    anchor: '100%'
+                                    xtype: 'fieldset',
+                                    title: 'Droits',
+                                    items: [
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            fieldLabel: 'Espaces de travail',
+                                            labelWidth: 120,
+                                            name: 'workspaces',
+                                            multiSelect: true,
+                                            store: 'ContributeWorkspacesCombo',
+                                            anchor: '100%'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Commentaires',
+                                    items: [
+                                        {
+                                            xtype: 'checkboxfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Disqus',
+                                            name: 'activateDisqus',
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
+                                        }
+                                    ]
                                 }
                             ]
                         },
