@@ -31,7 +31,7 @@ Ext.define('Rubedo.store.ContentMQueryStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'contents'
+                    read: 'contents/get-ordered-list'
                 },
                 reader: {
                     type: 'json',
