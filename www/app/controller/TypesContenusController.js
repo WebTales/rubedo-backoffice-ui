@@ -181,6 +181,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     var toUse="Ext.ux.TreePicker";
                     if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
                     if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                    storeT.load();
                     var selecteur = Ext.create(toUse, {
                         name:leVocab.get("id"),
                         fieldLabel: leVocab.get("name"),

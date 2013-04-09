@@ -184,6 +184,7 @@
                     "            var toUse=\"Ext.ux.TreePicker\";\r",
                     "            if(leVocab.get(\"multiSelect\")){toUse=\"Ext.ux.TreeMultiPicker\";}\r",
                     "            if(leVocab.get(\"id\")=='navigation'){storeT.getProxy().api={read:\"taxonomy-terms/navigation-tree\"};}\r",
+                    "            storeT.load();\r",
                     "         var selecteur = Ext.create(toUse, {\r",
                     "            name:leVocab.get(\"id\"),\r",
                     "            fieldLabel: leVocab.get(\"name\"),\r",
