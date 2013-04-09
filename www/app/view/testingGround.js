@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.MailingListPickerField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -38,16 +34,31 @@ Ext.define('Rubedo.view.testingGround', {
                     xtype: 'form',
                     bodyPadding: 10,
                     title: 'My Form',
-                    items: [
-                        {
-                            xtype: 'MailingListPickerField'
+                    listeners: {
+                        afterrender: {
+                            fn: me.onFormAfterRender,
+                            scope: me
                         }
-                    ]
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onFormAfterRender: function(component, eOpts) {
+        var homePageSelector = Ext.create("Ext.ux.TreeMultiPicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            labelWidth:110,
+            fieldLabel:"Page d'accueil",
+            id:"pickerMonkey",
+            anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+            name:"homePage"
+        });
+        component.add(homePageSelector);
     }
 
 });

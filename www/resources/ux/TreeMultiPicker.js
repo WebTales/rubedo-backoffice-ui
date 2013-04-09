@@ -46,7 +46,8 @@ Ext.define('Ext.ux.TreeMultiPicker', {
          * @cfg {Number} minPickerHeight
          * The minimum height of the tree dropdown. Defaults to 100.
          */
-        minPickerHeight: 100
+        minPickerHeight: 100,
+        ignoreIsNotPage:false
     },
    
     editable: false,
@@ -160,10 +161,11 @@ Ext.define('Ext.ux.TreeMultiPicker', {
      * @param {Ext.EventObject} e
      */
     onItemClick: function(view, record, node, rowIndex, e) {
+    	var me=this;
     	var betaSelected =view.getSelectionModel().getSelection();
     	var realSelected = [ ];
     	Ext.Array.forEach(betaSelected, function(item){
-    		if ((!item.isRoot())&&(!item.get("isNotPage"))){
+    		if ((!item.isRoot())&&((!item.get("isNotPage"))||(me.ignoreIsNotPage))){
     			realSelected.push(item);
     		}
     	});
@@ -242,7 +244,7 @@ Ext.define('Ext.ux.TreeMultiPicker', {
         var toSelect=[ ]; 
         if (value){
 	    	Ext.Array.forEach(value,function(item){
-	    		toSelect.push(me.picker.store.getNodeById(item));
+	    		toSelect.push(me.store.getNodeById(item));
 	    	});
 	    	toDisplay=Ext.Array.pluck(Ext.Array.pluck(toSelect,'data'),me.displayField);
 	

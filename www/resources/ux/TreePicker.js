@@ -46,7 +46,8 @@ Ext.define('Ext.ux.TreePicker', {
          * @cfg {Number} minPickerHeight
          * The minimum height of the tree dropdown. Defaults to 100.
          */
-        minPickerHeight: 100
+        minPickerHeight: 100,
+        ignoreIsNotPage:false
     },
    
     editable: false,
@@ -187,7 +188,7 @@ Ext.define('Ext.ux.TreePicker', {
      */
     selectItem: function(record) {
         var me = this;
-	if (!record.get("isNotPage")){
+	if ((!record.get("isNotPage"))||(me.ignoreIsNotPage)){
         me.setValue(record.get('id'));
         me.picker.hide();
         me.inputEl.focus();

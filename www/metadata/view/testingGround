@@ -31,14 +31,32 @@
             "designerId": "f1e3cb1e-a59f-42ec-a7af-0639c50409db",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
-                    "designerId": "641b4102-bdeb-4c17-820b-1fe3842278fa",
-                    "masterInstanceId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623"
+                    "userConfig": {
+                        "designer|userClassName": "onFormAfterRender",
+                        "fn": "onFormAfterRender",
+                        "implHandler": [
+                            "var homePageSelector = Ext.create(\"Ext.ux.TreeMultiPicker\", {\r",
+                            "            store:Ext.getStore(\"PagePickerStore\"),\r",
+                            "            displayField:\"text\",\r",
+                            "            labelWidth:110,\r",
+                            "            fieldLabel:\"Page d'accueil\",\r",
+                            "            id:\"pickerMonkey\",\r",
+                            "            anchor: \"100%\",\r",
+                            "            plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
+                            "            name:\"homePage\"\r",
+                            "        });\r",
+                            "component.add(homePageSelector);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "d345d055-4f50-4f9f-b6ab-3028bea1c666"
                 }
             ]
         }
