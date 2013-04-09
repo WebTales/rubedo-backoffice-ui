@@ -2099,7 +2099,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            progression: 0
+                            
                         }
                     },
                     version: 1,
@@ -2114,6 +2114,60 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '514ae0c5c0e051ac0d001672'
+                },
+                {
+                    type: 'Resource protégée',
+                    category: 'Formulaire',
+                    bType: 'protectedResource',
+                    description: '',
+                    configBasique: {
+                        title: 'Resource protégée',
+                        bType: 'protectedResource',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.MailingListPickerField',
+                                            config: {
+                                                fieldLabel: 'Liste de diffusion',
+                                                name: 'mailingListId'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Document',
+                                                name: 'documentId',
+                                                allowedFileType: 'Document',
+                                                smallMode: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '516404ecc0e0518d0f000018'
                 },
                 {
                     type: 'Contact',
