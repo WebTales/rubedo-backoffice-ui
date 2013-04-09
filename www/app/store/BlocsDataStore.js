@@ -1643,6 +1643,16 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Niveau',
+                                                name: 'menuLevel',
+                                                allowDecimals: false,
+                                                editable: false,
+                                                minValue: 1
+                                            }
+                                        },
+                                        {
                                             type: 'Ext.form.field.Checkbox',
                                             config: {
                                                 fieldLabel: 'Moteur de recherche',
@@ -1707,7 +1717,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         },
                         configBloc: {
                             style: 'Horizontal',
-                            displayRootPage: true
+                            displayRootPage: true,
+                            menuLevel: 1
                         }
                     },
                     version: 1,
