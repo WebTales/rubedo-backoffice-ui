@@ -282,20 +282,23 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         Ext.Array.forEach(mainWin.query("field"),function(field){
             if (field.submitValue){
                 if ((field.isVocabularyField)&&(!Ext.isEmpty(field.getValue()))) {
-                    if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
+                    if ((Ext.isEmpty(result.vocabularies[field.vocabularyId]))&&(field.usedRole!="rule")){
                         result.vocabularies[field.vocabularyId]={ };                
                     }
-                    if (Ext.isArray(field.getValue())){
-                        result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
-                    } else {
-                        result.vocabularies[field.vocabularyId][field.usedRole]=[field.getValue()];
+                    if (!(Ext.isEmpty(result.vocabularies[field.vocabularyId]))){
+                        if (Ext.isArray(field.getValue())){
+                            result.vocabularies[field.vocabularyId][field.usedRole]=field.getValue();
+                        } else {
+                            result.vocabularies[field.vocabularyId][field.usedRole]=[field.getValue()];
+                        }
                     }
 
                 } else if (field.isAddedRuleField){
-                    if (!Ext.isEmpty(result.fieldRules[field.ruleId])){
-
-                        result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
+                        result.fieldRules[field.ruleId]={ };           
                     }
+                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+
                 } else { 
                     result[field.name]=field.getValue();
                 }
