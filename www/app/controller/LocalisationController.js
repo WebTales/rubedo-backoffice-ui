@@ -99,6 +99,88 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     added: this.onBasefieldAdded
                 }
             });
+    },
+
+    produceLocalisationJSON: function() {
+        var result= { };
+        var count=0;
+        Ext.Object.each(Rubedo.view, function(a){
+            var test=Ext.create("Rubedo.view."+a,{id:undefined});
+            if (!Ext.isEmpty(test.localiserId)){
+                count=count+1;
+                if (test.isXType("field")){
+                    result[test.localiserId]={
+                        fieldLabel:test.fieldLabel,
+                        RTip:test.RTip
+                    };
+                } else if (test.isXType("button")){
+                    result[test.localiserId]={
+                        text:test.text
+                    };
+                } else if (test.isXType("fieldset")){
+                    result[test.localiserId]={
+                        title:test.title
+                    };
+                } else if (test.isXType("panel")){
+                    result[test.localiserId]={
+                        title:test.title
+                    };
+                } else if (test.isXType("window")){
+                    result[test.localiserId]={
+                        title:test.title
+                    };
+                }else if (test.isXType("gridcolumn")){
+                    result[test.localiserId]={
+                        text:test.text
+                    };
+                } else {
+                    console.log("unhandled localised component for id : "+test.localiserId); 
+                    count=count-1;
+                }
+            }
+            try{
+                Ext.Array.forEach(test.query("component"), function(component){
+                    if (!Ext.isEmpty(component.localiserId)){
+                        count=count+1;
+                        if (component.isXType("field")){
+                            result[component.localiserId]={
+                                fieldLabel:component.fieldLabel,
+                                RTip:component.RTip
+                            };
+                        } else if (component.isXType("button")){
+                            result[component.localiserId]={
+                                text:component.text
+                            };
+                        } else if (component.isXType("fieldset")){
+                            result[component.localiserId]={
+                                title:component.title
+                            };
+                        } else if (component.isXType("panel")){
+                            result[component.localiserId]={
+                                title:component.title
+                            };
+                        } else if (component.isXType("window")){
+                            result[component.localiserId]={
+                                title:component.title
+                            };
+                        }else if (component.isXType("gridcolumn")){
+                            result[component.localiserId]={
+                                text:component.text
+                            };
+                        } else {
+                            console.log("unhandled localised component for id : "+component.localiserId); 
+                            count=count-1;
+                        }
+                    }
+                });
+
+            }catch(err){
+                //console.log(err);
+            }
+            test.destroy();
+        });
+        console.log(count+" localised components");
+        console.log(Ext.JSON.encode(result));
     }
 
 });

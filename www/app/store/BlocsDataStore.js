@@ -1745,7 +1745,27 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page racine',
+                                                name: 'rootPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Niveau affiché',
+                                                name: 'displayLevel',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        }
+                                    ]
+                                }
                             ],
                             avance: [
                                 {
@@ -1778,6 +1798,51 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '506441f8c64804d514044000'
+                },
+                {
+                    type: 'Plan de site',
+                    category: 'Navigation',
+                    bType: 'siteMap',
+                    description: '',
+                    configBasique: {
+                        title: 'Plan de site',
+                        bType: 'siteMap',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514044492'
                 },
                 {
                     type: 'Page de recherche',
