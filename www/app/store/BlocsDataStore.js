@@ -1727,27 +1727,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page racine',
-                                                name: 'rootPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Niveau affiché',
-                                                name: 'displayLevel',
-                                                allowDecimals: false,
-                                                minValue: 1
-                                            }
-                                        }
-                                    ]
-                                }
+                                
                             ],
                             avance: [
                                 {
@@ -1792,7 +1772,27 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page racine',
+                                                name: 'rootPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Niveau affiché',
+                                                name: 'displayLevel',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        }
+                                    ]
+                                }
                             ],
                             avance: [
                                 {
