@@ -624,6 +624,7 @@ Ext.define('Rubedo.controller.PagesController', {
             store.resumeAutoSync();
             store.sync();
             store.addListener("update", function(a, record){
+
                 Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
                 var arButtons = [ ];
                 me.breadcrumbBuilder(record,arButtons);
@@ -658,6 +659,12 @@ Ext.define('Rubedo.controller.PagesController', {
                         Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
                     }
                 });
+                var task = new Ext.util.DelayedTask(function(){
+                    Ext.getCmp("mainPageTree").getSelectionModel().deselectAll();
+                    Ext.getCmp("mainPageTree").getSelectionModel().select(editedPage);
+                });
+                task.delay(200);
+
             } else {
                 Ext.getCmp("mainPageAttributeForm").up().setActiveTab(2);
                 Ext.Msg.alert("Erreur", "Les propriétés de la page sont invalides.");
