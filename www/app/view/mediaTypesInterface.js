@@ -25,7 +25,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     ],
 
     favoriteIcon: 'images.png',
-    localiserId: 'bigOne',
     height: 627,
     id: 'mediaTypesInterface',
     width: 1080,
@@ -67,7 +66,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.damTypes',
-                            localiserId: 'testMeYouFool',
                             id: 'newMTBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',

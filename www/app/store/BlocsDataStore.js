@@ -1265,29 +1265,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Pagination',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Afficher le paginateur',
-                                                name: 'showPager',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Taille des pages',
+                                                fieldLabel: 'Nombre de résultats affichés',
                                                 name: 'pageSize',
                                                 allowDecimals: false,
                                                 minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Limite de résultats',
-                                                name: 'resultsLimit',
-                                                allowDecimals: false,
-                                                minValue: 1
                                             }
                                         },
                                         {
@@ -1297,6 +1280,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 allowDecimals: false,
                                                 name: 'resultsSkip',
                                                 minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Activer le paginateur',
+                                                name: 'showPager',
+                                                inputValue: true
                                             }
                                         }
                                     ]
@@ -1545,29 +1536,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Pagination',
                                     champs: [
                                         {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Afficher le paginateur',
-                                                name: 'showPager',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Taille des pages',
+                                                fieldLabel: 'Nombre de résultats affichés',
                                                 name: 'pageSize',
                                                 allowDecimals: false,
                                                 minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Limite de résultats',
-                                                name: 'resultsLimit',
-                                                allowDecimals: false,
-                                                minValue: 1
                                             }
                                         },
                                         {
@@ -1577,6 +1551,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 allowDecimals: false,
                                                 name: 'resultsSkip',
                                                 minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Activer le paginateur',
+                                                name: 'showPager',
+                                                inputValue: true
                                             }
                                         }
                                     ]

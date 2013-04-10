@@ -8,7 +8,6 @@
     "userConfig": {
         "favoriteIcon": "images.png",
         "container|align": "stretch",
-        "localiserId": "bigOne",
         "height": 627,
         "id": "mediaTypesInterface",
         "width": 1080,
@@ -24,11 +23,6 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -97,7 +91,6 @@
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
                         "layout|flex": null,
-                        "localiserId": "testMeYouFool",
                         "id": "newMTBtn",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -112,11 +105,6 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
