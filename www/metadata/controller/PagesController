@@ -179,10 +179,13 @@
                     "    Ext.Array.forEach(Ext.getCmp(\"contributionPages\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
                     "    Ext.getCmp(\"mainPageEdition\").removeAll();\r",
                     "    var myMask =Ext.getStore(\"MasksComboStore\").findRecord(\"id\", record.get(\"maskId\")); \r",
+                    "    \r",
                     "    me.renderPage(Ext.clone(myMask.get(\"rows\")),1,Ext.getCmp(\"mainPageEdition\"));\r",
                     "    me.renderBlocks(Ext.clone(myMask.get(\"blocks\")), false);\r",
                     "    me.renderBlocks(Ext.clone(record.get(\"blocks\")), true);\r",
                     "    me.resetInterface();\r",
+                    "    Ext.getCmp(\"pageMaskDisplayBtn\").setText(\"Masque associé : \"+myMask.get(\"text\"));\r",
+                    "    Ext.getCmp(\"pageMaskDisplayBtn\").show();\r",
                     "    Ext.getCmp(\"mainPageAttributeForm\").getForm().loadRecord(record);\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"mainPageAttributeForm\").query(\"field\"), function(field){\r",
                     "        field.setReadOnly(false);\r",
@@ -503,6 +506,7 @@
                     "Ext.getCmp('pageElementPropsPanel').setIconCls();\r",
                     "Ext.getCmp('pageElementIdField').setValue();\r",
                     "Ext.getCmp(\"pagesInternalPreview\").removeAll();\r",
+                    "Ext.getCmp(\"pageMaskDisplayBtn\").hide();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().setValues();\r",
                     "Ext.getCmp(\"mainPageAttributeForm\").getForm().reset();\r",
                     "Ext.getCmp(\"pagePreviewTextItem\").setText();\r",
@@ -1375,6 +1379,46 @@
                 ]
             },
             "designerId": "485d72de-4ede-48af-b4b7-0646f7a95e2a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPageMaskDisplayBtnClick",
+                "fn": "onPageMaskDisplayBtnClick",
+                "implHandler": [
+                    "\t\t\t\t\t\tvar recordM = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().get(\"maskId\");\r",
+                    "\t\t\t\t\t\tvar fenetre = Ext.getCmp(\"adminFMDP\");\r",
+                    "                        if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }\r",
+                    "                        else {\r",
+                    "                            fenetre = Ext.widget(\"adminFMDP\");\r",
+                    "                            Ext.getCmp('desktopCont').add(fenetre);\r",
+                    "                            if (Ext.isDefined(window.innerHeight)) {\r",
+                    "                                if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
+                    "                                if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
+                    "                            }\r",
+                    "                            fenetre.show();\r",
+                    "                        }\r",
+                    "\t\t\t\t\t\tvar target=Ext.getCmp(\"adminFMDP\").getComponent(0);\r",
+                    "                        if (!Ext.isEmpty(target)) {\r",
+                    "\r",
+                    "                            if (target.getStore().isLoading()) {\r",
+                    "                                target.getStore().addListener(\"load\", function(){target.getSelectionModel().select(target.getStore().findRecord(\"id\",recordM));},this,{single:true});\r",
+                    "                            } else {\r",
+                    "                                target.getSelectionModel().select(target.getStore().findRecord(\"id\",recordM));\r",
+                    "                            }\r",
+                    "                        }"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#pageMaskDisplayBtn"
+            },
+            "designerId": "9a070aa8-2350-4882-a6b5-c828fbfe6494"
         }
     ]
 }

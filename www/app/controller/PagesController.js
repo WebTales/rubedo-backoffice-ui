@@ -111,10 +111,13 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getCmp("mainPageEdition").removeAll();
             var myMask =Ext.getStore("MasksComboStore").findRecord("id", record.get("maskId")); 
+
             me.renderPage(Ext.clone(myMask.get("rows")),1,Ext.getCmp("mainPageEdition"));
             me.renderBlocks(Ext.clone(myMask.get("blocks")), false);
             me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
+            Ext.getCmp("pageMaskDisplayBtn").setText("Masque associé : "+myMask.get("text"));
+            Ext.getCmp("pageMaskDisplayBtn").show();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
             Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
                 field.setReadOnly(false);
@@ -804,6 +807,30 @@ Ext.define('Rubedo.controller.PagesController', {
         }
     },
 
+    onPageMaskDisplayBtnClick: function(button, e, eOpts) {
+        var recordM = Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("maskId");
+        var fenetre = Ext.getCmp("adminFMDP");
+        if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }
+        else {
+            fenetre = Ext.widget("adminFMDP");
+            Ext.getCmp('desktopCont').add(fenetre);
+            if (Ext.isDefined(window.innerHeight)) {
+                if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+            }
+            fenetre.show();
+        }
+        var target=Ext.getCmp("adminFMDP").getComponent(0);
+        if (!Ext.isEmpty(target)) {
+
+            if (target.getStore().isLoading()) {
+                target.getStore().addListener("load", function(){target.getSelectionModel().select(target.getStore().findRecord("id",recordM));},this,{single:true});
+            } else {
+                target.getSelectionModel().select(target.getStore().findRecord("id",recordM));
+            }
+        }
+    },
+
     renderPage: function(mRows, its, cible) {
         var me=this;
         Ext.Array.forEach(mRows, function(row){
@@ -894,6 +921,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp('pageElementPropsPanel').setIconCls();
         Ext.getCmp('pageElementIdField').setValue();
         Ext.getCmp("pagesInternalPreview").removeAll();
+        Ext.getCmp("pageMaskDisplayBtn").hide();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
         Ext.getCmp("mainPageAttributeForm").getForm().reset();
         Ext.getCmp("pagePreviewTextItem").setText();
@@ -1034,6 +1062,9 @@ Ext.define('Rubedo.controller.PagesController', {
             },
             "#newPageMaskSelector": {
                 afterrender: this.onNewPageMaskSelectorAfterRender
+            },
+            "#pageMaskDisplayBtn": {
+                click: this.onPageMaskDisplayBtnClick
             }
         });
     }

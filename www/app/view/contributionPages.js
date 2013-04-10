@@ -355,6 +355,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                     title: 'Propriétés',
                                     items: [
                                         {
+                                            xtype: 'button',
+                                            hidden: true,
+                                            id: 'pageMaskDisplayBtn',
+                                            margin: '0 0 5 0',
+                                            text: 'Masque associé : '
+                                        },
+                                        {
                                             xtype: 'form',
                                             flex: 1,
                                             id: 'pageElementPropsPanel',
