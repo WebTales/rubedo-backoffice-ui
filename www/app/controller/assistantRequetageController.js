@@ -281,7 +281,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         result.fieldRules={ };
         Ext.Array.forEach(mainWin.query("field"),function(field){
             if (field.submitValue){
-                if (field.isVocabularyField) {
+                if ((field.isVocabularyField)&&(!Ext.isEmpty(field.getValue()))) {
                     if (Ext.isEmpty(result.vocabularies[field.vocabularyId])){
                         result.vocabularies[field.vocabularyId]={ };                
                     }
@@ -292,10 +292,10 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     }
 
                 } else if (field.isAddedRuleField){
-                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
-                        result.fieldRules[field.ruleId]={ };           
+                    if (!Ext.isEmpty(result.fieldRules[field.ruleId])){
+
+                        result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
                     }
-                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
                 } else { 
                     result[field.name]=field.getValue();
                 }
