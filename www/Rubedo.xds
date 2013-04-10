@@ -2341,6 +2341,22 @@
                 "app/view/MailingListPickerField.js"
             ],
             "className": "MailingListPickerField"
+        },
+        "e52a8e7e-0bba-4062-92d7-15145e60343a": {
+            "paths": [
+                "metadata/model/LocalisationModel",
+                "app/model/override/LocalisationModel.js",
+                "app/model/LocalisationModel.js"
+            ],
+            "className": "LocalisationModel"
+        },
+        "c123336d-eb0e-4617-bf31-1318f6731cb8": {
+            "paths": [
+                "metadata/store/LocalisationStore",
+                "app/store/override/LocalisationStore.js",
+                "app/store/LocalisationStore.js"
+            ],
+            "className": "LocalisationStore"
         }
     },
     "viewOrderMap": {
@@ -2570,7 +2586,8 @@
             "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
             "fc88ff8b-4055-49a7-9239-9574a3aef04e",
             "0c962f45-9c0e-470c-bf7f-7da0075f0ed9",
-            "cc39f83e-ee61-4265-9b4f-b3fb44efdb81"
+            "cc39f83e-ee61-4265-9b4f-b3fb44efdb81",
+            "c123336d-eb0e-4617-bf31-1318f6731cb8"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -2624,7 +2641,8 @@
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
             "98410e9a-0d71-4266-9879-fb34f77e26e0",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
-            "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3"
+            "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",
+            "e52a8e7e-0bba-4062-92d7-15145e60343a"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",
