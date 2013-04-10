@@ -47,12 +47,14 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     onComponentBeforeRender: function(component, eOpts) {
+        if (component.localiserId){
+            var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
+            if (!Ext.isEmpty(configs)) {
+                Ext.apply(component, configs);
+            }
+        }
         if ((component.isXType("field"))||(component.isXType("checkboxgroup"))||(component.isXType("radiogroup"))){
             component.labelSeparator=" ";
-            /*if (abstractcomponent.isXType("datefield")){
-            abstractcomponent.submitFormat='U';
-            abstractcomponent.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';
-            }*/
             if (component.fieldLabel=="Localisable"){
                 //temporary localiser hide
                 component.hide();
@@ -61,6 +63,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     onBasefieldAdded: function(component, container, pos, eOpts) {
+        if (component.localiserId){
+            var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
+            if (!Ext.isEmpty(configs)) {
+                Ext.apply(component, configs);
+            }
+        }
         if (!Ext.isEmpty(component.RTip)){
             component.anchor="90%";
             container.insert(pos,Ext.widget("RHelpBtn", {tooltip:component.RTip}));
