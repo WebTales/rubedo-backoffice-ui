@@ -352,6 +352,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            collapsible: true,
                             title: 'Clés d\'API externes',
                             items: [
                                 {
@@ -360,6 +361,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     fieldLabel: 'Google Maps',
                                     labelWidth: 110,
                                     name: 'googleMapsKey'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Google Analytics',
+                                    labelWidth: 110,
+                                    name: 'googleAnalyticsKey'
                                 },
                                 {
                                     xtype: 'textfield',

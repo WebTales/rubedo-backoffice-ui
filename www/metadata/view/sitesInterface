@@ -763,6 +763,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyFieldSet6",
+                        "collapsible": true,
                         "title": "Clés d'API externes"
                     },
                     "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
@@ -782,6 +783,22 @@
                                 "name": "googleMapsKey"
                             },
                             "designerId": "ba1103b7-9d59-4664-9428-7474772acc87"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField22",
+                                "fieldLabel": "Google Analytics",
+                                "labelWidth": 110,
+                                "name": "googleAnalyticsKey"
+                            },
+                            "designerId": "547bccdf-8510-49bd-a279-2d7b96355857"
                         },
                         {
                             "type": "Ext.form.field.Text",

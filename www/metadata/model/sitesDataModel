@@ -420,6 +420,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "googleAnalyticsKey",
+                "designer|userClassName": "MyField207"
+            },
+            "designerId": "f4765775-4c7b-4015-bf5e-9fed5ece0269"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "disqusKey",
                 "designer|userClassName": "MyField208"
             },

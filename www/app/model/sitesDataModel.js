@@ -120,6 +120,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
             name: 'googleMapsKey'
         },
         {
+            name: 'googleAnalyticsKey'
+        },
+        {
             name: 'disqusKey'
         }
     ]
