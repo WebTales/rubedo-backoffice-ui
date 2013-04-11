@@ -1631,7 +1631,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 name: 'menuLevel',
                                                 allowDecimals: false,
                                                 editable: false,
-                                                minValue: 1
+                                                minValue: 0
                                             }
                                         },
                                         {
@@ -1700,7 +1700,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         configBloc: {
                             style: 'Horizontal',
                             displayRootPage: true,
-                            menuLevel: 1
+                            menuLevel: 0
                         }
                     },
                     version: 1,
