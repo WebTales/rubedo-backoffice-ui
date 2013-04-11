@@ -130,7 +130,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "managesStore": true,
                         "layout|anchor": "90%",
                         "id": "champTCRequeteur",
                         "style": [
@@ -151,14 +150,7 @@
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
-                    "designerId": "900e06a4-5cf4-4ea4-b930-d9e2a09137c4",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "managesStore",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "900e06a4-5cf4-4ea4-b930-d9e2a09137c4"
                 },
                 {
                     "type": "Ext.button.Button",
@@ -249,7 +241,8 @@
                 "fn": "onAssistantRequetageRender",
                 "implHandler": [
                     "Ext.getStore('TCDepForQA').load();\r",
-                    "Ext.getStore('TaxonomyForQA').load();"
+                    "Ext.getStore('TaxonomyForQA').load();\r",
+                    "Ext.getStore(\"TCNDepCombo\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -270,7 +263,8 @@
                     "Ext.getStore('TCDepForQA').removeAll();\r",
                     "Ext.getStore('TaxonomyForQA').removeAll();\r",
                     "Ext.getStore(\"VersioningStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"VersioningStore\").removeAll();"
+                    "Ext.getStore(\"VersioningStore\").removeAll();\r",
+                    "Ext.getStore(\"TCNDepCombo\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

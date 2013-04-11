@@ -79,7 +79,6 @@ Ext.define('Rubedo.view.assistantRequetage', {
                     items: [
                         {
                             xtype: 'combobox',
-                            managesStore: true,
                             anchor: '90%',
                             id: 'champTCRequeteur',
                             style: '{float:left}',
@@ -144,6 +143,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
     onAssistantRequetageRender: function(component, eOpts) {
         Ext.getStore('TCDepForQA').load();
         Ext.getStore('TaxonomyForQA').load();
+        Ext.getStore("TCNDepCombo").load();
     },
 
     onAssistantRequetageBeforeClose: function(panel, eOpts) {
@@ -151,6 +151,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
         Ext.getStore('TaxonomyForQA').removeAll();
         Ext.getStore("VersioningStore").clearFilter(true);
         Ext.getStore("VersioningStore").removeAll();
+        Ext.getStore("TCNDepCombo").removeAll();
     },
 
     onAssistantRequetageAfterRender: function(component, eOpts) {
