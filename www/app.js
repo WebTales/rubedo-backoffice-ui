@@ -142,7 +142,9 @@ Ext.application({
         'Rubedo.view.contributionPrevisualisation',
         'Rubedo.view.newPageWindow',
         'Rubedo.view.newSiteWindow',
-        'Rubedo.view.MailingListPickerField'
+        'Rubedo.view.MailingListPickerField',
+        'Rubedo.view.MultiChoiceConfigurator',
+        'Rubedo.view.FormsPageConfigurator'
     ],
     models: [
         'sitesDataModel',
@@ -386,7 +388,9 @@ Ext.application({
         'contributionPrevisualisation',
         'newPageWindow',
         'newSiteWindow',
-        'MailingListPickerField'
+        'MailingListPickerField',
+        'MultiChoiceConfigurator',
+        'FormsPageConfigurator'
     ],
     autoCreateViewport: true,
     controllers: [
