@@ -23,8 +23,8 @@
                 "fn": "onMainCSVinportFieldChange",
                 "implHandler": [
                     "if (value) {\r",
-                    "    var form= filefield.up().getForm();\r",
-                    "    filefield.up().up().setLoading(true);\r",
+                    "    var form= filefield.up().up().getForm();\r",
+                    "    filefield.up().up().up().setLoading(true);\r",
                     "    form.submit({\r",
                     "        clientValidation: true,\r",
                     "        url: 'import/analyse',\r",
@@ -36,14 +36,23 @@
                     "            Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "            Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
                     "            Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "            Ext.getCmp(\"fileFieldHelper1\").show();\r",
                     "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
-                    "            filefield.nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+\" champs identifiés et \"+response.detectedContentsCount+\" contenus importables\");\r",
-                    "            filefield.up().up().setLoading(false);\r",
+                    "            filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+\" champs identifiés et \"+response.detectedContentsCount+\" contenus importables\");\r",
+                    "            filefield.up().up().up().setLoading(false);\r",
                     "\r",
                     "        },\r",
                     "        failure: function(form, action) {\r",
-                    "            filefield.up().up().setLoading(false);\r",
-                    "            Ext.Msg.alert(\"Erreur\", \"Erreur dans l'analyse du fichier\");\r",
+                    "            filefield.up().up().up().setLoading(false);\r",
+                    "            var message = \"Erreur dans l'analyse du fichier\";\r",
+                    "            try {\r",
+                    "            \tvar response = Ext.JSON.decode(action.response.responseText);\r",
+                    "                if (response.message){\r",
+                    "                    message=response.message;\r",
+                    "                }\r",
+                    "            } catch(err){}\r",
+                    "            Ext.Msg.alert(\"Erreur\", message);\r",
+                    "            filefield.reset();\r",
                     "        }\r",
                     "    });\r",
                     "}"
@@ -100,6 +109,30 @@
                 "designer|controlQuery": "#mainImportSubmitBtn"
             },
             "designerId": "171c9f08-971b-4b77-ab50-d1b65fecdbcc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFileFieldHelper1Click",
+                "fn": "onFileFieldHelper1Click",
+                "implHandler": [
+                    "Ext.getCmp(\"mainCSVinportField\").reset();\r",
+                    "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "button.hide();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#fileFieldHelper1"
+            },
+            "designerId": "d874ff6a-0216-465e-85c9-b75bdb6e1eaa"
         }
     ]
 }

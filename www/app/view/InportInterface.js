@@ -52,17 +52,35 @@ Ext.define('Rubedo.view.InportInterface', {
                     title: 'Choix du fichier à importer',
                     items: [
                         {
-                            xtype: 'filefield',
-                            extractFileInput: function() {
-                                var fileInput = Ext.getCmp("mainCSVinportField").fileInputEl.dom;
-                                return fileInput;
+                            xtype: 'container',
+                            margin: '0 0 10 0',
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
                             },
-                            anchor: '100%',
-                            id: 'mainCSVinportField',
-                            fieldLabel: 'Fichier CSV',
-                            name: 'csvFile',
-                            allowBlank: false,
-                            buttonText: 'Choisir et analyser'
+                            items: [
+                                {
+                                    xtype: 'filefield',
+                                    extractFileInput: function() {
+                                        var fileInput = Ext.getCmp("mainCSVinportField").fileInputEl.dom;
+                                        return fileInput;
+                                    },
+                                    flex: 1,
+                                    id: 'mainCSVinportField',
+                                    fieldLabel: 'Fichier CSV',
+                                    name: 'csvFile',
+                                    allowBlank: false,
+                                    buttonText: 'Choisir et analyser'
+                                },
+                                {
+                                    xtype: 'button',
+                                    hidden: true,
+                                    id: 'fileFieldHelper1',
+                                    margin: '0 0 0 4',
+                                    iconCls: 'close',
+                                    text: ''
+                                }
+                            ]
                         },
                         {
                             xtype: 'container',

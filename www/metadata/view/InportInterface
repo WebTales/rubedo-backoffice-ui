@@ -47,39 +47,75 @@
             "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
             "cn": [
                 {
-                    "type": "Ext.form.field.File",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "id": "mainCSVinportField",
-                        "designer|userClassName": "MyFileUpload",
-                        "fieldLabel": "Fichier CSV",
-                        "name": "csvFile",
-                        "allowBlank": false,
-                        "buttonText": "Choisir et analyser"
+                        "layout|flex": null,
+                        "container|align": "stretch",
+                        "margin": "0 0 10 0",
+                        "designer|userClassName": "MyContainer16",
+                        "layout": "hbox"
                     },
-                    "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
+                    "designerId": "52ce27cc-8170-4540-882b-34674429c437",
                     "cn": [
                         {
-                            "type": "basicfunction",
+                            "type": "Ext.form.field.File",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "extractFileInput",
-                                "fn": "extractFileInput",
-                                "implHandler": [
-                                    "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
-                                    "return fileInput;"
-                                ]
+                                "layout|flex": 1,
+                                "id": "mainCSVinportField",
+                                "designer|userClassName": "MyFileUpload",
+                                "fieldLabel": "Fichier CSV",
+                                "name": "csvFile",
+                                "allowBlank": false,
+                                "buttonText": "Choisir et analyser"
                             },
-                            "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
+                            "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
+                            "cn": [
+                                {
+                                    "type": "basicfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "extractFileInput",
+                                        "fn": "extractFileInput",
+                                        "implHandler": [
+                                            "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
+                                            "return fileInput;"
+                                        ]
+                                    },
+                                    "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "hidden": true,
+                                "id": "fileFieldHelper1",
+                                "margin": "0 0 0 4",
+                                "designer|userClassName": "MyButton44",
+                                "iconCls": "close",
+                                "text": ""
+                            },
+                            "designerId": "a4fb8fc2-6846-40b2-b969-e9b4209d0fd5"
                         }
                     ]
                 },

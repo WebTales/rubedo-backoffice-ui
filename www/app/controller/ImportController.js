@@ -19,8 +19,8 @@ Ext.define('Rubedo.controller.ImportController', {
 
     onMainCSVinportFieldChange: function(filefield, value, eOpts) {
         if (value) {
-            var form= filefield.up().getForm();
-            filefield.up().up().setLoading(true);
+            var form= filefield.up().up().getForm();
+            filefield.up().up().up().setLoading(true);
             form.submit({
                 clientValidation: true,
                 url: 'import/analyse',
@@ -32,17 +32,26 @@ Ext.define('Rubedo.controller.ImportController', {
                     Ext.getStore("NotInportFieldsStore").removeAll();
                     Ext.getStore("InportAsFieldStore").removeAll();
                     Ext.getStore("InportAsTaxoStore").removeAll();
+                    Ext.getCmp("fileFieldHelper1").show();
                     Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
-                    filefield.nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" champs identifiés et "+response.detectedContentsCount+" contenus importables");
-                    filefield.up().up().setLoading(false);
+                    filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" champs identifiés et "+response.detectedContentsCount+" contenus importables");
+                    filefield.up().up().up().setLoading(false);
 
                 },
                 failure: function(form, action) {
-                    filefield.up().up().setLoading(false);
-                    Ext.Msg.alert("Erreur", "Erreur dans l'analyse du fichier");
-                }
-            });
-        }
+                    filefield.up().up().up().setLoading(false);
+                    var message = "Erreur dans l'analyse du fichier";
+                    try {
+                        var response = Ext.JSON.decode(action.response.responseText);
+                        if (response.message){
+                            message=response.message;
+                        }
+                    } catch(err){}
+                        Ext.Msg.alert("Erreur", message);
+                        filefield.reset();
+                    }
+                });
+            }
     },
 
     onMainImportSubmitBtnClick: function(button, e, eOpts) {
@@ -75,6 +84,14 @@ Ext.define('Rubedo.controller.ImportController', {
         }
     },
 
+    onFileFieldHelper1Click: function(button, e, eOpts) {
+        Ext.getCmp("mainCSVinportField").reset();
+        Ext.getStore("NotInportFieldsStore").removeAll();
+        Ext.getStore("InportAsFieldStore").removeAll();
+        Ext.getStore("InportAsTaxoStore").removeAll();
+        button.hide();
+    },
+
     init: function(application) {
         this.control({
             "#mainCSVinportField": {
@@ -82,6 +99,9 @@ Ext.define('Rubedo.controller.ImportController', {
             },
             "#mainImportSubmitBtn": {
                 click: this.onMainImportSubmitBtnClick
+            },
+            "#fileFieldHelper1": {
+                click: this.onFileFieldHelper1Click
             }
         });
     }
