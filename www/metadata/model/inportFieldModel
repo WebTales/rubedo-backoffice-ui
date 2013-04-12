@@ -1,0 +1,87 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "inportFieldModel",
+        "designer|userAlias": "inportFieldModel"
+    },
+    "designerId": "9e088d56-6c5c-43d3-8291-8dee5762b7ba",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "designer|userClassName": "MyField65"
+            },
+            "designerId": "28b5340a-bfe6-47f3-83dc-ec97486f6121"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "newName",
+                "designer|userClassName": "MyField64"
+            },
+            "designerId": "d001bb46-3703-41d7-9687-c212f3856028"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label",
+                "designer|userClassName": "MyField66"
+            },
+            "designerId": "c70c1aaa-482b-4964-8acb-e5011870a77f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "'506441f8c648043912000017'"
+                ],
+                "name": "protoId",
+                "designer|userClassName": "MyField67"
+            },
+            "designerId": "2d072591-e037-4545-b53d-16dafc60f153"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "mandatory",
+                "type": "boolean",
+                "designer|userClassName": "MyField68"
+            },
+            "designerId": "36282dd9-cdfa-43bd-9c76-37e94e3b332d"
+        }
+    ]
+}

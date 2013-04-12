@@ -238,6 +238,13 @@
                                             "    itemId: 'menuWorkflows',\r",
                                             "    iconCls: 'process-icon',\r",
                                             "    text: 'Workflows'\r",
+                                            "},{\r",
+                                            "    xtype: 'menuitem',\r",
+                                            "    ACL: 'exe.ui.import',\r",
+                                            "    favoriteIcon: 'database_up.png',\r",
+                                            "    itemId: 'InportInterface',\r",
+                                            "    iconCls: 'database_up_small',\r",
+                                            "    text: 'Importation'\r",
                                             "}\r",
                                             "]);"
                                         ],

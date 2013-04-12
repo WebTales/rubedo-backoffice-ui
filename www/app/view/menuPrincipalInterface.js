@@ -312,6 +312,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             itemId: 'menuWorkflows',
             iconCls: 'process-icon',
             text: 'Workflows'
+        },{
+            xtype: 'menuitem',
+            ACL: 'exe.ui.import',
+            favoriteIcon: 'database_up.png',
+            itemId: 'InportInterface',
+            iconCls: 'database_up_small',
+            text: 'Importation'
         }
         ]);
     },

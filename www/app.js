@@ -13,6 +13,7 @@
  * Do NOT hand edit this file.
  */
 
+//@require @packageOverrides
 Ext.Loader.setConfig({
     enabled: true,
     paths: {
@@ -144,7 +145,8 @@ Ext.application({
         'Rubedo.view.newSiteWindow',
         'Rubedo.view.MailingListPickerField',
         'Rubedo.view.MultiChoiceConfigurator',
-        'Rubedo.view.FormsPageConfigurator'
+        'Rubedo.view.FormsPageConfigurator',
+        'Rubedo.view.InportInterface'
     ],
     models: [
         'sitesDataModel',
@@ -173,7 +175,8 @@ Ext.application({
         'workspaceModel',
         'formModel',
         'formFieldTypeModel',
-        'mailingListsModel'
+        'mailingListsModel',
+        'inportFieldModel'
     ],
     stores: [
         'SitesJson',
@@ -261,7 +264,10 @@ Ext.application({
         'TypesContenusDataJson',
         'PanierDataJson',
         'MultiChoiceOptionsStore',
-        'MailingListsCombo'
+        'MailingListsCombo',
+        'NotInportFieldsStore',
+        'InportAsFieldStore',
+        'InportAsTaxoStore'
     ],
     views: [
         'MyContainer',
@@ -390,7 +396,8 @@ Ext.application({
         'newSiteWindow',
         'MailingListPickerField',
         'MultiChoiceConfigurator',
-        'FormsPageConfigurator'
+        'FormsPageConfigurator',
+        'InportInterface'
     ],
     autoCreateViewport: true,
     controllers: [

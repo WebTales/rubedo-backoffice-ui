@@ -1,0 +1,803 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 449,
+        "id": "InportInterface",
+        "width": 712,
+        "designer|userClassName": "InportInterface",
+        "designer|userAlias": "InportInterface",
+        "layout": "card",
+        "iconCls": "database_up_small",
+        "title": "Importation"
+    },
+    "designerId": "174581d4-1d9c-4a32-b14d-615f802f9164",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "0fe6b893-b526-4495-b906-ca2d83b9cd88",
+            "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|userClassName": "MyForm10",
+                "layout": "vbox",
+                "bodyPadding": 10,
+                "title": "Choix du fichier à importer"
+            },
+            "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "mainCSVinportField",
+                        "designer|userClassName": "MyFileUpload",
+                        "fieldLabel": "Fichier CSV",
+                        "name": "csvFile",
+                        "allowBlank": false
+                    },
+                    "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMainCSVinportFieldChange",
+                                "fn": "onMainCSVinportFieldChange",
+                                "implHandler": [
+                                    "if (value) {\r",
+                                    "    var form= filefield.up().getForm();\r",
+                                    "    filefield.up().up().setLoading(true);\r",
+                                    "    form.submit({\r",
+                                    "        clientValidation: true,\r",
+                                    "        url: 'import/analyse',\r",
+                                    "        params: { \r",
+                                    "\r",
+                                    "        },\r",
+                                    "        success: function(form, action) {\r",
+                                    "            var response = Ext.JSON.decode(action.response.responseText);\r",
+                                    "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
+                                    "            filefield.nextSibling().enable();\r",
+                                    "            filefield.up().up().setLoading(false);\r",
+                                    "\r",
+                                    "        },\r",
+                                    "        failure: function(form, action) {\r",
+                                    "            filefield.up().up().setLoading(false);\r",
+                                    "            Ext.Msg.alert(\"Erreur\", \"Erreur dans l'analyse du fichier\");\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "65667dbc-5a55-4717-90f0-ed91cf2da492"
+                        },
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "extractFileInput",
+                                "fn": "extractFileInput",
+                                "implHandler": [
+                                    "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
+                                    "return fileInput;"
+                                ]
+                            },
+                            "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout|flex": 1,
+                        "disabled": true,
+                        "id": "mainCSVInportAnalyseContainer",
+                        "designer|userClassName": "MyContainer9",
+                        "layout": "vbox"
+                    },
+                    "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "container|align": "stretch",
+                                "designer|userClassName": "MyPanel13",
+                                "layout": "hbox",
+                                "title": "Champs identifiés"
+                            },
+                            "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "designer|userClassName": "MyGridPanel9",
+                                        "title": "",
+                                        "forceFit": true,
+                                        "store": "NotInportFieldsStore"
+                                    },
+                                    "designerId": "283bd4f5-dbc7-4651-bd9e-6139a8da22c9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn1",
+                                                "dataIndex": "name",
+                                                "text": "Ne pas importer"
+                                            },
+                                            "designerId": "efcc439c-9fce-45e7-b14b-1a63f4219084"
+                                        },
+                                        {
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyGridView1",
+                                                "markDirty": false
+                                            },
+                                            "designerId": "f0168bca-f9d5-463c-984e-ea4069204e12",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.plugin.DragDrop",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyGridDragDropPlugin"
+                                                    },
+                                                    "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "designer|userClassName": "MyGridPanel9",
+                                        "title": "",
+                                        "forceFit": true,
+                                        "store": "InportAsFieldStore"
+                                    },
+                                    "designerId": "f17de099-4f85-4eca-ad19-5edbb12e64ef",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn1",
+                                                "dataIndex": "name",
+                                                "text": "Importer en tant que champ"
+                                            },
+                                            "designerId": "453279b9-c24c-4f6b-8082-e785aea0f6b7"
+                                        },
+                                        {
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyGridView1",
+                                                "markDirty": false
+                                            },
+                                            "designerId": "f9b87123-7981-4d7e-becd-21f993e1a8c0",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.plugin.DragDrop",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyGridDragDropPlugin1"
+                                                    },
+                                                    "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "designer|userClassName": "MyGridPanel9",
+                                        "title": "",
+                                        "forceFit": true,
+                                        "store": "InportAsTaxoStore"
+                                    },
+                                    "designerId": "de9d07d1-9dfe-4de7-bb7b-08dd35b11d75",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn1",
+                                                "dataIndex": "name",
+                                                "text": "Importer en tant que taxonomie"
+                                            },
+                                            "designerId": "35b30c5c-a479-472e-8248-1caf91581b62"
+                                        },
+                                        {
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyGridView1",
+                                                "markDirty": false
+                                            },
+                                            "designerId": "c8aacbe6-e30e-41b6-a3fe-43ef19f161b6",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.plugin.DragDrop",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyGridDragDropPlugin2"
+                                                    },
+                                                    "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel15",
+                "title": "Paramètrage des champs",
+                "forceFit": true,
+                "store": "InportAsFieldStore"
+            },
+            "designerId": "5f894302-a1fb-4faa-9a1d-d3468c9068ef",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView7",
+                        "markDirty": false
+                    },
+                    "designerId": "f075de21-5108-4683-88a6-eb1d4d53d319",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyGridDragDropPlugin3"
+                            },
+                            "designerId": "2cafbea3-ce63-4e78-8c8d-68bb70112aa5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn9",
+                        "dataIndex": "name",
+                        "text": "Nom"
+                    },
+                    "designerId": "064b115b-c924-4cbe-8c40-4cc807efc7a6"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn10",
+                        "dataIndex": "newName",
+                        "text": "Nouveau nom (optionel)"
+                    },
+                    "designerId": "7c798fbe-f4ef-465f-b087-0faab3ad9753",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField18"
+                            },
+                            "designerId": "2a48bca6-b288-41f0-8d6e-6e6f944cec6f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn8",
+                        "dataIndex": "label",
+                        "text": "Libellé"
+                    },
+                    "designerId": "58d27c2c-d16b-4a50-aefa-be709925b6df",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField19"
+                            },
+                            "designerId": "91df9964-f3ad-42f1-9551-7c205e309625"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn11",
+                        "dataIndex": "protoId",
+                        "text": "Type"
+                    },
+                    "designerId": "fd18a1d9-502b-4118-85e6-5a91fc5b5dbf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyComboBox14",
+                                "allowBlank": false,
+                                "editable": false,
+                                "displayField": "type",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": "TypesChampsDataStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "eb3c3605-7bae-4efc-a7f2-e189013cc34e"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return(Ext.getStore(\"TypesChampsDataStore\").findRecord(\"id\", value).get(\"type\"));"
+                                ]
+                            },
+                            "designerId": "cad16b57-b48c-47c0-81fc-85951bafe73f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn",
+                        "dataIndex": "mandatory",
+                        "text": "Obligatoire",
+                        "falseText": "Non",
+                        "trueText": "Oui"
+                    },
+                    "designerId": "51a661eb-5176-445e-b32f-3ff8d3c40319",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyCheckbox1",
+                                "boxLabel": null,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "e4b6784b-7f90-4144-8844-e40c51cc84e7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin",
+                        "clicksToEdit": 1
+                    },
+                    "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel16",
+                "title": "Paramètrage de la taxonomie",
+                "forceFit": true,
+                "store": "InportAsTaxoStore"
+            },
+            "designerId": "e183be72-9326-4831-9dea-a0c3bd47dec2",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView8",
+                        "markDirty": false
+                    },
+                    "designerId": "010321de-5d77-43d1-84f4-b7e2490e70d6",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyGridDragDropPlugin4"
+                            },
+                            "designerId": "d5c95319-7f14-409d-8a5c-faa86247759b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn7",
+                        "dataIndex": "name",
+                        "text": "Nom"
+                    },
+                    "designerId": "142a2cca-0657-4a22-af59-e7cb46042458"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin1",
+                        "clicksToEdit": 1
+                    },
+                    "designerId": "9e40ec07-84d0-42ee-bee5-801d17ba98fc"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn10",
+                        "dataIndex": "newName",
+                        "text": "Nouveau nom (optionel)"
+                    },
+                    "designerId": "bd94392f-4db7-4055-9d75-86d858df24d0",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField18"
+                            },
+                            "designerId": "8a36d688-1e51-4b68-9282-7be3299a2e9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn",
+                        "dataIndex": "mandatory",
+                        "text": "Obligatoire",
+                        "falseText": "Non",
+                        "trueText": "Oui"
+                    },
+                    "designerId": "942d2776-2795-4922-aa25-43f3484d992d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyCheckbox1",
+                                "boxLabel": null,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "09ce9448-ceb2-4893-92a3-1ea3594be74b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm5",
+                "bodyPadding": 10,
+                "title": "Finalisation  et importation"
+            },
+            "designerId": "5426ed1d-fc23-4c2d-8687-1143c5b1c7de",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet",
+                        "title": "Paramètres du tye de contenus"
+                    },
+                    "designerId": "f442fe0b-620b-4cc6-a130-f68b8b8ebec3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField",
+                                "fieldLabel": "Nom",
+                                "labelWidth": 120,
+                                "name": "type",
+                                "allowBlank": false
+                            },
+                            "designerId": "52972bc4-ab73-4224-a300-a639dedd7cc3"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Espaces de travail",
+                                "labelWidth": 120,
+                                "name": "workspaces",
+                                "multiSelect": true,
+                                "store": "ContributeWorkspacesCombo",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "canSwitchStore": "boolean"
+                            },
+                            "designerId": "ca49d412-0b43-460d-afd3-097c2ed71b4d",
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyComboBox28",
+                                "fieldLabel": "Workflow",
+                                "labelWidth": 120,
+                                "name": "workflow",
+                                "allowBlank": false,
+                                "editable": false,
+                                "forceSelection": true,
+                                "store": [
+                                    "[\"Aucun\", \"Basique\"]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "9993b58d-f6a2-4eba-8d11-b839f1215d14"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "mainImportSubmitBtn",
+                        "designer|userClassName": "MyButton1",
+                        "scale": "large",
+                        "text": "Importer"
+                    },
+                    "designerId": "a81a4d29-0f4f-4f01-8cb8-9fa980374f80"
+                }
+            ]
+        }
+    ]
+}

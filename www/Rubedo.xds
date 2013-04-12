@@ -2357,6 +2357,46 @@
                 "app/store/LocalisationStore.js"
             ],
             "className": "LocalisationStore"
+        },
+        "174581d4-1d9c-4a32-b14d-615f802f9164": {
+            "paths": [
+                "metadata/view/InportInterface",
+                "app/view/override/InportInterface.js",
+                "app/view/InportInterface.js"
+            ],
+            "className": "InportInterface"
+        },
+        "f4a3e43b-725c-4ad7-8034-3875dc71bb70": {
+            "paths": [
+                "metadata/store/NotInportFieldsStore",
+                "app/store/override/NotInportFieldsStore.js",
+                "app/store/NotInportFieldsStore.js"
+            ],
+            "className": "NotInportFieldsStore"
+        },
+        "3be2705f-c3a0-4c70-8ead-494722c051a0": {
+            "paths": [
+                "metadata/store/InportAsFieldStore",
+                "app/store/override/InportAsFieldStore.js",
+                "app/store/InportAsFieldStore.js"
+            ],
+            "className": "InportAsFieldStore"
+        },
+        "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56": {
+            "paths": [
+                "metadata/store/InportAsTaxoStore",
+                "app/store/override/InportAsTaxoStore.js",
+                "app/store/InportAsTaxoStore.js"
+            ],
+            "className": "InportAsTaxoStore"
+        },
+        "9e088d56-6c5c-43d3-8291-8dee5762b7ba": {
+            "paths": [
+                "metadata/model/inportFieldModel",
+                "app/model/override/inportFieldModel.js",
+                "app/model/inportFieldModel.js"
+            ],
+            "className": "inportFieldModel"
         }
     },
     "viewOrderMap": {
@@ -2498,7 +2538,8 @@
             "73ed8109-ae62-44c8-9526-cd885b3b0396",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
             "7120e487-8033-4805-b435-a863418861d9",
-            "1f387c06-5c71-4cab-ac38-38a30ac34a23"
+            "1f387c06-5c71-4cab-ac38-38a30ac34a23",
+            "174581d4-1d9c-4a32-b14d-615f802f9164"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2587,7 +2628,10 @@
             "fc88ff8b-4055-49a7-9239-9574a3aef04e",
             "0c962f45-9c0e-470c-bf7f-7da0075f0ed9",
             "cc39f83e-ee61-4265-9b4f-b3fb44efdb81",
-            "c123336d-eb0e-4617-bf31-1318f6731cb8"
+            "c123336d-eb0e-4617-bf31-1318f6731cb8",
+            "f4a3e43b-725c-4ad7-8034-3875dc71bb70",
+            "3be2705f-c3a0-4c70-8ead-494722c051a0",
+            "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -2642,7 +2686,8 @@
             "98410e9a-0d71-4266-9879-fb34f77e26e0",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",
-            "e52a8e7e-0bba-4062-92d7-15145e60343a"
+            "e52a8e7e-0bba-4062-92d7-15145e60343a",
+            "9e088d56-6c5c-43d3-8291-8dee5762b7ba"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

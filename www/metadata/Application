@@ -33,7 +33,8 @@
             "workspaceModel",
             "formModel",
             "formFieldTypeModel",
-            "mailingListsModel"
+            "mailingListsModel",
+            "inportFieldModel"
         ],
         "stores": [
             "SitesJson",
@@ -121,7 +122,10 @@
             "TypesContenusDataJson",
             "PanierDataJson",
             "MultiChoiceOptionsStore",
-            "MailingListsCombo"
+            "MailingListsCombo",
+            "NotInportFieldsStore",
+            "InportAsFieldStore",
+            "InportAsTaxoStore"
         ],
         "views": [
             "MyContainer",
@@ -250,7 +254,8 @@
             "newSiteWindow",
             "MailingListPickerField",
             "MultiChoiceConfigurator",
-            "FormsPageConfigurator"
+            "FormsPageConfigurator",
+            "InportInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "inportFieldModel",
+        "storeId": "InportAsFieldStore",
+        "designer|userClassName": "InportAsFieldStore",
+        "designer|userAlias": "InportAsFieldStore"
+    },
+    "designerId": "3be2705f-c3a0-4c70-8ead-494722c051a0"
+}
