@@ -59,49 +59,11 @@
                         "designer|userClassName": "MyFileUpload",
                         "fieldLabel": "Fichier CSV",
                         "name": "csvFile",
-                        "allowBlank": false
+                        "allowBlank": false,
+                        "buttonText": "Choisir et analyser"
                     },
                     "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
                     "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "onMainCSVinportFieldChange",
-                                "fn": "onMainCSVinportFieldChange",
-                                "implHandler": [
-                                    "if (value) {\r",
-                                    "    var form= filefield.up().getForm();\r",
-                                    "    filefield.up().up().setLoading(true);\r",
-                                    "    form.submit({\r",
-                                    "        clientValidation: true,\r",
-                                    "        url: 'import/analyse',\r",
-                                    "        params: { \r",
-                                    "\r",
-                                    "        },\r",
-                                    "        success: function(form, action) {\r",
-                                    "            var response = Ext.JSON.decode(action.response.responseText);\r",
-                                    "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
-                                    "            filefield.nextSibling().enable();\r",
-                                    "            filefield.up().up().setLoading(false);\r",
-                                    "\r",
-                                    "        },\r",
-                                    "        failure: function(form, action) {\r",
-                                    "            filefield.up().up().setLoading(false);\r",
-                                    "            Ext.Msg.alert(\"Erreur\", \"Erreur dans l'analyse du fichier\");\r",
-                                    "        }\r",
-                                    "    });\r",
-                                    "}"
-                                ],
-                                "name": "change",
-                                "scope": "me"
-                            },
-                            "designerId": "65667dbc-5a55-4717-90f0-ed91cf2da492"
-                        },
                         {
                             "type": "basicfunction",
                             "reference": {
@@ -131,7 +93,6 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout|flex": 1,
-                        "disabled": true,
                         "id": "mainCSVInportAnalyseContainer",
                         "designer|userClassName": "MyContainer9",
                         "layout": "vbox"
@@ -150,7 +111,7 @@
                                 "container|align": "stretch",
                                 "designer|userClassName": "MyPanel13",
                                 "layout": "hbox",
-                                "title": "Champs identifiés"
+                                "title": "Choisissez un fichier CSV pour afficher ses champs"
                             },
                             "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
                             "cn": [
@@ -698,6 +659,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyForm5",
+                "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Finalisation  et importation"
             },
@@ -727,8 +689,8 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField",
                                 "fieldLabel": "Nom",
-                                "labelWidth": 120,
-                                "name": "type",
+                                "labelWidth": 165,
+                                "name": "ContentTypeType",
                                 "allowBlank": false
                             },
                             "designerId": "52972bc4-ab73-4224-a300-a639dedd7cc3"
@@ -742,8 +704,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": "Espaces de travail",
-                                "labelWidth": 120,
-                                "name": "workspaces",
+                                "labelWidth": 165,
+                                "name": "ContentTypeWorkspaces",
                                 "multiSelect": true,
                                 "store": "ContributeWorkspacesCombo",
                                 "layout|anchor": "100%"
@@ -765,8 +727,11 @@
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyComboBox28",
                                 "fieldLabel": "Workflow",
-                                "labelWidth": 120,
-                                "name": "workflow",
+                                "labelWidth": 165,
+                                "name": "ContentTypeWorkflow",
+                                "value": [
+                                    "\"Aucun\""
+                                ],
                                 "allowBlank": false,
                                 "editable": false,
                                 "forceSelection": true,
@@ -778,6 +743,88 @@
                                 "store": "array"
                             },
                             "designerId": "9993b58d-f6a2-4eba-8d11-b839f1215d14"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet3",
+                        "title": "Paramètres des contenus"
+                    },
+                    "designerId": "312d5ca5-684b-4e38-8d39-57fb31076ba0",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Contribution",
+                                "labelWidth": 165,
+                                "name": "ContentsWriteWorkspace",
+                                "store": "ContributeWorkspacesCombo",
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "7db6a75a-b5c7-488d-8d88-a1807ea34193",
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Diffusion",
+                                "labelWidth": 165,
+                                "name": "ContentsTarget",
+                                "multiSelect": true,
+                                "store": "WorkspacesComboWithAll",
+                                "layout|anchor": "100%"
+                            },
+                            "designerId": "cb608ca9-372b-47f8-91b0-560c2b3bca68",
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField4",
+                                "fieldLabel": "Date de début de publication ",
+                                "labelWidth": 165,
+                                "name": "ContentsStartPublicationDate"
+                            },
+                            "designerId": "2775b1ac-4fe0-4023-8320-81133ae5452a"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyDateField5",
+                                "fieldLabel": "Date de fin de publication ",
+                                "labelWidth": 165,
+                                "name": "ContentsEndPublicationDate"
+                            },
+                            "designerId": "2195c930-2b2a-4d9d-9182-21a9cbcc771f"
                         }
                     ]
                 },
@@ -798,6 +845,46 @@
                     "designerId": "a81a4d29-0f4f-4f01-8cb8-9fa980374f80"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onInportInterfaceBeforeRender",
+                "fn": "onInportInterfaceBeforeRender",
+                "implHandler": [
+                    "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "97b066b8-9612-4cf9-9c86-9ac87102a454"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onInportInterfaceBeforeClose",
+                "fn": "onInportInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "dadae1ce-0c2e-489a-9d9e-3b11f4628234"
         }
     ]
 }

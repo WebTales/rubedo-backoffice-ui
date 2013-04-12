@@ -2397,11 +2397,21 @@
                 "app/model/inportFieldModel.js"
             ],
             "className": "inportFieldModel"
+        },
+        "3923be22-e5f8-4dac-b18f-8fc3eb86f640": {
+            "paths": [
+                "metadata/controller/ImportController",
+                "app/controller/override/ImportController.js",
+                "app/controller/ImportController.js"
+            ],
+            "className": "ImportController"
         }
     },
     "viewOrderMap": {
         "view": [
+            "174581d4-1d9c-4a32-b14d-615f802f9164",
             "02bcaee3-2fc4-4f83-8521-12359112b8ab",
+            "b6ffe1bc-b42f-4987-9728-a2d2563012af",
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
             "6341613e-27da-44e4-b8e4-0157cfe99c02",
             "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02",
@@ -2420,7 +2430,6 @@
             "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
             "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
             "600b0e52-e465-45ce-ac64-6b6f98c6a6a6",
-            "b6ffe1bc-b42f-4987-9728-a2d2563012af",
             "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c",
             "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
             "2de13705-89e4-4cfe-abe7-36d5129e9aca",
@@ -2538,8 +2547,7 @@
             "73ed8109-ae62-44c8-9526-cd885b3b0396",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
             "7120e487-8033-4805-b435-a863418861d9",
-            "1f387c06-5c71-4cab-ac38-38a30ac34a23",
-            "174581d4-1d9c-4a32-b14d-615f802f9164"
+            "1f387c06-5c71-4cab-ac38-38a30ac34a23"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2652,7 +2660,8 @@
             "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
             "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
             "765f93a9-83e7-4405-aaaa-740265c87f51",
-            "82778ea5-36d1-422d-993a-6b91ab641629"
+            "82778ea5-36d1-422d-993a-6b91ab641629",
+            "3923be22-e5f8-4dac-b18f-8fc3eb86f640"
         ],
         "model": [
             "b980e128-6e56-43e6-99d6-b9312789f61e",

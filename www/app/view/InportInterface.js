@@ -62,17 +62,11 @@ Ext.define('Rubedo.view.InportInterface', {
                             fieldLabel: 'Fichier CSV',
                             name: 'csvFile',
                             allowBlank: false,
-                            listeners: {
-                                change: {
-                                    fn: me.onMainCSVinportFieldChange,
-                                    scope: me
-                                }
-                            }
+                            buttonText: 'Choisir et analyser'
                         },
                         {
                             xtype: 'container',
                             flex: 1,
-                            disabled: true,
                             id: 'mainCSVInportAnalyseContainer',
                             layout: {
                                 align: 'stretch',
@@ -86,7 +80,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         align: 'stretch',
                                         type: 'hbox'
                                     },
-                                    title: 'Champs identifiés',
+                                    title: 'Choisissez un fichier CSV pour afficher ses champs',
                                     items: [
                                         {
                                             xtype: 'gridpanel',
@@ -280,6 +274,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'form',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: 'Finalisation  et importation',
                     items: [
@@ -291,15 +286,15 @@ Ext.define('Rubedo.view.InportInterface', {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     fieldLabel: 'Nom',
-                                    labelWidth: 120,
-                                    name: 'type',
+                                    labelWidth: 165,
+                                    name: 'ContentTypeType',
                                     allowBlank: false
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
                                     fieldLabel: 'Espaces de travail',
-                                    labelWidth: 120,
-                                    name: 'workspaces',
+                                    labelWidth: 165,
+                                    name: 'ContentTypeWorkspaces',
                                     multiSelect: true,
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
@@ -308,8 +303,9 @@ Ext.define('Rubedo.view.InportInterface', {
                                     xtype: 'combobox',
                                     anchor: '100%',
                                     fieldLabel: 'Workflow',
-                                    labelWidth: 120,
-                                    name: 'workflow',
+                                    labelWidth: 165,
+                                    name: 'ContentTypeWorkflow',
+                                    value: 'Aucun',
                                     allowBlank: false,
                                     editable: false,
                                     forceSelection: true,
@@ -317,6 +313,43 @@ Ext.define('Rubedo.view.InportInterface', {
                                         'Aucun',
                                         'Basique'
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Paramètres des contenus',
+                            items: [
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    fieldLabel: 'Contribution',
+                                    labelWidth: 165,
+                                    name: 'ContentsWriteWorkspace',
+                                    store: 'ContributeWorkspacesCombo',
+                                    anchor: '100%'
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    fieldLabel: 'Diffusion',
+                                    labelWidth: 165,
+                                    name: 'ContentsTarget',
+                                    multiSelect: true,
+                                    store: 'WorkspacesComboWithAll',
+                                    anchor: '100%'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Date de début de publication ',
+                                    labelWidth: 165,
+                                    name: 'ContentsStartPublicationDate'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Date de fin de publication ',
+                                    labelWidth: 165,
+                                    name: 'ContentsEndPublicationDate'
                                 }
                             ]
                         },
@@ -329,35 +362,32 @@ Ext.define('Rubedo.view.InportInterface', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                beforerender: {
+                    fn: me.onInportInterfaceBeforeRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onInportInterfaceBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
     },
 
-    onMainCSVinportFieldChange: function(filefield, value, eOpts) {
-        if (value) {
-            var form= filefield.up().getForm();
-            filefield.up().up().setLoading(true);
-            form.submit({
-                clientValidation: true,
-                url: 'import/analyse',
-                params: { 
+    onInportInterfaceBeforeRender: function(component, eOpts) {
+        Ext.getStore("NotInportFieldsStore").removeAll();
+        Ext.getStore("InportAsFieldStore").removeAll();
+        Ext.getStore("InportAsTaxoStore").removeAll();
+    },
 
-                },
-                success: function(form, action) {
-                    var response = Ext.JSON.decode(action.response.responseText);
-                    Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
-                    filefield.nextSibling().enable();
-                    filefield.up().up().setLoading(false);
-
-                },
-                failure: function(form, action) {
-                    filefield.up().up().setLoading(false);
-                    Ext.Msg.alert("Erreur", "Erreur dans l'analyse du fichier");
-                }
-            });
-        }
+    onInportInterfaceBeforeClose: function(panel, eOpts) {
+        Ext.getStore("NotInportFieldsStore").removeAll();
+        Ext.getStore("InportAsFieldStore").removeAll();
+        Ext.getStore("InportAsTaxoStore").removeAll();
     }
 
 });

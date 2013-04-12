@@ -145,7 +145,8 @@ Ext.application({
         'Rubedo.view.MailingListPickerField',
         'Rubedo.view.MultiChoiceConfigurator',
         'Rubedo.view.FormsPageConfigurator',
-        'Rubedo.view.InportInterface'
+        'Rubedo.view.InportInterface',
+        'Rubedo.view.AjouterContenu'
     ],
     models: [
         'sitesDataModel',
@@ -396,7 +397,8 @@ Ext.application({
         'MailingListPickerField',
         'MultiChoiceConfigurator',
         'FormsPageConfigurator',
-        'InportInterface'
+        'InportInterface',
+        'AjouterContenu'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -417,7 +419,8 @@ Ext.application({
         'DAMController',
         'WorkspacesController',
         'LocalisationController',
-        'FormsController'
+        'FormsController',
+        'ImportController'
     ],
     name: 'Rubedo'
 });

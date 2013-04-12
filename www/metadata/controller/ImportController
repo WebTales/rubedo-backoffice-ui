@@ -1,0 +1,105 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportController",
+        "designer|userAlias": "ImportController"
+    },
+    "designerId": "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainCSVinportFieldChange",
+                "fn": "onMainCSVinportFieldChange",
+                "implHandler": [
+                    "if (value) {\r",
+                    "    var form= filefield.up().getForm();\r",
+                    "    filefield.up().up().setLoading(true);\r",
+                    "    form.submit({\r",
+                    "        clientValidation: true,\r",
+                    "        url: 'import/analyse',\r",
+                    "        params: { \r",
+                    "\r",
+                    "        },\r",
+                    "        success: function(form, action) {\r",
+                    "            var response = Ext.JSON.decode(action.response.responseText);\r",
+                    "            Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
+                    "            Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
+                    "            Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
+                    "            filefield.nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+\" champs identifiés et \"+response.detectedContentsCount+\" contenus importables\");\r",
+                    "            filefield.up().up().setLoading(false);\r",
+                    "\r",
+                    "        },\r",
+                    "        failure: function(form, action) {\r",
+                    "            filefield.up().up().setLoading(false);\r",
+                    "            Ext.Msg.alert(\"Erreur\", \"Erreur dans l'analyse du fichier\");\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.File",
+                "designer|controlQuery": "#mainCSVinportField"
+            },
+            "designerId": "05f2ffe9-d0fa-4a54-9b25-797971c64291"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainImportSubmitBtnClick",
+                "fn": "onMainImportSubmitBtnClick",
+                "implHandler": [
+                    "var myForm = button.up().getForm();\r",
+                    "if (myForm.isValid()){\r",
+                    "    var configs=myForm.getValues();\r",
+                    "    var inportAsField=Ext.Array.pluck(Ext.getStore(\"InportAsFieldStore\").getRange(), \"data\");\r",
+                    "    var inportAsTaxo=Ext.Array.pluck(Ext.getStore(\"InportAsTaxoStore\").getRange(), \"data\");\r",
+                    "    var form=Ext.getCmp(\"mainCSVinportField\").up().getForm();\r",
+                    "    button.up().up().setLoading(true);\r",
+                    "    form.submit({\r",
+                    "        url: 'import/import',\r",
+                    "        params: { \r",
+                    "            configs:Ext.JSON.encode(configs),\r",
+                    "            inportAsField: Ext.JSON.encode(inportAsField),\r",
+                    "            inportAsTaxo: Ext.JSON.encode(inportAsTaxo)\r",
+                    "        },\r",
+                    "        success: function(form, action) {\r",
+                    "            var response = Ext.JSON.decode(action.response.responseText);\r",
+                    "            Ext.Msg.alert(\"Succés\", response.importedContentsCount+\" contenus importés.\");            \r",
+                    "            button.up().up().setLoading(false);\r",
+                    "            button.up().up().close();\r",
+                    "\r",
+                    "        },\r",
+                    "        failure: function(form, action) {\r",
+                    "            button.up().up().setLoading(false);\r",
+                    "            Ext.Msg.alert(\"Erreur\", \"Erreur lors de l'importation\");\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mainImportSubmitBtn"
+            },
+            "designerId": "171c9f08-971b-4b77-ab50-d1b65fecdbcc"
+        }
+    ]
+}

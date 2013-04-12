@@ -255,7 +255,8 @@
             "MailingListPickerField",
             "MultiChoiceConfigurator",
             "FormsPageConfigurator",
-            "InportInterface"
+            "InportInterface",
+            "AjouterContenu"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -276,7 +277,8 @@
             "DAMController",
             "WorkspacesController",
             "LocalisationController",
-            "FormsController"
+            "FormsController",
+            "ImportController"
         ],
         "name": "Rubedo"
     },
