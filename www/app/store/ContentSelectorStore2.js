@@ -61,7 +61,7 @@ Ext.define('Rubedo.store.ContentSelectorStore2', {
     onJsonstoreBeforeLoad: function(store, operation, eOpts) {
         var raw = Ext.getStore("ContentMQueryStore").getRange();
         var refined = Ext.Array.pluck(Ext.Array.pluck(raw, "data"), "id");
-        store.getProxy().extraParams.tFilter="[{\"property\":\"id\",\"operator\":\"$nin\",\"value\":"+Ext.JSON.encode(refined)+"}]";
+        store.getProxy().extraParams.tFilter="[{\"property\":\"id\",\"operator\":\"$nin\",\"value\":"+Ext.JSON.encode(refined)+"},{\"property\":\"typeId\",\"operator\":\"$nin\",\"value\":"+Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getStore("SystemCTStore").getRange(),"data"), "id"))+"}]";
     },
 
     onJsonstoreAdd: function(store, records, index, eOpts) {

@@ -267,7 +267,8 @@ Ext.application({
         'MailingListsCombo',
         'NotInportFieldsStore',
         'InportAsFieldStore',
-        'InportAsTaxoStore'
+        'InportAsTaxoStore',
+        'SystemCTStore'
     ],
     views: [
         'MyContainer',

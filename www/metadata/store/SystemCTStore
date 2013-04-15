@@ -1,0 +1,87 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": false,
+        "usedCollection": null,
+        "autoLoad": true,
+        "model": "typesContenusDataModel",
+        "storeId": "SystemCTStore",
+        "designer|userClassName": "SystemCTStore",
+        "designer|userAlias": "SystemCTStore",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "e53cb58e-46d3-41e4-a2b4-a9a5c480e8d8",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy2",
+                "api": [
+                    "{\r",
+                    "                    read: 'content-types',\r",
+                    "\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "d91e3534-a7d5-48e5-9aa4-1b82113bb2ad",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
+                    },
+                    "designerId": "eba0ddbf-86b7-4570-a86d-03c3dd958b10"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "system",
+                "designer|userClassName": "MyFilter1",
+                "value": [
+                    "true"
+                ]
+            },
+            "designerId": "223f63f3-863e-4586-ae68-268e4fd95096"
+        }
+    ]
+}
