@@ -56,9 +56,25 @@ Ext.define('Rubedo.view.InportInterface', {
                             margin: '0 0 10 0',
                             layout: {
                                 align: 'stretch',
+                                padding: 1,
                                 type: 'hbox'
                             },
                             items: [
+                                {
+                                    xtype: 'textfield',
+                                    flex: 0.18,
+                                    fieldLabel: 'Séparateur',
+                                    labelWidth: 60,
+                                    name: 'separator',
+                                    value: ';',
+                                    allowBlank: false,
+                                    listeners: {
+                                        change: {
+                                            fn: me.onTextfieldChange,
+                                            scope: me
+                                        }
+                                    }
+                                },
                                 {
                                     xtype: 'filefield',
                                     extractFileInput: function() {
@@ -67,7 +83,9 @@ Ext.define('Rubedo.view.InportInterface', {
                                     },
                                     flex: 1,
                                     id: 'mainCSVinportField',
+                                    margin: '0 0 0 5',
                                     fieldLabel: 'Fichier CSV',
+                                    labelWidth: 80,
                                     name: 'csvFile',
                                     allowBlank: false,
                                     buttonText: 'Choisir et analyser'
@@ -394,6 +412,14 @@ Ext.define('Rubedo.view.InportInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onTextfieldChange: function(field, newValue, oldValue, eOpts) {
+        if (Ext.isEmpty(newValue)){
+            field.addListener("blur", function(){
+                if (Ext.isEmpty(field.getValue())){field.setValue(";");}
+            }, this, {single:true});
+            }
     },
 
     onInportInterfaceBeforeRender: function(component, eOpts) {

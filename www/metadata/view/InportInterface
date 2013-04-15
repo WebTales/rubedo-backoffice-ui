@@ -56,12 +56,58 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|align": "stretch",
+                        "container|padding": 1,
                         "margin": "0 0 10 0",
+                        "padding": null,
                         "designer|userClassName": "MyContainer16",
                         "layout": "hbox"
                     },
                     "designerId": "52ce27cc-8170-4540-882b-34674429c437",
                     "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 0.18,
+                                "designer|userClassName": "MyTextField7",
+                                "fieldLabel": "Séparateur",
+                                "labelWidth": 60,
+                                "name": "separator",
+                                "value": [
+                                    "\";\""
+                                ],
+                                "allowBlank": false
+                            },
+                            "designerId": "2cdf994e-da89-43ab-bd5a-f48dca38bcae",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTextfieldChange",
+                                        "fn": "onTextfieldChange",
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(newValue)){\r",
+                                            "    field.addListener(\"blur\", function(){\r",
+                                            "        if (Ext.isEmpty(field.getValue())){field.setValue(\";\");}\r",
+                                            "    }, this, {single:true});\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "4bf021a5-f84a-4243-8e71-9b1992c31840"
+                                }
+                            ]
+                        },
                         {
                             "type": "Ext.form.field.File",
                             "reference": {
@@ -72,8 +118,10 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "id": "mainCSVinportField",
+                                "margin": "0 0 0 5",
                                 "designer|userClassName": "MyFileUpload",
                                 "fieldLabel": "Fichier CSV",
+                                "labelWidth": 80,
                                 "name": "csvFile",
                                 "allowBlank": false,
                                 "buttonText": "Choisir et analyser"
@@ -127,8 +175,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|align": "stretch",
                         "layout|flex": 1,
+                        "container|align": "stretch",
                         "id": "mainCSVInportAnalyseContainer",
                         "designer|userClassName": "MyContainer9",
                         "layout": "vbox"
