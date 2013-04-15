@@ -56,7 +56,7 @@ Ext.define('Rubedo.view.CKEField', {
         { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
         { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
         { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
-        { name: 'links', items: [ 'Link', 'Unlink', '-','Anchor' ] },
+        { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
         '/',
         { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] }
         ];
@@ -66,7 +66,7 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
             { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },'/',
             { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] }, 
-            { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', 'Unlink'] },
+            { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', "Rubedolink", 'Unlink'] },
             { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo'  ] }
             ];
         } else if (component.CKETBConfig=="Basic"){
@@ -81,7 +81,7 @@ Ext.define('Rubedo.view.CKEField', {
         }
 
         var targetId = component.getInputId();
-        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:"ext-finder?type=Image"});
+        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:"ext-finder?type=Image"});
         component.editor.on('instanceReady', function(){
             component.up().doLayout();
             component.editor.document.getDocumentElement().on('click', function(){
