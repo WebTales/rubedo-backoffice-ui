@@ -30,123 +30,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             storeId: 'BlocsDataStore',
             data: [
                 {
-                    type: 'Google Maps',
-                    description: '<p>Le bloc "Google Maps"  permet d’afficher une carte présentant un ou plusieurs points géolocalisés.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p>',
-                    category: 'Cartographie',
-                    bType: 'googleMaps',
-                    configBasique: {
-                        title: 'Google Maps',
-                        bType: 'googleMaps',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Contenus',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.queryBuilderField',
-                                            config: {
-                                                fieldLabel: 'Requête',
-                                                name: 'query',
-                                                
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Champ position',
-                                                name: 'positionField',
-                                                allowBlank: false
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Centre de la carte',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Geolocalisation',
-                                                name: 'useLocation',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Adresse',
-                                                name: 'centerAddress'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Latitude',
-                                                name: 'centerLatitude',
-                                                allowDecimals: true,
-                                                decimalPrecision: 6
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Longitude',
-                                                name: 'centerLongitude',
-                                                allowDecimals: true,
-                                                decimalPrecision: 6
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Zoom',
-                                                name: 'zoom',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur',
-                                                name: 'height',
-                                                allowDecimals: false,
-                                                minValue: 100
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            positionField: 'position',
-                            zoom: 14,
-                            height: 500
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51237699c0e051d40e000004'
-                },
-                {
                     type: 'AddThis Share',
                     category: 'Syndication',
                     bType: 'addThis',
@@ -1879,12 +1762,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514066000'
                 },
                 {
-                    type: 'Page de recherche géolocalisée',
-                    category: 'Recherche',
+                    type: 'Google Maps',
+                    category: 'Cartographie',
                     bType: 'geoSearchResults',
-                    description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
+                    description: '',
                     configBasique: {
-                        title: 'Page de recherche géolocalisée',
+                        title: 'Google Maps',
                         bType: 'geoSearchResults',
                         flex: 1,
                         champsConfig: {
@@ -1952,6 +1835,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Paramètres',
                                     champs: [
                                         {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Recherche',
+                                                name: 'activateSearch',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
                                             type: 'Ext.form.field.Number',
                                             config: {
                                                 fieldLabel: 'Zoom',
@@ -1986,6 +1877,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
+                            activateSearch: true,
                             constrainToSite: true,
                             zoom: 14,
                             height: 500,
