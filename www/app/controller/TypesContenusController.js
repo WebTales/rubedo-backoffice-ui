@@ -789,7 +789,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     } else if (canModify=="no"){
                         Ext.Msg.alert('Modification impossible', 'Le type de contenu est utilisé par des contenus et ces modifications ne sont pas compatibles.');
                     } else if (canModify=="possible"){
-                        Ext.Msg.confirm('Attention', 'Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de repercutions. </br> Souhaitez-vous continuer ?' ,function(anser){
+                        Ext.Msg.confirm('Attention', 'Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de répercussions. </br> Souhaitez-vous continuer ?' ,function(anser){
                             if (anser=="yes"){
                                 var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
                                 target.beginEdit();

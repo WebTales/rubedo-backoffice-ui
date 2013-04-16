@@ -781,23 +781,6 @@
                             "designerId": "262bc1bd-e9ae-49c3-9af5-8cd6f9ca1715",
                             "cn": [
                                 {
-                                    "type": "Ext.button.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|flex": null,
-                                        "hidden": true,
-                                        "id": "pageMaskDisplayBtn",
-                                        "margin": "0 0 5 0",
-                                        "designer|userClassName": "MyButton13",
-                                        "text": "Masque associé : "
-                                    },
-                                    "designerId": "d722afeb-7ee9-4e8d-b6df-9db4d500f4c7"
-                                },
-                                {
                                     "type": "Ext.form.Panel",
                                     "reference": {
                                         "name": "items",
@@ -1285,8 +1268,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "layout|flex": 2,
                         "itemId": "boiteBarreMeta",
+                        "margin": "0 0 0 10",
+                        "maxWidth": null,
                         "designer|userClassName": "MyContainer9"
                     },
                     "designerId": "fa120237-07ec-4865-8ed6-3ec70f8c6513",
@@ -1308,6 +1293,36 @@
                             "designerId": "a0708fd5-5b2f-4615-84c1-a0b9d53ddd4c"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill42"
+                    },
+                    "designerId": "d8bd9681-980b-4637-b73e-f57a6d4b1a52"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "hidden": true,
+                        "id": "pageMaskDisplayBtn",
+                        "margin": "0 0 5 0",
+                        "designer|userClassName": "MyButton13",
+                        "text": "Masque associé : "
+                    },
+                    "designerId": "d722afeb-7ee9-4e8d-b6df-9db4d500f4c7"
                 }
             ]
         }

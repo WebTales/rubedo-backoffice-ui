@@ -920,7 +920,7 @@
                     "            } else if (canModify==\"no\"){\r",
                     "                Ext.Msg.alert('Modification impossible', 'Le type de contenu est utilisé par des contenus et ces modifications ne sont pas compatibles.');\r",
                     "            } else if (canModify==\"possible\"){\r",
-                    "                Ext.Msg.confirm('Attention', 'Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de repercutions. </br> Souhaitez-vous continuer ?' ,function(anser){\r",
+                    "                Ext.Msg.confirm('Attention', 'Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de répercussions. </br> Souhaitez-vous continuer ?' ,function(anser){\r",
                     "                    if (anser==\"yes\"){\r",
                     "                        var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();\r",
                     "                        target.beginEdit();\r",

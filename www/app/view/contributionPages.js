@@ -238,10 +238,22 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'container',
+                            flex: 2,
                             itemId: 'boiteBarreMeta',
+                            margin: '0 0 0 10',
                             tpl: [
                                 '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
                             ]
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            hidden: true,
+                            id: 'pageMaskDisplayBtn',
+                            margin: '0 0 5 0',
+                            text: 'Masque associé : '
                         }
                     ]
                 }
@@ -354,13 +366,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                     collapsible: true,
                                     title: 'Propriétés',
                                     items: [
-                                        {
-                                            xtype: 'button',
-                                            hidden: true,
-                                            id: 'pageMaskDisplayBtn',
-                                            margin: '0 0 5 0',
-                                            text: 'Masque associé : '
-                                        },
                                         {
                                             xtype: 'form',
                                             flex: 1,
