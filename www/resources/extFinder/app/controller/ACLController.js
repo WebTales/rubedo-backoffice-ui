@@ -49,6 +49,14 @@ Ext.define('extFinder.controller.ACLController', {
                     type:options.type
                 });
 
+            } else if (!Ext.isEmpty(options.soloMode)){
+                Ext.define('CKEOptions', {
+                    singleton:true,
+                    soloMode:true,
+                    contentId:options.contentId,
+                    type:"Image"
+                });
+
             }
 
 

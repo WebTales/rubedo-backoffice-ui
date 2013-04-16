@@ -276,8 +276,13 @@ Ext.define('extFinder.view.DAMPickerWindow', {
 
     onImagePickerAcceptBtnClick: function(button, e, eOpts) {
         if (CKEOptions.type=="Image"){
-            var fileURL="/image?file-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId");
-            window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
+
+            if (CKEOptions.soloMode){
+                window.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId"));
+            } else {
+                var fileURL="/image?file-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId");
+                window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
+            }
         }
         window.close();
     }
