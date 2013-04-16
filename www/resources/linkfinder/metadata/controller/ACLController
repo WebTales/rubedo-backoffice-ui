@@ -195,8 +195,9 @@
                     "    var selElement=selection.getSelectedElement();",
                     "    newElement.append(selElement);",
                     "    editor.insertElement(newElement);",
-                    "    ",
-                    "}"
+                    "",
+                    "}",
+                    "window.close();"
                 ]
             },
             "designerId": "5300b34b-8a97-40a1-9a22-7c817264ba01"

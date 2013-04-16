@@ -176,6 +176,7 @@ Ext.define('linkfinder.controller.ACLController', {
             editor.insertElement(newElement);
 
         }
+        window.close();
     }
 
 });
