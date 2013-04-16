@@ -8,18 +8,16 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "MediaTypes",
+        "autoLoad": false,
+        "model": "mediaTypeModel",
+        "storeId": "MediaTypesFORDAMPicker",
         "designer|userClassName": "MediaTypesFORDAMPicker",
         "designer|userAlias": "MediaTypesFORDAMPicker",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "MediaTypesFORDAMPicker",
-        "model": "mediaTypeModel",
         "data": null
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen6998",
     "designerId": "1a8b1bd9-acd3-48a5-985b-65285c209b10",
     "customConfigs": [
         {
@@ -35,7 +33,7 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -53,16 +51,16 @@
             "designerId": "1cefd5b4-2a3e-4f5e-a21f-9883e7179488",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "messageProperty": "message",
-                        "root": "data"
+                        "root": "data",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "647a31e9-c9af-45ce-832c-d000e8773277"
                 }

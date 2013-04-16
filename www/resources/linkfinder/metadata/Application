@@ -1,0 +1,42 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "taxonomyTermModel"
+        ],
+        "views": [
+            "MyViewport",
+            "MainTabPan"
+        ],
+        "appFolder": "resources/linkfinder/app",
+        "autoCreateViewport": true,
+        "controllers": [
+            "ACLController"
+        ],
+        "name": "linkfinder"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "paths": [
+                    "{\"Ext\":\".\", \"Ext.ux\":\"resources/ux\"}"
+                ],
+                "designer|userClassName": "Loader8"
+            },
+            "designerId": "89e9148c-25f4-4c98-bcec-cd79d8f29691"
+        }
+    ]
+}

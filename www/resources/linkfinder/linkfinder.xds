@@ -1,0 +1,161 @@
+{
+    "name": "linkfinder",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.2.1",
+    "xdsBuild": 951,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000500,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "cf6e37a9-ef7d-407a-b064-b3c3beead833": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "e6679921-3efa-43ea-aeba-a4878fdadbce": {
+            "paths": [
+                "metadata/view/MainViewport",
+                "resources/linkfinder/app/view/override/MainViewport.js",
+                "resources/linkfinder/app/view/MainViewport.js",
+                "resources/linkfinder/app/view/Viewport.js"
+            ],
+            "className": "MainViewport"
+        },
+        "72c4e490-bdaa-4cab-b47a-a2bb24f27c40": {
+            "paths": [
+                "metadata/controller/ACLController",
+                "resources/linkfinder/app/controller/override/ACLController.js",
+                "resources/linkfinder/app/controller/ACLController.js"
+            ],
+            "className": "ACLController"
+        },
+        "68c9705e-104d-4815-8463-1236c8453eab": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "4b3c5628-4711-46a3-8747-616fefae7df1": {
+            "paths": [
+                "metadata/resource/css1"
+            ],
+            "className": "css1"
+        },
+        "c431e313-f28f-4ea9-8fc8-6772bfe58391": {
+            "paths": [
+                "metadata/resource/css2"
+            ],
+            "className": "css2"
+        },
+        "b9e65010-24c1-4882-92a2-6f074c36d8ea": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "781293f3-107a-446d-bc57-6579a59aea3d": {
+            "paths": [
+                "metadata/resource/js1"
+            ],
+            "className": "js1"
+        },
+        "4e8d4923-799c-4c10-90e4-6034e3d2978b": {
+            "paths": [
+                "metadata/resource/js2"
+            ],
+            "className": "js2"
+        },
+        "af62f9b2-2818-4d20-9c78-ab7fa61f6d4c": {
+            "paths": [
+                "metadata/resource/js3"
+            ],
+            "className": "js3"
+        },
+        "65bcb699-77c6-4ba8-9086-e59e0664110d": {
+            "paths": [
+                "metadata/resource/js4"
+            ],
+            "className": "js4"
+        },
+        "38ad78c6-cdf2-4dab-865c-c753c4933746": {
+            "paths": [
+                "metadata/resource/js5"
+            ],
+            "className": "js5"
+        },
+        "b4f30db8-772d-4770-87e3-a7648e089d79": {
+            "paths": [
+                "metadata/resource/js6"
+            ],
+            "className": "js6"
+        },
+        "4f49cd0b-e289-45c5-a6e1-c5a441b54b22": {
+            "paths": [
+                "metadata/resource/css3"
+            ],
+            "className": "css3"
+        },
+        "6360ee49-c8e1-46f8-9550-b940e628e1c6": {
+            "paths": [
+                "metadata/resource/css4"
+            ],
+            "className": "css4"
+        },
+        "eec46e58-451c-4306-8058-8ea09d11a2d7": {
+            "paths": [
+                "metadata/view/MainTabPan",
+                "resources/linkfinder/app/view/override/MainTabPan.js",
+                "resources/linkfinder/app/view/MainTabPan.js"
+            ],
+            "className": "MainTabPan"
+        },
+        "41fd1b1e-74ce-485d-9406-a4ecc27fda4a": {
+            "paths": [
+                "metadata/model/taxonomyTermModel",
+                "resources/linkfinder/app/model/override/taxonomyTermModel.js",
+                "resources/linkfinder/app/model/taxonomyTermModel.js"
+            ],
+            "className": "taxonomyTermModel"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "e6679921-3efa-43ea-aeba-a4878fdadbce",
+            "eec46e58-451c-4306-8058-8ea09d11a2d7"
+        ],
+        "store": [],
+        "controller": [
+            "72c4e490-bdaa-4cab-b47a-a2bb24f27c40"
+        ],
+        "model": [
+            "41fd1b1e-74ce-485d-9406-a4ecc27fda4a"
+        ],
+        "resource": [
+            "cf6e37a9-ef7d-407a-b064-b3c3beead833",
+            "68c9705e-104d-4815-8463-1236c8453eab",
+            "4b3c5628-4711-46a3-8747-616fefae7df1",
+            "c431e313-f28f-4ea9-8fc8-6772bfe58391",
+            "b9e65010-24c1-4882-92a2-6f074c36d8ea",
+            "781293f3-107a-446d-bc57-6579a59aea3d",
+            "4e8d4923-799c-4c10-90e4-6034e3d2978b",
+            "af62f9b2-2818-4d20-9c78-ab7fa61f6d4c",
+            "65bcb699-77c6-4ba8-9086-e59e0664110d",
+            "38ad78c6-cdf2-4dab-865c-c753c4933746",
+            "b4f30db8-772d-4770-87e3-a7648e089d79",
+            "4f49cd0b-e289-45c5-a6e1-c5a441b54b22",
+            "6360ee49-c8e1-46f8-9550-b940e628e1c6"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

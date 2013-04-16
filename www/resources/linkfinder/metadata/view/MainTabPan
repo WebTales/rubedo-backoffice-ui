@@ -1,0 +1,192 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "MainTabPan",
+        "width": null,
+        "designer|userClassName": "MainTabPan",
+        "designer|userAlias": "MainTabPan"
+    },
+    "designerId": "eec46e58-451c-4306-8058-8ea09d11a2d7",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm",
+                "bodyPadding": 10,
+                "title": "Lien sur page"
+            },
+            "designerId": "7c8a5bdc-c4aa-4059-bab9-f9496e8bfb07",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "dock": "bottom",
+                        "id": "insertPageLink",
+                        "designer|userClassName": "MyButton",
+                        "scale": "medium",
+                        "text": "Insèrer un lien vers cette page"
+                    },
+                    "designerId": "067f141d-4dba-4dcc-8aef-e8f806cc2a1d"
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig"
+                    },
+                    "designerId": "d73de219-29d7-42f4-b9d5-6a1308916ca6"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onPanelAfterRender",
+                        "fn": "onPanelAfterRender",
+                        "implHandler": [
+                            "var store=Ext.create(\"Ext.data.TreeStore\", {",
+                            "            autoLoad: false,",
+                            "            autoSync: false,",
+                            "            model: 'linkfinder.model.taxonomyTermModel',",
+                            "            proxy: {",
+                            "                type: 'ajax',",
+                            "                api: {",
+                            "                    read: 'taxonomy-terms/navigation-tree'",
+                            "                },",
+                            "                reader: {",
+                            "                    type: 'json',",
+                            "                    getResponseData: function(response) {",
+                            "                        var data, error;",
+                            "",
+                            "                        try {",
+                            "                            data = Ext.decode(response.responseText);",
+                            "                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix",
+                            "                            return this.readRecords(data);",
+                            "                        } catch (ex) {",
+                            "                            error = new Ext.data.ResultSet({",
+                            "                                total  : 0,",
+                            "                                count  : 0,",
+                            "                                records: [],",
+                            "                                success: false,",
+                            "                                message: ex.message",
+                            "                            });",
+                            "",
+                            "                            this.fireEvent('exception', this, response, error);",
+                            "                            console.log(ex);",
+                            "",
+                            "                            Ext.Logger.warn('Unable to parse the JSON returned by the server');",
+                            "",
+                            "                            return error;",
+                            "                        }",
+                            "                    },",
+                            "                    messageProperty: 'message'",
+                            "                }",
+                            "            },",
+                            "            sorters: {",
+                            "                property: 'orderValue'",
+                            "            }",
+                            "        });",
+                            "var picker=Ext.create(\"Ext.ux.TreePicker\", {",
+                            "    store:store,",
+                            "    displayField:\"text\",",
+                            "    allowBlank:false,",
+                            "    valueField:\"id\",",
+                            "    labelSeparator:\" \",",
+                            "    labelWidth:60,",
+                            "    ignoreIsNotPage:false,",
+                            "    fieldLabel:\"Page\",",
+                            "    id:\"pagePicker\",",
+                            "    anchor: \"100%\",",
+                            "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],",
+                            "    name:\"page\"",
+                            "});",
+                            "",
+                            "component.insert(0,picker);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "ee53acf3-739c-4d54-8c2b-188774cd66c8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPanel2",
+                "title": "Lien sur contenu"
+            },
+            "designerId": "a9775e09-e809-40bf-a218-7f19cedb4f8b",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig1"
+                    },
+                    "designerId": "f2f7dac2-1c20-4b7e-9cad-1cf32e78073b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPanel3",
+                "title": "Lien sur document"
+            },
+            "designerId": "0fc80813-2f5c-47fc-9dc9-8051ab0f5ef6",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig2"
+                    },
+                    "designerId": "89e07181-7481-4ab7-ab7c-5303e685cd72"
+                }
+            ]
+        }
+    ]
+}

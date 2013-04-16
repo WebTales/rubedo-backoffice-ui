@@ -1,0 +1,240 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "taxonomyTermModel"
+        ],
+        "views": [
+            "MainViewport",
+            "MainTabPan"
+        ],
+        "designer|userClassName": "ACLController",
+        "designer|userAlias": "ACLController"
+    },
+    "designerId": "72c4e490-bdaa-4cab-b47a-a2bb24f27c40",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "var me=this;",
+                    "var options = decodeURIComponent(window.location.search.slice(1))",
+                    ".split('&')",
+                    ".reduce(function _reduce (a, b) {",
+                    "    b = b.split('=');",
+                    "    a[b[0]] = b[1];",
+                    "    return a;",
+                    "}, {});",
+                    "    if (!Ext.isEmpty(options.ckinstance)){",
+                    "        Ext.define('CKEOptions', {",
+                    "            singleton:true,",
+                    "            CKEditorInstance:options.ckinstance",
+                    "        });",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "    Ext.define('ACL', {",
+                    "        singleton:true,",
+                    "        CSRFToken:\"notYetSet\",",
+                    "        interfaceRights:{",
+                    "            \"read.ui.taxonomy\":false,",
+                    "            \"write.ui.taxonomy\":false,",
+                    "            \"read.ui.contentTypes\":false,",
+                    "            \"write.ui.contentTypes\":false,",
+                    "            \"read.ui.contents\":false,",
+                    "            \"write.ui.contents\":false,",
+                    "            \"read.ui.contents.draft\":false,",
+                    "            \"read.ui.contents.pending\":false,",
+                    "            \"read.ui.contents.published\":false,",
+                    "            \"write.ui.contents.draft\":false,",
+                    "            \"write.ui.contents.pending\":false,",
+                    "            \"write.ui.contents.published\":false,",
+                    "            \"write.ui.contents.draftToPending\":false,",
+                    "            \"write.ui.contents.pendingToDraft\":false,",
+                    "            \"write.ui.contents.pendingToPublished\":false,",
+                    "            \"write.ui.contents.putOnline\":false,",
+                    "            \"write.ui.contents.putOffline\":false,",
+                    "            \"read.ui.masks\":false,",
+                    "            \"write.ui.masks\":false,",
+                    "            \"read.ui.users\":false,",
+                    "            \"write.ui.users\":false,",
+                    "            \"read.ui.sites\":false,",
+                    "            \"write.ui.sites\":false,",
+                    "            \"read.ui.pages\":false,",
+                    "            \"write.ui.pages\":false,",
+                    "            \"read.ui.medias\":false,",
+                    "            \"write.ui.medias\":false,",
+                    "            \"read.ui.groups\":false,",
+                    "            \"write.ui.groups\":false,",
+                    "            \"read.ui.workflows\":false,",
+                    "            \"write.ui.workflows\":false,",
+                    "            \"exe.ui.elasticSearch\":false",
+                    "        }",
+                    "    });",
+                    "    Ext.Ajax.on(\"beforerequest\", function(conn, options){",
+                    "        options.params.token=ACL.CSRFToken;",
+                    "    });"
+                ]
+            },
+            "designerId": "182b7f40-b30e-4dbb-9931-5572d50aaf88"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComponentRender",
+                "fn": "onComponentRender",
+                "implHandler": [
+                    "if (!Ext.isEmpty(component.ACL)) {   ",
+                    "    if (ACL.interfaceRights[component.ACL]===false){",
+                    "        component.hide();",
+                    "        component.clearListeners();",
+                    "        component.fireEvent=Ext.emptyFn;",
+                    "    }",
+                    "}"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.Component",
+                "designer|controlQuery": "component"
+            },
+            "designerId": "73987439-71e0-4bf8-9873-405eb743ee92"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLaunch",
+                "fn": "onLaunch",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url:'current-user/get-token',",
+                    "    params:{",
+                    "    },",
+                    "    success:function(response){",
+                    "        ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;",
+                    "    },",
+                    "    failure:function(){",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');",
+                    "    }",
+                    "});",
+                    "Ext.Ajax.request({",
+                    "    url:'acl',",
+                    "    params:{",
+                    "        data: Ext.JSON.encode(ACL.interfaceRights)",
+                    "    },",
+                    "    success:function(response){",
+                    "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);",
+                    "        Ext.getCmp(\"MainViewport\").add(Ext.widget(\"MainTabPan\"));",
+                    "    },",
+                    "    failure:function(){",
+                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');",
+                    "    }",
+                    "});",
+                    "try {",
+                    "    Ext.util.CSS.removeStyleSheet(\"loading-bar-style\");",
+                    "    Ext.getElementById(\"loading-bar\").parentNode.removeChild(Ext.getElementById(\"loading-bar\"));",
+                    "} catch (err) {",
+                    "    console.log(\"dom element removal anomaly\");",
+                    "}"
+                ]
+            },
+            "designerId": "525422f6-7e52-4277-935d-f0cf5e8ce1cc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sendLink",
+                "fn": "sendLink",
+                "designer|params": [
+                    "link"
+                ],
+                "implHandler": [
+                    "var editor = window.opener.CKEDITOR.instances[CKEOptions.CKEditorInstance];",
+                    "var selection=editor.getSelection();",
+                    "if (selection.getType()==1){",
+                    "    editor.insertHtml('<a href=\"'+link+'\">'+link+'</a>');",
+                    "} else if (selection.getType()==2){",
+                    "    var text=selection.getSelectedText();",
+                    "    if (Ext.isEmpty(text)){",
+                    "        text=link;",
+                    "    }",
+                    "    editor.insertHtml('<a href=\"'+link+'\">'+text+'</a>');",
+                    "",
+                    "} else if (selection.getType()==3){",
+                    "    var newElement=window.opener.CKEDITOR.dom.element.createFromHtml('<a href=\"'+link+'\"></a>');",
+                    "    var selElement=selection.getSelectedElement();",
+                    "    newElement.append(selElement);",
+                    "    editor.insertElement(newElement);",
+                    "    ",
+                    "}"
+                ]
+            },
+            "designerId": "5300b34b-8a97-40a1-9a22-7c817264ba01"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onInsertPageLinkClick",
+                "fn": "onInsertPageLinkClick",
+                "implHandler": [
+                    "var me=this;",
+                    "if (Ext.getCmp(\"pagePicker\").isValid()){",
+                    "    Ext.Ajax.request({",
+                    "        url: 'xhr-get-page-url',",
+                    "        params: {",
+                    "            \"page-id\": Ext.getCmp(\"pagePicker\").getValue()",
+                    "        },",
+                    "        success: function(response){",
+                    "            var targetedUrl = Ext.JSON.decode(response.responseText).url;",
+                    "            me.sendLink(targetedUrl);",
+                    "        },",
+                    "        failure:function(){",
+                    "            Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\\'url de la page');",
+                    "        }",
+                    "    });",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#insertPageLink"
+            },
+            "designerId": "baad1698-7433-48ad-9a05-ef4dd1dc1737"
+        }
+    ]
+}
