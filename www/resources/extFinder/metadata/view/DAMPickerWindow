@@ -288,7 +288,7 @@
                                     "if (CKEOptions.type==\"Image\"){",
                                     "    ",
                                     "    if (CKEOptions.soloMode){",
-                                    "       \twindow.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"originalFileId\"));",
+                                    "       \twindow.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"id\"));",
                                     "    } else {",
                                     "    \tvar fileURL=\"/image?file-id=\"+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"originalFileId\");",
                                     "    \twindow.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );",
