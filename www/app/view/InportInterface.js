@@ -29,7 +29,8 @@ Ext.define('Rubedo.view.InportInterface', {
         type: 'card'
     },
     iconCls: 'database_up_small',
-    title: 'Importation',
+    title: 'Import',
+    constrainHeader: true,
 
     initComponent: function() {
         var me = this;

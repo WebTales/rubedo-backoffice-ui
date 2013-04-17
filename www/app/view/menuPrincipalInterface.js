@@ -318,7 +318,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'database_up.png',
             itemId: 'InportInterface',
             iconCls: 'database_up_small',
-            text: 'Importation'
+            text: 'Import'
         }
         ]);
     },
