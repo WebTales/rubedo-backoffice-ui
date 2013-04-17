@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": true,
         "plugins": null,
         "designer|userClassName": "MailingListPickerField",
         "designer|userAlias": "MailingListPickerField",
@@ -24,11 +23,6 @@
     },
     "designerId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623",
     "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "managesStore",
-            "type": "string"
-        },
         {
             "group": "(Custom Properties)",
             "name": "plugins",
@@ -50,7 +44,8 @@
                     "config"
                 ],
                 "implHandler": [
-                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];"
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
                 ]
             },
             "designerId": "f1487b3c-89ef-4dc1-807e-b2147e599731"

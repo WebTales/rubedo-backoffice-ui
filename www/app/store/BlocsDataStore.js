@@ -2055,12 +2055,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '514ae0c5c0e051ac0d001672'
                 },
                 {
-                    type: 'Resource protégée',
-                    category: 'Formulaire',
+                    type: 'Téléchargement de média protégé',
+                    category: 'Médias',
                     bType: 'protectedResource',
                     description: '',
                     configBasique: {
-                        title: 'Resource protégée',
+                        title: 'Téléchargement de média protégé',
                         bType: 'protectedResource',
                         flex: 1,
                         champsConfig: {
@@ -2078,10 +2078,16 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Rubedo.view.ImagePickerField',
                                             config: {
-                                                fieldLabel: 'Document',
+                                                fieldLabel: 'Média',
                                                 name: 'documentId',
-                                                allowedFileType: 'Document',
                                                 smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.directRTEField',
+                                            config: {
+                                                fieldLabel: 'Introduction',
+                                                name: 'introduction'
                                             }
                                         }
                                     ]
@@ -2107,6 +2113,59 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '516404ecc0e0518d0f000018'
+                },
+                {
+                    type: 'Téléchargement de média',
+                    category: 'Médias',
+                    bType: 'resource',
+                    description: '',
+                    configBasique: {
+                        title: 'Téléchargement de média',
+                        bType: 'resource',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Média',
+                                                name: 'documentId',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.directRTEField',
+                                            config: {
+                                                fieldLabel: 'Introduction',
+                                                name: 'introduction'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '516404ecc0e0518d0f123418'
                 },
                 {
                     type: 'Contact',

@@ -131,7 +131,29 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         }
         ];
         if (Ext.isEmpty(allowedTypes)){
-            if (Ext.isEmpty(allowedFileType)){            
+            if (Ext.isEmpty(allowedFileType)){
+                delete Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.filter;
+                Ext.getStore("MediaTypesFORDAMPicker").load();
+                columnsOver.push({
+                    xtype:'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        if (Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value))) {
+                            return(value);
+                        } else {
+                            return(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id",value).get("type"));
+                        }
+                    },
+                    filter: {
+                        type: 'combo',
+                        valueField: 'id',
+                        id:'chooseMTInPickerCombo',
+                        displayField: 'type',
+                        store: 'MediaTypesFORDAMPicker'
+                    },
+                    dataIndex: 'typeId',
+
+                    text: 'Type'
+                });
                 delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
                 Ext.getStore("DAMPickerStore").load();   
             } else {
@@ -150,6 +172,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                         type: 'combo',
                         valueField: 'id',
                         displayField: 'type',
+                        id:'chooseMTInPickerCombo',
                         store: 'MediaTypesFORDAMPicker'
                     },
                     dataIndex: 'typeId',
@@ -315,7 +338,19 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
     },
 
     onDAMPickerAddBtnClick: function(button, e, eOpts) {
-        if (!Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").getRange())){
+        if ((!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo')))&&(!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo').getValue()))) {
+            var DAMType=Ext.getStore("MediaTypesFORDAMPicker").findRecord("id", Ext.getCmp('chooseMTInPickerCombo').getValue());
+            var myEditor = Ext.widget("DAMCreateUpdateWindow");
+            Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
+            myEditor.typeId=DAMType.get("id");
+            myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
+            myEditor.directContribute=true;
+            myEditor.show();
+            Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
+            Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
+            Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        } else if (!Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").getRange())){
             var DAMType=Ext.getStore("MediaTypesFORDAMPicker").getRange()[0];
             var myEditor = Ext.widget("DAMCreateUpdateWindow");
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));

@@ -74,10 +74,16 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
     onRichTextConfiguratorSubmitClick: function(button, e, eOpts) {
         var field = button.up().up().getComponent(0);
         if (field.isValid()) {
-            var target=Ext.getCmp(button.targetedId);
-            target.itemConfig.html=field.getValue();
-            button.up().up().close();
-            target.sync();
+            if (button.directMode){
+                var target=Ext.getCmp(button.targetedId);
+                target.setValue(field.getValue());
+                button.up().up().close();
+            } else {       
+                var target=Ext.getCmp(button.targetedId);
+                target.itemConfig.html=field.getValue();
+                button.up().up().close();
+                target.sync();
+            }
         }
 
     }

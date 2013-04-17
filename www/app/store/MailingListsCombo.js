@@ -25,7 +25,7 @@ Ext.define('Rubedo.store.MailingListsCombo', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: false,
+            autoLoad: true,
             model: 'Rubedo.model.mailingListsModel',
             storeId: 'MailingListsCombo',
             pageSize: 1000,

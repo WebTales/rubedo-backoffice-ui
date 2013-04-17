@@ -146,7 +146,9 @@ Ext.application({
         'Rubedo.view.MultiChoiceConfigurator',
         'Rubedo.view.FormsPageConfigurator',
         'Rubedo.view.InportInterface',
-        'Rubedo.view.AjouterContenu'
+        'Rubedo.view.AjouterContenu',
+        'Rubedo.view.directRTEField',
+        'Rubedo.view.directRTEFieldComponent'
     ],
     models: [
         'sitesDataModel',
@@ -399,7 +401,9 @@ Ext.application({
         'MultiChoiceConfigurator',
         'FormsPageConfigurator',
         'InportInterface',
-        'AjouterContenu'
+        'AjouterContenu',
+        'directRTEField',
+        'directRTEFieldComponent'
     ],
     autoCreateViewport: true,
     controllers: [

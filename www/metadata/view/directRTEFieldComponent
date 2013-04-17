@@ -1,0 +1,68 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 29,
+        "padding": null,
+        "width": 455,
+        "designer|userClassName": "directRTEFieldComponent",
+        "designer|userAlias": "directRTEFieldComponent",
+        "fieldLabel": "Label",
+        "labelSeparator": " ",
+        "labelWidth": 60
+    },
+    "designerId": "55cce8dd-0a74-4498-8288-359ea835bb91",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "addBtn",
+                "margin": "0 10 0 0",
+                "designer|userClassName": "MyButton243",
+                "iconCls": "add",
+                "text": "Ajouter"
+            },
+            "designerId": "58cd5e07-979e-4b8c-a477-d08b28d5a123"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "editBtn",
+                "margin": "0 10 0 0",
+                "designer|userClassName": "MyButton244",
+                "iconCls": "edit",
+                "text": "Modifier"
+            },
+            "designerId": "f294cae0-2ca8-4d47-89ff-f59216ab0c62"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "removeBtn",
+                "designer|userClassName": "MyButton245",
+                "iconCls": "close",
+                "text": "Supprimer"
+            },
+            "designerId": "46f539c8-def7-4f8d-82fd-b68c53b598be"
+        }
+    ]
+}

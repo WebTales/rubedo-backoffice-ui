@@ -17,7 +17,6 @@ Ext.define('Rubedo.view.MailingListPickerField', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.MailingListPickerField',
 
-    managesStore: true,
     fieldLabel: 'Label',
     editable: false,
     displayField: 'name',
@@ -35,6 +34,7 @@ Ext.define('Rubedo.view.MailingListPickerField', {
 
     processMailingListPickerField: function(config) {
         config.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
+        return config;
     }
 
 });
