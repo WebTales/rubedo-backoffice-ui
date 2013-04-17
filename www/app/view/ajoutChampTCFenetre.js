@@ -17,9 +17,9 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajoutChampTCFenetre',
 
-    height: 300,
+    height: 446,
     id: 'ajoutChampTCFenetre',
-    width: 500,
+    width: 587,
     resizable: false,
     layout: {
         align: 'stretch',
@@ -40,6 +40,13 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                     id: 'ChampTCSelectGrid',
                     title: '',
                     store: 'TypesChampsDataStore',
+                    viewConfig: me.processMyGridView4({
+                        plugins: [
+                            Ext.create('Ext.grid.plugin.DragDrop', {
+                                enableDrop: false
+                            })
+                        ]
+                    }),
                     columns: [
                         {
                             xtype: 'gridcolumn',
@@ -58,16 +65,53 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                     ]
                 },
                 {
-                    xtype: 'panel',
+                    xtype: 'container',
                     flex: 1,
-                    id: 'PaneauTCDetail',
-                    styleHtmlContent: true,
-                    tpl: [
-                        '{description}'
-                    ],
-                    bodyPadding: 10,
-                    bodyStyle: '{text-align: justify;}',
-                    title: ''
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
+                    items: [
+                        {
+                            xtype: 'panel',
+                            flex: 1,
+                            id: 'PaneauTCDetail',
+                            styleHtmlContent: true,
+                            tpl: [
+                                '{description}'
+                            ],
+                            bodyPadding: 10,
+                            bodyStyle: '{text-align: justify;}',
+                            title: ''
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            flex: 1,
+                            title: 'Ajout multiple',
+                            forceFit: true,
+                            store: 'AddMultiFieldStore',
+                            viewConfig: {
+                                plugins: [
+                                    Ext.create('Ext.grid.plugin.DragDrop', {
+
+                                    })
+                                ],
+                                listeners: {
+                                    beforedrop: {
+                                        fn: me.onDragDropBeforeDrop,
+                                        scope: me
+                                    }
+                                }
+                            },
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'type',
+                                    text: 'Type'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             dockedItems: [
@@ -87,10 +131,35 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                beforerender: {
+                    fn: me.onAjoutChampTCFenetreBeforeRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    processMyGridView4: function(config) {
+        config.copy=true;
+        return config;
+    },
+
+    onDragDropBeforeDrop: function(node, data, overModel, dropPosition, dropFunction, eOpts) {
+        if (Ext.isEmpty(data.records[0].get("protoId"))){
+            var toCreate=Ext.clone(data.records[0].data);
+            toCreate.protoId=toCreate.id;
+            delete toCreate.id;
+            var newModel=Ext.create("Rubedo.model.typesChampsDataModel", toCreate);
+            data.records=[newModel];
+        }
+    },
+
+    onAjoutChampTCFenetreBeforeRender: function(component, eOpts) {
+        Ext.getStore("AddMultiFieldStore").removeAll();
     }
 
 });

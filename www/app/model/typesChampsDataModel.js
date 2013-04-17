@@ -50,6 +50,9 @@ Ext.define('Rubedo.model.typesChampsDataModel', {
         {
             defaultValue: 'Autre',
             name: 'category'
+        },
+        {
+            name: 'protoId'
         }
     ]
 });

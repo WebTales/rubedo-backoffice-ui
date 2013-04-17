@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "height": 300,
+        "height": 446,
         "id": "ajoutChampTCFenetre",
-        "width": 500,
+        "width": 587,
         "designer|userClassName": "ajoutChampTCFenetre",
         "designer|userAlias": "ajoutChampTCFenetre",
         "resizable": [
@@ -48,7 +48,42 @@
                     "userConfig": {
                         "designer|userClassName": "MyGridView6"
                     },
-                    "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c"
+                    "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyGridDragDropPlugin8",
+                                "enableDrop": false
+                            },
+                            "designerId": "9bd0776b-8076-44ed-ba72-ba31c3e2dfae"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "processMyGridView4",
+                                "fn": "processMyGridView4",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.copy=true;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "f2b496f4-15f6-422b-a4b0-b80a378fe813"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -98,7 +133,7 @@
             ]
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -106,32 +141,133 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "id": "PaneauTCDetail",
-                "styleHtmlContent": true,
-                "designer|userClassName": "MyPanel61",
-                "bodyPadding": 10,
-                "bodyStyle": [
-                    "{text-align: justify;}"
-                ],
-                "title": ""
+                "container|align": "stretch",
+                "designer|userClassName": "MyContainer34",
+                "layout": "vbox"
             },
-            "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
+            "designerId": "58d54e6d-7e6d-45fe-a47f-eaddb91b4332",
             "cn": [
                 {
-                    "type": "Ext.XTemplate",
+                    "type": "Ext.panel.Panel",
                     "reference": {
-                        "name": "tpl",
-                        "type": "object"
+                        "name": "items",
+                        "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "tpl",
-                        "implHandler": [
-                            "{description}"
+                        "layout|flex": 1,
+                        "id": "PaneauTCDetail",
+                        "styleHtmlContent": true,
+                        "designer|userClassName": "MyPanel61",
+                        "bodyPadding": 10,
+                        "bodyStyle": [
+                            "{text-align: justify;}"
                         ],
-                        "designer|displayName": "tpl"
+                        "title": ""
                     },
-                    "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
+                    "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "tpl",
+                                "implHandler": [
+                                    "{description}"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MyGridPanel28",
+                        "title": "Ajout multiple",
+                        "forceFit": true,
+                        "store": "AddMultiFieldStore"
+                    },
+                    "designerId": "ab145305-1858-4686-8898-35ddd9362816",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridView24"
+                            },
+                            "designerId": "c2d588f7-b33d-4fe2-9b60-7735e7cb0a7b",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.plugin.DragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridDragDropPlugin9"
+                                    },
+                                    "designerId": "b80cf63b-4ed0-4a6b-8599-38ae43122343",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onDragDropBeforeDrop",
+                                                "fn": "onDragDropBeforeDrop",
+                                                "implHandler": [
+                                                    "if (Ext.isEmpty(data.records[0].get(\"protoId\"))){\r",
+                                                    "    var toCreate=Ext.clone(data.records[0].data);\r",
+                                                    "    toCreate.protoId=toCreate.id;\r",
+                                                    "    delete toCreate.id;\r",
+                                                    "    var newModel=Ext.create(\"Rubedo.model.typesChampsDataModel\", toCreate);\r",
+                                                    "    data.records=[newModel];\r",
+                                                    "}"
+                                                ],
+                                                "name": "beforedrop",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "bb8f9652-2882-4c5f-874a-9b767ac96b66"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn37",
+                                "dataIndex": "type",
+                                "text": "Type"
+                            },
+                            "designerId": "a81e9ff4-8341-4042-a415-bf1fbcb2149e"
+                        }
+                    ]
                 }
             ]
         },
@@ -180,6 +316,24 @@
                     "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAjoutChampTCFenetreBeforeRender",
+                "fn": "onAjoutChampTCFenetreBeforeRender",
+                "implHandler": [
+                    "Ext.getStore(\"AddMultiFieldStore\").removeAll();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "9100e683-4420-4ec9-9bc0-463d0dd3d499"
         }
     ]
 }

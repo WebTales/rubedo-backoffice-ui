@@ -270,7 +270,8 @@ Ext.application({
         'NotInportFieldsStore',
         'InportAsFieldStore',
         'InportAsTaxoStore',
-        'SystemCTStore'
+        'SystemCTStore',
+        'AddMultiFieldStore'
     ],
     views: [
         'MyContainer',
