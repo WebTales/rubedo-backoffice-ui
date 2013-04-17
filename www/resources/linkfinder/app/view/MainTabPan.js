@@ -18,6 +18,7 @@ Ext.define('linkfinder.view.MainTabPan', {
     alias: 'widget.MainTabPan',
 
     id: 'MainTabPan',
+    activeTab: 0,
 
     initComponent: function() {
         var me = this;
@@ -38,20 +39,16 @@ Ext.define('linkfinder.view.MainTabPan', {
                             text: 'Insèrer un lien vers cette page'
                         }
                     ],
+                    tabConfig: {
+                        xtype: 'tab',
+                        flex: 1
+                    },
                     listeners: {
                         afterrender: {
                             fn: me.onPanelAfterRender,
                             scope: me
                         }
                     }
-                },
-                {
-                    xtype: 'panel',
-                    title: 'Lien sur contenu'
-                },
-                {
-                    xtype: 'panel',
-                    title: 'Lien sur document'
                 }
             ]
         });

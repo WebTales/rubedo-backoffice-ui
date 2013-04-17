@@ -10,7 +10,8 @@
         "id": "MainTabPan",
         "width": null,
         "designer|userClassName": "MainTabPan",
-        "designer|userAlias": "MainTabPan"
+        "designer|userAlias": "MainTabPan",
+        "activeTab": 0
     },
     "designerId": "eec46e58-451c-4306-8058-8ea09d11a2d7",
     "cn": [
@@ -53,6 +54,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": 1,
                         "designer|userClassName": "TabConfig"
                     },
                     "designerId": "d73de219-29d7-42f4-b9d5-6a1308916ca6"
@@ -131,60 +133,6 @@
                         "scope": "me"
                     },
                     "designerId": "ee53acf3-739c-4d54-8c2b-188774cd66c8"
-                }
-            ]
-        },
-        {
-            "type": "Ext.panel.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyPanel2",
-                "title": "Lien sur contenu"
-            },
-            "designerId": "a9775e09-e809-40bf-a218-7f19cedb4f8b",
-            "cn": [
-                {
-                    "type": "Ext.tab.Tab",
-                    "reference": {
-                        "name": "tabConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "TabConfig1"
-                    },
-                    "designerId": "f2f7dac2-1c20-4b7e-9cad-1cf32e78073b"
-                }
-            ]
-        },
-        {
-            "type": "Ext.panel.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyPanel3",
-                "title": "Lien sur document"
-            },
-            "designerId": "0fc80813-2f5c-47fc-9dc9-8051ab0f5ef6",
-            "cn": [
-                {
-                    "type": "Ext.tab.Tab",
-                    "reference": {
-                        "name": "tabConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "TabConfig2"
-                    },
-                    "designerId": "89e07181-7481-4ab7-ab7c-5303e685cd72"
                 }
             ]
         }
