@@ -60,7 +60,7 @@ Ext.define('Rubedo.controller.ImportController', {
             var configs=myForm.getValues();
             var inportAsField=Ext.Array.pluck(Ext.getStore("InportAsFieldStore").getRange(), "data");
             var inportAsTaxo=Ext.Array.pluck(Ext.getStore("InportAsTaxoStore").getRange(), "data");
-            var form=Ext.getCmp("mainCSVinportField").up().getForm();
+            var form=Ext.getCmp("mainCSVinportField").up().up().getForm();
             button.up().up().setLoading(true);
             form.submit({
                 url: 'import/import',

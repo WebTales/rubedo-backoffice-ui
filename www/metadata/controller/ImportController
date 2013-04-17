@@ -80,7 +80,7 @@
                     "    var configs=myForm.getValues();\r",
                     "    var inportAsField=Ext.Array.pluck(Ext.getStore(\"InportAsFieldStore\").getRange(), \"data\");\r",
                     "    var inportAsTaxo=Ext.Array.pluck(Ext.getStore(\"InportAsTaxoStore\").getRange(), \"data\");\r",
-                    "    var form=Ext.getCmp(\"mainCSVinportField\").up().getForm();\r",
+                    "    var form=Ext.getCmp(\"mainCSVinportField\").up().up().getForm();\r",
                     "    button.up().up().setLoading(true);\r",
                     "    form.submit({\r",
                     "        url: 'import/import',\r",
