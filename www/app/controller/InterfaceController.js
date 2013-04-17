@@ -512,6 +512,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
         }); 
         Ext.getStore("CurrentUserDataStore").load();
+        // handle url params
+        me.handleDirectives();
+
+
     },
 
     placeLibre: function(x, y, id) {
@@ -675,6 +679,24 @@ Ext.define('Rubedo.controller.InterfaceController', {
                     nIcone.setPosition(icone.data.posX, icone.data.posY);
                     Ext.getCmp("boiteAIconesBureau").add(nIcone);
                 }); 
+    },
+
+    handleDirectives: function() {
+        var recievedDirectives = decodeURIComponent(window.location.search.slice(1))
+        .split('&')
+        .reduce(function _reduce (a, b) {
+            b = b.split('=');
+            a[b[0]] = b[1];
+            return a;
+        }, {});
+
+            if (!Ext.isEmpty(recievedDirectives.content)){
+                var task = new Ext.util.DelayedTask(function(){
+                    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(recievedDirectives.content);
+                });
+                task.delay(600);
+
+            }
     }
 
 });

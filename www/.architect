@@ -2656,7 +2656,6 @@
         },
         "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265": {
             "id": "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265",
-            "expanded": false,
             "cn": [
                 {
                     "id": "59f076fe-63dc-4879-a475-318a17c27558"
@@ -3739,7 +3738,6 @@
         },
         "d307504b-480a-4d03-adf2-dc2c18432b4f": {
             "id": "d307504b-480a-4d03-adf2-dc2c18432b4f",
-            "expanded": false,
             "cn": [
                 {
                     "id": "0d473cf7-8a08-442c-a253-4fe63b539c25"
@@ -9173,7 +9171,6 @@
         },
         "130f60c3-0d78-444a-92e2-79b56d3ab643": {
             "id": "130f60c3-0d78-444a-92e2-79b56d3ab643",
-            "expanded": false,
             "cn": [
                 {
                     "id": "5c5b9451-2e7e-4af5-8da6-f40b2b04a89c"
@@ -9267,6 +9264,9 @@
                 },
                 {
                     "id": "67ad1f68-f76d-4f00-a60e-ca7553957efa"
+                },
+                {
+                    "id": "22ff9220-65f2-42b5-b72d-5538401c0f78"
                 }
             ]
         },
@@ -10293,18 +10293,21 @@
             "55cce8dd-0a74-4498-8288-359ea835bb91",
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
             "3dd5f03c-4619-4dc7-bb17-d53b3d011623",
-            "1d386e18-9693-405d-a9df-1862eb93baed"
+            "1d386e18-9693-405d-a9df-1862eb93baed",
+            "d307504b-480a-4d03-adf2-dc2c18432b4f",
+            "130f60c3-0d78-444a-92e2-79b56d3ab643",
+            "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "1d386e18-9693-405d-a9df-1862eb93baed",
-        "selectedInstance": "1d386e18-9693-405d-a9df-1862eb93baed"
+        "topInstance": "130f60c3-0d78-444a-92e2-79b56d3ab643",
+        "selectedInstance": "22ff9220-65f2-42b5-b72d-5538401c0f78"
     },
     "codeState": {
-        "topInstance": "1d386e18-9693-405d-a9df-1862eb93baed"
+        "topInstance": "130f60c3-0d78-444a-92e2-79b56d3ab643"
     },
     "editMode": "code"
 }

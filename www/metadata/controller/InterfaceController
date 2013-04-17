@@ -158,7 +158,11 @@
                     "    ACL.defaultWorkspace=currentUser.get(\"defaultWorkspace\");\r",
                     "\r",
                     "}); \r",
-                    "Ext.getStore(\"CurrentUserDataStore\").load();"
+                    "Ext.getStore(\"CurrentUserDataStore\").load();\r",
+                    "// handle url params\r",
+                    "me.handleDirectives();\r",
+                    "\r",
+                    ""
                 ]
             },
             "designerId": "1060d695-b0e6-4a96-b3a9-eba366981ee3"
@@ -1081,6 +1085,36 @@
                 "designer|controlQuery": "#menuPrincipalDroite button"
             },
             "designerId": "67ad1f68-f76d-4f00-a60e-ca7553957efa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "handleDirectives",
+                "fn": "handleDirectives",
+                "implHandler": [
+                    "var recievedDirectives = decodeURIComponent(window.location.search.slice(1))\r",
+                    ".split('&')\r",
+                    ".reduce(function _reduce (a, b) {\r",
+                    "    b = b.split('=');\r",
+                    "    a[b[0]] = b[1];\r",
+                    "    return a;\r",
+                    "}, {});\r",
+                    "\r",
+                    "if (!Ext.isEmpty(recievedDirectives.content)){\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(recievedDirectives.content);\r",
+                    "\t});\r",
+                    "    task.delay(600);\r",
+                    "    \r",
+                    "}"
+                ]
+            },
+            "designerId": "22ff9220-65f2-42b5-b72d-5538401c0f78"
         }
     ]
 }
