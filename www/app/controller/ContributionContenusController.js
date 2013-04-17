@@ -298,7 +298,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             } else if (selected[0].get("status")=="pending") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
                 Ext.getCmp("contentSubmitValBtn").disable();
-            } else if (selected[0].get("status")=="draft") {
+            } else if (selected[0].get("status")=="refused") {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_remove.png');
+                Ext.getCmp("contentRefuseBtn").disable();
+            }else if (selected[0].get("status")=="draft") {
                 imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
                 if (!Ext.getCmp("contentSubmitValBtn").isVisible()) {
                     Ext.getCmp("contentAcceptPublishBtn").disable();
@@ -354,7 +357,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_process.png');
                         Ext.getCmp("contentSubmitValBtn").disable();
 
-                    } else if (statuses[0]=="draft") {
+                    } else if (statuses[0]=="refused") {
+                        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_remove.png');
+                        Ext.getCmp("contentRefuseBtn").disable();
+
+                    }else if (statuses[0]=="draft") {
                         imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_edit.png');
                         if (!Ext.getCmp("contentSubmitValBtn").isVisible()) {
                             Ext.getCmp("contentAcceptPublishBtn").disable();
@@ -392,7 +399,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
             if (content.get("status")=="pending") {
-                content.set("status", "draft");
+                content.set("status", "refused");
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();
             Ext.getStore("ContenusDataJson").sync();
@@ -411,7 +418,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     contentSubmitVal: function(button, e, eOpts) {
         Ext.getStore("ContenusDataJson").suspendAutoSync();
         Ext.Array.forEach(Ext.getCmp("ContenusGrid").getSelectionModel().getSelection(), function(content){
-            if (content.get("status")=="draft") {
+            if ((content.get("status")=="draft")||(content.get("status")=="refused")) {
                 content.set("status", "pending");
             }});
             Ext.getStore("ContenusDataJson").resumeAutoSync();

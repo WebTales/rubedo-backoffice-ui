@@ -83,7 +83,10 @@
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+returner);\r",
                             "} else if (record.get(\"status\")==\"draft\") {\r",
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+returner);\r",
+                            "} else if (record.get(\"status\")==\"refused\") {\r",
+                            "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_remove.png\"> '+returner);\r",
                             "}\r",
+                            "\r",
                             "\r",
                             "\r",
                             ""
@@ -107,7 +110,8 @@
                     "    store: [\r",
                     "                [\"draft\", \"brouillon\"],\r",
                     "                [\"pending\", \"en attente de validation\"],\r",
-                    "                [\"published\", \"publié\"]\r",
+                    "                [\"published\", \"publié\"],\r",
+                    "        \t\t[\"refused\", \"refusé\"]\r",
                     "            ]\r",
                     "}"
                 ],
@@ -154,6 +158,8 @@
                             "    return(\"en attente de validation\");\r",
                             "} else if (value==\"draft\") {\r",
                             "    return(\"brouillon\");\r",
+                            "} else if (value==\"refused\") {\r",
+                            "    return(\"refusé\");\r",
                             "}"
                         ]
                     },

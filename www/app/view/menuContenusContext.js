@@ -43,7 +43,10 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+returner);
                         } else if (record.get("status")=="draft") {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+returner);
+                        } else if (record.get("status")=="refused") {
+                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_remove.png"> '+returner);
                         }
+
 
 
 
@@ -62,6 +65,8 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             return("en attente de validation");
                         } else if (value=="draft") {
                             return("brouillon");
+                        } else if (value=="refused") {
+                            return("refusé");
                         }
                     },
                     filter: {
@@ -78,6 +83,10 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             [
                                 'published',
                                 'publié'
+                            ],
+                            [
+                                'refused',
+                                'refusé'
                             ]
                         ]
                     },
