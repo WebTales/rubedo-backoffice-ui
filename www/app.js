@@ -13,7 +13,6 @@
  * Do NOT hand edit this file.
  */
 
-
 Ext.Loader.setConfig({
     enabled: true,
     paths: {
@@ -272,7 +271,8 @@ Ext.application({
         'InportAsFieldStore',
         'InportAsTaxoStore',
         'SystemCTStore',
-        'AddMultiFieldStore'
+        'AddMultiFieldStore',
+        'ImportableFieldTypesStore'
     ],
     views: [
         'MyContainer',
