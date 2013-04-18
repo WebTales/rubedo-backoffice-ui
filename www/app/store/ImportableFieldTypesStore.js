@@ -30,6 +30,40 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
             storeId: 'ImportableFieldTypesStore',
             data: [
                 {
+                    type: 'Titre',
+                    cType: 'text',
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: 'text'
+                },
+                {
+                    type: 'Résumé',
+                    cType: 'summary',
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: 'summary'
+                },
+                {
                     type: 'Localisation',
                     cType: 'Rubedo.view.localiserField',
                     openWindow: '',

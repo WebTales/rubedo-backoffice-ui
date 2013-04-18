@@ -43,7 +43,8 @@
                 "designer|userClassName": "MyForm10",
                 "layout": "vbox",
                 "bodyPadding": 10,
-                "title": "Choix du fichier à importer"
+                "title": "Choix du fichier à importer",
+                "timeout": 120
             },
             "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
             "cn": [
@@ -548,7 +549,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return(Ext.getStore(\"TypesChampsDataStore\").findRecord(\"id\", value).get(\"type\"));"
+                                    "return(Ext.getStore(\"ImportableFieldTypesStore\").findRecord(\"id\", value).get(\"type\"));"
                                 ]
                             },
                             "designerId": "cad16b57-b48c-47c0-81fc-85951bafe73f"
@@ -878,38 +879,6 @@
                             },
                             "designerId": "cb608ca9-372b-47f8-91b0-560c2b3bca68",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
-                        },
-                        {
-                            "type": "Ext.form.field.Date",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyDateField4",
-                                "fieldLabel": "Date de début de publication ",
-                                "labelWidth": 165,
-                                "name": "ContentsStartPublicationDate"
-                            },
-                            "designerId": "2775b1ac-4fe0-4023-8320-81133ae5452a"
-                        },
-                        {
-                            "type": "Ext.form.field.Date",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "designer|userClassName": "MyDateField5",
-                                "fieldLabel": "Date de fin de publication ",
-                                "labelWidth": 165,
-                                "name": "ContentsEndPublicationDate"
-                            },
-                            "designerId": "2195c930-2b2a-4d9d-9182-21a9cbcc771f"
                         }
                     ]
                 },

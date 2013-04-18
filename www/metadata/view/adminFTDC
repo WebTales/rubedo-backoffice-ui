@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "page_full.png",
-        "container|align": "stretch",
         "localiserId": "contentTypesWindow",
+        "container|align": "stretch",
         "height": 578,
         "id": "adminFTDC",
         "width": 1330,
@@ -212,8 +212,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "boutonNouveauTypeContenu",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -246,8 +246,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonSupprimerTypeContenu",
                         "itemId": null,
@@ -281,9 +281,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
+                        "localiserId": "editGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "editGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -417,9 +417,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -524,9 +524,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
+                        "localiserId": "saveGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "saveGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -913,8 +913,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "editTab",
+                                "layout|flex": null,
                                 "designer|userClassName": "TabConfig1"
                             },
                             "designerId": "b22e9634-2f00-453d-b24a-515f0c4de552",
@@ -1022,8 +1022,8 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|anchor": "90%",
                                                         "localiserId": "titleField",
+                                                        "layout|anchor": "90%",
                                                         "style": "{float:left}",
                                                         "designer|userClassName": "MyTextField1",
                                                         "fieldLabel": "Titre *",
@@ -1097,8 +1097,8 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|anchor": "90%",
                                                         "localiserId": "summaryField",
+                                                        "layout|anchor": "90%",
                                                         "style": [
                                                             "{float:left}"
                                                         ],
@@ -1128,9 +1128,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "editableFieldPanel",
                                         "id": "champsEditionTC",
-                                        "title": "Champs Editables",
-                                        "localiserId": "editableFieldPanel"
+                                        "title": "Champs Editables"
                                     },
                                     "designerId": "ceb92585-593a-443f-9573-0fb296398608",
                                     "customConfigs": [
@@ -1255,8 +1255,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "taxonomyTab",
+                                "layout|flex": null,
                                 "designer|userClassName": "TabConfig2"
                             },
                             "designerId": "05756f4b-998c-4166-bf9d-ac06a05755ba",
@@ -1582,8 +1582,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "workflowField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox28",
                                         "fieldLabel": "Workflow",
                                         "labelWidth": 120,
@@ -1638,8 +1638,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "disqusField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyCheckbox8",
                                         "fieldLabel": "Disqus",
                                         "name": "activateDisqus",

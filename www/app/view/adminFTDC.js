@@ -396,8 +396,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         },
                                                         {
                                                             xtype: 'textfield',
-                                                            anchor: '90%',
                                                             localiserId: 'titleField',
+                                                            anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Titre *',
                                                             name: 'text',
@@ -424,8 +424,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         },
                                                         {
                                                             xtype: 'textareafield',
-                                                            anchor: '90%',
                                                             localiserId: 'summaryField',
+                                                            anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Résumé ',
                                                             labelSeparator: ' ',
@@ -437,9 +437,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'MTeditFields',
+                                            localiserId: 'editableFieldPanel',
                                             id: 'champsEditionTC',
-                                            title: 'Champs Editables',
-                                            localiserId: 'editableFieldPanel'
+                                            title: 'Champs Editables'
                                         }
                                     ]
                                 },
@@ -594,8 +594,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'workflowField',
+                                            anchor: '100%',
                                             fieldLabel: 'Workflow',
                                             labelWidth: 120,
                                             name: 'workflow',
@@ -616,8 +616,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     items: [
                                         {
                                             xtype: 'checkboxfield',
-                                            anchor: '100%',
                                             localiserId: 'disqusField',
+                                            anchor: '100%',
                                             fieldLabel: 'Disqus',
                                             name: 'activateDisqus',
                                             boxLabel: '',

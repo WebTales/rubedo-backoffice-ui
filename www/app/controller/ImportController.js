@@ -59,15 +59,16 @@ Ext.define('Rubedo.controller.ImportController', {
         if (myForm.isValid()){
             var configs=myForm.getValues();
             Ext.Array.forEach(Ext.getStore("InportAsFieldStore").getRange(), function(record){
-                var protoCType=Ext.getStore("TypesChampsDataStore").findRecord("id", record.get("protoId")).get("cType");
-                var interv2=Ext.clone(Ext.create(protoCType).xtype);
-                record.set("cType",interv2);
-                interv2.destroy();
-                if (Ext.isEmpty(record.get("newName"))){
-                    record.set("newName", record.get("name"));
-                }
-                if (Ext.isEmpty(record.get("label"))){
-                    record.set("label", record.get("newName"));
+                if ((record.get("protoId")!="text")&&(record.get("protoId")!="summary")){
+                    var protoCType=Ext.getStore("TypesChampsDataStore").findRecord("id", record.get("protoId")).get("cType");
+                    var interv2=Ext.clone(Ext.create(protoCType).xtype);
+                    record.set("cType",interv2);
+                    if (Ext.isEmpty(record.get("newName"))){
+                        record.set("newName", record.get("name"));
+                    }
+                    if (Ext.isEmpty(record.get("label"))){
+                        record.set("label", record.get("newName"));
+                    }
                 }
             });
             Ext.Array.forEach(Ext.getStore("InportAsTaxoStore").getRange(), function(record){

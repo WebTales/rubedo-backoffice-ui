@@ -51,6 +51,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     },
                     bodyPadding: 10,
                     title: 'Choix du fichier à importer',
+                    timeout: 120,
                     items: [
                         {
                             xtype: 'container',
@@ -229,7 +230,7 @@ Ext.define('Rubedo.view.InportInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return(Ext.getStore("TypesChampsDataStore").findRecord("id", value).get("type"));
+                                return(Ext.getStore("ImportableFieldTypesStore").findRecord("id", value).get("type"));
                             },
                             dataIndex: 'protoId',
                             text: 'Type',
@@ -373,20 +374,6 @@ Ext.define('Rubedo.view.InportInterface', {
                                     multiSelect: true,
                                     store: 'WorkspacesComboWithAll',
                                     anchor: '100%'
-                                },
-                                {
-                                    xtype: 'datefield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Date de début de publication ',
-                                    labelWidth: 165,
-                                    name: 'ContentsStartPublicationDate'
-                                },
-                                {
-                                    xtype: 'datefield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Date de fin de publication ',
-                                    labelWidth: 165,
-                                    name: 'ContentsEndPublicationDate'
                                 }
                             ]
                         },
