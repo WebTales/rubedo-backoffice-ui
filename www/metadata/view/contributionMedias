@@ -8,6 +8,7 @@
     "userConfig": {
         "favoriteIcon": "folder.png",
         "container|align": "stretch",
+        "localiserId": "mediasWindow",
         "height": 578,
         "id": "contributionMedias",
         "width": 1000,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -205,6 +211,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "addFolderBtn",
                         "id": "boutonAjouterDossierMedias",
                         "itemId": null,
                         "designer|userClassName": "MyButton13",
@@ -213,7 +220,14 @@
                         "scale": "large",
                         "text": "Ajouter dossier"
                     },
-                    "designerId": "ef53b803-6854-4691-be1b-b768c2b46950"
+                    "designerId": "ef53b803-6854-4691-be1b-b768c2b46950",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

@@ -43,6 +43,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
+                "localiserId": "titleColumn",
                 "designer|userClassName": "MyColumn47",
                 "align": null,
                 "dataIndex": "text",
@@ -56,6 +57,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -99,11 +105,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "authorColumn",
                 "designer|userClassName": "MyColumn49",
                 "dataIndex": "author",
                 "text": "Auteur"
             },
-            "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45"
+            "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Date",
@@ -113,12 +127,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "createDateColumn",
                 "designer|userClassName": "MyDateColumn8",
                 "dataIndex": "lastUpdateTime",
                 "text": "Date de création",
                 "format": "d-m-Y"
             },
-            "designerId": "020e5c52-64e1-4ab8-bb41-d0dadc1d826f"
+            "designerId": "020e5c52-64e1-4ab8-bb41-d0dadc1d826f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

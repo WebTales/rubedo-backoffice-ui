@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "workspaceField",
         "designer|userClassName": "WorkspaceCombo",
         "designer|userAlias": "WorkspaceCombo",
         "fieldLabel": "Espace de travail",
@@ -17,6 +18,13 @@
         "valueField": "id"
     },
     "designerId": "552c244b-b66b-4875-9d66-15bedb41fd64",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basiceventbinding",

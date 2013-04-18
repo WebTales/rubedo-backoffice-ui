@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "workspaceWindow",
         "height": 456,
         "id": "WorkspacesInterface",
         "width": 723,
@@ -18,6 +19,13 @@
         "constrainHeader": true
     },
     "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -42,6 +50,7 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "id": "workspaceAdd",
                         "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
@@ -54,6 +63,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -68,6 +82,7 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "disabled": true,
                         "id": "workspaceRemove",
                         "designer|userClassName": "MyButton240",
@@ -82,6 +97,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -95,6 +115,7 @@
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
                         "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "disabled": true,
                         "id": "workspaceSave",
                         "designer|userClassName": "MyButton240",
@@ -108,6 +129,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -214,11 +240,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameColumn",
                         "designer|userClassName": "MyColumn70",
                         "dataIndex": "text",
                         "text": "Nom"
                     },
                     "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -262,6 +296,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "localiserId": "propsPanel",
                 "disabled": true,
                 "id": "workspacesMainForm",
                 "designer|userClassName": "MyForm43",
@@ -269,6 +304,13 @@
                 "title": "Propriétés"
             },
             "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -279,12 +321,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "designer|userClassName": "MyTextField74",
                         "fieldLabel": "Nom",
                         "name": "text",
                         "allowBlank": false
                     },
-                    "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767"
+                    "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

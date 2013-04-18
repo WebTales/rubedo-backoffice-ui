@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.contributionContenus', {
     ],
 
     favoriteIcon: 'folder.png',
+    localiserId: 'contentWindow',
     height: 578,
     id: 'contributionContenus',
     width: 951,
@@ -104,6 +105,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contents',
+                            localiserId: 'addBtn',
                             id: 'boutonAjouterContenu',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -113,6 +115,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contents',
+                            localiserId: 'editBtn',
                             disabled: true,
                             id: 'boutonModifierContenu',
                             iconAlign: 'top',
@@ -123,6 +126,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contents',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'boutonSupprimerContenu',
                             iconAlign: 'top',
@@ -132,6 +136,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -144,6 +149,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents',
+                                    localiserId: 'duplicateBtn',
                                     disabled: true,
                                     id: 'boutonCopierContenus',
                                     iconAlign: 'top',
@@ -163,6 +169,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -174,6 +181,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.contents',
+                            localiserId: 'workflowGroup',
                             disabled: true,
                             id: 'contribWorkflowBox',
                             headerPosition: 'bottom',
@@ -183,6 +191,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents.pendingToPublished',
+                                    localiserId: 'publishBtn',
                                     id: 'contentAcceptPublishBtn',
                                     iconAlign: 'top',
                                     iconCls: 'accept_big',
@@ -192,6 +201,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents.draftToPending',
+                                    localiserId: 'submitBtn',
                                     id: 'contentSubmitValBtn',
                                     iconAlign: 'top',
                                     iconCls: 'validation_submit_big',
@@ -201,6 +211,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents.pendingToDraft',
+                                    localiserId: 'refuseBtn',
                                     id: 'contentRefuseBtn',
                                     iconAlign: 'top',
                                     iconCls: 'nonS',
@@ -210,6 +221,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents.putOnline',
+                                    localiserId: 'onlineBtn',
                                     id: 'contentOnlineBtn',
                                     iconAlign: 'top',
                                     iconCls: 'online_big',
@@ -219,6 +231,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contents.putOffline',
+                                    localiserId: 'offlineBtn',
                                     id: 'contentOfflineBtn',
                                     iconAlign: 'top',
                                     iconCls: 'offline_big',
@@ -260,6 +273,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
                             },
+                            localiserId: 'typeColumn',
                             width: 672,
                             dataIndex: 'type',
                             text: 'Type',

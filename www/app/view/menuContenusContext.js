@@ -52,6 +52,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
 
                     },
                     filter: true,
+                    localiserId: 'titleColumn',
                     dataIndex: 'text',
                     text: 'Titre',
                     flex: 1
@@ -90,6 +91,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             ]
                         ]
                     },
+                    localiserId: 'stateColumn',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
@@ -109,6 +111,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             ]
                         ]
                     },
+                    localiserId: 'onlineColumn',
                     width: 60,
                     dataIndex: 'online',
                     text: 'En ligne',

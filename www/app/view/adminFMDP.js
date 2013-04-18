@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.adminFMDP', {
     ],
 
     favoriteIcon: 'application.png',
+    localiserId: 'pageMaskWindow',
     height: 578,
     id: 'adminFMDP',
     width: 1350,
@@ -100,6 +101,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.masks',
+                            localiserId: 'newBtn',
                             id: 'boutonNouveauMasque',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -109,6 +111,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.masks',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'boutonSupprimerMasque',
                             iconAlign: 'top',
@@ -119,6 +122,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.masks',
+                            localiserId: 'editGroup',
                             disabled: true,
                             id: 'masksEditionTopBarBox',
                             headerPosition: 'bottom',
@@ -131,6 +135,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newRowBtn',
                                     disabled: true,
                                     id: 'newRow',
                                     iconAlign: 'top',
@@ -140,6 +145,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newColBtn',
                                     disabled: true,
                                     id: 'newCol',
                                     iconAlign: 'top',
@@ -149,6 +155,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newBlocBtn',
                                     disabled: true,
                                     id: 'newBloc',
                                     iconAlign: 'top',
@@ -158,6 +165,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeBtn',
                                     disabled: true,
                                     id: 'deleteElement',
                                     iconAlign: 'top',
@@ -167,6 +175,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'exportBtn',
                                     disabled: true,
                                     id: 'exportElement',
                                     iconAlign: 'top',
@@ -176,6 +185,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'importBtn',
                                     disabled: true,
                                     id: 'importElement',
                                     iconAlign: 'top',
@@ -185,6 +195,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'moveElementUp',
                                     iconAlign: 'top',
@@ -194,6 +205,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'moveElementDown',
                                     iconAlign: 'top',
@@ -205,6 +217,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -217,6 +230,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.masks',
+                                    localiserId: 'duplicateBtn',
                                     id: 'boutonCopierMasque',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -234,6 +248,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shotcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -245,6 +260,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.masks',
+                            localiserId: 'saveGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -256,6 +272,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'saveBtn',
                                     id: 'AdminfMasquesEnregistrer',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -351,6 +368,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 }
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png"> ' + returner );
                             },
+                            localiserId: 'titleColumn',
                             dataIndex: 'text',
                             groupable: false,
                             text: 'Titre',
@@ -413,6 +431,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         {
                             xtype: 'panel',
                             margins: '0, 0, 0, 2',
+                            localiserId: 'propsPanel',
                             frame: true,
                             id: 'paneauPropMasque',
                             width: 300,
@@ -442,6 +461,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 {
                                     xtype: 'form',
                                     flex: 1,
+                                    localiserId: 'selectElementPanel',
                                     id: 'elementEditControl',
                                     autoScroll: true,
                                     title: 'Sélectionnez un élément'

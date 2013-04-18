@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.userSettings', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'settingWindow',
     height: 506,
     id: 'userSettings',
     width: 604,
@@ -50,10 +51,15 @@ Ext.define('Rubedo.view.userSettings', {
                             },
                             bodyPadding: 10,
                             title: 'Informations',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'informationsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'fieldset',
                                     flex: 1,
+                                    localiserId: 'informationsFieldSet',
                                     height: 385,
                                     margin: 0,
                                     width: 356,
@@ -63,6 +69,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'nameField',
                                             fieldLabel: 'Nom ',
                                             name: 'name',
                                             allowBlank: false
@@ -70,6 +77,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'loginField',
                                             fieldLabel: 'Login ',
                                             name: 'login',
                                             allowBlank: false,
@@ -78,6 +86,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'mailField',
                                             fieldLabel: 'E-mail ',
                                             name: 'email',
                                             allowBlank: false,
@@ -86,6 +95,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'combobox',
                                             anchor: '100%',
+                                            localiserId: 'civilityField',
                                             fieldLabel: 'Civilité ',
                                             name: 'title',
                                             editable: false,
@@ -99,42 +109,49 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'organisationField',
                                             fieldLabel: 'Organisation ',
                                             name: 'organisation'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'serviceField',
                                             fieldLabel: 'Service ',
                                             name: 'service'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'functionField',
                                             fieldLabel: 'Fonction ',
                                             name: 'post'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'phoneField',
                                             fieldLabel: 'Téléphone ',
                                             name: 'telephone'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'mobileField',
                                             fieldLabel: 'Mobile ',
                                             name: 'mobile'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'coordinatesField',
                                             fieldLabel: 'Coordonnées ',
                                             name: 'coordinates'
                                         },
                                         {
                                             xtype: 'combobox',
                                             anchor: '100%',
+                                            localiserId: 'languageField',
                                             fieldLabel: 'Langue ',
                                             name: 'language',
                                             editable: false,
@@ -146,12 +163,14 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'countryField',
                                             fieldLabel: 'Pays ',
                                             name: 'country'
                                         },
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            localiserId: 'applyBtn',
                                             id: 'userInfoEdit',
                                             text: 'Appliquer'
                                         }
@@ -159,6 +178,7 @@ Ext.define('Rubedo.view.userSettings', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'photoFieldSet',
                                     margin: '0 0 0 10',
                                     width: 200,
                                     title: 'Photo',
@@ -177,12 +197,14 @@ Ext.define('Rubedo.view.userSettings', {
                                                 Ext.widget("PersoPicUploadWindow", {userMode:true}).show();
                                             },
                                             anchor: '100%',
+                                            localiserId: 'changeBtn',
                                             margin: '0 0 10 0',
                                             text: 'Changer'
                                         },
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            localiserId: 'removeBtn',
                                             id: 'userProfilePictureDelete',
                                             text: 'Suprimer'
                                         }
@@ -194,14 +216,20 @@ Ext.define('Rubedo.view.userSettings', {
                             xtype: 'form',
                             bodyPadding: 10,
                             title: 'Accès',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'accessTab'
+                            },
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'changePassFieldSet',
                                     title: 'Changer de mot de passe',
                                     items: [
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'oldPasswordField',
                                             fieldLabel: 'Mot de passe actuel ',
                                             labelWidth: 160,
                                             name: 'oldPassword',
@@ -210,6 +238,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'newPasswordField',
                                             fieldLabel: 'Nouveau mot de passe ',
                                             labelWidth: 160,
                                             name: 'newPassword',
@@ -218,6 +247,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'newPasswordConfirmField',
                                             fieldLabel: 'Confirmer le mot passe ',
                                             labelWidth: 160,
                                             name: 'newPasswordConfirm',
@@ -227,6 +257,7 @@ Ext.define('Rubedo.view.userSettings', {
                                         {
                                             xtype: 'button',
                                             anchor: '100%',
+                                            localiserId: 'changePasswordBtn',
                                             id: 'changeMyPasswordBtn',
                                             text: 'Changer le mot de passe'
                                         }
@@ -265,6 +296,7 @@ Ext.define('Rubedo.view.userSettings', {
                                 menu.showAt(e.browserEvent.clientX,e.browserEvent.clientY);
 
                             },
+                            localiserId: 'desktopBtn',
                             iconCls: 'personalize',
                             text: 'Bureau'
                         }

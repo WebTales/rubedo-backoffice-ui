@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.monitoringTools', {
     ],
 
     ACL: 'exe.ui.elasticSearch',
+    localiserId: 'monitoringField',
     height: 280,
     id: 'monitoringTools',
     width: 577,
@@ -61,17 +62,20 @@ Ext.define('Rubedo.view.monitoringTools', {
                         });
                     },
                     flex: 1,
+                    localiserId: 'cachePanel',
                     id: 'SupervisionCachePanel',
                     bodyPadding: 10,
                     title: 'Cache',
                     items: [
                         {
                             xtype: 'fieldset',
+                            localiserId: 'cacheElementFieldSet',
                             title: 'Elements en cache',
                             items: [
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'objectField',
                                     fieldLabel: 'Objets',
                                     name: 'cachedItems',
                                     readOnly: true
@@ -79,6 +83,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'urlField',
                                     fieldLabel: 'URL',
                                     name: 'cachedUrl',
                                     readOnly: true
@@ -99,6 +104,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                     handler: function(button, event) {
                                         button.up().up().refreshCacheInfo();
                                     },
+                                    localiserId: 'refreshBtn',
                                     id: 'supervisionRefreshCacheBtn',
                                     text: '<b>Rafraichir</b>'
                                 },
@@ -114,6 +120,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             }
                                         });
                                     },
+                                    localiserId: 'clearCacheBtn',
                                     id: 'SupervisionClearCachetn',
                                     text: '<b>Vider le cache</b>'
                                 }
@@ -130,6 +137,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                 {
                     xtype: 'form',
                     flex: 0.5,
+                    localiserId: 'elasticSearchPanel',
                     layout: {
                         type: 'fit'
                     },
@@ -167,6 +175,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             }
                                         });
                                     },
+                                    localiserId: 'indexContentsBtn',
                                     text: '<b>Indexation des contenus</b>'
                                 },
                                 {
@@ -199,6 +208,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             }
                                         });
                                     },
+                                    localiserId: 'indexMediasBtn',
                                     text: '<b>Indexation des médias</b>'
                                 },
                                 {
@@ -231,6 +241,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             }
                                         });
                                     },
+                                    localiserId: 'indexAllBtn',
                                     text: '<b>Indexation complète</b>'
                                 }
                             ]

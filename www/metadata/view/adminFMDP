@@ -8,6 +8,7 @@
     "userConfig": {
         "favoriteIcon": "application.png",
         "container|align": "stretch",
+        "localiserId": "pageMaskWindow",
         "height": 578,
         "id": "adminFMDP",
         "width": 1350,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -203,6 +209,7 @@
                     "userConfig": {
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
+                        "localiserId": "newBtn",
                         "id": "boutonNouveauMasque",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -218,6 +225,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -231,6 +243,7 @@
                     "userConfig": {
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "disabled": true,
                         "id": "boutonSupprimerMasque",
                         "itemId": null,
@@ -248,6 +261,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -262,6 +280,7 @@
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
                         "container|columns": 2,
+                        "localiserId": "editGroup",
                         "disabled": true,
                         "id": "masksEditionTopBarBox",
                         "designer|userClassName": "MyButtonGroup",
@@ -275,6 +294,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -286,6 +310,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "newRowBtn",
                                 "disabled": true,
                                 "id": "newRow",
                                 "width": null,
@@ -296,7 +321,14 @@
                                 "scale": "large",
                                 "text": "Nouvelle Ligne"
                             },
-                            "designerId": "e9a1fe34-8ea2-4699-872b-7e0345119318"
+                            "designerId": "e9a1fe34-8ea2-4699-872b-7e0345119318",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -306,6 +338,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "newColBtn",
                                 "disabled": true,
                                 "id": "newCol",
                                 "width": null,
@@ -316,7 +349,14 @@
                                 "scale": "large",
                                 "text": "Nouvelle Colonne"
                             },
-                            "designerId": "094abf9a-b988-4159-9f4c-e9591a60cbf4"
+                            "designerId": "094abf9a-b988-4159-9f4c-e9591a60cbf4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -326,6 +366,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "newBlocBtn",
                                 "disabled": true,
                                 "id": "newBloc",
                                 "width": null,
@@ -336,7 +377,14 @@
                                 "scale": "large",
                                 "text": "Nouveau Bloc"
                             },
-                            "designerId": "69a2e8b9-1b19-4d31-b108-9c7ca2aa12a9"
+                            "designerId": "69a2e8b9-1b19-4d31-b108-9c7ca2aa12a9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -346,6 +394,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "removeBtn",
                                 "disabled": true,
                                 "id": "deleteElement",
                                 "width": null,
@@ -356,7 +405,14 @@
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
-                            "designerId": "31fea061-d506-4bea-97dd-db58877f255e"
+                            "designerId": "31fea061-d506-4bea-97dd-db58877f255e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -366,6 +422,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "exportBtn",
                                 "disabled": true,
                                 "id": "exportElement",
                                 "width": null,
@@ -376,7 +433,14 @@
                                 "scale": "large",
                                 "text": "Exporter"
                             },
-                            "designerId": "32b25a07-c68c-457c-9486-43b245e54995"
+                            "designerId": "32b25a07-c68c-457c-9486-43b245e54995",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -386,6 +450,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "importBtn",
                                 "disabled": true,
                                 "id": "importElement",
                                 "width": null,
@@ -396,7 +461,14 @@
                                 "scale": "large",
                                 "text": "Importer"
                             },
-                            "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5"
+                            "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -406,6 +478,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "moveElementUp",
                                 "width": null,
@@ -416,7 +489,14 @@
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
-                            "designerId": "800ddbd4-ee28-4961-9ecc-681bf122db20"
+                            "designerId": "800ddbd4-ee28-4961-9ecc-681bf122db20",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -426,6 +506,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "moveElementDown",
                                 "width": null,
@@ -436,7 +517,14 @@
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
-                            "designerId": "ef594afe-971b-4416-8d0f-bc0577d69f07"
+                            "designerId": "ef594afe-971b-4416-8d0f-bc0577d69f07",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -450,6 +538,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
+                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -457,6 +546,13 @@
                         "columns": 4
                     },
                     "designerId": "16ca8d6b-68f3-43bc-8a71-49f70684f672",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -467,6 +563,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.masks",
+                                "localiserId": "duplicateBtn",
                                 "id": "boutonCopierMasque",
                                 "width": null,
                                 "designer|userClassName": "MyButton17",
@@ -481,6 +578,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -512,6 +614,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "shotcutBtn",
                                 "itemId": "boutonCreerRaccourci",
                                 "designer|userClassName": "MyButton14",
                                 "icon": null,
@@ -520,7 +623,14 @@
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
-                            "designerId": "60b5777f-0c9c-4eb4-b702-93da390a9fa4"
+                            "designerId": "60b5777f-0c9c-4eb4-b702-93da390a9fa4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -535,6 +645,7 @@
                         "ACL": "write.ui.masks",
                         "layout|flex": null,
                         "container|columns": 2,
+                        "localiserId": "saveGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -547,6 +658,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -558,6 +674,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "saveBtn",
                                 "id": "AdminfMasquesEnregistrer",
                                 "itemId": null,
                                 "designer|userClassName": "MyButton13",
@@ -568,6 +685,13 @@
                                 "text": "Enregistrer"
                             },
                             "designerId": "68c3d963-6bad-4417-8d6c-11dc80cc460f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -811,6 +935,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "titleColumn",
                         "designer|userClassName": "MyColumn10",
                         "dataIndex": "text",
                         "groupable": false,
@@ -818,6 +943,13 @@
                         "flex": 1.2
                     },
                     "designerId": "ef6cd484-dd98-4816-8403-e294fede4c28",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -1019,6 +1151,7 @@
                         "layout|margins": "0, 0, 0, 2",
                         "dock": null,
                         "container|align": "stretch",
+                        "localiserId": "propsPanel",
                         "frame": true,
                         "id": "paneauPropMasque",
                         "margin": null,
@@ -1037,6 +1170,13 @@
                         "title": "Propriétés"
                     },
                     "designerId": "b17d65c2-1c11-4ad6-ba71-3635259504e2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Hidden",
@@ -1075,6 +1215,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
+                                "localiserId": "selectElementPanel",
                                 "height": null,
                                 "id": "elementEditControl",
                                 "margin": null,
@@ -1084,7 +1225,14 @@
                                 "iconCls": null,
                                 "title": "Sélectionnez un élément"
                             },
-                            "designerId": "a07c7761-a08c-4f96-a3a0-8c24a5d5e33b"
+                            "designerId": "a07c7761-a08c-4f96-a3a0-8c24a5d5e33b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "basiceventbinding",

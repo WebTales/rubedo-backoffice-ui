@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'sitesWindow',
     height: 449,
     id: 'sitesInterface',
     width: 753,
@@ -62,6 +63,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.sites',
+                            localiserId: 'addBtn',
                             id: 'siteAddBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -71,6 +73,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.sites',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'siteRemoveBtn',
                             iconAlign: 'top',
@@ -81,6 +84,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.sites',
+                            localiserId: 'saveBtn',
                             disabled: true,
                             id: 'updateSiteBtn',
                             iconAlign: 'top',
@@ -148,6 +152,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     return(value);
                                 }
                             },
+                            localiserId: 'domainNameColumn',
                             dataIndex: 'text',
                             text: 'Nom de domaine'
                         }
@@ -164,11 +169,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                     items: [
                         {
                             xtype: 'fieldset',
+                            localiserId: 'siteFieldSet',
                             collapsible: true,
                             title: 'Site',
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'domainNameField',
                                     anchor: '100%',
                                     fieldLabel: 'Nom de domaine *',
                                     labelWidth: 110,
@@ -178,6 +185,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'aliasField',
                                     anchor: '100%',
                                     fieldLabel: 'Alias ',
                                     labelWidth: 110,
@@ -186,6 +194,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 {
                                     xtype: 'combobox',
                                     managesStore: true,
+                                    localiserId: 'themeField',
                                     anchor: '100%',
                                     fieldLabel: 'Theme ',
                                     labelWidth: 110,
@@ -196,6 +205,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'combobox',
+                                    localiserId: 'protocolField',
                                     anchor: '100%',
                                     fieldLabel: 'Protocole *',
                                     labelWidth: 110,
@@ -239,6 +249,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textareafield',
+                                    localiserId: 'descriptionField',
                                     anchor: '100%',
                                     fieldLabel: 'Description par défaut',
                                     labelWidth: 110,
@@ -247,6 +258,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'authorField',
                                     anchor: '100%',
                                     fieldLabel: 'Auteur par défaut',
                                     labelWidth: 110,
@@ -269,6 +281,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'messageryFieldSet',
                             hidden: true,
                             collapsed: true,
                             collapsible: true,
@@ -276,6 +289,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                             items: [
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'activeMessageryField',
                                     anchor: '100%',
                                     fieldLabel: 'Activé ',
                                     name: 'activeMessagery',
@@ -283,12 +297,14 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'smtpServerField',
                                     anchor: '100%',
                                     fieldLabel: 'Serveur SMTP ',
                                     name: 'SMTPServer'
                                 },
                                 {
                                     xtype: 'numberfield',
+                                    localiserId: 'smtpPortField',
                                     anchor: '100%',
                                     fieldLabel: 'Port SMTP ',
                                     name: 'SMTPPort',
@@ -297,12 +313,14 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'smtpLoginField',
                                     anchor: '100%',
                                     fieldLabel: 'Login SMTP ',
                                     name: 'SMTPLogin'
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'smtpPassField',
                                     anchor: '100%',
                                     fieldLabel: 'Mot de passe SMTP ',
                                     name: 'SMTPPassword',
@@ -310,6 +328,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'defaultEmailField',
                                     anchor: '100%',
                                     fieldLabel: 'E-mail par défaut ',
                                     name: 'defaultEmail',
@@ -319,6 +338,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'accessibilityFieldSet ',
                             hidden: true,
                             collapsed: true,
                             collapsible: true,
@@ -326,6 +346,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                             items: [
                                 {
                                     xtype: 'combobox',
+                                    localiserId: 'accessibilityLeveLfield',
                                     anchor: '100%',
                                     fieldLabel: 'Niveau d\'accessibilité ',
                                     name: 'accessibilityLevel',
@@ -337,12 +358,14 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'opquastLoginField',
                                     anchor: '100%',
                                     fieldLabel: 'Login Opquast ',
                                     name: 'opquastLogin'
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'opquastPassField',
                                     anchor: '100%',
                                     fieldLabel: 'Mot de passe Optquast ',
                                     name: 'opquastPassword',
@@ -352,11 +375,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'apiKeysFieldSet',
                             collapsible: true,
                             title: 'Clés d\'API externes',
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'googleMapKeyField',
                                     anchor: '100%',
                                     fieldLabel: 'Google Maps',
                                     labelWidth: 110,
@@ -364,6 +389,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'googleAnalyticsKeyField',
                                     anchor: '100%',
                                     fieldLabel: 'Google Analytics',
                                     labelWidth: 110,
@@ -371,6 +397,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'disqusKeyField',
                                     anchor: '100%',
                                     fieldLabel: 'Disqus',
                                     labelWidth: 110,

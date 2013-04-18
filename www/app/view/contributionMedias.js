@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.contributionMedias', {
     ],
 
     favoriteIcon: 'folder.png',
+    localiserId: 'mediasWindow',
     height: 578,
     id: 'contributionMedias',
     width: 1000,
@@ -103,6 +104,7 @@ Ext.define('Rubedo.view.contributionMedias', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'addFolderBtn',
                             id: 'boutonAjouterDossierMedias',
                             iconCls: 'folder_add_big',
                             scale: 'large',

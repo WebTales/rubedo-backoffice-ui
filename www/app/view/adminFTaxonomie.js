@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
     ],
 
     favoriteIcon: 'tag.png',
+    localiserId: 'taxonomyWindow',
     height: 578,
     id: 'adminFTaxonomie',
     width: 1000,
@@ -103,6 +104,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.taxonomy',
+                            localiserId: 'addBtn',
                             id: 'boutonCreerTaxonomie',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -112,6 +114,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.taxonomy',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'boutonSupprimerTaxo',
                             iconAlign: 'top',
@@ -122,6 +125,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.taxonomy',
+                            localiserId: 'saveBtn',
                             disabled: true,
                             id: 'boutonEnregistrerTaxo',
                             iconAlign: 'top',
@@ -138,6 +142,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.taxonomyTerms',
+                            localiserId: 'editTermsGroup',
                             disabled: true,
                             id: 'taxoTermEditBrnGroup',
                             headerPosition: 'bottom',
@@ -146,6 +151,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addBtn',
                                     id: 'taxoOpenInsertBtn',
                                     iconAlign: 'top',
                                     iconCls: 'add_big',
@@ -154,6 +160,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeBtn',
                                     id: 'taxoTermKiller',
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',
@@ -164,6 +171,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'shortcutBtn',
                             itemId: 'boutonCreerRaccourci',
                             iconAlign: 'top',
                             iconCls: 'favorite_add_big',
@@ -205,6 +213,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                 }
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/tag.png"> '+returner);
                             },
+                            localiserId: 'nameColumn',
                             dataIndex: 'name',
                             text: 'Nom',
                             flex: 1
@@ -227,9 +236,14 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             },
                             iconCls: 'edit',
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'form',
+                                    localiserId: 'propsPanel',
                                     id: 'ProprietesTaxonomie',
                                     width: 300,
                                     autoScroll: true,
@@ -242,6 +256,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'nameField',
                                             fieldLabel: 'Nom ',
                                             name: 'name',
                                             allowBlank: false
@@ -249,18 +264,21 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'textareafield',
                                             anchor: '100%',
+                                            localiserId: 'descriptionField',
                                             fieldLabel: 'Description ',
                                             name: 'description'
                                         },
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'helpTextField',
                                             fieldLabel: 'Texte d\'aide ',
                                             name: 'helpText'
                                         },
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'expandableField',
                                             fieldLabel: 'Extensible ',
                                             name: 'expandable',
                                             boxLabel: '',
@@ -270,6 +288,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'inputAsTreeField',
                                             fieldLabel: 'Saisie arborescente',
                                             name: 'inputAsTree',
                                             boxLabel: '',
@@ -279,6 +298,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'multiSelectField',
                                             fieldLabel: 'Choix multiple ',
                                             name: 'multiSelect',
                                             boxLabel: '',
@@ -288,6 +308,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'mandatoryField',
                                             fieldLabel: 'Obligatoire ',
                                             name: 'mandatory',
                                             boxLabel: '',
@@ -298,7 +319,8 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                 },
                                 {
                                     xtype: 'TermesTaxonomieTree',
-                                    flex: 1
+                                    flex: 1,
+                                    localiserId: 'termsPanel'
                                 }
                             ]
                         },
@@ -308,6 +330,10 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             bodyPadding: 10,
                             iconCls: 'user',
                             title: 'Droits',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'rightsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',

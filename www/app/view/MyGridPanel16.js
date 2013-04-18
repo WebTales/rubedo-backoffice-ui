@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
                 {
                     xtype: 'gridcolumn',
                     filter: true,
+                    localiserId: 'nameColumn',
                     dataIndex: 'name',
                     text: 'Nom',
                     flex: 1

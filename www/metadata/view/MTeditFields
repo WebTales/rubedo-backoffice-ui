@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "fieldPanel",
         "frame": true,
         "id": "MTeditFields",
         "margin": 20,
@@ -20,5 +21,12 @@
         "bodyPadding": 0,
         "title": "Champs"
     },
-    "designerId": "7120e487-8033-4805-b435-a863418861d9"
+    "designerId": "7120e487-8033-4805-b435-a863418861d9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ]
 }

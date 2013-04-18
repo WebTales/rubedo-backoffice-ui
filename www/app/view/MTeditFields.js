@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.MTeditFields', {
         'Rubedo.view.override.MTeditFields'
     ],
 
+    localiserId: 'fieldPanel',
     frame: true,
     id: 'MTeditFields',
     margin: 20,

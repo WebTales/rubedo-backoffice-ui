@@ -24,6 +24,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     ],
 
     favoriteIcon: 'page_full.png',
+    localiserId: 'contentTypesWindow',
     height: 578,
     id: 'adminFTDC',
     width: 1330,
@@ -104,6 +105,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contentTypes',
+                            localiserId: 'addBtn',
                             id: 'boutonNouveauTypeContenu',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -113,6 +115,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contentTypes',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'boutonSupprimerTypeContenu',
                             iconAlign: 'top',
@@ -123,6 +126,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.contentTypes',
+                            localiserId: 'editGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -134,6 +138,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newFieldBtn',
                                     id: 'boutonOuvrirFenetreTC',
                                     iconAlign: 'top',
                                     iconCls: 'add_big',
@@ -142,6 +147,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'TCfieldUp',
                                     iconAlign: 'top',
@@ -151,6 +157,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'TCfieldDown',
                                     iconAlign: 'top',
@@ -160,6 +167,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeFieldBtn',
                                     disabled: true,
                                     id: 'TCfieldDeleter',
                                     iconAlign: 'top',
@@ -171,6 +179,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -183,6 +192,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.contentTypes',
+                                    localiserId: 'duplicateBtn',
                                     id: 'boutonCopierTC',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -200,6 +210,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -211,6 +222,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.contentTypes',
+                            localiserId: 'saveGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -222,6 +234,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'saveBtn',
                                     id: 'boutonEnregistrerTypeContenu',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -306,6 +319,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + returner );}
 
                             },
+                            localiserId: 'typeColumn',
                             width: 452,
                             dataIndex: 'type',
                             text: 'Type',
@@ -345,6 +359,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                             },
                             iconCls: 'edit',
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'container',
@@ -354,6 +372,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     items: [
                                         {
                                             xtype: 'panel',
+                                            localiserId: 'systemFieldPanel',
                                             frame: true,
                                             margin: 20,
                                             title: 'Champs système',
@@ -378,6 +397,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '90%',
+                                                            localiserId: 'titleField',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Titre *',
                                                             name: 'text',
@@ -405,6 +425,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '90%',
+                                                            localiserId: 'summaryField',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Résumé ',
                                                             labelSeparator: ' ',
@@ -417,7 +438,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         {
                                             xtype: 'MTeditFields',
                                             id: 'champsEditionTC',
-                                            title: 'Champs Editables'
+                                            title: 'Champs Editables',
+                                            localiserId: 'editableFieldPanel'
                                         }
                                     ]
                                 },
@@ -467,6 +489,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                             },
                             iconCls: 'page_taxonomy',
                             title: 'Taxonomie',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'taxonomyTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -485,24 +511,28 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'titleColumn',
                                             dataIndex: 'name',
                                             text: 'Titre',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'descriptionColumn',
                                             dataIndex: 'description',
                                             text: 'Description',
                                             flex: 3
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'helpTextColumn',
                                             dataIndex: 'helpText',
                                             text: 'HelpText',
                                             flex: 2
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'labelField',
                                             dataIndex: 'expandable',
                                             text: 'Etiquettes',
                                             flex: 1,
@@ -511,6 +541,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'multiChoiseColumn',
                                             dataIndex: 'mandatory',
                                             text: 'ChoixMultiple',
                                             flex: 1,
@@ -519,6 +550,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'mandatoryField',
                                             dataIndex: 'mandatory',
                                             text: 'Obligatoire',
                                             flex: 1,
@@ -541,9 +573,14 @@ Ext.define('Rubedo.view.adminFTDC', {
                             bodyPadding: 10,
                             iconCls: 'parametres',
                             title: 'Propriétés',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'propsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'rightWorkflowFieldSet',
                                     title: 'Droits et workflow',
                                     items: [
                                         {
@@ -558,6 +595,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         {
                                             xtype: 'combobox',
                                             anchor: '100%',
+                                            localiserId: 'workflowField',
                                             fieldLabel: 'Workflow',
                                             labelWidth: 120,
                                             name: 'workflow',
@@ -573,11 +611,13 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'commentsFieldSet',
                                     title: 'Commentaires',
                                     items: [
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'disqusField',
                                             fieldLabel: 'Disqus',
                                             name: 'activateDisqus',
                                             boxLabel: '',

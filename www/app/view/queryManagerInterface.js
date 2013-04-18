@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'queryWindow',
     height: 380,
     id: 'queryManagerInterface',
     width: 341,
@@ -44,6 +45,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.queries',
+                            localiserId: 'addBtn',
                             id: 'queryMainAddBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -53,6 +55,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.queries',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'queryMainRemoveBtn',
                             iconAlign: 'top',
@@ -62,6 +65,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'editBtn',
                             disabled: true,
                             id: 'queryMainEditBtn',
                             iconAlign: 'top',
@@ -107,6 +111,7 @@ Ext.define('Rubedo.view.queryManagerInterface', {
                                     return(value);
                                 }
                             },
+                            localiserId: 'nameColumn',
                             dataIndex: 'name',
                             text: 'Nom'
                         },

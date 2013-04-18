@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.contributionPages', {
 
     favoriteIcon: 'application.png',
     ACL: 'read.ui.pages',
+    localiserId: 'pageWindow',
     height: 578,
     id: 'contributionPages',
     width: 1200,
@@ -81,6 +82,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.pages',
+                            localiserId: 'addBtn',
                             disabled: true,
                             id: 'addPageBtn',
                             iconAlign: 'top',
@@ -91,6 +93,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.pages',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'removePageBtn',
                             iconAlign: 'top',
@@ -101,6 +104,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.pages',
+                            localiserId: 'editGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -112,6 +116,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newBlocBtn',
                                     disabled: true,
                                     id: 'newPageBloc',
                                     iconAlign: 'top',
@@ -121,6 +126,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeBtn',
                                     disabled: true,
                                     id: 'deletePageElement',
                                     iconAlign: 'top',
@@ -130,6 +136,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'pageElementUp',
                                     iconAlign: 'top',
@@ -139,6 +146,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'pageElementDown',
                                     iconAlign: 'top',
@@ -150,6 +158,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -169,6 +178,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -180,6 +190,7 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.pages',
+                            localiserId: 'saveGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -191,6 +202,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'saveBtn',
                                     id: 'pageSaveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -294,6 +306,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 {
                                     xtype: 'combobox',
                                     managesStore: true,
+                                    localiserId: 'siteField',
                                     flex: 1,
                                     id: 'pagesSitesCombo',
                                     fieldLabel: 'Site ',
@@ -323,6 +336,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     return(value);
                                 }
                             },
+                            localiserId: 'nameColumn',
                             dataIndex: 'text',
                             menuText: 'false',
                             text: 'Nom'
@@ -341,6 +355,10 @@ Ext.define('Rubedo.view.contributionPages', {
                                 type: 'hbox'
                             },
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'panel',
@@ -354,6 +372,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'panel',
+                                    localiserId: 'propsPanel',
                                     width: 300,
                                     resizable: true,
                                     resizeHandles: 'w',
@@ -368,6 +387,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     items: [
                                         {
                                             xtype: 'form',
+                                            localiserId: 'selectElementPanel',
                                             flex: 1,
                                             id: 'pageElementPropsPanel',
                                             autoScroll: true,
@@ -389,6 +409,10 @@ Ext.define('Rubedo.view.contributionPages', {
                                 type: 'fit'
                             },
                             title: 'Aperçu',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'overviewTab'
+                            },
                             dockedItems: [
                                 {
                                     xtype: 'toolbar',
@@ -405,6 +429,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         },
                                         {
                                             xtype: 'button',
+                                            localiserId: 'refreshBtn',
                                             id: 'pagePreviewRefreshBtn',
                                             iconCls: 'refresh',
                                             text: 'Actualiser'
@@ -419,9 +444,14 @@ Ext.define('Rubedo.view.contributionPages', {
                             autoScroll: true,
                             bodyPadding: 10,
                             title: 'Propriétés',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'propsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'nameField',
                                     anchor: '100%',
                                     fieldLabel: 'Nom *',
                                     name: 'text',
@@ -429,12 +459,14 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'urlField',
                                     anchor: '100%',
                                     fieldLabel: 'URL ',
                                     name: 'pageURL'
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'excludeFromMenuField',
                                     anchor: '100%',
                                     fieldLabel: 'Hors navigation',
                                     name: 'excludeFromMenu',
@@ -448,6 +480,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'inheritWorkspaceField',
                                     anchor: '100%',
                                     fieldLabel: 'Hérite de l\'espace de travail',
                                     name: 'inheritWorkspace',
@@ -462,10 +495,12 @@ Ext.define('Rubedo.view.contributionPages', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'referencingFieldSEt',
                                     title: 'Référencement',
                                     items: [
                                         {
                                             xtype: 'textfield',
+                                            localiserId: 'titleField',
                                             anchor: '100%',
                                             fieldLabel: 'Titre *',
                                             name: 'title',
@@ -473,6 +508,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         },
                                         {
                                             xtype: 'textareafield',
+                                            localiserId: 'descriptionField',
                                             anchor: '100%',
                                             fieldLabel: 'Description ',
                                             name: 'description',
@@ -495,6 +531,10 @@ Ext.define('Rubedo.view.contributionPages', {
                                 type: 'fit'
                             },
                             title: 'Contenus affichés',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'displayedContentTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -505,6 +545,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'titleColumn',
                                             dataIndex: 'text',
                                             text: 'Titre'
                                         }

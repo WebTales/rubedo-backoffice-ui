@@ -8,6 +8,7 @@
     "userConfig": {
         "ACL": "read.ui.pages",
         "container|align": "stretch",
+        "localiserId": "previewWindow",
         "height": 548,
         "id": "contributionPrevisualisation",
         "width": 1200,
@@ -24,6 +25,11 @@
         {
             "group": "(Custom Properties)",
             "name": "ACL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -57,6 +63,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "previewPageTree",
                 "id": "previewPageTree",
                 "width": 225,
                 "designer|userClassName": "MyTreePanel2",
@@ -67,6 +74,13 @@
                 "useArrows": true
             },
             "designerId": "e8970f61-6672-4bea-83c1-2eb06de4184b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.tree.View",
@@ -103,6 +117,7 @@
                             "userConfig": {
                                 "managesStore": true,
                                 "layout|flex": 1,
+                                "localiserId": "siteField",
                                 "id": "previewSitesCombo",
                                 "designer|userClassName": "MyComboBox12",
                                 "fieldLabel": "Site ",
@@ -121,6 +136,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "managesStore",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -166,6 +186,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "previewDeviceCombo",
                                 "id": "previewDeviceCombo",
                                 "margin": "0 20 0 0",
                                 "designer|userClassName": "MyCycleButton",
@@ -174,6 +195,13 @@
                                 "showText": true
                             },
                             "designerId": "bf4ac652-8888-4e80-93f2-78769c111b91",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.menu.Menu",
@@ -353,6 +381,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "draftField",
                                 "id": "advancedPreviewDraftField",
                                 "margin": "0 20 0 0",
                                 "designer|userClassName": "MyCheckbox6",
@@ -361,7 +390,14 @@
                                 "boxLabel": "",
                                 "inputValue": "true"
                             },
-                            "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9"
+                            "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Date",
@@ -372,12 +408,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "dateField",
                                 "id": "advancedPreviewDateField",
                                 "designer|userClassName": "MyDateField6",
                                 "fieldLabel": "Date",
                                 "labelWidth": 40
                             },
-                            "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079"
+                            "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.toolbar.Fill",
@@ -414,13 +458,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "refreshBtn",
                                 "id": "advancedPreviewPageRefresh",
                                 "designer|userClassName": "MyButton220",
                                 "iconCls": "refresh_big",
                                 "scale": "large",
                                 "text": "Actualiser"
                             },
-                            "designerId": "10afe836-bc5e-4f49-a68a-aee3f4c6ca2a"
+                            "designerId": "10afe836-bc5e-4f49-a68a-aee3f4c6ca2a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

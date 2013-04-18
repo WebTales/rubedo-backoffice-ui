@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "groupsWindow",
         "container|align": "stretch",
         "height": 578,
         "id": "adminFUtilisateurs",
@@ -18,6 +19,13 @@
         "constrainHeader": true
     },
     "designerId": "fb146702-039a-47f8-8142-bd4572c13135",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.panel.Tool",
@@ -197,6 +205,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
+                        "localiserId": "addBtn",
                         "layout|flex": null,
                         "id": "groupAddButton",
                         "itemId": null,
@@ -213,6 +222,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -225,6 +239,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
+                        "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
                         "id": "groupDeleteButton",
@@ -242,6 +257,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -254,6 +274,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
+                        "localiserId": "saveBtn",
                         "layout|flex": null,
                         "disabled": true,
                         "id": "groupSaveButton",
@@ -270,6 +291,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -332,6 +358,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
+                        "localiserId": "editGroup",
                         "layout|flex": null,
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup8",
@@ -346,6 +373,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -357,6 +389,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addBtn",
                                 "id": "userAddButton",
                                 "itemId": null,
                                 "designer|userClassName": "MyButton11",
@@ -366,7 +399,14 @@
                                 "scale": "large",
                                 "text": "Ajouter"
                             },
-                            "designerId": "7dafb50a-7452-4aaa-b415-eb893de52b92"
+                            "designerId": "7dafb50a-7452-4aaa-b415-eb893de52b92",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -376,6 +416,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "removeBtn",
                                 "id": "userRemoveButton",
                                 "itemId": null,
                                 "designer|userClassName": "MyButton11",
@@ -385,7 +426,14 @@
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
-                            "designerId": "ab112f4e-12af-4bca-abb8-511e5af1720d"
+                            "designerId": "ab112f4e-12af-4bca-abb8-511e5af1720d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -635,9 +683,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "userTab",
                                 "designer|userClassName": "TabConfig22"
                             },
-                            "designerId": "bb142432-60c7-4d87-afe6-a99a4a14cec2"
+                            "designerId": "bb142432-60c7-4d87-afe6-a99a4a14cec2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.Panel",
@@ -677,12 +733,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "nameColumn",
                                         "designer|userClassName": "MyColumn24",
                                         "dataIndex": "name",
                                         "text": "Nom",
                                         "flex": 1
                                     },
-                                    "designerId": "94b0f91c-83c4-4e61-bbe0-95662042c244"
+                                    "designerId": "94b0f91c-83c4-4e61-bbe0-95662042c244",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -692,12 +756,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "mailColumn",
                                         "designer|userClassName": "MyColumn25",
                                         "dataIndex": "email",
                                         "text": "Email",
                                         "flex": 1
                                     },
-                                    "designerId": "bb6319f1-8471-4b2a-8af1-19ffd24d198e"
+                                    "designerId": "bb6319f1-8471-4b2a-8af1-19ffd24d198e",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -707,12 +779,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "phoneColumn",
                                         "designer|userClassName": "MyColumn26",
                                         "dataIndex": "mobile",
                                         "text": "Téléphone",
                                         "flex": 1
                                     },
-                                    "designerId": "27f1b109-eacf-41a2-b142-3b4a86f4d109"
+                                    "designerId": "27f1b109-eacf-41a2-b142-3b4a86f4d109",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -722,12 +802,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "addressColumn",
                                         "designer|userClassName": "MyColumn27",
                                         "dataIndex": "login",
                                         "text": "Adresse",
                                         "flex": 1
                                     },
-                                    "designerId": "ed976c9b-cbcf-4daf-a59f-ae53a3d7ae5d"
+                                    "designerId": "ed976c9b-cbcf-4daf-a59f-ae53a3d7ae5d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -737,12 +825,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "postColumn",
                                         "designer|userClassName": "MyColumn28",
                                         "dataIndex": "post",
                                         "text": "Poste",
                                         "flex": 1
                                     },
-                                    "designerId": "384db602-928b-46ce-9a5f-bc711c4a3347"
+                                    "designerId": "384db602-928b-46ce-9a5f-bc711c4a3347",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -752,12 +848,20 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "departmentColumn",
                                         "designer|userClassName": "MyColumn29",
                                         "dataIndex": "organisation",
                                         "text": "Département",
                                         "flex": 1
                                     },
-                                    "designerId": "ff63a2a3-1959-430a-97ea-a49f3f0986b4"
+                                    "designerId": "ff63a2a3-1959-430a-97ea-a49f3f0986b4",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -865,9 +969,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "rightsTab",
                                 "designer|userClassName": "TabConfig34"
                             },
-                            "designerId": "0e21e1bb-5e07-446f-af67-51ca5f7e88f3"
+                            "designerId": "0e21e1bb-5e07-446f-af67-51ca5f7e88f3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -877,6 +989,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "nameField",
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField74",
                                 "fieldLabel": "Nom ",
@@ -884,7 +997,14 @@
                                 "name": "name",
                                 "allowBlank": false
                             },
-                            "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6"
+                            "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "linkedinstance",
@@ -895,6 +1015,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "notAutomatic": true,
+                                "localiserId": "readWorkSpaceField",
                                 "fieldLabel": "Espaces de travail en lecture ",
                                 "labelWidth": 220,
                                 "name": "readWorkspaces",
@@ -911,6 +1032,11 @@
                                     "group": "(Custom Properties)",
                                     "name": "notAutomatic",
                                     "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
                                 }
                             ],
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -924,6 +1050,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "notAutomatic": true,
+                                "localiserId": "writeWorkspaceField",
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
                                 "name": "writeWorkspaces",
@@ -940,6 +1067,11 @@
                                     "group": "(Custom Properties)",
                                     "name": "notAutomatic",
                                     "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
                                 }
                             ],
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -953,6 +1085,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "notAutomatic": true,
+                                "localiserId": "defaultWorkspaceField",
                                 "fieldLabel": "Espace de travail par défaut",
                                 "labelWidth": 220,
                                 "name": "defaultWorkspace",
@@ -966,6 +1099,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "notAutomatic",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ],
@@ -1043,6 +1181,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "admin.ui.groups",
+                                "localiserId": "adminTab",
                                 "designer|userClassName": "TabConfig12"
                             },
                             "designerId": "d6f45213-a423-4a94-8d9b-54dd9c6bbf09",
@@ -1050,6 +1189,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -1075,6 +1219,11 @@
                                     "group": "(Custom Properties)",
                                     "name": "notAutomatic",
                                     "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
                                 }
                             ],
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -1087,6 +1236,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "inheritWorkspaceField",
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyCheckbox8",
                                 "fieldLabel": "Hérite de l'espace de travail",
@@ -1096,6 +1246,13 @@
                                 "inputValue": "true"
                             },
                             "designerId": "8e91354c-9d6a-4431-b56c-58e22b25880b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",

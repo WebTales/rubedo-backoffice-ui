@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "mediasWindow",
         "height": 651,
         "id": "DAMInterface",
         "width": 1038,
@@ -18,6 +19,13 @@
         "constrainHeader": true
     },
     "designerId": "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "linkedinstance",
@@ -156,6 +164,7 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "id": "addDAMBtn",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -171,6 +180,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -184,6 +198,7 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "disabled": true,
                         "id": "DAMDeleteBtn",
                         "itemId": null,
@@ -199,6 +214,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -265,6 +285,7 @@
                     "userConfig": {
                         "ACL": "write.ui.dam",
                         "layout|flex": null,
+                        "localiserId": "editBtn",
                         "disabled": true,
                         "id": "DAMUpdateBtn",
                         "itemId": null,
@@ -281,6 +302,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -294,6 +320,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
+                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "id": "DAMPPBtnGroup",
                         "designer|userClassName": "MyButtonGroup",
@@ -302,6 +329,13 @@
                         "columns": 4
                     },
                     "designerId": "d542e06d-f92d-4938-a24b-0a4bbf60c3b9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -358,6 +392,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
                                 "designer|userClassName": "MyButton14",
                                 "icon": null,
@@ -366,7 +401,14 @@
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
-                            "designerId": "0a3c0105-408d-422d-b29f-174885e1acdc"
+                            "designerId": "0a3c0105-408d-422d-b29f-174885e1acdc",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },

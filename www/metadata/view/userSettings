@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "settingWindow",
         "height": 506,
         "id": "userSettings",
         "width": 604,
@@ -17,6 +18,13 @@
         "constrainHeader": true
     },
     "designerId": "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.tab.Panel",
@@ -57,9 +65,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "informationsTab",
                                 "designer|userClassName": "TabConfig24"
                             },
-                            "designerId": "c0c5a29e-4423-4050-8757-2fc6971211e7"
+                            "designerId": "c0c5a29e-4423-4050-8757-2fc6971211e7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.FieldSet",
@@ -70,6 +86,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
+                                "localiserId": "informationsFieldSet",
                                 "height": 385,
                                 "margin": 0,
                                 "width": 356,
@@ -78,6 +95,13 @@
                                 "title": "Informations"
                             },
                             "designerId": "d5cf9428-a2cd-4308-a4ce-40333fe9ef0f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -88,13 +112,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "nameField",
                                         "designer|userClassName": "MyTextField5",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
                                         "readOnly": null,
                                         "allowBlank": false
                                     },
-                                    "designerId": "a96bfa91-7feb-4d52-a806-320a83c4bbfa"
+                                    "designerId": "a96bfa91-7feb-4d52-a806-320a83c4bbfa",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -105,13 +137,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "loginField",
                                         "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "Login ",
                                         "name": "login",
                                         "allowBlank": false,
                                         "vtype": "alphanum"
                                     },
-                                    "designerId": "3085aba8-536d-4148-817f-6db8cec7805a"
+                                    "designerId": "3085aba8-536d-4148-817f-6db8cec7805a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -122,13 +162,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "mailField",
                                         "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "E-mail ",
                                         "name": "email",
                                         "allowBlank": false,
                                         "vtype": "email"
                                     },
-                                    "designerId": "d31aabb2-a733-41a3-8057-a8912a93ce82"
+                                    "designerId": "d31aabb2-a733-41a3-8057-a8912a93ce82",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -139,6 +187,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "civilityField",
                                         "designer|userClassName": "MyComboBox4",
                                         "fieldLabel": "Civilité ",
                                         "name": "title",
@@ -153,7 +202,14 @@
                                     "configAlternates": {
                                         "store": "array"
                                     },
-                                    "designerId": "dbb2a9c2-cd57-4f9d-88c5-027c6640d103"
+                                    "designerId": "dbb2a9c2-cd57-4f9d-88c5-027c6640d103",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -164,11 +220,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "organisationField",
                                         "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Organisation ",
                                         "name": "organisation"
                                     },
-                                    "designerId": "99325132-0517-41ea-9c58-b2cc1d2d3d3d"
+                                    "designerId": "99325132-0517-41ea-9c58-b2cc1d2d3d3d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -179,11 +243,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "serviceField",
                                         "designer|userClassName": "MyTextField20",
                                         "fieldLabel": "Service ",
                                         "name": "service"
                                     },
-                                    "designerId": "3a75d1c5-b68d-4955-8f87-36a628726e62"
+                                    "designerId": "3a75d1c5-b68d-4955-8f87-36a628726e62",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -194,11 +266,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "functionField",
                                         "designer|userClassName": "MyTextField21",
                                         "fieldLabel": "Fonction ",
                                         "name": "post"
                                     },
-                                    "designerId": "23831d34-f782-4005-a7ee-556c847b6e70"
+                                    "designerId": "23831d34-f782-4005-a7ee-556c847b6e70",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -209,11 +289,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "phoneField",
                                         "designer|userClassName": "MyTextField23",
                                         "fieldLabel": "Téléphone ",
                                         "name": "telephone"
                                     },
-                                    "designerId": "41153bcc-821b-4a8b-9b55-e6b2781d80fa"
+                                    "designerId": "41153bcc-821b-4a8b-9b55-e6b2781d80fa",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -224,11 +312,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "mobileField",
                                         "designer|userClassName": "MyTextField24",
                                         "fieldLabel": "Mobile ",
                                         "name": "mobile"
                                     },
-                                    "designerId": "ffd1c463-f9a0-4d98-82a3-598e4d50ac74"
+                                    "designerId": "ffd1c463-f9a0-4d98-82a3-598e4d50ac74",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -239,11 +335,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "coordinatesField",
                                         "designer|userClassName": "MyTextField25",
                                         "fieldLabel": "Coordonnées ",
                                         "name": "coordinates"
                                     },
-                                    "designerId": "d455b234-fb9a-438e-b7a2-c97c3085eab7"
+                                    "designerId": "d455b234-fb9a-438e-b7a2-c97c3085eab7",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -254,6 +358,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "languageField",
                                         "designer|userClassName": "MyComboBox5",
                                         "fieldLabel": "Langue ",
                                         "name": "language",
@@ -263,7 +368,14 @@
                                         "store": "languageStore",
                                         "valueField": "language"
                                     },
-                                    "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e"
+                                    "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -274,11 +386,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "countryField",
                                         "designer|userClassName": "MyTextField79",
                                         "fieldLabel": "Pays ",
                                         "name": "country"
                                     },
-                                    "designerId": "330e487a-5f04-4588-805a-b52c927f9a8d"
+                                    "designerId": "330e487a-5f04-4588-805a-b52c927f9a8d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.button.Button",
@@ -289,11 +409,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "applyBtn",
                                         "id": "userInfoEdit",
                                         "designer|userClassName": "MyButton130",
                                         "text": "Appliquer"
                                     },
-                                    "designerId": "3d93bfd0-6d10-4763-bd53-081f63ee0c1c"
+                                    "designerId": "3d93bfd0-6d10-4763-bd53-081f63ee0c1c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -306,6 +434,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "photoFieldSet",
                                 "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
@@ -313,6 +442,13 @@
                                 "title": "Photo"
                             },
                             "designerId": "48d0b8d5-9096-43aa-bd78-dce11f4337f8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.Img",
@@ -340,11 +476,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "changeBtn",
                                         "margin": "0 0 10 0",
                                         "designer|userClassName": "MyButton85",
                                         "text": "Changer"
                                     },
                                     "designerId": "ea146464-9179-4603-b751-e313e155217a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -377,12 +521,20 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "removeBtn",
                                         "id": "userProfilePictureDelete",
                                         "margin": null,
                                         "designer|userClassName": "MyButton128",
                                         "text": "Suprimer"
                                     },
-                                    "designerId": "da5b5540-e49c-4bc0-ac26-5dab9caaca96"
+                                    "designerId": "da5b5540-e49c-4bc0-ac26-5dab9caaca96",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -410,9 +562,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "accessTab",
                                 "designer|userClassName": "TabConfig28"
                             },
-                            "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d"
+                            "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.FieldSet",
@@ -422,10 +582,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "changePassFieldSet",
                                 "designer|userClassName": "MyFieldSet9",
                                 "title": "Changer de mot de passe"
                             },
                             "designerId": "b73318c6-650c-4d4f-ae83-7102e1441070",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -436,13 +604,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "oldPasswordField",
                                         "designer|userClassName": "MyTextField39",
                                         "fieldLabel": "Mot de passe actuel ",
                                         "labelWidth": 160,
                                         "name": "oldPassword",
                                         "inputType": "password"
                                     },
-                                    "designerId": "ac6139e7-3498-4dfd-9ac8-db23cde9dac1"
+                                    "designerId": "ac6139e7-3498-4dfd-9ac8-db23cde9dac1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -453,13 +629,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "newPasswordField",
                                         "designer|userClassName": "MyTextField40",
                                         "fieldLabel": "Nouveau mot de passe ",
                                         "labelWidth": 160,
                                         "name": "newPassword",
                                         "inputType": "password"
                                     },
-                                    "designerId": "7bfffd5f-30b7-4ffa-bfdc-fd88b209b39d"
+                                    "designerId": "7bfffd5f-30b7-4ffa-bfdc-fd88b209b39d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -470,6 +654,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "newPasswordConfirmField",
                                         "designer|userClassName": "MyTextField41",
                                         "fieldLabel": "Confirmer le mot passe ",
                                         "labelWidth": 160,
@@ -477,7 +662,14 @@
                                         "submitValue": false,
                                         "inputType": "password"
                                     },
-                                    "designerId": "df2f517f-9928-4f9a-931c-b779d498b335"
+                                    "designerId": "df2f517f-9928-4f9a-931c-b779d498b335",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.button.Button",
@@ -488,11 +680,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "changePasswordBtn",
                                         "id": "changeMyPasswordBtn",
                                         "designer|userClassName": "MyButton153",
                                         "text": "Changer le mot de passe"
                                     },
-                                    "designerId": "75ed947b-9aca-4a8b-9ef8-f7c4e9d1773b"
+                                    "designerId": "75ed947b-9aca-4a8b-9ef8-f7c4e9d1773b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -556,11 +756,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "desktopBtn",
                         "designer|userClassName": "MyButton271",
                         "iconCls": "personalize",
                         "text": "Bureau"
                     },
                     "designerId": "7cd2e547-3238-4584-8955-8e91354a3c66",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

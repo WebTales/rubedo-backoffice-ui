@@ -8,6 +8,7 @@
     "userConfig": {
         "ACL": "exe.ui.elasticSearch",
         "container|align": "stretch",
+        "localiserId": "monitoringField",
         "height": 280,
         "id": "monitoringTools",
         "width": 577,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "ACL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -56,12 +62,20 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "localiserId": "cachePanel",
                 "id": "SupervisionCachePanel",
                 "designer|userClassName": "MyForm53",
                 "bodyPadding": 10,
                 "title": "Cache"
             },
             "designerId": "88156036-6c5a-4848-9b93-531600345241",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.FieldSet",
@@ -71,10 +85,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "cacheElementFieldSet",
                         "designer|userClassName": "MyFieldSet17",
                         "title": "Elements en cache"
                     },
                     "designerId": "b2d8e831-9f2a-4e58-9e72-1d4a4558c39a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Number",
@@ -85,12 +107,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "objectField",
                                 "designer|userClassName": "MyNumberField6",
                                 "fieldLabel": "Objets",
                                 "name": "cachedItems",
                                 "readOnly": true
                             },
-                            "designerId": "435c176e-69c8-4e17-9ab0-b1ef9ad50ff6"
+                            "designerId": "435c176e-69c8-4e17-9ab0-b1ef9ad50ff6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -101,12 +131,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "urlField",
                                 "designer|userClassName": "MyNumberField7",
                                 "fieldLabel": "URL",
                                 "name": "cachedUrl",
                                 "readOnly": true
                             },
-                            "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8"
+                            "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -145,11 +183,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "refreshBtn",
                                 "id": "supervisionRefreshCacheBtn",
                                 "designer|userClassName": "MyButton267",
                                 "text": "<b>Rafraichir</b>"
                             },
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -182,11 +228,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "clearCacheBtn",
                                 "id": "SupervisionClearCachetn",
                                 "designer|userClassName": "MyButton268",
                                 "text": "<b>Vider le cache</b>"
                             },
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -272,6 +326,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 0.5,
+                "localiserId": "elasticSearchPanel",
                 "designer|userClassName": "MyForm54",
                 "layout": "fit",
                 "bodyPadding": 10,
@@ -280,6 +335,13 @@
                 "title": "Elastic Search"
             },
             "designerId": "b480c438-99d0-4d2e-b979-a715b2ef9c5e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -304,10 +366,18 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "indexContentsBtn",
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des contenus</b>"
                             },
                             "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -374,10 +444,18 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "indexMediasBtn",
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des médias</b>"
                             },
                             "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -444,10 +522,18 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "indexAllBtn",
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation complète</b>"
                             },
                             "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",

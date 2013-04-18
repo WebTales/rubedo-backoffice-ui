@@ -57,6 +57,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
+                "localiserId": "nameColumn",
                 "designer|userClassName": "MyColumn38",
                 "dataIndex": "name",
                 "text": "Nom",
@@ -70,6 +71,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]

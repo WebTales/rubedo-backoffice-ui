@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
     ],
 
     ACL: 'read.ui.pages',
+    localiserId: 'previewWindow',
     height: 548,
     id: 'contributionPrevisualisation',
     width: 1200,
@@ -50,6 +51,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
             items: [
                 {
                     xtype: 'treepanel',
+                    localiserId: 'previewPageTree',
                     id: 'previewPageTree',
                     width: 225,
                     collapseDirection: 'left',
@@ -68,6 +70,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 {
                                     xtype: 'combobox',
                                     managesStore: true,
+                                    localiserId: 'siteField',
                                     flex: 1,
                                     id: 'previewSitesCombo',
                                     fieldLabel: 'Site ',
@@ -96,6 +99,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                             items: [
                                 {
                                     xtype: 'cycle',
+                                    localiserId: 'previewDeviceCombo',
                                     id: 'previewDeviceCombo',
                                     margin: '0 20 0 0',
                                     arrowAlign: 'bottom',
@@ -155,6 +159,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'draftField',
                                     id: 'advancedPreviewDraftField',
                                     margin: '0 20 0 0',
                                     fieldLabel: 'Mode brouillon',
@@ -164,6 +169,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 },
                                 {
                                     xtype: 'datefield',
+                                    localiserId: 'dateField',
                                     id: 'advancedPreviewDateField',
                                     fieldLabel: 'Date',
                                     labelWidth: 40
@@ -176,6 +182,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'refreshBtn',
                                     id: 'advancedPreviewPageRefresh',
                                     iconCls: 'refresh_big',
                                     scale: 'large',

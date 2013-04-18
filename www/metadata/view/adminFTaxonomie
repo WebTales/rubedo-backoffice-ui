@@ -8,6 +8,7 @@
     "userConfig": {
         "favoriteIcon": "tag.png",
         "container|align": "stretch",
+        "localiserId": "taxonomyWindow",
         "height": 578,
         "id": "adminFTaxonomie",
         "width": 1000,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -205,6 +211,7 @@
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "id": "boutonCreerTaxonomie",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -220,6 +227,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -233,6 +245,7 @@
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
                         "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "disabled": true,
                         "id": "boutonSupprimerTaxo",
                         "itemId": null,
@@ -249,6 +262,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -262,6 +280,7 @@
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
                         "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "disabled": true,
                         "id": "boutonEnregistrerTaxo",
                         "itemId": null,
@@ -277,6 +296,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -316,6 +340,7 @@
                     "userConfig": {
                         "ACL": "write.ui.taxonomyTerms",
                         "layout|flex": null,
+                        "localiserId": "editTermsGroup",
                         "disabled": true,
                         "id": "taxoTermEditBrnGroup",
                         "designer|userClassName": "MyButtonGroup21",
@@ -329,6 +354,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -340,6 +370,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addBtn",
                                 "id": "taxoOpenInsertBtn",
                                 "designer|userClassName": "MyButton239",
                                 "iconAlign": "top",
@@ -347,7 +378,14 @@
                                 "scale": "large",
                                 "text": "Ajouter"
                             },
-                            "designerId": "fe29f9a6-6b62-46d5-b9eb-23cde9b3742f"
+                            "designerId": "fe29f9a6-6b62-46d5-b9eb-23cde9b3742f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -357,6 +395,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "removeBtn",
                                 "id": "taxoTermKiller",
                                 "designer|userClassName": "MyButton246",
                                 "iconAlign": "top",
@@ -364,7 +403,14 @@
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
-                            "designerId": "5839ef51-6810-447d-8daf-90243a8073f4"
+                            "designerId": "5839ef51-6810-447d-8daf-90243a8073f4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -377,6 +423,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "shortcutBtn",
                         "itemId": "boutonCreerRaccourci",
                         "designer|userClassName": "MyButton14",
                         "icon": null,
@@ -385,7 +432,14 @@
                         "scale": "large",
                         "text": "Ajouter aux favoris"
                     },
-                    "designerId": "2c1a0b63-4300-403a-a331-0c20472a6f8e"
+                    "designerId": "2c1a0b63-4300-403a-a331-0c20472a6f8e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Fill",
@@ -482,12 +536,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameColumn",
                         "designer|userClassName": "MyColumn18",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
                     },
                     "designerId": "691c3d64-6d16-4f5b-941a-efd4ae2c6f30",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -564,9 +626,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "editTab",
                                 "designer|userClassName": "TabConfig1"
                             },
-                            "designerId": "8f245380-44dc-4489-9d36-059a570b588c"
+                            "designerId": "8f245380-44dc-4489-9d36-059a570b588c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.Panel",
@@ -577,6 +647,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "propsPanel",
                                 "id": "ProprietesTaxonomie",
                                 "width": 300,
                                 "designer|userClassName": "MyForm14",
@@ -588,6 +659,13 @@
                                 "title": "Propriétés"
                             },
                             "designerId": "c49a56cf-011f-46c0-9435-0f5bd8623f55",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -598,13 +676,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "nameField",
                                         "id": null,
                                         "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
                                         "allowBlank": false
                                     },
-                                    "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855"
+                                    "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.TextArea",
@@ -615,13 +701,21 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "descriptionField",
                                         "id": null,
                                         "itemId": null,
                                         "designer|userClassName": "MyTextArea",
                                         "fieldLabel": "Description ",
                                         "name": "description"
                                     },
-                                    "designerId": "900247b2-df90-4243-947b-85f7cf846924"
+                                    "designerId": "900247b2-df90-4243-947b-85f7cf846924",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -632,12 +726,20 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "helpTextField",
                                         "id": null,
                                         "designer|userClassName": "MyTextField10",
                                         "fieldLabel": "Texte d'aide ",
                                         "name": "helpText"
                                     },
-                                    "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f"
+                                    "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -648,6 +750,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "expandableField",
                                         "id": null,
                                         "designer|userClassName": "MyCheckbox3",
                                         "fieldLabel": "Extensible ",
@@ -656,7 +759,14 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b"
+                                    "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -667,6 +777,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "inputAsTreeField",
                                         "id": null,
                                         "designer|userClassName": "MyCheckbox3",
                                         "fieldLabel": "Saisie arborescente",
@@ -675,7 +786,14 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419"
+                                    "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -686,6 +804,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "multiSelectField",
                                         "id": null,
                                         "designer|userClassName": "MyCheckbox4",
                                         "fieldLabel": "Choix multiple ",
@@ -694,7 +813,14 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47"
+                                    "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
@@ -705,6 +831,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "mandatoryField",
                                         "id": null,
                                         "designer|userClassName": "MyCheckbox5",
                                         "fieldLabel": "Obligatoire ",
@@ -713,7 +840,14 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61"
+                                    "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -725,9 +859,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "localiserId": "termsPanel"
                             },
                             "designerId": "e4c6a2b6-b68c-4569-9054-4831d1dac837",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "a78850b9-8d6a-42a3-b37f-1a00b54aba85"
                         }
                     ]
@@ -756,9 +898,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "rightsTab",
                                 "designer|userClassName": "TabConfig2"
                             },
-                            "designerId": "78532db4-7532-4c9f-a660-b33cc6ec4779"
+                            "designerId": "78532db4-7532-4c9f-a660-b33cc6ec4779",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "linkedinstance",
@@ -776,6 +926,13 @@
                                 "layout|anchor": "100%"
                             },
                             "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
                     ]

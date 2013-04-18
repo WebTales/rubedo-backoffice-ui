@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         'Rubedo.view.WorkspaceCombo'
     ],
 
+    localiserId: 'groupsWindow',
     height: 578,
     id: 'adminFUtilisateurs',
     width: 1000,
@@ -103,6 +104,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.groups',
+                            localiserId: 'addBtn',
                             id: 'groupAddButton',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -112,6 +114,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.groups',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'groupDeleteButton',
                             iconAlign: 'top',
@@ -122,6 +125,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.groups',
+                            localiserId: 'saveBtn',
                             disabled: true,
                             id: 'groupSaveButton',
                             iconAlign: 'top',
@@ -142,6 +146,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.groups',
+                            localiserId: 'editGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             overlapHeader: false,
@@ -150,6 +155,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addBtn',
                                     id: 'userAddButton',
                                     iconAlign: 'top',
                                     iconCls: 'user_add_big',
@@ -158,6 +164,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeBtn',
                                     id: 'userRemoveButton',
                                     iconAlign: 'top',
                                     iconCls: 'user_remove_big',
@@ -242,6 +249,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 type: 'fit'
                             },
                             title: 'Utilisateurs',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'userTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -251,36 +262,42 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'nameColumn',
                                             dataIndex: 'name',
                                             text: 'Nom',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'mailColumn',
                                             dataIndex: 'email',
                                             text: 'Email',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'phoneColumn',
                                             dataIndex: 'mobile',
                                             text: 'Téléphone',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'addressColumn',
                                             dataIndex: 'login',
                                             text: 'Adresse',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'postColumn',
                                             dataIndex: 'post',
                                             text: 'Poste',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'departmentColumn',
                                             dataIndex: 'organisation',
                                             text: 'Département',
                                             flex: 1
@@ -325,9 +342,14 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             autoScroll: true,
                             bodyPadding: 10,
                             title: 'Droits',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'rightsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'nameField',
                                     anchor: '100%',
                                     fieldLabel: 'Nom ',
                                     labelWidth: 220,
@@ -337,6 +359,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
+                                    localiserId: 'readWorkSpaceField',
                                     fieldLabel: 'Espaces de travail en lecture ',
                                     labelWidth: 220,
                                     name: 'readWorkspaces',
@@ -347,6 +370,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
+                                    localiserId: 'writeWorkspaceField',
                                     fieldLabel: 'Espaces de travail en contribution',
                                     labelWidth: 220,
                                     name: 'writeWorkspaces',
@@ -357,6 +381,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 {
                                     xtype: 'WorkspaceCombo',
                                     notAutomatic: true,
+                                    localiserId: 'defaultWorkspaceField',
                                     fieldLabel: 'Espace de travail par défaut',
                                     labelWidth: 220,
                                     name: 'defaultWorkspace',
@@ -392,7 +417,8 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             title: 'Administration',
                             tabConfig: {
                                 xtype: 'tab',
-                                ACL: 'admin.ui.groups'
+                                ACL: 'admin.ui.groups',
+                                localiserId: 'adminTab'
                             },
                             items: [
                                 {
@@ -403,6 +429,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'inheritWorkspaceField',
                                     anchor: '100%',
                                     fieldLabel: 'Hérite de l\'espace de travail',
                                     labelWidth: 220,

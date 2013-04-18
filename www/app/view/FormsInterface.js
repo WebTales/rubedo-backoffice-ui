@@ -25,6 +25,7 @@ Ext.define('Rubedo.view.FormsInterface', {
     ],
 
     favoriteIcon: 'note_edit.png',
+    localiserId: 'formsWindow',
     height: 627,
     id: 'FormsInterface',
     width: 1080,
@@ -73,6 +74,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.forms',
+                            localiserId: 'addBtn',
                             id: 'addFormBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -82,6 +84,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.forms',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'removeFormBtn',
                             iconAlign: 'top',
@@ -92,6 +95,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.forms',
+                            localiserId: 'editGroup',
                             disabled: true,
                             id: 'formElementsEditBtnGroup',
                             headerPosition: 'bottom',
@@ -104,6 +108,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addPageBtn',
                                     disabled: true,
                                     id: 'formAddPageBtn',
                                     iconAlign: 'top',
@@ -114,6 +119,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newElemBtn',
                                     disabled: true,
                                     id: 'formElementAddBtn',
                                     iconAlign: 'top',
@@ -123,6 +129,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'formElementMoveUpBtn',
                                     iconAlign: 'top',
@@ -132,6 +139,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'formElementMoveDownBtn',
                                     iconAlign: 'top',
@@ -141,6 +149,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeBtn',
                                     disabled: true,
                                     id: 'formElementRemoveBtn',
                                     iconAlign: 'top',
@@ -152,6 +161,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup ',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -164,6 +174,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.forms',
+                                    localiserId: 'duplicateBtn',
                                     id: 'formsDuplicateBtn',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -172,6 +183,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -183,6 +195,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.forms',
+                            localiserId: 'saveGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -195,6 +208,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.forms',
+                                    localiserId: 'saveBtn',
                                     id: 'formSaveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -275,6 +289,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 }
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/note.png"> ' + value);
                             },
+                            localiserId: 'titleColumn',
                             dataIndex: 'title',
                             text: 'Titre'
                         }
@@ -294,9 +309,14 @@ Ext.define('Rubedo.view.FormsInterface', {
                             bodyPadding: 10,
                             iconCls: 'parametres',
                             title: 'Propriétés',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'propsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    localiserId: 'formTitleField',
                                     anchor: '100%',
                                     fieldLabel: 'Titre du questionnaire',
                                     labelWidth: 160,
@@ -305,6 +325,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'textareafield',
+                                    localiserId: 'descriptionField',
                                     anchor: '100%',
                                     fieldLabel: 'Descriptif',
                                     labelWidth: 160,
@@ -312,6 +333,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'checkboxfield',
+                                    localiserId: 'uniqueAnswerField',
                                     anchor: '10%',
                                     id: 'formUniqueAnswerCheck',
                                     style: '{float:left;}',
@@ -362,6 +384,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'datefield',
+                                    localiserId: 'openingDateField',
                                     anchor: '50%',
                                     margin: '0 10 0 0',
                                     style: '{float:left; clear:both;}',
@@ -371,6 +394,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'datefield',
+                                    localiserId: 'closingDateField',
                                     anchor: '50%',
                                     style: '{float:right; }',
                                     fieldLabel: 'Date de fin',
@@ -379,6 +403,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'textareafield',
+                                    localiserId: 'endMessageField',
                                     anchor: '100%',
                                     fieldLabel: 'Message de fin',
                                     labelWidth: 160,
@@ -394,6 +419,10 @@ Ext.define('Rubedo.view.FormsInterface', {
                             },
                             iconCls: 'edit',
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'FormsEditContainer'
@@ -406,9 +435,14 @@ Ext.define('Rubedo.view.FormsInterface', {
                             bodyPadding: 10,
                             iconCls: 'user',
                             title: 'Droits',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'rightsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'workspaceField',
                                     fieldLabel: 'Espaces de travail',
                                     labelWidth: 120,
                                     name: 'workspaces',
@@ -426,6 +460,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                             title: 'Exploitation',
                             tabConfig: {
                                 xtype: 'tab',
+                                localiserId: 'exploitationField',
                                 tooltip: 'L\'exploitation des questionnaires permet d\'exporter les résultats dans le format csv'
                             },
                             listeners: {
@@ -437,10 +472,12 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'statsFieldSet',
                                     title: 'Statistiques',
                                     items: [
                                         {
                                             xtype: 'displayfield',
+                                            localiserId: 'totalResultFields',
                                             anchor: '100%',
                                             itemId: 'totalResults',
                                             fieldLabel: 'Nombre de personnes ayant commencé le questionnaire',
@@ -457,6 +494,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                         },
                                         {
                                             xtype: 'displayfield',
+                                            localiserId: 'validResultField',
                                             anchor: '50%',
                                             itemId: 'validResults',
                                             fieldLabel: 'Nombre de personnes ayant terminé le questionnaire',
@@ -467,10 +505,12 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'resultsFieldSet',
                                     title: 'Résultats',
                                     items: [
                                         {
                                             xtype: 'button',
+                                            localiserId: 'exportCSVBtn',
                                             id: 'formsExportCSVBtn',
                                             iconCls: 'arrow_down',
                                             text: 'Exporter en CSV',

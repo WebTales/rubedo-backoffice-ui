@@ -66,6 +66,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.damTypes',
+                            localiserId: 'addBtn',
                             id: 'newMTBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -75,6 +76,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.damTypes',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'removeMTBtn',
                             iconAlign: 'top',
@@ -85,6 +87,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.damTypes',
+                            localiserId: 'editGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -96,6 +99,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'newFieldBtn',
                                     id: 'newMTFieldBtn',
                                     iconAlign: 'top',
                                     iconCls: 'add_big',
@@ -104,6 +108,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'MTfieldUp',
                                     iconAlign: 'top',
@@ -113,6 +118,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'moveBtn',
                                     disabled: true,
                                     id: 'MTfieldDown',
                                     iconAlign: 'top',
@@ -122,6 +128,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeFieldBtn',
                                     disabled: true,
                                     id: 'MTfieldDeleter',
                                     iconAlign: 'top',
@@ -133,6 +140,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Presse-papiers',
@@ -145,6 +153,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.damTypes',
+                                    localiserId: 'duplicateBtn',
                                     id: 'copyMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'applications_big',
@@ -162,6 +171,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',
@@ -173,6 +183,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.damTypes',
+                            localiserId: 'saveGroup',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Sauvegarde',
@@ -185,6 +196,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.damTypes',
+                                    localiserId: 'saveBtn',
                                     id: 'saveMTBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',
@@ -292,6 +304,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 }
                                 return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/images.png"> ' + returner + " : <i>" + record.get("mainFileType")+"</i>" );
                             },
+                            localiserId: 'typeColumn',
                             dataIndex: 'type',
                             text: 'Type',
                             editor: {
@@ -332,6 +345,10 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             },
                             iconCls: 'edit',
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'container',
@@ -341,6 +358,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     items: [
                                         {
                                             xtype: 'panel',
+                                            localiserId: 'systemFieldPanel',
                                             frame: true,
                                             margin: 20,
                                             title: 'Champs système',
@@ -365,6 +383,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '90%',
+                                                            localiserId: 'titleField',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Titre *',
                                                             name: 'title',
@@ -392,6 +411,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         {
                                                             xtype: 'filefield',
                                                             anchor: '90%',
+                                                            localiserId: 'originalFileField',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Fichier original *',
                                                             labelSeparator: ' ',
@@ -409,6 +429,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'form',
+                                    localiserId: 'propsPanel',
                                     frame: true,
                                     id: 'MTPropPanel',
                                     width: 300,
@@ -453,6 +474,10 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             },
                             iconCls: 'page_taxonomy',
                             title: 'Taxonomie',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'taxonomyTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -471,24 +496,28 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'titleColumn',
                                             dataIndex: 'name',
                                             text: 'Titre',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'descriptionColumn',
                                             dataIndex: 'description',
                                             text: 'Description',
                                             flex: 3
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'helpTextColumn',
                                             dataIndex: 'helpText',
                                             text: 'HelpText',
                                             flex: 2
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'labelColumn',
                                             dataIndex: 'expandable',
                                             text: 'Etiquettes',
                                             flex: 1,
@@ -497,6 +526,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'multiChoiseColumn',
                                             dataIndex: 'mandatory',
                                             text: 'ChoixMultiple',
                                             flex: 1,
@@ -505,6 +535,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                         },
                                         {
                                             xtype: 'booleancolumn',
+                                            localiserId: 'mandatoryColumn',
                                             dataIndex: 'mandatory',
                                             text: 'Obligatoire',
                                             flex: 1,
@@ -527,9 +558,14 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             bodyPadding: 10,
                             iconCls: 'parametres',
                             title: 'Propriétés',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'propsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'rightsFieldSet',
                                     title: 'Droits',
                                     items: [
                                         {
@@ -545,11 +581,13 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'commentsFieldSet',
                                     title: 'Commentaires',
                                     items: [
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'disqusField',
                                             fieldLabel: 'Disqus',
                                             name: 'activateDisqus',
                                             boxLabel: '',

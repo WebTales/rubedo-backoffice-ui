@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.DAMInterface', {
         'Rubedo.view.DAMMainView'
     ],
 
+    localiserId: 'mediasWindow',
     height: 651,
     id: 'DAMInterface',
     width: 1038,
@@ -86,6 +87,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
+                            localiserId: 'addBtn',
                             id: 'addDAMBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -95,6 +97,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'DAMDeleteBtn',
                             iconAlign: 'top',
@@ -121,6 +124,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
+                            localiserId: 'editBtn',
                             disabled: true,
                             id: 'DAMUpdateBtn',
                             iconAlign: 'top',
@@ -130,6 +134,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'clipboardGroup',
                             disabled: true,
                             id: 'DAMPPBtnGroup',
                             headerPosition: 'bottom',
@@ -160,6 +165,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'shortcutBtn',
                                     itemId: 'boutonCreerRaccourci',
                                     iconAlign: 'top',
                                     iconCls: 'favorite_add_big',

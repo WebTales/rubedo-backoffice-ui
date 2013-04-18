@@ -44,16 +44,19 @@ Ext.define('Rubedo.view.DAMMainView', {
                         }
                     },
                     filter: true,
+                    localiserId: 'titleColumn',
                     dataIndex: 'text',
                     text: 'Titre'
                 },
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'authorColumn',
                     dataIndex: 'author',
                     text: 'Auteur'
                 },
                 {
                     xtype: 'datecolumn',
+                    localiserId: 'createDateColumn',
                     dataIndex: 'lastUpdateTime',
                     text: 'Date de création',
                     format: 'd-m-Y'

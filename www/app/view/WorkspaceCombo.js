@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.WorkspaceCombo', {
     extend: 'Ext.form.field.ComboBox',
     alias: 'widget.WorkspaceCombo',
 
+    localiserId: 'workspaceField',
     fieldLabel: 'Espace de travail',
     name: 'workspace',
     editable: false,

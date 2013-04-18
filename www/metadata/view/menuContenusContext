@@ -36,6 +36,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
+                "localiserId": "titleColumn",
                 "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
@@ -49,6 +50,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -115,6 +121,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "stateColumn",
                 "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
                 "text": "Etat",
@@ -128,6 +135,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -184,6 +196,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "onlineColumn",
                 "width": 60,
                 "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
@@ -199,6 +212,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]

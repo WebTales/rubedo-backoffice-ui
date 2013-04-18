@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'workspaceWindow',
     height: 456,
     id: 'WorkspacesInterface',
     width: 723,
@@ -45,6 +46,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.workspaces',
+                            localiserId: 'addBtn',
                             id: 'workspaceAdd',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -54,6 +56,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.workspaces',
+                            localiserId: 'removeBtn',
                             disabled: true,
                             id: 'workspaceRemove',
                             iconAlign: 'top',
@@ -64,6 +67,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.workspaces',
+                            localiserId: 'saveBtn',
                             disabled: true,
                             id: 'workspaceSave',
                             iconAlign: 'top',
@@ -109,6 +113,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                                     return(value);
                                 }
                             },
+                            localiserId: 'nameColumn',
                             dataIndex: 'text',
                             text: 'Nom'
                         }
@@ -117,6 +122,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                 {
                     xtype: 'form',
                     flex: 1,
+                    localiserId: 'propsPanel',
                     disabled: true,
                     id: 'workspacesMainForm',
                     bodyPadding: 10,
@@ -125,6 +131,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'nameField',
                             fieldLabel: 'Nom',
                             name: 'text',
                             allowBlank: false
