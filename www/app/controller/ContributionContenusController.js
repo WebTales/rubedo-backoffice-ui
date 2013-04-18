@@ -723,276 +723,278 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             //begin temporary fix
             configurateur.labelSeparator=" ";
             //end temporary fix
-            var nouvChamp = Ext.widget(donnees.cType, configurateur);
-            nouvChamp.config=Ext.clone(donnees.config);
-            //begin temporary fix
-            if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
-            //end temporary fix
-            if (donnees.cType =='triggerfield'){ 
-                var Ouvrir = Ext.clone(donnees.ouvrir);
-                nouvChamp.onTriggerClick= function() {
-                    var fenetre = Ext.widget(Ouvrir);
-                    fenetre.showAt(screen.width/2-200, 100);
-                } ; 
-                nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
-            }  
-            nouvChamp.anchor = '90%';
-            nouvChamp.style = '{float:left;}';
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(nouvChamp);
-            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-            if (Ext.isEmpty(nouvChamp.config.tooltip)){
-                enrobage.getComponent('helpBouton').hidden=true;
-            } 
-            if (nouvChamp.multivalued) {
-                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
-
-            };
-            formulaireTC.add(enrobage);
-
+            try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
+            var nouvChamp = Ext.create(donnees.cType, configurateur);
         }
-        var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
-        var lesTaxo = contentType.get("vocabularies");
-        var i=0;
-        for (i=0; i<lesTaxo.length; i++) {
-            var leVocab = Ext.getStore('TaxonomyForC2').findRecord('id', lesTaxo[i]);
-            if (leVocab.get("inputAsTree")){
-                var storeT = Ext.create("Ext.data.TreeStore", {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms/tree'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+        nouvChamp.config=Ext.clone(donnees.config);
+        //begin temporary fix
+        if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+        //end temporary fix
+        if (donnees.cType =='triggerfield'){ 
+            var Ouvrir = Ext.clone(donnees.ouvrir);
+            nouvChamp.onTriggerClick= function() {
+                var fenetre = Ext.widget(Ouvrir);
+                fenetre.showAt(screen.width/2-200, 100);
+            } ; 
+            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+        }  
+        nouvChamp.anchor = '90%';
+        nouvChamp.style = '{float:left;}';
+        var enrobage =Ext.widget('ChampTC');
+        enrobage.add(nouvChamp);
+        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+        if (Ext.isEmpty(nouvChamp.config.tooltip)){
+            enrobage.getComponent('helpBouton').hidden=true;
+        } 
+        if (nouvChamp.multivalued) {
+            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
-                                }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
-                            }
-                            return this.applyEncoding(min);
-                        }
+        };
+        formulaireTC.add(enrobage);
+
+    }
+    var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
+    var lesTaxo = contentType.get("vocabularies");
+    var i=0;
+    for (i=0; i<lesTaxo.length; i++) {
+        var leVocab = Ext.getStore('TaxonomyForC2').findRecord('id', lesTaxo[i]);
+        if (leVocab.get("inputAsTree")){
+            var storeT = Ext.create("Ext.data.TreeStore", {
+                model:"Rubedo.model.taxonomyTermModel",
+                remoteFilter:"true",
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms/tree'
                     },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
-
-                });
-                var toUse="Ext.ux.TreePicker";
-                if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
-                if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
-                storeT.load();
-                var selecteur = Ext.create(toUse, {
-                    name:leVocab.get("id"),
-                    fieldLabel: leVocab.get("name"),
-                    store: storeT,
-                    ignoreIsNotPage:true,
-                    anchor:"90%",
-                    displayField:"text",
-                    allowBlank: !leVocab.data.mandatory,
-                    plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
-                });
-
-
-            } else {
-                var storeT = Ext.create('Ext.data.JsonStore', {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message',
-                            root: 'data'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
-
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
-                                }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
-                            }
-                            return this.applyEncoding(min);
-                        }
+                    reader: {
+                        type: 'json',
+                        messageProperty: 'message'
                     },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
+                    encodeFilters: function(filters) {
+                        var min = [],
+                            length = filters.length,
+                            i = 0;
 
-                });
-                storeT.on("beforeload", function(s,o){
-                    o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (!Ext.isEmpty(o.params.comboQuery)){
-
-                        var newFilter=Ext.create('Ext.util.Filter', {
-                            property:"text",
-                            value:o.params.comboQuery,
-                            operator:'like'
-                        });
-
-                        o.filters.push(newFilter);
-
-                    }
-
-
-                });
-                var selecteur = Ext.widget('comboboxselect', {
-                    name:leVocab.get("id"),
-                    anchor:"90%",
-                    fieldLabel: leVocab.get("name"),
-                    autoScroll: false,
-                    store: storeT,
-                    queryMode: 'remote',
-                    queryParam: 'comboQuery',
-                    minChars:3,
-                    displayField: 'text',
-                    valueField: 'id',
-                    filterPickList: true,
-                    typeAhead: true,
-                    forceSelection: !leVocab.data.expandable,
-                    createNewOnEnter: leVocab.data.expandable,
-                    multiSelect: leVocab.data.multiSelect,
-                    allowBlank: !leVocab.data.mandatory
-                });
-
-            }
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(selecteur);
-            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-            formTaxoTC.add(enrobage);
-
-        }
-
-        var cible = content;
-        Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
-        Ext.Object.each(cible.get("champs"), function(key, value, myself){
-            if (Ext.isArray(value)) {
-                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
-                var y=0;
-                if (multiField.multivalued) {
-                    Ext.Array.each(value,function(val,index){
-                        if (index>0) {
-                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                        for (; i < length; i++) {
+                            min[i] = {
+                                property: filters[i].property,
+                                value   : filters[i].value
+                            };
+                            if (filters[i].type) {
+                                min[i].type = filters[i].type;
+                            }
+                            if (filters[i].operator) {
+                                min[i].operator = filters[i].operator;
+                            }
                         }
-                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
-                    }); 
+                        return this.applyEncoding(min);
+                    }
+                },
+                filters: {
+                    property: 'vocabularyId',
+                    value: leVocab.get("id")
                 }
-            }
-        });
-        Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
-        Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
-        Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
-        Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
-        Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
-        Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
-        Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
-        Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
-        Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
-        if (!editMode){
-            if ((!content.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
-                Ext.getCmp("boutonSoumettreNouveauContenu").hide();
-                Ext.getCmp("boutonPublierNouveauContenu").hide();
-                var nct = Ext.getCmp("nestedContentsTab");
-                if (!Ext.isEmpty(nct)){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct.destroy(); 
-                }
-            }
-            else
-            {
-                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
-                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
 
-                Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
-                var nct = Ext.getCmp("nestedContentsTab");
-                if (!Ext.isEmpty(nct)){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct.destroy(); 
-                }
-            }
+            });
+            var toUse="Ext.ux.TreePicker";
+            if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
+            if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+            storeT.load();
+            var selecteur = Ext.create(toUse, {
+                name:leVocab.get("id"),
+                fieldLabel: leVocab.get("name"),
+                store: storeT,
+                ignoreIsNotPage:true,
+                anchor:"90%",
+                displayField:"text",
+                allowBlank: !leVocab.data.mandatory,
+                plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
+            });
+
+
         } else {
-            var myId=cible.get("id");
+            var storeT = Ext.create('Ext.data.JsonStore', {
+                model:"Rubedo.model.taxonomyTermModel",
+                remoteFilter:"true",
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'taxonomy-terms'
+                    },
+                    reader: {
+                        type: 'json',
+                        messageProperty: 'message',
+                        root: 'data'
+                    },
+                    encodeFilters: function(filters) {
+                        var min = [],
+                            length = filters.length,
+                            i = 0;
 
+                        for (; i < length; i++) {
+                            min[i] = {
+                                property: filters[i].property,
+                                value   : filters[i].value
+                            };
+                            if (filters[i].type) {
+                                min[i].type = filters[i].type;
+                            }
+                            if (filters[i].operator) {
+                                min[i].operator = filters[i].operator;
+                            }
+                        }
+                        return this.applyEncoding(min);
+                    }
+                },
+                filters: {
+                    property: 'vocabularyId',
+                    value: leVocab.get("id")
+                }
+
+            });
+            storeT.on("beforeload", function(s,o){
+                o.filters=Ext.Array.slice(o.filters,0,1);
+                if (!Ext.isEmpty(o.params.comboQuery)){
+
+                    var newFilter=Ext.create('Ext.util.Filter', {
+                        property:"text",
+                        value:o.params.comboQuery,
+                        operator:'like'
+                    });
+
+                    o.filters.push(newFilter);
+
+                }
+
+
+            });
+            var selecteur = Ext.widget('comboboxselect', {
+                name:leVocab.get("id"),
+                anchor:"90%",
+                fieldLabel: leVocab.get("name"),
+                autoScroll: false,
+                store: storeT,
+                queryMode: 'remote',
+                queryParam: 'comboQuery',
+                minChars:3,
+                displayField: 'text',
+                valueField: 'id',
+                filterPickList: true,
+                typeAhead: true,
+                forceSelection: !leVocab.data.expandable,
+                createNewOnEnter: leVocab.data.expandable,
+                multiSelect: leVocab.data.multiSelect,
+                allowBlank: !leVocab.data.mandatory
+            });
+
+        }
+        var enrobage =Ext.widget('ChampTC');
+        enrobage.add(selecteur);
+        enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+        formTaxoTC.add(enrobage);
+
+    }
+
+    var cible = content;
+    Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));
+    Ext.Object.each(cible.get("champs"), function(key, value, myself){
+        if (Ext.isArray(value)) {
+            var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+            var y=0;
+            if (multiField.multivalued) {
+                Ext.Array.each(value,function(val,index){
+                    if (index>0) {
+                        multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                    }
+                    Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+                }); 
+            }
+        }
+    });
+    Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
+    Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
+    Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
+    Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
+    Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+    Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
+    Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
+    Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
+    Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
+    if (!editMode){
+        if ((!content.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
+            Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+            Ext.getCmp("boutonPublierNouveauContenu").hide();
             var nct = Ext.getCmp("nestedContentsTab");
             if (!Ext.isEmpty(nct)){
-                if (Ext.isEmpty(Ext.getCmp("nestedContentsAddCombo").getStore().getRange())){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct.destroy();
-
-                } else {
-                    Ext.getStore('NestedContentsStore').removeAll();
-                    Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
-                    Ext.getStore('NestedContentsStore').load();
-                }
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy(); 
             }
         }
-        if (specialMode){
-            try{
-                var nct5 = Ext.getCmp("nestedContentsTab");
-                if (!Ext.isEmpty(nct)){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct5.destroy();
+        else
+        {
+            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
 
-                }
-            } catch(err){ }
-                var nct2 = Ext.getCmp('boiteATaxoContenus');
-                if (!Ext.isEmpty(nct2)){
-                    Ext.getCmp('taxoTabConfig').destroy();
-                    nct2.destroy();
+            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy(); 
+            }
+        }
+    } else {
+        var myId=cible.get("id");
 
-                }
-                var nct3 = Ext.getCmp("contentMetadataBox");
-                if (!Ext.isEmpty(nct3)){
-                    Ext.getCmp('metaTabConfig').destroy();
-                    nct3.destroy();
+        var nct = Ext.getCmp("nestedContentsTab");
+        if (!Ext.isEmpty(nct)){
+            if (Ext.isEmpty(Ext.getCmp("nestedContentsAddCombo").getStore().getRange())){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy();
 
-                }
-                var nct4 = Ext.getCmp('boiteADroitsContenus');
-                if (!Ext.isEmpty(nct4)){
-                    Ext.getCmp('rightsTabConfig').destroy();
-                    nct4.destroy();
-
-                }
-                Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
-                Ext.getCmp("boutonSoumettreNouveauContenu").hide();
-                Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
-                Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
-                Ext.getCmp("cedtr1").destroy();
-                Ext.getCmp("cedtr2").destroy();
-
+            } else {
+                Ext.getStore('NestedContentsStore').removeAll();
+                Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
+                Ext.getStore('NestedContentsStore').load();
+            }
+        }
+    }
+    if (specialMode){
+        try{
+            var nct5 = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct5.destroy();
 
             }
+        } catch(err){ }
+            var nct2 = Ext.getCmp('boiteATaxoContenus');
+            if (!Ext.isEmpty(nct2)){
+                Ext.getCmp('taxoTabConfig').destroy();
+                nct2.destroy();
+
+            }
+            var nct3 = Ext.getCmp("contentMetadataBox");
+            if (!Ext.isEmpty(nct3)){
+                Ext.getCmp('metaTabConfig').destroy();
+                nct3.destroy();
+
+            }
+            var nct4 = Ext.getCmp('boiteADroitsContenus');
+            if (!Ext.isEmpty(nct4)){
+                Ext.getCmp('rightsTabConfig').destroy();
+                nct4.destroy();
+
+            }
+            Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
+            Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+            Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
+            Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
+            Ext.getCmp("cedtr1").destroy();
+            Ext.getCmp("cedtr2").destroy();
+
+
+        }
     },
 
     displaySpecialCreate: function(theCT, targetedId) {
@@ -1069,155 +1071,157 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 //begin temporary fix
                 configurateur.labelSeparator=" ";
                 //end temporary fix
-                var nouvChamp = Ext.widget(donnees.cType, configurateur);
-                nouvChamp.config=Ext.clone(donnees.config);
-                //begin temporary fix
-                if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
-                //end temporary fix
-                if (donnees.cType =='triggerfield'){ 
-                    var Ouvrir = Ext.clone(donnees.openWindow);
-                    nouvChamp.onTriggerClick= function() {
-                        var fenetre = Ext.widget(Ouvrir);
-                        fenetre.showAt(screen.width/2-200, 100);
-                    } ; 
-                    nouvChamp.openWindow =Ext.clone(donnees.openWindow);
-                }  
-                nouvChamp.anchor = '90%';
-                nouvChamp.style = '{float:left;}';
-                var enrobage =Ext.widget('ChampTC');
-                enrobage.add(nouvChamp);
-                enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-                if (Ext.isEmpty(nouvChamp.config.tooltip)){
-                    enrobage.getComponent('helpBouton').hidden=true;
-                } 
-                if (nouvChamp.multivalued) {
-                    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
-
-                };
-                formulaireTC.add(enrobage);
-
+                try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
+                var nouvChamp = Ext.create(donnees.cType, configurateur);
             }
-            /*var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
-            var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
-            var i=0;
-            for (i=0; i<lesTaxo.length; i++) {
-            var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
-            var storeT = Ext.create('Ext.data.JsonStore', {
-            model:"Rubedo.model.taxonomyTermModel",
-            remoteFilter:"true",
-            proxy: {
-            type: 'ajax',
-            api: {
-            read: 'taxonomy-terms'
-            },
-            reader: {
-            type: 'json',
-            messageProperty: 'message',
-            root: 'data'
-            },
-            encodeFilters: function(filters) {
-            var min = [],
-            length = filters.length,
-            i = 0;
-
-            for (; i < length; i++) {
-            min[i] = {
-            property: filters[i].property,
-            value   : filters[i].value
-            };
-            if (filters[i].type) {
-            min[i].type = filters[i].type;
-            }
-            if (filters[i].operator) {
-            min[i].operator = filters[i].operator;
-            }
-            }
-            return this.applyEncoding(min);
-            }
-            },
-            filters: {
-            property: 'vocabularyId',
-            value: leVocab.get("id")
-            }
-
-            });
-            storeT.on("beforeload", function(s,o){
-            o.filters=Ext.Array.slice(o.filters,0,1);
-            if (!Ext.isEmpty(o.params.comboQuery)){
-
-            var newFilter=Ext.create('Ext.util.Filter', {
-            property:"text",
-            value:o.params.comboQuery,
-            operator:'like'
-            });
-
-            o.filters.push(newFilter);
-
-            }
-
-
-            });
-
-
-            var selecteur = Ext.widget('comboboxselect', {
-            name:leVocab.get("id"),
-            width:690,
-            fieldLabel: leVocab.get("name"),
-            autoScroll: false,
-            store: storeT,
-            queryMode: 'remote',
-            queryParam: 'comboQuery',
-            minChars:3,
-            displayField: 'text',
-            valueField: 'id',
-            filterPickList: true,
-            typeAhead: true,
-            forceSelection: !leVocab.data.expandable,
-            createNewOnEnter: leVocab.data.expandable,
-            multiSelect: leVocab.data.multiSelect,
-            allowBlank: !leVocab.data.mandatory
-            });
+            nouvChamp.config=Ext.clone(donnees.config);
+            //begin temporary fix
+            if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+            //end temporary fix
+            if (donnees.cType =='triggerfield'){ 
+                var Ouvrir = Ext.clone(donnees.openWindow);
+                nouvChamp.onTriggerClick= function() {
+                    var fenetre = Ext.widget(Ouvrir);
+                    fenetre.showAt(screen.width/2-200, 100);
+                } ; 
+                nouvChamp.openWindow =Ext.clone(donnees.openWindow);
+            }  
+            nouvChamp.anchor = '90%';
+            nouvChamp.style = '{float:left;}';
             var enrobage =Ext.widget('ChampTC');
-            enrobage.add(selecteur);
-            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-            formTaxoTC.add(enrobage);
+            enrobage.add(nouvChamp);
+            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
+            if (Ext.isEmpty(nouvChamp.config.tooltip)){
+                enrobage.getComponent('helpBouton').hidden=true;
+            } 
+            if (nouvChamp.multivalued) {
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
 
-            }*/
+            };
+            formulaireTC.add(enrobage);
 
-            try{
-                var nct = Ext.getCmp("nestedContentsTab");
-                if (!Ext.isEmpty(nct)){
-                    Ext.getCmp('nestedContensTabConfig').destroy();
-                    nct.destroy();
+        }
+        /*var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
+        var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
+        var i=0;
+        for (i=0; i<lesTaxo.length; i++) {
+        var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
+        var storeT = Ext.create('Ext.data.JsonStore', {
+        model:"Rubedo.model.taxonomyTermModel",
+        remoteFilter:"true",
+        proxy: {
+        type: 'ajax',
+        api: {
+        read: 'taxonomy-terms'
+        },
+        reader: {
+        type: 'json',
+        messageProperty: 'message',
+        root: 'data'
+        },
+        encodeFilters: function(filters) {
+        var min = [],
+        length = filters.length,
+        i = 0;
 
-                }} catch(err){ }
-                    var nct2 = Ext.getCmp('boiteATaxoContenus');
-                    if (!Ext.isEmpty(nct2)){
-                        Ext.getCmp('taxoTabConfig').destroy();
-                        nct2.destroy();
+        for (; i < length; i++) {
+        min[i] = {
+        property: filters[i].property,
+        value   : filters[i].value
+        };
+        if (filters[i].type) {
+        min[i].type = filters[i].type;
+        }
+        if (filters[i].operator) {
+        min[i].operator = filters[i].operator;
+        }
+        }
+        return this.applyEncoding(min);
+        }
+        },
+        filters: {
+        property: 'vocabularyId',
+        value: leVocab.get("id")
+        }
 
-                    }
-                    var nct3 = Ext.getCmp("contentMetadataBox");
-                    if (!Ext.isEmpty(nct3)){
-                        Ext.getCmp('metaTabConfig').destroy();
-                        nct3.destroy();
+        });
+        storeT.on("beforeload", function(s,o){
+        o.filters=Ext.Array.slice(o.filters,0,1);
+        if (!Ext.isEmpty(o.params.comboQuery)){
 
-                    }
-                    var nct4 = Ext.getCmp('boiteADroitsContenus');
-                    if (!Ext.isEmpty(nct4)){
-                        Ext.getCmp('rightsTabConfig').destroy();
-                        nct4.destroy();
+        var newFilter=Ext.create('Ext.util.Filter', {
+        property:"text",
+        value:o.params.comboQuery,
+        operator:'like'
+        });
 
-                    }
-                    Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
-                    Ext.getCmp("boutonSoumettreNouveauContenu").hide();
-                    Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
-                    Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
-                    Ext.getCmp("cedtr1").destroy();
-                    Ext.getCmp("cedtr2").destroy();
+        o.filters.push(newFilter);
 
+        }
+
+
+        });
+
+
+        var selecteur = Ext.widget('comboboxselect', {
+        name:leVocab.get("id"),
+        width:690,
+        fieldLabel: leVocab.get("name"),
+        autoScroll: false,
+        store: storeT,
+        queryMode: 'remote',
+        queryParam: 'comboQuery',
+        minChars:3,
+        displayField: 'text',
+        valueField: 'id',
+        filterPickList: true,
+        typeAhead: true,
+        forceSelection: !leVocab.data.expandable,
+        createNewOnEnter: leVocab.data.expandable,
+        multiSelect: leVocab.data.multiSelect,
+        allowBlank: !leVocab.data.mandatory
+        });
+        var enrobage =Ext.widget('ChampTC');
+        enrobage.add(selecteur);
+        enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+        formTaxoTC.add(enrobage);
+
+        }*/
+
+        try{
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                Ext.getCmp('nestedContensTabConfig').destroy();
+                nct.destroy();
+
+            }} catch(err){ }
+                var nct2 = Ext.getCmp('boiteATaxoContenus');
+                if (!Ext.isEmpty(nct2)){
+                    Ext.getCmp('taxoTabConfig').destroy();
+                    nct2.destroy();
 
                 }
+                var nct3 = Ext.getCmp("contentMetadataBox");
+                if (!Ext.isEmpty(nct3)){
+                    Ext.getCmp('metaTabConfig').destroy();
+                    nct3.destroy();
+
+                }
+                var nct4 = Ext.getCmp('boiteADroitsContenus');
+                if (!Ext.isEmpty(nct4)){
+                    Ext.getCmp('rightsTabConfig').destroy();
+                    nct4.destroy();
+
+                }
+                Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
+                Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+                Ext.getCmp("boutonPublierNouveauContenu").specialMode=true;
+                Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
+                Ext.getCmp("cedtr1").destroy();
+                Ext.getCmp("cedtr2").destroy();
+
+
+            }
     },
 
     prepareContext: function(content, editMode, specialMode, targetedId) {

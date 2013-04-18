@@ -82,6 +82,32 @@
                 "designer|userClassName": "MyField68"
             },
             "designerId": "36282dd9-cdfa-43bd-9c76-37e94e3b332d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "csvIndex",
+                "designer|userClassName": "MyField63"
+            },
+            "designerId": "49d0c81a-2323-4faa-8190-9a9029c868e7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cType",
+                "designer|userClassName": "MyField64"
+            },
+            "designerId": "c20845d8-e3bf-455b-accc-86312dc18735"
         }
     ]
 }

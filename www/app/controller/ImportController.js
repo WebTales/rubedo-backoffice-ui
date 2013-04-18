@@ -58,6 +58,20 @@ Ext.define('Rubedo.controller.ImportController', {
         var myForm = button.up().getForm();
         if (myForm.isValid()){
             var configs=myForm.getValues();
+            Ext.Array.forEach(Ext.getStore("InportAsFieldStore").getRange(), function(record){
+                record.set("cType",Ext.getStore("TypesChampsDataStore").findRecord("id", record.get("protoId")).get("cType"));
+                if (Ext.isEmpty(record.get("newName"))){
+                    record.set("newName", record.get("name"));
+                }
+                if (Ext.isEmpty(record.get("label"))){
+                    record.set("label", record.get("newName"));
+                }
+            });
+            Ext.Array.forEach(Ext.getStore("InportAsTaxoStore").getRange(), function(record){
+                if (Ext.isEmpty(record.get("newName"))){
+                    record.set("newName", record.get("name"));
+                }
+            });
             var inportAsField=Ext.Array.pluck(Ext.getStore("InportAsFieldStore").getRange(), "data");
             var inportAsTaxo=Ext.Array.pluck(Ext.getStore("InportAsTaxoStore").getRange(), "data");
             var form=Ext.getCmp("mainCSVinportField").up().up().getForm();
