@@ -240,7 +240,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 displayField: 'type',
                                 forceSelection: true,
                                 queryMode: 'local',
-                                store: 'TypesChampsDataStore',
+                                store: 'ImportableFieldTypesStore',
                                 valueField: 'id'
                             }
                         },

@@ -271,7 +271,8 @@ Ext.application({
         'InportAsFieldStore',
         'InportAsTaxoStore',
         'SystemCTStore',
-        'AddMultiFieldStore'
+        'AddMultiFieldStore',
+        'ImportableFieldTypesStore'
     ],
     views: [
         'MyContainer',

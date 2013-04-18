@@ -59,7 +59,10 @@ Ext.define('Rubedo.controller.ImportController', {
         if (myForm.isValid()){
             var configs=myForm.getValues();
             Ext.Array.forEach(Ext.getStore("InportAsFieldStore").getRange(), function(record){
-                record.set("cType",Ext.getStore("TypesChampsDataStore").findRecord("id", record.get("protoId")).get("cType"));
+                var protoCType=Ext.getStore("TypesChampsDataStore").findRecord("id", record.get("protoId")).get("cType");
+                var interv2=Ext.clone(Ext.create(protoCType).xtype);
+                record.set("cType",interv2);
+                interv2.destroy();
                 if (Ext.isEmpty(record.get("newName"))){
                     record.set("newName", record.get("name"));
                 }
