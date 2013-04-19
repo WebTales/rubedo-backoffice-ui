@@ -64,6 +64,14 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'write.ui.contents.refused',
+                            hidden: true,
+                            id: 'boutonRefuserNouveauContenu',
+                            iconCls: 'save_refuse',
+                            text: 'Refuser'
+                        },
+                        {
+                            xtype: 'button',
                             isUpdate: false,
                             ACL: 'write.ui.contents.published',
                             id: 'boutonPublierNouveauContenu',

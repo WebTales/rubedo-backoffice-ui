@@ -555,6 +555,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("ContenusGrid").getStore().add(copiedOne);
     },
 
+    onBoutonRefuserNouveauContenuClick: function(button, e, eOpts) {
+        this.nContenuRecorder('refused',true);
+    },
+
     nContenuRecorder: function(status, update) {
         if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
             var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
@@ -959,6 +963,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
         }
     }
+    if (content.get("status")=="pending"){
+        if (ACL.interfaceRights['write.ui.contents.refused']) {
+            Ext.getCmp("boutonRefuserNouveauContenu").show();
+        }
+        Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
+        Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+    }
     if (specialMode){
         try{
             var nct5 = Ext.getCmp("nestedContentsTab");
@@ -1328,6 +1339,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             },
             "#boutonCopierContenus": {
                 click: this.onBoutonCopierContenusClick
+            },
+            "#boutonRefuserNouveauContenu": {
+                click: this.onBoutonRefuserNouveauContenuClick
             }
         });
     }

@@ -117,6 +117,31 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "write.ui.contents.refused",
+                        "layout|flex": null,
+                        "hidden": true,
+                        "id": "boutonRefuserNouveauContenu",
+                        "designer|userClassName": "MyButton141",
+                        "iconCls": "save_refuse",
+                        "text": "Refuser"
+                    },
+                    "designerId": "c7a84af2-9bf5-4331-ba4b-d475529f9e61",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "isUpdate": false,
                         "ACL": "write.ui.contents.published",
                         "layout|flex": null,
