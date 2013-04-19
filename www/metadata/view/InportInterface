@@ -393,7 +393,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyGridPanel15",
-                "title": "Paramètrage des champs",
+                "title": "Paramétrage des champs",
                 "forceFit": true,
                 "store": "InportAsFieldStore"
             },
@@ -565,6 +565,39 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyBooleanColumn",
+                        "dataIndex": "searchable",
+                        "text": "Recherchable",
+                        "falseText": "Non",
+                        "trueText": "Oui"
+                    },
+                    "designerId": "3bd1a725-44a7-4096-91b4-8dabf0f0d5dd",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyCheckbox1",
+                                "boxLabel": null,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "d4e76942-5824-49c7-8426-3cfea400a5e3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn",
                         "dataIndex": "mandatory",
                         "text": "Obligatoire",
                         "falseText": "Non",
@@ -613,7 +646,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyGridPanel16",
-                "title": "Paramètrage de la taxonomie",
+                "title": "Paramétrage de la taxonomie",
                 "forceFit": true,
                 "store": "InportAsTaxoStore"
             },
@@ -760,7 +793,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyFieldSet",
-                        "title": "Paramètres du tye de contenus"
+                        "title": "Paramètres du type de contenus"
                     },
                     "designerId": "f442fe0b-620b-4cc6-a130-f68b8b8ebec3",
                     "cn": [

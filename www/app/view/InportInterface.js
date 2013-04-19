@@ -194,7 +194,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'gridpanel',
-                    title: 'Paramètrage des champs',
+                    title: 'Paramétrage des champs',
                     forceFit: true,
                     store: 'InportAsFieldStore',
                     viewConfig: {
@@ -247,6 +247,18 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'booleancolumn',
+                            dataIndex: 'searchable',
+                            text: 'Recherchable',
+                            falseText: 'Non',
+                            trueText: 'Oui',
+                            editor: {
+                                xtype: 'checkboxfield',
+                                inputValue: 'true',
+                                uncheckedValue: 'false'
+                            }
+                        },
+                        {
+                            xtype: 'booleancolumn',
                             dataIndex: 'mandatory',
                             text: 'Obligatoire',
                             falseText: 'Non',
@@ -266,7 +278,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'gridpanel',
-                    title: 'Paramètrage de la taxonomie',
+                    title: 'Paramétrage de la taxonomie',
                     forceFit: true,
                     store: 'InportAsTaxoStore',
                     viewConfig: {
@@ -318,7 +330,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     items: [
                         {
                             xtype: 'fieldset',
-                            title: 'Paramètres du tye de contenus',
+                            title: 'Paramètres du type de contenus',
                             items: [
                                 {
                                     xtype: 'textfield',

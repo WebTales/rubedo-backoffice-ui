@@ -37,6 +37,11 @@ Ext.define('Rubedo.model.inportFieldModel', {
             type: 'boolean'
         },
         {
+            defaultValue: false,
+            name: 'searchable',
+            type: 'boolean'
+        },
+        {
             name: 'csvIndex'
         },
         {

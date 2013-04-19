@@ -91,6 +91,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "searchable",
+                "type": "boolean",
+                "designer|userClassName": "MyField68"
+            },
+            "designerId": "faf50da7-3702-4ca0-9ac6-874763f7faea"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "csvIndex",
                 "designer|userClassName": "MyField63"
             },
