@@ -1648,7 +1648,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Plan de site',
                     category: 'Navigation',
                     bType: 'siteMap',
-                    description: '',
+                    description: '<p>Le bloc « Plan de site » permet d’afficher le plan du site.</p>',
                     configBasique: {
                         title: 'Plan de site',
                         bType: 'siteMap',
@@ -1765,7 +1765,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Google Maps',
                     category: 'Cartographie',
                     bType: 'geoSearchResults',
-                    description: '',
+                    description: '<p>Le bloc "Google Map" permet d’afficher une carte présentant des contenus géolocalisés, ramenés par une requête.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p><p>La recherche à facettes peut être activée et couplée à la carte.</p>',
                     configBasique: {
                         title: 'Google Maps',
                         bType: 'geoSearchResults',
@@ -1946,7 +1946,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Questionnaire',
                     category: 'Formulaire',
                     bType: 'form',
-                    description: '',
+                    description: '<p>Le bloc « Questionnaire » permet d’afficher une des enquêtes en ligne créées à l’aide du module Questionnaires.</p>',
                     configBasique: {
                         title: 'Questionnaire',
                         bType: 'form',
@@ -2013,7 +2013,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Abonnement newsletter',
                     category: 'Formulaire',
                     bType: 'mailingList',
-                    description: '',
+                    description: '<p>Le bloc « Abonnement Newsletter » permet d’afficher un formulaire d’inscription à une mailing-list.</p>',
                     configBasique: {
                         title: 'Abonnement newsletter',
                         bType: 'mailingList',
@@ -2058,7 +2058,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Téléchargement de média protégé',
                     category: 'Médias',
                     bType: 'protectedResource',
-                    description: '',
+                    description: '<p>Le bloc « Téléchargement de média » permet de télécharger un média  par le biais d’une invitation par e-mail.</p>',
                     configBasique: {
                         title: 'Téléchargement de média protégé',
                         bType: 'protectedResource',
@@ -2118,7 +2118,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     type: 'Téléchargement de média',
                     category: 'Médias',
                     bType: 'resource',
-                    description: '',
+                    description: '<p>Le bloc « Téléchargement de média » permet de télécharger un média de façon anonyme.</p>',
                     configBasique: {
                         title: 'Téléchargement de média',
                         bType: 'resource',
@@ -2170,7 +2170,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                 {
                     type: 'Contact',
                     category: 'Formulaire',
-                    description: '',
+                    description: '<p>Le bloc « Contact » affiche un formulaire de contact.</p>',
                     bType: 'contact',
                     configBasique: {
                         title: 'Contact',
