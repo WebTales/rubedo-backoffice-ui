@@ -430,8 +430,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'panel',
-                            margins: '0, 0, 0, 2',
                             localiserId: 'propsPanel',
+                            margins: '0, 0, 0, 2',
                             frame: true,
                             id: 'paneauPropMasque',
                             width: 300,
@@ -460,8 +460,8 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 },
                                 {
                                     xtype: 'form',
-                                    flex: 1,
                                     localiserId: 'selectElementPanel',
+                                    flex: 1,
                                     id: 'elementEditControl',
                                     autoScroll: true,
                                     title: 'Sélectionnez un élément'

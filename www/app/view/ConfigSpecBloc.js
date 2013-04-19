@@ -17,7 +17,6 @@ Ext.define('Rubedo.view.ConfigSpecBloc', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.ConfigSpecBloc',
 
-    id: 'ConfigSpecBloc',
     activeTab: 0,
 
     initComponent: function() {
