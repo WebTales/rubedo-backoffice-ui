@@ -382,8 +382,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         },
                                                         {
                                                             xtype: 'textfield',
-                                                            anchor: '90%',
                                                             localiserId: 'titleField',
+                                                            anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Titre *',
                                                             name: 'title',
@@ -410,8 +410,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         },
                                                         {
                                                             xtype: 'filefield',
-                                                            anchor: '90%',
                                                             localiserId: 'originalFileField',
+                                                            anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Fichier original *',
                                                             labelSeparator: ' ',
@@ -586,8 +586,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     items: [
                                         {
                                             xtype: 'checkboxfield',
-                                            anchor: '100%',
                                             localiserId: 'disqusField',
+                                            anchor: '100%',
                                             fieldLabel: 'Disqus',
                                             name: 'activateDisqus',
                                             boxLabel: '',

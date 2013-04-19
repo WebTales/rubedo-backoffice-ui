@@ -442,7 +442,6 @@ Ext.define('Rubedo.view.FormsInterface', {
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
-                                    localiserId: 'workspaceField',
                                     fieldLabel: 'Espaces de travail',
                                     labelWidth: 120,
                                     name: 'workspaces',

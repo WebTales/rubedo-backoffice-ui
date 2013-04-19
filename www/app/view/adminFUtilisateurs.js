@@ -476,8 +476,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
         var form2 =Ext.getCmp("groupAdminPropsForm").getForm();
         if ((form.isValid())&&(form2.isValid())){
             var record =Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
+            record.beginEdit();
             record.set(form.getValues());
             record.set(form2.getValues());
+            record.endEdit();
         }
     },
 

@@ -90,8 +90,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "newMTBtn",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -124,8 +124,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "removeMTBtn",
                         "itemId": null,
@@ -159,9 +159,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
+                        "localiserId": "editGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "editGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -295,9 +295,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -402,9 +402,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
+                        "localiserId": "saveGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "saveGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -885,8 +885,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "editTab",
+                                "layout|flex": null,
                                 "designer|userClassName": "TabConfig1"
                             },
                             "designerId": "25a20889-bbff-428b-9513-ca0a1f6141ae",
@@ -988,8 +988,8 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|anchor": "90%",
                                                         "localiserId": "titleField",
+                                                        "layout|anchor": "90%",
                                                         "style": [
                                                             "{float:left}"
                                                         ],
@@ -1061,8 +1061,8 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|anchor": "90%",
                                                         "localiserId": "originalFileField",
+                                                        "layout|anchor": "90%",
                                                         "style": [
                                                             "{float:left}"
                                                         ],
@@ -1105,8 +1105,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "propsPanel",
+                                "layout|flex": null,
                                 "frame": true,
                                 "id": "MTPropPanel",
                                 "style": null,
@@ -1217,8 +1217,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "taxonomyTab",
+                                "layout|flex": null,
                                 "designer|userClassName": "TabConfig2"
                             },
                             "designerId": "a4f9afda-b5c3-49a2-80d6-72167bd765f7",
@@ -1558,8 +1558,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "disqusField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyCheckbox8",
                                         "fieldLabel": "Disqus",
                                         "name": "activateDisqus",

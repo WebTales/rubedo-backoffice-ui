@@ -315,8 +315,10 @@
                                     "var form2 =Ext.getCmp(\"groupAdminPropsForm\").getForm();\r",
                                     "if ((form.isValid())&&(form2.isValid())){\r",
                                     "    var record =Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
+                                    "    record.beginEdit();\r",
                                     "    record.set(form.getValues());\r",
                                     "    record.set(form2.getValues());\r",
+                                    "    record.endEdit();\r",
                                     "}"
                                 ],
                                 "name": "click",
