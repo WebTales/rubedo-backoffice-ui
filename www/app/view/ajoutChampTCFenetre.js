@@ -80,6 +80,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                             tpl: [
                                 '{description}'
                             ],
+                            autoScroll: true,
                             bodyPadding: 10,
                             bodyStyle: '{text-align: justify;}',
                             title: ''
