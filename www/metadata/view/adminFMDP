@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "application.png",
-        "container|align": "stretch",
         "localiserId": "pageMaskWindow",
+        "container|align": "stretch",
         "height": 578,
         "id": "adminFMDP",
         "width": 1350,
@@ -208,8 +208,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.masks",
-                        "layout|flex": null,
                         "localiserId": "newBtn",
+                        "layout|flex": null,
                         "id": "boutonNouveauMasque",
                         "itemId": null,
                         "designer|userClassName": "MyButton11",
@@ -242,8 +242,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.masks",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonSupprimerMasque",
                         "itemId": null,
@@ -278,9 +278,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.masks",
+                        "localiserId": "editGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "editGroup",
                         "disabled": true,
                         "id": "masksEditionTopBarBox",
                         "designer|userClassName": "MyButtonGroup",
@@ -536,9 +536,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -643,9 +643,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.masks",
+                        "localiserId": "saveGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "saveGroup",
                         "disabled": true,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
@@ -1134,6 +1134,7 @@
                         "style": null,
                         "width": null,
                         "designer|userClassName": "MyPanel61",
+                        "autoScroll": true,
                         "layout": "vbox",
                         "bodyStyle": null
                     },
@@ -1147,11 +1148,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "propsPanel",
                         "layout|flex": null,
                         "layout|margins": "0, 0, 0, 2",
                         "dock": null,
                         "container|align": "stretch",
-                        "localiserId": "propsPanel",
                         "frame": true,
                         "id": "paneauPropMasque",
                         "margin": null,
@@ -1214,8 +1215,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
                                 "localiserId": "selectElementPanel",
+                                "layout|flex": 1,
                                 "height": null,
                                 "id": "elementEditControl",
                                 "margin": null,

@@ -761,7 +761,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         var row = Ext.widget('panel', {
             header:false,
             mType:"row",
-            flex:1,
+            flex:undefined,
+            minHeight:100,
             elementTag:"div",
             elementStyle:"",
             displayRow:true,
@@ -824,6 +825,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         nouvBloc.elementStyle="";
         nouvBloc.elementTag="div";
         nouvBloc.renderDiv=true;
+        nouvBloc.flex=undefined;
+        nouvBloc.minHeight=80;
 
         var target = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
         var orderValue = 100;
@@ -1595,7 +1598,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 itemId:"eol"
             }));
             if (Ext.isEmpty(row.height)) {
-                newRow.flex=rFlex;
+                newRow.flex=undefined;
+                newRow.minHeight=100;
             } else {
                 newRow.height=row.height;
             }
@@ -1607,6 +1611,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.Array.forEach(mBlocks, function(block){
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
+                block.flex=undefined;
+                block.minHeight=80;
                 targetCol.add(Ext.widget("unBloc",block));
             }
         });

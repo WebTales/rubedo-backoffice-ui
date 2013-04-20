@@ -364,6 +364,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     xtype: 'panel',
                                     flex: 1,
                                     id: 'mainPageEdition',
+                                    autoScroll: true,
                                     layout: {
                                         align: 'stretch',
                                         type: 'vbox'

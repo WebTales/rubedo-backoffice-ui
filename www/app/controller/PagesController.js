@@ -270,6 +270,8 @@ Ext.define('Rubedo.controller.PagesController', {
         nouvBloc.elementStyle="";
         nouvBloc.elementTag="div";
         nouvBloc.renderDiv=true;
+        nouvBloc.flex=undefined;
+        nouvBloc.minHeight=80;
 
         var target = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
         var orderValue = 1;
@@ -900,7 +902,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 itemId:"eol"
             }));
             if (Ext.isEmpty(row.height)) {
-                newRow.flex=rFlex;
+                newRow.flex=undefined;
+                newRow.minHeight=100;
             } else {
                 newRow.height=row.height;
             }
@@ -939,6 +942,8 @@ Ext.define('Rubedo.controller.PagesController', {
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 block.canEdit=editable;
+                block.flex=undefined;
+                block.minHeight=80;
                 if (editable) {
                     var insertIndex=0;
                     Ext.Array.forEach(targetCol.items.items, function(brother){

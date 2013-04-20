@@ -423,6 +423,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             flex: 1,
                             border: 0,
                             id: 'masqueEdition',
+                            autoScroll: true,
                             layout: {
                                 align: 'stretch',
                                 type: 'vbox'
