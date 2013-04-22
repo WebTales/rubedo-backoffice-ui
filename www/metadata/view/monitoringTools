@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "exe.ui.elasticSearch",
-        "container|align": "stretch",
         "localiserId": "monitoringField",
+        "container|align": "stretch",
         "height": 280,
         "id": "monitoringTools",
         "width": 577,
@@ -61,8 +61,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "localiserId": "cachePanel",
+                "layout|flex": 1,
                 "id": "SupervisionCachePanel",
                 "designer|userClassName": "MyForm53",
                 "bodyPadding": 10,
@@ -106,8 +106,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "objectField",
+                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField6",
                                 "fieldLabel": "Objets",
                                 "name": "cachedItems",
@@ -130,8 +130,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "urlField",
+                                "layout|anchor": "100%",
                                 "designer|userClassName": "MyNumberField7",
                                 "fieldLabel": "URL",
                                 "name": "cachedUrl",
@@ -182,11 +182,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "refreshBtn",
+                                "layout|flex": null,
                                 "id": "supervisionRefreshCacheBtn",
                                 "designer|userClassName": "MyButton267",
-                                "text": "<b>Rafraichir</b>"
+                                "text": "<b>Rafraîchir</b>"
                             },
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
                             "customConfigs": [
@@ -227,8 +227,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "clearCacheBtn",
+                                "layout|flex": null,
                                 "id": "SupervisionClearCachetn",
                                 "designer|userClassName": "MyButton268",
                                 "text": "<b>Vider le cache</b>"
@@ -325,8 +325,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.5,
                 "localiserId": "elasticSearchPanel",
+                "layout|flex": 0.5,
                 "designer|userClassName": "MyForm54",
                 "layout": "fit",
                 "bodyPadding": 10,
@@ -365,8 +365,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "indexContentsBtn",
+                                "layout|flex": null,
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des contenus</b>"
                             },
@@ -443,8 +443,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "indexMediasBtn",
+                                "layout|flex": null,
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des médias</b>"
                             },
@@ -521,8 +521,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "indexAllBtn",
+                                "layout|flex": null,
                                 "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation complète</b>"
                             },

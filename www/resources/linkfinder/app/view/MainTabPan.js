@@ -36,7 +36,7 @@ Ext.define('linkfinder.view.MainTabPan', {
                             dock: 'bottom',
                             id: 'insertPageLink',
                             scale: 'medium',
-                            text: 'Insèrer un lien vers cette page'
+                            text: 'Insérer un lien vers cette page'
                         }
                     ],
                     tabConfig: {

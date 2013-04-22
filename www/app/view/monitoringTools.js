@@ -61,8 +61,8 @@ Ext.define('Rubedo.view.monitoringTools', {
                             }
                         });
                     },
-                    flex: 1,
                     localiserId: 'cachePanel',
+                    flex: 1,
                     id: 'SupervisionCachePanel',
                     bodyPadding: 10,
                     title: 'Cache',
@@ -74,16 +74,16 @@ Ext.define('Rubedo.view.monitoringTools', {
                             items: [
                                 {
                                     xtype: 'numberfield',
-                                    anchor: '100%',
                                     localiserId: 'objectField',
+                                    anchor: '100%',
                                     fieldLabel: 'Objets',
                                     name: 'cachedItems',
                                     readOnly: true
                                 },
                                 {
                                     xtype: 'numberfield',
-                                    anchor: '100%',
                                     localiserId: 'urlField',
+                                    anchor: '100%',
                                     fieldLabel: 'URL',
                                     name: 'cachedUrl',
                                     readOnly: true
@@ -106,7 +106,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                     },
                                     localiserId: 'refreshBtn',
                                     id: 'supervisionRefreshCacheBtn',
-                                    text: '<b>Rafraichir</b>'
+                                    text: '<b>Rafraîchir</b>'
                                 },
                                 {
                                     xtype: 'button',
@@ -136,8 +136,8 @@ Ext.define('Rubedo.view.monitoringTools', {
                 },
                 {
                     xtype: 'form',
-                    flex: 0.5,
                     localiserId: 'elasticSearchPanel',
+                    flex: 0.5,
                     layout: {
                         type: 'fit'
                     },

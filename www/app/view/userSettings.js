@@ -206,7 +206,7 @@ Ext.define('Rubedo.view.userSettings', {
                                             localiserId: 'removeBtn',
                                             anchor: '100%',
                                             id: 'userProfilePictureDelete',
-                                            text: 'Suprimer'
+                                            text: 'Supprimer'
                                         }
                                     ]
                                 }

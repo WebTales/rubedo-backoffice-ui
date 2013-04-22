@@ -96,7 +96,7 @@ Ext.define('Rubedo.controller.ImportController', {
                 },
                 failure: function(form, action) {
                     button.up().up().setLoading(false);
-                    Ext.Msg.alert("Erreur", "Erreur lors de l'importation");
+                    Ext.Msg.alert("Erreur", "Erreur lors de l'import");
                 }
             });
         }
