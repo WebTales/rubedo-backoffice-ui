@@ -104,6 +104,19 @@ Ext.define('Rubedo.controller.SearchController', {
         var target=Ext.getCmp("searchFacetBox");
         target.removeAll();
         Ext.Array.forEach(facets, function(facet){
+            if (facet._type=="range"){
+                facet.id="lastupdatetime";
+                facet.terms=[ ];
+                if (!Ext.isEmpty(facet.ranges)){
+                    Ext.Array.forEach(facet.ranges, function(rangeTerm){
+                        if ((rangeTerm.count<Ext.getStore("ESFacetteStore").getTotalCount())&&(rangeTerm.count!==0)){
+                            facet.terms.push(rangeTerm);
+                            rangeTerm.term=rangeTerm.from;
+
+                        }
+                    });
+                }
+            }
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
                 if((facet.id!="type")&&(facet.id!="damType")){newFacet.collapse();}
@@ -116,7 +129,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         anchor:"100%",
                         handler:function(thing){
                             var theProp=Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty];
-                            if (!Ext.isEmpty(theProp)){
+                            if ((!Ext.isEmpty(theProp))&&(facet._type!="range")){
                                 if (Ext.isArray(theProp)){
                                     theProp.push(thing.usedValue);
                                 } else {

@@ -516,48 +516,23 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     renderFacets: function(facets) {
-        /*var me=this;
-        var target=Ext.getCmp("DAMFacetBox");
-        target.removeAll();
-        Ext.Array.forEach(facets, function(facet){
-        if (!Ext.isEmpty(facet.terms)){
-        var newFacet = Ext.widget("fieldset", {title:facet.name, collapsible:true});
-        if(facet.name!="damType"){newFacet.collapse();}
-        newFacet.usedProperty=facet.name;
-
-        Ext.Array.forEach(facet.terms, function(term){
-        var newTerm=Ext.widget("button",{
-        text:term.term+" ("+term.count+")",
-        usedValue:term.term,
-        anchor:"100%",
-        handler:function(thing){
-        var theProp=Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty];
-        if (!Ext.isEmpty(theProp)){
-        if (Ext.isArray(theProp)){
-        theProp.push(thing.usedValue);
-        } else {
-        theProp=[theProp,thing.usedValue];
-        }
-
-        } else {
-        theProp=thing.usedValue;
-
-        }
-        Ext.getStore("DAMFacetteStore").activeFacettes[thing.up().usedProperty]=theProp;
-        Ext.getStore("DAMFacetteStore").load();
-        }
-        });
-        newFacet.add(newTerm);
-        });
-
-        target.add(newFacet);
-        }
-        });
-        */
         var me=this;
         var target=Ext.getCmp("DAMFacetBox");
         target.removeAll();
         Ext.Array.forEach(facets, function(facet){
+            if (facet._type=="range"){
+                facet.id="lastupdatetime";
+                facet.terms=[ ];
+                if (!Ext.isEmpty(facet.ranges)){
+                    Ext.Array.forEach(facet.ranges, function(rangeTerm){
+                        if ((rangeTerm.count<Ext.getStore("DAMFacetteStore").getTotalCount())&&(rangeTerm.count!==0)){
+                            facet.terms.push(rangeTerm);
+                            rangeTerm.term=rangeTerm.from;
+
+                        }
+                    });
+                }
+            }
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
                 if(facet.id!="damType"){newFacet.collapse();}
@@ -570,7 +545,7 @@ Ext.define('Rubedo.controller.DAMController', {
                         anchor:"100%",
                         handler:function(thing){
                             var theProp=Ext.getStore("DAMFacetteStore").activeFacettes[thing.up().usedProperty];
-                            if (!Ext.isEmpty(theProp)){
+                            if ((!Ext.isEmpty(theProp))&&(facet._type!="range")){
                                 if (Ext.isArray(theProp)){
                                     theProp.push(thing.usedValue);
                                 } else {
