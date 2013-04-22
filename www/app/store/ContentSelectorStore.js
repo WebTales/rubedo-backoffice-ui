@@ -40,7 +40,18 @@ Ext.define('Rubedo.store.ContentSelectorStore', {
                     messageProperty: 'message',
                     root: 'data'
                 }
+            },
+            listeners: {
+                beforeload: {
+                    fn: me.onJsonstoreBeforeLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreBeforeLoad: function(store, operation, eOpts) {
+        store.getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"operator\":\"$nin\",\"value\":"+Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getStore("SystemCTStore").getRange(),"data"), "id"))+"}]";
     }
+
 });

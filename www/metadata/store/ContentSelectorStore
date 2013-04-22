@@ -48,6 +48,24 @@
                     "designerId": "db4cbb47-2692-4405-9a9e-4141c52f9ae5"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreBeforeLoad",
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "store.getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$nin\\\",\\\"value\\\":\"+Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getStore(\"SystemCTStore\").getRange(),\"data\"), \"id\"))+\"}]\";"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "b4d3324b-0c60-4d9c-ac3c-ccd3290c2a5f"
         }
     ]
 }

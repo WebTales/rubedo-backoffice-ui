@@ -51,10 +51,10 @@
                 "fn": "onContentPickerWindowRender",
                 "implHandler": [
                     "Ext.getStore(\"TCNDepComboCS\").addListener(\"load\",function(){\r",
-                    "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"ContentSelectorStore\").load();\r",
+                    "    Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
+                    "    Ext.getStore(\"ContentSelectorStore\").load();\r",
                     "},this,{single:true});\r",
-                    "Ext.getStore(\"TCNDepComboCS\").load();"
+                    "    Ext.getStore(\"TCNDepComboCS\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
