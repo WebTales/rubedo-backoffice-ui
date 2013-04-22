@@ -326,7 +326,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     xtype: 'form',
                     autoScroll: true,
                     bodyPadding: 10,
-                    title: 'Finalisation  et importation',
+                    title: 'Finalisation  et import',
                     items: [
                         {
                             xtype: 'fieldset',
