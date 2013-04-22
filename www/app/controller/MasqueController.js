@@ -799,13 +799,21 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.Array.forEach(cBlocks,function(someBlock){
             someBlock.id=undefined;
         });
-        this.removeIds(child,cBlocks);
+        if (!Ext.isEmpty(child)){
+            this.removeIds(child,cBlocks);
+        }
         var maskRows = this.saveRows(this.getMasqueEdition());
         var maskBlocks= this.saveBlocks(this.getMasqueEdition());
-        if (target.id=="masqueEdition") {
-            maskRows.push(child);
-        } else {
-            this.spliceMask(maskRows,target.id,child,true);
+        if (!Ext.isEmpty(child)){
+            if (target.id=="masqueEdition") {
+                maskRows.push(child);
+            } else {
+                this.spliceMask(maskRows,target.id,child,true);
+            }
+        } else if (!Ext.isEmpty(cBlocks)){
+            Ext.Array.forEach(cBlocks,function(someBlock){
+                someBlock.parentCol=target.id;
+            });
         }
         this.getMasqueEdition().removeAll();
         this.masqueRestit(maskRows,1,this.getMasqueEdition()); 
@@ -1351,7 +1359,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     removeIds: function(element, blocks) {
         var me=this;
-        if (element.mType="col"){
+        if (element.mType=="col"){
             var newId=Ext.id(null,"column-");
             Ext.Array.forEach(blocks,function(someBlock){
                 if (someBlock.parentCol==element.id){
@@ -1696,7 +1704,11 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     saveBlocks: function(startComp) {
         var newBlocks = [ ];
-        Ext.Array.forEach(startComp.query("unBloc"), function(nBloc){
+        var searchArray=startComp.query("unBloc");
+        if (startComp.isXType("unBloc")){
+            searchArray.push(startComp);
+        }
+        Ext.Array.forEach(searchArray, function(nBloc){
             newBlocks.push({
 
                 bType:nBloc.bType,
