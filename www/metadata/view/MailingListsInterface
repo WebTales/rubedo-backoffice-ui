@@ -306,6 +306,34 @@
                     ]
                 },
                 {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Espaces de travail",
+                        "labelWidth": 140,
+                        "name": "workspaces",
+                        "multiSelect": true,
+                        "store": "ContributeWorkspacesCombo",
+                        "layout|anchor": "100%"
+                    },
+                    "configAlternates": {
+                        "canSwitchStore": "boolean"
+                    },
+                    "designerId": "6be546fc-cbea-49af-9ef9-8cd40327abc3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                },
+                {
                     "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
@@ -375,12 +403,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField10",
-                                "fieldLabel": "Nom de réponse",
+                                "designer|userClassName": "MyTextField9",
+                                "fieldLabel": "Adresse de réponse",
                                 "labelWidth": 140,
-                                "name": "replyToName"
+                                "name": "replyToAddress",
+                                "vtype": "email"
                             },
-                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03"
+                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623"
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -391,13 +420,12 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField9",
-                                "fieldLabel": "Adresse de réponse",
+                                "designer|userClassName": "MyTextField10",
+                                "fieldLabel": "Nom de réponse",
                                 "labelWidth": 140,
-                                "name": "replyToAddress",
-                                "vtype": "email"
+                                "name": "replyToName"
                             },
-                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623"
+                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03"
                         }
                     ]
                 },

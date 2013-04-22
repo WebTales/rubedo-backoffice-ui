@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
     alias: 'widget.MailingListsInterface',
 
     requires: [
+        'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -129,6 +130,15 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             allowBlank: false
                         },
                         {
+                            xtype: 'WorkspaceCombo',
+                            fieldLabel: 'Espaces de travail',
+                            labelWidth: 140,
+                            name: 'workspaces',
+                            multiSelect: true,
+                            store: 'ContributeWorkspacesCombo',
+                            anchor: '100%'
+                        },
+                        {
                             xtype: 'fieldset',
                             title: 'Expéditeur',
                             items: [
@@ -156,17 +166,17 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
-                                    fieldLabel: 'Nom de réponse',
-                                    labelWidth: 140,
-                                    name: 'replyToName'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
                                     fieldLabel: 'Adresse de réponse',
                                     labelWidth: 140,
                                     name: 'replyToAddress',
                                     vtype: 'email'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Nom de réponse',
+                                    labelWidth: 140,
+                                    name: 'replyToName'
                                 }
                             ]
                         },

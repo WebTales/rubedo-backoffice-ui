@@ -28,6 +28,9 @@ Ext.define('Rubedo.model.mailingListsModel', {
             name: 'version'
         },
         {
+            defaultValue: [
+                'global'
+            ],
             name: 'workspaces'
         },
         {
