@@ -223,18 +223,22 @@
                     "readOnly"
                 ],
                 "implHandler": [
-                    "var me = this,\r",
-                    "            inputEl = me.inputEl;\r",
-                    "        readOnly = !!readOnly;\r",
-                    "        me[readOnly ? 'addCls' : 'removeCls'](me.readOnlyCls);\r",
-                    "        me.readOnly = readOnly;\r",
-                    "        if (inputEl) {\r",
-                    "            inputEl.dom.readOnly = readOnly;\r",
-                    "        } else if (me.rendering) {\r",
-                    "            me.setReadOnlyOnBoxReady = true;\r",
-                    "        }\r",
-                    "        me.fireEvent('writeablechange', me, readOnly);\r",
-                    "        me.editor.setReadOnly(readOnly);"
+                    "try {\r",
+                    "    var me = this,\r",
+                    "    inputEl = me.inputEl;\r",
+                    "    readOnly = !!readOnly;\r",
+                    "    me[readOnly ? 'addCls' : 'removeCls'](me.readOnlyCls);\r",
+                    "    me.readOnly = readOnly;\r",
+                    "    if (inputEl) {\r",
+                    "        inputEl.dom.readOnly = readOnly;\r",
+                    "    } else if (me.rendering) {\r",
+                    "        me.setReadOnlyOnBoxReady = true;\r",
+                    "    }\r",
+                    "    me.fireEvent('writeablechange', me, readOnly);\r",
+                    "    me.editor.setReadOnly(readOnly);\r",
+                    "} catch (err){\r",
+                    "\tconsole.log(\"ckeditor readonly anomaly\");\r",
+                    "}"
                 ]
             },
             "designerId": "def3f505-9766-4202-a65e-6c79ac7a43f7"
