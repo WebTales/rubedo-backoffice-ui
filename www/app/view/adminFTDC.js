@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     localiserId: 'contentTypesWindow',
     height: 578,
     id: 'adminFTDC',
-    width: 1330,
+    width: 1350,
     layout: {
         align: 'stretch',
         type: 'hbox'
