@@ -346,6 +346,7 @@ Ext.define('Rubedo.view.contributionPages', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    id: 'pagesCenterTabBox',
                     activeTab: 0,
                     items: [
                         {
@@ -554,7 +555,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onPagesCenterTabBoxAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
@@ -640,6 +647,11 @@ Ext.define('Rubedo.view.contributionPages', {
             pinList:false
         });
         component.add(tagPicker);
+    },
+
+    onPagesCenterTabBoxAfterRender: function(component, eOpts) {
+        component.setActiveTab(2);
+        component.setActiveTab(0);
     },
 
     onImageRender1: function(component, eOpts) {

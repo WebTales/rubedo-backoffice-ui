@@ -801,6 +801,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "id": "pagesCenterTabBox",
                 "designer|userClassName": "MyTabPanel8",
                 "activeTab": 0
             },
@@ -1430,6 +1431,25 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onPagesCenterTabBoxAfterRender",
+                        "fn": "onPagesCenterTabBoxAfterRender",
+                        "implHandler": [
+                            "component.setActiveTab(2);\r",
+                            "component.setActiveTab(0);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "36f73562-8a5b-473b-844b-1f77045983ff"
                 }
             ]
         },
