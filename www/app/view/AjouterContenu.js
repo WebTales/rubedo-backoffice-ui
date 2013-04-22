@@ -57,7 +57,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.contents.pending',
+                            ACL: 'write.ui.contents.draftToPending',
                             id: 'boutonSoumettreNouveauContenu',
                             iconCls: 'save',
                             text: 'Soumettre'
