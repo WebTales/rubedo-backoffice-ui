@@ -193,87 +193,120 @@ Ext.define('Rubedo.view.InportInterface', {
                     ]
                 },
                 {
-                    xtype: 'gridpanel',
-                    title: 'Paramétrage des champs',
-                    forceFit: true,
-                    store: 'InportAsFieldStore',
-                    viewConfig: {
-                        markDirty: false,
-                        plugins: [
-                            Ext.create('Ext.grid.plugin.DragDrop', {
-
-                            })
-                        ]
+                    xtype: 'panel',
+                    layout: {
+                        type: 'fit'
                     },
-                    columns: [
+                    title: 'Paramétrage des champs',
+                    items: [
                         {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'name',
-                            text: 'Nom'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'newName',
-                            text: 'Nouveau nom (optionel)',
-                            editor: {
-                                xtype: 'textfield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'label',
-                            text: 'Libellé',
-                            editor: {
-                                xtype: 'textfield'
-                            }
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return(Ext.getStore("ImportableFieldTypesStore").findRecord("id", value).get("type"));
+                            xtype: 'gridpanel',
+                            title: '',
+                            forceFit: true,
+                            store: 'InportAsFieldStore',
+                            viewConfig: {
+                                markDirty: false,
+                                plugins: [
+                                    Ext.create('Ext.grid.plugin.DragDrop', {
+
+                                    })
+                                ]
                             },
-                            dataIndex: 'protoId',
-                            text: 'Type',
-                            editor: {
-                                xtype: 'combobox',
-                                allowBlank: false,
-                                editable: false,
-                                displayField: 'type',
-                                forceSelection: true,
-                                queryMode: 'local',
-                                store: 'ImportableFieldTypesStore',
-                                valueField: 'id'
-                            }
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'name',
+                                    text: 'Nom'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    width: 130,
+                                    dataIndex: 'newName',
+                                    text: 'Nouveau nom (optionel)',
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'label',
+                                    text: 'Libellé',
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        return(Ext.getStore("ImportableFieldTypesStore").findRecord("id", value).get("type"));
+                                    },
+                                    dataIndex: 'protoId',
+                                    text: 'Type',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'type',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'ImportableFieldTypesStore',
+                                        valueField: 'id'
+                                    }
+                                },
+                                {
+                                    xtype: 'booleancolumn',
+                                    dataIndex: 'searchable',
+                                    text: 'Recherchable',
+                                    falseText: 'Non',
+                                    trueText: 'Oui',
+                                    editor: {
+                                        xtype: 'checkboxfield',
+                                        inputValue: 'true',
+                                        uncheckedValue: 'false'
+                                    }
+                                },
+                                {
+                                    xtype: 'booleancolumn',
+                                    dataIndex: 'mandatory',
+                                    text: 'Obligatoire',
+                                    falseText: 'Non',
+                                    trueText: 'Oui',
+                                    editor: {
+                                        xtype: 'checkboxfield',
+                                        inputValue: 'true',
+                                        uncheckedValue: 'false'
+                                    }
+                                }
+                            ],
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.CellEditing', {
+                                    clicksToEdit: 1
+                                })
+                            ]
                         },
                         {
-                            xtype: 'booleancolumn',
-                            dataIndex: 'searchable',
-                            text: 'Recherchable',
-                            falseText: 'Non',
-                            trueText: 'Oui',
-                            editor: {
-                                xtype: 'checkboxfield',
-                                inputValue: 'true',
-                                uncheckedValue: 'false'
-                            }
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            dataIndex: 'mandatory',
-                            text: 'Obligatoire',
-                            falseText: 'Non',
-                            trueText: 'Oui',
-                            editor: {
-                                xtype: 'checkboxfield',
-                                inputValue: 'true',
-                                uncheckedValue: 'false'
-                            }
+                            xtype: 'hiddenfield',
+                            isValid: function() {
+                                var store=Ext.getStore("InportAsFieldStore");
+                                if (store.query("protoId","text").length===0) {
+                                    Ext.Msg.alert("Erreur", "Le type de contenu doit obligatoirement avoir un champ de type \"Titre\"");
+                                    return(false);
+                                } else if (store.query("protoId","text").length>1) {
+                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Titre\"");
+                                    return(false);
+                                } else if (store.query("protoId","summary").length>1) {
+                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Résumé\"");
+                                    return(false);
+                                }
+                                else if (store.query("protoId","51234e09c0e0516a0b00000d").length>1) {
+                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\"");
+                                    return(false);
+                                } else {
+                                    return(true);
+                                }
+                            },
+                            fieldLabel: 'Label'
                         }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            clicksToEdit: 1
-                        })
                     ]
                 },
                 {

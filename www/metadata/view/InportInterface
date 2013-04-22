@@ -385,255 +385,321 @@
             ]
         },
         {
-            "type": "Ext.grid.Panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridPanel15",
-                "title": "Paramétrage des champs",
-                "forceFit": true,
-                "store": "InportAsFieldStore"
+                "designer|userClassName": "MyPanel14",
+                "layout": "fit",
+                "bodyPadding": null,
+                "title": "Paramétrage des champs"
             },
-            "designerId": "5f894302-a1fb-4faa-9a1d-d3468c9068ef",
+            "designerId": "f1be8f51-c00e-4572-ab5f-3ec03a64008f",
             "cn": [
                 {
-                    "type": "Ext.grid.View",
+                    "type": "Ext.grid.Panel",
                     "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
+                        "name": "items",
+                        "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGridView7",
-                        "markDirty": false
+                        "designer|userClassName": "MyGridPanel15",
+                        "title": "",
+                        "forceFit": true,
+                        "store": "InportAsFieldStore"
                     },
-                    "designerId": "f075de21-5108-4683-88a6-eb1d4d53d319",
+                    "designerId": "5f894302-a1fb-4faa-9a1d-d3468c9068ef",
                     "cn": [
                         {
-                            "type": "Ext.grid.plugin.DragDrop",
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridView7",
+                                "markDirty": false
+                            },
+                            "designerId": "f075de21-5108-4683-88a6-eb1d4d53d319",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.plugin.DragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridDragDropPlugin3"
+                                    },
+                                    "designerId": "2cafbea3-ce63-4e78-8c8d-68bb70112aa5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn9",
+                                "dataIndex": "name",
+                                "text": "Nom"
+                            },
+                            "designerId": "064b115b-c924-4cbe-8c40-4cc807efc7a6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 130,
+                                "designer|userClassName": "MyColumn10",
+                                "dataIndex": "newName",
+                                "text": "Nouveau nom (optionel)",
+                                "flex": null
+                            },
+                            "designerId": "7c798fbe-f4ef-465f-b087-0faab3ad9753",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyTextField18"
+                                    },
+                                    "designerId": "2a48bca6-b288-41f0-8d6e-6e6f944cec6f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn8",
+                                "dataIndex": "label",
+                                "text": "Libellé"
+                            },
+                            "designerId": "58d27c2c-d16b-4a50-aefa-be709925b6df",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyTextField19"
+                                    },
+                                    "designerId": "91df9964-f3ad-42f1-9551-7c205e309625"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn11",
+                                "dataIndex": "protoId",
+                                "text": "Type"
+                            },
+                            "designerId": "fd18a1d9-502b-4118-85e6-5a91fc5b5dbf",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyComboBox14",
+                                        "allowBlank": false,
+                                        "editable": false,
+                                        "displayField": "type",
+                                        "forceSelection": true,
+                                        "queryMode": "local",
+                                        "store": "ImportableFieldTypesStore",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "eb3c3605-7bae-4efc-a7f2-e189013cc34e"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "renderer",
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "return(Ext.getStore(\"ImportableFieldTypesStore\").findRecord(\"id\", value).get(\"type\"));"
+                                        ]
+                                    },
+                                    "designerId": "cad16b57-b48c-47c0-81fc-85951bafe73f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyBooleanColumn",
+                                "dataIndex": "searchable",
+                                "text": "Recherchable",
+                                "falseText": "Non",
+                                "trueText": "Oui"
+                            },
+                            "designerId": "3bd1a725-44a7-4096-91b4-8dabf0f0d5dd",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyCheckbox1",
+                                        "boxLabel": null,
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "d4e76942-5824-49c7-8426-3cfea400a5e3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyBooleanColumn",
+                                "dataIndex": "mandatory",
+                                "text": "Obligatoire",
+                                "falseText": "Non",
+                                "trueText": "Oui"
+                            },
+                            "designerId": "51a661eb-5176-445e-b32f-3ff8d3c40319",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyCheckbox1",
+                                        "boxLabel": null,
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "e4b6784b-7f90-4144-8844-e40c51cc84e7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
                             "reference": {
                                 "name": "plugins",
                                 "type": "array"
                             },
-                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "codeClass": "Ext.grid.plugin.CellEditing",
                             "userConfig": {
-                                "designer|userClassName": "MyGridDragDropPlugin3"
+                                "designer|userClassName": "MyCellEditingPlugin",
+                                "clicksToEdit": 1
                             },
-                            "designerId": "2cafbea3-ce63-4e78-8c8d-68bb70112aa5"
+                            "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797"
                         }
                     ]
                 },
                 {
-                    "type": "Ext.grid.column.Column",
+                    "type": "Ext.form.field.Hidden",
                     "reference": {
-                        "name": "columns",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn9",
-                        "dataIndex": "name",
-                        "text": "Nom"
+                        "designer|userClassName": "MyHiddenField8",
+                        "fieldLabel": "Label"
                     },
-                    "designerId": "064b115b-c924-4cbe-8c40-4cc807efc7a6"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn10",
-                        "dataIndex": "newName",
-                        "text": "Nouveau nom (optionel)"
-                    },
-                    "designerId": "7c798fbe-f4ef-465f-b087-0faab3ad9753",
+                    "designerId": "fe48403e-f41f-4041-8182-bff17ec485b6",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyTextField18"
-                            },
-                            "designerId": "2a48bca6-b288-41f0-8d6e-6e6f944cec6f"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn8",
-                        "dataIndex": "label",
-                        "text": "Libellé"
-                    },
-                    "designerId": "58d27c2c-d16b-4a50-aefa-be709925b6df",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyTextField19"
-                            },
-                            "designerId": "91df9964-f3ad-42f1-9551-7c205e309625"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyColumn11",
-                        "dataIndex": "protoId",
-                        "text": "Type"
-                    },
-                    "designerId": "fd18a1d9-502b-4118-85e6-5a91fc5b5dbf",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyComboBox14",
-                                "allowBlank": false,
-                                "editable": false,
-                                "displayField": "type",
-                                "forceSelection": true,
-                                "queryMode": "local",
-                                "store": "ImportableFieldTypesStore",
-                                "valueField": "id"
-                            },
-                            "designerId": "eb3c3605-7bae-4efc-a7f2-e189013cc34e"
-                        },
-                        {
-                            "type": "fixedfunction",
+                            "type": "basicfunction",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
-                                "fn": "renderer",
-                                "designer|params": [
-                                    "value",
-                                    "metaData",
-                                    "record",
-                                    "rowIndex",
-                                    "colIndex",
-                                    "store",
-                                    "view"
-                                ],
+                                "designer|userClassName": "isValid",
+                                "fn": "isValid",
                                 "implHandler": [
-                                    "return(Ext.getStore(\"ImportableFieldTypesStore\").findRecord(\"id\", value).get(\"type\"));"
+                                    "var store=Ext.getStore(\"InportAsFieldStore\");\r",
+                                    "if (store.query(\"protoId\",\"text\").length===0) {\r",
+                                    "    Ext.Msg.alert(\"Erreur\", \"Le type de contenu doit obligatoirement avoir un champ de type \\\"Titre\\\"\");\r",
+                                    "    return(false);\r",
+                                    "} else if (store.query(\"protoId\",\"text\").length>1) {\r",
+                                    "    Ext.Msg.alert(\"Erreur\", \"Le type de contenu ne doit avoir qu'un seul champ de type \\\"Titre\\\"\");\r",
+                                    "    return(false);\r",
+                                    "} else if (store.query(\"protoId\",\"summary\").length>1) {\r",
+                                    "    Ext.Msg.alert(\"Erreur\", \"Le type de contenu ne doit avoir qu'un seul champ de type \\\"Résumé\\\"\");\r",
+                                    "    return(false);\r",
+                                    "}\r",
+                                    "else if (store.query(\"protoId\",\"51234e09c0e0516a0b00000d\").length>1) {\r",
+                                    "    Ext.Msg.alert(\"Erreur\", \"Le type de contenu ne doit avoir qu'un seul champ de type \\\"Localisation\\\"\");\r",
+                                    "    return(false);\r",
+                                    "} else {\r",
+                                    "    return(true);\r",
+                                    "}"
                                 ]
                             },
-                            "designerId": "cad16b57-b48c-47c0-81fc-85951bafe73f"
+                            "designerId": "01164a0b-1768-4b43-b63f-d881f5dc775a"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyBooleanColumn",
-                        "dataIndex": "searchable",
-                        "text": "Recherchable",
-                        "falseText": "Non",
-                        "trueText": "Oui"
-                    },
-                    "designerId": "3bd1a725-44a7-4096-91b4-8dabf0f0d5dd",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyCheckbox1",
-                                "boxLabel": null,
-                                "inputValue": "true",
-                                "uncheckedValue": "false"
-                            },
-                            "designerId": "d4e76942-5824-49c7-8426-3cfea400a5e3"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyBooleanColumn",
-                        "dataIndex": "mandatory",
-                        "text": "Obligatoire",
-                        "falseText": "Non",
-                        "trueText": "Oui"
-                    },
-                    "designerId": "51a661eb-5176-445e-b32f-3ff8d3c40319",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyCheckbox1",
-                                "boxLabel": null,
-                                "inputValue": "true",
-                                "uncheckedValue": "false"
-                            },
-                            "designerId": "e4b6784b-7f90-4144-8844-e40c51cc84e7"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin",
-                        "clicksToEdit": 1
-                    },
-                    "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797"
                 }
             ]
         },

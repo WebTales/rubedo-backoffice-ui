@@ -605,7 +605,7 @@
                     "                        }\r",
                     "\r",
                     "                        if (this.name=='fieldLabel') {\r",
-                    "                           \r",
+                    "\r",
                     "                            if (TCfield.isXType(\"ImagePickerField\")) {\r",
                     "                                TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());\r",
                     "                            } else if ((TCfield.isXType(\"localiserField\"))||(TCfield.isXType(\"externalMediaField\"))){\r",
