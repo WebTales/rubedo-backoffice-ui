@@ -319,6 +319,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             itemId: 'InportInterface',
             iconCls: 'database_up_small',
             text: 'Import'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.mailingLists',
+            favoriteIcon: 'mail.png',
+            itemId: 'MailingListsInterface',
+            iconCls: 'mail_small',
+            text: 'Listes de diffusion'
         }
         ]);
     },

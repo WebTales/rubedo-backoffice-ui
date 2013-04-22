@@ -245,6 +245,13 @@
                                             "    itemId: 'InportInterface',\r",
                                             "    iconCls: 'database_up_small',\r",
                                             "    text: 'Import'\r",
+                                            "},{\r",
+                                            "    xtype: 'menuitem',\r",
+                                            "    ACL: 'read.ui.mailingLists',\r",
+                                            "    favoriteIcon: 'mail.png',\r",
+                                            "    itemId: 'MailingListsInterface',\r",
+                                            "    iconCls: 'mail_small',\r",
+                                            "    text: 'Listes de diffusion'\r",
                                             "}\r",
                                             "]);"
                                         ],

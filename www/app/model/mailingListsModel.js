@@ -23,6 +23,32 @@ Ext.define('Rubedo.model.mailingListsModel', {
         },
         {
             name: 'id'
+        },
+        {
+            name: 'version'
+        },
+        {
+            name: 'workspaces'
+        },
+        {
+            name: 'readOnly',
+            persist: false,
+            type: 'boolean'
+        },
+        {
+            name: 'fromAddress'
+        },
+        {
+            name: 'fromName'
+        },
+        {
+            name: 'replyToAddress'
+        },
+        {
+            name: 'replyToName'
+        },
+        {
+            name: 'returnPathAddress'
         }
     ]
 });

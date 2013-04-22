@@ -261,7 +261,9 @@
             "InportInterface",
             "AjouterContenu",
             "directRTEField",
-            "directRTEFieldComponent"
+            "directRTEFieldComponent",
+            "MailingListsInterface",
+            "newMLWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -283,7 +285,8 @@
             "WorkspacesController",
             "LocalisationController",
             "FormsController",
-            "ImportController"
+            "ImportController",
+            "MailingListsController"
         ],
         "name": "Rubedo"
     },

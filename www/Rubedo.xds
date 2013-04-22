@@ -2445,6 +2445,30 @@
                 "app/store/ImportableFieldTypesStore.js"
             ],
             "className": "ImportableFieldTypesStore"
+        },
+        "8f7b389a-75fc-438a-8d03-797b9afc7316": {
+            "paths": [
+                "metadata/view/MailingListsInterface",
+                "app/view/override/MailingListsInterface.js",
+                "app/view/MailingListsInterface.js"
+            ],
+            "className": "MailingListsInterface"
+        },
+        "4444354c-c7f1-44c8-8601-47758824f7d5": {
+            "paths": [
+                "metadata/view/newMLWindow",
+                "app/view/override/newMLWindow.js",
+                "app/view/newMLWindow.js"
+            ],
+            "className": "newMLWindow"
+        },
+        "fa7809cb-a36e-40d9-92de-589f62b00143": {
+            "paths": [
+                "metadata/controller/MailingListsController",
+                "app/controller/override/MailingListsController.js",
+                "app/controller/MailingListsController.js"
+            ],
+            "className": "MailingListsController"
         }
     },
     "viewOrderMap": {
@@ -2563,7 +2587,9 @@
             "061bd6bb-80de-48a4-af26-f6193448d7a1",
             "94888e53-9ec4-4b43-8669-5443a9700c76",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+            "8f7b389a-75fc-438a-8d03-797b9afc7316",
             "3104ec03-3fa9-4813-a58d-51278a48751f",
+            "4444354c-c7f1-44c8-8601-47758824f7d5",
             "fb146702-039a-47f8-8142-bd4572c13135",
             "552c244b-b66b-4875-9d66-15bedb41fd64",
             "49bec756-7701-4c60-a70f-4a067633eff3",
@@ -2706,7 +2732,8 @@
             "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
             "765f93a9-83e7-4405-aaaa-740265c87f51",
             "82778ea5-36d1-422d-993a-6b91ab641629",
-            "3923be22-e5f8-4dac-b18f-8fc3eb86f640"
+            "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
+            "fa7809cb-a36e-40d9-92de-589f62b00143"
         ],
         "model": [
             "b980e128-6e56-43e6-99d6-b9312789f61e",

@@ -1,0 +1,152 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MailingListsController",
+        "designer|userAlias": "MailingListsController"
+    },
+    "designerId": "fa7809cb-a36e-40d9-92de-589f62b00143",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMLMainGridSelectionChange",
+                "fn": "onMLMainGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    Ext.getCmp(\"MailingListsRemove\").disable();\r",
+                    "    Ext.getCmp(\"MailingListsUpdate\").disable();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").getForm().reset();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").disable();\r",
+                    "\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"MailingListsRemove\").enable();\r",
+                    "    Ext.getCmp(\"MailingListsUpdate\").enable();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").enable();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").getForm().loadRecord(selected[0]);\r",
+                    "     if ((selected[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.mailingLists\"])){\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"MLPropsForm\").query(\"field\"), function(field){\r",
+                    "            field.setReadOnly(true);\r",
+                    "        });\r",
+                    "        Ext.getCmp(\"MailingListsRemove\").disable();\r",
+                    "        Ext.getCmp(\"MailingListsUpdate\").disable();\r",
+                    "    } else {\r",
+                    "        Ext.Array.forEach(Ext.getCmp(\"MLPropsForm\").query(\"field\"), function(field){\r",
+                    "            field.setReadOnly(false);\r",
+                    "        });\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#MLMainGrid"
+            },
+            "designerId": "e737eee8-5bab-4921-90ae-ad163b2bd60f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewMLSubmitBtnClick",
+                "fn": "onNewMLSubmitBtnClick",
+                "implHandler": [
+                    "var form = button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var newW= Ext.create(\"Rubedo.model.mailingListsModel\", form.getValues());\r",
+                    "    Ext.getStore(\"MailingListsCombo\").add(newW);\r",
+                    "    Ext.getStore(\"MailingListsCombo\").addListener(\"datachanged\",function(){Ext.getCmp('MLMainGrid').getSelectionModel().select(newW);},this,{single:true});\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newMLSubmitBtn"
+            },
+            "designerId": "ed3c1b1c-1ec0-4af3-b1ca-b6442ad49630"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMailingListsAddClick",
+                "fn": "onMailingListsAddClick",
+                "implHandler": [
+                    "Ext.widget(\"newMLWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MailingListsAdd"
+            },
+            "designerId": "b5a7fee6-497a-4401-b460-5985ffb6243f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMailingListsRemoveClick",
+                "fn": "onMailingListsRemoveClick",
+                "implHandler": [
+                    "var delCon = Ext.widget('delConfirmZ');\r",
+                    "delCon.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getStore(\"MailingListsCombo\").remove(Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "});  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MailingListsRemove"
+            },
+            "designerId": "4ed08ee9-a5cc-421c-bb43-54a9b133fcb9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMailingListsUpdateClick",
+                "fn": "onMailingListsUpdateClick",
+                "implHandler": [
+                    "var target = Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected();\r",
+                    "var form = Ext.getCmp(\"MLPropsForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    target.set(form.getValues());\r",
+                    "}  "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#MailingListsUpdate"
+            },
+            "designerId": "c5b0d7dd-e2a0-4ba9-88cf-2f740c833d0b"
+        }
+    ]
+}

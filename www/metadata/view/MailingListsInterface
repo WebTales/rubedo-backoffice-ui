@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "workspaceWindow",
+        "localiserId": null,
         "container|align": "stretch",
         "height": 456,
-        "id": "WorkspacesInterface",
+        "id": "MailingListsInterface",
         "width": 723,
-        "designer|userClassName": "WorkspacesInterface",
-        "designer|userAlias": "WorkspacesInterface",
+        "designer|userClassName": "MailingListsInterface",
+        "designer|userAlias": "MailingListsInterface",
         "layout": "hbox",
-        "iconCls": "user",
-        "title": "Espaces de travail",
+        "iconCls": "mail_small",
+        "title": "Listes de diffusion",
         "constrainHeader": true
     },
-    "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+    "designerId": "8f7b389a-75fc-438a-8d03-797b9afc7316",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -38,7 +38,7 @@
                 "dock": "top",
                 "designer|userClassName": "MyToolbar62"
             },
-            "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
+            "designerId": "dac24e4b-bd2f-42c2-a0ce-05f572b56766",
             "cn": [
                 {
                     "type": "Ext.button.Button",
@@ -48,17 +48,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.mailingLists",
                         "localiserId": "addBtn",
                         "layout|flex": null,
-                        "id": "workspaceAdd",
+                        "id": "MailingListsAdd",
                         "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
+                    "designerId": "6e7b660d-9227-480c-bcfd-057c30cb945e",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -80,18 +80,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.mailingLists",
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
-                        "id": "workspaceRemove",
+                        "id": "MailingListsRemove",
                         "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
                         "text": "Supprimer"
                     },
-                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
+                    "designerId": "135ac93b-92dd-4aea-b471-6afb1923a872",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -113,18 +113,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.mailingLists",
                         "localiserId": "saveBtn",
                         "layout|flex": null,
                         "disabled": true,
-                        "id": "workspaceSave",
+                        "id": "MailingListsUpdate",
                         "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
-                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
+                    "designerId": "2d2d6359-b692-41c7-b639-c27b102d7b91",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -159,7 +159,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
-                            "designerId": "2c159f6e-09eb-4f8b-bbe5-4ed9356d955f"
+                            "designerId": "857686fc-0e8d-44e0-9868-97b90f966915"
                         }
                     ]
                 },
@@ -174,32 +174,7 @@
                         "layout|flex": null,
                         "designer|userClassName": "MyFill27"
                     },
-                    "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "RApplication": "workspaces",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton243",
-                        "iconCls": "info_big",
-                        "scale": "large",
-                        "text": ""
-                    },
-                    "designerId": "bbc542ed-95ba-4521-b837-212a373b42a3",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "RApplication",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "d71b6f49-d6f4-44f0-858e-469b91d8d9c4"
                 }
             ]
         },
@@ -211,14 +186,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "workspacesGrid",
+                "id": "MLMainGrid",
                 "width": 200,
                 "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "forceFit": true,
-                "store": "WorkspacesStore"
+                "store": "MailingListsCombo"
             },
-            "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
+            "designerId": "b677c8e9-e99f-4c4d-80b1-9e93a14c09e7",
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -230,7 +205,7 @@
                     "userConfig": {
                         "designer|userClassName": "MyGridView31"
                     },
-                    "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
+                    "designerId": "71d887e0-631c-4810-9227-299a16f5cf94"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -242,10 +217,10 @@
                     "userConfig": {
                         "localiserId": "nameColumn",
                         "designer|userClassName": "MyColumn70",
-                        "dataIndex": "text",
+                        "dataIndex": "name",
                         "text": "Nom"
                     },
-                    "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
+                    "designerId": "af5483ae-6d3c-431f-9149-6b2d0831384f",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -281,7 +256,7 @@
                                     "}"
                                 ]
                             },
-                            "designerId": "ed5ea241-ef34-43a9-84b1-dfc9f8d86e4f"
+                            "designerId": "5b2379a5-be73-4852-a271-2b820ad9386e"
                         }
                     ]
                 }
@@ -295,22 +270,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "propsPanel",
                 "layout|flex": 1,
                 "disabled": true,
-                "id": "workspacesMainForm",
+                "id": "MLPropsForm",
                 "designer|userClassName": "MyForm43",
+                "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Propriétés"
             },
-            "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
+            "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -324,10 +292,11 @@
                         "layout|anchor": "100%",
                         "designer|userClassName": "MyTextField74",
                         "fieldLabel": "Nom",
-                        "name": "text",
+                        "labelWidth": 140,
+                        "name": "name",
                         "allowBlank": false
                     },
-                    "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
+                    "designerId": "ab12c7c6-2a2a-4d08-92b0-06e2dd9df1d6",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -335,44 +304,121 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet1",
+                        "title": "Expéditeur"
+                    },
+                    "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField7",
+                                "fieldLabel": "Adresse de l'expéditeur",
+                                "labelWidth": 140,
+                                "name": "fromAddress",
+                                "vtype": "email"
+                            },
+                            "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField8",
+                                "fieldLabel": "Nom de l'expéditeur",
+                                "labelWidth": 140,
+                                "name": "fromName"
+                            },
+                            "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet2",
+                        "title": "Réponse"
+                    },
+                    "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField10",
+                                "fieldLabel": "Nom de réponse",
+                                "labelWidth": 140,
+                                "name": "replyToName"
+                            },
+                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|userClassName": "MyTextField9",
+                                "fieldLabel": "Adresse de réponse",
+                                "labelWidth": 140,
+                                "name": "replyToAddress",
+                                "vtype": "email"
+                            },
+                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField11",
+                        "fieldLabel": "Adresse d'erreur",
+                        "labelWidth": 140,
+                        "name": "returnPathAddress",
+                        "vtype": "email"
+                    },
+                    "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8"
                 }
             ]
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onWorkspacesInterfaceRender",
-                "fn": "onWorkspacesInterfaceRender",
-                "implHandler": [
-                    "Ext.getStore(\"WorkspacesStore\").load();"
-                ],
-                "name": "render",
-                "scope": "me"
-            },
-            "designerId": "12eab1d4-0d8d-407b-815a-aff4f1b0b51d"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onWorkspacesInterfaceBeforeClose",
-                "fn": "onWorkspacesInterfaceBeforeClose",
-                "implHandler": [
-                    "Ext.getStore(\"WorkspacesStore\").removeAll();"
-                ],
-                "name": "beforeclose",
-                "scope": "me"
-            },
-            "designerId": "1f152444-d439-4016-b605-5b5cf95540ba"
         },
         {
             "type": "linkedinstance",
@@ -384,7 +430,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "designerId": "df2ae591-c05d-4f92-b303-08ddd9f66eb9",
+            "designerId": "6bd63a09-f1cc-402b-aa8a-a0e061d5dff4",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
@@ -397,7 +443,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "designerId": "565358fc-8689-4644-95d4-fc800b4d4cd2",
+            "designerId": "2ca6d01d-f48a-4dc9-a872-2545e8007034",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
     ]

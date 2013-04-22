@@ -148,7 +148,9 @@ Ext.application({
         'Rubedo.view.InportInterface',
         'Rubedo.view.AjouterContenu',
         'Rubedo.view.directRTEField',
-        'Rubedo.view.directRTEFieldComponent'
+        'Rubedo.view.directRTEFieldComponent',
+        'Rubedo.view.MailingListsInterface',
+        'Rubedo.view.newMLWindow'
     ],
     models: [
         'sitesDataModel',
@@ -405,7 +407,9 @@ Ext.application({
         'InportInterface',
         'AjouterContenu',
         'directRTEField',
-        'directRTEFieldComponent'
+        'directRTEFieldComponent',
+        'MailingListsInterface',
+        'newMLWindow'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -427,7 +431,8 @@ Ext.application({
         'WorkspacesController',
         'LocalisationController',
         'FormsController',
-        'ImportController'
+        'ImportController',
+        'MailingListsController'
     ],
     name: 'Rubedo'
 });

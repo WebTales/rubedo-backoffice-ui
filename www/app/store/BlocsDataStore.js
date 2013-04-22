@@ -1430,7 +1430,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Sauter les n premiers résulats',
+                                                fieldLabel: 'Sauter les n premiers résultats',
                                                 allowDecimals: false,
                                                 name: 'resultsSkip',
                                                 minValue: 1

@@ -26,17 +26,26 @@ Ext.define('Rubedo.store.MailingListsCombo', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
+            autoSync: true,
             model: 'Rubedo.model.mailingListsModel',
             storeId: 'MailingListsCombo',
             pageSize: 1000,
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'mailing-lists'
+                    create: 'mailing-lists/create',
+                    read: 'mailing-lists',
+                    update: 'mailing-lists/update',
+                    destroy: 'mailing-lists/delete'
                 },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
                     root: 'data'
                 }
             }

@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
+        "autoSync": true,
         "model": "mailingListsModel",
         "storeId": "MailingListsCombo",
         "designer|userClassName": "MailingListsCombo",
@@ -29,7 +30,10 @@
                 "designer|userClassName": "MyAjaxProxy48",
                 "api": [
                     "{\r",
-                    "                    read: 'mailing-lists'\r",
+                    "                    create: 'mailing-lists/create',\r",
+                    "                    read: 'mailing-lists',\r",
+                    "                    update: 'mailing-lists/update',\r",
+                    "                    destroy: 'mailing-lists/delete'\r",
                     "                }"
                 ]
             },
@@ -48,6 +52,20 @@
                         "designer|userClassName": "MyJsonReader47"
                     },
                     "designerId": "c4ffe507-2ebf-4449-8c17-c89efcb8cc87"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter10",
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "4cbe8174-eb6f-49c4-84f3-99a00cf160b9"
                 }
             ]
         }

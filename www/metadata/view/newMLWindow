@@ -1,0 +1,74 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 112,
+        "id": "newMLWindow",
+        "width": 400,
+        "designer|userClassName": "newMLWindow",
+        "designer|userAlias": "newMLWindow",
+        "resizable": false,
+        "layout": "fit",
+        "title": "Nouvelle liste de diffusion",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "4444354c-c7f1-44c8-8601-47758824f7d5",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyForm44",
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "06dd8e22-7c6a-4e5f-8e56-21bd51e05baf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextField75",
+                        "fieldLabel": "Nom",
+                        "name": "name",
+                        "allowBlank": false
+                    },
+                    "designerId": "330e5a90-d5bf-4b17-bac9-002bf255c24f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "newMLSubmitBtn",
+                        "designer|userClassName": "MyButton244",
+                        "scale": "medium",
+                        "text": "Créer une nouvelle liste de diffusion"
+                    },
+                    "designerId": "40b52b62-8fa5-42a8-8c35-b39c9185c96e"
+                }
+            ]
+        }
+    ]
+}
