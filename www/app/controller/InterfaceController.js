@@ -465,6 +465,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         try {
             Ext.util.CSS.removeStyleSheet("loading-bar-style");
             Ext.getElementById("loading-bar").parentNode.removeChild(Ext.getElementById("loading-bar"));
+            window.onbeforeunload = function() { return "Vous allez quitter le Back Office et perdre toute modification non sauvegardée."; };
         } catch (err) {
             console.log("dom element removal anomaly");
         }
