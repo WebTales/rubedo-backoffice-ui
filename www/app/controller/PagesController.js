@@ -109,13 +109,15 @@ Ext.define('Rubedo.controller.PagesController', {
             }
             Ext.getCmp("removePageBtn").enable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+
             Ext.getCmp("mainPageEdition").removeAll();
             var myMask =Ext.getStore("MasksComboStore").findRecord("id", record.get("maskId")); 
-
+            Ext.suspendLayouts();
             me.renderPage(Ext.clone(myMask.get("rows")),1,Ext.getCmp("mainPageEdition"));
             me.renderBlocks(Ext.clone(myMask.get("blocks")), false);
             me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
+            Ext.resumeLayouts();
             Ext.getCmp("pageMaskDisplayBtn").setText("Masque associé : "+myMask.get("text"));
             Ext.getCmp("pageMaskDisplayBtn").show();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
@@ -270,8 +272,7 @@ Ext.define('Rubedo.controller.PagesController', {
         nouvBloc.elementStyle="";
         nouvBloc.elementTag="div";
         nouvBloc.renderDiv=true;
-        nouvBloc.flex=undefined;
-        nouvBloc.minHeight=80;
+        nouvBloc.flex=1;
 
         var target = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
         var orderValue = 1;
@@ -902,8 +903,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 itemId:"eol"
             }));
             if (Ext.isEmpty(row.height)) {
-                newRow.flex=undefined;
-                newRow.minHeight=100;
+                newRow.flex=rFlex;
             } else {
                 newRow.height=row.height;
             }
@@ -942,8 +942,7 @@ Ext.define('Rubedo.controller.PagesController', {
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 block.canEdit=editable;
-                block.flex=undefined;
-                block.minHeight=80;
+                block.flex=1;
                 if (editable) {
                     var insertIndex=0;
                     Ext.Array.forEach(targetCol.items.items, function(brother){

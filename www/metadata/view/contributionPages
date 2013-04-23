@@ -843,7 +843,7 @@
                             ]
                         },
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -852,13 +852,32 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "container|align": "stretch",
-                                "id": "mainPageEdition",
-                                "designer|userClassName": "MyPanel40",
+                                "designer|userClassName": "MyContainer14",
                                 "autoScroll": true,
-                                "layout": "vbox",
-                                "title": ""
+                                "layout": "vbox"
                             },
-                            "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c"
+                            "designerId": "4062ba45-c19e-4363-9e8e-7b9d8b8b57f5",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|align": "stretch",
+                                        "height": 600,
+                                        "id": "mainPageEdition",
+                                        "designer|userClassName": "MyPanel40",
+                                        "autoScroll": true,
+                                        "layout": "vbox",
+                                        "title": ""
+                                    },
+                                    "designerId": "63cf7b51-666d-4bdf-94af-41433c36717c"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.panel.Panel",
@@ -1549,9 +1568,48 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyFill42"
+                        "designer|userClassName": "MyFill9"
                     },
-                    "designerId": "d8bd9681-980b-4637-b73e-f57a6d4b1a52"
+                    "designerId": "777d04dc-4977-4d63-b7bf-d59c490f01c0"
+                },
+                {
+                    "type": "Ext.slider.Single",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "MaskZoomControlSlider1",
+                        "width": 400,
+                        "designer|userClassName": "MySlider",
+                        "fieldLabel": "Niveau de zoom",
+                        "value": 719,
+                        "maxValue": 2000,
+                        "minValue": 200
+                    },
+                    "designerId": "3f4eeeb5-7364-4b63-a685-a3a3d117be22",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMaskZoomControlSliderChange1",
+                                "fn": "onMaskZoomControlSliderChange1",
+                                "implHandler": [
+                                    "Ext.getCmp(\"mainPageEdition\").setHeight(newValue);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "d02f7968-c049-4ec3-b751-89ffce69c3b8"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

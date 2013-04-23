@@ -261,6 +261,21 @@ Ext.define('Rubedo.view.contributionPages', {
                             xtype: 'tbfill'
                         },
                         {
+                            xtype: 'slider',
+                            id: 'MaskZoomControlSlider1',
+                            width: 400,
+                            fieldLabel: 'Niveau de zoom',
+                            value: 719,
+                            maxValue: 2000,
+                            minValue: 200,
+                            listeners: {
+                                change: {
+                                    fn: me.onMaskZoomControlSliderChange1,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
                             xtype: 'button',
                             hidden: true,
                             id: 'pageMaskDisplayBtn',
@@ -362,15 +377,26 @@ Ext.define('Rubedo.view.contributionPages', {
                             },
                             items: [
                                 {
-                                    xtype: 'panel',
+                                    xtype: 'container',
                                     flex: 1,
-                                    id: 'mainPageEdition',
                                     autoScroll: true,
                                     layout: {
                                         align: 'stretch',
                                         type: 'vbox'
                                     },
-                                    title: ''
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            height: 600,
+                                            id: 'mainPageEdition',
+                                            autoScroll: true,
+                                            layout: {
+                                                align: 'stretch',
+                                                type: 'vbox'
+                                            },
+                                            title: ''
+                                        }
+                                    ]
                                 },
                                 {
                                     xtype: 'panel',
@@ -656,6 +682,10 @@ Ext.define('Rubedo.view.contributionPages', {
 
     onImageRender1: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
+        Ext.getCmp("mainPageEdition").setHeight(newValue);
     }
 
 });

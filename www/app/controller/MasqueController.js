@@ -99,9 +99,11 @@ Ext.define('Rubedo.controller.MasqueController', {
         prevSelected.removeBodyCls('selectedelement');
     }
     this.getMasqueEdition().pageProperties=Ext.clone(record.get("pageProperties"));
+    Ext.suspendLayouts();
     this.getMasqueEdition().removeAll();
     this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition()); 
     this.restoreBlocks(Ext.clone(masque.blocks));
+    Ext.resumeLayouts();
 
     Ext.getCmp("newRow").disable();
     Ext.getCmp("newCol").disable();
@@ -761,8 +763,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         var row = Ext.widget('panel', {
             header:false,
             mType:"row",
-            flex:undefined,
-            minHeight:100,
+            flex:1,
             elementTag:"div",
             elementStyle:"",
             displayRow:true,
@@ -833,8 +834,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         nouvBloc.elementStyle="";
         nouvBloc.elementTag="div";
         nouvBloc.renderDiv=true;
-        nouvBloc.flex=undefined;
-        nouvBloc.minHeight=80;
+        nouvBloc.flex=1;
 
         var target = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
         var orderValue = 100;
@@ -1606,8 +1606,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 itemId:"eol"
             }));
             if (Ext.isEmpty(row.height)) {
-                newRow.flex=undefined;
-                newRow.minHeight=100;
+                newRow.flex=rFlex;
             } else {
                 newRow.height=row.height;
             }
@@ -1619,8 +1618,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.Array.forEach(mBlocks, function(block){
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
-                block.flex=undefined;
-                block.minHeight=80;
+                block.flex=1;
                 targetCol.add(Ext.widget("unBloc",block));
             }
         });

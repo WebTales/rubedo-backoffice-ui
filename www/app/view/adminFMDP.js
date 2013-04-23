@@ -83,10 +83,27 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'container',
+                            flex: 2,
                             itemId: 'boiteBarreMeta',
+                            minWidth: 400,
                             tpl: [
                                 '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser.fullName}  <b>Version : </b>{version}'
                             ]
+                        },
+                        {
+                            xtype: 'slider',
+                            id: 'MaskZoomControlSlider',
+                            width: 400,
+                            fieldLabel: 'Niveau de zoom',
+                            value: 600,
+                            maxValue: 2000,
+                            minValue: 200,
+                            listeners: {
+                                change: {
+                                    fn: me.onMaskZoomControlSliderChange,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 },
@@ -419,15 +436,26 @@ Ext.define('Rubedo.view.adminFMDP', {
                     title: '',
                     items: [
                         {
-                            xtype: 'panel',
+                            xtype: 'container',
                             flex: 1,
-                            border: 0,
-                            id: 'masqueEdition',
                             autoScroll: true,
                             layout: {
                                 align: 'stretch',
                                 type: 'vbox'
-                            }
+                            },
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    border: 0,
+                                    height: 600,
+                                    id: 'masqueEdition',
+                                    autoScroll: true,
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    }
+                                }
+                            ]
                         },
                         {
                             xtype: 'panel',
@@ -485,6 +513,10 @@ Ext.define('Rubedo.view.adminFMDP', {
 
     onImageRender: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');
+    },
+
+    onMaskZoomControlSliderChange: function(slider, newValue, thumb, eOpts) {
+        Ext.getCmp("masqueEdition").setHeight(newValue);
     },
 
     onAdminfMasquesEnregistrerAfterRender: function(component, eOpts) {
