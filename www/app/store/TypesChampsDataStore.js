@@ -994,6 +994,9 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             type: 'Ext.form.field.Number',
                             config: {
                                 fieldLabel: 'Nombre d\'etoiles',
+                                minValue: 1,
+                                allowDecimals: false,
+                                editable: false,
                                 name: 'numberOfStars'
                             }
                         },
@@ -1001,7 +1004,11 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             type: 'Ext.form.field.Number',
                             config: {
                                 fieldLabel: 'Divisions par \u00e9toile',
-                                name: 'split'
+                                name: 'split',
+                                minValue: 1,
+                                maxValue: 2,
+                                editable: false,
+                                allowDecimals: false
                             }
                         },
                         {
