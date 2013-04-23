@@ -232,7 +232,6 @@ Ext.define('Rubedo.controller.InterfaceController', {
     wallpaperChange: function(button, e, eOpts) {
         Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);
         Ext.getStore('PersonalPrefsStore').getRange()[0].set("wallpaper",Ext.getCmp('wallpaperPicker').getComponent(0).src);
-        console.log("changed");
     },
 
     onGridpanelExpand: function(p, eOpts) {
