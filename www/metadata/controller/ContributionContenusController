@@ -1305,6 +1305,7 @@
                     "var enrobage =Ext.widget('ChampTC');\r",
                     "enrobage.add(selecteur);\r",
                     "enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);\r",
+                    "if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}\r",
                     "formTaxoTC.add(enrobage);\r",
                     "\r",
                     "}\r",

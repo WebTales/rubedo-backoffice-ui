@@ -275,6 +275,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var enrobage =Ext.widget('ChampTC');
             enrobage.add(selecteur);
             enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+            if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
             formTaxoTC.add(enrobage);
 
         }
