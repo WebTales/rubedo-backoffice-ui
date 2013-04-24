@@ -49,6 +49,7 @@
                             "event"
                         ],
                         "implHandler": [
+                            "window.onbeforeunload=Ext.emptyFn;\r",
                             "window.location.href=\"login\";"
                         ]
                     },
