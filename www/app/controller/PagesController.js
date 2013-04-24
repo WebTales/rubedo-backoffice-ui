@@ -943,6 +943,9 @@ Ext.define('Rubedo.controller.PagesController', {
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 block.canEdit=editable;
+                if (Ext.isEmpty(block.configBloc)){
+                    block.configBloc={ };
+                }
                 block.flex=1;
                 if (editable) {
                     var insertIndex=0;

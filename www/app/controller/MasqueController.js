@@ -1618,6 +1618,9 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.Array.forEach(mBlocks, function(block){
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
+                if (Ext.isEmpty(block.configBloc)){
+                    block.configBloc={ };
+                }
                 block.flex=1;
                 targetCol.add(Ext.widget("unBloc",block));
             }
