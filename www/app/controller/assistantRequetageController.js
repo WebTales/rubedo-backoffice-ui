@@ -478,7 +478,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
 
 
-                    }
+                    } 
 
                     Ext.getStore('champsTCARStore').loadData(champsRegles);
 
