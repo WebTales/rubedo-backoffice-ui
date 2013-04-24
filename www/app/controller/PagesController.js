@@ -593,7 +593,8 @@ Ext.define('Rubedo.controller.PagesController', {
                             nChampS.on('afterrender', function(thing){thing.fireEvent("change");});
 
                         }
-                        nChampS.on('change', function(){component.configBloc[this.name]=this.getValue();});
+                        nChampS.on('change', function(){ component.configBloc[this.name]=this.getValue();});
+
                         nCateg.add(nChampS);
                     }
                     if(nCateg.isAdv){

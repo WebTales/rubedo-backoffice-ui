@@ -1105,13 +1105,13 @@
                     "    return a;\r",
                     "}, {});\r",
                     "\r",
-                    "if (!Ext.isEmpty(recievedDirectives.content)){\r",
-                    "    var task = new Ext.util.DelayedTask(function(){\r",
-                    "        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(recievedDirectives.content);\r",
-                    "\t});\r",
-                    "    task.delay(600);\r",
-                    "    \r",
-                    "}"
+                    "    if (!Ext.isEmpty(recievedDirectives.content)){\r",
+                    "        var task = new Ext.util.DelayedTask(function(){\r",
+                    "            Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(recievedDirectives.content);\r",
+                    "        });\r",
+                    "        task.delay(600);\r",
+                    "\r",
+                    "    }"
                 ]
             },
             "designerId": "22ff9220-65f2-42b5-b72d-5538401c0f78"

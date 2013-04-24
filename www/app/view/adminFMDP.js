@@ -95,9 +95,10 @@ Ext.define('Rubedo.view.adminFMDP', {
                             id: 'MaskZoomControlSlider',
                             width: 400,
                             fieldLabel: 'Niveau de zoom',
-                            value: 600,
+                            value: 661,
                             maxValue: 2000,
                             minValue: 200,
+                            useTips: false,
                             listeners: {
                                 change: {
                                     fn: me.onMaskZoomControlSliderChange,

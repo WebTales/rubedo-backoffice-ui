@@ -230,6 +230,9 @@
             } else {
 				this.textField.setValue('');
             }
+            if(this.textField.xtype=="treepicker"){
+            	this.textField.fireEvent("change");
+            }
             // end Ing. Leonardo D'Onofrio
 			this.textField.focus();
         },

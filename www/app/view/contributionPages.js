@@ -265,9 +265,10 @@ Ext.define('Rubedo.view.contributionPages', {
                             id: 'MaskZoomControlSlider1',
                             width: 400,
                             fieldLabel: 'Niveau de zoom',
-                            value: 719,
+                            value: 514,
                             maxValue: 2000,
                             minValue: 200,
+                            useTips: false,
                             listeners: {
                                 change: {
                                     fn: me.onMaskZoomControlSliderChange1,
