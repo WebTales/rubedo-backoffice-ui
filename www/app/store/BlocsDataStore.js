@@ -811,30 +811,6 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Résultats par page',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0,
-                                                value: 10
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.CTCField',
-                                            config: {
-                                                fieldLabel: 'Types de contenus',
-                                                name: 'contentTypes'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.TTField',
-                                            config: {
-                                                fieldLabel: 'Tags',
-                                                name: 'tags'
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.form.field.Text',
                                             config: {
                                                 fieldLabel: 'Placeholder',
