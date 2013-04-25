@@ -41,7 +41,13 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                             anchor: '100%',
                             id: 'champCreerTC',
                             fieldLabel: 'Nom ',
-                            allowBlank: false
+                            allowBlank: false,
+                            listeners: {
+                                specialkey: {
+                                    fn: me.onChampCreerTCSpecialkey,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'checkboxfield',
@@ -63,6 +69,12 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
         });
 
         me.callParent(arguments);
+    },
+
+    onChampCreerTCSpecialkey: function(field, e, eOpts) {
+        if (e.getKey() == e.ENTER) {
+            Ext.getCmp("boutonCreerTC").fireEvent("click",Ext.getCmp("boutonCreerTC"));
+        }
     }
 
 });

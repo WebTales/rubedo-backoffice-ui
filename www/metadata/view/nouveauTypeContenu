@@ -52,7 +52,29 @@
                         "fieldLabel": "Nom ",
                         "allowBlank": false
                     },
-                    "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a"
+                    "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onChampCreerTCSpecialkey",
+                                "fn": "onChampCreerTCSpecialkey",
+                                "implHandler": [
+                                    "if (e.getKey() == e.ENTER) {\r",
+                                    "    Ext.getCmp(\"boutonCreerTC\").fireEvent(\"click\",Ext.getCmp(\"boutonCreerTC\"));\r",
+                                    "}"
+                                ],
+                                "name": "specialkey",
+                                "scope": "me"
+                            },
+                            "designerId": "5001685b-f4a8-4f08-bcdf-54f1da5a36d6"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Checkbox",
