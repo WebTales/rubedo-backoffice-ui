@@ -258,7 +258,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         {
                                             xtype: 'datecolumn',
                                             dataIndex: 'publishTime',
-                                            text: 'Date de publication'
+                                            text: 'Date de publication',
+                                            format: 'd/m/Y'
                                         },
                                         {
                                             xtype: 'gridcolumn',
