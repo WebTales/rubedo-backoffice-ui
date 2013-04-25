@@ -560,44 +560,57 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     nContenuRecorder: function(status, update) {
-        if ((Ext.getCmp("boiteAChampsContenus").getForm().isValid())&&(Ext.getCmp("boiteATaxoContenus").getForm().isValid())&&(Ext.getCmp("contentMetadataBox").getForm().isValid())){
-            var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
-            var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
-            var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
-            var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
-            if (update) {
-                var myRec =Ext.getStore("CurrentContent").getRange()[0];
-                myRec.beginEdit();
-                myRec.set("text",champs.text);
-                myRec.set("champs",champs);
-                myRec.set("taxonomie",taxonomie);
-                myRec.set("status",status);
-                myRec.set(metaData);
-                myRec.set(droits);
-                myRec.endEdit();
-                Ext.getStore("CurrentContent").removeAll();
-                Ext.getStore('TaxonomyForC2').removeAll();
-                Ext.getStore("ContentTypesForContent").removeAll();
-                Ext.getStore("DepContentsCombo2").removeAll();
-                Ext.getStore('NestedContentsStore').removeAll();
+        if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
+            if (Ext.getCmp("boiteATaxoContenus").getForm().isValid()){
+                if (Ext.getCmp("contentMetadataBox").getForm().isValid()){
+                    var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+                    var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
+                    var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
+                    var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
+                    if (update) {
+                        var myRec =Ext.getStore("CurrentContent").getRange()[0];
+                        myRec.beginEdit();
+                        myRec.set("text",champs.text);
+                        myRec.set("champs",champs);
+                        myRec.set("taxonomie",taxonomie);
+                        myRec.set("status",status);
+                        myRec.set(metaData);
+                        myRec.set(droits);
+                        myRec.endEdit();
+                        Ext.getStore("CurrentContent").removeAll();
+                        Ext.getStore('TaxonomyForC2').removeAll();
+                        Ext.getStore("ContentTypesForContent").removeAll();
+                        Ext.getStore("DepContentsCombo2").removeAll();
+                        Ext.getStore('NestedContentsStore').removeAll();
 
-            } 
-            else {
-                var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
-                    text: champs.text,
-                    champs: champs,
-                    taxonomie:taxonomie,
-                    online:true,
-                    status: status,
-                    typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
+                    } 
+                    else {
+                        var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
+                            text: champs.text,
+                            champs: champs,
+                            taxonomie:taxonomie,
+                            online:true,
+                            status: status,
+                            typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
 
-                });
-                nContenu.set(metaData);
-                nContenu.set(droits);
+                        });
+                        nContenu.set(metaData);
+                        nContenu.set(droits);
 
-                Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+                        Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+                    }
+                    Ext.getCmp('ajouterContenu').close();
+                } else {
+                    Ext.Msg.alert("Erreur","Certains champs de métadonnées sont invalides.");
+                    Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(1);
+                }
+            } else {
+                Ext.Msg.alert("Erreur","Certains champs de taxonomie sont invalides.");
+                Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(2);
             }
-            Ext.getCmp('ajouterContenu').close();
+        } else {
+            Ext.Msg.alert("Erreur","Certains champs sont invalides.");
+            Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(0);
         }
     },
 

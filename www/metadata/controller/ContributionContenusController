@@ -284,7 +284,9 @@
                     "update"
                 ],
                 "implHandler": [
-                    "if ((Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid())&&(Ext.getCmp(\"boiteATaxoContenus\").getForm().isValid())&&(Ext.getCmp(\"contentMetadataBox\").getForm().isValid())){\r",
+                    "if (Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid()){\r",
+                    "    if (Ext.getCmp(\"boiteATaxoContenus\").getForm().isValid()){\r",
+                    "        if (Ext.getCmp(\"contentMetadataBox\").getForm().isValid()){\r",
                     "    var champs=Ext.getCmp(\"boiteAChampsContenus\").getForm().getValues();\r",
                     "    var taxonomie =Ext.getCmp(\"boiteATaxoContenus\").getForm().getValues();\r",
                     "    var droits = Ext.getCmp(\"boiteADroitsContenus\").getForm().getValues();\r",
@@ -322,6 +324,17 @@
                     "        Ext.getCmp('ContenusGrid').getStore().add(nContenu);\r",
                     "    }\r",
                     "    Ext.getCmp('ajouterContenu').close();\r",
+                    "            } else {\r",
+                    "\tExt.Msg.alert(\"Erreur\",\"Certains champs de métadonnées sont invalides.\");\r",
+                    "                Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(1);\r",
+                    "}\r",
+                    "    } else {\r",
+                    "\tExt.Msg.alert(\"Erreur\",\"Certains champs de taxonomie sont invalides.\");\r",
+                    "        Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(2);\r",
+                    "}\r",
+                    "} else {\r",
+                    "\tExt.Msg.alert(\"Erreur\",\"Certains champs sont invalides.\");\r",
+                    "    Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(0);\r",
                     "}"
                 ]
             },
