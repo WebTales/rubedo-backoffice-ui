@@ -603,6 +603,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                         },
                         labelWidth:60,
+                        RTip:"Permet de définir l'emplacement d'affichage des contenus proposés sous forme de liste dans les pages utilisants ce masque.",
                         inputValue:true,
                         anchor:"100%",
                         margin:"10 0 10 0",
