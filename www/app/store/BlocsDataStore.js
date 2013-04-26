@@ -842,6 +842,75 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '510001e9c0e0510a11000001'
                 },
                 {
+                    type: 'Formulaire de recherche avancé',
+                    category: 'Recherche',
+                    bType: 'advancedSearchForm',
+                    description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
+                    configBasique: {
+                        title: 'Formulaire de recherche avancé',
+                        bType: 'advancedSearchForm',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Configuration',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page de recherche',
+                                                name: 'searchPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Placeholder',
+                                                name: 'placeholder'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.CTCField',
+                                            config: {
+                                                fieldLabel: 'Types de contenus',
+                                                name: 'contentTypes'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Dynamique',
+                                                name: 'dynamic',
+                                                editable: false,
+                                                disabled: true,
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            dynamic: false
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '510001e9c0e0510a111234561'
+                },
+                {
                     type: 'Média Externe',
                     category: 'Médias',
                     bType: 'externalMedia',
