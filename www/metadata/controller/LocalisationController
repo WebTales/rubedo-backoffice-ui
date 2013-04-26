@@ -66,9 +66,7 @@
                     "// attach event and load localisation store\r",
                     "Ext.getStore(\"LocalisationStore\").on(\"load\",function(){\r",
                     "    me.updateLocalisationSingletons();\r",
-                    "});\r",
-                    "//add language param to store proxy before loading\r",
-                    "Ext.getStore(\"LocalisationStore\").load();"
+                    "});"
                 ]
             },
             "designerId": "02134674-1f73-49b0-ab08-b1257bec9f4e"
@@ -139,7 +137,7 @@
                 "name": "beforerender",
                 "scope": "me",
                 "designer|targetType": "Ext.form.field.Base",
-                "designer|controlQuery": "field"
+                "designer|controlQuery": "component"
             },
             "designerId": "20545d3d-55c2-4f5f-b471-7cfc1046dd2b"
         },
@@ -277,12 +275,23 @@
                 "designer|userClassName": "updateLocalisationSingletons",
                 "fn": "updateLocalisationSingletons",
                 "implHandler": [
+                    "var userLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\");\r",
                     "Ext.Array.forEach(Ext.getStore(\"LocalisationStore\").getRange(),function(localiser){\r",
                     "    var toUpdate =Rubedo[localiser.get(\"name\")];\r",
                     "    if (!Ext.isEmpty(toUpdate)){\r",
                     "        Ext.apply(toUpdate, localiser.get(\"items\"));\r",
                     "    }\r",
-                    "});"
+                    "});\r",
+                    "if ((!Ext.isEmpty(userLanguage))&&(userLanguage!=\"fre\")){\r",
+                    "    Ext.Array.forEach(Ext.getStore(\"LocalisationStore\").getRange(),function(localiser){\r",
+                    "        var toUpdate =Rubedo[localiser.get(\"name\")];\r",
+                    "        if (!Ext.isEmpty(toUpdate)){\r",
+                    "            if(!Ext.isEmpty(localiser.get(\"i18n\")[userLanguage])){\r",
+                    "\t\t\t\tExt.apply(toUpdate, localiser.get(\"i18n\")[userLanguage]);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
                 ]
             },
             "designerId": "ccc2e951-4238-41b3-b475-42aaf17282a1"

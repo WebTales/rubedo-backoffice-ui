@@ -47,7 +47,18 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            listeners: {
+                load: {
+                    fn: me.onJsonstoreLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreLoad: function(store, records, successful, eOpts) {
+        Ext.getStore("LocalisationStore").load();
     }
+
 });

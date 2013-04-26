@@ -158,7 +158,7 @@ Ext.define('Rubedo.view.userSettings', {
                                             displayField: 'language',
                                             forceSelection: true,
                                             store: 'languageStore',
-                                            valueField: 'language'
+                                            valueField: 'code'
                                         },
                                         {
                                             xtype: 'textfield',

@@ -24,16 +24,21 @@ Ext.define('Rubedo.store.languageStore', {
             storeId: 'languageStore',
             data: [
                 {
-                    language: 'Français'
+                    language: 'Français',
+                    code: 'fre'
                 },
                 {
-                    language: 'English'
+                    language: 'English',
+                    code: 'eng'
                 }
             ],
             pageSize: 1000,
             fields: [
                 {
                     name: 'language'
+                },
+                {
+                    name: 'code'
                 }
             ]
         }, cfg)]);

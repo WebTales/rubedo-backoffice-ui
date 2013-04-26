@@ -70,8 +70,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                             items: [
                                 {
                                     xtype: 'fieldset',
-                                    flex: 1,
                                     localiserId: 'informationsFieldSet',
+                                    flex: 1,
                                     height: 360,
                                     margin: 0,
                                     width: 356,
@@ -80,16 +80,16 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     items: [
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'nameField',
+                                            anchor: '100%',
                                             fieldLabel: 'Nom ',
                                             name: 'name',
                                             allowBlank: false
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'mailField',
+                                            anchor: '100%',
                                             fieldLabel: 'E-mail ',
                                             name: 'email',
                                             allowBlank: false,
@@ -97,8 +97,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'civilityField',
+                                            anchor: '100%',
                                             fieldLabel: 'Civilité ',
                                             name: 'title',
                                             editable: false,
@@ -111,70 +111,70 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'organisationField',
+                                            anchor: '100%',
                                             fieldLabel: 'Organisation ',
                                             name: 'organisation'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'serviceField',
+                                            anchor: '100%',
                                             fieldLabel: 'Service ',
                                             name: 'service'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'postField',
+                                            anchor: '100%',
                                             fieldLabel: 'Fonction ',
                                             name: 'post'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'phoneField',
+                                            anchor: '100%',
                                             fieldLabel: 'Téléphone ',
                                             name: 'telephone'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'mobileField',
+                                            anchor: '100%',
                                             fieldLabel: 'Mobile ',
                                             name: 'mobile'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'coordinatesField',
+                                            anchor: '100%',
                                             fieldLabel: 'Coordonnées ',
                                             name: 'coordinates'
                                         },
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'languageField',
+                                            anchor: '100%',
                                             fieldLabel: 'Langue ',
                                             name: 'language',
                                             editable: false,
                                             displayField: 'language',
                                             forceSelection: true,
                                             store: 'languageStore',
-                                            valueField: 'language'
+                                            valueField: 'code'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'countryField',
+                                            anchor: '100%',
                                             fieldLabel: 'Pays ',
                                             name: 'country'
                                         },
                                         {
                                             xtype: 'button',
                                             ACL: 'write.ui.users',
-                                            anchor: '100%',
                                             localiserId: 'applyField',
+                                            anchor: '100%',
                                             id: 'userAdminInfoEdit',
                                             text: 'Appliquer'
                                         }
@@ -200,16 +200,16 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                             handler: function(button, event) {
                                                 Ext.widget("PersoPicUploadWindow").show();
                                             },
-                                            anchor: '100%',
                                             localiserId: 'changeBtn',
+                                            anchor: '100%',
                                             margin: '0 0 10 0',
                                             text: 'Changer'
                                         },
                                         {
                                             xtype: 'button',
                                             ACL: 'write.ui.users',
-                                            anchor: '100%',
                                             localiserId: 'removeBtn',
+                                            anchor: '100%',
                                             id: 'userAdminProfilePictureDelete',
                                             text: 'Supprimer'
                                         }
@@ -235,8 +235,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     items: [
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'useraccountField',
+                                            anchor: '100%',
                                             fieldLabel: 'Compte utilisateur ',
                                             labelWidth: 200,
                                             name: 'login',
@@ -245,8 +245,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'gruopsField',
+                                            anchor: '100%',
                                             fieldLabel: 'Groupes',
                                             labelWidth: 200,
                                             name: 'groups',
@@ -260,8 +260,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'defaultGroupField',
+                                            anchor: '100%',
                                             fieldLabel: 'Groupe par defaut',
                                             labelWidth: 200,
                                             name: 'defaultGroup',
@@ -274,16 +274,16 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         },
                                         {
                                             xtype: 'datefield',
-                                            anchor: '100%',
                                             localiserId: 'startValidityField',
+                                            anchor: '100%',
                                             fieldLabel: 'Début de validité ',
                                             labelWidth: 200,
                                             name: 'startValidity'
                                         },
                                         {
                                             xtype: 'datefield',
-                                            anchor: '100%',
                                             localiserId: 'endValidityField',
+                                            anchor: '100%',
                                             fieldLabel: 'Fin de validité ',
                                             labelWidth: 200,
                                             name: 'endValidity'
@@ -291,8 +291,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                         {
                                             xtype: 'button',
                                             ACL: 'write.ui.users',
-                                            anchor: '100%',
                                             localiserId: 'applyBtn',
+                                            anchor: '100%',
                                             id: 'userAdminAccessEdit',
                                             text: 'Appliquer'
                                         }
@@ -306,8 +306,8 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     items: [
                                         {
                                             xtype: 'button',
-                                            anchor: '100%',
                                             localiserId: 'userPasswordChangeBtn',
+                                            anchor: '100%',
                                             id: 'AdminChangeUserPwd',
                                             text: 'Changer le mot de passe de cet utilisateur'
                                         }

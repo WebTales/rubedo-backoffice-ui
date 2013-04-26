@@ -65,6 +65,24 @@
                     "designerId": "1af54b8b-f6e2-4199-8536-e4a5d5cd2d02"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreLoad",
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "Ext.getStore(\"LocalisationStore\").load();"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "8e993bdd-5ab4-4019-bbf4-5651cddd4509"
         }
     ]
 }

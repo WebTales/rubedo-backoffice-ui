@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "localiserId": "usersWindow",
+        "container|align": "stretch",
         "height": 490,
         "id": "UserAdminWindow",
         "width": 800,
@@ -80,8 +80,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "userAdminAdd",
                         "designer|userClassName": "MyButton118",
                         "iconAlign": "top",
@@ -112,8 +112,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "id": "userAdminRemove",
                         "designer|userClassName": "MyButton117",
                         "iconAlign": "top",
@@ -237,8 +237,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
                                 "localiserId": "informationsFieldSet",
+                                "layout|flex": 1,
                                 "height": 360,
                                 "margin": 0,
                                 "width": 356,
@@ -263,8 +263,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "nameField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField5",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
@@ -288,8 +288,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "mailField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "E-mail ",
                                         "name": "email",
@@ -313,8 +313,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "civilityField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox4",
                                         "fieldLabel": "Civilité ",
                                         "name": "title",
@@ -346,8 +346,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "organisationField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Organisation ",
                                         "name": "organisation"
@@ -369,8 +369,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "serviceField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField20",
                                         "fieldLabel": "Service ",
                                         "name": "service"
@@ -392,8 +392,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "postField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField21",
                                         "fieldLabel": "Fonction ",
                                         "name": "post"
@@ -415,8 +415,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "phoneField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField23",
                                         "fieldLabel": "Téléphone ",
                                         "name": "telephone"
@@ -438,8 +438,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "mobileField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField24",
                                         "fieldLabel": "Mobile ",
                                         "name": "mobile"
@@ -461,8 +461,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "coordinatesField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField25",
                                         "fieldLabel": "Coordonnées ",
                                         "name": "coordinates"
@@ -484,8 +484,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "languageField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox5",
                                         "fieldLabel": "Langue ",
                                         "name": "language",
@@ -493,7 +493,7 @@
                                         "displayField": "language",
                                         "forceSelection": true,
                                         "store": "languageStore",
-                                        "valueField": "language"
+                                        "valueField": "code"
                                     },
                                     "designerId": "87c72347-a1a9-4d54-864f-68378e62361d",
                                     "customConfigs": [
@@ -512,8 +512,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "countryField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField80",
                                         "fieldLabel": "Pays ",
                                         "name": "country"
@@ -536,8 +536,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "layout|anchor": "100%",
                                         "localiserId": "applyField",
+                                        "layout|anchor": "100%",
                                         "id": "userAdminInfoEdit",
                                         "designer|userClassName": "MyButton130",
                                         "text": "Appliquer"
@@ -566,8 +566,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "photoFieldSet",
+                                "layout|flex": null,
                                 "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
@@ -608,8 +608,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "changeBtn",
+                                        "layout|anchor": "100%",
                                         "margin": "0 0 10 0",
                                         "designer|userClassName": "MyButton85",
                                         "text": "Changer"
@@ -654,8 +654,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "layout|anchor": "100%",
                                         "localiserId": "removeBtn",
+                                        "layout|anchor": "100%",
                                         "id": "userAdminProfilePictureDelete",
                                         "margin": null,
                                         "designer|userClassName": "MyButton128",
@@ -744,8 +744,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "useraccountField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyTextField28",
                                         "fieldLabel": "Compte utilisateur ",
                                         "labelWidth": 200,
@@ -771,8 +771,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "gruopsField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox29",
                                         "fieldLabel": "Groupes",
                                         "labelWidth": 200,
@@ -802,8 +802,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "defaultGroupField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyComboBox29",
                                         "fieldLabel": "Groupe par defaut",
                                         "labelWidth": 200,
@@ -835,8 +835,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "startValidityField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyDateField",
                                         "fieldLabel": "Début de validité ",
                                         "labelWidth": 200,
@@ -859,8 +859,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "endValidityField",
+                                        "layout|anchor": "100%",
                                         "designer|userClassName": "MyDateField1",
                                         "fieldLabel": "Fin de validité ",
                                         "labelWidth": 200,
@@ -884,8 +884,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "layout|anchor": "100%",
                                         "localiserId": "applyBtn",
+                                        "layout|anchor": "100%",
                                         "id": "userAdminAccessEdit",
                                         "designer|userClassName": "MyButton127",
                                         "text": "Appliquer"
@@ -941,8 +941,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "userPasswordChangeBtn",
+                                        "layout|anchor": "100%",
                                         "id": "AdminChangeUserPwd",
                                         "designer|userClassName": "MyButton131",
                                         "text": "Changer le mot de passe de cet utilisateur"

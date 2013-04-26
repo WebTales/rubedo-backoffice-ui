@@ -112,14 +112,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
         Ext.getStore("LocalisationStore").on("load",function(){
             me.updateLocalisationSingletons();
         });
-        //add language param to store proxy before loading
-        Ext.getStore("LocalisationStore").load();
 
         this.control({
             "#RHelpBtn": {
                 afterrender: this.onButtonAfterRender1
             },
-            "field": {
+            "component": {
                 beforerender: this.onComponentBeforeRender
             },
             "field, checkboxgroup, radiogroup": {
@@ -211,12 +209,23 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     updateLocalisationSingletons: function() {
+        var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
         Ext.Array.forEach(Ext.getStore("LocalisationStore").getRange(),function(localiser){
             var toUpdate =Rubedo[localiser.get("name")];
             if (!Ext.isEmpty(toUpdate)){
                 Ext.apply(toUpdate, localiser.get("items"));
             }
         });
+        if ((!Ext.isEmpty(userLanguage))&&(userLanguage!="fre")){
+            Ext.Array.forEach(Ext.getStore("LocalisationStore").getRange(),function(localiser){
+                var toUpdate =Rubedo[localiser.get("name")];
+                if (!Ext.isEmpty(toUpdate)){
+                    if(!Ext.isEmpty(localiser.get("i18n")[userLanguage])){
+                        Ext.apply(toUpdate, localiser.get("i18n")[userLanguage]);
+                    }
+                }
+            });
+        }
     },
 
     createLocalisationDefaults: function() {

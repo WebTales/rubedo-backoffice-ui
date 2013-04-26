@@ -12,10 +12,12 @@
         "data": [
             "[\r",
             "    {\r",
-            "        \"language\":\"Français\"\r",
+            "        \"language\":\"Français\",\r",
+            "        \"code\": \"fre\"\r",
             "    },\r",
             "    {\r",
-            "        \"language\":\"English\"\r",
+            "        \"language\":\"English\",\r",
+            "        \"code\": \"eng\"\r",
             "    }\r",
             "]"
         ],
@@ -35,6 +37,19 @@
                 "designer|userClassName": "field123"
             },
             "designerId": "d7f80146-99f7-471d-9244-a6637f73f3f8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "code",
+                "designer|userClassName": "MyField115"
+            },
+            "designerId": "9655498c-9c6d-4231-98bc-d3ae2520f978"
         }
     ]
 }
