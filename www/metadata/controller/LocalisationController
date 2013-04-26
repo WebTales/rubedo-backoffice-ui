@@ -125,7 +125,7 @@
                     "    if (!Ext.isEmpty(configs)) {\r",
                     "        Ext.apply(component, configs);\r",
                     "    }\r",
-                    "    if ((component.isXType(\"button\"))&&(component.scale=\"large\")){\r",
+                    "    if ((component.isXType(\"button\"))&&(component.scale==\"large\")){\r",
                     "        component.minWidth=48;\r",
                     "    }\r",
                     "}\r",

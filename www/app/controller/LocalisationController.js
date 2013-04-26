@@ -52,7 +52,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
             if (!Ext.isEmpty(configs)) {
                 Ext.apply(component, configs);
             }
-            if ((component.isXType("button"))&&(component.scale="large")){
+            if ((component.isXType("button"))&&(component.scale=="large")){
                 component.minWidth=48;
             }
         }
