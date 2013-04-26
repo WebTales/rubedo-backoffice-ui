@@ -52,6 +52,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             if (!Ext.isEmpty(configs)) {
                 Ext.apply(component, configs);
             }
+            if ((component.isXType("button"))&&(component.scale="large")){
+                component.minWidth=48;
+            }
         }
         if ((component.isXType("field"))||(component.isXType("checkboxgroup"))||(component.isXType("radiogroup"))){
             component.labelSeparator=" ";
