@@ -1684,6 +1684,77 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '506441f8c648043912000024'
+                },
+                {
+                    type: 'Case à cocher',
+                    cType: 'Ext.form.field.Checkbox',
+                    openWindow: '',
+                    description: '<p>Le champ "Case à cocher" permet un choix simple de type oui/non</p>',
+                    config: {
+                        name: 'checkbox',
+                        fieldLabel: 'Label du champ',
+                        searchable: false,
+                        multivalued: false,
+                        tooltip: '',
+                        inputValue: true,
+                        uncheckedValue: false,
+                        value: 'false',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c648043912248624'
                 }
             ],
             groupers: {
