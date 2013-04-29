@@ -610,14 +610,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "exe.ui.purgeContentType",
-                        "localiserId": "saveGroup",
+                        "localiserId": "adminGroupCT",
                         "layout|flex": null,
-                        "container|columns": 2,
+                        "container|columns": 1,
                         "disabled": true,
+                        "minWidth": null,
                         "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Administration",
-                        "columns": 4
+                        "columns": null
                     },
                     "designerId": "f43ae54d-3dd6-4499-82b9-d933cd2ccae5",
                     "customConfigs": [
@@ -644,12 +645,13 @@
                                 "localiserId": "purgeContentTypeBtn",
                                 "id": "purgeCTContentsBtn",
                                 "itemId": null,
+                                "minWidth": null,
                                 "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "database_remove_big",
                                 "scale": "large",
-                                "text": "Vider",
+                                "text": "Vider les contenus",
                                 "tooltip": "Supprimer tous les contenus de ce type"
                             },
                             "configAlternates": {

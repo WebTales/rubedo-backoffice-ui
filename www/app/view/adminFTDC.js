@@ -252,13 +252,12 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'exe.ui.purgeContentType',
-                            localiserId: 'saveGroup',
+                            localiserId: 'adminGroupCT',
                             disabled: true,
                             headerPosition: 'bottom',
                             title: 'Administration',
-                            columns: 4,
                             layout: {
-                                columns: 2,
+                                columns: 1,
                                 type: 'table'
                             },
                             items: [
@@ -269,7 +268,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     iconAlign: 'top',
                                     iconCls: 'database_remove_big',
                                     scale: 'large',
-                                    text: 'Vider',
+                                    text: 'Vider les contenus',
                                     tooltip: 'Supprimer tous les contenus de ce type'
                                 }
                             ]
