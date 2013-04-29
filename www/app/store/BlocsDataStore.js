@@ -2367,6 +2367,88 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '514ae0c5c0e051ac0d00002e'
                 },
                 {
+                    type: 'Contact avancé',
+                    category: 'Formulaire',
+                    description: '<p>Le bloc « Contact avancé » affiche un formulaire de contact avancé, basé sur un template et un gabarit spécifiques.</p>',
+                    bType: 'advancedContact',
+                    configBasique: {
+                        title: 'Contact avancé',
+                        bType: 'advancedContact',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Paramètres',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.form.field.BoxSelect',
+                                            config: {
+                                                store: [
+                                                    
+                                                ],
+                                                name: 'contacts',
+                                                fieldLabel: 'Destinataires',
+                                                multiSelect: true,
+                                                forceSelection: false,
+                                                stacked: true,
+                                                createNewOnEnter: true,
+                                                hideTrigger: true,
+                                                triggerOnClick: false,
+                                                createNewOnBlur: true,
+                                                pinList: false
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Captcha',
+                                                name: 'captcha',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Nom du formulaire',
+                                                name: 'formName'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Affichage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Template alternatif',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '514ae0c5c0e051ac0d46282e'
+                },
+                {
                     type: 'D\u00e9tail de contenu',
                     category: 'Contenus',
                     bType: 'contentDetail',
