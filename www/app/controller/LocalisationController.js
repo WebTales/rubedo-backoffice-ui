@@ -78,6 +78,13 @@ Ext.define('Rubedo.controller.LocalisationController', {
         }
     },
 
+    onFieldsetAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            component.setTitle(component.title);
+        });
+        task.delay(100);
+    },
+
     init: function(application) {
         var me=this;
         Ext.override(Ext.form.field.Date, {
@@ -125,6 +132,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             },
             "field, checkboxgroup, radiogroup": {
                 added: this.onBasefieldAdded
+            },
+            "fieldset": {
+                afterrender: this.onFieldsetAfterRender
             }
         });
     },
@@ -212,6 +222,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     updateLocalisationSingletons: function() {
+        //todo : move this to server side
+
         var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
         Ext.Array.forEach(Ext.getStore("LocalisationStore").getRange(),function(localiser){
             var toUpdate =Rubedo[localiser.get("name")];

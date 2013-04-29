@@ -278,6 +278,8 @@
                 "designer|userClassName": "updateLocalisationSingletons",
                 "fn": "updateLocalisationSingletons",
                 "implHandler": [
+                    "//todo : move this to server side\r",
+                    "\r",
                     "var userLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\");\r",
                     "Ext.Array.forEach(Ext.getStore(\"LocalisationStore\").getRange(),function(localiser){\r",
                     "    var toUpdate =Rubedo[localiser.get(\"name\")];\r",
@@ -348,6 +350,29 @@
                 ]
             },
             "designerId": "16e3c536-8ddf-47b6-81f8-80802e7dafb6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFieldsetAfterRender",
+                "fn": "onFieldsetAfterRender",
+                "implHandler": [
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    component.setTitle(component.title);\r",
+                    "});\r",
+                    "task.delay(100);"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.form.FieldSet",
+                "designer|controlQuery": "fieldset"
+            },
+            "designerId": "413bd541-5efe-49f4-b8f1-ad5d536d2703"
         }
     ]
 }
