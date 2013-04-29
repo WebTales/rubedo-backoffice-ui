@@ -1873,6 +1873,14 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 allowDecimals: true,
                                                 decimalPrecision: 6
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Afficher l\'icône',
+                                                name: 'showCenterMarker',
+                                                inputValue: true
+                                            }
                                         }
                                     ]
                                 },
@@ -1926,7 +1934,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             constrainToSite: true,
                             zoom: 14,
                             height: 500,
-                            pageSize: 5000
+                            pageSize: 5000,
+                            showCenterMarker: false
                         }
                     },
                     version: 1,
