@@ -229,6 +229,18 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search';
             Ext.getStore("ESFacetteStore").load();
 
+        } else if (component.damQueryMode){
+            component.modal=true;
+            component.setTitle("Assistant de requête DAM Elastic Search");
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("saveGeoQueryBtn").show();
+            if (!Ext.isEmpty(component.predefFacettes)){
+                Ext.getStore("ESFacetteStore").activeFacettes=component.predefFacettes;
+            }
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-dam';
+            Ext.getStore("ESFacetteStore").load();
+
         }
     }
 

@@ -1807,6 +1807,76 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                     id: '506441f8c64804d514066000'
                 },
                 {
+                    type: 'Liste de médias',
+                    category: 'Médias',
+                    bType: 'damList',
+                    description: '<p></p>',
+                    configBasique: {
+                        title: 'Liste de médias',
+                        bType: 'damList',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Filtrage',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 'asc',
+                                                    label: 'Croissant'
+                                                },
+                                                {
+                                                    value: 'desc',
+                                                    label: 'Decroissant'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Tri',
+                                                name: 'sort',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 'asc'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Facettes',
+                                                name: 'facets',
+                                                queryMode: false,
+                                                geoQueryMode: false,
+                                                damQueryMode: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            sort: 'asc'
+                        }
+                    },
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '506441f8c64804d514066927'
+                },
+                {
                     type: 'Google Maps',
                     category: 'Cartographie',
                     bType: 'geoSearchResults',

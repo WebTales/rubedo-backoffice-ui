@@ -9,6 +9,7 @@
         "allowedCT": null,
         "queryMode": true,
         "geoQueryMode": false,
+        "damQueryMode": false,
         "designer|userClassName": "ESQfield",
         "designer|userAlias": "ESQfield",
         "fieldLabel": "Label",
@@ -16,7 +17,8 @@
     },
     "configAlternates": {
         "geoQueryMode": "boolean",
-        "queryMode": "boolean"
+        "queryMode": "boolean",
+        "damQueryMode": "boolean"
     },
     "designerId": "40dcc4f4-8a58-473c-b8f1-982fef6fab5f",
     "customConfigs": [
@@ -33,6 +35,11 @@
         {
             "group": "(Custom Properties)",
             "name": "geoQueryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "damQueryMode",
             "type": "string"
         }
     ],
@@ -75,6 +82,7 @@
                     "        Ext.widget(\"searchResultsWindow\", {\r",
                     "            queryMode:component.queryMode,\r",
                     "            geoQueryMode:component.geoQueryMode,\r",
+                    "            damQueryMode:component.damQueryMode,\r",
                     "            targetedId:component.getId(),\r",
                     "            predefFacettes:null\r",
                     "        }).show();\r",
@@ -94,6 +102,7 @@
                     "        Ext.widget(\"searchResultsWindow\", {\r",
                     "            queryMode:component.queryMode,\r",
                     "            geoQueryMode:component.geoQueryMode,\r",
+                    "            damQueryMode:component.damQueryMode,\r",
                     "            targetedId:component.getId(),\r",
                     "            predefFacettes:Ext.JSON.decode(component.getValue())\r",
                     "        }).show();\r",
