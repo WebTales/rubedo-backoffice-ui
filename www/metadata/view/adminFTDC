@@ -609,6 +609,71 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "exe.ui.purgeContentType",
+                        "localiserId": "saveGroup",
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "disabled": true,
+                        "designer|userClassName": "MyButtonGroup",
+                        "headerPosition": "bottom",
+                        "title": "Administration",
+                        "columns": 4
+                    },
+                    "designerId": "f43ae54d-3dd6-4499-82b9-d933cd2ccae5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "purgeContentTypeBtn",
+                                "id": "purgeCTContentsBtn",
+                                "itemId": null,
+                                "designer|userClassName": "MyButton13",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "database_remove_big",
+                                "scale": "large",
+                                "text": "Vider",
+                                "tooltip": "Supprimer tous les contenus de ce type"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "3560be88-2a21-4389-8a86-8153348d5538",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,

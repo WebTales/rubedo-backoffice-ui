@@ -1013,6 +1013,33 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getStore("TaxonomyForCT").removeAll();
     },
 
+    onPurgeCTContentsBtnClick: function(button, e, eOpts) {
+        var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
+        button.setLoading(true);
+        Ext.Ajax.request({
+            url: 'contents/delete-by-content-type-id',
+            params: {
+                "type-id": target.get("id")
+            },
+            success: function(response){
+                button.setLoading(false);
+
+                Ext.Msg.alert("Succés", "Le type de contenu a été vidé");
+            },
+            failure: function(response) {
+                button.setLoading(false);
+                var message = "Erreur dans l'analyse du fichier";
+                try {
+                    var answer = Ext.JSON.decode(response.responseText);
+                    if (answer.message){
+                        message=answer.message;
+                    }
+                } catch(err){}
+                    Ext.Msg.alert("Erreur", message);
+                }
+            });
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1098,6 +1125,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#boutonCopierTC": {
                 click: this.copyTC
+            },
+            "#purgeCTContentsBtn": {
+                click: this.onPurgeCTContentsBtnClick
             }
         });
     }

@@ -1405,6 +1405,49 @@
                 ]
             },
             "designerId": "d157a9ee-580e-4b98-beef-42abf6f6da50"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPurgeCTContentsBtnClick",
+                "fn": "onPurgeCTContentsBtnClick",
+                "implHandler": [
+                    "var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();\r",
+                    "button.setLoading(true);\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'contents/delete-by-content-type-id',\r",
+                    "    params: {\r",
+                    "        \"type-id\": target.get(\"id\")\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        button.setLoading(false);\r",
+                    "\r",
+                    "        Ext.Msg.alert(\"Succés\", \"Le type de contenu a été vidé\");\r",
+                    "    },\r",
+                    "    failure: function(response) {\r",
+                    "        button.setLoading(false);\r",
+                    "\t\tvar message = \"Erreur dans l'analyse du fichier\";\r",
+                    "        try {\r",
+                    "            var answer = Ext.JSON.decode(response.responseText);\r",
+                    "            if (answer.message){\r",
+                    "                 message=answer.message;\r",
+                    "            }\r",
+                    "        } catch(err){}\r",
+                    "        Ext.Msg.alert(\"Erreur\", message);\r",
+                    "        }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#purgeCTContentsBtn"
+            },
+            "designerId": "7d05bac5-df93-4d07-9429-3c9665f7a5c3"
         }
     ]
 }
