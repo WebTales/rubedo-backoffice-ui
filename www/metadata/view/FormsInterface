@@ -1247,7 +1247,7 @@
                                     "        stats.data.percentageComplete=\"\";\r",
                                     "        if (stats.data.totalResults>0){\r",
                                     "            var myNum=(stats.data.validResults/stats.data.totalResults)*100;\r",
-                                    "            stats.data.percentageComplete=\" ( \"+myNum.toPrecision(2)+\"% )\";\r",
+                                    "            stats.data.percentageComplete=\" ( \"+myNum.toPrecision(3)+\"% )\";\r",
                                     "        } \r",
                                     "        component.getForm().setValues(stats.data);\r",
                                     "    }\r",
@@ -1392,26 +1392,6 @@
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "basiceventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "onFormsExportCSVBtnClick",
-                                                "fn": "onFormsExportCSVBtnClick",
-                                                "implHandler": [
-                                                    "window.location=\"forms/get-csv?display-qnb=1&form-id=\"+Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\");"
-                                                ],
-                                                "name": "click",
-                                                "scope": "me"
-                                            },
-                                            "designerId": "9b350201-fbaa-423d-8700-fedcbab35d83"
                                         }
                                     ]
                                 }

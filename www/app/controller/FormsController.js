@@ -294,6 +294,15 @@ Ext.define('Rubedo.controller.FormsController', {
         Ext.getCmp("mainFormsGrid").getStore().add(rec);
     },
 
+    onFormsExportCSVBtnClick: function(button, e, eOpts) {
+        window.onbeforeunload=Ext.emptyFn;
+        window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
+        var task = new Ext.util.DelayedTask(function(){
+            window.onbeforeunload = function() { return "Vous allez quitter le Back Office et perdre toute modification non sauvegardée."; };
+        });
+        task.delay(400);
+    },
+
     resetInterfaceSelect: function(record, pageRefresh) {
         Ext.getCmp("formPropsForm").getForm().setValues(record.getData());
         Ext.getCmp("formRightsForm").getForm().setValues(record.getData());
@@ -464,6 +473,9 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             "#formsDuplicateBtn": {
                 click: this.onFormsDuplicateBtnClick
+            },
+            "#formsExportCSVBtn": {
+                click: this.onFormsExportCSVBtnClick
             }
         });
     }

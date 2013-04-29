@@ -750,6 +750,31 @@
                 "designer|controlQuery": "#formsDuplicateBtn"
             },
             "designerId": "bdffd629-e2b1-4f61-a7fa-49470c311666"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormsExportCSVBtnClick",
+                "fn": "onFormsExportCSVBtnClick",
+                "implHandler": [
+                    "window.onbeforeunload=Ext.emptyFn;\r",
+                    "window.location=\"forms/get-csv?display-qnb=1&form-id=\"+Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().get(\"id\");\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    window.onbeforeunload = function() { return \"Vous allez quitter le Back Office et perdre toute modification non sauvegardée.\"; };\r",
+                    "});\r",
+                    "task.delay(400);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#formsExportCSVBtn"
+            },
+            "designerId": "ea8c4ca0-6a95-4922-9185-00b6a8cbe658"
         }
     ]
 }

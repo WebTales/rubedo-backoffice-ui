@@ -512,13 +512,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                             localiserId: 'exportCSVBtn',
                                             id: 'formsExportCSVBtn',
                                             iconCls: 'arrow_down',
-                                            text: 'Exporter en CSV',
-                                            listeners: {
-                                                click: {
-                                                    fn: me.onFormsExportCSVBtnClick,
-                                                    scope: me
-                                                }
-                                            }
+                                            text: 'Exporter en CSV'
                                         }
                                     ]
                                 }
@@ -577,15 +571,11 @@ Ext.define('Rubedo.view.FormsInterface', {
                 stats.data.percentageComplete="";
                 if (stats.data.totalResults>0){
                     var myNum=(stats.data.validResults/stats.data.totalResults)*100;
-                    stats.data.percentageComplete=" ( "+myNum.toPrecision(2)+"% )";
+                    stats.data.percentageComplete=" ( "+myNum.toPrecision(3)+"% )";
                 } 
                 component.getForm().setValues(stats.data);
             }
         });
-    },
-
-    onFormsExportCSVBtnClick: function(button, e, eOpts) {
-        window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
     },
 
     onFormsInterfaceRender: function(component, eOpts) {
