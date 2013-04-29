@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.newPageWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newPageWindow',
 
+    localiserId: 'newPageWindow',
     height: 127,
     id: 'newPageWindow',
     width: 400,
@@ -41,6 +42,7 @@ Ext.define('Rubedo.view.newPageWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'newPageTitleField',
                             fieldLabel: 'Titre ',
                             labelWidth: 110,
                             name: 'title',
@@ -49,6 +51,7 @@ Ext.define('Rubedo.view.newPageWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'newPageMaskChoiceField',
                             id: 'newPageMaskSelector',
                             fieldLabel: 'Masque de page ',
                             labelWidth: 110,
@@ -63,6 +66,7 @@ Ext.define('Rubedo.view.newPageWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'newPageSubmitBtn',
                             id: 'newPageSubmitBtn',
                             text: 'Créer en tant que fille de la page sélectionnée'
                         }

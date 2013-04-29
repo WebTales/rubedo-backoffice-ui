@@ -526,12 +526,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "siteDefaultTitleField",
                                 "designer|userClassName": "MyTextField70",
                                 "fieldLabel": "Titre par défaut",
                                 "labelWidth": 110,
                                 "name": "title"
                             },
-                            "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173"
+                            "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.TextArea",
@@ -541,7 +549,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "descriptionField",
+                                "localiserId": "defaultDescriptionField",
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextArea5",
                                 "fieldLabel": "Description par défaut",
@@ -566,7 +574,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "authorField",
+                                "localiserId": "defaultAuthorField",
                                 "layout|anchor": "100%",
                                 "designer|userClassName": "MyTextField71",
                                 "fieldLabel": "Auteur par défaut",

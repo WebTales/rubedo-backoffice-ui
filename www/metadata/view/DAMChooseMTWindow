@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "chooseDamTypeWindow",
         "height": 119,
         "id": "DAMChooseMTWindow",
         "width": 400,
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "061bd6bb-80de-48a4-af26-f6193448d7a1",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -45,6 +53,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeField",
                         "designer|userClassName": "MyComboBox26",
                         "fieldLabel": "Type",
                         "name": "typeId",
@@ -55,7 +64,14 @@
                         "store": "MediaTypesForDAM",
                         "valueField": "id"
                     },
-                    "designerId": "752f3e27-d7a0-4035-a499-a1cf11df484c"
+                    "designerId": "752f3e27-d7a0-4035-a499-a1cf11df484c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -66,12 +82,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeSubmitBtn",
                         "id": "addDamAfterTypeBtn",
                         "designer|userClassName": "MyButton239",
                         "scale": "large",
                         "text": "Créer un nouveau média de ce type"
                     },
-                    "designerId": "90f6669a-85e6-4ada-973d-c9c9869c0eaa"
+                    "designerId": "90f6669a-85e6-4ada-973d-c9c9869c0eaa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

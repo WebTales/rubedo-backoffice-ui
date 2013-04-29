@@ -243,13 +243,14 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'siteDefaultTitleField',
                                     fieldLabel: 'Titre par défaut',
                                     labelWidth: 110,
                                     name: 'title'
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    localiserId: 'descriptionField',
+                                    localiserId: 'defaultDescriptionField',
                                     anchor: '100%',
                                     fieldLabel: 'Description par défaut',
                                     labelWidth: 110,
@@ -258,7 +259,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    localiserId: 'authorField',
+                                    localiserId: 'defaultAuthorField',
                                     anchor: '100%',
                                     fieldLabel: 'Auteur par défaut',
                                     labelWidth: 110,

@@ -385,18 +385,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     },
                                                     items: [
                                                         {
-                                                            xtype: 'button',
-                                                            itemId: 'helpBouton',
-                                                            style: '{float:right;}',
-                                                            handleMouseEvents: false,
-                                                            iconCls: 'help',
-                                                            pressedCls: 'x-btn',
-                                                            text: '',
-                                                            tooltip: 'Titre du contenu. Obligatoire.'
-                                                        },
-                                                        {
                                                             xtype: 'textfield',
                                                             localiserId: 'titleField',
+                                                            RTip: 'Titre du contenu. Obligatoire.',
                                                             anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Titre *',
@@ -413,18 +404,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     },
                                                     items: [
                                                         {
-                                                            xtype: 'button',
-                                                            itemId: 'helpBouton',
-                                                            style: '{float:right;}',
-                                                            handleMouseEvents: false,
-                                                            iconCls: 'help',
-                                                            pressedCls: 'x-btn',
-                                                            text: '',
-                                                            tooltip: 'Resumé facultatif du contenu.'
-                                                        },
-                                                        {
                                                             xtype: 'textareafield',
                                                             localiserId: 'summaryField',
+                                                            RTip: 'Résumé facultatif du contenu.',
                                                             anchor: '90%',
                                                             style: '{float:left}',
                                                             fieldLabel: 'Résumé ',

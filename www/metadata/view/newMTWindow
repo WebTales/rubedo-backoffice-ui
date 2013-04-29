@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newDamTypeWindow",
         "height": 137,
         "id": "newMTWindow",
         "width": 334,
@@ -22,6 +23,13 @@
         "resizable": "boolean"
     },
     "designerId": "eaea8fd3-deb9-427e-8709-b7a7a3a32c08",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -46,12 +54,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newDamTypeNameField",
                         "designer|userClassName": "MyTextField61",
                         "fieldLabel": "Nom ",
                         "name": "type",
                         "allowBlank": false
                     },
-                    "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320"
+                    "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -62,6 +78,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newDamTypeMainFileTypeField",
                         "designer|userClassName": "MyComboBox22",
                         "fieldLabel": "Type de fichier principal",
                         "name": "mainFileType",
@@ -75,7 +92,14 @@
                     "configAlternates": {
                         "store": "array"
                     },
-                    "designerId": "caa9f4cf-fa7e-4fd1-be29-bd1e9481d131"
+                    "designerId": "caa9f4cf-fa7e-4fd1-be29-bd1e9481d131",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -86,11 +110,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newDamTypeSubmitBtn",
                         "id": "createNewMTBtn",
                         "designer|userClassName": "MyButton186",
                         "text": "Créer un nouveau type de média"
                     },
-                    "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23"
+                    "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

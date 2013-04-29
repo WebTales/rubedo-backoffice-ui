@@ -51,6 +51,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             xtype: 'button',
                             isUpdate: false,
                             ACL: 'write.ui.contents.draft',
+                            localiserId: 'createAsDraftBtn',
                             id: 'boutonEnregistrerNouveauContenu',
                             iconCls: 'save',
                             text: 'Brouillon'
@@ -58,6 +59,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contents.draftToPending',
+                            localiserId: 'submitBtn',
                             id: 'boutonSoumettreNouveauContenu',
                             iconCls: 'save',
                             text: 'Soumettre'
@@ -65,6 +67,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.contents.refused',
+                            localiserId: 'refuseBtn',
                             hidden: true,
                             id: 'boutonRefuserNouveauContenu',
                             iconCls: 'save_refuse',
@@ -74,6 +77,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             xtype: 'button',
                             isUpdate: false,
                             ACL: 'write.ui.contents.published',
+                            localiserId: 'publishBtn',
                             id: 'boutonPublierNouveauContenu',
                             iconCls: 'publish',
                             text: 'Publier'
@@ -92,6 +96,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 type: 'fit'
                             },
                             title: 'Edition',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'editTab'
+                            },
                             items: [
                                 {
                                     xtype: 'form',
@@ -110,17 +118,9 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Titre du contenu. Obligatoire.'
-                                                },
-                                                {
                                                     xtype: 'textfield',
+                                                    localiserId: 'titleField',
+                                                    RTip: 'Titre du contenu. Obligatoire.',
                                                     anchor: '90%',
                                                     style: '{float:left}',
                                                     fieldLabel: 'Titre *',
@@ -138,17 +138,9 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Résumé facultatif du contenu.'
-                                                },
-                                                {
                                                     xtype: 'textareafield',
+                                                    localiserId: 'summaryField',
+                                                    RTip: 'Résumé facultatif du contenu.',
                                                     anchor: '90%',
                                                     style: '{float:left}',
                                                     fieldLabel: 'Résumé ',
@@ -168,16 +160,19 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             title: 'Métadonnées',
                             tabConfig: {
                                 xtype: 'tab',
+                                localiserId: 'metadataTab',
                                 id: 'metaTabConfig'
                             },
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'publishFieldset',
                                     title: 'Publication',
                                     items: [
                                         {
                                             xtype: 'datefield',
                                             anchor: '100%',
+                                            localiserId: 'contentStartPublicationDateField',
                                             fieldLabel: 'Date de début de publication ',
                                             labelWidth: 200,
                                             name: 'startPublicationDate'
@@ -185,6 +180,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         {
                                             xtype: 'datefield',
                                             anchor: '100%',
+                                            localiserId: 'contentEndPublicationDateField',
                                             fieldLabel: 'Date de fin de publication ',
                                             labelWidth: 200,
                                             name: 'endPublicationDate'
@@ -200,6 +196,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             title: 'Taxonomie',
                             tabConfig: {
                                 xtype: 'tab',
+                                localiserId: 'taxonomyTab',
                                 id: 'taxoTabConfig'
                             }
                         },
@@ -210,11 +207,13 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             title: 'Espaces de travail',
                             tabConfig: {
                                 xtype: 'tab',
+                                localiserId: 'workspacesTab',
                                 id: 'rightsTabConfig'
                             },
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'contributeWorkspaceField',
                                     fieldLabel: 'Contribution',
                                     name: 'writeWorkspace',
                                     store: 'ContributeWorkspacesCombo',
@@ -222,6 +221,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'diffusionWorkspaceField',
                                     fieldLabel: 'Diffusion',
                                     name: 'target',
                                     multiSelect: true,
@@ -237,6 +237,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                 type: 'fit'
                             },
                             title: 'Versions',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'versionsTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -246,23 +250,27 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'versionTitleCol',
                                             dataIndex: 'text',
                                             text: 'Titre'
                                         },
                                         {
                                             xtype: 'numbercolumn',
+                                            localiserId: 'versionVersionCol',
                                             dataIndex: 'publishVersion',
                                             text: 'Version',
                                             format: '0'
                                         },
                                         {
                                             xtype: 'datecolumn',
+                                            localiserId: 'versionPublishDateCol',
                                             dataIndex: 'publishTime',
                                             text: 'Date de publication',
                                             format: 'd/m/Y'
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'versionAuthorCol',
                                             dataIndex: 'publishUser',
                                             text: 'Auteur'
                                         }
@@ -280,6 +288,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             title: 'Contenus Imbriqués',
                             tabConfig: {
                                 xtype: 'tab',
+                                localiserId: 'dependantTypesTab',
                                 id: 'nestedContensTabConfig'
                             },
                             dockedItems: [

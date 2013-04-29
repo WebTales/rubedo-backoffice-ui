@@ -21,12 +21,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "blockConfigSimplePanel",
                 "padding": null,
                 "designer|userClassName": "MyForm10",
                 "bodyPadding": 10,
                 "title": "Simple"
             },
             "designerId": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.tab.Tab",
@@ -50,11 +58,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "blockConfigAdvancedPanel",
                 "designer|userClassName": "MyForm11",
                 "bodyPadding": 10,
                 "title": "Avancé"
             },
             "designerId": "30b2853e-c6ad-4627-b904-006cc1fca756",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.tab.Tab",

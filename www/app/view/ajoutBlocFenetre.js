@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajoutBlocFenetre',
 
+    localiserId: 'addBlockWindow',
     draggable: false,
     height: 300,
     id: 'ajoutBlocFenetre',
@@ -44,6 +45,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'addBlockTypeColumn',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 1
@@ -83,12 +85,14 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             id: 'boutonAjouterBloc',
                             iconCls: 'add',
                             text: 'Ajouter'
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             hidden: true,
                             id: 'addPageBlocBtn',
                             iconCls: 'add',

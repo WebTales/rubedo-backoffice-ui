@@ -871,7 +871,6 @@
                                         "height": 600,
                                         "id": "mainPageEdition",
                                         "designer|userClassName": "MyPanel40",
-                                        "autoScroll": true,
                                         "layout": "vbox",
                                         "title": ""
                                     },
@@ -1343,6 +1342,7 @@
                                             "    anchor:\"100%\",\r",
                                             "    name:\"keywords\",\r",
                                             "    fieldLabel:\"Mots-clés\",\r",
+                                            "    localiserId:\"keywordsField\",\r",
                                             "    multiSelect:true,\r",
                                             "    forceSelection:false,\r",
                                             "    createNewOnEnter:true,\r",
@@ -1580,17 +1580,25 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "zoomLevelSlider",
                         "layout|flex": null,
                         "id": "MaskZoomControlSlider1",
                         "width": 400,
                         "designer|userClassName": "MySlider",
                         "fieldLabel": "Niveau de zoom",
-                        "value": 514,
+                        "value": 527,
                         "maxValue": 2000,
                         "minValue": 200,
                         "useTips": false
                     },
                     "designerId": "3f4eeeb5-7364-4b63-a685-a3a3d117be22",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",

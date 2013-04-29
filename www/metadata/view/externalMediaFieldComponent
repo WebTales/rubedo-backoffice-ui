@@ -33,6 +33,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
+                "localiserId": "emFieldURL",
                 "margin": "0 0 10 0",
                 "style": "{float:left;}",
                 "designer|userClassName": "MyTextField78",
@@ -45,7 +46,14 @@
             "configAlternates": {
                 "style": "string"
             },
-            "designerId": "7315eb9b-9a20-4067-a8a1-fde5fd948e35"
+            "designerId": "7315eb9b-9a20-4067-a8a1-fde5fd948e35",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.Number",
@@ -56,6 +64,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "50%",
+                "localiserId": "emFieldMaxWidth",
                 "margin": "0 10 0 0",
                 "style": "{float:left;}",
                 "designer|userClassName": "MyNumberField5",
@@ -70,7 +79,14 @@
             "configAlternates": {
                 "style": "string"
             },
-            "designerId": "87bf316d-6486-4d6b-967a-de446213a10a"
+            "designerId": "87bf316d-6486-4d6b-967a-de446213a10a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.Number",
@@ -81,6 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "50%",
+                "localiserId": "emFieldMAxHeight",
                 "designer|userClassName": "MyNumberField6",
                 "fieldLabel": "Hauteur max",
                 "labelSeparator": " ",
@@ -90,7 +107,14 @@
                 "decimalPrecision": 6,
                 "minValue": 0
             },
-            "designerId": "022ed57e-5376-4011-b73a-83153e560476"
+            "designerId": "022ed57e-5376-4011-b73a-83153e560476",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

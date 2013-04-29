@@ -94,18 +94,10 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Titre du média. Obligatoire.'
-                                                },
-                                                {
                                                     xtype: 'textfield',
                                                     anchor: '90%',
+                                                    localiserId: 'damTitleField',
+                                                    RTip: 'Titre du média. Obligatoire.',
                                                     style: '{float:left}',
                                                     fieldLabel: 'Titre *',
                                                     labelSeparator: ' ',
@@ -122,18 +114,10 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                             },
                                             items: [
                                                 {
-                                                    xtype: 'button',
-                                                    itemId: 'helpBouton',
-                                                    style: '{float:right;}',
-                                                    handleMouseEvents: false,
-                                                    iconCls: 'help',
-                                                    pressedCls: 'x-btn',
-                                                    text: '',
-                                                    tooltip: 'Fichier principal du média. Obligatoire.'
-                                                },
-                                                {
                                                     xtype: 'filefield',
                                                     anchor: '90%',
+                                                    localiserId: 'damOrginalFileField',
+                                                    RTip: 'Fichier principal du média. Obligatoire.',
                                                     style: '{float:left}',
                                                     fieldLabel: 'Fichier original *',
                                                     labelSeparator: ' ',
@@ -148,15 +132,18 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'taxonomyFieldset',
                             id: 'DAMTaxoBox',
                             title: 'Taxonomie'
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'workspacesFieldset',
                             title: 'Espaces de travail',
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'contributeWorkspaceField',
                                     fieldLabel: 'Contribution',
                                     name: 'writeWorkspace',
                                     store: 'ContributeWorkspacesCombo',
@@ -164,6 +151,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'diffusionWorkspaceField',
                                     fieldLabel: 'Diffusion',
                                     name: 'target',
                                     multiSelect: true,
@@ -185,12 +173,14 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'damSubmitNewBtn',
                             id: 'DAMSubmitBtn',
                             iconCls: 'save',
                             text: 'Créer ce nouveau média'
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'damSubmitUpdateBtn',
                             hidden: true,
                             id: 'DAMSubmitUpdateBtn',
                             iconCls: 'save',
@@ -222,8 +212,9 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
             id:"DAMOriginalUpd",
             fieldLabel:"Fichier original *",
             style:{"float":"left"},
+            localiserId:"damOrginalLargeFileField",
             bigMode:true,
-            fileType:leType,
+            fileType:leType
         });
         component.insert(0, mainField);
     }

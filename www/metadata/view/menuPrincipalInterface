@@ -107,6 +107,7 @@
                                             "    favoriteIcon: 'globe_computer.png',\r",
                                             "    itemId: 'sitesInterface',\r",
                                             "    iconCls: 'referencement_icon',\r",
+                                            "    localiserId:'sitesLaunchBtn',\r",
                                             "    text: 'Sites'\r",
                                             "},\r",
                                             "{\r",
@@ -115,6 +116,7 @@
                                             "    favoriteIcon: 'application.png',\r",
                                             "    itemId: 'adminFMDP',\r",
                                             "    iconCls: 'masque-icon',\r",
+                                            "    localiserId:'masksLaunchBtn',\r",
                                             "    text: 'Masques de page'\r",
                                             "},\r",
                                             "{\r",
@@ -123,6 +125,7 @@
                                             "    favoriteIcon: 'page_full.png',\r",
                                             "    itemId: 'adminFTDC',\r",
                                             "    iconCls: 'content-icon',\r",
+                                            "    localiserId:'contentTypesLaunchBtn',\r",
                                             "    text: 'Types de contenus'\r",
                                             "},\r",
                                             "{\r",
@@ -131,6 +134,7 @@
                                             "    favoriteIcon: 'images.png',\r",
                                             "    itemId: 'mediaTypesInterface',\r",
                                             "    iconCls: 'mediaTypes',\r",
+                                            "    localiserId:'damTypesLaunchBtn',\r",
                                             "    text: 'Types de médias'\r",
                                             "},\r",
                                             "{\r",
@@ -139,6 +143,7 @@
                                             "    favoriteIcon: 'note.edit.png',\r",
                                             "    itemId: 'FormsInterface',\r",
                                             "    iconCls: 'form_small',\r",
+                                            "    localiserId:'formsLaunchBtn',\r",
                                             "    text: 'Questionnaires'\r",
                                             "}\r",
                                             "]);"
@@ -188,6 +193,7 @@
                                             "    favoriteIcon: 'database_search.png',\r",
                                             "    itemId: 'queryManagerInterface',\r",
                                             "    iconCls: 'database_search',\r",
+                                            "    localiserId:'queriesLaunchBtn',\r",
                                             "    text: 'Requêtes'\r",
                                             "},\r",
                                             "{\r",
@@ -196,6 +202,7 @@
                                             "    favoriteIcon: 'tag.png',\r",
                                             "    itemId: 'adminFTaxonomie',\r",
                                             "    iconCls: 'page_taxonomy',\r",
+                                            "    localiserId:'taxonomyLaunchBtn',\r",
                                             "    text: 'Taxonomie'\r",
                                             "},\r",
                                             "{\r",
@@ -203,6 +210,7 @@
                                             "    ACL: 'read.ui.groups',\r",
                                             "    favoriteIcon: 'users.png',\r",
                                             "    itemId: 'adminFUtilisateurs',\r",
+                                            "    localiserId:'groupsLaunchBtn',\r",
                                             "    iconCls: 'user',\r",
                                             "    text: 'Groupes'\r",
                                             "},\r",
@@ -211,6 +219,7 @@
                                             "    ACL: 'read.ui.workspaces',\r",
                                             "    favoriteIcon: 'users.png',\r",
                                             "    itemId: 'WorkspacesInterface',\r",
+                                            "    localiserId:'workspacesLaunchBtn',\r",
                                             "    iconCls: 'user',\r",
                                             "    text: 'Espaces de travail'\r",
                                             "},\r",
@@ -220,6 +229,7 @@
                                             "    favoriteIcon: 'user_edit.png',\r",
                                             "    floating: false,\r",
                                             "    itemId: 'UserAdminWindow',\r",
+                                            "    localiserId:'usersLaunchBtn',\r",
                                             "    iconCls: 'user_edit',\r",
                                             "    text: 'Utilisateurs'\r",
                                             "},\r",
@@ -228,6 +238,7 @@
                                             "    ACL: 'read.ui.technicalDashboard',\r",
                                             "    favoriteIcon: 'chart.png',\r",
                                             "    itemId: 'monitoringTools',\r",
+                                            "    localiserId:'monitoringLaunchBtn',\r",
                                             "    iconCls: 'monitoring',\r",
                                             "    text: 'Supervision'\r",
                                             "},\r",
@@ -237,6 +248,7 @@
                                             "    favoriteIcon: 'processes.png',\r",
                                             "    itemId: 'menuWorkflows',\r",
                                             "    iconCls: 'process-icon',\r",
+                                            "    localiserId:'workflowsLaunchBtn',\r",
                                             "    text: 'Workflows'\r",
                                             "},{\r",
                                             "    xtype: 'menuitem',\r",
@@ -244,6 +256,7 @@
                                             "    favoriteIcon: 'database_up.png',\r",
                                             "    itemId: 'InportInterface',\r",
                                             "    iconCls: 'database_up_small',\r",
+                                            "    localiserId:'importLaunchBtn',\r",
                                             "    text: 'Import'\r",
                                             "},{\r",
                                             "    xtype: 'menuitem',\r",
@@ -251,6 +264,7 @@
                                             "    favoriteIcon: 'mail.png',\r",
                                             "    itemId: 'MailingListsInterface',\r",
                                             "    iconCls: 'mail_small',\r",
+                                            "    localiserId:'mailingListsLaunchBtn',\r",
                                             "    text: 'Listes de diffusion'\r",
                                             "}\r",
                                             "]);"
@@ -328,6 +342,7 @@
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "application.png",
                         "layout|flex": null,
+                        "localiserId": "pagesLaunchBtn",
                         "itemId": "contributionPages",
                         "margin": null,
                         "designer|userClassName": "MyButton2",
@@ -345,6 +360,11 @@
                             "group": "(Custom Properties)",
                             "name": "favoriteIcon",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -359,6 +379,7 @@
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "computer.png",
                         "layout|flex": null,
+                        "localiserId": "previewLaunchBtn",
                         "itemId": "contributionPrevisualisation",
                         "margin": null,
                         "designer|userClassName": "MyButton2",
@@ -376,6 +397,11 @@
                             "group": "(Custom Properties)",
                             "name": "favoriteIcon",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -390,6 +416,7 @@
                         "ACL": "read.ui.contents",
                         "favoriteIcon": "page_full.png",
                         "layout|flex": null,
+                        "localiserId": "contentsLaunchBtn",
                         "itemId": "contributionContenus",
                         "margin": null,
                         "designer|userClassName": "MyButton2",
@@ -407,6 +434,11 @@
                             "group": "(Custom Properties)",
                             "name": "favoriteIcon",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -421,6 +453,7 @@
                         "ACL": "read.ui.dam",
                         "favoriteIcon": "images.png",
                         "layout|flex": null,
+                        "localiserId": "DAMLaunchBtn",
                         "itemId": "DAMInterface",
                         "margin": null,
                         "designer|userClassName": "MyButton2",
@@ -437,6 +470,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "favoriteIcon",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -473,6 +511,7 @@
                         "usesMenu": true,
                         "usedMenu": "salamanderStudioMenu",
                         "layout|flex": null,
+                        "localiserId": "studioMenuBtn",
                         "designer|userClassName": "MyButton248",
                         "arrowCls": null,
                         "iconCls": "applications",
@@ -491,6 +530,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "usedMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -541,6 +585,7 @@
                         "usesMenu": true,
                         "usedMenu": "salamanderAdminMenu",
                         "layout|flex": null,
+                        "localiserId": "adminLenuBtn",
                         "designer|userClassName": "MyButton248",
                         "iconCls": "process-icon",
                         "text": "Administration"
@@ -558,6 +603,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "usedMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -607,6 +657,7 @@
                     "userConfig": {
                         "favoriteIcon": "tools.png",
                         "layout|flex": null,
+                        "localiserId": "mySettingsLaunchBtn",
                         "itemId": "userSettings",
                         "margin": null,
                         "designer|userClassName": "MyButton2",
@@ -618,6 +669,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "favoriteIcon",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -644,13 +700,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "logoutBtn",
                         "id": null,
                         "itemId": "deconnexionMenuPrincipal",
                         "designer|userClassName": "MyButton2",
                         "iconCls": "deconecter",
                         "text": "Déconnexion"
                     },
-                    "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a"
+                    "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

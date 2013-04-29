@@ -119,6 +119,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.pages',
                             favoriteIcon: 'application.png',
+                            localiserId: 'pagesLaunchBtn',
                             itemId: 'contributionPages',
                             iconCls: 'site-icon',
                             text: 'Pages'
@@ -127,6 +128,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.pages',
                             favoriteIcon: 'computer.png',
+                            localiserId: 'previewLaunchBtn',
                             itemId: 'contributionPrevisualisation',
                             iconCls: 'personalize',
                             text: 'Prévisualisation'
@@ -135,6 +137,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.contents',
                             favoriteIcon: 'page_full.png',
+                            localiserId: 'contentsLaunchBtn',
                             itemId: 'contributionContenus',
                             iconCls: 'content-icon',
                             text: 'Contenus'
@@ -143,6 +146,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             ACL: 'read.ui.dam',
                             favoriteIcon: 'images.png',
+                            localiserId: 'DAMLaunchBtn',
                             itemId: 'DAMInterface',
                             iconCls: 'mediaTypes',
                             text: 'Médiathèque'
@@ -155,6 +159,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             usesMenu: true,
                             usedMenu: 'salamanderStudioMenu',
+                            localiserId: 'studioMenuBtn',
                             iconCls: 'applications',
                             text: 'Studio',
                             listeners: {
@@ -172,6 +177,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             xtype: 'button',
                             usesMenu: true,
                             usedMenu: 'salamanderAdminMenu',
+                            localiserId: 'adminLenuBtn',
                             iconCls: 'process-icon',
                             text: 'Administration',
                             listeners: {
@@ -188,6 +194,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         {
                             xtype: 'button',
                             favoriteIcon: 'tools.png',
+                            localiserId: 'mySettingsLaunchBtn',
                             itemId: 'userSettings',
                             iconCls: 'parametres',
                             text: 'Paramètres'
@@ -197,6 +204,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'logoutBtn',
                             itemId: 'deconnexionMenuPrincipal',
                             iconCls: 'deconecter',
                             text: 'Déconnexion'
@@ -217,6 +225,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'globe_computer.png',
             itemId: 'sitesInterface',
             iconCls: 'referencement_icon',
+            localiserId:'sitesLaunchBtn',
             text: 'Sites'
         },
         {
@@ -225,6 +234,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'application.png',
             itemId: 'adminFMDP',
             iconCls: 'masque-icon',
+            localiserId:'masksLaunchBtn',
             text: 'Masques de page'
         },
         {
@@ -233,6 +243,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'page_full.png',
             itemId: 'adminFTDC',
             iconCls: 'content-icon',
+            localiserId:'contentTypesLaunchBtn',
             text: 'Types de contenus'
         },
         {
@@ -241,6 +252,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'images.png',
             itemId: 'mediaTypesInterface',
             iconCls: 'mediaTypes',
+            localiserId:'damTypesLaunchBtn',
             text: 'Types de médias'
         },
         {
@@ -249,6 +261,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'note.edit.png',
             itemId: 'FormsInterface',
             iconCls: 'form_small',
+            localiserId:'formsLaunchBtn',
             text: 'Questionnaires'
         }
         ]);
@@ -262,6 +275,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'database_search.png',
             itemId: 'queryManagerInterface',
             iconCls: 'database_search',
+            localiserId:'queriesLaunchBtn',
             text: 'Requêtes'
         },
         {
@@ -270,6 +284,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'tag.png',
             itemId: 'adminFTaxonomie',
             iconCls: 'page_taxonomy',
+            localiserId:'taxonomyLaunchBtn',
             text: 'Taxonomie'
         },
         {
@@ -277,6 +292,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             ACL: 'read.ui.groups',
             favoriteIcon: 'users.png',
             itemId: 'adminFUtilisateurs',
+            localiserId:'groupsLaunchBtn',
             iconCls: 'user',
             text: 'Groupes'
         },
@@ -285,6 +301,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             ACL: 'read.ui.workspaces',
             favoriteIcon: 'users.png',
             itemId: 'WorkspacesInterface',
+            localiserId:'workspacesLaunchBtn',
             iconCls: 'user',
             text: 'Espaces de travail'
         },
@@ -294,6 +311,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'user_edit.png',
             floating: false,
             itemId: 'UserAdminWindow',
+            localiserId:'usersLaunchBtn',
             iconCls: 'user_edit',
             text: 'Utilisateurs'
         },
@@ -302,6 +320,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             ACL: 'read.ui.technicalDashboard',
             favoriteIcon: 'chart.png',
             itemId: 'monitoringTools',
+            localiserId:'monitoringLaunchBtn',
             iconCls: 'monitoring',
             text: 'Supervision'
         },
@@ -311,6 +330,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'processes.png',
             itemId: 'menuWorkflows',
             iconCls: 'process-icon',
+            localiserId:'workflowsLaunchBtn',
             text: 'Workflows'
         },{
             xtype: 'menuitem',
@@ -318,6 +338,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'database_up.png',
             itemId: 'InportInterface',
             iconCls: 'database_up_small',
+            localiserId:'importLaunchBtn',
             text: 'Import'
         },{
             xtype: 'menuitem',
@@ -325,6 +346,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'mail.png',
             itemId: 'MailingListsInterface',
             iconCls: 'mail_small',
+            localiserId:'mailingListsLaunchBtn',
             text: 'Listes de diffusion'
         }
         ]);

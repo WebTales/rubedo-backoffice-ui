@@ -34,6 +34,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                 {
                     xtype: 'textfield',
                     anchor: '50%',
+                    localiserId: 'lcFieldAdress',
                     margin: '0 10 0 0',
                     style: '{float:left;}',
                     fieldLabel: 'Adresse',
@@ -45,6 +46,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                 {
                     xtype: 'numberfield',
                     anchor: '50%',
+                    localiserId: 'lcFieldAltitude',
                     fieldLabel: 'Altitude',
                     labelSeparator: ' ',
                     labelWidth: 60,
@@ -55,6 +57,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                 {
                     xtype: 'numberfield',
                     anchor: '50%',
+                    localiserId: 'lcFieldLatitude',
                     margin: '0 10 0 0',
                     style: '{float:left;}',
                     fieldLabel: 'Latitude',
@@ -69,6 +72,7 @@ Ext.define('Rubedo.view.localiserFieldComponent', {
                 {
                     xtype: 'numberfield',
                     anchor: '50%',
+                    localiserId: 'lcFieldLongitude',
                     fieldLabel: 'Longitude',
                     labelSeparator: ' ',
                     labelWidth: 60,

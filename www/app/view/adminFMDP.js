@@ -92,6 +92,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                         },
                         {
                             xtype: 'slider',
+                            localiserId: 'zoomLevelSlider',
                             id: 'MaskZoomControlSlider',
                             width: 400,
                             fieldLabel: 'Niveau de zoom',
@@ -450,7 +451,6 @@ Ext.define('Rubedo.view.adminFMDP', {
                                     border: 0,
                                     height: 600,
                                     id: 'masqueEdition',
-                                    autoScroll: true,
                                     layout: {
                                         align: 'stretch',
                                         type: 'vbox'

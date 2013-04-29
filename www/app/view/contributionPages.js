@@ -262,10 +262,11 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'slider',
+                            localiserId: 'zoomLevelSlider',
                             id: 'MaskZoomControlSlider1',
                             width: 400,
                             fieldLabel: 'Niveau de zoom',
-                            value: 514,
+                            value: 527,
                             maxValue: 2000,
                             minValue: 200,
                             useTips: false,
@@ -390,7 +391,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'panel',
                                             height: 600,
                                             id: 'mainPageEdition',
-                                            autoScroll: true,
                                             layout: {
                                                 align: 'stretch',
                                                 type: 'vbox'
@@ -665,6 +665,7 @@ Ext.define('Rubedo.view.contributionPages', {
             anchor:"100%",
             name:"keywords",
             fieldLabel:"Mots-clés",
+            localiserId:"keywordsField",
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,

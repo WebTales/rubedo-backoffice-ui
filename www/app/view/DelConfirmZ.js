@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.DelConfirmZ', {
     extend: 'Ext.window.Window',
     alias: 'widget.delConfirmZ',
 
+    localiserId: 'confirmDeleteWindow',
     draggable: false,
     height: 100,
     id: 'delConfirmZ',
@@ -40,6 +41,7 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'confirmDeleteYes',
                             id: 'delConfirmZOui',
                             margin: '0, 0, 0, 10',
                             iconCls: 'ouiS',
@@ -54,6 +56,7 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
+                            localiserId: 'confirmDeleteNo',
                             id: 'delConfirmZNon',
                             margin: '0, 10, 0, 0',
                             iconCls: 'nonS',

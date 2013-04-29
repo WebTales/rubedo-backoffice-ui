@@ -31,6 +31,7 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
+                "localiserId": "addBtn",
                 "itemId": "addBtn",
                 "margin": "0 4 0 0",
                 "designer|userClassName": "MyButton243",
@@ -43,29 +44,10 @@
                     "group": "(Custom Properties)",
                     "name": "ACL",
                     "type": "string"
-                }
-            ]
-        },
-        {
-            "type": "Ext.button.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ACL": "write.ui.queries",
-                "itemId": "editBtn",
-                "margin": "0 4 0 0",
-                "designer|userClassName": "MyButton244",
-                "iconCls": "edit",
-                "text": "Modifier"
-            },
-            "designerId": "34953db2-ecc0-43fe-89eb-784373624339",
-            "customConfigs": [
+                },
                 {
                     "group": "(Custom Properties)",
-                    "name": "ACL",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]
@@ -79,6 +61,37 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
+                "localiserId": "editBtn",
+                "itemId": "editBtn",
+                "margin": "0 4 0 0",
+                "designer|userClassName": "MyButton244",
+                "iconCls": "edit",
+                "text": "Modifier"
+            },
+            "designerId": "34953db2-ecc0-43fe-89eb-784373624339",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "write.ui.queries",
+                "localiserId": "removeBtn",
                 "itemId": "removeBtn",
                 "designer|userClassName": "MyButton245",
                 "iconCls": "close",
@@ -89,6 +102,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]

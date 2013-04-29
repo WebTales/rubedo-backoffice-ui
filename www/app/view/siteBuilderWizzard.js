@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
         'Rubedo.view.MyToolbar56'
     ],
 
+    localiserId: 'siteBuilderWizzard',
     height: 330,
     id: 'siteBuilderWizzard',
     width: 464,
@@ -47,6 +48,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                     items: [
                         {
                             xtype: 'panel',
+                            localiserId: 'sbStage1',
                             layout: {
                                 type: 'anchor'
                             },
@@ -56,6 +58,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'domainNameField',
                                     fieldLabel: 'Nom de domaine *',
                                     labelWidth: 110,
                                     name: 'text',
@@ -66,6 +69,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     xtype: 'combobox',
                                     managesStore: true,
                                     anchor: '100%',
+                                    localiserId: 'themeField',
                                     fieldLabel: 'Theme ',
                                     labelWidth: 110,
                                     name: 'theme',
@@ -77,6 +81,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'protocolField',
                                     fieldLabel: 'Protocole *',
                                     labelWidth: 110,
                                     name: 'protocol',
@@ -102,6 +107,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'sbStage2',
                             layout: {
                                 type: 'anchor'
                             },
@@ -111,6 +117,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'displayfield',
                                     anchor: '100%',
+                                    localiserId: 'siteModelField',
                                     fieldLabel: 'Modèle ',
                                     name: 'siteModelId',
                                     value: 'Site Vide'
@@ -119,6 +126,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'sbStage3',
                             overflowY: 'auto',
                             layout: {
                                 type: 'anchor'
@@ -129,12 +137,14 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'siteDefaultTitleField',
                                     fieldLabel: 'Titre par défaut',
                                     name: 'title'
                                 },
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
+                                    localiserId: 'defaultDescriptionField',
                                     fieldLabel: 'Description par défaut',
                                     name: 'description',
                                     maxLength: 250
@@ -142,6 +152,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'defaultAuthorField',
                                     fieldLabel: 'Auteur par défaut',
                                     name: 'author',
                                     value: 'Powered by Rubedo'
@@ -149,6 +160,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    localiserId: 'siteBuilderWizardSubmit',
                                     id: 'siteWizzardCreateBtn',
                                     margin: '10 0 0 0',
                                     scale: 'large',

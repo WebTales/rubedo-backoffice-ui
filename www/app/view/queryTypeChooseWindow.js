@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.queryTypeChooseWindow',
 
+    localiserId: 'queryTypeChooseWindow',
     height: 141,
     id: 'queryTypeChooseWindow',
     width: 235,
@@ -43,6 +44,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                         button.up().close();
                     },
                     flex: 1,
+                    localiserId: 'chooseManualQueryBtn',
                     scale: 'large',
                     text: 'Requête manuelle'
                 },
@@ -56,6 +58,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                         button.up().close();
                     },
                     flex: 1,
+                    localiserId: 'ChooseSimpleQueryBtn',
                     scale: 'large',
                     text: 'Requête simple'
                 },
@@ -68,6 +71,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                         button.up().close();
                     },
                     flex: 1,
+                    localiserId: 'chooseAdvancedQueryBtn',
                     scale: 'large',
                     text: 'Requête avancée'
                 }

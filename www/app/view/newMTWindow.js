@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.newMTWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newMTWindow',
 
+    localiserId: 'newDamTypeWindow',
     height: 137,
     id: 'newMTWindow',
     width: 334,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.newMTWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'newDamTypeNameField',
                             fieldLabel: 'Nom ',
                             name: 'type',
                             allowBlank: false
@@ -49,6 +51,7 @@ Ext.define('Rubedo.view.newMTWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'newDamTypeMainFileTypeField',
                             fieldLabel: 'Type de fichier principal',
                             name: 'mainFileType',
                             allowBlank: false,
@@ -65,6 +68,7 @@ Ext.define('Rubedo.view.newMTWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'newDamTypeSubmitBtn',
                             id: 'createNewMTBtn',
                             text: 'Créer un nouveau type de média'
                         }

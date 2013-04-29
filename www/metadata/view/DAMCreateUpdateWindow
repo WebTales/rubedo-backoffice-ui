@@ -116,8 +116,9 @@
                                             "    id:\"DAMOriginalUpd\",\r",
                                             "    fieldLabel:\"Fichier original *\",\r",
                                             "    style:{\"float\":\"left\"},\r",
+                                            "    localiserId:\"damOrginalLargeFileField\",\r",
                                             "    bigMode:true,\r",
-                                            "    fileType:leType,\r",
+                                            "    fileType:leType\r",
                                             "});\r",
                                             "component.insert(0, mainField);"
                                         ],
@@ -163,33 +164,6 @@
                                     "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
                                     "cn": [
                                         {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "itemId": "helpBouton",
-                                                "margin": null,
-                                                "style": [
-                                                    "{float:right;}"
-                                                ],
-                                                "designer|userClassName": "MyButton17",
-                                                "allowDepress": null,
-                                                "enableToggle": null,
-                                                "handleMouseEvents": false,
-                                                "iconCls": "help",
-                                                "pressed": null,
-                                                "pressedCls": "x-btn",
-                                                "text": "",
-                                                "tooltip": [
-                                                    "'Titre du média. Obligatoire.'"
-                                                ]
-                                            },
-                                            "designerId": "8a51a2c7-d9be-41e3-9282-a43ccad81b59"
-                                        },
-                                        {
                                             "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
@@ -198,6 +172,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|anchor": "90%",
+                                                "localiserId": "damTitleField",
+                                                "RTip": "Titre du média. Obligatoire.",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
@@ -208,7 +184,19 @@
                                                 "name": "title",
                                                 "allowBlank": false
                                             },
-                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa"
+                                            "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "RTip",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -230,33 +218,6 @@
                                     "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
                                     "cn": [
                                         {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "itemId": "helpBouton",
-                                                "margin": null,
-                                                "style": [
-                                                    "{float:right;}"
-                                                ],
-                                                "designer|userClassName": "MyButton17",
-                                                "allowDepress": null,
-                                                "enableToggle": null,
-                                                "handleMouseEvents": false,
-                                                "iconCls": "help",
-                                                "pressed": null,
-                                                "pressedCls": "x-btn",
-                                                "text": "",
-                                                "tooltip": [
-                                                    "'Fichier principal du média. Obligatoire.'"
-                                                ]
-                                            },
-                                            "designerId": "8f26dbc9-7440-449a-837c-d600f17da51f"
-                                        },
-                                        {
                                             "type": "Ext.form.field.File",
                                             "reference": {
                                                 "name": "items",
@@ -265,6 +226,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|anchor": "90%",
+                                                "localiserId": "damOrginalFileField",
+                                                "RTip": "Fichier principal du média. Obligatoire.",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
@@ -275,7 +238,19 @@
                                                 "name": "originalFileId",
                                                 "allowBlank": false
                                             },
-                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e"
+                                            "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "RTip",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -291,11 +266,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "taxonomyFieldset",
                         "id": "DAMTaxoBox",
                         "designer|userClassName": "MyFieldSet18",
                         "title": "Taxonomie"
                     },
-                    "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b"
+                    "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.FieldSet",
@@ -305,10 +288,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "workspacesFieldset",
                         "designer|userClassName": "MyFieldSet18",
                         "title": "Espaces de travail"
                     },
                     "designerId": "162cf652-9ad8-4da0-8b19-916b2b6ddc3a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -318,6 +309,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "contributeWorkspaceField",
                                 "fieldLabel": "Contribution",
                                 "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo",
@@ -334,6 +326,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "diffusionWorkspaceField",
                                 "fieldLabel": "Diffusion",
                                 "name": "target",
                                 "submitValue": null,
@@ -382,13 +375,21 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "damSubmitNewBtn",
                         "layout|flex": null,
                         "id": "DAMSubmitBtn",
                         "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Créer ce nouveau média"
                     },
-                    "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2"
+                    "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -399,13 +400,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "damSubmitUpdateBtn",
                         "hidden": true,
                         "id": "DAMSubmitUpdateBtn",
                         "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Enregistrer les modifications"
                     },
-                    "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4"
+                    "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

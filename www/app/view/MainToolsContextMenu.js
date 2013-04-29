@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.MainToolsContextMenu', {
             items: [
                 {
                     xtype: 'menuitem',
+                    localiserId: 'createDesktopShortcutMenuBtn',
                     iconCls: 'add',
                     text: 'Créer un raccourci sur le bureau'
                 }

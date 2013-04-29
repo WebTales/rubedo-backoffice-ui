@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.MyToolbar56', {
                         button.up().up().getLayout().prev();
                         button.up().makeCorrect();
                     },
+                    localiserId: 'wizardPrevBtn',
                     itemId: 'wizPrev',
                     iconCls: 'arrow_left',
                     text: 'Précédent'
@@ -59,6 +60,7 @@ Ext.define('Rubedo.view.MyToolbar56', {
                             }
                         }
                     },
+                    localiserId: 'wizardNextBtn',
                     itemId: 'wizNext',
                     iconAlign: 'right',
                     iconCls: 'arrow_right',

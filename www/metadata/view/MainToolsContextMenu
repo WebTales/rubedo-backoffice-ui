@@ -22,12 +22,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "createDesktopShortcutMenuBtn",
                 "id": null,
                 "designer|userClassName": "MyMenuItem7",
                 "iconCls": "add",
                 "text": "Créer un raccourci sur le bureau"
             },
-            "designerId": "90799c6c-f8f2-498e-932d-87b5bfc1d7c2"
+            "designerId": "90799c6c-f8f2-498e-932d-87b5bfc1d7c2",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

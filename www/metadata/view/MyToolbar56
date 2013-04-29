@@ -46,12 +46,20 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "wizardPrevBtn",
                 "itemId": "wizPrev",
                 "designer|userClassName": "MyButton221",
                 "iconCls": "arrow_left",
                 "text": "Précédent"
             },
             "designerId": "c032ac34-65b6-4121-b5a4-aeafa5360d8f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -85,6 +93,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "wizardNextBtn",
                 "itemId": "wizNext",
                 "designer|userClassName": "MyButton222",
                 "iconAlign": "right",
@@ -92,6 +101,13 @@
                 "text": "Suivant"
             },
             "designerId": "954c1089-b17e-4b5c-901f-29facff3b346",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

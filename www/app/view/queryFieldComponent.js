@@ -30,6 +30,7 @@ Ext.define('Rubedo.view.queryFieldComponent', {
                 {
                     xtype: 'button',
                     ACL: 'write.ui.queries',
+                    localiserId: 'addBtn',
                     itemId: 'addBtn',
                     margin: '0 4 0 0',
                     iconCls: 'add',
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.queryFieldComponent', {
                 {
                     xtype: 'button',
                     ACL: 'write.ui.queries',
+                    localiserId: 'editBtn',
                     itemId: 'editBtn',
                     margin: '0 4 0 0',
                     iconCls: 'edit',
@@ -46,6 +48,7 @@ Ext.define('Rubedo.view.queryFieldComponent', {
                 {
                     xtype: 'button',
                     ACL: 'write.ui.queries',
+                    localiserId: 'removeBtn',
                     itemId: 'removeBtn',
                     iconCls: 'close',
                     text: 'Supprimer'

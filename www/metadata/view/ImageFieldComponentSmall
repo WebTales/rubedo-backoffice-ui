@@ -67,6 +67,7 @@
                     "userConfig": {
                         "layout|x": 0,
                         "layout|y": 0,
+                        "localiserId": "imagePickerChangeBtn",
                         "itemId": "fieldChangeImage",
                         "designer|userClassName": "MyButton170",
                         "iconCls": "edit",
@@ -76,7 +77,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "5c36ab68-2fb3-4e8b-8dfd-4b18d3328471"
+                    "designerId": "5c36ab68-2fb3-4e8b-8dfd-4b18d3328471",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -88,6 +96,7 @@
                     "userConfig": {
                         "layout|x": 0,
                         "layout|y": 30,
+                        "localiserId": "imagePickerClearBtn",
                         "itemId": "fieldClearImage",
                         "designer|userClassName": "MyButton171",
                         "iconCls": "close",
@@ -97,7 +106,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "f192c816-0436-44df-a5dd-5838cb8fa523"
+                    "designerId": "f192c816-0436-44df-a5dd-5838cb8fa523",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

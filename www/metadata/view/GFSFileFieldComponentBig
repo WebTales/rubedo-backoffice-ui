@@ -109,6 +109,7 @@
                     "userConfig": {
                         "layout|x": 70,
                         "layout|y": 10,
+                        "localiserId": "gfsUploadBtn",
                         "itemId": "fieldChangeFile",
                         "designer|userClassName": "MyButton170",
                         "iconCls": "database_up_big",
@@ -119,7 +120,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "a9990c6b-2768-405b-adce-e42d491e656a"
+                    "designerId": "a9990c6b-2768-405b-adce-e42d491e656a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -131,6 +139,7 @@
                     "userConfig": {
                         "layout|x": 190,
                         "layout|y": 10,
+                        "localiserId": "gfsRemoveFileBtn",
                         "itemId": "fieldClearFile",
                         "width": 40,
                         "designer|userClassName": "MyButton171",
@@ -142,7 +151,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "10ef4574-25d3-4e78-99b1-5489c933b65f"
+                    "designerId": "10ef4574-25d3-4e78-99b1-5489c933b65f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -154,6 +170,7 @@
                     "userConfig": {
                         "layout|x": 10,
                         "layout|y": 10,
+                        "localiserId": "gfsDownloadBtn",
                         "itemId": "fieldDownloadFile",
                         "width": 40,
                         "designer|userClassName": "MyButton171",
@@ -165,7 +182,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "a5f80e8d-f417-4f72-9cd6-68b055efe581"
+                    "designerId": "a5f80e8d-f417-4f72-9cd6-68b055efe581",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -177,6 +201,7 @@
                     "userConfig": {
                         "layout|x": 130,
                         "layout|y": 10,
+                        "localiserId": "gfsPreviewFileBtn",
                         "itemId": "fieldPreviewFile",
                         "width": 40,
                         "designer|userClassName": "MyButton171",
@@ -188,7 +213,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "3b9fcc69-9743-4c23-920d-e4adef0417e5"
+                    "designerId": "3b9fcc69-9743-4c23-920d-e4adef0417e5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -200,6 +232,7 @@
                     "userConfig": {
                         "layout|x": 250,
                         "layout|y": 10,
+                        "localiserId": "gfsHelpBtn",
                         "itemId": "helpBouton",
                         "margin": null,
                         "style": [
@@ -218,7 +251,14 @@
                             "'Fichier principal du média. Obligatoire.'"
                         ]
                     },
-                    "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab"
+                    "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

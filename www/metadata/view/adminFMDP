@@ -187,6 +187,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "zoomLevelSlider",
                         "layout|flex": null,
                         "id": "MaskZoomControlSlider",
                         "width": 400,
@@ -198,6 +199,13 @@
                         "useTips": false
                     },
                     "designerId": "abd13300-7f3d-4d12-911f-0f3ecd76327e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -1192,7 +1200,7 @@
                                 "style": null,
                                 "width": null,
                                 "designer|userClassName": "MyPanel61",
-                                "autoScroll": true,
+                                "autoScroll": null,
                                 "layout": "vbox",
                                 "bodyStyle": null
                             },

@@ -53,6 +53,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
+                "localiserId": "u1TitleColumn",
                 "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
@@ -66,6 +67,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -122,6 +128,7 @@
                     "    store: \"TCNDepComboCS\"\r",
                     "}"
                 ],
+                "localiserId": "u1TypeColumn",
                 "designer|userClassName": "MyColumn53",
                 "dataIndex": "typeId",
                 "text": "Type",
@@ -135,6 +142,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -188,6 +200,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "u1StatusColumn",
                 "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
                 "text": "Etat",
@@ -201,6 +214,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -255,6 +273,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "u1OnlineColumn",
                 "width": 60,
                 "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
@@ -270,6 +289,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]

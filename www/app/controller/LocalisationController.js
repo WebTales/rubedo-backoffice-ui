@@ -118,6 +118,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
         Ext.define("Rubedo.RubedoInterfaceLoc",{
             singleton:true
         });
+        Ext.define("Rubedo.RubedoAutomatedElementsLoc",{
+            singleton:true
+
+        });
         // attach event and load localisation store
         Ext.getStore("LocalisationStore").on("load",function(){
             me.updateLocalisationSingletons();
@@ -153,7 +157,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     };
                 } else if (test.isXType("button")){
                     result[test.localiserId]={
-                        text:test.text
+                        text:test.text,
+                        tooltip:test.tooltip
                     };
                 } else if (test.isXType("fieldset")){
                     result[test.localiserId]={

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.DAMChooseMTWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.DAMChooseMTWindow',
 
+    localiserId: 'chooseDamTypeWindow',
     height: 119,
     id: 'DAMChooseMTWindow',
     width: 400,
@@ -40,6 +41,7 @@ Ext.define('Rubedo.view.DAMChooseMTWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'chooseDamTypeField',
                             fieldLabel: 'Type',
                             name: 'typeId',
                             allowBlank: false,
@@ -52,6 +54,7 @@ Ext.define('Rubedo.view.DAMChooseMTWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'chooseDamTypeSubmitBtn',
                             id: 'addDamAfterTypeBtn',
                             scale: 'large',
                             text: 'Créer un nouveau média de ce type'

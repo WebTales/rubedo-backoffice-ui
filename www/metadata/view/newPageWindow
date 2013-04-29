@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "usedStores": null,
+        "localiserId": "newPageWindow",
         "height": 127,
         "id": "newPageWindow",
         "width": 400,
@@ -28,6 +29,11 @@
         {
             "group": "(Custom Properties)",
             "name": "usedStores",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -55,6 +61,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newPageTitleField",
                         "designer|userClassName": "MyTextField44",
                         "fieldLabel": "Titre ",
                         "labelWidth": 110,
@@ -63,7 +70,14 @@
                         "regex": null,
                         "vtype": null
                     },
-                    "designerId": "8eacd9e1-5cc1-4c2d-811f-d77b4bfe96de"
+                    "designerId": "8eacd9e1-5cc1-4c2d-811f-d77b4bfe96de",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -75,6 +89,7 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "dock": null,
+                        "localiserId": "newPageMaskChoiceField",
                         "id": "newPageMaskSelector",
                         "designer|userClassName": "MyComboBox13",
                         "fieldLabel": "Masque de page ",
@@ -87,7 +102,14 @@
                         "store": "MasksComboStore",
                         "valueField": "id"
                     },
-                    "designerId": "46268254-4c0b-4734-bf0f-ff042a959e8b"
+                    "designerId": "46268254-4c0b-4734-bf0f-ff042a959e8b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -98,11 +120,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newPageSubmitBtn",
                         "id": "newPageSubmitBtn",
                         "designer|userClassName": "MyButton158",
                         "text": "Créer en tant que fille de la page sélectionnée"
                     },
-                    "designerId": "f85a67ca-a9ca-4c19-bb27-31ccee2deba8"
+                    "designerId": "f85a67ca-a9ca-4c19-bb27-31ccee2deba8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

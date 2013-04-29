@@ -52,6 +52,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
 
                     },
                     filter: true,
+                    localiserId: 'u1TitleColumn',
                     dataIndex: 'text',
                     text: 'Titre',
                     flex: 1
@@ -71,6 +72,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                         displayField: 'type',
                         store: 'TCNDepComboCS'
                     },
+                    localiserId: 'u1TypeColumn',
                     dataIndex: 'typeId',
                     text: 'Type',
                     flex: 1
@@ -103,6 +105,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                             ]
                         ]
                     },
+                    localiserId: 'u1StatusColumn',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
@@ -122,6 +125,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                             ]
                         ]
                     },
+                    localiserId: 'u1OnlineColumn',
                     width: 60,
                     dataIndex: 'online',
                     text: 'En ligne',
