@@ -1763,6 +1763,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     description: '<p></p>',
                     config: {
                         name: 'checkboxGroup',
+                        vertical: true,
                         items: [
                             {
                                 boxLabel: 'Option 1',
@@ -1846,6 +1847,98 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '517f7bf7c0e0512c05000001'
+                },
+                {
+                    type: 'Groupe be boutons radio',
+                    cType: 'Ext.form.RadioGroup',
+                    openWindow: '',
+                    description: '<p></p>',
+                    config: {
+                        name: 'radioGroup',
+                        vertical: true,
+                        items: [
+                            {
+                                boxLabel: 'Option 1',
+                                name: 'radioGroup',
+                                inputValue: 'valeur1'
+                            },
+                            {
+                                boxLabel: 'Option 2',
+                                name: 'radioGroup',
+                                inputValue: 'valeur2'
+                            }
+                        ],
+                        fieldLabel: 'Label du champ',
+                        searchable: false,
+                        columns: 1,
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Colonnes',
+                                name: 'columns',
+                                editable: false,
+                                allowDecimals: false,
+                                minValue: 1
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '517f7bf7c0e0512c05123451'
                 },
                 {
                     type: 'Lien sur contenu',

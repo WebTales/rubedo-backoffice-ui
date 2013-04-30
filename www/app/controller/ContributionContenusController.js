@@ -564,6 +564,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             if (Ext.getCmp("boiteATaxoContenus").getForm().isValid()){
                 if (Ext.getCmp("contentMetadataBox").getForm().isValid()){
                     var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+                    Ext.Array.forEach(Ext.getCmp("boiteAChampsContenus").query("checkboxgroup"),function(cbGroup){
+                        champs[cbGroup.name]=cbGroup.getValue();
+                    });
                     var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
                     var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
                     var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();

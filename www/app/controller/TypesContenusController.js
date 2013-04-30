@@ -1059,7 +1059,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     nameValidator: function(name) {
         var usedNames=["text","summary"];
         Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
-            if (field.getId()!=Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getId()){
+            if ((field.getId()!=Ext.getCmp(Ext.getCmp('champTCIdField').getValue()).getId())&&(field.up().isXType("ChampTC"))){
                 Ext.Array.include(usedNames,field.name);
             }
         });
