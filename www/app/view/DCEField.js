@@ -56,6 +56,9 @@ Ext.define('Rubedo.view.DCEField', {
             if (component.addOnly){
                 myComponent.getComponent("chooseBtn").hide();
             }
+            if (component.noEdit){
+                myComponent.getComponent("editBtn").hide();
+            }
 
         });
 
@@ -69,7 +72,9 @@ Ext.define('Rubedo.view.DCEField', {
             component.setValue(null);
         });
         myComponent.getComponent("addBtn").on("click", function(){
+
             Rubedo.controller.ContributionContenusController.prototype.specialContentCreate(component.allowedCT, component.getId());
+
         });
         myComponent.getComponent("chooseBtn").on("click", function(){
             var companion = Ext.widget("contentPickerWindow");

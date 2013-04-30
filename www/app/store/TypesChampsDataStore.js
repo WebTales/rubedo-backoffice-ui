@@ -1859,7 +1859,8 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         allowBlank: true,
                         multivalued: false,
                         allowedCT: null,
-                        realFieldMode: true,
+                        chooseOnly: true,
+                        noEdit: true,
                         tooltip: ''
                     },
                     configFields: [
