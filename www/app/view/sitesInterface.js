@@ -242,8 +242,8 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'siteDefaultTitleField',
+                                    anchor: '100%',
                                     fieldLabel: 'Titre par défaut',
                                     labelWidth: 110,
                                     name: 'title'

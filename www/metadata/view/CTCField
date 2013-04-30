@@ -27,5 +27,27 @@
             "name": "managesStore",
             "type": "string"
         }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "processCTCField",
+                "fn": "processCTCField",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "1adf0eb8-ca6e-4e17-9066-7d7a9a9a95b7"
+        }
     ]
 }

@@ -1698,7 +1698,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         tooltip: '',
                         inputValue: true,
                         uncheckedValue: false,
-                        value: 'false',
+                        value: false,
                         labelSeparator: ' '
                     },
                     configFields: [
@@ -1755,6 +1755,183 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fullName: 'Julien Bourdin'
                     },
                     id: '506441f8c648043912248624'
+                },
+                {
+                    type: 'Groupe de cases à cocher',
+                    cType: 'Ext.form.CheckboxGroup',
+                    openWindow: '',
+                    description: '<p></p>',
+                    config: {
+                        name: 'checkboxGroup',
+                        items: [
+                            {
+                                boxLabel: 'Option 1',
+                                name: 'checkboxGroup',
+                                inputValue: 'valeur1'
+                            },
+                            {
+                                boxLabel: 'Option 2',
+                                name: 'checkboxGroup',
+                                inputValue: 'valeur2'
+                            }
+                        ],
+                        fieldLabel: 'Label du champ',
+                        searchable: false,
+                        columns: 1,
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Number',
+                            config: {
+                                fieldLabel: 'Colonnes',
+                                name: 'columns',
+                                editable: false,
+                                allowDecimals: false,
+                                minValue: 1
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '517f7bf7c0e0512c05000001'
+                },
+                {
+                    type: 'Lien sur contenu',
+                    cType: 'Rubedo.view.DCEField',
+                    openWindow: '',
+                    description: '<p></p>',
+                    config: {
+                        name: 'contentLink',
+                        fieldLabel: 'Label du champ',
+                        searchable: false,
+                        allowBlank: true,
+                        multivalued: false,
+                        allowedCT: null,
+                        realFieldMode: true,
+                        tooltip: ''
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Nom',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Bulle d\'aide',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Rubedo.view.CTCField',
+                            config: {
+                                fieldLabel: 'Type de contenu',
+                                name: 'allowedCT',
+                                allowBlank: true,
+                                multiSelect: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Recherchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalu\u00e9',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    version: 1,
+                    lastUpdateUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    createUser: {
+                        id: 1,
+                        login: 'jbourdin',
+                        fullName: 'Julien Bourdin'
+                    },
+                    id: '517f7bf7c0e0512c01397501'
                 }
             ],
             groupers: {

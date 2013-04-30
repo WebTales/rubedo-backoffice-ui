@@ -36,7 +36,7 @@ Ext.define('Rubedo.view.DCEField', {
     },
 
     onHiddenfieldRender: function(component, eOpts) {
-        var myComponent = Ext.widget("DCEFieldComponent");
+        var myComponent = Ext.widget("DCEFieldComponent", {labelWidth: component.labelWidth});
         myComponent.setFieldLabel(component.fieldLabel+" ");
         component.on("change", function(a,newValue){
             if (Ext.isEmpty(newValue)){
@@ -50,12 +50,20 @@ Ext.define('Rubedo.view.DCEField', {
                 myComponent.getComponent("editBtn").show();
                 myComponent.getComponent("removeBtn").show();
             }
-            if (component.chooseOnly){
+            if ((component.chooseOnly)||(Ext.isEmpty(component.allowedCT))){
                 myComponent.getComponent("addBtn").hide();
             }
             if (component.addOnly){
                 myComponent.getComponent("chooseBtn").hide();
             }
+
+        });
+
+        myComponent.on("afterrender",function(){
+            myComponent.getEl().on("click",function(){
+
+                component.getEl().dom.click();
+            });
         });
         myComponent.getComponent("removeBtn").on("click", function(){
             component.setValue(null);
@@ -66,6 +74,7 @@ Ext.define('Rubedo.view.DCEField', {
         myComponent.getComponent("chooseBtn").on("click", function(){
             var companion = Ext.widget("contentPickerWindow");
             companion.targetId=component.getId();
+            companion.allowedCT=component.allowedCT;
             companion.show();
         });
         myComponent.getComponent("editBtn").on("click", function(){
@@ -73,7 +82,6 @@ Ext.define('Rubedo.view.DCEField', {
         });
         component.up().add(myComponent);
         component.fireEvent("change",component, component.getValue());
-
     }
 
 });

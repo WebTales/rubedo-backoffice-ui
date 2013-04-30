@@ -29,7 +29,13 @@ Ext.define('Rubedo.view.CTCField', {
     initComponent: function() {
         var me = this;
 
+        me.processCTCField(me);
         me.callParent(arguments);
+    },
+
+    processCTCField: function(config) {
+        config.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
+        return config;
     }
 
 });

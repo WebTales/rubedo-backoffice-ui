@@ -171,16 +171,16 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     items: [
                                         {
                                             xtype: 'datefield',
-                                            anchor: '100%',
                                             localiserId: 'contentStartPublicationDateField',
+                                            anchor: '100%',
                                             fieldLabel: 'Date de début de publication ',
                                             labelWidth: 200,
                                             name: 'startPublicationDate'
                                         },
                                         {
                                             xtype: 'datefield',
-                                            anchor: '100%',
                                             localiserId: 'contentEndPublicationDateField',
+                                            anchor: '100%',
                                             fieldLabel: 'Date de fin de publication ',
                                             labelWidth: 200,
                                             name: 'endPublicationDate'

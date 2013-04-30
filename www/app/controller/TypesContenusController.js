@@ -511,7 +511,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     }
                 }
                 Ext.getCmp('champTCIdField').setValue(TCfield.id);
-                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))) {
+                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))) {
                     TCfield.up().getComponent(2).getEl().frame(MyPrefData.themeColor);
                     TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
@@ -535,7 +535,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
 
-                    if (mesChamps[t].type =='Rubedo.view.CTMTField'){
+                    if ((mesChamps[t].type =='Rubedo.view.CTMTField')||(mesChamps[t].type =='Rubedo.view.CTCField')){
 
                         var properMT =Ext.clone(TCfield.config[nouvChamp.name]);
                         nouvChamp.getStore().targetField=nouvChamp.id;
@@ -558,7 +558,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());
-                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))){
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
                                         TCfield.up().getComponent(2).setFieldLabel(this.getValue());
                                     } else {
                                         TCfield.setFieldLabel(this.getValue());
@@ -579,7 +579,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                     TCfield.config.fieldLabel=currentOne;
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent(2).getComponent(0).setText(currentOne+" ");
-                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))){
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
                                         TCfield.up().getComponent(2).setFieldLabel(currentOne);
                                     } else {
                                         TCfield.setFieldLabel(currentOne);
@@ -1014,30 +1014,38 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     onPurgeCTContentsBtnClick: function(button, e, eOpts) {
-        var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
-        button.setLoading(true);
-        Ext.Ajax.request({
-            url: 'contents/delete-by-content-type-id',
-            params: {
-                "type-id": target.get("id")
-            },
-            success: function(response){
-                button.setLoading(false);
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
+            button.setLoading(true);
+            Ext.Ajax.request({
+                url: 'contents/delete-by-content-type-id',
+                params: {
+                    "type-id": target.get("id")
+                },
+                success: function(response){
+                    button.setLoading(false);
 
-                Ext.Msg.alert("Succés", "Le type de contenu a été vidé");
-            },
-            failure: function(response) {
-                button.setLoading(false);
-                var message = "Erreur dans l'analyse du fichier";
-                try {
-                    var answer = Ext.JSON.decode(response.responseText);
-                    if (answer.message){
-                        message=answer.message;
+                    Ext.Msg.alert("Succés", "Le type de contenu a été vidé");
+                },
+                failure: function(response) {
+                    button.setLoading(false);
+                    var message = "Erreur dans l'analyse du fichier";
+                    try {
+                        var answer = Ext.JSON.decode(response.responseText);
+                        if (answer.message){
+                            message=answer.message;
+                        }
+                    } catch(err){}
+                        Ext.Msg.alert("Erreur", message);
                     }
-                } catch(err){}
-                    Ext.Msg.alert("Erreur", message);
-                }
-            });
+                });
+                Ext.getCmp('delConfirmZ').close();
+
+            }); 
+
+
     },
 
     miseAPlatTaxo: function(cible, resultat) {

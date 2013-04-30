@@ -62,11 +62,21 @@ Ext.define('Rubedo.view.contentPickerWindow', {
     },
 
     onContentPickerWindowRender: function(component, eOpts) {
-        Ext.getStore("TCNDepComboCS").addListener("load",function(){
-            Ext.getStore("ContentSelectorStore").clearFilter(true);
-            Ext.getStore("ContentSelectorStore").load();
-        },this,{single:true});
-            Ext.getStore("TCNDepComboCS").load();
+        if (Ext.isEmpty(component.allowedCT)){
+            Ext.getStore("TCNDepComboCS").addListener("load",function(){
+                Ext.getStore("ContentSelectorStore").clearFilter(true);
+                Ext.getStore("ContentSelectorStore").load();
+            },this,{single:true});
+                Ext.getStore("TCNDepComboCS").clearFilter(true);
+                Ext.getStore("TCNDepComboCS").load();
+            } else {
+                Ext.getStore("TCNDepComboCS").addListener("load",function(){
+                    Ext.getStore("ContentSelectorStore").clearFilter(true);
+                    Ext.getStore("ContentSelectorStore").filter("typeId",component.allowedCT);
+                },this,{single:true});
+                    Ext.getStore("TCNDepComboCS").clearFilter(true);
+                    Ext.getStore("TCNDepComboCS").filter("id",component.allowedCT);
+                }
     },
 
     onContentPickerWindowBeforeClose: function(panel, eOpts) {
