@@ -553,7 +553,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 } else { 
                                     TCfield.config[this.name]= this.getValue();
                                 }
-
+                                if ((this.name=='name')&&((TCfield.isXType("radiogroup"))||(TCfield.isXType("checkboxgroup")))){
+                                    var ntcrVal=this.getValue();
+                                    Ext.Array.forEach(TCfield.config.items, function(ntch){ntch.name=ntcrVal;});
+                                }
                                 if (this.name=='fieldLabel') {
 
                                     if (TCfield.isXType("ImagePickerField")) {
