@@ -1821,6 +1821,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     categorie: 'Filtrage',
                                     champs: [
                                         {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Restreindre au site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
                                             type: 'Ext.form.field.ComboBox',
                                             isAutoStored: true,
                                             autoStoreData: [
@@ -1860,7 +1867,8 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            sort: 'asc'
+                            sort: 'asc',
+                            constrainToSite: true
                         }
                     },
                     version: 1,
