@@ -150,7 +150,9 @@ Ext.application({
         'Rubedo.view.directRTEField',
         'Rubedo.view.directRTEFieldComponent',
         'Rubedo.view.MailingListsInterface',
-        'Rubedo.view.newMLWindow'
+        'Rubedo.view.newMLWindow',
+        'Rubedo.view.specialTCFieldItemsConfigurator',
+        'Rubedo.view.MultiChoiceConfigurator1'
     ],
     models: [
         'sitesDataModel',
@@ -409,7 +411,9 @@ Ext.application({
         'directRTEField',
         'directRTEFieldComponent',
         'MailingListsInterface',
-        'newMLWindow'
+        'newMLWindow',
+        'specialTCFieldItemsConfigurator',
+        'MultiChoiceConfigurator1'
     ],
     autoCreateViewport: true,
     controllers: [

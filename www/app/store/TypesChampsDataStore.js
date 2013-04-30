@@ -1778,6 +1778,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         ],
                         fieldLabel: 'Label du champ',
                         searchable: false,
+                        allowBlank: true,
                         columns: 1,
                         multivalued: false,
                         tooltip: '',
@@ -1807,6 +1808,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
                                 allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {
@@ -1870,6 +1878,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         ],
                         fieldLabel: 'Label du champ',
                         searchable: false,
+                        allowBlank: true,
                         columns: 1,
                         multivalued: false,
                         tooltip: '',
@@ -1899,6 +1908,13 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                                 fieldLabel: 'Bulle d\'aide',
                                 name: 'tooltip',
                                 allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Facultatif',
+                                name: 'allowBlank'
                             }
                         },
                         {

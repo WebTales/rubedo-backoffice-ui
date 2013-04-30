@@ -671,6 +671,11 @@
                     "                    boiteParam.add(optionsLC); \r",
                     "\r",
                     "                }\r",
+                    "        \t\tif ((TCfield.isXType(\"radiogroup\"))||(TCfield.isXType(\"checkboxgroup\"))) {\r",
+                    "                    var itemsConfigurator=Ext.widget(\"specialTCFieldItemsConfigurator\");\r",
+                    "                    itemsConfigurator.targetedId=TCfield.id;\r",
+                    "                    boiteParam.add(itemsConfigurator); \r",
+                    "                }\r",
                     "            }\r",
                     "        });"
                 ],

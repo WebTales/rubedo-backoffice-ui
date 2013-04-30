@@ -620,6 +620,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             boiteParam.add(optionsLC); 
 
                         }
+                        if ((TCfield.isXType("radiogroup"))||(TCfield.isXType("checkboxgroup"))) {
+                            var itemsConfigurator=Ext.widget("specialTCFieldItemsConfigurator");
+                            itemsConfigurator.targetedId=TCfield.id;
+                            boiteParam.add(itemsConfigurator); 
+                        }
                     }
                 });
     },

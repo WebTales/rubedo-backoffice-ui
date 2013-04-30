@@ -2469,6 +2469,22 @@
                 "app/controller/MailingListsController.js"
             ],
             "className": "MailingListsController"
+        },
+        "ca0aea61-de73-4f0a-b040-a19454ef84dd": {
+            "paths": [
+                "metadata/view/specialTCFieldItemsConfigurator",
+                "app/view/override/specialTCFieldItemsConfigurator.js",
+                "app/view/specialTCFieldItemsConfigurator.js"
+            ],
+            "className": "specialTCFieldItemsConfigurator"
+        },
+        "b978680b-dfe2-47fc-b3c1-d006761b80bc": {
+            "paths": [
+                "metadata/view/MultiChoiceConfigurator1",
+                "app/view/override/MultiChoiceConfigurator1.js",
+                "app/view/MultiChoiceConfigurator1.js"
+            ],
+            "className": "MultiChoiceConfigurator1"
         }
     },
     "viewOrderMap": {
@@ -2615,7 +2631,9 @@
             "73ed8109-ae62-44c8-9526-cd885b3b0396",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
             "7120e487-8033-4805-b435-a863418861d9",
-            "1f387c06-5c71-4cab-ac38-38a30ac34a23"
+            "1f387c06-5c71-4cab-ac38-38a30ac34a23",
+            "b978680b-dfe2-47fc-b3c1-d006761b80bc",
+            "ca0aea61-de73-4f0a-b040-a19454ef84dd"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

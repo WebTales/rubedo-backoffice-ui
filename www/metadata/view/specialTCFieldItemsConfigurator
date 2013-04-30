@@ -1,0 +1,43 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "100%",
+        "margin": "5 0 0 0",
+        "designer|userClassName": "specialTCFieldItemsConfigurator",
+        "designer|userAlias": "specialTCFieldItemsConfigurator",
+        "text": "Configurer les options"
+    },
+    "designerId": "ca0aea61-de73-4f0a-b040-a19454ef84dd",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onButtonClick",
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "Ext.widget(\"MultiChoiceConfigurator1\",{targetedId:button.targetedId}).show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "2f6956d9-1b84-4f7a-a457-d3a63015a753"
+        }
+    ]
+}

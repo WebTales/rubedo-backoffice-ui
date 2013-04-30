@@ -1,0 +1,355 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 311,
+        "id": "MultiChoiceConfigurator1",
+        "width": 550,
+        "designer|userClassName": "MultiChoiceConfigurator1",
+        "designer|userAlias": "MultiChoiceConfigurator1",
+        "resizable": false,
+        "layout": "fit",
+        "title": "Editeur d'options",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "b978680b-dfe2-47fc-b3c1-d006761b80bc",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar72"
+            },
+            "designerId": "411fb381-b881-4db6-8e50-009afb04d330",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill36"
+                    },
+                    "designerId": "7e2de866-7f95-4f43-b86d-1b85b137cf4e"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "specialOptionsCfgSubmit",
+                        "designer|userClassName": "MyButton287",
+                        "iconCls": "ouiSpetit",
+                        "text": "Valider"
+                    },
+                    "designerId": "d588d8fa-553b-477a-83c6-aa2244904ac3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onSpecialOptionsCfgSubmitClick",
+                                "fn": "onSpecialOptionsCfgSubmitClick",
+                                "implHandler": [
+                                    "Ext.getCmp(button.up().up().targetedId).config.items=Ext.clone(Ext.Array.pluck(button.up().up().getComponent(0).getStore().getRange(),\"data\"));\r",
+                                    "Ext.getCmp(button.up().up().targetedId).removeAll();\r",
+                                    "Ext.getCmp(button.up().up().targetedId).add(Ext.getCmp(button.up().up().targetedId).config.items);\r",
+                                    "button.up().up().close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "f0ee9460-47f5-4c02-8cfd-39795da060ed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 160,
+                "id": "formsMCCGrid1",
+                "designer|userClassName": "MyGridPanel36",
+                "title": "",
+                "forceFit": true,
+                "store": "MultiChoiceOptionsStore"
+            },
+            "designerId": "e7d2f354-f23b-45fc-8848-fa430b609e7f",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView35"
+                    },
+                    "designerId": "813cf853-610d-421a-a9bf-9842b62693ac",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "designer|userClassName": "MyGridDragDropPlugin2"
+                            },
+                            "designerId": "c97efda5-5b49-4ff6-be32-83769a0f22b6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "right",
+                        "width": 28,
+                        "designer|userClassName": "MyToolbar77"
+                    },
+                    "designerId": "6e84cedc-baa6-4e0e-ae07-b4069df945d8",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "formsMCCGridAdd1",
+                                "designer|userClassName": "MyButton297",
+                                "iconCls": "add",
+                                "text": "",
+                                "tooltip": "Ajouter une option"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "4d7636f1-836a-4331-bd7e-a07ab60b04b9",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "\r",
+                                            "        Ext.getStore(\"MultiChoiceOptionsStore\").add({\r",
+                                            "            inputValue:\"valeur \"+ (Ext.getStore(\"MultiChoiceOptionsStore\").count()+1),\r",
+                                            "            name:Ext.getCmp(Ext.getCmp(\"MultiChoiceConfigurator1\").targetedId).name,\r",
+                                            "            boxLabel:\"Option \"+ (Ext.getStore(\"MultiChoiceOptionsStore\").count()+1)\r",
+                                            "        });\r",
+                                            " "
+                                        ]
+                                    },
+                                    "designerId": "92ba2bb6-debf-4577-b83f-7c76808a2264"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "id": "formsMCCGridRemove1",
+                                "designer|userClassName": "MyButton296",
+                                "iconCls": "close",
+                                "text": "",
+                                "tooltip": "Supprimer cette option"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "73e89388-1e40-437d-9629-2d57d842bdb6",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "Ext.getCmp(\"formsMCCGrid1\").getStore().remove(Ext.getCmp(\"formsMCCGrid1\").getSelectionModel().getLastSelected());"
+                                        ]
+                                    },
+                                    "designerId": "44e9778c-9651-4319-950e-c11b74084bb2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyCellEditingPlugin3"
+                    },
+                    "designerId": "2e1ebecb-572d-4c12-9eda-bdc55af8ac36"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onFormsMCCGridSelectionChange",
+                        "fn": "onFormsMCCGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "    Ext.getCmp(\"formsMCCGridRemove1\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"formsMCCGridRemove1\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "ec9ba939-118a-47e5-b937-8ef648f03681"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn13",
+                        "dataIndex": "inputValue",
+                        "text": "Valeur"
+                    },
+                    "designerId": "56fc6791-215a-4c11-bca6-208ac95aaaac",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField9",
+                                "allowBlank": false
+                            },
+                            "designerId": "1957b9cd-1eef-4f93-9937-8c0417b9381b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn14",
+                        "dataIndex": "boxLabel",
+                        "text": "Label"
+                    },
+                    "designerId": "0780a6be-e984-40e9-954c-bb5136c8e7a3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField8",
+                                "allowBlank": false
+                            },
+                            "designerId": "11f0ae5d-6bc4-48d0-8458-594529752fd0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMultiChoiceConfigurator1AfterRender",
+                "fn": "onMultiChoiceConfigurator1AfterRender",
+                "implHandler": [
+                    "component.getComponent(0).getStore().loadData(Ext.clone(Ext.getCmp(component.targetedId).config.items));"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "677ca544-aae4-4e05-8319-652d160c9ea9"
+        }
+    ]
+}
