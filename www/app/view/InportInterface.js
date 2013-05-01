@@ -222,7 +222,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                     xtype: 'gridcolumn',
                                     width: 130,
                                     dataIndex: 'newName',
-                                    text: 'Nouveau nom (optionel)',
+                                    text: 'Nouveau nom (optionnel)',
                                     editor: {
                                         xtype: 'textfield'
                                     }
@@ -331,7 +331,7 @@ Ext.define('Rubedo.view.InportInterface', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'newName',
-                            text: 'Nouveau nom (optionel)',
+                            text: 'Nouveau nom (optionnel)',
                             editor: {
                                 xtype: 'textfield'
                             }

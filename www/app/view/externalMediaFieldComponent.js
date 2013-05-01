@@ -33,8 +33,8 @@ Ext.define('Rubedo.view.externalMediaFieldComponent', {
             items: [
                 {
                     xtype: 'textfield',
-                    anchor: '100%',
                     localiserId: 'emFieldURL',
+                    anchor: '100%',
                     margin: '0 0 10 0',
                     style: '{float:left;}',
                     fieldLabel: 'URL',
@@ -45,11 +45,11 @@ Ext.define('Rubedo.view.externalMediaFieldComponent', {
                 },
                 {
                     xtype: 'numberfield',
-                    anchor: '50%',
                     localiserId: 'emFieldMaxWidth',
+                    anchor: '50%',
                     margin: '0 10 0 0',
                     style: '{float:left;}',
-                    fieldLabel: 'Largeux max',
+                    fieldLabel: 'Largeur max',
                     labelSeparator: ' ',
                     name: 'maxWidth',
                     submitValue: false,
@@ -59,8 +59,8 @@ Ext.define('Rubedo.view.externalMediaFieldComponent', {
                 },
                 {
                     xtype: 'numberfield',
-                    anchor: '50%',
                     localiserId: 'emFieldMAxHeight',
+                    anchor: '50%',
                     fieldLabel: 'Hauteur max',
                     labelSeparator: ' ',
                     name: 'maxHeight',

@@ -19,9 +19,9 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
 
     localiserId: 'addBlockWindow',
     draggable: false,
-    height: 300,
+    height: 346,
     id: 'ajoutBlocFenetre',
-    width: 500,
+    width: 533,
     resizable: false,
     layout: {
         align: 'stretch',
@@ -38,7 +38,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    flex: 0.5,
+                    flex: 1,
                     id: 'BlocsSelectGrid',
                     title: '',
                     store: 'BlocsDataStore',
@@ -62,7 +62,7 @@ Ext.define('Rubedo.view.ajoutBlocFenetre', {
                 },
                 {
                     xtype: 'panel',
-                    flex: 1,
+                    flex: 1.3,
                     id: 'PaneauBlocsDetail',
                     styleHtmlContent: true,
                     tpl: [
