@@ -1858,6 +1858,15 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 geoQueryMode: false,
                                                 damQueryMode: true
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Médias par page',
+                                                name: 'pagesize',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
                                         }
                                     ]
                                 }
@@ -1868,6 +1877,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         },
                         configBloc: {
                             sort: 'asc',
+                            pagesize: 25,
                             constrainToSite: true
                         }
                     },
