@@ -1763,7 +1763,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     description: '<p></p>',
                     config: {
                         name: 'checkboxGroup',
-                        vertical: true,
                         items: [
                             {
                                 boxLabel: 'Option 1',
@@ -1779,7 +1778,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fieldLabel: 'Label du champ',
                         searchable: false,
                         allowBlank: true,
-                        columns: 1,
                         multivalued: false,
                         tooltip: '',
                         labelSeparator: ' '
@@ -1822,23 +1820,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Recherchable',
                                 name: 'searchable'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Multivalu\u00e9',
-                                name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Number',
-                            config: {
-                                fieldLabel: 'Colonnes',
-                                name: 'columns',
-                                editable: false,
-                                allowDecimals: false,
-                                minValue: 1
                             }
                         }
                     ],
@@ -1863,7 +1844,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     description: '<p></p>',
                     config: {
                         name: 'radioGroup',
-                        vertical: true,
                         items: [
                             {
                                 boxLabel: 'Option 1',
@@ -1879,7 +1859,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                         fieldLabel: 'Label du champ',
                         searchable: false,
                         allowBlank: true,
-                        columns: 1,
                         multivalued: false,
                         tooltip: '',
                         labelSeparator: ' '
@@ -1922,23 +1901,6 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             config: {
                                 fieldLabel: 'Recherchable',
                                 name: 'searchable'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Checkbox',
-                            config: {
-                                fieldLabel: 'Multivalu\u00e9',
-                                name: 'multivalued'
-                            }
-                        },
-                        {
-                            type: 'Ext.form.field.Number',
-                            config: {
-                                fieldLabel: 'Colonnes',
-                                name: 'columns',
-                                editable: false,
-                                allowDecimals: false,
-                                minValue: 1
                             }
                         }
                     ],
