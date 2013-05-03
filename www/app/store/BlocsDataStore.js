@@ -1766,7 +1766,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Filtrage',
+                                    categorie: 'Paramètres',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.Checkbox',
@@ -1780,6 +1780,13 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             config: {
                                                 fieldLabel: 'Facettes prédéfinies',
                                                 name: 'predefinedFacets'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Page associée',
+                                                name: 'singlePage'
                                             }
                                         }
                                     ]
