@@ -100,6 +100,80 @@
                 "name": "publishUser"
             },
             "designerId": "00ad6d49-3475-4ae4-aadf-455a625ecaef"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fields"
+            },
+            "designerId": "f51b968d-615f-4da6-8c80-9e8e8b8682e4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "taxonomy"
+            },
+            "designerId": "776a736b-7f96-443d-a956-66d05c6f3b51"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "endPublicationDate",
+                "type": null
+            },
+            "designerId": "82383943-7287-4705-b6d9-a4bea58412e6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "startPublicationDate",
+                "type": null
+            },
+            "designerId": "7e8a18e3-2679-4d35-87f4-0617d9a91202"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "writeWorkspace"
+            },
+            "designerId": "27079492-04db-4b41-9493-22df475b25f3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "target"
+            },
+            "designerId": "30dd3256-d17f-448b-8a96-9d6722a565cf"
         }
     ]
 }

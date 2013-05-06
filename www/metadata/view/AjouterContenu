@@ -185,6 +185,42 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "contentEditorCancelButton",
+                        "iconCls": "close",
+                        "text": "Annuler"
+                    },
+                    "designerId": "d83afd2c-a030-4a15-979d-35507c3102cb",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "2e38663c-1d11-43f5-a12e-d2cbabd62e75"
+                        }
+                    ]
                 }
             ]
         },
@@ -701,6 +737,84 @@
                                             "type": "string"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 20
+                                    },
+                                    "designerId": "ec22aef3-0975-4a63-903a-dfddc417aaba",
+                                    "cn": [
+                                        {
+                                            "type": "actioncolumnitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "resources/icones/generic/repeat.png",
+                                                "iconCls": null,
+                                                "tooltip": "Restaurer"
+                                            },
+                                            "designerId": "b0a1486a-98f6-4f25-a08b-2a68816e00ef",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "handler",
+                                                        "designer|params": [
+                                                            "view",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "item",
+                                                            "e",
+                                                            "record",
+                                                            "row"
+                                                        ],
+                                                        "implHandler": [
+                                                            "var cible = record;\r",
+                                                            "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"fields\"));\r",
+                                                            "Ext.Object.each(cible.get(\"fields\"), function(key, value, myself){\r",
+                                                            "if (Ext.isArray(value)) {\r",
+                                                            "    var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];\r",
+                                                            "    var y=0;\r",
+                                                            "    if (multiField.multivalued) {\r",
+                                                            "        Ext.Array.each(value,function(val,index){\r",
+                                                            "            if (index>0) {\r",
+                                                            "                multiField.up().getComponent('boutonReplicateurChamps').fireEvent(\"click\",multiField.up().getComponent('boutonReplicateurChamps'));\r",
+                                                            "            }\r",
+                                                            "            Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);\r",
+                                                            "        }); \r",
+                                                            "    }\r",
+                                                            "}\r",
+                                                            "});\r",
+                                                            "try{\r",
+                                                            "Ext.getCmp(\"ajouterContenu\").getComponent(0).getLayout().setActiveItem(1);\r",
+                                                            "Ext.getCmp(\"ajouterContenu\").getComponent(0).getLayout().setActiveItem(0);\r",
+                                                            "Ext.getCmp(\"boiteATaxoContenus\").getForm().setValues(cible.get(\"taxonomy\"));\r",
+                                                            "Ext.getCmp(\"boiteADroitsContenus\").getForm().setValues(cible.getData());\r",
+                                                            "Ext.getCmp(\"contentMetadataBox\").getForm().setValues(cible.getData());\r",
+                                                            "}catch (err){\r",
+                                                            "\tconsole.log(\"reloading anomaly\");\r",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "designerId": "f53b4afd-68a0-4ca2-bf52-23be52ea856d"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -715,6 +829,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "read.ui.dependantTypes",
+                        "hidden": true,
                         "id": "nestedContentsTab",
                         "layout": "fit",
                         "title": "Contenus Imbriqués"
@@ -737,6 +852,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "dependantTypesTab",
+                                "hidden": true,
                                 "id": "nestedContensTabConfig"
                             },
                             "designerId": "1a19d2e0-ed7b-4a6b-8bdd-5016b832a3fd",

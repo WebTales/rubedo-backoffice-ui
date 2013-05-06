@@ -43,6 +43,24 @@ Ext.define('Rubedo.model.versionsDataModel', {
         {
             mapping: 'publishUser.fullName',
             name: 'publishUser'
+        },
+        {
+            name: 'fields'
+        },
+        {
+            name: 'taxonomy'
+        },
+        {
+            name: 'endPublicationDate'
+        },
+        {
+            name: 'startPublicationDate'
+        },
+        {
+            name: 'writeWorkspace'
+        },
+        {
+            name: 'target'
         }
     ]
 });
