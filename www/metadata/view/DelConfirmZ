@@ -41,8 +41,7 @@
             "codeClass": null,
             "userConfig": {
                 "dock": null,
-                "height": null,
-                "designer|userClassName": "MyToolbar16"
+                "height": null
             },
             "designerId": "c481d41d-742e-4d94-a57c-9ab6d35741f9",
             "cn": [
@@ -54,14 +53,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "confirmDeleteYes",
                         "layout|flex": null,
                         "layout|margins": null,
-                        "localiserId": "confirmDeleteYes",
                         "height": null,
                         "id": "delConfirmZOui",
                         "margin": "0, 0, 0, 10",
                         "style": null,
-                        "designer|userClassName": "MyButton44",
                         "iconCls": "ouiS",
                         "scale": "large",
                         "text": "Oui"
@@ -83,8 +81,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill31"
+                        "layout|flex": null
                     },
                     "designerId": "66b093b2-ad05-43b7-a0fc-e626558d7aea"
                 },
@@ -96,13 +93,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "confirmDeleteNo",
                         "layout|flex": null,
                         "layout|margins": null,
-                        "localiserId": "confirmDeleteNo",
                         "id": "delConfirmZNon",
                         "margin": "0, 10, 0, 0",
                         "style": null,
-                        "designer|userClassName": "MyButton43",
                         "iconCls": "nonS",
                         "scale": "large",
                         "text": "Non"
@@ -124,7 +120,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -148,7 +143,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "delConfirmZField",
-                        "designer|userClassName": "MyHiddenField1",
                         "fieldLabel": "Label"
                     },
                     "designerId": "0e0f13d8-3b0f-4ba5-adf5-d64ace5ab253"

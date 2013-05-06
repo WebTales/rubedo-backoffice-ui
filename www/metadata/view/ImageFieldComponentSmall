@@ -35,7 +35,6 @@
             "userConfig": {
                 "layout|flex": null,
                 "width": 100,
-                "designer|userClassName": "MyLabel",
                 "text": "My Label :"
             },
             "designerId": "ca478cff-c265-4afb-8870-dbb2e62e5878"
@@ -52,7 +51,6 @@
                 "itemId": "buttonHolder",
                 "margin": "0 0 0 5",
                 "width": 29,
-                "designer|userClassName": "MyContainer25",
                 "layout": "absolute"
             },
             "designerId": "5cebfb62-0946-4cd7-9fce-931791a9eba1",
@@ -65,11 +63,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "imagePickerChangeBtn",
                         "layout|x": 0,
                         "layout|y": 0,
-                        "localiserId": "imagePickerChangeBtn",
                         "itemId": "fieldChangeImage",
-                        "designer|userClassName": "MyButton170",
                         "iconCls": "edit",
                         "text": "",
                         "tooltip": "Choisir un média"
@@ -94,11 +91,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "imagePickerClearBtn",
                         "layout|x": 0,
                         "layout|y": 30,
-                        "localiserId": "imagePickerClearBtn",
                         "itemId": "fieldClearImage",
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "close",
                         "text": "",
                         "tooltip": "Désélectionner"
@@ -130,7 +126,6 @@
                 "minWidth": null,
                 "style": null,
                 "width": null,
-                "designer|userClassName": "MyImg14",
                 "src": null
             },
             "configAlternates": {
@@ -146,7 +141,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onFieldImagePreviewRender",
                         "fn": "onFieldImagePreviewRender",
                         "implHandler": [
                             "component.getEl().on(\"load\", function(){component.up().doLayout();});"

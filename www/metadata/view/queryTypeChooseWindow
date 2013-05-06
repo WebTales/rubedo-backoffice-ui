@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "localiserId": "queryTypeChooseWindow",
+        "container|align": "stretch",
         "height": 141,
         "id": "queryTypeChooseWindow",
         "width": 235,
@@ -39,9 +39,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "localiserId": "chooseManualQueryBtn",
-                "designer|userClassName": "MyButton232",
+                "layout|flex": 1,
                 "scale": "large",
                 "text": "Requête manuelle"
             },
@@ -62,7 +61,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "handler",
                         "fn": "handler",
                         "designer|params": [
                             "button",
@@ -87,9 +85,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "localiserId": "ChooseSimpleQueryBtn",
-                "designer|userClassName": "MyButton233",
+                "layout|flex": 1,
                 "scale": "large",
                 "text": "Requête simple"
             },
@@ -110,7 +107,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "handler",
                         "fn": "handler",
                         "designer|params": [
                             "button",
@@ -136,9 +132,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "localiserId": "chooseAdvancedQueryBtn",
-                "designer|userClassName": "MyButton234",
+                "layout|flex": 1,
                 "scale": "large",
                 "text": "Requête avancée"
             },
@@ -159,7 +154,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "handler",
                         "fn": "handler",
                         "designer|params": [
                             "button",

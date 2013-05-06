@@ -31,7 +31,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxChange",
                 "fn": "onComboboxChange",
                 "implHandler": [
                     "field.up().getComponent(\"answerFieldComponent\").removeAll();\r",

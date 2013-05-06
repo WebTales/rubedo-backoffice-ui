@@ -38,8 +38,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "breadcrumb",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "breadcrumb"
             },
             "designerId": "324828ce-5810-4308-8b33-371d5f59c908",
             "cn": [
@@ -53,7 +52,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "referencement_icon",
                         "text": "Sites"
                     },
@@ -70,8 +68,7 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
-                "height": 64,
-                "designer|userClassName": "MyToolbar41"
+                "height": 64
             },
             "designerId": "41095a8f-523a-40a9-a8ed-85fa9e8bfb0b",
             "cn": [
@@ -87,7 +84,6 @@
                         "localiserId": "addBtn",
                         "layout|flex": null,
                         "id": "siteAddBtn",
-                        "designer|userClassName": "MyButton155",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -120,7 +116,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "siteRemoveBtn",
-                        "designer|userClassName": "MyButton156",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -153,7 +148,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "updateSiteBtn",
-                        "designer|userClassName": "MyButton165",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -181,8 +175,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill28"
+                        "layout|flex": null
                     },
                     "designerId": "d517ce59-5eb0-4b20-ad39-5ffd097f4e65"
                 },
@@ -197,7 +190,6 @@
                         "RApplication": "sites",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton250",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -225,7 +217,6 @@
                 "layout|flex": null,
                 "id": "mainSitesGrid",
                 "width": 200,
-                "designer|userClassName": "MyGridPanel21",
                 "title": "",
                 "forceFit": true,
                 "store": "SitesJson"
@@ -249,9 +240,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView21"
-                    },
                     "designerId": "de7f7da1-3e7f-4d67-ba0c-9a4ef387bb4e"
                 },
                 {
@@ -263,7 +251,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "domainNameColumn",
-                        "designer|userClassName": "MyColumn46",
                         "dataIndex": "text",
                         "text": "Nom de domaine"
                     },
@@ -284,7 +271,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -320,7 +306,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "mainSiteProps",
-                "designer|userClassName": "MyForm30",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -336,7 +321,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "siteFieldSet",
-                        "designer|userClassName": "MyFieldSet11",
                         "collapsible": true,
                         "title": "Site"
                     },
@@ -359,7 +343,6 @@
                             "userConfig": {
                                 "localiserId": "domainNameField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField50",
                                 "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
                                 "name": "text",
@@ -385,7 +368,6 @@
                             "userConfig": {
                                 "localiserId": "aliasField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField45",
                                 "fieldLabel": "Alias ",
                                 "labelWidth": 110,
                                 "name": "alias"
@@ -410,7 +392,6 @@
                                 "managesStore": true,
                                 "localiserId": "themeField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox19",
                                 "fieldLabel": "Theme ",
                                 "labelWidth": 110,
                                 "name": "theme",
@@ -445,7 +426,6 @@
                             "userConfig": {
                                 "localiserId": "protocolField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox18",
                                 "fieldLabel": "Protocole *",
                                 "labelWidth": 110,
                                 "name": "protocol",
@@ -479,7 +459,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "hidden": true,
-                                "designer|userClassName": "MyTextField52",
                                 "fieldLabel": "Langue principale ",
                                 "name": "mainLanguage"
                             },
@@ -495,7 +474,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "hidden": true,
-                                "designer|userClassName": "MyTextField53",
                                 "fieldLabel": "Langues ",
                                 "name": "languages"
                             },
@@ -511,7 +489,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "hidden": true,
-                                "designer|userClassName": "MyTextArea8",
                                 "fieldLabel": "Filtre ",
                                 "name": "filter"
                             },
@@ -527,7 +504,6 @@
                             "userConfig": {
                                 "localiserId": "siteDefaultTitleField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField70",
                                 "fieldLabel": "Titre par défaut",
                                 "labelWidth": 110,
                                 "name": "title"
@@ -551,7 +527,6 @@
                             "userConfig": {
                                 "localiserId": "defaultDescriptionField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea5",
                                 "fieldLabel": "Description par défaut",
                                 "labelWidth": 110,
                                 "name": "description",
@@ -576,7 +551,6 @@
                             "userConfig": {
                                 "localiserId": "defaultAuthorField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField71",
                                 "fieldLabel": "Auteur par défaut",
                                 "labelWidth": 110,
                                 "name": "author",
@@ -601,7 +575,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onFieldsetRender",
                                 "fn": "onFieldsetRender",
                                 "implHandler": [
                                     "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
@@ -677,7 +650,6 @@
                     "userConfig": {
                         "localiserId": "messageryFieldSet",
                         "hidden": true,
-                        "designer|userClassName": "MyFieldSet10",
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Messagerie"
@@ -701,7 +673,6 @@
                             "userConfig": {
                                 "localiserId": "activeMessageryField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox4",
                                 "fieldLabel": "Activé ",
                                 "name": "activeMessagery",
                                 "boxLabel": ""
@@ -725,7 +696,6 @@
                             "userConfig": {
                                 "localiserId": "smtpServerField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField54",
                                 "fieldLabel": "Serveur SMTP ",
                                 "name": "SMTPServer"
                             },
@@ -748,7 +718,6 @@
                             "userConfig": {
                                 "localiserId": "smtpPortField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField2",
                                 "fieldLabel": "Port SMTP ",
                                 "name": "SMTPPort",
                                 "allowDecimals": false,
@@ -773,7 +742,6 @@
                             "userConfig": {
                                 "localiserId": "smtpLoginField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField56",
                                 "fieldLabel": "Login SMTP ",
                                 "name": "SMTPLogin"
                             },
@@ -796,7 +764,6 @@
                             "userConfig": {
                                 "localiserId": "smtpPassField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField55",
                                 "fieldLabel": "Mot de passe SMTP ",
                                 "name": "SMTPPassword",
                                 "inputType": "password"
@@ -820,7 +787,6 @@
                             "userConfig": {
                                 "localiserId": "defaultEmailField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField57",
                                 "fieldLabel": "E-mail par défaut ",
                                 "name": "defaultEmail",
                                 "vtype": "email"
@@ -846,7 +812,6 @@
                     "userConfig": {
                         "localiserId": "accessibilityFieldSet ",
                         "hidden": true,
-                        "designer|userClassName": "MyFieldSet14",
                         "collapsed": true,
                         "collapsible": true,
                         "title": "Accessibilité"
@@ -870,7 +835,6 @@
                             "userConfig": {
                                 "localiserId": "accessibilityLeveLfield",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox17",
                                 "fieldLabel": "Niveau d'accessibilité ",
                                 "name": "accessibilityLevel",
                                 "store": [
@@ -899,7 +863,6 @@
                             "userConfig": {
                                 "localiserId": "opquastLoginField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField58",
                                 "fieldLabel": "Login Opquast ",
                                 "name": "opquastLogin"
                             },
@@ -922,7 +885,6 @@
                             "userConfig": {
                                 "localiserId": "opquastPassField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField59",
                                 "fieldLabel": "Mot de passe Optquast ",
                                 "name": "opquastPassword",
                                 "inputType": "password"
@@ -947,7 +909,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "apiKeysFieldSet",
-                        "designer|userClassName": "MyFieldSet6",
                         "collapsible": true,
                         "title": "Clés d'API externes"
                     },
@@ -970,7 +931,6 @@
                             "userConfig": {
                                 "localiserId": "googleMapKeyField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField22",
                                 "fieldLabel": "Google Maps",
                                 "labelWidth": 110,
                                 "name": "googleMapsKey"
@@ -994,7 +954,6 @@
                             "userConfig": {
                                 "localiserId": "googleAnalyticsKeyField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField22",
                                 "fieldLabel": "Google Analytics",
                                 "labelWidth": 110,
                                 "name": "googleAnalyticsKey"
@@ -1018,7 +977,6 @@
                             "userConfig": {
                                 "localiserId": "disqusKeyField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField23",
                                 "fieldLabel": "Disqus",
                                 "labelWidth": 110,
                                 "name": "disqusKey"
@@ -1074,8 +1032,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
             "cn": [
@@ -1090,7 +1047,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
@@ -1103,7 +1059,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/globe_computer.png');"
@@ -1124,8 +1079,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "itemId": "boiteBarreMeta",
-                        "designer|userClassName": "MyContainer9"
+                        "itemId": "boiteBarreMeta"
                     },
                     "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
                     "cn": [
@@ -1137,7 +1091,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],

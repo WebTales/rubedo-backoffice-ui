@@ -23,7 +23,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy21",
                 "api": [
                     "{\r",
                     "     create: 'current-user/create',\r",
@@ -45,8 +44,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader19"
+                        "root": "data"
                     },
                     "designerId": "2014ebc5-70c5-4775-8978-ea67339c39c9"
                 },
@@ -58,7 +56,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter5",
                         "encode": true,
                         "root": "data"
                     },
@@ -74,7 +71,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreLoad",
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
                     "Ext.getStore(\"LocalisationStore\").load();"

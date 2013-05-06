@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy68",
                 "api": [
                     "{\r",
                     "    \"read\":\"groups\"\r",
@@ -58,8 +57,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader67"
+                        "root": "data"
                     },
                     "designerId": "5d8e858d-804e-4259-8d22-68bb1437a0aa"
                 }

@@ -42,7 +42,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'content-types/create',\r",
@@ -65,8 +64,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "1b84526b-ec3a-4346-b5cb-b850d005eb61"
                 },
@@ -79,7 +77,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": "mapping",
-                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },
@@ -96,7 +93,6 @@
             "codeClass": null,
             "userConfig": {
                 "property": "system",
-                "designer|userClassName": "MyFilter7",
                 "value": [
                     "{\"$ne\":true}"
                 ]

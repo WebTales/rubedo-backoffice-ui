@@ -64,8 +64,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "breadcrumb",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "breadcrumb"
             },
             "designerId": "76b21c64-6b72-42f6-9627-14f62d09fd3f",
             "cn": [
@@ -78,7 +77,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton282",
                         "iconCls": "form_small",
                         "text": "Questionnaires"
                     },
@@ -98,9 +96,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "14d54c74-6d00-4930-bf66-7c81a3432afc",
             "cn": [
@@ -117,7 +113,6 @@
                         "layout|flex": null,
                         "id": "addFormBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -152,7 +147,6 @@
                         "disabled": true,
                         "id": "removeFormBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -187,7 +181,6 @@
                         "container|columns": 2,
                         "disabled": true,
                         "id": "formElementsEditBtnGroup",
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 5
@@ -217,7 +210,6 @@
                                 "localiserId": "addPageBtn",
                                 "disabled": true,
                                 "id": "formAddPageBtn",
-                                "designer|userClassName": "MyButton285",
                                 "iconAlign": "top",
                                 "iconCls": "page_add_big",
                                 "scale": "large",
@@ -247,7 +239,6 @@
                                 "localiserId": "newElemBtn",
                                 "disabled": true,
                                 "id": "formElementAddBtn",
-                                "designer|userClassName": "MyButton112",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
                                 "scale": "large",
@@ -273,7 +264,6 @@
                                 "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "formElementMoveUpBtn",
-                                "designer|userClassName": "MyButton113",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
                                 "scale": "large",
@@ -299,7 +289,6 @@
                                 "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "formElementMoveDownBtn",
-                                "designer|userClassName": "MyButton114",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
                                 "scale": "large",
@@ -325,7 +314,6 @@
                                 "localiserId": "removeBtn",
                                 "disabled": true,
                                 "id": "formElementRemoveBtn",
-                                "designer|userClassName": "MyButton115",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "scale": "large",
@@ -354,7 +342,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -380,7 +367,6 @@
                                 "localiserId": "duplicateBtn",
                                 "id": "formsDuplicateBtn",
                                 "width": null,
-                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -411,7 +397,6 @@
                             "userConfig": {
                                 "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -442,7 +427,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4
@@ -473,7 +457,6 @@
                                 "localiserId": "saveBtn",
                                 "id": "formSaveBtn",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
@@ -502,7 +485,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onSaveMTBtnAfterRender",
                                         "fn": "onSaveMTBtnAfterRender",
                                         "implHandler": [
                                             "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -529,8 +511,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "b4c0d170-573a-4830-bc88-1602d2fe1fb9"
                 },
@@ -545,7 +526,6 @@
                         "RApplication": "forms",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -570,7 +550,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "formSelectedElementField",
-                        "designer|userClassName": "MyHiddenField13",
                         "fieldLabel": "Label"
                     },
                     "designerId": "a9cc29fa-b505-42fb-b21b-4e73e1844566"
@@ -589,8 +568,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "86e6b28a-6c32-4e70-b926-2d365c5c0a66",
             "cn": [
@@ -605,7 +583,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "8a2f88b3-5c33-4f80-93d0-07a30aabb157",
@@ -618,7 +595,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender1",
                                 "fn": "onImageRender1",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/note_edit.png');"
@@ -640,8 +616,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
-                        "margin": "0 0 0 20",
-                        "designer|userClassName": "MyContainer9"
+                        "margin": "0 0 0 20"
                     },
                     "designerId": "0ae30472-9498-4230-ba69-697e7ad66410",
                     "cn": [
@@ -653,7 +628,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<b>{title}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],
@@ -676,7 +650,6 @@
                 "layout|flex": null,
                 "id": "mainFormsGrid",
                 "width": 220,
-                "designer|userClassName": "MyGridPanel34",
                 "resizable": true,
                 "resizeHandles": "e",
                 "title": "",
@@ -695,9 +668,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView33"
-                    },
                     "designerId": "0b2bed5e-c7ff-4e1b-889d-68a1bdd628b3"
                 },
                 {
@@ -709,7 +679,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "titleColumn",
-                        "designer|userClassName": "MyColumn70",
                         "dataIndex": "title",
                         "text": "Titre"
                     },
@@ -730,7 +699,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -765,7 +733,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "FormsCenterZone",
-                "designer|userClassName": "MyTabPanel",
                 "iconCls": null,
                 "activeTab": 0
             },
@@ -780,7 +747,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "formPropsForm",
-                        "designer|userClassName": "MyForm57",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "iconCls": "parametres",
@@ -796,8 +762,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsTab",
-                                "designer|userClassName": "TabConfig31"
+                                "localiserId": "propsTab"
                             },
                             "designerId": "f59a1940-02a2-4605-8408-f9776ff919e4",
                             "customConfigs": [
@@ -818,7 +783,6 @@
                             "userConfig": {
                                 "localiserId": "formTitleField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField82",
                                 "fieldLabel": "Titre du questionnaire",
                                 "labelWidth": 160,
                                 "name": "title",
@@ -843,7 +807,6 @@
                             "userConfig": {
                                 "localiserId": "descriptionField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea11",
                                 "fieldLabel": "Descriptif",
                                 "labelWidth": 160,
                                 "name": "description"
@@ -869,7 +832,6 @@
                                 "layout|anchor": "10%",
                                 "id": "formUniqueAnswerCheck",
                                 "style": "{float:left;}",
-                                "designer|userClassName": "MyCheckbox11",
                                 "fieldLabel": "Unicité de la réponse",
                                 "labelWidth": 160,
                                 "name": "uniqueAnswer",
@@ -897,7 +859,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onFormUniqueAnswerCheckChange",
                                         "fn": "onFormUniqueAnswerCheckChange",
                                         "implHandler": [
                                             "if (newValue===true) {\r",
@@ -926,7 +887,6 @@
                             "userConfig": {
                                 "margin": "0 20 0 20",
                                 "style": "{float:left;}",
-                                "designer|userClassName": "MyButton292",
                                 "allowDepress": false,
                                 "enableToggle": true,
                                 "handleMouseEvents": false,
@@ -955,7 +915,6 @@
                                 "id": "formUniqueAnswerTextField",
                                 "margin": null,
                                 "style": "{float:left;}",
-                                "designer|userClassName": "MyTextField90",
                                 "fieldLabel": "Déjà répondu",
                                 "labelWidth": 160,
                                 "name": "uniqueAnswerText"
@@ -976,7 +935,6 @@
                                 "hidden": true,
                                 "id": "justAHelper11",
                                 "style": "{float:right;}",
-                                "designer|userClassName": "MyButton299",
                                 "iconCls": "help",
                                 "text": "",
                                 "tooltip": "Message affiché si l'utilisateur a déjà répondu au questionnaire"
@@ -999,7 +957,6 @@
                                 "layout|anchor": "50%",
                                 "margin": "0 10 0 0",
                                 "style": "{float:left; clear:both;}",
-                                "designer|userClassName": "MyDateField8",
                                 "fieldLabel": "Date de début ",
                                 "labelWidth": 160,
                                 "name": "openingDate"
@@ -1028,7 +985,6 @@
                                 "layout|anchor": "50%",
                                 "margin": null,
                                 "style": "{float:right; }",
-                                "designer|userClassName": "MyDateField9",
                                 "fieldLabel": "Date de fin",
                                 "labelWidth": 160,
                                 "name": "closingDate"
@@ -1055,7 +1011,6 @@
                             "userConfig": {
                                 "localiserId": "endMessageField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextArea13",
                                 "fieldLabel": "Message de fin",
                                 "labelWidth": 160,
                                 "name": "endMessage"
@@ -1082,7 +1037,6 @@
                         "dock": null,
                         "id": "FormsEditor",
                         "padding": null,
-                        "designer|userClassName": "MyPanel4",
                         "layout": "fit",
                         "bodyPadding": null,
                         "iconCls": "edit",
@@ -1099,8 +1053,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "editTab",
-                                "layout|flex": null,
-                                "designer|userClassName": "TabConfig1"
+                                "layout|flex": null
                             },
                             "designerId": "2a845286-0e64-4f04-8382-d1f00261d534",
                             "customConfigs": [
@@ -1132,7 +1085,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "formRightsForm",
-                        "designer|userClassName": "MyForm45",
                         "bodyPadding": 10,
                         "iconCls": "user",
                         "title": "Droits"
@@ -1147,8 +1099,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rightsTab",
-                                "designer|userClassName": "TabConfig2"
+                                "localiserId": "rightsTab"
                             },
                             "designerId": "b72889f7-496b-4e2e-a69a-2e78dc0ac1b9",
                             "customConfigs": [
@@ -1195,7 +1146,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "formStatsTab",
-                        "designer|userClassName": "MyForm67",
                         "bodyPadding": 10,
                         "iconCls": "monitoring",
                         "title": "Exploitation"
@@ -1211,7 +1161,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "exploitationField",
-                                "designer|userClassName": "TabConfig32",
                                 "tooltip": "L'exploitation des questionnaires permet d'exporter les résultats dans le format csv"
                             },
                             "configAlternates": {
@@ -1234,7 +1183,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onFormStatsTabActivate",
                                 "fn": "onFormStatsTabActivate",
                                 "implHandler": [
                                     "Ext.Ajax.request({\r",
@@ -1267,7 +1215,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "statsFieldSet",
-                                "designer|userClassName": "MyFieldSet18",
                                 "title": "Statistiques"
                             },
                             "designerId": "afb9fb77-e12f-43b7-9b70-7a6bf94153e7",
@@ -1290,7 +1237,6 @@
                                         "localiserId": "totalResultFields",
                                         "layout|anchor": "100%",
                                         "itemId": "totalResults",
-                                        "designer|userClassName": "MyDisplayField1",
                                         "fieldLabel": "Nombre de personnes ayant commencé le questionnaire",
                                         "labelWidth": 360,
                                         "name": "totalResults"
@@ -1315,7 +1261,6 @@
                                         "layout|anchor": "50%",
                                         "itemId": "percentageField",
                                         "style": "{float:right;}",
-                                        "designer|userClassName": "MyDisplayField3",
                                         "fieldLabel": "",
                                         "name": "percentageComplete"
                                     },
@@ -1335,7 +1280,6 @@
                                         "localiserId": "validResultField",
                                         "layout|anchor": "50%",
                                         "itemId": "validResults",
-                                        "designer|userClassName": "MyDisplayField2",
                                         "fieldLabel": "Nombre de personnes ayant terminé le questionnaire",
                                         "labelWidth": 360,
                                         "name": "validResults"
@@ -1360,7 +1304,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "resultsFieldSet",
-                                "designer|userClassName": "MyFieldSet19",
                                 "title": "Résultats"
                             },
                             "designerId": "00080423-cad1-4620-a9fb-09d457421f97",
@@ -1382,7 +1325,6 @@
                                     "userConfig": {
                                         "localiserId": "exportCSVBtn",
                                         "id": "formsExportCSVBtn",
-                                        "designer|userClassName": "MyButton301",
                                         "iconCls": "arrow_down",
                                         "text": "Exporter en CSV"
                                     },
@@ -1409,7 +1351,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormsInterfaceRender",
                 "fn": "onFormsInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"FormsStore\").load();"
@@ -1427,7 +1368,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormsInterfaceBeforeClose",
                 "fn": "onFormsInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"FormsStore\").removeAll();"

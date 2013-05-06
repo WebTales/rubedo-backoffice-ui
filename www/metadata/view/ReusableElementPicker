@@ -33,7 +33,6 @@
                 "managesStore": true,
                 "layout|flex": 0.5,
                 "id": "ReusableElementsGrid",
-                "designer|userClassName": "MyGridPanel17",
                 "title": "",
                 "store": "ReusableElementsDataStore"
             },
@@ -56,9 +55,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView17"
-                    },
                     "designerId": "8bdb7e96-8aed-4c82-b1f5-7fc83e88f1f3"
                 },
                 {
@@ -69,7 +65,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn38",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
@@ -83,9 +78,6 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature2"
-                    },
                     "designerId": "92bbf608-3b28-491c-aab5-19f563d60436",
                     "cn": [
                         {
@@ -96,7 +88,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name:this.translator}"
                                 ],
@@ -112,7 +103,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "translator",
                                         "fn": "translator",
                                         "designer|params": [
                                             "name"
@@ -141,8 +131,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "designer|userClassName": "MyToolbar78"
+                        "dock": "bottom"
                     },
                     "designerId": "50d8f915-f1d9-4775-8ac5-6801ad08ff0f",
                     "cn": [
@@ -154,8 +143,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill41"
+                                "layout|flex": null
                             },
                             "designerId": "9c6e853c-5e23-4d57-8cff-fc28e75aa44b"
                         },
@@ -170,7 +158,6 @@
                                 "layout|flex": null,
                                 "disabled": true,
                                 "id": "resusableElementsDeleteBtn",
-                                "designer|userClassName": "MyButton298",
                                 "iconCls": "close",
                                 "text": "Supprimer"
                             },
@@ -184,7 +171,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onResusableElementsDeleteBtnClick",
                                         "fn": "onResusableElementsDeleteBtnClick",
                                         "implHandler": [
                                             "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -218,7 +204,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "center",
-                "designer|userClassName": "MyPanel41",
                 "layout": "vbox",
                 "title": ""
             },
@@ -236,7 +221,6 @@
                         "id": "reusableelementSimulation",
                         "margin": "10 0 0 0",
                         "width": 300,
-                        "designer|userClassName": "MyContainer20",
                         "anchorSize": null
                     },
                     "designerId": "72bbb711-00fc-426b-ac82-9a0301c20483"
@@ -254,7 +238,6 @@
                         "margin": "10 0 10 0",
                         "styleHtmlContent": true,
                         "width": 350,
-                        "designer|userClassName": "MyContainer20",
                         "anchorSize": null
                     },
                     "designerId": "d1370439-418e-4078-b7ed-18fff72361d9",
@@ -267,7 +250,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<h2>{name}</h2>\r",
                                     "<p>{description}</p>"
@@ -287,8 +269,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "dock": "bottom",
-                        "designer|userClassName": "MyToolbar36"
+                        "dock": "bottom"
                     },
                     "designerId": "8ef4da63-4453-4819-a353-67967c734453",
                     "cn": [
@@ -300,8 +281,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill10"
+                                "layout|flex": null
                             },
                             "designerId": "236618a2-a732-4b8d-98fe-7b8e3b062289"
                         },
@@ -316,7 +296,6 @@
                                 "layout|flex": null,
                                 "disabled": true,
                                 "id": "REAddButton",
-                                "designer|userClassName": "MyButton125",
                                 "iconCls": "add",
                                 "text": "Ajouter"
                             },

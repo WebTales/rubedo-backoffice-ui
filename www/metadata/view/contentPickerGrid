@@ -25,9 +25,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView2"
-            },
             "designerId": "490172d4-b5b9-41ae-94d2-aca2d4d25780"
         },
         {
@@ -39,7 +36,6 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
                 "flex": 1
@@ -64,7 +60,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -108,7 +103,6 @@
                     "    store: \"TCNDepComboCS\"\r",
                     "}"
                 ],
-                "designer|userClassName": "MyColumn53",
                 "dataIndex": "typeId",
                 "text": "Type",
                 "flex": 1
@@ -133,7 +127,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -174,7 +167,6 @@
                     "            ]\r",
                     "}"
                 ],
-                "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
                 "text": "Etat",
                 "flex": 1
@@ -199,7 +191,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -242,7 +233,6 @@
                     "}"
                 ],
                 "width": 60,
-                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -270,7 +260,6 @@
             "userConfig": {
                 "dock": "bottom",
                 "width": 360,
-                "designer|userClassName": "MyPagingToolbar",
                 "displayInfo": true,
                 "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
                 "emptyMsg": "Rien à afficher",
@@ -291,8 +280,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill20"
+                        "layout|flex": null
                     },
                     "designerId": "0edcbb1a-9c32-4c1f-b62e-b43886318b56"
                 },
@@ -307,7 +295,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "contentPickerSelectBtn",
-                        "designer|userClassName": "MyButton188",
                         "iconCls": "ouiSpetit",
                         "text": "<b>Choisir ce contenu</b>"
                     },
@@ -321,7 +308,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -348,7 +334,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContentPickerGridSelectionChange",
                 "fn": "onContentPickerGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)) {\r",
@@ -370,7 +355,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContentPickerGridItemDblClick",
                 "fn": "onContentPickerGridItemDblClick",
                 "implHandler": [
                     "Ext.getCmp(\"contentPickerSelectBtn\").handler(Ext.getCmp(\"contentPickerSelectBtn\"));\r",

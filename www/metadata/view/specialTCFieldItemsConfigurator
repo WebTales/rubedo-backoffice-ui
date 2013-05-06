@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonClick",
                 "fn": "onButtonClick",
                 "implHandler": [
                     "Ext.widget(\"MultiChoiceConfigurator1\",{targetedId:button.targetedId}).show();"

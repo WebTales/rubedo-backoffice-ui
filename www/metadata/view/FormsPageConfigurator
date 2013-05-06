@@ -29,8 +29,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar72"
+                "dock": "bottom"
             },
             "designerId": "ae9564ce-28bc-424c-9738-6e719069c68f",
             "cn": [
@@ -42,8 +41,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill36"
+                        "layout|flex": null
                     },
                     "designerId": "1dc42110-d24f-4783-ba13-7a07c514f38c"
                 },
@@ -57,7 +55,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "formPageConfiguratorSubmit",
-                        "designer|userClassName": "MyButton287",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -71,7 +68,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onRichTextConfiguratorSubmitClick",
                                 "fn": "onRichTextConfiguratorSubmitClick",
                                 "implHandler": [
                                     "var field = button.up().up().getComponent(0).getComponent(0);\r",
@@ -100,7 +96,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm65",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -115,7 +110,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField87",
                         "fieldLabel": "Label",
                         "name": "label",
                         "allowBlank": false
@@ -132,7 +126,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowAfterRender",
                 "fn": "onWindowAfterRender",
                 "implHandler": [
                     "var initialValues = Ext.clone(component.initialItemConfig);\r",

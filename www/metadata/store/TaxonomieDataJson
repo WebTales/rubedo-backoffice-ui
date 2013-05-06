@@ -41,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy10",
                 "api": [
                     "{\r",
                     "create : 'taxonomy/create',\r",
@@ -63,8 +62,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader8"
+                        "root": "data"
                     },
                     "designerId": "925b331f-81f7-4778-948e-dede21eee20c"
                 },
@@ -76,7 +74,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter1",
                         "encode": true,
                         "root": "data"
                     },

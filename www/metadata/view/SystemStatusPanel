@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelDestroy",
                 "fn": "onPanelDestroy",
                 "implHandler": [
                     "var me =this;\r",
@@ -44,7 +43,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyContainer27",
                 "layout": "vbox"
             },
             "designerId": "28a15491-520e-49ef-934c-b49ddf332736"
@@ -59,7 +57,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyContainer28",
                 "layout": "vbox"
             },
             "designerId": "3a3ef5bf-011e-42bc-afe2-a79961891a8a"
@@ -72,7 +69,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelBeforeRender",
                 "fn": "onPanelBeforeRender",
                 "implHandler": [
                     "Ext.chart.theme.Memory = Ext.extend(Ext.chart.theme.Base, {\r",
@@ -125,7 +121,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelAfterRender",
                 "fn": "onPanelAfterRender",
                 "implHandler": [
                     "var me=this;\r",
@@ -145,7 +140,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createCpu1LoadChart",
                 "fn": "createCpu1LoadChart",
                 "implHandler": [
                     "return {\r",
@@ -198,7 +192,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createCpu2LoadChart",
                 "fn": "createCpu2LoadChart",
                 "implHandler": [
                     "return {\r",
@@ -251,7 +244,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createMemoryPieChart",
                 "fn": "createMemoryPieChart",
                 "implHandler": [
                     "var me = this;\r",
@@ -317,7 +309,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createProcessChart",
                 "fn": "createProcessChart",
                 "implHandler": [
                     "return {\r",
@@ -410,7 +401,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "generateCpuLoad",
                 "fn": "generateCpuLoad",
                 "implHandler": [
                     " var me = this,\r",
@@ -467,7 +457,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "generateData",
                 "fn": "generateData",
                 "designer|params": [
                     "names"
@@ -499,7 +488,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateCharts",
                 "fn": "updateCharts",
                 "implHandler": [
                     "var me = this;\r",

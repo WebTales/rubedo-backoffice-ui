@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "folder.png",
-        "container|align": "stretch",
         "localiserId": "contentWindow",
+        "container|align": "stretch",
         "height": 578,
         "id": "contributionContenus",
         "width": 951,
@@ -42,7 +42,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "59f076fe-63dc-4879-a475-318a17c27558"
@@ -56,7 +55,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "ee029be7-35bc-4a2c-8f9d-c77a10f3f78e"
@@ -72,8 +70,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "0e1829e2-db05-4a5b-8d19-7b74a848c555",
             "cn": [
@@ -87,7 +84,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "content-icon",
                         "text": "Contenus <b>></b> "
                     },
@@ -107,8 +103,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "13638db7-830e-4891-8255-4a53d86cafb7",
             "cn": [
@@ -124,7 +119,6 @@
                         "height": 45,
                         "itemId": "imageBarreMeta",
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "6cdac45c-2f22-46e5-9e67-bafdff2c9d17",
@@ -137,7 +131,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');"
@@ -159,8 +152,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
-                        "margin": "0 0 0 20",
-                        "designer|userClassName": "MyContainer9"
+                        "margin": "0 0 0 20"
                     },
                     "designerId": "934c5a7e-55ec-42c0-88fd-ad948cba62c7",
                     "cn": [
@@ -172,7 +164,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
                                 ],
@@ -196,9 +187,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "7f9e58dc-086c-4c88-8430-a453eb2aa38c",
             "cn": [
@@ -211,11 +200,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contents",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "boutonAjouterContenu",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -245,12 +233,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contents",
-                        "layout|flex": null,
                         "localiserId": "editBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonModifierContenu",
                         "itemId": null,
-                        "designer|userClassName": "MyButton12",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
@@ -280,12 +267,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contents",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonSupprimerContenu",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -314,11 +300,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "clipboardGroup",
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -345,7 +330,6 @@
                                 "disabled": true,
                                 "id": "boutonCopierContenus",
                                 "width": null,
-                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -378,7 +362,6 @@
                                 "hidden": true,
                                 "id": "ajoutPanierContenus",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -397,7 +380,6 @@
                             "userConfig": {
                                 "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -424,11 +406,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contents",
-                        "layout|flex": null,
                         "localiserId": "workflowGroup",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "contribWorkflowBox",
-                        "designer|userClassName": "MyButtonGroup10",
                         "headerPosition": "bottom",
                         "title": "Workflow",
                         "columns": 5
@@ -458,7 +439,6 @@
                                 "ACL": "write.ui.contents.pendingToPublished",
                                 "localiserId": "publishBtn",
                                 "id": "contentAcceptPublishBtn",
-                                "designer|userClassName": "MyButton136",
                                 "iconAlign": "top",
                                 "iconCls": "accept_big",
                                 "scale": "large",
@@ -489,7 +469,6 @@
                                 "ACL": "write.ui.contents.draftToPending",
                                 "localiserId": "submitBtn",
                                 "id": "contentSubmitValBtn",
-                                "designer|userClassName": "MyButton136",
                                 "iconAlign": "top",
                                 "iconCls": "validation_submit_big",
                                 "scale": "large",
@@ -520,7 +499,6 @@
                                 "ACL": "write.ui.contents.pendingToDraft",
                                 "localiserId": "refuseBtn",
                                 "id": "contentRefuseBtn",
-                                "designer|userClassName": "MyButton136",
                                 "iconAlign": "top",
                                 "iconCls": "nonS",
                                 "scale": "large",
@@ -551,7 +529,6 @@
                                 "ACL": "write.ui.contents.putOnline",
                                 "localiserId": "onlineBtn",
                                 "id": "contentOnlineBtn",
-                                "designer|userClassName": "MyButton136",
                                 "iconAlign": "top",
                                 "iconCls": "online_big",
                                 "scale": "large",
@@ -582,7 +559,6 @@
                                 "ACL": "write.ui.contents.putOffline",
                                 "localiserId": "offlineBtn",
                                 "id": "contentOfflineBtn",
-                                "designer|userClassName": "MyButton136",
                                 "iconAlign": "top",
                                 "iconCls": "offline_big",
                                 "scale": "large",
@@ -612,8 +588,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "d334fd27-ab15-45c5-a479-5f16b4583ce6"
                 },
@@ -628,7 +603,6 @@
                         "RApplication": "contents",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -657,7 +631,6 @@
                 "id": "TypesContenusGrid",
                 "itemId": null,
                 "width": 150,
-                "designer|userClassName": "MyGridPanel1",
                 "autoScroll": true,
                 "resizable": [
                     "true"
@@ -680,8 +653,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "TypesContenusGridView",
-                        "itemId": null,
-                        "designer|userClassName": "MyGridView1"
+                        "itemId": null
                     },
                     "designerId": "624e13fe-653d-4759-955c-87f4e12c5ce3"
                 },
@@ -695,7 +667,6 @@
                     "userConfig": {
                         "localiserId": "typeColumn",
                         "width": 672,
-                        "designer|userClassName": "MyColumn8",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
@@ -717,7 +688,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -743,9 +713,6 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.RowModel",
-                    "userConfig": {
-                        "designer|userClassName": "MyRowSelectionModel1"
-                    },
                     "designerId": "042fd63d-f360-4728-8932-51572820d755"
                 }
             ]

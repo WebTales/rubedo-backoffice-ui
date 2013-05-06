@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy21",
                 "api": [
                     "{\r",
                     "                    create: 'image/create',\r",
@@ -49,8 +48,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader19"
+                        "root": "data"
                     },
                     "designerId": "b484b00e-31c6-46ce-aaff-6920ed91ee38"
                 },
@@ -62,7 +60,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter5",
                         "encode": true,
                         "root": "data"
                     },

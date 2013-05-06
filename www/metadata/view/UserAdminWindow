@@ -66,8 +66,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar34"
+                "dock": "top"
             },
             "designerId": "8399ab7f-bc71-422a-a7e2-d7ec589ccfb1",
             "cn": [
@@ -83,7 +82,6 @@
                         "localiserId": "addBtn",
                         "layout|flex": null,
                         "id": "userAdminAdd",
-                        "designer|userClassName": "MyButton118",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -115,7 +113,6 @@
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "id": "userAdminRemove",
-                        "designer|userClassName": "MyButton117",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -143,8 +140,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill32"
+                        "layout|flex": null
                     },
                     "designerId": "d2048406-8115-48f9-81e1-56328b015cea"
                 },
@@ -159,7 +155,6 @@
                         "RApplication": "users",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton263",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -186,7 +181,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "userAdminMainPanel",
-                "designer|userClassName": "MyTabPanel7",
                 "activeTab": 0
             },
             "designerId": "8c3d9510-d629-4e19-9483-9f30337da40f",
@@ -200,7 +194,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "userAdminInfoDisplay",
-                        "designer|userClassName": "MyForm22",
                         "designer|displayName": "",
                         "overflowY": "auto",
                         "layout": "hbox",
@@ -217,8 +210,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "informationsTab",
-                                "designer|userClassName": "TabConfig24"
+                                "localiserId": "informationsTab"
                             },
                             "designerId": "b2ab377d-4030-49f4-81a8-dbf760cc2938",
                             "customConfigs": [
@@ -242,7 +234,6 @@
                                 "height": 360,
                                 "margin": 0,
                                 "width": 356,
-                                "designer|userClassName": "MyFieldSet5",
                                 "autoScroll": true,
                                 "title": "Informations"
                             },
@@ -265,7 +256,6 @@
                                     "userConfig": {
                                         "localiserId": "nameField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField5",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
                                         "readOnly": null,
@@ -290,7 +280,6 @@
                                     "userConfig": {
                                         "localiserId": "mailField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "E-mail ",
                                         "name": "email",
                                         "allowBlank": false,
@@ -315,7 +304,6 @@
                                     "userConfig": {
                                         "localiserId": "civilityField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox4",
                                         "fieldLabel": "Civilité ",
                                         "name": "title",
                                         "editable": false,
@@ -348,7 +336,6 @@
                                     "userConfig": {
                                         "localiserId": "organisationField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Organisation ",
                                         "name": "organisation"
                                     },
@@ -371,7 +358,6 @@
                                     "userConfig": {
                                         "localiserId": "serviceField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField20",
                                         "fieldLabel": "Service ",
                                         "name": "service"
                                     },
@@ -394,7 +380,6 @@
                                     "userConfig": {
                                         "localiserId": "postField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField21",
                                         "fieldLabel": "Fonction ",
                                         "name": "post"
                                     },
@@ -417,7 +402,6 @@
                                     "userConfig": {
                                         "localiserId": "phoneField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField23",
                                         "fieldLabel": "Téléphone ",
                                         "name": "telephone"
                                     },
@@ -440,7 +424,6 @@
                                     "userConfig": {
                                         "localiserId": "mobileField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField24",
                                         "fieldLabel": "Mobile ",
                                         "name": "mobile"
                                     },
@@ -463,7 +446,6 @@
                                     "userConfig": {
                                         "localiserId": "coordinatesField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField25",
                                         "fieldLabel": "Coordonnées ",
                                         "name": "coordinates"
                                     },
@@ -486,7 +468,6 @@
                                     "userConfig": {
                                         "localiserId": "languageField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox5",
                                         "fieldLabel": "Langue ",
                                         "name": "language",
                                         "editable": false,
@@ -514,7 +495,6 @@
                                     "userConfig": {
                                         "localiserId": "countryField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField80",
                                         "fieldLabel": "Pays ",
                                         "name": "country"
                                     },
@@ -539,7 +519,6 @@
                                         "localiserId": "applyField",
                                         "layout|anchor": "100%",
                                         "id": "userAdminInfoEdit",
-                                        "designer|userClassName": "MyButton130",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4",
@@ -571,7 +550,6 @@
                                 "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
-                                "designer|userClassName": "MyFieldSet4",
                                 "title": "Photo"
                             },
                             "designerId": "50a05e4c-d597-4647-8831-9190d17f160b",
@@ -595,7 +573,6 @@
                                         "id": "userAdminProfilePicture",
                                         "margin": "0 0 18 18",
                                         "width": 140,
-                                        "designer|userClassName": "MyImg12",
                                         "src": "resources/images/userBig.png"
                                     },
                                     "designerId": "87cf3f1f-d102-426b-86ca-008863f143e5"
@@ -611,7 +588,6 @@
                                         "localiserId": "changeBtn",
                                         "layout|anchor": "100%",
                                         "margin": "0 0 10 0",
-                                        "designer|userClassName": "MyButton85",
                                         "text": "Changer"
                                     },
                                     "designerId": "8c0ba0f1-fe60-4156-b16d-662458ac41a9",
@@ -631,7 +607,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "handler",
                                                 "fn": "handler",
                                                 "designer|params": [
                                                     "button",
@@ -658,7 +633,6 @@
                                         "layout|anchor": "100%",
                                         "id": "userAdminProfilePictureDelete",
                                         "margin": null,
-                                        "designer|userClassName": "MyButton128",
                                         "text": "Supprimer"
                                     },
                                     "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1",
@@ -688,7 +662,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "userAdminAccessDisplay",
-                        "designer|userClassName": "MyForm21",
                         "overflowY": "auto",
                         "bodyPadding": 20,
                         "title": "Accès"
@@ -703,8 +676,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "accessTab",
-                                "designer|userClassName": "TabConfig25"
+                                "localiserId": "accessTab"
                             },
                             "designerId": "4c8995ee-d38b-4823-9df4-8518de02a10b",
                             "customConfigs": [
@@ -724,7 +696,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "acountUserValidFieldSet",
-                                "designer|userClassName": "MyFieldSet2",
                                 "title": "Compte utilisateur et validité"
                             },
                             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
@@ -746,7 +717,6 @@
                                     "userConfig": {
                                         "localiserId": "useraccountField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField28",
                                         "fieldLabel": "Compte utilisateur ",
                                         "labelWidth": 200,
                                         "name": "login",
@@ -773,7 +743,6 @@
                                     "userConfig": {
                                         "localiserId": "gruopsField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox29",
                                         "fieldLabel": "Groupes",
                                         "labelWidth": 200,
                                         "name": "groups",
@@ -804,7 +773,6 @@
                                     "userConfig": {
                                         "localiserId": "defaultGroupField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox29",
                                         "fieldLabel": "Groupe par defaut",
                                         "labelWidth": 200,
                                         "name": "defaultGroup",
@@ -837,7 +805,6 @@
                                     "userConfig": {
                                         "localiserId": "startValidityField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyDateField",
                                         "fieldLabel": "Début de validité ",
                                         "labelWidth": 200,
                                         "name": "startValidity"
@@ -861,7 +828,6 @@
                                     "userConfig": {
                                         "localiserId": "endValidityField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyDateField1",
                                         "fieldLabel": "Fin de validité ",
                                         "labelWidth": 200,
                                         "name": "endValidity"
@@ -887,7 +853,6 @@
                                         "localiserId": "applyBtn",
                                         "layout|anchor": "100%",
                                         "id": "userAdminAccessEdit",
-                                        "designer|userClassName": "MyButton127",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "848b18e8-9811-4ad3-b616-69932515952b",
@@ -916,7 +881,6 @@
                             "userConfig": {
                                 "ACL": "write.ui.users",
                                 "localiserId": "passwordChangeFieldSet",
-                                "designer|userClassName": "MyFieldSet6",
                                 "title": "Changement de mot de passe"
                             },
                             "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
@@ -944,7 +908,6 @@
                                         "localiserId": "userPasswordChangeBtn",
                                         "layout|anchor": "100%",
                                         "id": "AdminChangeUserPwd",
-                                        "designer|userClassName": "MyButton131",
                                         "text": "Changer le mot de passe de cet utilisateur"
                                     },
                                     "designerId": "a7c9c3f6-0197-4c9c-86d4-154356adf8f5",
@@ -968,7 +931,6 @@
                             "userConfig": {
                                 "height": 150,
                                 "hidden": true,
-                                "designer|userClassName": "MyGridPanel18",
                                 "autoScroll": true,
                                 "title": "Délégations",
                                 "store": "DelegationsDataStore"
@@ -983,8 +945,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "height": null,
-                                        "designer|userClassName": "MyGridView18"
+                                        "height": null
                                     },
                                     "designerId": "2f7b933a-287a-438a-be4b-57bad565633b"
                                 },
@@ -996,7 +957,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyColumn45",
                                         "dataIndex": "receiverId",
                                         "text": "Délégué",
                                         "flex": 1
@@ -1012,7 +972,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "managesStore": true,
-                                                "designer|userClassName": "MyComboBox7",
                                                 "displayField": "name",
                                                 "minChars": 3,
                                                 "store": "UsersComboStore",
@@ -1039,7 +998,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "renderer",
                                                 "fn": "renderer",
                                                 "designer|params": [
                                                     "value",
@@ -1071,7 +1029,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyDateColumn6",
                                         "dataIndex": "startValidity",
                                         "text": "Début de validité",
                                         "flex": 1
@@ -1085,9 +1042,6 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyDateField2"
-                                            },
                                             "designerId": "1c3d12f0-2afd-4448-8369-4b262cf8ec6f"
                                         }
                                     ]
@@ -1100,7 +1054,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyDateColumn7",
                                         "dataIndex": "endValidity",
                                         "text": "Fin de validité",
                                         "flex": 1
@@ -1114,9 +1067,6 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyDateField3"
-                                            },
                                             "designerId": "48c1393c-a52e-4312-a145-48feffeb3d3b"
                                         }
                                     ]
@@ -1129,8 +1079,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dock": "bottom",
-                                        "designer|userClassName": "MyToolbar37"
+                                        "dock": "bottom"
                                     },
                                     "designerId": "188dc337-9de5-481e-b840-c13009721805",
                                     "cn": [
@@ -1142,8 +1091,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "designer|userClassName": "MyFill11"
+                                                "layout|flex": null
                                             },
                                             "designerId": "4b65bcef-4575-46f7-a986-9ce8984cf53d"
                                         },
@@ -1158,7 +1106,6 @@
                                                 "ACL": "write.ui.users",
                                                 "layout|flex": null,
                                                 "id": "AdminAddDelegationBtn",
-                                                "designer|userClassName": "MyButton133",
                                                 "iconCls": "add",
                                                 "text": "Ajouter"
                                             },
@@ -1182,7 +1129,6 @@
                                                 "ACL": "write.ui.users",
                                                 "layout|flex": null,
                                                 "id": "AdminDeleteDelegationBtn",
-                                                "designer|userClassName": "MyButton134",
                                                 "iconCls": "close",
                                                 "text": "Supprimer"
                                             },
@@ -1204,9 +1150,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyCheckboxSelectionModel6"
-                                    },
                                     "designerId": "e8c4c4fb-1769-442e-b12b-7995efe474e0"
                                 },
                                 {
@@ -1216,9 +1159,6 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.RowEditing",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyRowEditingPlugin1"
-                                    },
                                     "designerId": "a144b900-8b4c-47b1-8e19-43f27d903412",
                                     "cn": [
                                         {
@@ -1229,7 +1169,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "onGridroweditingpluginBeforeEdit",
                                                 "fn": "onGridroweditingpluginBeforeEdit",
                                                 "implHandler": [
                                                     "if (!ACL.interfaceRights['write.ui.users']) {return(false);}"
@@ -1249,7 +1188,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onGridpanelDestroy",
                                         "fn": "onGridpanelDestroy",
                                         "implHandler": [
                                             "component.getStore().removeAll();"
@@ -1271,7 +1209,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onUserAdminMainPanelAfterRender",
                         "fn": "onUserAdminMainPanelAfterRender",
                         "implHandler": [
                             "component.getLayout().setActiveItem(1);\r",

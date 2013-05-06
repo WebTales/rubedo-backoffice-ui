@@ -26,7 +26,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPropertyGrid",
                 "overflowY": "auto",
                 "title": "",
                 "disableSelection": true,
@@ -49,7 +48,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onPropertygridBeforeEdit",
                         "fn": "onPropertygridBeforeEdit",
                         "implHandler": [
                             "return(false);"
@@ -69,8 +67,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar40"
+                "dock": "bottom"
             },
             "designerId": "5eb46282-3897-43ea-a286-93094bd21c65",
             "cn": [
@@ -82,8 +79,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill15"
+                        "layout|flex": null
                     },
                     "designerId": "a6677035-0c91-41b2-837f-4781583ca7a8"
                 },
@@ -96,7 +92,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton152",
                         "text": "<b>OK</b>"
                     },
                     "designerId": "cc6419f1-4bc6-4165-a055-83f86270d8fa",
@@ -109,7 +104,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",

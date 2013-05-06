@@ -32,7 +32,6 @@
             "userConfig": {
                 "layout|flex": 0.5,
                 "id": "ChampTCSelectGrid",
-                "designer|userClassName": "MyGridPanel8",
                 "title": "",
                 "store": "TypesChampsDataStore"
             },
@@ -45,9 +44,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView6"
-                    },
                     "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c",
                     "cn": [
                         {
@@ -58,7 +54,6 @@
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
                             "userConfig": {
-                                "designer|userClassName": "MyGridDragDropPlugin8",
                                 "enableDrop": false
                             },
                             "designerId": "9bd0776b-8076-44ed-ba72-ba31c3e2dfae"
@@ -71,7 +66,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "processMyGridView4",
                                 "fn": "processMyGridView4",
                                 "designer|params": [
                                     "config"
@@ -93,7 +87,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn15",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
@@ -107,9 +100,6 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature5"
-                    },
                     "designerId": "b79bfd9b-49c7-4b78-97dd-c51b9410d893",
                     "cn": [
                         {
@@ -120,7 +110,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name}"
                                 ],
@@ -142,7 +131,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyContainer34",
                 "layout": "vbox"
             },
             "designerId": "58d54e6d-7e6d-45fe-a47f-eaddb91b4332",
@@ -158,7 +146,6 @@
                         "layout|flex": 1,
                         "id": "PaneauTCDetail",
                         "styleHtmlContent": true,
-                        "designer|userClassName": "MyPanel61",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "bodyStyle": [
@@ -176,7 +163,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "{description}"
                                 ],
@@ -195,7 +181,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyGridPanel28",
                         "title": "Ajout multiple",
                         "forceFit": true,
                         "store": "AddMultiFieldStore"
@@ -209,9 +194,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView24"
-                            },
                             "designerId": "c2d588f7-b33d-4fe2-9b60-7735e7cb0a7b",
                             "cn": [
                                 {
@@ -221,9 +203,6 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridDragDropPlugin9"
-                                    },
                                     "designerId": "b80cf63b-4ed0-4a6b-8599-38ae43122343",
                                     "cn": [
                                         {
@@ -234,7 +213,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "onDragDropBeforeDrop",
                                                 "fn": "onDragDropBeforeDrop",
                                                 "implHandler": [
                                                     "if (Ext.isEmpty(data.records[0].get(\"protoId\"))){\r",
@@ -262,7 +240,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn37",
                                 "dataIndex": "type",
                                 "text": "Type"
                             },
@@ -281,8 +258,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar16"
+                "dock": "bottom"
             },
             "designerId": "0e376d6c-8ec1-4c44-9c32-678fb7579a6e",
             "cn": [
@@ -294,8 +270,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill9"
+                        "layout|flex": null
                     },
                     "designerId": "7318e19f-be26-4061-a70e-0fcfdee1a901"
                 },
@@ -310,7 +285,6 @@
                         "layout|flex": null,
                         "id": "boutonAjouterChampTC",
                         "margin": null,
-                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
@@ -326,7 +300,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAjoutChampTCFenetreBeforeRender",
                 "fn": "onAjoutChampTCFenetreBeforeRender",
                 "implHandler": [
                     "Ext.getStore(\"AddMultiFieldStore\").removeAll();"

@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "suivant",
                 "fn": "suivant",
                 "implHandler": [
                     "var me=this;\r",
@@ -81,7 +80,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "precedent",
                 "fn": "precedent",
                 "implHandler": [
                     "var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;\r",
@@ -108,7 +106,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "enleveRegle",
                 "fn": "enleveRegle",
                 "implHandler": [
                     "if (button.up().up().up().items.items.indexOf(button.up().up())==2) {\r",
@@ -133,7 +130,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectAllTC",
                 "fn": "selectAllTC",
                 "implHandler": [
                     "Ext.getCmp('champTCRequeteur').select(Ext.getCmp('champTCRequeteur').getStore().data.items);"
@@ -153,7 +149,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ajoutRegleChamp",
                 "fn": "ajoutRegleChamp",
                 "implHandler": [
                     "var nRegle= Ext.getCmp('createurReglesChampsAR').getValue();\r",
@@ -222,7 +217,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryBuildSaveBtnClick",
                 "fn": "onQueryBuildSaveBtnClick",
                 "implHandler": [
                     "if ((Ext.getCmp(\"assistantRequetage\").simpleMode)||(button.up().getForm().isValid())){\r",
@@ -290,7 +284,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onBoutonCreateurTrisChampsARClick",
                 "fn": "onBoutonCreateurTrisChampsARClick",
                 "implHandler": [
                     "var nRegle= Ext.getCmp('createurTrisChampsAR').getValue();\r",
@@ -347,7 +340,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "readQuery",
                 "fn": "readQuery",
                 "implHandler": [
                     "var mainWin= Ext.getCmp(\"assistantRequetage\");\r",
@@ -395,7 +387,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "displayQuery",
                 "fn": "displayQuery",
                 "designer|params": [
                     "query"
@@ -458,7 +449,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainQueriesGridSelectionChange",
                 "fn": "onMainQueriesGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -487,7 +477,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryMainRemoveBtnClick",
                 "fn": "onQueryMainRemoveBtnClick",
                 "implHandler": [
                     "\r",
@@ -516,7 +505,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryMainAddBtnClick",
                 "fn": "onQueryMainAddBtnClick",
                 "implHandler": [
                     "Ext.widget(\"assistantRequetage\",{adminMode:true}).show();"
@@ -536,7 +524,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryMainEditBtnClick",
                 "fn": "onQueryMainEditBtnClick",
                 "implHandler": [
                     "var initialQuery = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\"));\r",
@@ -558,7 +545,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "adaptToTCSelect",
                 "fn": "adaptToTCSelect",
                 "designer|params": [
                     "keepInMind"
@@ -914,7 +900,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainQueriesGridItemDblClick",
                 "fn": "onMainQueriesGridItemDblClick",
                 "implHandler": [
                     "Ext.getCmp(\"queryMainEditBtn\").fireEvent(\"click\");"
@@ -934,7 +919,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "restoreFieldRules",
                 "fn": "restoreFieldRules",
                 "designer|params": [
                     "fieldRules"

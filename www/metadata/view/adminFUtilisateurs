@@ -36,7 +36,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "fff875c8-b083-4f2d-95c4-81fdb8395e96"
@@ -50,7 +49,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "76eea817-13e3-4bc4-b165-abbbfef179c8"
@@ -66,8 +64,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "1c7fea59-edee-4192-a2c7-f159374df0d4",
             "cn": [
@@ -81,7 +78,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "user",
                         "text": "Groupes <b>></b> "
                     },
@@ -101,8 +97,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "24c9bb56-fa33-4f8f-ab40-4353957b6fc0",
             "cn": [
@@ -117,7 +112,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "21ae997d-2dbc-4837-8e85-cdf1662ad5cf",
@@ -130,7 +124,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png');"
@@ -153,8 +146,7 @@
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
                         "margin": "0 0 0 10",
-                        "styleHtmlContent": true,
-                        "designer|userClassName": "MyContainer9"
+                        "styleHtmlContent": true
                     },
                     "designerId": "ac6e9cc8-defd-49ca-be3e-e8db39210003",
                     "cn": [
@@ -166,7 +158,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<p> <b> {name} </b> {userNb} {calif} </p>"
                                 ],
@@ -190,9 +181,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "881ff497-661b-43ff-85b4-6bdc8a7a77a0",
             "cn": [
@@ -209,7 +198,6 @@
                         "layout|flex": null,
                         "id": "groupAddButton",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -244,7 +232,6 @@
                         "disabled": true,
                         "id": "groupDeleteButton",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -279,7 +266,6 @@
                         "disabled": true,
                         "id": "groupSaveButton",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
@@ -308,7 +294,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onGroupSaveButtonClick",
                                 "fn": "onGroupSaveButtonClick",
                                 "implHandler": [
                                     "var form =Ext.getCmp(\"groupPropsForm\").getForm();\r",
@@ -334,7 +319,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onGroupSaveButtonAfterRender",
                                 "fn": "onGroupSaveButtonAfterRender",
                                 "implHandler": [
                                     "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -363,7 +347,6 @@
                         "localiserId": "editGroup",
                         "layout|flex": null,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup8",
                         "headerPosition": "bottom",
                         "overlapHeader": false,
                         "title": "Edition",
@@ -394,7 +377,6 @@
                                 "localiserId": "addBtn",
                                 "id": "userAddButton",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton11",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "user_add_big",
@@ -421,7 +403,6 @@
                                 "localiserId": "removeBtn",
                                 "id": "userRemoveButton",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton11",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "user_remove_big",
@@ -447,8 +428,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "6702c09e-9a7a-49ef-80b3-684c915b5808"
                 },
@@ -463,7 +443,6 @@
                         "RApplication": "groups",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -490,7 +469,6 @@
             "userConfig": {
                 "layout|flex": 0.4,
                 "id": "groupsGrid",
-                "designer|userClassName": "MyTreePanel2",
                 "title": "",
                 "hideHeaders": false,
                 "store": "GroupsDataStore",
@@ -508,9 +486,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyTreeView2"
-                    },
                     "designerId": "8145efcc-bff3-4ee7-a406-ac517b7d1b6f",
                     "cn": [
                         {
@@ -521,7 +496,6 @@
                             },
                             "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                             "userConfig": {
-                                "designer|userClassName": "MyTreeDragDropPlugin2",
                                 "dragText": "{0} groupe{1} séléctionné{1}"
                             },
                             "designerId": "42bcca70-3797-46a0-b074-6f8a822a9421",
@@ -534,7 +508,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                         "fn": "onTreedragdroppluginBeforeDrop",
                                         "implHandler": [
                                             "if (!ACL.interfaceRights['write.ui.groups']){return(false);}\r",
@@ -577,7 +550,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onTreedragdroppluginDrop",
                                         "fn": "onTreedragdroppluginDrop",
                                         "implHandler": [
                                             "var task= new Ext.util.DelayedTask(function(){\r",
@@ -603,7 +575,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyTreeColumn1",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
@@ -618,7 +589,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -658,7 +628,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyTabPanel6",
                 "activeTab": 0
             },
             "designerId": "42403621-5294-482e-9e14-a9ec1ab9de9a",
@@ -671,7 +640,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel35",
                         "layout": "fit",
                         "title": "Utilisateurs"
                     },
@@ -685,8 +653,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "userTab",
-                                "designer|userClassName": "TabConfig22"
+                                "localiserId": "userTab"
                             },
                             "designerId": "bb142432-60c7-4d87-afe6-a99a4a14cec2",
                             "customConfigs": [
@@ -706,7 +673,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "UsersInGroupGrid",
-                                "designer|userClassName": "MyGridPanel15",
                                 "title": "",
                                 "store": "UsersGroupStore"
                             },
@@ -722,9 +688,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridView15"
-                                    },
                                     "designerId": "53651c8e-bcc2-47a9-86aa-8520958f33d2"
                                 },
                                 {
@@ -736,7 +699,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "nameColumn",
-                                        "designer|userClassName": "MyColumn24",
                                         "dataIndex": "name",
                                         "text": "Nom",
                                         "flex": 1
@@ -759,7 +721,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "mailColumn",
-                                        "designer|userClassName": "MyColumn25",
                                         "dataIndex": "email",
                                         "text": "Email",
                                         "flex": 1
@@ -782,7 +743,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "phoneColumn",
-                                        "designer|userClassName": "MyColumn26",
                                         "dataIndex": "mobile",
                                         "text": "Téléphone",
                                         "flex": 1
@@ -805,7 +765,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "addressColumn",
-                                        "designer|userClassName": "MyColumn27",
                                         "dataIndex": "login",
                                         "text": "Adresse",
                                         "flex": 1
@@ -828,7 +787,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "postColumn",
-                                        "designer|userClassName": "MyColumn28",
                                         "dataIndex": "post",
                                         "text": "Poste",
                                         "flex": 1
@@ -851,7 +809,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "departmentColumn",
-                                        "designer|userClassName": "MyColumn29",
                                         "dataIndex": "organisation",
                                         "text": "Département",
                                         "flex": 1
@@ -874,7 +831,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "hidden": true,
-                                        "designer|userClassName": "MyColumn30",
                                         "dataIndex": "defaultGroup",
                                         "text": "Groupes",
                                         "flex": 1
@@ -890,7 +846,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "hidden": true,
-                                        "designer|userClassName": "MyDateColumn2",
                                         "dataIndex": "createTime",
                                         "text": "Création",
                                         "flex": 1
@@ -906,7 +861,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "hidden": true,
-                                        "designer|userClassName": "MyDateColumn3",
                                         "dataIndex": "updateTime",
                                         "text": "Dernière modification",
                                         "flex": 1
@@ -920,9 +874,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyCheckboxSelectionModel5"
-                                    },
                                     "designerId": "3f12ae69-31e9-4a12-a7dc-5d9cf6b7cdc6"
                                 },
                                 {
@@ -933,7 +884,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onUsersInGroupGridDestroy",
                                         "fn": "onUsersInGroupGridDestroy",
                                         "implHandler": [
                                             "component.getStore().removeAll();"
@@ -956,7 +906,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "groupPropsForm",
-                        "designer|userClassName": "MyForm40",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Droits"
@@ -971,8 +920,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rightsTab",
-                                "designer|userClassName": "TabConfig34"
+                                "localiserId": "rightsTab"
                             },
                             "designerId": "0e21e1bb-5e07-446f-af67-51ca5f7e88f3",
                             "customConfigs": [
@@ -993,7 +941,6 @@
                             "userConfig": {
                                 "localiserId": "nameField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField74",
                                 "fieldLabel": "Nom ",
                                 "labelWidth": 220,
                                 "name": "name",
@@ -1121,7 +1068,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "hidden": true,
-                                "designer|userClassName": "MyCheckbox9",
                                 "fieldLabel": "Peut supprimer des éléments",
                                 "labelWidth": 220,
                                 "name": "canDeleteElements",
@@ -1140,7 +1086,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "hidden": true,
-                                "designer|userClassName": "MyCheckbox10",
                                 "fieldLabel": "Peut modifier les éléments des autres utilisateurs",
                                 "labelWidth": 220,
                                 "name": "canWriteUnownedElements",
@@ -1161,7 +1106,6 @@
                     "userConfig": {
                         "ACL": "admin.ui.groups",
                         "id": "groupAdminPropsForm",
-                        "designer|userClassName": "MyForm19",
                         "bodyPadding": 10,
                         "title": "Administration"
                     },
@@ -1183,8 +1127,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "admin.ui.groups",
-                                "localiserId": "adminTab",
-                                "designer|userClassName": "TabConfig12"
+                                "localiserId": "adminTab"
                             },
                             "designerId": "d6f45213-a423-4a94-8d9b-54dd9c6bbf09",
                             "customConfigs": [
@@ -1240,7 +1183,6 @@
                             "userConfig": {
                                 "localiserId": "inheritWorkspaceField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox8",
                                 "fieldLabel": "Hérite de l'espace de travail",
                                 "labelWidth": 220,
                                 "name": "inheritWorkspace",
@@ -1264,7 +1206,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onCheckboxfieldChange1",
                                         "fn": "onCheckboxfieldChange1",
                                         "implHandler": [
                                             "if (newValue) {\r",
@@ -1293,7 +1234,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminFUtilisateursRender",
                 "fn": "onAdminFUtilisateursRender",
                 "implHandler": [
                     "Ext.getStore(\"RoleStore\").load();\r",
@@ -1312,7 +1252,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminFUtilisateursBeforeClose",
                 "fn": "onAdminFUtilisateursBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"RoleStore\").removeAll();\r",
@@ -1331,7 +1270,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminFUtilisateursAfterRender",
                 "fn": "onAdminFUtilisateursAfterRender",
                 "implHandler": [
                     "var rolePicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",

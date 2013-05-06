@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onImagePickerWindowRender",
                 "fn": "onImagePickerWindowRender",
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").clearFilter(true);\r",
@@ -267,7 +266,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onImagePickerWindowBeforeClose",
                 "fn": "onImagePickerWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").removeAll();\r",
@@ -289,7 +287,6 @@
             "userConfig": {
                 "dock": "bottom",
                 "width": 360,
-                "designer|userClassName": "MyPagingToolbar3",
                 "displayInfo": true,
                 "store": "DAMPickerStore"
             },
@@ -306,7 +303,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "imagePickerAcceptBtn",
-                        "designer|userClassName": "MyButton206",
                         "iconCls": "ouiSpetit",
                         "text": "Choisir"
                     },
@@ -320,7 +316,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImagePickerAcceptBtnClick",
                                 "fn": "onImagePickerAcceptBtnClick",
                                 "implHandler": [
                                     "var target = button.up().up().getComponent(0).getSelectionModel().getLastSelected();\r",
@@ -344,7 +339,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "DAMPickerAddBtn",
-                        "designer|userClassName": "MyButton266",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
@@ -358,7 +352,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onDAMPickerAddBtnClick",
                                 "fn": "onDAMPickerAddBtnClick",
                                 "implHandler": [
                                     "if ((!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo')))&&(!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo').getValue()))) {\r",
@@ -407,7 +400,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton207",
                         "iconCls": "close",
                         "text": "Annuler"
                     },
@@ -421,7 +413,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",

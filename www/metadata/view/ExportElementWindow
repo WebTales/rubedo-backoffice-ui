@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm20",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -44,7 +43,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField19",
                         "fieldLabel": "Nom * ",
                         "name": "name",
                         "allowBlank": false
@@ -60,7 +58,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextArea4",
                         "fieldLabel": "Description ",
                         "name": "description"
                     },
@@ -76,7 +73,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "ExportElementButton",
-                        "designer|userClassName": "MyButton126",
                         "text": "Exporter cet élément "
                     },
                     "designerId": "2b8ebde6-ea09-4fa7-acd3-6059cba61641"

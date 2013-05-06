@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -101,7 +100,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
                     "if (!Ext.isEmpty(component.ACL)) {   \r",
@@ -127,7 +125,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
                     "var me=this;\r",
@@ -168,7 +165,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "checkSessionStatus",
                 "fn": "checkSessionStatus",
                 "implHandler": [
                     "Ext.Ajax.request({\r",

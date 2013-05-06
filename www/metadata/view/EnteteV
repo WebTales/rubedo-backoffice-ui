@@ -26,7 +26,6 @@
                 "layout|flex": null,
                 "disabled": true,
                 "id": "boutonPincipalInterface",
-                "designer|userClassName": "MyButton79",
                 "icon": "resources/images/logoRubedo.png",
                 "scale": "large",
                 "text": null
@@ -42,8 +41,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "layout|margins": null,
-                "designer|userClassName": "MySeparator1"
+                "layout|margins": null
             },
             "designerId": "82c79abf-2f13-4993-929f-eb97bef30738"
         },
@@ -57,7 +55,6 @@
             "userConfig": {
                 "layout|flex": null,
                 "id": "desktopHomeBtn",
-                "designer|userClassName": "MyButton17",
                 "iconCls": "desktopHome_med",
                 "scale": "medium",
                 "text": "",
@@ -77,8 +74,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "layout|margins": null,
-                "designer|userClassName": "MySeparator1"
+                "layout|margins": null
             },
             "designerId": "c9b9dbe4-c3c2-4d7c-9e5d-f78c7d19ea94"
         },
@@ -94,7 +90,6 @@
                 "border": 0,
                 "height": 30,
                 "id": "taskbarPrincipal",
-                "designer|userClassName": "MyToolbar24",
                 "enableOverflow": true
             },
             "designerId": "1cf8c639-afdd-492d-a6f2-9805dc2e51c1"
@@ -110,7 +105,6 @@
                 "layout|flex": null,
                 "id": "ESSearchField",
                 "itemId": "filterField",
-                "designer|userClassName": "MyTextField",
                 "fieldLabel": "",
                 "labelSeparator": " ",
                 "labelWidth": 68,
@@ -128,7 +122,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onESSearchFieldSpecialkey",
                         "fn": "onESSearchFieldSpecialkey",
                         "implHandler": [
                             "if (e.getKey() == e.ENTER) {\r",
@@ -153,7 +146,6 @@
                 "layout|flex": null,
                 "id": "ESSearchButton",
                 "itemId": null,
-                "designer|userClassName": "MyButton",
                 "iconCls": "search",
                 "text": null
             },

@@ -30,8 +30,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar72"
+                "dock": "bottom"
             },
             "designerId": "67e26dce-0cf6-4377-9232-f4074c7609f9",
             "cn": [
@@ -43,8 +42,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill36"
+                        "layout|flex": null
                     },
                     "designerId": "e696e82d-cbfd-4f08-990a-524843455e53"
                 },
@@ -58,7 +56,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "MultiChoiceConfiguratorSubmit",
-                        "designer|userClassName": "MyButton287",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -72,7 +69,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onMultiChoiceConfiguratorSubmitClick",
                                 "fn": "onMultiChoiceConfiguratorSubmitClick",
                                 "implHandler": [
                                     "var initialValues = Ext.clone(button.up().up().initialItemConfig);\r",
@@ -114,7 +110,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm58",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -129,7 +124,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField81",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
@@ -145,7 +139,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField82",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
@@ -161,7 +154,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField82",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
@@ -177,7 +169,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyCheckbox12",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -196,7 +187,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyNumberField8",
                         "fieldLabel": "Nombre de colonnes",
                         "labelWidth": 140,
                         "name": "columns",
@@ -213,7 +203,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyRadioGroup",
                         "fieldLabel": "Réponse",
                         "labelSeparator": " ",
                         "labelWidth": 140
@@ -228,7 +217,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "choix simple",
@@ -244,7 +232,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio1",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "choix multiple",
@@ -264,7 +251,6 @@
                     "userConfig": {
                         "height": 160,
                         "id": "formsMCCGrid",
-                        "designer|userClassName": "MyGridPanel36",
                         "title": "",
                         "forceFit": true,
                         "store": "MultiChoiceOptionsStore"
@@ -278,9 +264,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView35"
-                            },
                             "designerId": "a4c3a9fe-3dc1-47eb-9ddc-669140c90f62",
                             "cn": [
                                 {
@@ -290,9 +273,6 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridDragDropPlugin2"
-                                    },
                                     "designerId": "c7f29566-6e0e-43e4-9f90-4cffa8424c2d"
                                 }
                             ]
@@ -306,7 +286,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "height": null,
-                                "designer|userClassName": "MyColumn73",
                                 "dataIndex": "boxLabel",
                                 "text": "Options"
                             },
@@ -320,7 +299,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyTextField89",
                                         "allowBlank": false
                                     },
                                     "designerId": "44e18556-7463-4808-8fd0-847098f0a2ae"
@@ -336,8 +314,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "right",
-                                "width": 28,
-                                "designer|userClassName": "MyToolbar77"
+                                "width": 28
                             },
                             "designerId": "d340b82b-16e1-4c62-a1b0-9eabaef82e0b",
                             "cn": [
@@ -351,7 +328,6 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "id": "formsMCCGridAdd",
-                                        "designer|userClassName": "MyButton297",
                                         "iconCls": "add",
                                         "text": "",
                                         "tooltip": "Ajouter une option"
@@ -369,7 +345,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "handler",
                                                 "fn": "handler",
                                                 "designer|params": [
                                                     "button",
@@ -409,7 +384,6 @@
                                         "layout|flex": null,
                                         "disabled": true,
                                         "id": "formsMCCGridRemove",
-                                        "designer|userClassName": "MyButton296",
                                         "iconCls": "close",
                                         "text": "",
                                         "tooltip": "Supprimer cette option"
@@ -427,7 +401,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "handler",
                                                 "fn": "handler",
                                                 "designer|params": [
                                                     "button",
@@ -450,9 +423,6 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.CellEditing",
-                            "userConfig": {
-                                "designer|userClassName": "MyCellEditingPlugin3"
-                            },
                             "designerId": "09e9564c-efeb-426b-855e-007a2e5dcb1a"
                         },
                         {
@@ -463,7 +433,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onFormsMCCGridSelectionChange",
                                 "fn": "onFormsMCCGridSelectionChange",
                                 "implHandler": [
                                     "if (Ext.isEmpty(selected)){\r",
@@ -489,7 +458,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowAfterRender",
                 "fn": "onWindowAfterRender",
                 "implHandler": [
                     "var initialValues = Ext.clone(component.initialItemConfig.fieldConfig);\r",

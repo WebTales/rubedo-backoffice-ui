@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTextareafieldAfterRender",
                 "fn": "onTextareafieldAfterRender",
                 "implHandler": [
                     "var myTBConfig=[\r",
@@ -112,7 +111,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getValue",
                 "fn": "getValue",
                 "implHandler": [
                     "return(this.getRawValue());"
@@ -128,7 +126,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTextareafieldBeforeDestroy",
                 "fn": "onTextareafieldBeforeDestroy",
                 "implHandler": [
                     "try {component.editor.destroy();} catch(err) {\r",
@@ -148,7 +145,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "setValue",
                 "fn": "setValue",
                 "designer|params": [
                     "value"
@@ -170,7 +166,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getRawValue",
                 "fn": "getRawValue",
                 "implHandler": [
                     "var me=this;\r",
@@ -189,7 +184,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTextareafieldErrorChange",
                 "fn": "onTextareafieldErrorChange",
                 "implHandler": [
                     "var me = this;\r",
@@ -217,7 +211,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "setReadOnly",
                 "fn": "setReadOnly",
                 "designer|params": [
                     "readOnly"

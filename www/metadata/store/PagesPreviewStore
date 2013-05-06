@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy",
                 "api": [
                     "{\r",
                     "                    create: 'pages/create',\r",
@@ -60,8 +59,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "messageProperty": "message",
-                        "designer|userClassName": "MyJsonReader"
+                        "messageProperty": "message"
                     },
                     "designerId": "926c301b-b8b8-49e7-a009-9bda2b162e74",
                     "cn": [
@@ -73,7 +71,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "getResponseData",
                                 "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
@@ -114,7 +111,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter20",
                         "encode": true,
                         "root": "data"
                     },
@@ -130,8 +126,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "orderValue",
-                "designer|userClassName": "MySorter2"
+                "property": "orderValue"
             },
             "designerId": "340df9d5-9726-4bee-b133-bcdb801fd52d"
         }

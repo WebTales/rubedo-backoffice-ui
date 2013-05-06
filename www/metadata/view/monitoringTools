@@ -64,7 +64,6 @@
                 "localiserId": "cachePanel",
                 "layout|flex": 1,
                 "id": "SupervisionCachePanel",
-                "designer|userClassName": "MyForm53",
                 "bodyPadding": 10,
                 "title": "Cache"
             },
@@ -86,7 +85,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "cacheElementFieldSet",
-                        "designer|userClassName": "MyFieldSet17",
                         "title": "Elements en cache"
                     },
                     "designerId": "b2d8e831-9f2a-4e58-9e72-1d4a4558c39a",
@@ -108,7 +106,6 @@
                             "userConfig": {
                                 "localiserId": "objectField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField6",
                                 "fieldLabel": "Objets",
                                 "name": "cachedItems",
                                 "readOnly": true
@@ -132,7 +129,6 @@
                             "userConfig": {
                                 "localiserId": "urlField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField7",
                                 "fieldLabel": "URL",
                                 "name": "cachedUrl",
                                 "readOnly": true
@@ -156,8 +152,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "designer|userClassName": "MyToolbar66"
+                        "dock": "bottom"
                     },
                     "designerId": "271d4e37-978d-48f2-9679-b87590020b55",
                     "cn": [
@@ -169,8 +164,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill33"
+                                "layout|flex": null
                             },
                             "designerId": "7bc92e92-1848-449b-98b2-655d14b9bf46"
                         },
@@ -185,7 +179,6 @@
                                 "localiserId": "refreshBtn",
                                 "layout|flex": null,
                                 "id": "supervisionRefreshCacheBtn",
-                                "designer|userClassName": "MyButton267",
                                 "text": "<b>Rafraîchir</b>"
                             },
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
@@ -205,7 +198,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "handler",
                                         "fn": "handler",
                                         "designer|params": [
                                             "button",
@@ -230,7 +222,6 @@
                                 "localiserId": "clearCacheBtn",
                                 "layout|flex": null,
                                 "id": "SupervisionClearCachetn",
-                                "designer|userClassName": "MyButton268",
                                 "text": "<b>Vider le cache</b>"
                             },
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
@@ -250,7 +241,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "handler",
                                         "fn": "handler",
                                         "designer|params": [
                                             "button",
@@ -281,7 +271,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "refreshCacheInfo",
                         "fn": "refreshCacheInfo",
                         "implHandler": [
                             "Ext.Ajax.request({\r",
@@ -305,7 +294,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onSupervisionCachePanelAfterRender",
                         "fn": "onSupervisionCachePanelAfterRender",
                         "implHandler": [
                             "component.refreshCacheInfo();"
@@ -327,7 +315,6 @@
             "userConfig": {
                 "localiserId": "elasticSearchPanel",
                 "layout|flex": 0.5,
-                "designer|userClassName": "MyForm54",
                 "layout": "fit",
                 "bodyPadding": 10,
                 "icon": "resources/images/esLogo.png",
@@ -352,8 +339,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
-                        "height": 30,
-                        "designer|userClassName": "MyToolbar39"
+                        "height": 30
                     },
                     "designerId": "943c7847-7412-45d3-8161-becf886f007c",
                     "cn": [
@@ -367,7 +353,6 @@
                             "userConfig": {
                                 "localiserId": "indexContentsBtn",
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des contenus</b>"
                             },
                             "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
@@ -387,7 +372,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "handler",
                                         "fn": "handler",
                                         "designer|params": [
                                             "button",
@@ -430,8 +414,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "designer|userClassName": "MySpacer2"
+                                "layout|flex": 1
                             },
                             "designerId": "7da675d9-cef1-4913-baf4-3d05e8957365"
                         },
@@ -445,7 +428,6 @@
                             "userConfig": {
                                 "localiserId": "indexMediasBtn",
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation des médias</b>"
                             },
                             "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
@@ -465,7 +447,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "handler",
                                         "fn": "handler",
                                         "designer|params": [
                                             "button",
@@ -508,8 +489,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "designer|userClassName": "MySpacer3"
+                                "layout|flex": 1
                             },
                             "designerId": "46634022-720f-4ff1-a790-ecfb4e6ecae0"
                         },
@@ -523,7 +503,6 @@
                             "userConfig": {
                                 "localiserId": "indexAllBtn",
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton151",
                                 "text": "<b>Indexation complète</b>"
                             },
                             "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
@@ -543,7 +522,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "handler",
                                         "fn": "handler",
                                         "designer|params": [
                                             "button",

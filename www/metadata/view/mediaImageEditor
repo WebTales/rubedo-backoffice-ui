@@ -44,7 +44,6 @@
                 "designer|snapToGrid": 10,
                 "itemId": "workspace",
                 "width": 794,
-                "designer|userClassName": "MyContainer20",
                 "autoScroll": true,
                 "layout": "absolute"
             },
@@ -61,7 +60,6 @@
                 "layout|flex": null,
                 "itemId": "proprietes",
                 "width": 200,
-                "designer|userClassName": "MyForm20",
                 "bodyPadding": 10,
                 "collapseDirection": "right",
                 "collapsible": true,
@@ -78,7 +76,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet1",
                         "title": "Taille"
                     },
                     "designerId": "37f09996-58b3-4f35-9ff7-d1eea4126367",
@@ -94,7 +91,6 @@
                                 "layout|anchor": "100%",
                                 "id": "imageEditorHeightField",
                                 "itemId": null,
-                                "designer|userClassName": "MyNumberField3",
                                 "fieldLabel": "Hauteur ",
                                 "labelWidth": 60
                             },
@@ -110,7 +106,6 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "id": "imageEditorWidthField",
-                                "designer|userClassName": "MyNumberField4",
                                 "fieldLabel": "Largeur ",
                                 "labelWidth": 60
                             },
@@ -129,8 +124,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "dock": "top",
-                "designer|userClassName": "MyToolbar32"
+                "dock": "top"
             },
             "designerId": "a1c048fb-48c9-4203-b3c9-952de24d2840",
             "cn": [
@@ -143,7 +137,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton102",
                         "icon": "resources/icones/32x32/zoom_in.png",
                         "scale": "large",
                         "text": "Zoom in"
@@ -159,7 +152,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton101",
                         "icon": "resources/icones/32x32/zoom_out.png",
                         "scale": "large",
                         "text": "Zoom out"
@@ -175,7 +167,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/floppy_disc.png",
                         "scale": "large",
                         "text": "Enregistrer"
@@ -192,7 +183,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "imageEditorUndo",
-                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/skip_backward.png",
                         "scale": "large",
                         "text": "Undo"
@@ -209,7 +199,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "imageEditorReset",
-                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/repeat.png",
                         "scale": "large",
                         "text": "Reset"
@@ -225,7 +214,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton100",
                         "icon": "resources/icones/32x32/crop.png",
                         "scale": "large",
                         "text": "Crop"

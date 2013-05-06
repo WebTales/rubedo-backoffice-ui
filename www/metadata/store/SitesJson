@@ -41,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
                     "                    create: 'sites/wizard-create',\r",
@@ -63,8 +62,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader4"
+                        "root": "data"
                     },
                     "designerId": "67fdc2a7-5ca3-4922-9237-f1c9a507c1e6"
                 },
@@ -76,7 +74,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter19",
                         "encode": true,
                         "root": "data"
                     },

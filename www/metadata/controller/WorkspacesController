@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspaceAddClick",
                 "fn": "onWorkspaceAddClick",
                 "implHandler": [
                     "Ext.widget(\"newWorkspaceWindow\").show();"
@@ -39,7 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspaceRemoveClick",
                 "fn": "onWorkspaceRemoveClick",
                 "implHandler": [
                     "var delCon = Ext.widget('delConfirmZ');\r",
@@ -64,7 +62,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspaceSaveClick",
                 "fn": "onWorkspaceSaveClick",
                 "implHandler": [
                     "var target = Ext.getCmp(\"workspacesGrid\").getSelectionModel().getLastSelected();\r",
@@ -88,7 +85,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspacesGridSelectionChange",
                 "fn": "onWorkspacesGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -129,7 +125,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onNewWorkspaceSublitBtnClick",
                 "fn": "onNewWorkspaceSublitBtnClick",
                 "implHandler": [
                     "var form = button.up().getForm();\r",

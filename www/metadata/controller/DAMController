@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceSelect",
                 "fn": "resetInterfaceSelect",
                 "designer|params": [
                     "record"
@@ -50,7 +49,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceNoSelect",
                 "fn": "resetInterfaceNoSelect",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"DAMInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.disable();});\r",
@@ -72,7 +70,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectDAMType",
                 "fn": "selectDAMType",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -96,7 +93,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderDAMTypeFields",
                 "fn": "renderDAMTypeFields",
                 "designer|params": [
                     "DAMType",
@@ -120,7 +116,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderMTField",
                 "fn": "renderMTField",
                 "designer|params": [
                     "protoData",
@@ -162,7 +157,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddDAMBtnClick",
                 "fn": "onAddDAMBtnClick",
                 "implHandler": [
                     "if (!Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType)){\r",
@@ -195,7 +189,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderTaxoFields",
                 "fn": "renderTaxoFields",
                 "designer|params": [
                     "DAMType",
@@ -364,7 +357,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectDAM",
                 "fn": "selectDAM",
                 "implHandler": [
                     "Ext.getCmp(\"DAMDeleteBtn\").enable();\r",
@@ -410,7 +402,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMDeleteBtnClick",
                 "fn": "onDAMDeleteBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -438,7 +429,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMSubmitBtnClick",
                 "fn": "onDAMSubmitBtnClick",
                 "implHandler": [
                     "button.up().up().setLoading(true);\r",
@@ -495,7 +485,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMUpdateBtnClick",
                 "fn": "onDAMUpdateBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
@@ -533,7 +522,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getTaxoValues",
                 "fn": "getTaxoValues",
                 "implHandler": [
                     "var values = { };\r",
@@ -553,7 +541,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMSubmitUpdateBtnClick",
                 "fn": "onDAMSubmitUpdateBtnClick",
                 "implHandler": [
                     "var me = this;\r",
@@ -590,7 +577,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMROBtnClick",
                 "fn": "onDAMROBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
@@ -630,7 +616,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMSwitchEditBtnClick",
                 "fn": "onDAMSwitchEditBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
@@ -657,7 +642,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelItemDblClick",
                 "fn": "onGridpanelItemDblClick",
                 "implHandler": [
                     "if (ACL.interfaceRights[\"write.ui.dam\"]){\r",
@@ -681,7 +665,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "prepareContext",
                 "fn": "prepareContext",
                 "designer|params": [
                     "damId",
@@ -729,7 +712,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "fireUnitaryEdit",
                 "fn": "fireUnitaryEdit",
                 "designer|params": [
                     "ROMode"
@@ -776,7 +758,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderFacets",
                 "fn": "renderFacets",
                 "designer|params": [
                     "facets"
@@ -845,7 +826,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderActiveFacets",
                 "fn": "renderActiveFacets",
                 "designer|params": [
                     "facets"
@@ -908,7 +888,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMSearchBtnClick",
                 "fn": "onDAMSearchBtnClick",
                 "implHandler": [
                     "Ext.getStore(\"DAMFacetteStore\").activeFacettes.query=Ext.getCmp(\"DAMSearchField\").getValue();\r",
@@ -929,7 +908,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddDamAfterTypeBtnClick",
                 "fn": "onAddDamAfterTypeBtnClick",
                 "implHandler": [
                     "if (button.up().getForm().isValid()){\r",

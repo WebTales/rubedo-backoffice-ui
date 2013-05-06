@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy5",
                 "api": [
                     "{\r",
                     "read : 'masks'\r",
@@ -59,8 +58,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader3"
+                        "root": "data"
                     },
                     "designerId": "38a29384-a150-49b6-a79b-7fcc59725867"
                 }

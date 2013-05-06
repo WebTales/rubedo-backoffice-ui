@@ -45,7 +45,6 @@
             "codeClass": null,
             "userConfig": {
                 "batchActions": false,
-                "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
                     "                    create: 'contents/create',\r",
@@ -67,8 +66,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader20"
+                        "root": "data"
                     },
                     "designerId": "eaf8ec34-dff7-4d22-9865-12e5613107e2"
                 },
@@ -81,7 +79,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": "mapping",
-                        "designer|userClassName": "MyJsonWriter12",
                         "encode": true,
                         "root": "data"
                     },
@@ -97,7 +94,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreUpdate",
                 "fn": "onJsonstoreUpdate",
                 "implHandler": [
                     "Rubedo.controller.ContributionContenusController.prototype.contentsSelect(Ext.getCmp(\"ContenusGrid\"), Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection());\r",

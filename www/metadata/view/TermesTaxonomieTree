@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTreeView1",
                 "autoScroll": true,
                 "disableSelection": false,
                 "itemCls": null
@@ -40,7 +39,6 @@
                     "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                     "userConfig": {
                         "pluginId": "termsDrager",
-                        "designer|userClassName": "MyTreeDragDropPlugin1",
                         "dragText": "{0} terme{1} séléctionné{1}"
                     },
                     "designerId": "c30057c1-7987-483f-bff7-cba215698d02",
@@ -53,7 +51,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                 "fn": "onTreedragdroppluginBeforeDrop",
                                 "implHandler": [
                                     "if (!ACL.interfaceRights[\"write.ui.taxonomyTerms\"]){\r",
@@ -103,7 +100,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onTreedragdroppluginDrop",
                                 "fn": "onTreedragdroppluginDrop",
                                 "implHandler": [
                                     "var task= new Ext.util.DelayedTask(function(){\r",
@@ -129,7 +125,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTreeColumn2",
                 "dataIndex": "text",
                 "text": "Termes"
             },
@@ -143,7 +138,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyTextField76",
                         "allowBlank": false
                     },
                     "designerId": "5e6180c1-591d-42a9-96b8-f27edff43f95"
@@ -156,7 +150,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",

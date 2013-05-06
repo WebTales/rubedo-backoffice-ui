@@ -22,9 +22,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView2"
-            },
             "designerId": "d0d193f1-a7c7-44a9-84be-4548ec9e26de"
         },
         {
@@ -36,7 +33,6 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
                 "flex": 1
@@ -61,7 +57,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -98,7 +93,6 @@
                     "}"
                 ],
                 "width": 60,
-                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -123,9 +117,6 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
-            "userConfig": {
-                "designer|userClassName": "MyCheckboxSelectionModel5"
-            },
             "designerId": "ffa17544-3abd-4e72-a4a9-f37c4f1ce274"
         },
         {
@@ -136,7 +127,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGroupingFeature3",
                 "enableGroupingMenu": false
             },
             "designerId": "4857f368-7d2a-41cc-b239-95daf8b38792",
@@ -149,7 +139,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "groupHeaderTpl",
                         "implHandler": [
                             "Type : {name:this.formatName}"
                         ],
@@ -165,7 +154,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "formatName",
                                 "fn": "formatName",
                                 "designer|params": [
                                     "name"

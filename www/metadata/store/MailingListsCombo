@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy48",
                 "api": [
                     "{\r",
                     "                    create: 'mailing-lists/create',\r",
@@ -48,8 +47,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader47"
+                        "root": "data"
                     },
                     "designerId": "c4ffe507-2ebf-4449-8c17-c89efcb8cc87"
                 },
@@ -61,7 +59,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter10",
                         "encode": true,
                         "root": "data"
                     },

@@ -23,7 +23,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy1",
                 "api": [
                     "{\r",
                     "                        'create':'panier/create',\r",
@@ -45,8 +44,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader1"
+                        "root": "data"
                     },
                     "designerId": "44a1369b-822f-4a6c-b4e3-26cd6cfbb9c8"
                 },
@@ -59,7 +57,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": null,
-                        "designer|userClassName": "MyJsonWriter",
                         "encode": true,
                         "root": "data"
                     },
@@ -75,7 +72,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreDataChangeD",
                 "fn": "onJsonstoreDataChangeD",
                 "implHandler": [
                     "/*var nbeltspanier =  this.count();\r",

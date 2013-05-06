@@ -30,7 +30,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "readMyQuery",
                 "fn": "readMyQuery",
                 "implHandler": [
                     "var mainWin= Ext.getCmp(\"MQA\");\r",
@@ -88,7 +87,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm50",
                 "bodyPadding": 10,
                 "title": "Choix des types de médias"
             },
@@ -104,7 +102,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "DAMTypeWizCombo",
-                        "designer|userClassName": "MyComboBox31",
                         "fieldLabel": "Types de media",
                         "name": "DAMTypes",
                         "allowBlank": false,
@@ -125,7 +122,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onFormDeactivate",
                         "fn": "onFormDeactivate",
                         "implHandler": [
                             "if ((component.up().editorMode)&&(component.up().initialQuery.DAMTypes.toString()==Ext.getCmp(\"DAMTypeWizCombo\").getValue().toString())){\r",
@@ -150,7 +146,6 @@
             "codeClass": null,
             "userConfig": {
                 "id": "assisstantRE2",
-                "designer|userClassName": "MyForm51",
                 "overflowY": "auto",
                 "bodyPadding": 10,
                 "title": "Choix des règles sur la taxonomie"
@@ -165,7 +160,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMQAAfterRender",
                 "fn": "onMQAAfterRender",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"mainFileType\\\",\\\"value\\\":\\\"\"+component.allowedFileType+\"\\\"}]\";\r",
@@ -199,7 +193,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reactToMTChange",
                 "fn": "reactToMTChange",
                 "designer|params": [
                     "keepInMind"
@@ -411,7 +404,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMQABeforeClose",
                 "fn": "onMQABeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();\r",
@@ -440,7 +432,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPanel48",
                 "layout": "anchor",
                 "bodyPadding": 10,
                 "title": "Enregistrement"
@@ -457,7 +448,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "MQASaveBtn",
-                        "designer|userClassName": "MyButton246",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -471,7 +461,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onMQASaveBtnClick",
                                 "fn": "onMQASaveBtnClick",
                                 "implHandler": [
                                     "var result= Ext.getCmp(\"MQA\").readMyQuery();\r",

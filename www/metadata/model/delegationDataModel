@@ -19,8 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "giverId",
-                "designer|userClassName": "field137"
+                "name": "giverId"
             },
             "designerId": "3ca37bc4-a066-4ebc-84bc-ddf846bad679"
         },
@@ -32,8 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "receiverId",
-                "designer|userClassName": "field138"
+                "name": "receiverId"
             },
             "designerId": "19040b44-ed69-4336-b650-7bbbd665370a"
         },
@@ -46,8 +44,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "startValidity",
-                "type": "date",
-                "designer|userClassName": "field139"
+                "type": "date"
             },
             "designerId": "3d2c1995-6e7a-4c0f-8be6-906c53dd9757"
         },
@@ -60,8 +57,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "endValidity",
-                "type": "date",
-                "designer|userClassName": "field139"
+                "type": "date"
             },
             "designerId": "b019e981-87a3-474f-bf9f-6616ea0e0f15"
         },
@@ -73,8 +69,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field141"
+                "name": "id"
             },
             "designerId": "511a7b38-91aa-4004-acb4-35bdb3d36867"
         },
@@ -86,8 +81,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "field142"
+                "name": "version"
             },
             "designerId": "3d7f020a-1631-40d4-893d-3a872ec92423"
         },
@@ -99,7 +93,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPresenceValidation",
                 "field": "receiverId"
             },
             "designerId": "7518b78e-d06a-420c-ba88-42372e9a1549"

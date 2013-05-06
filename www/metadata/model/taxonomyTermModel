@@ -20,8 +20,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "text",
-                "type": "string",
-                "designer|userClassName": "MyField40"
+                "type": "string"
             },
             "designerId": "585482ba-a618-48f3-9508-b920319a14f8"
         },
@@ -33,8 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field149"
+                "name": "id"
             },
             "designerId": "6ed55993-28ae-4df0-bb67-a35c5a4432b3"
         },
@@ -46,8 +44,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "field150"
+                "name": "version"
             },
             "designerId": "beac2a5e-84f0-407c-bb77-857203f23d58"
         },
@@ -59,8 +56,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "vocabularyId",
-                "designer|userClassName": "field151"
+                "name": "vocabularyId"
             },
             "designerId": "383ca66c-c602-47b3-b5d8-c37fcbee5936"
         },
@@ -74,8 +70,7 @@
             "userConfig": {
                 "name": "orderValue",
                 "sortType": "asFloat",
-                "type": "float",
-                "designer|userClassName": "field226"
+                "type": "float"
             },
             "designerId": "3fb42404-61ae-4bfa-809e-e974662edcd3"
         },
@@ -89,8 +84,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "b2b58df8-090d-43a7-8a69-2cbe1cf22190"
         },
@@ -104,8 +98,7 @@
             "userConfig": {
                 "name": "leaf",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field235"
+                "type": "boolean"
             },
             "designerId": "b72b0393-b2ae-41a1-9fff-052a693ccf2f",
             "cn": [
@@ -117,7 +110,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "convert",
                         "fn": "convert",
                         "designer|params": [
                             "v",
@@ -143,8 +135,7 @@
                     "true"
                 ],
                 "name": "expandable",
-                "type": "boolean",
-                "designer|userClassName": "field236"
+                "type": "boolean"
             },
             "designerId": "79af3439-7e3b-4f00-b95b-cde333c5c918"
         },
@@ -160,8 +151,7 @@
                     "false"
                 ],
                 "name": "isNotPage",
-                "persist": false,
-                "designer|userClassName": "field316"
+                "persist": false
             },
             "designerId": "c337b307-e758-406b-bdba-f4a624742234"
         }

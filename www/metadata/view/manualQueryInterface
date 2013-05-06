@@ -39,7 +39,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onManualQueryLeftGridSelectionChange",
                         "fn": "onManualQueryLeftGridSelectionChange",
                         "implHandler": [
                             "if (Ext.isEmpty(selected)){\r",
@@ -66,7 +65,6 @@
                 "layout|flex": null,
                 "dock": null,
                 "height": 50,
-                "designer|userClassName": "MyToolbar59",
                 "vertical": true
             },
             "designerId": "aa5a151b-f0df-44be-9850-e5f20df886ec",
@@ -79,8 +77,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "designer|userClassName": "MySpacer"
+                        "layout|flex": 1
                     },
                     "designerId": "9a3cd3e0-f4ed-4265-9acd-a424c2ff7374"
                 },
@@ -95,7 +92,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "manualQueryAddRecordBtn",
-                        "designer|userClassName": "MyButton235",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "text": "Ajouter"
@@ -110,7 +106,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onManualQueryAddRecordBtnClick",
                                 "fn": "onManualQueryAddRecordBtnClick",
                                 "implHandler": [
                                     "var target = Ext.getCmp(\"manualQueryLeftGrid\").getSelectionModel().getLastSelected();\r",
@@ -135,7 +130,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "manualQueryRemoveRecordBtn",
-                        "designer|userClassName": "MyButton236",
                         "iconCls": "arrow_left",
                         "text": "Enlever"
                     },
@@ -149,7 +143,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onManualQueryRemoveRecordBtnClick",
                                 "fn": "onManualQueryRemoveRecordBtnClick",
                                 "implHandler": [
                                     "var target = Ext.getCmp(\"manualQueryRightGridGrid\").getSelectionModel().getLastSelected();\r",
@@ -171,8 +164,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "designer|userClassName": "MySpacer1"
+                        "layout|flex": 1
                     },
                     "designerId": "c90e27be-a02f-4fee-8811-abe5cfe6aac4"
                 }
@@ -189,7 +181,6 @@
                 "layout|flex": 1,
                 "id": "manualQueryRightGridGrid",
                 "itemId": null,
-                "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "store": "ContentMQueryStore"
             },
@@ -205,9 +196,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView2"
-                    },
                     "designerId": "1aed84d6-e076-4e81-9f24-fb98cf17776d",
                     "cn": [
                         {
@@ -217,9 +205,6 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
-                            "userConfig": {
-                                "designer|userClassName": "MyGridDragDropPlugin1"
-                            },
                             "designerId": "15a21eb1-6f33-4b8e-8f5b-c498b5bfc1d5"
                         }
                     ]
@@ -233,7 +218,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "filter": true,
-                        "designer|userClassName": "MyColumn5",
                         "dataIndex": "text",
                         "text": "Titre",
                         "flex": 1
@@ -258,7 +242,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -302,7 +285,6 @@
                             "    store: \"TCNDepComboCS\"\r",
                             "}"
                         ],
-                        "designer|userClassName": "MyColumn53",
                         "dataIndex": "typeId",
                         "text": "Type",
                         "flex": 1
@@ -327,7 +309,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -368,7 +349,6 @@
                             "            ]\r",
                             "}"
                         ],
-                        "designer|userClassName": "MyColumn6",
                         "dataIndex": "status",
                         "text": "Etat",
                         "flex": 1
@@ -393,7 +373,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -436,7 +415,6 @@
                             "}"
                         ],
                         "width": 60,
-                        "designer|userClassName": "MyBooleanColumn3",
                         "dataIndex": "online",
                         "text": "En ligne",
                         "falseText": "Non",
@@ -462,8 +440,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "designer|userClassName": "MyToolbar60"
+                        "dock": "bottom"
                     },
                     "designerId": "196df3b1-cb19-48ed-849e-60bb20f182c9",
                     "cn": [
@@ -475,8 +452,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill26"
+                                "layout|flex": null
                             },
                             "designerId": "a9769fc6-da1e-4f9b-89a2-bad14bb62b68"
                         },
@@ -490,7 +466,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "id": "manualQuerySaveBtn",
-                                "designer|userClassName": "MyButton239",
                                 "iconCls": "ouiSpetit",
                                 "text": "Enregistrer la requête"
                             },
@@ -504,7 +479,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onManualQuerySaveBtnClick",
                                         "fn": "onManualQuerySaveBtnClick",
                                         "implHandler": [
                                             "var raw = button.up().up().getStore().getRange();\r",
@@ -549,7 +523,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onManualQueryRightGridGridSelectionChange",
                         "fn": "onManualQueryRightGridGridSelectionChange",
                         "implHandler": [
                             "if (Ext.isEmpty(selected)){\r",
@@ -588,7 +561,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onManualQueryInterfaceRender",
                 "fn": "onManualQueryInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"TCNDepComboCS\").load();\r",
@@ -617,7 +589,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onManualQueryInterfaceBeforeClose",
                 "fn": "onManualQueryInterfaceBeforeClose",
                 "implHandler": [
                     "panel.getComponent(0).getStore().clearFilter(true);\r",

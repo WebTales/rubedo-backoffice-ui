@@ -49,7 +49,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'workspaces/create',\r",
@@ -76,8 +75,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "81181bad-d613-49e8-97d5-80869fd99e4f"
                 },
@@ -90,7 +88,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": null,
-                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },

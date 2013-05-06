@@ -70,8 +70,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "7009d86e-1608-44d8-bddf-86cdc670993d",
             "cn": [
@@ -85,7 +84,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "masque-icon",
                         "text": "Masques de page <b>></b> "
                     },
@@ -105,8 +103,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "d4183738-b3dd-43cb-9be8-c374df4c3c17",
             "cn": [
@@ -121,7 +118,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "44968f46-716b-4f02-b6a1-e78f6f451af2",
@@ -134,7 +130,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
@@ -156,8 +151,7 @@
                     "userConfig": {
                         "layout|flex": 2,
                         "itemId": "boiteBarreMeta",
-                        "minWidth": 400,
-                        "designer|userClassName": "MyContainer9"
+                        "minWidth": 400
                     },
                     "designerId": "e5e9e678-e511-4689-b64f-824880b32a7c",
                     "cn": [
@@ -169,7 +163,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser.fullName}  <b>Version : </b>{version}"
                                 ],
@@ -191,7 +184,6 @@
                         "layout|flex": null,
                         "id": "MaskZoomControlSlider",
                         "width": 400,
-                        "designer|userClassName": "MySlider",
                         "fieldLabel": "Niveau de zoom",
                         "value": 661,
                         "maxValue": 2000,
@@ -215,7 +207,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onMaskZoomControlSliderChange",
                                 "fn": "onMaskZoomControlSliderChange",
                                 "implHandler": [
                                     "Ext.getCmp(\"masqueEdition\").setHeight(newValue);"
@@ -242,8 +233,6 @@
                 "height": 86,
                 "itemId": "contextBar",
                 "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools",
                 "enableOverflow": true
             },
             "designerId": "9ade6d4b-ac00-44c3-aa6f-5202512b7859",
@@ -261,7 +250,6 @@
                         "layout|flex": null,
                         "id": "boutonNouveauMasque",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -296,7 +284,6 @@
                         "disabled": true,
                         "id": "boutonSupprimerMasque",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "arrowAlign": null,
                         "icon": null,
                         "iconAlign": "top",
@@ -332,7 +319,6 @@
                         "container|columns": 2,
                         "disabled": true,
                         "id": "masksEditionTopBarBox",
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 8
@@ -363,7 +349,6 @@
                                 "disabled": true,
                                 "id": "newRow",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -391,7 +376,6 @@
                                 "disabled": true,
                                 "id": "newCol",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -419,7 +403,6 @@
                                 "disabled": true,
                                 "id": "newBloc",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -447,7 +430,6 @@
                                 "disabled": true,
                                 "id": "deleteElement",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_remove_big",
@@ -475,7 +457,6 @@
                                 "disabled": true,
                                 "id": "exportElement",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_down_big",
@@ -503,7 +484,6 @@
                                 "disabled": true,
                                 "id": "importElement",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_up_big",
@@ -531,7 +511,6 @@
                                 "disabled": true,
                                 "id": "moveElementUp",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
@@ -559,7 +538,6 @@
                                 "disabled": true,
                                 "id": "moveElementDown",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
@@ -589,7 +567,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -615,7 +592,6 @@
                                 "localiserId": "duplicateBtn",
                                 "id": "boutonCopierMasque",
                                 "width": null,
-                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -646,7 +622,6 @@
                             "userConfig": {
                                 "hidden": true,
                                 "id": "ajouterPanierMasques",
-                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -665,7 +640,6 @@
                             "userConfig": {
                                 "localiserId": "shotcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -696,7 +670,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4
@@ -726,7 +699,6 @@
                                 "localiserId": "saveBtn",
                                 "id": "AdminfMasquesEnregistrer",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
@@ -750,7 +722,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onAdminfMasquesEnregistrerAfterRender",
                                         "fn": "onAdminfMasquesEnregistrerAfterRender",
                                         "implHandler": [
                                             "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -781,7 +752,6 @@
                         "container|columns": 2,
                         "disabled": true,
                         "hidden": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4
@@ -797,7 +767,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "AdminfMasquesExporter",
-                                "designer|userClassName": "MyButton62",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -816,7 +785,6 @@
                             "userConfig": {
                                 "ACL": "write.ui.masks",
                                 "id": "AdminfMasquesImporter",
-                                "designer|userClassName": "MyButton63",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
@@ -842,8 +810,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "1f41b011-9eda-4c5a-aaaf-5cc0c301b8fd"
                 },
@@ -858,7 +825,6 @@
                         "RApplication": "masks",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconAlign": null,
                         "iconCls": "info_big",
@@ -889,7 +855,6 @@
                 "id": "masquesGrid",
                 "itemId": null,
                 "width": 150,
-                "designer|userClassName": "MyGridPanel4",
                 "resizable": [
                     "true"
                 ],
@@ -919,8 +884,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "masquesGridView",
-                        "itemId": null,
-                        "designer|userClassName": "MyGridView4"
+                        "itemId": null
                     },
                     "designerId": "67643c61-ccf4-47a9-85a3-6d8fe7d1df08"
                 },
@@ -932,7 +896,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature",
                         "groupByText": null
                     },
                     "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e",
@@ -945,7 +908,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "groupHeaderTpl",
                                 "implHandler": [
                                     "Site : {name:this.getProperName}"
                                 ],
@@ -961,7 +923,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "getProperName",
                                         "fn": "getProperName",
                                         "designer|params": [
                                             "name"
@@ -985,7 +946,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "titleColumn",
-                        "designer|userClassName": "MyColumn10",
                         "dataIndex": "text",
                         "groupable": false,
                         "text": "Titre",
@@ -1008,7 +968,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -1037,7 +996,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyTextField10",
                                 "allowBlank": false
                             },
                             "designerId": "809a4f59-db92-42ba-b6b5-d6220a708ba6"
@@ -1051,9 +1009,6 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin"
-                    },
                     "designerId": "c01a137c-54ed-4822-ba6c-dc41c1f1285b",
                     "cn": [
                         {
@@ -1064,7 +1019,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
                                 "fn": "onGridcelleditingpluginBeforeEdit",
                                 "implHandler": [
                                     "if (!ACL.interfaceRights['write.ui.masks']){return(false);}"
@@ -1082,7 +1036,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onGridcelleditingpluginEdit",
                                 "fn": "onGridcelleditingpluginEdit",
                                 "implHandler": [
                                     "var bcRep = Ext.getCmp(\"adminFMDP\").getDockedComponent('filArianne').getComponent('type');\r",
@@ -1104,9 +1057,6 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.RowModel",
-                    "userConfig": {
-                        "designer|userClassName": "MyRowSelectionModel1"
-                    },
                     "designerId": "d1d1591c-0345-41dd-8fd5-0559a865cb4c"
                 },
                 {
@@ -1117,7 +1067,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onMasquesGridBeforeRender",
                         "fn": "onMasquesGridBeforeRender",
                         "implHandler": [
                             "Ext.getStore(\"SitesComboMasks\").load();"
@@ -1135,7 +1084,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onMasquesGridDestroy",
                         "fn": "onMasquesGridDestroy",
                         "implHandler": [
                             "Ext.getStore(\"SitesComboMasks\").removeAll();"
@@ -1158,7 +1106,6 @@
                 "layout|flex": 1,
                 "container|align": "stretch",
                 "height": null,
-                "designer|userClassName": "MyPanel4",
                 "layout": "hbox",
                 "header": false,
                 "iconCls": "edit",
@@ -1176,7 +1123,6 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyContainer12",
                         "autoScroll": true,
                         "layout": "vbox"
                     },
@@ -1199,7 +1145,6 @@
                                 "margin": null,
                                 "style": null,
                                 "width": null,
-                                "designer|userClassName": "MyPanel61",
                                 "autoScroll": null,
                                 "layout": "vbox",
                                 "bodyStyle": null
@@ -1225,7 +1170,6 @@
                         "id": "paneauPropMasque",
                         "margin": null,
                         "width": 300,
-                        "designer|userClassName": "MyPanel59",
                         "autoScroll": true,
                         "resizable": [
                             "true"
@@ -1256,7 +1200,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "elementIdField",
-                                "designer|userClassName": "MyHiddenField",
                                 "fieldLabel": "Label"
                             },
                             "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
@@ -1270,7 +1213,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "mainColumnIdField",
-                                "designer|userClassName": "MyHiddenField",
                                 "fieldLabel": "Label"
                             },
                             "designerId": "214eb9cb-391d-42a6-8bd2-dfdf1f556074"
@@ -1288,7 +1230,6 @@
                                 "height": null,
                                 "id": "elementEditControl",
                                 "margin": null,
-                                "designer|userClassName": "MyForm4",
                                 "autoScroll": true,
                                 "bodyPadding": null,
                                 "iconCls": null,
@@ -1311,7 +1252,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onPaneauPropMasqueResize",
                                 "fn": "onPaneauPropMasqueResize",
                                 "implHandler": [
                                     "this.doLayout();"

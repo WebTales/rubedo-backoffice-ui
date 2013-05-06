@@ -40,8 +40,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "site",
-                "designer|userClassName": "MyGrouper"
+                "property": "site"
             },
             "designerId": "bde309da-e690-46af-ac46-812a93f86786"
         },
@@ -53,7 +52,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy5",
                 "api": [
                     "{\r",
                     "create : 'masks/create',\r",
@@ -75,8 +73,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader3"
+                        "root": "data"
                     },
                     "designerId": "f187256a-f83f-42d3-ba2e-d0b22e7ec462"
                 },
@@ -88,7 +85,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter2",
                         "encode": true,
                         "root": "data"
                     },

@@ -45,7 +45,6 @@
             "codeClass": null,
             "userConfig": {
                 "batchActions": false,
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'dam/create',\r",
@@ -67,8 +66,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "ebe272d1-1ac2-4201-bc58-dd2f78dfcf51"
                 },
@@ -81,7 +79,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": null,
-                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },

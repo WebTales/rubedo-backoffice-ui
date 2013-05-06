@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddFormBtnClick",
                 "fn": "onAddFormBtnClick",
                 "implHandler": [
                     "Ext.widget(\"newFormWindow\").show();"
@@ -39,7 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSubmitNewFormBtnClick",
                 "fn": "onSubmitNewFormBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -90,7 +88,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceSelect",
                 "fn": "resetInterfaceSelect",
                 "designer|params": [
                     "record",
@@ -136,7 +133,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceNoSelect",
                 "fn": "resetInterfaceNoSelect",
                 "implHandler": [
                     "Ext.getCmp(\"formPropsForm\").getForm().reset();\r",
@@ -162,7 +158,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRemoveFormBtnClick",
                 "fn": "onRemoveFormBtnClick",
                 "implHandler": [
                     "var target = Ext.getCmp('mainFormsGrid').getSelectionModel().getLastSelected();\r",
@@ -194,7 +189,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainFormsGridSelectionChange",
                 "fn": "onMainFormsGridSelectionChange",
                 "implHandler": [
                     "var me=this;\r",
@@ -219,7 +213,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormSaveBtnClick",
                 "fn": "onFormSaveBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -258,7 +251,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "if (!component.isXType(\"RFormPage\")){\r",
@@ -315,7 +307,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormSelectedElementFieldChange",
                 "fn": "onFormSelectedElementFieldChange",
                 "implHandler": [
                     "var previousOne = Ext.getCmp(oldValue);\r",
@@ -370,7 +361,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormElementAddBtnClick",
                 "fn": "onFormElementAddBtnClick",
                 "implHandler": [
                     "Ext.widget(\"addFormFieldWindow\").show();"
@@ -390,7 +380,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormAddPageBtnClick",
                 "fn": "onFormAddPageBtnClick",
                 "implHandler": [
                     "Ext.Ajax.request({\r",
@@ -429,7 +418,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormElementMoveUpBtnClick",
                 "fn": "onFormElementMoveUpBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
@@ -455,7 +443,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormElementMoveDownBtnClick",
                 "fn": "onFormElementMoveDownBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
@@ -479,7 +466,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormElementRemoveBtnClick",
                 "fn": "onFormElementRemoveBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());\r",
@@ -501,7 +487,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onInsertFormElementBtnClick",
                 "fn": "onInsertFormElementBtnClick",
                 "implHandler": [
                     "var insertor=Ext.clone(Ext.getCmp(\"formFieldSelectGrid\").getSelectionModel().getLastSelected().getData());\r",
@@ -553,7 +538,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveFormPages",
                 "fn": "saveFormPages",
                 "implHandler": [
                     "var pages =[ ];\r",
@@ -585,7 +569,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "readFormPages",
                 "fn": "readFormPages",
                 "designer|params": [
                     "pages"
@@ -616,7 +599,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormFieldCofiguratorBtnClick",
                 "fn": "onFormFieldCofiguratorBtnClick",
                 "implHandler": [
                     "var myItemConfig = Ext.clone(button.up().up().itemConfig);\r",
@@ -638,7 +620,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "fireElementConfigurator",
                 "fn": "fireElementConfigurator",
                 "designer|params": [
                     "itemConfig",
@@ -680,7 +661,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "refreshFCEStore",
                 "fn": "refreshFCEStore",
                 "designer|params": [
                     "notThisOne"
@@ -710,7 +690,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormFieldConditionsBtnClick",
                 "fn": "onFormFieldConditionsBtnClick",
                 "implHandler": [
                     "var myItemConfig = Ext.clone(button.up().up().itemConfig);\r",
@@ -736,7 +715,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormsDuplicateBtnClick",
                 "fn": "onFormsDuplicateBtnClick",
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"mainFormsGrid\").getSelectionModel().getLastSelected().data);\r",
@@ -759,7 +737,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormsExportCSVBtnClick",
                 "fn": "onFormsExportCSVBtnClick",
                 "implHandler": [
                     "window.onbeforeunload=Ext.emptyFn;\r",

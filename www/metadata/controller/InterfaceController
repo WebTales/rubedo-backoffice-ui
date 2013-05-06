@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "afficherMenuPrincipal",
                 "fn": "afficherMenuPrincipal",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
@@ -57,7 +56,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "maximize",
                 "fn": "maximize",
                 "implHandler": [
                     "tool.up().up().toggleMaximize();"
@@ -77,7 +75,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "compenserResize",
                 "fn": "compenserResize",
                 "implHandler": [
                     "Ext.getCmp('boiteAIconesBureau').setHeight(component.getHeight());\r",
@@ -105,7 +102,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
                     "var me=this;\r",
@@ -176,7 +172,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "componrtementWindow",
                 "fn": "componrtementWindow",
                 "implHandler": [
                     "if ((!component.isXType(\"messagebox\"))&&(!component.isXType(\"uxNotification\"))){\r",
@@ -221,7 +216,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "minimize",
                 "fn": "minimize",
                 "implHandler": [
                     "tool.up().up().minimize();"
@@ -241,7 +235,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "comportementIcones",
                 "fn": "comportementIcones",
                 "implHandler": [
                     "var me=this;\r",
@@ -309,7 +302,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "placeLibre",
                 "fn": "placeLibre",
                 "designer|params": [
                     "x",
@@ -335,7 +327,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMenuitemClick",
                 "fn": "onMenuitemClick",
                 "implHandler": [
                     "var button=item; \r",
@@ -368,7 +359,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ouvrirFenteresMenuDroite",
                 "fn": "ouvrirFenteresMenuDroite",
                 "implHandler": [
                     "if (button.itemId=='deconnexionMenuPrincipal') {\r",
@@ -416,7 +406,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "desktopMenu",
                 "fn": "desktopMenu",
                 "implHandler": [
                     "component.getEl().on('contextmenu', function(e){\r",
@@ -444,7 +433,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "hideAllIcons",
                 "fn": "hideAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.hide();});"
@@ -464,7 +452,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "showAllIcons",
                 "fn": "showAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.show();});"
@@ -484,7 +471,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reagarangeAllIcons",
                 "fn": "reagarangeAllIcons",
                 "implHandler": [
                     "Ext.getStore(\"IconesDataJson\").suspendAutoSync();\r",
@@ -507,7 +493,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "displayDesktopCustomizeWindow",
                 "fn": "displayDesktopCustomizeWindow",
                 "implHandler": [
                     "var fenetre=Ext.getCmp('DesktopCustomizeWindow'); \r",
@@ -531,7 +516,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateWallpaperPreview",
                 "fn": "updateWallpaperPreview",
                 "implHandler": [
                     "Ext.getCmp('wallpaperPicker').getComponent(0).setSrc(record.data.file);"
@@ -551,7 +535,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "wallpaperChange",
                 "fn": "wallpaperChange",
                 "implHandler": [
                     "Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);\r",
@@ -572,7 +555,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -599,7 +581,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelExpand",
                 "fn": "onGridpanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -620,7 +601,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelExpand1",
                 "fn": "onGridpanelExpand1",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -641,7 +621,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelItemClick",
                 "fn": "onGridpanelItemClick",
                 "implHandler": [
                     "Ext.getCmp('themePicker').getComponent(0).setSrc(record.data.preview);"
@@ -661,7 +640,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "applyTheme",
                 "fn": "applyTheme",
                 "implHandler": [
                     "var theme = Ext.getCmp('themeGrid').getSelectionModel().getLastSelected().data;\r",
@@ -694,7 +672,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelExpand",
                 "fn": "onPanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
@@ -715,7 +692,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "HCmode",
                 "fn": "HCmode",
                 "implHandler": [
                     "var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];\r",
@@ -745,7 +721,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "setHCButtonStatus",
                 "fn": "setHCButtonStatus",
                 "implHandler": [
                     "if (MyPrefData.HCMode===true) {\r",
@@ -767,7 +742,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createIconBtn",
                 "fn": "createIconBtn",
                 "implHandler": [
                     "var myWindow = button.findParentByType(\"window\");\r",
@@ -878,7 +852,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "refreshIcons",
                 "fn": "refreshIcons",
                 "implHandler": [
                     "var icones = Ext.getStore('IconesDataJson').getRange();\r",
@@ -956,7 +929,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "launchESWindow",
                 "fn": "launchESWindow",
                 "implHandler": [
                     "if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {\r",
@@ -984,7 +956,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDesktopHomeBtnClick",
                 "fn": "onDesktopHomeBtnClick",
                 "implHandler": [
                     "Ext.WindowManager.each(function(thing){\r",
@@ -1008,7 +979,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mainToolsContextShow",
                 "fn": "mainToolsContextShow",
                 "implHandler": [
                     "var me=this;\r",
@@ -1066,7 +1036,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonMouseOver",
                 "fn": "onButtonMouseOver",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){ thing.hide();});\r",
@@ -1094,7 +1063,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "handleDirectives",
                 "fn": "handleDirectives",
                 "implHandler": [
                     "var recievedDirectives = decodeURIComponent(window.location.search.slice(1))\r",

@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -116,7 +115,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
                     "if ((component.managesStore)&&(component.store)) {\r",
@@ -140,7 +138,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reloadActiveBrothers",
                 "fn": "reloadActiveBrothers",
                 "designer|params": [
                     "collectionName",
@@ -165,7 +162,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "fireNotif",
                 "fn": "fireNotif",
                 "designer|params": [
                     "title",
@@ -197,7 +193,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "handleLastUpdated",
                 "fn": "handleLastUpdated",
                 "designer|params": [
                     "record",

@@ -40,7 +40,6 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
-                "designer|userClassName": "MyForm10",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": "Choix du fichier à importer",
@@ -61,7 +60,6 @@
                         "container|padding": 1,
                         "margin": "0 0 10 0",
                         "padding": null,
-                        "designer|userClassName": "MyContainer16",
                         "layout": "hbox"
                     },
                     "designerId": "52ce27cc-8170-4540-882b-34674429c437",
@@ -75,7 +73,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 0.18,
-                                "designer|userClassName": "MyTextField7",
                                 "fieldLabel": "Séparateur",
                                 "labelWidth": 60,
                                 "name": "separator",
@@ -94,7 +91,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onTextfieldChange",
                                         "fn": "onTextfieldChange",
                                         "implHandler": [
                                             "if (Ext.isEmpty(newValue)){\r",
@@ -121,7 +117,6 @@
                                 "layout|flex": 1,
                                 "id": "mainCSVinportField",
                                 "margin": "0 0 0 5",
-                                "designer|userClassName": "MyFileUpload",
                                 "fieldLabel": "Fichier CSV",
                                 "labelWidth": 80,
                                 "name": "csvFile",
@@ -138,7 +133,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "extractFileInput",
                                         "fn": "extractFileInput",
                                         "implHandler": [
                                             "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
@@ -161,7 +155,6 @@
                                 "hidden": true,
                                 "id": "fileFieldHelper1",
                                 "margin": "0 0 0 4",
-                                "designer|userClassName": "MyButton44",
                                 "iconCls": "close",
                                 "text": ""
                             },
@@ -180,7 +173,6 @@
                         "layout|flex": 1,
                         "container|align": "stretch",
                         "id": "mainCSVInportAnalyseContainer",
-                        "designer|userClassName": "MyContainer9",
                         "layout": "vbox"
                     },
                     "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
@@ -195,7 +187,6 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "container|align": "stretch",
-                                "designer|userClassName": "MyPanel13",
                                 "layout": "hbox",
                                 "title": "Choisissez un fichier CSV pour afficher ses champs"
                             },
@@ -210,7 +201,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyGridPanel9",
                                         "title": "",
                                         "forceFit": true,
                                         "store": "NotInportFieldsStore"
@@ -225,7 +215,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyColumn1",
                                                 "dataIndex": "name",
                                                 "text": "Ne pas importer"
                                             },
@@ -239,7 +228,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyGridView1",
                                                 "markDirty": false
                                             },
                                             "designerId": "f0168bca-f9d5-463c-984e-ea4069204e12",
@@ -251,9 +239,6 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridDragDropPlugin"
-                                                    },
                                                     "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
                                                 }
                                             ]
@@ -269,7 +254,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyGridPanel9",
                                         "title": "",
                                         "forceFit": true,
                                         "store": "InportAsFieldStore"
@@ -284,7 +268,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyColumn1",
                                                 "dataIndex": "name",
                                                 "text": "Importer en tant que champ"
                                             },
@@ -298,7 +281,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyGridView1",
                                                 "markDirty": false
                                             },
                                             "designerId": "f9b87123-7981-4d7e-becd-21f993e1a8c0",
@@ -310,9 +292,6 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridDragDropPlugin1"
-                                                    },
                                                     "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
                                                 }
                                             ]
@@ -328,7 +307,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyGridPanel9",
                                         "title": "",
                                         "forceFit": true,
                                         "store": "InportAsTaxoStore"
@@ -343,7 +321,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyColumn1",
                                                 "dataIndex": "name",
                                                 "text": "Importer en tant que taxonomie"
                                             },
@@ -357,7 +334,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyGridView1",
                                                 "markDirty": false
                                             },
                                             "designerId": "c8aacbe6-e30e-41b6-a3fe-43ef19f161b6",
@@ -369,9 +345,6 @@
                                                         "type": "array"
                                                     },
                                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridDragDropPlugin2"
-                                                    },
                                                     "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
                                                 }
                                             ]
@@ -392,7 +365,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyPanel14",
                 "layout": "fit",
                 "bodyPadding": null,
                 "title": "Paramétrage des champs"
@@ -407,7 +379,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGridPanel15",
                         "title": "",
                         "forceFit": true,
                         "store": "InportAsFieldStore"
@@ -422,7 +393,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyGridView7",
                                 "markDirty": false
                             },
                             "designerId": "f075de21-5108-4683-88a6-eb1d4d53d319",
@@ -434,9 +404,6 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.DragDrop",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridDragDropPlugin3"
-                                    },
                                     "designerId": "2cafbea3-ce63-4e78-8c8d-68bb70112aa5"
                                 }
                             ]
@@ -449,7 +416,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn9",
                                 "dataIndex": "name",
                                 "text": "Nom"
                             },
@@ -464,7 +430,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": 130,
-                                "designer|userClassName": "MyColumn10",
                                 "dataIndex": "newName",
                                 "text": "Nouveau nom (optionnel)",
                                 "flex": null
@@ -478,9 +443,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyTextField18"
-                                    },
                                     "designerId": "2a48bca6-b288-41f0-8d6e-6e6f944cec6f"
                                 }
                             ]
@@ -493,7 +455,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn8",
                                 "dataIndex": "label",
                                 "text": "Libellé"
                             },
@@ -506,9 +467,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyTextField19"
-                                    },
                                     "designerId": "91df9964-f3ad-42f1-9551-7c205e309625"
                                 }
                             ]
@@ -521,7 +479,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn11",
                                 "dataIndex": "protoId",
                                 "text": "Type"
                             },
@@ -535,7 +492,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyComboBox14",
                                         "allowBlank": false,
                                         "editable": false,
                                         "displayField": "type",
@@ -554,7 +510,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "renderer",
                                         "fn": "renderer",
                                         "designer|params": [
                                             "value",
@@ -581,7 +536,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyBooleanColumn",
                                 "dataIndex": "searchable",
                                 "text": "Recherchable",
                                 "falseText": "Non",
@@ -597,7 +551,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyCheckbox1",
                                         "boxLabel": null,
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
@@ -614,7 +567,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyBooleanColumn",
                                 "dataIndex": "mandatory",
                                 "text": "Obligatoire",
                                 "falseText": "Non",
@@ -630,7 +582,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyCheckbox1",
                                         "boxLabel": null,
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
@@ -647,7 +598,6 @@
                             },
                             "codeClass": "Ext.grid.plugin.CellEditing",
                             "userConfig": {
-                                "designer|userClassName": "MyCellEditingPlugin",
                                 "clicksToEdit": 1
                             },
                             "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797"
@@ -662,7 +612,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyHiddenField8",
                         "fieldLabel": "Label"
                     },
                     "designerId": "fe48403e-f41f-4041-8182-bff17ec485b6",
@@ -675,7 +624,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "isValid",
                                 "fn": "isValid",
                                 "implHandler": [
                                     "var store=Ext.getStore(\"InportAsFieldStore\");\r",
@@ -711,7 +659,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridPanel16",
                 "title": "Paramétrage de la taxonomie",
                 "forceFit": true,
                 "store": "InportAsTaxoStore"
@@ -726,7 +673,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyGridView8",
                         "markDirty": false
                     },
                     "designerId": "010321de-5d77-43d1-84f4-b7e2490e70d6",
@@ -738,9 +684,6 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
-                            "userConfig": {
-                                "designer|userClassName": "MyGridDragDropPlugin4"
-                            },
                             "designerId": "d5c95319-7f14-409d-8a5c-faa86247759b"
                         }
                     ]
@@ -753,7 +696,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn7",
                         "dataIndex": "name",
                         "text": "Nom"
                     },
@@ -767,7 +709,6 @@
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
                     "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin1",
                         "clicksToEdit": 1
                     },
                     "designerId": "9e40ec07-84d0-42ee-bee5-801d17ba98fc"
@@ -780,7 +721,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn10",
                         "dataIndex": "newName",
                         "text": "Nouveau nom (optionnel)"
                     },
@@ -793,9 +733,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyTextField18"
-                            },
                             "designerId": "8a36d688-1e51-4b68-9282-7be3299a2e9f"
                         }
                     ]
@@ -808,7 +745,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyBooleanColumn",
                         "dataIndex": "mandatory",
                         "text": "Obligatoire",
                         "falseText": "Non",
@@ -824,7 +760,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyCheckbox1",
                                 "boxLabel": null,
                                 "inputValue": "true",
                                 "uncheckedValue": "false"
@@ -843,7 +778,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm5",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Finalisation  et import"
@@ -858,7 +792,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet",
                         "title": "Paramètres du type de contenus"
                     },
                     "designerId": "f442fe0b-620b-4cc6-a130-f68b8b8ebec3",
@@ -872,7 +805,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField",
                                 "fieldLabel": "Nom",
                                 "labelWidth": 165,
                                 "name": "ContentTypeType",
@@ -910,7 +842,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox28",
                                 "fieldLabel": "Workflow",
                                 "labelWidth": 165,
                                 "name": "ContentTypeWorkflow",
@@ -939,7 +870,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet3",
                         "title": "Paramètres des contenus"
                     },
                     "designerId": "312d5ca5-684b-4e38-8d39-57fb31076ba0",
@@ -991,7 +921,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "mainImportSubmitBtn",
-                        "designer|userClassName": "MyButton1",
                         "scale": "large",
                         "text": "Importer"
                     },
@@ -1007,7 +936,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onInportInterfaceBeforeRender",
                 "fn": "onInportInterfaceBeforeRender",
                 "implHandler": [
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
@@ -1027,7 +955,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onInportInterfaceBeforeClose",
                 "fn": "onInportInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",

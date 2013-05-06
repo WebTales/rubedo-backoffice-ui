@@ -21,8 +21,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "name",
-                "type": "string",
-                "designer|userClassName": "MyField40"
+                "type": "string"
             },
             "designerId": "6814118f-3ea7-433e-b1ba-2434271003ca"
         },
@@ -36,8 +35,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "description",
-                "type": "string",
-                "designer|userClassName": "MyField40"
+                "type": "string"
             },
             "designerId": "4dcd8e05-d510-4fee-a095-7895f197db24"
         },
@@ -51,8 +49,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "helpText",
-                "type": "string",
-                "designer|userClassName": "MyField40"
+                "type": "string"
             },
             "designerId": "aa4ddf07-8a2f-4b41-ba10-c64806d91350"
         },
@@ -66,8 +63,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "expandable",
-                "type": "boolean",
-                "designer|userClassName": "MyField40"
+                "type": "boolean"
             },
             "designerId": "e09bf732-f7d4-4a6f-bb2f-a2ff72129aa9"
         },
@@ -81,8 +77,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "inputAsTree",
-                "type": "boolean",
-                "designer|userClassName": "MyField40"
+                "type": "boolean"
             },
             "designerId": "afa07d89-7d1f-437a-b495-1fb77fc9d9d3"
         },
@@ -96,8 +91,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "multiSelect",
-                "type": "boolean",
-                "designer|userClassName": "MyField40"
+                "type": "boolean"
             },
             "designerId": "8ca6ad47-1435-412f-aaab-f2c607c37044"
         },
@@ -111,8 +105,7 @@
             "userConfig": {
                 "defaultValue": null,
                 "name": "mandatory",
-                "type": "boolean",
-                "designer|userClassName": "MyField40"
+                "type": "boolean"
             },
             "designerId": "dec5ef4a-c9da-4cf2-b5d0-b771aed728a1"
         },
@@ -124,8 +117,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField86"
+                "name": "version"
             },
             "designerId": "42264a27-7a8c-4abe-8804-fa1a20726131"
         },
@@ -137,8 +129,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field103"
+                "name": "id"
             },
             "designerId": "af053b8c-6f84-4fd9-9072-25131c65ab92"
         },
@@ -152,8 +143,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "createTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "bcb5486a-a461-41bc-891b-5a4f198087df"
         },
@@ -167,8 +157,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "0e88d7e0-3979-427c-a849-7f9e83ecac42"
         },
@@ -180,8 +169,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "createUser",
-                "designer|userClassName": "field60"
+                "name": "createUser"
             },
             "designerId": "1e6bebf9-00de-4e47-9421-904f78e0f57d"
         },
@@ -193,8 +181,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "workspaces",
-                "designer|userClassName": "field281"
+                "name": "workspaces"
             },
             "designerId": "213e03f0-dc54-4970-a4b7-ddc3cbdd6fd9"
         },
@@ -208,8 +195,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "85f7c26d-aa23-4cee-9af9-aa6d9c03ff5e"
         }

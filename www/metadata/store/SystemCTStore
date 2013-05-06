@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    read: 'content-types',\r",
@@ -60,8 +59,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "eba0ddbf-86b7-4570-a86d-03c3dd958b10"
                 }
@@ -76,7 +74,6 @@
             "codeClass": null,
             "userConfig": {
                 "property": "system",
-                "designer|userClassName": "MyFilter1",
                 "value": [
                     "true"
                 ]

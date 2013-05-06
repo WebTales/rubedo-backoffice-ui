@@ -45,7 +45,6 @@
             "codeClass": null,
             "userConfig": {
                 "batchActions": false,
-                "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
                     "    read: 'pages/get-content-list'\r",
@@ -64,8 +63,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader20"
+                        "root": "data"
                     },
                     "designerId": "854cf4ff-6e63-4322-b3ca-bb17ea3a5cf6"
                 }

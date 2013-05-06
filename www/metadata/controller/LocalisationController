@@ -25,7 +25,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -83,7 +82,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onButtonAfterRender1",
                 "fn": "onButtonAfterRender1",
                 "implHandler": [
                     "try {\r",
@@ -121,7 +119,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentBeforeRender",
                 "fn": "onComponentBeforeRender",
                 "implHandler": [
                     "if (component.localiserId){\r",
@@ -156,7 +153,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onBasefieldAdded",
                 "fn": "onBasefieldAdded",
                 "implHandler": [
                     "if (component.localiserId){\r",
@@ -185,7 +181,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "produceInterfaceLocalisationJSON",
                 "fn": "produceInterfaceLocalisationJSON",
                 "implHandler": [
                     "var result= { };\r",
@@ -280,7 +275,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateLocalisationSingletons",
                 "fn": "updateLocalisationSingletons",
                 "implHandler": [
                     "//todo : move this to server side\r",
@@ -314,7 +308,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createLocalisationDefaults",
                 "fn": "createLocalisationDefaults",
                 "implHandler": [
                     "var me = this;\r",
@@ -364,7 +357,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFieldsetAfterRender",
                 "fn": "onFieldsetAfterRender",
                 "implHandler": [
                     "var task = new Ext.util.DelayedTask(function(){\r",

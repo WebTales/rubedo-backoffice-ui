@@ -39,7 +39,6 @@
                 "container|align": "stretch",
                 "id": "salamanderBox",
                 "width": null,
-                "designer|userClassName": "MyPanel62",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "bodyStyle": null
@@ -64,7 +63,6 @@
                         "margin": null,
                         "minHeight": null,
                         "width": 220,
-                        "designer|userClassName": "MyContainer43",
                         "layout": "absolute"
                     },
                     "designerId": "16740bbe-36c7-4f53-a23e-27f05e8d1dea",
@@ -84,8 +82,7 @@
                                 "hidden": false,
                                 "id": "salamanderStudioMenu",
                                 "margin": null,
-                                "width": 218,
-                                "designer|userClassName": "MyMenu8"
+                                "width": 218
                             },
                             "designerId": "be1246af-6b6a-4569-a656-e12db32401d6",
                             "cn": [
@@ -97,7 +94,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onSalamanderStudioMenuRender",
                                         "fn": "onSalamanderStudioMenuRender",
                                         "implHandler": [
                                             "component.add([\r",
@@ -170,8 +166,7 @@
                                 "hidden": false,
                                 "id": "salamanderAdminMenu",
                                 "margin": null,
-                                "width": 218,
-                                "designer|userClassName": "MyMenu8"
+                                "width": 218
                             },
                             "designerId": "b0494c50-c3ce-495b-b9d6-6671ac75fbbf",
                             "cn": [
@@ -183,7 +178,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onSalamanderAdminMenuRender",
                                         "fn": "onSalamanderAdminMenuRender",
                                         "implHandler": [
                                             "component.add([\r",
@@ -284,7 +278,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onSalamanderContextRender",
                                 "fn": "onSalamanderContextRender",
                                 "implHandler": [
                                     "Ext.Array.forEach(component.query(\"menu\"), function(thing){thing.hide();});"
@@ -308,7 +301,6 @@
                         "id": "salamanderLogo",
                         "margin": null,
                         "width": 210,
-                        "designer|userClassName": "MyImg11",
                         "src": "resources/images/logoBkg.png"
                     },
                     "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
@@ -326,8 +318,7 @@
                 "layout|flex": 1,
                 "dock": "left",
                 "id": "menuPrincipalDroite",
-                "width": null,
-                "designer|userClassName": "MyToolbar25"
+                "width": null
             },
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
             "cn": [
@@ -341,11 +332,10 @@
                     "userConfig": {
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "application.png",
-                        "layout|flex": null,
                         "localiserId": "pagesLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "contributionPages",
                         "margin": null,
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "site-icon",
                         "text": "Pages"
                     },
@@ -378,11 +368,10 @@
                     "userConfig": {
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "computer.png",
-                        "layout|flex": null,
                         "localiserId": "previewLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "contributionPrevisualisation",
                         "margin": null,
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "personalize",
                         "text": "Prévisualisation"
                     },
@@ -415,11 +404,10 @@
                     "userConfig": {
                         "ACL": "read.ui.contents",
                         "favoriteIcon": "page_full.png",
-                        "layout|flex": null,
                         "localiserId": "contentsLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "contributionContenus",
                         "margin": null,
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "content-icon",
                         "text": "Contenus"
                     },
@@ -452,11 +440,10 @@
                     "userConfig": {
                         "ACL": "read.ui.dam",
                         "favoriteIcon": "images.png",
-                        "layout|flex": null,
                         "localiserId": "DAMLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "DAMInterface",
                         "margin": null,
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "mediaTypes",
                         "text": "Médiathèque"
                     },
@@ -488,8 +475,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "read.ui.contents",
-                        "layout|flex": null,
-                        "designer|userClassName": "MySeparator13"
+                        "layout|flex": null
                     },
                     "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
                     "customConfigs": [
@@ -510,9 +496,8 @@
                     "userConfig": {
                         "usesMenu": true,
                         "usedMenu": "salamanderStudioMenu",
-                        "layout|flex": null,
                         "localiserId": "studioMenuBtn",
-                        "designer|userClassName": "MyButton248",
+                        "layout|flex": null,
                         "arrowCls": null,
                         "iconCls": "applications",
                         "text": "Studio"
@@ -547,7 +532,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onButtonRender",
                                 "fn": "onButtonRender",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
@@ -567,8 +551,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "width": 120,
-                                "designer|userClassName": "MyMenu8"
+                                "width": 120
                             },
                             "designerId": "2920c27e-8d48-41fe-8a95-5bb91da72db5"
                         }
@@ -584,9 +567,8 @@
                     "userConfig": {
                         "usesMenu": true,
                         "usedMenu": "salamanderAdminMenu",
-                        "layout|flex": null,
                         "localiserId": "adminLenuBtn",
-                        "designer|userClassName": "MyButton248",
+                        "layout|flex": null,
                         "iconCls": "process-icon",
                         "text": "Administration"
                     },
@@ -620,7 +602,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onButtonRender1",
                                 "fn": "onButtonRender1",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])){\r",
@@ -640,8 +621,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "width": 120,
-                                "designer|userClassName": "MyMenu8"
+                                "width": 120
                             },
                             "designerId": "8bdf58fa-1e0d-489e-8a1c-427a2e12bf92"
                         }
@@ -656,11 +636,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "favoriteIcon": "tools.png",
-                        "layout|flex": null,
                         "localiserId": "mySettingsLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "userSettings",
                         "margin": null,
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "parametres",
                         "text": "Paramètres"
                     },
@@ -686,8 +665,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill18"
+                        "layout|flex": null
                     },
                     "designerId": "b6eb0758-2e62-4dcb-acb0-adf28999e387"
                 },
@@ -699,11 +677,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "logoutBtn",
+                        "layout|flex": null,
                         "id": null,
                         "itemId": "deconnexionMenuPrincipal",
-                        "designer|userClassName": "MyButton2",
                         "iconCls": "deconecter",
                         "text": "Déconnexion"
                     },

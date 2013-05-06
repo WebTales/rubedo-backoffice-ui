@@ -20,8 +20,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": null,
-                "name": "title",
-                "designer|userClassName": "MyField2"
+                "name": "title"
             },
             "designerId": "0cfe42e8-3ab2-4631-bc38-f9bb6abd3b2e"
         },
@@ -33,8 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField85"
+                "name": "version"
             },
             "designerId": "e2756e4b-b0af-4a51-b99d-2af57a600ffe"
         },
@@ -46,8 +44,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field103"
+                "name": "id"
             },
             "designerId": "57bb4080-c295-42ae-9861-f6e9ceeee097"
         },
@@ -62,8 +59,7 @@
                 "defaultValue": [
                     "[ ]"
                 ],
-                "name": "formPages",
-                "designer|userClassName": "field2"
+                "name": "formPages"
             },
             "designerId": "e4b3032f-03ee-49f5-a39e-99546cc34cab"
         },
@@ -75,8 +71,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "workspaces",
-                "designer|userClassName": "field280"
+                "name": "workspaces"
             },
             "designerId": "a345c870-78f5-4f73-b422-9d5e8579cfaa"
         },
@@ -90,8 +85,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "8af2efb6-7215-4159-8c99-90c729a03148"
         },
@@ -103,8 +97,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "description",
-                "designer|userClassName": "field319"
+                "name": "description"
             },
             "designerId": "814b5a95-c75e-459c-9451-5ab3cd3e12c3"
         },
@@ -116,8 +109,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "uniqueAnswer",
-                "designer|userClassName": "field320"
+                "name": "uniqueAnswer"
             },
             "designerId": "69486035-2417-4503-8c10-f6948605f1ec"
         },
@@ -132,8 +124,7 @@
                 "defaultValue": [
                     "\"Vous avez déjà complété cette enquête. Merci.\""
                 ],
-                "name": "uniqueAnswerText",
-                "designer|userClassName": "field320"
+                "name": "uniqueAnswerText"
             },
             "designerId": "cbdfbe7b-3c7e-4b1e-bbdd-1be015d14912"
         },
@@ -148,8 +139,7 @@
                 "defaultValue": [
                     "\"Nous vous remercions d’avoir répondu à cette enquête.\""
                 ],
-                "name": "endMessage",
-                "designer|userClassName": "field320"
+                "name": "endMessage"
             },
             "designerId": "fff58254-25bc-4777-865f-3d01f657ed42"
         },
@@ -161,8 +151,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "openingDate",
-                "designer|userClassName": "field321"
+                "name": "openingDate"
             },
             "designerId": "b9eba5ec-715b-4455-9ea0-e25242b0091a"
         },
@@ -174,8 +163,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "closingDate",
-                "designer|userClassName": "field322"
+                "name": "closingDate"
             },
             "designerId": "184ed8f8-f033-4161-81b7-9ab2b86c8842"
         },
@@ -189,8 +177,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "42f3cad2-88f8-496b-9f8c-a3ce822ce4d7"
         },
@@ -204,8 +191,7 @@
             "userConfig": {
                 "mapping": "createUser.fullName",
                 "name": "createUser",
-                "persist": false,
-                "designer|userClassName": "field60"
+                "persist": false
             },
             "designerId": "9f6b52b7-af99-47e9-8000-527e22c37d29"
         }

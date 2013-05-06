@@ -34,7 +34,6 @@
             "userConfig": {
                 "layout|flex": null,
                 "width": 105,
-                "designer|userClassName": "MyLabel",
                 "text": "My Label :"
             },
             "designerId": "7f452ffd-c824-4619-9b07-eed4c829902f"
@@ -52,7 +51,6 @@
                 "minWidth": null,
                 "style": null,
                 "width": null,
-                "designer|userClassName": "MyImg14",
                 "src": null
             },
             "configAlternates": {
@@ -68,7 +66,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onFieldImagePreviewRender",
                         "fn": "onFieldImagePreviewRender",
                         "implHandler": [
                             "component.getEl().on(\"load\", function(){component.up().doLayout();});"
@@ -92,7 +89,6 @@
                 "itemId": "buttonHolder",
                 "margin": "0 0 0 10",
                 "width": 41,
-                "designer|userClassName": "MyContainer25",
                 "layout": "absolute"
             },
             "designerId": "ae9be1d2-a8c6-4b95-b62c-4d1f4f08737d",
@@ -105,11 +101,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "gfsUploadFileBtn",
                         "layout|x": 10,
                         "layout|y": 30,
-                        "localiserId": "gfsUploadFileBtn",
                         "itemId": "fieldChangeFile",
-                        "designer|userClassName": "MyButton170",
                         "iconCls": "database_up_small",
                         "text": "",
                         "tooltip": "Uploader un fichier"
@@ -134,12 +129,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "gfsDeleteFileBtn",
                         "layout|x": 10,
                         "layout|y": 90,
-                        "localiserId": "gfsDeleteFileBtn",
                         "itemId": "fieldClearFile",
                         "width": null,
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "close",
                         "text": "",
                         "tooltip": "Supprimer le fichier"
@@ -164,12 +158,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "gfsDownloadFileBtn",
                         "layout|x": 10,
                         "layout|y": 0,
-                        "localiserId": "gfsDownloadFileBtn",
                         "itemId": "fieldDownloadFile",
                         "width": null,
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "database_down_small",
                         "text": "",
                         "tooltip": "Télécharger le fichier"
@@ -194,12 +187,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "gfsPreviewFileBtn",
                         "layout|x": 10,
                         "layout|y": 60,
-                        "localiserId": "gfsPreviewFileBtn",
                         "itemId": "fieldPreviewFile",
                         "width": null,
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "play_small",
                         "text": "",
                         "tooltip": "Affichage en détail"
@@ -229,7 +221,6 @@
                         "hidden": true,
                         "itemId": "fieldEditFile",
                         "width": 40,
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "pencil_big",
                         "scale": "large",
                         "text": "",

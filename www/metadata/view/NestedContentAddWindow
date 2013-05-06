@@ -31,8 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar14"
+                "dock": "bottom"
             },
             "designerId": "a241ddd5-fdd2-44f9-a3ee-4edd5307ce46",
             "cn": [
@@ -44,8 +43,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "ade30501-96ce-4ec5-af84-97fcb1bdb130"
                 },
@@ -61,7 +59,6 @@
                         "layout|flex": null,
                         "layout|margins": null,
                         "id": "nestedContentRecordBtn",
-                        "designer|userClassName": "MyButton49",
                         "iconCls": "save",
                         "text": "Enregistrer"
                     },
@@ -89,7 +86,6 @@
             "userConfig": {
                 "height": 101,
                 "id": "nestedContentsFieldBox",
-                "designer|userClassName": "MyForm3",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -105,8 +101,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "padding": 10,
-                        "designer|userClassName": "ChampTC",
-                        "designer|userAlias": "ChampTC",
                         "layout": "anchor"
                     },
                     "designerId": "f849470d-bac7-40d0-99c6-1003a109c5e8",
@@ -123,7 +117,6 @@
                                 "style": [
                                     "{float:left}"
                                 ],
-                                "designer|userClassName": "MyTextField1",
                                 "fieldLabel": "Titre ",
                                 "name": "text",
                                 "allowBlank": false
@@ -143,7 +136,6 @@
                                 "style": [
                                     "{float:right;}"
                                 ],
-                                "designer|userClassName": "MyButton17",
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,
@@ -168,8 +160,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "padding": 10,
-                        "designer|userClassName": "ChampTC",
-                        "designer|userAlias": "ChampTC",
                         "layout": "anchor"
                     },
                     "designerId": "9167fdd6-7b9a-4b97-964a-55286fd269a2",
@@ -186,7 +176,6 @@
                                 "style": [
                                     "{float:left}"
                                 ],
-                                "designer|userClassName": "MyTextArea7",
                                 "fieldLabel": "Résumé",
                                 "labelSeparator": " ",
                                 "name": "summary"
@@ -206,7 +195,6 @@
                                 "style": [
                                     "{float:right;}"
                                 ],
-                                "designer|userClassName": "MyButton17",
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,

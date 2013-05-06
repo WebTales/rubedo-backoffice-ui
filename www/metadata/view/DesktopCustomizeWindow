@@ -32,7 +32,6 @@
             "codeClass": null,
             "userConfig": {
                 "width": 150,
-                "designer|userClassName": "MyContainer18",
                 "layout": "accordion"
             },
             "designerId": "ed7cfa8f-e792-4d4d-a78e-e6a596c08fff",
@@ -47,7 +46,6 @@
                     "userConfig": {
                         "managesStore": true,
                         "id": "wallpaperGrid",
-                        "designer|userClassName": "MyGridPanel15",
                         "collapsed": false,
                         "title": "Fond d'écran",
                         "store": "WallpapersDataJson"
@@ -71,9 +69,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView13"
-                            },
                             "designerId": "b4a054a2-490f-4ccc-92d0-b22fbc3f742b"
                         },
                         {
@@ -84,7 +79,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn24",
                                 "dataIndex": "name",
                                 "text": "Nom",
                                 "flex": 1
@@ -103,7 +97,6 @@
                     "userConfig": {
                         "managesStore": true,
                         "id": "themeGrid",
-                        "designer|userClassName": "MyGridPanel16",
                         "collapsed": true,
                         "title": "Thèmes",
                         "store": "ThemesDataJson"
@@ -127,9 +120,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView14"
-                            },
                             "designerId": "a2e630a6-e060-4b2b-aeaf-e56aa3f9da0e"
                         },
                         {
@@ -140,7 +130,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn2",
                                 "dataIndex": "name",
                                 "text": "Nom",
                                 "flex": 1
@@ -158,7 +147,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "accessibilityOptionsPanel",
-                        "designer|userClassName": "MyPanel36",
                         "title": "Accessibilité"
                     },
                     "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f"
@@ -175,7 +163,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "DesktopCustomizeMainArea",
-                "designer|userClassName": "MyContainer19",
                 "layout": "fit"
             },
             "designerId": "4a737d26-c7f2-4aa4-8bc1-aa26bec7529c",

@@ -34,7 +34,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxBeforeRender",
                 "fn": "onComboboxBeforeRender",
                 "implHandler": [
                     "if ((!component.notAutomatic)&&(Ext.isEmpty(component.getValue()))){\r",
@@ -59,7 +58,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "setReadOnly",
                 "fn": "setReadOnly",
                 "designer|params": [
                     "readOnly"
@@ -91,7 +89,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxAdded",
                 "fn": "onComboboxAdded",
                 "implHandler": [
                     "if ((component.getStore().storeId==\"ContributeWorkspacesCombo\")||(component.getStore().storeId==\"ContributeWorkspacesComboWithAll\")){\r",

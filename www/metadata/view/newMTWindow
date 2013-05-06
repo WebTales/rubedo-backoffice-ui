@@ -39,7 +39,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm32",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -53,9 +52,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "newDamTypeNameField",
-                        "designer|userClassName": "MyTextField61",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Nom ",
                         "name": "type",
                         "allowBlank": false
@@ -77,9 +75,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "newDamTypeMainFileTypeField",
-                        "designer|userClassName": "MyComboBox22",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Type de fichier principal",
                         "name": "mainFileType",
                         "allowBlank": false,
@@ -109,10 +106,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "newDamTypeSubmitBtn",
+                        "layout|anchor": "100%",
                         "id": "createNewMTBtn",
-                        "designer|userClassName": "MyButton186",
                         "text": "Créer un nouveau type de média"
                     },
                     "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23",

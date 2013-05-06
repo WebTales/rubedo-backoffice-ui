@@ -33,7 +33,6 @@
             "userConfig": {
                 "managesStore": false,
                 "id": "TCImbriquesGrid",
-                "designer|userClassName": "MyGridPanel13",
                 "title": "",
                 "store": "TypesContenusDepDataJson"
             },
@@ -56,9 +55,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView11"
-                    },
                     "designerId": "7c9f11a1-5d96-49aa-9cdf-c22abca73d64"
                 },
                 {
@@ -69,7 +65,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn23",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
@@ -83,9 +78,6 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.CheckboxModel",
-                    "userConfig": {
-                        "designer|userClassName": "MyCheckboxSelectionModel3"
-                    },
                     "designerId": "a8646a49-8894-4ef1-bcfa-0f8ca02f1273"
                 },
                 {
@@ -96,7 +88,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onTCImbriquesGridViewReady",
                         "fn": "onTCImbriquesGridViewReady",
                         "implHandler": [
                             "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",

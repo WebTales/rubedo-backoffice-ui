@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "folder.png",
-        "container|align": "stretch",
         "localiserId": "mediasWindow",
+        "container|align": "stretch",
         "height": 578,
         "id": "contributionMedias",
         "width": 1000,
@@ -42,7 +42,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "5500ac1d-2c18-47ca-9818-b934174ff091"
@@ -56,7 +55,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "90ba1d83-8251-47f8-8086-6a09917fed35"
@@ -72,8 +70,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "07542b37-fdcf-4b66-b9f0-b4f9a3a57dfc",
             "cn": [
@@ -87,7 +84,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "media-icon",
                         "text": "Médiathèque<b> ></b> "
                     },
@@ -107,8 +103,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "c4ca647d-d32f-4c3e-9ca8-e6790b2ea72d",
             "cn": [
@@ -124,7 +119,6 @@
                         "height": 45,
                         "itemId": "imageBarreMeta",
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "9fa65e42-4f24-4d44-b50e-793099aa2e8b",
@@ -137,7 +131,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageBarreMetaRender",
                                 "fn": "onImageBarreMetaRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/database.png');"
@@ -158,8 +151,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "itemId": "boiteBarreMeta",
-                        "designer|userClassName": "MyContainer9"
+                        "itemId": "boiteBarreMeta"
                     },
                     "designerId": "2a235df1-21b6-44bd-9a4f-bf38167e9024",
                     "cn": [
@@ -171,7 +163,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
                                 ],
@@ -196,8 +187,6 @@
                 "height": 54,
                 "itemId": "contextBar",
                 "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools",
                 "enableOverflow": true
             },
             "designerId": "2595ffe2-df20-49f1-8820-418876b47117",
@@ -210,11 +199,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "addFolderBtn",
+                        "layout|flex": null,
                         "id": "boutonAjouterDossierMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "folder_add_big",
                         "scale": "large",
@@ -240,7 +228,6 @@
                         "layout|flex": null,
                         "id": "boutonSupprimerDossierMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "folder_remove_big",
                         "scale": "large",
@@ -259,7 +246,6 @@
                         "layout|flex": null,
                         "id": "boutonUploadMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "database_up_big",
                         "scale": "large",
@@ -278,7 +264,6 @@
                         "layout|flex": null,
                         "id": "boutonDownloadMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "database_down_big",
                         "scale": "large",
@@ -297,7 +282,6 @@
                         "layout|flex": null,
                         "id": "boutonSupprimerMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -316,7 +300,6 @@
                         "layout|flex": null,
                         "id": "boutonEditionMedias",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconCls": "pencil_big",
                         "scale": "large",
@@ -334,7 +317,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boutonCreerRaccourci",
-                        "designer|userClassName": "MyButton14",
                         "icon": null,
                         "iconCls": "favorite_add_big",
                         "scale": "large",
@@ -350,8 +332,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "56550b6e-f0bb-4da5-9d64-da0b206e5097"
                 },
@@ -365,7 +346,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boutonAide",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -387,7 +367,6 @@
                 "layout|flex": null,
                 "id": "contributionMediasGrid",
                 "width": 150,
-                "designer|userClassName": "MyGridPanel14",
                 "resizable": [
                     "true"
                 ],
@@ -414,9 +393,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView12"
-                    },
                     "designerId": "fd700e02-dd56-4cf1-8bc9-dc35f2412cb6"
                 },
                 {
@@ -427,7 +403,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn21",
                         "dataIndex": "titre",
                         "groupable": true,
                         "menuDisabled": true,
@@ -444,7 +419,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -470,9 +444,6 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature1"
-                    },
                     "designerId": "8c513b76-f7ab-4c3b-842f-3c9ceedb8258"
                 }
             ]
@@ -487,7 +458,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "images-view",
-                "designer|userClassName": "MyContainer16",
                 "layout": "fit"
             },
             "designerId": "41b954a8-f5f5-4ef7-9c7c-ca04b972c284",

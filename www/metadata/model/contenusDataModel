@@ -19,8 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "text",
-                "designer|userClassName": "MyField2"
+                "name": "text"
             },
             "designerId": "d7ba6bf9-8173-4f3f-908d-36ec9b76482c"
         },
@@ -34,8 +33,7 @@
             "userConfig": {
                 "mapping": "fields",
                 "name": "champs",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
             "designerId": "f40ef47e-8d86-4e17-b1e6-bffe5c5374c7"
         },
@@ -48,8 +46,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "typeId",
-                "type": null,
-                "designer|userClassName": "MyField2"
+                "type": null
             },
             "designerId": "08ac3b57-b6fb-4ec0-9c08-2b6c638862f3"
         },
@@ -62,8 +59,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": null,
-                "name": "status",
-                "designer|userClassName": "MyField2"
+                "name": "status"
             },
             "designerId": "635a78d5-5539-47df-bc44-e0f42c2185c1"
         },
@@ -76,8 +72,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "version",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
             "designerId": "44f51e76-788e-454e-ab82-5ac8e150af15"
         },
@@ -89,8 +84,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field104"
+                "name": "id"
             },
             "designerId": "425e900a-f12f-43cc-ae7a-96f02f52d478"
         },
@@ -103,8 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "taxonomy",
-                "name": "taxonomie",
-                "designer|userClassName": "field105"
+                "name": "taxonomie"
             },
             "designerId": "91b732b7-a0c5-49b3-9fa3-ad9acd777314"
         },
@@ -117,8 +110,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "online",
-                "type": "boolean",
-                "designer|userClassName": "field146"
+                "type": "boolean"
             },
             "designerId": "a57b4710-6cd5-4974-8105-d8d731ba6459"
         },
@@ -132,8 +124,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "1cda83c2-59d0-4c1b-8900-c91f227084eb"
         },
@@ -147,8 +138,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "createTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "b3bb0d6e-af79-49db-80fe-9b5c399ef693"
         },
@@ -161,8 +151,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "createUser",
-                "persist": false,
-                "designer|userClassName": "field60"
+                "persist": false
             },
             "designerId": "539e9c08-1655-4cd9-9d13-97a28df7b8e1"
         },
@@ -175,8 +164,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "startPublicationDate",
-                "type": null,
-                "designer|userClassName": "field147"
+                "type": null
             },
             "designerId": "a2814e00-7b6a-47b8-b360-4756f76d2b1b"
         },
@@ -189,8 +177,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "endPublicationDate",
-                "type": null,
-                "designer|userClassName": "field148"
+                "type": null
             },
             "designerId": "6bfd7261-8f98-4b47-8034-51084593dcb0"
         },
@@ -202,8 +189,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "target",
-                "designer|userClassName": "field289"
+                "name": "target"
             },
             "designerId": "e459bbea-01f1-4678-9401-97dc73d76cb5"
         },
@@ -215,8 +201,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "writeWorkspace",
-                "designer|userClassName": "field288"
+                "name": "writeWorkspace"
             },
             "designerId": "65271155-33c5-40a7-9cc6-0530f99ac7e3"
         },
@@ -230,8 +215,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "15fa366c-32d2-4132-ada5-9da2963c1088"
         },
@@ -243,8 +227,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "pageId",
-                "designer|userClassName": "field310"
+                "name": "pageId"
             },
             "designerId": "43651db6-0645-4a65-a5a9-f0cb4a04118f"
         },
@@ -256,8 +239,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "maskId",
-                "designer|userClassName": "field310"
+                "name": "maskId"
             },
             "designerId": "ea303e14-683e-4464-9c18-aa9dc212e2a6"
         },
@@ -269,8 +251,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "blockId",
-                "designer|userClassName": "field311"
+                "name": "blockId"
             },
             "designerId": "70bec1fc-0ffb-43cc-8993-d2698d13566f"
         }

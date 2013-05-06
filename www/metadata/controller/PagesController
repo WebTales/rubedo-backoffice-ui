@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "pageSiteSelect",
                 "fn": "pageSiteSelect",
                 "implHandler": [
                     "Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
@@ -55,7 +54,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openPageAddWindow",
                 "fn": "openPageAddWindow",
                 "implHandler": [
                     "Ext.widget(\"newPageWindow\").show();"
@@ -75,7 +73,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createNewPage",
                 "fn": "createNewPage",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -123,7 +120,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deletePage",
                 "fn": "deletePage",
                 "implHandler": [
                     "var me=this;\r",
@@ -166,7 +162,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "pageSelect",
                 "fn": "pageSelect",
                 "implHandler": [
                     "Ext.getStore(\"PageDisplayedContentsStore\").removeAll();\r",
@@ -256,7 +251,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "moveElementUp",
                 "fn": "moveElementUp",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -287,7 +281,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "moveElementDown",
                 "fn": "moveElementDown",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -319,7 +312,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteElement",
                 "fn": "deleteElement",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -349,7 +341,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderPage",
                 "fn": "renderPage",
                 "designer|params": [
                     "mRows",
@@ -445,7 +436,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "columnSelector",
                 "fn": "columnSelector",
                 "implHandler": [
                     "if ((component.mType==\"col\")&&((Ext.isEmpty(component.items.items))||(component.items.items[0].isXType(\"unBloc\")))){\r",
@@ -495,7 +485,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterface",
                 "fn": "resetInterface",
                 "implHandler": [
                     "Ext.getCmp(\"newPageBloc\").disable();\r",
@@ -525,7 +514,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "showBlocAddWindow",
                 "fn": "showBlocAddWindow",
                 "implHandler": [
                     "Ext.widget(\"ajoutBlocFenetre\").show();\r",
@@ -548,7 +536,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "insertBloc",
                 "fn": "insertBloc",
                 "implHandler": [
                     "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
@@ -589,7 +576,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "blocSelection",
                 "fn": "blocSelection",
                 "implHandler": [
                     "if (component.canEdit){\r",
@@ -937,7 +923,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "savePage",
                 "fn": "savePage",
                 "implHandler": [
                     "var me=this;\r",
@@ -1014,7 +999,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowBeforeDestroy",
                 "fn": "onWindowBeforeDestroy",
                 "implHandler": [
                     "if (component.isXType(\"window\")){\r",
@@ -1039,7 +1023,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPagesSitesComboBeforeRender",
                 "fn": "onPagesSitesComboBeforeRender",
                 "implHandler": [
                     "var me=this;\r",
@@ -1069,7 +1052,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "pagePreviewSelect",
                 "fn": "pagePreviewSelect",
                 "implHandler": [
                     "Ext.getStore(\"PagesPreviewStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
@@ -1091,7 +1073,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPreviewPageTreeSelect",
                 "fn": "onPreviewPageTreeSelect",
                 "implHandler": [
                     "Ext.getCmp(\"contribPreviewMain\").removeAll();\r",
@@ -1139,7 +1120,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPagePreviewRefreshBtnClick",
                 "fn": "onPagePreviewRefreshBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1180,7 +1160,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderBlocks",
                 "fn": "renderBlocks",
                 "designer|params": [
                     "mBlocks",
@@ -1226,7 +1205,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveBlocks",
                 "fn": "saveBlocks",
                 "designer|params": [
                     "startComp"
@@ -1273,7 +1251,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdvancedPreviewPageRefreshClick",
                 "fn": "onAdvancedPreviewPageRefreshClick",
                 "implHandler": [
                     "var record=Ext.getCmp(\"previewPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1321,7 +1298,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelActivate",
                 "fn": "onPanelActivate",
                 "implHandler": [
                     "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1345,7 +1321,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onNewPageMaskSelectorAfterRender",
                 "fn": "onNewPageMaskSelectorAfterRender",
                 "implHandler": [
                     "var target=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1368,7 +1343,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "breadcrumbBuilder",
                 "fn": "breadcrumbBuilder",
                 "designer|params": [
                     "node",
@@ -1396,7 +1370,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPageMaskDisplayBtnClick",
                 "fn": "onPageMaskDisplayBtnClick",
                 "implHandler": [
                     "var recordM = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().get(\"maskId\");\r",

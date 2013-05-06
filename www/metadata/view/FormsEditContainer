@@ -26,7 +26,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFormsEditContainerAfterRender",
                 "fn": "onFormsEditContainerAfterRender",
                 "implHandler": [
                     "this.dd = Ext.create('Rubedo.view.PortalDropZone', this, this.dropConfig);"
@@ -44,7 +43,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent",
                 "name": "validatedrop",
                 "params": [
                     "e"
@@ -60,7 +58,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent1",
                 "name": "beforedragover",
                 "params": [
                     "e"
@@ -76,7 +73,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent2",
                 "name": "dragover",
                 "params": [
                     "e"
@@ -92,7 +88,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent3",
                 "name": "beforedrop",
                 "params": [
                     "e"
@@ -108,7 +103,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent4",
                 "name": "drop",
                 "params": [
                     "e"

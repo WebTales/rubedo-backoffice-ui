@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "localiserId": "mediasWindow",
+        "container|align": "stretch",
         "height": 651,
         "id": "DAMInterface",
         "width": 1038,
@@ -59,8 +59,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "2ec98bdc-7ba5-485e-9571-0594da1e0c3a",
             "cn": [
@@ -76,7 +75,6 @@
                         "height": 45,
                         "margin": "0 10 0 0",
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "35bf1649-d74b-4d34-a212-8bfd964817e8",
@@ -89,7 +87,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender11",
                                 "fn": "onImageRender11",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
@@ -111,8 +108,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
-                        "styleHtmlContent": true,
-                        "designer|userClassName": "MyContainer9"
+                        "styleHtmlContent": true
                     },
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [
@@ -124,7 +120,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
                                 ],
@@ -148,9 +143,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
             "cn": [
@@ -163,11 +156,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "addDAMBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -197,12 +189,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "DAMDeleteBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -237,7 +228,6 @@
                         "hidden": true,
                         "id": "DAMROBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
@@ -261,7 +251,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onDAMROBtnRender",
                                 "fn": "onDAMROBtnRender",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"write.ui.dam\"])&&(ACL.interfaceRights[\"read.ui.dam\"])){\r",
@@ -284,12 +273,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "layout|flex": null,
                         "localiserId": "editBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "DAMUpdateBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
@@ -318,12 +306,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
-                        "localiserId": "clipboardGroup",
                         "disabled": true,
                         "id": "DAMPPBtnGroup",
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -349,7 +336,6 @@
                                 "hidden": true,
                                 "id": null,
                                 "width": null,
-                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -375,7 +361,6 @@
                             "userConfig": {
                                 "hidden": true,
                                 "id": "addToSCMTBtn",
-                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -394,7 +379,6 @@
                             "userConfig": {
                                 "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -424,7 +408,6 @@
                         "container|columns": 2,
                         "disabled": true,
                         "hidden": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4
@@ -440,7 +423,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": null,
-                                "designer|userClassName": "MyButton62",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -459,7 +441,6 @@
                             "userConfig": {
                                 "ACL": "write.ui.dam",
                                 "id": null,
-                                "designer|userClassName": "MyButton63",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
@@ -485,8 +466,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "1a661f33-69b8-437e-8bae-79ea26ea5094"
                 },
@@ -501,7 +481,6 @@
                         "RApplication": "dam",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -530,7 +509,6 @@
                 "id": "DAMFacetBox",
                 "padding": null,
                 "width": 240,
-                "designer|userClassName": "MyPanel57",
                 "overflowY": "auto",
                 "bodyPadding": "10 16 10 10",
                 "title": ""
@@ -545,8 +523,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
-                        "designer|userClassName": "MyToolbar61"
+                        "dock": "top"
                     },
                     "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
                     "cn": [
@@ -560,7 +537,6 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "id": "DAMSearchField",
-                                "designer|userClassName": "MyTextField4",
                                 "fieldLabel": ""
                             },
                             "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
@@ -573,7 +549,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onDAMSearchFieldSpecialkey",
                                         "fn": "onDAMSearchFieldSpecialkey",
                                         "implHandler": [
                                             "if (e.getKey() == e.ENTER) {\r",
@@ -597,7 +572,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "id": "DAMSearchBtn",
-                                "designer|userClassName": "MyButton167",
                                 "iconCls": "search",
                                 "text": ""
                             },
@@ -616,7 +590,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "designer|userClassName": "MyPanel52",
                 "overflowY": "auto",
                 "layout": "fit"
             },
@@ -646,7 +619,6 @@
                     "userConfig": {
                         "dock": "bottom",
                         "width": 360,
-                        "designer|userClassName": "MyPagingToolbar2",
                         "displayInfo": true,
                         "store": "DAMFacetteStore"
                     },
@@ -662,7 +634,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMMTGridRender",
                 "fn": "onDAMMTGridRender",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").load();\r",
@@ -683,7 +654,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDAMInterfaceDestroy",
                 "fn": "onDAMInterfaceDestroy",
                 "implHandler": [
                     "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
@@ -707,8 +677,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 34,
-                "id": "DAMActiveFacetBox",
-                "designer|userClassName": "MyToolbar3"
+                "id": "DAMActiveFacetBox"
             },
             "designerId": "a933a0ea-82ad-49bf-aef8-b28d0a54fc02"
         }

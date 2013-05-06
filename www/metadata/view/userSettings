@@ -34,7 +34,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTabPanel8",
                 "activeTab": 0
             },
             "designerId": "9b18d5fa-c863-4308-b52a-7c7737c83404",
@@ -48,7 +47,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "userInfoDisplay",
-                        "designer|userClassName": "MyForm22",
                         "designer|displayName": "",
                         "autoScroll": true,
                         "layout": "hbox",
@@ -65,8 +63,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "informationsTab",
-                                "designer|userClassName": "TabConfig24"
+                                "localiserId": "informationsTab"
                             },
                             "designerId": "c0c5a29e-4423-4050-8757-2fc6971211e7",
                             "customConfigs": [
@@ -90,7 +87,6 @@
                                 "height": 385,
                                 "margin": 0,
                                 "width": 356,
-                                "designer|userClassName": "MyFieldSet5",
                                 "autoScroll": true,
                                 "title": "Informations"
                             },
@@ -113,7 +109,6 @@
                                     "userConfig": {
                                         "localiserId": "nameField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField5",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
                                         "readOnly": null,
@@ -138,7 +133,6 @@
                                     "userConfig": {
                                         "localiserId": "loginField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "Login ",
                                         "name": "login",
                                         "allowBlank": false,
@@ -163,7 +157,6 @@
                                     "userConfig": {
                                         "localiserId": "mailField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField22",
                                         "fieldLabel": "E-mail ",
                                         "name": "email",
                                         "allowBlank": false,
@@ -188,7 +181,6 @@
                                     "userConfig": {
                                         "localiserId": "civilityField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox4",
                                         "fieldLabel": "Civilité ",
                                         "name": "title",
                                         "editable": false,
@@ -221,7 +213,6 @@
                                     "userConfig": {
                                         "localiserId": "organisationField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Organisation ",
                                         "name": "organisation"
                                     },
@@ -244,7 +235,6 @@
                                     "userConfig": {
                                         "localiserId": "serviceField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField20",
                                         "fieldLabel": "Service ",
                                         "name": "service"
                                     },
@@ -267,7 +257,6 @@
                                     "userConfig": {
                                         "localiserId": "functionField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField21",
                                         "fieldLabel": "Fonction ",
                                         "name": "post"
                                     },
@@ -290,7 +279,6 @@
                                     "userConfig": {
                                         "localiserId": "phoneField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField23",
                                         "fieldLabel": "Téléphone ",
                                         "name": "telephone"
                                     },
@@ -313,7 +301,6 @@
                                     "userConfig": {
                                         "localiserId": "mobileField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField24",
                                         "fieldLabel": "Mobile ",
                                         "name": "mobile"
                                     },
@@ -336,7 +323,6 @@
                                     "userConfig": {
                                         "localiserId": "coordinatesField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField25",
                                         "fieldLabel": "Coordonnées ",
                                         "name": "coordinates"
                                     },
@@ -359,7 +345,6 @@
                                     "userConfig": {
                                         "localiserId": "languageField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox5",
                                         "fieldLabel": "Langue ",
                                         "name": "language",
                                         "editable": false,
@@ -387,7 +372,6 @@
                                     "userConfig": {
                                         "localiserId": "countryField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField79",
                                         "fieldLabel": "Pays ",
                                         "name": "country"
                                     },
@@ -411,7 +395,6 @@
                                         "localiserId": "applyBtn",
                                         "layout|anchor": "100%",
                                         "id": "userInfoEdit",
-                                        "designer|userClassName": "MyButton130",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "3d93bfd0-6d10-4763-bd53-081f63ee0c1c",
@@ -438,7 +421,6 @@
                                 "height": null,
                                 "margin": "0 0 0 10",
                                 "width": 200,
-                                "designer|userClassName": "MyFieldSet4",
                                 "title": "Photo"
                             },
                             "designerId": "48d0b8d5-9096-43aa-bd78-dce11f4337f8",
@@ -462,7 +444,6 @@
                                         "id": "userProfilePicture",
                                         "margin": "0 0 18 18",
                                         "width": 140,
-                                        "designer|userClassName": "MyImg12",
                                         "src": "resources/images/userBig.png"
                                     },
                                     "designerId": "668838f7-ef25-4f75-83c6-f31331501a7c"
@@ -478,7 +459,6 @@
                                         "localiserId": "changeBtn",
                                         "layout|anchor": "100%",
                                         "margin": "0 0 10 0",
-                                        "designer|userClassName": "MyButton85",
                                         "text": "Changer"
                                     },
                                     "designerId": "ea146464-9179-4603-b751-e313e155217a",
@@ -498,7 +478,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "handler",
                                                 "fn": "handler",
                                                 "designer|params": [
                                                     "button",
@@ -524,7 +503,6 @@
                                         "layout|anchor": "100%",
                                         "id": "userProfilePictureDelete",
                                         "margin": null,
-                                        "designer|userClassName": "MyButton128",
                                         "text": "Supprimer"
                                     },
                                     "designerId": "da5b5540-e49c-4bc0-ac26-5dab9caaca96",
@@ -548,7 +526,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm27",
                         "bodyPadding": 10,
                         "title": "Accès"
                     },
@@ -562,8 +539,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "accessTab",
-                                "designer|userClassName": "TabConfig28"
+                                "localiserId": "accessTab"
                             },
                             "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d",
                             "customConfigs": [
@@ -583,7 +559,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "changePassFieldSet",
-                                "designer|userClassName": "MyFieldSet9",
                                 "title": "Changer de mot de passe"
                             },
                             "designerId": "b73318c6-650c-4d4f-ae83-7102e1441070",
@@ -605,7 +580,6 @@
                                     "userConfig": {
                                         "localiserId": "oldPasswordField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField39",
                                         "fieldLabel": "Mot de passe actuel ",
                                         "labelWidth": 160,
                                         "name": "oldPassword",
@@ -630,7 +604,6 @@
                                     "userConfig": {
                                         "localiserId": "newPasswordField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField40",
                                         "fieldLabel": "Nouveau mot de passe ",
                                         "labelWidth": 160,
                                         "name": "newPassword",
@@ -655,7 +628,6 @@
                                     "userConfig": {
                                         "localiserId": "newPasswordConfirmField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField41",
                                         "fieldLabel": "Confirmer le mot passe ",
                                         "labelWidth": 160,
                                         "name": "newPasswordConfirm",
@@ -682,7 +654,6 @@
                                         "localiserId": "changePasswordBtn",
                                         "layout|anchor": "100%",
                                         "id": "changeMyPasswordBtn",
-                                        "designer|userClassName": "MyButton153",
                                         "text": "Changer le mot de passe"
                                     },
                                     "designerId": "75ed947b-9aca-4a8b-9ef8-f7c4e9d1773b",
@@ -729,8 +700,7 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom",
-                "height": null,
-                "designer|userClassName": "MyToolbar67"
+                "height": null
             },
             "designerId": "ca2bdad4-196f-494a-85a4-042d5ef64dae",
             "cn": [
@@ -742,8 +712,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill33"
+                        "layout|flex": null
                     },
                     "designerId": "382f62a2-c828-4666-89dc-9f4e631e6fc6"
                 },
@@ -757,7 +726,6 @@
                     "userConfig": {
                         "localiserId": "desktopBtn",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton271",
                         "iconCls": "personalize",
                         "text": "Bureau"
                     },
@@ -778,7 +746,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",

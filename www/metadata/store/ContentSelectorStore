@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy27",
                 "api": [
                     "{\r",
                     "                    read: 'contents'\r",
@@ -42,8 +41,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader26"
+                        "root": "data"
                     },
                     "designerId": "db4cbb47-2692-4405-9a9e-4141c52f9ae5"
                 }
@@ -57,7 +55,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "store.getProxy().extraParams.tFilter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$nin\\\",\\\"value\\\":\"+Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getStore(\"SystemCTStore\").getRange(),\"data\"), \"id\"))+\"}]\";"

@@ -32,7 +32,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm8",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -48,7 +47,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "champCreerTC",
-                        "designer|userClassName": "MyTextField10",
                         "fieldLabel": "Nom ",
                         "allowBlank": false
                     },
@@ -62,7 +60,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onChampCreerTCSpecialkey",
                                 "fn": "onChampCreerTCSpecialkey",
                                 "implHandler": [
                                     "if (e.getKey() == e.ENTER) {\r",
@@ -87,7 +84,6 @@
                         "ACL": "write.ui.dependantTypes",
                         "layout|anchor": "100%",
                         "id": "champTCIsDep",
-                        "designer|userClassName": "MyCheckbox3",
                         "fieldLabel": "Imbriqué ",
                         "boxLabel": ""
                     },
@@ -110,7 +106,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "boutonCreerTC",
-                        "designer|userClassName": "MyButton70",
                         "text": "Créer un nouveau type de contenu"
                     },
                     "designerId": "5e9ce190-3a65-410a-8f33-122344d58a33"

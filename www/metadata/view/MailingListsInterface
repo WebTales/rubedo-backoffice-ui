@@ -35,8 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar62"
+                "dock": "top"
             },
             "designerId": "dac24e4b-bd2f-42c2-a0ce-05f572b56766",
             "cn": [
@@ -52,7 +51,6 @@
                         "localiserId": "addBtn",
                         "layout|flex": null,
                         "id": "MailingListsAdd",
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -85,7 +83,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "MailingListsRemove",
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -118,7 +115,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "MailingListsUpdate",
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -146,7 +142,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onWorkspaceSaveAfterRender",
                                 "fn": "onWorkspaceSaveAfterRender",
                                 "implHandler": [
                                     "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -171,8 +166,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill27"
+                        "layout|flex": null
                     },
                     "designerId": "d71b6f49-d6f4-44f0-858e-469b91d8d9c4"
                 }
@@ -188,7 +182,6 @@
             "userConfig": {
                 "id": "MLMainGrid",
                 "width": 200,
-                "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "forceFit": true,
                 "store": "MailingListsCombo"
@@ -202,9 +195,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView31"
-                    },
                     "designerId": "71d887e0-631c-4810-9227-299a16f5cf94"
                 },
                 {
@@ -216,7 +206,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "nameColumn",
-                        "designer|userClassName": "MyColumn70",
                         "dataIndex": "name",
                         "text": "Nom"
                     },
@@ -237,7 +226,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -273,7 +261,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "MLPropsForm",
-                "designer|userClassName": "MyForm43",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Propriétés"
@@ -290,7 +277,6 @@
                     "userConfig": {
                         "localiserId": "nameField",
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField74",
                         "fieldLabel": "Nom",
                         "labelWidth": 140,
                         "name": "name",
@@ -341,7 +327,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet1",
                         "title": "Expéditeur"
                     },
                     "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
@@ -355,7 +340,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField7",
                                 "fieldLabel": "Adresse de l'expéditeur",
                                 "labelWidth": 140,
                                 "name": "fromAddress",
@@ -372,7 +356,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField8",
                                 "fieldLabel": "Nom de l'expéditeur",
                                 "labelWidth": 140,
                                 "name": "fromName"
@@ -389,7 +372,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyFieldSet2",
                         "title": "Réponse"
                     },
                     "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
@@ -403,7 +385,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField9",
                                 "fieldLabel": "Adresse de réponse",
                                 "labelWidth": 140,
                                 "name": "replyToAddress",
@@ -420,7 +401,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField10",
                                 "fieldLabel": "Nom de réponse",
                                 "labelWidth": 140,
                                 "name": "replyToName"
@@ -438,7 +418,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField11",
                         "fieldLabel": "Adresse d'erreur",
                         "labelWidth": 140,
                         "name": "returnPathAddress",

@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm38",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -44,7 +43,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyFileUpload5",
                         "fieldLabel": "Fichier",
                         "name": "file",
                         "allowBlank": false,
@@ -62,7 +60,6 @@
                     "userConfig": {
                         "layout|anchor": "50%",
                         "margin": "0 10 0 0",
-                        "designer|userClassName": "MyButton218",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -76,7 +73,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -134,7 +130,6 @@
                     "userConfig": {
                         "layout|anchor": "50%",
                         "margin": "0 0 0 10",
-                        "designer|userClassName": "MyButton219",
                         "iconCls": "close",
                         "text": "Annuler"
                     },
@@ -148,7 +143,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",

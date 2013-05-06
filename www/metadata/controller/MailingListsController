@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMLMainGridSelectionChange",
                 "fn": "onMLMainGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -61,7 +60,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onNewMLSubmitBtnClick",
                 "fn": "onNewMLSubmitBtnClick",
                 "implHandler": [
                     "var form = button.up().getForm();\r",
@@ -87,7 +85,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMailingListsAddClick",
                 "fn": "onMailingListsAddClick",
                 "implHandler": [
                     "Ext.widget(\"newMLWindow\").show();"
@@ -107,7 +104,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMailingListsRemoveClick",
                 "fn": "onMailingListsRemoveClick",
                 "implHandler": [
                     "var delCon = Ext.widget('delConfirmZ');\r",
@@ -132,7 +128,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMailingListsUpdateClick",
                 "fn": "onMailingListsUpdateClick",
                 "implHandler": [
                     "var target = Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected();\r",

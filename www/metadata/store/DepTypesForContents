@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "                    create: 'content-types/create',\r",
@@ -62,8 +61,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "f377fb72-db71-4505-b2c8-2d7970f61530"
                 }
@@ -78,7 +76,6 @@
             "codeClass": null,
             "userConfig": {
                 "property": "dependant",
-                "designer|userClassName": "MyFilter",
                 "value": [
                     "true"
                 ]
@@ -93,8 +90,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "type",
-                "designer|userClassName": "MyField2"
+                "name": "type"
             },
             "designerId": "4b122b50-d3a3-46e8-8497-4cd2a398759d"
         },
@@ -107,8 +103,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "dependant",
-                "type": "boolean",
-                "designer|userClassName": "MyField53"
+                "type": "boolean"
             },
             "designerId": "fde37044-a53a-4136-8a71-47337338973d"
         },
@@ -120,8 +115,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field153"
+                "name": "id"
             },
             "designerId": "05ca686e-9689-466a-912d-ee5be996adf9"
         }

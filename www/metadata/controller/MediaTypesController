@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onNewMTBtnClick",
                 "fn": "onNewMTBtnClick",
                 "implHandler": [
                     "Ext.widget(\"newMTWindow\").show();"
@@ -39,7 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onCreateNewMTBtnClick",
                 "fn": "onCreateNewMTBtnClick",
                 "implHandler": [
                     "if (button.up().getForm().isValid()) {\r",
@@ -65,7 +63,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceNoSelect",
                 "fn": "resetInterfaceNoSelect",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.disable();});\r",
@@ -93,7 +90,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetInterfaceSelect",
                 "fn": "resetInterfaceSelect",
                 "designer|params": [
                     "record"
@@ -156,7 +152,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainMTGridSelect",
                 "fn": "onMainMTGridSelect",
                 "implHandler": [
                     "this.resetInterfaceSelect(record);"
@@ -176,7 +171,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRemoveMTBtnClick",
                 "fn": "onRemoveMTBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -222,7 +216,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateMT",
                 "fn": "updateMT",
                 "designer|params": [
                     "record"
@@ -252,7 +245,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSaveMTBtnClick",
                 "fn": "onSaveMTBtnClick",
                 "implHandler": [
                     "this.updateMT(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected());"
@@ -272,7 +264,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onNewMTFieldBtnClick",
                 "fn": "onNewMTFieldBtnClick",
                 "implHandler": [
                     "Ext.widget(\"MTFieldAddWindow\").show();"
@@ -292,7 +283,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderMTField",
                 "fn": "renderMTField",
                 "designer|params": [
                     "protoData",
@@ -340,7 +330,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nameAvailable",
                 "fn": "nameAvailable",
                 "designer|params": [
                     "name"
@@ -367,7 +356,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMTFieldInsertBtnClick",
                 "fn": "onMTFieldInsertBtnClick",
                 "implHandler": [
                     "var proto=Ext.clone(Ext.getCmp(\"MTFieldSelectGrid\").getSelectionModel().getLastSelected().getData());\r",
@@ -390,7 +378,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "recordFields",
                 "fn": "recordFields",
                 "designer|params": [
                     "target"
@@ -429,7 +416,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMTFieldSelectGridItemDblClick",
                 "fn": "onMTFieldSelectGridItemDblClick",
                 "implHandler": [
                     "this.onMTFieldInsertBtnClick(Ext.getCmp(\"MTFieldInsertBtn\"));"
@@ -449,7 +435,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var usedNames=[\"original\", \"text\"];\r",
@@ -570,7 +555,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nameValidator",
                 "fn": "nameValidator",
                 "designer|params": [
                     "name"
@@ -599,7 +583,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMTfieldUpClick",
                 "fn": "onMTfieldUpClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -625,7 +608,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMTfieldDownClick",
                 "fn": "onMTfieldDownClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -649,7 +631,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMTfieldDeleterClick",
                 "fn": "onMTfieldDeleterClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -677,7 +658,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onCopyMTBtnClick",
                 "fn": "onCopyMTBtnClick",
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().data);\r",

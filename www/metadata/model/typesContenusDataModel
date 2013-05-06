@@ -20,8 +20,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": null,
-                "name": "type",
-                "designer|userClassName": "MyField2"
+                "name": "type"
             },
             "designerId": "70507101-9150-49a0-b25e-27da2813a637"
         },
@@ -35,8 +34,7 @@
             "userConfig": {
                 "mapping": "fields",
                 "name": "champs",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
             "designerId": "c74690d6-b0d7-4e74-97b0-7adb41d4a20a"
         },
@@ -50,8 +48,7 @@
             "userConfig": {
                 "mapping": null,
                 "name": "vocabularies",
-                "type": "auto",
-                "designer|userClassName": "MyField2"
+                "type": "auto"
             },
             "designerId": "59ce6e62-cced-4e36-aceb-949093bfc475"
         },
@@ -65,8 +62,7 @@
             "userConfig": {
                 "mapping": null,
                 "name": "dependant",
-                "type": "boolean",
-                "designer|userClassName": "MyField53"
+                "type": "boolean"
             },
             "designerId": "40f89b06-9db9-422a-a7af-5b81ef5e9bca"
         },
@@ -83,8 +79,7 @@
                 ],
                 "mapping": null,
                 "name": "activateDisqus",
-                "type": "boolean",
-                "designer|userClassName": "MyField53"
+                "type": "boolean"
             },
             "designerId": "e7cb6cd1-995f-4ece-b978-dbef7d5be405"
         },
@@ -97,8 +92,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": null,
-                "name": "dependantTypes",
-                "designer|userClassName": "MyField54"
+                "name": "dependantTypes"
             },
             "designerId": "13953f15-65ae-4735-83c9-5222468a7272"
         },
@@ -110,8 +104,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "MyField85"
+                "name": "version"
             },
             "designerId": "83d240cd-2673-4959-a955-bc76773e73d9"
         },
@@ -123,8 +116,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field103"
+                "name": "id"
             },
             "designerId": "72b0e420-c12b-40cb-9b27-2b968712e6ea"
         },
@@ -138,8 +130,7 @@
             "userConfig": {
                 "dateFormat": null,
                 "name": "createTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "49c0e80c-0478-43cc-b2c8-7f493889d3ad"
         },
@@ -153,8 +144,7 @@
             "userConfig": {
                 "mapping": "createUser.fullName",
                 "name": "createUser",
-                "persist": false,
-                "designer|userClassName": "field60"
+                "persist": false
             },
             "designerId": "d2203896-ffd1-4be1-8c05-fc6c39766f50"
         },
@@ -167,8 +157,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "updateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "a5a2780c-7ffb-4a89-bb92-9a142403659a"
         },
@@ -182,8 +171,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "createTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "2d4cd5a8-5e3e-48d2-9a00-ddc0ed6559e7"
         },
@@ -197,8 +185,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "65c9ea64-97e4-41f1-bda4-f84c50cfccac"
         },
@@ -210,8 +197,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "workspaces",
-                "designer|userClassName": "field280"
+                "name": "workspaces"
             },
             "designerId": "e563e840-0177-4786-98e5-24ebd95917d6"
         },
@@ -225,8 +211,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "e40c3d25-895d-4a10-9bef-d765fa6f6864"
         },
@@ -241,8 +226,7 @@
                 "defaultValue": [
                     "\"Basique\""
                 ],
-                "name": "workflow",
-                "designer|userClassName": "field307"
+                "name": "workflow"
             },
             "designerId": "87e55298-8560-4b83-962d-09eaa62ee10d"
         },
@@ -254,8 +238,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "CTType",
-                "designer|userClassName": "field309"
+                "name": "CTType"
             },
             "designerId": "5a8c86f8-d36a-4ef5-92ec-95ce3ebc6bba"
         },
@@ -271,8 +254,7 @@
                     "false"
                 ],
                 "name": "system",
-                "type": "boolean",
-                "designer|userClassName": "field315"
+                "type": "boolean"
             },
             "designerId": "a8cf29cf-aa8c-4c91-891a-a25465dd95de"
         }

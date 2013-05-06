@@ -22,9 +22,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView2"
-            },
             "designerId": "1768ec9b-890e-4c0e-8028-98798e539c51"
         },
         {
@@ -37,7 +34,6 @@
             "userConfig": {
                 "filter": true,
                 "localiserId": "titleColumn",
-                "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
                 "flex": 1
@@ -67,7 +63,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -122,7 +117,6 @@
                     "}"
                 ],
                 "localiserId": "stateColumn",
-                "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
                 "text": "Etat",
                 "flex": 1
@@ -152,7 +146,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -198,7 +191,6 @@
                 ],
                 "localiserId": "onlineColumn",
                 "width": 60,
-                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -228,9 +220,6 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
-            "userConfig": {
-                "designer|userClassName": "MyCheckboxSelectionModel5"
-            },
             "designerId": "c81741b8-eace-4a05-a234-d574f7bfabcc"
         },
         {
@@ -243,7 +232,6 @@
             "userConfig": {
                 "dock": "bottom",
                 "width": 360,
-                "designer|userClassName": "MyPagingToolbar",
                 "displayInfo": true,
                 "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
                 "emptyMsg": "Rien à afficher",

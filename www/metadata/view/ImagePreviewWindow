@@ -37,7 +37,6 @@
             "userConfig": {
                 "maxHeight": null,
                 "maxWidth": null,
-                "designer|userClassName": "MyImg8",
                 "resizable": [
                     "false"
                 ],
@@ -53,7 +52,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onImageRender",
                         "fn": "onImageRender",
                         "implHandler": [
                             "component.getEl().on(\"load\", function(){\r",

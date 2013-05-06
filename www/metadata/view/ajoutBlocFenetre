@@ -42,7 +42,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "BlocsSelectGrid",
-                "designer|userClassName": "MyGridPanel8",
                 "title": "",
                 "store": "BlocsDataStore"
             },
@@ -55,9 +54,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView6"
-                    },
                     "designerId": "e5aac3f2-12f9-41d0-bfeb-41e9caff91a1"
                 },
                 {
@@ -69,7 +65,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "addBlockTypeColumn",
-                        "designer|userClassName": "MyColumn15",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
@@ -90,9 +85,6 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGroupingFeature4"
-                    },
                     "designerId": "b0cf21c8-d32e-4826-8310-6baab3100177",
                     "cn": [
                         {
@@ -103,7 +95,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name}"
                                 ],
@@ -126,7 +117,6 @@
                 "layout|flex": 1.3,
                 "id": "PaneauBlocsDetail",
                 "styleHtmlContent": true,
-                "designer|userClassName": "MyPanel61",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
@@ -144,7 +134,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "tpl",
                         "implHandler": [
                             "{description}"
                         ],
@@ -163,8 +152,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar16"
+                "dock": "bottom"
             },
             "designerId": "34af955f-e5f0-4ad4-a966-a4b024424451",
             "cn": [
@@ -176,8 +164,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill16"
+                        "layout|flex": null
                     },
                     "designerId": "8804b6d2-1710-4da3-8c89-5497ca27c176"
                 },
@@ -193,7 +180,6 @@
                         "layout|flex": null,
                         "id": "boutonAjouterBloc",
                         "margin": null,
-                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
@@ -219,7 +205,6 @@
                         "hidden": true,
                         "id": "addPageBlocBtn",
                         "margin": null,
-                        "designer|userClassName": "MyButton72",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },

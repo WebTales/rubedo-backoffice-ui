@@ -41,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxAdded",
                 "fn": "onComboboxAdded",
                 "implHandler": [
                     "component.getStore().addListener(\"load\",function(){\r",
@@ -134,7 +133,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboboxBeforeDestroy",
                 "fn": "onComboboxBeforeDestroy",
                 "implHandler": [
                     "component.getStore().removeAll();"

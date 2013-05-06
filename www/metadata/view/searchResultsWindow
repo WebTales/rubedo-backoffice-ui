@@ -30,7 +30,6 @@
                 "layout|flex": null,
                 "id": "searchFacetBox",
                 "width": 240,
-                "designer|userClassName": "MyForm35",
                 "overflowY": "auto",
                 "bodyPadding": "0 20 0 10",
                 "title": "Filtres"
@@ -45,8 +44,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
-                        "designer|userClassName": "MyToolbar50"
+                        "dock": "top"
                     },
                     "designerId": "2f9dc766-5c89-4824-9f2c-c5aec6163e59",
                     "cn": [
@@ -60,7 +58,6 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "id": "ESFacetQueryField",
-                                "designer|userClassName": "MyTextField62",
                                 "fieldLabel": "",
                                 "labelWidth": 40,
                                 "name": "query",
@@ -76,7 +73,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onESFacetQueryFieldSpecialkey",
                                         "fn": "onESFacetQueryFieldSpecialkey",
                                         "implHandler": [
                                             "if (e.getKey() == e.ENTER) {\r",
@@ -98,8 +94,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 0.01,
-                                "designer|userClassName": "MyFill22"
+                                "layout|flex": 0.01
                             },
                             "designerId": "512f81f9-c89e-4638-b647-ca6a0bf63761"
                         },
@@ -113,7 +108,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "id": "ESFacetQueryBtn",
-                                "designer|userClassName": "MyButton190",
                                 "iconCls": "search",
                                 "text": ""
                             },
@@ -131,7 +125,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSearchResultsWindowBeforeClose",
                 "fn": "onSearchResultsWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"ESFacetteStore\").removeAll();\r",
@@ -174,8 +167,6 @@
                 "layout|flex": 1,
                 "id": "ResultContentsGrid",
                 "itemId": null,
-                "designer|userClassName": "MyGridPanel20",
-                "designer|userAlias": "mygridpanel20",
                 "title": "",
                 "store": "ESFacetteStore"
             },
@@ -188,9 +179,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView2"
-                    },
                     "designerId": "5dc083f4-5a24-48aa-9b80-e39f6ddee069"
                 },
                 {
@@ -201,7 +189,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn5",
                         "dataIndex": "text",
                         "text": "Titre",
                         "flex": 2
@@ -219,7 +206,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyColumn58",
                         "dataIndex": "author",
                         "text": "Auteur",
                         "flex": 1
@@ -234,7 +220,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyDateColumn7",
                         "dataIndex": "lastUpdateTime",
                         "text": "Date de dernière modification",
                         "flex": 1.2,
@@ -251,7 +236,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "width": 80,
-                        "designer|userClassName": "MyNumberColumn1",
                         "dataIndex": "score",
                         "text": "Pertinence",
                         "format": "0"
@@ -268,7 +252,6 @@
                     "userConfig": {
                         "dock": "bottom",
                         "width": 360,
-                        "designer|userClassName": "MyPagingToolbar4",
                         "displayInfo": true,
                         "store": "ESFacetteStore"
                     },
@@ -286,8 +269,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "top",
-                "id": "ESSearchTopBar",
-                "designer|userClassName": "MyToolbar63"
+                "id": "ESSearchTopBar"
             },
             "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
             "cn": [
@@ -304,7 +286,6 @@
                         "cls": null,
                         "height": 32,
                         "id": "SearchActiveFacetBar",
-                        "designer|userClassName": "MyToolbar58",
                         "enableOverflow": true
                     },
                     "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
@@ -317,8 +298,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill29"
+                        "layout|flex": null
                     },
                     "designerId": "5ca14368-c13a-4a27-965c-1e0ed7bb9217"
                 },
@@ -333,7 +313,6 @@
                         "layout|flex": null,
                         "id": "ESFavBtn",
                         "itemId": "boutonCreerRaccourci",
-                        "designer|userClassName": "MyButton253",
                         "iconCls": "favorite_add_med",
                         "scale": "medium",
                         "text": ""
@@ -351,7 +330,6 @@
                         "layout|flex": null,
                         "hidden": true,
                         "id": "saveGeoQueryBtn",
-                        "designer|userClassName": "MyButton302",
                         "iconCls": "ouiSpetit",
                         "text": "Enregistrer la requête"
                     },
@@ -365,7 +343,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onSaveGeoQueryBtnClick",
                                 "fn": "onSaveGeoQueryBtnClick",
                                 "implHandler": [
                                     "var rez = Ext.JSON.encode(Ext.getStore(\"ESFacetteStore\").activeFacettes);\r",
@@ -389,7 +366,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSearchResultsWindowBeforeRender",
                 "fn": "onSearchResultsWindowBeforeRender",
                 "implHandler": [
                     "if (component.geoQueryMode){\r",

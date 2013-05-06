@@ -45,7 +45,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "734b1e25-11a5-4527-8c3e-5e23d327a321"
@@ -59,7 +58,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "223429ac-0ed5-4055-b1e3-8e635bf175b1"
@@ -75,8 +73,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "e4f365ae-720a-4be4-838a-5709d0412e3f",
             "cn": [
@@ -90,7 +87,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "content-icon",
                         "text": "Types de contenus <b>></b> "
                     },
@@ -110,8 +106,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "7bd9dbfb-6307-4a82-b0a3-d9230df88731",
             "cn": [
@@ -126,7 +121,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "2512ca22-9569-40ff-9aaf-c9e00d1d95fb",
@@ -139,7 +133,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');"
@@ -160,8 +153,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "itemId": "boiteBarreMeta",
-                        "designer|userClassName": "MyContainer9"
+                        "itemId": "boiteBarreMeta"
                     },
                     "designerId": "27d0a539-abfe-4fed-8d18-ac0172113b20",
                     "cn": [
@@ -173,7 +165,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],
@@ -197,9 +188,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "6d797021-4ab9-433b-9fae-11f6949876b4",
             "cn": [
@@ -216,7 +205,6 @@
                         "layout|flex": null,
                         "id": "boutonNouveauTypeContenu",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -251,7 +239,6 @@
                         "disabled": true,
                         "id": "boutonSupprimerTypeContenu",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -285,7 +272,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 4
@@ -314,7 +300,6 @@
                             "userConfig": {
                                 "localiserId": "newFieldBtn",
                                 "id": "boutonOuvrirFenetreTC",
-                                "designer|userClassName": "MyButton112",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
                                 "scale": "large",
@@ -340,7 +325,6 @@
                                 "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "TCfieldUp",
-                                "designer|userClassName": "MyButton113",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
                                 "scale": "large",
@@ -366,7 +350,6 @@
                                 "localiserId": "moveBtn",
                                 "disabled": true,
                                 "id": "TCfieldDown",
-                                "designer|userClassName": "MyButton114",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
                                 "scale": "large",
@@ -392,7 +375,6 @@
                                 "localiserId": "removeFieldBtn",
                                 "disabled": true,
                                 "id": "TCfieldDeleter",
-                                "designer|userClassName": "MyButton115",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "scale": "large",
@@ -421,7 +403,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -447,7 +428,6 @@
                                 "localiserId": "duplicateBtn",
                                 "id": "boutonCopierTC",
                                 "width": null,
-                                "designer|userClassName": "MyButton17",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
@@ -478,7 +458,6 @@
                             "userConfig": {
                                 "hidden": true,
                                 "id": "ajouterPanierTC",
-                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -497,7 +476,6 @@
                             "userConfig": {
                                 "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -528,7 +506,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4
@@ -558,7 +535,6 @@
                                 "localiserId": "saveBtn",
                                 "id": "boutonEnregistrerTypeContenu",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
@@ -582,7 +558,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onBoutonEnregistrerTypeContenuAfterRender",
                                         "fn": "onBoutonEnregistrerTypeContenuAfterRender",
                                         "implHandler": [
                                             "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -615,7 +590,6 @@
                         "container|columns": 1,
                         "disabled": true,
                         "minWidth": null,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Administration",
                         "columns": null
@@ -646,7 +620,6 @@
                                 "id": "purgeCTContentsBtn",
                                 "itemId": null,
                                 "minWidth": null,
-                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "database_remove_big",
@@ -680,7 +653,6 @@
                         "container|columns": 2,
                         "disabled": true,
                         "hidden": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Fichier",
                         "columns": 4
@@ -696,7 +668,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "AdminfTCExporter",
-                                "designer|userClassName": "MyButton62",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
@@ -715,7 +686,6 @@
                             "userConfig": {
                                 "ACL": "write.ui.contentTypes",
                                 "id": "AdminfTCImporter",
-                                "designer|userClassName": "MyButton63",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
@@ -741,8 +711,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "ae9956d1-86bb-4795-87f3-4f91e1ff99c1"
                 },
@@ -757,7 +726,6 @@
                         "RApplication": "contentTypes",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -787,7 +755,6 @@
                 "id": "AdminfTypesGrid",
                 "itemId": null,
                 "width": 150,
-                "designer|userClassName": "MyGridPanel7",
                 "resizable": true,
                 "resizeHandles": "e",
                 "title": "",
@@ -815,8 +782,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "AdminfTypesGridView",
-                        "itemId": null,
-                        "designer|userClassName": "MyGridView5"
+                        "itemId": null
                     },
                     "designerId": "53c78463-bb8d-43d7-8636-f8958851f323"
                 },
@@ -830,7 +796,6 @@
                     "userConfig": {
                         "localiserId": "typeColumn",
                         "width": 452,
-                        "designer|userClassName": "MyColumn14",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
@@ -852,7 +817,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -883,7 +847,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyTextField27",
                                 "allowBlank": false
                             },
                             "designerId": "73da240b-428c-452a-beb7-f008eefd9db0"
@@ -897,9 +860,6 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.RowModel",
-                    "userConfig": {
-                        "designer|userClassName": "MyRowSelectionModel3"
-                    },
                     "designerId": "16e785a1-3a76-422c-a5de-1397b78c3dbc"
                 },
                 {
@@ -909,9 +869,6 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "designer|userClassName": "MyCellEditingPlugin1"
-                    },
                     "designerId": "b868827d-50c2-4a9e-b8c0-401bcedb701e",
                     "cn": [
                         {
@@ -922,7 +879,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onGridcelleditingpluginBeforeEdit",
                                 "fn": "onGridcelleditingpluginBeforeEdit",
                                 "implHandler": [
                                     "if ((!ACL.interfaceRights[\"write.ui.contentTypes\"])||(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
@@ -949,7 +905,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "tabPanTC",
-                "designer|userClassName": "MyTabPanel",
                 "iconCls": null,
                 "activeTab": 0
             },
@@ -965,7 +920,6 @@
                     "userConfig": {
                         "dock": null,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel4",
                         "layout": "hbox",
                         "iconCls": "edit",
                         "title": "Edition"
@@ -981,8 +935,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "editTab",
-                                "layout|flex": null,
-                                "designer|userClassName": "TabConfig1"
+                                "layout|flex": null
                             },
                             "designerId": "b22e9634-2f00-453d-b24a-515f0c4de552",
                             "customConfigs": [
@@ -1004,7 +957,6 @@
                                 "layout|flex": 1,
                                 "id": "conteneurChampsEditionTC",
                                 "width": null,
-                                "designer|userClassName": "MyContainer4",
                                 "autoScroll": true
                             },
                             "designerId": "da1da9d0-fbd4-418f-b29e-09ffba76a126",
@@ -1020,7 +972,6 @@
                                         "localiserId": "systemFieldPanel",
                                         "frame": true,
                                         "margin": 20,
-                                        "designer|userClassName": "MyPanel43",
                                         "title": "Champs système"
                                     },
                                     "designerId": "75afc2fc-c004-4c43-9dd4-a2f48682cd6b",
@@ -1042,8 +993,6 @@
                                             "userConfig": {
                                                 "padding": 10,
                                                 "style": null,
-                                                "designer|userClassName": "ChampTC",
-                                                "designer|userAlias": "ChampTC",
                                                 "designer|displayName": null,
                                                 "layout": "anchor"
                                             },
@@ -1064,7 +1013,6 @@
                                                         "RTip": "Titre du contenu. Obligatoire.",
                                                         "layout|anchor": "90%",
                                                         "style": "{float:left}",
-                                                        "designer|userClassName": "MyTextField1",
                                                         "fieldLabel": "Titre *",
                                                         "labelSeparator": null,
                                                         "name": "text",
@@ -1098,8 +1046,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "padding": 10,
-                                                "designer|userClassName": "ChampTC",
-                                                "designer|userAlias": "ChampTC",
                                                 "designer|displayName": null,
                                                 "layout": "anchor"
                                             },
@@ -1119,7 +1065,6 @@
                                                         "style": [
                                                             "{float:left}"
                                                         ],
-                                                        "designer|userClassName": "MyTextArea6",
                                                         "fieldLabel": "Résumé ",
                                                         "labelSeparator": " ",
                                                         "name": "summary"
@@ -1179,7 +1124,6 @@
                                 "id": "PaneauConfigChamps",
                                 "style": null,
                                 "width": 300,
-                                "designer|userClassName": "MyForm7",
                                 "autoScroll": true,
                                 "layout": "auto",
                                 "bodyPadding": 8,
@@ -1201,7 +1145,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "id": "boiteConfigChampsTC",
-                                        "designer|userClassName": "MyContainer10",
                                         "layout": "anchor"
                                     },
                                     "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801"
@@ -1215,7 +1158,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "id": "champTCIdField",
-                                        "designer|userClassName": "MyHiddenField3",
                                         "fieldLabel": "Label"
                                     },
                                     "designerId": "d87c6d1b-7468-4d28-bb9d-bceb646cac2a"
@@ -1233,7 +1175,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyPanel5",
                         "iconCls": "page_meta",
                         "title": "Métadonnées"
                     },
@@ -1246,9 +1187,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig2"
-                            },
                             "designerId": "cd5c121a-3ad9-4c6b-bdfc-23d44a0132b0"
                         }
                     ]
@@ -1262,7 +1200,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel5",
                         "layout": "hbox",
                         "iconCls": "page_taxonomy",
                         "title": "Taxonomie"
@@ -1278,8 +1215,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "taxonomyTab",
-                                "layout|flex": null,
-                                "designer|userClassName": "TabConfig2"
+                                "layout|flex": null
                             },
                             "designerId": "05756f4b-998c-4166-bf9d-ac06a05755ba",
                             "customConfigs": [
@@ -1302,7 +1238,6 @@
                                 "layout|flex": 1,
                                 "autoRender": false,
                                 "id": "vocabulairesTypesContenusGrid",
-                                "designer|userClassName": "MyGridPanel12",
                                 "title": "Vocabulaires",
                                 "store": "TaxonomyForCT"
                             },
@@ -1326,8 +1261,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "autoRender": false,
-                                        "designer|userClassName": "MyGridView10"
+                                        "autoRender": false
                                     },
                                     "designerId": "9db26ac5-2ccc-4546-b6f3-3a555232dc6c"
                                 },
@@ -1338,9 +1272,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
-                                    "userConfig": {
-                                        "designer|userClassName": "MyCheckboxSelectionModel2"
-                                    },
                                     "designerId": "3716bc38-ce46-4b05-b916-6c07c5003efb"
                                 },
                                 {
@@ -1352,7 +1283,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "titleColumn",
-                                        "designer|userClassName": "MyColumn18",
                                         "dataIndex": "name",
                                         "text": "Titre",
                                         "flex": 1
@@ -1375,7 +1305,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "descriptionColumn",
-                                        "designer|userClassName": "MyColumn21",
                                         "dataIndex": "description",
                                         "text": "Description",
                                         "flex": 3
@@ -1398,7 +1327,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "helpTextColumn",
-                                        "designer|userClassName": "MyColumn22",
                                         "dataIndex": "helpText",
                                         "text": "HelpText",
                                         "flex": 2
@@ -1421,7 +1349,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "labelField",
-                                        "designer|userClassName": "MyBooleanColumn",
                                         "dataIndex": "expandable",
                                         "text": "Etiquettes",
                                         "flex": 1,
@@ -1446,7 +1373,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "multiChoiseColumn",
-                                        "designer|userClassName": "MyBooleanColumn1",
                                         "dataIndex": "mandatory",
                                         "text": "ChoixMultiple",
                                         "flex": 1,
@@ -1471,7 +1397,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "mandatoryField",
-                                        "designer|userClassName": "MyBooleanColumn2",
                                         "dataIndex": "mandatory",
                                         "text": "Obligatoire",
                                         "flex": 1,
@@ -1495,7 +1420,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onVocabulairesTypesContenusGridViewReady",
                                         "fn": "onVocabulairesTypesContenusGridViewReady",
                                         "implHandler": [
                                             "if (!ACL.interfaceRights[\"write.ui.contentTypes\"]){\r",
@@ -1520,7 +1444,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "TDCEditForm",
-                        "designer|userClassName": "MyForm46",
                         "bodyPadding": 10,
                         "iconCls": "parametres",
                         "title": "Propriétés"
@@ -1535,8 +1458,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsTab",
-                                "designer|userClassName": "TabConfig2"
+                                "localiserId": "propsTab"
                             },
                             "designerId": "5d5cba21-5420-46a7-8f88-88d68b334bdd",
                             "customConfigs": [
@@ -1556,7 +1478,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "rightWorkflowFieldSet",
-                                "designer|userClassName": "MyFieldSet1",
                                 "title": "Droits et workflow"
                             },
                             "designerId": "81bdef1a-b73b-4940-974b-c6d5ed7df559",
@@ -1606,7 +1527,6 @@
                                     "userConfig": {
                                         "localiserId": "workflowField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyComboBox28",
                                         "fieldLabel": "Workflow",
                                         "labelWidth": 120,
                                         "name": "workflow",
@@ -1640,7 +1560,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "commentsFieldSet",
-                                "designer|userClassName": "MyFieldSet2",
                                 "title": "Commentaires"
                             },
                             "designerId": "c250c238-fb68-4487-97c4-7f7d3b7b58e2",
@@ -1662,7 +1581,6 @@
                                     "userConfig": {
                                         "localiserId": "disqusField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyCheckbox8",
                                         "fieldLabel": "Disqus",
                                         "name": "activateDisqus",
                                         "boxLabel": "",
@@ -1691,7 +1609,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyPanel5",
                         "iconCls": "versions",
                         "title": "Historique"
                     },
@@ -1704,9 +1621,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "TabConfig2"
-                            },
                             "designerId": "61bbc960-51be-4a7d-aa9c-c4b43f5436b6"
                         }
                     ]
@@ -1721,7 +1635,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminFTDCRender",
                 "fn": "onAdminFTDCRender",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDataJson\").load();"
@@ -1739,7 +1652,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminFTDCBeforeClose",
                 "fn": "onAdminFTDCBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDataJson\").removeAll();"

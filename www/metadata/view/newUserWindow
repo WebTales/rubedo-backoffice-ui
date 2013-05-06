@@ -28,7 +28,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm52",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -43,7 +42,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField5",
                         "fieldLabel": "Nom ",
                         "labelWidth": 120,
                         "name": "name",
@@ -61,7 +59,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField22",
                         "fieldLabel": "E-mail ",
                         "labelWidth": 120,
                         "name": "email",
@@ -79,7 +76,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField28",
                         "fieldLabel": "Compte utilisateur ",
                         "labelWidth": 120,
                         "name": "login",
@@ -99,7 +95,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "userCreateSubmitBtn",
-                        "designer|userClassName": "MyButton264",
                         "scale": "large",
                         "text": "Valider"
                     },

@@ -20,8 +20,7 @@
             "userConfig": {
                 "mapping": "fields.text",
                 "name": "text",
-                "type": null,
-                "designer|userClassName": "MyField2"
+                "type": null
             },
             "designerId": "c3a5d357-2bc4-46d7-b53a-0132ae71d104"
         },
@@ -33,8 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field61"
+                "name": "id"
             },
             "designerId": "877b1a5f-83d7-496b-b71a-6e19d1e28fef"
         },
@@ -46,8 +44,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "field62"
+                "name": "version"
             },
             "designerId": "350da856-241b-44e8-ba38-8a49ef014c18"
         },
@@ -59,8 +56,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "contentId",
-                "designer|userClassName": "field62"
+                "name": "contentId"
             },
             "designerId": "07e87087-e00b-4a5f-bc13-55f796d5cbde"
         },
@@ -74,8 +70,7 @@
             "userConfig": {
                 "name": "publishVersion",
                 "sortType": "asInt",
-                "type": "int",
-                "designer|userClassName": "field208"
+                "type": "int"
             },
             "designerId": "429457ff-501a-4b91-b1a0-a64931be67ca"
         },
@@ -89,8 +84,7 @@
             "userConfig": {
                 "dateFormat": "U",
                 "name": "publishTime",
-                "type": "date",
-                "designer|userClassName": "field209"
+                "type": "date"
             },
             "designerId": "7ac67c71-e102-44a6-926d-136b2cc44744"
         },
@@ -103,8 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "publishUser.fullName",
-                "name": "publishUser",
-                "designer|userClassName": "field63"
+                "name": "publishUser"
             },
             "designerId": "00ad6d49-3475-4ae4-aadf-455a625ecaef"
         }

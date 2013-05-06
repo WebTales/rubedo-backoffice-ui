@@ -21,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onHiddenfieldRender",
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
                     "var companion = Ext.widget(\"externalMediaFieldComponent\");\r",
@@ -70,7 +69,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "setValue",
                 "fn": "setValue",
                 "designer|params": [
                     "value"
@@ -91,7 +89,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getValue",
                 "fn": "getValue",
                 "implHandler": [
                     "return(this.value);"
@@ -107,7 +104,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getSubmitValue",
                 "fn": "getSubmitValue",
                 "implHandler": [
                     "return (this.value);"

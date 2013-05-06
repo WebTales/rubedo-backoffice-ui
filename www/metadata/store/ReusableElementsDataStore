@@ -23,7 +23,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy21",
                 "api": [
                     "{\r",
                     "                    create: 'reusable-elements/create',\r",
@@ -45,8 +44,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader19"
+                        "root": "data"
                     },
                     "designerId": "2cf93d8a-a7eb-4e0e-835b-db521f83497d"
                 },
@@ -58,7 +56,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter28",
                         "encode": true,
                         "root": "data"
                     },
@@ -74,8 +71,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "mType",
-                "designer|userClassName": "MyGrouper2"
+                "property": "mType"
             },
             "designerId": "f18abfdb-3e63-41d1-8354-625575748b05"
         }

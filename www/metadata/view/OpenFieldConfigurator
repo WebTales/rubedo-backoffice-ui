@@ -31,8 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar72"
+                "dock": "bottom"
             },
             "designerId": "d2e10625-6858-4324-943a-4fdce8b1021c",
             "cn": [
@@ -44,8 +43,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill36"
+                        "layout|flex": null
                     },
                     "designerId": "90b88144-a652-4849-99b9-88ea5246e11a"
                 },
@@ -59,7 +57,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "OpenFieldConfiguratorSubmit",
-                        "designer|userClassName": "MyButton287",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
@@ -73,7 +70,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onOpenFieldConfiguratorSubmitClick",
                                 "fn": "onOpenFieldConfiguratorSubmitClick",
                                 "implHandler": [
                                     "var initialValues = Ext.clone(button.up().up().initialItemConfig);\r",
@@ -121,7 +117,6 @@
             "userConfig": {
                 "border": 0,
                 "height": 134,
-                "designer|userClassName": "MyForm58",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -136,7 +131,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField81",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
@@ -152,7 +146,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField82",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
@@ -168,7 +161,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField82",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
@@ -184,7 +176,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyCheckbox12",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -202,7 +193,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyRadioGroup",
                         "fieldLabel": "Type de champ",
                         "labelPad": null,
                         "labelSeparator": " ",
@@ -218,7 +208,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Texte",
@@ -235,7 +224,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "width": 100,
-                                "designer|userClassName": "MyRadio",
                                 "fieldLabel": null,
                                 "labelWidth": null,
                                 "name": "fieldType",
@@ -252,7 +240,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio1",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Nombre",
@@ -268,7 +255,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio1",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Date",
@@ -284,7 +270,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyRadio1",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Horaire",
@@ -300,7 +285,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onRadiogroupChange",
                                 "fn": "onRadiogroupChange",
                                 "implHandler": [
                                     "Ext.getCmp(\"CameleonicFormContainer\").getLayout().setActiveItem(Ext.getCmp(\"CameleonicFormContainer\").getComponent(newValue.fieldType));"
@@ -325,7 +309,6 @@
                 "layout|flex": 1,
                 "activeItem": 1,
                 "id": "CameleonicFormContainer",
-                "designer|userClassName": "MyContainer52",
                 "layout": "card"
             },
             "designerId": "278b9869-cfb1-405d-9100-4fe38ce8470b",
@@ -340,7 +323,6 @@
                     "userConfig": {
                         "border": 0,
                         "itemId": "textfield",
-                        "designer|userClassName": "MyForm63",
                         "bodyPadding": 10,
                         "title": ""
                     },
@@ -355,7 +337,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
@@ -373,7 +354,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField10",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
@@ -391,7 +371,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox31",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -417,7 +396,6 @@
                     "userConfig": {
                         "border": 0,
                         "itemId": "textareafield",
-                        "designer|userClassName": "MyForm63",
                         "bodyPadding": 10,
                         "title": ""
                     },
@@ -432,7 +410,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
@@ -450,7 +427,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField10",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
@@ -468,7 +444,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyComboBox31",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -494,7 +469,6 @@
                     "userConfig": {
                         "border": 0,
                         "itemId": "numberfield",
-                        "designer|userClassName": "MyForm60",
                         "bodyPadding": 10,
                         "title": ""
                     },
@@ -509,7 +483,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField11",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -525,7 +498,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyNumberField12",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
@@ -541,7 +513,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox14",
                                 "fieldLabel": "Décimales",
                                 "labelWidth": 140,
                                 "name": "allowDecimals",
@@ -561,7 +532,6 @@
                     "userConfig": {
                         "border": 0,
                         "itemId": "datefield",
-                        "designer|userClassName": "MyForm61",
                         "bodyPadding": 10,
                         "title": ""
                     },
@@ -576,7 +546,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyDateField9",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -592,7 +561,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyDateField10",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
@@ -611,7 +579,6 @@
                     "userConfig": {
                         "border": 0,
                         "itemId": "timefield",
-                        "designer|userClassName": "MyForm62",
                         "bodyPadding": 10,
                         "title": ""
                     },
@@ -626,7 +593,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTimeField",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -642,7 +608,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTimeField1",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
@@ -661,7 +626,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onOpenFieldConfiguratorAfterRender",
                 "fn": "onOpenFieldConfiguratorAfterRender",
                 "implHandler": [
                     "var initialValues = Ext.clone(component.initialItemConfig.fieldConfig);\r",

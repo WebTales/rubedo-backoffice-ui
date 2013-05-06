@@ -37,7 +37,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm41",
                 "designer|displayName": null,
                 "bodyPadding": 10,
                 "title": ""
@@ -52,9 +51,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "chooseDamTypeField",
-                        "designer|userClassName": "MyComboBox26",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Type",
                         "name": "typeId",
                         "allowBlank": false,
@@ -81,10 +79,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "chooseDamTypeSubmitBtn",
+                        "layout|anchor": "100%",
                         "id": "addDamAfterTypeBtn",
-                        "designer|userClassName": "MyButton239",
                         "scale": "large",
                         "text": "Créer un nouveau média de ce type"
                     },

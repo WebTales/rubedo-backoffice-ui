@@ -22,8 +22,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "name",
-                "type": "string",
-                "designer|userClassName": "field87"
+                "type": "string"
             },
             "designerId": "08d73747-619c-4889-a323-b48212899a4a"
         },
@@ -35,8 +34,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "rights",
-                "designer|userClassName": "field88"
+                "name": "rights"
             },
             "designerId": "6e22d867-ae07-4db7-ab60-fb534ab7957f"
         },
@@ -48,8 +46,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "members",
-                "designer|userClassName": "field88"
+                "name": "members"
             },
             "designerId": "41ca5f57-01c1-4f23-bcc8-df2ae47c15f6"
         },
@@ -61,8 +58,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field101"
+                "name": "id"
             },
             "designerId": "de0566ed-31d7-47b7-8a96-eb09a6abbb04"
         },
@@ -74,8 +70,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "version",
-                "designer|userClassName": "field102"
+                "name": "version"
             },
             "designerId": "4211fc0e-0178-477d-b1ca-8a7816bf2c45"
         },
@@ -89,8 +84,7 @@
             "userConfig": {
                 "dateFormat": null,
                 "name": "createTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "843eff58-0d7d-45a9-adae-7b4d7acfb0de"
         },
@@ -103,8 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "updateTime",
-                "type": "date",
-                "designer|userClassName": "field92"
+                "type": "date"
             },
             "designerId": "1ef9ae75-c2f3-4782-944c-051179f47a88"
         },
@@ -116,8 +109,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "roles",
-                "designer|userClassName": "field256"
+                "name": "roles"
             },
             "designerId": "37140909-f954-4c49-8bdc-23a92a8719c8"
         },
@@ -129,8 +121,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "readWorkspaces",
-                "designer|userClassName": "field282"
+                "name": "readWorkspaces"
             },
             "designerId": "6ca811ab-cd4c-4539-aaea-7b1ba1297cc5"
         },
@@ -142,8 +133,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "writeWorkspaces",
-                "designer|userClassName": "field283"
+                "name": "writeWorkspaces"
             },
             "designerId": "4950293a-04fc-4a74-8ffc-797e577bdb40"
         },
@@ -155,8 +145,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "canDeleteElements",
-                "designer|userClassName": "field284"
+                "name": "canDeleteElements"
             },
             "designerId": "3091cacb-fa39-46fc-82ef-df3450ca9d27"
         },
@@ -168,8 +157,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "canWriteUnownedElements",
-                "designer|userClassName": "field285"
+                "name": "canWriteUnownedElements"
             },
             "designerId": "b5cb9cc6-2a2c-4815-b1f0-eac5ab266c59"
         },
@@ -183,8 +171,7 @@
             "userConfig": {
                 "name": "leaf",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field235"
+                "type": "boolean"
             },
             "designerId": "3329bfb2-3ce1-4399-861a-6f67280bdbe7",
             "cn": [
@@ -196,7 +183,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "convert",
                         "fn": "convert",
                         "designer|params": [
                             "v",
@@ -222,8 +208,7 @@
                     "true"
                 ],
                 "name": "expandable",
-                "type": "boolean",
-                "designer|userClassName": "field236"
+                "type": "boolean"
             },
             "designerId": "76a222a2-5b21-4d4a-8432-daf64870e3a0"
         },
@@ -235,8 +220,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "defaultWorkspace",
-                "designer|userClassName": "field312"
+                "name": "defaultWorkspace"
             },
             "designerId": "e0e06b71-dd13-4e80-b9f1-48fb353275f0"
         },
@@ -250,8 +234,7 @@
             "userConfig": {
                 "name": "readOnly",
                 "persist": false,
-                "type": "boolean",
-                "designer|userClassName": "field292"
+                "type": "boolean"
             },
             "designerId": "2e91dd29-0e79-4433-98ea-13246af72dd3"
         },
@@ -263,8 +246,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "workspace",
-                "designer|userClassName": "field312"
+                "name": "workspace"
             },
             "designerId": "38850682-3c9b-4dd0-aa54-58e8ebe3b18a"
         },
@@ -276,8 +258,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "inheritWorkspace",
-                "designer|userClassName": "field313"
+                "name": "inheritWorkspace"
             },
             "designerId": "dcbd7b8e-2606-4da3-9485-c5f7152d608f"
         }

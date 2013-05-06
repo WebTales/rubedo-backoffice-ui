@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy27",
                 "api": [
                     "{\r",
                     "                    read: 'contents'\r",
@@ -42,8 +41,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader26"
+                        "root": "data"
                     },
                     "designerId": "cc31fd8d-f029-4aa8-a745-3a7f522372d5"
                 }
@@ -57,7 +55,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "var raw = Ext.getStore(\"ContentMQueryStore\").getRange();\r",
@@ -77,7 +74,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreAdd",
                 "fn": "onJsonstoreAdd",
                 "implHandler": [
                     "store.totalCount=store.totalCount+1;\r",
@@ -96,7 +92,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreRemove",
                 "fn": "onJsonstoreRemove",
                 "implHandler": [
                     "store.totalCount=store.totalCount-1;\r",

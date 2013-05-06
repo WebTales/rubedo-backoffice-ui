@@ -35,8 +35,7 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "top",
-                "height": 64,
-                "designer|userClassName": "MyToolbar57"
+                "height": 64
             },
             "designerId": "0dc2a5d4-9222-4749-bd50-3f78d0e44772",
             "cn": [
@@ -49,10 +48,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.queries",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "queryMainAddBtn",
-                        "designer|userClassName": "MyButton224",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -81,11 +79,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.queries",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "queryMainRemoveBtn",
-                        "designer|userClassName": "MyButton225",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -113,11 +110,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "editBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "queryMainEditBtn",
-                        "designer|userClassName": "MyButton226",
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
                         "scale": "large",
@@ -140,7 +136,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onQueryMainEditBtnBeforeRender",
                                 "fn": "onQueryMainEditBtnBeforeRender",
                                 "implHandler": [
                                     "if (!ACL.interfaceRights[\"read.ui.queries\"]){\r",
@@ -165,8 +160,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill25"
+                        "layout|flex": null
                     },
                     "designerId": "a6663552-432a-4d5a-973f-d8a66a4b4fed"
                 },
@@ -181,7 +175,6 @@
                         "RApplication": "queries",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton227",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -206,7 +199,6 @@
             "codeClass": null,
             "userConfig": {
                 "id": "mainQueriesGrid",
-                "designer|userClassName": "MyGridPanel30",
                 "title": "",
                 "forceFit": true,
                 "store": "MainQueriesStore"
@@ -223,9 +215,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView29"
-                    },
                     "designerId": "892bc1e9-0a5d-422c-8900-ccac56d29a7d"
                 },
                 {
@@ -237,7 +226,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "nameColumn",
-                        "designer|userClassName": "MyColumn61",
                         "dataIndex": "name",
                         "text": "Nom"
                     },
@@ -258,7 +246,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -291,7 +278,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyColumn63",
                         "dataIndex": "averageDuration",
                         "text": "Durée moyenne (s)"
                     },
@@ -306,7 +292,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyColumn66",
                         "dataIndex": "count",
                         "text": "Compteur"
                     },
@@ -321,7 +306,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyColumn67",
                         "dataIndex": "usage",
                         "text": "Usage"
                     },
@@ -347,7 +331,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryManagerInterfaceRender",
                 "fn": "onQueryManagerInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"MainQueriesStore\").load();"
@@ -365,7 +348,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onQueryManagerInterfaceBeforeClose",
                 "fn": "onQueryManagerInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"MainQueriesStore\").removeAll();"

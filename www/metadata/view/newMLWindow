@@ -30,7 +30,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm44",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -45,7 +44,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField75",
                         "fieldLabel": "Nom",
                         "name": "name",
                         "allowBlank": false
@@ -62,7 +60,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "newMLSubmitBtn",
-                        "designer|userClassName": "MyButton244",
                         "scale": "medium",
                         "text": "Créer une nouvelle liste de diffusion"
                     },

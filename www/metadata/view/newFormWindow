@@ -30,7 +30,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm56",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -45,7 +44,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField81",
                         "fieldLabel": "Titre",
                         "labelWidth": 40,
                         "name": "title",
@@ -61,7 +59,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onTextfieldSpecialkey",
                                 "fn": "onTextfieldSpecialkey",
                                 "implHandler": [
                                     "if (e.getKey() == e.ENTER) {\r",
@@ -85,7 +82,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "submitNewFormBtn",
-                        "designer|userClassName": "MyButton279",
                         "text": "Créer ce questionnaire"
                     },
                     "designerId": "eb8800af-bdfd-46ee-94c4-005949bfc9dc"

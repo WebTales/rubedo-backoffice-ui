@@ -29,8 +29,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "DAMImageDrop",
-                "designer|userClassName": "MyGridView28"
+                "id": "DAMImageDrop"
             },
             "designerId": "f7a3f49d-de46-4e94-922f-f9b262b0e41b"
         },
@@ -44,7 +43,6 @@
             "userConfig": {
                 "filter": true,
                 "localiserId": "titleColumn",
-                "designer|userClassName": "MyColumn47",
                 "align": null,
                 "dataIndex": "text",
                 "text": "Titre"
@@ -74,7 +72,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -106,7 +103,6 @@
             "codeClass": null,
             "userConfig": {
                 "localiserId": "authorColumn",
-                "designer|userClassName": "MyColumn49",
                 "dataIndex": "author",
                 "text": "Auteur"
             },
@@ -128,7 +124,6 @@
             "codeClass": null,
             "userConfig": {
                 "localiserId": "createDateColumn",
-                "designer|userClassName": "MyDateColumn8",
                 "dataIndex": "lastUpdateTime",
                 "text": "Date de création",
                 "format": "d-m-Y"

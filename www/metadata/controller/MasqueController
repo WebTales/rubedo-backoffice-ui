@@ -34,7 +34,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteMask",
                 "fn": "deleteMask",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -88,7 +87,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "masquesDisplay",
                 "fn": "masquesDisplay",
                 "implHandler": [
                     "var dataview = Ext.getCmp(\"masquesGrid\");\r",
@@ -154,7 +152,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reusablesGridSelect",
                 "fn": "reusablesGridSelect",
                 "implHandler": [
                     "Ext.getCmp(\"reusableelementDescription\").update(record.data);\r",
@@ -192,7 +189,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MasqueEdition",
                 "ref": "MasqueEdition",
                 "selector": "#masqueEdition"
             },
@@ -206,7 +202,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "removeIds",
                 "fn": "removeIds",
                 "designer|params": [
                     "element",
@@ -246,7 +241,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "applyConstrain",
                 "fn": "applyConstrain",
                 "designer|params": [
                     "target",
@@ -316,7 +310,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "spliceMask",
                 "fn": "spliceMask",
                 "designer|params": [
                     "elements",
@@ -363,7 +356,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "findElement",
                 "fn": "findElement",
                 "designer|params": [
                     "someArray",
@@ -402,7 +394,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "masqueMAJ",
                 "fn": "masqueMAJ",
                 "designer|params": [
                     "cible"
@@ -436,7 +427,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getElementDepth",
                 "fn": "getElementDepth",
                 "designer|params": [
                     "element"
@@ -480,7 +470,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "masqueRestit",
                 "fn": "masqueRestit",
                 "designer|params": [
                     "mRows",
@@ -578,7 +567,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTreepanelItemClick",
                 "fn": "onTreepanelItemClick",
                 "implHandler": [
                     "var cible = Ext.getCmp('arborescenceSites').getSelectionModel().getSelection()[0];\r",
@@ -601,7 +589,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "copyMaskWindow",
                 "fn": "copyMaskWindow",
                 "implHandler": [
                     "var cible = Ext.getCmp('masquesGrid').getSelectionModel().getSelection()[0];\r",
@@ -626,7 +613,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "newMaskWindow",
                 "fn": "newMaskWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauMasque');\r",
@@ -647,7 +633,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createMask",
                 "fn": "createMask",
                 "implHandler": [
                     "if ((Ext.getCmp('nouveauMasqueTitre').isValid())&&(Ext.getCmp('nouveauMasqueSite').isValid())) {\r",
@@ -683,7 +668,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "maskSave",
                 "fn": "maskSave",
                 "implHandler": [
                     "var me =this;\r",
@@ -752,7 +736,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "copyMask",
                 "fn": "copyMask",
                 "implHandler": [
                     "if ((Ext.getCmp('copierMasqueTitre').isValid())&&(Ext.getCmp('copierMasqueSite').isValid())) {\r",
@@ -791,7 +774,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "importMaskWindow",
                 "fn": "importMaskWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('importationMasques');\r",
@@ -813,7 +795,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectionEvents",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var me=this;\r",
@@ -1228,7 +1209,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteMaskElement",
                 "fn": "deleteMaskElement",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -1274,7 +1254,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "addCol",
                 "fn": "addCol",
                 "implHandler": [
                     "Ext.Ajax.request({\r",
@@ -1347,7 +1326,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "addRow",
                 "fn": "addRow",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -1393,7 +1371,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "showBlocWindow",
                 "fn": "showBlocWindow",
                 "implHandler": [
                     "var blocWin = Ext.widget('ajoutBlocFenetre');\r",
@@ -1414,7 +1391,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "importElement",
                 "fn": "importElement",
                 "implHandler": [
                     "var target=button.up().up().up().insTar;\r",
@@ -1460,7 +1436,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "addBloc",
                 "fn": "addBloc",
                 "implHandler": [
                     "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
@@ -1501,7 +1476,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "restoreBlocks",
                 "fn": "restoreBlocks",
                 "designer|params": [
                     "mBlocks"
@@ -1529,7 +1503,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getElementLevel",
                 "fn": "getElementLevel",
                 "designer|params": [
                     "element",
@@ -1553,7 +1526,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveRows",
                 "fn": "saveRows",
                 "designer|params": [
                     "startComp"
@@ -1636,7 +1608,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mainBoxSelect",
                 "fn": "mainBoxSelect",
                 "implHandler": [
                     "component.setBorder(2);\r",
@@ -1732,7 +1703,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "blocSelect",
                 "fn": "blocSelect",
                 "implHandler": [
                     "\r",
@@ -2083,7 +2053,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "exportElement",
                 "fn": "exportElement",
                 "implHandler": [
                     "var form = button.up().getForm();\r",
@@ -2123,7 +2092,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "addBlocDblClick",
                 "fn": "addBlocDblClick",
                 "implHandler": [
                     "if (Ext.getCmp(\"BlocsSelectGrid\").pageMode){\r",
@@ -2147,7 +2115,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "exportMaskElementWindow",
                 "fn": "exportMaskElementWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('ExportElementWindow');\r",
@@ -2169,7 +2136,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "showImportWindow",
                 "fn": "showImportWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('ReusableElementPicker');\r",
@@ -2200,7 +2166,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "moveElementUp",
                 "fn": "moveElementUp",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -2231,7 +2196,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "moveElementDown",
                 "fn": "moveElementDown",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('elementIdField').getValue());\r",
@@ -2260,7 +2224,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "blocDetailShow",
                 "fn": "blocDetailShow",
                 "implHandler": [
                     "Ext.getCmp(\"PaneauBlocsDetail\").update(record.getData());"
@@ -2280,7 +2243,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveBlocks",
                 "fn": "saveBlocks",
                 "designer|params": [
                     "startComp"
@@ -2329,7 +2291,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainColumnIdFieldChange",
                 "fn": "onMainColumnIdFieldChange",
                 "implHandler": [
                     "if (!Ext.isEmpty(Ext.getCmp(newValue))){\r",

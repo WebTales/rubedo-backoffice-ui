@@ -49,7 +49,6 @@
             "userConfig": {
                 "height": null,
                 "id": "DAMFieldBox",
-                "designer|userClassName": "MyForm3",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -66,7 +65,6 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "id": null,
-                        "designer|userClassName": "MyContainer47",
                         "layout": "hbox"
                     },
                     "designerId": "53ad484f-2ba0-41b0-902d-d697fbb20190",
@@ -84,8 +82,6 @@
                                 "padding": 10,
                                 "style": null,
                                 "width": 300,
-                                "designer|userClassName": "ChampTC",
-                                "designer|userAlias": "ChampTC",
                                 "designer|displayName": null,
                                 "layout": "anchor"
                             },
@@ -102,7 +98,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onContainerRender",
                                         "fn": "onContainerRender",
                                         "implHandler": [
                                             "if (Ext.isEmpty(Ext.getStore(\"MTForDAMEdit\").getRange())){\r",
@@ -141,7 +136,6 @@
                                 "id": "DAMSEcondaryFieldsBox",
                                 "margin": "10 0 0 20",
                                 "padding": null,
-                                "designer|userClassName": "MyContainer48",
                                 "layout": "anchor"
                             },
                             "designerId": "00372f86-6219-41a4-82fb-2853c61cd555",
@@ -156,8 +150,6 @@
                                     "userConfig": {
                                         "layout|anchor": "100%",
                                         "padding": 10,
-                                        "designer|userClassName": "ChampTC",
-                                        "designer|userAlias": "ChampTC",
                                         "designer|displayName": null,
                                         "layout": "anchor"
                                     },
@@ -171,14 +163,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|anchor": "90%",
                                                 "localiserId": "damTitleField",
                                                 "RTip": "Titre du média. Obligatoire.",
+                                                "layout|anchor": "90%",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "designer|userClassName": "MyTextField1",
                                                 "fieldLabel": "Titre *",
                                                 "labelSeparator": " ",
                                                 "name": "title",
@@ -210,8 +201,6 @@
                                     "userConfig": {
                                         "margin": null,
                                         "padding": 10,
-                                        "designer|userClassName": "ChampTC",
-                                        "designer|userAlias": "ChampTC",
                                         "designer|displayName": null,
                                         "layout": "anchor"
                                     },
@@ -225,14 +214,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|anchor": "90%",
                                                 "localiserId": "damOrginalFileField",
                                                 "RTip": "Fichier principal du média. Obligatoire.",
+                                                "layout|anchor": "90%",
                                                 "id": null,
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "designer|userClassName": "MyFileUpload3",
                                                 "fieldLabel": "Fichier original *",
                                                 "labelSeparator": " ",
                                                 "name": "originalFileId",
@@ -268,7 +256,6 @@
                     "userConfig": {
                         "localiserId": "taxonomyFieldset",
                         "id": "DAMTaxoBox",
-                        "designer|userClassName": "MyFieldSet18",
                         "title": "Taxonomie"
                     },
                     "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b",
@@ -289,7 +276,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "workspacesFieldset",
-                        "designer|userClassName": "MyFieldSet18",
                         "title": "Espaces de travail"
                     },
                     "designerId": "162cf652-9ad8-4da0-8b19-916b2b6ddc3a",
@@ -349,8 +335,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar64"
+                "dock": "bottom"
             },
             "designerId": "05251599-1bff-4bbb-8363-53ce3f23941b",
             "cn": [
@@ -362,8 +347,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill30"
+                        "layout|flex": null
                     },
                     "designerId": "92ab0fc0-d9b4-49ca-be75-7dcdcfa11b38"
                 },
@@ -378,7 +362,6 @@
                         "localiserId": "damSubmitNewBtn",
                         "layout|flex": null,
                         "id": "DAMSubmitBtn",
-                        "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Créer ce nouveau média"
                     },
@@ -399,11 +382,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "damSubmitUpdateBtn",
+                        "layout|flex": null,
                         "hidden": true,
                         "id": "DAMSubmitUpdateBtn",
-                        "designer|userClassName": "MyButton208",
                         "iconCls": "save",
                         "text": "Enregistrer les modifications"
                     },
@@ -427,7 +409,6 @@
                         "layout|flex": null,
                         "hidden": true,
                         "id": "DAMSwitchEditBtn",
-                        "designer|userClassName": "MyButton208",
                         "text": "Passer en mode édition"
                     },
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"

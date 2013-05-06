@@ -41,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "api": [
                     "{\r",
                     "    read: 'workspaces'\r",
@@ -65,8 +64,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "data"
                     },
                     "designerId": "55d83ee0-acf2-4ee9-b123-29c49a020488"
                 }
@@ -80,7 +78,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreLoad",
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
                     "store.filter(\"canContribute\", true);"
@@ -98,7 +95,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "store.clearFilter(true);"

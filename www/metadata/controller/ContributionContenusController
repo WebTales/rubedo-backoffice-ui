@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "typeSelect",
                 "fn": "typeSelect",
                 "implHandler": [
                     "var filArianne = Ext.getCmp(\"TypesContenusGrid\").findParentByType('window').getDockedComponent('filArianne');\r",
@@ -72,7 +71,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentSaveAndPublish",
                 "fn": "contentSaveAndPublish",
                 "implHandler": [
                     "if (button.specialMode){\r",
@@ -153,7 +151,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentSave",
                 "fn": "contentSave",
                 "implHandler": [
                     "this.nContenuRecorder('draft', button.isUpdate);"
@@ -173,7 +170,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "putNestedContentsOffline",
                 "fn": "putNestedContentsOffline",
                 "implHandler": [
                     "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
@@ -199,7 +195,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nestedContentsSelect",
                 "fn": "nestedContentsSelect",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -250,7 +245,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowBeforeClose",
                 "fn": "onWindowBeforeClose",
                 "implHandler": [
                     "if (panel.isXType(\"window\")){\r",
@@ -277,7 +271,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nContenuRecorder",
                 "fn": "nContenuRecorder",
                 "designer|params": [
                     "status",
@@ -351,7 +344,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentDelete",
                 "fn": "contentDelete",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
@@ -382,7 +374,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentEdit",
                 "fn": "contentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];\r",
@@ -450,7 +441,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentsSelect",
                 "fn": "contentsSelect",
                 "implHandler": [
                     "Ext.getCmp(\"boutonModifierContenu\").setText('Modifier');\r",
@@ -599,7 +589,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "doubleClickEdit",
                 "fn": "doubleClickEdit",
                 "implHandler": [
                     "//Ext.getCmp(\"boutonModifierContenu\").fireEvent(\"click\");\r",
@@ -620,7 +609,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "putContentsOnline",
                 "fn": "putContentsOnline",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -646,7 +634,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentRefuse",
                 "fn": "contentRefuse",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -672,7 +659,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "putContentsOffline",
                 "fn": "putContentsOffline",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -698,7 +684,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentSubmitVal",
                 "fn": "contentSubmitVal",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -724,7 +709,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentAcceptPublish",
                 "fn": "contentAcceptPublish",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -750,7 +734,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "contentSaveAndSubmit",
                 "fn": "contentSaveAndSubmit",
                 "implHandler": [
                     "this.nContenuRecorder('pending',button.isUpdate);"
@@ -770,7 +753,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nestedContentsDelete",
                 "fn": "nestedContentsDelete",
                 "implHandler": [
                     "Ext.getCmp(\"NestedContentsGrid\").getStore().remove(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection());"
@@ -790,7 +772,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "putNestedContentsOnline",
                 "fn": "putNestedContentsOnline",
                 "implHandler": [
                     "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
@@ -816,7 +797,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "addNestedContent",
                 "fn": "addNestedContent",
                 "implHandler": [
                     "if (Ext.getCmp(\"nestedContentsAddCombo\").isValid()) {\r",
@@ -880,7 +860,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nestedContentRecorder",
                 "fn": "nestedContentRecorder",
                 "designer|params": [
                     "update"
@@ -920,7 +899,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveNestedContent",
                 "fn": "saveNestedContent",
                 "implHandler": [
                     "this.nestedContentRecorder(button.isUpdate);"
@@ -940,7 +918,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nestedContentEdit",
                 "fn": "nestedContentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('NestedContentsGrid').getSelectionModel().getSelection()[0];\r",
@@ -981,7 +958,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "NCDblClickEdit",
                 "fn": "NCDblClickEdit",
                 "implHandler": [
                     "Ext.getCmp(\"nestedContentsModifyBtn\").fireEvent(\"click\");"
@@ -1001,7 +977,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWindowRender",
                 "fn": "onWindowRender",
                 "implHandler": [
                     "if (component.isXType(\"window\")){\r",
@@ -1025,7 +1000,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "unitaryContentEdit",
                 "fn": "unitaryContentEdit",
                 "designer|params": [
                     "id",
@@ -1063,7 +1037,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "displayContentEditWindow",
                 "fn": "displayContentEditWindow",
                 "designer|params": [
                     "content",
@@ -1444,7 +1417,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "displaySpecialCreate",
                 "fn": "displaySpecialCreate",
                 "designer|params": [
                     "theCT",
@@ -1687,7 +1659,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "prepareContext",
                 "fn": "prepareContext",
                 "designer|params": [
                     "content",
@@ -1725,7 +1696,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "specialContentCreate",
                 "fn": "specialContentCreate",
                 "designer|params": [
                     "CTType",
@@ -1755,7 +1725,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPageContentGridItemDblClick",
                 "fn": "onPageContentGridItemDblClick",
                 "implHandler": [
                     "this.unitaryContentEdit(record.get(\"id\"), false);"
@@ -1775,7 +1744,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onBoutonCopierContenusClick",
                 "fn": "onBoutonCopierContenusClick",
                 "implHandler": [
                     "var copiedOne = Ext.getCmp(\"ContenusGrid\").getSelectionModel().getLastSelected().copy();\r",
@@ -1800,7 +1768,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onBoutonRefuserNouveauContenuClick",
                 "fn": "onBoutonRefuserNouveauContenuClick",
                 "implHandler": [
                     "this.nContenuRecorder('refused',true);"

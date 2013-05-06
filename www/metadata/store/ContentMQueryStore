@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy70",
                 "api": [
                     "{\r",
                     "                    read: 'contents/get-ordered-list'\r",
@@ -42,8 +41,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader69"
+                        "root": "data"
                     },
                     "designerId": "825b33e2-fb71-4765-a23c-a1ecec90da9d"
                 }

@@ -38,7 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm39",
                 "layout": "card",
                 "bodyPadding": null,
                 "title": ""
@@ -54,7 +53,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "sbStage1",
-                        "designer|userClassName": "MyPanel53",
                         "layout": "anchor",
                         "bodyPadding": 10,
                         "title": "Etape 1 : Identification"
@@ -76,9 +74,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "domainNameField",
-                                "designer|userClassName": "MyTextField50",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
                                 "name": "text",
@@ -103,9 +100,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "managesStore": true,
-                                "layout|anchor": "100%",
                                 "localiserId": "themeField",
-                                "designer|userClassName": "MyComboBox19",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Theme ",
                                 "labelWidth": 110,
                                 "name": "theme",
@@ -141,9 +137,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "protocolField",
-                                "designer|userClassName": "MyComboBox18",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Protocole *",
                                 "labelWidth": 110,
                                 "name": "protocol",
@@ -196,7 +191,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "sbStage2",
-                        "designer|userClassName": "MyPanel53",
                         "layout": "anchor",
                         "bodyPadding": 10,
                         "title": "Etape 2 : Modèle"
@@ -218,9 +212,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "siteModelField",
-                                "designer|userClassName": "MyDisplayField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Modèle ",
                                 "name": "siteModelId",
                                 "value": [
@@ -247,7 +240,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "sbStage3",
-                        "designer|userClassName": "MyPanel53",
                         "overflowY": "auto",
                         "layout": "anchor",
                         "bodyPadding": 10,
@@ -270,9 +262,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "siteDefaultTitleField",
-                                "designer|userClassName": "MyTextField70",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Titre par défaut",
                                 "name": "title"
                             },
@@ -293,9 +284,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "defaultDescriptionField",
-                                "designer|userClassName": "MyTextArea5",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Description par défaut",
                                 "name": "description",
                                 "maxLength": 250
@@ -317,7 +307,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onPanelRender",
                                 "fn": "onPanelRender",
                                 "implHandler": [
                                     "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
@@ -348,9 +337,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "defaultAuthorField",
-                                "designer|userClassName": "MyTextField71",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Auteur par défaut",
                                 "name": "author",
                                 "value": [
@@ -374,11 +362,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "siteBuilderWizardSubmit",
+                                "layout|anchor": "100%",
                                 "id": "siteWizzardCreateBtn",
                                 "margin": "10 0 0 0",
-                                "designer|userClassName": "MyButton223",
                                 "scale": "large",
                                 "text": "Créer ce site"
                             },

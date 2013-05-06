@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "tag.png",
-        "container|align": "stretch",
         "localiserId": "taxonomyWindow",
+        "container|align": "stretch",
         "height": 578,
         "id": "adminFTaxonomie",
         "width": 1000,
@@ -42,7 +42,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "10ac5aac-3da6-46d1-8927-7cdb40712689"
@@ -56,7 +55,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "103f5f47-7c06-44b6-910e-98992fde2491"
@@ -72,8 +70,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "4dff7f83-c51e-462b-bdb2-3e6abfc8a3cb",
             "cn": [
@@ -87,7 +84,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "page_taxonomy",
                         "text": "Taxonomie <b>></b> "
                     },
@@ -107,8 +103,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "d4e4cd44-4942-4cb7-a760-73cb9b614b35",
             "cn": [
@@ -123,7 +118,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "967c9977-efcb-498c-8660-3537a1bae65e",
@@ -136,7 +130,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender",
                                 "fn": "onImageRender",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/tag.png');"
@@ -158,8 +151,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
-                        "margin": "0 0 0 20",
-                        "designer|userClassName": "MyContainer9"
+                        "margin": "0 0 0 20"
                     },
                     "designerId": "015d3e9e-7c67-4770-9c6f-2d44b4c25b32",
                     "cn": [
@@ -171,7 +163,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
                                 ],
@@ -195,9 +186,7 @@
                 "dock": "top",
                 "height": null,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "c216e76a-79fc-49b7-8fc3-d3a6234b9d95",
             "cn": [
@@ -210,11 +199,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "layout|flex": null,
                         "localiserId": "addBtn",
+                        "layout|flex": null,
                         "id": "boutonCreerTaxonomie",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -244,12 +232,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "layout|flex": null,
                         "localiserId": "removeBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonSupprimerTaxo",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -279,12 +266,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "layout|flex": null,
                         "localiserId": "saveBtn",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "boutonEnregistrerTaxo",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
@@ -313,7 +299,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onBoutonEnregistrerTaxoAfterRender",
                                 "fn": "onBoutonEnregistrerTaxoAfterRender",
                                 "implHandler": [
                                     "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -339,11 +324,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomyTerms",
-                        "layout|flex": null,
                         "localiserId": "editTermsGroup",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "taxoTermEditBrnGroup",
-                        "designer|userClassName": "MyButtonGroup21",
                         "headerPosition": "bottom",
                         "title": "Edition des termes",
                         "columns": 2
@@ -372,7 +356,6 @@
                             "userConfig": {
                                 "localiserId": "addBtn",
                                 "id": "taxoOpenInsertBtn",
-                                "designer|userClassName": "MyButton239",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
                                 "scale": "large",
@@ -397,7 +380,6 @@
                             "userConfig": {
                                 "localiserId": "removeBtn",
                                 "id": "taxoTermKiller",
-                                "designer|userClassName": "MyButton246",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "scale": "large",
@@ -422,10 +404,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "shortcutBtn",
+                        "layout|flex": null,
                         "itemId": "boutonCreerRaccourci",
-                        "designer|userClassName": "MyButton14",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "favorite_add_big",
@@ -449,8 +430,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "97dc0870-b440-45f0-85df-6654a8ed6cfc"
                 },
@@ -465,7 +445,6 @@
                         "RApplication": "taxonomy",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -496,7 +475,6 @@
                 "id": "AdminfTaxonomieGrid",
                 "itemId": null,
                 "width": 150,
-                "designer|userClassName": "MyGridPanel11",
                 "resizable": [
                     "true"
                 ],
@@ -523,9 +501,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView9"
-                    },
                     "designerId": "46d804df-cbac-46bc-8d57-3a7df00f9721"
                 },
                 {
@@ -537,7 +512,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "nameColumn",
-                        "designer|userClassName": "MyColumn18",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
@@ -559,7 +533,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -595,7 +568,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "taxonomyCenterBox",
-                "designer|userClassName": "MyTabPanel",
                 "activeTab": 0
             },
             "designerId": "f20a43a3-d7ab-4d39-b820-31c90cae2204",
@@ -610,7 +582,6 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "id": "conteneurAdminfTaxo",
-                        "designer|userClassName": "MyPanel4",
                         "layout": "hbox",
                         "iconCls": "edit",
                         "title": "Edition"
@@ -625,9 +596,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "editTab",
-                                "designer|userClassName": "TabConfig1"
+                                "layout|flex": null
                             },
                             "designerId": "8f245380-44dc-4489-9d36-059a570b588c",
                             "customConfigs": [
@@ -646,11 +616,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "propsPanel",
+                                "layout|flex": null,
                                 "id": "ProprietesTaxonomie",
                                 "width": 300,
-                                "designer|userClassName": "MyForm14",
                                 "autoScroll": true,
                                 "bodyPadding": 10,
                                 "collapseDirection": "left",
@@ -675,10 +644,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "nameField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Nom ",
                                         "name": "name",
                                         "allowBlank": false
@@ -700,11 +668,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "descriptionField",
+                                        "layout|anchor": "100%",
                                         "id": null,
                                         "itemId": null,
-                                        "designer|userClassName": "MyTextArea",
                                         "fieldLabel": "Description ",
                                         "name": "description"
                                     },
@@ -725,10 +692,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "helpTextField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyTextField10",
                                         "fieldLabel": "Texte d'aide ",
                                         "name": "helpText"
                                     },
@@ -749,10 +715,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "expandableField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyCheckbox3",
                                         "fieldLabel": "Extensible ",
                                         "name": "expandable",
                                         "boxLabel": "",
@@ -776,10 +741,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "inputAsTreeField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyCheckbox3",
                                         "fieldLabel": "Saisie arborescente",
                                         "name": "inputAsTree",
                                         "boxLabel": "",
@@ -803,10 +767,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "multiSelectField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyCheckbox4",
                                         "fieldLabel": "Choix multiple ",
                                         "name": "multiSelect",
                                         "boxLabel": "",
@@ -830,10 +793,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "mandatoryField",
+                                        "layout|anchor": "100%",
                                         "id": null,
-                                        "designer|userClassName": "MyCheckbox5",
                                         "fieldLabel": "Obligatoire ",
                                         "name": "mandatory",
                                         "boxLabel": "",
@@ -859,8 +821,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "localiserId": "termsPanel"
+                                "localiserId": "termsPanel",
+                                "layout|flex": 1
                             },
                             "designerId": "e4c6a2b6-b68c-4569-9054-4831d1dac837",
                             "customConfigs": [
@@ -883,7 +845,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "taxoRightsBox",
-                        "designer|userClassName": "MyForm48",
                         "bodyPadding": 10,
                         "iconCls": "user",
                         "title": "Droits"
@@ -898,8 +859,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rightsTab",
-                                "designer|userClassName": "TabConfig2"
+                                "localiserId": "rightsTab"
                             },
                             "designerId": "78532db4-7532-4c9f-a660-b33cc6ec4779",
                             "customConfigs": [

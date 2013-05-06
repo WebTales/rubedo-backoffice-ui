@@ -47,7 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent",
                 "name": "facettesChanged",
                 "params": [
                     "facettes",
@@ -65,7 +64,6 @@
             "codeClass": null,
             "userConfig": {
                 "batchActions": false,
-                "designer|userClassName": "MyAjaxProxy57",
                 "api": [
                     "{\r",
                     "         create: 'dam/create',\r",
@@ -86,8 +84,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader56"
+                        "root": "data"
                     },
                     "designerId": "19df1797-687f-4d0f-a9d3-6f0860e5ff48",
                     "cn": [
@@ -99,7 +96,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "getResponseData",
                                 "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
@@ -146,7 +142,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "nameProperty": null,
-                        "designer|userClassName": "MyJsonWriter13",
                         "encode": true,
                         "root": "data"
                     },
@@ -162,7 +157,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreFacettesChanged",
                 "fn": "onJsonstoreFacettesChanged",
                 "implHandler": [
                     "Rubedo.controller.DAMController.prototype.renderFacets(facettes);\r",
@@ -182,7 +176,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreLoad",
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
                     "var rawActiveFacettes = store.getProxy().activeFacettes;\r",
@@ -211,7 +204,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "var source=Ext.clone(store.activeFacettes);\r",
@@ -240,8 +232,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "score",
-                "designer|userClassName": "MySorter6"
+                "property": "score"
             },
             "designerId": "ca4a4559-facf-42c7-9914-0c926c14a775"
         }

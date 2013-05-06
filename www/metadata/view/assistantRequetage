@@ -40,8 +40,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar17"
+                "dock": "bottom"
             },
             "designerId": "db5b5502-4e7c-4386-bc6c-b79435a73abd",
             "cn": [
@@ -56,7 +55,6 @@
                         "layout|flex": 1,
                         "id": "progressAR",
                         "width": null,
-                        "designer|userClassName": "MyProgressBar",
                         "animate": true,
                         "text": "Etape 1 sur 5",
                         "value": 0.2
@@ -74,7 +72,6 @@
                         "layout|flex": null,
                         "hidden": true,
                         "id": "boutonPrevRequeteur",
-                        "designer|userClassName": "MyButton62",
                         "iconCls": "arrow_left",
                         "text": "Précédent"
                     },
@@ -90,7 +87,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "id": "boutonNextRequeteur",
-                        "designer|userClassName": "MyButton68",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "text": "Suivant"
@@ -109,7 +105,6 @@
             "userConfig": {
                 "etape": "1",
                 "id": "assisstantRE1",
-                "designer|userClassName": "MyForm9",
                 "bodyPadding": 10,
                 "title": "Choix des types de contenus"
             },
@@ -135,7 +130,6 @@
                         "style": [
                             "{float:left}"
                         ],
-                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "",
                         "name": "contentTypes",
                         "allowBlank": false,
@@ -164,7 +158,6 @@
                         "style": [
                             "{float:right;}"
                         ],
-                        "designer|userClassName": "MyButton72",
                         "iconCls": "ouiSpetit",
                         "text": "",
                         "tooltip": [
@@ -185,7 +178,6 @@
             "userConfig": {
                 "etape": "2",
                 "id": "assisstantRE2",
-                "designer|userClassName": "MyForm11",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": "Choix des termes de la taxonomie"
@@ -237,7 +229,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAssistantRequetageRender",
                 "fn": "onAssistantRequetageRender",
                 "implHandler": [
                     "Ext.getStore('TCDepForQA').load();\r",
@@ -257,7 +248,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAssistantRequetageBeforeClose",
                 "fn": "onAssistantRequetageBeforeClose",
                 "implHandler": [
                     "Ext.getStore('TCDepForQA').removeAll();\r",
@@ -279,7 +269,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAssistantRequetageAfterRender",
                 "fn": "onAssistantRequetageAfterRender",
                 "implHandler": [
                     "if (component.simpleMode) {\r",

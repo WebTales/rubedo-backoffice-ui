@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy17",
                 "api": [
                     "{\r",
                     "     create: 'wallpapers/create',\r",
@@ -46,8 +45,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader15"
+                        "root": "data"
                     },
                     "designerId": "6dbcaea5-5fba-4e0e-95c2-f35228b140b5"
                 },
@@ -59,7 +57,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter7",
                         "encode": true,
                         "root": "data"
                     },

@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem",
                 "iconCls": null,
                 "text": "Icônes"
             },
@@ -38,7 +37,6 @@
                     "userConfig": {
                         "frame": true,
                         "width": null,
-                        "designer|userClassName": "MyMenu2",
                         "showSeparator": false
                     },
                     "designerId": "6f008f16-0b19-4a66-89bf-4424300c5192",
@@ -52,7 +50,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "itemShowAllIcons",
-                                "designer|userClassName": "MyMenuItem3",
                                 "text": "Afficher"
                             },
                             "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408"
@@ -66,7 +63,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "itemHideAllIcons",
-                                "designer|userClassName": "MyMenuItem4",
                                 "text": "Cacher"
                             },
                             "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643"
@@ -80,7 +76,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "itemRearangeAllIcons",
-                                "designer|userClassName": "MyMenuItem5",
                                 "text": "Réorganiser automatiquement"
                             },
                             "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8"
@@ -96,9 +91,6 @@
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MySeparator7"
-            },
             "designerId": "b9451322-077c-4b12-80a0-e4de53e30dba"
         },
         {
@@ -110,7 +102,6 @@
             "codeClass": null,
             "userConfig": {
                 "id": "itemCustomizeDesktop",
-                "designer|userClassName": "MyMenuItem2",
                 "iconCls": "personalize",
                 "text": "Personnaliser"
             },

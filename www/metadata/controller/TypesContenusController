@@ -32,7 +32,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ajouterContenu",
                 "fn": "ajouterContenu",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0])) {\r",
@@ -309,7 +308,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ouvrirFenetreTC",
                 "fn": "ouvrirFenetreTC",
                 "implHandler": [
                     "var fenetreTC = Ext.widget('ajoutChampTCFenetre');\r",
@@ -330,7 +328,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "creerChampTC",
                 "fn": "creerChampTC",
                 "implHandler": [
                     "var me=this;\r",
@@ -544,7 +541,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectChampTC",
                 "fn": "selectChampTC",
                 "implHandler": [
                     "var me=this;\r",
@@ -694,7 +690,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "enleveChampTC",
                 "fn": "enleveChampTC",
                 "implHandler": [
                     "if (Ext.getCmp('champTCIdField').getValue() == component.getComponent(1).id) {\r",
@@ -719,7 +714,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateOptionsListeTC",
                 "fn": "updateOptionsListeTC",
                 "implHandler": [
                     "Ext.getCmp('PaneauTCDetail').update(record.data);"
@@ -739,7 +733,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectTC",
                 "fn": "selectTC",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
@@ -928,7 +921,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "supprimeTypeContenu",
                 "fn": "supprimeTypeContenu",
                 "implHandler": [
                     "var cible = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getSelection()[0];\r",
@@ -980,7 +972,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "enregistrerTypeContenus",
                 "fn": "enregistrerTypeContenus",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){\r",
@@ -1070,7 +1061,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "fenetreNTC",
                 "fn": "fenetreNTC",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauTypeContenu');\r",
@@ -1092,7 +1082,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "creerNTC",
                 "fn": "creerNTC",
                 "implHandler": [
                     "if (Ext.getCmp('champCreerTC').isValid()) {\r",
@@ -1130,7 +1119,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "miseAPlatTaxo",
                 "fn": "miseAPlatTaxo",
                 "designer|params": [
                     "cible",
@@ -1154,7 +1142,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "repliqueChamp",
                 "fn": "repliqueChamp",
                 "implHandler": [
                     "var nouvChamp=button.up().getComponent(1).cloneConfig();\r",
@@ -1187,7 +1174,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "TCfieldDelete",
                 "fn": "TCfieldDelete",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1210,7 +1196,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "TCfieldMoveUp",
                 "fn": "TCfieldMoveUp",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1236,7 +1221,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "TCfieldMoveDown",
                 "fn": "TCfieldMoveDown",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1260,7 +1244,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createThroughDblClick",
                 "fn": "createThroughDblClick",
                 "implHandler": [
                     "Ext.getStore(\"AddMultiFieldStore\").removeAll();\r",
@@ -1281,7 +1264,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "copyTC",
                 "fn": "copyTC",
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().data);\r",
@@ -1304,7 +1286,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelEdit",
                 "fn": "onGridpanelEdit",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusNDepDataJson\").load();"
@@ -1324,7 +1305,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminfTypesGridRender",
                 "fn": "onAdminfTypesGridRender",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
@@ -1345,7 +1325,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAdminfTypesGridDestroy",
                 "fn": "onAdminfTypesGridDestroy",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").removeAll();\r",
@@ -1366,7 +1345,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nameValidator",
                 "fn": "nameValidator",
                 "designer|params": [
                     "name"
@@ -1395,7 +1373,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "nameAvailable",
                 "fn": "nameAvailable",
                 "designer|params": [
                     "name"
@@ -1422,7 +1399,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPurgeCTContentsBtnClick",
                 "fn": "onPurgeCTContentsBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",

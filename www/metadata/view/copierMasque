@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm5",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -45,7 +44,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "copierMasqueTitre",
-                        "designer|userClassName": "MyTextField15",
                         "fieldLabel": "Nouveau titre ",
                         "value": null,
                         "allowBlank": false
@@ -62,7 +60,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "copierMasqueSite",
-                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "Dans le site ",
                         "allowBlank": false,
                         "editable": false,
@@ -83,7 +80,6 @@
                         "layout|anchor": "1",
                         "id": "copierMasque",
                         "width": null,
-                        "designer|userClassName": "MyButton50",
                         "text": "Dupliquer ce masque"
                     },
                     "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523"

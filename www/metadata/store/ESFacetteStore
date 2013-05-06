@@ -46,7 +46,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "CustomEvent",
                 "name": "facettesChanged",
                 "params": [
                     "facettes",
@@ -63,7 +62,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy57",
                 "api": [
                     "{\r",
                     "    read:\"elastic-search\"\r",
@@ -81,8 +79,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader56"
+                        "root": "data"
                     },
                     "designerId": "7baab310-0fec-4681-af15-dfbcd8b8dac0",
                     "cn": [
@@ -94,7 +91,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "getResponseData",
                                 "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
@@ -142,7 +138,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreFacettesChanged",
                 "fn": "onJsonstoreFacettesChanged",
                 "implHandler": [
                     "Rubedo.controller.SearchController.prototype.renderFacets(facettes);\r",
@@ -161,7 +156,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreLoad",
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
                     "var rawActiveFacettes = store.getProxy().activeFacettes;\r",
@@ -190,7 +184,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onJsonstoreBeforeLoad",
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "var source=Ext.clone(store.activeFacettes);\r",
@@ -219,8 +212,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "score",
-                "designer|userClassName": "MySorter6"
+                "property": "score"
             },
             "designerId": "ae10a6c7-5d2e-4ceb-bbdd-1e6945fd0f15"
         }

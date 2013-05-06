@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "groupSelect",
                 "fn": "groupSelect",
                 "implHandler": [
                     "var users = [ ];\r",
@@ -76,7 +75,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "removeGroup",
                 "fn": "removeGroup",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -117,7 +115,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openGroupAddWindow",
                 "fn": "openGroupAddWindow",
                 "implHandler": [
                     "var window = Ext.widget(\"GroupAddWindow\");\r",
@@ -140,7 +137,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createGroup",
                 "fn": "createGroup",
                 "implHandler": [
                     "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
@@ -180,7 +176,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "changeAdminPwdSubmit",
                 "fn": "changeAdminPwdSubmit",
                 "implHandler": [
                     "var myForm=button.up().getForm();\r",
@@ -227,7 +222,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "newAdminDelegation",
                 "fn": "newAdminDelegation",
                 "implHandler": [
                     "var newDel = Ext.create(\"Rubedo.model.delegationDataModel\", {\r",
@@ -250,7 +244,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getGroupUsers",
                 "fn": "getGroupUsers",
                 "designer|params": [
                     "group",
@@ -279,7 +272,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openUserAddWindow",
                 "fn": "openUserAddWindow",
                 "implHandler": [
                     "var target = Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
@@ -304,7 +296,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "userSelectionAdd",
                 "fn": "userSelectionAdd",
                 "implHandler": [
                     "var selection = Ext.Array.pluck(Ext.Array.pluck(button.up().up().getComponent(0).getSelectionModel().getSelection(),\"data\"),\"id\");\r",
@@ -329,7 +320,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ArianneBuilder",
                 "fn": "ArianneBuilder",
                 "designer|params": [
                     "node",
@@ -359,7 +349,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "removeUserFromGroup",
                 "fn": "removeUserFromGroup",
                 "implHandler": [
                     "var targets =Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"UsersInGroupGrid\").getSelectionModel().getSelection(),\"data\"),\"id\");\r",
@@ -383,7 +372,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onGridpanelSelect",
                 "fn": "onGridpanelSelect",
                 "implHandler": [
                     "Ext.getCmp(\"userAdminMainPanel\").enable();\r",
@@ -417,7 +405,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "adminInfoUpdate",
                 "fn": "adminInfoUpdate",
                 "implHandler": [
                     "if (Ext.getCmp(\"userAdminInfoDisplay\").getForm().isValid()) {\r",
@@ -439,7 +426,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "newUser",
                 "fn": "newUser",
                 "implHandler": [
                     "Ext.widget(\"newUserWindow\").show();"
@@ -459,7 +445,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "userAdminRemove",
                 "fn": "userAdminRemove",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -487,7 +472,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteAdminPicture",
                 "fn": "deleteAdminPicture",
                 "implHandler": [
                     "Ext.getCmp(\"userAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
@@ -508,7 +492,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "adminAccessEdit",
                 "fn": "adminAccessEdit",
                 "implHandler": [
                     "if (Ext.getCmp(\"userAdminAccessDisplay\").getForm().isValid()) {\r",
@@ -530,7 +513,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openAdminChangePwdWindow",
                 "fn": "openAdminChangePwdWindow",
                 "implHandler": [
                     "var window = Ext.widget(\"AdminPasswordChange\");\r",
@@ -553,7 +535,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openUserSettings",
                 "fn": "openUserSettings",
                 "implHandler": [
                     "if (component.isWindow) {\r",
@@ -581,7 +562,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "userInfoUpdate",
                 "fn": "userInfoUpdate",
                 "implHandler": [
                     "var myRecord= Ext.getStore(\"CurrentUserDataStore\").getRange()[0];\r",
@@ -604,7 +584,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteUserProfilePic",
                 "fn": "deleteUserProfilePic",
                 "implHandler": [
                     "Ext.getCmp(\"userProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
@@ -625,7 +604,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "adminDeleteDelegations",
                 "fn": "adminDeleteDelegations",
                 "implHandler": [
                     "button.up().up().getStore().remove(button.up().up().getSelectionModel().getSelection());"
@@ -645,7 +623,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "changeMyPassword",
                 "fn": "changeMyPassword",
                 "implHandler": [
                     "var myForm=button.up().up().getForm();\r",
@@ -689,7 +666,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onUserAdminWindowBeforeClose",
                 "fn": "onUserAdminWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"UsersAdminDataStore\").removeAll();\r",
@@ -710,7 +686,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onUserAdminWindowRender",
                 "fn": "onUserAdminWindowRender",
                 "implHandler": [
                     "if (component.isXType(\"window\")){\r",
@@ -733,7 +708,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onUserCreateSubmitBtnClick",
                 "fn": "onUserCreateSubmitBtnClick",
                 "implHandler": [
                     "var form = button.up().getForm();\r",

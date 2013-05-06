@@ -31,9 +31,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView16"
-            },
             "designerId": "4c510eed-cbd9-419d-b3eb-b323b1deb924"
         },
         {
@@ -43,9 +40,6 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
-            "userConfig": {
-                "designer|userClassName": "MyCheckboxSelectionModel4"
-            },
             "designerId": "b93c27fe-d628-4ddd-b7eb-cad93152971c"
         },
         {
@@ -58,7 +52,6 @@
             "userConfig": {
                 "filter": true,
                 "localiserId": "nameColumn",
-                "designer|userClassName": "MyColumn38",
                 "dataIndex": "name",
                 "text": "Nom",
                 "flex": 1
@@ -90,7 +83,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn39",
                 "dataIndex": "title",
                 "text": "Civilité",
                 "flex": 1
@@ -117,7 +109,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn40",
                 "dataIndex": "organisation",
                 "text": "Organisation",
                 "flex": 1
@@ -144,7 +135,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn41",
                 "dataIndex": "service",
                 "text": "Service",
                 "flex": 1
@@ -171,7 +161,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn42",
                 "dataIndex": "post",
                 "text": "Fonction",
                 "flex": 1
@@ -198,7 +187,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn43",
                 "dataIndex": "email",
                 "text": "E-mail",
                 "flex": 1
@@ -225,7 +213,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn44",
                 "dataIndex": "telephone",
                 "text": "Téléphone",
                 "flex": 1
@@ -252,7 +239,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn45",
                 "dataIndex": "mobile",
                 "text": "Mobile",
                 "flex": 1
@@ -279,7 +265,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn46",
                 "dataIndex": "coordinates",
                 "text": "Coordonnées",
                 "flex": 1
@@ -306,7 +291,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn48",
                 "dataIndex": "language",
                 "text": "Langue",
                 "flex": 1
@@ -333,7 +317,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyColumn49",
                 "dataIndex": "country",
                 "text": "Pays",
                 "flex": 1
@@ -360,7 +343,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyDateColumn5",
                 "dataIndex": "createTime",
                 "text": "Création",
                 "flex": 1
@@ -387,7 +369,6 @@
             "userConfig": {
                 "filter": true,
                 "hidden": true,
-                "designer|userClassName": "MyDateColumn6",
                 "dataIndex": "updateTime",
                 "text": "Mise à jour",
                 "flex": 1

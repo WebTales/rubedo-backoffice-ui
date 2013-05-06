@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "read.ui.pages",
-        "container|align": "stretch",
         "localiserId": "previewWindow",
+        "container|align": "stretch",
         "height": 548,
         "id": "contributionPrevisualisation",
         "width": 1200,
@@ -62,11 +62,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "localiserId": "previewPageTree",
+                "layout|flex": null,
                 "id": "previewPageTree",
                 "width": 225,
-                "designer|userClassName": "MyTreePanel2",
                 "collapseDirection": "left",
                 "collapsible": true,
                 "title": "Sélecteur de pages",
@@ -89,9 +88,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyTreeView2"
-                    },
                     "designerId": "0bb850f9-ae8a-4f9a-b976-b10ddb990c6c"
                 },
                 {
@@ -102,8 +98,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
-                        "designer|userClassName": "MyToolbar42"
+                        "dock": "top"
                     },
                     "designerId": "8ac0ebfb-9f90-40b6-86ed-3f73f2aa3a5b",
                     "cn": [
@@ -116,10 +111,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "managesStore": true,
-                                "layout|flex": 1,
                                 "localiserId": "siteField",
+                                "layout|flex": 1,
                                 "id": "previewSitesCombo",
-                                "designer|userClassName": "MyComboBox12",
                                 "fieldLabel": "Site ",
                                 "labelWidth": 40,
                                 "editable": false,
@@ -159,7 +153,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "contribPreviewMain",
-                "designer|userClassName": "MyPanel52",
                 "layout": "fit"
             },
             "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7",
@@ -172,8 +165,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
-                        "designer|userClassName": "MyToolbar55"
+                        "dock": "top"
                     },
                     "designerId": "26fe1274-5cf3-4d80-bb54-b0d19790ecfd",
                     "cn": [
@@ -185,11 +177,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "previewDeviceCombo",
+                                "layout|flex": null,
                                 "id": "previewDeviceCombo",
                                 "margin": "0 20 0 0",
-                                "designer|userClassName": "MyCycleButton",
                                 "arrowAlign": "bottom",
                                 "scale": "large",
                                 "showText": true
@@ -213,7 +204,6 @@
                                     "userConfig": {
                                         "styleHtmlContent": true,
                                         "width": null,
-                                        "designer|userClassName": "MyMenu5",
                                         "showSeparator": false
                                     },
                                     "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
@@ -228,7 +218,6 @@
                                             "userConfig": {
                                                 "deviceValue": "desktop",
                                                 "height": null,
-                                                "designer|userClassName": "MyCheckItem",
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
                                                 "plain": true,
@@ -252,7 +241,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone",
-                                                "designer|userClassName": "MyCheckItem1",
                                                 "iconCls": "prevIphone",
                                                 "plain": true,
                                                 "text": "Téléphone - portrait"
@@ -275,7 +263,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone-l",
-                                                "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIphoneL",
                                                 "plain": true,
                                                 "text": "Téléphone - paysage"
@@ -298,7 +285,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad",
-                                                "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIpad",
                                                 "plain": true,
                                                 "text": "Tablette - portrait"
@@ -321,7 +307,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad-l",
-                                                "designer|userClassName": "MyCheckItem2",
                                                 "iconCls": "prevIpadL",
                                                 "plain": true,
                                                 "text": "Tablette - paysage"
@@ -345,7 +330,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onPreviewDeviceComboChange",
                                         "fn": "onPreviewDeviceComboChange",
                                         "implHandler": [
                                             "if (!Ext.isEmpty(Ext.getCmp(\"advancedPreviewPageRefresh\"))){\r",
@@ -367,8 +351,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MySeparator7"
+                                "layout|flex": null
                             },
                             "designerId": "5792268c-d60e-48f5-a285-e97b20db6b26"
                         },
@@ -380,11 +363,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "draftField",
+                                "layout|flex": null,
                                 "id": "advancedPreviewDraftField",
                                 "margin": "0 20 0 0",
-                                "designer|userClassName": "MyCheckbox6",
                                 "fieldLabel": "Mode brouillon",
                                 "labelWidth": 90,
                                 "boxLabel": "",
@@ -407,10 +389,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "dateField",
+                                "layout|flex": null,
                                 "id": "advancedPreviewDateField",
-                                "designer|userClassName": "MyDateField6",
                                 "fieldLabel": "Date",
                                 "labelWidth": 40
                             },
@@ -431,8 +412,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill24"
+                                "layout|flex": null
                             },
                             "designerId": "4ba7bf43-f812-44c1-a0d2-8ff0d45e1078"
                         },
@@ -444,8 +424,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MySeparator8"
+                                "layout|flex": null
                             },
                             "designerId": "2baa604d-0e06-4a33-9d2a-cb5738a2d11c"
                         },
@@ -457,10 +436,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "refreshBtn",
+                                "layout|flex": null,
                                 "id": "advancedPreviewPageRefresh",
-                                "designer|userClassName": "MyButton220",
                                 "iconCls": "refresh_big",
                                 "scale": "large",
                                 "text": "Actualiser"

@@ -35,7 +35,6 @@
             "userConfig": {
                 "layout|flex": null,
                 "width": 105,
-                "designer|userClassName": "MyLabel",
                 "text": "My Label :"
             },
             "designerId": "a6f0dc97-303b-4735-8fe0-d740129ac151"
@@ -53,7 +52,6 @@
                 "minWidth": null,
                 "style": null,
                 "width": null,
-                "designer|userClassName": "MyImg14",
                 "src": null
             },
             "configAlternates": {
@@ -69,7 +67,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onFieldImagePreviewRender",
                         "fn": "onFieldImagePreviewRender",
                         "implHandler": [
                             "component.getEl().on(\"load\", function(){component.up().doLayout();});"
@@ -93,7 +90,6 @@
                 "itemId": "buttonHolder",
                 "margin": "0 0 0 10",
                 "width": 49,
-                "designer|userClassName": "MyContainer25",
                 "layout": "absolute"
             },
             "designerId": "15d54f0f-2b5f-483c-9126-4b65e9786bf7",
@@ -106,11 +102,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "imagePickerChangeBtn",
                         "layout|x": 10,
                         "layout|y": 10,
-                        "localiserId": "imagePickerChangeBtn",
                         "itemId": "fieldChangeImage",
-                        "designer|userClassName": "MyButton170",
                         "iconCls": "pencil_med",
                         "scale": "medium",
                         "text": "",
@@ -136,11 +131,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "imagePickerClearBtn",
                         "layout|x": 10,
                         "layout|y": 80,
-                        "localiserId": "imagePickerClearBtn",
                         "itemId": "fieldClearImage",
-                        "designer|userClassName": "MyButton171",
                         "iconCls": "remove_med",
                         "scale": "medium",
                         "text": "",

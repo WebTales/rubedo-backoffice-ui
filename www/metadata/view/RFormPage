@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "sync",
                 "fn": "sync",
                 "implHandler": [
                     "var me=this;\r",
@@ -90,7 +89,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPanelAfterRender",
                 "fn": "onPanelAfterRender",
                 "implHandler": [
                     "this.sync();"
@@ -115,7 +113,6 @@
                 "itemId": "editBar",
                 "style": null,
                 "width": 20,
-                "designer|userClassName": "MyContainer51",
                 "layout": "vbox"
             },
             "configAlternates": {
@@ -132,7 +129,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "formFieldCofiguratorBtn",
-                        "designer|userClassName": "MyButton286",
                         "iconCls": "edit",
                         "text": "",
                         "tooltip": "Paramètres",
@@ -153,7 +149,6 @@
                     "userConfig": {
                         "itemId": "formFieldConditionsBtn",
                         "margin": "10 0 0 0",
-                        "designer|userClassName": "MyButton286",
                         "iconCls": "cond_small",
                         "text": "",
                         "tooltip": "Condition d'affichage",

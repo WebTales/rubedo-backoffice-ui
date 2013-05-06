@@ -32,7 +32,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "itemId": "wizProgress",
-                "designer|userClassName": "MyProgressBar1",
                 "value": 0.4
             },
             "designerId": "e0e43236-cbf8-46df-bc2e-ce8dae7b553f"
@@ -45,10 +44,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "localiserId": "wizardPrevBtn",
+                "layout|flex": null,
                 "itemId": "wizPrev",
-                "designer|userClassName": "MyButton221",
                 "iconCls": "arrow_left",
                 "text": "Précédent"
             },
@@ -69,7 +67,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "handler",
                         "fn": "handler",
                         "designer|params": [
                             "button",
@@ -92,10 +89,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "localiserId": "wizardNextBtn",
+                "layout|flex": null,
                 "itemId": "wizNext",
-                "designer|userClassName": "MyButton222",
                 "iconAlign": "right",
                 "iconCls": "arrow_right",
                 "text": "Suivant"
@@ -117,7 +113,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "handler",
                         "fn": "handler",
                         "designer|params": [
                             "button",
@@ -153,7 +148,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "makeCorrect",
                 "fn": "makeCorrect",
                 "implHandler": [
                     "var all = this.up().items.items.length;\r",
@@ -183,7 +177,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onToolbarAfterRender",
                 "fn": "onToolbarAfterRender",
                 "implHandler": [
                     "this.makeCorrect();"

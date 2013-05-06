@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "selectSite",
                 "fn": "selectSite",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)) {\r",
@@ -74,7 +73,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteSite",
                 "fn": "deleteSite",
                 "implHandler": [
                     "var target = Ext.getCmp('mainSitesGrid').getSelectionModel().getSelection()[0];\r",
@@ -136,7 +134,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "openAddSiteWindow",
                 "fn": "openAddSiteWindow",
                 "implHandler": [
                     "Ext.widget(\"siteBuilderWizzard\").show();"
@@ -156,7 +153,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "createNewSite",
                 "fn": "createNewSite",
                 "implHandler": [
                     "var form = button.up().getForm();\r",
@@ -186,7 +182,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateSiteSubmit",
                 "fn": "updateSiteSubmit",
                 "implHandler": [
                     "var me=this;\r",
@@ -233,7 +228,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSitesInterfaceBeforeClose",
                 "fn": "onSitesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").removeAll();\r",
@@ -255,7 +249,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMainSitesGridRender",
                 "fn": "onMainSitesGridRender",
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").load();"
@@ -275,7 +268,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSiteWizzardCreateBtnClick",
                 "fn": "onSiteWizzardCreateBtnClick",
                 "implHandler": [
                     "var form = button.up().up().getForm();\r",

@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm5",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -45,7 +44,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "nouveauMasqueTitre",
-                        "designer|userClassName": "MyTextField15",
                         "fieldLabel": "Titre ",
                         "value": [
                             "Nouveau Masque",
@@ -65,7 +63,6 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "id": "nouveauMasqueSite",
-                        "designer|userClassName": "MyComboBox",
                         "fieldLabel": "Site ",
                         "allowBlank": false,
                         "editable": false,
@@ -87,7 +84,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onNouveauMasqueSiteAfterRender",
                                 "fn": "onNouveauMasqueSiteAfterRender",
                                 "implHandler": [
                                     "var results = component.getStore().getRange();\r",
@@ -113,7 +109,6 @@
                         "layout|anchor": "1",
                         "id": "creerNouveauMasque",
                         "width": null,
-                        "designer|userClassName": "MyButton50",
                         "text": "Créer un nouveau masque"
                     },
                     "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a"

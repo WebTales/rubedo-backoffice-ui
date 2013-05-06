@@ -35,8 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar62"
+                "dock": "top"
             },
             "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
             "cn": [
@@ -54,7 +53,6 @@
                         "id": "workspaceAdd",
                         "minWidth": null,
                         "width": null,
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "add_big",
                         "scale": "large",
@@ -87,7 +85,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "workspaceRemove",
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -120,7 +117,6 @@
                         "layout|flex": null,
                         "disabled": true,
                         "id": "workspaceSave",
-                        "designer|userClassName": "MyButton240",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -148,7 +144,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onWorkspaceSaveAfterRender",
                                 "fn": "onWorkspaceSaveAfterRender",
                                 "implHandler": [
                                     "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -173,8 +168,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill27"
+                        "layout|flex": null
                     },
                     "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
                 },
@@ -189,7 +183,6 @@
                         "RApplication": "workspaces",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton243",
                         "iconCls": "info_big",
                         "scale": "large",
                         "text": ""
@@ -215,7 +208,6 @@
             "userConfig": {
                 "id": "workspacesGrid",
                 "width": 200,
-                "designer|userClassName": "MyGridPanel32",
                 "title": "",
                 "forceFit": true,
                 "store": "WorkspacesStore"
@@ -229,9 +221,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyGridView31"
-                    },
                     "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
                 },
                 {
@@ -243,7 +232,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "nameColumn",
-                        "designer|userClassName": "MyColumn70",
                         "dataIndex": "text",
                         "text": "Nom"
                     },
@@ -264,7 +252,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -301,7 +288,6 @@
                 "layout|flex": 1,
                 "disabled": true,
                 "id": "workspacesMainForm",
-                "designer|userClassName": "MyForm43",
                 "bodyPadding": 10,
                 "title": "Propriétés"
             },
@@ -324,7 +310,6 @@
                     "userConfig": {
                         "localiserId": "nameField",
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField74",
                         "fieldLabel": "Nom",
                         "name": "text",
                         "allowBlank": false
@@ -348,7 +333,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspacesInterfaceRender",
                 "fn": "onWorkspacesInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"WorkspacesStore\").load();"
@@ -366,7 +350,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onWorkspacesInterfaceBeforeClose",
                 "fn": "onWorkspacesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"WorkspacesStore\").removeAll();"

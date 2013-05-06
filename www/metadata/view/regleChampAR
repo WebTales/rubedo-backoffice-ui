@@ -25,9 +25,7 @@
             "codeClass": null,
             "userConfig": {
                 "frame": true,
-                "itemId": "boite",
-                "designer|userClassName": "MyToolbar22",
-                "designer|userAlias": "mytoolbar22"
+                "itemId": "boite"
             },
             "designerId": "3c75a79e-90f7-4a56-a629-d75f94e71a32",
             "cn": [
@@ -41,7 +39,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "nomChamp",
-                        "designer|userClassName": "MyTextItem4",
                         "text": "Champ"
                     },
                     "designerId": "cdec8b9e-1356-42ec-bd70-8fbf38156ea8"
@@ -60,7 +57,6 @@
                         "style": [
                             "{float:right}"
                         ],
-                        "designer|userClassName": "MyButton74",
                         "iconCls": "close",
                         "text": ""
                     },

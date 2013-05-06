@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy6",
                 "api": [
                     "{\r",
                     "\r",
@@ -48,8 +47,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader4"
+                        "root": "data"
                     },
                     "designerId": "9e86a502-7d91-46ff-9d67-1f584e182e48"
                 }
@@ -63,8 +61,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "text",
-                "designer|userClassName": "field219"
+                "name": "text"
             },
             "designerId": "96090cd7-d092-4741-a428-db76c9b06dcd"
         },
@@ -76,8 +73,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "label",
-                "designer|userClassName": "field220"
+                "name": "label"
             },
             "designerId": "9b5affc0-dadd-44ac-8dad-654270b1b065"
         }

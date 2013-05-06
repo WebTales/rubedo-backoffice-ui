@@ -33,8 +33,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar14"
+                "dock": "bottom"
             },
             "designerId": "5fdbaee6-a984-400c-91a6-d04d65c467fe",
             "cn": [
@@ -46,8 +45,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "6e0b7a95-da0b-437e-b46d-00ce24cec254"
                 },
@@ -65,7 +63,6 @@
                         "layout|flex": null,
                         "layout|margins": null,
                         "id": "boutonEnregistrerNouveauContenu",
-                        "designer|userClassName": "MyButton49",
                         "iconCls": "save",
                         "text": "Brouillon"
                     },
@@ -103,7 +100,6 @@
                         "localiserId": "submitBtn",
                         "layout|flex": null,
                         "id": "boutonSoumettreNouveauContenu",
-                        "designer|userClassName": "MyButton141",
                         "iconCls": "save",
                         "text": "Soumettre"
                     },
@@ -134,7 +130,6 @@
                         "layout|flex": null,
                         "hidden": true,
                         "id": "boutonRefuserNouveauContenu",
-                        "designer|userClassName": "MyButton141",
                         "iconCls": "save_refuse",
                         "text": "Refuser"
                     },
@@ -165,7 +160,6 @@
                         "localiserId": "publishBtn",
                         "layout|flex": null,
                         "id": "boutonPublierNouveauContenu",
-                        "designer|userClassName": "MyButton50",
                         "iconAlign": null,
                         "iconCls": "publish",
                         "text": "Publier"
@@ -202,7 +196,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTabPanel6",
                 "activeTab": 0
             },
             "designerId": "2fa9a88e-b658-4f2d-854c-2efaebcc668f",
@@ -215,7 +208,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyPanel46",
                         "layout": "fit",
                         "title": "Edition"
                     },
@@ -229,8 +221,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "editTab",
-                                "designer|userClassName": "TabConfig27"
+                                "localiserId": "editTab"
                             },
                             "designerId": "39d2203a-e32c-438e-9e73-e2fa5a3ef4d6",
                             "customConfigs": [
@@ -251,7 +242,6 @@
                             "userConfig": {
                                 "height": 101,
                                 "id": "boiteAChampsContenus",
-                                "designer|userClassName": "MyForm3",
                                 "autoScroll": true,
                                 "bodyPadding": 10,
                                 "title": ""
@@ -268,8 +258,6 @@
                                     "userConfig": {
                                         "id": "cedtr1",
                                         "padding": 10,
-                                        "designer|userClassName": "ChampTC",
-                                        "designer|userAlias": "ChampTC",
                                         "layout": "anchor"
                                     },
                                     "designerId": "2620fef2-078c-4983-8fec-8f914a248962",
@@ -288,7 +276,6 @@
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "designer|userClassName": "MyTextField1",
                                                 "fieldLabel": "Titre *",
                                                 "labelSeparator": null,
                                                 "name": "text",
@@ -320,8 +307,6 @@
                                     "userConfig": {
                                         "id": "cedtr2",
                                         "padding": 10,
-                                        "designer|userClassName": "ChampTC",
-                                        "designer|userAlias": "ChampTC",
                                         "layout": "anchor"
                                     },
                                     "designerId": "28c92b29-92d3-47c3-853a-0fbbd944db2d",
@@ -340,7 +325,6 @@
                                                 "style": [
                                                     "{float:left}"
                                                 ],
-                                                "designer|userClassName": "MyTextArea7",
                                                 "fieldLabel": "Résumé ",
                                                 "labelSeparator": " ",
                                                 "name": "summary"
@@ -374,7 +358,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "contentMetadataBox",
-                        "designer|userClassName": "MyForm25",
                         "bodyPadding": 10,
                         "title": "Métadonnées"
                     },
@@ -389,8 +372,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "metadataTab",
-                                "id": "metaTabConfig",
-                                "designer|userClassName": "TabConfig28"
+                                "id": "metaTabConfig"
                             },
                             "designerId": "6382d243-7dcc-4aac-947b-71f6e8bde597",
                             "customConfigs": [
@@ -410,7 +392,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "publishFieldset",
-                                "designer|userClassName": "MyFieldSet8",
                                 "title": "Publication"
                             },
                             "designerId": "3c64996e-d30c-451d-b7c0-00cf76fcc57f",
@@ -432,7 +413,6 @@
                                     "userConfig": {
                                         "localiserId": "contentStartPublicationDateField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyDateField4",
                                         "fieldLabel": "Date de début de publication ",
                                         "labelWidth": 200,
                                         "name": "startPublicationDate"
@@ -456,7 +436,6 @@
                                     "userConfig": {
                                         "localiserId": "contentEndPublicationDateField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyDateField5",
                                         "fieldLabel": "Date de fin de publication ",
                                         "labelWidth": 200,
                                         "name": "endPublicationDate"
@@ -483,7 +462,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "boiteATaxoContenus",
-                        "designer|userClassName": "MyForm16",
                         "bodyPadding": 10,
                         "title": "Taxonomie"
                     },
@@ -498,8 +476,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "taxonomyTab",
-                                "id": "taxoTabConfig",
-                                "designer|userClassName": "TabConfig29"
+                                "id": "taxoTabConfig"
                             },
                             "designerId": "3a998a89-0efb-4245-9f1f-7d21860f9dad",
                             "customConfigs": [
@@ -521,7 +498,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "boiteADroitsContenus",
-                        "designer|userClassName": "MyForm47",
                         "bodyPadding": 10,
                         "title": "Espaces de travail"
                     },
@@ -536,8 +512,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "workspacesTab",
-                                "id": "rightsTabConfig",
-                                "designer|userClassName": "TabConfig29"
+                                "id": "rightsTabConfig"
                             },
                             "designerId": "41a82d8f-cc6c-40e6-bd18-70a0b7441752",
                             "customConfigs": [
@@ -594,7 +569,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "contentsVersionPanel",
-                        "designer|userClassName": "MyPanel48",
                         "layout": "fit",
                         "title": "Versions"
                     },
@@ -608,8 +582,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "versionsTab",
-                                "designer|userClassName": "TabConfig29"
+                                "localiserId": "versionsTab"
                             },
                             "designerId": "b2841907-99b4-46e8-8359-cc0ad3ef9eaa",
                             "customConfigs": [
@@ -628,7 +601,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyGridPanel23",
                                 "title": "",
                                 "forceFit": true,
                                 "store": "VersioningStore"
@@ -642,9 +614,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridView23"
-                                    },
                                     "designerId": "7e5cf955-3bc0-4a91-a9a3-1e754ebee449"
                                 },
                                 {
@@ -656,7 +625,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "versionTitleCol",
-                                        "designer|userClassName": "MyColumn47",
                                         "dataIndex": "text",
                                         "text": "Titre"
                                     },
@@ -678,7 +646,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "versionVersionCol",
-                                        "designer|userClassName": "MyNumberColumn",
                                         "dataIndex": "publishVersion",
                                         "text": "Version",
                                         "format": "0"
@@ -701,7 +668,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "versionPublishDateCol",
-                                        "designer|userClassName": "MyDateColumn9",
                                         "dataIndex": "publishTime",
                                         "text": "Date de publication",
                                         "format": "d/m/Y"
@@ -724,7 +690,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "versionAuthorCol",
-                                        "designer|userClassName": "MyColumn2",
                                         "dataIndex": "publishUser",
                                         "text": "Auteur"
                                     },
@@ -751,7 +716,6 @@
                     "userConfig": {
                         "ACL": "read.ui.dependantTypes",
                         "id": "nestedContentsTab",
-                        "designer|userClassName": "MyPanel44",
                         "layout": "fit",
                         "title": "Contenus Imbriqués"
                     },
@@ -773,8 +737,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "dependantTypesTab",
-                                "id": "nestedContensTabConfig",
-                                "designer|userClassName": "TabConfig29"
+                                "id": "nestedContensTabConfig"
                             },
                             "designerId": "1a19d2e0-ed7b-4a6b-8bdd-5016b832a3fd",
                             "customConfigs": [
@@ -794,8 +757,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "top",
-                                "height": 54,
-                                "designer|userClassName": "MyToolbar37"
+                                "height": 54
                             },
                             "designerId": "d0d74000-3ed4-406c-826c-ab9b49c52b79",
                             "cn": [
@@ -809,7 +771,6 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "height": 50,
-                                        "designer|userClassName": "MyButtonGroup11",
                                         "bodyPadding": 4,
                                         "headerPosition": "bottom",
                                         "title": "Ajouter un contenu imbriqué",
@@ -827,7 +788,6 @@
                                             "userConfig": {
                                                 "id": "nestedContentsAddCombo",
                                                 "margin": null,
-                                                "designer|userClassName": "MyComboBox11",
                                                 "fieldLabel": "Type de contenu à ajouter ",
                                                 "labelWidth": 160,
                                                 "allowBlank": false,
@@ -851,7 +811,6 @@
                                             "userConfig": {
                                                 "id": "nestedContentsAddBtn",
                                                 "margin": "0 0 0 10",
-                                                "designer|userClassName": "MyButton143",
                                                 "iconCls": "add",
                                                 "text": "Ajouter"
                                             },
@@ -870,7 +829,6 @@
                                         "layout|flex": null,
                                         "disabled": true,
                                         "id": "nestedContentsDeleteBtn",
-                                        "designer|userClassName": "MyButton144",
                                         "iconAlign": "top",
                                         "iconCls": "remove_med",
                                         "scale": "medium",
@@ -889,7 +847,6 @@
                                         "layout|flex": null,
                                         "disabled": true,
                                         "id": "nestedContentsModifyBtn",
-                                        "designer|userClassName": "MyButton145",
                                         "iconAlign": "top",
                                         "iconCls": "pencil_med",
                                         "scale": "medium",
@@ -908,7 +865,6 @@
                                         "layout|flex": null,
                                         "disabled": true,
                                         "id": "nestedContentsOnlineBtn",
-                                        "designer|userClassName": "MyButton145",
                                         "iconAlign": "top",
                                         "iconCls": "online_med",
                                         "scale": "medium",
@@ -927,7 +883,6 @@
                                         "layout|flex": null,
                                         "disabled": true,
                                         "id": "nestedContentsOfflineBtn",
-                                        "designer|userClassName": "MyButton145",
                                         "iconAlign": "top",
                                         "iconCls": "offline_med",
                                         "scale": "medium",
@@ -943,8 +898,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyFill12"
+                                        "layout|flex": null
                                     },
                                     "designerId": "4da4df51-41a0-44a7-8d33-bb77e0e18eee"
                                 },
@@ -957,7 +911,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": null,
-                                        "designer|userClassName": "MyButton148",
                                         "iconCls": "info_big",
                                         "scale": "large",
                                         "text": ""
@@ -998,7 +951,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAjouterContenuRender",
                 "fn": "onAjouterContenuRender",
                 "implHandler": [
                     "if (component.specialMode){\r",

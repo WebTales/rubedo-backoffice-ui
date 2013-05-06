@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy10",
                 "api": [
                     "{\r",
                     "read : 'versioning'\r",
@@ -46,8 +45,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader8"
+                        "root": "data"
                     },
                     "designerId": "482a708d-1e4f-45db-a3f4-2014c1b5b68e"
                 }
@@ -62,8 +60,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "publishVersion",
-                "designer|userClassName": "MySorter3"
+                "property": "publishVersion"
             },
             "designerId": "18ed8649-3e47-47be-aef3-e0e03dc19403"
         }

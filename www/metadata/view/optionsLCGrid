@@ -25,9 +25,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView8"
-            },
             "designerId": "75dc6c5f-c2ab-4503-a3ba-e4eb603a89aa"
         },
         {
@@ -38,7 +35,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn16",
                 "dataIndex": "valeur",
                 "text": "Valeur",
                 "flex": 1
@@ -53,7 +49,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyTextField11",
                         "allowBlank": false
                     },
                     "designerId": "a87ebb6f-d41e-4a17-832f-169d0cf3842c"
@@ -68,7 +63,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn16",
                 "dataIndex": "nom",
                 "text": "Nom",
                 "flex": 1
@@ -83,7 +77,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyTextField12",
                         "allowBlank": false
                     },
                     "designerId": "ca6748c5-419c-49f0-9f1d-2bdb02d8550f"
@@ -97,9 +90,6 @@
                 "type": "array"
             },
             "codeClass": "Ext.grid.plugin.RowEditing",
-            "userConfig": {
-                "designer|userClassName": "MyRowEditingPlugin"
-            },
             "designerId": "7501fd76-69a6-4dae-bb1c-9b88bf2c7f17"
         },
         {
@@ -110,8 +100,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar19"
+                "dock": "bottom"
             },
             "designerId": "1a87ee7c-d1a8-4c6d-8a3a-d8898ba05b46",
             "cn": [
@@ -124,7 +113,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton64",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
@@ -138,7 +126,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onButtonClick",
                                 "fn": "onButtonClick",
                                 "implHandler": [
                                     "button.up().up().getComponent(0).getStore().add({valeur : 'valeur', nom : 'nom'});"
@@ -159,7 +146,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton65",
                         "iconCls": "close",
                         "text": "Supprimer"
                     },
@@ -173,7 +159,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onButtonClick1",
                                 "fn": "onButtonClick1",
                                 "implHandler": [
                                     "button.up().up().getComponent(0).getStore().remove(button.up().up().getComponent(0).getSelectionModel().getLastSelected());"

@@ -46,7 +46,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyForm29",
                 "bodyPadding": 10,
                 "title": ""
             },
@@ -60,9 +59,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "newPageTitleField",
-                        "designer|userClassName": "MyTextField44",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Titre ",
                         "labelWidth": 110,
                         "name": "title",
@@ -87,11 +85,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "newPageMaskChoiceField",
                         "layout|anchor": "100%",
                         "dock": null,
-                        "localiserId": "newPageMaskChoiceField",
                         "id": "newPageMaskSelector",
-                        "designer|userClassName": "MyComboBox13",
                         "fieldLabel": "Masque de page ",
                         "labelWidth": 110,
                         "name": "maskId",
@@ -119,10 +116,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "newPageSubmitBtn",
+                        "layout|anchor": "100%",
                         "id": "newPageSubmitBtn",
-                        "designer|userClassName": "MyButton158",
                         "text": "Créer en tant que fille de la page sélectionnée"
                     },
                     "designerId": "f85a67ca-a9ca-4c19-bb27-31ccee2deba8",

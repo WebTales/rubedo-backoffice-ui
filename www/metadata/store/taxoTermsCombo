@@ -21,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy27",
                 "api": [
                     "{\r",
                     "                    read: 'taxonomy-terms'\r",
@@ -39,8 +38,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader26"
+                        "root": "data"
                     },
                     "designerId": "85e297a3-b404-420f-8646-a4abfc73fee1"
                 }

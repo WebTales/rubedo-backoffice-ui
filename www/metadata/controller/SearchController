@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mainSearchLaunch",
                 "fn": "mainSearchLaunch",
                 "implHandler": [
                     "var me=this;\r",
@@ -57,7 +56,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mainResultWindowGetContext",
                 "fn": "mainResultWindowGetContext",
                 "implHandler": [
                     "if ((record.get(\"objectType\")==\"content\")&&(ACL.interfaceRights['read.ui.contents'])){\r",
@@ -81,7 +79,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderActiveFacets",
                 "fn": "renderActiveFacets",
                 "designer|params": [
                     "facets"
@@ -143,7 +140,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onESFacetQueryBtnClick",
                 "fn": "onESFacetQueryBtnClick",
                 "implHandler": [
                     "Ext.getStore(\"ESFacetteStore\").activeFacettes.query=Ext.getCmp(\"ESFacetQueryField\").getValue();\r",
@@ -164,7 +160,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "renderFacets",
                 "fn": "renderFacets",
                 "designer|params": [
                     "facets"

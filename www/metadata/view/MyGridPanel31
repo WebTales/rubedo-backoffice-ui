@@ -25,9 +25,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView2"
-            },
             "designerId": "1da5c9eb-cc3a-4209-a0ec-0f4d951f8625",
             "cn": [
                 {
@@ -37,9 +34,6 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.DragDrop",
-                    "userConfig": {
-                        "designer|userClassName": "MyGridDragDropPlugin"
-                    },
                     "designerId": "9775debd-2a36-4c02-b1d3-b97048a98cda"
                 }
             ]
@@ -54,7 +48,6 @@
             "userConfig": {
                 "filter": true,
                 "localiserId": "u1TitleColumn",
-                "designer|userClassName": "MyColumn5",
                 "dataIndex": "text",
                 "text": "Titre",
                 "flex": 1
@@ -84,7 +77,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -129,7 +121,6 @@
                     "}"
                 ],
                 "localiserId": "u1TypeColumn",
-                "designer|userClassName": "MyColumn53",
                 "dataIndex": "typeId",
                 "text": "Type",
                 "flex": 1
@@ -159,7 +150,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -201,7 +191,6 @@
                     "}"
                 ],
                 "localiserId": "u1StatusColumn",
-                "designer|userClassName": "MyColumn6",
                 "dataIndex": "status",
                 "text": "Etat",
                 "flex": 1
@@ -231,7 +220,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -275,7 +263,6 @@
                 ],
                 "localiserId": "u1OnlineColumn",
                 "width": 60,
-                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "online",
                 "text": "En ligne",
                 "falseText": "Non",
@@ -309,7 +296,6 @@
                 "dock": "bottom",
                 "id": "contentSelectorPagingToolbar",
                 "width": 360,
-                "designer|userClassName": "MyPagingToolbar",
                 "displayInfo": true,
                 "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
                 "emptyMsg": "Rien à afficher",
@@ -330,7 +316,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onPagingToolbarConentSelectBeforeRender",
                         "fn": "onPagingToolbarConentSelectBeforeRender",
                         "implHandler": [
                             "component.bindStore(component.up().getStore());"

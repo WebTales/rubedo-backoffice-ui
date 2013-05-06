@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onStoreUpdate",
                 "fn": "onStoreUpdate",
                 "implHandler": [
                     "Rubedo.controller.ContributionContenusController.prototype.nestedContentsSelect(Ext.getCmp(\"NestedContentsGrid\"), Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection());\r",
@@ -44,8 +43,7 @@
             "codeClass": null,
             "userConfig": {
                 "property": "typeId",
-                "root": null,
-                "designer|userClassName": "MyGrouper3"
+                "root": null
             },
             "designerId": "3d04bb23-cec3-48a8-b92f-989a5b0e80ce"
         },
@@ -57,7 +55,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy25",
                 "api": [
                     "{\r",
                     "                    create: 'nested-contents/create',\r",
@@ -83,8 +80,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "messageProperty": "message",
-                        "root": "data",
-                        "designer|userClassName": "MyJsonReader24"
+                        "root": "data"
                     },
                     "designerId": "7eecfb39-7244-48ec-b663-8ef5431666b3"
                 },
@@ -96,7 +92,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonWriter18",
                         "encode": true,
                         "root": "data"
                     },

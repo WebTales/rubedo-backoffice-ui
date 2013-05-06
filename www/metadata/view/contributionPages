@@ -48,7 +48,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMinimize",
-                "designer|userClassName": "MyTool16",
                 "type": "minimize"
             },
             "designerId": "357d8ec3-5063-407a-86f4-1c4f9a278490"
@@ -62,7 +61,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "windowMaximize",
-                "designer|userClassName": "MyTool17",
                 "type": "maximize"
             },
             "designerId": "412b6872-bfd0-46df-92b3-ff3606eb5b67"
@@ -78,8 +76,7 @@
                 "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne",
-                "designer|userClassName": "MyToolbar26"
+                "itemId": "filArianne"
             },
             "designerId": "7564a651-4add-4f34-a33c-62e35f5e0b26",
             "cn": [
@@ -93,7 +90,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "origine",
-                        "designer|userClassName": "MyButton88",
                         "iconCls": "masque-icon",
                         "text": "Pages<b> ></b> "
                     },
@@ -109,8 +105,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "border": 0,
-                        "id": "pageTreeBreadcrumb",
-                        "designer|userClassName": "MyToolbar65"
+                        "id": "pageTreeBreadcrumb"
                     },
                     "designerId": "8f0e17f0-75c2-4099-b055-f4f4a20b01c9"
                 }
@@ -128,9 +123,7 @@
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "designer|userClassName": "menuContenusTools",
-                "designer|userAlias": "menuContenusTools"
+                "width": null
             },
             "designerId": "3a708c0d-071b-4c2c-bfa7-03924dd5598f",
             "cn": [
@@ -148,7 +141,6 @@
                         "disabled": true,
                         "id": "addPageBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton11",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -183,7 +175,6 @@
                         "disabled": true,
                         "id": "removePageBtn",
                         "itemId": null,
-                        "designer|userClassName": "MyButton13",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
@@ -217,7 +208,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 6
@@ -248,7 +238,6 @@
                                 "disabled": true,
                                 "id": "newPageBloc",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
@@ -276,7 +265,6 @@
                                 "disabled": true,
                                 "id": "deletePageElement",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_remove_big",
@@ -304,7 +292,6 @@
                                 "disabled": true,
                                 "id": "pageElementUp",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
@@ -332,7 +319,6 @@
                                 "disabled": true,
                                 "id": "pageElementDown",
                                 "width": null,
-                                "designer|userClassName": "MyButton51",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
@@ -362,7 +348,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -386,7 +371,6 @@
                             "userConfig": {
                                 "hidden": true,
                                 "id": null,
-                                "designer|userClassName": "MyButton15",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
@@ -405,7 +389,6 @@
                             "userConfig": {
                                 "localiserId": "shortcutBtn",
                                 "itemId": "boutonCreerRaccourci",
-                                "designer|userClassName": "MyButton14",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
@@ -436,7 +419,6 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
-                        "designer|userClassName": "MyButtonGroup",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4
@@ -466,7 +448,6 @@
                                 "localiserId": "saveBtn",
                                 "id": "pageSaveBtn",
                                 "itemId": null,
-                                "designer|userClassName": "MyButton13",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
@@ -490,7 +471,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onPageSaveBtnAfterRender",
                                         "fn": "onPageSaveBtnAfterRender",
                                         "implHandler": [
                                             "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
@@ -517,8 +497,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill10"
+                        "layout|flex": null
                     },
                     "designerId": "fe81dfca-1c32-468c-95fe-d0c6166842f7"
                 },
@@ -533,7 +512,6 @@
                         "RApplication": "pages",
                         "layout|flex": null,
                         "itemId": "RHelpBtn",
-                        "designer|userClassName": "MyButton94",
                         "icon": null,
                         "iconCls": "info_big",
                         "scale": "large",
@@ -561,7 +539,6 @@
                 "layout|flex": null,
                 "id": "mainPageTree",
                 "width": 225,
-                "designer|userClassName": "MyTreePanel2",
                 "resizable": true,
                 "resizeHandles": "e",
                 "title": "",
@@ -581,9 +558,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MyTreeView2"
-                    },
                     "designerId": "0faed59a-eddb-494c-b8ce-f2b22fe628b7",
                     "cn": [
                         {
@@ -594,7 +568,6 @@
                             },
                             "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                             "userConfig": {
-                                "designer|userClassName": "MyTreeDragDropPlugin2",
                                 "dragText": "{0} page{1} séléctionnée{1}"
                             },
                             "designerId": "89b7136f-756c-4721-a7f3-aa01a0e66964",
@@ -607,7 +580,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onTreedragdroppluginBeforeDrop",
                                         "fn": "onTreedragdroppluginBeforeDrop",
                                         "implHandler": [
                                             "\r",
@@ -658,7 +630,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onTreedragdroppluginDrop",
                                         "fn": "onTreedragdroppluginDrop",
                                         "implHandler": [
                                             "var task= new Ext.util.DelayedTask(function(){\r",
@@ -684,8 +655,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
-                        "designer|userClassName": "MyToolbar42"
+                        "dock": "top"
                     },
                     "designerId": "45af98fe-5448-4f07-8ad6-112899cbe64f",
                     "cn": [
@@ -701,7 +671,6 @@
                                 "localiserId": "siteField",
                                 "layout|flex": 1,
                                 "id": "pagesSitesCombo",
-                                "designer|userClassName": "MyComboBox12",
                                 "fieldLabel": "Site ",
                                 "labelWidth": 40,
                                 "editable": false,
@@ -738,7 +707,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "nameColumn",
-                        "designer|userClassName": "MyTreeColumn1",
                         "dataIndex": "text",
                         "menuText": "false",
                         "text": "Nom",
@@ -761,7 +729,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "renderer",
                                 "fn": "renderer",
                                 "designer|params": [
                                     "value",
@@ -802,7 +769,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "pagesCenterTabBox",
-                "designer|userClassName": "MyTabPanel8",
                 "activeTab": 0
             },
             "designerId": "31ec80f6-28dc-4ca5-88b0-992bb0b0b5cc",
@@ -816,7 +782,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel41",
                         "layout": "hbox",
                         "title": "Edition"
                     },
@@ -830,8 +795,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "editTab",
-                                "designer|userClassName": "TabConfig28"
+                                "localiserId": "editTab"
                             },
                             "designerId": "3e88f0dd-a817-428c-9196-8bf2d9687ec0",
                             "customConfigs": [
@@ -852,7 +816,6 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "container|align": "stretch",
-                                "designer|userClassName": "MyContainer14",
                                 "autoScroll": true,
                                 "layout": "vbox"
                             },
@@ -870,7 +833,6 @@
                                         "container|align": "stretch",
                                         "height": 600,
                                         "id": "mainPageEdition",
-                                        "designer|userClassName": "MyPanel40",
                                         "layout": "vbox",
                                         "title": ""
                                     },
@@ -891,7 +853,6 @@
                                 "container|align": "stretch",
                                 "cls": null,
                                 "width": 300,
-                                "designer|userClassName": "MyPanel33",
                                 "overflowY": null,
                                 "resizable": true,
                                 "resizeHandles": "w",
@@ -928,7 +889,6 @@
                                         "layout|flex": 1,
                                         "height": null,
                                         "id": "pageElementPropsPanel",
-                                        "designer|userClassName": "MyForm31",
                                         "autoScroll": true,
                                         "bodyPadding": null,
                                         "title": "Sélectionnez un élément"
@@ -951,7 +911,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "id": "pageElementIdField",
-                                        "designer|userClassName": "MyHiddenField5",
                                         "fieldLabel": "Label"
                                     },
                                     "designerId": "0aae9eaa-8caf-4cc9-9b8d-99911592506f"
@@ -969,7 +928,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "pagesInternalPreview",
-                        "designer|userClassName": "MyPanel40",
                         "layout": "fit",
                         "title": "Aperçu"
                     },
@@ -983,8 +941,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "overviewTab",
-                                "designer|userClassName": "TabConfig27"
+                                "localiserId": "overviewTab"
                             },
                             "designerId": "1b16f1d9-9e8d-46e4-90c1-97a24dea5764",
                             "customConfigs": [
@@ -1004,8 +961,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "top",
-                                "height": 24,
-                                "designer|userClassName": "MyToolbar45"
+                                "height": 24
                             },
                             "designerId": "ef276fcd-932b-4674-a53c-9d3198467bb3",
                             "cn": [
@@ -1019,7 +975,6 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "id": "pagePreviewTextItem",
-                                        "designer|userClassName": "MyTextItem1",
                                         "text": ""
                                     },
                                     "designerId": "e0c6307c-bd0d-4714-9aa4-a418f6b2b6da"
@@ -1032,8 +987,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyFill23"
+                                        "layout|flex": null
                                     },
                                     "designerId": "97c2f5ff-5fb4-4640-a5c6-9ec9df00136d"
                                 },
@@ -1048,7 +1002,6 @@
                                         "localiserId": "refreshBtn",
                                         "layout|flex": null,
                                         "id": "pagePreviewRefreshBtn",
-                                        "designer|userClassName": "MyButton192",
                                         "iconCls": "refresh",
                                         "text": "Actualiser"
                                     },
@@ -1075,7 +1028,6 @@
                     "userConfig": {
                         "autoShow": null,
                         "id": "mainPageAttributeForm",
-                        "designer|userClassName": "MyForm32",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Propriétés"
@@ -1090,8 +1042,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsTab",
-                                "designer|userClassName": "TabConfig26"
+                                "localiserId": "propsTab"
                             },
                             "designerId": "ebdeaea9-51a6-4e03-adba-216b96c86f7a",
                             "customConfigs": [
@@ -1112,7 +1063,6 @@
                             "userConfig": {
                                 "localiserId": "nameField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField46",
                                 "fieldLabel": "Nom *",
                                 "labelSeparator": null,
                                 "name": "text",
@@ -1139,7 +1089,6 @@
                             "userConfig": {
                                 "localiserId": "urlField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyTextField49",
                                 "fieldLabel": "URL ",
                                 "name": "pageURL",
                                 "regex": null,
@@ -1164,7 +1113,6 @@
                             "userConfig": {
                                 "localiserId": "excludeFromMenuField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox5",
                                 "fieldLabel": "Hors navigation",
                                 "name": "excludeFromMenu",
                                 "boxLabel": "",
@@ -1216,7 +1164,6 @@
                             "userConfig": {
                                 "localiserId": "inheritWorkspaceField",
                                 "layout|anchor": "100%",
-                                "designer|userClassName": "MyCheckbox8",
                                 "fieldLabel": "Hérite de l'espace de travail",
                                 "name": "inheritWorkspace",
                                 "boxLabel": "",
@@ -1239,7 +1186,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onCheckboxfieldChange",
                                         "fn": "onCheckboxfieldChange",
                                         "implHandler": [
                                             "if (newValue) {\r",
@@ -1265,7 +1211,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "referencingFieldSEt",
-                                "designer|userClassName": "MyFieldSet16",
                                 "title": "Référencement"
                             },
                             "designerId": "c7ec2131-9c4a-4f2a-8b7d-5a5834bf829e",
@@ -1287,7 +1232,6 @@
                                     "userConfig": {
                                         "localiserId": "titleField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextField47",
                                         "fieldLabel": "Titre *",
                                         "labelSeparator": null,
                                         "name": "title",
@@ -1312,7 +1256,6 @@
                                     "userConfig": {
                                         "localiserId": "descriptionField",
                                         "layout|anchor": "100%",
-                                        "designer|userClassName": "MyTextArea4",
                                         "fieldLabel": "Description ",
                                         "name": "description",
                                         "maxLength": 250
@@ -1334,7 +1277,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "onMainPageAttributeFormRender",
                                         "fn": "onMainPageAttributeFormRender",
                                         "implHandler": [
                                             "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
@@ -1371,7 +1313,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "pageContentDisplayer",
-                        "designer|userClassName": "MyPanel50",
                         "layout": "fit",
                         "title": "Contenus affichés"
                     },
@@ -1385,8 +1326,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "displayedContentTab",
-                                "designer|userClassName": "TabConfig34"
+                                "localiserId": "displayedContentTab"
                             },
                             "designerId": "5c0ca1d9-5e44-409d-b03b-f7da24367bc7",
                             "customConfigs": [
@@ -1406,7 +1346,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "pageContentGrid",
-                                "designer|userClassName": "MyGridPanel33",
                                 "title": "",
                                 "forceFit": true,
                                 "store": "PageDisplayedContentsStore"
@@ -1420,9 +1359,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "MyGridView32"
-                                    },
                                     "designerId": "7fe51694-b500-42da-9fd6-2a06475dad41"
                                 },
                                 {
@@ -1434,7 +1370,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "localiserId": "titleColumn",
-                                        "designer|userClassName": "MyColumn71",
                                         "dataIndex": "text",
                                         "text": "Titre"
                                     },
@@ -1459,7 +1394,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onPagesCenterTabBoxAfterRender",
                         "fn": "onPagesCenterTabBoxAfterRender",
                         "implHandler": [
                             "component.setActiveTab(2);\r",
@@ -1484,8 +1418,7 @@
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
-                "width": null,
-                "designer|userClassName": "MyToolbar27"
+                "width": null
             },
             "designerId": "0267550c-9782-4d39-9c37-e8d5ce708eac",
             "cn": [
@@ -1500,7 +1433,6 @@
                         "layout|flex": null,
                         "height": 45,
                         "width": 48,
-                        "designer|userClassName": "MyImg2",
                         "src": null
                     },
                     "designerId": "ee03d990-076f-4d27-b03c-2c589e1e409a",
@@ -1513,7 +1445,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImageRender1",
                                 "fn": "onImageRender1",
                                 "implHandler": [
                                     "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/application.png');"
@@ -1536,8 +1467,7 @@
                         "layout|flex": 2,
                         "itemId": "boiteBarreMeta",
                         "margin": "0 0 0 10",
-                        "maxWidth": null,
-                        "designer|userClassName": "MyContainer9"
+                        "maxWidth": null
                     },
                     "designerId": "fa120237-07ec-4865-8ed6-3ec70f8c6513",
                     "cn": [
@@ -1549,7 +1479,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "tpl",
                                 "implHandler": [
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ],
@@ -1567,8 +1496,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill9"
+                        "layout|flex": null
                     },
                     "designerId": "777d04dc-4977-4d63-b7bf-d59c490f01c0"
                 },
@@ -1584,7 +1512,6 @@
                         "layout|flex": null,
                         "id": "MaskZoomControlSlider1",
                         "width": 400,
-                        "designer|userClassName": "MySlider",
                         "fieldLabel": "Niveau de zoom",
                         "value": 527,
                         "maxValue": 2000,
@@ -1608,7 +1535,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onMaskZoomControlSliderChange1",
                                 "fn": "onMaskZoomControlSliderChange1",
                                 "implHandler": [
                                     "Ext.getCmp(\"mainPageEdition\").setHeight(newValue);"
@@ -1632,7 +1558,6 @@
                         "hidden": true,
                         "id": "pageMaskDisplayBtn",
                         "margin": "0 0 5 0",
-                        "designer|userClassName": "MyButton13",
                         "text": "Masque associé : "
                     },
                     "designerId": "d722afeb-7ee9-4e8d-b6df-9db4d500f4c7"

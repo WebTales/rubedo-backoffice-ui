@@ -47,7 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContentPickerWindowRender",
                 "fn": "onContentPickerWindowRender",
                 "implHandler": [
                     "if (Ext.isEmpty(component.allowedCT)){\r",
@@ -79,7 +78,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContentPickerWindowBeforeClose",
                 "fn": "onContentPickerWindowBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"ContentSelectorStore\").clearFilter(true);\r",
