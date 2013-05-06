@@ -162,7 +162,33 @@
                                         "store": "SitesJson",
                                         "valueField": "id"
                                     },
-                                    "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708"
+                                    "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onModelSiteIdFieldChange",
+                                                "implHandler": [
+                                                    "if (!Ext.isEmpty(newValue)){\r",
+                                                    "    var theRec = field.getStore().findRecord(\"id\", newValue).getData();\r",
+                                                    "    Ext.Array.forEach(Ext.getCmp(\"siteBuilderWizzard\").query(\"field\"),function(somefield){\r",
+                                                    "        if ((somefield.name!=\"builtOnEmptySite\")&&(somefield.name!=\"builtOnModelSiteId\")&&(somefield.name!=\"text\")){\r",
+                                                    "            somefield.setValue(theRec[somefield.name]);\r",
+                                                    "        }\r",
+                                                    "    });\r",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "d3e5a2a9-f936-437c-b034-2c415bb8086c"
+                                        }
+                                    ]
                                 }
                             ]
                         }

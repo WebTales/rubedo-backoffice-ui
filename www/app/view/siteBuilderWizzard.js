@@ -92,7 +92,13 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                             allowBlank: false,
                                             queryMode: 'local',
                                             store: 'SitesJson',
-                                            valueField: 'id'
+                                            valueField: 'id',
+                                            listeners: {
+                                                change: {
+                                                    fn: me.onModelSiteIdFieldChange,
+                                                    scope: me
+                                                }
+                                            }
                                         }
                                     ]
                                 }
@@ -237,6 +243,17 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
 
     onUseEmptySiteFieldAfterRender: function(component, eOpts) {
         component.fireEvent("change", true);
+    },
+
+    onModelSiteIdFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (!Ext.isEmpty(newValue)){
+            var theRec = field.getStore().findRecord("id", newValue).getData();
+            Ext.Array.forEach(Ext.getCmp("siteBuilderWizzard").query("field"),function(somefield){
+                if ((somefield.name!="builtOnEmptySite")&&(somefield.name!="builtOnModelSiteId")&&(somefield.name!="text")){
+                    somefield.setValue(theRec[somefield.name]);
+                }
+            });
+        }
     },
 
     onPanelRender: function(component, eOpts) {
