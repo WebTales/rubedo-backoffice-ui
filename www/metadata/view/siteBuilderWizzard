@@ -52,10 +52,134 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "sbStage2",
+                        "layout": "anchor",
+                        "bodyPadding": 10,
+                        "title": "Etape 1 : Modèle"
+                    },
+                    "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "id": "useEmptySiteField",
+                                "fieldLabel": "Créer un site vide",
+                                "name": "builtOnEmptySite",
+                                "boxLabel": "",
+                                "checked": true,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "bdf589d0-261e-4169-810b-3af1c8f1a94c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUseEmptySiteFieldChange",
+                                        "implHandler": [
+                                            "if (newValue){\r",
+                                            "\tExt.getCmp(\"modelSiteIdFieldset\").hide();\r",
+                                            "    Ext.getCmp(\"modelSiteIdField\").setValue(null);\r",
+                                            "    Ext.getCmp(\"modelSiteIdField\").allowBlank=true;\r",
+                                            "    Ext.getCmp(\"modelSiteIdField\").submitValue=false;\r",
+                                            "} else {\r",
+                                            "    Ext.getCmp(\"modelSiteIdFieldset\").show();\r",
+                                            "    Ext.getCmp(\"modelSiteIdField\").allowBlank=false;\r",
+                                            "    Ext.getCmp(\"modelSiteIdField\").submitValue=true;\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "984095b4-775f-4959-8189-04b19948a9a1"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUseEmptySiteFieldAfterRender",
+                                        "implHandler": [
+                                            "component.fireEvent(\"change\", true);"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "14cbcc70-6bbd-4cdd-a581-c415d6ae3bd7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "modelSiteIdFieldset",
+                                "title": "Créer un site en utilisant un site existant comme modèle"
+                            },
+                            "designerId": "1f0f2704-dfae-4add-b507-0be1237357b5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "id": "modelSiteIdField",
+                                        "fieldLabel": "Site modèle",
+                                        "name": "builtOnModelSiteId",
+                                        "submitValue": false,
+                                        "allowBlank": false,
+                                        "queryMode": "local",
+                                        "store": "SitesJson",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "localiserId": "sbStage1",
                         "layout": "anchor",
                         "bodyPadding": 10,
-                        "title": "Etape 1 : Identification"
+                        "title": "Etape 2 : Identification"
                     },
                     "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
                     "customConfigs": [
@@ -179,55 +303,6 @@
                             },
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "sbStage2",
-                        "layout": "anchor",
-                        "bodyPadding": 10,
-                        "title": "Etape 2 : Modèle"
-                    },
-                    "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ],
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Display",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "siteModelField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Modèle ",
-                                "name": "siteModelId",
-                                "value": [
-                                    "Site Vide"
-                                ]
-                            },
-                            "designerId": "e9550238-2ce6-4791-96b8-6dec0ee8a3b6",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
                         }
                     ]
                 },

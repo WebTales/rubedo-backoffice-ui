@@ -124,6 +124,13 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'disqusKey'
+        },
+        {
+            name: 'builtOnEmptySite',
+            type: 'boolean'
+        },
+        {
+            name: 'builtOnModelSiteId'
         }
     ]
 });

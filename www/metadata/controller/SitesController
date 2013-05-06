@@ -280,8 +280,8 @@
                     "            Ext.getStore(\"MasquesDataJson\").load();\r",
                     "        }\r",
                     "    },this,{single:true});\r",
-                    "    button.up().up().up().close();\r",
-                    "}"
+                    "        button.up().up().up().close();\r",
+                    "    }"
                 ],
                 "name": "click",
                 "scope": "me",

@@ -48,12 +48,64 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                     items: [
                         {
                             xtype: 'panel',
+                            localiserId: 'sbStage2',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            bodyPadding: 10,
+                            title: 'Etape 1 : Modèle',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    id: 'useEmptySiteField',
+                                    fieldLabel: 'Créer un site vide',
+                                    name: 'builtOnEmptySite',
+                                    boxLabel: '',
+                                    checked: true,
+                                    inputValue: 'true',
+                                    uncheckedValue: 'false',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onUseEmptySiteFieldChange,
+                                            scope: me
+                                        },
+                                        afterrender: {
+                                            fn: me.onUseEmptySiteFieldAfterRender,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    hidden: true,
+                                    id: 'modelSiteIdFieldset',
+                                    title: 'Créer un site en utilisant un site existant comme modèle',
+                                    items: [
+                                        {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            id: 'modelSiteIdField',
+                                            fieldLabel: 'Site modèle',
+                                            name: 'builtOnModelSiteId',
+                                            submitValue: false,
+                                            allowBlank: false,
+                                            queryMode: 'local',
+                                            store: 'SitesJson',
+                                            valueField: 'id'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
                             localiserId: 'sbStage1',
                             layout: {
                                 type: 'anchor'
                             },
                             bodyPadding: 10,
-                            title: 'Etape 1 : Identification',
+                            title: 'Etape 2 : Identification',
                             items: [
                                 {
                                     xtype: 'textfield',
@@ -102,25 +154,6 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     labelWidth: 110,
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
-                            localiserId: 'sbStage2',
-                            layout: {
-                                type: 'anchor'
-                            },
-                            bodyPadding: 10,
-                            title: 'Etape 2 : Modèle',
-                            items: [
-                                {
-                                    xtype: 'displayfield',
-                                    localiserId: 'siteModelField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Modèle ',
-                                    name: 'siteModelId',
-                                    value: 'Site Vide'
                                 }
                             ]
                         },
@@ -187,6 +220,23 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
         });
 
         me.callParent(arguments);
+    },
+
+    onUseEmptySiteFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (newValue){
+            Ext.getCmp("modelSiteIdFieldset").hide();
+            Ext.getCmp("modelSiteIdField").setValue(null);
+            Ext.getCmp("modelSiteIdField").allowBlank=true;
+            Ext.getCmp("modelSiteIdField").submitValue=false;
+        } else {
+            Ext.getCmp("modelSiteIdFieldset").show();
+            Ext.getCmp("modelSiteIdField").allowBlank=false;
+            Ext.getCmp("modelSiteIdField").submitValue=true;
+        }
+    },
+
+    onUseEmptySiteFieldAfterRender: function(component, eOpts) {
+        component.fireEvent("change", true);
     },
 
     onPanelRender: function(component, eOpts) {

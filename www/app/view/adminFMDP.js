@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.adminFMDP', {
     localiserId: 'pageMaskWindow',
     height: 578,
     id: 'adminFMDP',
-    width: 1350,
+    width: 1400,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -355,7 +355,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                     xtype: 'gridpanel',
                     managesStore: true,
                     id: 'masquesGrid',
-                    width: 150,
+                    width: 200,
                     resizable: true,
                     resizeHandles: 'e',
                     title: '',

@@ -405,6 +405,31 @@
                 "name": "disqusKey"
             },
             "designerId": "1d0b5f45-9dc4-4e6a-ab74-30f20e0a05fa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "builtOnEmptySite",
+                "type": "boolean"
+            },
+            "designerId": "39dc83f7-94c7-4482-933a-465d07405fae"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "builtOnModelSiteId"
+            },
+            "designerId": "804cf380-84c3-43b8-96fe-6b873895fa5b"
         }
     ]
 }
