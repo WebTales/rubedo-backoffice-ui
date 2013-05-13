@@ -594,7 +594,7 @@
                                     "    fieldLabel:\"Page de détail par défaut\",\r",
                                     "    id:\"sitesSinglePicker\",\r",
                                     "    anchor: \"100%\",\r",
-                                    "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
+                                    "    allowBlank:false,\r",
                                     "    name:\"defaultSingle\"\r",
                                     "});\r",
                                     "\r",

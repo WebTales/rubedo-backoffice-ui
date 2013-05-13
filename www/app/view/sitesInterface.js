@@ -440,7 +440,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             fieldLabel:"Page de détail par défaut",
             id:"sitesSinglePicker",
             anchor: "100%",
-            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+            allowBlank:false,
             name:"defaultSingle"
         });
 

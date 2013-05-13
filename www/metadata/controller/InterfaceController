@@ -699,11 +699,11 @@
                     "    Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');\r",
                     "    MyPrefData.HCMode=true;\r",
                     "    myPrefs.set(\"HCMode\",true);\r",
-                    "    button.setText('Désactiver');\r",
+                    "    button.setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
                     "} else {Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-gray.css');\r",
                     "    MyPrefData.HCMode=false;\r",
                     "    myPrefs.set(\"HCMode\",false);\r",
-                    "    button.setText('Activer');\r",
+                    "    button.setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
                     "}"
                 ],
                 "name": "click",
@@ -724,7 +724,7 @@
                 "fn": "setHCButtonStatus",
                 "implHandler": [
                     "if (MyPrefData.HCMode===true) {\r",
-                    "    component.setText('Désactiver');\r",
+                    "    component.setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
                     "} "
                 ],
                 "name": "render",

@@ -127,7 +127,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             errorTitle:"Erreur",
             serverConnectionError:"Connexion au serveur interrompue",
             internalServerError:"Erreur interne du serveur",
-            unkownError:"Erreur inconnue"
+            unkownError:"Erreur inconnue",
+            activateText:"Activer",
+            deactivateText:"Désactiver"
 
         });
         // attach event and load localisation store

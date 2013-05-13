@@ -276,17 +276,17 @@ Ext.define('Rubedo.controller.InterfaceController', {
             Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');
             MyPrefData.HCMode=true;
             myPrefs.set("HCMode",true);
-            button.setText('Désactiver');
+            button.setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
         } else {Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-gray.css');
             MyPrefData.HCMode=false;
             myPrefs.set("HCMode",false);
-            button.setText('Activer');
+            button.setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
         }
     },
 
     setHCButtonStatus: function(component, eOpts) {
         if (MyPrefData.HCMode===true) {
-            component.setText('Désactiver');
+            component.setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
         } 
     },
 
