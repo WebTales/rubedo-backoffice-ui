@@ -604,15 +604,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     }
                     Ext.getCmp('ajouterContenu').close();
                 } else {
-                    Ext.Msg.alert("Erreur","Certains champs de métadonnées sont invalides.");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidMetaError);
                     Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(1);
                 }
             } else {
-                Ext.Msg.alert("Erreur","Certains champs de taxonomie sont invalides.");
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidTaxoError);
                 Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(2);
             }
         } else {
-            Ext.Msg.alert("Erreur","Certains champs sont invalides.");
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
             Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(0);
         }
     },
@@ -654,7 +654,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 }else if ((ACL.interfaceRights["read.ui.contents"])&&(ACL.interfaceRights["read.ui.contents."+theContent.get("status")])){
                     me.prepareContext(theContent, false, specialMode, targetedId);
                 } else {
-                    Ext.Msg.alert('Erreur',"Vos droits sont insuffisants pour afficher ou modifier ce contenu");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.insufficientContentRightsError);
                     theStore.removeAll();
                 }
 
@@ -1034,7 +1034,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
             }
             fenetre.show();
-            fenetre.setTitle("Nouveau contenu "+theCT.get("type"));
+            fenetre.setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+theCT.get("type"));
             var formulaireTC = Ext.getCmp('boiteAChampsContenus');
             Ext.getCmp("contentsVersionPanel").up().remove( Ext.getCmp("contentsVersionPanel"));
             var champsD =theCT.data.champs;

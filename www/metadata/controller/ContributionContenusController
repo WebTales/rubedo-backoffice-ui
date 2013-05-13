@@ -282,7 +282,7 @@
                     "        if (Ext.getCmp(\"contentMetadataBox\").getForm().isValid()){\r",
                     "            var champs=Ext.getCmp(\"boiteAChampsContenus\").getForm().getValues();\r",
                     "            Ext.Array.forEach(Ext.getCmp(\"boiteAChampsContenus\").query(\"checkboxgroup\"),function(cbGroup){\r",
-                    "            \tchamps[cbGroup.name]=cbGroup.getValue();\r",
+                    "                champs[cbGroup.name]=cbGroup.getValue();\r",
                     "            });\r",
                     "            var taxonomie =Ext.getCmp(\"boiteATaxoContenus\").getForm().getValues();\r",
                     "            var droits = Ext.getCmp(\"boiteADroitsContenus\").getForm().getValues();\r",
@@ -321,15 +321,15 @@
                     "            }\r",
                     "            Ext.getCmp('ajouterContenu').close();\r",
                     "        } else {\r",
-                    "            Ext.Msg.alert(\"Erreur\",\"Certains champs de métadonnées sont invalides.\");\r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidMetaError);\r",
                     "            Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(1);\r",
                     "        }\r",
                     "    } else {\r",
-                    "        Ext.Msg.alert(\"Erreur\",\"Certains champs de taxonomie sont invalides.\");\r",
+                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidTaxoError);\r",
                     "        Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(2);\r",
                     "    }\r",
                     "} else {\r",
-                    "    Ext.Msg.alert(\"Erreur\",\"Certains champs sont invalides.\");\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);\r",
                     "    Ext.getCmp(\"ajouterContenu\").getComponent(0).setActiveTab(0);\r",
                     "}"
                 ]
@@ -613,11 +613,11 @@
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
                     "Ext.Array.forEach(Ext.getCmp(\"ContenusGrid\").getSelectionModel().getSelection(), function(content){\r",
-                    "    \r",
-                    "        content.set(\"online\", true);\r",
-                    "    });\r",
-                    "    Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
-                    "    Ext.getStore(\"ContenusDataJson\").sync();"
+                    "\r",
+                    "    content.set(\"online\", true);\r",
+                    "});\r",
+                    "Ext.getStore(\"ContenusDataJson\").resumeAutoSync();\r",
+                    "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1018,13 +1018,13 @@
                     "        }else if ((ACL.interfaceRights[\"read.ui.contents\"])&&(ACL.interfaceRights[\"read.ui.contents.\"+theContent.get(\"status\")])){\r",
                     "            me.prepareContext(theContent, false, specialMode, targetedId);\r",
                     "        } else {\r",
-                    "            Ext.Msg.alert('Erreur',\"Vos droits sont insuffisants pour afficher ou modifier ce contenu\");\r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.insufficientContentRightsError);\r",
                     "            theStore.removeAll();\r",
                     "        }\r",
                     "\r",
                     "    }\r",
                     "},this,{single:true});\r",
-                    "    Ext.getStore(\"CurrentContent\").load();"
+                    "Ext.getStore(\"CurrentContent\").load();"
                 ]
             },
             "designerId": "1ee0d45e-e7df-43f3-8cc7-65f8e71a5a7e"
@@ -1431,7 +1431,7 @@
                     "        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
                     "    }\r",
                     "    fenetre.show();\r",
-                    "    fenetre.setTitle(\"Nouveau contenu \"+theCT.get(\"type\"));\r",
+                    "    fenetre.setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+theCT.get(\"type\"));\r",
                     "    var formulaireTC = Ext.getCmp('boiteAChampsContenus');\r",
                     "    Ext.getCmp(\"contentsVersionPanel\").up().remove( Ext.getCmp(\"contentsVersionPanel\"));\r",
                     "    var champsD =theCT.data.champs;\r",

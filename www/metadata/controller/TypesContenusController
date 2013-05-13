@@ -42,7 +42,7 @@
                     "        if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}\r",
                     "    }\r",
                     "    fenetre.show();\r",
-                    "    fenetre.setTitle(\"Nouveau contenu \"+Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get(\"type\"));\r",
+                    "    fenetre.setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get(\"type\"));\r",
                     "    var formulaireTC = Ext.getCmp('boiteAChampsContenus');\r",
                     "    Ext.getCmp(\"contentsVersionPanel\").up().remove( Ext.getCmp(\"contentsVersionPanel\"));\r",
                     "    var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;\r",

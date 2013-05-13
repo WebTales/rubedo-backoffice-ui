@@ -40,7 +40,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
             }
             fenetre.show();
-            fenetre.setTitle("Nouveau contenu "+Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("type"));
+            fenetre.setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("type"));
             var formulaireTC = Ext.getCmp('boiteAChampsContenus');
             Ext.getCmp("contentsVersionPanel").up().remove( Ext.getCmp("contentsVersionPanel"));
             var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;

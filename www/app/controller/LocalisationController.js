@@ -164,7 +164,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
             divIdText:"Id de la div",
             divClassText:"Classe de la div",
             blockText:"Bloc",
-            URLPrefixText:"Préfixe URL"
+            URLPrefixText:"Préfixe URL",
+            invalidMetaError:"Certains champs de métadonnées sont invalides.",
+            invalidTaxoError:"Certains champs de taxonomie sont invalides.",
+            invalidFieldsError:"Certains champs sont invalides.",
+            insufficientContentRightsError:"Vos droits sont insuffisants pour afficher ou modifier ce contenu",
+            newContentText:"Nouveau Contenu"
 
         });
         // attach event and load localisation store
