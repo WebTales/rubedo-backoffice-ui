@@ -119,7 +119,15 @@ Ext.define('Rubedo.controller.LocalisationController', {
             singleton:true
         });
         Ext.define("Rubedo.RubedoAutomatedElementsLoc",{
-            singleton:true
+            singleton:true,
+            notifTitle:"Notififcation",
+            notifCreate:"<p>Création réussie.</p>",
+            notifUpdate:"<p>Mise à jour réussie.</p>",
+            notifDestroy:"<p>Suppression réussie.</p>",
+            errorTitle:"Erreur",
+            serverConnectionError:"Connexion au serveur interrompue",
+            internalServerError:"Erreur interne du serveur",
+            unkownError:"Erreur inconnue"
 
         });
         // attach event and load localisation store

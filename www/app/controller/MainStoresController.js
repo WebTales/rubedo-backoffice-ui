@@ -32,15 +32,15 @@ Ext.define('Rubedo.controller.MainStoresController', {
             store.on("write", function(theStore,roperation){
                 if(!(theStore.silentOps)){
                     if (roperation.action=="update") {
-                        me.fireNotif("Notification", "<p>Mise à jour réussie.</p>");
+                        me.fireNotif(Rubedo.RubedoAutomatedElementsLoc.notifTitle, Rubedo.RubedoAutomatedElementsLoc.notifUpdate);
                         /* try{me.handleLastUpdated(roperation.records[0],theStore.usedCollection);}
                         catch(err){console.log("Erreur d'enregistrement en dernier modifié");}*/
                     }
                     else if (roperation.action=="create") {
-                        me.fireNotif("Notification", "<p>Création réussie.</p>");
+                        me.fireNotif(Rubedo.RubedoAutomatedElementsLoc.notifTitle, Rubedo.RubedoAutomatedElementsLoc.notifCreate);
                     }
                     else if (roperation.action=="destroy") {
-                        me.fireNotif("Notification", "<p>Suppression réussie.</p>");
+                        me.fireNotif(Rubedo.RubedoAutomatedElementsLoc.notifTitle, Rubedo.RubedoAutomatedElementsLoc.notifDestroy);
                     }}
                 });
                 //events for optimised stores
@@ -69,11 +69,11 @@ Ext.define('Rubedo.controller.MainStoresController', {
                 if (!Ext.isEmpty(proxy)) {
                     proxy.on("exception", function( proxy, response, operation, options ){
                         var message = "";
-                        if (response.status === 0) {message= "Connexion au serveur interrompue";}
+                        if (response.status === 0) {message= Rubedo.RubedoAutomatedElementsLoc.serverConnectionError;}
                         else if ((response.status === 500)||(response.status === 200)){
                             var respondedMessage = Ext.JSON.decode(response.responseText);
                             if ((Ext.isEmpty(respondedMessage))||(Ext.isEmpty(respondedMessage.msg))){
-                                message = "Erreur interne du serveur";
+                                message = Rubedo.RubedoAutomatedElementsLoc.internalServerError;
                             }
                             else {
                                 message = respondedMessage.msg;
@@ -82,13 +82,13 @@ Ext.define('Rubedo.controller.MainStoresController', {
                         } else {
                             var respondedMessage = Ext.JSON.decode(response.responseText);
                             if ((Ext.isEmpty(respondedMessage))||(Ext.isEmpty(respondedMessage.msg))){
-                                message = "Erreur inconnue";
+                                message = Rubedo.RubedoAutomatedElementsLoc.unknownError;
                             }
                             else {
                                 message = respondedMessage.msg;
                             }
                         }
-                        Ext.Msg.alert("Erreur", message);
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);
                         if (operation.action=="update") {
                             Ext.Array.forEach(operation.records, function (record){ record.reject();});
                         }
