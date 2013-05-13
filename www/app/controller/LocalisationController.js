@@ -134,7 +134,32 @@ Ext.define('Rubedo.controller.LocalisationController', {
             deactivateText:"Désactiver",
             windowBeforeUnloadMessage:"Vous allez quitter le Back Office et perdre toute modification non sauvegardée.",
             maskIsUsedText:"Le masque ne peut etre supprimé car il est utilisé par des pages.",
-            selectAnElementText:"Sélectionnez un élément"
+            selectAnElementText:"Sélectionnez un élément",
+            columnText:"Colonne",
+            lignText:"Ligne",
+            titleText:"Titre",
+            displayTitleText:"Afficher le titre",
+            visibilityText:"Visibilité",
+            telephoneText:"Téléphone",
+            tabletText:"Tablette",
+            computerText:"Ordinateur",
+            HTMLClassText:"Classe HTML",
+            HTMLIdText:"Id HTML",
+            styleText:"Style",
+            tagText:"Tag",
+            displayAsTabsText:"Afficher en onglets",
+            displayRowTagText:"Afficher la baliser row",
+            displayRowFluidTagText:"Afficher la balise row-fluid",
+            includeInAContainerText:"Inclure dans un container",
+            includeInAContainerFluidText:"Inclure dans un container-fluid",
+            containerIdText:"Id du container",
+            containerClassText:"Classe du container",
+            mainColumnText:"Colonne principale",
+            mainColumnRTip:"Permet de définir l'emplacement d'affichage des contenus proposés sous forme de liste dans les pages utilisants ce masque.",
+            showSpanAndOffsetText:"Afficher le span et l'offset",
+            offsetText:"Offset",
+            spanText:"Span",
+            columnIdRecoveryError:"Erreur dans la récupération d\'un identifiant de colonne"
 
         });
         // attach event and load localisation store
