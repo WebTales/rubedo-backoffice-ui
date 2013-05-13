@@ -51,7 +51,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 success: function(response){
                     var maskIsUsed=Ext.JSON.decode(response.responseText).used;
                     if (maskIsUsed){
-                        Ext.Msg.alert('Suppression impossible', 'Le masque est utilisé par des pages.');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.maskIsUsedText);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
                         fenetre.show();
@@ -63,7 +63,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             Ext.getCmp("newCol").disable();
                             Ext.getCmp("newBloc").disable();
                             Ext.getCmp("deleteElement").disable();
-                            Ext.getCmp('elementEditControl').setTitle("Sélectionnez un élément");
+                            Ext.getCmp('elementEditControl').setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);
                             Ext.getCmp('elementEditControl').removeAll();
                             Ext.getCmp('elementEditControl').setIconCls();
                             Ext.getCmp('elementIdField').setValue(null);

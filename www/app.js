@@ -417,7 +417,6 @@ Ext.application({
     ],
     autoCreateViewport: true,
     controllers: [
-        'ContributionSitesController',
         'ContributionContenusController',
         'MasqueController',
         'TypesContenusController',
