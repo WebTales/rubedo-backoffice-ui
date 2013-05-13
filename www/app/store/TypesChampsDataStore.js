@@ -1760,7 +1760,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     type: 'Groupe de cases à cocher',
                     cType: 'Ext.form.CheckboxGroup',
                     openWindow: '',
-                    description: '<p></p>',
+                    description: '<p>Le champ "Groupe de cases à cocher" permet de choisir un ou plusieurs élément dans une liste d\'options finie.</p>',
                     config: {
                         name: 'checkboxGroup',
                         items: [
@@ -1838,10 +1838,10 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     id: '517f7bf7c0e0512c05000001'
                 },
                 {
-                    type: 'Groupe be boutons radio',
+                    type: 'Groupe de boutons radio',
                     cType: 'Ext.form.RadioGroup',
                     openWindow: '',
-                    description: '<p></p>',
+                    description: '<p>Le champ "Groupe de radio boutons" permet de choisir un élément au maximum dans une liste d\'options finie.</p>',
                     config: {
                         name: 'radioGroup',
                         items: [
@@ -1922,7 +1922,7 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                     type: 'Lien sur contenu',
                     cType: 'Rubedo.view.DCEField',
                     openWindow: '',
-                    description: '<p></p>',
+                    description: '<p>Le champ "Lien sur contenu" permet de saisir un lien sur un contenu</p>',
                     config: {
                         name: 'contentLink',
                         fieldLabel: 'Label du champ',
