@@ -159,7 +159,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
             showSpanAndOffsetText:"Afficher le span et l'offset",
             offsetText:"Offset",
             spanText:"Span",
-            columnIdRecoveryError:"Erreur dans la récupération d\'un identifiant de colonne"
+            columnIdRecoveryError:"Erreur dans la récupération d\'un identifiant de colonne",
+            displayInADivText:"Afficher dans une div",
+            divIdText:"Id de la div",
+            divClassText:"Classe de la div",
+            blockText:"Bloc",
+            URLPrefixText:"Préfixe URL"
 
         });
         // attach event and load localisation store
