@@ -73,6 +73,8 @@
                     "    internalServerError:\"Erreur interne du serveur\",\r",
                     "    unkownError:\"Erreur inconnue\",\r",
                     "    activateText:\"Activer\",\r",
+                    "    pageHoldsDefaultError:\"Cette page ne peut etre suprimée car elle u une de ses décendantes est utilisée comme page de détail du site\",\r",
+                    "    pageHoldsDefaultServerError:\"Erreur dans la détermination du statut supprimable de la page\",\r",
                     "    deactivateText:\"Désactiver\"\r",
                     "\r",
                     "});\r",

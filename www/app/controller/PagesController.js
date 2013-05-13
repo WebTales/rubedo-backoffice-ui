@@ -77,25 +77,43 @@ Ext.define('Rubedo.controller.PagesController', {
         var me=this;
         var target=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
         if (Ext.isDefined(target)) {
-            var delCon = Ext.widget('delConfirmZ');
-            delCon.show();
-            var store=Ext.getCmp("mainPageTree").getStore();
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                store.suspendAutoSync();
-                var myParent=target.parentNode;
-                if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
-                    myParent.set("expandable",false);
+            Ext.Ajax.request({
+                url: 'pages/holds-site-default',
+                params: {
+                    id: target.get('id')
+                },
+                success: function(response){
+                    var answer = Ext.JSON.decode(response.responseText);
+                    if (answer.holdsDefault){
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.pageHoldsDefaultError);
+                    } else {
+                        var delCon = Ext.widget('delConfirmZ');
+                        delCon.show();
+                        var store=Ext.getCmp("mainPageTree").getStore();
+                        Ext.getCmp('delConfirmZOui').on('click', function() { 
+                            store.suspendAutoSync();
+                            var myParent=target.parentNode;
+                            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
+                                myParent.set("expandable",false);
+                            }
+                            target.remove();
+                            store.resumeAutoSync();
+                            store.sync();
+                            Ext.getCmp("addPageBtn").enable();
+                            Ext.getCmp("removePageBtn").disable();
+                            Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                            Ext.getCmp("mainPageEdition").removeAll();
+                            Ext.getCmp('delConfirmZ').close();
+                            me.resetInterface();
+                        });
+                    }
+                },
+                failure:function(){
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.pageHoldsDefaultServerError);
+
                 }
-                target.remove();
-                store.resumeAutoSync();
-                store.sync();
-                Ext.getCmp("addPageBtn").enable();
-                Ext.getCmp("removePageBtn").disable();
-                Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
-                Ext.getCmp("mainPageEdition").removeAll();
-                Ext.getCmp('delConfirmZ').close();
-                me.resetInterface();
-            });  
+            });
+
 
         }
     },

@@ -129,6 +129,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             internalServerError:"Erreur interne du serveur",
             unkownError:"Erreur inconnue",
             activateText:"Activer",
+            pageHoldsDefaultError:"Cette page ne peut etre suprimée car elle u une de ses décendantes est utilisée comme page de détail du site",
+            pageHoldsDefaultServerError:"Erreur dans la détermination du statut supprimable de la page",
             deactivateText:"Désactiver"
 
         });
