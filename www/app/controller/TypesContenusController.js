@@ -1029,6 +1029,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             button.setLoading(true);
             Ext.Ajax.request({
                 url: 'contents/delete-by-content-type-id',
+                method:"POST",
                 params: {
                     "type-id": target.get("id")
                 },
