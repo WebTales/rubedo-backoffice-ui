@@ -131,7 +131,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             activateText:"Activer",
             pageHoldsDefaultError:"Cette page ne peut etre suprimée car elle u une de ses décendantes est utilisée comme page de détail du site",
             pageHoldsDefaultServerError:"Erreur dans la détermination du statut supprimable de la page",
-            deactivateText:"Désactiver"
+            deactivateText:"Désactiver",
+            windowBeforeUnloadMessage:"Vous allez quitter le Back Office et perdre toute modification non sauvegardée."
 
         });
         // attach event and load localisation store
