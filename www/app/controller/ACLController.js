@@ -110,7 +110,7 @@ Ext.define('Rubedo.controller.ACLController', {
                 ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;
             },
             failure:function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.tokenRecoveryError);
             }
         });
         Ext.Ajax.request({
@@ -123,7 +123,7 @@ Ext.define('Rubedo.controller.ACLController', {
                 Ext.getCmp('boutonPincipalInterface').enable();
             },
             failure:function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);
             }
         });
         ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);

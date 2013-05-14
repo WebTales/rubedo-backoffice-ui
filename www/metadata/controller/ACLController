@@ -136,7 +136,7 @@
                     "        ACL.CSRFToken=Ext.JSON.decode(response.responseText).token;\r",
                     "    },\r",
                     "    failure:function(){\r",
-                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération du jeton de sécurité');\r",
+                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.tokenRecoveryError);\r",
                     "    }\r",
                     "});\r",
                     "Ext.Ajax.request({\r",
@@ -149,7 +149,7 @@
                     "        Ext.getCmp('boutonPincipalInterface').enable();\r",
                     "    },\r",
                     "    failure:function(){\r",
-                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",
+                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);\r",
                     "    }\r",
                     "});\r",
                     "ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);"

@@ -181,7 +181,16 @@ Ext.define('Rubedo.controller.LocalisationController', {
             contentTypeHasBeenEmptiedText:"Le type de contenu a été vidé",
             fieldNameAlreadyUsedError:"Nom dèjà utilisé par un autre champ",
             passwordsDoNotMatchError:"Les mots de passe ne correspondent pas",
-            passwordChangedText:"Mot de passe changé"
+            passwordChangedText:"Mot de passe changé",
+            rightsRecoveryError:"Erreur dans la récupération des droits",
+            tokenRecoveryError:"Erreur dans la récupération du jeton de sécurité",
+            siteModifWarning:"La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?",
+            pageURLRecoveryError:"Erreur dans la récupèration de l'url de la page",
+            pagePreviewText:"Ceci est un aperçu de cette page telle que disponible en ligne en",
+            associatedMaskText:"Masque associé",
+            pagePropertiesInvalidError:"Les propriétés de la page sont invalides.",
+            stageText:"Etape",
+            onText:"sur"
 
         });
         // attach event and load localisation store

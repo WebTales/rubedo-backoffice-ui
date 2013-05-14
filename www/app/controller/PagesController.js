@@ -136,7 +136,7 @@ Ext.define('Rubedo.controller.PagesController', {
             me.renderBlocks(Ext.clone(record.get("blocks")), true);
             me.resetInterface();
             Ext.resumeLayouts();
-            Ext.getCmp("pageMaskDisplayBtn").setText("Masque associé : "+myMask.get("text"));
+            Ext.getCmp("pageMaskDisplayBtn").setText(Rubedo.RubedoAutomatedElementsLoc.associatedMaskText+" : "+myMask.get("text"));
             Ext.getCmp("pageMaskDisplayBtn").show();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
             Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
@@ -157,11 +157,11 @@ Ext.define('Rubedo.controller.PagesController', {
                     }));
                 },
                 failure:function(){
-                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
                 }
             });
 
-            Ext.getCmp("pagePreviewTextItem").setText('Ceci est un aperçu de cette page telle que disponible en ligne en '+Ext.Date.format(new Date(), 'F j, Y, G:i '));
+            Ext.getCmp("pagePreviewTextItem").setText(Rubedo.RubedoAutomatedElementsLoc.pagePreviewText+" "+Ext.Date.format(new Date(), 'F j, Y, G:i '));
             var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
             var values= record.getData();
             values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
@@ -232,7 +232,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("pageElementUp").disable();
         Ext.getCmp("pageElementDown").disable();
         Ext.getCmp('pageElementPropsPanel').removeAll();
-        Ext.getCmp('pageElementPropsPanel').setTitle("Sélectionnez un élément");
+        Ext.getCmp('pageElementPropsPanel').setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);
         Ext.getCmp('pageElementPropsPanel').setIconCls();
         Ext.getCmp('pageElementIdField').setValue();
     },
@@ -264,7 +264,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pageElementDown").disable();
             var propEdit=Ext.getCmp('pageElementPropsPanel');
             propEdit.removeAll();
-            propEdit.setTitle("Colonne");
+            propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);
             propEdit.setIconCls('editZone');
             e.stopEvent();
         });
@@ -333,7 +333,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp('pageElementIdField').setValue(component.id);
             var propEdit=Ext.getCmp('pageElementPropsPanel');
             try{
-                propEdit.setTitle("Bloc "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("type"));
+                propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.blockText+" "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("type"));
             }catch(err){
                 propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
             }
@@ -344,7 +344,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             configSpec.getComponent(0).add(Ext.widget('textfield',{
                 itemId:"eTitleField",
-                fieldLabel:"Titre ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
                 onChange:function(){
                     if (this.isValid()){
                         component.setTitle(this.getValue());
@@ -358,7 +358,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(0).add(Ext.widget('checkbox',{
                 itemId:"eTitleShowField",
-                fieldLabel:"Afficher le titre ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showTitleText,
                 onChange:function(){
 
                     component.displayTitle=this.getValue();
@@ -393,16 +393,16 @@ Ext.define('Rubedo.controller.PagesController', {
             */
 
             configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
-                fieldLabel:"Visibilité ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
                 anchor:"100%",
                 labelWidth:60,
                 margin:"0 0 10 0",
                 vertical:true,
                 columns:1,
                 items: [
-                { boxLabel: 'Téléphone', checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
-                { boxLabel: 'Tablette',checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
-                { boxLabel: 'Ordinateur',checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText,checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText,checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
                 ]
 
             }));  
@@ -414,7 +414,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"eClassHTMLField",
-                fieldLabel:"Classe HTML ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
                 onChange:function(){
                     if (this.isValid()){
                         component.classHTML=this.getValue();
@@ -431,7 +431,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"eidHTMLField",
-                fieldLabel:"Id HTML ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLIdText,
                 onChange:function(){
                     if (this.isValid()){
                         component.idHTML=this.getValue();
@@ -446,7 +446,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"urlPrefixHTMLField",
-                fieldLabel:"Préfixe URL ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.URLPrefixText,
                 onChange:function(){
                     if (this.isValid()){
                         component.urlPrefix=this.getValue();
@@ -461,7 +461,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 itemId:"eStyleField",
-                fieldLabel:"Style ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
                 onChange:function(){
                     if (this.isValid()){
                         component.elementStyle=this.getValue();
@@ -475,7 +475,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(1).add(Ext.widget('combobox',{
                 itemId:"eTagField",
-                fieldLabel:"Tag ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.tagText,
                 queryMode:"local",
                 store:["div","span","header","section","footer","aside"],
                 onChange:function(){
@@ -491,7 +491,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(1).add(Ext.widget('checkbox',{
                 itemId:"eRenderDivField",
-                fieldLabel:"Afficher dans une div ",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showInADivText,
                 onChange:function(){
 
                     component.renderDiv=this.getValue();
@@ -681,7 +681,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         }));
                     },
                     failure:function(){
-                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
                     }
                 });
                 var task = new Ext.util.DelayedTask(function(){
@@ -692,7 +692,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             } else {
                 Ext.getCmp("mainPageAttributeForm").up().setActiveTab(2);
-                Ext.Msg.alert("Erreur", "Les propriétés de la page sont invalides.");
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pagePropertiesInvalidError);
             }
     },
 
@@ -751,7 +751,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         }));
                     },
                     failure:function(){
-                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
                     }
                 });
             }}
@@ -776,7 +776,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     }));
                 },
                 failure:function(){
-                    Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
                 }
             });
         }
@@ -808,7 +808,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         }));
                     },
                     failure:function(){
-                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
                     }
                 });
             }}
@@ -939,7 +939,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("pageElementUp").disable();
         Ext.getCmp("pageElementDown").disable();
         Ext.getCmp('pageElementPropsPanel').removeAll();
-        Ext.getCmp('pageElementPropsPanel').setTitle("Sélectionnez un élément");
+        Ext.getCmp('pageElementPropsPanel').setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);
         Ext.getCmp('pageElementPropsPanel').setIconCls();
         Ext.getCmp('pageElementIdField').setValue();
         Ext.getCmp("pagesInternalPreview").removeAll();

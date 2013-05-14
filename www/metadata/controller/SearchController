@@ -175,7 +175,7 @@
                     "        if (!Ext.isEmpty(facet.ranges)){\r",
                     "            Ext.Array.forEach(facet.ranges, function(rangeTerm){\r",
                     "                if ((rangeTerm.count<Ext.getStore(\"ESFacetteStore\").getTotalCount())&&(rangeTerm.count!==0)){\r",
-                    "                \tfacet.terms.push(rangeTerm);\r",
+                    "                    facet.terms.push(rangeTerm);\r",
                     "                    rangeTerm.term=rangeTerm.from;\r",
                     "\r",
                     "                }\r",

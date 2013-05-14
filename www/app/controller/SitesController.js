@@ -64,7 +64,7 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp('delConfirmZOui').on('click', function() { 
 
                 if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
-                    Ext.MessageBox.confirm("Attention !","La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?", function(anser){
+                    Ext.MessageBox.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle,Rubedo.RubedoAutomatedElementsLoc.siteModifWarning, function(anser){
                         if (anser=="yes"){
                             Ext.getCmp("contributionPages").close();
                             Ext.getCmp('mainSitesGrid').getStore().remove(target);
@@ -125,7 +125,7 @@ Ext.define('Rubedo.controller.SitesController', {
         var form = Ext.getCmp("mainSiteProps").getForm();
         if (form.isValid()){
             if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
-                Ext.MessageBox.confirm("Attention !","La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?", function(anser){
+                Ext.MessageBox.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle,Rubedo.RubedoAutomatedElementsLoc.siteModifWarning, function(anser){
                     if (anser=="yes"){
                         Ext.getCmp("contributionPages").close();
                         var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();

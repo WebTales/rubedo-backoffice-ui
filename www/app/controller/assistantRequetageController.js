@@ -58,7 +58,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             if (Ext.isDefined(suivET)) {
                 button.up().up().getLayout().next();
 
-                Ext.getCmp('progressAR').updateProgress(suivET/tousET, 'Etape '+suivET+' sur '+tousET);
+                Ext.getCmp('progressAR').updateProgress(suivET/tousET, Rubedo.RubedoAutomatedElementsLoc.stageText+" "+suivET+" "+Rubedo.RubedoAutomatedElementsLoc.onText+" "+tousET);
             }
         }
 
@@ -71,7 +71,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         else if (suivET==1) { Ext.getCmp('boutonPrevRequeteur').hide();}
         if (Ext.isDefined(suivET)) {
             button.up().up().getLayout().prev();
-            Ext.getCmp('progressAR').updateProgress(suivET/tousET, 'Etape '+suivET+' sur '+tousET);
+            Ext.getCmp('progressAR').updateProgress(suivET/tousET, Rubedo.RubedoAutomatedElementsLoc.stageText+" "+suivET+" "+Rubedo.RubedoAutomatedElementsLoc.onText+" "+tousET);
         }
     },
 
