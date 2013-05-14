@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "multiChoiceQuestionEditor",
         "height": 404,
         "id": "MultiChoiceConfigurator",
         "width": 632,
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "547619b3-9e1c-4adf-a83a-d4aa14243ebe",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -55,11 +63,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "validateBtn",
                         "id": "MultiChoiceConfiguratorSubmit",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
                     "designerId": "627dd1bd-c39d-40a5-8d82-c65fcfcc827f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -124,11 +140,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionLabelField",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
                     },
-                    "designerId": "4281a76e-27f2-4e96-a32f-181781ff4715"
+                    "designerId": "4281a76e-27f2-4e96-a32f-181781ff4715",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -139,11 +163,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionCodeField",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
                     },
-                    "designerId": "4dae3c30-2ddb-4d3d-a9f7-7106d4aaea3c"
+                    "designerId": "4dae3c30-2ddb-4d3d-a9f7-7106d4aaea3c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -154,11 +186,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionHelpTextField",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
                     },
-                    "designerId": "8543ec2e-77e3-4bb3-8a70-f64f3b9d3dcc"
+                    "designerId": "8543ec2e-77e3-4bb3-8a70-f64f3b9d3dcc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Checkbox",
@@ -169,6 +209,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "mandatoryCheckbox",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -176,7 +217,14 @@
                         "inputValue": "true",
                         "uncheckedValue": "false"
                     },
-                    "designerId": "6a7e3f07-0d2a-4760-a441-b3bec3669a84"
+                    "designerId": "6a7e3f07-0d2a-4760-a441-b3bec3669a84",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -187,13 +235,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "colNumberField",
                         "fieldLabel": "Nombre de colonnes",
                         "labelWidth": 140,
                         "name": "columns",
                         "allowDecimals": false,
                         "minValue": 1
                     },
-                    "designerId": "6fc18692-6812-4cca-9a7e-bf5e61babac3"
+                    "designerId": "6fc18692-6812-4cca-9a7e-bf5e61babac3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.RadioGroup",
@@ -203,11 +259,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "answerTypeCheckboxGroup",
                         "fieldLabel": "Réponse",
                         "labelSeparator": " ",
                         "labelWidth": 140
                     },
                     "designerId": "20e9a0ed-1271-4d5f-a01e-6c3ac89fdc54",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Radio",
@@ -217,12 +281,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "sipleChoiceRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "choix simple",
                                 "inputValue": "radiogroup"
                             },
-                            "designerId": "cdf0777a-9f5c-4d6a-b232-05448194ab0d"
+                            "designerId": "cdf0777a-9f5c-4d6a-b232-05448194ab0d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Radio",
@@ -232,12 +304,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "multiChoiceRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "choix multiple",
                                 "inputValue": "checkboxgroup"
                             },
-                            "designerId": "6d9bde21-ec6c-411d-b575-05085fe8b8dd"
+                            "designerId": "6d9bde21-ec6c-411d-b575-05085fe8b8dd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -285,11 +365,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "optionsCol",
                                 "height": null,
                                 "dataIndex": "boxLabel",
                                 "text": "Options"
                             },
                             "designerId": "d2f25f9f-663c-40a4-a5ef-5168fb3532af",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -327,6 +415,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": null,
+                                        "localiserId": "closedQuestionAddOptionBtn",
                                         "id": "formsMCCGridAdd",
                                         "iconCls": "add",
                                         "text": "",
@@ -336,6 +425,13 @@
                                         "tooltip": "string"
                                     },
                                     "designerId": "9520bce1-decf-475c-8a50-c033d6d9fbb6",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -363,7 +459,7 @@
                                                     "        });\r",
                                                     "    },\r",
                                                     "    failure: function(){\r",
-                                                    "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\\'un identifiant.');\r",
+                                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.identifierRecoverError);\r",
                                                     "\r",
                                                     "    }\r",
                                                     "});"
@@ -382,6 +478,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": null,
+                                        "localiserId": "closedQuestionRemoveOptionBtn",
                                         "disabled": true,
                                         "id": "formsMCCGridRemove",
                                         "iconCls": "close",
@@ -392,6 +489,13 @@
                                         "tooltip": "string"
                                     },
                                     "designerId": "0e28d65f-bc6c-40a8-acdc-f9ace9d581eb",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.FormsPageConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.FormsPageConfigurator',
 
+    localiserId: 'formPageConfigurator',
     height: 113,
     width: 389,
     resizable: false,
@@ -41,6 +42,7 @@ Ext.define('Rubedo.view.FormsPageConfigurator', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             id: 'formPageConfiguratorSubmit',
                             iconCls: 'ouiSpetit',
                             text: 'Valider',
@@ -63,6 +65,7 @@ Ext.define('Rubedo.view.FormsPageConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'formPageLabelField',
                             fieldLabel: 'Label',
                             name: 'label',
                             allowBlank: false

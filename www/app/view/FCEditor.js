@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.FCEditor', {
         'Rubedo.view.MyComboBox32'
     ],
 
+    localiserId: 'formsConditionalEditor',
     height: 211,
     id: 'FCEditor',
     width: 632,
@@ -46,6 +47,7 @@ Ext.define('Rubedo.view.FCEditor', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             id: 'FCEditorSubmitBtn',
                             iconCls: 'ouiSpetit',
                             text: 'Valider',
@@ -73,7 +75,8 @@ Ext.define('Rubedo.view.FCEditor', {
                         {
                             xtype: 'mycombobox32',
                             itemId: 'conditionFieldCombo',
-                            flex: 1
+                            flex: 1,
+                            localiserId: 'showOnlyIfField'
                         },
                         {
                             xtype: 'combobox',

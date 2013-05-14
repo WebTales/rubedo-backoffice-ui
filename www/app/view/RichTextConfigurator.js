@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
         'Rubedo.view.CKEField'
     ],
 
+    localiserId: 'rteConfigWindow',
     height: 360,
     width: 632,
     resizable: false,
@@ -53,6 +54,7 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             id: 'richTextConfiguratorSubmit',
                             iconCls: 'ouiSpetit',
                             text: 'Valider',

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.MultiChoiceConfigurator',
 
+    localiserId: 'multiChoiceQuestionEditor',
     height: 404,
     id: 'MultiChoiceConfigurator',
     width: 632,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             id: 'MultiChoiceConfiguratorSubmit',
                             iconCls: 'ouiSpetit',
                             text: 'Valider',
@@ -64,6 +66,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionLabelField',
                             fieldLabel: 'Intitulé de la question',
                             labelWidth: 140,
                             name: 'fieldLabel'
@@ -71,6 +74,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionCodeField',
                             fieldLabel: 'Code de la question',
                             labelWidth: 140,
                             name: 'qNb'
@@ -78,6 +82,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionHelpTextField',
                             fieldLabel: 'Bulle d\'aide',
                             labelWidth: 140,
                             name: 'tooltip'
@@ -85,6 +90,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
+                            localiserId: 'mandatoryCheckbox',
                             fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             name: 'mandatory',
@@ -95,6 +101,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            localiserId: 'colNumberField',
                             fieldLabel: 'Nombre de colonnes',
                             labelWidth: 140,
                             name: 'columns',
@@ -103,18 +110,21 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         },
                         {
                             xtype: 'radiogroup',
+                            localiserId: 'answerTypeCheckboxGroup',
                             fieldLabel: 'Réponse',
                             labelSeparator: ' ',
                             labelWidth: 140,
                             items: [
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'sipleChoiceRadio',
                                     name: 'fieldType',
                                     boxLabel: 'choix simple',
                                     inputValue: 'radiogroup'
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'multiChoiceRadio',
                                     name: 'fieldType',
                                     boxLabel: 'choix multiple',
                                     inputValue: 'checkboxgroup'
@@ -138,6 +148,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'optionsCol',
                                     dataIndex: 'boxLabel',
                                     text: 'Options',
                                     editor: {
@@ -167,11 +178,12 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                                                         });
                                                     },
                                                     failure: function(){
-                                                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+                                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.identifierRecoverError);
 
                                                     }
                                                 });
                                             },
+                                            localiserId: 'closedQuestionAddOptionBtn',
                                             id: 'formsMCCGridAdd',
                                             iconCls: 'add',
                                             text: '',
@@ -182,6 +194,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                                             handler: function(button, event) {
                                                 Ext.getCmp("formsMCCGrid").getStore().remove(Ext.getCmp("formsMCCGrid").getSelectionModel().getLastSelected());
                                             },
+                                            localiserId: 'closedQuestionRemoveOptionBtn',
                                             disabled: true,
                                             id: 'formsMCCGridRemove',
                                             iconCls: 'close',
