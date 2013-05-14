@@ -207,7 +207,25 @@ Ext.define('Rubedo.controller.LocalisationController', {
             identifiedFieldsText:"champs identifiés et",
             importableContentsText:"contenus importables",
             importedContentsText:"contenus importés",
-            importError:"Erreur lors de l'import"
+            importError:"Erreur lors de l'import",
+            eligibleContentTypesText:"Types de contenus eligibles",
+            eachContentMustVerifyRulesText:"Chaque contenu doit verifier les règles suivantes",
+            eachContentMustVerifyAtLeastOneRuleText:"Chaque contenu doit verifier au moins une des règles suivantes",
+            taxonomyText:"Taxonomie",
+            rulesAndSortsOnFieldsText:"Règles et tris sur les champs des contenus",
+            ascSortText:"tri croissant",
+            descSortText:"tri decroissant",
+            relationBetweenRulesText:"Relation entre les règles",
+            creationText:"Création",
+            lastUpdateText:"Dernière modification",
+            noVocabForTheseCtText:"Pas de vocabulaire disponible pour cet ensemble de types de contenus",
+            ruleText:"Règle",
+            tRuleAllText:"Contient tous les termes",
+            tRuleAllRecText:"Contient tous les termes ou au moins un descendant par terme",
+            tRuleSomeText:"Contient au moins un des termes",
+            tRuleSomeREcText:"Contient au moins un des termes ou au moins un des descendants d’un des termes",
+            tRuleNotText:"Ne contient aucun des termes suivants",
+            tRuleNotRecText:"Ne contient ni les termes suivants ni leurs descendants"
 
         });
         // attach event and load localisation store

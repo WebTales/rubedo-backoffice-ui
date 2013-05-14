@@ -311,16 +311,16 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     displayQuery: function(query) {
-        var htmlDisplay="<h3>Types de contenus eligibles</h3><ul>";
+        var htmlDisplay="<h3>"+Rubedo.RubedoAutomatedElementsLoc.eligibleContentTypesText+"</h3><ul>";
         Ext.Array.forEach(query.contentTypes, function(ctid){
             htmlDisplay+="<li>"+Ext.getStore('TCNDepCombo').findRecord("id",ctid).get("type")+"</li>";
         });
-        var qVocRule="chaque contenu doit verifier toutes les règles suivantes";
+        var qVocRule=Rubedo.RubedoAutomatedElementsLoc.eachContentMustVerifyRulesText;
         if (query.vocabulariesRule!="AND"){
-            qVocRule="chaque contenu doit verifier au moins une des règles suivantes";
+            qVocRule=Rubedo.RubedoAutomatedElementsLoc.eachContentMustVerifyAtLeastOneRuleText;
         }
         if (!Ext.isEmpty(query.vocabularies)){
-            htmlDisplay+="</ul><h3>Taxonomie : "+qVocRule+"</h3>";
+            htmlDisplay+="</ul><h3>"+Rubedo.RubedoAutomatedElementsLoc.taxonomyText+" : "+qVocRule+"</h3>";
             try {Ext.Object.each(query.vocabularies, function(key, value, myself){
                 if(!Ext.isEmpty(value.terms)){
                     var myFields = Ext.getCmp("assisstantRE2").query("field[vocabularyId="+key+"]");
@@ -339,7 +339,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             }
         }
         if (!Ext.isEmpty(query.fieldRules)){
-            htmlDisplay+="<h3>Règles et tris sur les champs des contenus</h3><ul>";
+            htmlDisplay+="<h3>"+Rubedo.RubedoAutomatedElementsLoc.rulesAndSortsOnFieldsText+"</h3><ul>";
             Ext.Object.each(query.fieldRules, function(key, value, myself){
                 var tri = "";
                 var a = value.rule||"";
@@ -347,7 +347,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 var c=Ext.clone(b);
                 if(Ext.isDate(c)){c=Ext.Date.format(c, 'j F, Y, G:i');}
                 if (!Ext.isEmpty(value.sort)){
-                    if (value.sort=="ASC") {tri=", tri croissant";} else {tri=", tri decroissant";}
+                    if (value.sort=="ASC") {tri=", "+Rubedo.RubedoAutomatedElementsLoc.ascSortText;} else {tri=", "+Rubedo.RubedoAutomatedElementsLoc.descSortText;}
                 }
 
                 htmlDisplay+="<li>"+key+" "+a+" "+c+" "+tri+"</li>";
@@ -380,7 +380,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             var lien = Ext.create('Ext.form.ComboBox', {
                 anchor: '100%',
-                fieldLabel: 'Relation entre les règles ',
+                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.relationBetweenRulesText,
                 store: storeL,
                 value: 'OR',
                 name: "vocabulariesRule",
@@ -407,20 +407,20 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 typesContenus=[typesContenus];
             }
             var champsRegles = [ ];
-            champsRegles.push({nom:'Création',
+            champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.creationText,
                 valeur: {
                     cType: 'datefield',
                     name: 'creation',
                     ruleId:'createTime',
-                    label: 'Création'
+                    label: Rubedo.RubedoAutomatedElementsLoc.creationText
                 }
             });
-            champsRegles.push({nom:'Dernière modification',
+            champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
                 valeur: {
                     cType: 'datefield',
                     name: 'derniereModification',
                     ruleId:'lastUpdateTime',
-                    label: 'Dernière modification'
+                    label: Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
                 }});
                 if (typesContenus.length<2) {
                     var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
@@ -447,20 +447,20 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 for (k=0; k<typesDEP.length; k++) {
 
                     var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
-                    champsRegles.push({nom:theTargetType.get("type")+' > '+'Création',
+                    champsRegles.push({nom:theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.creationText,
                         valeur: {
                             cType: 'datefield',
                             name: 'creation',
                             ruleId:'createTime',
-                            label: theTargetType.get("type")+' > '+'Création'
+                            label: theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.creationText
                         }
                     });
-                    champsRegles.push({nom:theTargetType.get("type")+' > '+'Dernière modification',
+                    champsRegles.push({nom:theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
                         valeur: {
                             cType: 'datefield',
                             name: 'derniereModification',
                             ruleId:'lastUpdateTime',
-                            label: theTargetType.get("type")+' > '+'Dernière modification'
+                            label: theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
                         }});  
 
 
@@ -491,7 +491,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         vocabulaires = Ext.Array.intersect(vocabulaires, vocabSuivant);
                     }
                     if(Ext.isEmpty(vocabulaires)){
-                        Ext.getCmp('assisstantRE2').add(Ext.widget("container", {styleHtmlContent:true, html:"<p>Aucun vocabulaire disponible pour cet ensemble de types de contenus.</p>"}));
+                        Ext.getCmp('assisstantRE2').add(Ext.widget("container", {styleHtmlContent:true, html:"<p>"+Rubedo.RubedoAutomatedElementsLoc.noVocabForTheseCTText+"</p>"}));
                     }
                     if (vocabulaires.length>1) {Ext.getCmp('assisstantRE2').add(lien);}
                     //Ext.Array.remove(vocabulaires,"navigation");
@@ -641,12 +641,12 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             var storeR = Ext.create('Ext.data.Store', {
                                 fields: ['valeur', 'nom'],
                                 data : [
-                                {valeur: 'all', nom :'Contient tous les termes'},
-                                {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
-                                {valeur: 'some', nom :'Contient au moins un des termes'},
-                                {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'},
-                                {valeur: 'not', nom :'Ne contient aucun des termes suivants'},
-                                {valeur: 'notRec', nom :'Ne contient ni les termes suivants ni leurs descendants'}
+                                {valeur: 'all', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllText},
+                                {valeur: 'allRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllRecText},
+                                {valeur: 'some', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeText},
+                                {valeur: 'someRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeRecText},
+                                {valeur: 'not', nom : Rubedo.RubedoAutomatedElementsLoc.tRuleNotText},
+                                {valeur: 'notRec', nom : Rubedo.RubedoAutomatedElementsLoc.tRuleNotRecText}
                                 ]
                             });
 
@@ -656,7 +656,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 vocabularyId:leVocab.get("id"),
                                 isVocabularyField:true,
                                 usedRole:"rule",
-                                fieldLabel: 'Règle',
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.ruleText,
                                 store: storeR,
                                 queryMode: 'local',
                                 displayField: 'nom',
@@ -781,8 +781,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         var storeOper = Ext.create('Ext.data.Store', {
                             fields: ['operateur', 'label'],
                             data : [
-                            {"operateur":"ASC", "label": "Croissant"},
-                            {"operateur":"DESC", "label": "Decroissant"}
+                            {"operateur":"ASC", "label": Rubedo.RubedoAutomatedElementsLoc.ascText},
+                            {"operateur":"DESC", "label": Rubedo.RubedoAutomatedElementsLoc.descText}
                             ]
                         });
                         var operateur= Ext.create('Ext.form.ComboBox', {
@@ -805,7 +805,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
                         enrobage.getComponent(0).insert(1,operateur);
                         if (Ext.getCmp('assisstantRE5').items.items.length>2){
-                            enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
+                            enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>'+Rubedo.RubedoAutomatedElementsLoc.thenText+' </b>'}));
                         }
 
                         Ext.getCmp('assisstantRE5').add(enrobage);
