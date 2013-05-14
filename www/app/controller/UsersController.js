@@ -140,7 +140,7 @@ Ext.define('Rubedo.controller.UsersController', {
                         }
                     }
                 }); } else {
-                    Ext.Msg.alert('Erreur', "Les mots de passe ne correspondent pas");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.passwordsDoNotMatchError);
                 }
             }
     },
@@ -272,22 +272,22 @@ Ext.define('Rubedo.controller.UsersController', {
                 myForm.submit({
                     url:"current-user/change-password",
                     success: function(form, action) {
-                        Rubedo.controller.MainStoresController.prototype.fireNotif('Succés', 'Mot de passe changé');
+                        Rubedo.controller.MainStoresController.prototype.fireNotif(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.passwordChangedText);
                     },
                     failure: function(form, action) {
                         switch (action.failureType) {
                             case Ext.form.action.Action.CLIENT_INVALID:
-                            Ext.Msg.alert('Erreur', 'Formulaire invalide');
+                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
                             break;
                             case Ext.form.action.Action.CONNECT_FAILURE:
-                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.serverConnectionError);
                             break;
                             case Ext.form.action.Action.SERVER_INVALID:
-                            Ext.Msg.alert('Erreur', action.result.msg);
+                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, action.result.msg);
                         }
                     }
                 }); } else {
-                    Ext.Msg.alert('Erreur', "Les nouveaux mots de passe ne correspondent pas");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.passwordsDoNotMatchError);
                 }
             }
     },

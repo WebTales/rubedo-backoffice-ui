@@ -179,7 +179,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             successTitle:"Succés",
             contentsDeleteError:"Erreur dans la suppression des contenus",
             contentTypeHasBeenEmptiedText:"Le type de contenu a été vidé",
-            fieldNameAlreadyUsedError:"Nom dèjà utilisé par un autre champ"
+            fieldNameAlreadyUsedError:"Nom dèjà utilisé par un autre champ",
+            passwordsDoNotMatchError:"Les mots de passe ne correspondent pas",
+            passwordChangedText:"Mot de passe changé"
 
         });
         // attach event and load localisation store
