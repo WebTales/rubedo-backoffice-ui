@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newContentWindow",
         "height": 500,
         "id": "ajouterContenu",
         "width": 900,
@@ -24,6 +25,13 @@
         "resizable": "boolean"
     },
     "designerId": "b6ffe1bc-b42f-4987-9728-a2d2563012af",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -195,11 +203,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "cancelBtn",
                         "id": "contentEditorCancelButton",
                         "iconCls": "close",
                         "text": "Annuler"
                     },
                     "designerId": "d83afd2c-a030-4a15-979d-35507c3102cb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

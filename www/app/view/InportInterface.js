@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.InportInterface', {
         'Rubedo.view.WorkspaceCombo'
     ],
 
+    localiserId: 'importMainWindow',
     height: 449,
     id: 'InportInterface',
     width: 712,
@@ -45,6 +46,7 @@ Ext.define('Rubedo.view.InportInterface', {
             items: [
                 {
                     xtype: 'form',
+                    localiserId: 'importStage1Panel',
                     layout: {
                         align: 'stretch',
                         type: 'vbox'
@@ -65,6 +67,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'textfield',
                                     flex: 0.18,
+                                    localiserId: 'importSeparatorField',
                                     fieldLabel: 'Séparateur',
                                     labelWidth: 60,
                                     name: 'separator',
@@ -84,6 +87,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         return fileInput;
                                     },
                                     flex: 1,
+                                    localiserId: 'importCSVFileField',
                                     id: 'mainCSVinportField',
                                     margin: '0 0 0 5',
                                     fieldLabel: 'Fichier CSV',
@@ -94,6 +98,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'importCSVFieldAuxilaryBtn',
                                     hidden: true,
                                     id: 'fileFieldHelper1',
                                     margin: '0 0 0 4',
@@ -114,6 +119,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'panel',
                                     flex: 1,
+                                    localiserId: 'importStage1MainPanel',
                                     layout: {
                                         align: 'stretch',
                                         type: 'hbox'
@@ -129,6 +135,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'importIgnoredFieldsCol',
                                                     dataIndex: 'name',
                                                     text: 'Ne pas importer'
                                                 }
@@ -151,6 +158,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'importImportAsFieldCol',
                                                     dataIndex: 'name',
                                                     text: 'Importer en tant que champ'
                                                 }
@@ -173,6 +181,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'importImportAsTaxoCol',
                                                     dataIndex: 'name',
                                                     text: 'Importer en tant que taxonomie'
                                                 }
@@ -194,6 +203,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'panel',
+                    localiserId: 'importStage2',
                     layout: {
                         type: 'fit'
                     },
@@ -215,11 +225,13 @@ Ext.define('Rubedo.view.InportInterface', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'importS2NameColumn',
                                     dataIndex: 'name',
                                     text: 'Nom'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'importS2NewnameCol',
                                     width: 130,
                                     dataIndex: 'newName',
                                     text: 'Nouveau nom (optionnel)',
@@ -229,6 +241,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'importS2LabelCol',
                                     dataIndex: 'label',
                                     text: 'Libellé',
                                     editor: {
@@ -240,6 +253,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                         return(Ext.getStore("ImportableFieldTypesStore").findRecord("id", value).get("type"));
                                     },
+                                    localiserId: 'importS2TypeCol',
                                     dataIndex: 'protoId',
                                     text: 'Type',
                                     editor: {
@@ -255,6 +269,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'booleancolumn',
+                                    localiserId: 'importS2SearchableCol',
                                     dataIndex: 'searchable',
                                     text: 'Recherchable',
                                     falseText: 'Non',
@@ -267,6 +282,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'booleancolumn',
+                                    localiserId: 'importS2MandatoryCol',
                                     dataIndex: 'mandatory',
                                     text: 'Obligatoire',
                                     falseText: 'Non',
@@ -289,17 +305,17 @@ Ext.define('Rubedo.view.InportInterface', {
                             isValid: function() {
                                 var store=Ext.getStore("InportAsFieldStore");
                                 if (store.query("protoId","text").length===0) {
-                                    Ext.Msg.alert("Erreur", "Le type de contenu doit obligatoirement avoir un champ de type \"Titre\"");
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveTitleError);
                                     return(false);
                                 } else if (store.query("protoId","text").length>1) {
-                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Titre\"");
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveOnlyOneTitleError);
                                     return(false);
                                 } else if (store.query("protoId","summary").length>1) {
-                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Résumé\"");
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveOnlyOneSummaryError);
                                     return(false);
                                 }
                                 else if (store.query("protoId","51234e09c0e0516a0b00000d").length>1) {
-                                    Ext.Msg.alert("Erreur", "Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\"");
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CRMustHaveOnlyOneLocFieldError);
                                     return(false);
                                 } else {
                                     return(true);
@@ -311,6 +327,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'gridpanel',
+                    localiserId: 'importStage3',
                     title: 'Paramétrage de la taxonomie',
                     forceFit: true,
                     store: 'InportAsTaxoStore',
@@ -325,11 +342,13 @@ Ext.define('Rubedo.view.InportInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'importS3NameCol',
                             dataIndex: 'name',
                             text: 'Nom'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'importS3NewNameXol',
                             dataIndex: 'newName',
                             text: 'Nouveau nom (optionnel)',
                             editor: {
@@ -338,6 +357,7 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'booleancolumn',
+                            localiserId: 'importS3MandatoryCol',
                             dataIndex: 'mandatory',
                             text: 'Obligatoire',
                             falseText: 'Non',
@@ -357,17 +377,20 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'form',
+                    localiserId: 'importFinalStage',
                     autoScroll: true,
                     bodyPadding: 10,
                     title: 'Finalisation  et import',
                     items: [
                         {
                             xtype: 'fieldset',
+                            localiserId: 'importS4Fielset1',
                             title: 'Paramètres du type de contenus',
                             items: [
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'nameField',
                                     fieldLabel: 'Nom',
                                     labelWidth: 165,
                                     name: 'ContentTypeType',
@@ -385,6 +408,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'workflowField',
                                     fieldLabel: 'Workflow',
                                     labelWidth: 165,
                                     name: 'ContentTypeWorkflow',
@@ -401,10 +425,12 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'importS4Fieldset2',
                             title: 'Paramètres des contenus',
                             items: [
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'contributeWorkspaceField',
                                     fieldLabel: 'Contribution',
                                     labelWidth: 165,
                                     name: 'ContentsWriteWorkspace',
@@ -413,6 +439,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'WorkspaceCombo',
+                                    localiserId: 'difusionWorkspaceField',
                                     fieldLabel: 'Diffusion',
                                     labelWidth: 165,
                                     name: 'ContentsTarget',
@@ -425,6 +452,7 @@ Ext.define('Rubedo.view.InportInterface', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'importBtn',
                             id: 'mainImportSubmitBtn',
                             scale: 'large',
                             text: 'Importer'

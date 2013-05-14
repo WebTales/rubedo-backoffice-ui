@@ -225,7 +225,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
             tRuleSomeText:"Contient au moins un des termes",
             tRuleSomeREcText:"Contient au moins un des termes ou au moins un des descendants d’un des termes",
             tRuleNotText:"Ne contient aucun des termes suivants",
-            tRuleNotRecText:"Ne contient ni les termes suivants ni leurs descendants"
+            tRuleNotRecText:"Ne contient ni les termes suivants ni leurs descendants",
+            CTMustHaveTitleError:"Le type de contenu doit obligatoirement avoir un champ de type \"Titre\"",
+            CTMustHaveOnlyOneTitleError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Titre\"",
+            CTMustHaveOnlyOneSummaryError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Résumé\"",
+            CRMustHaveOnlyOneLocFieldError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\""
 
         });
         // attach event and load localisation store

@@ -24,6 +24,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
         'Ext.ux.TreePicker'
     ],
 
+    localiserId: 'newContentWindow',
     height: 500,
     id: 'ajouterContenu',
     width: 900,
@@ -87,6 +88,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
+                            localiserId: 'cancelBtn',
                             id: 'contentEditorCancelButton',
                             iconCls: 'close',
                             text: 'Annuler'

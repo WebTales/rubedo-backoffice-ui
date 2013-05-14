@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.newFormWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newFormWindow',
 
+    localiserId: 'newFormWindow',
     height: 103,
     width: 274,
     resizable: false,
@@ -41,6 +42,7 @@ Ext.define('Rubedo.view.newFormWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'newFormTitleField',
                             fieldLabel: 'Titre',
                             labelWidth: 40,
                             name: 'title',
@@ -55,6 +57,7 @@ Ext.define('Rubedo.view.newFormWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'newFormCreateBtn',
                             id: 'submitNewFormBtn',
                             text: 'Créer ce questionnaire'
                         }

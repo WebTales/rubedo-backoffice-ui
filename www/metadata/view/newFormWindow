@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newFormWindow",
         "height": 103,
         "width": 274,
         "designer|userClassName": "newFormWindow",
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "02bcaee3-2fc4-4f83-8521-12359112b8ab",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -44,12 +52,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newFormTitleField",
                         "fieldLabel": "Titre",
                         "labelWidth": 40,
                         "name": "title",
                         "allowBlank": false
                     },
                     "designerId": "4a09526f-b5a2-4c97-be47-d4fb33b625c3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -81,10 +97,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newFormCreateBtn",
                         "id": "submitNewFormBtn",
                         "text": "Créer ce questionnaire"
                     },
-                    "designerId": "eb8800af-bdfd-46ee-94c4-005949bfc9dc"
+                    "designerId": "eb8800af-bdfd-46ee-94c4-005949bfc9dc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }
