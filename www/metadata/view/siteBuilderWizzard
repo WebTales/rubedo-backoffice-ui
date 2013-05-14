@@ -67,7 +67,7 @@
                     ],
                     "cn": [
                         {
-                            "type": "Ext.form.field.Checkbox",
+                            "type": "Ext.form.field.Radio",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -77,11 +77,11 @@
                                 "layout|anchor": "100%",
                                 "id": "useEmptySiteField",
                                 "fieldLabel": "Créer un site vide",
+                                "labelWidth": 110,
                                 "name": "builtOnEmptySite",
                                 "boxLabel": "",
                                 "checked": true,
-                                "inputValue": "true",
-                                "uncheckedValue": "false"
+                                "inputValue": "true"
                             },
                             "designerId": "bdf589d0-261e-4169-810b-3af1c8f1a94c",
                             "cn": [
@@ -131,6 +131,23 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Créer un site en utilisant un site existant comme modèle",
+                                "labelWidth": 320,
+                                "name": "builtOnEmptySite",
+                                "boxLabel": "",
+                                "inputValue": "false"
+                            },
+                            "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da"
+                        },
+                        {
                             "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
@@ -138,9 +155,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "hidden": true,
+                                "border": 0,
                                 "id": "modelSiteIdFieldset",
-                                "title": "Créer un site en utilisant un site existant comme modèle"
+                                "padding": 0,
+                                "title": null
                             },
                             "designerId": "1f0f2704-dfae-4add-b507-0be1237357b5",
                             "cn": [

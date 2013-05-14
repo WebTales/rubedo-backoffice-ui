@@ -56,15 +56,15 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                             title: 'Etape 1 : Modèle',
                             items: [
                                 {
-                                    xtype: 'checkboxfield',
+                                    xtype: 'radiofield',
                                     anchor: '100%',
                                     id: 'useEmptySiteField',
                                     fieldLabel: 'Créer un site vide',
+                                    labelWidth: 110,
                                     name: 'builtOnEmptySite',
                                     boxLabel: '',
                                     checked: true,
                                     inputValue: 'true',
-                                    uncheckedValue: 'false',
                                     listeners: {
                                         change: {
                                             fn: me.onUseEmptySiteFieldChange,
@@ -77,10 +77,19 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     }
                                 },
                                 {
+                                    xtype: 'radiofield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Créer un site en utilisant un site existant comme modèle',
+                                    labelWidth: 320,
+                                    name: 'builtOnEmptySite',
+                                    boxLabel: '',
+                                    inputValue: 'false'
+                                },
+                                {
                                     xtype: 'fieldset',
-                                    hidden: true,
+                                    border: 0,
                                     id: 'modelSiteIdFieldset',
-                                    title: 'Créer un site en utilisant un site existant comme modèle',
+                                    padding: 0,
                                     items: [
                                         {
                                             xtype: 'combobox',
