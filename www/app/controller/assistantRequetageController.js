@@ -134,7 +134,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             }
             enrobage.getComponent(0).insert(1,operateur);
             if (Ext.getCmp('assisstantRE4').items.items.length>2){
-                enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>ET </b>'}));
+                enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>'+Rubedo.RubedoAutomatedElementsLoc.andText+'</b>'}));
             }
 
             Ext.getCmp('assisstantRE4').add(enrobage);
@@ -203,8 +203,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             var storeOper = Ext.create('Ext.data.Store', {
                 fields: ['operateur', 'label'],
                 data : [
-                {"operateur":"ASC", "label": "Croissant"},
-                {"operateur":"DESC", "label": "Decroissant"}
+                {"operateur":"ASC", "label": Rubedo.RubedoAutomatedElementsLoc.ascText},
+                {"operateur":"DESC", "label": Rubedo.RubedoAutomatedElementsLoc.descText}
                 ]
             });
             var operateur= Ext.create('Ext.form.ComboBox', {
@@ -227,7 +227,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             enrobage.getComponent(0).insert(1,operateur);
             if (Ext.getCmp('assisstantRE5').items.items.length>2){
-                enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>Puis </b>'}));
+                enrobage.getComponent(0).insert(0,Ext.widget('tbtext', {text: '<b>'+Rubedo.RubedoAutomatedElementsLoc.thenText+' </b>'}));
             }
 
             Ext.getCmp('assisstantRE5').add(enrobage);

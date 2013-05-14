@@ -44,7 +44,7 @@ Ext.define('Rubedo.controller.FormsController', {
                         button.up().up().close();
                     },
                     failure: function(){
-                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.identifierRecoveryError);
 
                     }
                 });
@@ -95,11 +95,11 @@ Ext.define('Rubedo.controller.FormsController', {
                     me.resetInterfaceSelect(target);
                 },this,{single:true});
                 } else {
-                    Ext.Msg.alert("Erreur", "Propriétés du formulaire invalides");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFormPropertiesError);
                     Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(0);
                 }
             } else {
-                Ext.Msg.alert("Erreur", "Paramétrage des droits invalide");
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);
                 Ext.getCmp("FormsCenterZone").getLayout().setActiveItem(2);
             }
     },
@@ -205,7 +205,7 @@ Ext.define('Rubedo.controller.FormsController', {
                 newPage.getEl().dom.click();
             },
             failure: function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.identifierRecoveryError);
 
             }
         });
@@ -265,7 +265,7 @@ Ext.define('Rubedo.controller.FormsController', {
 
             },
             failure: function(){
-                Ext.Msg.alert('Erreur', 'Erreur dans la récupération d\'un identifiant.');
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.identifierRecoveryError);
 
             }
         });
@@ -298,7 +298,7 @@ Ext.define('Rubedo.controller.FormsController', {
         window.onbeforeunload=Ext.emptyFn;
         window.location="forms/get-csv?display-qnb=1&form-id="+Ext.getCmp("mainFormsGrid").getSelectionModel().getLastSelected().get("id");
         var task = new Ext.util.DelayedTask(function(){
-            window.onbeforeunload = function() { return "Vous allez quitter le Back Office et perdre toute modification non sauvegardée."; };
+            window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
         });
         task.delay(400);
     },

@@ -34,20 +34,20 @@ Ext.define('Rubedo.controller.ImportController', {
                     Ext.getStore("InportAsTaxoStore").removeAll();
                     Ext.getCmp("fileFieldHelper1").show();
                     Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
-                    filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" champs identifiés et "+response.detectedContentsCount+" contenus importables");
+                    filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" "+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+" "+response.detectedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);
                     filefield.up().up().up().setLoading(false);
 
                 },
                 failure: function(form, action) {
                     filefield.up().up().up().setLoading(false);
-                    var message = "Erreur dans l'analyse du fichier";
+                    var message = Rubedo.RubedoAutomatedElementsLoc.fileAnalysisError;
                     try {
                         var response = Ext.JSON.decode(action.response.responseText);
                         if (response.message){
                             message=response.message;
                         }
                     } catch(err){}
-                        Ext.Msg.alert("Erreur", message);
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);
                         filefield.reset();
                     }
                 });
@@ -89,14 +89,14 @@ Ext.define('Rubedo.controller.ImportController', {
                 },
                 success: function(form, action) {
                     var response = Ext.JSON.decode(action.response.responseText);
-                    Ext.Msg.alert("Succés", response.importedContentsCount+" contenus importés.");            
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesText, response.importedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);            
                     button.up().up().setLoading(false);
                     button.up().up().close();
 
                 },
                 failure: function(form, action) {
                     button.up().up().setLoading(false);
-                    Ext.Msg.alert("Erreur", "Erreur lors de l'import");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.importError);
                 }
             });
         }

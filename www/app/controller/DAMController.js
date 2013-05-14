@@ -32,7 +32,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
-            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+DAMType.get("type"));
             myEditor.show();
             this.renderDAMTypeFields(DAMType, false);
             this.renderTaxoFields(DAMType);
@@ -112,13 +112,13 @@ Ext.define('Rubedo.controller.DAMController', {
                 button.up().up().setLoading(false);
                 switch (action.failureType) {
                     case Ext.form.action.Action.CLIENT_INVALID:
-                    Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
                     break;
                     case Ext.form.action.Action.CONNECT_FAILURE:
-                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.serverConnectionError);
                     break;
                     case Ext.form.action.Action.SERVER_INVALID:
-                    Ext.Msg.alert('Erreur', action.result.msg);
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, action.result.msg);
                 }
             }
         });
@@ -165,7 +165,7 @@ Ext.define('Rubedo.controller.DAMController', {
             record.endEdit();
             button.up().up().close();
             Ext.getStore("DAMFacetteStore").load();
-        } else {Ext.Msg.alert("Erreur","Certains champs sont invalides");}
+        } else {Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);}
     },
 
     onDAMROBtnClick: function(button, e, eOpts) {
@@ -198,7 +198,7 @@ Ext.define('Rubedo.controller.DAMController', {
         button.hide();
         Ext.Array.forEach(Ext.getCmp("DAMFieldBox").query("field"), function(thing){thing.setReadOnly(false);});
         Ext.getCmp("DAMSubmitUpdateBtn").show();
-        myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
+        myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMEditText+" \" "+record.get("title")+" \"");
 
 
     },
@@ -223,7 +223,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
-            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
             myEditor.show();
             this.renderDAMTypeFields(DAMType, false);
             this.renderTaxoFields(DAMType);
@@ -492,7 +492,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getStore("DAMEditStore").removeAll();
             Ext.getStore("TaxonomyForDam2").removeAll();
         });
-        myEditor.setTitle("Edition du média \" "+record.get("title")+" \"");
+        myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMEditText+" \" "+record.get("title")+" \"");
         Ext.getCmp("DAMSubmitBtn").hide();
         Ext.getCmp("DAMSubmitUpdateBtn").show();
         Ext.getCmp("DAMSubmitUpdateBtn").indepMode=true;
@@ -510,7 +510,7 @@ Ext.define('Rubedo.controller.DAMController', {
         if (ROMode){
             Ext.Array.forEach(myEditor.query("field"), function(thing){thing.setReadOnly(true);});
             //Ext.Array.forEach(myEditor.query("button"), function(thing){thing.disable();});
-            myEditor.setTitle("Affichage du média \" "+record.get("title")+" \"");
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMDisplayText+" \" "+record.get("title")+" \"");
             Ext.getCmp("DAMSubmitUpdateBtn").hide();
         }
     },
@@ -591,7 +591,7 @@ Ext.define('Rubedo.controller.DAMController', {
                         }
                     });
                     if(thing.label=="Query"){
-                        activeOne.setText("Recherche : "+thing.terms[0].label);
+                        activeOne.setText(Rubedo.RubedoAutomatedElementsLoc.searchText+" : "+thing.terms[0].label);
                     }
                     target.add(activeOne);
                 });
@@ -610,7 +610,7 @@ Ext.define('Rubedo.controller.DAMController', {
                     }
                 });
                 if(thing.label=="Query"){
-                    activeOne.setText("Recherche : "+thing.terms[0].label);
+                    activeOne.setText(Rubedo.RubedoAutomatedElementsLoc.searchText+" : "+thing.terms[0].label);
                 }
                 target.add(activeOne);
             }

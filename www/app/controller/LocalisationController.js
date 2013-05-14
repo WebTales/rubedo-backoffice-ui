@@ -190,7 +190,24 @@ Ext.define('Rubedo.controller.LocalisationController', {
             associatedMaskText:"Masque associé",
             pagePropertiesInvalidError:"Les propriétés de la page sont invalides.",
             stageText:"Etape",
-            onText:"sur"
+            onText:"sur",
+            ascText:"Croissant",
+            descText:"Decroissant",
+            andText:"Et",
+            thenText:"Puis",
+            mediaTypeIsUsedError:"Ce type de média est utilisé par des médias et ne peut donc etre supprimé.",
+            invalidRightsPropertiesError:"Configuration invalide des droits",
+            newDamText:"Nouveau média",
+            DAMEditText:"Edition du média",
+            DAMDisplayText:"Affichage du média",
+            searchText:"Recherche",
+            identifierRecoveryError:"Erreur dans la récupération d'un identifiant",
+            invalidFormPropertiesError:"Propriétés du formulaire invalides",
+            fileAnalysisError:"Erreur dans l'analyse du fichier",
+            identifiedFieldsText:"champs identifiés et",
+            importableContentsText:"contenus importables",
+            importedContentsText:"contenus importés",
+            importError:"Erreur lors de l'import"
 
         });
         // attach event and load localisation store

@@ -47,7 +47,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                 success: function(response){
                     var maskIsUsed=Ext.JSON.decode(response.responseText).used;
                     if (maskIsUsed){
-                        Ext.Msg.alert('Suppression impossible', 'Ce type de médias est utilsé par des médias.');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.mediaTypeIsUsedError);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
                         fenetre.show();
@@ -302,7 +302,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
             record.endEdit();
         } else {
-            Ext.Msg.alert('Erreur', 'Propriétés invalides dans l\'onglet "Droits"');
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);
         }
     },
 
@@ -382,7 +382,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             }
         });
         if (Ext.Array.contains(usedNames,name)){
-            return("Nom dèjà utilisé par un autre champ");
+            return(Rubedo.RubedoAutomatedElementsLoc.fieldNameAlreadyUsedError);
         } else {
             return(true);
         }

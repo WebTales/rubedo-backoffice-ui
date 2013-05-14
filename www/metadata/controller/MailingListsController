@@ -32,7 +32,7 @@
                     "    Ext.getCmp(\"MailingListsUpdate\").enable();\r",
                     "    Ext.getCmp(\"MLPropsForm\").enable();\r",
                     "    Ext.getCmp(\"MLPropsForm\").getForm().loadRecord(selected[0]);\r",
-                    "     if ((selected[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.mailingLists\"])){\r",
+                    "    if ((selected[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.mailingLists\"])){\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"MLPropsForm\").query(\"field\"), function(field){\r",
                     "            field.setReadOnly(true);\r",
                     "        });\r",
