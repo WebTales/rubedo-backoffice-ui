@@ -229,7 +229,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
             CTMustHaveTitleError:"Le type de contenu doit obligatoirement avoir un champ de type \"Titre\"",
             CTMustHaveOnlyOneTitleError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Titre\"",
             CTMustHaveOnlyOneSummaryError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Résumé\"",
-            CRMustHaveOnlyOneLocFieldError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\""
+            CRMustHaveOnlyOneLocFieldError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\"",
+            notMentionedText:"non renseigné",
+            showOnlyIfText:"Affiché si et seulement si",
+            orText:"Ou"
 
         });
         // attach event and load localisation store

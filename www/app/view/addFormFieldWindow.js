@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.addFormFieldWindow',
 
+    localiserId: 'formAddElementWindow',
     draggable: false,
     height: 300,
     id: 'addFormFieldWindow',
@@ -44,6 +45,7 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 1
@@ -85,6 +87,7 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             disabled: true,
                             id: 'insertFormElementBtn',
                             iconCls: 'add',

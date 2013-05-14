@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "formOpenQuestionConfigurator",
         "height": 288,
         "id": "OpenFieldConfigurator",
         "width": 715,
@@ -22,6 +23,13 @@
         "resizable": "boolean"
     },
     "designerId": "66fcb2bd-aade-460e-b8f6-0839b3a1d005",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -131,11 +139,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionLabelField",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
                     },
-                    "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11"
+                    "designerId": "c880204c-43cb-434e-9591-fb7d72c93c11",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -146,11 +162,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionCodeField",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
                     },
-                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc"
+                    "designerId": "ec30c3e4-df8f-401e-bd36-b1925b1e4dcc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -161,11 +185,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionHelpTextField",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
                     },
-                    "designerId": "fda18543-0001-43bf-95f0-e2cd70e39210"
+                    "designerId": "fda18543-0001-43bf-95f0-e2cd70e39210",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Checkbox",
@@ -176,6 +208,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "questionMandatoryField",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -183,7 +216,14 @@
                         "inputValue": "true",
                         "uncheckedValue": "false"
                     },
-                    "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf"
+                    "designerId": "83f2c1ae-567b-4f57-9376-6b46e911afcf",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.RadioGroup",
@@ -193,12 +233,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "questionFieldTypeRadioGroup",
                         "fieldLabel": "Type de champ",
                         "labelPad": null,
                         "labelSeparator": " ",
                         "labelWidth": 140
                     },
                     "designerId": "8cba619b-6566-41d9-b8fd-7d48d373cb9f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Radio",
@@ -208,12 +256,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "questionTextRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Texte",
                                 "inputValue": "textfield"
                             },
-                            "designerId": "5e745674-511a-4942-8a90-72ccec8f90f9"
+                            "designerId": "5e745674-511a-4942-8a90-72ccec8f90f9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Radio",
@@ -223,6 +279,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "questionTextareaRadio",
                                 "width": 100,
                                 "fieldLabel": null,
                                 "labelWidth": null,
@@ -230,7 +287,14 @@
                                 "boxLabel": "Commentaire",
                                 "inputValue": "textareafield"
                             },
-                            "designerId": "1b425295-942f-4586-ac64-86be42be4047"
+                            "designerId": "1b425295-942f-4586-ac64-86be42be4047",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Radio",
@@ -240,12 +304,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "questionNumberRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Nombre",
                                 "inputValue": "numberfield"
                             },
-                            "designerId": "2ecb16a1-924c-46d0-9d6e-6db6442ad5c2"
+                            "designerId": "2ecb16a1-924c-46d0-9d6e-6db6442ad5c2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Radio",
@@ -255,12 +327,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "questionDateRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Date",
                                 "inputValue": "datefield"
                             },
-                            "designerId": "5b46a9ee-6c0a-47b0-b075-aaa86895f2c1"
+                            "designerId": "5b46a9ee-6c0a-47b0-b075-aaa86895f2c1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Radio",
@@ -270,12 +350,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "questionTimeRadio",
                                 "fieldLabel": null,
                                 "name": "fieldType",
                                 "boxLabel": "Horaire",
                                 "inputValue": "timefield"
                             },
-                            "designerId": "75a944b1-e4e1-4f12-9cf9-82c4e892ce94"
+                            "designerId": "75a944b1-e4e1-4f12-9cf9-82c4e892ce94",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "basiceventbinding",
@@ -337,13 +425,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "minLengthField",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
-                            "designerId": "9fe7a6a8-0b5a-43f5-9a18-3da1f25f8931"
+                            "designerId": "9fe7a6a8-0b5a-43f5-9a18-3da1f25f8931",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -354,13 +450,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "maxLengthField",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
-                            "designerId": "0fad7f80-3929-4dc9-8a0a-5f814dc2d17e"
+                            "designerId": "0fad7f80-3929-4dc9-8a0a-5f814dc2d17e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -371,6 +475,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "validationField",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -382,7 +487,14 @@
                             "configAlternates": {
                                 "store": "array"
                             },
-                            "designerId": "0889a5b0-11b6-49b0-a995-9aec9d2a0801"
+                            "designerId": "0889a5b0-11b6-49b0-a995-9aec9d2a0801",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -410,13 +522,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "minLengthField",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
-                            "designerId": "560326de-6bbd-424b-b4a9-7ea9132469cc"
+                            "designerId": "560326de-6bbd-424b-b4a9-7ea9132469cc",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -427,13 +547,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "maxLengthField",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
                                 "allowDecimals": false,
                                 "minValue": 0
                             },
-                            "designerId": "0fe6fdba-dd1e-4921-8216-d4d3aad68b46"
+                            "designerId": "0fe6fdba-dd1e-4921-8216-d4d3aad68b46",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -444,6 +572,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "validationField",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -455,7 +584,14 @@
                             "configAlternates": {
                                 "store": "array"
                             },
-                            "designerId": "e8ea9159-8de9-485a-926a-1bc74be6b831"
+                            "designerId": "e8ea9159-8de9-485a-926a-1bc74be6b831",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -483,11 +619,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "minValueField",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
                             },
-                            "designerId": "cb49f2b1-f4ae-433f-b867-5d9967085413"
+                            "designerId": "cb49f2b1-f4ae-433f-b867-5d9967085413",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -498,11 +642,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "maxValueField",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
                             },
-                            "designerId": "76aa5aea-d43f-4a86-af9a-66cc61390fe1"
+                            "designerId": "76aa5aea-d43f-4a86-af9a-66cc61390fe1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -513,12 +665,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "allowDecimalsField",
                                 "fieldLabel": "Décimales",
                                 "labelWidth": 140,
                                 "name": "allowDecimals",
                                 "boxLabel": ""
                             },
-                            "designerId": "c2fccede-e31d-49df-85fd-d2659ab043a6"
+                            "designerId": "c2fccede-e31d-49df-85fd-d2659ab043a6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -546,11 +706,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "minValueField",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
                             },
-                            "designerId": "2b8b0a91-70fe-45ab-8068-4c8b349d4aaf"
+                            "designerId": "2b8b0a91-70fe-45ab-8068-4c8b349d4aaf",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Date",
@@ -561,11 +729,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "maxValueField",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
                             },
-                            "designerId": "8ecf1cc7-3c37-4e89-a9c9-730152569920"
+                            "designerId": "8ecf1cc7-3c37-4e89-a9c9-730152569920",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -593,11 +769,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "minValueField",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
                             },
-                            "designerId": "f52a7e01-e696-4023-9715-05c54eea6dac"
+                            "designerId": "f52a7e01-e696-4023-9715-05c54eea6dac",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Time",
@@ -608,11 +792,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "maxValueField",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
                             },
-                            "designerId": "066173b6-75cc-4764-a576-6dc45dab73d7"
+                            "designerId": "066173b6-75cc-4764-a576-6dc45dab73d7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

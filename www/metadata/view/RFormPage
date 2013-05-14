@@ -42,7 +42,7 @@
                     "                if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){\r",
                     "                    var theGoodOption = \"\";\r",
                     "                    Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){\r",
-                    "                        var interMedOption=\" non renseigné\";\r",
+                    "                        var interMedOption=\" \"+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;\r",
                     "\r",
                     "                        Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){\r",
                     "                            if (possible.inputValue==value){\r",
@@ -50,14 +50,14 @@
                     "                            }\r",
                     "                        });\r",
                     "                        if (index > 0){\r",
-                    "                            interMedOption=\" OU \"+interMedOption;\r",
+                    "                            interMedOption=Rubedo.RubedoAutomatedElementsLoc.orText+\" \"+interMedOption;\r",
                     "                        }\r",
                     "                        theGoodOption=theGoodOption+interMedOption;\r",
                     "                    });\r",
                     "                    filler=filler+theGoodOption;\r",
                     "\r",
                     "                } else {\r",
-                    "                    var theGoodOption = \" non renseigné\";\r",
+                    "                    var theGoodOption = \" \"+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;\r",
                     "                    Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){\r",
                     "                        if (possible.inputValue==me.itemConfig.conditionals[0].value.value){\r",
                     "                            theGoodOption=possible.boxLabel;\r",
@@ -74,7 +74,7 @@
                     "                filler=filler+me.itemConfig.conditionals[0].value;\r",
                     "            }\r",
                     "        }catch(err){console.log(\"error geting condition to display\");}\r",
-                    "            plusText=\"<i style=\\\"color:\"+MyPrefData.themeColor+\";\\\"> (Affiché si et seulement si \"+filler+\" )</i>\";\r",
+                    "            plusText=\"<i style=\\\"color:\"+MyPrefData.themeColor+\";\\\"> (\"+Rubedo.RubedoAutomatedElementsLoc.showOnlyIfText+\" \"+filler+\" )</i>\";\r",
                     "        }\r",
                     "        this.setTitle(this.itemConfig.label+\" \"+plusText);"
                 ]
@@ -128,6 +128,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "formFieldConfiguratorBtn",
                         "itemId": "formFieldCofiguratorBtn",
                         "iconCls": "edit",
                         "text": "",
@@ -137,7 +138,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "3041c50c-02f2-4539-ab43-f3d14536c982"
+                    "designerId": "3041c50c-02f2-4539-ab43-f3d14536c982",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -147,6 +155,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "formFieldConditionBtn",
                         "itemId": "formFieldConditionsBtn",
                         "margin": "10 0 0 0",
                         "iconCls": "cond_small",
@@ -157,7 +166,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "bc35ebc7-11fe-49b3-a3e3-158fdc265c85"
+                    "designerId": "bc35ebc7-11fe-49b3-a3e3-158fdc265c85",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "formAddElementWindow",
         "draggable": false,
         "height": 300,
         "id": "addFormFieldWindow",
@@ -23,6 +24,13 @@
         "resizable": "boolean"
     },
     "designerId": "304ad092-9c78-4ed0-8170-c2c2b07738e2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -56,11 +64,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typeCol",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
                     },
-                    "designerId": "5ae5df94-153d-409f-bc9b-4602e6c4d50c"
+                    "designerId": "5ae5df94-153d-409f-bc9b-4602e6c4d50c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",
@@ -174,13 +190,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "disabled": true,
                         "id": "insertFormElementBtn",
                         "margin": null,
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
-                    "designerId": "57dbdfab-e1dd-4a84-9239-56a374f31ef3"
+                    "designerId": "57dbdfab-e1dd-4a84-9239-56a374f31ef3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

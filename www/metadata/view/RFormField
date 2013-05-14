@@ -61,13 +61,13 @@
                     "    try{\r",
                     "        filler=Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.qNb+\" \"+me.itemConfig.conditionals[0].operator+\" \";\r",
                     "        if (Ext.isEmpty(me.itemConfig.conditionals[0].value)) {\r",
-                    "            filler=filler+\" non renseigné\";\r",
+                    "            filler=filler+\" \"+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;\r",
                     "        } else if ((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType==\"radiogroup\")||(Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldType==\"checkboxgroup\")) {\r",
                     "            if (Ext.isObject(me.itemConfig.conditionals[0].value)){\r",
                     "                if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){\r",
                     "                    var theGoodOption = \"\";\r",
                     "                    Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){\r",
-                    "                        var interMedOption=\" non renseigné\";\r",
+                    "                        var interMedOption=\" \"+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;\r",
                     "\r",
                     "                        Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){\r",
                     "                            if (possible.inputValue==value){\r",
@@ -75,14 +75,14 @@
                     "                            }\r",
                     "                        });\r",
                     "                        if (index > 0){\r",
-                    "                            interMedOption=\" OU \"+interMedOption;\r",
+                    "                            interMedOption=Rubedo.RubedoAutomatedElementsLoc.orText+\" \"+interMedOption;\r",
                     "                        }\r",
                     "                        theGoodOption=theGoodOption+interMedOption;\r",
                     "                    });\r",
                     "                    filler=filler+theGoodOption;\r",
                     "\r",
                     "                } else {\r",
-                    "                    var theGoodOption = \" non renseigné\";\r",
+                    "                    var theGoodOption = \" \"+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;\r",
                     "                    Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){\r",
                     "                        if (possible.inputValue==me.itemConfig.conditionals[0].value.value){\r",
                     "                            theGoodOption=possible.boxLabel;\r",
@@ -99,7 +99,7 @@
                     "                filler=filler+me.itemConfig.conditionals[0].value;\r",
                     "            }\r",
                     "        }catch(err){console.log(\"error geting condition to display\");}\r",
-                    "            plusText=\"<i style=\\\"color:\"+MyPrefData.themeColor+\";\\\"> (Affiché si et seulement si \"+filler+\" )</i>\";\r",
+                    "            plusText=\"<i style=\\\"color:\"+MyPrefData.themeColor+\";\\\"> (\"+Rubedo.RubedoAutomatedElementsLoc.showOnlyIfText+\" \"+filler+\" )</i>\";\r",
                     "        }\r",
                     "        if ((me.itemConfig.fType==\"openQuestion\")||(me.itemConfig.fType==\"multiChoiceQuestion\")){\r",
                     "            var previewField = Ext.widget(me.itemConfig.fieldType, me.itemConfig.fieldConfig);\r",
@@ -114,7 +114,7 @@
                     "            if (!Ext.isEmpty(me.itemConfig.tooltip)){\r",
                     "                previewField.RTip=me.itemConfig.tooltip;\r",
                     "            }\r",
-                    "            \r",
+                    "\r",
                     "            me.add(previewField);\r",
                     "        } else if (me.itemConfig.fType==\"richText\") {\r",
                     "            me.update(plusText+me.itemConfig.html);\r",
@@ -171,6 +171,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "formFieldConfiguratorBtn",
                         "itemId": "formFieldCofiguratorBtn",
                         "iconCls": "edit",
                         "text": "",
@@ -180,7 +181,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "fafe42e9-8bf4-44f9-a072-4b5a6e563fc1"
+                    "designerId": "fafe42e9-8bf4-44f9-a072-4b5a6e563fc1",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -190,6 +198,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "formFieldConditionsBtn",
                         "itemId": "formFieldConditionsBtn",
                         "margin": "10 0 0 0",
                         "iconCls": "cond_small",
@@ -200,7 +209,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "694ca393-4a09-4514-87ee-e9ac13beeb04"
+                    "designerId": "694ca393-4a09-4514-87ee-e9ac13beeb04",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

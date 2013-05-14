@@ -8,6 +8,7 @@
     "userConfig": {
         "favoriteIcon": "images.png",
         "container|align": "stretch",
+        "localiserId": "DamTypesMainWindow",
         "height": 627,
         "id": "mediaTypesInterface",
         "width": 1080,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],

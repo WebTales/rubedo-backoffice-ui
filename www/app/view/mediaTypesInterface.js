@@ -25,6 +25,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     ],
 
     favoriteIcon: 'images.png',
+    localiserId: 'DamTypesMainWindow',
     height: 627,
     id: 'mediaTypesInterface',
     width: 1080,

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.OpenFieldConfigurator',
 
+    localiserId: 'formOpenQuestionConfigurator',
     height: 288,
     id: 'OpenFieldConfigurator',
     width: 715,
@@ -67,6 +68,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionLabelField',
                             fieldLabel: 'Intitulé de la question',
                             labelWidth: 140,
                             name: 'fieldLabel'
@@ -74,6 +76,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionCodeField',
                             fieldLabel: 'Code de la question',
                             labelWidth: 140,
                             name: 'qNb'
@@ -81,6 +84,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'questionHelpTextField',
                             fieldLabel: 'Bulle d\'aide',
                             labelWidth: 140,
                             name: 'tooltip'
@@ -88,6 +92,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
+                            localiserId: 'questionMandatoryField',
                             fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             name: 'mandatory',
@@ -97,18 +102,21 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                         },
                         {
                             xtype: 'radiogroup',
+                            localiserId: 'questionFieldTypeRadioGroup',
                             fieldLabel: 'Type de champ',
                             labelSeparator: ' ',
                             labelWidth: 140,
                             items: [
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'questionTextRadio',
                                     name: 'fieldType',
                                     boxLabel: 'Texte',
                                     inputValue: 'textfield'
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'questionTextareaRadio',
                                     width: 100,
                                     name: 'fieldType',
                                     boxLabel: 'Commentaire',
@@ -116,18 +124,21 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'questionNumberRadio',
                                     name: 'fieldType',
                                     boxLabel: 'Nombre',
                                     inputValue: 'numberfield'
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'questionDateRadio',
                                     name: 'fieldType',
                                     boxLabel: 'Date',
                                     inputValue: 'datefield'
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    localiserId: 'questionTimeRadio',
                                     name: 'fieldType',
                                     boxLabel: 'Horaire',
                                     inputValue: 'timefield'
@@ -161,6 +172,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'minLengthField',
                                     fieldLabel: 'Longueur min',
                                     labelWidth: 140,
                                     name: 'minLength',
@@ -170,6 +182,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'maxLengthField',
                                     fieldLabel: 'Longueur max',
                                     labelWidth: 140,
                                     name: 'maxLength',
@@ -179,6 +192,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'validationField',
                                     fieldLabel: 'Validation',
                                     labelWidth: 140,
                                     name: 'vtype',
@@ -202,6 +216,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'minLengthField',
                                     fieldLabel: 'Longueur min',
                                     labelWidth: 140,
                                     name: 'minLength',
@@ -211,6 +226,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'maxLengthField',
                                     fieldLabel: 'Longueur max',
                                     labelWidth: 140,
                                     name: 'maxLength',
@@ -220,6 +236,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'validationField',
                                     fieldLabel: 'Validation',
                                     labelWidth: 140,
                                     name: 'vtype',
@@ -243,6 +260,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'minValueField',
                                     fieldLabel: 'Valeur min',
                                     labelWidth: 140,
                                     name: 'minValue'
@@ -250,6 +268,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'maxValueField',
                                     fieldLabel: 'Valeur max',
                                     labelWidth: 140,
                                     name: 'maxValue'
@@ -257,6 +276,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    localiserId: 'allowDecimalsField',
                                     fieldLabel: 'Décimales',
                                     labelWidth: 140,
                                     name: 'allowDecimals',
@@ -274,6 +294,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'datefield',
                                     anchor: '100%',
+                                    localiserId: 'minValueField',
                                     fieldLabel: 'Valeur min',
                                     labelWidth: 140,
                                     name: 'minValue'
@@ -281,6 +302,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'datefield',
                                     anchor: '100%',
+                                    localiserId: 'maxValueField',
                                     fieldLabel: 'Valeur max',
                                     labelWidth: 140,
                                     name: 'maxValue'
@@ -297,6 +319,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'timefield',
                                     anchor: '100%',
+                                    localiserId: 'minValueField',
                                     fieldLabel: 'Valeur min',
                                     labelWidth: 140,
                                     name: 'minValue'
@@ -304,6 +327,7 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                                 {
                                     xtype: 'timefield',
                                     anchor: '100%',
+                                    localiserId: 'maxValueField',
                                     fieldLabel: 'Valeur max',
                                     labelWidth: 140,
                                     name: 'maxValue'

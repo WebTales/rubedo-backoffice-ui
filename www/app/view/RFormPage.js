@@ -48,6 +48,7 @@ Ext.define('Rubedo.view.RFormPage', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'formFieldConfiguratorBtn',
                             itemId: 'formFieldCofiguratorBtn',
                             iconCls: 'edit',
                             text: '',
@@ -56,6 +57,7 @@ Ext.define('Rubedo.view.RFormPage', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'formFieldConditionBtn',
                             itemId: 'formFieldConditionsBtn',
                             margin: '10 0 0 0',
                             iconCls: 'cond_small',
@@ -89,7 +91,7 @@ Ext.define('Rubedo.view.RFormPage', {
                         if (Ext.isArray(me.itemConfig.conditionals[0].value.value)){
                             var theGoodOption = "";
                             Ext.Array.forEach(me.itemConfig.conditionals[0].value.value, function(value, index){
-                                var interMedOption=" non renseigné";
+                                var interMedOption=" "+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;
 
                                 Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
                                     if (possible.inputValue==value){
@@ -97,14 +99,14 @@ Ext.define('Rubedo.view.RFormPage', {
                                     }
                                 });
                                 if (index > 0){
-                                    interMedOption=" OU "+interMedOption;
+                                    interMedOption=Rubedo.RubedoAutomatedElementsLoc.orText+" "+interMedOption;
                                 }
                                 theGoodOption=theGoodOption+interMedOption;
                             });
                             filler=filler+theGoodOption;
 
                         } else {
-                            var theGoodOption = " non renseigné";
+                            var theGoodOption = " "+Rubedo.RubedoAutomatedElementsLoc.notMentionedText;
                             Ext.Array.forEach((Ext.getCmp(me.itemConfig.conditionals[0].field).itemConfig.fieldConfig.items), function(possible){
                                 if (possible.inputValue==me.itemConfig.conditionals[0].value.value){
                                     theGoodOption=possible.boxLabel;
@@ -121,7 +123,7 @@ Ext.define('Rubedo.view.RFormPage', {
                         filler=filler+me.itemConfig.conditionals[0].value;
                     }
                 }catch(err){console.log("error geting condition to display");}
-                    plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> (Affiché si et seulement si "+filler+" )</i>";
+                    plusText="<i style=\"color:"+MyPrefData.themeColor+";\"> ("+Rubedo.RubedoAutomatedElementsLoc.showOnlyIfText+" "+filler+" )</i>";
                 }
                 this.setTitle(this.itemConfig.label+" "+plusText);
     }
