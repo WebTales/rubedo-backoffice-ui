@@ -169,7 +169,17 @@ Ext.define('Rubedo.controller.LocalisationController', {
             invalidTaxoError:"Certains champs de taxonomie sont invalides.",
             invalidFieldsError:"Certains champs sont invalides.",
             insufficientContentRightsError:"Vos droits sont insuffisants pour afficher ou modifier ce contenu",
-            newContentText:"Nouveau Contenu"
+            newContentText:"Nouveau Contenu",
+            maxOneLocFieldError:"Un type de contenus ne peut pas avoir plusieurs champs de type \"Localisation\".",
+            contentTypeIsUsedError:"Ce type de contenu est utilsé par des contenus et ne peut donc pas etre supprimé.",
+            warningTitle:"Attention",
+            contentTypeIncompatModifError:"Le type de contenu est utilisé par des contenus et ces modifications ne sont pas compatibles.",
+            contentTypeModifWarning:"Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de répercussions. </br> Souhaitez-vous continuer ?",
+            fieldReplicaText:"Replique du champ",
+            successTitle:"Succés",
+            contentsDeleteError:"Erreur dans la suppression des contenus",
+            contentTypeHasBeenEmptiedText:"Le type de contenu a été vidé",
+            fieldNameAlreadyUsedError:"Nom dèjà utilisé par un autre champ"
 
         });
         // attach event and load localisation store

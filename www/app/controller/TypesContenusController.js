@@ -302,7 +302,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (Ext.isEmpty(Ext.getStore("AddMultiFieldStore").getRange())){
             var donnees = Ext.getCmp('ChampTCSelectGrid').getSelectionModel().getLastSelected().data;
             if ((donnees.cType=="Rubedo.view.localiserField")&&(!Ext.isEmpty(Ext.getCmp("champsEditionTC").query("localiserField")))){
-                Ext.Msg.alert("Erreur", "Un type de contenus ne peut pas avoir plusieurs champs de type \"Localisation\".");
+                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.maxOneLocFieldError);
             }else {
                 var configurateur = Ext.clone(donnees.config);
                 if (donnees.cType =='Ext.ux.TreePicker'){ 
@@ -399,7 +399,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     interv.id=interv.protoId;
                     var donnees = interv;
                     if ((donnees.cType=="Rubedo.view.localiserField")&&(!Ext.isEmpty(Ext.getCmp("champsEditionTC").query("localiserField")))){
-                        Ext.Msg.alert("Erreur", "Un type de contenus ne peut pas avoir plusieurs champs de type \"Localisation\".");
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.maxOneLocFieldError);
                     }else {
                         var configurateur = Ext.clone(donnees.config);
                         if (donnees.cType =='Ext.ux.TreePicker'){ 
@@ -826,7 +826,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 success: function(response){
                     var maskIsUsed=Ext.JSON.decode(response.responseText).used;
                     if (maskIsUsed){
-                        Ext.Msg.alert('Suppression impossible', 'Ce type de contenu est utilsé par des contenus.');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeIsUsedError);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
                         fenetre.show();
@@ -901,9 +901,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         }
                         target.endEdit();
                     } else if (canModify=="no"){
-                        Ext.Msg.alert('Modification impossible', 'Le type de contenu est utilisé par des contenus et ces modifications ne sont pas compatibles.');
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeIncompatModifError);
                     } else if (canModify=="possible"){
-                        Ext.Msg.confirm('Attention', 'Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de répercussions. </br> Souhaitez-vous continuer ?' ,function(anser){
+                        Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeModifWarning ,function(anser){
                             if (anser=="yes"){
                                 var target = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected();
                                 target.beginEdit();
@@ -959,7 +959,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip("Réplique du champ "+button.up().getComponent(1).fieldLabel);
+        enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.fieldReplicaText+" "+button.up().getComponent(1).fieldLabel);
         var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
         supprimeur.on('click', function(){
             button.valeursM--;
@@ -1036,18 +1036,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 success: function(response){
                     button.setLoading(false);
 
-                    Ext.Msg.alert("Succés", "Le type de contenu a été vidé");
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);
                 },
                 failure: function(response) {
                     button.setLoading(false);
-                    var message = "Erreur dans l'analyse du fichier";
+                    var message = Rubedo.RubedoAutomatedElementsLoc.contentsDeleteError;
                     try {
                         var answer = Ext.JSON.decode(response.responseText);
                         if (answer.message){
                             message=answer.message;
                         }
                     } catch(err){}
-                        Ext.Msg.alert("Erreur", message);
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);
                     }
                 });
                 Ext.getCmp('delConfirmZ').close();
@@ -1073,7 +1073,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             }
         });
         if (Ext.Array.contains(usedNames,name)){
-            return("Nom dèjà utilisé par un autre champ");
+            return(Rubedo.RubedoAutomatedElementsLoc.fieldNameAlreadyUsedError);
         } else {
             return(true);
         }
