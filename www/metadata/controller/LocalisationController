@@ -37,9 +37,6 @@
                     "});\r",
                     "Ext.require(\"Ext.ux.callout.Callout\");\r",
                     "\r",
-                    "//get language param\r",
-                    "\r",
-                    "//apply correct locale file\r",
                     "\r",
                     "//define localisation singletons \r",
                     "Ext.define(\"Rubedo.RubedoAppHelp\",{\r",
@@ -188,9 +185,10 @@
                     "    rolesText:\"Rôles\"\r",
                     "});\r",
                     "// attach event and load localisation store\r",
-                    "Ext.getStore(\"LocalisationStore\").on(\"load\",function(){\r",
-                    "    me.updateLocalisationSingletons();\r",
-                    "});"
+                    "/*Ext.getStore(\"LocalisationStore\").on(\"load\",function(){\r",
+                    "    \r",
+                    "});*/\r",
+                    "//me.updateLocalisationSingletons();"
                 ]
             },
             "designerId": "02134674-1f73-49b0-ab08-b1257bec9f4e"
@@ -407,8 +405,54 @@
             "userConfig": {
                 "fn": "updateLocalisationSingletons",
                 "implHandler": [
-                    "//todo : move this to server side\r",
+                    "//new method using simple JSON files\r",
+                    "var userLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\");\r",
+                    "if ((!Ext.isEmpty(userLanguage))&&(userLanguage!=\"fre\")){\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'resources/localisationfiles/'+userLanguage+'/appHelp.json',\r",
+                    "        params: {\r",
+                    "            \r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var singletonUpdates = Ext.JSON.decode(response.responseText);\r",
+                    "            Ext.apply(Rubedo.RubedoAppHelp, singletonUpdates);\r",
+                    "        },\r",
+                    "\t\tfailure:function(){\r",
+                    "\t\t\tconsole.log(\"RubedoAppHelp singleton could not be localized for the current language\");\r",
+                    "        }\r",
+                    "    });\r",
+                    "\tExt.Ajax.request({\r",
+                    "        url: 'resources/localisationfiles/'+userLanguage+'/componentLabels.json',\r",
+                    "        params: {\r",
+                    "            \r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var singletonUpdates = Ext.JSON.decode(response.responseText);\r",
+                    "            Ext.apply(Rubedo.RubedoInterfaceLoc, singletonUpdates);\r",
+                    "        },\r",
+                    "\t\tfailure:function(){\r",
+                    "\t\t\tconsole.log(\"RubedoInterfaceLoc singleton could not be localized for the current language\");\r",
+                    "        }\r",
+                    "    });\r",
+                    "\tExt.Ajax.request({\r",
+                    "        url: 'resources/localisationfiles/'+userLanguage+'/automatedElements.json',\r",
+                    "        params: {\r",
+                    "            \r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var singletonUpdates = Ext.JSON.decode(response.responseText);\r",
+                    "            Ext.apply(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);\r",
+                    "        },\r",
+                    "\t\tfailure:function(){\r",
+                    "\t\t\tconsole.log(\"RubedoAutomatedElementsLoc singleton could not be localized for the current language\");\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
                     "\r",
+                    "\r",
+                    "\r",
+                    "/*\r",
+                    "//Old method using the database\r",
                     "var userLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\");\r",
                     "Ext.Array.forEach(Ext.getStore(\"LocalisationStore\").getRange(),function(localiser){\r",
                     "    var toUpdate =Rubedo[localiser.get(\"name\")];\r",
@@ -425,7 +469,7 @@
                     "            }\r",
                     "        }\r",
                     "    });\r",
-                    "}"
+                    "}*/"
                 ]
             },
             "designerId": "ccc2e951-4238-41b3-b475-42aaf17282a1"
@@ -440,7 +484,8 @@
             "userConfig": {
                 "fn": "createLocalisationDefaults",
                 "implHandler": [
-                    "var me = this;\r",
+                    "//deprecated method\r",
+                    "/*var me = this;\r",
                     "var defaultHelp={\r",
                     "    pages:\"<p>Les différentes pages d'un site peuvent aisément être enrichies de blocs fonctionnels.L'application \\\"Pages\\\" permet :</p><ul><li> d'accéder à la vue arborescente des sites gérés sur la plateforme,</li><li> d'ajouter des pages sur la base des masques de pages existants,</li><li> de modifier ou de supprimer des pages,</li><li> d'ajouter des fonctionnalités aux pages par le biais de la bibliothèque de blocs fonctionnels,</li><li> de prévisualiser l'affichage d'une page en front-office,</li><li> de gérer les paramètres de référencement naturel,</li><li> de gérer les droits en lecture et écriture au travers des espaces de travail.</li></ul>\",\r",
                     "    sites:\"<p>Rubedo offre nativement la fonctionnalité d'usine à sites.L'application \\\"Sites\\\" permet  :</p><ul><li> de créer de nouveaux sites au travers d'un assistant de création </li><li>  sur la base de modèles existants ou en partant d'un modèle vierge </li><li>  de modifier le paramétrage des sites existants</li></ul>\",\r",
@@ -604,7 +649,7 @@
                     "}\r",
                     "store.resumeAutoSync();\r",
                     "store.sync();\r",
-                    "console.log(\"Done saving localisation. Please reload the page.\");"
+                    "console.log(\"Done saving localisation. Please reload the page.\");*/"
                 ]
             },
             "designerId": "16e3c536-8ddf-47b6-81f8-80802e7dafb6"

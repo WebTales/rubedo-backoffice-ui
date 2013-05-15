@@ -94,7 +94,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onSalamanderStudioMenuRender",
+                                        "fn": "onSalamanderStudioMenuAdded",
                                         "implHandler": [
                                             "component.add([\r",
                                             "{\r",
@@ -144,7 +144,7 @@
                                             "}\r",
                                             "]);"
                                         ],
-                                        "name": "render",
+                                        "name": "added",
                                         "scope": "me"
                                     },
                                     "designerId": "40d8e44e-16f5-4c80-b93b-2aef15f8bb97"
@@ -178,7 +178,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onSalamanderAdminMenuRender",
+                                        "fn": "onSalamanderAdminMenuAdded",
                                         "implHandler": [
                                             "component.add([\r",
                                             "{\r",
@@ -263,7 +263,7 @@
                                             "}\r",
                                             "]);"
                                         ],
-                                        "name": "render",
+                                        "name": "added",
                                         "scope": "me"
                                     },
                                     "designerId": "ec8d19fa-ca02-403a-8b9d-4f1aa9f8cf7f"

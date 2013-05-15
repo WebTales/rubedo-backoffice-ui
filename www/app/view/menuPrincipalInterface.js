@@ -68,8 +68,8 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     id: 'salamanderStudioMenu',
                                     width: 218,
                                     listeners: {
-                                        render: {
-                                            fn: me.onSalamanderStudioMenuRender,
+                                        added: {
+                                            fn: me.onSalamanderStudioMenuAdded,
                                             scope: me
                                         }
                                     }
@@ -84,8 +84,8 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     id: 'salamanderAdminMenu',
                                     width: 218,
                                     listeners: {
-                                        render: {
-                                            fn: me.onSalamanderAdminMenuRender,
+                                        added: {
+                                            fn: me.onSalamanderAdminMenuAdded,
                                             scope: me
                                         }
                                     }
@@ -217,7 +217,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         me.callParent(arguments);
     },
 
-    onSalamanderStudioMenuRender: function(component, eOpts) {
+    onSalamanderStudioMenuAdded: function(component, container, pos, eOpts) {
         component.add([
         {
             xtype: 'menuitem',
@@ -267,7 +267,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         ]);
     },
 
-    onSalamanderAdminMenuRender: function(component, eOpts) {
+    onSalamanderAdminMenuAdded: function(component, container, pos, eOpts) {
         component.add([
         {
             xtype: 'menuitem',

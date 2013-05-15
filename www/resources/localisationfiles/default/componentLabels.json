@@ -1,0 +1,1542 @@
+{
+    "versionCol": {
+        "text": "Version"
+    },
+    "statusCol": {
+        "text": "Etat"
+    },
+    "dateCol": {
+        "text": "Date"
+    },
+    "authorCol": {
+        "text": "Auteur"
+    },
+    "iconsBtn": {
+        "text": "Icônes"
+    },
+    "showAllIconsBtn": {
+        "text": "Afficher"
+    },
+    "hideAllIconsBtn": {
+        "text": "Cacher"
+    },
+    "rearangeAllIconsBtn": {
+        "text": "Réorganiser automatiquement"
+    },
+    "CustomizeBtn": {
+        "text": "Personnaliser"
+    },
+    "wallpapaerPickerBtn": {
+        "text": "Choisir en tant que nouveau fond d'écran"
+    },
+    "themePickerBtn": {
+        "text": "Appliquer ce thème"
+    },
+    "hcmodeFieldset": {
+        "title": "Mode contraste élevé"
+    },
+    "hcmodeActivateBtn": {
+        "text": "Activer"
+    },
+    "addGroupWindow": {
+        "title": "Ajouter un groupe"
+    },
+    "nameField": {
+        "fieldLabel": "Nom ",
+        "RTip": null
+    },
+    "createGroupAsAsonBtn": {
+        "text": "Créer en tant que fils du groupe séléctionné"
+    },
+    "reusableElementsWindow": {
+        "title": "Eléments réutilisables"
+    },
+    "nameCol": {
+        "text": "Nom"
+    },
+    "deleteBtn": {
+        "text": "Supprimer"
+    },
+    "addBtn": {
+        "text": "Ajouter"
+    },
+    "removeBtn": {
+        "text": "Supprimer"
+    },
+    "renameBtn": {
+        "text": "Renommer"
+    },
+    "exportElementsWindow": {
+        "title": "Exporter un élément"
+    },
+    "mandatoryNameField": {
+        "fieldLabel": "Nom * ",
+        "RTip": null
+    },
+    "elementDescriptionField": {
+        "fieldLabel": "Description ",
+        "RTip": null
+    },
+    "exportElementBtn": {
+        "text": "Exporter cet élément "
+    },
+    "changePasswordWindow": {
+        "title": "Changement  de mot de passe"
+    },
+    "newPasswordField": {
+        "fieldLabel": "Nouveau mot de passe ",
+        "RTip": null
+    },
+    "confirmField": {
+        "fieldLabel": "Confirmer ",
+        "RTip": null
+    },
+    "applyBtn": {
+        "text": "Appliquer"
+    },
+    "termField": {
+        "fieldLabel": "Terme ",
+        "RTip": null
+    },
+    "indexedElementsWindow": {
+        "title": "Elements indexés"
+    },
+    "okBtn": {
+        "text": "<b>OK</b>"
+    },
+    "imagePickerChangeBtn": {
+        "text": ""
+    },
+    "imagePickerClearBtn": {
+        "text": ""
+    },
+    "createDesktopShortcutMenuBtn": {
+        "text": "Créer un raccourci sur le bureau"
+    },
+    "newDamTypeWindow": {
+        "title": "Nouveau type de média"
+    },
+    "newDamTypeNameField": {
+        "fieldLabel": "Nom ",
+        "RTip": null
+    },
+    "newDamTypeMainFileTypeField": {
+        "fieldLabel": "Type de fichier principal",
+        "RTip": null
+    },
+    "newDamTypeSubmitBtn": {
+        "text": "Créer un nouveau type de média"
+    },
+    "addMTFieldWindow": {
+        "title": "Ajouter un champ"
+    },
+    "typeCol": {
+        "text": "Type"
+    },
+    "qbs3": {
+        "title": "Choix des critères sur les champs"
+    },
+    "qbs3ruleadder": {
+        "fieldLabel": "Ajouter une régle sur ",
+        "RTip": null
+    },
+    "qbs3auxbtn": {
+        "text": ""
+    },
+    "qbs4": {
+        "title": "Choix des tris sur les champs"
+    },
+    "qbs4sortBtn": {
+        "fieldLabel": "Ajouter un tri sur ",
+        "RTip": null
+    },
+    "qbs4auxbtn": {
+        "text": ""
+    },
+    "gfsUploadFileBtn": {
+        "text": ""
+    },
+    "gfsDeleteFileBtn": {
+        "text": ""
+    },
+    "gfsDownloadFileBtn": {
+        "text": ""
+    },
+    "gfsPreviewFileBtn": {
+        "text": ""
+    },
+    "fieldEditlocBtn": {
+        "text": ""
+    },
+    "gfsUploadWindow": {
+        "title": "Upload"
+    },
+    "fileField": {
+        "fieldLabel": "Fichier",
+        "RTip": null
+    },
+    "validateBtn": {
+        "text": "Valider"
+    },
+    "cancelBtn": {
+        "text": "Annuler"
+    },
+    "wizardPrevBtn": {
+        "text": "Précédent"
+    },
+    "wizardNextBtn": {
+        "text": "Suivant"
+    },
+    "queryWindow": {
+        "title": "Requêtes"
+    },
+    "editBtn": {
+        "text": "Editer"
+    },
+    "nameColumn": {
+        "text": "Nom"
+    },
+    "queryTypeChooseWindow": {
+        "title": "Choisissez un type de requête"
+    },
+    "chooseManualQueryBtn": {
+        "text": "Requête manuelle"
+    },
+    "ChooseSimpleQueryBtn": {
+        "text": "Requête simple"
+    },
+    "chooseAdvancedQueryBtn": {
+        "text": "Requête avancée"
+    },
+    "chooseDamTypeWindow": {
+        "title": "Choissez un type de média"
+    },
+    "chooseDamTypeField": {
+        "fieldLabel": "Type",
+        "RTip": null
+    },
+    "chooseDamTypeSubmitBtn": {
+        "text": "Créer un nouveau média de ce type"
+    },
+    "workspaceWindow": {
+        "title": "Espaces de travail"
+    },
+    "saveBtn": {
+        "text": "Enregistrer"
+    },
+    "propsPanel": {
+        "title": "Propriétés"
+    },
+    "newWorkspaceWindow": {
+        "title": "Nouvel espace de travail"
+    },
+    "createNewWorkspaceBtn": {
+        "text": "Créer un nouvel espace de travail"
+    },
+    "newTermWindow": {
+        "title": "Nouveau terme"
+    },
+    "workspaceField": {
+        "fieldLabel": "Espaces de travail",
+        "RTip": null
+    },
+    "maskSaveChoiceWindow": {
+        "title": "Ce masque est utilisé par des pages"
+    },
+    "maskSaveChoice1Btn": {
+        "text": "Enregistrer et répercuter les modifications sur toutes les pages"
+    },
+    "maskSaveChoice2Btn": {
+        "text": "Enregistrer sous un nouveau masque"
+    },
+    "mediaQueryAssistant": {
+        "title": "Assistant de requêtage sur médias"
+    },
+    "mqs1": {
+        "title": "Choix des types de médias"
+    },
+    "mediaTypesField": {
+        "fieldLabel": "Types de media",
+        "RTip": null
+    },
+    "mqS2": {
+        "title": "Choix des règles sur la taxonomie"
+    },
+    "mqls": {
+        "title": "Enregistrement"
+    },
+    "chooseBtn": {
+        "text": "Choisir"
+    },
+    "modifyBtn": {
+        "text": "Modifier"
+    },
+    "lcFieldAdress": {
+        "fieldLabel": "Adresse",
+        "RTip": null
+    },
+    "lcFieldAltitude": {
+        "fieldLabel": "Altitude",
+        "RTip": null
+    },
+    "lcFieldLatitude": {
+        "fieldLabel": "Latitude",
+        "RTip": null
+    },
+    "lcFieldLongitude": {
+        "fieldLabel": "Longitude",
+        "RTip": null
+    },
+    "sessionExpiringWindow": {
+        "title": "Votre session va bientot expirer"
+    },
+    "sessionRenewWindow": {
+        "text": "Renouveler ma session"
+    },
+    "sessionExpiredWindow": {
+        "title": "Votre session a expiré"
+    },
+    "reconnectBtn": {
+        "text": "Se connecter à nouveau"
+    },
+    "pagesLaunchBtn": {
+        "text": "Pages"
+    },
+    "previewLaunchBtn": {
+        "text": "Prévisualisation"
+    },
+    "contentsLaunchBtn": {
+        "text": "Contenus"
+    },
+    "DAMLaunchBtn": {
+        "text": "Médiathèque"
+    },
+    "studioMenuBtn": {
+        "text": "Studio"
+    },
+    "adminLenuBtn": {
+        "text": "Administration"
+    },
+    "mySettingsLaunchBtn": {
+        "text": "Paramètres"
+    },
+    "logoutBtn": {
+        "text": "Déconnexion"
+    },
+    "sitesLaunchBtn": {
+        "text": "Sites"
+    },
+    "masksLaunchBtn": {
+        "text": "Masques de page"
+    },
+    "contentTypesLaunchBtn": {
+        "text": "Types de contenus"
+    },
+    "damTypesLaunchBtn": {
+        "text": "Types de médias"
+    },
+    "formsLaunchBtn": {
+        "text": "Questionnaires"
+    },
+    "queriesLaunchBtn": {
+        "text": "Requêtes"
+    },
+    "taxonomyLaunchBtn": {
+        "text": "Taxonomie"
+    },
+    "groupsLaunchBtn": {
+        "text": "Groupes"
+    },
+    "workspacesLaunchBtn": {
+        "text": "Espaces de travail"
+    },
+    "usersLaunchBtn": {
+        "text": "Utilisateurs"
+    },
+    "monitoringLaunchBtn": {
+        "text": "Supervision"
+    },
+    "workflowsLaunchBtn": {
+        "text": "Workflows"
+    },
+    "importLaunchBtn": {
+        "text": "Import"
+    },
+    "mailingListsLaunchBtn": {
+        "text": "Listes de diffusion"
+    },
+    "gfsUploadBtn": {
+        "text": ""
+    },
+    "gfsRemoveFileBtn": {
+        "text": ""
+    },
+    "gfsDownloadBtn": {
+        "text": ""
+    },
+    "gfsHelpBtn": {
+        "text": ""
+    },
+    "newUserWindow": {
+        "title": "Nouvel utilisateur"
+    },
+    "emailField": {
+        "fieldLabel": "E-mail ",
+        "RTip": null
+    },
+    "userAccountField": {
+        "fieldLabel": "Compte utilisateur ",
+        "RTip": null
+    },
+    "picUploadWindow": {
+        "title": "Uploader une image"
+    },
+    "newFormWindow": {
+        "title": "Nouveau questionnaire"
+    },
+    "newFormTitleField": {
+        "fieldLabel": "Titre",
+        "RTip": null
+    },
+    "newFormCreateBtn": {
+        "text": "Créer ce questionnaire"
+    },
+    "formAddElementWindow": {
+        "title": "Ajouter un élément"
+    },
+    "formFieldConfiguratorBtn": {
+        "text": ""
+    },
+    "formFieldConditionBtn": {
+        "text": ""
+    },
+    "formFieldConditionsBtn": {
+        "text": ""
+    },
+    "fieldPanel": {
+        "title": "Champs"
+    },
+    "rteConfigWindow": {
+        "title": "Editeur de texte riche"
+    },
+    "formOpenQuestionConfigurator": {
+        "title": "Editeur de question ouverte"
+    },
+    "questionLabelField": {
+        "fieldLabel": "Intitulé de la question",
+        "RTip": null
+    },
+    "questionCodeField": {
+        "fieldLabel": "Code de la question",
+        "RTip": null
+    },
+    "questionHelpTextField": {
+        "fieldLabel": "Bulle d'aide",
+        "RTip": null
+    },
+    "questionMandatoryField": {
+        "fieldLabel": "Obligatoire",
+        "RTip": null
+    },
+    "questionFieldTypeRadioGroup": {
+        "fieldLabel": "Type de champ",
+        "RTip": null
+    },
+    "questionTextRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "questionTextareaRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "questionNumberRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "questionDateRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "questionTimeRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "minLengthField": {
+        "fieldLabel": "Longueur min",
+        "RTip": null
+    },
+    "maxLengthField": {
+        "fieldLabel": "Longueur max",
+        "RTip": null
+    },
+    "validationField": {
+        "fieldLabel": "Validation",
+        "RTip": null
+    },
+    "minValueField": {
+        "fieldLabel": "Valeur min",
+        "RTip": null
+    },
+    "maxValueField": {
+        "fieldLabel": "Valeur max",
+        "RTip": null
+    },
+    "allowDecimalsField": {
+        "fieldLabel": "Décimales",
+        "RTip": null
+    },
+    "emFieldURL": {
+        "fieldLabel": "URL",
+        "RTip": null
+    },
+    "emFieldMaxWidth": {
+        "fieldLabel": "Largeur max",
+        "RTip": null
+    },
+    "emFieldMAxHeight": {
+        "fieldLabel": "Hauteur max",
+        "RTip": null
+    },
+    "confirmDeleteWindow": {
+        "title": "Confirmation de suppression"
+    },
+    "confirmDeleteYes": {
+        "text": "Oui"
+    },
+    "confirmDeleteNo": {
+        "text": "Non"
+    },
+    "addBlockWindow": {
+        "title": "Ajouter un bloc"
+    },
+    "addBlockTypeColumn": {
+        "text": "Type"
+    },
+    "previewWindow": {
+        "title": "Prévisualisation"
+    },
+    "previewPageTree": {
+        "title": "Sélecteur de pages"
+    },
+    "siteField": {
+        "fieldLabel": "Site ",
+        "RTip": null
+    },
+    "previewDeviceCombo": {
+        "text": "Ordinateur"
+    },
+    "draftField": {
+        "fieldLabel": "Mode brouillon",
+        "RTip": null
+    },
+    "dateField": {
+        "fieldLabel": "Date",
+        "RTip": null
+    },
+    "refreshBtn": {
+        "text": "<b>Rafraîchir</b>"
+    },
+    "newPageWindow": {
+        "title": "Nouvelle Page"
+    },
+    "newPageTitleField": {
+        "fieldLabel": "Titre ",
+        "RTip": null
+    },
+    "newPageMaskChoiceField": {
+        "fieldLabel": "Masque de page ",
+        "RTip": null
+    },
+    "newPageSubmitBtn": {
+        "text": "Créer en tant que fille de la page sélectionnée"
+    },
+    "multiChoiceQuestionEditor": {
+        "title": "Editeur de question fermée"
+    },
+    "mandatoryCheckbox": {
+        "fieldLabel": "Obligatoire",
+        "RTip": null
+    },
+    "colNumberField": {
+        "fieldLabel": "Nombre de colonnes",
+        "RTip": null
+    },
+    "answerTypeCheckboxGroup": {
+        "fieldLabel": "Réponse",
+        "RTip": null
+    },
+    "sipleChoiceRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "multiChoiceRadio": {
+        "fieldLabel": null,
+        "RTip": null
+    },
+    "optionsCol": {
+        "text": "Options"
+    },
+    "closedQuestionAddOptionBtn": {
+        "text": ""
+    },
+    "closedQuestionRemoveOptionBtn": {
+        "text": ""
+    },
+    "formPageConfigurator": {
+        "title": "Editeur de page"
+    },
+    "formPageLabelField": {
+        "fieldLabel": "Label",
+        "RTip": null
+    },
+    "importMainWindow": {
+        "title": "Import"
+    },
+    "importStage1Panel": {
+        "title": "Choix du fichier à importer"
+    },
+    "importSeparatorField": {
+        "fieldLabel": "Séparateur",
+        "RTip": null
+    },
+    "importCSVFileField": {
+        "fieldLabel": "Fichier CSV",
+        "RTip": null
+    },
+    "importCSVFieldAuxilaryBtn": {
+        "text": ""
+    },
+    "importStage1MainPanel": {
+        "title": "Choisissez un fichier CSV pour afficher ses champs"
+    },
+    "importIgnoredFieldsCol": {
+        "text": "Ne pas importer"
+    },
+    "importImportAsFieldCol": {
+        "text": "Importer en tant que champ"
+    },
+    "importImportAsTaxoCol": {
+        "text": "Importer en tant que taxonomie"
+    },
+    "importStage2": {
+        "title": "Paramétrage des champs"
+    },
+    "importS2NameColumn": {
+        "text": "Nom"
+    },
+    "importS2NewnameCol": {
+        "text": "Nouveau nom (optionnel)"
+    },
+    "importS2LabelCol": {
+        "text": "Libellé"
+    },
+    "importS2TypeCol": {
+        "text": "Type"
+    },
+    "importS2SearchableCol": {
+        "text": "Recherchable"
+    },
+    "importS2MandatoryCol": {
+        "text": "Obligatoire"
+    },
+    "importStage3": {
+        "title": "Paramétrage de la taxonomie"
+    },
+    "importS3NameCol": {
+        "text": "Nom"
+    },
+    "importS3NewNameXol": {
+        "text": "Nouveau nom (optionnel)"
+    },
+    "importS3MandatoryCol": {
+        "text": "Obligatoire"
+    },
+    "importFinalStage": {
+        "title": "Finalisation  et import"
+    },
+    "importS4Fielset1": {
+        "title": "Paramètres du type de contenus"
+    },
+    "workflowField": {
+        "fieldLabel": "Workflow",
+        "RTip": null
+    },
+    "importS4Fieldset2": {
+        "title": "Paramètres des contenus"
+    },
+    "contributeWorkspaceField": {
+        "fieldLabel": "Contribution",
+        "RTip": null
+    },
+    "difusionWorkspaceField": {
+        "fieldLabel": "Diffusion",
+        "RTip": null
+    },
+    "importBtn": {
+        "text": "Importer"
+    },
+    "mailingListsWindow": {
+        "title": "Listes de diffusion"
+    },
+    "propertiesForm": {
+        "title": "Propriétés"
+    },
+    "expeditorFieldset": {
+        "title": "Expéditeur"
+    },
+    "expeditorAdressField": {
+        "fieldLabel": "Adresse de l'expéditeur",
+        "RTip": null
+    },
+    "expeditorNameField": {
+        "fieldLabel": "Nom de l'expéditeur",
+        "RTip": null
+    },
+    "responseFieldset": {
+        "title": "Réponse"
+    },
+    "replyToAdressField": {
+        "fieldLabel": "Adresse de réponse",
+        "RTip": null
+    },
+    "replyToNameField": {
+        "fieldLabel": "Nom de réponse",
+        "RTip": null
+    },
+    "returnPathAdressField": {
+        "fieldLabel": "Adresse d'erreur",
+        "RTip": null
+    },
+    "newMLWindow": {
+        "title": "Nouvelle liste de diffusion"
+    },
+    "newMLCreateBtn": {
+        "text": "Créer une nouvelle liste de diffusion"
+    },
+    "optionsEditor1Window": {
+        "title": "Editeur d'options"
+    },
+    "valueCol": {
+        "text": "Valeur"
+    },
+    "labelCol": {
+        "text": "Label"
+    },
+    "oeditor1addBtn": {
+        "text": ""
+    },
+    "oeditor1removeBtn": {
+        "text": ""
+    },
+    "optionsConfiguratorBtn": {
+        "text": "Configurer les options",
+        "tooltip": null
+    },
+    "pageMaskWindow": {
+        "title": "Masques de page"
+    },
+    "newBtn": {
+        "text": "Nouveau"
+    },
+    "editGroup": {
+        "title": "Edition"
+    },
+    "newRowBtn": {
+        "text": "Nouvelle Ligne"
+    },
+    "newColBtn": {
+        "text": "Nouvelle Colonne"
+    },
+    "newBlocBtn": {
+        "text": "Nouveau Bloc"
+    },
+    "exportBtn": {
+        "text": "Exporter"
+    },
+    "moveBtn": {
+        "text": "Déplacer"
+    },
+    "clipboardGroup": {
+        "title": "Presse-papiers"
+    },
+    "duplicateBtn": {
+        "text": "Copier"
+    },
+    "shotcutBtn": {
+        "text": "Ajouter aux favoris"
+    },
+    "saveGroup": {
+        "title": "Sauvegarde"
+    },
+    "titleColumn": {
+        "text": "Titre"
+    },
+    "selectElementPanel": {
+        "title": "Sélectionnez un élément"
+    },
+    "zoomLevelSlider": {
+        "fieldLabel": "Niveau de zoom",
+        "RTip": null
+    },
+    "desktopCustomizeWindow": {
+        "title": "Personnalisation du bureau"
+    },
+    "wallpaperGrid": {
+        "title": "Fond d'écran"
+    },
+    "themeGrid": {
+        "title": "Thèmes"
+    },
+    "accessibilityPanel": {
+        "title": "Accessibilité"
+    },
+    "pageWindow": {
+        "title": "Pages"
+    },
+    "shortcutBtn": {
+        "text": "Ajouter aux favoris"
+    },
+    "editTab": {
+        "text": "Edition"
+    },
+    "overviewTab": {
+        "text": "Aperçu"
+    },
+    "propsTab": {
+        "text": "Propriétés"
+    },
+    "displayedContentTab": {
+        "text": "Contenus affichés"
+    },
+    "urlField": {
+        "fieldLabel": "URL",
+        "RTip": null
+    },
+    "excludeFromMenuField": {
+        "fieldLabel": "Hors navigation",
+        "RTip": null
+    },
+    "inheritWorkspaceField": {
+        "fieldLabel": "Hérite de l'espace de travail",
+        "RTip": null
+    },
+    "referencingFieldSEt": {
+        "title": "Référencement"
+    },
+    "titleField": {
+        "fieldLabel": "Titre *",
+        "RTip": null
+    },
+    "descriptionField": {
+        "fieldLabel": "Description ",
+        "RTip": null
+    },
+    "groupsWindow": {
+        "title": "Groupes"
+    },
+    "userTab": {
+        "text": "Utilisateurs"
+    },
+    "rightsTab": {
+        "text": "Droits"
+    },
+    "adminTab": {
+        "text": "Administration"
+    },
+    "mailColumn": {
+        "text": "Email"
+    },
+    "phoneColumn": {
+        "text": "Téléphone"
+    },
+    "addressColumn": {
+        "text": "Adresse"
+    },
+    "postColumn": {
+        "text": "Poste"
+    },
+    "departmentColumn": {
+        "text": "Département"
+    },
+    "readWorkSpaceField": {
+        "fieldLabel": "Espaces de travail en lecture ",
+        "RTip": null
+    },
+    "writeWorkspaceField": {
+        "fieldLabel": "Espaces de travail en contribution",
+        "RTip": null
+    },
+    "defaultWorkspaceField": {
+        "fieldLabel": "Espace de travail par défaut",
+        "RTip": null
+    },
+    "addUsersToGroupWindow": {
+        "text": "Ajouter ces utilisateurs au groupe séléctionné"
+    },
+    "usersWindow": {
+        "title": "Utilisateurs"
+    },
+    "informationsTab": {
+        "text": "Informations"
+    },
+    "accessTab": {
+        "text": "Accès"
+    },
+    "informationsFieldSet": {
+        "title": "Informations"
+    },
+    "mailField": {
+        "fieldLabel": "E-mail ",
+        "RTip": null
+    },
+    "civilityField": {
+        "fieldLabel": "Civilité ",
+        "RTip": null
+    },
+    "organisationField": {
+        "fieldLabel": "Organisation ",
+        "RTip": null
+    },
+    "serviceField": {
+        "fieldLabel": "Service ",
+        "RTip": null
+    },
+    "postField": {
+        "fieldLabel": "Fonction ",
+        "RTip": null
+    },
+    "phoneField": {
+        "fieldLabel": "Téléphone ",
+        "RTip": null
+    },
+    "mobileField": {
+        "fieldLabel": "Mobile ",
+        "RTip": null
+    },
+    "coordinatesField": {
+        "fieldLabel": "Coordonnées ",
+        "RTip": null
+    },
+    "languageField": {
+        "fieldLabel": "Langue ",
+        "RTip": null
+    },
+    "countryField": {
+        "fieldLabel": "Pays ",
+        "RTip": null
+    },
+    "applyField": {
+        "text": "Appliquer"
+    },
+    "photoFieldSet": {
+        "title": "Photo"
+    },
+    "changeBtn": {
+        "text": "Changer"
+    },
+    "acountUserValidFieldSet": {
+        "title": "Compte utilisateur et validité"
+    },
+    "useraccountField": {
+        "fieldLabel": "Compte utilisateur ",
+        "RTip": null
+    },
+    "gruopsField": {
+        "fieldLabel": "Groupes",
+        "RTip": null
+    },
+    "defaultGroupField": {
+        "fieldLabel": "Groupe par defaut",
+        "RTip": null
+    },
+    "startValidityField": {
+        "fieldLabel": "Début de validité ",
+        "RTip": null
+    },
+    "endValidityField": {
+        "fieldLabel": "Fin de validité ",
+        "RTip": null
+    },
+    "passwordChangeFieldSet": {
+        "title": "Changement de mot de passe"
+    },
+    "userPasswordChangeBtn": {
+        "text": "Changer le mot de passe de cet utilisateur"
+    },
+    "settingWindow": {
+        "title": "Paramètres"
+    },
+    "loginField": {
+        "fieldLabel": "Login ",
+        "RTip": null
+    },
+    "functionField": {
+        "fieldLabel": "Fonction ",
+        "RTip": null
+    },
+    "changePassFieldSet": {
+        "title": "Changer de mot de passe"
+    },
+    "oldPasswordField": {
+        "fieldLabel": "Mot de passe actuel ",
+        "RTip": null
+    },
+    "newPasswordConfirmField": {
+        "fieldLabel": "Confirmer le mot passe ",
+        "RTip": null
+    },
+    "changePasswordBtn": {
+        "text": "Changer le mot de passe"
+    },
+    "desktopBtn": {
+        "text": "Bureau"
+    },
+    "stateColumn": {
+        "text": "Etat"
+    },
+    "onlineColumn": {
+        "text": "En ligne"
+    },
+    "contentWindow": {
+        "title": "Contenus"
+    },
+    "workflowGroup": {
+        "title": "Workflow"
+    },
+    "publishBtn": {
+        "text": "Publier"
+    },
+    "submitBtn": {
+        "text": "Soumettre"
+    },
+    "refuseBtn": {
+        "text": "Refuser"
+    },
+    "onlineBtn": {
+        "text": "Mettre en ligne"
+    },
+    "offlineBtn": {
+        "text": "Mettre hors ligne"
+    },
+    "typeColumn": {
+        "text": "Type"
+    },
+    "sitesWindow": {
+        "title": "Sites"
+    },
+    "domainNameColumn": {
+        "text": "Nom de domaine"
+    },
+    "siteFieldSet": {
+        "title": "Site"
+    },
+    "domainNameField": {
+        "fieldLabel": "Nom de domaine *",
+        "RTip": null
+    },
+    "aliasField": {
+        "fieldLabel": "Alias ",
+        "RTip": null
+    },
+    "themeField": {
+        "fieldLabel": "Theme ",
+        "RTip": null
+    },
+    "protocolField": {
+        "fieldLabel": "Protocole *",
+        "RTip": null
+    },
+    "siteDefaultTitleField": {
+        "fieldLabel": "Titre par défaut",
+        "RTip": null
+    },
+    "defaultDescriptionField": {
+        "fieldLabel": "Description par défaut",
+        "RTip": null
+    },
+    "defaultAuthorField": {
+        "fieldLabel": "Auteur par défaut",
+        "RTip": null
+    },
+    "messageryFieldSet": {
+        "title": "Messagerie"
+    },
+    "activeMessageryField": {
+        "fieldLabel": "Activé ",
+        "RTip": null
+    },
+    "smtpServerField": {
+        "fieldLabel": "Serveur SMTP ",
+        "RTip": null
+    },
+    "smtpPortField": {
+        "fieldLabel": "Port SMTP ",
+        "RTip": null
+    },
+    "smtpLoginField": {
+        "fieldLabel": "Login SMTP ",
+        "RTip": null
+    },
+    "smtpPassField": {
+        "fieldLabel": "Mot de passe SMTP ",
+        "RTip": null
+    },
+    "defaultEmailField": {
+        "fieldLabel": "E-mail par défaut ",
+        "RTip": null
+    },
+    "accessibilityFieldSet ": {
+        "title": "Accessibilité"
+    },
+    "accessibilityLeveLfield": {
+        "fieldLabel": "Niveau d'accessibilité ",
+        "RTip": null
+    },
+    "opquastLoginField": {
+        "fieldLabel": "Login Opquast ",
+        "RTip": null
+    },
+    "opquastPassField": {
+        "fieldLabel": "Mot de passe Optquast ",
+        "RTip": null
+    },
+    "apiKeysFieldSet": {
+        "title": "Clés d'API externes"
+    },
+    "googleMapKeyField": {
+        "fieldLabel": "Google Maps",
+        "RTip": null
+    },
+    "googleAnalyticsKeyField": {
+        "fieldLabel": "Google Analytics",
+        "RTip": null
+    },
+    "disqusKeyField": {
+        "fieldLabel": "Disqus",
+        "RTip": null
+    },
+    "searchResultsWindow": {
+        "title": "Résultats de recherche"
+    },
+    "saveQueryBtn": {
+        "text": "Enregistrer la requête"
+    },
+    "filtersPanel": {
+        "title": "Filtres"
+    },
+    "titleCol": {
+        "text": "Titre"
+    },
+    "lastUpdateCol": {
+        "text": "Date de dernière modification"
+    },
+    "pertinenceCol": {
+        "text": "Pertinence"
+    },
+    "queryBuilder": {
+        "title": "Assistant de requêtage "
+    },
+    "queryBuilderStage1": {
+        "title": "Choix des types de contenus"
+    },
+    "qbs1selAllBtn": {
+        "text": ""
+    },
+    "qbStage2": {
+        "title": "Choix des termes de la taxonomie"
+    },
+    "prevBtn": {
+        "text": "Précédent"
+    },
+    "nextBtn": {
+        "text": "Suivant"
+    },
+    "damPickerWindow": {
+        "title": "Choix DAM"
+    },
+    "monitoringField": {
+        "title": "Supervision"
+    },
+    "cachePanel": {
+        "title": "Cache"
+    },
+    "cacheElementFieldSet": {
+        "title": "Elements en cache"
+    },
+    "objectField": {
+        "fieldLabel": "Objets",
+        "RTip": null
+    },
+    "clearCacheBtn": {
+        "text": "<b>Vider le cache</b>"
+    },
+    "elasticSearchPanel": {
+        "title": "Elastic Search"
+    },
+    "indexContentsBtn": {
+        "text": "<b>Indexation des contenus</b>"
+    },
+    "indexMediasBtn": {
+        "text": "<b>Indexation des médias</b>"
+    },
+    "indexAllBtn": {
+        "text": "<b>Indexation complète</b>"
+    },
+    "onlineCol": {
+        "text": "En ligne"
+    },
+    "chooseThisContentBtn": {
+        "text": "<b>Choisir ce contenu</b>"
+    },
+    "newDamWindow": {
+        "title": "Nouveau média"
+    },
+    "damTitleField": {
+        "fieldLabel": "Titre *",
+        "RTip": "Titre du média. Obligatoire."
+    },
+    "damOrginalFileField": {
+        "fieldLabel": "Fichier original *",
+        "RTip": "Fichier principal du média. Obligatoire."
+    },
+    "taxonomyFieldset": {
+        "title": "Taxonomie"
+    },
+    "workspacesFieldset": {
+        "title": "Espaces de travail"
+    },
+    "diffusionWorkspaceField": {
+        "fieldLabel": "Diffusion",
+        "RTip": null
+    },
+    "damSubmitNewBtn": {
+        "text": "Créer ce nouveau média"
+    },
+    "damSubmitUpdateBtn": {
+        "text": "Enregistrer les modifications"
+    },
+    "u1TitleColumn": {
+        "text": "Titre"
+    },
+    "u1TypeColumn": {
+        "text": "Type"
+    },
+    "u1StatusColumn": {
+        "text": "Etat"
+    },
+    "u1OnlineColumn": {
+        "text": "En ligne"
+    },
+    "siteBuilderWizzard": {
+        "title": "Assistant de création de site"
+    },
+    "sbStage2": {
+        "title": "Etape 1 : Modèle"
+    },
+    "createEmptySiteField": {
+        "fieldLabel": "Créer un site vide",
+        "RTip": null
+    },
+    "createSiteFromModelField": {
+        "fieldLabel": "Créer un site en utilisant un site existant comme modèle",
+        "RTip": null
+    },
+    "siteMoelField": {
+        "fieldLabel": "Site modèle",
+        "RTip": null
+    },
+    "sbStage1": {
+        "title": "Etape 2 : Identification"
+    },
+    "sbStage3": {
+        "title": "Etape 3 : Référencement"
+    },
+    "siteBuilderWizardSubmit": {
+        "text": "Créer ce site"
+    },
+    "manualQueryWindow": {
+        "title": "Requête manuelle"
+    },
+    "addQBtn": {
+        "text": "Ajouter"
+    },
+    "removeQbtn": {
+        "text": "Enlever"
+    },
+    "saveManualQueryBtn": {
+        "text": "Enregistrer la requête"
+    },
+    "formsWindow": {
+        "title": "Questionnaires"
+    },
+    "addPageBtn": {
+        "text": "Nouvelle page"
+    },
+    "newElemBtn": {
+        "text": "Nouvel élément"
+    },
+    "clipboardGroup ": {
+        "title": "Presse-papiers"
+    },
+    "exploitationField": {
+        "text": "Exploitation"
+    },
+    "formTitleField": {
+        "fieldLabel": "Titre du questionnaire",
+        "RTip": null
+    },
+    "uniqueAnswerField": {
+        "fieldLabel": "Unicité de la réponse",
+        "RTip": null
+    },
+    "openingDateField": {
+        "fieldLabel": "Date de début ",
+        "RTip": null
+    },
+    "closingDateField": {
+        "fieldLabel": "Date de fin",
+        "RTip": null
+    },
+    "endMessageField": {
+        "fieldLabel": "Message de fin",
+        "RTip": null
+    },
+    "statsFieldSet": {
+        "title": "Statistiques"
+    },
+    "totalResultFields": {
+        "fieldLabel": "Nombre de personnes ayant commencé le questionnaire",
+        "RTip": null
+    },
+    "validResultField": {
+        "fieldLabel": "Nombre de personnes ayant terminé le questionnaire",
+        "RTip": null
+    },
+    "resultsFieldSet": {
+        "title": "Résultats"
+    },
+    "exportCSVBtn": {
+        "text": "Exporter en CSV"
+    },
+    "newContentWindow": {
+        "title": "Nouveau Contenu"
+    },
+    "metadataTab": {
+        "text": "Métadonnées"
+    },
+    "taxonomyTab": {
+        "text": "Taxonomie"
+    },
+    "workspacesTab": {
+        "text": "Espaces de travail"
+    },
+    "versionsTab": {
+        "text": "Versions"
+    },
+    "dependantTypesTab": {
+        "text": "Contenus Imbriqués"
+    },
+    "summaryField": {
+        "fieldLabel": "Résumé ",
+        "RTip": "Résumé facultatif du contenu."
+    },
+    "publishFieldset": {
+        "title": "Publication"
+    },
+    "contentStartPublicationDateField": {
+        "fieldLabel": "Date de début de publication ",
+        "RTip": null
+    },
+    "contentEndPublicationDateField": {
+        "fieldLabel": "Date de fin de publication ",
+        "RTip": null
+    },
+    "versionTitleCol": {
+        "text": "Titre"
+    },
+    "versionVersionCol": {
+        "text": "Version"
+    },
+    "versionPublishDateCol": {
+        "text": "Date de publication"
+    },
+    "versionAuthorCol": {
+        "text": "Auteur"
+    },
+    "createAsDraftBtn": {
+        "text": "Brouillon"
+    },
+    "termsCol": {
+        "text": "Termes"
+    },
+    "newVocabWindow": {
+        "title": "Nouveau vocabulaire"
+    },
+    "createNewVocabBtn": {
+        "text": "Créer un nouveau vocabulaire"
+    },
+    "newCTWindow": {
+        "title": "Nouveau type de contenu"
+    },
+    "isDepField": {
+        "fieldLabel": "Imbriqué ",
+        "RTip": null
+    },
+    "createNTCBtn": {
+        "text": "Créer un nouveau type de contenu"
+    },
+    "addCTFieldWindow": {
+        "title": "Ajouter un champ"
+    },
+    "multiTCAddFieldCol": {
+        "title": "Ajout multiple"
+    },
+    "optionsGrid": {
+        "title": "Options"
+    },
+    "depCTTab": {
+        "title": "Types de contenus imbriqués"
+    },
+    "newMaskWindow": {
+        "title": "Nouveau Masque"
+    },
+    "nmSiteField": {
+        "fieldLabel": "Site ",
+        "RTip": null
+    },
+    "createNewMaskBtn": {
+        "text": "Créer un nouveau masque"
+    },
+    "maskDupliacteWindow": {
+        "title": "Duplication de masque"
+    },
+    "mdNewTitleField": {
+        "fieldLabel": "Nouveau titre ",
+        "RTip": null
+    },
+    "mdnewSiteField": {
+        "fieldLabel": "Dans le site ",
+        "RTip": null
+    },
+    "mdSubmitBtn": {
+        "text": "Dupliquer ce masque"
+    },
+    "blockConfigSimplePanel": {
+        "title": "Simple"
+    },
+    "blockConfigAdvancedPanel": {
+        "title": "Avancé"
+    },
+    "contentTypesWindow": {
+        "title": "Types de contenus"
+    },
+    "newFieldBtn": {
+        "text": "Nouveau champ"
+    },
+    "removeFieldBtn": {
+        "text": "Supprimer champ"
+    },
+    "adminGroupCT": {
+        "title": "Administration"
+    },
+    "purgeContentTypeBtn": {
+        "text": "Vider les contenus"
+    },
+    "systemFieldPanel": {
+        "title": "Champs système"
+    },
+    "editableFieldPanel": {
+        "title": "Champs Editables"
+    },
+    "propertiesPanel": {
+        "title": "Propriétés"
+    },
+    "descriptionColumn": {
+        "text": "Description"
+    },
+    "helpTextColumn": {
+        "text": "HelpText"
+    },
+    "labelField": {
+        "text": "Etiquettes"
+    },
+    "multiChoiseColumn": {
+        "text": "ChoixMultiple"
+    },
+    "mandatoryField": {
+        "fieldLabel": "Obligatoire ",
+        "RTip": null
+    },
+    "rightWorkflowFieldSet": {
+        "title": "Droits et workflow"
+    },
+    "commentsFieldSet": {
+        "title": "Commentaires"
+    },
+    "disqusField": {
+        "fieldLabel": "Disqus",
+        "RTip": null
+    },
+    "DamTypesMainWindow": {
+        "title": "Types de médias"
+    },
+    "originalFileField": {
+        "fieldLabel": "Fichier original *",
+        "RTip": null
+    },
+    "labelColumn": {
+        "text": "Etiquettes"
+    },
+    "mandatoryColumn": {
+        "text": "Obligatoire"
+    },
+    "rightsFieldSet": {
+        "title": "Droits"
+    },
+    "showOnlyIfCombo": {
+        "fieldLabel": "Affiché si et seulement si ",
+        "RTip": null
+    },
+    "formsConditionalEditor": {
+        "title": "Condition d'affichage"
+    },
+    "showOnlyIfField": {
+        "fieldLabel": "Affiché si et seulement si ",
+        "RTip": null
+    },
+    "taxonomyWindow": {
+        "title": "Taxonomie"
+    },
+    "editTermsGroup": {
+        "title": "Edition des termes"
+    },
+    "helpTextField": {
+        "fieldLabel": "Texte d'aide ",
+        "RTip": null
+    },
+    "expandableField": {
+        "fieldLabel": "Extensible ",
+        "RTip": null
+    },
+    "inputAsTreeField": {
+        "fieldLabel": "Saisie arborescente",
+        "RTip": null
+    },
+    "multiSelectField": {
+        "fieldLabel": "Choix multiple ",
+        "RTip": null
+    },
+    "termsPanel": {
+        "title": ""
+    },
+    "authorColumn": {
+        "text": "Auteur"
+    },
+    "createDateColumn": {
+        "text": "Date de création"
+    },
+    "mediasWindow": {
+        "title": "Médiathèque"
+    }
+}

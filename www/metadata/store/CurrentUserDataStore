@@ -73,7 +73,7 @@
             "userConfig": {
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
-                    "Ext.getStore(\"LocalisationStore\").load();"
+                    "Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();"
                 ],
                 "name": "load",
                 "scope": "me"
