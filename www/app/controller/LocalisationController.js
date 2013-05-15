@@ -271,7 +271,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
             var test=Ext.create("Rubedo.view."+a,{id:undefined});
             if (!Ext.isEmpty(test.localiserId)){
                 count=count+1;
-                if (test.isXType("field")){
+                if ((test.isXType("field"))||(test.isXType("radiogroup"))||(test.isXType("checkboxgroup"))){
                     result[test.localiserId]={
                         fieldLabel:test.fieldLabel,
                         RTip:test.RTip
@@ -281,7 +281,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
                         text:test.text,
                         tooltip:test.tooltip
                     };
-                } else if (test.isXType("fieldset")){
+                } else if (test.isXType("menuitem")){
+                    result[test.localiserId]={
+                        text:test.text,
+                        tooltip:test.tooltip
+                    };
+                }else if (test.isXType("fieldset")){
                     result[test.localiserId]={
                         title:test.title
                     };
@@ -306,7 +311,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 Ext.Array.forEach(test.query("component"), function(component){
                     if (!Ext.isEmpty(component.localiserId)){
                         count=count+1;
-                        if (component.isXType("field")){
+                        if ((component.isXType("field"))||(component.isXType("radiogroup"))||(component.isXType("checkboxgroup"))){
                             result[component.localiserId]={
                                 fieldLabel:component.fieldLabel,
                                 RTip:component.RTip
@@ -315,7 +320,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
                             result[component.localiserId]={
                                 text:component.text
                             };
-                        } else if (component.isXType("fieldset")){
+                        } else if (component.isXType("menuitem")){
+                            result[component.localiserId]={
+                                text:component.text
+                            };
+                        }else if (component.isXType("fieldset")){
                             result[component.localiserId]={
                                 title:component.title
                             };
@@ -386,21 +395,151 @@ Ext.define('Rubedo.controller.LocalisationController', {
             dam:"<p>La médiathèque permet de gérer les médias ( images, vidéo, audio, animation ou documents) en fonction des types de médias paramétrés.L'application \"Médiathèque\" permet  :</p><ul><li> de créer un média à partir d'un type de média paramétré</li><li>  d'uploader un média et de renseigner les métadonnées associées</li><li>  de classer le média à l'aide des vocabulaires autorisés pour ce type de média</li><li>  d'associer le média à un espace de contribution et des espaces de diffusion</li><li>  de modifier les média</li><li>  d'ajouter un média en favori</li></ul>",
             forms:"<p>Rubedo permet de réaliser des enquêtes en ligne à l'aide de l'application questionnaire. Les fonctions de glisser/déposer facilitent la création des questions et des étapes. L'application Questionnaire permet :</p><ul><li> d'ajouter, supprimer et dupliquer un questionnaire</li><li> d'ajouter un questionnaire en favoris</li><li> de gérer les propriétés d'un questionnaire,  les conditions d'unicité et sa mise en ligne</li><li> de créer un questionnaire à l'aide des palettes d'outils de mise en forme (Wysiwyg, image, section, page, titre) et de paramétrage (type de questions)</li><li> de gérer les paramétres des questions et des réponses (label, bulle d'aide, obligatoire, conditionnel et options)</li><li> d'exploiter les résultats de chaque questionnaire en exportant au format csv</li></ul>"
         };
+        var defaultAutomatedElementsLoc={
+            notifTitle:"Notififcation",
+            notifCreate:"<p>Création réussie.</p>",
+            notifUpdate:"<p>Mise à jour réussie.</p>",
+            notifDestroy:"<p>Suppression réussie.</p>",
+            errorTitle:"Erreur",
+            serverConnectionError:"Connexion au serveur interrompue",
+            internalServerError:"Erreur interne du serveur",
+            unkownError:"Erreur inconnue",
+            activateText:"Activer",
+            pageHoldsDefaultError:"Cette page ne peut etre suprimée car elle u une de ses décendantes est utilisée comme page de détail du site",
+            pageHoldsDefaultServerError:"Erreur dans la détermination du statut supprimable de la page",
+            deactivateText:"Désactiver",
+            windowBeforeUnloadMessage:"Vous allez quitter le Back Office et perdre toute modification non sauvegardée.",
+            maskIsUsedText:"Le masque ne peut etre supprimé car il est utilisé par des pages.",
+            selectAnElementText:"Sélectionnez un élément",
+            columnText:"Colonne",
+            lignText:"Ligne",
+            titleText:"Titre",
+            displayTitleText:"Afficher le titre",
+            visibilityText:"Visibilité",
+            telephoneText:"Téléphone",
+            tabletText:"Tablette",
+            computerText:"Ordinateur",
+            HTMLClassText:"Classe HTML",
+            HTMLIdText:"Id HTML",
+            styleText:"Style",
+            tagText:"Tag",
+            displayAsTabsText:"Afficher en onglets",
+            displayRowTagText:"Afficher la baliser row",
+            displayRowFluidTagText:"Afficher la balise row-fluid",
+            includeInAContainerText:"Inclure dans un container",
+            includeInAContainerFluidText:"Inclure dans un container-fluid",
+            containerIdText:"Id du container",
+            containerClassText:"Classe du container",
+            mainColumnText:"Colonne principale",
+            mainColumnRTip:"Permet de définir l'emplacement d'affichage des contenus proposés sous forme de liste dans les pages utilisants ce masque.",
+            showSpanAndOffsetText:"Afficher le span et l'offset",
+            offsetText:"Offset",
+            spanText:"Span",
+            columnIdRecoveryError:"Erreur dans la récupération d\'un identifiant de colonne",
+            displayInADivText:"Afficher dans une div",
+            divIdText:"Id de la div",
+            divClassText:"Classe de la div",
+            blockText:"Bloc",
+            URLPrefixText:"Préfixe URL",
+            invalidMetaError:"Certains champs de métadonnées sont invalides.",
+            invalidTaxoError:"Certains champs de taxonomie sont invalides.",
+            invalidFieldsError:"Certains champs sont invalides.",
+            insufficientContentRightsError:"Vos droits sont insuffisants pour afficher ou modifier ce contenu",
+            newContentText:"Nouveau Contenu",
+            maxOneLocFieldError:"Un type de contenus ne peut pas avoir plusieurs champs de type \"Localisation\".",
+            contentTypeIsUsedError:"Ce type de contenu est utilsé par des contenus et ne peut donc pas etre supprimé.",
+            warningTitle:"Attention",
+            contentTypeIncompatModifError:"Le type de contenu est utilisé par des contenus et ces modifications ne sont pas compatibles.",
+            contentTypeModifWarning:"Ce type de contenu est utilisé par des contenus. Le modifier pourrait avoir de répercussions. </br> Souhaitez-vous continuer ?",
+            fieldReplicaText:"Replique du champ",
+            successTitle:"Succés",
+            contentsDeleteError:"Erreur dans la suppression des contenus",
+            contentTypeHasBeenEmptiedText:"Le type de contenu a été vidé",
+            fieldNameAlreadyUsedError:"Nom dèjà utilisé par un autre champ",
+            passwordsDoNotMatchError:"Les mots de passe ne correspondent pas",
+            passwordChangedText:"Mot de passe changé",
+            rightsRecoveryError:"Erreur dans la récupération des droits",
+            tokenRecoveryError:"Erreur dans la récupération du jeton de sécurité",
+            siteModifWarning:"La modification de ce site impliquera la fermeture de la fenetre de gestion des pages. Cela entrainera la perte de toute modification non sauvegardée dans cette fenetre. </br> Souhaitez-vous poursuivre ?",
+            pageURLRecoveryError:"Erreur dans la récupèration de l'url de la page",
+            pagePreviewText:"Ceci est un aperçu de cette page telle que disponible en ligne en",
+            associatedMaskText:"Masque associé",
+            pagePropertiesInvalidError:"Les propriétés de la page sont invalides.",
+            stageText:"Etape",
+            onText:"sur",
+            ascText:"Croissant",
+            descText:"Decroissant",
+            andText:"Et",
+            thenText:"Puis",
+            mediaTypeIsUsedError:"Ce type de média est utilisé par des médias et ne peut donc etre supprimé.",
+            invalidRightsPropertiesError:"Configuration invalide des droits",
+            newDamText:"Nouveau média",
+            DAMEditText:"Edition du média",
+            DAMDisplayText:"Affichage du média",
+            searchText:"Recherche",
+            identifierRecoveryError:"Erreur dans la récupération d'un identifiant",
+            invalidFormPropertiesError:"Propriétés du formulaire invalides",
+            fileAnalysisError:"Erreur dans l'analyse du fichier",
+            identifiedFieldsText:"champs identifiés et",
+            importableContentsText:"contenus importables",
+            importedContentsText:"contenus importés",
+            importError:"Erreur lors de l'import",
+            eligibleContentTypesText:"Types de contenus eligibles",
+            eachContentMustVerifyRulesText:"Chaque contenu doit verifier les règles suivantes",
+            eachContentMustVerifyAtLeastOneRuleText:"Chaque contenu doit verifier au moins une des règles suivantes",
+            taxonomyText:"Taxonomie",
+            rulesAndSortsOnFieldsText:"Règles et tris sur les champs des contenus",
+            ascSortText:"tri croissant",
+            descSortText:"tri decroissant",
+            relationBetweenRulesText:"Relation entre les règles",
+            creationText:"Création",
+            lastUpdateText:"Dernière modification",
+            noVocabForTheseCtText:"Pas de vocabulaire disponible pour cet ensemble de types de contenus",
+            ruleText:"Règle",
+            tRuleAllText:"Contient tous les termes",
+            tRuleAllRecText:"Contient tous les termes ou au moins un descendant par terme",
+            tRuleSomeText:"Contient au moins un des termes",
+            tRuleSomeREcText:"Contient au moins un des termes ou au moins un des descendants d’un des termes",
+            tRuleNotText:"Ne contient aucun des termes suivants",
+            tRuleNotRecText:"Ne contient ni les termes suivants ni leurs descendants",
+            CTMustHaveTitleError:"Le type de contenu doit obligatoirement avoir un champ de type \"Titre\"",
+            CTMustHaveOnlyOneTitleError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Titre\"",
+            CTMustHaveOnlyOneSummaryError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Résumé\"",
+            CRMustHaveOnlyOneLocFieldError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\"",
+            notMentionedText:"non renseigné",
+            showOnlyIfText:"Affiché si et seulement si",
+            orText:"Ou",
+            rootText:"Racine",
+            esGeoQueryText:"Assistant de requête Elastic Search geolocalisée",
+            esQueryText:"Assistant de requête Elastic Search",
+            esDAMQueryText:"Assistant de requête DAM Elastic Search",
+            keywordsText:"Mots-clés",
+            defaultKeywordsText:"Mots-clés par défaut",
+            defaultSinglePageText:"Page de détail par défaut",
+            homePageText:"Page d'accueil",
+            rolesText:"Rôles"
+        };
         var defaultInterfaceLoc=me.produceInterfaceLocalisationJSON();
         var store=Ext.getStore("LocalisationStore");
         var helpRec=store.findRecord("name","RubedoAppHelp");
         store.suspendAutoSync();
         if (Ext.isEmpty(helpRec)){
-            store.add({name:"RubedoAppHelp",items:defaultHelp,i18n:{}})
+            store.add({name:"RubedoAppHelp",items:defaultHelp,i18n:{}});
         } else {
             helpRec.set("items",defaultHelp);
         }
 
         var intLocRec=store.findRecord("name","RubedoInterfaceLoc");
         if (Ext.isEmpty(intLocRec)){
-            store.add({name:"RubedoInterfaceLoc",items:defaultInterfaceLoc,i18n:{}})
+            store.add({name:"RubedoInterfaceLoc",items:defaultInterfaceLoc,i18n:{}});
         } else {
             intLocRec.set("items",defaultInterfaceLoc);
+        }
+        var autoElsLoc=store.findRecord("name","RubedoAutomatedElementsLoc");
+        if (Ext.isEmpty(autoElsLoc)){
+            store.add({name:"RubedoAutomatedElementsLoc",items:defaultAutomatedElementsLoc,i18n:{}});
+        } else {
+            autoElsLoc.set("items",defaultAutomatedElementsLoc);
         }
         store.resumeAutoSync();
         store.sync();
