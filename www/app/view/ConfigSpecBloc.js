@@ -28,13 +28,21 @@ Ext.define('Rubedo.view.ConfigSpecBloc', {
                     xtype: 'form',
                     localiserId: 'blockConfigSimplePanel',
                     bodyPadding: 10,
-                    title: 'Simple'
+                    title: 'Simple',
+                    tabConfig: {
+                        xtype: 'tab',
+                        localiserId: 'blockConfigSimplePanel'
+                    }
                 },
                 {
                     xtype: 'form',
                     localiserId: 'blockConfigAdvancedPanel',
                     bodyPadding: 10,
-                    title: 'Avancé'
+                    title: 'Avancé',
+                    tabConfig: {
+                        xtype: 'tab',
+                        localiserId: 'blockConfigSimplePanel'
+                    }
                 }
             ]
         });

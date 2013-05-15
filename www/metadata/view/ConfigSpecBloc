@@ -42,7 +42,17 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "db22a8e1-32da-4cb0-9a0d-3e27c539d9fd"
+                    "userConfig": {
+                        "localiserId": "blockConfigSimplePanel"
+                    },
+                    "designerId": "db22a8e1-32da-4cb0-9a0d-3e27c539d9fd",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },
@@ -74,7 +84,17 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "6f4cbf89-715a-4de1-93b4-01918cdf6d22"
+                    "userConfig": {
+                        "localiserId": "blockConfigSimplePanel"
+                    },
+                    "designerId": "6f4cbf89-715a-4de1-93b4-01918cdf6d22",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }
