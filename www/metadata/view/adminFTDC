@@ -86,11 +86,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "contentTypesLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "content-icon",
-                        "text": "Types de contenus <b>></b> "
+                        "text": "Types de contenus"
                     },
-                    "designerId": "8c917407-a836-4bc5-99f8-0258cc4af426"
+                    "designerId": "8c917407-a836-4bc5-99f8-0258cc4af426",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

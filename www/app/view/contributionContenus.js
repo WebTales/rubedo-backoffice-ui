@@ -60,9 +60,10 @@ Ext.define('Rubedo.view.contributionContenus', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'contentsLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'content-icon',
-                            text: 'Contenus <b>></b> '
+                            text: 'Contenus'
                         }
                     ]
                 },

@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'formsLaunchBtn',
                             iconCls: 'form_small',
                             text: 'Questionnaires'
                         }

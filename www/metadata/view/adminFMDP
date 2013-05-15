@@ -83,11 +83,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "masksLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "masque-icon",
-                        "text": "Masques de page <b>></b> "
+                        "text": "Masques de page "
                     },
-                    "designerId": "11899a22-6796-4539-9728-50fb40aa0f0b"
+                    "designerId": "11899a22-6796-4539-9728-50fb40aa0f0b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

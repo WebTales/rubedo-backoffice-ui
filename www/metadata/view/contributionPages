@@ -89,11 +89,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "pagesLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "masque-icon",
-                        "text": "Pages<b> ></b> "
+                        "text": "Pages"
                     },
-                    "designerId": "d6876996-1753-4eb2-8296-68bab3225bed"
+                    "designerId": "d6876996-1753-4eb2-8296-68bab3225bed",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",

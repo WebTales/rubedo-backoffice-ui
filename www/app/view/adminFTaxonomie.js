@@ -61,9 +61,10 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'taxonomyLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'page_taxonomy',
-                            text: 'Taxonomie <b>></b> '
+                            text: 'Taxonomie '
                         }
                     ]
                 },

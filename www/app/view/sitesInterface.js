@@ -49,6 +49,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'sitesLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'referencement_icon',
                             text: 'Sites'

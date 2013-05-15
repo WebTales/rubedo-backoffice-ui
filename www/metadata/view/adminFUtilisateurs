@@ -77,11 +77,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "groupsLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "user",
-                        "text": "Groupes <b>></b> "
+                        "text": "Groupes "
                     },
-                    "designerId": "890706be-c355-49e7-87e4-a7357fe14269"
+                    "designerId": "890706be-c355-49e7-87e4-a7357fe14269",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

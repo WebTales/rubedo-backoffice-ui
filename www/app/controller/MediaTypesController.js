@@ -231,7 +231,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeMTBtn").disable();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
-        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes"}));
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes",localiserId:"damTypesLaunchBtn"}));
         Ext.getCmp('MTeditFields').removeAll();
         Ext.getCmp("MTfieldUp").disable();
         Ext.getCmp("MTfieldDown").disable();
@@ -248,7 +248,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.Array.forEach(Ext.getCmp("mediaTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.enable();});
         Ext.getCmp("removeMTBtn").enable();
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").removeAll();
-        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias <b> > </b>", iconCls:"mediaTypes"}));
+        Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Types de médias", iconCls:"mediaTypes",localiserId:"damTypesLaunchBtn"}));
         Ext.getCmp("mediaTypesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("type"), iconCls:"mediaTypes"}));
         Ext.getCmp("MTcenterZone").enable();
         Ext.getCmp("MTfieldUp").disable();

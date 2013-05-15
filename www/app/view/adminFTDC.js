@@ -62,9 +62,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'contentTypesLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'content-icon',
-                            text: 'Types de contenus <b>></b> '
+                            text: 'Types de contenus'
                         }
                     ]
                 },

@@ -57,9 +57,10 @@ Ext.define('Rubedo.view.adminFMDP', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'masksLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'masque-icon',
-                            text: 'Masques de page <b>></b> '
+                            text: 'Masques de page '
                         }
                     ]
                 },

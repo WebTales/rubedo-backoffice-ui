@@ -51,11 +51,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "sitesLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "referencement_icon",
                         "text": "Sites"
                     },
-                    "designerId": "a7e804dd-6cd3-4327-a0ff-f18b14fb58b6"
+                    "designerId": "a7e804dd-6cd3-4327-a0ff-f18b14fb58b6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

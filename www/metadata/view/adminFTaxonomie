@@ -83,11 +83,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "taxonomyLaunchBtn",
                         "itemId": "origine",
                         "iconCls": "page_taxonomy",
-                        "text": "Taxonomie <b>></b> "
+                        "text": "Taxonomie "
                     },
-                    "designerId": "9f610fec-7c1a-44c2-8523-04daa23cc5c4"
+                    "designerId": "9f610fec-7c1a-44c2-8523-04daa23cc5c4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

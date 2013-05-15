@@ -77,10 +77,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "formsLaunchBtn",
                         "iconCls": "form_small",
                         "text": "Questionnaires"
                     },
-                    "designerId": "473b68ec-b6bf-4c1b-8a24-4a64ed56a9f4"
+                    "designerId": "473b68ec-b6bf-4c1b-8a24-4a64ed56a9f4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

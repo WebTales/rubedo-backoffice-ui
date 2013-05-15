@@ -61,9 +61,10 @@ Ext.define('Rubedo.view.contributionPages', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'pagesLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'masque-icon',
-                            text: 'Pages<b> ></b> '
+                            text: 'Pages'
                         },
                         {
                             xtype: 'toolbar',

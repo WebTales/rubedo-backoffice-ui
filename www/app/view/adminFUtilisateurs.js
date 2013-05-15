@@ -59,9 +59,10 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'groupsLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'user',
-                            text: 'Groupes <b>></b> '
+                            text: 'Groupes '
                         }
                     ]
                 },
