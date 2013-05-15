@@ -28,12 +28,14 @@ Ext.define('Rubedo.view.iconsContextMenu', {
             items: [
                 {
                     xtype: 'menuitem',
+                    localiserId: 'removeBtn',
                     itemId: 'iconDeleteMenuItem',
                     iconCls: 'close',
                     text: 'Supprimer'
                 },
                 {
                     xtype: 'textfield',
+                    localiserId: 'nameField',
                     itemId: 'iconNameField',
                     fieldLabel: 'Nom ',
                     labelWidth: 40,
@@ -41,6 +43,7 @@ Ext.define('Rubedo.view.iconsContextMenu', {
                 },
                 {
                     xtype: 'menuitem',
+                    localiserId: 'renameBtn',
                     itemId: 'iconRenameMenuItem',
                     iconCls: 'edit',
                     text: 'Renommer'

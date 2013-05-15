@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "optionsGrid",
         "height": 250,
         "id": "optionsLCGrid",
         "margin": "20 0 0 0",
@@ -17,6 +18,13 @@
         "store": null
     },
     "designerId": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.View",
@@ -35,11 +43,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "valueCol",
                 "dataIndex": "valeur",
                 "text": "Valeur",
                 "flex": 1
             },
             "designerId": "ee5447c9-3ff1-4cdc-8f11-2f8f5780c6ed",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -63,11 +79,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "nameCol",
                 "dataIndex": "nom",
                 "text": "Nom",
                 "flex": 1
             },
             "designerId": "8ff67939-dca1-4c6b-927e-08c5eae18848",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -113,10 +137,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
                     "designerId": "bd89e8b0-020a-42d9-b70e-a59f08c37658",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -146,10 +178,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "iconCls": "close",
                         "text": "Supprimer"
                     },
                     "designerId": "77dd6c12-3fe7-479d-8e78-3277797aa3fb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",

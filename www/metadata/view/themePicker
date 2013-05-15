@@ -40,11 +40,19 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
+                "localiserId": "themePickerBtn",
                 "id": "themePickerButton",
                 "margin": "10 0 0 0",
                 "text": "Appliquer ce thème"
             },
-            "designerId": "f0e0706a-ea02-404c-b01c-e14c16212383"
+            "designerId": "f0e0706a-ea02-404c-b01c-e14c16212383",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

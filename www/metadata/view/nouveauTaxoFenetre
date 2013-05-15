@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newVocabWindow",
         "frame": null,
         "height": 106,
         "id": "nouveauTaxoFenetre",
@@ -23,6 +24,13 @@
         "resizable": "boolean"
     },
     "designerId": "b2ceb939-34ac-4cce-a01f-154ca2572cfb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -46,11 +54,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "id": "champCreerTaxo",
                         "fieldLabel": "Nom ",
                         "allowBlank": false
                     },
-                    "designerId": "9b364f8f-ac9a-410e-b484-dc99bb3e37a8"
+                    "designerId": "9b364f8f-ac9a-410e-b484-dc99bb3e37a8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -61,10 +77,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "createNewVocabBtn",
                         "id": "boutonCreerTaxo",
                         "text": "Créer un nouveau vocabulaire"
                     },
-                    "designerId": "76ed696d-71b6-4cb4-a2fd-13bf3d93aae6"
+                    "designerId": "76ed696d-71b6-4cb4-a2fd-13bf3d93aae6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

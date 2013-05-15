@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.MTFieldAddWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.MTFieldAddWindow',
 
+    localiserId: 'addMTFieldWindow',
     height: 300,
     id: 'MTFieldAddWindow',
     width: 500,
@@ -43,6 +44,7 @@ Ext.define('Rubedo.view.MTFieldAddWindow', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 1
@@ -79,6 +81,7 @@ Ext.define('Rubedo.view.MTFieldAddWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             disabled: true,
                             id: 'MTFieldInsertBtn',
                             iconCls: 'add',

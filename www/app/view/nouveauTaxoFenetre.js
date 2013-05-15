@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.nouveauTaxoFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.nouveauTaxoFenetre',
 
+    localiserId: 'newVocabWindow',
     height: 106,
     id: 'nouveauTaxoFenetre',
     width: 300,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.nouveauTaxoFenetre', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'nameField',
                             id: 'champCreerTaxo',
                             fieldLabel: 'Nom ',
                             allowBlank: false
@@ -49,6 +51,7 @@ Ext.define('Rubedo.view.nouveauTaxoFenetre', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'createNewVocabBtn',
                             id: 'boutonCreerTaxo',
                             text: 'Créer un nouveau vocabulaire'
                         }

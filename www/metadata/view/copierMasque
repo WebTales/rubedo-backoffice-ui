@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "maskDupliacteWindow",
         "height": 133,
         "id": "copieMasqueFenetre",
         "width": 400,
@@ -20,6 +21,13 @@
         "modal": true
     },
     "designerId": "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -43,12 +51,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "mdNewTitleField",
                         "id": "copierMasqueTitre",
                         "fieldLabel": "Nouveau titre ",
                         "value": null,
                         "allowBlank": false
                     },
-                    "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6"
+                    "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -59,6 +75,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "mdnewSiteField",
                         "id": "copierMasqueSite",
                         "fieldLabel": "Dans le site ",
                         "allowBlank": false,
@@ -67,7 +84,14 @@
                         "store": "SitesJson",
                         "valueField": "id"
                     },
-                    "designerId": "36fde64e-b099-4699-a162-b92b00cde888"
+                    "designerId": "36fde64e-b099-4699-a162-b92b00cde888",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -78,11 +102,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "1",
+                        "localiserId": "mdSubmitBtn",
                         "id": "copierMasque",
                         "width": null,
                         "text": "Dupliquer ce masque"
                     },
-                    "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523"
+                    "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

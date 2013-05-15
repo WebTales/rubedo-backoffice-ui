@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
     extend: 'Ext.window.Window',
     alias: 'widget.ajoutChampTCFenetre',
 
+    localiserId: 'addCTFieldWindow',
     height: 446,
     id: 'ajoutChampTCFenetre',
     width: 587,
@@ -50,6 +51,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 1
@@ -88,6 +90,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                         {
                             xtype: 'gridpanel',
                             flex: 1,
+                            localiserId: 'multiTCAddFieldCol',
                             title: 'Ajout multiple',
                             forceFit: true,
                             store: 'AddMultiFieldStore',
@@ -107,6 +110,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'typeCol',
                                     dataIndex: 'type',
                                     text: 'Type'
                                 }
@@ -126,6 +130,7 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             id: 'boutonAjouterChampTC',
                             iconCls: 'add',
                             text: 'Ajouter'

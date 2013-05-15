@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "read.ui.dependantTypes",
+        "localiserId": "depCTTab",
         "id": "ongletTCDep",
         "designer|userClassName": "ongletTCDep",
         "designer|userAlias": "ongletTCDep",
@@ -19,6 +20,11 @@
         {
             "group": "(Custom Properties)",
             "name": "ACL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],
@@ -65,11 +71,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typeCol",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
                     },
-                    "designerId": "7f5c7cb6-2dcb-42b9-a9e1-358d00de5e8a"
+                    "designerId": "7f5c7cb6-2dcb-42b9-a9e1-358d00de5e8a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.selection.CheckboxModel",

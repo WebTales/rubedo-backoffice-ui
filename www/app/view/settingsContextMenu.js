@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.settingsContextMenu', {
             items: [
                 {
                     xtype: 'menuitem',
+                    localiserId: 'iconsBtn',
                     text: 'Icônes',
                     menu: {
                         xtype: 'menu',
@@ -35,16 +36,19 @@ Ext.define('Rubedo.view.settingsContextMenu', {
                         items: [
                             {
                                 xtype: 'menuitem',
+                                localiserId: 'showAllIconsBtn',
                                 id: 'itemShowAllIcons',
                                 text: 'Afficher'
                             },
                             {
                                 xtype: 'menuitem',
+                                localiserId: 'hideAllIconsBtn',
                                 id: 'itemHideAllIcons',
                                 text: 'Cacher'
                             },
                             {
                                 xtype: 'menuitem',
+                                localiserId: 'rearangeAllIconsBtn',
                                 id: 'itemRearangeAllIcons',
                                 text: 'Réorganiser automatiquement'
                             }
@@ -56,6 +60,7 @@ Ext.define('Rubedo.view.settingsContextMenu', {
                 },
                 {
                     xtype: 'menuitem',
+                    localiserId: 'CustomizeBtn',
                     id: 'itemCustomizeDesktop',
                     iconCls: 'personalize',
                     text: 'Personnaliser'

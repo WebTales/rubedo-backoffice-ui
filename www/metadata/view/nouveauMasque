@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newMaskWindow",
         "height": 133,
         "id": "nouveauMasqueFenetre",
         "width": 400,
@@ -20,6 +21,13 @@
         "modal": true
     },
     "designerId": "a5749eef-eecb-4978-b0d5-e075d6b5418b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -43,6 +51,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "titleField",
                         "id": "nouveauMasqueTitre",
                         "fieldLabel": "Titre ",
                         "value": [
@@ -51,7 +60,14 @@
                         ],
                         "allowBlank": false
                     },
-                    "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298"
+                    "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -62,6 +78,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "nmSiteField",
                         "id": "nouveauMasqueSite",
                         "fieldLabel": "Site ",
                         "allowBlank": false,
@@ -75,6 +92,13 @@
                         "managesStore": "boolean"
                     },
                     "designerId": "e25a20c6-71da-448d-8b8f-cd959f2c6f2b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -107,11 +131,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "1",
+                        "localiserId": "createNewMaskBtn",
                         "id": "creerNouveauMasque",
                         "width": null,
                         "text": "Créer un nouveau masque"
                     },
-                    "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a"
+                    "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

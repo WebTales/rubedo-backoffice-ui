@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.copierMasque', {
     extend: 'Ext.window.Window',
     alias: 'widget.copierMasque',
 
+    localiserId: 'maskDupliacteWindow',
     height: 133,
     id: 'copieMasqueFenetre',
     width: 400,
@@ -41,6 +42,7 @@ Ext.define('Rubedo.view.copierMasque', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'mdNewTitleField',
                             id: 'copierMasqueTitre',
                             fieldLabel: 'Nouveau titre ',
                             allowBlank: false
@@ -48,6 +50,7 @@ Ext.define('Rubedo.view.copierMasque', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'mdnewSiteField',
                             id: 'copierMasqueSite',
                             fieldLabel: 'Dans le site ',
                             allowBlank: false,
@@ -59,6 +62,7 @@ Ext.define('Rubedo.view.copierMasque', {
                         {
                             xtype: 'button',
                             anchor: '1',
+                            localiserId: 'mdSubmitBtn',
                             id: 'copierMasque',
                             text: 'Dupliquer ce masque'
                         }

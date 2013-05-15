@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.UserAddWindow', {
         'Rubedo.view.MyGridPanel16'
     ],
 
+    localiserId: 'addUsersToGroupWindow',
     height: 300,
     id: 'UserAddWindow',
     width: 600,
@@ -51,6 +52,7 @@ Ext.define('Rubedo.view.UserAddWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addUsersToGroupWindow',
                             id: 'userSelectionAddButton',
                             text: 'Ajouter ces utilisateurs au groupe séléctionné'
                         }

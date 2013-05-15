@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.optionsLCGrid',
 
+    localiserId: 'optionsGrid',
     height: 250,
     id: 'optionsLCGrid',
     margin: '20 0 0 0',
@@ -30,6 +31,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'valueCol',
                     dataIndex: 'valeur',
                     text: 'Valeur',
                     flex: 1,
@@ -40,6 +42,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                 },
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'nameCol',
                     dataIndex: 'nom',
                     text: 'Nom',
                     flex: 1,
@@ -61,6 +64,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             iconCls: 'add',
                             text: 'Ajouter',
                             listeners: {
@@ -72,6 +76,7 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'removeBtn',
                             iconCls: 'close',
                             text: 'Supprimer',
                             listeners: {

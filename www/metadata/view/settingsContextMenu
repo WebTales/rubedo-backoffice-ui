@@ -22,10 +22,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "iconsBtn",
                 "iconCls": null,
                 "text": "Icônes"
             },
             "designerId": "3037325b-d9db-4d02-a1d7-6b9d7f3e8fbb",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.menu.Menu",
@@ -49,10 +57,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "showAllIconsBtn",
                                 "id": "itemShowAllIcons",
                                 "text": "Afficher"
                             },
-                            "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408"
+                            "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.menu.Item",
@@ -62,10 +78,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "hideAllIconsBtn",
                                 "id": "itemHideAllIcons",
                                 "text": "Cacher"
                             },
-                            "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643"
+                            "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.menu.Item",
@@ -75,10 +99,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "rearangeAllIconsBtn",
                                 "id": "itemRearangeAllIcons",
                                 "text": "Réorganiser automatiquement"
                             },
-                            "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8"
+                            "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -101,11 +133,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "CustomizeBtn",
                 "id": "itemCustomizeDesktop",
                 "iconCls": "personalize",
                 "text": "Personnaliser"
             },
-            "designerId": "b6bd5a9b-06dc-4c69-abce-482679780311"
+            "designerId": "b6bd5a9b-06dc-4c69-abce-482679780311",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

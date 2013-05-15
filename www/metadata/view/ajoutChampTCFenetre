@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "addCTFieldWindow",
         "height": 446,
         "id": "ajoutChampTCFenetre",
         "width": 587,
@@ -21,6 +22,13 @@
         "modal": true
     },
     "designerId": "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -87,11 +95,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typeCol",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 1
                     },
-                    "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de"
+                    "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.feature.Grouping",
@@ -181,11 +197,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
+                        "localiserId": "multiTCAddFieldCol",
                         "title": "Ajout multiple",
                         "forceFit": true,
                         "store": "AddMultiFieldStore"
                     },
                     "designerId": "ab145305-1858-4686-8898-35ddd9362816",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.View",
@@ -240,10 +264,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "typeCol",
                                 "dataIndex": "type",
                                 "text": "Type"
                             },
-                            "designerId": "a81e9ff4-8341-4042-a415-bf1fbcb2149e"
+                            "designerId": "a81e9ff4-8341-4042-a415-bf1fbcb2149e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -283,12 +315,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "addBtn",
                         "id": "boutonAjouterChampTC",
                         "margin": null,
                         "iconCls": "add",
                         "text": "Ajouter"
                     },
-                    "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe"
+                    "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

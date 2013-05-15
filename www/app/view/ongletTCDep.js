@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.ongletTCDep', {
     alias: 'widget.ongletTCDep',
 
     ACL: 'read.ui.dependantTypes',
+    localiserId: 'depCTTab',
     id: 'ongletTCDep',
     layout: {
         type: 'fit'
@@ -39,6 +40,7 @@ Ext.define('Rubedo.view.ongletTCDep', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 1
