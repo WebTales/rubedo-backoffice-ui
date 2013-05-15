@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "sessionExpiringWindow",
         "height": 82,
         "id": "sessionWarningWindow",
         "width": 252,
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "5d41405d-8ed6-4d4a-b220-d09d58101928",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.button.Button",
@@ -29,6 +37,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "sessionRenewWindow",
                 "resizable": null,
                 "text": "Renouveler ma session"
             },
@@ -36,6 +45,13 @@
                 "resizable": "boolean"
             },
             "designerId": "136ed17c-7b4c-48fe-955a-4c4d4a6fa89a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

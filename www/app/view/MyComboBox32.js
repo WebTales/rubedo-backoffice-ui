@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.MyComboBox32', {
         'Rubedo.view.override.MyComboBox32'
     ],
 
+    localiserId: 'showOnlyIfCombo',
     fieldLabel: 'Affiché si et seulement si ',
     labelWidth: 170,
     name: 'field',

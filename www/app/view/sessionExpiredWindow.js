@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.sessionExpiredWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.sessionExpiredWindow',
 
+    localiserId: 'sessionExpiredWindow',
     height: 78,
     id: 'sessionExpiredWindow',
     width: 236,
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.sessionExpiredWindow', {
                         window.onbeforeunload=Ext.emptyFn;
                         window.location.href="login";
                     },
+                    localiserId: 'reconnectBtn',
                     text: 'Se connecter à nouveau'
                 }
             ]

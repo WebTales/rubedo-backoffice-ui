@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.champsEditionTC', {
     extend: 'Ext.form.Panel',
     alias: 'widget.champsEditionTC',
 
+    localiserId: 'fieldPanel',
     frame: true,
     id: 'champsEditionTC',
     margin: 20,

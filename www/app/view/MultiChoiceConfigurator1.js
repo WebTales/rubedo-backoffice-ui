@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
     extend: 'Ext.window.Window',
     alias: 'widget.MultiChoiceConfigurator1',
 
+    localiserId: 'optionsEditor1Window',
     height: 311,
     id: 'MultiChoiceConfigurator1',
     width: 550,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             id: 'specialOptionsCfgSubmit',
                             iconCls: 'ouiSpetit',
                             text: 'Valider',
@@ -87,6 +89,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
                                         });
 
                                     },
+                                    localiserId: 'oeditor1addBtn',
                                     id: 'formsMCCGridAdd1',
                                     iconCls: 'add',
                                     text: '',
@@ -97,6 +100,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
                                     handler: function(button, event) {
                                         Ext.getCmp("formsMCCGrid1").getStore().remove(Ext.getCmp("formsMCCGrid1").getSelectionModel().getLastSelected());
                                     },
+                                    localiserId: 'oeditor1removeBtn',
                                     disabled: true,
                                     id: 'formsMCCGridRemove1',
                                     iconCls: 'close',
@@ -120,6 +124,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'valueCol',
                             dataIndex: 'inputValue',
                             text: 'Valeur',
                             editor: {
@@ -129,6 +134,7 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator1', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'labelCol',
                             dataIndex: 'boxLabel',
                             text: 'Label',
                             editor: {

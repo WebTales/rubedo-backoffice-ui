@@ -25,12 +25,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "addBtn",
                 "itemId": "addBtn",
                 "margin": "0 10 0 0",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
-            "designerId": "f74f269d-e45a-4f7f-abde-b41fbfcde738"
+            "designerId": "f74f269d-e45a-4f7f-abde-b41fbfcde738",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -40,12 +48,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "modifyBtn",
                 "itemId": "editBtn",
                 "margin": "0 10 0 0",
                 "iconCls": "edit",
                 "text": "Modifier"
             },
-            "designerId": "201942b7-b36d-493d-b6a6-4ed90a22fc12"
+            "designerId": "201942b7-b36d-493d-b6a6-4ed90a22fc12",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -55,11 +71,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "removeBtn",
                 "itemId": "removeBtn",
                 "iconCls": "close",
                 "text": "Supprimer"
             },
-            "designerId": "d6ec84d5-e0b4-4bab-ada9-632ddbaa2fdc"
+            "designerId": "d6ec84d5-e0b4-4bab-ada9-632ddbaa2fdc",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

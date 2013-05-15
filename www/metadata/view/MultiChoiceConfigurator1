@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "optionsEditor1Window",
         "height": 311,
         "id": "MultiChoiceConfigurator1",
         "width": 550,
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "b978680b-dfe2-47fc-b3c1-d006761b80bc",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -55,11 +63,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "validateBtn",
                         "id": "specialOptionsCfgSubmit",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
                     "designerId": "d588d8fa-553b-477a-83c6-aa2244904ac3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -143,6 +159,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "oeditor1addBtn",
                                 "id": "formsMCCGridAdd1",
                                 "iconCls": "add",
                                 "text": "",
@@ -152,6 +169,13 @@
                                 "tooltip": "string"
                             },
                             "designerId": "4d7636f1-836a-4331-bd7e-a07ab60b04b9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -189,6 +213,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "oeditor1removeBtn",
                                 "disabled": true,
                                 "id": "formsMCCGridRemove1",
                                 "iconCls": "close",
@@ -199,6 +224,13 @@
                                 "tooltip": "string"
                             },
                             "designerId": "73e89388-1e40-437d-9629-2d57d842bdb6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -261,10 +293,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "valueCol",
                         "dataIndex": "inputValue",
                         "text": "Valeur"
                     },
                     "designerId": "56fc6791-215a-4c11-bca6-208ac95aaaac",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -288,10 +328,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "labelCol",
                         "dataIndex": "boxLabel",
                         "text": "Label"
                     },
                     "designerId": "0780a6be-e984-40e9-954c-bb5136c8e7a3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",

@@ -30,6 +30,7 @@ Ext.define('Rubedo.view.directRTEFieldComponent', {
             items: [
                 {
                     xtype: 'button',
+                    localiserId: 'addBtn',
                     itemId: 'addBtn',
                     margin: '0 10 0 0',
                     iconCls: 'add',
@@ -37,6 +38,7 @@ Ext.define('Rubedo.view.directRTEFieldComponent', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'modifyBtn',
                     itemId: 'editBtn',
                     margin: '0 10 0 0',
                     iconCls: 'edit',
@@ -44,6 +46,7 @@ Ext.define('Rubedo.view.directRTEFieldComponent', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'removeBtn',
                     itemId: 'removeBtn',
                     iconCls: 'close',
                     text: 'Supprimer'

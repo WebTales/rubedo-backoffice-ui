@@ -25,12 +25,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "addBtn",
                 "itemId": "addBtn",
                 "margin": "0 10 0 0",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
-            "designerId": "ee60fef5-7c29-4cd1-9424-ff889b8782be"
+            "designerId": "ee60fef5-7c29-4cd1-9424-ff889b8782be",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -40,12 +48,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "chooseBtn",
                 "itemId": "chooseBtn",
                 "margin": "0 10 0 0",
                 "iconCls": "search",
                 "text": "Choisir"
             },
-            "designerId": "212091b7-1a08-4c1f-8ca5-6fa22bcf1b5e"
+            "designerId": "212091b7-1a08-4c1f-8ca5-6fa22bcf1b5e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -55,12 +71,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "modifyBtn",
                 "itemId": "editBtn",
                 "margin": "0 10 0 0",
                 "iconCls": "edit",
                 "text": "Modifier"
             },
-            "designerId": "7f7e9d30-5b01-4482-ba6d-33f826d54ed7"
+            "designerId": "7f7e9d30-5b01-4482-ba6d-33f826d54ed7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -70,11 +94,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "removeBtn",
                 "itemId": "removeBtn",
                 "iconCls": "close",
                 "text": "Supprimer"
             },
-            "designerId": "e5794c53-8862-418c-b7aa-7fc06ef8b4d8"
+            "designerId": "e5794c53-8862-418c-b7aa-7fc06ef8b4d8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.sessionWarningWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.sessionWarningWindow',
 
+    localiserId: 'sessionExpiringWindow',
     height: 82,
     id: 'sessionWarningWindow',
     width: 252,
@@ -49,6 +50,7 @@ Ext.define('Rubedo.view.sessionWarningWindow', {
                         });
                         button.up().close();
                     },
+                    localiserId: 'sessionRenewWindow',
                     text: 'Renouveler ma session'
                 }
             ]

@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.specialTCFieldItemsConfigurator', {
     alias: 'widget.specialTCFieldItemsConfigurator',
 
     anchor: '100%',
+    localiserId: 'optionsConfiguratorBtn',
     margin: '5 0 0 0',
     text: 'Configurer les options',
 

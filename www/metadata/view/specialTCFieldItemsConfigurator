@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "100%",
+        "localiserId": "optionsConfiguratorBtn",
         "margin": "5 0 0 0",
         "designer|userClassName": "specialTCFieldItemsConfigurator",
         "designer|userAlias": "specialTCFieldItemsConfigurator",
@@ -17,6 +18,11 @@
         {
             "group": "(Custom Properties)",
             "name": "anchor",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
             "type": "string"
         }
     ],

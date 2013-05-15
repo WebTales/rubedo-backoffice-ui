@@ -211,16 +211,16 @@ Ext.define('Rubedo.view.MQA', {
         var storeL = Ext.create('Ext.data.Store', {
             fields: ['valeur', 'nom'],
             data : [
-            {valeur: 'AND', nom :'ET'},
-            {valeur: 'OR', nom :'OU'}
+            {valeur: 'AND', nom :Rubedo.RubedoAutomatedElementsLoc.andText},
+            {valeur: 'OR', nom :Rubedo.RubedoAutomatedElementsLoc.orText}
             ]
         });
 
         var lien = Ext.create('Ext.form.ComboBox', {
             anchor: '100%',
-            fieldLabel: 'Relation entre les règles ',
+            fieldLabel: Rubedo.RubedoAutomatedElementsLoc.relationBetweenRulesText,
             store: storeL,
-            value: 'OU',
+            value: 'OR',
             name: "vocabulariesRule",
             queryMode: 'local',
             displayField: 'nom',
@@ -232,20 +232,20 @@ Ext.define('Rubedo.view.MQA', {
 
         });
         var champsRegles = [ ];
-        champsRegles.push({nom:'Création',
+        champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.creationText,
             valeur: {
                 cType: 'datefield',
                 name: 'creation',
                 ruleId:'createTime',
-                label: 'Création'
+                label: Rubedo.RubedoAutomatedElementsLoc.creationText
             }
         });
-        champsRegles.push({nom:'Dernière modification',
+        champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
             valeur: {
                 cType: 'datefield',
                 name: 'derniereModification',
                 ruleId:'lastUpdateTime',
-                label: 'Dernière modification'
+                label: Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
             }});
             Ext.getStore('champsTCARStore').loadData(champsRegles);
             var vocabulaires=vocabularies;
@@ -341,10 +341,10 @@ Ext.define('Rubedo.view.MQA', {
                 var storeR = Ext.create('Ext.data.Store', {
                     fields: ['valeur', 'nom'],
                     data : [
-                    {valeur: 'all', nom :'Contient tous les termes'},
-                    {valeur: 'allRec', nom :'Contient tous les termes ou au moins un descendant par terme'},
-                    {valeur: 'some', nom :'Contient au moins un des termes'},
-                    {valeur: 'someRec', nom :'Contient au moins un des termes ou au moins un des descendants d’un des termes'}
+                    {valeur: 'all', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllText},
+                    {valeur: 'allRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllRecText},
+                    {valeur: 'some', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeText},
+                    {valeur: 'someRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeRecText}
                     ]
                 });
 
@@ -354,7 +354,7 @@ Ext.define('Rubedo.view.MQA', {
                     vocabularyId:leVocab.get("id"),
                     isVocabularyField:true,
                     usedRole:"rule",
-                    fieldLabel: 'Règle',
+                    fieldLabel: Rubedo.RubedoAutomatedElementsLoc.ruleText,
                     store: storeR,
                     queryMode: 'local',
                     displayField: 'nom',

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "sessionExpiredWindow",
         "height": 78,
         "id": "sessionExpiredWindow",
         "width": 236,
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.button.Button",
@@ -29,9 +37,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "reconnectBtn",
                 "text": "Se connecter à nouveau"
             },
             "designerId": "d70d4085-012a-4c09-9664-8b3e0c4921fe",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
