@@ -1284,7 +1284,7 @@
                     "    store:Ext.getStore(\"RoleStore\"),\r",
                     "    anchor:\"100%\",\r",
                     "    name:\"roles\",\r",
-                    "    fieldLabel:\"Rôles\",\r",
+                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.rolesText,\r",
                     "    labelWidth:220,\r",
                     "    queryMode:\"local\",\r",
                     "    multiSelect:true,\r",

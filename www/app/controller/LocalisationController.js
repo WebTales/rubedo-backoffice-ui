@@ -236,8 +236,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
             rootText:"Racine",
             esGeoQueryText:"Assistant de requête Elastic Search geolocalisée",
             esQueryText:"Assistant de requête Elastic Search",
-            esDAMQueryText:"Assistant de requête DAM Elastic Search"
-
+            esDAMQueryText:"Assistant de requête DAM Elastic Search",
+            keywordsText:"Mots-clés",
+            defaultKeywordsText:"Mots-clés par défaut",
+            defaultSinglePageText:"Page de détail par défaut",
+            homePageText:"Page d'accueil",
+            rolesText:"Rôles"
         });
         // attach event and load localisation store
         Ext.getStore("LocalisationStore").on("load",function(){

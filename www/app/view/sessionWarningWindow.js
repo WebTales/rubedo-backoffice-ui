@@ -45,7 +45,7 @@ Ext.define('Rubedo.view.sessionWarningWindow', {
                                 ACL.interfaceRights=Ext.JSON.decode(response.responseText);
                             },
                             failure:function(){
-                                Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');
+                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);
                             }
                         });
                         button.up().close();

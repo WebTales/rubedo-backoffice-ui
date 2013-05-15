@@ -741,7 +741,7 @@
                                 ],
                                 "implHandler": [
                                     "if (record.isRoot()){\r",
-                                    "    return(\"<i style=\\\"color:#777;\\\">Racine</i>\");\r",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                                     "}\r",
                                     "else if (record.get(\"readOnly\")) {\r",
                                     "    record.data.allowDrop=false;\r",
@@ -1283,7 +1283,7 @@
                                             "    store:[],\r",
                                             "    anchor:\"100%\",\r",
                                             "    name:\"keywords\",\r",
-                                            "    fieldLabel:\"Mots-clés\",\r",
+                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.keywordsText,\r",
                                             "    localiserId:\"keywordsField\",\r",
                                             "    multiSelect:true,\r",
                                             "    forceSelection:false,\r",

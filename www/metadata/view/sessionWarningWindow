@@ -76,7 +76,7 @@
                             "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);\r",
                             "    },\r",
                             "    failure:function(){\r",
-                            "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');\r",
+                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);\r",
                             "    }\r",
                             "});\r",
                             "button.up().close();"

@@ -218,6 +218,7 @@
                     "userConfig": {
                         "layout|x": 130,
                         "layout|y": 10,
+                        "localiserId": "fieldEditlocBtn",
                         "hidden": true,
                         "itemId": "fieldEditFile",
                         "width": 40,
@@ -229,7 +230,14 @@
                     "configAlternates": {
                         "tooltip": "string"
                     },
-                    "designerId": "fb6b4fed-0c34-4d17-ad0b-4a6c09013ee9"
+                    "designerId": "fb6b4fed-0c34-4d17-ad0b-4a6c09013ee9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

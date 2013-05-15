@@ -66,8 +66,8 @@ Ext.define('Rubedo.view.InportInterface', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    flex: 0.18,
                                     localiserId: 'importSeparatorField',
+                                    flex: 0.18,
                                     fieldLabel: 'Séparateur',
                                     labelWidth: 60,
                                     name: 'separator',
@@ -86,8 +86,8 @@ Ext.define('Rubedo.view.InportInterface', {
                                         var fileInput = Ext.getCmp("mainCSVinportField").fileInputEl.dom;
                                         return fileInput;
                                     },
-                                    flex: 1,
                                     localiserId: 'importCSVFileField',
+                                    flex: 1,
                                     id: 'mainCSVinportField',
                                     margin: '0 0 0 5',
                                     fieldLabel: 'Fichier CSV',
@@ -118,8 +118,8 @@ Ext.define('Rubedo.view.InportInterface', {
                             items: [
                                 {
                                     xtype: 'panel',
-                                    flex: 1,
                                     localiserId: 'importStage1MainPanel',
+                                    flex: 1,
                                     layout: {
                                         align: 'stretch',
                                         type: 'hbox'
@@ -389,8 +389,8 @@ Ext.define('Rubedo.view.InportInterface', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'nameField',
+                                    anchor: '100%',
                                     fieldLabel: 'Nom',
                                     labelWidth: 165,
                                     name: 'ContentTypeType',
@@ -407,8 +407,8 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'combobox',
-                                    anchor: '100%',
                                     localiserId: 'workflowField',
+                                    anchor: '100%',
                                     fieldLabel: 'Workflow',
                                     labelWidth: 165,
                                     name: 'ContentTypeWorkflow',
@@ -451,8 +451,8 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'importBtn',
+                            anchor: '100%',
                             id: 'mainImportSubmitBtn',
                             scale: 'large',
                             text: 'Importer'

@@ -427,7 +427,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
             labelWidth:110,
-            fieldLabel:"Page d'accueil",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.homePageText,
             id:"sitesHomePicker",
             anchor: "100%",
             plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
@@ -437,21 +437,18 @@ Ext.define('Rubedo.view.sitesInterface', {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
             labelWidth:110,
-            fieldLabel:"Page de détail par défaut",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultSinglePageText,
             id:"sitesSinglePicker",
             anchor: "100%",
             allowBlank:false,
             name:"defaultSingle"
         });
-
-
-
         var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:[],
             anchor:"100%",
             name:"keywords",
             labelWidth:110,
-            fieldLabel:"Mots clés par défaut",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,

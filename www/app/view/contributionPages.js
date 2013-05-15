@@ -342,7 +342,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 if (record.isRoot()){
-                                    return("<i style=\"color:#777;\">Racine</i>");
+                                    return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                                 }
                                 else if (record.get("readOnly")) {
                                     record.data.allowDrop=false;
@@ -664,7 +664,7 @@ Ext.define('Rubedo.view.contributionPages', {
             store:[],
             anchor:"100%",
             name:"keywords",
-            fieldLabel:"Mots-clés",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.keywordsText,
             localiserId:"keywordsField",
             multiSelect:true,
             forceSelection:false,

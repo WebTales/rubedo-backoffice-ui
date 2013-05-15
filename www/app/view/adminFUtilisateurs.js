@@ -558,7 +558,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             store:Ext.getStore("RoleStore"),
             anchor:"100%",
             name:"roles",
-            fieldLabel:"Rôles",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.rolesText,
             labelWidth:220,
             queryMode:"local",
             multiSelect:true,

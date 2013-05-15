@@ -47,8 +47,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "container|align": "stretch",
                 "localiserId": "importStage1Panel",
+                "container|align": "stretch",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": "Choix du fichier à importer",
@@ -88,8 +88,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 0.18,
                                 "localiserId": "importSeparatorField",
+                                "layout|flex": 0.18,
                                 "fieldLabel": "Séparateur",
                                 "labelWidth": 60,
                                 "name": "separator",
@@ -138,8 +138,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
                                 "localiserId": "importCSVFileField",
+                                "layout|flex": 1,
                                 "id": "mainCSVinportField",
                                 "margin": "0 0 0 5",
                                 "fieldLabel": "Fichier CSV",
@@ -183,8 +183,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "importCSVFieldAuxilaryBtn",
+                                "layout|flex": null,
                                 "hidden": true,
                                 "id": "fileFieldHelper1",
                                 "margin": "0 0 0 4",
@@ -225,9 +225,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "importStage1MainPanel",
                                 "layout|flex": 1,
                                 "container|align": "stretch",
-                                "localiserId": "importStage1MainPanel",
                                 "layout": "hbox",
                                 "title": "Choisissez un fichier CSV pour afficher ses champs"
                             },
@@ -980,8 +980,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "nameField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Nom",
                                 "labelWidth": 165,
                                 "name": "ContentTypeType",
@@ -1025,8 +1025,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "workflowField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Workflow",
                                 "labelWidth": 165,
                                 "name": "ContentTypeWorkflow",
@@ -1121,8 +1121,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "importBtn",
+                        "layout|anchor": "100%",
                         "id": "mainImportSubmitBtn",
                         "scale": "large",
                         "text": "Importer"
