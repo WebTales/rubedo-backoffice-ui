@@ -45,6 +45,7 @@ Ext.define('Rubedo.view.contentPickerGrid', {
 
                     },
                     filter: true,
+                    localiserId: 'titleCol',
                     dataIndex: 'text',
                     text: 'Titre',
                     flex: 1
@@ -64,6 +65,7 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                         displayField: 'type',
                         store: 'TCNDepComboCS'
                     },
+                    localiserId: 'typeCol',
                     dataIndex: 'typeId',
                     text: 'Type',
                     flex: 1
@@ -96,6 +98,7 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                             ]
                         ]
                     },
+                    localiserId: 'statusCol',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
@@ -115,6 +118,7 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                             ]
                         ]
                     },
+                    localiserId: 'onlineCol',
                     width: 60,
                     dataIndex: 'online',
                     text: 'En ligne',
@@ -148,6 +152,7 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                                 button.up().up().up().close();
 
                             },
+                            localiserId: 'chooseThisContentBtn',
                             disabled: true,
                             id: 'contentPickerSelectBtn',
                             iconCls: 'ouiSpetit',

@@ -233,7 +233,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
             notMentionedText:"non renseigné",
             showOnlyIfText:"Affiché si et seulement si",
             orText:"Ou",
-            rootText:"Racine"
+            rootText:"Racine",
+            esGeoQueryText:"Assistant de requête Elastic Search geolocalisée",
+            esQueryText:"Assistant de requête Elastic Search",
+            esDAMQueryText:"Assistant de requête DAM Elastic Search"
 
         });
         // attach event and load localisation store

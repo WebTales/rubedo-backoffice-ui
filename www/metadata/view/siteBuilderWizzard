@@ -75,6 +75,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "createEmptySiteField",
                                 "id": "useEmptySiteField",
                                 "fieldLabel": "Créer un site vide",
                                 "labelWidth": 110,
@@ -84,6 +85,13 @@
                                 "inputValue": "true"
                             },
                             "designerId": "bdf589d0-261e-4169-810b-3af1c8f1a94c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -139,13 +147,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "createSiteFromModelField",
                                 "fieldLabel": "Créer un site en utilisant un site existant comme modèle",
                                 "labelWidth": 320,
                                 "name": "builtOnEmptySite",
                                 "boxLabel": "",
                                 "inputValue": "false"
                             },
-                            "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da"
+                            "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.FieldSet",
@@ -171,6 +187,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "siteMoelField",
                                         "id": "modelSiteIdField",
                                         "fieldLabel": "Site modèle",
                                         "name": "builtOnModelSiteId",
@@ -181,6 +198,13 @@
                                         "valueField": "id"
                                     },
                                     "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",

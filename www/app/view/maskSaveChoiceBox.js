@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.maskSaveChoiceBox', {
     extend: 'Ext.window.Window',
     alias: 'widget.maskSaveChoiceBox',
 
+    localiserId: 'maskSaveChoiceWindow',
     height: 144,
     width: 400,
     resizable: false,
@@ -35,11 +36,13 @@ Ext.define('Rubedo.view.maskSaveChoiceBox', {
                 {
                     xtype: 'button',
                     flex: 1,
+                    localiserId: 'maskSaveChoice1Btn',
                     text: 'Enregistrer et répercuter les modifications sur toutes les pages'
                 },
                 {
                     xtype: 'button',
                     flex: 1,
+                    localiserId: 'maskSaveChoice2Btn',
                     text: 'Enregistrer sous un nouveau masque'
                 }
             ]

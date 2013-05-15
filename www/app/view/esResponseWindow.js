@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.esResponseWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.esResponseWindow',
 
+    localiserId: 'indexedElementsWindow',
     height: 250,
     id: 'esResponseWindow',
     width: 400,
@@ -67,6 +68,7 @@ Ext.define('Rubedo.view.esResponseWindow', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
+                            localiserId: 'okBtn',
                             text: '<b>OK</b>'
                         }
                     ]

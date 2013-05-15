@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'manualQueryWindow',
     height: 401,
     id: 'manualQueryInterface',
     width: 1064,
@@ -58,6 +59,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addQBtn',
                             disabled: true,
                             id: 'manualQueryAddRecordBtn',
                             iconAlign: 'right',
@@ -72,6 +74,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'removeQbtn',
                             disabled: true,
                             id: 'manualQueryRemoveRecordBtn',
                             iconCls: 'arrow_left',
@@ -118,6 +121,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
 
                             },
                             filter: true,
+                            localiserId: 'titleCol',
                             dataIndex: 'text',
                             text: 'Titre',
                             flex: 1
@@ -137,6 +141,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                 displayField: 'type',
                                 store: 'TCNDepComboCS'
                             },
+                            localiserId: 'typeCol',
                             dataIndex: 'typeId',
                             text: 'Type',
                             flex: 1
@@ -169,6 +174,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                     ]
                                 ]
                             },
+                            localiserId: 'statusCol',
                             dataIndex: 'status',
                             text: 'Etat',
                             flex: 1
@@ -188,6 +194,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                     ]
                                 ]
                             },
+                            localiserId: 'onlineCol',
                             width: 60,
                             dataIndex: 'online',
                             text: 'En ligne',
@@ -205,6 +212,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'saveManualQueryBtn',
                                     id: 'manualQuerySaveBtn',
                                     iconCls: 'ouiSpetit',
                                     text: 'Enregistrer la requête',

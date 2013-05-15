@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'damPickerWindow',
     height: 406,
     id: 'ImagePickerWindow',
     width: 600,
@@ -55,6 +56,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'chooseBtn',
                             disabled: true,
                             id: 'imagePickerAcceptBtn',
                             iconCls: 'ouiSpetit',
@@ -68,6 +70,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'addBtn',
                             id: 'DAMPickerAddBtn',
                             iconCls: 'add',
                             text: 'Ajouter',
@@ -83,6 +86,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                             handler: function(button, event) {
                                 this.up().up().close();
                             },
+                            localiserId: 'cancelBtn',
                             iconCls: 'close',
                             text: 'Annuler'
                         }

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newWorkspaceWindow",
         "height": 112,
         "width": 400,
         "designer|userClassName": "newWorkspaceWindow",
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "3104ec03-3fa9-4813-a58d-51278a48751f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -43,11 +51,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "fieldLabel": "Nom",
                         "name": "text",
                         "allowBlank": false
                     },
-                    "designerId": "44dee598-9fa0-4cda-8298-9d0f922e598a"
+                    "designerId": "44dee598-9fa0-4cda-8298-9d0f922e598a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -58,11 +74,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "createNewWorkspaceBtn",
                         "id": "newWorkspaceSublitBtn",
                         "scale": "medium",
                         "text": "Créer un nouvel espace de travail"
                     },
-                    "designerId": "4627d258-9390-455f-942a-97d5ba812d44"
+                    "designerId": "4627d258-9390-455f-942a-97d5ba812d44",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "exportElementsWindow",
         "height": 168,
         "id": "ExportElementWindow",
         "width": 381,
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "4e5df8c9-dabd-492c-a887-bdcba9d112f4",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -42,12 +50,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "mandatoryNameField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Nom * ",
                         "name": "name",
                         "allowBlank": false
                     },
-                    "designerId": "7f37adb6-709c-4b57-b63d-1a0deb80f5f1"
+                    "designerId": "7f37adb6-709c-4b57-b63d-1a0deb80f5f1",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.TextArea",
@@ -57,11 +73,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "elementDescriptionField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Description ",
                         "name": "description"
                     },
-                    "designerId": "a9698243-3ee8-4f40-b2df-10a43c76f672"
+                    "designerId": "a9698243-3ee8-4f40-b2df-10a43c76f672",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -71,11 +95,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "exportElementBtn",
                         "layout|anchor": "100%",
                         "id": "ExportElementButton",
                         "text": "Exporter cet élément "
                     },
-                    "designerId": "2b8ebde6-ea09-4fa7-acd3-6059cba61641"
+                    "designerId": "2b8ebde6-ea09-4fa7-acd3-6059cba61641",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

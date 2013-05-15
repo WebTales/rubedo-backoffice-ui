@@ -1120,6 +1120,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "propertiesPanel",
                                 "frame": true,
                                 "id": "PaneauConfigChamps",
                                 "style": null,
@@ -1135,6 +1136,13 @@
                                 "title": "Propriétés"
                             },
                             "designerId": "3412f695-c5d1-4f51-abc5-d9d5794a2b47",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.container.Container",

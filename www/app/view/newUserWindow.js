@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.newUserWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newUserWindow',
 
+    localiserId: 'newUserWindow',
     height: 173,
     width: 400,
     resizable: false,
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.newUserWindow', {
                     items: [
                         {
                             xtype: 'textfield',
+                            localiserId: 'nameField',
                             anchor: '100%',
                             fieldLabel: 'Nom ',
                             labelWidth: 120,
@@ -46,6 +48,7 @@ Ext.define('Rubedo.view.newUserWindow', {
                         },
                         {
                             xtype: 'textfield',
+                            localiserId: 'emailField',
                             anchor: '100%',
                             fieldLabel: 'E-mail ',
                             labelWidth: 120,
@@ -55,6 +58,7 @@ Ext.define('Rubedo.view.newUserWindow', {
                         },
                         {
                             xtype: 'textfield',
+                            localiserId: 'userAccountField',
                             anchor: '100%',
                             fieldLabel: 'Compte utilisateur ',
                             labelWidth: 120,
@@ -64,6 +68,7 @@ Ext.define('Rubedo.view.newUserWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'validateBtn',
                             anchor: '100%',
                             id: 'userCreateSubmitBtn',
                             scale: 'large',

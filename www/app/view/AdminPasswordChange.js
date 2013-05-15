@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.AdminPasswordChange', {
     extend: 'Ext.window.Window',
     alias: 'widget.AdminPasswordChange',
 
+    localiserId: 'changePasswordWindow',
     height: 130,
     id: 'AdminPasswordChange',
     width: 400,
@@ -39,6 +40,7 @@ Ext.define('Rubedo.view.AdminPasswordChange', {
                     items: [
                         {
                             xtype: 'textfield',
+                            localiserId: 'newPasswordField',
                             anchor: '100%',
                             fieldLabel: 'Nouveau mot de passe ',
                             labelWidth: 150,
@@ -47,6 +49,7 @@ Ext.define('Rubedo.view.AdminPasswordChange', {
                         },
                         {
                             xtype: 'textfield',
+                            localiserId: 'confirmField',
                             anchor: '100%',
                             fieldLabel: 'Confirmer ',
                             labelWidth: 150,
@@ -68,6 +71,7 @@ Ext.define('Rubedo.view.AdminPasswordChange', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'applyBtn',
                             anchor: '100%',
                             id: 'AdminPasswordChangeBtn',
                             text: 'Appliquer'

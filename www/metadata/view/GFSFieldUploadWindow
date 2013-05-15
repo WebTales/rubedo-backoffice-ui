@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "gfsUploadWindow",
         "height": 102,
         "width": 400,
         "designer|userClassName": "GFSFieldUploadWindow",
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "1dd7d2f3-5f63-4221-a070-989924064068",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -43,12 +51,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "fileField",
                         "fieldLabel": "Fichier",
                         "name": "file",
                         "allowBlank": false,
                         "buttonText": "Choisir"
                     },
-                    "designerId": "d4ff35cb-e4d7-485a-8008-e327e47c03a8"
+                    "designerId": "d4ff35cb-e4d7-485a-8008-e327e47c03a8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -59,11 +75,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "50%",
+                        "localiserId": "validateBtn",
                         "margin": "0 10 0 0",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
                     "designerId": "dad3da89-4e47-4696-aa44-8711be3d940e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -123,11 +147,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "50%",
+                        "localiserId": "cancelBtn",
                         "margin": "0 0 0 10",
                         "iconCls": "close",
                         "text": "Annuler"
                     },
                     "designerId": "88d8f535-0073-45d6-9c3e-e4c8288b70e4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

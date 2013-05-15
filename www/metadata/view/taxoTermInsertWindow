@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newTermWindow",
         "height": 118,
         "id": "taxoTermInsertWindow",
         "width": 400,
@@ -15,6 +16,13 @@
         "title": "Nouveau terme"
     },
     "designerId": "49bec756-7701-4c60-a70f-4a067633eff3",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -38,11 +46,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "termField",
                         "fieldLabel": "Terme ",
                         "name": "text",
                         "allowBlank": false
                     },
-                    "designerId": "b0ba22a7-c737-4e4a-861c-7d6d0c9d0539"
+                    "designerId": "b0ba22a7-c737-4e4a-861c-7d6d0c9d0539",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -53,11 +69,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "addBtn",
                         "id": "taxoTermInsertorBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
-                    "designerId": "f025a4d7-5a8e-4fa8-9850-269cb963167a"
+                    "designerId": "f025a4d7-5a8e-4fa8-9850-269cb963167a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

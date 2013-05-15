@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newMLWindow",
         "height": 112,
         "id": "newMLWindow",
         "width": 400,
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "4444354c-c7f1-44c8-8601-47758824f7d5",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -44,11 +52,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "fieldLabel": "Nom",
                         "name": "name",
                         "allowBlank": false
                     },
-                    "designerId": "330e5a90-d5bf-4b17-bac9-002bf255c24f"
+                    "designerId": "330e5a90-d5bf-4b17-bac9-002bf255c24f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -59,11 +75,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "newMLCreateBtn",
                         "id": "newMLSubmitBtn",
                         "scale": "medium",
                         "text": "Créer une nouvelle liste de diffusion"
                     },
-                    "designerId": "40b52b62-8fa5-42a8-8c35-b39c9185c96e"
+                    "designerId": "40b52b62-8fa5-42a8-8c35-b39c9185c96e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

@@ -36,6 +36,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
+                "localiserId": "titleCol",
                 "dataIndex": "text",
                 "text": "Titre",
                 "flex": 1
@@ -48,6 +49,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -103,6 +109,7 @@
                     "    store: \"TCNDepComboCS\"\r",
                     "}"
                 ],
+                "localiserId": "typeCol",
                 "dataIndex": "typeId",
                 "text": "Type",
                 "flex": 1
@@ -115,6 +122,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -167,6 +179,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "statusCol",
                 "dataIndex": "status",
                 "text": "Etat",
                 "flex": 1
@@ -179,6 +192,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -232,6 +250,7 @@
                     "            ]\r",
                     "}"
                 ],
+                "localiserId": "onlineCol",
                 "width": 60,
                 "dataIndex": "online",
                 "text": "En ligne",
@@ -246,6 +265,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ]
@@ -293,12 +317,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "chooseThisContentBtn",
                         "disabled": true,
                         "id": "contentPickerSelectBtn",
                         "iconCls": "ouiSpetit",
                         "text": "<b>Choisir ce contenu</b>"
                     },
                     "designerId": "0362fb29-8b32-4261-9691-979ceac0a7b2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

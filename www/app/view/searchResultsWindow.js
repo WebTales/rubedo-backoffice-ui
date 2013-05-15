@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'searchResultsWindow',
     height: 492,
     id: 'searchResultsWindow',
     width: 936,
@@ -40,6 +41,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             items: [
                 {
                     xtype: 'form',
+                    localiserId: 'filtersPanel',
                     id: 'searchFacetBox',
                     width: 240,
                     overflowY: 'auto',
@@ -87,18 +89,21 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'titleCol',
                             dataIndex: 'text',
                             text: 'Titre',
                             flex: 2
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'authorCol',
                             dataIndex: 'author',
                             text: 'Auteur',
                             flex: 1
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'lastUpdateCol',
                             dataIndex: 'lastUpdateTime',
                             text: 'Date de dernière modification',
                             flex: 1.2,
@@ -106,6 +111,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                         },
                         {
                             xtype: 'numbercolumn',
+                            localiserId: 'pertinenceCol',
                             width: 80,
                             dataIndex: 'score',
                             text: 'Pertinence',
@@ -168,6 +174,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'saveQueryBtn',
                             hidden: true,
                             id: 'saveGeoQueryBtn',
                             iconCls: 'ouiSpetit',
@@ -208,7 +215,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     onSearchResultsWindowBeforeRender: function(component, eOpts) {
         if (component.geoQueryMode){
             component.modal=true;
-            component.setTitle("Assistant de requête Elastic Search geolocalisée");
+            component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esGeoQueryText);
             Ext.getStore("ESFacetteStore").activeFacettes={ };
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("saveGeoQueryBtn").show();
@@ -219,7 +226,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getStore("ESFacetteStore").load();
         } else if (component.queryMode){
             component.modal=true;
-            component.setTitle("Assistant de requête Elastic Search");
+            component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esQueryText);
             Ext.getStore("ESFacetteStore").activeFacettes={ };
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("saveGeoQueryBtn").show();
@@ -231,7 +238,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
 
         } else if (component.damQueryMode){
             component.modal=true;
-            component.setTitle("Assistant de requête DAM Elastic Search");
+            component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esDAMQueryText);
             Ext.getStore("ESFacetteStore").activeFacettes={ };
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("saveGeoQueryBtn").show();

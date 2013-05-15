@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.PersoPicUploadWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.PersoPicUploadWindow',
 
+    localiserId: 'picUploadWindow',
     height: 102,
     width: 400,
     resizable: false,
@@ -39,6 +40,7 @@ Ext.define('Rubedo.view.PersoPicUploadWindow', {
                     items: [
                         {
                             xtype: 'filefield',
+                            localiserId: 'fileField',
                             anchor: '100%',
                             fieldLabel: 'Fichier',
                             name: 'file',
@@ -72,18 +74,19 @@ Ext.define('Rubedo.view.PersoPicUploadWindow', {
                                         button.up().setLoading(false);
                                         switch (action.failureType) {
                                             case Ext.form.action.Action.CLIENT_INVALID:
-                                            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
+                                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
                                             break;
                                             case Ext.form.action.Action.CONNECT_FAILURE:
-                                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.serverConnectionerror);
                                             break;
                                             case Ext.form.action.Action.SERVER_INVALID:
-                                            Ext.Msg.alert('Erreur', action.result.msg);
+                                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, action.result.msg);
                                         }
                                     }
                                 });
 
                             },
+                            localiserId: 'validateBtn',
                             anchor: '50%',
                             margin: '0 10 0 0',
                             iconCls: 'ouiSpetit',
@@ -94,6 +97,7 @@ Ext.define('Rubedo.view.PersoPicUploadWindow', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
+                            localiserId: 'cancelBtn',
                             anchor: '50%',
                             margin: '0 0 0 10',
                             iconCls: 'close',

@@ -97,7 +97,7 @@ Ext.define('Rubedo.view.MyToolbar56', {
         } else {
             this.getComponent("wizNext").show();
         }
-        this.getComponent("wizProgress").updateProgress((activeIndex+1)/all,"Etape "+(activeIndex+1)+" sur "+all);
+        this.getComponent("wizProgress").updateProgress((activeIndex+1)/all,Rubedo.RubedoAutomatedElementsLoc.stageText+" "+(activeIndex+1)+" "+Rubedo.RubedoAutomatedElementsLoc.onText+" "+all);
     }
 
 });

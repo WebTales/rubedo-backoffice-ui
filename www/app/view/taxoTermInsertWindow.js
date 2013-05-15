@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.taxoTermInsertWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.taxoTermInsertWindow',
 
+    localiserId: 'newTermWindow',
     height: 118,
     id: 'taxoTermInsertWindow',
     width: 400,
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.taxoTermInsertWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'termField',
                             fieldLabel: 'Terme ',
                             name: 'text',
                             allowBlank: false
@@ -45,6 +47,7 @@ Ext.define('Rubedo.view.taxoTermInsertWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'addBtn',
                             id: 'taxoTermInsertorBtn',
                             scale: 'large',
                             text: 'Ajouter'

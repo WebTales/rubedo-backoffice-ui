@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "manualQueryWindow",
         "height": 401,
         "id": "manualQueryInterface",
         "width": 1064,
@@ -17,6 +18,13 @@
         "constrain": true
     },
     "designerId": "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "linkedinstance",
@@ -90,6 +98,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "addQBtn",
                         "disabled": true,
                         "id": "manualQueryAddRecordBtn",
                         "iconAlign": "right",
@@ -97,6 +106,13 @@
                         "text": "Ajouter"
                     },
                     "designerId": "435006e6-e1ec-4292-9d7f-15a360048507",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -128,12 +144,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "removeQbtn",
                         "disabled": true,
                         "id": "manualQueryRemoveRecordBtn",
                         "iconCls": "arrow_left",
                         "text": "Enlever"
                     },
                     "designerId": "7d15cc34-9d4b-4289-84ad-1b90db2a9e92",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -218,6 +242,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "filter": true,
+                        "localiserId": "titleCol",
                         "dataIndex": "text",
                         "text": "Titre",
                         "flex": 1
@@ -230,6 +255,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "filter",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -285,6 +315,7 @@
                             "    store: \"TCNDepComboCS\"\r",
                             "}"
                         ],
+                        "localiserId": "typeCol",
                         "dataIndex": "typeId",
                         "text": "Type",
                         "flex": 1
@@ -297,6 +328,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "filter",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -349,6 +385,7 @@
                             "            ]\r",
                             "}"
                         ],
+                        "localiserId": "statusCol",
                         "dataIndex": "status",
                         "text": "Etat",
                         "flex": 1
@@ -361,6 +398,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "filter",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -414,6 +456,7 @@
                             "            ]\r",
                             "}"
                         ],
+                        "localiserId": "onlineCol",
                         "width": 60,
                         "dataIndex": "online",
                         "text": "En ligne",
@@ -428,6 +471,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "filter",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -465,11 +513,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "saveManualQueryBtn",
                                 "id": "manualQuerySaveBtn",
                                 "iconCls": "ouiSpetit",
                                 "text": "Enregistrer la requête"
                             },
                             "designerId": "855cdaf0-a7b4-4964-a851-4ae1cb2fb83b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",

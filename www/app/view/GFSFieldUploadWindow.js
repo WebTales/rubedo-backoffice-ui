@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.GFSFieldUploadWindow',
 
+    localiserId: 'gfsUploadWindow',
     height: 102,
     width: 400,
     resizable: false,
@@ -40,6 +41,7 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
                         {
                             xtype: 'filefield',
                             anchor: '100%',
+                            localiserId: 'fileField',
                             fieldLabel: 'Fichier',
                             name: 'file',
                             allowBlank: false,
@@ -79,6 +81,7 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
 
                             },
                             anchor: '50%',
+                            localiserId: 'validateBtn',
                             margin: '0 10 0 0',
                             iconCls: 'ouiSpetit',
                             text: 'Valider'
@@ -89,6 +92,7 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
                                 button.up().up().close();
                             },
                             anchor: '50%',
+                            localiserId: 'cancelBtn',
                             margin: '0 0 0 10',
                             iconCls: 'close',
                             text: 'Annuler'

@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
+        "localiserId": "mailingListsWindow",
         "container|align": "stretch",
         "height": 456,
         "id": "MailingListsInterface",
@@ -259,6 +259,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "localiserId": "propertiesForm",
                 "disabled": true,
                 "id": "MLPropsForm",
                 "autoScroll": true,
@@ -266,6 +267,13 @@
                 "title": "Propriétés"
             },
             "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -327,9 +335,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "expeditorFieldset",
                         "title": "Expéditeur"
                     },
                     "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -340,12 +356,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "expeditorAdressField",
                                 "fieldLabel": "Adresse de l'expéditeur",
                                 "labelWidth": 140,
                                 "name": "fromAddress",
                                 "vtype": "email"
                             },
-                            "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88"
+                            "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -356,11 +380,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "expeditorNameField",
                                 "fieldLabel": "Nom de l'expéditeur",
                                 "labelWidth": 140,
                                 "name": "fromName"
                             },
-                            "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040"
+                            "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -372,9 +404,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "responseFieldset",
                         "title": "Réponse"
                     },
                     "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -385,12 +425,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "replyToAdressField",
                                 "fieldLabel": "Adresse de réponse",
                                 "labelWidth": 140,
                                 "name": "replyToAddress",
                                 "vtype": "email"
                             },
-                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623"
+                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -401,11 +449,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "replyToNameField",
                                 "fieldLabel": "Nom de réponse",
                                 "labelWidth": 140,
                                 "name": "replyToName"
                             },
-                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03"
+                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -418,12 +474,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "returnPathAdressField",
                         "fieldLabel": "Adresse d'erreur",
                         "labelWidth": 140,
                         "name": "returnPathAddress",
                         "vtype": "email"
                     },
-                    "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8"
+                    "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

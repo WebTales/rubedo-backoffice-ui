@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "reusableElementsWindow",
         "container|align": "stretch",
         "height": 350,
         "id": "ReusableElementPicker",
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "04ab642c-6370-4c30-97cf-7c905f47813f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -65,11 +73,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameCol",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
                     },
-                    "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed"
+                    "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.feature.Grouping",
@@ -155,6 +171,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "deleteBtn",
                                 "layout|flex": null,
                                 "disabled": true,
                                 "id": "resusableElementsDeleteBtn",
@@ -162,6 +179,13 @@
                                 "text": "Supprimer"
                             },
                             "designerId": "a994ca8d-2b21-4997-833b-e3c6e03716bd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -293,13 +317,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addBtn",
                                 "layout|flex": null,
                                 "disabled": true,
                                 "id": "REAddButton",
                                 "iconCls": "add",
                                 "text": "Ajouter"
                             },
-                            "designerId": "8dd193ad-a01e-4ed0-8569-1ff6bbd3b08c"
+                            "designerId": "8dd193ad-a01e-4ed0-8569-1ff6bbd3b08c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

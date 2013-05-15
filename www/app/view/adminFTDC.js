@@ -451,6 +451,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'form',
+                                    localiserId: 'propertiesPanel',
                                     frame: true,
                                     id: 'PaneauConfigChamps',
                                     width: 300,

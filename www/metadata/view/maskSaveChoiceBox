@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "maskSaveChoiceWindow",
         "height": 144,
         "width": 400,
         "designer|userClassName": "maskSaveChoiceBox",
@@ -20,6 +21,13 @@
         "resizable": "boolean"
     },
     "designerId": "fc048e78-715a-4081-8d00-7a42e4767f26",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.button.Button",
@@ -30,9 +38,17 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "localiserId": "maskSaveChoice1Btn",
                 "text": "Enregistrer et répercuter les modifications sur toutes les pages"
             },
-            "designerId": "923a29c9-2c40-4c54-abce-85e7d89bd651"
+            "designerId": "923a29c9-2c40-4c54-abce-85e7d89bd651",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -43,9 +59,17 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "localiserId": "maskSaveChoice2Btn",
                 "text": "Enregistrer sous un nouveau masque"
             },
-            "designerId": "88b32124-cffd-46ff-b835-aa2becfafa8d"
+            "designerId": "88b32124-cffd-46ff-b835-aa2becfafa8d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

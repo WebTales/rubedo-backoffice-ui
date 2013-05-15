@@ -31,8 +31,8 @@ Ext.define('Rubedo.view.assisstantRE5', {
             items: [
                 {
                     xtype: 'combobox',
-                    anchor: '90%',
                     localiserId: 'qbs4sortBtn',
+                    anchor: '90%',
                     id: 'createurTrisChampsAR',
                     style: '{float: left}',
                     fieldLabel: 'Ajouter un tri sur ',

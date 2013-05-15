@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "mediaQueryAssistant",
         "height": 373,
         "id": "MQA",
         "width": 469,
@@ -21,6 +22,13 @@
         "resizable": "boolean"
     },
     "designerId": "e1d83abe-514e-4e8d-8512-df1fa7f2a8c7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basicfunction",
@@ -87,10 +95,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "mqs1",
                 "bodyPadding": 10,
                 "title": "Choix des types de médias"
             },
             "designerId": "796177a4-b025-4b70-924e-91f89c4448fd",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -101,6 +117,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "mediaTypesField",
                         "id": "DAMTypeWizCombo",
                         "fieldLabel": "Types de media",
                         "name": "DAMTypes",
@@ -112,7 +129,14 @@
                         "store": "MediaTypesFORDAMPicker",
                         "valueField": "id"
                     },
-                    "designerId": "93641b6b-525e-4ceb-a491-a6206c10c8fc"
+                    "designerId": "93641b6b-525e-4ceb-a491-a6206c10c8fc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",
@@ -145,12 +169,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "mqS2",
                 "id": "assisstantRE2",
                 "overflowY": "auto",
                 "bodyPadding": 10,
                 "title": "Choix des règles sur la taxonomie"
             },
-            "designerId": "d67b5d86-b64d-462d-9141-3f6571a9e8c6"
+            "designerId": "d67b5d86-b64d-462d-9141-3f6571a9e8c6",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "basiceventbinding",
@@ -173,9 +205,9 @@
                     "if (component.editorMode){\r",
                     "    component.initialQuery=Ext.JSON.decode(component.initialValue);\r",
                     "    var task= new Ext.util.DelayedTask(function(){\r",
-                    "    Ext.getCmp(\"DAMTypeWizCombo\").setValue(component.initialQuery.DAMTypes);\r",
-                    "    component.reactToMTChange(true);\r",
-                    "    Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(component.initialQuery.fieldRules);\r",
+                    "        Ext.getCmp(\"DAMTypeWizCombo\").setValue(component.initialQuery.DAMTypes);\r",
+                    "        component.reactToMTChange(true);\r",
+                    "        Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(component.initialQuery.fieldRules);\r",
                     "    });\r",
                     "    task.delay(600);\r",
                     "}"
@@ -274,8 +306,8 @@
                     "                },\r",
                     "                encodeFilters: function(filters) {\r",
                     "                    var min = [],\r",
-                    "                    length = filters.length,\r",
-                    "                    i = 0;\r",
+                    "                        length = filters.length,\r",
+                    "                        i = 0;\r",
                     "\r",
                     "                    for (; i < length; i++) {\r",
                     "                        min[i] = {\r",
@@ -432,11 +464,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "mqls",
                 "layout": "anchor",
                 "bodyPadding": 10,
                 "title": "Enregistrement"
             },
             "designerId": "fe6c1f8e-0610-4292-8792-7bbea27140b3",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.button.Button",
@@ -447,11 +487,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "saveBtn",
                         "id": "MQASaveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
                     "designerId": "fb45f1f1-3be2-4c86-8adb-a603913b9fb7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",

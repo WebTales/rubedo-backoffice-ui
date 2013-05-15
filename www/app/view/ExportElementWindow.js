@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ExportElementWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ExportElementWindow',
 
+    localiserId: 'exportElementsWindow',
     height: 168,
     id: 'ExportElementWindow',
     width: 381,
@@ -39,6 +40,7 @@ Ext.define('Rubedo.view.ExportElementWindow', {
                     items: [
                         {
                             xtype: 'textfield',
+                            localiserId: 'mandatoryNameField',
                             anchor: '100%',
                             fieldLabel: 'Nom * ',
                             name: 'name',
@@ -46,12 +48,14 @@ Ext.define('Rubedo.view.ExportElementWindow', {
                         },
                         {
                             xtype: 'textareafield',
+                            localiserId: 'elementDescriptionField',
                             anchor: '100%',
                             fieldLabel: 'Description ',
                             name: 'description'
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'exportElementBtn',
                             anchor: '100%',
                             id: 'ExportElementButton',
                             text: 'Exporter cet élément '

@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.MQA', {
         'Rubedo.view.assisstantRE5'
     ],
 
+    localiserId: 'mediaQueryAssistant',
     height: 373,
     id: 'MQA',
     width: 469,
@@ -45,12 +46,14 @@ Ext.define('Rubedo.view.MQA', {
             items: [
                 {
                     xtype: 'form',
+                    localiserId: 'mqs1',
                     bodyPadding: 10,
                     title: 'Choix des types de médias',
                     items: [
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'mediaTypesField',
                             id: 'DAMTypeWizCombo',
                             fieldLabel: 'Types de media',
                             name: 'DAMTypes',
@@ -72,6 +75,7 @@ Ext.define('Rubedo.view.MQA', {
                 },
                 {
                     xtype: 'form',
+                    localiserId: 'mqS2',
                     id: 'assisstantRE2',
                     overflowY: 'auto',
                     bodyPadding: 10,
@@ -82,6 +86,7 @@ Ext.define('Rubedo.view.MQA', {
                 },
                 {
                     xtype: 'panel',
+                    localiserId: 'mqls',
                     layout: {
                         type: 'anchor'
                     },
@@ -91,6 +96,7 @@ Ext.define('Rubedo.view.MQA', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'saveBtn',
                             id: 'MQASaveBtn',
                             scale: 'large',
                             text: 'Enregistrer',

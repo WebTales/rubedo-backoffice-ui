@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "indexedElementsWindow",
         "height": 250,
         "id": "esResponseWindow",
         "width": 400,
@@ -17,6 +18,13 @@
         "modal": true
     },
     "designerId": "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.property.Grid",
@@ -92,9 +100,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "okBtn",
                         "text": "<b>OK</b>"
                     },
                     "designerId": "cc6419f1-4bc6-4165-a055-83f86270d8fa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

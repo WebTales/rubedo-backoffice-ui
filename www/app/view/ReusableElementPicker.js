@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
     extend: 'Ext.window.Window',
     alias: 'widget.ReusableElementPicker',
 
+    localiserId: 'reusableElementsWindow',
     height: 350,
     id: 'ReusableElementPicker',
     width: 600,
@@ -43,6 +44,7 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'nameCol',
                             dataIndex: 'name',
                             text: 'Nom',
                             flex: 1
@@ -77,6 +79,7 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'deleteBtn',
                                     disabled: true,
                                     id: 'resusableElementsDeleteBtn',
                                     iconCls: 'close',
@@ -132,6 +135,7 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addBtn',
                                     disabled: true,
                                     id: 'REAddButton',
                                     iconCls: 'add',

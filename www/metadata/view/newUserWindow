@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newUserWindow",
         "height": 173,
         "width": 400,
         "designer|userClassName": "newUserWindow",
@@ -19,6 +20,13 @@
         "resizable": "boolean"
     },
     "designerId": "a3ee1d58-780e-4000-bbfd-ee2f8a5443eb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -41,6 +49,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Nom ",
                         "labelWidth": 120,
@@ -48,7 +57,14 @@
                         "readOnly": null,
                         "allowBlank": false
                     },
-                    "designerId": "1d142858-20d9-4d03-9a8f-a5f588a73d61"
+                    "designerId": "1d142858-20d9-4d03-9a8f-a5f588a73d61",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -58,6 +74,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "emailField",
                         "layout|anchor": "100%",
                         "fieldLabel": "E-mail ",
                         "labelWidth": 120,
@@ -65,7 +82,14 @@
                         "allowBlank": false,
                         "vtype": "email"
                     },
-                    "designerId": "b968575e-d7d2-4313-9cad-29e5a8369377"
+                    "designerId": "b968575e-d7d2-4313-9cad-29e5a8369377",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -75,6 +99,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "userAccountField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Compte utilisateur ",
                         "labelWidth": 120,
@@ -83,7 +108,14 @@
                         "allowBlank": false,
                         "vtype": "alphanum"
                     },
-                    "designerId": "94a2c827-3a2b-46cc-b7a2-229d5f9a52f2"
+                    "designerId": "94a2c827-3a2b-46cc-b7a2-229d5f9a52f2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -93,12 +125,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "validateBtn",
                         "layout|anchor": "100%",
                         "id": "userCreateSubmitBtn",
                         "scale": "large",
                         "text": "Valider"
                     },
-                    "designerId": "d18557ae-32d7-42c8-bd55-980b2194458d"
+                    "designerId": "d18557ae-32d7-42c8-bd55-980b2194458d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

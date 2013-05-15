@@ -575,11 +575,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameCol",
                         "dataIndex": "name",
                         "text": "Nom",
                         "flex": 1
                     },
                     "designerId": "59c0c2fe-4619-44bd-9bc3-5dbdd74c61cf",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

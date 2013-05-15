@@ -232,6 +232,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
                                 }
                             },
+                            localiserId: 'nameCol',
                             dataIndex: 'name',
                             text: 'Nom',
                             flex: 1
