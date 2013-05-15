@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.ImagePreviewWindow',
 
+    localiserId: 'imagePreviewWindow',
     minHeight: 100,
     minWidth: 100,
     autoScroll: true,

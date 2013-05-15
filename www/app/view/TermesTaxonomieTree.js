@@ -51,7 +51,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     xtype: 'treecolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (record.isRoot()){
-                            return("<i style=\"color:#777;\">Racine</i>");
+                            return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                         }
                         else if ((record.get("readOnly"))||(!ACL.interfaceRights["write.ui.taxonomyTerms"])) {
                             record.data.allowDrop=false;
@@ -62,6 +62,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                             return(value);
                         }
                     },
+                    localiserId: 'termsCol',
                     dataIndex: 'text',
                     text: 'Termes',
                     editor: {

@@ -27,21 +27,25 @@ Ext.define('Rubedo.view.MyGridPanel3', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'versionCol',
                     dataIndex: 'text',
                     text: 'Version'
                 },
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'statusCol',
                     dataIndex: 'status',
                     text: 'Etat'
                 },
                 {
                     xtype: 'datecolumn',
+                    localiserId: 'dateCol',
                     dataIndex: 'date',
                     text: 'Date'
                 },
                 {
                     xtype: 'gridcolumn',
+                    localiserId: 'authorCol',
                     dataIndex: 'auteur',
                     text: 'Auteur'
                 }

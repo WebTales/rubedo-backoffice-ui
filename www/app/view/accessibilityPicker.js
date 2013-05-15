@@ -30,12 +30,14 @@ Ext.define('Rubedo.view.accessibilityPicker', {
             items: [
                 {
                     xtype: 'fieldset',
+                    localiserId: 'hcmodeFieldset',
                     padding: 10,
                     title: 'Mode contraste élevé',
                     items: [
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'hcmodeActivateBtn',
                             id: 'highContrastButton',
                             text: 'Activer'
                         }

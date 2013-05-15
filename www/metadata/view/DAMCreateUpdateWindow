@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "newDamWindow",
         "height": 400,
         "id": "DAMCreateUpdateWindow",
         "maxHeight": null,
@@ -28,6 +29,13 @@
         "resizable": "boolean"
     },
     "designerId": "939ef002-62e9-4ca0-a15f-a368fcab7385",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "linkedinstance",

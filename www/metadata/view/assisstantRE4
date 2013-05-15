@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "etape": "3",
+        "localiserId": "qbs3",
         "id": "assisstantRE4",
         "designer|userClassName": "assisstantRE4",
         "designer|userAlias": "assisstantRE4",
@@ -20,6 +21,11 @@
             "group": "(Custom Properties)",
             "name": "etape",
             "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
         }
     ],
     "cn": [
@@ -32,6 +38,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "90%",
+                "localiserId": "qbs3ruleadder",
                 "id": "createurReglesChampsAR",
                 "style": [
                     "{float: left}"
@@ -46,7 +53,14 @@
                 "store": "champsTCARStore",
                 "valueField": "valeur"
             },
-            "designerId": "ba90af8e-da88-412f-90da-dc228f2d83ac"
+            "designerId": "ba90af8e-da88-412f-90da-dc228f2d83ac",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -56,6 +70,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "qbs3auxbtn",
                 "id": "boutonCreateurReglesChampsAR",
                 "style": [
                     "{float:right}"
@@ -63,7 +78,14 @@
                 "iconCls": "add",
                 "text": ""
             },
-            "designerId": "5ec6f01a-429c-44ec-9785-36bae678bc63"
+            "designerId": "5ec6f01a-429c-44ec-9785-36bae678bc63",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

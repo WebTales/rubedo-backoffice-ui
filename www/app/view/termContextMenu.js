@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.termContextMenu', {
             items: [
                 {
                     xtype: 'textfield',
+                    localiserId: 'termField',
                     id: 'nouveauTermeTaxoField',
                     fieldLabel: 'Terme ',
                     labelWidth: 50,
@@ -34,6 +35,7 @@ Ext.define('Rubedo.view.termContextMenu', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'addBtn',
                     id: 'boutonAjouterTermesTaxo',
                     icon: '',
                     iconCls: 'add',
@@ -41,6 +43,7 @@ Ext.define('Rubedo.view.termContextMenu', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'removeBtn',
                     id: 'boutonSupprimerTermesTaxo',
                     iconCls: 'close',
                     text: 'Supprimer'

@@ -24,10 +24,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "hcmodeFieldset",
                 "padding": 10,
                 "title": "Mode contraste élevé"
             },
             "designerId": "ff710c4d-105f-4dfc-8df7-9ee042bccbaa",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.button.Button",
@@ -38,10 +46,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "hcmodeActivateBtn",
                         "id": "highContrastButton",
                         "text": "Activer"
                     },
-                    "designerId": "e1f91b5b-7cc6-4167-92a0-9149123ffb5f"
+                    "designerId": "e1f91b5b-7cc6-4167-92a0-9149123ffb5f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

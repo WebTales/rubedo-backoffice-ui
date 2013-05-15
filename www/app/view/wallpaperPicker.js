@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.wallpaperPicker', {
                 {
                     xtype: 'button',
                     anchor: '100%',
+                    localiserId: 'wallpapaerPickerBtn',
                     id: 'wallpaperPickerButton',
                     margin: '10 0 0 0',
                     text: 'Choisir en tant que nouveau fond d\'écran'

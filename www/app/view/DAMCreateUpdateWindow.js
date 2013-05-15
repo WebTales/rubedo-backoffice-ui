@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
         'Ext.ux.TreePicker'
     ],
 
+    localiserId: 'newDamWindow',
     height: 400,
     id: 'DAMCreateUpdateWindow',
     minHeight: 220,

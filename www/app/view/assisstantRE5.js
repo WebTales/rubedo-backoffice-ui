@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
     alias: 'widget.assisstantRE5',
 
     etape: '4',
+    localiserId: 'qbs4',
     id: 'assisstantRE5',
     autoScroll: true,
     bodyPadding: 10,
@@ -31,6 +32,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
                 {
                     xtype: 'combobox',
                     anchor: '90%',
+                    localiserId: 'qbs4sortBtn',
                     id: 'createurTrisChampsAR',
                     style: '{float: left}',
                     fieldLabel: 'Ajouter un tri sur ',
@@ -45,6 +47,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'qbs4auxbtn',
                     id: 'boutonCreateurTrisChampsAR',
                     style: '{float:right}',
                     iconCls: 'add',

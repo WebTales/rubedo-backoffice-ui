@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "desktopCustomizeWindow",
         "height": 450,
         "id": "DesktopCustomizeWindow",
         "width": 600,
@@ -22,6 +23,13 @@
         "minimizable": true
     },
     "designerId": "021dc961-e2fd-4e63-afd9-8829737e3813",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.container.Container",
@@ -45,6 +53,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "managesStore": true,
+                        "localiserId": "wallpaperGrid",
                         "id": "wallpaperGrid",
                         "collapsed": false,
                         "title": "Fond d'écran",
@@ -58,6 +67,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "managesStore",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -79,11 +93,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "nameCol",
                                 "dataIndex": "name",
                                 "text": "Nom",
                                 "flex": 1
                             },
-                            "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd"
+                            "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -96,6 +118,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "managesStore": true,
+                        "localiserId": "themeGrid",
                         "id": "themeGrid",
                         "collapsed": true,
                         "title": "Thèmes",
@@ -109,6 +132,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "managesStore",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -130,11 +158,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "nameCol",
                                 "dataIndex": "name",
                                 "text": "Nom",
                                 "flex": 1
                             },
-                            "designerId": "29e86ca0-e02b-4343-9670-5da548459531"
+                            "designerId": "29e86ca0-e02b-4343-9670-5da548459531",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -146,10 +182,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "accessibilityPanel",
                         "id": "accessibilityOptionsPanel",
                         "title": "Accessibilité"
                     },
-                    "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f"
+                    "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },

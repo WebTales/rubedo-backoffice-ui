@@ -125,10 +125,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "termsCol",
                 "dataIndex": "text",
                 "text": "Termes"
             },
             "designerId": "fb2e8d1b-8817-43dc-b288-b5a97300ec7c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -162,7 +170,7 @@
                         ],
                         "implHandler": [
                             "if (record.isRoot()){\r",
-                            "    return(\"<i style=\\\"color:#777;\\\">Racine</i>\");\r",
+                            "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                             "}\r",
                             "else if ((record.get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.taxonomyTerms\"])) {\r",
                             "    record.data.allowDrop=false;\r",

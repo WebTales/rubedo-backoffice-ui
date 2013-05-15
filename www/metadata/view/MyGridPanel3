@@ -31,10 +31,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "versionCol",
                 "dataIndex": "text",
                 "text": "Version"
             },
-            "designerId": "541b6899-09a8-4e4f-9cfa-021638da40ab"
+            "designerId": "541b6899-09a8-4e4f-9cfa-021638da40ab",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -44,10 +52,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "statusCol",
                 "dataIndex": "status",
                 "text": "Etat"
             },
-            "designerId": "24b88560-e1e7-4e71-a71c-814635132305"
+            "designerId": "24b88560-e1e7-4e71-a71c-814635132305",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Date",
@@ -57,10 +73,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "dateCol",
                 "dataIndex": "date",
                 "text": "Date"
             },
-            "designerId": "d7c8bf6e-5a20-4874-a7e2-8558ea4a82ee"
+            "designerId": "d7c8bf6e-5a20-4874-a7e2-8558ea4a82ee",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.grid.column.Column",
@@ -70,10 +94,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "authorCol",
                 "dataIndex": "auteur",
                 "text": "Auteur"
             },
-            "designerId": "3606d661-4716-4eb3-b810-57eb507c0e8f"
+            "designerId": "3606d661-4716-4eb3-b810-57eb507c0e8f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

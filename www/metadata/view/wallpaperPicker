@@ -40,11 +40,19 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
+                "localiserId": "wallpapaerPickerBtn",
                 "id": "wallpaperPickerButton",
                 "margin": "10 0 0 0",
                 "text": "Choisir en tant que nouveau fond d'écran"
             },
-            "designerId": "8b24cae6-3889-40b1-a0a6-47e22c48e495"
+            "designerId": "8b24cae6-3889-40b1-a0a6-47e22c48e495",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

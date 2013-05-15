@@ -232,7 +232,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             CRMustHaveOnlyOneLocFieldError:"Le type de contenu ne doit avoir qu'un seul champ de type \"Localisation\"",
             notMentionedText:"non renseigné",
             showOnlyIfText:"Affiché si et seulement si",
-            orText:"Ou"
+            orText:"Ou",
+            rootText:"Racine"
 
         });
         // attach event and load localisation store

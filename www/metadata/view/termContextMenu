@@ -22,6 +22,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "termField",
                 "id": "nouveauTermeTaxoField",
                 "fieldLabel": "Terme ",
                 "labelSeparator": null,
@@ -29,7 +30,14 @@
                 "allowBlank": false,
                 "vtype": null
             },
-            "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98"
+            "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -39,12 +47,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "addBtn",
                 "id": "boutonAjouterTermesTaxo",
                 "icon": "",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
-            "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b"
+            "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -54,12 +70,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "removeBtn",
                 "id": "boutonSupprimerTermesTaxo",
                 "icon": null,
                 "iconCls": "close",
                 "text": "Supprimer"
             },
-            "designerId": "ca16c6a2-921d-49a2-90ce-d1d7c384c787"
+            "designerId": "ca16c6a2-921d-49a2-90ce-d1d7c384c787",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

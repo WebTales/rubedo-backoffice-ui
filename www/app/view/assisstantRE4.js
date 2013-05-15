@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
     alias: 'widget.assisstantRE4',
 
     etape: '3',
+    localiserId: 'qbs3',
     id: 'assisstantRE4',
     autoScroll: true,
     bodyPadding: 10,
@@ -31,6 +32,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
                 {
                     xtype: 'combobox',
                     anchor: '90%',
+                    localiserId: 'qbs3ruleadder',
                     id: 'createurReglesChampsAR',
                     style: '{float: left}',
                     fieldLabel: 'Ajouter une régle sur ',
@@ -45,6 +47,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'qbs3auxbtn',
                     id: 'boutonCreateurReglesChampsAR',
                     style: '{float:right}',
                     iconCls: 'add',

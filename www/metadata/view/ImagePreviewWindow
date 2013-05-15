@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "imagePreviewWindow",
         "height": null,
         "id": null,
         "maxHeight": null,
@@ -26,6 +27,13 @@
         "modal": true
     },
     "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.Img",

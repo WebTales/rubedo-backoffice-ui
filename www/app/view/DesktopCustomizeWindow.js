@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
         'Rubedo.view.wallpaperPicker'
     ],
 
+    localiserId: 'desktopCustomizeWindow',
     height: 450,
     id: 'DesktopCustomizeWindow',
     width: 600,
@@ -49,6 +50,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                         {
                             xtype: 'gridpanel',
                             managesStore: true,
+                            localiserId: 'wallpaperGrid',
                             id: 'wallpaperGrid',
                             collapsed: false,
                             title: 'Fond d\'écran',
@@ -56,6 +58,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'nameCol',
                                     dataIndex: 'name',
                                     text: 'Nom',
                                     flex: 1
@@ -65,6 +68,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                         {
                             xtype: 'gridpanel',
                             managesStore: true,
+                            localiserId: 'themeGrid',
                             id: 'themeGrid',
                             collapsed: true,
                             title: 'Thèmes',
@@ -72,6 +76,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'nameCol',
                                     dataIndex: 'name',
                                     text: 'Nom',
                                     flex: 1
@@ -80,6 +85,7 @@ Ext.define('Rubedo.view.DesktopCustomizeWindow', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'accessibilityPanel',
                             id: 'accessibilityOptionsPanel',
                             title: 'Accessibilité'
                         }
