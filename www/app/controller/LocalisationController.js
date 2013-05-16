@@ -408,6 +408,20 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     console.log("RubedoAutomatedElementsLoc singleton could not be localized for the current language");
                 }
             });
+            Ext.Ajax.request({
+                url: 'resources/localisationfiles/'+userLanguage+'/fieldTypes.json',
+                params: {
+
+                },
+                success: function(response){
+                    var singletonUpdates = Ext.JSON.decode(response.responseText);
+                    Ext.getStore("TypesChampsDataStore").removeAll();
+                    Ext.getStore("TypesChampsDataStore").loadData(singletonUpdates);
+                },
+                failure:function(){
+                    console.log("FieldTypes store could not be localized for the current language");
+                }
+            });
         }
 
 
