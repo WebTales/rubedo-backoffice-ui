@@ -44,11 +44,29 @@ Ext.define('Rubedo.view.DCEField', {
                 myComponent.getComponent("chooseBtn").show();
                 myComponent.getComponent("editBtn").hide();
                 myComponent.getComponent("removeBtn").hide();
+                myComponent.getComponent("contentTitleBtn").hide();
             } else {
                 myComponent.getComponent("addBtn").hide();
-                myComponent.getComponent("chooseBtn").hide();
+                myComponent.getComponent("chooseBtn").show();
                 myComponent.getComponent("editBtn").show();
                 myComponent.getComponent("removeBtn").show();
+                Ext.Ajax.request({
+                    url: 'contents/find-one',
+                    params: {
+                        id: newValue
+                    },
+                    success: function(response){
+                        var answer = Ext.JSON.decode(response.responseText);
+                        myComponent.getComponent("contentTitleBtn").setText(answer.data.text);
+                        myComponent.getComponent("contentTitleBtn").show();
+                    },
+                    failure:function(){
+                        console.log("failed to get content title");
+                    }
+                });
+
+
+
             }
             if ((component.chooseOnly)||(Ext.isEmpty(component.allowedCT))){
                 myComponent.getComponent("addBtn").hide();

@@ -25,6 +25,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
+                "itemId": "contentTitleBtn",
+                "margin": "0 10 0 0",
+                "style": "{cursor:default !important;}",
+                "allowDepress": false,
+                "enableToggle": true,
+                "handleMouseEvents": false,
+                "pressed": true,
+                "text": ""
+            },
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "b9a7a817-b72a-401f-94ab-c9720d55bd79"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "localiserId": "addBtn",
                 "itemId": "addBtn",
                 "margin": "0 10 0 0",

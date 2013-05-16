@@ -30,6 +30,18 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
             items: [
                 {
                     xtype: 'button',
+                    disabled: true,
+                    itemId: 'contentTitleBtn',
+                    margin: '0 10 0 0',
+                    style: '{cursor:default !important;}',
+                    allowDepress: false,
+                    enableToggle: true,
+                    handleMouseEvents: false,
+                    pressed: true,
+                    text: ''
+                },
+                {
+                    xtype: 'button',
                     localiserId: 'addBtn',
                     itemId: 'addBtn',
                     margin: '0 10 0 0',
