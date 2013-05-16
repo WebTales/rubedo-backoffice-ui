@@ -123,8 +123,8 @@
                     "store.load();\r",
                     "\r",
                     "var boiteMeta = Ext.getCmp(\"adminFTaxonomie\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
-                    "customMeta=record.get(\"name\")+\"</br> Creation : \"+Ext.Date.format(record.get(\"createTime\"), \"d-m-y\")+\r",
-                    "\" Dernière modification : \"+Ext.Date.format(record.get(\"lastUpdateTime\"), \"d-m-y\")+\" Auteur : \"+record.get(\"createUser\").fullName;\r",
+                    "customMeta=record.get(\"name\")+\"</br> \"+Rubedo.RubedoAutomatedElementsLoc.createText+\" : \"+Ext.Date.format(record.get(\"createTime\"), \"d-m-y\")+\r",
+                    "\" \"+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+\" : \"+Ext.Date.format(record.get(\"lastUpdateTime\"), \"d-m-y\")+\" \"+Rubedo.RubedoAutomatedElementsLoc.authorText+\" : \"+record.get(\"createUser\").fullName;\r",
                     "boiteMeta.update(customMeta);"
                 ],
                 "name": "select",

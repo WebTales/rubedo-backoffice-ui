@@ -57,46 +57,25 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     text: 'Titre',
                     flex: 1
                 },
-                {
+                me.processEtat({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (value=="published") {
-                            return("publié");
+                            return(Rubedo.RubedoAutomatedElementsLoc.publishedText);
                         } else if (value=="pending") {
-                            return("en attente de validation");
+                            return(Rubedo.RubedoAutomatedElementsLoc.pendingText);
                         } else if (value=="draft") {
-                            return("brouillon");
+                            return(Rubedo.RubedoAutomatedElementsLoc.draftText);
                         } else if (value=="refused") {
-                            return("refusé");
+                            return(Rubedo.RubedoAutomatedElementsLoc.refusedText);
                         }
-                    },
-                    filter: {
-                        type: 'combo',
-                        store: [
-                            [
-                                'draft',
-                                'brouillon'
-                            ],
-                            [
-                                'pending',
-                                'en attente de validation'
-                            ],
-                            [
-                                'published',
-                                'publié'
-                            ],
-                            [
-                                'refused',
-                                'refusé'
-                            ]
-                        ]
                     },
                     localiserId: 'stateColumn',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
-                },
-                {
+                }),
+                me.processEnligne({
                     xtype: 'booleancolumn',
                     filter: {
                         type: 'combo',
@@ -114,10 +93,8 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     localiserId: 'onlineColumn',
                     width: 60,
                     dataIndex: 'online',
-                    text: 'En ligne',
-                    falseText: 'Non',
-                    trueText: 'Oui'
-                }
+                    text: 'En ligne'
+                })
             ],
             selModel: Ext.create('Ext.selection.CheckboxModel', {
 
@@ -141,6 +118,38 @@ Ext.define('Rubedo.view.menuContenusContext', {
         });
 
         me.callParent(arguments);
+    },
+
+    processEtat: function(config) {
+        config.filter={
+            type:"combo",
+            store: [
+            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+            ]
+        };
+        return config;
+    },
+
+    processEnligne: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        config.filter={
+            type: 'combo',
+            store: [
+            [
+            true,
+            Rubedo.RubedoAutomatedElementsLoc.yesText
+            ],
+            [
+            false,
+            Rubedo.RubedoAutomatedElementsLoc.noText
+            ]
+            ]
+        };
+        return config;
     }
 
 });

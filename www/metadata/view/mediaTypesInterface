@@ -806,6 +806,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "fe999633-dd94-47df-b93a-6f7eacf3c72b"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "7c18c286-f8ed-4380-9c05-527b87628f37"
                         }
                     ]
                 }

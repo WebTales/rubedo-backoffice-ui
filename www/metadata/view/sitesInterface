@@ -50,8 +50,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "sitesLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "referencement_icon",
                         "text": "Sites"
@@ -1102,6 +1102,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "81960d12-b108-4a15-9c88-5749ff0e6d64"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "03492ee7-3ef5-40f7-94d9-764fb22b2312"
                         }
                     ]
                 }

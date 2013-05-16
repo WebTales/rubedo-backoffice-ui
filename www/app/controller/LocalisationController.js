@@ -238,7 +238,18 @@ Ext.define('Rubedo.controller.LocalisationController', {
             defaultKeywordsText:"Mots-clés par défaut",
             defaultSinglePageText:"Page de détail par défaut",
             homePageText:"Page d'accueil",
-            rolesText:"Rôles"
+            rolesText:"Rôles",
+            authorText:"Auteur",
+            versionText:"Version",
+            contentsText:"Contenus",
+            displayText:"Afficher",
+            publishedText:"publié",
+            pendingText:"en attente de validation",
+            draftText:"brouillon",
+            refusedText:"refusé",
+            yesText:"Oui",
+            noText:"Non",
+            mediasText:"médias"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

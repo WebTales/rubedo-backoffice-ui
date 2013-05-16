@@ -82,8 +82,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "masksLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "masque-icon",
                         "text": "Masques de page "
@@ -177,6 +177,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "9cfc629f-2b1c-4993-b83f-dcc12aba6b37"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "4ed2b279-8514-4930-a451-fd318586a7b7"
                         }
                     ]
                 },

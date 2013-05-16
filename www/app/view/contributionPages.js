@@ -249,7 +249,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                 }
                             }
                         },
-                        {
+                        me.processBoiteBarreMeta({
                             xtype: 'container',
                             flex: 2,
                             itemId: 'boiteBarreMeta',
@@ -257,7 +257,7 @@ Ext.define('Rubedo.view.contributionPages', {
                             tpl: [
                                 '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}'
                             ]
-                        },
+                        }),
                         {
                             xtype: 'tbfill'
                         },
@@ -595,6 +595,13 @@ Ext.define('Rubedo.view.contributionPages', {
         });
 
         me.callParent(arguments);
+    },
+
+    processBoiteBarreMeta: function(config) {
+        config.tpl=[
+        '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
+        ];
+        return config;
     },
 
     onPageSaveBtnAfterRender: function(component, eOpts) {

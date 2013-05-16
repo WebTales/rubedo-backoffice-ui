@@ -105,17 +105,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": [
-                    "{\r",
-                    "    type:\"combo\",\r",
-                    "    store: [\r",
-                    "                [\"draft\", \"brouillon\"],\r",
-                    "                [\"pending\", \"en attente de validation\"],\r",
-                    "                [\"published\", \"publié\"],\r",
-                    "        \t\t[\"refused\", \"refusé\"]\r",
-                    "            ]\r",
-                    "}"
-                ],
                 "localiserId": "stateColumn",
                 "dataIndex": "status",
                 "text": "Etat",
@@ -158,17 +147,44 @@
                         ],
                         "implHandler": [
                             "if (value==\"published\") {\r",
-                            "    return(\"publié\");\r",
+                            "    return(Rubedo.RubedoAutomatedElementsLoc.publishedText);\r",
                             "} else if (value==\"pending\") {\r",
-                            "    return(\"en attente de validation\");\r",
+                            "    return(Rubedo.RubedoAutomatedElementsLoc.pendingText);\r",
                             "} else if (value==\"draft\") {\r",
-                            "    return(\"brouillon\");\r",
+                            "    return(Rubedo.RubedoAutomatedElementsLoc.draftText);\r",
                             "} else if (value==\"refused\") {\r",
-                            "    return(\"refusé\");\r",
+                            "    return(Rubedo.RubedoAutomatedElementsLoc.refusedText);\r",
                             "}"
                         ]
                     },
                     "designerId": "7453c21b-fba4-49f2-b1e1-174ac3866a0c"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processEtat",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.filter={\r",
+                            "    type:\"combo\",\r",
+                            "    store: [\r",
+                            "                [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                            "                [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                            "                [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                            "        \t\t[\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                            "            ]\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "68445c63-62ce-4bbc-9fc1-134083536097"
                 }
             ]
         },
@@ -193,8 +209,8 @@
                 "width": 60,
                 "dataIndex": "online",
                 "text": "En ligne",
-                "falseText": "Non",
-                "trueText": "Oui"
+                "falseText": null,
+                "trueText": null
             },
             "configAlternates": {
                 "filter": "object"
@@ -210,6 +226,41 @@
                     "group": "(Custom Properties)",
                     "name": "localiserId",
                     "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processEnligne",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                            "config.filter={\r",
+                            "                        type: 'combo',\r",
+                            "                        store: [\r",
+                            "                            [\r",
+                            "                                true,\r",
+                            "                                Rubedo.RubedoAutomatedElementsLoc.yesText\r",
+                            "                            ],\r",
+                            "                            [\r",
+                            "                                false,\r",
+                            "                                Rubedo.RubedoAutomatedElementsLoc.noText\r",
+                            "                            ]\r",
+                            "                        ]\r",
+                            "                    };\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "e10e6580-e25f-40d9-8025-ecd34a17e7ad"
                 }
             ]
         },

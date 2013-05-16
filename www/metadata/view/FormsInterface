@@ -76,8 +76,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "formsLaunchBtn",
+                        "layout|flex": null,
                         "iconCls": "form_small",
                         "text": "Questionnaires"
                     },
@@ -642,6 +642,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "e925880c-7f14-43fd-9412-f6947641362f"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "95cd4060-5df6-461f-9a4b-ec3ebe42a59b"
                         }
                     ]
                 }

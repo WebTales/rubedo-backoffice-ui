@@ -271,7 +271,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 Ext.getCmp("boutonSupprimerContenu").enable();
             }else if (ACL.interfaceRights["read.ui.contents."+selected[0].get("status")]){
                 Ext.getCmp("boutonModifierContenu").enable();
-                Ext.getCmp("boutonModifierContenu").setText('Afficher');
+                Ext.getCmp("boutonModifierContenu").setText(Rubedo.RubedoAutomatedElementsLoc.displayText);
                 Ext.getCmp("boutonModifierContenu").enable();
                 Ext.getCmp("boutonSupprimerContenu").disable();        
             } else {
@@ -281,8 +281,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
             Ext.getCmp("contribWorkflowBox").enable();
             Ext.Array.forEach(Ext.getCmp("contribWorkflowBox").items.items, function(item){item.enable();});    
-            customMeta=selected[0].get("text")+"</br> Creation : "+Ext.Date.format(selected[0].get("createTime"), "d-m-y")+
-            " Dernière modification : "+Ext.Date.format(selected[0].get("lastUpdateTime"), "d-m-y")+" Auteur : "+selected[0].get("createUser").fullName;
+            customMeta=selected[0].get("text")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.creationText+" : "+Ext.Date.format(selected[0].get("createTime"), "d-m-y")+
+            " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(selected[0].get("lastUpdateTime"), "d-m-y")+" "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : "+selected[0].get("createUser").fullName;
             boiteMeta.update(customMeta);
             if (selected[0].get("online")) {
                 Ext.getCmp("contentOnlineBtn").disable();
@@ -369,7 +369,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         Ext.getCmp("contentRefuseBtn").disable();
                     }
                 }
-                customMeta=selected.length+" Contenus";
+                customMeta=selected.length+" "+Rubedo.RubedoAutomatedElementsLoc.contentsText;
                 if (RO==true){
                     Ext.getCmp("contribWorkflowBox").disable();
                     Ext.getCmp("boutonModifierContenu").disable();

@@ -88,8 +88,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "pagesLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "masque-icon",
                         "text": "Pages"
@@ -1493,6 +1493,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "a0708fd5-5b2f-4615-84c1-a0b9d53ddd4c"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "f580c338-0804-49ed-bb2e-23d6d80b565e"
                         }
                     ]
                 },

@@ -85,8 +85,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "contentTypesLaunchBtn",
+                        "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "content-icon",
                         "text": "Types de contenus"
@@ -179,6 +179,27 @@
                                 "designer|displayName": "tpl"
                             },
                             "designerId": "2b705087-8964-4414-9907-3e2e7d5d21ae"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "                            ];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "635caacb-67eb-4329-bac2-dce92ee37176"
                         }
                     ]
                 }
@@ -1127,8 +1148,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "propertiesPanel",
+                                "layout|flex": null,
                                 "frame": true,
                                 "id": "PaneauConfigChamps",
                                 "style": null,

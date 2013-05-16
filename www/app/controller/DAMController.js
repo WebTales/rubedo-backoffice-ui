@@ -56,14 +56,14 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
 
         } else if (selected.length==1) {
-            var customMeta = "<b> "+selected[0].get("text")+"</b></br><b> Dernière modification : </b>"+Ext.Date.format(selected[0].get("lastUpdateTime"), 'd-m-Y')+"<b> Auteur : </b>"+selected[0].get("author");
+            var customMeta = "<b> "+selected[0].get("text")+"</b></br><b> "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : </b>"+Ext.Date.format(selected[0].get("lastUpdateTime"), 'd-m-Y')+"<b> "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : </b>"+selected[0].get("author");
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMPPBtnGroup").enable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc("dam/get-thumbnail?id="+selected[0].get("id"));
         } else {
             Ext.getCmp("DAMUpdateBtn").disable();
-            var customMeta = "<b> "+selected.length+" médias"+ "</b>";
+            var customMeta = "<b> "+selected.length+" "+Rubedo.RubedoAutomatedElementsLoc.mediasText+" "+ "</b>";
             Ext.getCmp("DAMPPBtnGroup").disable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
