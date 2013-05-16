@@ -644,7 +644,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 {valeur: 'all', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllText},
                                 {valeur: 'allRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleAllRecText},
                                 {valeur: 'some', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeText},
-                                {valeur: 'someRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeRecText},
+                                {valeur: 'someRec', nom :Rubedo.RubedoAutomatedElementsLoc.tRuleSomeREcText},
                                 {valeur: 'not', nom : Rubedo.RubedoAutomatedElementsLoc.tRuleNotText},
                                 {valeur: 'notRec', nom : Rubedo.RubedoAutomatedElementsLoc.tRuleNotRecText}
                                 ]

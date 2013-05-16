@@ -31,8 +31,8 @@ Ext.define('Rubedo.view.assisstantRE4', {
             items: [
                 {
                     xtype: 'combobox',
-                    anchor: '90%',
                     localiserId: 'qbs3ruleadder',
+                    anchor: '90%',
                     id: 'createurReglesChampsAR',
                     style: '{float: left}',
                     fieldLabel: 'Ajouter une régle sur ',
