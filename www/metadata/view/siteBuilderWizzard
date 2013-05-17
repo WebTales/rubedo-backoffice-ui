@@ -74,13 +74,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "createEmptySiteField",
+                                "layout|anchor": "100%",
                                 "id": "useEmptySiteField",
-                                "fieldLabel": "Créer un site vide",
+                                "fieldLabel": null,
                                 "labelWidth": 110,
                                 "name": "builtOnEmptySite",
-                                "boxLabel": "",
+                                "boxLabel": "Créer un site vide",
                                 "checked": true,
                                 "inputValue": "true"
                             },
@@ -146,12 +146,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "createSiteFromModelField",
-                                "fieldLabel": "Créer un site en utilisant un site existant comme modèle",
+                                "layout|anchor": "100%",
+                                "fieldLabel": null,
                                 "labelWidth": 320,
                                 "name": "builtOnEmptySite",
-                                "boxLabel": "",
+                                "boxLabel": "Créer un site en utilisant un site existant comme modèle",
                                 "inputValue": "false"
                             },
                             "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da",
@@ -186,8 +186,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
                                         "localiserId": "siteMoelField",
+                                        "layout|anchor": "100%",
                                         "id": "modelSiteIdField",
                                         "fieldLabel": "Site modèle",
                                         "name": "builtOnModelSiteId",

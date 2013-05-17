@@ -56,7 +56,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
                         {
                             xtype: 'button',
                             localiserId: 'prevBtn',
-                            hidden: true,
+                            disabled: true,
                             id: 'boutonPrevRequeteur',
                             iconCls: 'arrow_left',
                             text: 'Précédent'

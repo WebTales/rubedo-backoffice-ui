@@ -87,15 +87,15 @@ Ext.define('Rubedo.view.MyToolbar56', {
         var active = this.up().getLayout().getActiveItem();
         var activeIndex = this.up().items.items.indexOf(active);
         if (activeIndex===0){
-            this.getComponent("wizPrev").hide();
+            this.getComponent("wizPrev").disable();
         } else {
-            this.getComponent("wizPrev").show();
+            this.getComponent("wizPrev").enable();
         }
 
         if (activeIndex==all-1){
-            this.getComponent("wizNext").hide();
+            this.getComponent("wizNext").disable();
         } else {
-            this.getComponent("wizNext").show();
+            this.getComponent("wizNext").enable();
         }
         this.getComponent("wizProgress").updateProgress((activeIndex+1)/all,Rubedo.RubedoAutomatedElementsLoc.stageText+" "+(activeIndex+1)+" "+Rubedo.RubedoAutomatedElementsLoc.onText+" "+all);
     }

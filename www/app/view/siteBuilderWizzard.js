@@ -57,13 +57,12 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                             items: [
                                 {
                                     xtype: 'radiofield',
-                                    anchor: '100%',
                                     localiserId: 'createEmptySiteField',
+                                    anchor: '100%',
                                     id: 'useEmptySiteField',
-                                    fieldLabel: 'Créer un site vide',
                                     labelWidth: 110,
                                     name: 'builtOnEmptySite',
-                                    boxLabel: '',
+                                    boxLabel: 'Créer un site vide',
                                     checked: true,
                                     inputValue: 'true',
                                     listeners: {
@@ -79,12 +78,11 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 },
                                 {
                                     xtype: 'radiofield',
-                                    anchor: '100%',
                                     localiserId: 'createSiteFromModelField',
-                                    fieldLabel: 'Créer un site en utilisant un site existant comme modèle',
+                                    anchor: '100%',
                                     labelWidth: 320,
                                     name: 'builtOnEmptySite',
-                                    boxLabel: '',
+                                    boxLabel: 'Créer un site en utilisant un site existant comme modèle',
                                     inputValue: 'false'
                                 },
                                 {
@@ -95,8 +93,8 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     items: [
                                         {
                                             xtype: 'combobox',
-                                            anchor: '100%',
                                             localiserId: 'siteMoelField',
+                                            anchor: '100%',
                                             id: 'modelSiteIdField',
                                             fieldLabel: 'Site modèle',
                                             name: 'builtOnModelSiteId',

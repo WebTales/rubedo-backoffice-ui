@@ -75,9 +75,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "prevBtn",
-                        "hidden": true,
+                        "layout|flex": null,
+                        "disabled": true,
                         "id": "boutonPrevRequeteur",
                         "iconCls": "arrow_left",
                         "text": "Précédent"
@@ -99,8 +99,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "nextBtn",
+                        "layout|flex": null,
                         "id": "boutonNextRequeteur",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",

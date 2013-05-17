@@ -53,8 +53,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
             var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
             var suivET= Ext.getCmp('assistantRequetage').getLayout().getNext().etape;
-            if (suivET==tousET) { Ext.getCmp('boutonNextRequeteur').hide();}
-            else if (suivET==2) { Ext.getCmp('boutonPrevRequeteur').show();}
+            if (suivET==tousET) { Ext.getCmp('boutonNextRequeteur').disable();}
+            else if (suivET==2) { Ext.getCmp('boutonPrevRequeteur').enable();}
             if (Ext.isDefined(suivET)) {
                 button.up().up().getLayout().next();
 
@@ -67,8 +67,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     precedent: function(button, e, eOpts) {
         var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;
         var suivET= Ext.getCmp('assistantRequetage').getLayout().getPrev().etape;
-        if (suivET==tousET-1) { Ext.getCmp('boutonNextRequeteur').show();}
-        else if (suivET==1) { Ext.getCmp('boutonPrevRequeteur').hide();}
+        if (suivET==tousET-1) { Ext.getCmp('boutonNextRequeteur').enable();}
+        else if (suivET==1) { Ext.getCmp('boutonPrevRequeteur').disable();}
         if (Ext.isDefined(suivET)) {
             button.up().up().getLayout().prev();
             Ext.getCmp('progressAR').updateProgress(suivET/tousET, Rubedo.RubedoAutomatedElementsLoc.stageText+" "+suivET+" "+Rubedo.RubedoAutomatedElementsLoc.onText+" "+tousET);
