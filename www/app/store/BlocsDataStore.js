@@ -2437,6 +2437,27 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                                 fieldLabel: 'Nom du formulaire',
                                                 name: 'formName'
                                             }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Sujet de l\'e-mail',
+                                                name: 'subject'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'De la part de',
+                                                name: 'from'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Personnes en copie',
+                                                name: 'cc'
+                                            }
                                         }
                                     ]
                                 }
