@@ -45,7 +45,7 @@ Ext.define('Rubedo.view.userSettings', {
                         {
                             xtype: 'form',
                             id: 'userInfoDisplay',
-                            autoScroll: true,
+                            overflowY: 'auto',
                             layout: {
                                 type: 'hbox'
                             },
