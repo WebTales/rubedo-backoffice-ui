@@ -60,9 +60,9 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     localiserId: 'createEmptySiteField',
                                     anchor: '100%',
                                     id: 'useEmptySiteField',
+                                    fieldLabel: 'Créer un site vide',
                                     labelWidth: 110,
                                     name: 'builtOnEmptySite',
-                                    boxLabel: 'Créer un site vide',
                                     checked: true,
                                     inputValue: 'true',
                                     listeners: {
@@ -80,9 +80,9 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     xtype: 'radiofield',
                                     localiserId: 'createSiteFromModelField',
                                     anchor: '100%',
+                                    fieldLabel: 'Créer un site en utilisant un site existant comme modèle',
                                     labelWidth: 320,
                                     name: 'builtOnEmptySite',
-                                    boxLabel: 'Créer un site en utilisant un site existant comme modèle',
                                     inputValue: 'false'
                                 },
                                 {
