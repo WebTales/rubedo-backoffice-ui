@@ -164,14 +164,10 @@ Ext.define('Rubedo.view.monitoringTools', {
                                                 answerMe.show();
                                                 button.setLoading(false);
                                             },
-                                            failure: function(form, action) {
-                                                switch (action.failureType) {
-                                                    case Ext.form.action.Action.CONNECT_FAILURE:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                    break;
-                                                    case Ext.form.action.Action.SERVER_INVALID:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                }
+                                            failure: function(response) {
+                                                button.setLoading(false);
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);
+
                                             }
                                         });
                                     },
@@ -197,14 +193,9 @@ Ext.define('Rubedo.view.monitoringTools', {
                                                 answerMe.show();
                                                 button.setLoading(false);
                                             },
-                                            failure: function(form, action) {
-                                                switch (action.failureType) {
-                                                    case Ext.form.action.Action.CONNECT_FAILURE:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                    break;
-                                                    case Ext.form.action.Action.SERVER_INVALID:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                }
+                                            failure: function(response) {
+                                                button.setLoading(false);
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);
                                             }
                                         });
                                     },
@@ -230,14 +221,9 @@ Ext.define('Rubedo.view.monitoringTools', {
                                                 answerMe.show();
                                                 button.setLoading(false);
                                             },
-                                            failure: function(form, action) {
-                                                switch (action.failureType) {
-                                                    case Ext.form.action.Action.CONNECT_FAILURE:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                                                    break;
-                                                    case Ext.form.action.Action.SERVER_INVALID:
-                                                    Ext.Msg.alert('Erreur', 'Erreur Serveur');
-                                                }
+                                            failure: function(response) {
+                                                button.setLoading(false);
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);
                                             }
                                         });
                                     },
