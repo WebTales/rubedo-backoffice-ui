@@ -25,11 +25,11 @@ Ext.define('Rubedo.store.languageStore', {
             data: [
                 {
                     language: 'Français',
-                    code: 'fre'
+                    code: 'fr'
                 },
                 {
                     language: 'English',
-                    code: 'eng'
+                    code: 'en'
                 }
             ],
             pageSize: 1000,

@@ -368,7 +368,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
     updateLocalisationSingletons: function() {
         //new method using simple JSON files
         var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
-        if ((!Ext.isEmpty(userLanguage))&&(userLanguage!="fre")){
+        if ((!Ext.isEmpty(userLanguage))&&(userLanguage!="fr")){
             Ext.Ajax.request({
                 url: 'resources/localisationfiles/'+userLanguage+'/appHelp.json',
                 params: {
