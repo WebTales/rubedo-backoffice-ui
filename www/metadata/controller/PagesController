@@ -650,7 +650,7 @@
                     "    }));\r",
                     "    configSpec.getComponent(0).add(Ext.widget('checkbox',{\r",
                     "        itemId:\"eTitleShowField\",\r",
-                    "        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showTitleText,\r",
+                    "        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayTitleText,\r",
                     "        onChange:function(){\r",
                     "\r",
                     "            component.displayTitle=this.getValue();\r",

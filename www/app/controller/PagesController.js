@@ -358,7 +358,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(0).add(Ext.widget('checkbox',{
                 itemId:"eTitleShowField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showTitleText,
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayTitleText,
                 onChange:function(){
 
                     component.displayTitle=this.getValue();
