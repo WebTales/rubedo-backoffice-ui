@@ -41,16 +41,16 @@ Ext.define('Rubedo.view.copierMasque', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'mdNewTitleField',
+                            anchor: '100%',
                             id: 'copierMasqueTitre',
                             fieldLabel: 'Nouveau titre ',
                             allowBlank: false
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'mdnewSiteField',
+                            anchor: '100%',
                             id: 'copierMasqueSite',
                             fieldLabel: 'Dans le site ',
                             allowBlank: false,
@@ -61,8 +61,8 @@ Ext.define('Rubedo.view.copierMasque', {
                         },
                         {
                             xtype: 'button',
-                            anchor: '1',
                             localiserId: 'mdSubmitBtn',
+                            anchor: '1',
                             id: 'copierMasque',
                             text: 'Dupliquer ce masque'
                         }

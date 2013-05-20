@@ -41,8 +41,8 @@ Ext.define('Rubedo.view.nouveauMasque', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'titleField',
+                            anchor: '100%',
                             id: 'nouveauMasqueTitre',
                             fieldLabel: 'Titre ',
                             value: 'Nouveau Masque',
@@ -50,8 +50,8 @@ Ext.define('Rubedo.view.nouveauMasque', {
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'nmSiteField',
+                            anchor: '100%',
                             id: 'nouveauMasqueSite',
                             fieldLabel: 'Site ',
                             allowBlank: false,
@@ -69,8 +69,8 @@ Ext.define('Rubedo.view.nouveauMasque', {
                         },
                         {
                             xtype: 'button',
-                            anchor: '1',
                             localiserId: 'createNewMaskBtn',
+                            anchor: '1',
                             id: 'creerNouveauMasque',
                             text: 'Créer un nouveau masque'
                         }

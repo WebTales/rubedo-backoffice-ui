@@ -1033,7 +1033,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             vertical:true,
             columns:1,
             items: [
-            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.phoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
             ]

@@ -1808,7 +1808,7 @@
                     "    vertical:true,\r",
                     "    columns:1,\r",
                     "    items: [\r",
-                    "    { boxLabel: Rubedo.RubedoAutomatedElementsLoc.phoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },\r",
+                    "    { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },\r",
                     "    { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},\r",
                     "    { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}\r",
                     "    ]\r",
