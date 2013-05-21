@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 29,
+        "height": 70,
         "padding": null,
-        "width": 455,
+        "width": 243,
         "designer|userClassName": "DCEFieldComponent",
         "designer|userAlias": "DCEFieldComponent",
         "fieldLabel": "Label",
@@ -27,7 +27,7 @@
             "userConfig": {
                 "disabled": true,
                 "itemId": "contentTitleBtn",
-                "margin": "0 10 0 0",
+                "margin": "10 10 0 0",
                 "style": "{cursor:default !important;}",
                 "allowDepress": false,
                 "enableToggle": true,
@@ -50,7 +50,7 @@
             "userConfig": {
                 "localiserId": "addBtn",
                 "itemId": "addBtn",
-                "margin": "0 10 0 0",
+                "margin": "10 10 0 0",
                 "iconCls": "add",
                 "text": "Ajouter"
             },
@@ -73,7 +73,7 @@
             "userConfig": {
                 "localiserId": "chooseBtn",
                 "itemId": "chooseBtn",
-                "margin": "0 10 0 0",
+                "margin": "10 10 0 0",
                 "iconCls": "search",
                 "text": "Choisir"
             },
@@ -96,7 +96,7 @@
             "userConfig": {
                 "localiserId": "modifyBtn",
                 "itemId": "editBtn",
-                "margin": "0 10 0 0",
+                "margin": "10 10 0 0",
                 "iconCls": "edit",
                 "text": "Modifier"
             },
@@ -119,6 +119,7 @@
             "userConfig": {
                 "localiserId": "removeBtn",
                 "itemId": "removeBtn",
+                "margin": "10 0 0 0",
                 "iconCls": "close",
                 "text": "Supprimer"
             },

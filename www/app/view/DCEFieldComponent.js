@@ -17,8 +17,8 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget.DCEFieldComponent',
 
-    height: 29,
-    width: 455,
+    height: 70,
+    width: 243,
     fieldLabel: 'Label',
     labelSeparator: ' ',
     labelWidth: 60,
@@ -32,7 +32,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     xtype: 'button',
                     disabled: true,
                     itemId: 'contentTitleBtn',
-                    margin: '0 10 0 0',
+                    margin: '10 10 0 0',
                     style: '{cursor:default !important;}',
                     allowDepress: false,
                     enableToggle: true,
@@ -44,7 +44,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     xtype: 'button',
                     localiserId: 'addBtn',
                     itemId: 'addBtn',
-                    margin: '0 10 0 0',
+                    margin: '10 10 0 0',
                     iconCls: 'add',
                     text: 'Ajouter'
                 },
@@ -52,7 +52,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     xtype: 'button',
                     localiserId: 'chooseBtn',
                     itemId: 'chooseBtn',
-                    margin: '0 10 0 0',
+                    margin: '10 10 0 0',
                     iconCls: 'search',
                     text: 'Choisir'
                 },
@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     xtype: 'button',
                     localiserId: 'modifyBtn',
                     itemId: 'editBtn',
-                    margin: '0 10 0 0',
+                    margin: '10 10 0 0',
                     iconCls: 'edit',
                     text: 'Modifier'
                 },
@@ -68,6 +68,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     xtype: 'button',
                     localiserId: 'removeBtn',
                     itemId: 'removeBtn',
+                    margin: '10 0 0 0',
                     iconCls: 'close',
                     text: 'Supprimer'
                 }
