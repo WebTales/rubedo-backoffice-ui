@@ -1713,7 +1713,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Niveau affiché',
+                                                fieldLabel: 'Niveaux dépliés',
                                                 name: 'displayLevel',
                                                 allowDecimals: false,
                                                 minValue: 1
