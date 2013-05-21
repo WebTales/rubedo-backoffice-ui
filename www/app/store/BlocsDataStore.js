@@ -1330,7 +1330,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         }
                                     ]
-                                },
+                                }/*,
                                 {
                                     categorie: 'Pagination',
                                     champs: [
@@ -1352,7 +1352,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         }
                                     ]
-                                }
+                                }*/
                             ],
                             avance: [
                                 {
