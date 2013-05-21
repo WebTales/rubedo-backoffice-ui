@@ -280,7 +280,9 @@ Ext.define('Rubedo.controller.PagesController', {
 
     insertBloc: function(button, e, eOpts) {
         var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
-        var nouvBloc = Ext.widget('unBloc', Ext.clone(donnees.configBasique));
+        var configurator = Ext.clone(donnees.configBasique);
+        delete configurator.champsConfig;
+        var nouvBloc = Ext.widget('unBloc', configurator);
         nouvBloc.responsive={
             "phone":true,
             "tablet":true,
@@ -504,8 +506,13 @@ Ext.define('Rubedo.controller.PagesController', {
                 checked:component.renderDiv
             }));
 
-            var categories = Ext.clone(component.champsConfig.simple);
-            var categoriesADV = Ext.clone(component.champsConfig.avance);
+            if (Ext.isEmpty(component.bType)){
+                var categories = Ext.clone(component.champsConfig.simple);
+                var categoriesADV = Ext.clone(component.champsConfig.avance);
+            } else {
+                var categories=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("configBasique").champsConfig.simple);
+                var categoriesADV=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("configBasique").champsConfig.avance);
+            }
 
             Ext.Array.forEach(categoriesADV,function(someCat){someCat.isAdv=true;});
             categories=Ext.Array.merge(categories,categoriesADV);

@@ -85,7 +85,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "blockConfigSimplePanel"
+                        "localiserId": "blockConfigAdvancedPanel"
                     },
                     "designerId": "6f4cbf89-715a-4de1-93b4-01918cdf6d22",
                     "customConfigs": [
@@ -97,6 +97,29 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormAfterRender",
+                "implHandler": [
+                    "try{\r",
+                    " component.getComponent(0).setTitle(Rubedo.RubedoInterfaceLoc['blockConfigSimplePanel'].title);\r",
+                    " component.getComponent(1).setTitle(Rubedo.RubedoInterfaceLoc['blockConfigAdvancedPanel'].title);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "} catch(err){}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "514808a9-400a-440d-988c-e924c76fae0a"
         }
     ]
 }

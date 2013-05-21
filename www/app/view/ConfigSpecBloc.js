@@ -41,13 +41,29 @@ Ext.define('Rubedo.view.ConfigSpecBloc', {
                     title: 'Avancé',
                     tabConfig: {
                         xtype: 'tab',
-                        localiserId: 'blockConfigSimplePanel'
+                        localiserId: 'blockConfigAdvancedPanel'
                     }
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onFormAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onFormAfterRender: function(component, eOpts) {
+        try{
+            component.getComponent(0).setTitle(Rubedo.RubedoInterfaceLoc['blockConfigSimplePanel'].title);
+            component.getComponent(1).setTitle(Rubedo.RubedoInterfaceLoc['blockConfigAdvancedPanel'].title);
+
+
+
+        } catch(err){}
     }
 
 });

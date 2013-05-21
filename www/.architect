@@ -1810,7 +1810,6 @@
         },
         "41d656a3-49d4-4a9c-ab7d-f13817e6085f": {
             "id": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
-            "expanded": false,
             "cn": [
                 {
                     "id": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
@@ -1827,6 +1826,9 @@
                             "id": "6f4cbf89-715a-4de1-93b4-01918cdf6d22"
                         }
                     ]
+                },
+                {
+                    "id": "514808a9-400a-440d-988c-e924c76fae0a"
                 }
             ]
         },
@@ -10480,30 +10482,20 @@
     "tabState": {
         "openTabs": [
             "765f93a9-83e7-4405-aaaa-740265c87f51",
-            "d8f7ec5e-c852-435a-bb17-6c19e843c898",
-            "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
-            "98647ca9-632b-4513-8aac-67b99b9af747",
-            "59694082-24d4-4519-ae8c-5fd6849d6503",
-            "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
+            "da6ed701-29c3-4603-a441-221b8ebb99cf",
             "b29235f7-9588-4632-b7ab-b0f2633b21ec",
-            "aad4192f-6fb1-4dbc-946e-1204a1cea801",
-            "ff1ccb16-8670-4464-8aec-9e29b8f7ad76",
-            "9f720849-6c20-4727-8b99-ce99c0298e28",
-            "2ab67cbe-8ad7-49d6-93b0-def6ba8520a8",
-            "80577966-9127-4f1a-ba7a-faceef3f254a",
-            "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
-            "da6ed701-29c3-4603-a441-221b8ebb99cf"
+            "41d656a3-49d4-4a9c-ab7d-f13817e6085f"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "41d656a3-49d4-4a9c-ab7d-f13817e6085f"
     },
     "inspectorState": {
-        "topInstance": "da6ed701-29c3-4603-a441-221b8ebb99cf",
-        "selectedInstance": "51ce778b-c530-48f5-a2d7-43f3b6482faf"
+        "topInstance": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
+        "selectedInstance": "514808a9-400a-440d-988c-e924c76fae0a"
     },
     "codeState": {
-        "topInstance": "da6ed701-29c3-4603-a441-221b8ebb99cf"
+        "topInstance": "41d656a3-49d4-4a9c-ab7d-f13817e6085f"
     },
     "editMode": "code"
 }

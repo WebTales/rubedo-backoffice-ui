@@ -422,6 +422,20 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     console.log("FieldTypes store could not be localized for the current language");
                 }
             });
+            Ext.Ajax.request({
+                url: 'resources/localisationfiles/'+userLanguage+'/blockTypes.json',
+                params: {
+
+                },
+                success: function(response){
+                    var singletonUpdates = Ext.JSON.decode(response.responseText);
+                    Ext.getStore("BlocsDataStore").removeAll();
+                    Ext.getStore("BlocsDataStore").loadData(singletonUpdates);
+                },
+                failure:function(){
+                    console.log("BlockTypes store could not be localized for the current language");
+                }
+            });
         }
 
 
