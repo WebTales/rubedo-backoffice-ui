@@ -177,8 +177,8 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 Ext.getCmp("assistantRequetage").getLayout().setActiveItem(4);
                 Ext.getCmp("progressAR").updateProgress(1, Rubedo.RubedoAutomatedElementsLoc.stageText+" 5 "+Rubedo.RubedoAutomatedElementsLoc.onText+" 5");
             }
-            Ext.getCmp("boutonPrevRequeteur").show();
-            Ext.getCmp("boutonNextRequeteur").hide();
+            Ext.getCmp("boutonPrevRequeteur").enable();
+            Ext.getCmp("boutonNextRequeteur").disable();
             Ext.getCmp("assistantRequetage").setLoading(true);
             if(component.ROMode){
                 Ext.getCmp("progressAR").up().hide();
