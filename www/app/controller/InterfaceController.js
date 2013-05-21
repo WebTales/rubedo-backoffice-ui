@@ -513,7 +513,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }); 
         Ext.getStore("CurrentUserDataStore").load();
         // handle url params
-        me.handleDirectives();
+        try{me.handleDirectives();}catch(err){
+        console.log("error in handling url params");
+    }
 
 
     },
