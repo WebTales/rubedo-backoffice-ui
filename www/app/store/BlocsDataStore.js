@@ -1555,7 +1555,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Niveau',
+                                                fieldLabel: 'Niveau de base',
                                                 name: 'menuLevel',
                                                 allowDecimals: false,
                                                 editable: false,
