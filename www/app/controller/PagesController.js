@@ -493,7 +493,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
             configSpec.getComponent(1).add(Ext.widget('checkbox',{
                 itemId:"eRenderDivField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showInADivText,
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayInADivText,
                 onChange:function(){
 
                     component.renderDiv=this.getValue();

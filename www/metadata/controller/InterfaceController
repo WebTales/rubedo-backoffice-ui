@@ -158,7 +158,7 @@
                     "Ext.getStore(\"CurrentUserDataStore\").load();\r",
                     "// handle url params\r",
                     "try{me.handleDirectives();}catch(err){\r",
-                    "\tconsole.log(\"error in handling url params\");\r",
+                    "console.log(\"error in handling url params\");\r",
                     "}\r",
                     "\r",
                     ""

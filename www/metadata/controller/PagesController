@@ -785,7 +785,7 @@
                     "    }));\r",
                     "    configSpec.getComponent(1).add(Ext.widget('checkbox',{\r",
                     "        itemId:\"eRenderDivField\",\r",
-                    "        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showInADivText,\r",
+                    "        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayInADivText,\r",
                     "        onChange:function(){\r",
                     "\r",
                     "            component.renderDiv=this.getValue();\r",
