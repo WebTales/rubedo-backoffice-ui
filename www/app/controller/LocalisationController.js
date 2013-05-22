@@ -628,6 +628,57 @@ Ext.define('Rubedo.controller.LocalisationController', {
         store.resumeAutoSync();
         store.sync();
         console.log("Done saving localisation. Please reload the page.");*/
+    },
+
+    extractLocFromBlocksJson: function() {
+        var me = this;
+        var data = Ext.clone(Ext.Array.pluck(Ext.getStore("BlocsDataStore").getRange(), "data"));
+        var extractedLoc = { };
+        Ext.Array.forEach(data, function(block){
+            block.category=me.insertAndReplace(extractedLoc, block.category);
+            block.type=me.insertAndReplace(extractedLoc, block.type);
+            block.description=me.insertAndReplace(extractedLoc, block.description);
+            block.configBasique.title=me.insertAndReplace(extractedLoc, block.configBasique.title);
+            Ext.Array.forEach(block.configBasique.champsConfig.simple, function(category){
+                category.categorie=me.insertAndReplace(extractedLoc, category.categorie);
+                Ext.Array.forEach(category.champs, function(field){
+                    field.config.fieldLabel=me.insertAndReplace(extractedLoc, field.config.fieldLabel);
+                    if (!Ext.isEmpty(field.autoStoreData)){
+                        Ext.Array.forEach(field.autoStoreData, function(option){
+                            option.label=me.insertAndReplace(extractedLoc, option.label);
+                        });
+                    }
+                });
+            });
+            Ext.Array.forEach(block.configBasique.champsConfig.avance, function(category){
+                category.categorie=me.insertAndReplace(extractedLoc, category.categorie);
+                Ext.Array.forEach(category.champs, function(field){
+                    field.config.fieldLabel=me.insertAndReplace(extractedLoc, field.config.fieldLabel);
+                    if (!Ext.isEmpty(field.autoStoreData)){
+                        Ext.Array.forEach(field.autoStoreData, function(option){
+                            option.label=me.insertAndReplace(extractedLoc, option.label);
+                        });
+                    }
+                });
+            });
+        });
+        console.log(extractedLoc);
+        console.log("\n \n");
+        console.log(data);
+    },
+
+    insertAndReplace: function(locObj, targetString) {
+        var newId="#"+Ext.id()+"#";
+        var finalId=Ext.clone(newId);
+        Ext.Object.each(locObj, function(key, value, myself) {
+            if (value==targetString){
+                finalId=key;
+            }
+        });
+        if (newId==finalId){
+            locObj[finalId]=targetString;
+        }
+        return(finalId);
     }
 
 });

@@ -714,6 +714,83 @@
                 "designer|controlQuery": "fieldset"
             },
             "designerId": "413bd541-5efe-49f4-b8f1-ad5d536d2703"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "extractLocFromBlocksJson",
+                "implHandler": [
+                    "var me = this;\r",
+                    "var data = Ext.clone(Ext.Array.pluck(Ext.getStore(\"BlocsDataStore\").getRange(), \"data\"));\r",
+                    "var extractedLoc = { };\r",
+                    "Ext.Array.forEach(data, function(block){\r",
+                    "\tblock.category=me.insertAndReplace(extractedLoc, block.category);\r",
+                    "    block.type=me.insertAndReplace(extractedLoc, block.type);\r",
+                    "    block.description=me.insertAndReplace(extractedLoc, block.description);\r",
+                    "    block.configBasique.title=me.insertAndReplace(extractedLoc, block.configBasique.title);\r",
+                    "    Ext.Array.forEach(block.configBasique.champsConfig.simple, function(category){\r",
+                    "        category.categorie=me.insertAndReplace(extractedLoc, category.categorie);\r",
+                    "        Ext.Array.forEach(category.champs, function(field){\r",
+                    "            field.config.fieldLabel=me.insertAndReplace(extractedLoc, field.config.fieldLabel);\r",
+                    "            if (!Ext.isEmpty(field.autoStoreData)){\r",
+                    "                Ext.Array.forEach(field.autoStoreData, function(option){\r",
+                    "\t\t\t\t\toption.label=me.insertAndReplace(extractedLoc, option.label);\r",
+                    "                });\r",
+                    "            }\r",
+                    "        });\r",
+                    "    });\r",
+                    "    Ext.Array.forEach(block.configBasique.champsConfig.avance, function(category){\r",
+                    "        category.categorie=me.insertAndReplace(extractedLoc, category.categorie);\r",
+                    "        Ext.Array.forEach(category.champs, function(field){\r",
+                    "            field.config.fieldLabel=me.insertAndReplace(extractedLoc, field.config.fieldLabel);\r",
+                    "            if (!Ext.isEmpty(field.autoStoreData)){\r",
+                    "                Ext.Array.forEach(field.autoStoreData, function(option){\r",
+                    "\t\t\t\t\toption.label=me.insertAndReplace(extractedLoc, option.label);\r",
+                    "                });\r",
+                    "            }\r",
+                    "        });\r",
+                    "    });\r",
+                    "});\r",
+                    "console.log(extractedLoc);\r",
+                    "console.log(\"\\n \\n\");\r",
+                    "console.log(data);"
+                ]
+            },
+            "designerId": "135734d5-8fd3-4b96-9764-767a7262b2f7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "insertAndReplace",
+                "designer|params": [
+                    "locObj",
+                    "targetString"
+                ],
+                "implHandler": [
+                    "var newId=\"#\"+Ext.id()+\"#\";\r",
+                    "var finalId=Ext.clone(newId);\r",
+                    "Ext.Object.each(locObj, function(key, value, myself) {\r",
+                    "    if (value==targetString){\r",
+                    "\t\tfinalId=key;\r",
+                    "    }\r",
+                    "});\r",
+                    "if (newId==finalId){\r",
+                    "    locObj[finalId]=targetString;\r",
+                    "}\r",
+                    "return(finalId);"
+                ]
+            },
+            "designerId": "561eeccd-ba92-4fe0-b9ae-9caba83908b8"
         }
     ]
 }
